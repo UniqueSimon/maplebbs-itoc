@@ -1,37 +1,37 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G802) ¯¸¤º: plan
-¼ÐÃD: [¤å¥ó] shm ¥X²{¿ù»~
-®É¶¡: 2006/05/27 Sat 11:25:16
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š802) ç«™å…§: plan
+æ¨™é¡Œ: [æ–‡ä»¶] shm å‡ºç¾éŒ¯èª¤
+æ™‚é–“: 2006/05/27 Sat 11:25:16
 
-  ¦pªG¥X²{Ãþ¦ü¥H¤Uªº°ÝÃD¡G
+  å¦‚æžœå‡ºç¾é¡žä¼¼ä»¥ä¸‹çš„å•é¡Œï¼š
 
-  A. ¥á¦b¯¸¤Wªº¤H¤ô²y, ¨t²Î«o¦^À³¹ï¤è¤£¦b¯¸¤W
-  B. ­×§ï config.h ±N MAXBOARD §ï¦Ü 2048¡A¦ý¬O·s¼WªºªOµLªk¨q¥X¨Ó
-     ±N MAXBOARD «ì´_¦¨ 1024¡A¬ÝªO¤S¥X²{¤F
+  A. ä¸Ÿåœ¨ç«™ä¸Šçš„äººæ°´çƒ, ç³»çµ±å»å›žæ‡‰å°æ–¹ä¸åœ¨ç«™ä¸Š
+  B. ä¿®æ”¹ config.h å°‡ MAXBOARD æ”¹è‡³ 2048ï¼Œä½†æ˜¯æ–°å¢žçš„æ¿ç„¡æ³•ç§€å‡ºä¾†
+     å°‡ MAXBOARD æ¢å¾©æˆ 1024ï¼Œçœ‹æ¿åˆå‡ºç¾äº†
 
-  ³o¬O¦]¬° MAXACTIVE¡BMAXBOARD ¤Ó¤jªº­ì¦]¡A¦Ó share memory ¤£°÷¥Î
-  ­n­×§ï kernel ³]©w¡AµM«á­«·s compile kernel ¦A­«¶}¾÷
+  é€™æ˜¯å› ç‚º MAXACTIVEã€MAXBOARD å¤ªå¤§çš„åŽŸå› ï¼Œè€Œ share memory ä¸å¤ ç”¨
+  è¦ä¿®æ”¹ kernel è¨­å®šï¼Œç„¶å¾Œé‡æ–° compile kernel å†é‡é–‹æ©Ÿ
 
-: ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w :
+: â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ :
 
-  FreeBSD ªº¸Ü¡ASHMMAXPGS ªº¹w³]­È¬O 1025¡Ashm ¤j¤p¹w³]¬O 4MB
-  ½Ð¦b±zªº kernel configuration file ¥[¤J¤U­±³o¦æ¡AÅý shm ¤j¤pÅÜ 16MB
+  FreeBSD çš„è©±ï¼ŒSHMMAXPGS çš„é è¨­å€¼æ˜¯ 1025ï¼Œshm å¤§å°é è¨­æ˜¯ 4MB
+  è«‹åœ¨æ‚¨çš„ kernel configuration file åŠ å…¥ä¸‹é¢é€™è¡Œï¼Œè®“ shm å¤§å°è®Š 16MB
 
 options         SHMMAXPGS=4096
 
-: ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w :
+: â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ :
 
-  Gentoo Linux ªº¸Ü¡A«h¬O§ï /etc/sysctl.conf
+  Gentoo Linux çš„è©±ï¼Œå‰‡æ˜¯æ”¹ /etc/sysctl.conf
 
 kernel.shmmni = 16384
 
 --
-µo«H¤H: visor.bbs@bbs.yzu.edu.tw (16­¿¹ï«þ OnFly  ^O^)
-¼Ð  ÃD: Re: [°ÝÃD]Windtop¶}¦n·sª©«á µLªkload
-µo«H¯¸: ¤¸´¼¤j¾Ç­·¤§¶ð (Mon Aug 13 16:38:03 2001)
+ç™¼ä¿¡äºº: visor.bbs@bbs.yzu.edu.tw (16å€å°æ‹· OnFly  ^O^)
+æ¨™  é¡Œ: Re: [å•é¡Œ]Windtopé–‹å¥½æ–°ç‰ˆå¾Œ ç„¡æ³•load
+ç™¼ä¿¡ç«™: å…ƒæ™ºå¤§å­¸é¢¨ä¹‹å¡” (Mon Aug 13 16:38:03 2001)
 --
-µo«H¤H: peterkim.bbs@cpu.tfcis.org (¡Ã¡¾¡Ã||..§Ú¬O¤Ñ§L)
-¼Ð  ÃD: Re: ¦n¤Í¦W³æ¥X²{°ÝÃD...
-µo«H¯¸: °Ê¤O®Ö¤ß (2006/04/18 Tue 14:25:57)
+ç™¼ä¿¡äºº: peterkim.bbs@cpu.tfcis.org (ï¿£â–½ï¿£||..æˆ‘æ˜¯å¤©å…µ)
+æ¨™  é¡Œ: Re: å¥½å‹åå–®å‡ºç¾å•é¡Œ...
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2006/04/18 Tue 14:25:57)
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

@@ -1,18 +1,18 @@
-�o�H�H: itoc.bbs@kulu.twbbs.org (�ѤҤl���Y?!), �ݪO: itoc
-��  �D: [�ץ�] visio.c vget() ��J����X�ץ�
-�o�H��: �B�P�B�P���篸 (Sun Jun  2 01:54:31 2002)         Updated: 2002/10/17
+發信人: itoc.bbs@kulu.twbbs.org (老夫子的頭?!), 看板: itoc
+標  題: [修正] visio.c vget() 輸入控制碼修正
+發信站: 咕嚕咕嚕火鍋站 (Sun Jun  2 01:54:31 2002)         Updated: 2002/10/17
 
-  vget �i�H��J����X�A�|�y���e������
-  ��k�O�Q�� emailpost �����@�g������X���H��
-  �A��H��^�иӫH�A�K�i�ⱱ��X�s�J vget �� lastcmd
-  post �ɥΤW�U�䲾���~���� lastcmd �Y�i
+  vget 可以輸入控制碼，會造成畫面錯亂
+  方法是利用 emailpost 先給一篇有控制碼的信件
+  再於信件回覆該信，便可把控制碼存入 vget 的 lastcmd
+  post 時用上下鍵移到剛才那個 lastcmd 即可
 
-  ���F�ѨM�o�Ӱ��D�Abmtad/innbbsd �b���H/�峹�ɤw�g strip ���F����X
-  �ҥH���W�z�פW�N���|������X���H��/�峹
-  �M�Ӧp�G�z�����O�ഫ�L�Ӫ�
-  �|���@�ǥH�e�d�U��������X���D���H��/�峹
+  為了解決這個問題，bmtad/innbbsd 在收信/文章時已經 strip 掉了控制碼
+  所以站上理論上就不會有控制碼的信件/文章
+  然而如果您的站是轉換過來的
+  會有一些以前留下的有控制碼標題的信件/文章
 
-  ����N�o�˧�
+  那麼就這樣改
 
 : visio.c vget()
 
@@ -27,7 +27,7 @@
           break;
         }
 
-+       if (ch == KEY_ESC)      /* itoc.020601: ���o�ϥα���X */
++       if (ch == KEY_ESC)      /* itoc.020601: 不得使用控制碼 */
 +         ch = '*';
 
         outc(ch);
@@ -35,4 +35,4 @@
       } while (++col < max);
 
 --
-[1;37m�� ���峹�� [33mitoc[37m �q [32mnctu5566.Dorm3.NCTU.edu.tw[37m �o��[m
+[1;37m□ 本文章由 [33mitoc[37m 從 [32mnctu5566.Dorm3.NCTU.edu.tw[37m 發表[m

@@ -1,23 +1,23 @@
-�@��: itoc (�\��о�) ����: SYSOP
-���D: POP3 �۰ʻ{��
-�ɶ�: Sat Jan  1 00:00:00 2000
+作者: itoc (功能教學) 站內: SYSOP
+標題: POP3 自動認證
+時間: Sat Jan  1 00:00:00 2000
 
-                        [1;42m �� POP3 �۰ʻ{�� �� [m
+                        [1;42m □ POP3 自動認證 □ [m
 
-   �������� POP3 �۰ʻ{�ҥ\��
-   �i��K�j�a�ϥ� Email Jusity
+   本站提供 POP3 自動認證功能
+   可方便大家使用 Email Jusity
 
-   �b [1;31mUser -> Register -> Address[m ��J�q�l�l��H�c�H��
+   在 [1;31mUser -> Register -> Address[m 填入電子郵件信箱以後
 
-   �O�_�ϥ� POP3 �{��(Y/N)�H[N]  �^�� y
+   是否使用 POP3 認證(Y/N)？[N]  回答 y
 
-   �|�X�{�b���M�D�����W�r
+   會出現帳號和主機的名字
 
-   �п�J�H�W�ҦC�X���u�@���b�����K�X: (�z�b�u�@���W���K�X)
-                                       [1;37m�`�N�G���O�b BBS �����עұK�X[m
+   請輸入以上所列出之工作站帳號的密碼: (您在工作站上的密碼)
+                                       [1;37m注意：不是在 BBS 站的ＩＤ密碼[m
 
-   �p�G�z���ন�\�� POP3 �۰ʻ{��
-   �p�G����ϥγo�ӥ\��A�ٽ��~��ϥέ쥻���^�H�覡�� Email Justify
+   如果您不能成功的 POP3 自動認證
+   如果不能使用這個功能，還請繼續使用原本的回信方式來 Email Justify
 
 --
-[1;37m�� ���峹�Ӧ� [33;44m ��j�q�l [0;1;37m �� [32mEE.NCTU.edu.tw[37m �ҵo��[m
+[1;37m□ 本文章來自 [33;44m 交大電子 [0;1;37m 由 [32mEE.NCTU.edu.tw[37m 所發表[m

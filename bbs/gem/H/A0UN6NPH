@@ -1,29 +1,29 @@
-�@��: itoc (�\��о�) ����: SYSOP
-���D: �Q�Τͽ˨Ӹs�ձH�H
-�ɶ�: Sat Jan  1 00:00:00 2000
+作者: itoc (功能教學) 站內: SYSOP
+標題: 利用友誼來群組寄信
+時間: Sat Jan  1 00:00:00 2000
 
-                        [1;42m �� �Q�Τͽ˨Ӹs�ձH�H �� [m
+                        [1;42m □ 利用友誼來群組寄信 □ [m
 
-: �b�s�ձH�H���ɭԡA���ӿﶵ�s G) �s�աA�o�O�b�����򪺩O�H
+: 在群組寄信的時候，有個選項叫 G) 群組，這是在做什麼的呢？
 
-G �O Group ���N��A�ٰO�o�b�n�ͦW�椤���@��s�ͽ˪��a
-�O���A�b�s�ձH�H���ɭԫ� G ��J����r�s�ձ���
-�t�δN�|�۰ʧ�n�ͦW�椤�� ID ��i�ӱH�H�W��
+G 是 Group 的意思，還記得在好友名單中有一欄叫友誼的吧
+是的，在群組寄信的時候按 G 輸入關鍵字群組條件
+系統就會自動把好友名單中的 ID 抓進來寄信名單
 
-�|�ӨҤl�A���]�ڪ��n�ͦW�欰
+舉個例子，假設我的好友名單為
 
-  �s��    �N ��         ��       ��
-     1    aa            ��p�P�� �i�T
-     2    bb            �ꤤ�P�� ���|
-     3    cc            �ꤤ�F�~ ����
-     4    dd            ��p�ꤤ���O�F�~ ����
+  編號    代 號         友       誼
+     1    aa            國小同學 張三
+     2    bb            國中同學 李四
+     3    cc            國中鄰居 王五
+     4    dd            國小國中都是鄰居 趙六
 
-�s�ձ����J �i�T   �X�{  aa
-�s�ձ����J ��p   �X�{  aa dd
-�s�ձ����J �ꤤ   �X�{  bb cc dd
-�s�ձ����J �P��   �X�{  aa bb
-�s�ձ����J �F�~   �X�{  cc dd
-�s�ձ��� �� Enter   �X�{  (�����n��) aa bb cc dd
+群組條件輸入 張三   出現  aa
+群組條件輸入 國小   出現  aa dd
+群組條件輸入 國中   出現  bb cc dd
+群組條件輸入 同學   出現  aa bb
+群組條件輸入 鄰居   出現  cc dd
+群組條件 按 Enter   出現  (全部好友) aa bb cc dd
 
 --
-[1;37m�� ���峹�Ӧ� [33;44m ��j�q�l [0;1;37m �� [32mEE.NCTU.edu.tw[37m �ҵo��[m
+[1;37m□ 本文章來自 [33;44m 交大電子 [0;1;37m 由 [32mEE.NCTU.edu.tw[37m 所發表[m

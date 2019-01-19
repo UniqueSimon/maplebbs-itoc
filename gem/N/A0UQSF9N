@@ -1,11 +1,11 @@
-�@��: itoc (���ӵo�i�����) ����: plan
-���D: [�\��] �h�˻y�t�ɩΨϥΪ̦۩wtheme
-�ɶ�: Thu Sep  5 11:09:56 2002                          Updated: 2005/04/30
+作者: itoc (不太發展實驗室) 站內: plan
+標題: [功能] 多樣語系檔或使用者自定theme
+時間: Thu Sep  5 11:09:56 2002                          Updated: 2005/04/30
 
-�� �ޭz�mLinuxBoy (-TMA-1-)�n���ʨ��G
->   �p�̯��W�ϥΪ̳̪񴣥X�@�Ӱ��D..
->   �p�̷Q�쪺���k�O�N�Ҧ���r�������q�q�t�~�g�i�@���ɮ׸̭��A�M��
->   �̷ӨϥΪ̭ӤH���]�w���J�C
+※ 引述《LinuxBoy (-TMA-1-)》之銘言：
+>   小弟站上使用者最近提出一個問題..
+>   小弟想到的做法是將所有文字的部份通通另外寫進一個檔案裡面，然後
+>   依照使用者個人的設定載入。
 
 : global.h
 
@@ -14,43 +14,43 @@
 
 : theme.h
 
-  �N�� #define xxx �令 VAR char *xxx INI()�A�Ҧp
+  就把 #define xxx 改成 VAR char *xxx INI()，例如
 
-- #define FEETER_CLASS    COLOR1 "  �ݪO���  " COLOR2 " (c)�s�峹 ..."
-+ VAR char *FEETER_CLASS  INI(COLOR1 "  �ݪO���  " COLOR2 " (c)�s�峹 ...");
+- #define FEETER_CLASS    COLOR1 "  看板選擇  " COLOR2 " (c)新文章 ..."
++ VAR char *FEETER_CLASS  INI(COLOR1 "  看板選擇  " COLOR2 " (c)新文章 ...");
 
-- #define FEETER_ULIST    COLOR1 "  ���ͦC��  " COLOR2 " (f)�n��  ..."
-+ VAR char *FEETER_ULIST  INI(COLOR1 "  ���ͦC��  " COLOR2 " (f)�n��  ...");
+- #define FEETER_ULIST    COLOR1 "  網友列表  " COLOR2 " (f)好友  ..."
++ VAR char *FEETER_ULIST  INI(COLOR1 "  網友列表  " COLOR2 " (f)好友  ...");
 
-  �Ҧ��� NECKER_* FOOTER_* FEETER_* VMSG_NULL ICON_* TOKEN_* ���n��
+  所有的 NECKER_* FOOTER_* FEETER_* VMSG_NULL ICON_* TOKEN_* 都要改
 
-: src/include/theme.1 �s�W���ɮ�
+: src/include/theme.1 新增此檔案
 
-  �N�O���~���諸�A�̧ǳq�q�g�b�o�̭��A�@�Ӥ@��
-  �b�o�ɮ׸̭��g���i�H���~�諸��r�O���@�˪� (�]�N�O�t�~�@�ӧG���D�D)
+  就是把剛才有改的，依序通通寫在這裡面，一個一行
+  在這檔案裡面寫的可以跟剛才改的文字是不一樣的 (也就是另外一個佈景主題)
 
-"\033[1;37;44m  ��ܬݪO  \033[0;30;47m c:�s�峹 vV:�wŪ��Ū ....\033[m"
-"\033[1;37;44m  ���ͪ��p  \033[0;30;47m f:�n�� t:���  ....\033[m"
+"\033[1;37;44m  選擇看板  \033[0;30;47m c:新文章 vV:已讀未讀 ....\033[m"
+"\033[1;37;44m  網友狀況  \033[0;30;47m f:好友 t:聊天  ....\033[m"
 
-: src/include/theme.2 �s�W���ɮ�
+: src/include/theme.2 新增此檔案
 
-  �M src/include/theme.1 �@�˪��榡�A�i�H�y�t�~�@�M�C��B��r���G���D�D
+  和 src/include/theme.1 一樣的格式，可以造另外一套顏色、文字的佈景主題
 
-: bbsd.c:load_theme() �s�W���禡�� tn_login() �e��
+: bbsd.c:load_theme() 新增此函式於 tn_login() 前面
 
-#define MAX_MSG 500         /* ���]�����{���� 500 �� message */
+#define MAX_MSG 500         /* 假設全部程式有 500 個 message */
 #define LOAD_THEME(x, i)    if (all_msg[i][0]) x = all_msg[i]
 
 static void
-load_theme()        /* ���J�y�t�� */
+load_theme()        /* 載入語系檔 */
 {
   int i;
   char *fpath, ans[3];
   FILE *fp;
   static char all_msg[MAX_MSG][80];
 
-  /* ��ܻy�t�� */
-  switch (vget(b_lines, 0, "�ϥέ��@�M�G���D�D(1-2)�H ", ans, 3, DOECHO))
+  /* 選擇語系檔 */
+  switch (vget(b_lines, 0, "使用哪一套佈景主題(1-2)？ ", ans, 3, DOECHO))
   {
   case '1':
     fpath = "src/include/theme.1";
@@ -62,7 +62,7 @@ load_theme()        /* ���J�y�t�� */
     return;
   }
 
-  /* ���J�y�t�� */
+  /* 載入語系檔 */
   if (fp = fopen(fpath, "r"))
   {
     for (i = 0; i < MAX_MSG; i++)
@@ -73,9 +73,9 @@ load_theme()        /* ���J�y�t�� */
     fclose(fp);
   }
 
-  [1;44m// ��e�����諸�����̧Ǽg�b�U�ӡA[m
-  [1;44m// 0�N�OŪ�y�t�ɪ��Ĥ@��A1�N�OŪ�y�t�ɪ��ĤG��A�̦����� [m
-  /* ��Ҧ��� msg �����V all_msg[][] */
+  [1;44m// 把前面有改的全部依序寫在下來，[m
+  [1;44m// 0就是讀語系檔的第一行，1就是讀語系檔的第二行，依此類推 [m
+  /* 把所有的 msg 都指向 all_msg[][] */
   LOAD_THEME(FEETER_CLASS, 0);
   LOAD_THEME(FEETER_ULIST, 1);
   ...
@@ -90,10 +90,10 @@ load_theme()        /* ���J�y�t�� */
 
 ---
 
-  �o�˪��ܡA�{���i�H��ܤ֡A�N�u�n�� theme.h �� bbsd.c:load_theme()
-  �M�s�� theme.1 theme.2 theme.3 ���y�t��
+  這樣的話，程式可以改很少，就只要改 theme.h 及 bbsd.c:load_theme()
+  和編修 theme.1 theme.2 theme.3 等語系檔
 
-  global.h �]�i�H��ӿ�z
+  global.h 也可以比照辦理
 
 --
-[1;37m�� ���峹�� [33mitoc[37m �q [32m140.113.128.124[37m �o��[m
+[1;37m□ 本文章由 [33mitoc[37m 從 [32m140.113.128.124[37m 發表[m

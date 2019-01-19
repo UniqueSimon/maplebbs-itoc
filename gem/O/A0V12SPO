@@ -1,28 +1,28 @@
-§@ªÌ: itoc (§@·~¦nÃø¼g) ¬İªO: plan
-¼ĞÃD: [­×¥¿] song.c ÂIºq¨ì¬İªO¶¶«KÂIºq¥h«H½c
-®É¶¡: Tue Dec 31 18:34:42 2002                          Updated: 2005/06/25
+ä½œè€…: itoc (ä½œæ¥­å¥½é›£å¯«) çœ‹æ¿: plan
+æ¨™é¡Œ: [ä¿®æ­£] song.c é»æ­Œåˆ°çœ‹æ¿é †ä¾¿é»æ­Œå»ä¿¡ç®±
+æ™‚é–“: Tue Dec 31 18:34:42 2002                          Updated: 2005/06/25
 
-¡° ¤Ş­z¡mRoger («K·í«L)¡n¤§»Ê¨¥¡G
-> ¦]¬°¦³¨Ç¨Ï¥ÎªÌ¤ÏÀ³¥L­ÌÂIªººq¤£¤@©w·|³Q¨Ï¥ÎªÌ¬İ¨ì
-> ¯à¤£¯àÅı¨Ï¥ÎªÌÂIºqµ¹A®É
-> ÂIªººq°£¤F°e¨ìktvª©¥~
-> ÁÙ¯à§âºq¥»±H¨ìAªº«H½c©O?
+â€» å¼•è¿°ã€ŠRoger (ä¾¿ç•¶ä¿ )ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å› ç‚ºæœ‰äº›ä½¿ç”¨è€…åæ‡‰ä»–å€‘é»çš„æ­Œä¸ä¸€å®šæœƒè¢«ä½¿ç”¨è€…çœ‹åˆ°
+> èƒ½ä¸èƒ½è®“ä½¿ç”¨è€…é»æ­Œçµ¦Aæ™‚
+> é»çš„æ­Œé™¤äº†é€åˆ°ktvç‰ˆå¤–
+> é‚„èƒ½æŠŠæ­Œæœ¬å¯„åˆ°Açš„ä¿¡ç®±å‘¢?
 
 : song.c:song_order()
 
   btime_update(brd_bno(BN_KTV));
 
-+ if (!annoy &&         /* ¨S°Î¦W¤~¥i¶¶«K±H«H½c */
-+   vans("­n¶¶«K±H¨ì¥Lªº«H½c¶Ü(Y/N)¡H[N] ") == 'y')
++ if (!annoy &&         /* æ²’åŒ¿åæ‰å¯é †ä¾¿å¯„ä¿¡ç®± */
++   vans("è¦é †ä¾¿å¯„åˆ°ä»–çš„ä¿¡ç®±å—(Y/N)ï¼Ÿ[N] ") == 'y')
 + {
-+   if (acct_userno(des) > 0)   /* ­n¦³³o id ¤~¦æ */
++   if (acct_userno(des) > 0)   /* è¦æœ‰é€™ id æ‰è¡Œ */
 +   {
 +     usr_fpath(fpath, des, fn_dir);
 +     hdr_stamp(fpath, HDR_COPY, &xpost, buf);
 
 +     strcpy(xpost.owner, cuser.userid);
 +     strcpy(xpost.nick, cuser.username);
-+     sprintf(xpost.title, "%s ÂIµ¹±z", cuser.userid);
++     sprintf(xpost.title, "%s é»çµ¦æ‚¨", cuser.userid);
 
 +     rec_add(fpath, &xpost, sizeof(HDR));
 +   }
@@ -34,4 +34,4 @@
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

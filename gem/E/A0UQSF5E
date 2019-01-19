@@ -1,11 +1,11 @@
-§@ªÌ: itoc (¬@±Ï¤@­ÓÆF»î) ¬İªO: plan
-¼ĞÃD: [­×¥¿] talk.c ²á¤Ñ®É³sÄò«ö¤G¦¸ Ctrl-C ¤~Â÷¶}
-®É¶¡: Sat Jul 20 01:10:36 2002                          Updated: 2002/10/17
+ä½œè€…: itoc (æ‹¯æ•‘ä¸€å€‹éˆé­‚) çœ‹æ¿: plan
+æ¨™é¡Œ: [ä¿®æ­£] talk.c èŠå¤©æ™‚é€£çºŒæŒ‰äºŒæ¬¡ Ctrl-C æ‰é›¢é–‹
+æ™‚é–“: Sat Jul 20 01:10:36 2002                          Updated: 2002/10/17
 
-¡° ¤Ş­z¡mtbp.bbs@xeon.tfcis.org (tbp)¡n¤§»Ê¨¥¡G
-> ¨â¤H²á¤Ñ®É
-> ¦p¦ó­×§ï¤~¯àÅı²Ä¤@¦¸«ö^C¬°Äµ§i
-> ¦A«ö¤@¦¸^C¤~°h¥X©O
+â€» å¼•è¿°ã€Štbp.bbs@xeon.tfcis.org (tbp)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å…©äººèŠå¤©æ™‚
+> å¦‚ä½•ä¿®æ”¹æ‰èƒ½è®“ç¬¬ä¸€æ¬¡æŒ‰^Cç‚ºè­¦å‘Š
+> å†æŒ‰ä¸€æ¬¡^Cæ‰é€€å‡ºå‘¢
 
 : talk.c:talk_speak()
 
@@ -22,7 +22,7 @@ talk_speak(fd)
   ...
   ...
 
-+ ctrlc = 0;        /* 1:¤W¤@Áä¬O Ctrl-C ©Î Ctrl-D */
++ ctrlc = 0;        /* 1:ä¸Šä¸€éµæ˜¯ Ctrl-C æˆ– Ctrl-D */
 
   for (;;)
   {
@@ -30,11 +30,11 @@ talk_speak(fd)
 
 +   if (ch == Ctrl('D') || ch == Ctrl('C'))
 +   {
-+     if (ctrlc)    /* ³sÄò«ö¤G¦¸ Ctrl-C ©Î Ctrl-D Â÷¶} */
++     if (ctrlc)    /* é€£çºŒæŒ‰äºŒæ¬¡ Ctrl-C æˆ– Ctrl-D é›¢é–‹ */
 +     {
 +       break;
 +     }
-+     else          /* ²Ä¤@¦¸«ö Ctrl-C ©Î Ctrl-D */
++     else          /* ç¬¬ä¸€æ¬¡æŒ‰ Ctrl-C æˆ– Ctrl-D */
 +     {
 +       ctrlc = 1;
 +       continue;
@@ -58,14 +58,14 @@ talk_speak(fd)
 
 #ifdef HAVE_GAME
 #define FOOTER_TALK     \
-COLOR1 " ¥æ½Í¼Ò¦¡ " COLOR2 " (^O)¹ï«³ (³sÄò¤G¦¸^C,^D)µ²§ô¥æ½Í (^T)©I¥s¾¹ (^Z)§Ö±¶¦Cªí (^G)¹Í¹Í  \033[m"
+COLOR1 " äº¤è«‡æ¨¡å¼ " COLOR2 " (^O)å°å¥• (é€£çºŒäºŒæ¬¡^C,^D)çµæŸäº¤è«‡ (^T)å‘¼å«å™¨ (^Z)å¿«æ·åˆ—è¡¨ (^G)å—¶å—¶  \033[m"
 #else
 #define FOOTER_TALK     \
-COLOR1 " ¥æ½Í¼Ò¦¡ " COLOR2 " (³sÄò¤G¦¸^C,^D)µ²§ô¥æ½Í (^T)©I¥s¾¹ (^Z)§Ö±¶¦Cªí (^G)¹Í¹Í (^Y)²M°£  \033[m"
+COLOR1 " äº¤è«‡æ¨¡å¼ " COLOR2 " (é€£çºŒäºŒæ¬¡^C,^D)çµæŸäº¤è«‡ (^T)å‘¼å«å™¨ (^Z)å¿«æ·åˆ—è¡¨ (^G)å—¶å—¶ (^Y)æ¸…é™¤  \033[m"
 #endif
 
 --
-  À³¸Ó¬O³o¼Ë¡A¨S¸Õ¹L
+  æ‡‰è©²æ˜¯é€™æ¨£ï¼Œæ²’è©¦é
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

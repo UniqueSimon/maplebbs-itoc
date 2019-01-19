@@ -1,45 +1,45 @@
-�@��: itoc (�\��о�) ����: SYSOP
-���D: ���W���o���峹
-�ɶ�: Sat Jan  1 00:00:00 2000
+作者: itoc (功能教學) 站內: SYSOP
+標題: 不上站發表文章
+時間: Sat Jan  1 00:00:00 2000
 
-                        [1;42m �� ���W���o���峹 �� [m
+                        [1;42m □ 不上站發表文章 □ [m
 
- �ֻ��o���峹�@�w�n�W���H���F�`�٨ϥΪ̪������ϥζO�A��������
- bbs mail post ���\��C�H��z�u�n�b�a���s��n�z���峹�A�M���
- �o�g�峹�H�� bbs@bbs.tnfsh.tn.edu.tw �Y�i�C
+ 誰說發表文章一定要上站？為了節省使用者的網路使用費，本站提供
+ bbs mail post 的功能。以後您只要在家中編輯好您的文章，然後把
+ 這篇文章寄給 bbs@bbs.tnfsh.tn.edu.tw 即可。
 
- �D�D�H�K�A�峹���榡�p�U�G
+ 主題隨便，文章的格式如下：
 
 
 #name: *s
 #password: your_password
 #board: test
-#title: [�о�] �p�󤣤W���N��o���峹
+#title: [教學] 如何不上站就能發表文章
 
-bbs mail post ���榡�O�T�w���G
-�Ĥ@��g�� #name: �z�b������ ID
-�ĤG��g�� #password: �z�b�������K�X
-�ĤT��g�� #board: �z���峹�ҭn�o�����ݪO
-�ĥ|��g�� #title: �z���峹�ҭn�����D
-�Ĥ���ťդ@��
-�Ĥ���}�l�N�O�z���峹���e
+bbs mail post 的格式是固定的：
+第一行寫著 #name: 您在本站的 ID
+第二行寫著 #password: 您在本站的密碼
+第三行寫著 #board: 您的文章所要發表的看板
+第四行寫著 #title: 您的文章所要的標題
+第五行空白一行
+第六行開始就是您的文章內容
 
-  �z�u�n�b�a�̼g�n�o�ˮ榡���@�ʫH�A�M���o�ʫH�H�u�¤�r�榡�v
-  �H�� bbs@bbs.tnfsh.tn.edu.tw �Y�i�C
-  �n�`�N���O�A�o�˵o���峹���ܡA�峹�g�ƥH�ΤW�����Ƴ����|�W�[�C
+  您只要在家裡寫好這樣格式的一封信，然後把這封信以「純文字格式」
+  寄來 bbs@bbs.tnfsh.tn.edu.tw 即可。
+  要注意的是，這樣發表文章的話，文章篇數以及上站次數都不會增加。
 
-�� �� mail post �i�H�ϥα���X�ܡH
+※ 用 mail post 可以使用控制碼嗎？
 
-  �m�ⱱ��X�i�H�ΡA���L�z���t�έn��䴩 ANSI ��J�~��C�@�Ǳ`
-  �����@�~�t�Φp Unix FreeBSD Linux �����i�H������J Ansi ����
-  �X *�C�p�G�z�ϥΪ��t�άO Windows �t�C�A�i�H�ϥ� DOS �U���@��
-  �{��, �p Artworx Ansidraw Sdraw Thedraw ���A�N�i�H�F��z�Q�n
-  ���ت��C�٦� KKman �� Ansi Editor �]�ມ���z���ݨD�C
+  彩色控制碼可以用，不過您的系統要能支援 ANSI 輸入才行。一些常
+  見的作業系統如 Unix FreeBSD Linux 等都可以直接輸入 Ansi 控制
+  碼 *。如果您使用的系統是 Windows 系列，可以使用 DOS 下的一些
+  程式, 如 Artworx Ansidraw Sdraw Thedraw 等，就可以達到您想要
+  的目的。還有 KKman 的 Ansi Editor 也能滿足您的需求。
 
-  �J�M��αm�ⱱ��X�A�N��� **s **n �o�G�ر���X�F�C
+  既然能用彩色控制碼，就能用 **s **n 這二種控制碼了。
 
-  �ܩ�o�ǵ{���p����o�A�z�i�H�Q�� archie ��U�j FTP �h�M��A��
-  �O�� Ascii �O�M�ݡC
+  至於這些程式如何取得，您可以利用 archie 到各大 FTP 去尋找，或
+  是到 Ascii 板尋問。
 
 --
-[1;37m�� ���峹�Ӧ� [33;44m ��j�q�l [0;1;37m �� [32mEE.NCTU.edu.tw[37m �ҵo��[m
+[1;37m□ 本文章來自 [33;44m 交大電子 [0;1;37m 由 [32mEE.NCTU.edu.tw[37m 所發表[m

@@ -1,20 +1,20 @@
-§@ªÌ: itoc (¥æ¤j¹q¤l) ¬ÝªO: plan
-¼ÐÃD: [¥\¯à] ¤å³¹¤£¯àÂà±H
-®É¶¡: Sun Mar 10 15:11:11 2002                          Updated: 2004/09/07
+ä½œè€…: itoc (äº¤å¤§é›»å­) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] æ–‡ç« ä¸èƒ½è½‰å¯„
+æ™‚é–“: Sun Mar 10 15:11:11 2002                          Updated: 2004/09/07
 
-¡° ¤Þ­z¡melvis (elvis)¡n¤§»Ê¨¥¡G
-> >     §Ú¦b·Q¦pªG¨Ï¥ÎªÌ¥i¥H³]©w¦Û¤vªº¤å³¹¤£¥iÂà±H¨º¤]¤£¿ù
+â€» å¼•è¿°ã€Šelvis (elvis)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> >     æˆ‘åœ¨æƒ³å¦‚æžœä½¿ç”¨è€…å¯ä»¥è¨­å®šè‡ªå·±çš„æ–‡ç« ä¸å¯è½‰å¯„é‚£ä¹Ÿä¸éŒ¯
 
 : hdr.h
 
-#define POST_NOFORWARD      0x00004000      /* ¤£¯àÂà±Hªº */
+#define POST_NOFORWARD      0x00004000      /* ä¸èƒ½è½‰å¯„çš„ */
 
 : modes.h
 
-#define EDIT_NOFORWARD  0x20    /* ¤£¯àÂà±H */
+#define EDIT_NOFORWARD  0x20    /* ä¸èƒ½è½‰å¯„ */
 
-> >     ¨Ï¥ÎªÌ¥i¥H¦b ctrl-x «á¤£«ö l ¤]¤£«ö s ¨Ó¦s
-> >     «ö¥t¤@­Ó¤£¥iÂà±Hªº¿ï¶µ
+> >     ä½¿ç”¨è€…å¯ä»¥åœ¨ ctrl-x å¾Œä¸æŒ‰ l ä¹Ÿä¸æŒ‰ s ä¾†å­˜
+> >     æŒ‰å¦ä¸€å€‹ä¸å¯è½‰å¯„çš„é¸é …
 
 : post.c do_post()
 
@@ -34,35 +34,35 @@
 
 : edit.c ve_filer()
 
-  [1;44m // menu1 menu2 menu3 menu4 ¤]¬O¤ñ·Ó­×§ï [m
+  [1;44m // menu1 menu2 menu3 menu4 ä¹Ÿæ˜¯æ¯”ç…§ä¿®æ”¹ [m
 
-  if (ve_op < 0)        /* itoc.010301: ·s¼W ve_op = -1 ¤£¯àÀx¦s */
--   msg = "[E]Ä~Äò (A)©ñ±ó ....";
-+   msg = "[E]Ä~Äò (F)¤£±oÂà±H (A)©ñ±ó ....";
+  if (ve_op < 0)        /* itoc.010301: æ–°å¢ž ve_op = -1 ä¸èƒ½å„²å­˜ */
+-   msg = "[E]ç¹¼çºŒ (A)æ”¾æ£„ ....";
++   msg = "[E]ç¹¼çºŒ (F)ä¸å¾—è½‰å¯„ (A)æ”¾æ£„ ....";
   else if (bbsmode != M_POST)
--   msg = "[S]¦sÀÉ (A)©ñ±ó ....";
-+   msg = "[S]¦sÀÉ (F)¤£±oÂà±H (A)©ñ±ó ....";
+-   msg = "[S]å­˜æª” (A)æ”¾æ£„ ....";
++   msg = "[S]å­˜æª” (F)ä¸å¾—è½‰å¯„ (A)æ”¾æ£„ ....";
   else if (curredit & EDIT_OUTGO)
--   msg = "[S]¦sÀÉ (L)¯¸¤º (A)©ñ±ó ...";
-+   msg = "[S]¦sÀÉ (L)¯¸¤º (F)¤£±oÂà±H (A)©ñ±ó ...";
+-   msg = "[S]å­˜æª” (L)ç«™å…§ (A)æ”¾æ£„ ...";
++   msg = "[S]å­˜æª” (L)ç«™å…§ (F)ä¸å¾—è½‰å¯„ (A)æ”¾æ£„ ...";
   else
--   msg = "[L]¯¸¤º (S)¦sÀÉ (A)©ñ±ó ...";
-+   msg = "[L]¯¸¤º (S)¦sÀÉ (F)¤£±oÂà±H (A)©ñ±ó ...";
+-   msg = "[L]ç«™å…§ (S)å­˜æª” (A)æ”¾æ£„ ...";
++   msg = "[L]ç«™å…§ (S)å­˜æª” (F)ä¸å¾—è½‰å¯„ (A)æ”¾æ£„ ...";
 
   ...
   ...
 
   case 'l':
-    if (ve_op < 0)              /* itoc.010301: ¤£¯àÀx¦s */
+    if (ve_op < 0)              /* itoc.010301: ä¸èƒ½å„²å­˜ */
       return VE_FOOTER;
     curredit &= ~EDIT_OUTGO;
     break;
 
 + case 'f':
-+   if (ve_op < 0)              /* itoc.010301: ¤£¯àÀx¦s */
++   if (ve_op < 0)              /* itoc.010301: ä¸èƒ½å„²å­˜ */
 +     return VE_FOOTER;
 +   curredit |= EDIT_NOFORWARD;
-+   curredit &= ~EDIT_OUTGO;    /* ¤£¯àÂà±H¥²¬O local save */
++   curredit &= ~EDIT_OUTGO;    /* ä¸èƒ½è½‰å¯„å¿…æ˜¯ local save */
 +   break;
 
   case 'r':
@@ -85,21 +85,21 @@
 
 : xover.c xo_forward()
 
-    /* itoc.000319: ­×¥¿­­¨î¯Å¤å³¹¤£±oÂà±H */
-    /* itoc.010602: GEM_RESTRICT ©M POST_RESTRICT ¤Ç°t¡A©Ò¥H¥[±K¤å³¹¤]¤£±oÂà±H */
+    /* itoc.000319: ä¿®æ­£é™åˆ¶ç´šæ–‡ç« ä¸å¾—è½‰å¯„ */
+    /* itoc.010602: GEM_RESTRICT å’Œ POST_RESTRICT åŒ¹é…ï¼Œæ‰€ä»¥åŠ å¯†æ–‡ç« ä¹Ÿä¸å¾—è½‰å¯„ */
     if ((xmode & (GEM_RESTRICT | GEM_RESERVED)) && !HAS_PERM(PERM_ALLBOARD))
       continue;
 
 +   if (xmode & POST_NOFORWARD)
 +      continue;
 
-    if (!(xmode & GEM_FOLDER))          /* ¬d hdr ¬O§_ plain text */
+    if (!(xmode & GEM_FOLDER))          /* æŸ¥ hdr æ˜¯å¦ plain text */
 
 
-> >     µM«á¦b¤å³¹¦Cªí¤]¥i¥H cancel ©Î¦A³]©w¤£¥iÂà±H
-> >     ·íµM­n¤£Âà«Hªº¸Ü¤@¶}©lªº¤£¥iÂà±H¤]·|¦s¦¨ localsave Åo
+> >     ç„¶å¾Œåœ¨æ–‡ç« åˆ—è¡¨ä¹Ÿå¯ä»¥ cancel æˆ–å†è¨­å®šä¸å¯è½‰å¯„
+> >     ç•¶ç„¶è¦ä¸è½‰ä¿¡çš„è©±ä¸€é–‹å§‹çš„ä¸å¯è½‰å¯„ä¹Ÿæœƒå­˜æˆ localsave å›‰
 
-: post.c:post_noforward() ·s¼W³o°¦¨ç¦¡¦b post_help() ¤§«e
+: post.c:post_noforward() æ–°å¢žé€™éš»å‡½å¼åœ¨ post_help() ä¹‹å‰
 
 static int
 post_noforward(xo)
@@ -108,7 +108,7 @@ post_noforward(xo)
   HDR *hdr;
   int pos, cur;
 
-  if (!cuser.userlevel) /* itoc.020114: guest ¤£¯à¹ï¨ä¥L guest ªº¤å³¹¥[±K */
+  if (!cuser.userlevel) /* itoc.020114: guest ä¸èƒ½å°å…¶ä»– guest çš„æ–‡ç« åŠ å¯† */
     return XO_NONE;
 
   pos = xo->pos;
@@ -130,14 +130,14 @@ post_noforward(xo)
 : post.c:post_cb[]
 : post.c:xpost_cb[]
 
-+ 'M', post_noforward,      [1;44m// «öÁä¦Û©w [m
++ 'M', post_noforward,      [1;44m// æŒ‰éµè‡ªå®š [m
 
 
 --
-  §Ú¨S¸Õ¹L³o¥\¯à¡A¤]¤£ª¾¹D¦³¨S¦³º|¬} :p
+  æˆ‘æ²’è©¦éŽé€™åŠŸèƒ½ï¼Œä¹Ÿä¸çŸ¥é“æœ‰æ²’æœ‰æ¼æ´ž :p
 
-  ¤£¹L¤£¯àÂà±Hªº¤å³¹¤£¬O«Ü©_©Ç¶Ü?
-  ¬JµM¯à³Q§O¤H¬Ý¨ì, ¥L´N¥i¥H¥ô·N copy ¤F°Ú
+  ä¸éŽä¸èƒ½è½‰å¯„çš„æ–‡ç« ä¸æ˜¯å¾ˆå¥‡æ€ªå—Ž?
+  æ—¢ç„¶èƒ½è¢«åˆ¥äººçœ‹åˆ°, ä»–å°±å¯ä»¥ä»»æ„ copy äº†å•Š
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mnctu5566.Dorm3.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mnctu5566.Dorm3.NCTU.edu.tw[37m ç™¼è¡¨[m

@@ -1,75 +1,75 @@
-§@ªÌ: itoc (¬@±Ï¤@­ÓÆF»î) ¬ÝªO: plan
-¼ÐÃD: [¤å¥ó] Âà«H³]©w¤â¥U
-®É¶¡: Thu Jul  4 17:17:34 2002
+ä½œè€…: itoc (æ‹¯æ•‘ä¸€å€‹éˆé­‚) çœ‹æ¿: plan
+æ¨™é¡Œ: [æ–‡ä»¶] è½‰ä¿¡è¨­å®šæ‰‹å†Š
+æ™‚é–“: Thu Jul  4 17:17:34 2002
 
-                       [32m¡¹ Âà«H³]©w¤â¥U ¡¹[m
+                       [32mâ˜… è½‰ä¿¡è¨­å®šæ‰‹å†Š â˜…[m
 
-  ¢Ý¡BÂà«H°ò¥»³]©w
-  ¤@¡B©M news server Âà«H
-  ¤G¡B©M bbs ¹ïÂà
-
-
-    ¥»¤å¥ó¬O¼gµ¹­n¦w¸Ë itoc ©ÒºûÅ@ªº bbs µ{¦¡ª©¥»©Ò¨Ï¥Îªº¡A¦ý¤]¾A¥Î
-  ¤j³¡¤À bbs ª©¥»¡C
+  ï¼¯ã€è½‰ä¿¡åŸºæœ¬è¨­å®š
+  ä¸€ã€å’Œ news server è½‰ä¿¡
+  äºŒã€å’Œ bbs å°è½‰
 
 
-  [1;33m¢Ý¡BÂà«H°ò¥»³]©w[m
+    æœ¬æ–‡ä»¶æ˜¯å¯«çµ¦è¦å®‰è£ itoc æ‰€ç¶­è­·çš„ bbs ç¨‹å¼ç‰ˆæœ¬æ‰€ä½¿ç”¨çš„ï¼Œä½†ä¹Ÿé©ç”¨
+  å¤§éƒ¨åˆ† bbs ç‰ˆæœ¬ã€‚
 
-    0. ¥H¤U¥þ³¡¬O¥Î bbs ªº¨­¤À°õ¦æ
 
-    1. crontab -e ¥[¤J³o¤G¦æ (À³¸Ó­ì¥»´N¦³¤F)
+  [1;33mï¼¯ã€è½‰ä¿¡åŸºæœ¬è¨­å®š[m
 
-# ¨C¤p®É¹ï¨ä¥L BBS ¤Î news server Âà«H¤­¦¸
+    0. ä»¥ä¸‹å…¨éƒ¨æ˜¯ç”¨ bbs çš„èº«åˆ†åŸ·è¡Œ
+
+    1. crontab -e åŠ å…¥é€™äºŒè¡Œ (æ‡‰è©²åŽŸæœ¬å°±æœ‰äº†)
+
+# æ¯å°æ™‚å°å…¶ä»– BBS åŠ news server è½‰ä¿¡äº”æ¬¡
 10,22,34,46,58 * * * * innd/bbslink > /dev/null 2>&1
 
 
-  [1;33m¤@¡B©M news server Âà«H[m
+  [1;33mä¸€ã€å’Œ news server è½‰ä¿¡[m
 
-   ½d¨Ò¡G
+   ç¯„ä¾‹ï¼š
      news:   news.tfcis.org      POST(119)
      group:  TFCIS.personal.itoc
 
-    1. ¶}­Ó·sªO [itoc]¡A¯S§Oª`·Nªº¬O¡A³]©wÄÝ©Ê 1 ¡¼ ¤£Âà«H¥X¥h
+    1. é–‹å€‹æ–°æ¿ [itoc]ï¼Œç‰¹åˆ¥æ³¨æ„çš„æ˜¯ï¼Œè¨­å®šå±¬æ€§ 1 â–¡ ä¸è½‰ä¿¡å‡ºåŽ»
 
-    2. ½s¿è nodelist¡A¥[¤J
+    2. ç·¨è¼¯ nodelistï¼ŒåŠ å…¥
 
        TFCIS        news.tfcis.org          POST(119)
 
-    3. ½s¿è newsfeeds¡A¥[¤J
+    3. ç·¨è¼¯ newsfeedsï¼ŒåŠ å…¥
 
        TFCIS        TFCIS.personal.itoc     <-> itoc   big5
 
-    4. §¹¦¨
+    4. å®Œæˆ
 
-    5. ¦pªG«H¤@ª½¨ú¤£¶i¨Ó¡A¦¹®É¥i¥H¤W¤u§@¯¸¤â°Ê°õ¦æ
+    5. å¦‚æžœä¿¡ä¸€ç›´å–ä¸é€²ä¾†ï¼Œæ­¤æ™‚å¯ä»¥ä¸Šå·¥ä½œç«™æ‰‹å‹•åŸ·è¡Œ
        % innd/bbslink -v
-       ¬Ý¬Ý¿ù»~°T®§¦A§@³B²z¡C
+       çœ‹çœ‹éŒ¯èª¤è¨Šæ¯å†ä½œè™•ç†ã€‚
 
 
-  [1;33m¤G¡B©M bbs ¹ïÂà[m
+  [1;33mäºŒã€å’Œ bbs å°è½‰[m
 
-   ½d¨Ò¡G
-     bbs.abc.com ¯¸ªº Math ªOÂà¨ì¦Û¤v¯¸¤Wªº Mathematics ªO
-     (¤G¯¸ªºªO¦W¥i¥H¤£¤@¼Ë)
+   ç¯„ä¾‹ï¼š
+     bbs.abc.com ç«™çš„ Math æ¿è½‰åˆ°è‡ªå·±ç«™ä¸Šçš„ Mathematics æ¿
+     (äºŒç«™çš„æ¿åå¯ä»¥ä¸ä¸€æ¨£)
 
-    1. ¶}­Ó·sªO [Mathematics]¡A¯S§Oª`·Nªº¬O¡A³]©wÄÝ©Ê 1 ¡¼ ¤£Âà«H¥X¥h
+    1. é–‹å€‹æ–°æ¿ [Mathematics]ï¼Œç‰¹åˆ¥æ³¨æ„çš„æ˜¯ï¼Œè¨­å®šå±¬æ€§ 1 â–¡ ä¸è½‰ä¿¡å‡ºåŽ»
 
-    2. ­º¥ý¤GÃä¥ý­n¬°³o­ÓÂà«Hªº¬ÝªO¨ú¤@­Ó¬Û¦Pªº group ¦W¦r¡A
-       °²³]¬O bbs.math   (group ¦W¦r¤G¯¸­n¨ú¤@¼Ë)
+    2. é¦–å…ˆäºŒé‚Šå…ˆè¦ç‚ºé€™å€‹è½‰ä¿¡çš„çœ‹æ¿å–ä¸€å€‹ç›¸åŒçš„ group åå­—ï¼Œ
+       å‡è¨­æ˜¯ bbs.math   (group åå­—äºŒç«™è¦å–ä¸€æ¨£)
 
-    3. ½s¿è nodelist¡A¥[¤J
+    3. ç·¨è¼¯ nodelistï¼ŒåŠ å…¥
 
        ABC          bbs.abc.com             IHAVE(7777)
 
-    4. ½s¿è newsfeeds¡A¥[¤J
+    4. ç·¨è¼¯ newsfeedsï¼ŒåŠ å…¥
 
        ABC          bbs.math                <-> Mathematics   big5
 
-    5. §¹¦¨
+    5. å®Œæˆ
 
-    6. ¦pªG«H¤@ª½°e¤£¥X¥h¡A¦¹®É¥i¥H¤W¤u§@¯¸¤â°Ê°õ¦æ
+    6. å¦‚æžœä¿¡ä¸€ç›´é€ä¸å‡ºåŽ»ï¼Œæ­¤æ™‚å¯ä»¥ä¸Šå·¥ä½œç«™æ‰‹å‹•åŸ·è¡Œ
        % innd/bbslink -v
-       ¬Ý¬Ý¿ù»~°T®§¦A§@³B²z¡C
+       çœ‹çœ‹éŒ¯èª¤è¨Šæ¯å†ä½œè™•ç†ã€‚
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mapple.Dorm3.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mapple.Dorm3.NCTU.edu.tw[37m ç™¼è¡¨[m

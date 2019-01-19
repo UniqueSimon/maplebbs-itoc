@@ -1,26 +1,26 @@
-�@��: itoc (�\��о�) ����: SYSOP
-���D: �^�л{�ҫH
-�ɶ�: Sat Jan  1 00:00:00 2000
+作者: itoc (功能教學) 站內: SYSOP
+標題: 回覆認證信
+時間: Sat Jan  1 00:00:00 2000
 
-                        [1;42m �� �^�л{�ҫH �� [m
+                        [1;42m □ 回覆認證信 □ [m
 
-  �������Ѧ^�л{�ҫH���������{�Ҫ��A�ȡC
+  本站提供回覆認證信做為身分認證的服務。
 
-  ���z�b [1;31mUser -> Register -> Address[m ��g
-  �q�l�l��H�c�ɡA�t�η|�H�@�ʻ{�ҫH�h�z�Ҷ�
-  �q�l�l��H�c�C
+  當您在 [1;31mUser -> Register -> Address[m 填寫
+  電子郵件信箱時，系統會寄一封認證信去您所填的
+  電子郵件信箱。
 
-  �{�ҫH�����D��
+  認證信的標題為
 
   [WolfBBS]To ID([1;35mxxxxxxx[m) [VALID]
 
-  �z�u�n�����^�H�Y�i�A�`�N�Ф��n��ʤF���D�A
-  �ݫH�H�쥻���A�U���n�J�A�z�N�q�L�{�ҤF�C
+  您只要直接回信即可，注意請不要更動了標題，
+  待信寄到本站，下次登入，您就通過認證了。
 
-  �Ϊ̱z�]�i�H�g��g�{�ҽX���覡�A�䤤 xxxxxxx
-  �O�@�ǥѼƦr�M�j�g�r���Ҳզ����{�ҽX�A�o�ɱz
-  �u�n�W���A�� [1;31mUser -> Register -> Verify[m
-  ��J xxxxxxx �Y�i�q�L�{�ҡC
+  或者您也可以經填寫認證碼的方式，其中 xxxxxxx
+  是一些由數字和大寫字母所組成的認證碼，這時您
+  只要上站，到 [1;31mUser -> Register -> Verify[m
+  填入 xxxxxxx 即可通過認證。
 
 --
-[1;37m�� ���峹�Ӧ� [33;44m ��j�q�l [0;1;37m �� [32mEE.NCTU.edu.tw[37m �ҵo��[m
+[1;37m□ 本文章來自 [33;44m 交大電子 [0;1;37m 由 [32mEE.NCTU.edu.tw[37m 所發表[m

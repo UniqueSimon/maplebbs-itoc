@@ -1,103 +1,103 @@
-§@ªÌ: itoc (¤£¤Óµo®i¹êÅç«Ç) ¯¸¤º: plan
-¼ĞÃD: [¤å¥ó] ­«½sµ{¦¡
-®É¶¡: Sun Sep  1 23:29:42 2002
+ä½œè€…: itoc (ä¸å¤ªç™¼å±•å¯¦é©—å®¤) ç«™å…§: plan
+æ¨™é¡Œ: [æ–‡ä»¶] é‡ç·¨ç¨‹å¼
+æ™‚é–“: Sun Sep  1 23:29:42 2002
 
-  [1;31m> »¡©ú[m
+  [1;31m> èªªæ˜[m
 
-    ³o½g¬O»¡©ú¦b§ï§¹µ{¦¡¥H«á¡A«ç»ò±¾¤W·sµ{¦¡ªº¤èªk¡C
+    é€™ç¯‡æ˜¯èªªæ˜åœ¨æ”¹å®Œç¨‹å¼ä»¥å¾Œï¼Œæ€éº¼æ›ä¸Šæ–°ç¨‹å¼çš„æ–¹æ³•ã€‚
 
-    [~bbs/src] -bbs- % abcdefg  ªí¥Ü¬O¥Î bbs ¨­¤À¡A¦b ~bbs/src °õ¦æ abcdefg
-    [~bbs/src] -root- # abcdefg  ªí¥Ü¬O¥Î root ¨­¤À¡A¦b ~bbs/src °õ¦æ abcdefg
+    [~bbs/src] -bbs- % abcdefg  è¡¨ç¤ºæ˜¯ç”¨ bbs èº«åˆ†ï¼Œåœ¨ ~bbs/src åŸ·è¡Œ abcdefg
+    [~bbs/src] -root- # abcdefg  è¡¨ç¤ºæ˜¯ç”¨ root èº«åˆ†ï¼Œåœ¨ ~bbs/src åŸ·è¡Œ abcdefg
 
-    °²³]§@·~¨t²Î¬O freebsd¡A¦pªG¬O linux ´N§â make freebsd ´«¦¨ make linux
+    å‡è¨­ä½œæ¥­ç³»çµ±æ˜¯ freebsdï¼Œå¦‚æœæ˜¯ linux å°±æŠŠ make freebsd æ›æˆ make linux
 
-    §â´¤¶i¶¥ª©ªº­ì«h¡A§A´N¥i¥HºÉ¶q¤Ö reboot¡A¤]¤£»İ­nÃö bbs ¯¸¡C
+    æŠŠæ¡é€²éšç‰ˆçš„åŸå‰‡ï¼Œä½ å°±å¯ä»¥ç›¡é‡å°‘ rebootï¼Œä¹Ÿä¸éœ€è¦é—œ bbs ç«™ã€‚
 
   : -------------------------------------------------------------- :
 
-  [1;31m> °òÂ¦ª©[m
+  [1;31m> åŸºç¤ç‰ˆ[m
 
-   [1;32m+ ¦pªG¬O§ï¤F *.c ªº¸Ü[m  (src/lib/*.c °£¥~)
+   [1;32m+ å¦‚æœæ˜¯æ”¹äº† *.c çš„è©±[m  (src/lib/*.c é™¤å¤–)
 
      [~bbs/src] -bbs- % make freebsd install
-     [anywhere] -root- # reboot ©Î shutdown -r now
+     [anywhere] -root- # reboot æˆ– shutdown -r now
 
-   [1;32m+ ¦pªG¬O§ï¤F src/lib/*.c ©Î src/include/*.h ªº¸Ü[m
+   [1;32m+ å¦‚æœæ˜¯æ”¹äº† src/lib/*.c æˆ– src/include/*.h çš„è©±[m
 
-     ¦pªG¦³²§°Ê struct ­nÂà´«
+     å¦‚æœæœ‰ç•°å‹• struct è¦è½‰æ›
 
      [~bbs/src] -bbs- % make clean freebsd install
-     [anywhere] -root- # reboot ©Î shutdown -r now
+     [anywhere] -root- # reboot æˆ– shutdown -r now
 
   : -------------------------------------------------------------- :
 
-  [1;31m> ¶i¶¥ª©[m
+  [1;31m> é€²éšç‰ˆ[m
 
-   [1;32m+ ¦pªG¬O§ï¤F src/lib/*.c ªº¸Ü[m
+   [1;32m+ å¦‚æœæ˜¯æ”¹äº† src/lib/*.c çš„è©±[m
 
-     §â©Ò¦³ªº¤H³£½ğ¤U¯¸¡A´«·sªºµ{¦¡
+     æŠŠæ‰€æœ‰çš„äººéƒ½è¸¢ä¸‹ç«™ï¼Œæ›æ–°çš„ç¨‹å¼
 
      [~bbs/src] -bbs- % make clean freebsd install
      [~bbs/src/sh] -bbs- % ./killbbs.sh
      [~bbs/bin] -bbs- % ./account
      [~bbs/bin] -bbs- % ./camera
 
-     ­Õ­Y¬O Linux ªº¸Ü¡A½Ğ¦A°õ¦æ
+     å€˜è‹¥æ˜¯ Linux çš„è©±ï¼Œè«‹å†åŸ·è¡Œ
 
      [anywhere] -bbs- % ipcrm shm 1998
      [anywhere] -bbs- % ipcrm shm 2997
      [anywhere] -bbs- % ipcrm shm 2999
 
-   [1;32m+ ¦pªG¬O§ï¤F src/so/*.c ªº¸Ü[m
+   [1;32m+ å¦‚æœæ˜¯æ”¹äº† src/so/*.c çš„è©±[m
 
-     ¥H xyz.c ¬°¨Ò¡A¨ä¥L¤]¬O¤@¼Ë
+     ä»¥ xyz.c ç‚ºä¾‹ï¼Œå…¶ä»–ä¹Ÿæ˜¯ä¸€æ¨£
 
      [~bbs/src/so] -bbs- % make freebsd
      [~bbs/src/so] -bbs- % cp xyz.so ~/bin/
 
-     ­Y§â ¨SÅÜ°Ê.so ¤] install ¨ì ~/bin/ ·|³y¦¨½u¤W¥¿¦b¨Ï¥Î³o
-     ¥~±¾¥\¯àªº¤H¥i¯àÂ_½u¡C
+     è‹¥æŠŠ æ²’è®Šå‹•.so ä¹Ÿ install åˆ° ~/bin/ æœƒé€ æˆç·šä¸Šæ­£åœ¨ä½¿ç”¨é€™
+     å¤–æ›åŠŸèƒ½çš„äººå¯èƒ½æ–·ç·šã€‚
 
-   [1;32m+ ¦pªG¬O§ï¤F src/util/*.c src/util/*/*.c ªº¸Ü[m
+   [1;32m+ å¦‚æœæ˜¯æ”¹äº† src/util/*.c src/util/*/*.c çš„è©±[m
 
      [~bbs/src/util] -bbs- % make freebsd install
 
-     ­Y¬O§ï account.c camera.c ÁÙ­n¦h°õ¦æ¤@¨B
-     [~bbs/bin] -bbs- % ./account           (­Õ­Y§ïªº¬O src/util/account.c)
-     [~bbs/bin] -bbs- % ./camera            (­Õ­Y§ïªº¬O src/util/camera.c)
+     è‹¥æ˜¯æ”¹ account.c camera.c é‚„è¦å¤šåŸ·è¡Œä¸€æ­¥
+     [~bbs/bin] -bbs- % ./account           (å€˜è‹¥æ”¹çš„æ˜¯ src/util/account.c)
+     [~bbs/bin] -bbs- % ./camera            (å€˜è‹¥æ”¹çš„æ˜¯ src/util/camera.c)
 
-   [1;32m+ ¦pªG¬O§ï¤F src/bgopherd/*.c ©Î src/bmtad/*.c ©Î src/bpop3d/*.c ©Î[m
-   [1;32m  src/innbbsd/*.c ©Î src/maple/*.c[m
+   [1;32m+ å¦‚æœæ˜¯æ”¹äº† src/bgopherd/*.c æˆ– src/bmtad/*.c æˆ– src/bpop3d/*.c æˆ–[m
+   [1;32m  src/innbbsd/*.c æˆ– src/maple/*.c[m
 
      [~bbs/src/xxxx] -bbs- % make freebsd install update
 
-     ´N¬O¦b¨º¥Ø¿ı¤U make freebsd install update
+     å°±æ˜¯åœ¨é‚£ç›®éŒ„ä¸‹ make freebsd install update
 
-     ­Y¬O¨S¦³¶] inetd ©Î xinetd¡A¨º»òÁÙ­n¦h°õ¦æ¤@¨B
-     [~bbs/bin] -root- # ./gemd             (­Õ­Y§ïªº¬O src/bgopherd/*.c)
-     [~bbs/bin] -root- # ./bmtad            (­Õ­Y§ïªº¬O src/bmtad/*.c)
-     [~bbs/bin] -root- # ./bpop3d           (­Õ­Y§ïªº¬O src/bpop3d/*.c)
-     [~bbs/innd] -root- # ./innbbsd         (­Õ­Y§ïªº¬O src/innbbsd/*.c)
-     [~bbs/bin] -root- # ./xchatd           (­Õ­Y§ïªº¬O src/maple/xchatd.c)
-     [~bbs/bin] -root- # ./bguard           (­Õ­Y§ïªº¬O src/maple/bguard.c)
-     [~bbs/bin] -root- # ./bbsd             (­Õ­Y§ïªº¬O src/maple/¨ä¥L *.c)
+     è‹¥æ˜¯æ²’æœ‰è·‘ inetd æˆ– xinetdï¼Œé‚£éº¼é‚„è¦å¤šåŸ·è¡Œä¸€æ­¥
+     [~bbs/bin] -root- # ./gemd             (å€˜è‹¥æ”¹çš„æ˜¯ src/bgopherd/*.c)
+     [~bbs/bin] -root- # ./bmtad            (å€˜è‹¥æ”¹çš„æ˜¯ src/bmtad/*.c)
+     [~bbs/bin] -root- # ./bpop3d           (å€˜è‹¥æ”¹çš„æ˜¯ src/bpop3d/*.c)
+     [~bbs/innd] -root- # ./innbbsd         (å€˜è‹¥æ”¹çš„æ˜¯ src/innbbsd/*.c)
+     [~bbs/bin] -root- # ./xchatd           (å€˜è‹¥æ”¹çš„æ˜¯ src/maple/xchatd.c)
+     [~bbs/bin] -root- # ./bguard           (å€˜è‹¥æ”¹çš„æ˜¯ src/maple/bguard.c)
+     [~bbs/bin] -root- # ./bbsd             (å€˜è‹¥æ”¹çš„æ˜¯ src/maple/å…¶ä»– *.c)
 
-   [1;32m+ ¦pªG¬O§ï¤F src/include/*.h[m  (§ïÅÜ¤F struct)
+   [1;32m+ å¦‚æœæ˜¯æ”¹äº† src/include/*.h[m  (æ”¹è®Šäº† struct)
 
-     ­Õ­Y¦³°Ê¨ì struct.c ¤¤ªº struct ACCT UTMP UCACHE BCACHE FCACHE
-     ¨ä¤¤ªº¥ô¦ó¤@¶µ¡A(¨Ò¦p§ï PAL_MAX ·|°Ê¨ì UTMP¡F§ï MAXACTIVE ·|°Ê¨ì UCACHE)
-     ³£±o½ğ±¼¯¸¤W©Ò¦³¨Ï¥ÎªÌ¡A¨Ã­«¶}©Ò¦³ªA°È¡A°®¯Ü reboot ¦n¤F
+     å€˜è‹¥æœ‰å‹•åˆ° struct.c ä¸­çš„ struct ACCT UTMP UCACHE BCACHE FCACHE
+     å…¶ä¸­çš„ä»»ä½•ä¸€é …ï¼Œ(ä¾‹å¦‚æ”¹ PAL_MAX æœƒå‹•åˆ° UTMPï¼›æ”¹ MAXACTIVE æœƒå‹•åˆ° UCACHE)
+     éƒ½å¾—è¸¢æ‰ç«™ä¸Šæ‰€æœ‰ä½¿ç”¨è€…ï¼Œä¸¦é‡é–‹æ‰€æœ‰æœå‹™ï¼Œä¹¾è„† reboot å¥½äº†
 
-     [anywhere] -root- # reboot ©Î shutdown -r now
+     [anywhere] -root- # reboot æˆ– shutdown -r now
 
-   [1;32m+ ¦pªG¬O§ï¤F src/include/*.h[m  (¨S²§°Ê struct)
+   [1;32m+ å¦‚æœæ˜¯æ”¹äº† src/include/*.h[m  (æ²’ç•°å‹• struct)
 
-     ­Õ­Y¨S¦³°Ê¨ì ACCT UTMP UCACHE BCACHE FCACHE¡A¨º»ò´N¥u­n
-     ¬İ³Q§ïªº¨º¶µ³Q­ş¨Çµ{¦¡ include ¤F¡AµM«á­«½s¨º¨Çµ{¦¡§Y¥i¡A
-     ³o¼Ë¥i¥H¬Ù¤U«Ü¦h®É¶¡¡C
+     å€˜è‹¥æ²’æœ‰å‹•åˆ° ACCT UTMP UCACHE BCACHE FCACHEï¼Œé‚£éº¼å°±åªè¦
+     çœ‹è¢«æ”¹çš„é‚£é …è¢«å“ªäº›ç¨‹å¼ include äº†ï¼Œç„¶å¾Œé‡ç·¨é‚£äº›ç¨‹å¼å³å¯ï¼Œ
+     é€™æ¨£å¯ä»¥çœä¸‹å¾ˆå¤šæ™‚é–“ã€‚
 
-     ¨Ò¦p config.h:HOST_ALIASES ¹ïÀ³¨ì mail.c bmtad.c
-     ¨º»ò´Nµ¥®Ä¤W§ï¤F³o mail.c bmtad.c¡A©Ò¥H­n
+     ä¾‹å¦‚ config.h:HOST_ALIASES å°æ‡‰åˆ° mail.c bmtad.c
+     é‚£éº¼å°±ç­‰æ•ˆä¸Šæ”¹äº†é€™ mail.c bmtad.cï¼Œæ‰€ä»¥è¦
 
      [~bbs/src/maple] -bbs- % rm mail.o
      [~bbs/src/maple] -bbs- % make freebsd install update
@@ -105,4 +105,4 @@
      [~bbs/src/bmtad] -bbs- % make freebsd install update
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

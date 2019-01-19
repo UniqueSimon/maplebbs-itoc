@@ -1,25 +1,25 @@
-�o�H�H: itoc.bbs@processor.tfcis.org (:MM:), �ݪO: plan
-��  �D: Re: �����H���i���\��..
-�o�H��: XEON (Mon, 03 Mar 2003 00:56:07 +0800 (CST))      Updated: 2003/03/19
+發信人: itoc.bbs@processor.tfcis.org (:MM:), 看板: plan
+標  題: Re: 關於氣象報告的功能..
+發信站: XEON (Mon, 03 Mar 2003 00:56:07 +0800 (CST))      Updated: 2003/03/19
 
-�� �ޭz�malbert.bbs@rtbbs.twbbs.org (�G�Q�@��)�n���ʨ��G
-> ���M�ثe��H���������A���Ѥ�r�Ҧ����w����F�A
-> ���O����٬O���w���檺�A�u�O�S����ܦb�����W�Ӥw�C
-> �Ҧ��̷s����r�ҤѮ���i�i�H��H�U��}���o
+※ 引述《albert.bbs@rtbbs.twbbs.org (二十一天)》之銘言：
+> 雖然目前氣象局網頁不再提供文字模式的預報單了，
+> 但是其實還是有預報單的，只是沒有顯示在網頁上而已。
+> 所有最新的文字模天氣報告可以到以下位址取得
 > ftp://ftpsv.cwb.gov.tw/pub/forecast/
-> ���L�]���쥻����H���i�\��O�� webx ��Ū�����A
-> ���䴩 ftp protocol�A�ҥH�i��{���n��@�U�F�C
+> 不過因為原本的氣象報告功能是用 webx 來讀取的，
+> 不支援 ftp protocol，所以可能程式要改一下了。
 
-: crontab -e �[�J
+: crontab -e 加入
 
-# ��H���i�A�C�p�ɧ�@��
+# 氣象報告，每小時抓一次
 1 * * * * src/sh/weather.sh > /dev/null 2>&1
 
-: src/sh/weather.sh �����e (�O�o�n chmod 700 weather.sh)
-: /bin/lynx �]�\�O /usr/local/bin/lynx�A�ݦۤv�� lynx ���|��b��
+: src/sh/weather.sh 的內容 (記得要 chmod 700 weather.sh)
+: /bin/lynx 也許是 /usr/local/bin/lynx，看自己的 lynx 路徑放在哪
 
 #!/bin/sh
-# lynx �����|�Цۦ��A�q�`�O /bin/lynx �� /usr/local/bin/lynx
+# lynx 的路徑請自行改，通常是 /bin/lynx 或 /usr/local/bin/lynx
 /bin/lynx --source ftp://ftpsv.cwb.gov.tw/pub/forecast/W041.txt > gem/@/@W041
 /bin/lynx --source ftp://ftpsv.cwb.gov.tw/pub/forecast/W031.txt > gem/@/@W031
 /bin/lynx --source ftp://ftpsv.cwb.gov.tw/pub/forecast/W001.txt > gem/@/@W001
@@ -38,27 +38,27 @@
 /bin/lynx --source ftp://ftpsv.cwb.gov.tw/pub/forecast/W014.txt > gem/@/@W014
 /bin/lynx --source ftp://ftpsv.cwb.gov.tw/pub/forecast/W032.txt > gem/@/@W032
 
-: �b��ؤ��G��� Ctrl+P => (D)��� => ���D => W???
-: �H�W�U���ɮ׼��D���O��
+: 在精華公佈欄裡 Ctrl+P => (D)資料 => 標題 => W???
+: 以上各個檔案標題分別為
 
-     1  �� ������H���{�b�Ѯ��[�����i                    @W041
-     2  �� ������H����ڤѮ��[�����i                    @W031
-     3  �� ��ڤѮ𷧪p                                  @W001
-     4  �� ���ѥդѤѮ�w��                              @W002
-     5  �� ����դѤѮ�w��                              @W003
-     6  �� ������H����H���i                            @W016
-     7  �� ���]�ܫ�ѭ��Ѯ�                            @W043
-     8  �� �Ѯ�ξA�׫��ƹw���]�ҡ^                      @W020
-     9  �� �Ѯ�ξA�׫��ƹw���]�A�^                      @W032
-    10  �� �@�g�Ѯ�w��                                  @W011
-    11  �� �@�g�ȹC�Ѯ�w��                              @W012
-    12  �� �@�g�A�~��H�w��                              @W044
-    13  �� ��ڦU�D�n�����Ѯ�w��                        @W010
-    14  �� �j���D�n�����Ѯ�w��                          @W018
-    15  �� ���]�ܩ��ѲM��Ѯ�w��                        @W042
-    16  �� ������Ѯ�i��                                @W014
-    17  �� �u�����Ѯ�i��                                @W015
+     1  ◇ 中央氣象局現在天氣觀測報告                    @W041
+     2  ◇ 中央氣象局實際天氣觀測報告                    @W031
+     3  ◇ 實際天氣概況                                  @W001
+     4  ◇ 今天白天天氣預報                              @W002
+     5  ◇ 明日白天天氣預報                              @W003
+     6  ◇ 中央氣象局氣象報告                            @W016
+     7  ◇ 明夜至後天凌晨天氣                            @W043
+     8  ◇ 天氣舒適度指數預報（甲）                      @W020
+     9  ◇ 天氣舒適度指數預報（乙）                      @W032
+    10  ◇ 一週天氣預報                                  @W011
+    11  ◇ 一週旅遊天氣預報                              @W012
+    12  ◇ 一週農業氣象預報                              @W044
+    13  ◇ 國際各主要都市天氣預報                        @W010
+    14  ◇ 大陸主要城市天氣預報                          @W018
+    15  ◇ 今夜至明天清晨天氣預報                        @W042
+    16  ◇ 月長期天氣展望                                @W014
+    17  ◇ 季長期天氣展望                                @W015
 
 --
-    [1;32m�~�w�w Origin �� [33;45m �ʤO�֤� [37m processor.tfcis.org [32;40m �� �_�`�a �w�w�q[m
-    [1;32m�q     Author �� [36mitoc.Dorm-GD2.NCTU.edu.tw[m
+    [1;32m╭── Origin ╮ [33;45m 動力核心 [37m processor.tfcis.org [32;40m ～ δεζ ──┼[m
+    [1;32m┼     Author ╯ [36mitoc.Dorm-GD2.NCTU.edu.tw[m

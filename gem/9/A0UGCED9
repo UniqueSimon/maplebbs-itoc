@@ -1,19 +1,19 @@
-µo«H¤H: DarkKiller.bbs@abpe.org (±ª°Ê), ¬İªO: MaplePlan
-¼Ğ  ÃD: [¤å¥ó] gdb ªº¥Îªk
-µo«H¯¸: ¤p³À³À BBS (Sat Nov 17 13:10:14 2001)
+ç™¼ä¿¡äºº: DarkKiller.bbs@abpe.org (æ‚¸å‹•), çœ‹æ¿: MaplePlan
+æ¨™  é¡Œ: [æ–‡ä»¶] gdb çš„ç”¨æ³•
+ç™¼ä¿¡ç«™: å°é¹¿é¹¿ BBS (Sat Nov 17 13:10:14 2001)
 
-compile ªº®É­Ô¥[¤J -ggdb (¥[¨ì Makefile ªº CFLAGS)¡A³o¼Ë§A¥Î gdb ¥h¬İ
-core ªº®É­Ô¥´ (l)ist ´N¥i¥H¬İ¨ì­ì©lµ{¦¡½X¡C
+compile çš„æ™‚å€™åŠ å…¥ -ggdb (åŠ åˆ° Makefile çš„ CFLAGS)ï¼Œé€™æ¨£ä½ ç”¨ gdb å»çœ‹
+core çš„æ™‚å€™æ‰“ (l)ist å°±å¯ä»¥çœ‹åˆ°åŸå§‹ç¨‹å¼ç¢¼ã€‚
 
-µM«á±µ¤U¨Ó´N¥i¥H¥Î bt (== backtrace) ¬İ¬İ stack ªº±¡ªp¡C
+ç„¶å¾Œæ¥ä¸‹ä¾†å°±å¯ä»¥ç”¨ bt (== backtrace) çœ‹çœ‹ stack çš„æƒ…æ³ã€‚
 
-¥Î up ¥i¥H¨ì¤W¤@¼h¡A¥Î down ¥i¥H¨ì¤U¤@¼h¡A¥´ (p)rintf var ¥i¥H¬İ¨ì var
-³o­ÓÅÜ¼Æªº±¡ªp¡A¥´ var.value (¦pªG var ¬O¤@­Ó structure) ¥i¥H¬İ¨ì¥Lªº
-­È¡C
+ç”¨ up å¯ä»¥åˆ°ä¸Šä¸€å±¤ï¼Œç”¨ down å¯ä»¥åˆ°ä¸‹ä¸€å±¤ï¼Œæ‰“ (p)rintf var å¯ä»¥çœ‹åˆ° var
+é€™å€‹è®Šæ•¸çš„æƒ…æ³ï¼Œæ‰“ var.value (å¦‚æœ var æ˜¯ä¸€å€‹ structure) å¯ä»¥çœ‹åˆ°ä»–çš„
+å€¼ã€‚
 
-¥´ help ¥i¥H¬İ¨ì§ó¦h¸ê°T¡A©Î¬O¥­±`¨S¨Æ¤]¥i¥H man gdb¡Binfo gdb ¬İ¬İ¡C
+æ‰“ help å¯ä»¥çœ‹åˆ°æ›´å¤šè³‡è¨Šï¼Œæˆ–æ˜¯å¹³å¸¸æ²’äº‹ä¹Ÿå¯ä»¥ man gdbã€info gdb çœ‹çœ‹ã€‚
 
 --
                                     Gea-Suan Lin <gslin@informath.net>
 --
-¡° Origin: ¤p³À³À <Deer.abpe.org> ¡» From: infopc06.math.nctu.edu.tw
+â€» Origin: å°é¹¿é¹¿ <Deer.abpe.org> â—† From: infopc06.math.nctu.edu.tw

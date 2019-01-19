@@ -1,16 +1,16 @@
-§@ªÌ: itoc (¤£¤Óµo®i¹êÅç«Ç) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ´£¿ôªA°È
-®É¶¡: Wed Sep  4 10:52:15 2002                          Updated: 2006/04/17
+ä½œè€…: itoc (ä¸å¤ªç™¼å±•å¯¦é©—å®¤) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] æé†’æœå‹™
+æ™‚é–“: Wed Sep  4 10:52:15 2002                          Updated: 2006/04/17
 
-  NPC ªº¥\¯à¤ÓµL²á¡A¨º§ï¤@¤U
-  ´N¥i¥HÅÜ´£¿ôªA°È (­n§ï¦¨¥bÂI³ø®É¤]¬O¥i¥H)
+  NPC çš„åŠŸèƒ½å¤ªç„¡èŠï¼Œé‚£æ”¹ä¸€ä¸‹
+  å°±å¯ä»¥è®Šæé†’æœå‹™ (è¦æ”¹æˆåŠé»å ±æ™‚ä¹Ÿæ˜¯å¯ä»¥)
 
 : maple.p
 
 int bmw_send(UTMP *callee, BMW *bmw);
 + void bmw_alarm(void);
 
-: bmw.c:bmw_alarm() ·s¼W³o¨ç¦¡©ó bmw_send() «á­±
+: bmw.c:bmw_alarm() æ–°å¢é€™å‡½å¼æ–¼ bmw_send() å¾Œé¢
 
 void
 bmw_alarm()
@@ -21,20 +21,20 @@ bmw_alarm()
   time(&now);
   if (now > alarm)
   {
-    if (alarm)      /* ¤W¯¸«áªº²Ä¤@¦¸¤£ºâ */
+    if (alarm)      /* ä¸Šç«™å¾Œçš„ç¬¬ä¸€æ¬¡ä¸ç®— */
     {
       BMW bmw;
-      char *msg[2] = {"¯¸°_¨Ó°Ê°ÊÃi¸y§a", "¹q¸£¥´¤Ó¦h¤£¦n³á"};
+      char *msg[2] = {"ç«™èµ·ä¾†å‹•å‹•æ‡¶è…°å§", "é›»è…¦æ‰“å¤ªå¤šä¸å¥½å–”"};
 
       strcpy(bmw.msg, msg[now % 2]);
       bmw.caller = cutmp;
-      bmw.sender = 0;                  /* ¤£¥i¦^ÂĞ */
+      bmw.sender = 0;                  /* ä¸å¯å›è¦† */
       bmw.recver = cuser.userno;
-      strcpy(bmw.userid, "¦Û°Ê³ø®É");
+      strcpy(bmw.userid, "è‡ªå‹•å ±æ™‚");
       bmw_send(cutmp, &bmw);
     }
 
-    alarm = now + 30 * 60;  /* ¨C 30 ¤À alarm ¤@¦¸ */
+    alarm = now + 30 * 60;  /* æ¯ 30 åˆ† alarm ä¸€æ¬¡ */
   }
 }
 
@@ -50,7 +50,7 @@ outf(str)
 }
 
 
-  ©ñ¦b outf()¡A¦pªG¨Ï¥ÎªÌ idle ®É¡A¨º»ò´N¤£´£¿ô
+  æ”¾åœ¨ outf()ï¼Œå¦‚æœä½¿ç”¨è€… idle æ™‚ï¼Œé‚£éº¼å°±ä¸æé†’
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

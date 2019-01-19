@@ -1,11 +1,11 @@
-�o�H�H: itoc.bbs@processor.tfcis.org (:MM:), �ݪO: plan
-��  �D: [�\��] �q�X�ϥΪ̵��U��Ҷ񤧹q��/���}
-�o�H��: XEON (Mon, 10 Mar 2003 00:36:22 +0800 (CST))      Updated: 2003/09/26
+發信人: itoc.bbs@processor.tfcis.org (:MM:), 看板: plan
+標  題: [功能] 秀出使用者註冊單所填之電話/住址
+發信站: XEON (Mon, 10 Mar 2003 00:36:22 +0800 (CST))      Updated: 2003/09/26
 
-�� �ޭz�mLucifer (�u�n�ۨ�o�̼g��O)�n���ʨ��G
->             �������Ȧb�d�ߨϥΪ̮�
->             �A�h��� 1,�q�� 2,���} �o�ⶵ
->             �o�ⶵ�O�b��g���U��ɼg��(�p�G����)
+※ 引述《Lucifer (只好窩到這裡寫日記)》之銘言：
+>             站長站務在查詢使用者時
+>             再多顯示 1,電話 2,住址 這兩項
+>             這兩項是在填寫註冊單時寫的(如果有填)
 
 : acct.c:acct_show()
 
@@ -13,25 +13,25 @@
   {
 +   char address[60], phone[20];
 
-    prints("  \033[32m�W���a�I�G\033[37m%-35s\033[32m�o�H���ơG\033[37m%d\n",
+    prints("  \033[32m上站地點：\033[37m%-35s\033[32m發信次數：\033[37m%d\n",
       u->lasthost, u->numemails);
-    bitmsg("  \033[32m�v�����šG\033[37m", STR_PERM, ulevel);
-    bitmsg("  \033[32m�ߺD�X�СG\033[37m", STR_UFO, u->ufo);
+    bitmsg("  \033[32m權限等級：\033[37m", STR_PERM, ulevel);
+    bitmsg("  \033[32m習慣旗標：\033[37m", STR_UFO, u->ufo);
 
 +   if (find_rform(u->userno, u->userid, address, phone))
 +   {
-+     prints("  \033[32m���U���}�G\033[37m%-35s\033[32m���U�q�ܡG\033[37m%s\n",
++     prints("  \033[32m註冊住址：\033[37m%-35s\033[32m註冊電話：\033[37m%s\n",
 +       address, phone);
 +   }
   }
 
-: acct.c:find_rform() �[�J acct_show() ���e
+: acct.c:find_rform() 加入 acct_show() 之前
 
-static int          /* 1:���  0:�S��� */
+static int          /* 1:找到  0:沒找到 */
 find_rform(userno, userid, address, phone)
-  int userno;               /* �ǤJ userno/userid */
+  int userno;               /* 傳入 userno/userid */
   char *userid;
-  char *address, *phone;    /* �^�� address/phone */
+  char *address, *phone;    /* 回傳 address/phone */
 {
   RFORM *rform;
   int fd, rc;
@@ -48,8 +48,8 @@ find_rform(userno, userid, address, phone)
         strcpy(address, rform->address);
         strcpy(phone, rform->phone);
         rc = 1;
-        break;          /* �Y��o�� break �����A����N�O��̫�@�����U�� */
-      }                 /* �Y��o�� break �d�ۡA����N�O��Ĥ@�����U�� */
+        break;          /* 若把這行 break 拿掉，那麼就是找最後一筆註冊單 */
+      }                 /* 若把這行 break 留著，那麼就是找第一筆註冊單 */
     }
 
     close(fd);
@@ -59,10 +59,10 @@ find_rform(userno, userid, address, phone)
 }
 
 --
-  �����D�b����ɭԶ}�l
-  �ڴN�� address �����q ACCT �������F
-  �ҥH sizeof(ACCT) �q�H�e�� 512 �����{�b�� 220
+  不知道在什麼時候開始
+  我就把 address 等欄位從 ACCT 中拿掉了
+  所以 sizeof(ACCT) 從以前的 512 降成現在的 220
 
 --
-    [1;32m�~�w�w Origin �� [33;45m �ʤO�֤� [37m processor.tfcis.org [32;40m �� �_�`�a �w�w�q[m
-    [1;32m�x     Modify �� [31m03/03/10  0:36:22 [m
+    [1;32m╭── Origin ╮ [33;45m 動力核心 [37m processor.tfcis.org [32;40m ～ δεζ ──┼[m
+    [1;32m│     Modify ╯ [31m03/03/10  0:36:22 [m

@@ -1,20 +1,20 @@
-    [31;1m¢¨¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢©[36m ¢q ¢z¢q`     ¢¡  ¢~ ùú¢w¢q¢wùû ¢w¢r¢w¢~¢sùý[m
-[1;37m  ¢~[31m¢i¢i[34m[34m[34m   ¢l   ¡@¡@  ¢l[31m  ¢i¢i[36m ¢q ¢x¢q  ¢w¢£¢r¢s¢r ¢u¢w¢q¢w¢t  ¢~¢£ ¢w¢q¢w[m
-[1;37m¢~¢£   [34;1m ¢¨¢i¢g¢e¢c¢e¢g¢i¢©  [36m ¢~¢u ¢£¢¢  ¢w¢£¢w¢q¢w ùü¢w¢q¢w¢£ ¢~¢w¢¡¢~¢r¢¡[m
-[1;37m¢x    [34;1m  ¢i¢i¢i¢i¢i¢i¢i¢i¢i  [36m ¢£¢r¢w¢w¢w ¢w¢£¢w¢q¢w     ¢¢¢w¢w ¢¢¢w¢£¢¢¢w¢£[m
-[1;37m¢x   [34;1;m ¢¨¢i¢i¢i¢i¢i¢i¢i¢i¢i¢©[32m ¦pªG§A¥u¬O¦]¬°Ãi´k ¦pªG§A¤£Ä@¦A·Q¤Ó¦h ¦pªG§A[m
-[1;37m¢x    [34m¢i¢i¢i[37m¢°[34m¢i[37m¢±[34m¢i[37m¢²[34m¢i¢i¢i[33m ¹½­Â¤F§A«á®¬¤F ½Ð¦^¨ì§Ú¨­«á ¦pªG§AÁÙ¦b°í«ù¤°»ò[m
-[1;37m¢x    [34m¢i¢i¢i[37m¢³[34m¢i[37m¢´[34m¢i[37m¢µ[34m¢i¢i¢i[32m ¦pªG§A§Ô¨ü¤£¤F±I¹æ ¦pªG§A¹½­Â¤F §A«á®¬¤F[m
-[1;37m¢x    [34m¢i¢i¢i[37m¢¶[34m¢i[37m¢·[34m¢i[37m¢¸[34m¢i¢i¢i[33m °²¸Ë§Ú¦b§A¨­«á §Ú¥u¬O¤£Ä@·N³o¼Ë¶}¤f  ®`©È§A¦b[m
-[1;37m¢¢¢w¢w[34m¢i¢i¢i[37m¡¯[34m¢i[37m¢¯[34m¢i[37m¡­[34m¢i¢i¢i[32m ¹q¸Ü½uªº¨ºÀY²\¬y ²\¬y ¦pªG§Aªº¦^¾Ð¤Ó¦h ¦pªG§Aªº[m
-[1;37m|ucg| [1;34m¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i¢i[33m ³d¥ô¤Ó­« ¦pªG§A¥u¬O¦]¬° §A¥u¬O¦]¬° ¥u¬O¦]¬° ±I¹æ[m
-[33m<~Src~>[32m·Q¹ï[33m<~Des~>[32m»¡[33m<~Say~>[m
+    [31;1mâ—¢â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ—£[36m â”¼ â”Œâ”¼`     â•®  â•­ â•­â”€â”¼â”€â•® â”€â”´â”€â•­â”¬â•¯[m
+[1;37m  â•­[31mâ–ˆâ–ˆ[34m[34m[34m   â–   ã€€ã€€  â–[31m  â–ˆâ–ˆ[36m â”¼ â”‚â”¼  â”€â•¯â”´â”¬â”´ â”œâ”€â”¼â”€â”¤  â•­â•¯ â”€â”¼â”€[m
+[1;37mâ•­â•¯   [34;1m â—¢â–ˆâ–†â–„â–‚â–„â–†â–ˆâ—£  [36m â•­â”œ â•¯â•°  â”€â•¯â”€â”¼â”€ â•°â”€â”¼â”€â•¯ â•­â”€â•®â•­â”´â•®[m
+[1;37mâ”‚    [34;1m  â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ  [36m â•¯â”´â”€â”€â”€ â”€â•¯â”€â”¼â”€     â•°â”€â”€ â•°â”€â•¯â•°â”€â•¯[m
+[1;37mâ”‚   [34;1;m â—¢â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ—£[32m å¦‚æžœä½ åªæ˜¯å› ç‚ºæ‡¶æƒ° å¦‚æžœä½ ä¸é¡˜å†æƒ³å¤ªå¤š å¦‚æžœä½ [m
+[1;37mâ”‚    [34mâ–ˆâ–ˆâ–ˆ[37mï¼‘[34mâ–ˆ[37mï¼’[34mâ–ˆ[37mï¼“[34mâ–ˆâ–ˆâ–ˆ[33m åŽ­å€¦äº†ä½ å¾Œæ‚”äº† è«‹å›žåˆ°æˆ‘èº«å¾Œ å¦‚æžœä½ é‚„åœ¨å …æŒä»€éº¼[m
+[1;37mâ”‚    [34mâ–ˆâ–ˆâ–ˆ[37mï¼”[34mâ–ˆ[37mï¼•[34mâ–ˆ[37mï¼–[34mâ–ˆâ–ˆâ–ˆ[32m å¦‚æžœä½ å¿å—ä¸äº†å¯‚å¯ž å¦‚æžœä½ åŽ­å€¦äº† ä½ å¾Œæ‚”äº†[m
+[1;37mâ”‚    [34mâ–ˆâ–ˆâ–ˆ[37mï¼—[34mâ–ˆ[37mï¼˜[34mâ–ˆ[37mï¼™[34mâ–ˆâ–ˆâ–ˆ[33m å‡è£æˆ‘åœ¨ä½ èº«å¾Œ æˆ‘åªæ˜¯ä¸é¡˜æ„é€™æ¨£é–‹å£  å®³æ€•ä½ åœ¨[m
+[1;37mâ•°â”€â”€[34mâ–ˆâ–ˆâ–ˆ[37mï¼Š[34mâ–ˆ[37mï¼[34mâ–ˆ[37mï¼ƒ[34mâ–ˆâ–ˆâ–ˆ[32m é›»è©±ç·šçš„é‚£é ­æ·šæµ æ·šæµ å¦‚æžœä½ çš„å›žæ†¶å¤ªå¤š å¦‚æžœä½ çš„[m
+[1;37m|ucg| [1;34mâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ[33m è²¬ä»»å¤ªé‡ å¦‚æžœä½ åªæ˜¯å› ç‚º ä½ åªæ˜¯å› ç‚º åªæ˜¯å› ç‚º å¯‚å¯ž[m
+[33m<~Src~>[32mæƒ³å°[33m<~Des~>[32mèªª[33m<~Say~>[m
 
 
-§@    ªÌ:ucg.bbs@ptt.csie.ntu.edu.tw
-§ë½Z¤é´Á:Sun Jul 30 2000
-¥»½Z¥ó­º¦¸µoªí©ó§å½ð½ð¹ê·~§{
+ä½œ    è€…:ucg.bbs@ptt.csie.ntu.edu.tw
+æŠ•ç¨¿æ—¥æœŸ:Sun Jul 30 2000
+æœ¬ç¨¿ä»¶é¦–æ¬¡ç™¼è¡¨æ–¼æ‰¹è¸¢è¸¢å¯¦æ¥­åŠ
 
 --
-¡° µo«H¯¸: §å½ð½ð¹ê·~§{(ptt.twbbs.org)
-¡» From: h208.s244.ts.hinet.net
+â€» ç™¼ä¿¡ç«™: æ‰¹è¸¢è¸¢å¯¦æ¥­åŠ(ptt.twbbs.org)
+â—† From: h208.s244.ts.hinet.net

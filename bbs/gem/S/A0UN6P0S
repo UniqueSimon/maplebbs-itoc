@@ -1,43 +1,43 @@
-�@��: itoc (�\��о�) ����: SYSOP
-���D: �����{��
-�ɶ�: Sat Jan  1 00:00:00 2000
+作者: itoc (功能教學) 站內: SYSOP
+標題: 身分認證
+時間: Sat Jan  1 00:00:00 2000
 
-                        [1;42m �� �����{�� �� [m
+                        [1;42m □ 身分認證 □ [m
 
-# �z�i�H�b User -> Info �������e���ݨ�z�ثe�������{�Ҫ��A�A
-  �p�G�O�|���q�L�{�ҡA�h�|�X�{�H�U�r�ˡG
+# 您可以在 User -> Info 或離站畫面看到您目前的身分認證狀態，
+  如果是尚未通過認證，則會出現以下字樣：
 
-  [32m�����{�ҡG�аѦҥ������G��i��T�{�A�H���@�v��[m
+  [32m身分認證：請參考本站公佈欄進行確認，以提昇權限[m
 
-# �������ѥ|�ب����{�Ҫ���k�G
+# 本站提供四種身分認證的方法：
 
-  % �Ĥ@�O[1;35m Email Reply[m�A�b [1;31mUser -> Register -> Address[m�A
-    �z�u�n��J�z���q�l�l��H�c�A�t�δN�|�o�@�ʫH���z�A�z��
-    �ۥh�ӫH�c���H�A���έץ��p��a��A�����^�H�Y�i�C�p�G�z
-    ��J���q�l�l��O�K�O�q�l�l��H�c�A�άO�y���e��z���A��
-    ��N�|�X�{�o�Ǧr�G�y�� ���X�檺 E-mail address�z�A�u�n
-    �N�бz�ϥΥt�~�@�ӹq�l�l��H�c�F�C
+  % 第一是[1;35m Email Reply[m，在 [1;31mUser -> Register -> Address[m，
+    您只要填入您的電子郵件信箱，系統就會發一封信給您，您接
+    著去該信箱收信，不用修正如何地方，直接回信即可。如果您
+    輸入的電子郵件是免費電子郵件信箱，或是『有前科』的，那
+    麼就會出現這些字：『★ 不合格的 E-mail address』，只好
+    就請您使用另外一個電子郵件信箱了。
 
-  % �ĤG�O[1;35m��g���U��[m�A�b [1;31mUser -> Register -> Register[m�A
-    �z�u�n��g�Թꪺ�ӤH��ơA�����N�|���A�f�ֳq�L�C
+  % 第二是[1;35m填寫註冊單[m，在 [1;31mUser -> Register -> Register[m，
+    您只要填寫詳實的個人資料，站長就會幫你審核通過。
 
-  % �ĤT�O[1;35m��g�{�ҽX[m�A�b [1;31mUser -> Register -> Addfress[m�A
-    ����J�z���q�l�l��H�c�H��A�|����{�ҫH�A��{�ҫH�D��
-    �]���D�^�W���@��{�ҽX�b [1;31mUser -> Register -> Verify[m
-    ��J�Y�i�C
+  % 第三是[1;35m填寫認證碼[m，在 [1;31mUser -> Register -> Addfress[m，
+    先填入您的電子郵件信箱以後，會收到認證信，把認證信主旨
+    （標題）上那一串認證碼在 [1;31mUser -> Register -> Verify[m
+    輸入即可。
 
-  % �ĥ|�O[1;35m POP3 �{��[m�A�b [1;31mUser -> Register -> Address[m�A
-    �z�u�n��J�z���q�l�l��H�c�A�ÿ�ܭn�ϥ� POP3 �{�ҡA�A
-    ��J�H�c�K�X�Y�i�C
+  % 第四是[1;35m POP3 認證[m，在 [1;31mUser -> Register -> Address[m，
+    您只要填入您的電子郵件信箱，並選擇要使用 POP3 認證，再
+    輸入信箱密碼即可。
 
-  % ������檺�覡�O�H Email Justify ���D�ARegister Form ��
-    ���A�������A�����èS���q�Ȥ@�w�n�b�h�u���ɶ����f�ֵ��U��A
-    �٬O�Ʊ�j�a�ϥΦ۰ʪ� Email Justify�A���t�ΥX���D���ɭԡA
-    �~�ϥζ�g���U�檺��k�C
+  % 本站實行的方式是以 Email Justify 為主，Register Form 為
+    輔，換言之，站長並沒有義務一定要在多短的時間內審核註冊單，
+    還是希望大家使用自動的 Email Justify，當系統出問題的時候，
+    才使用填寫註冊單的方法。
 
-  ���{�ҳq�L�H��A�b User -> Info �������e���A�|�X�{�H�U�r�ˡG
+  當認證通過以後，在 User -> Info 或離站畫面，會出現以下字樣：
 
-  [32m�����{�ҡG0�~ 2��19�� 19:09:24 �P����[m
+  [32m身分認證：0年 2月19日 19:09:24 星期六[m
 
 --
-[1;37m�� ���峹�Ӧ� [33;44m ��j�q�l [0;1;37m �� [32mEE.NCTU.edu.tw[37m �ҵo��[m
+[1;37m□ 本文章來自 [33;44m 交大電子 [0;1;37m 由 [32mEE.NCTU.edu.tw[37m 所發表[m

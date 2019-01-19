@@ -1,21 +1,21 @@
-§@ªÌ: itoc (AsPSQwel) ¬ÝªO: plan
-¼ÐÃD: [¤å¥ó] ¦h­«Âà«H³]©w
-®É¶¡: 2004/04/25 Sun 23:40:51
+ä½œè€…: itoc (AsPSQwel) çœ‹æ¿: plan
+æ¨™é¡Œ: [æ–‡ä»¶] å¤šé‡è½‰ä¿¡è¨­å®š
+æ™‚é–“: 2004/04/25 Sun 23:40:51
 
-                       [32m¡¹ ¦h­«Âà«H³]©w ¡¹[m
+                       [32mâ˜… å¤šé‡è½‰ä¿¡è¨­å®š â˜…[m
 
-  ¤@¡BÂà¤J¤]Âà¥X (¤@¯ë¬ÝªO)
-  ¤G¡B¥uÂà¤J¤£Âà¥X
-  ¤T¡B¥uÂà¥X¤£Âà¤J
-
-
-    ¥»¤å¥ó¬O¼gµ¹­n¦w¸Ë itoc ©ÒºûÅ@ªº bbs µ{¦¡ª©¥»©Ò¨Ï¥Îªº¡A¨Ã¤£¾A¥Î
-  ¨ä¥L bbs ª©¥»¡C
-
-    ¥H¤U³]©w³£¬O§ï¡uÂà¤å¬ÝªO¦Cªí¡v¡C
+  ä¸€ã€è½‰å…¥ä¹Ÿè½‰å‡º (ä¸€èˆ¬çœ‹æ¿)
+  äºŒã€åªè½‰å…¥ä¸è½‰å‡º
+  ä¸‰ã€åªè½‰å‡ºä¸è½‰å…¥
 
 
-¡° ¤@¡BÂà¤J¤]Âà¥X (¤@¯ë¬ÝªO)
+    æœ¬æ–‡ä»¶æ˜¯å¯«çµ¦è¦å®‰è£ itoc æ‰€ç¶­è­·çš„ bbs ç¨‹å¼ç‰ˆæœ¬æ‰€ä½¿ç”¨çš„ï¼Œä¸¦ä¸é©ç”¨
+  å…¶ä»– bbs ç‰ˆæœ¬ã€‚
+
+    ä»¥ä¸‹è¨­å®šéƒ½æ˜¯æ”¹ã€Œè½‰æ–‡çœ‹æ¿åˆ—è¡¨ã€ã€‚
+
+
+â€» ä¸€ã€è½‰å…¥ä¹Ÿè½‰å‡º (ä¸€èˆ¬çœ‹æ¿)
 
    Example: tw.bbs.comp.386bsd -> [FreeBSD]
             tw.bbs.comp.386bsd <- [FreeBSD]
@@ -23,20 +23,20 @@
    bbsroute     tw.bbs.comp.386bsd      <-> FreeBSD  big5
 
 
-¡° ¤G¡B¥uÂà¤J¤£Âà¥X
+â€» äºŒã€åªè½‰å…¥ä¸è½‰å‡º
 
    Example: tw.bbs.campus -> [campus]
 
    bbsroute     tw.bbs.campus            -> campus  big5
 
-   (³]©w¬ÝªOÄÝ©Ê ¡½ ¤£Âà«H¥X¥h¡A´N·|¥u¥X²{¦V¥kªº½bÀY)
+   (è¨­å®šçœ‹æ¿å±¬æ€§ â–  ä¸è½‰ä¿¡å‡ºåŽ»ï¼Œå°±æœƒåªå‡ºç¾å‘å³çš„ç®­é ­)
 
 
-¡° ¤T¡B¥uÂà¥X¤£Âà¤J
+â€» ä¸‰ã€åªè½‰å‡ºä¸è½‰å…¥
 
    Example: tw.bbs.newgroups <- [newboards]
 
    bbsroute     tw.bbs.newgroups        <-  newboards  big5
 
 --
-[1m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

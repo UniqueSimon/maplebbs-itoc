@@ -1,19 +1,19 @@
-§@ªÌ: itoc (¬¡¤O¦A²{) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¾×±¼¦P¤@­ÓE-mailµù¥Uªº²Ä4­ÓID
-®É¶¡: Sun Sep 29 18:31:16 2002                          Updated: 2005/01/09
+ä½œè€…: itoc (æ´»åŠ›å†ç¾) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] æ“‹æ‰åŒä¸€å€‹E-mailè¨»å†Šçš„ç¬¬4å€‹ID
+æ™‚é–“: Sun Sep 29 18:31:16 2002                          Updated: 2005/01/09
 
-¡° ¤Ş­z¡mYangwenli.bbs@bbs.sa.ncyu.edu.tw (·¨«Â§Q)¡n¤§»Ê¨¥¡G
->     account.c·|§â¦P¤@ email »{ÃÒ¦h¦¸ªº ID ¬ö¿ı¤U¨Ó¡A
->     ¯à¤£¯àª½±µ¦bµù¥U²Ä4­Ó ID ªº®É­Ô´NÀÉ¤U¨Ó©O¡H
+â€» å¼•è¿°ã€ŠYangwenli.bbs@bbs.sa.ncyu.edu.tw (æ¥Šå¨åˆ©)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>     account.cæœƒæŠŠåŒä¸€ email èªè­‰å¤šæ¬¡çš„ ID ç´€éŒ„ä¸‹ä¾†ï¼Œ
+>     èƒ½ä¸èƒ½ç›´æ¥åœ¨è¨»å†Šç¬¬4å€‹ ID çš„æ™‚å€™å°±æª”ä¸‹ä¾†å‘¢ï¼Ÿ
 
 : global.h
 
-  #define FN_ETC_EXPIRE   "etc/expire.conf"     /* ¬İªO¤å³¹½g¼Æ¤W­­³]©w */
-+ #define FN_ETC_EMAILADDR "etc/emailaddr"      /* ¦P¤@ email »{ÃÒ¦h¦¸¦Cªí */
+  #define FN_ETC_EXPIRE   "etc/expire.conf"     /* çœ‹æ¿æ–‡ç« ç¯‡æ•¸ä¸Šé™è¨­å®š */
++ #define FN_ETC_EMAILADDR "etc/emailaddr"      /* åŒä¸€ email èªè­‰å¤šæ¬¡åˆ—è¡¨ */
 
 : user.c:ban_addr()
 
-  /* ¤£¦b¥Õ¦W³æ¤W©Î¦b¶Â¦W³æ¤W */
+  /* ä¸åœ¨ç™½åå–®ä¸Šæˆ–åœ¨é»‘åå–®ä¸Š */
 - return (!acl_has(TRUST_ACLFILE, foo, host + 1) ||
 -   acl_has(UNTRUST_ACLFILE, foo, host + 1) > 0);
 + if (!acl_has(TRUST_ACLFILE, foo, host + 1) ||
@@ -21,10 +21,10 @@
 + {
 +   return 1;
 + }
-+ else       /* ¦b¥Õ¦W³æ¤W¥B¤£¦b¶Â¦W³æ¤W¡A¦AÀË¬d¬O§_¶W¹L»{ÃÒ¥|¦¸¥H¤W */
++ else       /* åœ¨ç™½åå–®ä¸Šä¸”ä¸åœ¨é»‘åå–®ä¸Šï¼Œå†æª¢æŸ¥æ˜¯å¦è¶…éèªè­‰å››æ¬¡ä»¥ä¸Š */
 + {
-+   /* xeon.050109: ­Y¥Î­ì¨Óªº email ­«·s»{ÃÒ¡A
-+                   §Y¨Ï¦b emailaddr ¤W¤]¥i¥H»{ÃÒ */
++   /* xeon.050109: è‹¥ç”¨åŸä¾†çš„ email é‡æ–°èªè­‰ï¼Œ
++                   å³ä½¿åœ¨ emailaddr ä¸Šä¹Ÿå¯ä»¥èªè­‰ */
 +   if (str_cmp(cuser.email, addr) &&
 +     acl_has(FN_ETC_EMAILADDR, foo, host + 1) > 0)
 +     return 1;
@@ -66,7 +66,7 @@ report_eaddr_group()
           fprintf(faddr, "%5d) %-13s%s[%d]\t%s\n", acct.userno, acct.userid,
             buf, acct.numlogins, acct.email);
 
-+         if (!logit)       /* ¤@­Ó email ¥u log ¤@¦¸ */
++         if (!logit)       /* ä¸€å€‹ email åª log ä¸€æ¬¡ */
 +         {
 +           logit = 1;
 +           fprintf(faddr2, "%s\n", acct.email);
@@ -101,9 +101,9 @@ report_eaddr_group()
 #endif
 
 
-  ¨C¶g¶]¤F reaper ¥H«á·|²£¥Í¥X etc/emailaddr
-  °O¿ıµÛ¨Ï¥Î¶W¹L¤T¦¸ªº email
-  ¦b³o¦W³æ¤¤ªº±N¤ñ·Ó untrust.acl ¶Â¦W³æ¿ì²z
+  æ¯é€±è·‘äº† reaper ä»¥å¾Œæœƒç”¢ç”Ÿå‡º etc/emailaddr
+  è¨˜éŒ„è‘—ä½¿ç”¨è¶…éä¸‰æ¬¡çš„ email
+  åœ¨é€™åå–®ä¸­çš„å°‡æ¯”ç…§ untrust.acl é»‘åå–®è¾¦ç†
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

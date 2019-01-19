@@ -1,142 +1,142 @@
-§@ªÌ: itoc (¹º¯}¤@«×ªÅ¶¡ªº«e¾É) ¬İªO: plan
-¼ĞÃD: [¤å¥ó] BBS §Ö³t¦w¸Ë¤â¥U
-®É¶¡: Wed Mar 27 20:29:27 2002
+ä½œè€…: itoc (åŠƒç ´ä¸€åº¦ç©ºé–“çš„å‰å°) çœ‹æ¿: plan
+æ¨™é¡Œ: [æ–‡ä»¶] BBS å¿«é€Ÿå®‰è£æ‰‹å†Š
+æ™‚é–“: Wed Mar 27 20:29:27 2002
 
-                       [32m¡¹ §Ö³t¦w¸Ë¤â¥U ¡¹[m
+                       [32mâ˜… å¿«é€Ÿå®‰è£æ‰‹å†Š â˜…[m
 
-  ¤@¡B¦w¸Ë§@·~¨t²Î
-  ¤G¡B¤U¸ü BBS µ{¦¡
-  ¤T¡B«Ø¥ß BBS ±b¸¹
-  ¥|¡B¦w¸Ë BBS
-  ¤­¡B³]©w BBS Àô¹Ò -- ¡]¢Ï¡^¦pªG¦³ inetd¡iFreeBSD¡j
-  ¤­¡B³]©w BBS Àô¹Ò -- ¡]¢Ğ¡^¦pªG¦³ xinetd¡iLinux¡j
-  ¤­¡B³]©w BBS Àô¹Ò -- ¡]¢Ñ¡^¦pªG¨S¦³ inetd/xinetd
-  ¤»¡B¨ä¥L³]©w
-  ¤C¡B¨É¥Î±z¦Û¤vªº BBS
-
-
-    ¥»¤å¥ó¬O¼gµ¹­n¦w¸Ë itoc ©ÒºûÅ@ªº bbs µ{¦¡ª©¥»©Ò¨Ï¥Îªº¡A¨Ã¤£¾A¥Î
-  ¨ä¥L bbs ª©¥»¡C
+  ä¸€ã€å®‰è£ä½œæ¥­ç³»çµ±
+  äºŒã€ä¸‹è¼‰ BBS ç¨‹å¼
+  ä¸‰ã€å»ºç«‹ BBS å¸³è™Ÿ
+  å››ã€å®‰è£ BBS
+  äº”ã€è¨­å®š BBS ç’°å¢ƒ -- ï¼ˆï¼¡ï¼‰å¦‚æœæœ‰ inetdã€FreeBSDã€‘
+  äº”ã€è¨­å®š BBS ç’°å¢ƒ -- ï¼ˆï¼¢ï¼‰å¦‚æœæœ‰ xinetdã€Linuxã€‘
+  äº”ã€è¨­å®š BBS ç’°å¢ƒ -- ï¼ˆï¼£ï¼‰å¦‚æœæ²’æœ‰ inetd/xinetd
+  å…­ã€å…¶ä»–è¨­å®š
+  ä¸ƒã€äº«ç”¨æ‚¨è‡ªå·±çš„ BBS
 
 
-  [1;33m¤@¡B¦w¸Ë§@·~¨t²Î[m
-
-    ¥»µ{¦¡¤w¦b FreeBSD ¤Î Linux ´ú¸Õ¹L¥i¥H¥¿±`¹B§@¡A¨ä¥L¨t²Î«h¨S¦³
-  ¸Õ¹L¡A©Ò¥H¤£²M·¡¡C
-
-    ¦w¸Ë§@·~¨t²Î®É´N¹³¥­±`¦w¸Ë¤@¼Ë¡A¨S¤°»ò¯S§O­nª`·Nªº¡A°ß¤@­n´£¿ô
-  ±zªº¬O¡A½Ğ¦w¸Ë sed awk make gcc µ¥µ{¦¡¡A¦]¬° bbs ·|¥Î¨ì¡C
+    æœ¬æ–‡ä»¶æ˜¯å¯«çµ¦è¦å®‰è£ itoc æ‰€ç¶­è­·çš„ bbs ç¨‹å¼ç‰ˆæœ¬æ‰€ä½¿ç”¨çš„ï¼Œä¸¦ä¸é©ç”¨
+  å…¶ä»– bbs ç‰ˆæœ¬ã€‚
 
 
-  [1;33m¤G¡B¤U¸ü BBS µ{¦¡[m
+  [1;33mä¸€ã€å®‰è£ä½œæ¥­ç³»çµ±[m
 
-    ¦b http://processor.tfcis.org/~itoc ¥i¥H§ä¨ì³Ì·sªºµ{¦¡ª©¥»¡AÀ³
-  ¸Óªø±o¹³ MapleBBS-3.10-20yymmdd-PACK.tgz ³o¼ËªºÀÉ¦W¡C
+    æœ¬ç¨‹å¼å·²åœ¨ FreeBSD åŠ Linux æ¸¬è©¦éå¯ä»¥æ­£å¸¸é‹ä½œï¼Œå…¶ä»–ç³»çµ±å‰‡æ²’æœ‰
+  è©¦éï¼Œæ‰€ä»¥ä¸æ¸…æ¥šã€‚
+
+    å®‰è£ä½œæ¥­ç³»çµ±æ™‚å°±åƒå¹³å¸¸å®‰è£ä¸€æ¨£ï¼Œæ²’ä»€éº¼ç‰¹åˆ¥è¦æ³¨æ„çš„ï¼Œå”¯ä¸€è¦æé†’
+  æ‚¨çš„æ˜¯ï¼Œè«‹å®‰è£ sed awk make gcc ç­‰ç¨‹å¼ï¼Œå› ç‚º bbs æœƒç”¨åˆ°ã€‚
 
 
-  [1;33m¤T¡B«Ø¥ß BBS ±b¸¹[m
+  [1;33mäºŒã€ä¸‹è¼‰ BBS ç¨‹å¼[m
 
-    ¥H root ¨­¤Àµn¤J¡C
+    åœ¨ http://processor.tfcis.org/~itoc å¯ä»¥æ‰¾åˆ°æœ€æ–°çš„ç¨‹å¼ç‰ˆæœ¬ï¼Œæ‡‰
+  è©²é•·å¾—åƒ MapleBBS-3.10-20yymmdd-PACK.tgz é€™æ¨£çš„æª”åã€‚
+
+
+  [1;33mä¸‰ã€å»ºç«‹ BBS å¸³è™Ÿ[m
+
+    ä»¥ root èº«åˆ†ç™»å…¥ã€‚
 
   -root- # [1;36mmkdir /home/bbs[m
 
   -root- # [1;36mvipw[m
-           ¦pªG±z¬O FreeBSD ªº¸Ü¡A¦b³Ì«á¤@¦æ¥[¤W
+           å¦‚æœæ‚¨æ˜¯ FreeBSD çš„è©±ï¼Œåœ¨æœ€å¾Œä¸€è¡ŒåŠ ä¸Š
            bbs:*:9999:99::0:0:BBS Administrator:/home/bbs:/bin/tcsh
-           ¦pªG±z¬O Linux ªº¸Ü¡A¦b³Ì«á¤@¦æ¥[¤W
+           å¦‚æœæ‚¨æ˜¯ Linux çš„è©±ï¼Œåœ¨æœ€å¾Œä¸€è¡ŒåŠ ä¸Š
            bbs:x:9999:999:BBS Administrator:/home/bbs:/bin/bash
-           (·íµM±z¤]¥i¥H¥Î pw ©Î useradd,adduser ªº«ü¥O¨Ó§¹¦¨¬Û¦Pªº°Ê§@)
+           (ç•¶ç„¶æ‚¨ä¹Ÿå¯ä»¥ç”¨ pw æˆ– useradd,adduser çš„æŒ‡ä»¤ä¾†å®Œæˆç›¸åŒçš„å‹•ä½œ)
 
   -root- # [1;36mjoe /etc/group[m
-           (°²³]½s¿è¾¹¬O joe¡A¦pªG¤£¬Oªº¸Ü¡A½Ğ¦Û¦æ§ïÅÜ)
-           ¦pªG±z¬O FreeBSD ªº¸Ü¡A¦b³Ì«á¤@¦æ¥[¤W
+           (å‡è¨­ç·¨è¼¯å™¨æ˜¯ joeï¼Œå¦‚æœä¸æ˜¯çš„è©±ï¼Œè«‹è‡ªè¡Œæ”¹è®Š)
+           å¦‚æœæ‚¨æ˜¯ FreeBSD çš„è©±ï¼Œåœ¨æœ€å¾Œä¸€è¡ŒåŠ ä¸Š
            bbs:*:99:bbs
-           ¦pªG±z¬O Linux ªº¸Ü¡A¦b³Ì«á¤@¦æ¥[¤W
+           å¦‚æœæ‚¨æ˜¯ Linux çš„è©±ï¼Œåœ¨æœ€å¾Œä¸€è¡ŒåŠ ä¸Š
            bbs:*:999:bbs
-           (·íµM±z¤]¥i¥H¥Î pw ©Î groupadd ªº«ü¥O¨Ó§¹¦¨¬Û¦Pªº°Ê§@)
+           (ç•¶ç„¶æ‚¨ä¹Ÿå¯ä»¥ç”¨ pw æˆ– groupadd çš„æŒ‡ä»¤ä¾†å®Œæˆç›¸åŒçš„å‹•ä½œ)
 
   -root- # [1;36mpasswd bbs[m
-           ¿é¤J bbs ªº±K½X
+           è¼¸å…¥ bbs çš„å¯†ç¢¼
 
   -root- # [1;36mtar xvfz /tmp/MapleBBS-3.10-20yymmdd-PACK.tgz -C /home/[m
-           °²³]±z§â BBS µ{¦¡ÀÉ®×©ñ¦b /tmp/
+           å‡è¨­æ‚¨æŠŠ BBS ç¨‹å¼æª”æ¡ˆæ”¾åœ¨ /tmp/
 
   -root- # [1;36mchown -R bbs:bbs /home/bbs[m
 
 
-  [1;33m¥|¡B¦w¸Ë BBS[m
+  [1;33må››ã€å®‰è£ BBS[m
 
-    ¥H bbs ¨­¤Àµn¤J¡C
+    ä»¥ bbs èº«åˆ†ç™»å…¥ã€‚
 
   -bbs- % [1;35mjoe /home/bbs/src/include/config.h[m
-          ­×§ï HOST_ALIASES¡A§â±z©Ò¦³ªº fqdn ³£¥[¶i¥h
+          ä¿®æ”¹ HOST_ALIASESï¼ŒæŠŠæ‚¨æ‰€æœ‰çš„ fqdn éƒ½åŠ é€²å»
 
 #define HOST_ALIASES    {MYHOSTNAME, MYIPADDR, \
                          "wolf.twbbs.org", "wolf.twbbs.org.tw", \
                          NULL}
 
-          ¦pªG±z¬O Linux ªº¸Ü¡A§ï BBSGID ¬° 999
+          å¦‚æœæ‚¨æ˜¯ Linux çš„è©±ï¼Œæ”¹ BBSGID ç‚º 999
 
-#define BBSGID          99                      /* Linux ½Ğ³]¬° 999 */
+#define BBSGID          99                      /* Linux è«‹è¨­ç‚º 999 */
 
-          ¦pªG±z¬O FreeBSD ªº¸Ü
-          ¨º»ò BBSGID ºû«ù¬O 99
+          å¦‚æœæ‚¨æ˜¯ FreeBSD çš„è©±
+          é‚£éº¼ BBSGID ç¶­æŒæ˜¯ 99
 
   -bbs- % [1;35mjoe /home/bbs/src/include/dns.h[m
-          ¦pªG±z¨S¦³ relay server ¥iÀ°±zªº BBS ±H«Hªº¸Ü¡A¨º»ò½Ğ¸õ¹L³o¤@¨B¡A
-          ¦ı±z±N¥i¯àµLªk¹ï¥~±H«H¨ì¬Y¨Ç¯¸¥x¡C
+          å¦‚æœæ‚¨æ²’æœ‰ relay server å¯å¹«æ‚¨çš„ BBS å¯„ä¿¡çš„è©±ï¼Œé‚£éº¼è«‹è·³éé€™ä¸€æ­¥ï¼Œ
+          ä½†æ‚¨å°‡å¯èƒ½ç„¡æ³•å°å¤–å¯„ä¿¡åˆ°æŸäº›ç«™å°ã€‚
 
-          ¦pªG±z¦³ relay server ¥iÀ°±zªº BBS ±H«Hªº¸Ü¡A½Ğ±N HAVE_RELAY_SERVER
-          ªº #undef §ï¦¨ #define¡A¨Ã§ï RELAY_SERVER ªº©w¸q­È¡C
+          å¦‚æœæ‚¨æœ‰ relay server å¯å¹«æ‚¨çš„ BBS å¯„ä¿¡çš„è©±ï¼Œè«‹å°‡ HAVE_RELAY_SERVER
+          çš„ #undef æ”¹æˆ #defineï¼Œä¸¦æ”¹ RELAY_SERVER çš„å®šç¾©å€¼ã€‚
 
-#define HAVE_RELAY_SERVER       /* ±Ä¥Î relay server ¨Ó¥~±H«H¥ó */
+#define HAVE_RELAY_SERVER       /* æ¡ç”¨ relay server ä¾†å¤–å¯„ä¿¡ä»¶ */
 
 #ifdef HAVE_RELAY_SERVER
 #define RELAY_SERVER    "mail.tnfsh.tn.edu.tw"  /* outbound mail server */
 #endif
 
-          ¨Ò¦p¦b¥æ³q¤j¾Çªº¯¸¥i¥H¨Ï¥Î "smtp.nctu.edu.tw"¡A¦Ó¨Ï¥Î HiNet ADSL ªº
-          ¯¸¥i¥H¨Ï¥Î "msa.hinet.net"¡C
+          ä¾‹å¦‚åœ¨äº¤é€šå¤§å­¸çš„ç«™å¯ä»¥ä½¿ç”¨ "smtp.nctu.edu.tw"ï¼Œè€Œä½¿ç”¨ HiNet ADSL çš„
+          ç«™å¯ä»¥ä½¿ç”¨ "msa.hinet.net"ã€‚
 
   -bbs- % [1;35mjoe /home/bbs/bin/install.sh[m
-          ­×§ï schoolname bbsname ... msg_bmw µ¥¼Æ¶µ¡A¨Ò¦p§ï¦¨¥H¤U³o¼Ë
-          (½Ğª`·N¤£­n¦³ªÅ¥Õ©Î¬O[]²Å¸¹)
+          ä¿®æ”¹ schoolname bbsname ... msg_bmw ç­‰æ•¸é …ï¼Œä¾‹å¦‚æ”¹æˆä»¥ä¸‹é€™æ¨£
+          (è«‹æ³¨æ„ä¸è¦æœ‰ç©ºç™½æˆ–æ˜¯[]ç¬¦è™Ÿ)
 
-schoolname="¤Ó¶§¬P¨t"
-bbsname="¤õ¬P¼Ö¶é"
+schoolname="å¤ªé™½æ˜Ÿç³»"
+bbsname="ç«æ˜Ÿæ¨‚åœ’"
 bbsname2="MarsBBS"
-sysopnick="¾Ô¯«°¨´µ"
+sysopnick="æˆ°ç¥é¦¬æ–¯"
 myipaddr="200.100.50.25"
 myhostname="solarmars.twbbs.org"
-msg_bmw="¤õ²y"
+msg_bmw="ç«çƒ"
 
-          ¦pªG±z¬O¨Ï¥Î Linux ªº¸Ü¡AÁÙ­n§ï
+          å¦‚æœæ‚¨æ˜¯ä½¿ç”¨ Linux çš„è©±ï¼Œé‚„è¦æ”¹
 
 ostype="linux"
 
   -bbs- % [1;35m/home/bbs/bin/install.sh[m
-          ±z»İ­nµ¥«İ¤@¬q®É¶¡¨Ó§¹¦¨½sÄ¶
+          æ‚¨éœ€è¦ç­‰å¾…ä¸€æ®µæ™‚é–“ä¾†å®Œæˆç·¨è­¯
 
   -bbs- % [1;35mrm -f /home/bbs/bin/install.sh[m
-          sed ¥Î¹L¤@¦¸¥H«á´N¨S¥Î¤F¡A¨º´N¸ò¥¦»¡Án¦A¨£§a
+          sed ç”¨éä¸€æ¬¡ä»¥å¾Œå°±æ²’ç”¨äº†ï¼Œé‚£å°±è·Ÿå®ƒèªªè²å†è¦‹å§
 
   -bbs- % [1;35mcrontab /home/bbs/doc/crontab[m
-          §â doc/crontab ªº¤º®e¥[¤J crontab
+          æŠŠ doc/crontab çš„å…§å®¹åŠ å…¥ crontab
 
 
-    [1;33m¤­¡B³]©w BBS Àô¹Ò -- ¡]¢Ï¡^¦pªG¦³ inetd[m
+    [1;33mäº”ã€è¨­å®š BBS ç’°å¢ƒ -- ï¼ˆï¼¡ï¼‰å¦‚æœæœ‰ inetd[m
 
-    ¦pªG¨S¦³ /etc/inetd.conf ³oÀÉ®×¡A½Ğ¸õ¨ì¤­¡]¢Ğ¡^¡A³q±` FreeBSD À³¸Ó¦³
-  inetd ¤~¹ï¡C
+    å¦‚æœæ²’æœ‰ /etc/inetd.conf é€™æª”æ¡ˆï¼Œè«‹è·³åˆ°äº”ï¼ˆï¼¢ï¼‰ï¼Œé€šå¸¸ FreeBSD æ‡‰è©²æœ‰
+  inetd æ‰å°ã€‚
 
-    ¥H root ¨­¤Àµn¤J¡C
+    ä»¥ root èº«åˆ†ç™»å…¥ã€‚
 
   -root- # [1;36mjoe /etc/inetd.conf[m
-           §R°£­ì¥»ªº¤G¦æ («e­±¥[¤W # §Y¥i)
+           åˆªé™¤åŸæœ¬çš„äºŒè¡Œ (å‰é¢åŠ ä¸Š # å³å¯)
 #telnet stream  tcp     nowait  root    /usr/libexec/telnetd    telnetd
 #telnet stream  tcp6    nowait  root    /usr/libexec/telnetd    telnetd
 
-           ¥[¤J¥H¤U¼Æ¦æ
+           åŠ å…¥ä»¥ä¸‹æ•¸è¡Œ
 #
 # MapleBBS
 #
@@ -151,7 +151,7 @@ xchat   stream  tcp     wait    bbs     /home/bbs/bin/xchatd    xchatd -i
 bbsnntp stream  tcp     wait    bbs     /home/bbs/innd/innbbsd  innbbsd -i
 
   -root- # [1;36mjoe /etc/rc.d/rc.local[m
-           ¥[¤J¥H¤U¼Æ¦æ (³oÀÉ®×¦³¥i¯à­ì¥»¬O¨S¦³¥ô¦ó¤å¦rªº¶}·sÀÉ®×)
+           åŠ å…¥ä»¥ä¸‹æ•¸è¡Œ (é€™æª”æ¡ˆæœ‰å¯èƒ½åŸæœ¬æ˜¯æ²’æœ‰ä»»ä½•æ–‡å­—çš„é–‹æ–°æª”æ¡ˆ)
 
 #!/bin/sh
 #
@@ -161,15 +161,15 @@ su bbs -c '/home/bbs/bin/camera'
 su bbs -c '/home/bbs/bin/account'
 
 
-    [1;33m¤­¡B³]©w BBS Àô¹Ò -- ¡]¢Ğ¡^¦pªG¦³ xinetd[m
+    [1;33mäº”ã€è¨­å®š BBS ç’°å¢ƒ -- ï¼ˆï¼¢ï¼‰å¦‚æœæœ‰ xinetd[m
 
-    ¦pªG¨S¦³ /etc/xinetd.d/ ³o¥Ø¿ı¡A½Ğ¸õ¨ì¤­¡]¢Ñ¡^¡A³q±` Linux À³¸Ó¦³
-  xinetd ¤~¹ï¡C
+    å¦‚æœæ²’æœ‰ /etc/xinetd.d/ é€™ç›®éŒ„ï¼Œè«‹è·³åˆ°äº”ï¼ˆï¼£ï¼‰ï¼Œé€šå¸¸ Linux æ‡‰è©²æœ‰
+  xinetd æ‰å°ã€‚
 
-    ¥H root ¨­¤Àµn¤J¡C
+    ä»¥ root èº«åˆ†ç™»å…¥ã€‚
 
   -root- # [1;36mjoe /etc/xinetd.d/telnet[m
-           ±N³oÀÉ®×§ï¦¨¦¹¤º®e (³oÀÉ®×¦³¥i¯à­ì¥»¬O¨S¦³¥ô¦ó¤å¦rªº¶}·sÀÉ®×)
+           å°‡é€™æª”æ¡ˆæ”¹æˆæ­¤å…§å®¹ (é€™æª”æ¡ˆæœ‰å¯èƒ½åŸæœ¬æ˜¯æ²’æœ‰ä»»ä½•æ–‡å­—çš„é–‹æ–°æª”æ¡ˆ)
 
 service telnet
 {
@@ -183,7 +183,7 @@ service telnet
 }
 
   -root- # [1;36mjoe /etc/xinetd.d/smtp[m
-           ±N³oÀÉ®×§ï¦¨¦¹¤º®e (³oÀÉ®×¦³¥i¯à­ì¥»¬O¨S¦³¥ô¦ó¤å¦rªº¶}·sÀÉ®×)
+           å°‡é€™æª”æ¡ˆæ”¹æˆæ­¤å…§å®¹ (é€™æª”æ¡ˆæœ‰å¯èƒ½åŸæœ¬æ˜¯æ²’æœ‰ä»»ä½•æ–‡å­—çš„é–‹æ–°æª”æ¡ˆ)
 
 service smtp
 {
@@ -196,7 +196,7 @@ service smtp
 }
 
   -root- # [1;36mjoe /etc/xinetd.d/gopher[m
-           ±N³oÀÉ®×§ï¦¨¦¹¤º®e (³oÀÉ®×¦³¥i¯à­ì¥»¬O¨S¦³¥ô¦ó¤å¦rªº¶}·sÀÉ®×)
+           å°‡é€™æª”æ¡ˆæ”¹æˆæ­¤å…§å®¹ (é€™æª”æ¡ˆæœ‰å¯èƒ½åŸæœ¬æ˜¯æ²’æœ‰ä»»ä½•æ–‡å­—çš„é–‹æ–°æª”æ¡ˆ)
 
 service gopher
 {
@@ -210,7 +210,7 @@ service gopher
 }
 
   -root- # [1;36mjoe /etc/xinetd.d/finger[m
-           ±N³oÀÉ®×§ï¦¨¦¹¤º®e (³oÀÉ®×¦³¥i¯à­ì¥»¬O¨S¦³¥ô¦ó¤å¦rªº¶}·sÀÉ®×)
+           å°‡é€™æª”æ¡ˆæ”¹æˆæ­¤å…§å®¹ (é€™æª”æ¡ˆæœ‰å¯èƒ½åŸæœ¬æ˜¯æ²’æœ‰ä»»ä½•æ–‡å­—çš„é–‹æ–°æª”æ¡ˆ)
 
 service finger
 {
@@ -223,7 +223,7 @@ service finger
 }
 
   -root- # [1;36mjoe /etc/xinetd.d/pop3[m
-           ±N³oÀÉ®×§ï¦¨¦¹¤º®e (³oÀÉ®×¦³¥i¯à­ì¥»¬O¨S¦³¥ô¦ó¤å¦rªº¶}·sÀÉ®×)
+           å°‡é€™æª”æ¡ˆæ”¹æˆæ­¤å…§å®¹ (é€™æª”æ¡ˆæœ‰å¯èƒ½åŸæœ¬æ˜¯æ²’æœ‰ä»»ä½•æ–‡å­—çš„é–‹æ–°æª”æ¡ˆ)
 
 service pop3
 {
@@ -236,7 +236,7 @@ service pop3
 }
 
   -root- # [1;36mjoe /etc/xinetd.d/nntp[m
-           ±N³oÀÉ®×§ï¦¨¦¹¤º®e (³oÀÉ®×¦³¥i¯à­ì¥»¬O¨S¦³¥ô¦ó¤å¦rªº¶}·sÀÉ®×)
+           å°‡é€™æª”æ¡ˆæ”¹æˆæ­¤å…§å®¹ (é€™æª”æ¡ˆæœ‰å¯èƒ½åŸæœ¬æ˜¯æ²’æœ‰ä»»ä½•æ–‡å­—çš„é–‹æ–°æª”æ¡ˆ)
 
 service nntp
 {
@@ -250,7 +250,7 @@ service nntp
 }
 
   -root- # [1;36mjoe /etc/xinetd.d/http[m
-           ±N³oÀÉ®×§ï¦¨¦¹¤º®e (³oÀÉ®×¦³¥i¯à­ì¥»¬O¨S¦³¥ô¦ó¤å¦rªº¶}·sÀÉ®×)
+           å°‡é€™æª”æ¡ˆæ”¹æˆæ­¤å…§å®¹ (é€™æª”æ¡ˆæœ‰å¯èƒ½åŸæœ¬æ˜¯æ²’æœ‰ä»»ä½•æ–‡å­—çš„é–‹æ–°æª”æ¡ˆ)
 
 service http
 {
@@ -264,7 +264,7 @@ service http
 }
 
   -root- # [1;36mjoe /etc/xinetd.d/xchat[m
-           ±N³oÀÉ®×§ï¦¨¦¹¤º®e (³oÀÉ®×¦³¥i¯à­ì¥»¬O¨S¦³¥ô¦ó¤å¦rªº¶}·sÀÉ®×)
+           å°‡é€™æª”æ¡ˆæ”¹æˆæ­¤å…§å®¹ (é€™æª”æ¡ˆæœ‰å¯èƒ½åŸæœ¬æ˜¯æ²’æœ‰ä»»ä½•æ–‡å­—çš„é–‹æ–°æª”æ¡ˆ)
 
 service xchat
 {
@@ -278,7 +278,7 @@ service xchat
 }
 
   -root- # [1;36mjoe /etc/xinetd.d/bbsnntp[m
-           ±N³oÀÉ®×§ï¦¨¦¹¤º®e (³oÀÉ®×¦³¥i¯à­ì¥»¬O¨S¦³¥ô¦ó¤å¦rªº¶}·sÀÉ®×)
+           å°‡é€™æª”æ¡ˆæ”¹æˆæ­¤å…§å®¹ (é€™æª”æ¡ˆæœ‰å¯èƒ½åŸæœ¬æ˜¯æ²’æœ‰ä»»ä½•æ–‡å­—çš„é–‹æ–°æª”æ¡ˆ)
 
 service bbsnntp
 {
@@ -292,7 +292,7 @@ service bbsnntp
 }
 
   -root- # [1;36mjoe /etc/rc.local[m
-           ¥[¤J¥H¤U¼Æ¦æ (³oÀÉ®×¦³¥i¯à­ì¥»¬O¨S¦³¥ô¦ó¤å¦rªº¶}·sÀÉ®×)
+           åŠ å…¥ä»¥ä¸‹æ•¸è¡Œ (é€™æª”æ¡ˆæœ‰å¯èƒ½åŸæœ¬æ˜¯æ²’æœ‰ä»»ä½•æ–‡å­—çš„é–‹æ–°æª”æ¡ˆ)
 
 #!/bin/sh
 #
@@ -302,14 +302,14 @@ su bbs -c '/home/bbs/bin/camera'
 su bbs -c '/home/bbs/bin/account'
 
 
-    [1;33m¤­¡B³]©w BBS Àô¹Ò -- ¡]¢Ñ¡^¦pªG¨S¦³ inetd/xinetd[m
+    [1;33mäº”ã€è¨­å®š BBS ç’°å¢ƒ -- ï¼ˆï¼£ï¼‰å¦‚æœæ²’æœ‰ inetd/xinetd[m
 
-    ¨S inetd ¤]¨S xinetd¡A§ï¥Î standalone ±Ò°Ê
+    æ²’ inetd ä¹Ÿæ²’ xinetdï¼Œæ”¹ç”¨ standalone å•Ÿå‹•
 
-    ¥H root ¨­¤Àµn¤J¡C
+    ä»¥ root èº«åˆ†ç™»å…¥ã€‚
 
   -root- # [1;36mjoe /etc/rc.local[m
-           ¥[¤J¥H¤U¼Æ¦æ (³oÀÉ®×¦³¥i¯à­ì¥»¬O¨S¦³¥ô¦ó¤å¦rªº¶}·sÀÉ®×)
+           åŠ å…¥ä»¥ä¸‹æ•¸è¡Œ (é€™æª”æ¡ˆæœ‰å¯èƒ½åŸæœ¬æ˜¯æ²’æœ‰ä»»ä½•æ–‡å­—çš„é–‹æ–°æª”æ¡ˆ)
 
 #!/bin/sh
 #
@@ -328,12 +328,12 @@ su bbs -c '/home/bbs/bin/camera'
 su bbs -c '/home/bbs/bin/account'
 
 
-    [1;33m¤»¡B¨ä¥L³]©w[m
+    [1;33må…­ã€å…¶ä»–è¨­å®š[m
 
-  ¥H root ¨­¤Àµn¤J¡C
+  ä»¥ root èº«åˆ†ç™»å…¥ã€‚
 
   -root- # [1;36mjoe /etc/services[m
-           ¥[¤J¥H¤U¼Æ¦æ
+           åŠ å…¥ä»¥ä¸‹æ•¸è¡Œ
 
 xchat           3838/tcp
 xchat           3838/udp
@@ -341,24 +341,24 @@ bbsnntp         7777/tcp   usenet       #Network News Transfer Protocol
 bbsnntp         7777/udp   usenet       #Network News Transfer Protocol
 
   -root- # [1;36mjoe /etc/login.conf[m
-           ­×§ï md5 ¬° des ½s½X¡ALinux ½Ğ¸õ¹L¦¹¨BÆJ
+           ä¿®æ”¹ md5 ç‚º des ç·¨ç¢¼ï¼ŒLinux è«‹è·³éæ­¤æ­¥é©Ÿ
 
  default:\
         :passwd_format=des:\
 
   -root- # [1;36mjoe /etc/rc.conf[m
-           §â YES §ï¦¨ NO¡ALinux ½Ğ¸õ¹L¦¹¨BÆJ
+           æŠŠ YES æ”¹æˆ NOï¼ŒLinux è«‹è·³éæ­¤æ­¥é©Ÿ
 
 sendmail_enable="NO"
 
   -root- # [1;36mreboot[m
-           ­«¶}¾÷§a
+           é‡é–‹æ©Ÿå§
 
 
-    [1;33m¤C¡B¨É¥Î±z¦Û¤vªº BBS[m
+    [1;33mä¸ƒã€äº«ç”¨æ‚¨è‡ªå·±çš„ BBS[m
 
-    ±zªº BBS À³¸Ó¤w¸g¬[¦n¤F¡A¸ÕµÛ telnet ¬İ¬İ¡A¨º´N³o¼Ë¦n¦n¨É¥Î§a¡C
+    æ‚¨çš„ BBS æ‡‰è©²å·²ç¶“æ¶å¥½äº†ï¼Œè©¦è‘— telnet çœ‹çœ‹ï¼Œé‚£å°±é€™æ¨£å¥½å¥½äº«ç”¨å§ã€‚
 
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mnctu5566.Dorm3.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mnctu5566.Dorm3.NCTU.edu.tw[37m ç™¼è¡¨[m

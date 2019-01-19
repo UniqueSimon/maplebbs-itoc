@@ -1,21 +1,21 @@
-§@ªÌ: itoc (:MM:) ¬İªO: itoc
-¼ĞÃD: Re: §ï*.soªº°İÃD
-®É¶¡: Sun Jan 12 10:34:05 2003
+ä½œè€…: itoc (:MM:) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: æ”¹*.soçš„å•é¡Œ
+æ™‚é–“: Sun Jan 12 10:34:05 2003
 
-  1. §ï§¹ so/*.c ­n make ostype install
-  2. ­n­«·s¤W¯¸¤~¦³®Ä
-  3. ¦pªG¦b¿ï³æ«ö¤F§¹¥ş¨S¦³¤ÏÀ³¡A´N¬O§Aªºµ{¦¡¦³¼g¿ù
-     ¦ı compile ®É¨S¦³ error
-     ªí¥Ü¤£¬O»yªk¤Wªº¿ù»~¡A¦Ó¬O©I¥s¤F¤@­Ó¤£¦s¦bªº¨ç¦¡
+  1. æ”¹å®Œ so/*.c è¦ make ostype install
+  2. è¦é‡æ–°ä¸Šç«™æ‰æœ‰æ•ˆ
+  3. å¦‚æœåœ¨é¸å–®æŒ‰äº†å®Œå…¨æ²’æœ‰åæ‡‰ï¼Œå°±æ˜¯ä½ çš„ç¨‹å¼æœ‰å¯«éŒ¯
+     ä½† compile æ™‚æ²’æœ‰ error
+     è¡¨ç¤ºä¸æ˜¯èªæ³•ä¸Šçš„éŒ¯èª¤ï¼Œè€Œæ˜¯å‘¼å«äº†ä¸€å€‹ä¸å­˜åœ¨çš„å‡½å¼
 
-  ¨Ò:  so/apple.c  (¬õ¦â¬O¿ù»~©Ò¦b)
+  ä¾‹:  so/apple.c  (ç´…è‰²æ˜¯éŒ¯èª¤æ‰€åœ¨)
 
   int
   main_apple()
   {
     int num;
     num = 5;
-    prints("%d", [1;31mN[mum);           <-- ·|¦³ error, ¥¼ª¾ªºÅÜ¼Æ Num
+    prints("%d", [1;31mN[mum);           <-- æœƒæœ‰ error, æœªçŸ¥çš„è®Šæ•¸ Num
   }
 
   int
@@ -23,17 +23,17 @@
   {
     int num;
     num = 5;
-    print[1;31md[m("%d", num);           <-- ¤£·|¦³ error, compile ·|¦¨¥\
-  }                                  ¦ı¨ä¹ê¨S¦³ printd ³o¨ç¦¡
-                                     ©Ò¥H¦b menu ¿ï³o¿ï¶µ®É·|¥¢±Ñ
+    print[1;31md[m("%d", num);           <-- ä¸æœƒæœ‰ error, compile æœƒæˆåŠŸ
+  }                                  ä½†å…¶å¯¦æ²’æœ‰ printd é€™å‡½å¼
+                                     æ‰€ä»¥åœ¨ menu é¸é€™é¸é …æ™‚æœƒå¤±æ•—
 
-  ¨º§A­n«ç»ò§ä¥X³oÃşªº¿ù»~©O? «ÜÂ²³æ
-  §â apple.c ¥[¤J maple/ ¤U
-  µM«á§ï maple/Makefile ¥[¤J apple.c apple.o
-  ¦b maple/ ¤U make ostype
-  ´N·|¬İ¨ì error ¤F
-  §ä¨ì error ¥H«á¡A¦A§â apple.c ©ñ¦^ so/ §Y¥i
+  é‚£ä½ è¦æ€éº¼æ‰¾å‡ºé€™é¡çš„éŒ¯èª¤å‘¢? å¾ˆç°¡å–®
+  æŠŠ apple.c åŠ å…¥ maple/ ä¸‹
+  ç„¶å¾Œæ”¹ maple/Makefile åŠ å…¥ apple.c apple.o
+  åœ¨ maple/ ä¸‹ make ostype
+  å°±æœƒçœ‹åˆ° error äº†
+  æ‰¾åˆ° error ä»¥å¾Œï¼Œå†æŠŠ apple.c æ”¾å› so/ å³å¯
 
 --
-    [1;32m¢~¢w¢w Origin ¢¡ [33;45m °Ê¤O®Ö¤ß [37m processor.tfcis.org [32;40m ¡ã £_£`£a ¢w¢w¢q[m
-    [1;32m¢q     Author ¢£ [36mitoc.Dorm-GD2.NCTU.edu.tw[m
+    [1;32mâ•­â”€â”€ Origin â•® [33;45m å‹•åŠ›æ ¸å¿ƒ [37m processor.tfcis.org [32;40m ï½ Î´ÎµÎ¶ â”€â”€â”¼[m
+    [1;32mâ”¼     Author â•¯ [36mitoc.Dorm-GD2.NCTU.edu.tw[m

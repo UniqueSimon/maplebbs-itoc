@@ -1,14 +1,14 @@
-µo«H¤H: DarkKiller.bbs@abpe.org (¦ıÄ@¤Hªø¤[¡A¤d¨½¦@¼`®S), ¬İªO: DK
-¼Ğ  ÃD: Re: [doc] ¦b FreeBSD ¦p¦ó¨Ï¥Î postfix
-µo«H¯¸: ¤p³À³À BBS (Wed Apr  4 16:57:32 2001)
+ç™¼ä¿¡äºº: DarkKiller.bbs@abpe.org (ä½†é¡˜äººé•·ä¹…ï¼Œåƒé‡Œå…±å¬‹å¨Ÿ), çœ‹æ¿: DK
+æ¨™  é¡Œ: Re: [doc] åœ¨ FreeBSD å¦‚ä½•ä½¿ç”¨ postfix
+ç™¼ä¿¡ç«™: å°é¹¿é¹¿ BBS (Wed Apr  4 16:57:32 2001)
 
-* §ïª©°O¿ı
+* æ”¹ç‰ˆè¨˜éŒ„
 
   2002/12/11
-  * ­×§ï Virtual ³]©wªº°İÃD¡C
+  * ä¿®æ”¹ Virtual è¨­å®šçš„å•é¡Œã€‚
 
   2002/09/01
-  * ­×§ï±Ò°Ê postfix ªº¤èªk¡C
+  * ä¿®æ”¹å•Ÿå‹• postfix çš„æ–¹æ³•ã€‚
 
 * Author & License:
 
@@ -21,68 +21,68 @@
 
   http://www.gnu.org/licenses/fdl.txt
 
-* °Ñ¦Ò¤å¥ó¡G
+* åƒè€ƒæ–‡ä»¶ï¼š
 
   http://www.postfix.org
   /usr/local/etc/postfix/sample-*
 
-* ­º¥ı¡A§Ú­Ì¥ı§Q¥Î ports ¦w¸Ë postfix¡G
+* é¦–å…ˆï¼Œæˆ‘å€‘å…ˆåˆ©ç”¨ ports å®‰è£ postfixï¼š
 
   cd /usr/ports/mail/postfix-current
   make all install clean
 
-  ¥L©Ò°İ§Aªº°İÃD½Ğ¿ï Yes¡AÅı¥L¶} postfix ­n¥Îªº±b¸¹¡C
+  ä»–æ‰€å•ä½ çš„å•é¡Œè«‹é¸ Yesï¼Œè®“ä»–é–‹ postfix è¦ç”¨çš„å¸³è™Ÿã€‚
 
-* ¦w¸Ë¦n¥H«á¡A¨ì /usr/local/etc/postfix ¤U­±­×§ï main.cf ªº¤U¦C³]©w¡G
+* å®‰è£å¥½ä»¥å¾Œï¼Œåˆ° /usr/local/etc/postfix ä¸‹é¢ä¿®æ”¹ main.cf çš„ä¸‹åˆ—è¨­å®šï¼š
 
-  # §Aªº hostname
+  # ä½ çš„ hostname
   myhostname = infomath.math.nctu.edu.tw
 
-  # §Aªº domain
+  # ä½ çš„ domain
   mydomain = math.nctu.edu.tw
 
-  # ·í§A³o¥x¾÷¾¹¦³«Ü¦h domain name ­n¦¬ªº®É­Ô¡A§A¥i¥H¥Î³oºØ³o­Ó³]©w§â
-  # ³o¨Ç domain name ©ñ¨ì¦P¤@­ÓÀÉ®×¸Ì­±¡AÀÉ®×ªº¤º®e´N¬O¨C¤@¦æ©ñ¤@­Ó
-  # hostname¡C
+  # ç•¶ä½ é€™å°æ©Ÿå™¨æœ‰å¾ˆå¤š domain name è¦æ”¶çš„æ™‚å€™ï¼Œä½ å¯ä»¥ç”¨é€™ç¨®é€™å€‹è¨­å®šæŠŠ
+  # é€™äº› domain name æ”¾åˆ°åŒä¸€å€‹æª”æ¡ˆè£¡é¢ï¼Œæª”æ¡ˆçš„å…§å®¹å°±æ˜¯æ¯ä¸€è¡Œæ”¾ä¸€å€‹
+  # hostnameã€‚
   mydestination = /usr/local/etc/postfix/local-host-names
 
-  # Ãö±¼§Aªº vrfy «ü¥O¡C
+  # é—œæ‰ä½ çš„ vrfy æŒ‡ä»¤ã€‚
   #
-  # °£«D§Aª¾¹D³o­ÓªF¦è¬O°µ¤°»òªº¡A§_«h±j¯P«ØÄ³§A³]©w¤W¥h!
+  # é™¤éä½ çŸ¥é“é€™å€‹æ±è¥¿æ˜¯åšä»€éº¼çš„ï¼Œå¦å‰‡å¼·çƒˆå»ºè­°ä½ è¨­å®šä¸Šå»!
   disable_vrfy_command = yes
 
-  # §A¤¹³\ relay ªº domains¡A³q±`¬O³Q³]¬° MX ¤~­n³]©w¤W¥h¡C®æ¦¡¸ò
-  # local-host-names ¬Û¦P¡A³£¬O¤@¦æ¤@­Ó domain¡C
+  # ä½ å…è¨± relay çš„ domainsï¼Œé€šå¸¸æ˜¯è¢«è¨­ç‚º MX æ‰è¦è¨­å®šä¸Šå»ã€‚æ ¼å¼è·Ÿ
+  # local-host-names ç›¸åŒï¼Œéƒ½æ˜¯ä¸€è¡Œä¸€å€‹ domainã€‚
   relay_domains = /usr/local/etc/postfix/relay-domains
 
-  # ³o¬O³]©w global ªº aliases¡A§A¥i¥H§â¥H«e©ñ¦b /etc/mail/aliases ªºÀÉ
-  # ®×ª½±µ copy ¹L¨Ó¥H«á¡A¶] postalias hash:/usr/local/etc/postfix/aliases¡C
+  # é€™æ˜¯è¨­å®š global çš„ aliasesï¼Œä½ å¯ä»¥æŠŠä»¥å‰æ”¾åœ¨ /etc/mail/aliases çš„æª”
+  # æ¡ˆç›´æ¥ copy éä¾†ä»¥å¾Œï¼Œè·‘ postalias hash:/usr/local/etc/postfix/aliasesã€‚
   alias_maps = hash:/usr/local/etc/postfix/aliases
 
-  # ¦pªG§A¤£·Q°õ¦æ postalias hash:/usr/local/etc/postfix/aliases ³o»òªø¦ê
-  # ªº«ü¥O¡A§A¥i¥H³]©w¤U­±³o¦æ¡A­n³]ªº¸ò alias_maps ¤@¼Ë¡C
+  # å¦‚æœä½ ä¸æƒ³åŸ·è¡Œ postalias hash:/usr/local/etc/postfix/aliases é€™éº¼é•·ä¸²
+  # çš„æŒ‡ä»¤ï¼Œä½ å¯ä»¥è¨­å®šä¸‹é¢é€™è¡Œï¼Œè¦è¨­çš„è·Ÿ alias_maps ä¸€æ¨£ã€‚
   #
-  # ³]©w§¹¥H«á¥u­n¥Î newaliases ©Î sendmail -bi ´N¥i¥H§ó·s¤F¡C
+  # è¨­å®šå®Œä»¥å¾Œåªè¦ç”¨ newaliases æˆ– sendmail -bi å°±å¯ä»¥æ›´æ–°äº†ã€‚
   alias_database = hash:/usr/local/etc/postfix/etc/aliases
 
-  # ¥H«e sendmail ¥Î /etc/mail/access ¨Ó±±¨î discard/reject/relay ¥H¤Î¨ä
-  # ¥Lªº³]©w¡C¦b postfix ¸Ì­±¡A§Ú­Ì©î¶}¹ï HELO/MAIL FROM/RCPT TO/... µ¥µ¥
-  # §@³B²z¡A§Ú­Ì¶È¤¶²Ğ relay ©Ò»İ­n¥Î¨ì¹ï RCPT TO ªº±±¨î¡A§â¤U­±³o¦æ¡G
+  # ä»¥å‰ sendmail ç”¨ /etc/mail/access ä¾†æ§åˆ¶ discard/reject/relay ä»¥åŠå…¶
+  # ä»–çš„è¨­å®šã€‚åœ¨ postfix è£¡é¢ï¼Œæˆ‘å€‘æ‹†é–‹å° HELO/MAIL FROM/RCPT TO/... ç­‰ç­‰
+  # ä½œè™•ç†ï¼Œæˆ‘å€‘åƒ…ä»‹ç´¹ relay æ‰€éœ€è¦ç”¨åˆ°å° RCPT TO çš„æ§åˆ¶ï¼ŒæŠŠä¸‹é¢é€™è¡Œï¼š
   #
   # smtpd_recipient_restrictions = permit_mynetworks,check_relay_domains
   #
-  # ­×§ï¦¨¡G
+  # ä¿®æ”¹æˆï¼š
   #
   smtpd_recipient_restrictions = permit_mynetworks,hash:/usr/local/etc/postfix/rcptto-access,check_relay_domains
 
   #
-  # µM«á¶] postmap hash:/usr/local/etc/postfix/rcptto-access §Y¥i¡C
+  # ç„¶å¾Œè·‘ postmap hash:/usr/local/etc/postfix/rcptto-access å³å¯ã€‚
   #
-  # §ó¶i¶¥ªº¥Îªk½Ğ°Ñ¦Ò /usr/loca/etc/postfix/sample-smtpd.cf ¸Ì­±ªº»¡©ú¡C
+  # æ›´é€²éšçš„ç”¨æ³•è«‹åƒè€ƒ /usr/loca/etc/postfix/sample-smtpd.cf è£¡é¢çš„èªªæ˜ã€‚
 
-* ²{¦b¡A­n³]©wÅı postfix ¦b¶}¾÷ªº®É­Ô±Ò°Ê°_¨Ó¡C
+* ç¾åœ¨ï¼Œè¦è¨­å®šè®“ postfix åœ¨é–‹æ©Ÿçš„æ™‚å€™å•Ÿå‹•èµ·ä¾†ã€‚
 
-  ¥t¥~¦b /etc/rc.conf ³]©w¡G
+  å¦å¤–åœ¨ /etc/rc.conf è¨­å®šï¼š
 
   sendmail_enable="YES"
   sendmail_flags="-bd"
@@ -90,102 +90,102 @@
   sendmail_submit_enable="NO"
   sendmail_msp_queue_enable="NO"
 
-  µM«á§â²{¦b¥¿¦b¶]ªº sendmail ¬å±¼¡G
+  ç„¶å¾ŒæŠŠç¾åœ¨æ­£åœ¨è·‘çš„ sendmail ç æ‰ï¼š
 
   killall -9 sendmail
 
-  §â§Aªº postfix ¶]°_¨Ó¡G
+  æŠŠä½ çš„ postfix è·‘èµ·ä¾†ï¼š
 
   sendmail -bd
 
-* ¥ı±q¦Û¤v¾÷¾¹±H¤@«Ê«H¨ì§A³o¥x¾÷¾¹¡A¬İ¬İ¥i¤£¥i¥H°e¨ì¡C¦pªG¥i¥Hªº¸Ü¡A±q
-  §O¥x±H¨ì§A¦Û¤vªº¾÷¾¹¬İ¬İ! ¦³°İÃDªº¸Ü¬İ¬İ /var/log/maillog ¸Ì­±¦³¤°»ò
-  ¥i¥H´£¨Ñ§A¦Û¤v debug ªº¤èªk¡A§ä¨ìªº¸Ü¡Apost ¨ì 386BSD ªO¸ò¤j®a¤À¨É :)
+* å…ˆå¾è‡ªå·±æ©Ÿå™¨å¯„ä¸€å°ä¿¡åˆ°ä½ é€™å°æ©Ÿå™¨ï¼Œçœ‹çœ‹å¯ä¸å¯ä»¥é€åˆ°ã€‚å¦‚æœå¯ä»¥çš„è©±ï¼Œå¾
+  åˆ¥å°å¯„åˆ°ä½ è‡ªå·±çš„æ©Ÿå™¨çœ‹çœ‹! æœ‰å•é¡Œçš„è©±çœ‹çœ‹ /var/log/maillog è£¡é¢æœ‰ä»€éº¼
+  å¯ä»¥æä¾›ä½ è‡ªå·± debug çš„æ–¹æ³•ï¼Œæ‰¾åˆ°çš„è©±ï¼Œpost åˆ° 386BSD æ¿è·Ÿå¤§å®¶åˆ†äº« :)
 
-  µM«á¥Î¦Û¤v¾÷¾¹±H«Hµ¹¦Û¤v¬İ¬İ¡A¦pªG¦¨¥\ªº¸Ü¡A±H¨ì§O¥x¾÷¾¹ªº±b¸¹¬İ¬İ¡A
-  ¬Û¦Pªº¡A¦pªG§A¹J¨ì§xÃøªº¸Ü¡A§A¥i¥H¬İ¬İ /var/log/maillog ¸Ì­±ªºªF¦è¥h
-  ²q´ú°İÃDªº¥X³B :)
+  ç„¶å¾Œç”¨è‡ªå·±æ©Ÿå™¨å¯„ä¿¡çµ¦è‡ªå·±çœ‹çœ‹ï¼Œå¦‚æœæˆåŠŸçš„è©±ï¼Œå¯„åˆ°åˆ¥å°æ©Ÿå™¨çš„å¸³è™Ÿçœ‹çœ‹ï¼Œ
+  ç›¸åŒçš„ï¼Œå¦‚æœä½ é‡åˆ°å›°é›£çš„è©±ï¼Œä½ å¯ä»¥çœ‹çœ‹ /var/log/maillog è£¡é¢çš„æ±è¥¿å»
+  çŒœæ¸¬å•é¡Œçš„å‡ºè™• :)
 
-* ±µ¤U¨Ó¬O»¡ BBS ªº³¡¤À¤F¡A¹ï©ó BBS ¦Ó¨¥¡A³Ì¥D­n´N¬O bbsmail¡Bbrdmail
-  ¥H¤Î mailpost ­n³z¹L sendmail (¥H«e) ©Î¬O postfix (²{¦b) §â«H¥óÂà¨ì
-  BBS ¸Ì¡C
+* æ¥ä¸‹ä¾†æ˜¯èªª BBS çš„éƒ¨åˆ†äº†ï¼Œå°æ–¼ BBS è€Œè¨€ï¼Œæœ€ä¸»è¦å°±æ˜¯ bbsmailã€brdmail
+  ä»¥åŠ mailpost è¦é€é sendmail (ä»¥å‰) æˆ–æ˜¯ postfix (ç¾åœ¨) æŠŠä¿¡ä»¶è½‰åˆ°
+  BBS è£¡ã€‚
 
-  ©Ò¥H§Ú­Ìªº°µªk¬O¨Ï¥Î canonical §â username.bbs@deer.twbbs.org Âà¦¨
-  username@bbsmail ¥H«á¡A¦A¥Î transport §â­nµ¹ bbsmail ªº¤å³¹³£¥áµ¹
-  BBS ªº bbsmail ³B²z¡C
+  æ‰€ä»¥æˆ‘å€‘çš„åšæ³•æ˜¯ä½¿ç”¨ canonical æŠŠ username.bbs@deer.twbbs.org è½‰æˆ
+  username@bbsmail ä»¥å¾Œï¼Œå†ç”¨ transport æŠŠè¦çµ¦ bbsmail çš„æ–‡ç« éƒ½ä¸Ÿçµ¦
+  BBS çš„ bbsmail è™•ç†ã€‚
 
-  brdmail ªº§@ªk©M bbsmail ¤]¬O¬Û¦P¡A§â brdname.brd@deer.twbbs.org
-  ¥áµ¹ BBS ªº brdmail ³B²z¡C
+  brdmail çš„ä½œæ³•å’Œ bbsmail ä¹Ÿæ˜¯ç›¸åŒï¼ŒæŠŠ brdname.brd@deer.twbbs.org
+  ä¸Ÿçµ¦ BBS çš„ brdmail è™•ç†ã€‚
 
-  mailpost ªº§@ªk©M bbsmail ¤]¬O¬Û¦P¡A§â bbs@deer.twbbs.org ¥áµ¹ BBS ªº
-  mailpost ³B²z¡C
+  mailpost çš„ä½œæ³•å’Œ bbsmail ä¹Ÿæ˜¯ç›¸åŒï¼ŒæŠŠ bbs@deer.twbbs.org ä¸Ÿçµ¦ BBS çš„
+  mailpost è™•ç†ã€‚
 
-* Ãö³¬ bmtad¡G
+* é—œé–‰ bmtadï¼š
 
-  ­º¥ı¡A§A±o¥ı§â bmtad ªº³]©wÃö±¼¡G
+  é¦–å…ˆï¼Œä½ å¾—å…ˆæŠŠ bmtad çš„è¨­å®šé—œæ‰ï¼š
 
-  a. ¦pªG§A¥Îªº¬O inetd ªº¸Ü¡A´N§â /etc/inetd.conf ¤¤ bmtad µù¸Ñ°_¨Ó¡G
+  a. å¦‚æœä½ ç”¨çš„æ˜¯ inetd çš„è©±ï¼Œå°±æŠŠ /etc/inetd.conf ä¸­ bmtad è¨»è§£èµ·ä¾†ï¼š
 
 #smtp    stream  tcp     wait    bbs     /home/bbs/bin/bmtad     bmtad -i
 
-  b. ¦pªG§A¥Îªº¬O xinetd ªº¸Ü¡A´N§â /etc/xinetd.d/smtp µ¹§R°£¡C
+  b. å¦‚æœä½ ç”¨çš„æ˜¯ xinetd çš„è©±ï¼Œå°±æŠŠ /etc/xinetd.d/smtp çµ¦åˆªé™¤ã€‚
 
-  c. ¦pªG§A¥Îªº¬O standslone ªº¸Ü¡A´N§â /etc/rc.local ¤¤ bmtad µù¸Ñ°_¨Ó¡G
+  c. å¦‚æœä½ ç”¨çš„æ˜¯ standslone çš„è©±ï¼Œå°±æŠŠ /etc/rc.local ä¸­ bmtad è¨»è§£èµ·ä¾†ï¼š
 
 #/home/bbs/bin/bmta
 
-* ¶}©l³]©w BBS ³¡¤À¡G
+* é–‹å§‹è¨­å®š BBS éƒ¨åˆ†ï¼š
 
-  ¥H¤U¬O¥H deer.twbbs.org ¬°¨Ò¡A½Ğ¦Û¤v§ï¦¨§Aªº hostname¡C
+  ä»¥ä¸‹æ˜¯ä»¥ deer.twbbs.org ç‚ºä¾‹ï¼Œè«‹è‡ªå·±æ”¹æˆä½ çš„ hostnameã€‚
 
-  §Ú­Ì¥ı¦b main.cf ¸Ì­±·s¼W¨â¶µ³]©w¡G
+  æˆ‘å€‘å…ˆåœ¨ main.cf è£¡é¢æ–°å¢å…©é …è¨­å®šï¼š
 
-  # virtual ªº³¡¤À¡A§Ú­Ì¥Î pcre ¨Ó³B²z ¡G
+  # virtual çš„éƒ¨åˆ†ï¼Œæˆ‘å€‘ç”¨ pcre ä¾†è™•ç† ï¼š
   virtual_maps = pcre:/usr/local/etc/postfix/virtual
 
-  # transport ªº³¡¤À¡A§Ú­Ì¥Î hash ¨Ó³B²z¡G
+  # transport çš„éƒ¨åˆ†ï¼Œæˆ‘å€‘ç”¨ hash ä¾†è™•ç†ï¼š
   transport_maps = hash:/usr/local/etc/postfix/transport
 
-  §Ú­Ì¥ı·s¼W /usr/local/etc/postfix/virtual¡G
-  (½Ğ¨Ì¦Û¤vªº domain name ¨Ó§ïÅÜ)
+  æˆ‘å€‘å…ˆæ–°å¢ /usr/local/etc/postfix/virtualï¼š
+  (è«‹ä¾è‡ªå·±çš„ domain name ä¾†æ”¹è®Š)
 
   /^bbs(reg)?@deer\.twbbs\.org(\.tw)?$/ bbs@mailpost.
   /^(.+)\.bbs@deer\.twbbs\.org(\.tw)?$/ $1@bbsmail.
   /^(.+)\.brd@deer\.twbbs\.org(\.tw)?$/ $1@brdmail.
 
-  µM«á¦A·s¼W /usr/local/etc/postfix/transport¡G
+  ç„¶å¾Œå†æ–°å¢ /usr/local/etc/postfix/transportï¼š
 
   bbsmail bbsmail:
   brdmail brdmail:
   mailpost mailpost:
 
-  ·s¼W§¹¥H«á¡A¶]¤U­±ªº©R¥OÅı¥¦²£¥Í¬ÛÃöªº³]©w¡G
+  æ–°å¢å®Œä»¥å¾Œï¼Œè·‘ä¸‹é¢çš„å‘½ä»¤è®“å®ƒç”¢ç”Ÿç›¸é—œçš„è¨­å®šï¼š
 
   postmap hash:/usr/local/etc/postfix/transport
 
-  µM«á§Ú­Ì­n§i¶D postfix¡Abbsmail¡Bbrdmail ¥H¤Î mailpost ³o¤T­Ó mailer
-  ¨ì©³¬O¨º¤T°¦µ{¦¡­t³d¡C
+  ç„¶å¾Œæˆ‘å€‘è¦å‘Šè¨´ postfixï¼Œbbsmailã€brdmail ä»¥åŠ mailpost é€™ä¸‰å€‹ mailer
+  åˆ°åº•æ˜¯é‚£ä¸‰éš»ç¨‹å¼è² è²¬ã€‚
 
-  ­×§ï /usr/local/etc/postfix/master.cf¡A¥[¨ì³Ì«á­±¡G
+  ä¿®æ”¹ /usr/local/etc/postfix/master.cfï¼ŒåŠ åˆ°æœ€å¾Œé¢ï¼š
 
-  # ½Ğª`·N¡A³o¬O¨S¦³´«¦æªº¡A½Ğ¦Û¦æ±µ¤W¡G(¥Î tab)
+  # è«‹æ³¨æ„ï¼Œé€™æ˜¯æ²’æœ‰æ›è¡Œçš„ï¼Œè«‹è‡ªè¡Œæ¥ä¸Šï¼š(ç”¨ tab)
   bbsmail   unix  -       n       n       -       -       pipe
   flags=FR user=bbs argv=/home/bbs/bin/bbsmail $mailbox
 
-  # ³o¤]¬O¨S¦³´«¦æªº¡A¤]¬O¥Î tab ±µ¤W¡G
+  # é€™ä¹Ÿæ˜¯æ²’æœ‰æ›è¡Œçš„ï¼Œä¹Ÿæ˜¯ç”¨ tab æ¥ä¸Šï¼š
   brdmail   unix  -       n       n       -       -       pipe
   flags=FR user=bbs argv=/home/bbs/bin/brdmail $mailbox
 
-  # ³o¤]¬O¨S¦³´«¦æªº¡A¤]¬O¥Î tab ±µ¤W¡G
+  # é€™ä¹Ÿæ˜¯æ²’æœ‰æ›è¡Œçš„ï¼Œä¹Ÿæ˜¯ç”¨ tab æ¥ä¸Šï¼š
   mailpost  unix  -       n       n       -       -       pipe
   flags=FR user=bbs argv=/home/bbs/bin/mailpost
 
-  ³]©w§ï§¹¥H«á¡A½Ğ¿é¤J¤U¦C«ü¥O¡AÅı postfix ¥h­«·sÅª¤J³]©w¡G
+  è¨­å®šæ”¹å®Œä»¥å¾Œï¼Œè«‹è¼¸å…¥ä¸‹åˆ—æŒ‡ä»¤ï¼Œè®“ postfix å»é‡æ–°è®€å…¥è¨­å®šï¼š
 
   postfix reload
 
 --
-                                 ¥æ¤j®Õ¶éºô¸ôµ¦¶i·| NCTUCCCA    ªL¹Å°a
+                                 äº¤å¤§æ ¡åœ’ç¶²è·¯ç­–é€²æœƒ NCTUCCCA    æ—å˜‰è»’
                                  Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
 
-¡° Origin: ¤p³À³À <Deer.abpe.org> ¡» From: infomath.math.nctu.edu.tw
+â€» Origin: å°é¹¿é¹¿ <Deer.abpe.org> â—† From: infomath.math.nctu.edu.tw

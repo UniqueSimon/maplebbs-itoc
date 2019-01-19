@@ -1,22 +1,22 @@
-§@ªÌ: itoc (AsPSQwel) ¬İªO: plan
-¼ĞÃD: [¥\¯à] grade.c ¥æ¤j¦¨ÁZ¬d¸ß
-®É¶¡: Wed Feb 12 21:26:55 2003                          Updated: 2003/12/29
+ä½œè€…: itoc (AsPSQwel) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] grade.c äº¤å¤§æˆç¸¾æŸ¥è©¢
+æ™‚é–“: Wed Feb 12 21:26:55 2003                          Updated: 2003/12/29
 
-: menu.c ¦b¾A·íªº¿ï³æ¥[¤W
+: menu.c åœ¨é©ç•¶çš„é¸å–®åŠ ä¸Š
 
 + "bin/grade.so:main_grade", 0, - M_XMODE,
-+ "Grade      ¡ñ ¦¨ÁZ¬dº] ¡ğ",
++ "Grade      â™‚ æˆç¸¾æŸ¥æ¦œ â™€",
 
 : game/Makefile
 
 SO =    ... [1;33mgrade.so[m
 
-: game/grade.c ·s¼W³oµ{¦¡
+: game/grade.c æ–°å¢é€™ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* grade.c        ( NTHU CS MapleBBS Ver 3.10 )          */
 /*-------------------------------------------------------*/
-/* target : ¥æ³q¤j¾Ç¬d¦¨ÁZ¨t²Î                           */
+/* target : äº¤é€šå¤§å­¸æŸ¥æˆç¸¾ç³»çµ±                           */
 /* create : 02/06/26                                     */
 /* update : 02/07/26                                     */
 /* author : eric.bbs@boring.twbbs.tw                     */
@@ -65,18 +65,18 @@ http_conn(server, s, sid)
   char cid[7], cname[31], cs[5], cscore[11], ct[2];
   FILE *fp;
 
-  mouts(b_lines - 1, 0, "³s±µ¦øªA¾¹¤¤¡A½Ğµy­Ô.............");
+  mouts(b_lines - 1, 0, "é€£æ¥ä¼ºæœå™¨ä¸­ï¼Œè«‹ç¨å€™.............");
   refresh();
 
   if ((sockfd = dns_open(server, HTTP_PORT)) < 0)
   {
-    vmsg("µLªk»P¦øªA¾¹¨ú±o³sµ²¡A¬d¸ß¥¢±Ñ¡I");
+    vmsg("ç„¡æ³•èˆ‡ä¼ºæœå™¨å–å¾—é€£çµï¼ŒæŸ¥è©¢å¤±æ•—ï¼");
     return -1;
   }
 
   /* parser return message from web server */
   write(sockfd, s, strlen(s));
-  /* read(sockfd, p = pool, sizeof(pool)); */        /* ¤Ó¤j¤F¡A¤@¦¸Åª¤£§¹ */
+  /* read(sockfd, p = pool, sizeof(pool)); */        /* å¤ªå¤§äº†ï¼Œä¸€æ¬¡è®€ä¸å®Œ */
   p = xtail = pool;
   for (;;)
   {
@@ -95,67 +95,67 @@ http_conn(server, s, sid)
   sprintf(fpath, "tmp/%s.grade", cuser.userid);
   fp = fopen(fpath, "w");
 
-  /* itoc.µù¸Ñ: ·s¥Í¨S¦³¾ú¦~¦¨ÁZ®É¡A·|¦]¬° pool ÁÙ´İ¦s«e¤@­Ó¤Hªº¸ê®Æ¡A
-     ¬GÅã¥Ü«e¤@­Ó¤Hªº¦¨ÁZ©Î³y¦¨§PÂ_¿ù»~¡A©Ò¥H­n¥ı§â³Ì«á¤@­Ó(²Ä¤G­Ó)
-     </TABLE> §ä¥X¨Ó */
+  /* itoc.è¨»è§£: æ–°ç”Ÿæ²’æœ‰æ­·å¹´æˆç¸¾æ™‚ï¼Œæœƒå› ç‚º pool é‚„æ®˜å­˜å‰ä¸€å€‹äººçš„è³‡æ–™ï¼Œ
+     æ•…é¡¯ç¤ºå‰ä¸€å€‹äººçš„æˆç¸¾æˆ–é€ æˆåˆ¤æ–·éŒ¯èª¤ï¼Œæ‰€ä»¥è¦å…ˆæŠŠæœ€å¾Œä¸€å€‹(ç¬¬äºŒå€‹)
+     </TABLE> æ‰¾å‡ºä¾† */
   xtail = strstr(pool, "</TABLE>");
-  xtail = strstr(xtail + 1, "</TABLE>");/* §ä³Ì«á¤@­Ó </TABLE> */
+  xtail = strstr(xtail + 1, "</TABLE>");/* æ‰¾æœ€å¾Œä¸€å€‹ </TABLE> */
 
-  sum = 0;        /* ¥[ÅvÁ`¤À */
-  sub = 0;        /* ­×²ßªºÁ`¾Ç¤À */
-  pass = 0;        /* ¤Î®æªº¾Ç¤À */
-  nocount = 0;        /* ¤£¦C¤J¥­§¡ªº¾Ç¤À */
-  gpa = 0;        /* ¥[Åv GPA Á`¤À */
-  graduate = atoi(sid) % 1000 >= 200 ? 1 : 0;        /* ¬ã¨s¥ÍÁÙ¬O¤j¾Ç¥Í */
+  sum = 0;        /* åŠ æ¬Šç¸½åˆ† */
+  sub = 0;        /* ä¿®ç¿’çš„ç¸½å­¸åˆ† */
+  pass = 0;        /* åŠæ ¼çš„å­¸åˆ† */
+  nocount = 0;        /* ä¸åˆ—å…¥å¹³å‡çš„å­¸åˆ† */
+  gpa = 0;        /* åŠ æ¬Š GPA ç¸½åˆ† */
+  graduate = atoi(sid) % 1000 >= 200 ? 1 : 0;        /* ç ”ç©¶ç”Ÿé‚„æ˜¯å¤§å­¸ç”Ÿ */
 
   p = pool;
 
-  fputs("      ¢~ùùùùùùùŞùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùŞùùùùùŞùùùùùùùùùùùŞùùùù¢¡\n", fp);
-  fputs("      ùø½Ò¸¹  ùø½Ò¦W                          ùø¾Ç¤Àùø ¤À¼Æ     ùø¿ï­×ùø\n", fp);
-  fputs("      ùàùùùùùùùáùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùáùùùùùáùùùùùùùùùùùáùùùùùâ\n", fp);
+  fputs("      â•­â•â•â•â•¦â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•¦â•â•â•¦â•â•â•â•â•â•¦â•â•â•®\n", fp);
+  fputs("      â•‘èª²è™Ÿ  â•‘èª²å                          â•‘å­¸åˆ†â•‘ åˆ†æ•¸     â•‘é¸ä¿®â•‘\n", fp);
+  fputs("      â• â•â•â•â•¬â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•¬â•â•â•¬â•â•â•â•â•â•¬â•â•â•£\n", fp);
 
   for (;;)
   {
     p = strstr(p, "<td>");
 
-    if (!p || p >= xtail)        /* ¨ì³Ì«á¤F©Î·s¥Í®Ú¥»¨S¸ê®Æ */
+    if (!p || p >= xtail)        /* åˆ°æœ€å¾Œäº†æˆ–æ–°ç”Ÿæ ¹æœ¬æ²’è³‡æ–™ */
       break;
 
-    p = html_strip(p, cid, 6);           /* ½Ò¸¹ */
-    p = html_strip(p, cname, 30);        /* ½Ò¦W */
-    p = html_strip(p, cs, 4);            /* ¾Ç¤À */
-    p = html_strip(p, cscore, 10);       /* ¤À¼Æ */
-    p = html_strip(p, ct, 1);            /* ¿ï§O */
+    p = html_strip(p, cid, 6);           /* èª²è™Ÿ */
+    p = html_strip(p, cname, 30);        /* èª²å */
+    p = html_strip(p, cs, 4);            /* å­¸åˆ† */
+    p = html_strip(p, cscore, 10);       /* åˆ†æ•¸ */
+    p = html_strip(p, ct, 1);            /* é¸åˆ¥ */
 
-    fprintf(fp, "      ùø\033[35m%-6s\033[mùø\033[33m%-30s\033[mùø"
-      "\033[32m%-4s\033[mùø\033[36m%-10s\033[mùø\033[31m%-4s\033[mùø\n",
+    fprintf(fp, "      â•‘\033[35m%-6s\033[mâ•‘\033[33m%-30s\033[mâ•‘"
+      "\033[32m%-4s\033[mâ•‘\033[36m%-10s\033[mâ•‘\033[31m%-4s\033[mâ•‘\n",
       cid, cname, cs, cscore, ct);
 
-    if (!str_ncmp(cscore, "¦¨ÁZ¥¼°e¹F", 10) || !str_ncmp(cscore, "Tr", 2))        /* ©è§K¡B¦¨ÁZ¥¼°e¹F¼È¤£ºâ¤J¥­§¡¡B¾Ç¤À */
+    if (!str_ncmp(cscore, "æˆç¸¾æœªé€é”", 10) || !str_ncmp(cscore, "Tr", 2))        /* æŠµå…ã€æˆç¸¾æœªé€é”æš«ä¸ç®—å…¥å¹³å‡ã€å­¸åˆ† */
     {
       continue;
     }
-    else if (!str_ncmp(cscore, "Withdraw", 8))        /* Withdraw ¤£ºâ¤J¥­§¡ */
+    else if (!str_ncmp(cscore, "Withdraw", 8))        /* Withdraw ä¸ç®—å…¥å¹³å‡ */
     {
       i = atoi(cs);
       nocount += i;
       sub += i;
     }
-    else if (!str_ncmp(cscore, "Pass", 4))        /* Pass ¤£ºâ¤J¥­§¡ */
+    else if (!str_ncmp(cscore, "Pass", 4))        /* Pass ä¸ç®—å…¥å¹³å‡ */
     {
       i = atoi(cs);
       pass += i;
       nocount += i;
       sub += i;
     }
-    else                                        /* ¦³¦¨ÁZ */
+    else                                        /* æœ‰æˆç¸¾ */
     {
       i = atoi(cs);
       sockfd = atoi(cscore);
-      sum += sockfd * i;        /* «ö¾Ç¤À¥[Åv */
+      sum += sockfd * i;        /* æŒ‰å­¸åˆ†åŠ æ¬Š */
       sub += i;
 
-      if (sockfd >= (graduate ? 70 : 60))        /* ¬ã¨s¥Í 70 ¤À¤Î®æ¡F¤j¾Ç¥Í 60 ¤À¤Î®æ */
+      if (sockfd >= (graduate ? 70 : 60))        /* ç ”ç©¶ç”Ÿ 70 åˆ†åŠæ ¼ï¼›å¤§å­¸ç”Ÿ 60 åˆ†åŠæ ¼ */
       {
         pass += i;
 
@@ -166,20 +166,20 @@ http_conn(server, s, sid)
       }
     }
   }
-  fputs("      ùüùùùùùùùäùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùäùùùùùäùùùùùùùùùùùäùùùùùı\n", fp);
+  fputs("      â•°â•â•â•â•©â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•©â•â•â•©â•â•â•â•â•â•©â•â•â•¯\n", fp);
 
   i = sub - nocount;
-  fprintf(fp, "\n      ¡i¥­§¡¡j\033[1;31m%.2f\033[m  ¡i¾Ç¤À¡j%d/%d  ¡iGPA¡j%.2f\n",
+  fprintf(fp, "\n      ã€å¹³å‡ã€‘\033[1;31m%.2f\033[m  ã€å­¸åˆ†ã€‘%d/%d  ã€GPAã€‘%.2f\n",
     i ? sum / (double) i : 0,
     pass, sub,
-    i ? gpa / (double) i : 0);                /* Á×§K°£¼Æ¬° 0 */
+    i ? gpa / (double) i : 0);                /* é¿å…é™¤æ•¸ç‚º 0 */
 
   fclose(fp);
 
   if (more(fpath, (char *) -1) >= 0)
   {
-    if (vans("±z­n±N¬d¸ßµ²ªG±H¦^«H½c¶Ü¡H[N] ") == 'y')
-      mail_self(fpath, cuser.userid, "[³Æ §Ñ ¿ı] ¦¨ÁZ¬d¸ß", 0);
+    if (vans("æ‚¨è¦å°‡æŸ¥è©¢çµæœå¯„å›ä¿¡ç®±å—ï¼Ÿ[N] ") == 'y')
+      mail_self(fpath, cuser.userid, "[å‚™ å¿˜ éŒ„] æˆç¸¾æŸ¥è©¢", 0);
   }
   unlink(fpath);
 
@@ -198,12 +198,12 @@ grade(sid, id, choice)
 
   if ((sockfd = dns_open(SERVER_grade, HTTP_PORT)) < 0)
   {
-    vmsg("µLªk»P¦øªA¾¹¨ú±o³sµ²¡A¬d¸ß¥¢±Ñ¡I");
+    vmsg("ç„¡æ³•èˆ‡ä¼ºæœå™¨å–å¾—é€£çµï¼ŒæŸ¥è©¢å¤±æ•—ï¼");
     return -1;
   }
   else
   {
-    mouts(b_lines - 1, 0, "³s±µ¦øªA¾¹¤¤¡A½Ğµy­Ô.............");
+    mouts(b_lines - 1, 0, "é€£æ¥ä¼ºæœå™¨ä¸­ï¼Œè«‹ç¨å€™.............");
     refresh();
   }
 
@@ -215,15 +215,15 @@ grade(sid, id, choice)
   read(sockfd, pool, sizeof(pool));
   close(sockfd);
 
-  /* itoc.µù¸Ñ: ¤£¯à¥Î¦³¨S¦³ strstr(pool, "SERID") ¨ÓÀË¬d¡C
-     ·í«e¤@­Ó¤H¥¿½T¿é¤J¬d¸ß®É¡A·|±q sockfd ¤¤Åª¥X¸ûªøªº¸ê®Æ¶i pool¡A
-     «á¤@­Ó¤H­Y¿é¤J¿ù»~¡A·|±q sockfd ¤¤Åª¥X¸ûµuªº¸ê®Æ¶i pool¡A
-     ¦]¬° pool ¨S¦³²MªÅ¡A«á¤@­Ó¤Hªº pool «á¬q¤¤¤´µM·|¦³«e¤@­Ó¤Hªº SERID¡A
-     «á¤@­Ó¤H´N·|»~¬d¨ì«e¤@­Ó¤Hªº¦¨ÁZ */
+  /* itoc.è¨»è§£: ä¸èƒ½ç”¨æœ‰æ²’æœ‰ strstr(pool, "SERID") ä¾†æª¢æŸ¥ã€‚
+     ç•¶å‰ä¸€å€‹äººæ­£ç¢ºè¼¸å…¥æŸ¥è©¢æ™‚ï¼Œæœƒå¾ sockfd ä¸­è®€å‡ºè¼ƒé•·çš„è³‡æ–™é€² poolï¼Œ
+     å¾Œä¸€å€‹äººè‹¥è¼¸å…¥éŒ¯èª¤ï¼Œæœƒå¾ sockfd ä¸­è®€å‡ºè¼ƒçŸ­çš„è³‡æ–™é€² poolï¼Œ
+     å› ç‚º pool æ²’æœ‰æ¸…ç©ºï¼Œå¾Œä¸€å€‹äººçš„ pool å¾Œæ®µä¸­ä»ç„¶æœƒæœ‰å‰ä¸€å€‹äººçš„ SERIDï¼Œ
+     å¾Œä¸€å€‹äººå°±æœƒèª¤æŸ¥åˆ°å‰ä¸€å€‹äººçš„æˆç¸¾ */
 
   if (strstr(pool, "<b>"))
   {
-    vmsg("¬dµL¦¹¾Ç¸¹©Î±K½X¿é¤J¿ù»~¡A½Ğ­«·s¿é¤J¡I");
+    vmsg("æŸ¥ç„¡æ­¤å­¸è™Ÿæˆ–å¯†ç¢¼è¼¸å…¥éŒ¯èª¤ï¼Œè«‹é‡æ–°è¼¸å…¥ï¼");
     return 0;
   }
 
@@ -242,7 +242,7 @@ grade(sid, id, choice)
   }
 
   sprintf(atrn, "F=SHOWSCORE&SERID=%s&USERID=%s%%20%%20%%20&CHOICE=%s",
-    serid, sid, choice ? "2.¬d¸ß¾ú¦~¦¨ÁZ" : "1.¬d¸ß¥»¾Ç´Á¦¨ÁZ");
+    serid, sid, choice ? "2.æŸ¥è©¢æ­·å¹´æˆç¸¾" : "1.æŸ¥è©¢æœ¬å­¸æœŸæˆç¸¾");
   sprintf(sendform, "GET /REGCGI?%s HTTP/1.0\n\n", atrn);
   http_conn(SERVER_grade, sendform, sid);
 
@@ -253,22 +253,22 @@ grade(sid, id, choice)
 int
 main_grade()
 {
-  char sid[8];        /* ¾Ç¸¹ */
-  char id[11];        /* ¨­¤ÀÃÒ¦r¸¹ */
+  char sid[8];        /* å­¸è™Ÿ */
+  char id[11];        /* èº«åˆ†è­‰å­—è™Ÿ */
   char ans[3];
-  int choice;        /* 0:¾Ç´Á¦¨ÁZ 1:¾ú©¡¦¨ÁZ */
+  int choice;        /* 0:å­¸æœŸæˆç¸¾ 1:æ­·å±†æˆç¸¾ */
 
   while (1)
   {
     clear();
-    mouts(0, 25, "\033[1;37;44m¡· ¥æ³q¤j¾Ç¦¨ÁZ¬d¸ß ¡·\033[m");
-    mouts(3, 0, "¸ê®Æ¨Ó·½¡Ghttp://"SERVER_grade);
+    mouts(0, 25, "\033[1;37;44mâ— äº¤é€šå¤§å­¸æˆç¸¾æŸ¥è©¢ â—\033[m");
+    mouts(3, 0, "è³‡æ–™ä¾†æºï¼šhttp://"SERVER_grade);
 
-    if (!vget(5, 0, "½Ğ¿é¤J¾Ç¸¹¡G", sid, 8, DOECHO))
+    if (!vget(5, 0, "è«‹è¼¸å…¥å­¸è™Ÿï¼š", sid, 8, DOECHO))
       break;
-    if (!vget(6, 0, "½Ğ¿é¤J¨­¤ÀÃÒ¦r¸¹¡G", id, 11, NOECHO))
+    if (!vget(6, 0, "è«‹è¼¸å…¥èº«åˆ†è­‰å­—è™Ÿï¼š", id, 11, NOECHO))
       break;
-    choice = vget(7,0, "½Ğ¿ï¾Ü (1)¥»¾Ç´Á¦¨ÁZ (2)¾ú¦~¦¨ÁZ¡G[1] ",
+    choice = vget(7,0, "è«‹é¸æ“‡ (1)æœ¬å­¸æœŸæˆç¸¾ (2)æ­·å¹´æˆç¸¾ï¼š[1] ",
       ans, 3, DOECHO) == '2';
     grade(sid, id, choice);
   }
@@ -277,4 +277,4 @@ main_grade()
 #endif    /* HAVE_NETTOOL */
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

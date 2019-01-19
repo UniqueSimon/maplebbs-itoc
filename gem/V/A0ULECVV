@@ -1,30 +1,30 @@
-�@��: itoc (�u���ܥi�R�� :D) �ݪO: plan
-���D: [���] BBS ��s�{����U
-�ɶ�: Mon Aug 12 12:01:19 2002
+作者: itoc (真的很可愛啊 :D) 看板: plan
+標題: [文件] BBS 更新程式手冊
+時間: Mon Aug 12 12:01:19 2002
 
-                       [32m�� ��s�{����U ��[m
+                       [32m★ 更新程式手冊 ★[m
 
-  �@�B�U���s�� BBS �{��
-  �G�B��s�{��
-  �T�B�۩w�պA
-
-
-    �����O�g���n�w�� itoc �Һ��@�� bbs �{�������ҨϥΪ��A�ä��A��
-  ��L bbs �����C
-
-    ����󪺥ت��O�� MapleBBS-3.10-20yymmdd-PACK �ɯŨ�̷s����{��
-  �Ϊ��C
+  一、下載新版 BBS 程式
+  二、更新程式
+  三、自定組態
 
 
-  [1;33m�@�B�U���s�� BBS �{��[m
+    本文件是寫給要安裝 itoc 所維護的 bbs 程式版本所使用的，並不適用
+  其他 bbs 版本。
 
-    �b http://processor.tfcis.org/~itoc �i�H���̷s���{�������A��
-  �Ӫ��o�� MapleBBS-3.10-20yymmdd-PACK.tgz �o�˪��ɦW�C
+    本文件的目的是讓 MapleBBS-3.10-20yymmdd-PACK 升級到最新日期程式
+  用的。
 
 
-  [1;33m�G�B��s�{��[m
+  [1;33m一、下載新版 BBS 程式[m
 
-    �H bbs �����n�J�A�ç� MapleBBS-3.10-20yymmdd-PACK.tgz ��b /tmp�C
+    在 http://processor.tfcis.org/~itoc 可以找到最新的程式版本，應
+  該長得像 MapleBBS-3.10-20yymmdd-PACK.tgz 這樣的檔名。
+
+
+  [1;33m二、更新程式[m
+
+    以 bbs 身分登入，並把 MapleBBS-3.10-20yymmdd-PACK.tgz 放在 /tmp。
 
   -bbs- % [1;36mtar xvfz MapleBBS-3.10-20yymmdd-PACK.tgz -C /tmp/[m
 
@@ -32,28 +32,28 @@
 
   -bbs- % [1;36mmv -f /tmp/bbs/src /home/bbs/[m
 
-    �ݷs���� src/maple/CHANGE�A�M��q�z����������}�l�ݨ�̫�@��A
-  �p�G�u�� *.h *.c ����z�u�n�� src/ �Y�i�C���ɭԥi�঳�@�� gem/@/*.hlp
-  etc/* �o�Ǥ��b src/ �̭����⨺���ɮפ]�n���s�A�q�s���ƻs�L�ӧY�i�C
-  �d�Ҧp�U�G��G
+    看新版的 src/maple/CHANGE，然後從您的版本日期開始看到最後一行，
+  如果只有 *.h *.c 那麼您只要換 src/ 即可。有時候可能有一些 gem/@/*.hlp
+  etc/* 這些不在 src/ 裡面的把那個檔案也要換新，從新版複製過來即可。
+  範例如下二行：
 
   -bbs- % [1;36mmv -f /tmp/bbs/etc/webx.conf.cwb /home/bbs/etc/[m
 
   -bbs- % [1;36mmv -f /tmp/bbs/gem/@/@cosign.hlp /home/bbs/gem/@/[m
 
-    �̫�� /tmp �����Ȧs�ɮקR���C
+    最後把 /tmp 內的暫存檔案刪除。
 
   -bbs- % [1;36mrm -rf /tmp/bbs[m
 
   -bbs- % [1;36mrm -f /tmp/MapleBBS-3.10-20yymmdd-PACK.tgz[m
 
 
-  [1;33m�T�B�۩w�պA[m
+  [1;33m三、自定組態[m
 
-    �즹�A�z�w�g���� code �������F�A���U�ӱz�n�s��H�U�ɮסG
+    到此，您已經完成 code 的替換了，接下來您要編輯以下檔案：
 
-  src/include/config.h     �̭��� SCHOOLNAME �� HOST_ALIASES�C
-                           �p�G�z�O LINUX ���ϥΪ̡A�٭n�� BBSGID �� 999�C
+  src/include/config.h     裡面的 SCHOOLNAME 到 HOST_ALIASES。
+                           如果您是 LINUX 的使用者，還要改 BBSGID 為 999。
 
 --
-[1;37m�� ���峹�� [33mitoc[37m �q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m �o��[m
+[1;37m□ 本文章由 [33mitoc[37m 從 [32mitoc.Dorm-GD2.NCTU.edu.tw[37m 發表[m
