@@ -2,260 +2,260 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=big5">
 <meta http-equiv=Content-Language content=zh-tw>
-<title>MapleBBS »¡©ú¤å¥ó</title>
+<title>MapleBBS èªªæ˜æ–‡ä»¶</title>
 </head>
 
 <body>
 
 <center><table><tr><td><pre>
 
-                       <font color="#008000">¡¹ Âà«H±`¨£°İÃD ¡¹</font>
+                       <font color="#008000">â˜… è½‰ä¿¡å¸¸è¦‹å•é¡Œ â˜…</font>
 
-  <a href='#1'>¤@¡B°òÂ¦³]©w</a>
-  <a href='#2'>¤G¡B±`¨£°İÃD (FAQ)</a>
+  <a href='#1'>ä¸€ã€åŸºç¤è¨­å®š</a>
+  <a href='#2'>äºŒã€å¸¸è¦‹å•é¡Œ (FAQ)</a>
 
 
-    ¥Ø«e MapleBBS ©Ò¨Ï¥Îªº innbbsd µ{¦¡¬O±q skhuang@csie.nctu.edu.tw ªº
-  innbbsd 0.50beta-4 ¥[¤W leeym@cae.ce.ntu.edu.tw ªº NoCeM 0.8¡A©Ò­×§ï¨Ó
-  ªº¡A¶È¾A¥Î©ó MapleBBS¡AµLªk¾A¥Î¨ä¥L BBS ¨t²Î¡C
+    ç›®å‰ MapleBBS æ‰€ä½¿ç”¨çš„ innbbsd ç¨‹å¼æ˜¯å¾ skhuang@csie.nctu.edu.tw çš„
+  innbbsd 0.50beta-4 åŠ ä¸Š leeym@cae.ce.ntu.edu.tw çš„ NoCeM 0.8ï¼Œæ‰€ä¿®æ”¹ä¾†
+  çš„ï¼Œåƒ…é©ç”¨æ–¼ MapleBBSï¼Œç„¡æ³•é©ç”¨å…¶ä»– BBS ç³»çµ±ã€‚
 
   <a name='1'></a>
-  <font color="#000080"><u>¤@¡B°òÂ¦³]©w</u></font>
+  <font color="#000080"><u>ä¸€ã€åŸºç¤è¨­å®š</u></font>
 
-  * ³]©w src/innbbsd/innbbsconf.h
+  * è¨­å®š src/innbbsd/innbbsconf.h
 
-    #define _NoCeM_                     /* No See Them ¾×«H¾÷¨î */
-    ¦pªG¤£·Q¨Ï¥Î NoCeM ¾×«H¾÷¨î¡A½Ğ #undef ³o¶µ¡C
+    #define _NoCeM_                     /* No See Them æ“‹ä¿¡æ©Ÿåˆ¶ */
+    å¦‚æœä¸æƒ³ä½¿ç”¨ NoCeM æ“‹ä¿¡æ©Ÿåˆ¶ï¼Œè«‹ #undef é€™é …ã€‚
 
-    #undef  _KEEP_CANCEL_               /* «O¯d cancel ªº¤å³¹©ó deleted ªO */
-    ¦pªG·Q§â cancel ªº¤å³¹³£°O¿ı¤U¨Ó¡A¨º»ò½Ğ #define ³o¶µ¡C
-
-
-  * ³]©w¡uÂà¤å¯¸¥x¦Cªí¡v (innd/nodelist.bbs)
-
-    ¥u¦³¦b³o­ÓÀÉ®×¸Ì­±ªº¯¸¥x¡A¤~¤¹³\¸Ó¯¸¥x³s½u¦Ü¥»¯¸¡C
+    #undef  _KEEP_CANCEL_               /* ä¿ç•™ cancel çš„æ–‡ç« æ–¼ deleted æ¿ */
+    å¦‚æœæƒ³æŠŠ cancel çš„æ–‡ç« éƒ½è¨˜éŒ„ä¸‹ä¾†ï¼Œé‚£éº¼è«‹ #define é€™é …ã€‚
 
 
-  * ³]©w¡uÂà¤å¬İªO¦Cªí¡v (innd/newsfeeds.bbs)
+  * è¨­å®šã€Œè½‰æ–‡ç«™å°åˆ—è¡¨ã€ (innd/nodelist.bbs)
 
-    ³o­ÓÀÉ®×¸Ì­±°O¸ü¤F©Ò¦³­n©M§O¥x¥æ´«¤å³¹ªº¬İªO¡A¨äÂà«Hªº¯¸¥x/¸s²Õ/¬İªO
-    ¹ï·Ó¦Cªí¡C
-
-
-  * ³]©w¡uNoCeM¾×¤å³W«h¡v (innd/ncmperm.bbs)
-
-    NoCeM ¾×«H¾÷¨îªº±±¨î¡A¥i¥H¿ï¾Ü¬O§_±µ¦¬ NoCeM notice ªº¬å¤å¡C
+    åªæœ‰åœ¨é€™å€‹æª”æ¡ˆè£¡é¢çš„ç«™å°ï¼Œæ‰å…è¨±è©²ç«™å°é€£ç·šè‡³æœ¬ç«™ã€‚
 
 
-  * ³]©w¡u¼s§i¤å¦W³æ¡v (innd/spamrule.bbs)
+  * è¨­å®šã€Œè½‰æ–‡çœ‹æ¿åˆ—è¡¨ã€ (innd/newsfeeds.bbs)
 
-    º¡¨¬³o­ÓÀÉ®×¸Ì­±©Ò¦C³W«hªº¤å³¹¡A±N³Q¥»¯¸©Ú¦¬¡C
+    é€™å€‹æª”æ¡ˆè£¡é¢è¨˜è¼‰äº†æ‰€æœ‰è¦å’Œåˆ¥å°äº¤æ›æ–‡ç« çš„çœ‹æ¿ï¼Œå…¶è½‰ä¿¡çš„ç«™å°/ç¾¤çµ„/çœ‹æ¿
+    å°ç…§åˆ—è¡¨ã€‚
+
+
+  * è¨­å®šã€ŒNoCeMæ“‹æ–‡è¦å‰‡ã€ (innd/ncmperm.bbs)
+
+    NoCeM æ“‹ä¿¡æ©Ÿåˆ¶çš„æ§åˆ¶ï¼Œå¯ä»¥é¸æ“‡æ˜¯å¦æ¥æ”¶ NoCeM notice çš„ç æ–‡ã€‚
+
+
+  * è¨­å®šã€Œå»£å‘Šæ–‡åå–®ã€ (innd/spamrule.bbs)
+
+    æ»¿è¶³é€™å€‹æª”æ¡ˆè£¡é¢æ‰€åˆ—è¦å‰‡çš„æ–‡ç« ï¼Œå°‡è¢«æœ¬ç«™æ‹’æ”¶ã€‚
 
   <a name='2'></a>
-  <font color="#000080"><u>¤G¡B±`¨£°İÃD (FAQ)</u></font>
+  <font color="#000080"><u>äºŒã€å¸¸è¦‹å•é¡Œ (FAQ)</u></font>
 
-  (¥H¤U©Ò¦³ªº % ¶}ÀYªº«ü¥O¡A³£¬O¥H bbs ¨­¤À¦b /home/bbs °õ¦æ)
+  (ä»¥ä¸‹æ‰€æœ‰çš„ % é–‹é ­çš„æŒ‡ä»¤ï¼Œéƒ½æ˜¯ä»¥ bbs èº«åˆ†åœ¨ /home/bbs åŸ·è¡Œ)
 
 
-  * §Ú­n«ç»ò³]©w nodelist.bbs¡H
+  * æˆ‘è¦æ€éº¼è¨­å®š nodelist.bbsï¼Ÿ
 
-    1. nodelist.bbs ªº®æ¦¡¦p¤U¡G
+    1. nodelist.bbs çš„æ ¼å¼å¦‚ä¸‹ï¼š
 
        WOLF            bbs.tnfsh.tn.edu.tw     IHAVE(7777)
        ^^^^            ^^^^^^^^^^^^^^^^^^^     ^^^^^^^^^^^
        node-name       host                    protocol(port)
 
-       ³oªí¥Ü¡G¥»¯¸±N»P Wolf ¯¸ (bbs.tnfsh.tn.edu.tw:7777) °µ IHAVE Âà«H¡C
+       é€™è¡¨ç¤ºï¼šæœ¬ç«™å°‡èˆ‡ Wolf ç«™ (bbs.tnfsh.tn.edu.tw:7777) åš IHAVE è½‰ä¿¡ã€‚
 
-    2. node-name ¬O¸Ó¯¸ªºµu¦W¡AÀH«K±z©R¦W¡C
-    3. host ¬O¸Ó¯¸ªº hostname¡A¥i¥H¬O ip/fqdn¡A§Y¨Ï¤£¬O¥¿¸Ñ¡A¹³
-       xxx.twbbs.org ¤]¬O³Q±µ¨üªº¡C
-    4. ¥Ø«e¤ä´©ªº protocol ¦³ IHAVE POST ¤GºØ¡A¤@¯ë BBS ¨Ï¥Î IHAVE¡A
-       news-server ¨Ï¥Î POST¡C
-    5. port ¬°¹ï¤è¶}ªº³s±µ°ğ¡A¤@¯ë BBS ¨Ï¥Î 7777¡Anews-server ¨Ï¥Î 119¡C
-    6. ¥u¦³§â¹ï¤è¯¸¥xªº¸ê°T¥[¤J nodelist.bbs ¥H«á¡A¹ï¤è¤~¥i¥H access §Ú­Ì¡C
+    2. node-name æ˜¯è©²ç«™çš„çŸ­åï¼Œéš¨ä¾¿æ‚¨å‘½åã€‚
+    3. host æ˜¯è©²ç«™çš„ hostnameï¼Œå¯ä»¥æ˜¯ ip/fqdnï¼Œå³ä½¿ä¸æ˜¯æ­£è§£ï¼Œåƒ
+       xxx.twbbs.org ä¹Ÿæ˜¯è¢«æ¥å—çš„ã€‚
+    4. ç›®å‰æ”¯æ´çš„ protocol æœ‰ IHAVE POST äºŒç¨®ï¼Œä¸€èˆ¬ BBS ä½¿ç”¨ IHAVEï¼Œ
+       news-server ä½¿ç”¨ POSTã€‚
+    5. port ç‚ºå°æ–¹é–‹çš„é€£æ¥åŸ ï¼Œä¸€èˆ¬ BBS ä½¿ç”¨ 7777ï¼Œnews-server ä½¿ç”¨ 119ã€‚
+    6. åªæœ‰æŠŠå°æ–¹ç«™å°çš„è³‡è¨ŠåŠ å…¥ nodelist.bbs ä»¥å¾Œï¼Œå°æ–¹æ‰å¯ä»¥ access æˆ‘å€‘ã€‚
 
 
-  * §Ú­n«ç»ò³]©w newsfeeds.bbs¡H
+  * æˆ‘è¦æ€éº¼è¨­å®š newsfeeds.bbsï¼Ÿ
 
-    1. newsfeeds.bbs ªº®æ¦¡¦p¤U¡G
+    1. newsfeeds.bbs çš„æ ¼å¼å¦‚ä¸‹ï¼š
 
        Maple        nthu.cs.bbs.plan        <-> plan   big5
        ^^^^^        ^^^^^^^^^^^^^^^^        ^^^ ^^^^^  ^^^^
        node-name    newsgroup               way board  charset
 
-       ³oªí¥Ü¡G¥»¯¸ªº plan ªO»P Maple ¯¸ªº nthu.cs.bbs.plan °µÂù¦VÂà«H¡A
-               ½s½X¬O big5¡C
+       é€™è¡¨ç¤ºï¼šæœ¬ç«™çš„ plan æ¿èˆ‡ Maple ç«™çš„ nthu.cs.bbs.plan åšé›™å‘è½‰ä¿¡ï¼Œ
+               ç·¨ç¢¼æ˜¯ big5ã€‚
 
-    2. node-name «ü©w­n©M nodelist.bbs ¤¤­ş­Ó¯¸¥xÂà«H¡C
-    3. ¦pªG¬O©M BBS Âà«Hªº¸Ü¡A¨º»ò newsgroup ¥i¥HÀH«K¨ú¦W¡A¥u­n¤G¯¸³£¨ú¬Û¦P
-       ´N¥i¥H¤F¡F¦pªG¬O©M news-server Âà«Hªº¸Ü¡A½Ğ©M news-server ¨ú¦¨¬Û¦P¡C
-    4. way ¦V¥ª <- ªí¥ÜÂà¥X¡A¦V¥k -> ªí¥ÜÂà¶i¡AÂù¦V <-> ªí¥ÜÂà¥X¥BÂà¶i¡C
-    4. board «ü©w­n©M§Ú­Ì¯¸¤Wªº­ş­Ó¬İªOÂà«H¡C
-    5. charset ¥i«ü©w big5 ©Î¬O gb2312 ©Î¬O us-ascii µ¥¦U¦¡¦U¼Ëªº½s½X¡C
+    2. node-name æŒ‡å®šè¦å’Œ nodelist.bbs ä¸­å“ªå€‹ç«™å°è½‰ä¿¡ã€‚
+    3. å¦‚æœæ˜¯å’Œ BBS è½‰ä¿¡çš„è©±ï¼Œé‚£éº¼ newsgroup å¯ä»¥éš¨ä¾¿å–åï¼Œåªè¦äºŒç«™éƒ½å–ç›¸åŒ
+       å°±å¯ä»¥äº†ï¼›å¦‚æœæ˜¯å’Œ news-server è½‰ä¿¡çš„è©±ï¼Œè«‹å’Œ news-server å–æˆç›¸åŒã€‚
+    4. way å‘å·¦ <- è¡¨ç¤ºè½‰å‡ºï¼Œå‘å³ -> è¡¨ç¤ºè½‰é€²ï¼Œé›™å‘ <-> è¡¨ç¤ºè½‰å‡ºä¸”è½‰é€²ã€‚
+    4. board æŒ‡å®šè¦å’Œæˆ‘å€‘ç«™ä¸Šçš„å“ªå€‹çœ‹æ¿è½‰ä¿¡ã€‚
+    5. charset å¯æŒ‡å®š big5 æˆ–æ˜¯ gb2312 æˆ–æ˜¯ us-ascii ç­‰å„å¼å„æ¨£çš„ç·¨ç¢¼ã€‚
 
 
-  * §Ú­n«ç»ò³]©w ncmperm.bbs¡H
+  * æˆ‘è¦æ€éº¼è¨­å®š ncmperm.bbsï¼Ÿ
 
-    1. ncmperm.bbs ªº®æ¦¡¦p¤U¡G
+    1. ncmperm.bbs çš„æ ¼å¼å¦‚ä¸‹ï¼š
 
-       news@news.math.nctu.edu.tw      power         ¡³
+       news@news.math.nctu.edu.tw      power         â—‹
        ^^^^^^^^^^^^^^^^^^^^^^^^^^      ^^^^^         ^^
        issuer                          type          perm
 
-       ³oªí¥Ü¡G¤¹³\ news@news.math.nctu.edu.tw ªº power ¬å«H¡C
+       é€™è¡¨ç¤ºï¼šå…è¨± news@news.math.nctu.edu.tw çš„ power ç ä¿¡ã€‚
 
-    2. issuer ¬Oµo NCM notice ªÌ¡C
-    3. ¦P¤@­Ó issuer ¥i¥Hµo¦n´X­Ó type ªº NCM notice¡C
-    4. perm ¦pªG¬O ¡³¡A¨º»ò´N¬O¤¹³\³o­Ó notice ¬å«H¡Fperm ¦pªG¬O ¢®¡A¨º»ò
-       ´N¤£¤¹³\³o­Ó notice ¬å«H¡C
-    5. ¦pªG¦³·s¼Wªº NoCeM issuer/type ªº¸Ü¡Aµ{¦¡·|¦Û°Ê§â ncmperm.bbs ¥[¤J
-       ncmperm.bbs¡A¹w³]¬O perm ¢®¡A¦pªG¯¸ªø­n¶}±Ò±µ¨ü³o­Ó notice¡A­n§â
-       perm §ï¦¨ ¡³¡C
+    2. issuer æ˜¯ç™¼ NCM notice è€…ã€‚
+    3. åŒä¸€å€‹ issuer å¯ä»¥ç™¼å¥½å¹¾å€‹ type çš„ NCM noticeã€‚
+    4. perm å¦‚æœæ˜¯ â—‹ï¼Œé‚£éº¼å°±æ˜¯å…è¨±é€™å€‹ notice ç ä¿¡ï¼›perm å¦‚æœæ˜¯ â•³ï¼Œé‚£éº¼
+       å°±ä¸å…è¨±é€™å€‹ notice ç ä¿¡ã€‚
+    5. å¦‚æœæœ‰æ–°å¢çš„ NoCeM issuer/type çš„è©±ï¼Œç¨‹å¼æœƒè‡ªå‹•æŠŠ ncmperm.bbs åŠ å…¥
+       ncmperm.bbsï¼Œé è¨­æ˜¯ perm â•³ï¼Œå¦‚æœç«™é•·è¦é–‹å•Ÿæ¥å—é€™å€‹ noticeï¼Œè¦æŠŠ
+       perm æ”¹æˆ â—‹ã€‚
 
 
-  * §Ú­n«ç»ò³]©w spamrule.bbs¡H
+  * æˆ‘è¦æ€éº¼è¨­å®š spamrule.bbsï¼Ÿ
 
-    1. ncmperm.bbs ªº®æ¦¡¦p¤U¡G
+    1. ncmperm.bbs çš„æ ¼å¼å¦‚ä¸‹ï¼š
 
-       Maple        House        [¨Ó·½] ¥]§t hinet.net
+       Maple        House        [ä¾†æº] åŒ…å« hinet.net
        ^^^^^        ^^^^^         ^^^^       ^^^^^^^^^
        path         board         type       detail
 
-       ³oªí¥Ü¡G¦b Maple ³o­Ó¯¸Âà¨Óªº¤å³¹¤¤¡A­Y¨Ó·½¥]§t hinet.net ±NµLªkÂà
-       «H¶i¤J House ªO¡C
+       é€™è¡¨ç¤ºï¼šåœ¨ Maple é€™å€‹ç«™è½‰ä¾†çš„æ–‡ç« ä¸­ï¼Œè‹¥ä¾†æºåŒ…å« hinet.net å°‡ç„¡æ³•è½‰
+       ä¿¡é€²å…¥ House æ¿ã€‚
 
-    2. path ¬O³o±ø³W«h¾A¥Î©ó­ş¨Ç¯¸Âà¨Óªº¤å³¹¡A¤]¥i¥H¿ï¾Ü©Ò¦³¯¸¥x¡C
-    3. board ¬O³o±ø³W«h¾A¥Î©ó­ş¨Ç¬İªO¡A¤]¥i¥H¿ï¾Ü©Ò¦³¬İªO¡C
-    4. type ¬O³o±ø³W«hÀË¬d­ş¤@Äæ¦ì¡C
-    5. detail ¬O³o±ø³W«hªº¤º®e¡C
+    2. path æ˜¯é€™æ¢è¦å‰‡é©ç”¨æ–¼å“ªäº›ç«™è½‰ä¾†çš„æ–‡ç« ï¼Œä¹Ÿå¯ä»¥é¸æ“‡æ‰€æœ‰ç«™å°ã€‚
+    3. board æ˜¯é€™æ¢è¦å‰‡é©ç”¨æ–¼å“ªäº›çœ‹æ¿ï¼Œä¹Ÿå¯ä»¥é¸æ“‡æ‰€æœ‰çœ‹æ¿ã€‚
+    4. type æ˜¯é€™æ¢è¦å‰‡æª¢æŸ¥å“ªä¸€æ¬„ä½ã€‚
+    5. detail æ˜¯é€™æ¢è¦å‰‡çš„å…§å®¹ã€‚
 
 
-  * §Ú¥i¥H¸ò­ş¨Ç news-server Âà«H¡H
+  * æˆ‘å¯ä»¥è·Ÿå“ªäº› news-server è½‰ä¿¡ï¼Ÿ
 
-    ¦b¦¹¦C¥X¤@¨Ç±`¨£ªº news-server¡G
+    åœ¨æ­¤åˆ—å‡ºä¸€äº›å¸¸è¦‹çš„ news-serverï¼š
 
-    1. ¥æ³q¤j¾Ç  netnews.nctu.edu.tw   POST(119)
-    2. ¥æ¤j¸ê¬ì  news.cis.nctu.edu.tw  POST(119)
-    3. ¥æ¤jÀ³¼Æ  news.math.nctu.edu.tw POST(119)
-    4. ¤¤¤s¤j¾Ç  news.nsysu.edu.tw     POST(119)
-    5. ¤¤¿³¤j¾Ç  news.nchu.edu.tw      POST(119)
+    1. äº¤é€šå¤§å­¸  netnews.nctu.edu.tw   POST(119)
+    2. äº¤å¤§è³‡ç§‘  news.cis.nctu.edu.tw  POST(119)
+    3. äº¤å¤§æ‡‰æ•¸  news.math.nctu.edu.tw POST(119)
+    4. ä¸­å±±å¤§å­¸  news.nsysu.edu.tw     POST(119)
+    5. ä¸­èˆˆå¤§å­¸  news.nchu.edu.tw      POST(119)
     6. Hinet     news.hinet.net        POST(119)
 
-    µM¦Ó³o¨Ç news-server ©¹©¹³£¦³¨ä¦s¨ú­­¨î¡A¨Ò¦p Hinet ªº¦øªA¾¹¶È­­ Hinet
-    ªº¥Î¤á¦s¨ú¡C
+    ç„¶è€Œé€™äº› news-server å¾€å¾€éƒ½æœ‰å…¶å­˜å–é™åˆ¶ï¼Œä¾‹å¦‚ Hinet çš„ä¼ºæœå™¨åƒ…é™ Hinet
+    çš„ç”¨æˆ¶å­˜å–ã€‚
 
-    ­Y±z¤£ª¾¹D¶Q³æ¦ì±MÄİªº news-server¡A½Ğ«ê­pºâ¾÷¤¤¤ßµ¥¬ÛÃö³æ¦ì¡C
+    è‹¥æ‚¨ä¸çŸ¥é“è²´å–®ä½å°ˆå±¬çš„ news-serverï¼Œè«‹æ°è¨ˆç®—æ©Ÿä¸­å¿ƒç­‰ç›¸é—œå–®ä½ã€‚
 
 
-  * §Ú­n«ç»ò±oª¾­ş­Ó newsgroup ¬O¹ïÀ³­ş­Ó°Q½×°Ï¡H
+  * æˆ‘è¦æ€éº¼å¾—çŸ¥å“ªå€‹ newsgroup æ˜¯å°æ‡‰å“ªå€‹è¨è«–å€ï¼Ÿ
 
-    ¹ï©ó¤@¯ëªº¤j²³Âà«HªO¡A¦b³\¦h news-server ¤W³£¦³¨ä¹ïÀ³ªº¸s²Õ¡C¤@¨Ç±`¨£
-    ªº tw.bbs.* ¸s²Õ¹ï·Óªí½Ğ°Ñ¦Ò³o­Óºô¯¸¡G
+    å°æ–¼ä¸€èˆ¬çš„å¤§çœ¾è½‰ä¿¡æ¿ï¼Œåœ¨è¨±å¤š news-server ä¸Šéƒ½æœ‰å…¶å°æ‡‰çš„ç¾¤çµ„ã€‚ä¸€äº›å¸¸è¦‹
+    çš„ tw.bbs.* ç¾¤çµ„å°ç…§è¡¨è«‹åƒè€ƒé€™å€‹ç¶²ç«™ï¼š
     http://www.csie.nctu.edu.tw/~cdsheen/pnews/index.php
 
 
-  * §Ú­n«ç»ò±oª¾ news-server ¤W¦³¤°»ò newsgroup¡H
+  * æˆ‘è¦æ€éº¼å¾—çŸ¥ news-server ä¸Šæœ‰ä»€éº¼ newsgroupï¼Ÿ
 
     % telnet news.cs.nthu.edu.tw 119 > file
     list
     quit
 
-    ¨º»ò¦b file ³o­ÓÀÉ®×¸Ì­±´N°O¿ı¤F bbs.cs.nthu.edu.tw ³o­Ó news-server
-    ¤Wªº©Ò¦³ newsgroup ¤F¡C
+    é‚£éº¼åœ¨ file é€™å€‹æª”æ¡ˆè£¡é¢å°±è¨˜éŒ„äº† bbs.cs.nthu.edu.tw é€™å€‹ news-server
+    ä¸Šçš„æ‰€æœ‰ newsgroup äº†ã€‚
 
 
-  * ¦p¦ó¤@¦¸§ì³\¦h½g¤å³¹¡H
+  * å¦‚ä½•ä¸€æ¬¡æŠ“è¨±å¤šç¯‡æ–‡ç« ï¼Ÿ
 
-    bbslink ¹w³]¤@¦¸¥u§ì 100 «Ê«H¡A¦pªG­n§ì¶W¹L 100 «Êªº¸Ü¡A½Ğ¨Ï¥Î -a
-    ³o­Ó°Ñ¼Æ¡C
+    bbslink é è¨­ä¸€æ¬¡åªæŠ“ 100 å°ä¿¡ï¼Œå¦‚æœè¦æŠ“è¶…é 100 å°çš„è©±ï¼Œè«‹ä½¿ç”¨ -a
+    é€™å€‹åƒæ•¸ã€‚
     % innd/bbslink -a 500 -s site
-    ¨ä¤¤ site ¬O°O¿ı¦b nodelist.bbs ¸Ìªº­^¤å¯¸¦W¡C
+    å…¶ä¸­ site æ˜¯è¨˜éŒ„åœ¨ nodelist.bbs è£¡çš„è‹±æ–‡ç«™åã€‚
 
 
-  * ¦pªG§ì¹L¥hªº¤å³¹¡H
+  * å¦‚æœæŠ“éå»çš„æ–‡ç« ï¼Ÿ
 
-    ¦pªG±z·Q¦¬¹L¥h¤w¸g§ì¹Lªº«H¡A¨º»ò½Ğ­×§ï newsfeeds.bbs ¤¤ªº high-number
-    (±N³o¼Æ¦rÅÜ¤p¡A¦Ü©ó­n´î¤p¦h¤Ö¡A¨ú¨M©ó±z­n§ì´X«Ê¹L¥hªº«H)¡C
+    å¦‚æœæ‚¨æƒ³æ”¶éå»å·²ç¶“æŠ“éçš„ä¿¡ï¼Œé‚£éº¼è«‹ä¿®æ”¹ newsfeeds.bbs ä¸­çš„ high-number
+    (å°‡é€™æ•¸å­—è®Šå°ï¼Œè‡³æ–¼è¦æ¸›å°å¤šå°‘ï¼Œå–æ±ºæ–¼æ‚¨è¦æŠ“å¹¾å°éå»çš„ä¿¡)ã€‚
 
-    1. ­º¥ı°õ¦æ¥H¤U¡A´N·|§â³o­Ó¯¸ªº©Ò¦³¸s²Õ¤§ high-number §ó·s¡C
+    1. é¦–å…ˆåŸ·è¡Œä»¥ä¸‹ï¼Œå°±æœƒæŠŠé€™å€‹ç«™çš„æ‰€æœ‰ç¾¤çµ„ä¹‹ high-number æ›´æ–°ã€‚
        % innd/bbslink -c -s site
 
-    2. ¨ä¦¸§ï newsfeeds.bbs ¤¤¸Ó¸s²Õªº high-number¡C
-       ¦pªG·Q§ì¤@¤d«Ê«H¡A´N§â­ì¨Óªº¼Æ¦r´î¤@¤d¡C
+    2. å…¶æ¬¡æ”¹ newsfeeds.bbs ä¸­è©²ç¾¤çµ„çš„ high-numberã€‚
+       å¦‚æœæƒ³æŠ“ä¸€åƒå°ä¿¡ï¼Œå°±æŠŠåŸä¾†çš„æ•¸å­—æ¸›ä¸€åƒã€‚
 
-    3. µM«á°õ¦æ¥H¤U¡A´N·|¤@¦¸§ì 1000 «Ê¡C
+    3. ç„¶å¾ŒåŸ·è¡Œä»¥ä¸‹ï¼Œå°±æœƒä¸€æ¬¡æŠ“ 1000 å°ã€‚
        % innd/bbslink -a 1000 -s site
 
 
-  * ¦pªG·Q¦¬¨ä¥L¯¸ªº³s½u¬å«Hªº¸Ü¡A«ç»ò°µ¡H
+  * å¦‚æœæƒ³æ”¶å…¶ä»–ç«™çš„é€£ç·šç ä¿¡çš„è©±ï¼Œæ€éº¼åšï¼Ÿ
 
-    BBS ¯¸¹ïÂà¡A±N¦Û°Ê¦³³s½u¬å«Hªº¥\¯à¡A¤£»İ­n¥t¥~³]©w¡C
+    BBS ç«™å°è½‰ï¼Œå°‡è‡ªå‹•æœ‰é€£ç·šç ä¿¡çš„åŠŸèƒ½ï¼Œä¸éœ€è¦å¦å¤–è¨­å®šã€‚
 
-    ­Y·Q§ì news-server ªº³s½u¬å«Hªº¸Ü¡A¨º»ò½Ğ¦b newsfeeds.bbs ¤¤¥[¤J
+    è‹¥æƒ³æŠ“ news-server çš„é€£ç·šç ä¿¡çš„è©±ï¼Œé‚£éº¼è«‹åœ¨ newsfeeds.bbs ä¸­åŠ å…¥
 
     SiteA        control.cancel           -> junk   big5
     SiteB        control.cancel           -> junk   big5
 
-    ¨C­Ó¨S¦³³QÁı«Hªº¯¸¥x³£­n¥[¤J¤@¦¸¡C
+    æ¯å€‹æ²’æœ‰è¢«é¤µä¿¡çš„ç«™å°éƒ½è¦åŠ å…¥ä¸€æ¬¡ã€‚
 
 
-  * ¦pªG·Q¦¬ NoCeM ªº¾×«H¾÷¨î¡A«ç»ò°µ¡H
+  * å¦‚æœæƒ³æ”¶ NoCeM çš„æ“‹ä¿¡æ©Ÿåˆ¶ï¼Œæ€éº¼åšï¼Ÿ
 
-    ­º¥ı±z¥²¶·¥ı§ä¤@­Ó¦³ tw.bbs.admin ³o­Ó¸s²Õªº news-server¡A³q±`±z¦¬
-    tw.bbs.* ¸s²Õªº¨º¥x³£·|¦³³o­Ó¸s²Õ¡C
+    é¦–å…ˆæ‚¨å¿…é ˆå…ˆæ‰¾ä¸€å€‹æœ‰ tw.bbs.admin é€™å€‹ç¾¤çµ„çš„ news-serverï¼Œé€šå¸¸æ‚¨æ”¶
+    tw.bbs.* ç¾¤çµ„çš„é‚£å°éƒ½æœƒæœ‰é€™å€‹ç¾¤çµ„ã€‚
 
-    ¦pªG±z¤w¸g³Q³o¥x news-server Áı«H¡A¨º»ò±z¤°»ò³£¤£»İ­n³]©w¡A¥u»İ­n½Ğ¸Ó
-    news-server ±N tw.bbs.admin ¥D°ÊÁıµ¹±z§Y¥i¡C
+    å¦‚æœæ‚¨å·²ç¶“è¢«é€™å° news-server é¤µä¿¡ï¼Œé‚£éº¼æ‚¨ä»€éº¼éƒ½ä¸éœ€è¦è¨­å®šï¼Œåªéœ€è¦è«‹è©²
+    news-server å°‡ tw.bbs.admin ä¸»å‹•é¤µçµ¦æ‚¨å³å¯ã€‚
 
-    ¦pªG±z¨S¦³³Q³o¥x news-server Áı«H¡A¨º»ò±z­n¦b newsfeeds.bbs ¥[¤J
+    å¦‚æœæ‚¨æ²’æœ‰è¢«é€™å° news-server é¤µä¿¡ï¼Œé‚£éº¼æ‚¨è¦åœ¨ newsfeeds.bbs åŠ å…¥
 
     SiteA        tw.bbs.admin             -> junk   big5
 
-    ¨ä¤¤ SiteA ´N¬O¦³ tw.bbs.admin ³o­Ó¸s²Õªº news-server¡C
+    å…¶ä¸­ SiteA å°±æ˜¯æœ‰ tw.bbs.admin é€™å€‹ç¾¤çµ„çš„ news-serverã€‚
 
 
-  * µLªk BBS ¯¸¹ïÂà¡H
+  * ç„¡æ³• BBS ç«™å°è½‰ï¼Ÿ
 
-    ¤j³¡¤À BBS ¹ïÂà¥¢±Ñªº­ì¦]¡A³£¬O¦]¬°¹ï¤è¨S¦³§â±z¥[¤J nodelist.bbs¡A
-    ½Ğ¸ÕµÛ³s¹ï¤è BBS ¯¸ªº innbbsd port¡A¨Ò¦p¡G
+    å¤§éƒ¨åˆ† BBS å°è½‰å¤±æ•—çš„åŸå› ï¼Œéƒ½æ˜¯å› ç‚ºå°æ–¹æ²’æœ‰æŠŠæ‚¨åŠ å…¥ nodelist.bbsï¼Œ
+    è«‹è©¦è‘—é€£å°æ–¹ BBS ç«™çš„ innbbsd portï¼Œä¾‹å¦‚ï¼š
     % telnet bbs.tnfsh.tn.edu.tw 7777
-    ¦pªG¥X²{³o¼Ëªº°T®§¡G502 ±z¤£¦b¥»¯¸ªº nodelist.bbs ¦W³æ¤¤¡A
-    ¨º»ò½Ğ¹ï¤èªº¯¸ªø§â±z¥[¤J nodelist.bbs¡C
+    å¦‚æœå‡ºç¾é€™æ¨£çš„è¨Šæ¯ï¼š502 æ‚¨ä¸åœ¨æœ¬ç«™çš„ nodelist.bbs åå–®ä¸­ï¼Œ
+    é‚£éº¼è«‹å°æ–¹çš„ç«™é•·æŠŠæ‚¨åŠ å…¥ nodelist.bbsã€‚
 
-    ¥Ò¯¸©M¤A¯¸¤G­Ó BBS ¯¸¹ïÂà¡A¥Ò¯¸¤W¥i¥H¬İ¨ì¤A¯¸ªº«H¡A¤A¯¸¤W¤£¯à¬İ¨ì¥Ò¯¸ªº
-    «H¡A¨º»ò¥X°İÃDªº¬O¥Ò¯¸¡A¤£¬O¤A¯¸¡C
+    ç”²ç«™å’Œä¹™ç«™äºŒå€‹ BBS ç«™å°è½‰ï¼Œç”²ç«™ä¸Šå¯ä»¥çœ‹åˆ°ä¹™ç«™çš„ä¿¡ï¼Œä¹™ç«™ä¸Šä¸èƒ½çœ‹åˆ°ç”²ç«™çš„
+    ä¿¡ï¼Œé‚£éº¼å‡ºå•é¡Œçš„æ˜¯ç”²ç«™ï¼Œä¸æ˜¯ä¹™ç«™ã€‚
 
-    ±z¤]¥i¥H¦b bbslink ¥[°Ñ¼Æ -v¡A¨Ó¨q¥X¸Ô²Óªº°T®§¡A¬İ¬O¥d¦b­ş¸Ì¡C
+    æ‚¨ä¹Ÿå¯ä»¥åœ¨ bbslink åŠ åƒæ•¸ -vï¼Œä¾†ç§€å‡ºè©³ç´°çš„è¨Šæ¯ï¼Œçœ‹æ˜¯å¡åœ¨å“ªè£¡ã€‚
     % innd/bbslink -v
 
 
-  * µLªk¸ò news-server §ì«H¡H
+  * ç„¡æ³•è·Ÿ news-server æŠ“ä¿¡ï¼Ÿ
 
-    ¤j³¡¤À©M news-server Âà«H¥¢±Ñªº­ì¦]¡A³£¬O¦]¬°±z¦b¨º news-server ¨S¦³Åv
-    ­­¡A½Ğ¸ÕµÛ³s¹ï¤è news-server ªº innd port¡A¨Ò¦p¡G
+    å¤§éƒ¨åˆ†å’Œ news-server è½‰ä¿¡å¤±æ•—çš„åŸå› ï¼Œéƒ½æ˜¯å› ç‚ºæ‚¨åœ¨é‚£ news-server æ²’æœ‰æ¬Š
+    é™ï¼Œè«‹è©¦è‘—é€£å°æ–¹ news-server çš„ innd portï¼Œä¾‹å¦‚ï¼š
     % telnet news.cs.nthu.edu.tw 119
-    ¦pªG¨S¦³¥X²{ (posting ok) ªº°T®§¡A¥Nªí±z¨S¦³¦b¨º¾÷¾¹ post ªºÅv­­¡C
+    å¦‚æœæ²’æœ‰å‡ºç¾ (posting ok) çš„è¨Šæ¯ï¼Œä»£è¡¨æ‚¨æ²’æœ‰åœ¨é‚£æ©Ÿå™¨ post çš„æ¬Šé™ã€‚
 
-    ±z¤]¥i¥H¦b bbslink ¥[°Ñ¼Æ -v¡A¨Ó¨q¥X¸Ô²Óªº°T®§¡A¬İ¬O¥d¦b­ş¸Ì¡C
+    æ‚¨ä¹Ÿå¯ä»¥åœ¨ bbslink åŠ åƒæ•¸ -vï¼Œä¾†ç§€å‡ºè©³ç´°çš„è¨Šæ¯ï¼Œçœ‹æ˜¯å¡åœ¨å“ªè£¡ã€‚
     % innd/bbslink -v
 
 
-  * ¦pªG·Q shutdown innbbsd ªº¸Ü¡A«ç»ò°µ¡H
+  * å¦‚æœæƒ³ shutdown innbbsd çš„è©±ï¼Œæ€éº¼åšï¼Ÿ
 
     % kill `tail -1 run/innbbsd-7777.pid | awk '{print $$1}'`
 
 
-  * ¦p¦ó§â¯¸¤WªºÂÂ«H¦A°e¥X¥h¤@¦¸¡H
+  * å¦‚ä½•æŠŠç«™ä¸Šçš„èˆŠä¿¡å†é€å‡ºå»ä¸€æ¬¡ï¼Ÿ
 
-    % bin/outgo ¬İªO °_ÂI ²×ÂI
-    ¬İªO´N¬O­nÂà¥Xªº¬İªO­^¤å¦W¡C
-    °_ÂI¡B²×ÂI´N¬O«ü©w±q²Ä´X½g¤å³¹Âà¨ì²Ä´X½g¤å³¹¡C
-    ³o¼Ë´N·|§â¬İªOªº¤å³¹¦A¥[¨ì innd/out.bntp¡A¦p¦¹ bbslink ´N·|§â«H¦A°e¤@
-    ¹M¡C
+    % bin/outgo çœ‹æ¿ èµ·é» çµ‚é»
+    çœ‹æ¿å°±æ˜¯è¦è½‰å‡ºçš„çœ‹æ¿è‹±æ–‡åã€‚
+    èµ·é»ã€çµ‚é»å°±æ˜¯æŒ‡å®šå¾ç¬¬å¹¾ç¯‡æ–‡ç« è½‰åˆ°ç¬¬å¹¾ç¯‡æ–‡ç« ã€‚
+    é€™æ¨£å°±æœƒæŠŠçœ‹æ¿çš„æ–‡ç« å†åŠ åˆ° innd/out.bntpï¼Œå¦‚æ­¤ bbslink å°±æœƒæŠŠä¿¡å†é€ä¸€
+    éã€‚
 
 --
-                                                    ¥æ¤j¹q¤l §ù¦t°a
+                                                    äº¤å¤§é›»å­ æœå®‡è»’
                                E-Mail: <a href=mailto:itoc.bbs@bbs.tnfsh.tn.edu.tw>itoc.bbs@bbs.tnfsh.tn.edu.tw</a>
                               WWW: <a href=http://processor.tfcis.org/~itoc>http://processor.tfcis.org/~itoc</a>
 

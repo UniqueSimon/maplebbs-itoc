@@ -2,38 +2,38 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=big5">
 <meta http-equiv=Content-Language content=zh-tw>
-<title>MapleBBS �������</title>
+<title>MapleBBS 說明文件</title>
 </head>
 
 <body>
 
 <center><table><tr><td><pre>
 
-                       <font color="#008000">�� �[�]²�餤�媺 BBS �� ��</font>
+                       <font color="#008000">★ 架設簡體中文的 BBS 站 ★</font>
 
 
-  <a href='#1'>�@�B�c��N�X -> ²��N�X</a>
-  <a href='#2'>�G�B�B�z Big5 �����O \ ���r</a>
-  <a href='#3'>�T�B�λy����</a>
-  <a href='#4'>�|�B��H�{��</a>
-  <a href='#5'>���B�r���]�w</a>
+  <a href='#1'>一、繁體代碼 -> 簡體代碼</a>
+  <a href='#2'>二、處理 Big5 結尾是 \ 的字</a>
+  <a href='#3'>三、用語異動</a>
+  <a href='#4'>四、轉信程式</a>
+  <a href='#5'>五、字集設定</a>
 
 
-    �����O�g���n�w�� itoc �Һ��@�� bbs �{�������ҨϥΪ��A�ä��A��
-  ��L bbs �����C
+    本文件是寫給要安裝 itoc 所維護的 bbs 程式版本所使用的，並不適用
+  其他 bbs 版本。
 
   <a name='1'></a>
-  <font color="#000080"><u>�@�B�c��N�X -> ²��N�X</u></font>
+  <font color="#000080"><u>一、繁體代碼 -> 簡體代碼</u></font>
 
-    �o�����i�H�a�@�ǳn��ӧ����A�Ҧp FreeBSD �U�� autogb�A�ðt�X�@�Ӥp�p��
-  script �ӧ����C
+    這部分可以靠一些軟件來完成，例如 FreeBSD 下用 autogb，並配合一個小小的
+  script 來完成。
 
 #!/bin/sh
 
-# filelist �̭��g�۩Ҧ��ɮ׸��|
+# filelist 裡面寫著所有檔案路徑
 filelist="xx.c xx.h";
 
-# �c��->²��
+# 繁體->簡體
 for i in $filelist
 do
   autogb < $i > $i.new;
@@ -41,27 +41,27 @@ do
 done
 
   <a name='2'></a>
-  <font color="#000080"><u>�G�B�B�z Big5 �����O \ ���r</u></font>
+  <font color="#000080"><u>二、處理 Big5 結尾是 \ 的字</u></font>
 
-    �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\
-    �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\
-    �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\
-    �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\ �\
-    �\ �\ �\ �\ �\ �\ �\ �\
+    兝 α 么 功 吒 吭 沔 坼 歿 俞 枯 苒 娉 珮 豹 崤 淚 許 廄 琵
+    跚 愧 稞 鈾 暝 蓋 墦 穀 閱 璞 餐 縷 擺 黠 孀 髏 躡 ? ? 尐
+    佢 汻 岤 狖 垥 柦 胐 娖 涂 罡 偅 惝 牾 莍 傜 揊 焮 茻 鄃 幋
+    滜 綅 赨 塿 槙 箤 踊 嫹 潿 蔌 醆 嬞 獦 螏 餤 燡 螰 駹 礒 鎪
+    瀙 酀 瀵 騱 酅 贕 鱋 鱭
 
-    �H�W�o�Ǧr�b Big5 �������O '\'�A�ɭP�b big5->gb �ɷ|���N�X�h�X '\'�A
-  �Ф�ʱN���̧R���C
+    以上這些字在 Big5 中結尾是 '\'，導致在 big5->gb 時會讓代碼多出 '\'，
+  請手動將它們刪除。
 
   <a name='3'></a>
-  <font color="#000080"><u>�T�B�λy����</u></font>
+  <font color="#000080"><u>三、用語異動</u></font>
 
-    �⩤���ǥλy���ӬۦP�A�N�o�@�@��ʽվ�C
+    兩岸有些用語不太相同，就得一一手動調整。
 
   <a name='4'></a>
-  <font color="#000080"><u>�|�B��H�{��</u></font>
+  <font color="#000080"><u>四、轉信程式</u></font>
 
-    ��H�������n���@�Ǥp�ܰʡA�令�H�U�o�˥H��N�i�H������ big5 ��
-  newsgroup ��H�C
+    轉信的部分要做一些小變動，改成以下這樣以後就可以直接跟 big5 的
+  newsgroup 轉信。
 
 : src/innbbsd/rec_article.c receive_article()
 
@@ -98,12 +98,12 @@ done
 + }
 
   <a name='5'></a>
-  <font color="#000080"><u>���B�r���]�w</u></font>
+  <font color="#000080"><u>五、字集設定</u></font>
 
-    �� config.h ���� MYCHARSET �� "gb2312" �Ψ�L�C
+    改 config.h 中的 MYCHARSET 為 "gb2312" 或其他。
 
 --
-                                                    ��j�q�l ���t�a
+                                                    交大電子 杜宇軒
                                E-Mail: <a href=mailto:itoc.bbs@bbs.tnfsh.tn.edu.tw>itoc.bbs@bbs.tnfsh.tn.edu.tw</a>
                               WWW: <a href=http://processor.tfcis.org/~itoc>http://processor.tfcis.org/~itoc</a>
 

@@ -2,81 +2,81 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=big5">
 <meta http-equiv=Content-Language content=zh-tw>
-<title>MapleBBS »¡©ú¤å¥ó</title>
+<title>MapleBBS èªªæ˜æ–‡ä»¶</title>
 </head>
 
 <body>
 
 <center><table><tr><td><pre>
 
-                       <font color="#008000">¡¹ Crontab ³]©w¤â¥U ¡¹</font>
+                       <font color="#008000">â˜… Crontab è¨­å®šæ‰‹å†Š â˜…</font>
 
-  <a href='#1'>¤@¡B³]©w Crontab</a>
+  <a href='#1'>ä¸€ã€è¨­å®š Crontab</a>
 
 
-    ¥»¤å¥ó¬O¼gµ¹­n¦w¸Ë itoc ©ÒºûÅ@ªº bbs µ{¦¡ª©¥»©Ò¨Ï¥Îªº¡A¨Ã¤£¾A¥Î
-  ¨ä¥L bbs ª©¥»¡C
+    æœ¬æ–‡ä»¶æ˜¯å¯«çµ¦è¦å®‰è£ itoc æ‰€ç¶­è­·çš„ bbs ç¨‹å¼ç‰ˆæœ¬æ‰€ä½¿ç”¨çš„ï¼Œä¸¦ä¸é©ç”¨
+  å…¶ä»– bbs ç‰ˆæœ¬ã€‚
 
   <a name='1'></a>
-  <font color="#000080"><u>¤@¡B³]©w Crontab</u></font>
+  <font color="#000080"><u>ä¸€ã€è¨­å®š Crontab</u></font>
 
-    ¥H bbs ¨­¤Àµn¤J¡C
+    ä»¥ bbs èº«åˆ†ç™»å…¥ã€‚
 
   -bbs- % <font color="#0000FF">crontab -e</font>
-          ¥[¤J¥H¤U¼Æ¦æ¡C
+          åŠ å…¥ä»¥ä¸‹æ•¸è¡Œã€‚
 
 #!/bin/sh
 # minute hour monthday month weekday command
 
-# ¨C¤p®É¹ï¨ä¥L BBS ¤Î news server Âà«H¤­¦¸
+# æ¯å°æ™‚å°å…¶ä»– BBS åŠ news server è½‰ä¿¡äº”æ¬¡
 10,22,34,46,58 * * * * innd/bbslink > /dev/null 2>&1
 
-# ¨C¤p®É§@¤@¦¸¸ÜÃD²Î­p
+# æ¯å°æ™‚ä½œä¸€æ¬¡è©±é¡Œçµ±è¨ˆ
 20 * * * * bin/poststat > /dev/null 2>&1
 
-# ¨C¤p®É§@¤@¦¸¾ú¥v­y¸ñ
+# æ¯å°æ™‚ä½œä¸€æ¬¡æ­·å²è»Œè·¡
 25 * * * * bin/counter > /dev/null 2>&1
 
-# ¨C¤p®É§@¤@¦¸¤H¦¸²Î­p¤Î¶}²¼ account (account­n¦b¨C¤p®É 1-5 ¤À¶])
+# æ¯å°æ™‚ä½œä¸€æ¬¡äººæ¬¡çµ±è¨ˆåŠé–‹ç¥¨ account (accountè¦åœ¨æ¯å°æ™‚ 1-5 åˆ†è·‘)
 1 * * * * bin/account > /dev/null 2>&1
 
-# ¨C¤p®É§ó·s¤@¦¸°ÊºA¬İªO(¦]¬°¦³ÂIºq¨ì°ÊºA¬İªO¡A©Ò¥HÀW²v°ª¤@¨Ç)
+# æ¯å°æ™‚æ›´æ–°ä¸€æ¬¡å‹•æ…‹çœ‹æ¿(å› ç‚ºæœ‰é»æ­Œåˆ°å‹•æ…‹çœ‹æ¿ï¼Œæ‰€ä»¥é »ç‡é«˜ä¸€äº›)
 6 * * * * bin/camera > /dev/null 2>&1
 
-# ®ğ¶H³ø§i¡A¨C¤p®É§ì¤@¦¸
+# æ°£è±¡å ±å‘Šï¼Œæ¯å°æ™‚æŠ“ä¸€æ¬¡
 #1 * * * * src/sh/weather.sh > /dev/null 2>&1
 
-# ¨C¤Ñ 3:50PM Âà´«ªÑ¥«®æ¦¡
+# æ¯å¤© 3:50PM è½‰æ›è‚¡å¸‚æ ¼å¼
 50 15 * * * bin/stock-open > /dev/null 2>&1
 
-# ¨C¤Ñ 10:30AM 4:30PM §ì©_¼¯·s»D
+# æ¯å¤© 10:30AM 4:30PM æŠ“å¥‡æ‘©æ–°è
 30 10,16 * * * bin/enews-open > /dev/null 2>&1
 
-# ¨C¤Ñ°µ¤@¦¸±Æ¦æº]²Î­p
+# æ¯å¤©åšä¸€æ¬¡æ’è¡Œæ¦œçµ±è¨ˆ
 28 3 * * * bin/topgem > /dev/null 2>&1
 30 3 * * * bin/topsong > /dev/null 2>&1
 32 3 * * * bin/topusr > /dev/null 2>&1
 
-# ¨C¤Ñ®Ú¾Ú expire.conf ¹ï¬İªO¤å³¹§@ expire
+# æ¯å¤©æ ¹æ“š expire.conf å°çœ‹æ¿æ–‡ç« ä½œ expire
 29 3 * * * bin/expire > /dev/null 2>&1
 
-# ¨C¤Ñ¹ïºëµØ°Ï§@¯Á¤ŞÀÉ¡A¤è«K¨Ï¥ÎªÌ·j´M
+# æ¯å¤©å°ç²¾è¯å€ä½œç´¢å¼•æª”ï¼Œæ–¹ä¾¿ä½¿ç”¨è€…æœå°‹
 40 3 * * * bin/gem-index > /dev/null 2>&1
 
-# ¨C¤Ñ²M²z­Ó¤H«H½c
+# æ¯å¤©æ¸…ç†å€‹äººä¿¡ç®±
 0 4 * * * bin/bquota > /dev/null 2>&1
 
-# ¨C¬P´Á²M²z¤[¥¼¤W¯¸¨Ï¥ÎªÌ¡A²M¥Xªº user ·|³Q·h¦Ü usr/@ ¥Ø¿ı¤U¡A½Ğ¦Û¦æ¦A§R°£
+# æ¯æ˜ŸæœŸæ¸…ç†ä¹…æœªä¸Šç«™ä½¿ç”¨è€…ï¼Œæ¸…å‡ºçš„ user æœƒè¢«æ¬è‡³ usr/@ ç›®éŒ„ä¸‹ï¼Œè«‹è‡ªè¡Œå†åˆªé™¤
 50 3 * * 3 bin/reaper > /dev/null 2>&1
 
-# bbs ³Æ¥÷¡A¬°­°§C load¡A¨C¶g¥|¤Ñ¤À´²³Æ¥÷¤£¦Pªº¥Ø¿ı
+# bbs å‚™ä»½ï¼Œç‚ºé™ä½ loadï¼Œæ¯é€±å››å¤©åˆ†æ•£å‚™ä»½ä¸åŒçš„ç›®éŒ„
 4 3 * * 2  bin/backupbrd > /dev/null 2>&1
 4 3 * * 3  bin/backupgem > /dev/null 2>&1
 4 3 * * 4  bin/backupusr > /dev/null 2>&1
 4 3 * * 5  bin/backupoth > /dev/null 2>&1
 
 --
-                                                    ¥æ¤j¹q¤l §ù¦t°a
+                                                    äº¤å¤§é›»å­ æœå®‡è»’
                                E-Mail: <a href=mailto:itoc.bbs@bbs.tnfsh.tn.edu.tw>itoc.bbs@bbs.tnfsh.tn.edu.tw</a>
                               WWW: <a href=http://processor.tfcis.org/~itoc>http://processor.tfcis.org/~itoc</a>
 

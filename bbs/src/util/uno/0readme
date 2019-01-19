@@ -1,22 +1,22 @@
-  ¥H¤U´X¤äµ{¦¡¬O®³¨Ó¸Ñ¨M Maple3 userno ­«ÂĞ°İÃDªº¡G
+  ä»¥ä¸‹å¹¾æ”¯ç¨‹å¼æ˜¯æ‹¿ä¾†è§£æ±º Maple3 userno é‡è¦†å•é¡Œçš„ï¼š
                                                                                 
-  collect_uno           ±q usr/_/* ©³¤U©Ò¦³ªº .ACCT ¦¬¶°¥ş¯¸ªº userno¡A°O¿ı©ó all_user_uno
-  conflict_uno          ¥i¥H§â all_user_uno ªºµ²ªGÂ²³æ¤ÀªR¡A¨q¥X­«ÂĞªº userno
-  fix_uno               ­«³]©Ò¦³¤Hªº userno¡A¨Ã­««Ø pal/list.?/aloha/frienz/benz
+  collect_uno           å¾ usr/_/* åº•ä¸‹æ‰€æœ‰çš„ .ACCT æ”¶é›†å…¨ç«™çš„ usernoï¼Œè¨˜éŒ„æ–¼ all_user_uno
+  conflict_uno          å¯ä»¥æŠŠ all_user_uno çš„çµæœç°¡å–®åˆ†æï¼Œç§€å‡ºé‡è¦†çš„ userno
+  fix_uno               é‡è¨­æ‰€æœ‰äººçš„ usernoï¼Œä¸¦é‡å»º pal/list.?/aloha/frienz/benz
                                                                                 
-  ¥¿½T¨Ï¥Îªº¶¶§Ç¡G
+  æ­£ç¢ºä½¿ç”¨çš„é †åºï¼š
 
-  1. ½Ğ¥ı³Æ¥÷ usr/
-  2. °õ¦æ«e¥ı½ğ¤HÃö¯¸
+  1. è«‹å…ˆå‚™ä»½ usr/
+  2. åŸ·è¡Œå‰å…ˆè¸¢äººé—œç«™
 
-  3. °õ¦æ collect_uno
-  4. °õ¦æ conflict_uno
-  5. ¥i¥H¬İ¨ìµ²ªG¬O§_¦³½s¸¹­«ÂĞ
+  3. åŸ·è¡Œ collect_uno
+  4. åŸ·è¡Œ conflict_uno
+  5. å¯ä»¥çœ‹åˆ°çµæœæ˜¯å¦æœ‰ç·¨è™Ÿé‡è¦†
 
-  6. ¦pªG¦³½s¸¹­«ÂĞªº¸Ü¡A°õ¦æ fix_uno
+  6. å¦‚æœæœ‰ç·¨è™Ÿé‡è¦†çš„è©±ï¼ŒåŸ·è¡Œ fix_uno
 
-  7. ¦A«×°õ¦æ collect_uno
-  8. ¦A«×°õ¦æ conflict_uno
-  9. ¬İ¬İ­«¾ã«áªºµ²ªG¬O§_ÁÙ¦³½s¸¹­«ÂĞ
+  7. å†åº¦åŸ·è¡Œ collect_uno
+  8. å†åº¦åŸ·è¡Œ conflict_uno
+  9. çœ‹çœ‹é‡æ•´å¾Œçš„çµæœæ˜¯å¦é‚„æœ‰ç·¨è™Ÿé‡è¦†
 
- 10. §¹¦¨¡A­«·s¶}¯¸
+ 10. å®Œæˆï¼Œé‡æ–°é–‹ç«™
