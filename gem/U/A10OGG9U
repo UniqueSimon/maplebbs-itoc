@@ -1,39 +1,39 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬ÝªO: plan
-¼Ð  ÃD: Re: Ãö©ó "ª©¥D§R¤å®É¦Û¦æ³]©w²z¥Ñ"
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/02/24 Tue 23:47:52)                Updated: 2006/07/04
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: é—œæ–¼ "ç‰ˆä¸»åˆªæ–‡æ™‚è‡ªè¡Œè¨­å®šç†ç”±"
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/02/24 Tue 23:47:52)                Updated: 2006/07/04
 
-¡° ¤Þ­z¡mLoveforever.bbs@wretch.csie.nctu.edu.tw (³p»»¦p­·..)¡n¤§»Ê¨¥¡G
-> Ãö©ó "ª©¥D§R¤å®É¦Û¦æ³]©w²z¥Ñ"
-> ©Î¬OItoc´¿¸g¦b­þ­Ó¯¸µoªí¹L©O?!
-> ·Q´M§ä³o­Ó¥\¯à
+â€» å¼•è¿°ã€ŠLoveforever.bbs@wretch.csie.nctu.edu.tw (é€é™å¦‚é¢¨..)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> é—œæ–¼ "ç‰ˆä¸»åˆªæ–‡æ™‚è‡ªè¡Œè¨­å®šç†ç”±"
+> æˆ–æ˜¯Itocæ›¾ç¶“åœ¨å“ªå€‹ç«™ç™¼è¡¨éŽå‘¢?!
+> æƒ³å°‹æ‰¾é€™å€‹åŠŸèƒ½
 
-  §â§R°£ªº¤å³¹¥[¤W POST_ERASE ºX¼Ð
+  æŠŠåˆªé™¤çš„æ–‡ç« åŠ ä¸Š POST_ERASE æ——æ¨™
 
 : hdr.h
 
 - #define POST_5        0x00000010
-+ #define POST_ERASE    0x00000010      /* ³Q§R°£ªº¤å³¹ */
++ #define POST_ERASE    0x00000010      /* è¢«åˆªé™¤çš„æ–‡ç«  */
 
 - #define MAIL_5        0x00000010
 + #define MAIL_ERASE    0x00000010
 
-: post.c:post_delete() ¦pªG­n¦³¿é¤J²z¥Ñªº¥\¯à´N³o¼Ë§ï
+: post.c:post_delete() å¦‚æžœè¦æœ‰è¼¸å…¥ç†ç”±çš„åŠŸèƒ½å°±é€™æ¨£æ”¹
 
   if (vans(msg_del_ny) == 'y')
   {
     currchrono = hdr->chrono;
-+   if (by_BM && vget(b_lines, 0, "½Ð¿é¤J§R¤å²z¥Ñ", buf, 40, DOECHO))
-+     sprintf(hdr->title, "%s §R°£²z¥Ñ¡G%s", cuser.userid, buf);
++   if (by_BM && vget(b_lines, 0, "è«‹è¼¸å…¥åˆªæ–‡ç†ç”±", buf, 40, DOECHO))
++     sprintf(hdr->title, "%s åˆªé™¤ç†ç”±ï¼š%s", cuser.userid, buf);
 +   else
-+     sprintf(hdr->title, "<< ¥»¤å³¹¸g %s §R°£ >>", cuser.userid);
++     sprintf(hdr->title, "<< æœ¬æ–‡ç« ç¶“ %s åˆªé™¤ >>", cuser.userid);
 +   hdr->xmode = POST_ERASE | (hdr->xmode & POST_BOTTOM);
 
-: post.c:post_delete() ¦pªG¤£­n¦³¿é¤J²z¥Ñªº¥\¯à«h³o¼Ë§ï
+: post.c:post_delete() å¦‚æžœä¸è¦æœ‰è¼¸å…¥ç†ç”±çš„åŠŸèƒ½å‰‡é€™æ¨£æ”¹
 
   if (vans(msg_del_ny) == 'y')
   {
     currchrono = hdr->chrono;
-+   sprintf(hdr->title, "<< ¥»¤å³¹¸g %s §R°£ >>", cuser.userid);
++   sprintf(hdr->title, "<< æœ¬æ–‡ç« ç¶“ %s åˆªé™¤ >>", cuser.userid);
 +   hdr->xmode = POST_ERASE | (hdr->xmode & POST_BOTTOM);
 
 : post.c:post_delete()
@@ -52,9 +52,9 @@
 + if (!stat(fpath, &st))
     by_bm = st.st_size;
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  ¦³ POST_ERASE ºX¼ÐªºÅã¥Ü d¡A¨Ãµø¬°¤wÅª
+  æœ‰ POST_ERASE æ——æ¨™çš„é¡¯ç¤º dï¼Œä¸¦è¦–ç‚ºå·²è®€
 
 : post.c:post_attr()
 
@@ -73,9 +73,9 @@
   else
 #endif
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  ±µ¤U¨Ó­nÅý¦³ POST_ERASE ºX¼Ðªº¤°»ò°Ê§@³£¤£¯à°µ
+  æŽ¥ä¸‹ä¾†è¦è®“æœ‰ POST_ERASE æ——æ¨™çš„ä»€éº¼å‹•ä½œéƒ½ä¸èƒ½åš
 
 : post.c:post_reply()
 
@@ -134,7 +134,7 @@
     return XO_NONE;
 #endif
 
-: xpost.c:XoXpost() ¤Î xpost.c:XoNews()
+: xpost.c:XoXpost() åŠ xpost.c:XoNews()
 
 +   if (head->xmode & POST_ERASE)
 +     continue;
@@ -171,7 +171,7 @@
 + if (xmode & POST_ERASE)
 +   return;
 
-  if (xmode & (GEM_RESTRICT | GEM_RESERVED))  /* ­­¨î¯ÅºëµØ°Ï¤£¯à½Æ»s/¶K¤W */
+  if (xmode & (GEM_RESTRICT | GEM_RESERVED))  /* é™åˆ¶ç´šç²¾è¯å€ä¸èƒ½è¤‡è£½/è²¼ä¸Š */
     return;
 
 : gem.c:gem_gather()
@@ -179,13 +179,13 @@
 +   if (xmode & POST_ERASE)
 +     continue;
 
-    if (xmode & (GEM_RESTRICT | GEM_RESERVED))  /* ­­¨î¯ÅºëµØ°Ï¤£¯à©wÁã¦¬¿ý */
+    if (xmode & (GEM_RESTRICT | GEM_RESERVED))  /* é™åˆ¶ç´šç²¾è¯å€ä¸èƒ½å®šéŒ¨æ”¶éŒ„ */
       continue;
 
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  ³Ì«á¦b expire ®É­n¬å±¼¦³ POST_ERASE ºX¼Ðªº¤å³¹
+  æœ€å¾Œåœ¨ expire æ™‚è¦ç æŽ‰æœ‰ POST_ERASE æ——æ¨™çš„æ–‡ç« 
 
 : expire.c:expire()
 
@@ -203,5 +203,5 @@
 
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35m140.113.191.193 [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ž [35m140.113.191.193 [30mç™¼è¡¨[m

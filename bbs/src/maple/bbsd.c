@@ -37,7 +37,7 @@ static pid_t currpid;
 extern BCACHE *bshm;
 extern UCACHE *ushm;
 
-/* static int mport; */ /* Thor.990325: ¤£»İ­n¤F:P */
+/* static int mport; */ /* Thor.990325: ä¸éœ€è¦äº†:P */
 static u_long tn_addr;
 
 
@@ -53,12 +53,12 @@ extern time_t mode_lastchange;
 
 
 /* ----------------------------------------------------- */
-/* Â÷¶} BBS µ{¦¡					 */
+/* é›¢é–‹ BBS ç¨‹å¼					 */
 /* ----------------------------------------------------- */
 
 
 void
-alog(mode, msg)		/* Admin ¦æ¬°°O¿ı */
+alog(mode, msg)		/* Admin è¡Œç‚ºè¨˜éŒ„ */
   char *mode, *msg;
 {
   char buf[512];
@@ -69,7 +69,7 @@ alog(mode, msg)		/* Admin ¦æ¬°°O¿ı */
 
 
 void
-blog(mode, msg)		/* BBS ¤@¯ë°O¿ı */
+blog(mode, msg)		/* BBS ä¸€èˆ¬è¨˜éŒ„ */
   char *mode, *msg;
 {
   char buf[512];
@@ -97,9 +97,9 @@ u_exit(mode)
   char fpath[80];
   ACCT tuser;
 
-  mantime_add(currbno, -1);	/* °h¥X³Ì«á¬İªº¨º­ÓªO */
+  mantime_add(currbno, -1);	/* é€€å‡ºæœ€å¾Œçœ‹çš„é‚£å€‹æ¿ */
 
-  utmp_free(cutmp);		/* ÄÀ©ñ UTMP shm */
+  utmp_free(cutmp);		/* é‡‹æ”¾ UTMP shm */
 
   diff = (time(&cuser.lastlogin) - ap_start) / 60;
   sprintf(fpath, "Stay: %d (%d)", diff, currpid);
@@ -107,11 +107,11 @@ u_exit(mode)
 
   if (cuser.userlevel)
   {
-    ve_backup();		/* ½s¿è¾¹¦Û°Ê³Æ¥÷ */
-    brh_save();			/* Àx¦s¾\Åª°O¿ıÀÉ */
+    ve_backup();		/* ç·¨è¼¯å™¨è‡ªå‹•å‚™ä»½ */
+    brh_save();			/* å„²å­˜é–±è®€è¨˜éŒ„æª” */
   }
 
-#ifndef LOG_BMW	/* Â÷¯¸§R°£¤ô²y */
+#ifndef LOG_BMW	/* é›¢ç«™åˆªé™¤æ°´çƒ */
   usr_fpath(fpath, cuser.userid, fn_amw);
   unlink(fpath);
   usr_fpath(fpath, cuser.userid, fn_bmw);
@@ -123,9 +123,9 @@ u_exit(mode)
 #endif
 
 
-  /* ¼g¦^ .ACCT */
+  /* å¯«å› .ACCT */
 
-  if (!HAS_STATUS(STATUS_DATALOCK))	/* itoc.010811: ¨S¦³³Q¯¸ªøÂê©w¡A¤~¥i¥H¦^¦s .ACCT */
+  if (!HAS_STATUS(STATUS_DATALOCK))	/* itoc.010811: æ²’æœ‰è¢«ç«™é•·é–å®šï¼Œæ‰å¯ä»¥å›å­˜ .ACCT */
   {
     usr_fpath(fpath, cuser.userid, fn_acct);
     fd = open(fpath, O_RDWR);
@@ -135,20 +135,20 @@ u_exit(mode)
       {
 	if (diff >= 1)
 	{
-	  cuser.numlogins++;	/* Thor.980727.µù¸Ñ: ¦b¯¸¤W¥¼¶W¹L¤@¤ÀÄÁ¤£¤©­pºâ¦¸¼Æ */
-	  addmoney(diff);	/* itoc.010805: ¤W¯¸¤@¤ÀÄÁ¥[¤@¤¸ */
+	  cuser.numlogins++;	/* Thor.980727.è¨»è§£: åœ¨ç«™ä¸Šæœªè¶…éä¸€åˆ†é˜ä¸äºˆè¨ˆç®—æ¬¡æ•¸ */
+	  addmoney(diff);	/* itoc.010805: ä¸Šç«™ä¸€åˆ†é˜åŠ ä¸€å…ƒ */
 	}
 
-	if (HAS_STATUS(STATUS_COINLOCK))	/* itoc.010831: ­Y¬O multi-login ªº²Ä¤G°¦¥H«á¡A¤£Àx¦s¿ú¹ô */
+	if (HAS_STATUS(STATUS_COINLOCK))	/* itoc.010831: è‹¥æ˜¯ multi-login çš„ç¬¬äºŒéš»ä»¥å¾Œï¼Œä¸å„²å­˜éŒ¢å¹£ */
 	{
 	  cuser.money = tuser.money;
 	  cuser.gold = tuser.gold;
 	}
 
-	/* itoc.010811.µù¸Ñ: ¦pªG¨Ï¥ÎªÌ¦b½u¤W¨S¦³»{ÃÒªº¸Ü¡A
-	  ¨º»ò cuser ¤Î tuser ªº userlevel/tvalid ¬O¦P¨Bªº¡F
-	  ¦ı­Y¨Ï¥ÎªÌ¦b½u¤W¦^»{ÃÒ«H/¶ñ»{ÃÒ½X/³Q¯¸ªø¼f®Öµù¥U³æ..µ¥»{ÃÒ³q¹Lªº¸Ü¡A
-	  ¨º»ò tuser ªº userlevel/tvalid ¤~¬O¤ñ¸û·sªº */
+	/* itoc.010811.è¨»è§£: å¦‚æœä½¿ç”¨è€…åœ¨ç·šä¸Šæ²’æœ‰èªè­‰çš„è©±ï¼Œ
+	  é‚£éº¼ cuser åŠ tuser çš„ userlevel/tvalid æ˜¯åŒæ­¥çš„ï¼›
+	  ä½†è‹¥ä½¿ç”¨è€…åœ¨ç·šä¸Šå›èªè­‰ä¿¡/å¡«èªè­‰ç¢¼/è¢«ç«™é•·å¯©æ ¸è¨»å†Šå–®..ç­‰èªè­‰é€šéçš„è©±ï¼Œ
+	  é‚£éº¼ tuser çš„ userlevel/tvalid æ‰æ˜¯æ¯”è¼ƒæ–°çš„ */
 	cuser.userlevel = tuser.userlevel;
 	cuser.tvalid = tuser.tvalid;
 
@@ -180,12 +180,12 @@ login_abort(msg)
 }
 
 
-/* Thor.980903: lkchu patch: ¤£¨Ï¥Î¤W¯¸¥Ó½Ğ±b¸¹®É, «h¤U¦C function§¡¤£¥Î */
+/* Thor.980903: lkchu patch: ä¸ä½¿ç”¨ä¸Šç«™ç”³è«‹å¸³è™Ÿæ™‚, å‰‡ä¸‹åˆ— functionå‡ä¸ç”¨ */
 
 #ifdef LOGINASNEW
 
 /* ----------------------------------------------------- */
-/* ÀË¬d user µù¥U±¡ªp					 */
+/* æª¢æŸ¥ user è¨»å†Šæƒ…æ³					 */
 /* ----------------------------------------------------- */
 
 
@@ -245,12 +245,12 @@ is_badid(userid)
 
 #if 0
 static int
-uniq_userno(fd)			/* §ä .USR «e­±ªÅªº userno */
+uniq_userno(fd)			/* æ‰¾ .USR å‰é¢ç©ºçš„ userno */
   int fd;
 {
   char buf[4096];
   int userno, size;
-  SCHEMA *sp;			/* record length 16 ¥i¾ã°£ 4096 */
+  SCHEMA *sp;			/* record length 16 å¯æ•´é™¤ 4096 */
 
   userno = 1;
 
@@ -303,67 +303,67 @@ acct_apply()
   for (;;)
   {
     if (!vget(18, 0, msg_uid, userid, IDLEN + 1, DOECHO))
-      login_abort("\n¦A¨£ ...");
+      login_abort("\nå†è¦‹ ...");
 
     if (is_badid(userid))
     {
-      vmsg("µLªk±µ¨ü³o­Ó¥N¸¹¡A½Ğ¨Ï¥Î­^¤å¦r¥À¡A¨Ã¥B¤£­n¥]§tªÅ®æ");
+      vmsg("ç„¡æ³•æ¥å—é€™å€‹ä»£è™Ÿï¼Œè«‹ä½¿ç”¨è‹±æ–‡å­—æ¯ï¼Œä¸¦ä¸”ä¸è¦åŒ…å«ç©ºæ ¼");
     }
     else
     {
       usr_fpath(buf, userid, NULL);
       if (dashd(buf))
-	vmsg("¦¹¥N¸¹¤w¸g¦³¤H¨Ï¥Î");
+	vmsg("æ­¤ä»£è™Ÿå·²ç¶“æœ‰äººä½¿ç”¨");
       else
 	break;
     }
 
     if (++try >= 10)
-      login_abort("\n±z¹Á¸Õ¿ù»~ªº¿é¤J¤Ó¦h¡A½Ğ¤U¦¸¦A¨Ó§a");
+      login_abort("\næ‚¨å˜—è©¦éŒ¯èª¤çš„è¼¸å…¥å¤ªå¤šï¼Œè«‹ä¸‹æ¬¡å†ä¾†å§");
   }
 
   for (;;)
   {
-    vget(19, 0, "½Ğ³]©w±K½X¡G", buf, PSWDLEN + 1, NOECHO);
+    vget(19, 0, "è«‹è¨­å®šå¯†ç¢¼ï¼š", buf, PSWDLEN + 1, NOECHO);
     if ((strlen(buf) < 4) || !strcmp(buf, userid))
     {
-      vmsg("±K½X¤ÓÂ²³æ¡A©ö¾D¤J«I¡A¦Ü¤Ö­n 4 ­Ó¦r¡A½Ğ­«·s¿é¤J");
+      vmsg("å¯†ç¢¼å¤ªç°¡å–®ï¼Œæ˜“é­å…¥ä¾µï¼Œè‡³å°‘è¦ 4 å€‹å­—ï¼Œè«‹é‡æ–°è¼¸å…¥");
       continue;
     }
 
-    vget(20, 0, "½ĞÀË¬d±K½X¡G", buf + PSWDLEN + 2, PSWDLEN + 1, NOECHO);
+    vget(20, 0, "è«‹æª¢æŸ¥å¯†ç¢¼ï¼š", buf + PSWDLEN + 2, PSWDLEN + 1, NOECHO);
     if (!strcmp(buf, buf + PSWDLEN + 2))
       break;
 
-    vmsg("±K½X¿é¤J¿ù»~, ½Ğ­«·s¿é¤J±K½X");
+    vmsg("å¯†ç¢¼è¼¸å…¥éŒ¯èª¤, è«‹é‡æ–°è¼¸å…¥å¯†ç¢¼");
   }
 
   str_ncpy(cuser.passwd, genpasswd(buf), sizeof(cuser.passwd));
 
   do
   {
-    vget(20, 0, "¼Ê    ºÙ¡G", cuser.username, UNLEN + 1, DOECHO);
+    vget(20, 0, "æš±    ç¨±ï¼š", cuser.username, UNLEN + 1, DOECHO);
   } while (strlen(cuser.username) < 2);
 
-  /* itoc.010317: ´£¥Ü user ¥H«á±N¤£¯à§ï©m¦W */
-  vmsg("ª`·N¡G½Ğ¿é¤J¯u¹ê©m¦W¡A¥»¯¸¤£´£¨Ñ­×§ï©m¦Wªº¥\\¯à");
+  /* itoc.010317: æç¤º user ä»¥å¾Œå°‡ä¸èƒ½æ”¹å§“å */
+  vmsg("æ³¨æ„ï¼šè«‹è¼¸å…¥çœŸå¯¦å§“åï¼Œæœ¬ç«™ä¸æä¾›ä¿®æ”¹å§“åçš„åŠŸ\èƒ½");
 
   do
   {
-    vget(21, 0, "¯u¹ê©m¦W¡G", cuser.realname, RNLEN + 1, DOECHO);
+    vget(21, 0, "çœŸå¯¦å§“åï¼š", cuser.realname, RNLEN + 1, DOECHO);
   } while (strlen(cuser.realname) < 4);
 
   cuser.userlevel = PERM_DEFAULT;
   cuser.ufo = UFO_DEFAULT_NEW;
   cuser.numlogins = 1;
-  cuser.tvalid = ap_start;		/* itoc.030724: ®³¤W¯¸®É¶¡·í²Ä¤@¦¸»{ÃÒ½Xªº seed */
-  sprintf(cuser.email, "%s.bbs@%s", cuser.userid, str_host);	/* itoc.010902: ¹w³] email */
+  cuser.tvalid = ap_start;		/* itoc.030724: æ‹¿ä¸Šç«™æ™‚é–“ç•¶ç¬¬ä¸€æ¬¡èªè­‰ç¢¼çš„ seed */
+  sprintf(cuser.email, "%s.bbs@%s", cuser.userid, str_host);	/* itoc.010902: é è¨­ email */
 
-  /* Ragnarok.050528: ¥i¯à¤G¤H¦P®É¥Ó½Ğ¦P¤@­Ó ID¡A¦b¦¹¥²¶·¦AÀË¬d¤@¦¸ */
+  /* Ragnarok.050528: å¯èƒ½äºŒäººåŒæ™‚ç”³è«‹åŒä¸€å€‹ IDï¼Œåœ¨æ­¤å¿…é ˆå†æª¢æŸ¥ä¸€æ¬¡ */
   usr_fpath(buf, userid, NULL);
   if (dashd(buf))
   {
-    vmsg("¦¹¥N¸¹­è³Qµù¥U¨«¡A½Ğ­«·s¥Ó½Ğ");
+    vmsg("æ­¤ä»£è™Ÿå‰›è¢«è¨»å†Šèµ°ï¼Œè«‹é‡æ–°ç”³è«‹");
     abort_bbs();
   }
 
@@ -375,26 +375,26 @@ acct_apply()
   fd = open(FN_SCHEMA, O_RDWR | O_CREAT, 0600);
   {
     /* flock(fd, LOCK_EX); */
-    /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+    /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
     f_exlock(fd);
 
     cuser.userno = try = uniq_userno(fd);
     write(fd, &slot, sizeof(slot));
     /* flock(fd, LOCK_UN); */
-    /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+    /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
     f_unlock(fd);
   }
   close(fd);
 
   /* create directory */
 
-  /* usr_fpath(buf, userid, NULL); */	/* ­è°µ¹L */
+  /* usr_fpath(buf, userid, NULL); */	/* å‰›åšé */
   mkdir(buf, 0700);
   strcat(buf, "/@");
   mkdir(buf, 0700);
-  usr_fpath(buf, userid, "gem");	/* itoc.010727: ­Ó¤HºëµØ°Ï */
+  usr_fpath(buf, userid, "gem");	/* itoc.010727: å€‹äººç²¾è¯å€ */
   /* mak_dirs(buf); */
-  mak_links(buf);			/* itoc.010924: ´î¤Ö­Ó¤HºëµØ°Ï¥Ø¿ı */
+  mak_links(buf);			/* itoc.010924: æ¸›å°‘å€‹äººç²¾è¯å€ç›®éŒ„ */
 #ifdef MY_FAVORITE
   usr_fpath(buf, userid, "MF");
   mkdir(buf, 0700);
@@ -404,7 +404,7 @@ acct_apply()
   fd = open(buf, O_WRONLY | O_CREAT, 0600);
   write(fd, &cuser, sizeof(ACCT));
   close(fd);
-  /* Thor.990416: ª`·N: «ç»ò·|¦³ .ACCTªø«×¬O0ªº, ¦Ó¥B¥u¦³ @¥Ø¿ı, «ùÄòÆ[¹î¤¤ */
+  /* Thor.990416: æ³¨æ„: æ€éº¼æœƒæœ‰ .ACCTé•·åº¦æ˜¯0çš„, è€Œä¸”åªæœ‰ @ç›®éŒ„, æŒçºŒè§€å¯Ÿä¸­ */
 
   sprintf(buf, "%d", try);
   blog("APPLY", buf);
@@ -443,7 +443,7 @@ logattempt(type, content)
 
 
 /* ----------------------------------------------------- */
-/* µn¿ı BBS µ{¦¡					 */
+/* ç™»éŒ„ BBS ç¨‹å¼					 */
 /* ----------------------------------------------------- */
 
 
@@ -452,7 +452,7 @@ extern void bmw_rqst();
 
 
 #ifdef HAVE_WHERE
-static int		/* 1:¦blist¤¤ 0:¤£¦blist¤¤ */
+static int		/* 1:åœ¨listä¸­ 0:ä¸åœ¨listä¸­ */
 belong_list(filelist, key, desc)
   char *filelist, *key, *desc;
 {
@@ -473,12 +473,12 @@ belong_list(filelist, key, desc)
 	*str = '\0';
 	if (strstr(key, buf))
 	{
-	  /* ¸õ¹LªÅ¥Õ¤À¹j */
+	  /* è·³éç©ºç™½åˆ†éš” */
 	  for (str++; *str && isspace(*str); str++)
 	    ;
 
 	  strcpy(desc, str);
-	  if (str = (char *) strchr(desc, '\n'))	/* ³Ì«áªº '\n' ¤£­n */
+	  if (str = (char *) strchr(desc, '\n'))	/* æœ€å¾Œçš„ '\n' ä¸è¦ */
 	    *str = '\0';
 	  rc = 1;
 	  break;
@@ -504,10 +504,10 @@ utmp_setup(mode)
   utmp.pid = currpid;
   utmp.userno = cuser.userno;
   utmp.mode = bbsmode = mode;
-  /* utmp.in_addr = tn_addr; */ /* itoc.010112: §ïÅÜumtp.in_addr¥H¨Ïulist_cmp_host¥¿±` */
+  /* utmp.in_addr = tn_addr; */ /* itoc.010112: æ”¹è®Šumtp.in_addrä»¥ä½¿ulist_cmp_hostæ­£å¸¸ */
   addr = (uschar *) &tn_addr;
   utmp.in_addr = (addr[0] << 24) + (addr[1] << 16) + (addr[2] << 8) + addr[3];
-  utmp.userlevel = cuser.userlevel;	/* itoc.010309: §â userlevel ¤]©ñ¤J cache */
+  utmp.userlevel = cuser.userlevel;	/* itoc.010309: æŠŠ userlevel ä¹Ÿæ”¾å…¥ cache */
   utmp.ufo = cuser.ufo;
   utmp.status = 0;
   
@@ -519,8 +519,8 @@ utmp_setup(mode)
 #ifdef GUEST_NICK
   if (!cuser.userlevel)		/* guest */
   {
-    char nick[9][5] = {"¹C¤l", "¤ôºw", "³X«È", "¸É©«", "½ŞÀY", "¼v¤l", "¯f¬r", "µ£¦~", "¥Û¹³"};
-    sprintf(cuser.username, "¤Ó¶§¤Uªº%s", nick[ap_start % 9]);
+    char nick[9][5] = {"éŠå­", "æ°´æ»´", "è¨ªå®¢", "è£œå¸–", "è±¬é ­", "å½±å­", "ç—…æ¯’", "ç«¥å¹´", "çŸ³åƒ"};
+    sprintf(cuser.username, "å¤ªé™½ä¸‹çš„%s", nick[ap_start % 9]);
   }
 #endif	/* GUEST_NICK */
 
@@ -531,31 +531,31 @@ utmp_setup(mode)
 #  ifdef GUEST_WHERE
   if (!cuser.userlevel)		/* guest */
   {
-    /* itoc.010910: GUEST_NICK ©M GUEST_WHERE ªº¶Ã¼Æ¼Ò¼ÆÁ×§K¤@¼Ë */
-    char from[16][9] = {"­·«F¤E«ä", "«C®H´Â¶§", "²v·N³qÅü", "«n¥x»·²·", "±d²øªïÄf", "ºÑ¯ó¦p¯ô", "½t¼z¼í¥Í", "¦è®x¯º»y",
-			"¥É¾ğ¦Vºa", "ºñ±»­«¼Ó", "ªQªL¥ß»A", "¦Ë´ò±á­·", "¦Ë¶é¬M«F", "¦±¹D§¨½®", "²ü¶í¤ë¦â", "«ä¶é¬K¾å"};
+    /* itoc.010910: GUEST_NICK å’Œ GUEST_WHERE çš„äº‚æ•¸æ¨¡æ•¸é¿å…ä¸€æ¨£ */
+    char from[16][9] = {"é¢¨äº­ä¹æ€", "é’åŸ”æœé™½", "ç‡æ„é€šè¡¢", "å—å°é çœº", "åº·èŠè¿æ›¦", "ç¢§è‰å¦‚èŒµ", "ç·£æ…§æ½¤ç”Ÿ", "è¥¿åº­ç¬‘èª",
+			"ç‰æ¨¹å‘æ¦®", "ç¶ æ©é‡æ¨“", "æ¾æ—ç«‹ç¿ ", "ç«¹æ¹–æ™¨é¢¨", "ç«¹åœ’æ˜ äº­", "æ›²é“å¤¾è”­", "è·å¡˜æœˆè‰²", "æ€åœ’æ˜¥æ›‰"};
     strcpy(utmp.from, from[ap_start % 16]);
   }
   else
 #  endif	/* GUEST_WHERE */
   {
 
-  /* ¹³ hinet ³oºØ ip «Ü¦h¡A DN «Ü¤Öªº¡A´N¼g¤J etc/fqdn    *
-   * ¹³ 140.112. ³oºØ´N¼g¦b etc/host                       *
-   * §Y¨Ï DNS Äê±¼¡A¦b etc/host ¸Ì­±ªºÁÙ¬O¥i¥H·Ó¼Ë§PÂ_¦¨¥\ *
-   * ¦pªG§â 140.112. ¼g¤J etc/host ¤¤¡A´N¤£¥Î§â ntu.edu.tw *
-   * ­«ÂĞ¼g¤J etc/fqdn ¸Ì¤F                                */
+  /* åƒ hinet é€™ç¨® ip å¾ˆå¤šï¼Œ DN å¾ˆå°‘çš„ï¼Œå°±å¯«å…¥ etc/fqdn    *
+   * åƒ 140.112. é€™ç¨®å°±å¯«åœ¨ etc/host                       *
+   * å³ä½¿ DNS çˆ›æ‰ï¼Œåœ¨ etc/host è£¡é¢çš„é‚„æ˜¯å¯ä»¥ç…§æ¨£åˆ¤æ–·æˆåŠŸ *
+   * å¦‚æœæŠŠ 140.112. å¯«å…¥ etc/host ä¸­ï¼Œå°±ä¸ç”¨æŠŠ ntu.edu.tw *
+   * é‡è¦†å¯«å…¥ etc/fqdn è£¡äº†                                */
 
     char name[48];
 
-    /* ¥ı¤ñ¹ï FQDN */
-    str_lower(name, fromhost);	/* itoc.011011: ¤j¤p¼g§¡¥i¡Aetc/fqdn ¸Ì­±³£­n¼g¤p¼g */
+    /* å…ˆæ¯”å° FQDN */
+    str_lower(name, fromhost);	/* itoc.011011: å¤§å°å¯«å‡å¯ï¼Œetc/fqdn è£¡é¢éƒ½è¦å¯«å°å¯« */
     if (!belong_list(FN_ETC_FQDN, name, utmp.from))
     {
-      /* ¦A¤ñ¹ï ip */
+      /* å†æ¯”å° ip */
       sprintf(name, "%d.%d.%d.%d", addr[0], addr[1], addr[2], addr[3]);
       if (!belong_list(FN_ETC_HOST, name, utmp.from))
-	str_ncpy(utmp.from, fromhost, sizeof(utmp.from)); /* ¦pªG³£¨S§ä¨ì¹ïÀ³¬G¶m¡A´N¬O¥Î fromhost */
+	str_ncpy(utmp.from, fromhost, sizeof(utmp.from)); /* å¦‚æœéƒ½æ²’æ‰¾åˆ°å°æ‡‰æ•…é„‰ï¼Œå°±æ˜¯ç”¨ fromhost */
     }
   }
 
@@ -563,11 +563,11 @@ utmp_setup(mode)
   str_ncpy(utmp.from, fromhost, sizeof(utmp.from));
 #endif	/* HAVE_WHERE */
   
-  /* Thor: §i¶DUser¤w¸gº¡¤F©ñ¤£¤U... */
+  /* Thor: å‘Šè¨´Userå·²ç¶“æ»¿äº†æ”¾ä¸ä¸‹... */
   if (!utmp_new(&utmp))
-    login_abort("\n±z­è­è¿ïªº¦ì¤l¤w¸g³Q¤H±¶¨¬¥ıµn¤F¡A½Ğ¤U¦¸¦A¨Ó§a");
+    login_abort("\næ‚¨å‰›å‰›é¸çš„ä½å­å·²ç¶“è¢«äººæ·è¶³å…ˆç™»äº†ï¼Œè«‹ä¸‹æ¬¡å†ä¾†å§");
 
-  /* itoc.001223: utmp_new §¹¦A pal_cache¡A¦pªG login_abort ´N¤£°µ¤F */
+  /* itoc.001223: utmp_new å®Œå† pal_cacheï¼Œå¦‚æœ login_abort å°±ä¸åšäº† */
   pal_cache();
 }
 
@@ -577,11 +577,11 @@ utmp_setup(mode)
 /* ----------------------------------------------------- */
 
 
-static int		/* ¦^¶Ç multi */
+static int		/* å›å‚³ multi */
 login_user(content)
   char *content;
 {
-  int attempts;		/* ¹Á¸Õ´X¦¸¿ù»~ */
+  int attempts;		/* å˜—è©¦å¹¾æ¬¡éŒ¯èª¤ */
   int multi;
   char fpath[64], uid[IDLEN + 1];
 #ifndef CHAT_SECURE
@@ -589,7 +589,7 @@ login_user(content)
 #endif
 
   move(b_lines, 0);
-  outs("   ¡° °ÑÆ[±b¸¹¡G\033[1;32m" STR_GUEST "\033[m  ¥Ó½Ğ·s±b¸¹¡G\033[1;31m" STR_NEW "\033[m");
+  outs("   â€» åƒè§€å¸³è™Ÿï¼š\033[1;32m" STR_GUEST "\033[m  ç”³è«‹æ–°å¸³è™Ÿï¼š\033[1;31m" STR_NEW "\033[m");
 
   attempts = 0;
   multi = 0;
@@ -598,25 +598,25 @@ login_user(content)
     if (++attempts > LOGINATTEMPTS)
     {
       film_out(FILM_TRYOUT, 0);
-      login_abort("\n¦A¨£ ...");
+      login_abort("\nå†è¦‹ ...");
     }
 
-    vget(b_lines - 2, 0, "   [±zªº±b¸¹] ", uid, IDLEN + 1, DOECHO);
+    vget(b_lines - 2, 0, "   [æ‚¨çš„å¸³è™Ÿ] ", uid, IDLEN + 1, DOECHO);
 
     if (!str_cmp(uid, STR_NEW))
     {
 #ifdef LOGINASNEW
-#  ifdef HAVE_GUARANTOR		/* itoc.000319: «OÃÒ¤H¨î«× */
-      vget(b_lines - 2, 0, "   [±zªº«O¤H] ", uid, IDLEN + 1, DOECHO);
+#  ifdef HAVE_GUARANTOR		/* itoc.000319: ä¿è­‰äººåˆ¶åº¦ */
+      vget(b_lines - 2, 0, "   [æ‚¨çš„ä¿äºº] ", uid, IDLEN + 1, DOECHO);
       if (!*uid || (acct_load(&cuser, uid) < 0))
       {
-	vmsg("©êºp¡A¨S¦³¤¶²Ğ¤H¤£±o¥[¤J¥»¯¸");
+	vmsg("æŠ±æ­‰ï¼Œæ²’æœ‰ä»‹ç´¹äººä¸å¾—åŠ å…¥æœ¬ç«™");
       }
       else if (!HAS_PERM(PERM_GUARANTOR))
       {
-	vmsg("©êºp¡A±z¤£°÷¸ê®æ¾á¥ô§O¤Hªº¤¶²Ğ¤H");
+	vmsg("æŠ±æ­‰ï¼Œæ‚¨ä¸å¤ è³‡æ ¼æ“”ä»»åˆ¥äººçš„ä»‹ç´¹äºº");
       }
-      else if (!vget(b_lines - 2, 40, "[«O¤H±K½X] ", passbuf, PSWDLEN + 1, NOECHO))
+      else if (!vget(b_lines - 2, 40, "[ä¿äººå¯†ç¢¼] ", passbuf, PSWDLEN + 1, NOECHO))
       {       
 	continue;
       }
@@ -637,16 +637,16 @@ login_user(content)
 	  acct_apply();
 	  logattempt(' ', content);
 
-	  /* itoc.010820: °O¿ı«O¤H©ó«OÃÒ¤H¤Î³Q«O¤H */
-	  /* itoc.010820.µù¸Ñ: §â¹ï¤è log ¦b¦æ­º¡A¦b reaper ®É¥i¥H¤è«K¬å tree */
-	  sprintf(buf, "%s ©ó %s ¤¶²Ğ¦¹¤H(%s)¥[¤J¥»¯¸\n", parentid, Btime(&ap_start), cuser.userid);
+	  /* itoc.010820: è¨˜éŒ„ä¿äººæ–¼ä¿è­‰äººåŠè¢«ä¿äºº */
+	  /* itoc.010820.è¨»è§£: æŠŠå°æ–¹ log åœ¨è¡Œé¦–ï¼Œåœ¨ reaper æ™‚å¯ä»¥æ–¹ä¾¿ç  tree */
+	  sprintf(buf, "%s æ–¼ %s ä»‹ç´¹æ­¤äºº(%s)åŠ å…¥æœ¬ç«™\n", parentid, Btime(&ap_start), cuser.userid);
 	  usr_fpath(fpath, cuser.userid, "guarantor");
 	  if (fp = fopen(fpath, "a"))
 	  {
 	    fputs(buf, fp);
 	    fclose(fp);
 	  }
-	  sprintf(buf, "%s ©ó %s ³Q¦¹¤H(%s)¤¶²Ğ¥[¤J¥»¯¸\n", cuser.userid, Btime(&ap_start), parentid);
+	  sprintf(buf, "%s æ–¼ %s è¢«æ­¤äºº(%s)ä»‹ç´¹åŠ å…¥æœ¬ç«™\n", cuser.userid, Btime(&ap_start), parentid);
 	  usr_fpath(fpath, parentid, "guarantor");
 	  if (fp = fopen(fpath, "a"))
 	  {
@@ -658,25 +658,25 @@ login_user(content)
 	}
       }
 #  else
-      acct_apply(); /* Thor.980917.µù¸Ñ: cuser setup ok */
+      acct_apply(); /* Thor.980917.è¨»è§£: cuser setup ok */
       logattempt(' ', content);
       break;
 #  endif
 #else
-      outs("\n¥»¨t²Î¥Ø«e¼È°±½u¤Wµù¥U, ½Ğ¥Î " STR_GUEST " ¶i¤J");
+      outs("\næœ¬ç³»çµ±ç›®å‰æš«åœç·šä¸Šè¨»å†Š, è«‹ç”¨ " STR_GUEST " é€²å…¥");
       continue;
 #endif
     }
     else if (!*uid)
     {
-      /* ­Y¨S¿é¤J ID¡A¨º»ò continue */
+      /* è‹¥æ²’è¼¸å…¥ IDï¼Œé‚£éº¼ continue */
     }
-    else if (str_cmp(uid, STR_GUEST))	/* ¤@¯ë¨Ï¥ÎªÌ */
+    else if (str_cmp(uid, STR_GUEST))	/* ä¸€èˆ¬ä½¿ç”¨è€… */
     {
-      if (!vget(b_lines - 2, 40, "[±zªº±K½X] ", passbuf, PSWDLEN + 1, NOECHO))
-	continue;	/* ¤£¥´±K½X«h¨ú®øµn¤J */
+      if (!vget(b_lines - 2, 40, "[æ‚¨çš„å¯†ç¢¼] ", passbuf, PSWDLEN + 1, NOECHO))
+	continue;	/* ä¸æ‰“å¯†ç¢¼å‰‡å–æ¶ˆç™»å…¥ */
 
-      /* itoc.040110: ¦b¿é¤J§¹ ID ¤Î±K½X¡A¤~¸ü¤J .ACCT */
+      /* itoc.040110: åœ¨è¼¸å…¥å®Œ ID åŠå¯†ç¢¼ï¼Œæ‰è¼‰å…¥ .ACCT */
       if (acct_load(&cuser, uid) < 0)
       {
 	vmsg(err_uid);
@@ -693,12 +693,12 @@ login_user(content)
 	if (!str_cmp(cuser.userid, str_sysop))
 	{
 #ifdef SYSOP_SU
-	  /* Â²³æªº SU ¥\¯à */
-	  if (vans("ÅÜ§ó¨Ï¥ÎªÌ¨­¤À(Y/N)¡H[N] ") == 'y')
+	  /* ç°¡å–®çš„ SU åŠŸèƒ½ */
+	  if (vans("è®Šæ›´ä½¿ç”¨è€…èº«åˆ†(Y/N)ï¼Ÿ[N] ") == 'y')
 	  {
 	    for (;;)
 	    {
-	      if (vget(b_lines - 2, 0, "   [ÅÜ§ó±b¸¹] ", uid, IDLEN + 1, DOECHO) && 
+	      if (vget(b_lines - 2, 0, "   [è®Šæ›´å¸³è™Ÿ] ", uid, IDLEN + 1, DOECHO) && 
 		acct_load(&cuser, uid) >= 0)
 		break;
 	      vmsg(err_uid);
@@ -708,7 +708,7 @@ login_user(content)
 #endif
 	  {
 	    /* SYSOP gets all permission bits */
-	    /* itoc.010902: DENY perm ±Æ¥~ */
+	    /* itoc.010902: DENY perm æ’å¤– */
 	    cuser.userlevel = ~0 ^ (PERM_DENYMAIL | PERM_DENYTALK | PERM_DENYCHAT | PERM_DENYPOST | PERM_DENYLOGIN | PERM_PURGE);
 	  }   
 	}
@@ -716,11 +716,11 @@ login_user(content)
 	if (cuser.ufo & UFO_ACL)
 	{
 	  usr_fpath(fpath, cuser.userid, FN_ACL);
-	  str_lower(fromhost, fromhost);	/* lkchu.981201: ´«¤p¼g */
+	  str_lower(fromhost, fromhost);	/* lkchu.981201: æ›å°å¯« */
 	  if (!acl_has(fpath, "", fromhost))
-	  {	/* Thor.980728: ª`·N acl ÀÉ¤¤­n¥ş³¡¤p¼g */
+	  {	/* Thor.980728: æ³¨æ„ acl æª”ä¸­è¦å…¨éƒ¨å°å¯« */
 	    logattempt('-', content);
-	    login_abort("\n±zªº¤W¯¸¦aÂI¤£¤Ó¹ï«l¡A½Ğ®Ö¹ï [¤W¯¸¦aÂI³]©wÀÉ]");
+	    login_abort("\næ‚¨çš„ä¸Šç«™åœ°é»ä¸å¤ªå°å‹ï¼Œè«‹æ ¸å° [ä¸Šç«™åœ°é»è¨­å®šæª”]");
 	  }
 	}
 
@@ -734,25 +734,25 @@ login_user(content)
 	  pid_t pid;
 
 	  if (HAS_PERM(PERM_DENYLOGIN | PERM_PURGE))
-	    login_abort("\n³o­Ó±b¸¹¼È°±ªA°È¡A¸Ô±¡½Ğ¦V¯¸ªø¬¢¸ß¡C");
+	    login_abort("\né€™å€‹å¸³è™Ÿæš«åœæœå‹™ï¼Œè©³æƒ…è«‹å‘ç«™é•·æ´½è©¢ã€‚");
 
 
 	  if (!(ui = (UTMP *) utmp_find(cuser.userno)))
 	    break;		/* user isn't logged in */
 
 	  pid = ui->pid;
-	  if (pid && vans("±z·Q½ğ±¼¨ä¥L­«½Æªº login (Y/N)¶Ü¡H[Y] ") != 'n' && pid == ui->pid)
+	  if (pid && vans("æ‚¨æƒ³è¸¢æ‰å…¶ä»–é‡è¤‡çš„ login (Y/N)å—ï¼Ÿ[Y] ") != 'n' && pid == ui->pid)
 	  {
 	    if ((kill(pid, SIGTERM) == -1) && (errno == ESRCH))
 	      utmp_free(ui);
 	    else
-	      sleep(3);			/* ³Q½ğªº¤H³o®É­Ô¥¿¦b¦Û§Ú¤FÂ_ */
+	      sleep(3);			/* è¢«è¸¢çš„äººé€™æ™‚å€™æ­£åœ¨è‡ªæˆ‘äº†æ–· */
 	    blog("MULTI", cuser.userid);
 	  }
 
-	  if ((multi = utmp_count(cuser.userno, 0)) >= MULTI_MAX || 	/* ½u¤W¤w¦³ MULTI_MAX °¦¦Û¤v¡A¸T¤îµn¤J */
-	    (!multi && acct_load(&cuser, uid) < 0))			/* yiting.050101: ­Y­è¤w½ğ±¼©Ò¦³ multi-login¡A¨º»ò­«·sÅª¨ú¥H®M¥ÎÅÜ§ó */
-	    login_abort("\n¦A¨£ ...");
+	  if ((multi = utmp_count(cuser.userno, 0)) >= MULTI_MAX || 	/* ç·šä¸Šå·²æœ‰ MULTI_MAX éš»è‡ªå·±ï¼Œç¦æ­¢ç™»å…¥ */
+	    (!multi && acct_load(&cuser, uid) < 0))			/* yiting.050101: è‹¥å‰›å·²è¸¢æ‰æ‰€æœ‰ multi-loginï¼Œé‚£éº¼é‡æ–°è®€å–ä»¥å¥—ç”¨è®Šæ›´ */
+	    login_abort("\nå†è¦‹ ...");
 	}
 	break;
       }
@@ -765,9 +765,9 @@ login_user(content)
 	continue;
       }
       logattempt(' ', content);
-      cuser.userlevel = 0;	/* Thor.981207: ©È¤H¶Ãª±, ±j¨î¼g¦^cuser.userlevel */
+      cuser.userlevel = 0;	/* Thor.981207: æ€•äººäº‚ç©, å¼·åˆ¶å¯«å›cuser.userlevel */
       cuser.ufo = UFO_DEFAULT_GUEST;
-      break;	/* Thor.980917.µù¸Ñ: cuser setup ok */
+      break;	/* Thor.980917.è¨»è§£: cuser setup ok */
     }
   }
 
@@ -783,7 +783,7 @@ login_level()
   ACCT tuser;
   char fpath[64];
 
-  /* itoc.010804.µù¸Ñ: ¦³ PERM_VALID ªÌ¦Û°Êµoµ¹ PERM_POST PERM_PAGE PERM_CHAT */
+  /* itoc.010804.è¨»è§£: æœ‰ PERM_VALID è€…è‡ªå‹•ç™¼çµ¦ PERM_POST PERM_PAGE PERM_CHAT */
   level = cuser.userlevel | (PERM_ALLVALID ^ PERM_VALID);
 
   if (!(level & PERM_ALLADMIN))
@@ -792,18 +792,18 @@ login_level()
     if ((level & PERM_VALID) && (cuser.tvalid + VALID_PERIOD < ap_start))
     {
       level ^= PERM_VALID;
-      /* itoc.011116: ¥D°Êµo«H³qª¾¨Ï¥ÎªÌ¡A¤@ª½°e«H¤£ª¾¹D·|¤£·|¤Ó¯ÓªÅ¶¡ !? */
-      mail_self(FN_ETC_REREG, str_sysop, "±zªº»{ÃÒ¤w¸g¹L´Á¡A½Ğ­«·s»{ÃÒ", 0);
+      /* itoc.011116: ä¸»å‹•ç™¼ä¿¡é€šçŸ¥ä½¿ç”¨è€…ï¼Œä¸€ç›´é€ä¿¡ä¸çŸ¥é“æœƒä¸æœƒå¤ªè€—ç©ºé–“ !? */
+      mail_self(FN_ETC_REREG, str_sysop, "æ‚¨çš„èªè­‰å·²ç¶“éæœŸï¼Œè«‹é‡æ–°èªè­‰", 0);
     }
 #endif
 
 #ifdef NEWUSER_LIMIT
-    /* §Y¨Ï¤w¸g³q¹L»{ÃÒ¡AÁÙ¬O­n¨£²ß¤T¤Ñ */
+    /* å³ä½¿å·²ç¶“é€šéèªè­‰ï¼Œé‚„æ˜¯è¦è¦‹ç¿’ä¸‰å¤© */
     if (ap_start - cuser.firstlogin < 3 * 86400)
       level &= ~PERM_POST;
 #endif
 
-    /* itoc.000520: ¥¼¸g¨­¤À»{ÃÒ, ¸T¤î post/chat/talk/write */
+    /* itoc.000520: æœªç¶“èº«åˆ†èªè­‰, ç¦æ­¢ post/chat/talk/write */
     if (!(level & PERM_VALID))
       level &= ~(PERM_POST | PERM_CHAT | PERM_PAGE);
 
@@ -827,8 +827,8 @@ login_level()
   {
     if (read(fd, &tuser, sizeof(ACCT)) == sizeof(ACCT))
     {
-      /* itoc.010805.µù¸Ñ: ³o¦¸ªº¼g¦^ .ACCT ¬O¬°¤FÅı§O¤H Query ½u¤W¨Ï¥ÎªÌ®É
-	 ¥X²{ªº¤W¯¸®É¶¡/¨Ó·½¥¿½T¡A¥H¤Î¦^¦s¥¿½Tªº userlvel */
+      /* itoc.010805.è¨»è§£: é€™æ¬¡çš„å¯«å› .ACCT æ˜¯ç‚ºäº†è®“åˆ¥äºº Query ç·šä¸Šä½¿ç”¨è€…æ™‚
+	 å‡ºç¾çš„ä¸Šç«™æ™‚é–“/ä¾†æºæ­£ç¢ºï¼Œä»¥åŠå›å­˜æ­£ç¢ºçš„ userlvel */
       tuser.userlevel = level;
       tuser.lastlogin = ap_start;
       strcpy(tuser.lasthost, cuser.lasthost);
@@ -851,16 +851,16 @@ login_status(multi)
 
   status = 0;
 
-  /* itoc.010831: multi-login ªº²Ä¤G°¦¥[¤W¤£¥iÅÜ°Ê¿ú¹ôªººX¼Ğ */
+  /* itoc.010831: multi-login çš„ç¬¬äºŒéš»åŠ ä¸Šä¸å¯è®Šå‹•éŒ¢å¹£çš„æ——æ¨™ */
   if (multi)
     status |= STATUS_COINLOCK;
 
-  /* itoc.011022: ¥[¤J¥Í¤éºX¼Ğ */
+  /* itoc.011022: åŠ å…¥ç”Ÿæ—¥æ——æ¨™ */
   ptime = localtime(&ap_start);
   if (cuser.day == ptime->tm_mday && cuser.month == ptime->tm_mon + 1)
     status |= STATUS_BIRTHDAY;
 
-  /* ªB¤Í¦W³æ¦P¨B¡B²M²z¹L´Á«H¥ó */
+  /* æœ‹å‹åå–®åŒæ­¥ã€æ¸…ç†éæœŸä¿¡ä»¶ */
   if (ap_start > cuser.tcheck + CHECK_PERIOD)
   {
     outz(MSG_CHKDATA);
@@ -874,7 +874,7 @@ login_status(multi)
     frienz_sync(fpath);
 #endif
 #ifdef OVERDUE_MAILDEL
-    status |= m_quota();		/* Thor.µù¸Ñ: ¸ê®Æ¾ã²z½]®Ö¦³¥]§t BIFF check */
+    status |= m_quota();		/* Thor.è¨»è§£: è³‡æ–™æ•´ç†ç¨½æ ¸æœ‰åŒ…å« BIFF check */
 #endif
   }
 #ifdef OVERDUE_MAILDEL
@@ -882,8 +882,8 @@ login_status(multi)
 #endif
     status |= m_query(cuser.userid);
 
-  /* itoc.010924: ÀË¬d­Ó¤HºëµØ°Ï¬O§_¹L¦h */
-#ifndef LINUX	/* ¦b Linux ¤U³oÀË¬d©Ç©Çªº */
+  /* itoc.010924: æª¢æŸ¥å€‹äººç²¾è¯å€æ˜¯å¦éå¤š */
+#ifndef LINUX	/* åœ¨ Linux ä¸‹é€™æª¢æŸ¥æ€ªæ€ªçš„ */
   {
     struct stat st;
     usr_fpath(fpath, cuser.userid, "gem");
@@ -902,40 +902,40 @@ login_other()
   usint status;
   char fpath[64];
 
-  /* §R°£¿ù»~µn¤J°O¿ı */
+  /* åˆªé™¤éŒ¯èª¤ç™»å…¥è¨˜éŒ„ */
   usr_fpath(fpath, cuser.userid, FN_BADLOGIN);
-  if (more(fpath, (char *) -1) >= 0 && vans("¥H¤W¬°¿é¤J±K½X¿ù»~®Éªº¤W¯¸¦aÂI°O¿ı¡A­n§R°£¶Ü(Y/N)¡H[Y] ") != 'n')
+  if (more(fpath, (char *) -1) >= 0 && vans("ä»¥ä¸Šç‚ºè¼¸å…¥å¯†ç¢¼éŒ¯èª¤æ™‚çš„ä¸Šç«™åœ°é»è¨˜éŒ„ï¼Œè¦åˆªé™¤å—(Y/N)ï¼Ÿ[Y] ") != 'n')
     unlink(fpath);
 
   if (!HAS_PERM(PERM_VALID))
-    film_out(FILM_NOTIFY, -1);		/* ©|¥¼»{ÃÒ³qª¾ */
+    film_out(FILM_NOTIFY, -1);		/* å°šæœªèªè­‰é€šçŸ¥ */
 #ifdef JUSTIFY_PERIODICAL
   else if (!HAS_PERM(PERM_ALLADMIN) && (cuser.tvalid + VALID_PERIOD - INVALID_NOTICE_PERIOD < ap_start))
-    film_out(FILM_REREG, -1);		/* ¦³®Ä®É¶¡¹O´Á 10 ¤Ñ«e´£¥XÄµ§i */
+    film_out(FILM_REREG, -1);		/* æœ‰æ•ˆæ™‚é–“é€¾æœŸ 10 å¤©å‰æå‡ºè­¦å‘Š */
 #endif
 
 #ifdef NEWUSER_LIMIT
   if (ap_start - cuser.firstlogin < 3 * 86400)
-    film_out(FILM_NEWUSER, -1);		/* §Y¨Ï¤w¸g³q¹L»{ÃÒ¡AÁÙ¬O­n¨£²ß¤T¤Ñ */
+    film_out(FILM_NEWUSER, -1);		/* å³ä½¿å·²ç¶“é€šéèªè­‰ï¼Œé‚„æ˜¯è¦è¦‹ç¿’ä¸‰å¤© */
 #endif
 
   status = cutmp->status;
 
 #ifdef OVERDUE_MAILDEL
   if (status & STATUS_MQUOTA)
-    film_out(FILM_MQUOTA, -1);		/* ¹L´Á«H¥ó§Y±N²M°£Äµ§i */
+    film_out(FILM_MQUOTA, -1);		/* éæœŸä¿¡ä»¶å³å°‡æ¸…é™¤è­¦å‘Š */
 #endif
 
   if (status & STATUS_MAILOVER)
-    film_out(FILM_MAILOVER, -1);	/* «H¥ó¹L¦h©Î±H«H¹L¦h */
+    film_out(FILM_MAILOVER, -1);	/* ä¿¡ä»¶éå¤šæˆ–å¯„ä¿¡éå¤š */
 
   if (status & STATUS_MGEMOVER)
-    film_out(FILM_MGEMOVER, -1);	/* itoc.010924: ­Ó¤HºëµØ°Ï¹L¦hÄµ§i */
+    film_out(FILM_MGEMOVER, -1);	/* itoc.010924: å€‹äººç²¾è¯å€éå¤šè­¦å‘Š */
 
   if (status & STATUS_BIRTHDAY)
-    film_out(FILM_BIRTHDAY, -1);	/* itoc.010415: ¥Í¤é·í¤Ñ¤W¯¸¦³ special Åwªïµe­± */
+    film_out(FILM_BIRTHDAY, -1);	/* itoc.010415: ç”Ÿæ—¥ç•¶å¤©ä¸Šç«™æœ‰ special æ­¡è¿ç•«é¢ */
 
-  ve_recover();				/* ¤W¦¸Â_½u¡A½s¿è¾¹¦^¦s */
+  ve_recover();				/* ä¸Šæ¬¡æ–·ç·šï¼Œç·¨è¼¯å™¨å›å­˜ */
 }
 
 
@@ -945,13 +945,13 @@ tn_login()
   int multi;
   char buf[128];
 
-  bbsmode = M_LOGIN;	/* itoc.020828: ¥H§K¹L¤[¥¼¿é¤J®É igetch ·|¥X²{ movie */
+  bbsmode = M_LOGIN;	/* itoc.020828: ä»¥å…éä¹…æœªè¼¸å…¥æ™‚ igetch æœƒå‡ºç¾ movie */
 
   /* --------------------------------------------------- */
-  /* µn¿ı¨t²Î						 */
+  /* ç™»éŒ„ç³»çµ±						 */
   /* --------------------------------------------------- */
 
-  /* Thor.990415: °O¿ıip, ©È¥¿¬d¤£¨ì */
+  /* Thor.990415: è¨˜éŒ„ip, æ€•æ­£æŸ¥ä¸åˆ° */
   sprintf(buf, "%s ip:%08lx (%d)", fromhost, tn_addr, currpid);
 
   multi = login_user(buf);
@@ -959,12 +959,12 @@ tn_login()
   blog("ENTER", buf);
 
   /* --------------------------------------------------- */
-  /* ªì©l¤Æ utmp¡Bflag¡Bmode¡B«H½c			 */
+  /* åˆå§‹åŒ– utmpã€flagã€modeã€ä¿¡ç®±			 */
   /* --------------------------------------------------- */
 
-  bbstate = STAT_STARTED;	/* ¶i¤J¨t²Î¥H«á¤~¥i¥H¦^¤ô²y */
-  utmp_setup(M_LOGIN);		/* Thor.980917.µù¸Ñ: cutmp, cutmp-> setup ok */
-  total_user = ushm->count;	/* itoc.011027: ¥¼¶i¨Ï¥ÎªÌ¦W³æ«e¡A±Ò©l¤Æ total_user */
+  bbstate = STAT_STARTED;	/* é€²å…¥ç³»çµ±ä»¥å¾Œæ‰å¯ä»¥å›æ°´çƒ */
+  utmp_setup(M_LOGIN);		/* Thor.980917.è¨»è§£: cutmp, cutmp-> setup ok */
+  total_user = ushm->count;	/* itoc.011027: æœªé€²ä½¿ç”¨è€…åå–®å‰ï¼Œå•Ÿå§‹åŒ– total_user */
 
   mbox_main();
 
@@ -976,11 +976,11 @@ tn_login()
   if (cuser.userlevel)		/* not guest */
   {
     /* ------------------------------------------------- */
-    /* ®Ö¹ï user level ¨Ã±N .ACCT ¼g¦^			 */
+    /* æ ¸å° user level ä¸¦å°‡ .ACCT å¯«å›			 */
     /* ------------------------------------------------- */
 
-    /* itoc.030929: ¦b .ACCT ¼g¦^¥H«e¡A¤£¥i¥H¦³¥ô¦ó vmsg(NULL) ©Î more(xxxx, NULL)
-       µ¥ªºªF¦è¡A³o¼Ë¦pªG user ¦b vmsg(NULL) ®É¦^»{ÃÒ«H¡A¤~¤£·|³Q¼g¦^ªº cuser »\¹L */
+    /* itoc.030929: åœ¨ .ACCT å¯«å›ä»¥å‰ï¼Œä¸å¯ä»¥æœ‰ä»»ä½• vmsg(NULL) æˆ– more(xxxx, NULL)
+       ç­‰çš„æ±è¥¿ï¼Œé€™æ¨£å¦‚æœ user åœ¨ vmsg(NULL) æ™‚å›èªè­‰ä¿¡ï¼Œæ‰ä¸æœƒè¢«å¯«å›çš„ cuser è“‹é */
 
     cuser.lastlogin = ap_start;
     str_ncpy(cuser.lasthost, fromhost, sizeof(cuser.lasthost));
@@ -988,13 +988,13 @@ tn_login()
     login_level();
 
     /* ------------------------------------------------- */
-    /* ³]©w status					 */
+    /* è¨­å®š status					 */
     /* ------------------------------------------------- */
 
     login_status(multi);
 
     /* ------------------------------------------------- */
-    /* ¨q¨Ç¸ê°T						 */
+    /* ç§€äº›è³‡è¨Š						 */
     /* ------------------------------------------------- */
 
     login_other();
@@ -1013,7 +1013,7 @@ tn_motd()
 
   if (!(ufo & UFO_MOTD))
   {
-    more("gem/@/@-day", NULL);	/* ¤µ¤é¼öªù¸ÜÃD */
+    more("gem/@/@-day", NULL);	/* ä»Šæ—¥ç†±é–€è©±é¡Œ */
     pad_view();
   }
 
@@ -1030,7 +1030,7 @@ tn_motd()
   }
 
 #ifdef HAVE_FORCE_BOARD
-  brd_force();	/* itoc.000319: ±j¨î¾\Åª¤½§iªO */
+  brd_force();	/* itoc.000319: å¼·åˆ¶é–±è®€å…¬å‘Šæ¿ */
 #endif
 }
 
@@ -1064,7 +1064,7 @@ tn_signals()
   act.sa_handler = (void *) bmw_rqst;
   sigaction(SIGUSR2, &act, NULL);
 
-  /* ¦b¦¹­É¥Î sigset_t act.sa_mask */
+  /* åœ¨æ­¤å€Ÿç”¨ sigset_t act.sa_mask */
   sigaddset(&act.sa_mask, SIGPIPE);
   sigprocmask(SIG_BLOCK, &act.sa_mask, NULL);
 
@@ -1078,20 +1078,20 @@ tn_main()
 
 #ifdef HAVE_LOGIN_DENIED
   if (acl_has(BBS_ACLFILE, "", fromhost))
-    login_abort("\n¶Q¾÷¾¹©ó¤£³Q±Í¯¸±µ¨ü");
+    login_abort("\nè²´æ©Ÿå™¨æ–¼ä¸è¢«æ•ç«™æ¥å—");
 #endif
 
   time(&ap_start);
 
-  prints("%s ¡ó " SCHOOLNAME " ¡ó " MYIPADDR "\n"
-    "Åwªï¥úÁ{¡i\033[1;33;46m %s \033[m¡j¥Ø«e½u¤W¤H¼Æ [%d] ¤H",
+  prints("%s âŠ™ " SCHOOLNAME " âŠ™ " MYIPADDR "\n"
+    "æ­¡è¿å…‰è‡¨ã€\033[1;33;46m %s \033[mã€‘ç›®å‰ç·šä¸Šäººæ•¸ [%d] äºº",
     str_host, str_site, ushm->count);
 
-  film_out((ap_start % 3) + FILM_OPENING0, 3);	/* ¶Ã¼ÆÅã¥Ü¶}ÀYµe­± */
+  film_out((ap_start % 3) + FILM_OPENING0, 3);	/* äº‚æ•¸é¡¯ç¤ºé–‹é ­ç•«é¢ */
   
   currpid = getpid();
 
-  tn_signals();	/* Thor.980806: ©ñ©ó tn_login«e, ¥H«K call in¤£·|³Q½ğ */
+  tn_signals();	/* Thor.980806: æ”¾æ–¼ tn_loginå‰, ä»¥ä¾¿ call inä¸æœƒè¢«è¸¢ */
   tn_login();
 
   board_main();
@@ -1153,19 +1153,19 @@ telnet_init()
 
 
 /* ----------------------------------------------------- */
-/* ¤ä´©¶W¹L 24 ¦Cªºµe­±					 */
+/* æ”¯æ´è¶…é 24 åˆ—çš„ç•«é¢					 */
 /* ----------------------------------------------------- */
 
 
 static void
 term_init()
 {
-#if 0   /* fuse.030518: µù¸Ñ */
-  server°İ¡G§A·|§ïÅÜ¦æ¦C¼Æ¶Ü¡H(TN_NAWS, Negotiate About Window Size)
-  clientµª¡GYes, I do. (TNCH_DO)
+#if 0   /* fuse.030518: è¨»è§£ */
+  serverå•ï¼šä½ æœƒæ”¹è®Šè¡Œåˆ—æ•¸å—ï¼Ÿ(TN_NAWS, Negotiate About Window Size)
+  clientç­”ï¼šYes, I do. (TNCH_DO)
 
-  ¨º»ò¦b³s½u®É¡A·íTERMÅÜ¤Æ¦æ¦C¼Æ®É´N·|µo¥X¡G
-  TNCH_IAC + TNCH_SB + TN_NAWS + ¦æ¼Æ¦C¼Æ + TNCH_IAC + TNCH_SE;
+  é‚£éº¼åœ¨é€£ç·šæ™‚ï¼Œç•¶TERMè®ŠåŒ–è¡Œåˆ—æ•¸æ™‚å°±æœƒç™¼å‡ºï¼š
+  TNCH_IAC + TNCH_SB + TN_NAWS + è¡Œæ•¸åˆ—æ•¸ + TNCH_IAC + TNCH_SE;
 #endif
 
   /* ask client to report it's term size */
@@ -1180,7 +1180,7 @@ term_init()
 
   memset(buf, 0, sizeof(buf));
 
-  /* °İ¹ï¤è (telnet client) ¦³¨S¦³¤ä´©¤£¦Pªº¿Ã¹õ¼e°ª */
+  /* å•å°æ–¹ (telnet client) æœ‰æ²’æœ‰æ”¯æ´ä¸åŒçš„è¢å¹•å¯¬é«˜ */
   send(0, svr, 3, 0);
 
   rset = 1;
@@ -1192,7 +1192,7 @@ term_init()
   rcv = NULL;
   if ((uschar) buf[0] == IAC && buf[2] == TELOPT_NAWS)
   {
-    /* gslin: Unix ªº telnet ¹ï¦³µL¥[ port °Ñ¼Æªº¦æ¬°¤£¤Ó¤@¼Ë */
+    /* gslin: Unix çš„ telnet å°æœ‰ç„¡åŠ  port åƒæ•¸çš„è¡Œç‚ºä¸å¤ªä¸€æ¨£ */
     if ((uschar) buf[1] == SB)
     {
       rcv = buf + 3;
@@ -1217,12 +1217,12 @@ term_init()
     b_lines = ntohs(* (short *) (rcv + 2)) - 1;
     b_cols = ntohs(* (short *) rcv) - 1;
 
-    /* b_lines ¦Ü¤Ö­n 23¡A³Ì¦h¤£¯à¶W¹L T_LINES - 1 */
+    /* b_lines è‡³å°‘è¦ 23ï¼Œæœ€å¤šä¸èƒ½è¶…é T_LINES - 1 */
     if (b_lines >= T_LINES)
       b_lines = T_LINES - 1;
     else if (b_lines < 23)
       b_lines = 23;
-    /* b_cols ¦Ü¤Ö­n 79¡A³Ì¦h¤£¯à¶W¹L T_COLS - 1 */
+    /* b_cols è‡³å°‘è¦ 79ï¼Œæœ€å¤šä¸èƒ½è¶…é T_COLS - 1 */
     if (b_cols >= T_COLS)
       b_cols = T_COLS - 1;
     else if (b_cols < 79)
@@ -1245,7 +1245,7 @@ term_init()
 
 static void
 start_daemon(port)
-  int port; /* Thor.981206: ¨ú 0 ¥Nªí *¨S¦³°Ñ¼Æ* , -1 ¥Nªí -i (inetd) */
+  int port; /* Thor.981206: å– 0 ä»£è¡¨ *æ²’æœ‰åƒæ•¸* , -1 ä»£è¡¨ -i (inetd) */
 {
   int n;
   struct linger ld;
@@ -1321,7 +1321,7 @@ start_daemon(port)
     if (getsockname(0, (struct sockaddr *) &sin, &n) >= 0)
       port = ntohs(sin.sin_port);
 #endif
-    /* mport = port; */ /* Thor.990325: ¤£»İ­n¤F:P */
+    /* mport = port; */ /* Thor.990325: ä¸éœ€è¦äº†:P */
 
     sprintf(data, "%d\t%s\t%d\tinetd -i\n", getpid(), buf, port);
     f_cat(PID_FILE, data);
@@ -1345,7 +1345,7 @@ start_daemon(port)
   sin.sin_family = AF_INET;
   sin.sin_addr.s_addr = INADDR_ANY;
 
-  if (port == 0) /* Thor.981206: port 0 ¥Nªí¨S¦³°Ñ¼Æ */
+  if (port == 0) /* Thor.981206: port 0 ä»£è¡¨æ²’æœ‰åƒæ•¸ */
   {
     n = MAX_BBSDPORT - 1;
     while (n)
@@ -1367,7 +1367,7 @@ start_daemon(port)
   ld.l_onoff = ld.l_linger = 0;
   setsockopt(n, SOL_SOCKET, SO_LINGER, (char *) &ld, sizeof(ld));
 
-  /* mport = port; */ /* Thor.990325: ¤£»İ­n¤F:P */
+  /* mport = port; */ /* Thor.990325: ä¸éœ€è¦äº†:P */
   sin.sin_port = htons(port);
   if ((bind(n, (struct sockaddr *) &sin, sizeof(sin)) < 0) || (listen(n, QLEN) < 0))
     exit(1);
@@ -1461,7 +1461,7 @@ main_signals()
 {
   struct sigaction act;
 
-  /* act.sa_mask = 0; */ /* Thor.981105: ¼Ğ·Ç¥Îªk */
+  /* act.sa_mask = 0; */ /* Thor.981105: æ¨™æº–ç”¨æ³• */
   sigemptyset(&act.sa_mask);      
   act.sa_flags = 0;
 
@@ -1495,7 +1495,7 @@ main(argc, argv)
   /* --------------------------------------------------- */
 
   /* Thor.990325: usage, bbsd, or bbsd -i, or bbsd 1234 */
-  /* Thor.981206: ¨ú 0 ¥Nªí *¨S¦³°Ñ¼Æ*, -1 ¥Nªí -i */
+  /* Thor.981206: å– 0 ä»£è¡¨ *æ²’æœ‰åƒæ•¸*, -1 ä»£è¡¨ -i */
   start_daemon(argc > 1 ? strcmp("-i", argv[1]) ? atoi(argv[1]) : -1 : 0);
 
   main_signals();
@@ -1536,8 +1536,8 @@ main(argc, argv)
     argc = *totaluser;
     if (argc >= MAXACTIVE - 5 /* || *avgload > THRESHOLD */ )
     {
-      /* ­É¥Î currtitle */
-      sprintf(currtitle, "¥Ø«e½u¤W¤H¼Æ [%d] ¤H¡A¨t²Î¹¡©M¡A½Ğµy«á¦A¨Ó\n", argc);
+      /* å€Ÿç”¨ currtitle */
+      sprintf(currtitle, "ç›®å‰ç·šä¸Šäººæ•¸ [%d] äººï¼Œç³»çµ±é£½å’Œï¼Œè«‹ç¨å¾Œå†ä¾†\n", argc);
       send(csock, currtitle, strlen(currtitle), 0);
       close(csock);
       continue;

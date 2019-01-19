@@ -1,17 +1,17 @@
-�@��: itoc (�}�Ѷ���~�O���D�I) �ݪO: plan
-���D: [�\��] ���n�峹�m��
-�ɶ�: 2004/04/16 Fri 14:18:48                           Updated: 2004/11/01
+作者: itoc (破解韌體才是王道！) 看板: plan
+標題: [功能] 重要文章置頂
+時間: 2004/04/16 Fri 14:18:48                           Updated: 2004/11/01
 
-  �峹�m���\��A���n�峹�@���b�����峹�C���C�����̤W�����
+  文章置頂功能，重要文章一直在版面文章列表每頁的最上面顯示
 
-  �̦h�u���e�����g�峹�m��
+  最多只取前面五篇文章置頂
 
-  �Y��n½��m���峹���Ҧb���A����ӭ��|�X�{�Ӥ峹�G��
-  �@���b�m������m�A�@���b��Ӫ���m
+  若剛好翻到置頂文章的所在頁，那麼該頁會出現該文章二次
+  一次在置頂的位置，一次在原來的位置
 
-�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w
+─────────────────────────────────────
 
-  ���⤶���令���m�����\��
+  先把介面改成有置頂的功能
 
 : modes.h
 
@@ -43,7 +43,7 @@ VAR int b_lines;                /* bottom line */
 +       if (((HDR *) pool)->xmode & POST_TOP)
 +       {
 +         memcpy(xo_pool + xo_top * recsiz, pool, recsiz);
-+         if (++xo_top >= 5)      /* �̦h 5 �g�m�� */
++         if (++xo_top >= 5)      /* 最多 5 篇置頂 */
 +           break;
 +       }
 +     }
@@ -69,23 +69,23 @@ xo_cursor(ch, pagemax, num, pageno, pos, redraw)
 + xo_top = 0;
   switch (ch)
 
-�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w
+─────────────────────────────────────
 
-  �W�[ POST_TOP �o�ݩ�
+  增加 POST_TOP 這屬性
 
 : hdr.h
 
-#define POST_SCORE      0x00004000      /* �аO�����L�� */
-+ #define POST_TOP      0x00008000      /* �l�צb�W�����峹 */
+#define POST_SCORE      0x00004000      /* 標記評分過的 */
++ #define POST_TOP      0x00008000      /* 始終在上面的文章 */
 
-: post.c:post_item() �G�B
+: post.c:post_item() 二處
 
 + if (hdr->xmode & POST_TOP)
-+   prints("  ���n%c%c", tag_char(hdr->chrono), post_attr(hdr));
++   prints("  重要%c%c", tag_char(hdr->chrono), post_attr(hdr));
 + else
     prints("%6d%c%c", num, tag_char(hdr->chrono), post_attr(hdr));
 
-: post.c:post_top() �s�W�b post_mark() �U��
+: post.c:post_top() 新增在 post_mark() 下面
 
 static int
 post_top(xo)
@@ -102,12 +102,12 @@ post_top(xo)
     xmode = hdr->xmode;
 
 #ifdef HAVE_LABELMARK
-    if (xmode & POST_DELETE)    /* �ݬ媺�峹���� top */
+    if (xmode & POST_DELETE)    /* 待砍的文章不能 top */
       return XO_NONE;
 #endif
 
     hdr->xmode = xmode ^ POST_TOP;
-    if (hdr->xmode & POST_TOP)       /* �Y�[ top�A�P�ɤ]�[ mark */
+    if (hdr->xmode & POST_TOP)       /* 若加 top，同時也加 mark */
       hdr->xmode |= POST_MARKED;
     currchrono = hdr->chrono;
 
@@ -121,7 +121,7 @@ post_top(xo)
 
 : post.c:post_cb[]
 
-+ 'p', post_top,             [1;44m //����۩w [m
++ 'p', post_top,             [1;44m //按鍵自定 [m
 
 --
-[1;37m�� ���峹�� [33mitoc[37m �q [32mpc512-2.EE.NCTU.edu.tw[37m �o��[m
+[1;37m□ 本文章由 [33mitoc[37m 從 [32mpc512-2.EE.NCTU.edu.tw[37m 發表[m

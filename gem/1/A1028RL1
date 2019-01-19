@@ -1,10 +1,10 @@
-§@ªÌ: itoc (League) ¬ÝªO: plan
-¼ÐÃD: [¥\¯à] ¬ÝªO³Â¦N
-®É¶¡: 2004/02/07 Sat 12:49:14                           Updated: 2005/03/23
+ä½œè€…: itoc (League) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] çœ‹æ¿éº»å‰
+æ™‚é–“: 2004/02/07 Sat 12:49:14                           Updated: 2005/03/23
 
-  ­n¥ý°µ "pal.c ³Â¦N¦W³æ" ³o½g patch
+  è¦å…ˆåš "pal.c éº»å‰åå–®" é€™ç¯‡ patch
 
-  ³Q³]¬ÝªO³Â¦Nªº¨Ï¥ÎªÌ¥i¥H¬Ý¥[±K¤å³¹/§â¬ÝªO¥´¥]
+  è¢«è¨­çœ‹æ¿éº»å‰çš„ä½¿ç”¨è€…å¯ä»¥çœ‹åŠ å¯†æ–‡ç« /æŠŠçœ‹æ¿æ‰“åŒ…
 
 : maple.p
 
@@ -12,10 +12,10 @@ int is_bgood(BPAL *bpal);
 int is_bbad(BPAL *bpal);
 + int is_bmate(BPAL *bpal);
 
-: pal.c:is_bmate() ¥[¦b is_bgood() «e­±
+: pal.c:is_bmate() åŠ åœ¨ is_bgood() å‰é¢
 
 int
-is_bmate(bpal)              /*  1: §Ú¬O¸ÓªOªº³Â¦N */
+is_bmate(bpal)              /*  1: æˆ‘æ˜¯è©²æ¿çš„éº»å‰ */
   BPAL *bpal;
 {
   return belong_pal(bpal->pal_spool, bpal->pal_max, cuser.userno | MATE_MASK);
@@ -26,7 +26,7 @@ is_bmate(bpal)              /*  1: §Ú¬O¸ÓªOªº³Â¦N */
   else if (ulevel & PERM_ALLBOARD)
     bits = BRD_L_BIT | BRD_R_BIT | BRD_W_BIT | BRD_X_BIT | BRD_M_BIT;
 
-+ /* itoc.040207: ¬ÝªO³Â¦N­«·s§PÂ_ */
++ /* itoc.040207: çœ‹æ¿éº»å‰é‡æ–°åˆ¤æ–· */
 + else if (is_bmate(bpal))
 +   bits = BRD_L_BIT | BRD_R_BIT | BRD_W_BIT | BRD_M_BIT;
 
@@ -60,7 +60,7 @@ is_bmate(bpal)              /*  1: §Ú¬O¸ÓªOªº³Â¦N */
   hdr = (HDR *) xo_pool + cur;
 
 - if (!strcmp(hdr->owner, cuser.userid) || (bbstate & STAT_BM))
-+ /* ¬ÝªO³Â¦N¤£¯à¥[¸Ñ±KªO¤Wªº¤å³¹ */
++ /* çœ‹æ¿éº»å‰ä¸èƒ½åŠ è§£å¯†æ¿ä¸Šçš„æ–‡ç«  */
 + if (!strcmp(hdr->owner, cuser.userid) ||
 +   ((bbstate & STAT_BM) && (bbstate & STAT_BOARD)))
   {
@@ -68,4 +68,4 @@ is_bmate(bpal)              /*  1: §Ú¬O¸ÓªOªº³Â¦N */
     currchrono = hdr->chrono;
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

@@ -1,10 +1,10 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬ÝªO: plan
-¼Ð  ÃD: [¥\¯à] manage.c ªO¥D¦Û­q¬ÝªO¡Gµo¤åªùÂe­­¨î
-µo«H¯¸: °Ê¤O®Ö¤ß (2007/04/18 Wed 22:24:16)                Updated: 2007/04/19
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] manage.c æ¿ä¸»è‡ªè¨‚çœ‹æ¿ï¼šç™¼æ–‡é–€æª»é™åˆ¶
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2007/04/18 Wed 22:24:16)                Updated: 2007/04/19
 
-: struct.h ¥[¤J³o¬q©ó struct BRD ¤§«á
-> ¨ä¹êÀ³¸Ó§â­­¨î¼g¦b struct BRD ¸Ì­±
-> ¤£¹L¥Ñ©ó¤£·QÂà´« .BRD¡A©Ò¥H´N¥t¥~¦s¤@­ÓÀÉ®×
+: struct.h åŠ å…¥é€™æ®µæ–¼ struct BRD ä¹‹å¾Œ
+> å…¶å¯¦æ‡‰è©²æŠŠé™åˆ¶å¯«åœ¨ struct BRD è£¡é¢
+> ä¸éŽç”±æ–¼ä¸æƒ³è½‰æ› .BRDï¼Œæ‰€ä»¥å°±å¦å¤–å­˜ä¸€å€‹æª”æ¡ˆ
 
 typedef struct
 {
@@ -16,12 +16,12 @@ typedef struct
 : global.h
 
   #define FN_CZH             ".CZH"
-+ #define FN_THRESHOLD       "threshold"    /* ¬ÝªOµo¤åªùÂe */
++ #define FN_THRESHOLD       "threshold"    /* çœ‹æ¿ç™¼æ–‡é–€æª» */
 
 : battr.h
 
-  #define BRD_ANONYMOUS      0x20    /* °Î¦W¬ÝªO */
-+ #define BRD_THRESHOLD      0x40    /* µo¤åªùÂe­­¨î */
+  #define BRD_ANONYMOUS      0x20    /* åŒ¿åçœ‹æ¿ */
++ #define BRD_THRESHOLD      0x40    /* ç™¼æ–‡é–€æª»é™åˆ¶ */
 
   ...
   ...
@@ -34,10 +34,10 @@ typedef struct
 
 : battr.h:battr_tbl[]
 
-  "°Î¦W¬ÝªO",           /* BRD_ANONYMOUS */
-+ "µo¤åªùÂe­­¨î",       /* BRD_THRESHOLD */
+  "åŒ¿åçœ‹æ¿",           /* BRD_ANONYMOUS */
++ "ç™¼æ–‡é–€æª»é™åˆ¶",       /* BRD_THRESHOLD */
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
 : post.c:do_post()
 
@@ -57,20 +57,20 @@ typedef struct
 +   {
 +     if (cuser.lastlogin - cuser.firstlogin < th.age * 86400)
 +     {
-+       sprintf(msg, "µù¥U®É¶¡ %d ¤Ñ¥H¤W¡A¤è¥i¦b¦¹¬ÝªOµoªí¤å³¹", th.age);
++       sprintf(msg, "è¨»å†Šæ™‚é–“ %d å¤©ä»¥ä¸Šï¼Œæ–¹å¯åœ¨æ­¤çœ‹æ¿ç™¼è¡¨æ–‡ç« ", th.age);
 +       vmsg(msg);
 +       return XO_FOOT;
 +     }
 +     if (cuser.numlogins < th.numlogins)
 +     {
-+       sprintf(msg, "¤W¯¸¦¸¼Æ %d ¦¸¥H¤W¡A¤è¥i¦b¦¹¬ÝªOµoªí¤å³¹", th.numlogins)
++       sprintf(msg, "ä¸Šç«™æ¬¡æ•¸ %d æ¬¡ä»¥ä¸Šï¼Œæ–¹å¯åœ¨æ­¤çœ‹æ¿ç™¼è¡¨æ–‡ç« ", th.numlogins)
 ;
 +       vmsg(msg);
 +       return XO_FOOT;
 +     }
 +     if (cuser.numposts < th.numposts)
 +     {
-+       sprintf(msg, "µoªí¤å³¹ %d ½g¥H¤W¡A¤è¥i¦b¦¹¬ÝªOµoªí¤å³¹", th.numposts);
++       sprintf(msg, "ç™¼è¡¨æ–‡ç«  %d ç¯‡ä»¥ä¸Šï¼Œæ–¹å¯åœ¨æ­¤çœ‹æ¿ç™¼è¡¨æ–‡ç« ", th.numposts);
 +       vmsg(msg);
 +       return XO_FOOT;
 +     }
@@ -79,9 +79,9 @@ typedef struct
 
   film_out(FILM_POST, 0);
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-: manage.c §â¥H¤U³o¬q¥[¦b post_battr_noscore() «á­±
+: manage.c æŠŠä»¥ä¸‹é€™æ®µåŠ åœ¨ post_battr_noscore() å¾Œé¢
 
 static int
 post_battr_threshold(xo)
@@ -97,7 +97,7 @@ post_battr_threshold(xo)
 
   brd_fpath(fpath, newbrd.brdname, FN_THRESHOLD);
 
-  switch (ans = vans("¡· µo¤åªùÂe­­¨î 1)¤£­­¨îªùÂe 2)­­¨îªùÂe [Q] "))
+  switch (ans = vans("â—Ž ç™¼æ–‡é–€æª»é™åˆ¶ 1)ä¸é™åˆ¶é–€æª» 2)é™åˆ¶é–€æª» [Q] "))
   {
   case '1':
     newbrd.battr &= ~BRD_THRESHOLD;
@@ -110,7 +110,7 @@ post_battr_threshold(xo)
 
     if (echo & GCARRY)
       sprintf(buf, "%d", th.age);
-    if (!vgets(b_lines, 0, "½Ð¿é¤Jµo¤åªùÂe¡Ðµù¥U´X¤Ñ¥H¤W¡H", buf, 4, echo))
+    if (!vgets(b_lines, 0, "è«‹è¼¸å…¥ç™¼æ–‡é–€æª»ï¼è¨»å†Šå¹¾å¤©ä»¥ä¸Šï¼Ÿ", buf, 4, echo))
       return XO_FOOT;
     if ((num = atoi(buf)) < 0)
       return XO_FOOT;
@@ -118,7 +118,7 @@ post_battr_threshold(xo)
 
     if (echo & GCARRY)
       sprintf(buf, "%d", th.numlogins);
-    if (!vgets(b_lines, 0, "½Ð¿é¤Jµo¤åªùÂe¡Ðµn¤J´X¦¸¥H¤W", buf, 4, echo))
+    if (!vgets(b_lines, 0, "è«‹è¼¸å…¥ç™¼æ–‡é–€æª»ï¼ç™»å…¥å¹¾æ¬¡ä»¥ä¸Š", buf, 4, echo))
       return XO_FOOT;
     if ((num = atoi(buf)) < 0)
       return XO_FOOT;
@@ -126,7 +126,7 @@ post_battr_threshold(xo)
 
     if (echo & GCARRY)
       sprintf(buf, "%d", th.numposts);
-    if (!vgets(b_lines, 0, "½Ð¿é¤Jµo¤åªùÂe¡Ðµo¤å´X½g¥H¤W", buf, 4, echo))
+    if (!vgets(b_lines, 0, "è«‹è¼¸å…¥ç™¼æ–‡é–€æª»ï¼ç™¼æ–‡å¹¾ç¯‡ä»¥ä¸Š", buf, 4, echo))
       return XO_FOOT;
     if ((num = atoi(buf)) < 0)
       return XO_FOOT;
@@ -159,17 +159,17 @@ post_battr_threshold(xo)
 : manage.c:post_manage()
 
 #  ifdef HAVE_SCORE
-    "Score   ³]©w¥i§_µû¤À",
+    "Score   è¨­å®šå¯å¦è©•åˆ†",
 #  endif
-+   "ZLevel  µo¤åªùÂe­­¨î",
++   "ZLevel  ç™¼æ–‡é–€æª»é™åˆ¶",
 
   ...
   ...
 
 #  ifdef HAVE_SCORE
-    " (S)µû¤À"
+    " (S)è©•åˆ†"
 #  endif
-+   " (Z)­­¨î"
++   " (Z)é™åˆ¶"
 
   ...
   ...
@@ -183,5 +183,5 @@ post_battr_threshold(xo)
 +   return post_battr_threshold(xo);
 
 --
-[1;36m=[37m[[36m¡É[37m:[33m¡[37mÝ¢¨[m¢©¡[1;33mÝ[37m:[36m¡É [31mOrigin[37m ]|[[m  [0;31m°[1mÊ[1m¤[0;31mO[0;31m®[1mÖ[1m¤[0;31mß [1mcpu.tfcis.org  [37m]|[¡[33mÝ£»¡[mÝ[1;36m¡É[37m:][36m=[m
-[1;36m=[0m[[1;36m¡Ç[37m:[33m¡[30mÝ¢ª[m¢¬¡[1;33mÝ[37m:[36m¡Ç [31mAuthor[m ]|[[1m218-168-183-53.dynamic.hin[m]|[¡[1;33mÝ[30m¡[37m´¡[30mÝ[36m¡Ç[37m:[m][1;36m=[m
+[1;36m=[37m[[36mï¹Ž[37m:[33m?[37mæ‘ƒ?[mâ—£?[1;33m?[37m:[36mï¹Ž [31mOrigin[37m ]|[[m  [0;31m?[1m?[1m?[0;31mO[0;31m?[1m?[1m?[0;31m?[1mcpu.tfcis.org  [37m]|[?[33mæŸèªª[m?[1;36mï¹Ž[37m:][36m=[m
+[1;36m=[0m[[1;36mï¹Š[37m:[33m?[30mæ‘ƒ?[mâ•±?[1;33m?[37m:[36mï¹Š [31mAuthor[m ]|[[1m218-168-183-53.dynamic.hin[m]|[?[1;33m?[30m?[37mæ’[30m?[36mï¹Š[37m:[m][1;36m=[m

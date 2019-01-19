@@ -1,20 +1,20 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: ¦bSolaris¤Uªº°İÃD
-®É¶¡: Wed Nov 19 15:32:17 2003
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: åœ¨Solarisä¸‹çš„å•é¡Œ
+æ™‚é–“: Wed Nov 19 15:32:17 2003
 
-¡° ¤Ş­z¡mitoc (®Ö¤ß°Ê¤O)¡n¤§»Ê¨¥¡G
->   Solaris ªº dso ªº³£ make ¥¢±Ñ°Ú
->   ¨º°®¯Ü³q³q§ì¥h maple ¸Ì­±¦n¤F :p
+â€» å¼•è¿°ã€Šitoc (æ ¸å¿ƒå‹•åŠ›)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>   Solaris çš„ dso çš„éƒ½ make å¤±æ•—å•Š
+>   é‚£ä¹¾è„†é€šé€šæŠ“å» maple è£¡é¢å¥½äº† :p
 
-  ¤@¡B§ï src/maple/Makefile
+  ä¸€ã€æ”¹ src/maple/Makefile
 
-    src/so/Makefile ¼gµÛ
+    src/so/Makefile å¯«è‘—
 
 SO =    admutil.so aloha.so bank.so chat.so help.so manage.so newbrd.so \
         song.so vote.so xyz.so \
         calendar.so classtable.so credit.so jcee.so todo.so
 
-    ¨º»ò´N¦b maple/Makefile ¥[¤W¥h¹ïÀ³ªº *.c *.o
+    é‚£éº¼å°±åœ¨ maple/Makefile åŠ ä¸Šå»å°æ‡‰çš„ *.c *.o
 
 SRC =   acct.c bbsd.c bmw.c board.c cache.c edit.c favor.c \
         gem.c mail.c menu.c more.c pal.c post.c talk.c ulist.c \
@@ -34,47 +34,47 @@ OBJ =   acct.o bbsd.o bmw.o board.o cache.o edit.o favor.o \
         [1;33m../so/calendar.o ../so/classtable.o ../so/credit.o \[m
         [1;33m../so/jcee.o ../so/todo.o[m
 
-    ¦P²z src/game/Makeifle ¤]¬O¤ñ·Ó¿ì²z
-    ¦P²z src/pip/Makeifle ¤]¬O¤ñ·Ó¿ì²z
+    åŒç† src/game/Makeifle ä¹Ÿæ˜¯æ¯”ç…§è¾¦ç†
+    åŒç† src/pip/Makeifle ä¹Ÿæ˜¯æ¯”ç…§è¾¦ç†
 
 
-  ¤G¡B§ï src/Makefile
+  äºŒã€æ”¹ src/Makefile
 
-      ©Ò¦³ªº³o¤T¦æ®³±¼
+      æ‰€æœ‰çš„é€™ä¸‰è¡Œæ‹¿æ‰
 
         @cd so; make xxxx
         @cd game; make xxx
         @cd pip; make xxxx
 
-      ÅÜ¦¨
+      è®Šæˆ
 
 #       @cd so; make xxxx
 #       @cd game; make xxxx
 #       @cd pip; make xxxx
 
-      ¨ä¤¤ xxxx ¥]¬A
-      sun linux solaris sol-x86 freebsd bsd ¤Î install
-      ¦ı¤£¥]¬A clean
+      å…¶ä¸­ xxxx åŒ…æ‹¬
+      sun linux solaris sol-x86 freebsd bsd åŠ install
+      ä½†ä¸åŒ…æ‹¬ clean
 
 
-  ¤T¡B§ï menu.c
+  ä¸‰ã€æ”¹ menu.c
 
-    menu.c ¤¤ªº©Ò¦³ "bin/xxxx.so:yyyy" ³£§ï¦¨ yyyy
-    ®³±¼ "" ¤Î bin/xxxx.so:¡A¥H¤Î - M_XXXX ªº ­t ®³±¼¡A¨Ò¦p
+    menu.c ä¸­çš„æ‰€æœ‰ "bin/xxxx.so:yyyy" éƒ½æ”¹æˆ yyyy
+    æ‹¿æ‰ "" åŠ bin/xxxx.so:ï¼Œä»¥åŠ - M_XXXX çš„ è²  æ‹¿æ‰ï¼Œä¾‹å¦‚
 
 
   "bin/admutil.so:a_search", PERM_ALLACCT, - M_SYSTEM,
-  "Hunt       ¢« ·j´M¤ŞÀº ¢¨",
+  "Hunt       â—¤ æœå°‹å¼•æ“ â—¢",
 
-    §ï¦¨
+    æ”¹æˆ
 
   a_search, PERM_ALLACCT, M_SYSTEM,
-  "Hunt       ¢« ·j´M¤ŞÀº ¢¨",
+  "Hunt       â—¤ æœå°‹å¼•æ“ â—¢",
 
 
-  ¥|¡B§ï post.c:post_cb[]
+  å››ã€æ”¹ post.c:post_cb[]
 
-    ±N³o¥|¦æ®³±¼
+    å°‡é€™å››è¡Œæ‹¿æ‰
 
   'B' | XO_DL, (void *) "bin/manage.so:post_manage",
   'R' | XO_DL, (void *) "bin/vote.so:vote_result",
@@ -84,7 +84,7 @@ OBJ =   acct.o bbsd.o bmw.o board.o cache.o edit.o favor.o \
   Ctrl('X') | XO_DL, (void *) "bin/manage.so:post_terminator",
 #endif
 
-    §ï¦¨
+    æ”¹æˆ
 
   'B', post_manage,
   'R', vote_result,
@@ -95,26 +95,26 @@ OBJ =   acct.o bbsd.o bmw.o board.o cache.o edit.o favor.o \
 #endif
 
 
-  ¤­¡B§ï©Ò¦³ DL_get() ¤Î DL_func ªº³¡¤À
+  äº”ã€æ”¹æ‰€æœ‰ DL_get() åŠ DL_func çš„éƒ¨åˆ†
 
-bbsd.c:    DL_func("bin/enews.so:main_enews");  /* ¤W¯¸¾\Åª©_¼¯·s»D */
+bbsd.c:    DL_func("bin/enews.so:main_enews");  /* ä¸Šç«™é–±è®€å¥‡æ‘©æ–°è */
 talk.c: if (DL_func("bin/bwboard.so:vaBWboard", fd, 1) == -2)
 talk.c:      if (DL_func("bin/bwboard.so:vaBWboard", fd, 0) == -2)
 xover.c:  DL_func("bin/help.so:vaHelp", path);
 
-    ¨Ì§Ç§ï¦¨
+    ä¾åºæ”¹æˆ
 
-bbsd.c:    main_enews();  /* ¤W¯¸¾\Åª©_¼¯·s»D */
+bbsd.c:    main_enews();  /* ä¸Šç«™é–±è®€å¥‡æ‘©æ–°è */
 talk.c: if (vaBWboard(fd, 1) == -2)
 talk.c:      if (vaBWboard(fd, 0) == -2)
 xover.c:  vaHelp(path);
 
 
-  ¤»¡B§ï src/maple/maple.p
+  å…­ã€æ”¹ src/maple/maple.p
 
-    §â©Ò¦³·s¼Wªº¨ç¦¡¥[¤J maple.p
+    æŠŠæ‰€æœ‰æ–°å¢çš„å‡½å¼åŠ å…¥ maple.p
 
-    ¥H¤W­±Á¿¨ìªº¬°¨Ò¤l¡A¨º»ò´N¬O¦b maple.p ¤¤¥[¤J
+    ä»¥ä¸Šé¢è¬›åˆ°çš„ç‚ºä¾‹å­ï¼Œé‚£éº¼å°±æ˜¯åœ¨ maple.p ä¸­åŠ å…¥
 
 int a_search();
 int post_manage();
@@ -126,7 +126,7 @@ int vaBWboard();
 int vaHelp();
 ...
 ...
-(§â©Ò¦³ so/*.c game/*.c ¥[¤Jªº non-static ¨ç¦¡³£±¾¤W«Å§i)
+(æŠŠæ‰€æœ‰ so/*.c game/*.c åŠ å…¥çš„ non-static å‡½å¼éƒ½æ›ä¸Šå®£å‘Š)
 
 
 ---------------------------------------2005/12/09---------------------
@@ -193,5 +193,5 @@ int XoNewBoard();
 
 
 --
- [1;43m¢z[44m¢q[m Or[1mig[30min[m: [44m Maple-itoc£»°Ê¤O®Ö¤ß [31;47m processor.tfcis.org [m
- [1;41m¢|[42m¢}[m A[1mut[30mho[mr: [1;36mitoc [30m±q [35mpc512-2.ee.nctu.edu.tw [30mµoªí[m
+ [1;43mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [44m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [31;47m processor.tfcis.org [m
+ [1;41mâ””[42mâ”˜[m A[1mut[30mho[mr: [1;36mitoc [30må¾ [35mpc512-2.ee.nctu.edu.tw [30mç™¼è¡¨[m

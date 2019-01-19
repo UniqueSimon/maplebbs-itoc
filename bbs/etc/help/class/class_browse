@@ -1,12 +1,12 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xENTER �xclass_browse�x�i�J�ݪO                                        �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │ENTER │class_browse│進入看板                                        │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� r �� ENTER �i�H�i�J�ӪO�C
+    將游標移到某欄，按 r 或 ENTER 可以進入該板。
 
-    �Y�X�{�u�藍�_�A���O�u��ݪO�n�Ͷi�J�A�ЦV�O�D�ӽФJ�ҳ\�i�v���T���A��
-  �ܳo�O�O�n�ͬݪO�A�z�L�k�i�J�C
+    若出現「對不起，此板只准看板好友進入，請向板主申請入境許可」的訊息，表
+  示這板是好友看板，您無法進入。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

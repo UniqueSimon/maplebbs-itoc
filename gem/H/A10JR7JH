@@ -1,11 +1,11 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ½Ğ±Ğnocemªº³]©w
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/09/07 Tue 18:56:37)                Updated: 2004/09/07
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: è«‹æ•™nocemçš„è¨­å®š
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/09/07 Tue 18:56:37)                Updated: 2004/09/07
 
-¡° ¤Ş­z¡mtantu.bbs@Deer.twbbs.org (¤Ñ¹Ï)¡n¤§»Ê¨¥¡G
-> ¦]¬°¨C¤Ñ­n¬İ¤@¤U innd/ncmperm.bbs
-> ¨Ã¥B§â¦¬¨ìªºissue perm¥Ñno§ï¬°yes
-> ¬O§_¦³¤°»ò¿ìªk,¥i¥HÅı¦¬¨ìªºissue perm¦Û°Ê¥ş¬°yes ?
+â€» å¼•è¿°ã€Štantu.bbs@Deer.twbbs.org (å¤©åœ–)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å› ç‚ºæ¯å¤©è¦çœ‹ä¸€ä¸‹ innd/ncmperm.bbs
+> ä¸¦ä¸”æŠŠæ”¶åˆ°çš„issue permç”±noæ”¹ç‚ºyes
+> æ˜¯å¦æœ‰ä»€éº¼è¾¦æ³•,å¯ä»¥è®“æ”¶åˆ°çš„issue permè‡ªå‹•å…¨ç‚ºyes ?
 
 : nocem.c:NCMupdate()
 
@@ -26,5 +26,5 @@ NCMupdate(issuer, type)
 
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m Maple-itoc£»°Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
- [1;42m¢q[45m¢}[m A[1mut[30mho[mr: [1;31mitoc [30m±q [36mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
+ [1;42mâ”¼[45mâ”˜[m A[1mut[30mho[mr: [1;31mitoc [30må¾ [36mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

@@ -1,12 +1,12 @@
-�o�H�H: guessi.bbs@bbs.wretch.cc (�S) �ݪO: plan
-��  �D: [�ץ�] �峹�����ק�
-�o�H��: �L�W�p�� (2006/03/23 Thu 21:15:50)                Updated: 2006/05/29
+發信人: guessi.bbs@bbs.wretch.cc (沒) 看板: plan
+標  題: [修正] 文章評分修改
+發信站: 無名小站 (2006/03/23 Thu 21:15:50)                Updated: 2006/05/29
 
-�� �ޭz�myiyihi.bbs@processor.tfcis.org (...........)�n���ʨ��G
-> �i�H�b���ӱ����峹�e�� i �B��������Ʀr
-> �n�⦹�\�൹�O�D�ϥγo�ӸӦp���O �H
+※ 引述《yiyihi.bbs@processor.tfcis.org (...........)》之銘言：
+> 可以在不該推的文章前按 i 、拿掉推文數字
+> 要把此功能給板主使用這個該如何改呢 ？
 
-: post.c:post_resetscore() �Х[�bpost_score()���e addscore()����
+: post.c:post_resetscore() 請加在post_score()之前 addscore()之後
 
 static int
 post_resetscore(xo)
@@ -22,30 +22,30 @@ post_resetscore(xo)
     cur = pos - xo->top;
     hdr = (HDR *) xo_pool + cur;
 
-    switch (vans("�������]�w 1)�ۭq 2)�M�� 3)�z 4)�� [Q] "))
+    switch (vans("◎評分設定 1)自訂 2)清除 3)爆 4)爛 [Q] "))
     {
     case '1':
-      if (!vget(b_lines, 0, "�п�J�Ʀr�G", ans, 4, DOECHO))
+      if (!vget(b_lines, 0, "請輸入數字：", ans, 4, DOECHO))
         return XO_FOOT;
       score = atoi(ans);
       if (score > 35 || score < -35)
         return XO_FOOT;
-      hdr->xmode |= POST_SCORE; /* ���i��L���� */
+      hdr->xmode |= POST_SCORE; /* 原文可能無評分 */
       hdr->score = score;
       break;
 
     case '2':
-      hdr->xmode &= ~POST_SCORE; /* �M���N���ݭnPOST_SCORE�F */
+      hdr->xmode &= ~POST_SCORE; /* 清除就不需要POST_SCORE了 */
       hdr->score = 0;
       break;
 
    case '3':
-      hdr->xmode |= POST_SCORE;         /* ���i��L���� */
+      hdr->xmode |= POST_SCORE;         /* 原文可能無評分 */
       hdr->score = 35;
       break;
 
     case '4':
-      hdr->xmode |= POST_SCORE;         /* ���i��L���� */
+      hdr->xmode |= POST_SCORE;         /* 原文可能無評分 */
       hdr->score = -35;
       break;
 
@@ -63,7 +63,7 @@ post_resetscore(xo)
   return XO_FOOT;
 }
 
-: post.c:post_cb[] �� post.c:xpost_cb[]
+: post.c:post_cb[] 及 post.c:xpost_cb[]
 
 #ifdef HAVE_SCORE
   '%', post_score,
@@ -71,8 +71,8 @@ post_resetscore(xo)
 #endif
 
 --
-[1;30;40m�ҧL�̤����������δc���G���D�̤��B�g�l�~�h�Q���ΧL�h�Q�k�L�̤��������D�g�l[m
-[1;30m�������o�w[37m[30m�ӥΤ���H���W�ӦӤ����Ӭ����̬O�ֱ��H�Ҽֱ��H�̫h���i�o�ө�ѤU
-[m[1;30m�o�N�Ʃ|�����Ʃ|�k���N�x�~���W�N�x�~�k���H��§�B�����H�����H�s�d�_���ԳӥH[m
-[1;30m��§�B���D�`[37m�L�W[30m�����p�ѤU����ګJ���Y��u���U���N�ۻ��Ѧa�ۦX�H�����S����[m
-[1;30m���O�Ӧۧ��l��W�W��J���ҥ�N�����[37m61-231-192-209.dynamic.hinet.net[30m��[m
+[1;30;40m夫兵者不祥之器物或惡之故有道者不處君子居則貴左用兵則貴右兵者不祥之器非君子[m
+[1;30m之器不得已[37m[30m而用之恬淡為上勝而不美而美之者是樂殺人夫樂殺人者則不可得志於天下
+[m[1;30m矣吉事尚左凶事尚右偏將軍居左上將軍居右言以喪禮處之殺人之眾以哀悲泣之戰勝以[m
+[1;30m喪禮處之道常[37m無名[30m樸雖小天下莫能臣侯王若能守之萬物將自賓天地相合以降甘露民莫[m
+[1;30m之令而自均始制有名名亦既有夫亦將知止知止[37m61-231-192-209.dynamic.hinet.net[30m海[m

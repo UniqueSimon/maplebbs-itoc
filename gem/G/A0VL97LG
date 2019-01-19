@@ -1,15 +1,15 @@
-µo«H¤H: Dinsam.bbs@ccudream.twbbs.org («e¥@.. o.O) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à]¦¬«H«Å¨¥
-µo«H¯¸: ¤¤¥¿¿v¹Ú¶é (Tue, 02 Sep 2003 21:15:24 +0800)      Updated: 2004/09/06
+ç™¼ä¿¡äºº: Dinsam.bbs@ccudream.twbbs.org (å‰ä¸–.. o.O) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]æ”¶ä¿¡å®£è¨€
+ç™¼ä¿¡ç«™: ä¸­æ­£ç¯‰å¤¢åœ’ (Tue, 02 Sep 2003 21:15:24 +0800)      Updated: 2004/09/06
 
 : config.h
 
-+ #define MAX_MAILHINTLINES    12      /* ¦¬«H«Å¨¥ªø«× */
++ #define MAX_MAILHINTLINES    12      /* æ”¶ä¿¡å®£è¨€é•·åº¦ */
 
-: mail.c:mail_hint() ·s¼W¦¹¨ç¦¡©ó hdr_reply() ¤§«e
+: mail.c:mail_hint() æ–°å¢æ­¤å‡½å¼æ–¼ hdr_reply() ä¹‹å‰
 
 static void
-mail_hint(userid)              /* ¨q¥X userid ªº¥D¤H°İ­Ô»y */
+mail_hint(userid)              /* ç§€å‡º userid çš„ä¸»äººå•å€™èª */
   char *userid;
 {
   int i;
@@ -21,7 +21,7 @@ mail_hint(userid)              /* ¨q¥X userid ªº¥D¤H°İ­Ô»y */
   {
     clear();
     move(2, 0);
-    prints("³o¬O %s ªº¦¬«H«Å¨¥\n", userid);
+    prints("é€™æ˜¯ %s çš„æ”¶ä¿¡å®£è¨€\n", userid);
 
     i = 0;
     while (i++ < MAX_MAILHINTLINES && fgets(buf, sizeof(buf), fp))
@@ -33,7 +33,7 @@ mail_hint(userid)              /* ¨q¥X userid ªº¥D¤H°İ­Ô»y */
   }
 }
 
-: mail.c:mbox_hint_edit() ·s¼W¦b mbox_help() ¤§«e
+: mail.c:mbox_hint_edit() æ–°å¢åœ¨ mbox_help() ä¹‹å‰
 
 static int
 mbox_hint_edit(xo)
@@ -42,7 +42,7 @@ mbox_hint_edit(xo)
   int mode;
   char fpath[64];
 
-  mode = vans("¦¬«H«Å¨¥ (D)§R°£ (E)­×§ï (Q)¨ú®ø¡H[E] ");
+  mode = vans("æ”¶ä¿¡å®£è¨€ (D)åˆªé™¤ (E)ä¿®æ”¹ (Q)å–æ¶ˆï¼Ÿ[E] ");
 
   if (mode != 'q')
   {
@@ -54,7 +54,7 @@ mbox_hint_edit(xo)
       return XO_FOOT;
     }
 
-    if (vedit(fpath, 0))      /* Thor.981020: ª`·N³Qtalkªº°İÃD */
+    if (vedit(fpath, 0))      /* Thor.981020: æ³¨æ„è¢«talkçš„å•é¡Œ */
       vmsg(msg_cancel);
     return mbox_head(xo);
   }
@@ -65,22 +65,22 @@ mbox_hint_edit(xo)
 
   utmp_mode(M_SMAIL);
   fpath[0] = '\0';
-  curredit = EDIT_MAIL;         /* Thor.981105: ª½±µ«ü©w¼g«H */
+  curredit = EDIT_MAIL;         /* Thor.981105: ç›´æ¥æŒ‡å®šå¯«ä¿¡ */
 
 + if (userno)
-+   mail_hint(rcpt); /* ¨q¥X¦¬«H«Å¨¥ */
++   mail_hint(rcpt); /* ç§€å‡ºæ”¶ä¿¡å®£è¨€ */
 
 : mail.c:mbox_cb[]
 
-+ Ctrl('E'), mbox_hint_edit,   [1;44m// «öÁä¦Û­q [m
++ Ctrl('E'), mbox_hint_edit,   [1;44m// æŒ‰éµè‡ªè¨‚ [m
 
 --
-  ¦b¬İªO«ö y ¦^À³(B)¤GªÌ¬Ò¬O
-  ¨Ã¤£·|¬İ¨ìµo«H«Å¨¥
+  åœ¨çœ‹æ¿æŒ‰ y å›æ‡‰(B)äºŒè€…çš†æ˜¯
+  ä¸¦ä¸æœƒçœ‹åˆ°ç™¼ä¿¡å®£è¨€
 
 --
-[m[1;33m¡´[36m     [37m£»[36m    [37m£»[36m ¢¨¢h¢© ¢¨¢h¢© ¢h  ¢h ¢i¢h¢© ¢i¢h¢© ¢i¢h¢© ¢¨¢h¢© ¢i¢h¢p   [33m¡ş[m
-  [1m£»[m [1;33m¢­[37m         ¢i     ¢i     ¢i  ¢i ¢i  ¢p ¢i  ¢p ¢i¢g   ¢i¢g¢p ¢p¢p¢p [33m¡¹[m
-[32m¢¨[37;42m     [1;33m¡¹[37m£»     [33m¢ª¢i¢« ¢ª¢i¢« ¢ª¢i¢« ¢i¢i¢« ¢i¢ª¢g ¢i¢g¢« ¢i  ¢p ¢p¢p¢p[37m£»[;37;42m  [32;40m¢©[m
-[32;42m  [1;37m¢Ñ¢Ò¢Ğ¢Ğ¢á  [32m¤¤¥¿[35m¿v¹Ú¶é[36mBBS¯¸ [31mÅwªï»YÁ{°ÑÆ[[32m cd.twbbs.org  (140.123.20.230)[36m [;37;42m   [m
-[1;32m http://cd.twbbs.org[;32;40m¢ª[30;42m [1;33m [37m¡¯[32m [37mAuthor:[;30;42m Dinsam      [1;37m¡¹ From:[;30;42m 218.171.110.242 [1;32m  [33m [;32;40m¢«[m
+[m[1;33mâ—[36m     [37mË™[36m    [37mË™[36m â—¢â–‡â—£ â—¢â–‡â—£ â–‡  â–‡ â–ˆâ–‡â—£ â–ˆâ–‡â—£ â–ˆâ–‡â—£ â—¢â–‡â—£ â–ˆâ–‡â–‰   [33mï¼[m
+  [1mË™[m [1;33mâ•²[37m         â–ˆ     â–ˆ     â–ˆ  â–ˆ â–ˆ  â–‰ â–ˆ  â–‰ â–ˆâ–†   â–ˆâ–†â–‰ â–‰â–‰â–‰ [33mâ˜…[m
+[32mâ—¢[37;42m     [1;33mâ˜…[37mË™     [33mâ—¥â–ˆâ—¤ â—¥â–ˆâ—¤ â—¥â–ˆâ—¤ â–ˆâ–ˆâ—¤ â–ˆâ—¥â–† â–ˆâ–†â—¤ â–ˆ  â–‰ â–‰â–‰â–‰[37mË™[;37;42m  [32;40mâ—£[m
+[32;42m  [1;37mï¼£ï¼¤ï¼¢ï¼¢ï¼³  [32mä¸­æ­£[35mç¯‰å¤¢åœ’[36mBBSç«™ [31mæ­¡è¿è’è‡¨åƒè§€[32m cd.twbbs.org  (140.123.20.230)[36m [;37;42m   [m
+[1;32m http://cd.twbbs.org[;32;40mâ—¥[30;42m [1;33m [37mï¼Š[32m [37mAuthor:[;30;42m Dinsam      [1;37mâ˜… From:[;30;42m 218.171.110.242 [1;32m  [33m [;32;40mâ—¤[m

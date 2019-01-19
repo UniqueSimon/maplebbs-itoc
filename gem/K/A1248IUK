@@ -1,26 +1,26 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD] ¦³Ãö¯¸¤º¬İªO¤¬Âà¤å³¹
-µo«H¯¸: °Ê¤O®Ö¤ß (2005/04/21 Thu 08:44:52)                Updated: 2005/04/21
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] æœ‰é—œç«™å…§çœ‹æ¿äº’è½‰æ–‡ç« 
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2005/04/21 Thu 08:44:52)                Updated: 2005/04/21
 
-¡° ¤Ş­z¡mshadowofsoul (Shadow Of Soul)¡n¤§»Ê¨¥¡G
-> §Æ±æ¯à°÷post¦b¤@­ÓªO(ex. ¤½§iª©)
-> ¥L´N·|¦Û°ÊÂà«H¨ì¬Y¨Ç»İ­n¤½§iªºª©
-¡° ¤Ş­z¡mcchhsu (AG)¡n¤§»Ê¨¥¡G
-> ¦³¨S¦³¿ìªk§ï¦¨ ...post«á´N·|¦Û°ÊÂàpo¨ì XX¤ÀÃş¥h©O
+â€» å¼•è¿°ã€Šshadowofsoul (Shadow Of Soul)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å¸Œæœ›èƒ½å¤ poståœ¨ä¸€å€‹æ¿(ex. å…¬å‘Šç‰ˆ)
+> ä»–å°±æœƒè‡ªå‹•è½‰ä¿¡åˆ°æŸäº›éœ€è¦å…¬å‘Šçš„ç‰ˆ
+â€» å¼•è¿°ã€Šcchhsu (AG)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æœ‰æ²’æœ‰è¾¦æ³•æ”¹æˆ ...postå¾Œå°±æœƒè‡ªå‹•è½‰poåˆ° XXåˆ†é¡å»å‘¢
 
-  ¯¸ªø¦b XXXX ªOªº post ·|¦Û°ÊÂà¥h¤ÀÃş¬O [­Ó¤H] ªº©Ò¦³¬İªO
+  ç«™é•·åœ¨ XXXX æ¿çš„ post æœƒè‡ªå‹•è½‰å»åˆ†é¡æ˜¯ [å€‹äºº] çš„æ‰€æœ‰çœ‹æ¿
 
 : post.c:do_post()
 
-+ if (HAS_PERM(PERM_ALLADMIN) && !strcmp(currboard, "XXXX"))   [1;44m // XXXX ¦Û­q [m
++ if (HAS_PERM(PERM_ALLADMIN) && !strcmp(currboard, "XXXX"))   [1;44m // XXXX è‡ªè¨‚ [m
 +   copy_post(&hdr, fpath);
 
   unlink(fpath);
 
   vmsg(NULL);
 
-: post.c:copy_post() ·s¼W¦¹¨ç¦¡¦b do_post() «e­±
-: ¦pªG¬O§Æ±æ¡u¦Û°ÊÂà¥h¤ÀÃş¬O [­Ó¤H] ªº©Ò¦³¬İªO¡v¡A¨º»ò³o¼Ë§ï
+: post.c:copy_post() æ–°å¢æ­¤å‡½å¼åœ¨ do_post() å‰é¢
+: å¦‚æœæ˜¯å¸Œæœ›ã€Œè‡ªå‹•è½‰å»åˆ†é¡æ˜¯ [å€‹äºº] çš„æ‰€æœ‰çœ‹æ¿ã€ï¼Œé‚£éº¼é€™æ¨£æ”¹
 
 static void
 copy_post(hdr, fpath)
@@ -36,7 +36,7 @@ copy_post(hdr, fpath)
 
   while (brdp < bend)
   {
-    if (!strcmp(brdp->class, "­Ó¤H"))   [1;44m // ¤ÀÃş¦Û©w [m
+    if (!strcmp(brdp->class, "å€‹äºº"))   [1;44m // åˆ†é¡è‡ªå®š [m
     {
       brd_fpath(folder, brdp->brdname, fn_dir);
       hdr_stamp(folder, HDR_COPY | 'A', &post, fpath);
@@ -47,8 +47,8 @@ copy_post(hdr, fpath)
   }
 }
 
-: post.c:copy_post() ·s¼W¦¹¨ç¦¡¦b do_post() «e­±
-: ¦pªG¬O§Æ±æ¡u¦Û°ÊÂà¥h¬İªO YYYY¡v¡A¨º»ò³o¼Ë§ï
+: post.c:copy_post() æ–°å¢æ­¤å‡½å¼åœ¨ do_post() å‰é¢
+: å¦‚æœæ˜¯å¸Œæœ›ã€Œè‡ªå‹•è½‰å»çœ‹æ¿ YYYYã€ï¼Œé‚£éº¼é€™æ¨£æ”¹
 
 static void
 do_post(fpath)
@@ -58,12 +58,12 @@ do_post(fpath)
   char folder[64];
   HDR post;
 
-  brd_fpath(folder, "YYYY", fn_dir);      [1;44m // ¬İªO¦Û©w [m
+  brd_fpath(folder, "YYYY", fn_dir);      [1;44m // çœ‹æ¿è‡ªå®š [m
   hdr_stamp(folder, HDR_COPY | 'A', &post, fpath);
   memcpy(post.owner, hdr->owner, TTLEN + 140);
   rec_bot(folder, &post, sizeof(HDR));
 }
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

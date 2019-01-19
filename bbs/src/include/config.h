@@ -22,242 +22,242 @@
 
 
 /* ----------------------------------------------------- */
-/* ©w¸q BBS ¯¸¦W¦ì§}					 */
+/* å®šç¾© BBS ç«™åä½å€					 */
 /* ------------------------------------------------------*/
 
-#define SCHOOLNAME	"¥x«n¤@¤¤"		/* ²ÕÂ´¦WºÙ */
-#define BBSNAME		"»P«n¦@»R"		/* ¤¤¤å¯¸¦W */
-#define BBSNAME2	"WolfBBS"		/* ­^¤å¯¸¦W */
-#define SYSOPNICK	"¯T¤Hªø¦Ñ"		/* sysop ªº¼ÊºÙ */
-#define TAG_VALID       "["BBSNAME2"]To"	/* ¨­¤À»{ÃÒ¨ç token */
+#define SCHOOLNAME	"å°å—ä¸€ä¸­"		/* çµ„ç¹”åç¨± */
+#define BBSNAME		"èˆ‡å—å…±èˆ"		/* ä¸­æ–‡ç«™å */
+#define BBSNAME2	"WolfBBS"		/* è‹±æ–‡ç«™å */
+#define SYSOPNICK	"ç‹¼äººé•·è€"		/* sysop çš„æš±ç¨± */
+#define TAG_VALID       "["BBSNAME2"]To"	/* èº«åˆ†èªè­‰å‡½ token */
 
 #define MYIPADDR	"210.70.137.5"		/* IP address */
-#define MYHOSTNAME	"bbs.tnfsh.tn.edu.tw"	/* ºô¸ô¦a§} FQDN */
+#define MYHOSTNAME	"bbs.tnfsh.tn.edu.tw"	/* ç¶²è·¯åœ°å€ FQDN */
 
 #define HOST_ALIASES	{MYHOSTNAME, MYIPADDR, \
 			 "wolf.twbbs.org", "wolf.twbbs.org.tw", \
 			 NULL}
 
-#define MYCHARSET	"big5"			/* BBS ©Ò¨Ï¥Îªº¦r¶° */
+#define MYCHARSET	"big5"			/* BBS æ‰€ä½¿ç”¨çš„å­—é›† */
 
-#define BBSHOME		"/home/bbs"		/* BBS ªº®a */
-#define BAKPATH		"/home/bbs/bak"		/* ³Æ¥÷ÀÉªº¸ô®| */
+#define BBSHOME		"/home/bbs"		/* BBS çš„å®¶ */
+#define BAKPATH		"/home/bbs/bak"		/* å‚™ä»½æª”çš„è·¯å¾‘ */
 
 #define BBSUID		9999
-#define BBSGID		99			/* Linux ½Ğ³]¬° 999 */
+#define BBSGID		99			/* Linux è«‹è¨­ç‚º 999 */
 
 
 /* ----------------------------------------------------- */
-/* ²ÕºA³W¹º						 */
+/* çµ„æ…‹è¦åŠƒ						 */
 /* ----------------------------------------------------- */
 
   /* ------------------------------------------------- */
-  /* ²ÕºA³W¹º£»¨t²Î°lÂÜ                                */
+  /* çµ„æ…‹è¦åŠƒË™ç³»çµ±è¿½è¹¤                                */
   /* ------------------------------------------------- */
 
-#define	HAVE_SEM		/* ¨Ï¥Î semaphore */
+#define	HAVE_SEM		/* ä½¿ç”¨ semaphore */
 
 #ifndef CYGWIN
-#define	HAVE_RLIMIT		/* ±Ä¥Î resource limit¡ACygwin ¤£¯à¥Î */
+#define	HAVE_RLIMIT		/* æ¡ç”¨ resource limitï¼ŒCygwin ä¸èƒ½ç”¨ */
 #endif
 
-#undef	MODE_STAT               /* Æ[¹î¤Î²Î­p user ªº¥ÍºA¡A¥H°µ¬°¸gÀç¤è°w */
+#undef	MODE_STAT               /* è§€å¯ŸåŠçµ±è¨ˆ user çš„ç”Ÿæ…‹ï¼Œä»¥åšç‚ºç¶“ç‡Ÿæ–¹é‡ */
 
-#undef	SYSOP_CHECK_MAIL	/* itoc.001029: ¯¸ªø¥i¥HÅª¨ú¨Ï¥ÎªÌ«H½c */
+#undef	SYSOP_CHECK_MAIL	/* itoc.001029: ç«™é•·å¯ä»¥è®€å–ä½¿ç”¨è€…ä¿¡ç®± */
 
-#undef	SYSOP_SU		/* itoc.001102: ¥H sysop µn¤J¥i¥HÅÜ§ó¨Ï¥ÎªÌ¨­¤À */
+#undef	SYSOP_SU		/* itoc.001102: ä»¥ sysop ç™»å…¥å¯ä»¥è®Šæ›´ä½¿ç”¨è€…èº«åˆ† */
 
-#define	HAVE_MULTI_BYTE		/* hightman.060504: ¤ä´©Âù¦r¸`º~¦r³B²z */
+#define	HAVE_MULTI_BYTE		/* hightman.060504: æ”¯æ´é›™å­—ç¯€æ¼¢å­—è™•ç† */
 
   /* ------------------------------------------------- */
-  /* ²ÕºA³W¹º£»µù¥U»{ÃÒ                                */
+  /* çµ„æ…‹è¦åŠƒË™è¨»å†Šèªè­‰                                */
   /* ------------------------------------------------- */
 
-#define LOGINASNEW		/* ±Ä¥Î¤W¯¸¥Ó½Ğ±b¸¹¨î«× */
+#define LOGINASNEW		/* æ¡ç”¨ä¸Šç«™ç”³è«‹å¸³è™Ÿåˆ¶åº¦ */
 
 #ifdef LOGINASNEW
-#undef	HAVE_GUARANTOR		/* itoc.000319: ±Ä¥Î«OÃÒ¤H¨î«× */
+#undef	HAVE_GUARANTOR		/* itoc.000319: æ¡ç”¨ä¿è­‰äººåˆ¶åº¦ */
 #endif
 
-#undef	HAVE_LOGIN_DENIED	/* itoc.000319: ¾×±¼¬Y¨Ç¨Ó·½ªº³sµ²¡A°Ñ·Ó etc/bbs.acl */
+#undef	HAVE_LOGIN_DENIED	/* itoc.000319: æ“‹æ‰æŸäº›ä¾†æºçš„é€£çµï¼Œåƒç…§ etc/bbs.acl */
 
-#undef	NEWUSER_LIMIT		/* ·s¤â¤W¸ôªº¤T¤Ñ­­¨î */
+#undef	NEWUSER_LIMIT		/* æ–°æ‰‹ä¸Šè·¯çš„ä¸‰å¤©é™åˆ¶ */
 
-#define	JUSTIFY_PERIODICAL	/* ©w´Á¨­¤À»{ÃÒ */
+#define	JUSTIFY_PERIODICAL	/* å®šæœŸèº«åˆ†èªè­‰ */
 
-#define	EMAIL_JUSTIFY		/* µo¥X Internet Email ¨­¤À»{ÃÒ«H¨ç */
+#define	EMAIL_JUSTIFY		/* ç™¼å‡º Internet Email èº«åˆ†èªè­‰ä¿¡å‡½ */
 
 #ifdef EMAIL_JUSTIFY
-#define	HAVE_POP3_CHECK		/* itoc.000315: POP3 ¨t²Î»{ÃÒ */
-#define	HAVE_REGKEY_CHECK	/* itoc.010112: »{ÃÒ½XÅçÃÒ */
+#define	HAVE_POP3_CHECK		/* itoc.000315: POP3 ç³»çµ±èªè­‰ */
+#define	HAVE_REGKEY_CHECK	/* itoc.010112: èªè­‰ç¢¼é©—è­‰ */
 #endif
 
-#define	HAVE_REGISTER_FORM	/* µù¥U³æ»{ÃÒ */
+#define	HAVE_REGISTER_FORM	/* è¨»å†Šå–®èªè­‰ */
 
   /* ------------------------------------------------- */
-  /* ²ÕºA³W¹º£»µ²¥æªB¤Í                                */
+  /* çµ„æ…‹è¦åŠƒË™çµäº¤æœ‹å‹                                */
   /* ------------------------------------------------- */
 
-#define	HAVE_MODERATED_BOARD	/* ´£¨Ñ¦n¤Í¯µ±KªO */	/* ¯µ±K¬İªOªº¾\ÅªÅv­­­n¬O PERM_SYSOP ¤~·|³Q·í¦¨¯µ±K¬İªO */
-							/* ¦n¤Í¬İªOªº¾\ÅªÅv­­­n¬O PERM_BOARD ¤~·|³Q·í¦¨¦n¤Í¬İªO */
-#define	CHECK_ONLINE		/* itoc.010306: ¤å³¹¦Cªí¤¤¥i¥HÅã¥Ü¨Ï¥ÎªÌ¬O§_¦b¯¸¤W */
+#define	HAVE_MODERATED_BOARD	/* æä¾›å¥½å‹ç§˜å¯†æ¿ */	/* ç§˜å¯†çœ‹æ¿çš„é–±è®€æ¬Šé™è¦æ˜¯ PERM_SYSOP æ‰æœƒè¢«ç•¶æˆç§˜å¯†çœ‹æ¿ */
+							/* å¥½å‹çœ‹æ¿çš„é–±è®€æ¬Šé™è¦æ˜¯ PERM_BOARD æ‰æœƒè¢«ç•¶æˆå¥½å‹çœ‹æ¿ */
+#define	CHECK_ONLINE		/* itoc.010306: æ–‡ç« åˆ—è¡¨ä¸­å¯ä»¥é¡¯ç¤ºä½¿ç”¨è€…æ˜¯å¦åœ¨ç«™ä¸Š */
 
-#define	HAVE_BADPAL		/* itoc.010302: ´£¨ÑÃa¤Hªº¥\¯à */
+#define	HAVE_BADPAL		/* itoc.010302: æä¾›å£äººçš„åŠŸèƒ½ */
 
-#define	HAVE_LIST		/* itoc.010923: ¸s²Õ¦W³æ */
+#define	HAVE_LIST		/* itoc.010923: ç¾¤çµ„åå–® */
 
-#define HAVE_ALOHA              /* itoc.001202: ¤W¯¸³qª¾ */
+#define HAVE_ALOHA              /* itoc.001202: ä¸Šç«™é€šçŸ¥ */
 
-#undef	LOGIN_NOTIFY            /* ¨t²Î¨ó´Mºô¤Í */
+#undef	LOGIN_NOTIFY            /* ç³»çµ±å”å°‹ç¶²å‹ */
 
 #if (defined(HAVE_ALOHA) || defined(LOGIN_NOTIFY))
-#define	HAVE_NOALOHA		/* itoc.010716: ¤W¯¸¤£³qª¾/¨ó´M */
+#define	HAVE_NOALOHA		/* itoc.010716: ä¸Šç«™ä¸é€šçŸ¥/å”å°‹ */
 #endif
 
-#define	LOG_BMW                 /* lkchu.981201: ¤ô²y°O¿ı³B²z */
+#define	LOG_BMW                 /* lkchu.981201: æ°´çƒè¨˜éŒ„è™•ç† */
 
 #ifdef LOG_BMW
-#define	RETAIN_BMW		/* itoc.021102: ¤ô²y¦sÃÒ */
+#define	RETAIN_BMW		/* itoc.021102: æ°´çƒå­˜è­‰ */
 #endif
 
-#define	LOG_TALK		/* lkchu.981201: ²á¤Ñ°O¿ı³B²z */
+#define	LOG_TALK		/* lkchu.981201: èŠå¤©è¨˜éŒ„è™•ç† */
 
-#define	HAVE_NOBROAD		/* itoc.010716: ©Ú¦¬¼s¼½ */
+#define	HAVE_NOBROAD		/* itoc.010716: æ‹’æ”¶å»£æ’­ */
 
-#define	BMW_COUNT		/* itoc.010312: ­pºâ¤¤¤F´X­Ó¤ô²y */
+#define	BMW_COUNT		/* itoc.010312: è¨ˆç®—ä¸­äº†å¹¾å€‹æ°´çƒ */
 
-#define	BMW_DISPLAY		/* itoc.010313: Åã¥Ü¤§«eªº¤ô²y */
+#define	BMW_DISPLAY		/* itoc.010313: é¡¯ç¤ºä¹‹å‰çš„æ°´çƒ */
 
-#define	HAVE_CHANGE_NICK	/* ¨Ï¥ÎªÌ¦W³æ ^N ¥Ã¤[§ó§ï¼ÊºÙ */
+#define	HAVE_CHANGE_NICK	/* ä½¿ç”¨è€…åå–® ^N æ°¸ä¹…æ›´æ”¹æš±ç¨± */
 
-#define	HAVE_CHANGE_FROM        /* ¨Ï¥ÎªÌ¦W³æ ^F ¼È®É§ó§ï¬G¶m */
+#define	HAVE_CHANGE_FROM        /* ä½¿ç”¨è€…åå–® ^F æš«æ™‚æ›´æ”¹æ•…é„‰ */
 
-#define	HAVE_CHANGE_ID		/* ¨Ï¥ÎªÌ¦W³æ ^D ¼È®É§ó§ï ID */
+#define	HAVE_CHANGE_ID		/* ä½¿ç”¨è€…åå–® ^D æš«æ™‚æ›´æ”¹ ID */
 
-#define	HAVE_WHERE		/* itoc.001102: ¨Ï¥ÎªÌ¦W³æ¬G¶m¿ëÃÑ¡A°Ñ·Ó etc/host fqdn */
+#define	HAVE_WHERE		/* itoc.001102: ä½¿ç”¨è€…åå–®æ•…é„‰è¾¨è­˜ï¼Œåƒç…§ etc/host fqdn */
 
 #ifdef HAVE_WHERE
-#define GUEST_WHERE		/* itoc.010208: guest ¶Ã¼Æ¨ú¬G¶m */
+#define GUEST_WHERE		/* itoc.010208: guest äº‚æ•¸å–æ•…é„‰ */
 #endif
 
-#define	GUEST_NICK		/* itoc.000319: guest ¶Ã¼Æ¨ú¼ÊºÙ */
+#define	GUEST_NICK		/* itoc.000319: guest äº‚æ•¸å–æš±ç¨± */
 
-#define	DETAIL_IDLETIME		/* itoc.020316: ®É±`§ó·s¶¢¸m®É¶¡ */
+#define	DETAIL_IDLETIME		/* itoc.020316: æ™‚å¸¸æ›´æ–°é–’ç½®æ™‚é–“ */
 
-#define	TIME_KICKER		/* itoc.030514: ¬O§_¦Û°ÊÃ±°h idle ¹L¤[ªº¨Ï¥ÎªÌ */
+#define	TIME_KICKER		/* itoc.030514: æ˜¯å¦è‡ªå‹•ç°½é€€ idle éä¹…çš„ä½¿ç”¨è€… */
 
-#define	HAVE_BRDMATE		/* itoc.020602: ªO¦ñ (¾\Åª¦P¤@¬İªO) */
+#define	HAVE_BRDMATE		/* itoc.020602: æ¿ä¼´ (é–±è®€åŒä¸€çœ‹æ¿) */
 
-#define	HAVE_SUPERCLOAK		/* itoc.020602: µµÁô¡A¯¸ªø¶W¯ÅÁô§Î */
+#define	HAVE_SUPERCLOAK		/* itoc.020602: ç´«éš±ï¼Œç«™é•·è¶…ç´šéš±å½¢ */
 
   /* ------------------------------------------------- */
-  /* ²ÕºA³W¹º£»¬İªO«H½c                                */
+  /* çµ„æ…‹è¦åŠƒË™çœ‹æ¿ä¿¡ç®±                                */
   /* ------------------------------------------------- */
       
-#define	HAVE_ANONYMOUS		/* ´£¨Ñ anonymous ªO */
+#define	HAVE_ANONYMOUS		/* æä¾› anonymous æ¿ */
 
 #ifdef HAVE_ANONYMOUS
-#define	HAVE_UNANONYMOUS_BOARD	/* itoc.020602: ¤Ï°Î¦WªO¡A¥²¶·¦³¶} BN_UNANONYMOUS */
+#define	HAVE_UNANONYMOUS_BOARD	/* itoc.020602: ååŒ¿åæ¿ï¼Œå¿…é ˆæœ‰é–‹ BN_UNANONYMOUS */
 #endif
 
-#define	SHOW_USER_IN_TEXT       /* ¦b¤å¥ó¤¤ Ctrl+Q ¥iÅã¥Ü User ªº¦W¦r */
+#define	SHOW_USER_IN_TEXT       /* åœ¨æ–‡ä»¶ä¸­ Ctrl+Q å¯é¡¯ç¤º User çš„åå­— */
 
-#undef	ANTI_PHONETIC		/* itoc.030503: ¸T¥Îª`­µ¤å */
+#undef	ANTI_PHONETIC		/* itoc.030503: ç¦ç”¨æ³¨éŸ³æ–‡ */
 
-#define	ENHANCED_VISIT		/* itoc.010407: ¤wÅª/¥¼ÅªÀË¬d¬O¸Ó¬İªOªº³Ì«á¤@½g¨M©w */
+#define	ENHANCED_VISIT		/* itoc.010407: å·²è®€/æœªè®€æª¢æŸ¥æ˜¯è©²çœ‹æ¿çš„æœ€å¾Œä¸€ç¯‡æ±ºå®š */
 
-#define	COLOR_HEADER            /* lkchu.981201: ÅÜ´«±m¦â¼ĞÀY */
+#define	COLOR_HEADER            /* lkchu.981201: è®Šæ›å½©è‰²æ¨™é ­ */
 
-#define	CURSOR_BAR		/* itoc.010113: ¿ï³æ¥ú´Î¡A­Y¶}±Ò¿ï³æ¥ú´Î¡A¿ï³æ´N¤£¯à¦³ÃC¦â±±¨î½X */
+#define	CURSOR_BAR		/* itoc.010113: é¸å–®å…‰æ£’ï¼Œè‹¥é–‹å•Ÿé¸å–®å…‰æ£’ï¼Œé¸å–®å°±ä¸èƒ½æœ‰é¡è‰²æ§åˆ¶ç¢¼ */
 
-#define	HAVE_DECLARE		/* ¨Ï title ¤¤¦³ [] §ó©úÅã¡A¥B¤é´Á¤W¦â */
+#define	HAVE_DECLARE		/* ä½¿ title ä¸­æœ‰ [] æ›´æ˜é¡¯ï¼Œä¸”æ—¥æœŸä¸Šè‰² */
 
-#define	HAVE_POPUPMENU          /* ÂÛ¥X¦¡¿ï³æ */
+#define	HAVE_POPUPMENU          /* è¹¦å‡ºå¼é¸å–® */
 
 #ifdef HAVE_POPUPMENU
-#define	POPUP_ANSWER		/* ÂÛ¥X¦¡¿ï³æ -- ¸ß°İ¿ï¶µ */
-#define	POPUP_MESSAGE		/* ÂÛ¥X¦¡¿ï³æ -- °T®§µøµ¡ */
+#define	POPUP_ANSWER		/* è¹¦å‡ºå¼é¸å–® -- è©¢å•é¸é … */
+#define	POPUP_MESSAGE		/* è¹¦å‡ºå¼é¸å–® -- è¨Šæ¯è¦–çª— */
 #endif
 
-#define	AUTHOR_EXTRACTION	/* ´M§ä¦P¤@§@ªÌ¤å³¹ */
+#define	AUTHOR_EXTRACTION	/* å°‹æ‰¾åŒä¸€ä½œè€…æ–‡ç«  */
 
-#define	HAVE_TERMINATOR		/* ²×µ²¤å³¹¤jªk --- ©Ø·¬¸¨¸­±Ù */
+#define	HAVE_TERMINATOR		/* çµ‚çµæ–‡ç« å¤§æ³• --- æ‹‚æ¥“è½è‘‰æ–¬ */
 
-#define	HAVE_XYNEWS		/* itoc.010822: ·s»D¾\Åª¼Ò¦¡ */
+#define	HAVE_XYNEWS		/* itoc.010822: æ–°èé–±è®€æ¨¡å¼ */
 
-#define	HAVE_SCORE		/* itoc.020114: ¤å³¹µû¤À¥\¯à */
+#define	HAVE_SCORE		/* itoc.020114: æ–‡ç« è©•åˆ†åŠŸèƒ½ */
 
-#define	HAVE_DETECT_CROSSPOST	/* cross-post ¦Û°Ê°»´ú */
+#define	HAVE_DETECT_CROSSPOST	/* cross-post è‡ªå‹•åµæ¸¬ */
 
-#define	AUTO_JUMPBRD		/* itoc.010910: ¬İªO¦Cªí¦Û°Ê¸õ¥h¤U¤@­Ó¥¼Åª¬İªO */
+#define	AUTO_JUMPBRD		/* itoc.010910: çœ‹æ¿åˆ—è¡¨è‡ªå‹•è·³å»ä¸‹ä¸€å€‹æœªè®€çœ‹æ¿ */
 
-#undef	AUTO_JUMPPOST		/* itoc.010910: ¤å³¹¦Cªí¦Û°Ê¸õ¥h³Ì«á¤@½g¥¼Åª */
+#undef	AUTO_JUMPPOST		/* itoc.010910: æ–‡ç« åˆ—è¡¨è‡ªå‹•è·³å»æœ€å¾Œä¸€ç¯‡æœªè®€ */
 
-#define	ENHANCED_BSHM_UPDATE	/* itoc.021101: ¬İªO¦Cªí§R°£/¼Ğ°O¤å³¹¤£¦C¤J¥¼Åªªº¿O */
+#define	ENHANCED_BSHM_UPDATE	/* itoc.021101: çœ‹æ¿åˆ—è¡¨åˆªé™¤/æ¨™è¨˜æ–‡ç« ä¸åˆ—å…¥æœªè®€çš„ç‡ˆ */
 
-#define	SLIDE_SHOW		/* itoc.030411: ¦Û°Ê¼½©ñ¤å³¹ */
+#define	SLIDE_SHOW		/* itoc.030411: è‡ªå‹•æ’­æ”¾æ–‡ç«  */
 
-#define	EVERY_Z			/* ctrl-z Everywhere (°£¤F¼g¤å³¹) */
+#define	EVERY_Z			/* ctrl-z Everywhere (é™¤äº†å¯«æ–‡ç« ) */
 
-#define	EVERY_BIFF		/* Thor.980805: ¶l®t¨ì³B¨Ó«ö¹a */
+#define	EVERY_BIFF		/* Thor.980805: éƒµå·®åˆ°è™•ä¾†æŒ‰éˆ´ */
 
-#undef	HAVE_SIGNED_MAIL	/* Thor.990409: ¥~°e«H¥ó¥[Ã±¦W */
+#undef	HAVE_SIGNED_MAIL	/* Thor.990409: å¤–é€ä¿¡ä»¶åŠ ç°½å */
 
-#define	INPUT_TOOLS		/* itoc.000319: ²Å¸¹¿é¤J¤u¨ã */
+#define	INPUT_TOOLS		/* itoc.000319: ç¬¦è™Ÿè¼¸å…¥å·¥å…· */
 
-#define	HAVE_FORCE_BOARD	/* itoc.000319: ±j­¢ user login ®É­ÔÅª¨ú¬Y¤½§i¬İªO */
-				/* itoc.010726: ¸Ó¤½§i¬İªO­n¤£¥i zap¡A§_«h zap «á¤£·|°O¿ı brh */
+#define	HAVE_FORCE_BOARD	/* itoc.000319: å¼·è¿« user login æ™‚å€™è®€å–æŸå…¬å‘Šçœ‹æ¿ */
+				/* itoc.010726: è©²å…¬å‘Šçœ‹æ¿è¦ä¸å¯ zapï¼Œå¦å‰‡ zap å¾Œä¸æœƒè¨˜éŒ„ brh */
 
-#define	MY_FAVORITE		/* itoc.001202: ´£¨Ñ§Úªº³Ì·R¬İªO */
+#define	MY_FAVORITE		/* itoc.001202: æä¾›æˆ‘çš„æœ€æ„›çœ‹æ¿ */
 
-#define	HAVE_COSIGN		/* itoc.010108: ´£¨Ñ¬İªO³s¸p */
+#define	HAVE_COSIGN		/* itoc.010108: æä¾›çœ‹æ¿é€£ç½² */
 
 #ifdef HAVE_COSIGN
-#undef	SYSOP_START_COSIGN	/* itoc.030613: ·sªO³s¸p­n¥ı¸g¯¸ªø¼f®Ö¤~¯à¶}©l */
+#undef	SYSOP_START_COSIGN	/* itoc.030613: æ–°æ¿é€£ç½²è¦å…ˆç¶“ç«™é•·å¯©æ ¸æ‰èƒ½é–‹å§‹ */
 #endif
 
-#define	HAVE_REFUSEMARK		/* itoc.010602: ´£¨Ñ¬İªO¤å³¹¥[±K */
+#define	HAVE_REFUSEMARK		/* itoc.010602: æä¾›çœ‹æ¿æ–‡ç« åŠ å¯† */
 
-#define	HAVE_LABELMARK		/* itoc.020307: ´£¨Ñ¬İªO¤å³¹¥[«İ¬å¼Ğ°O */
+#define	HAVE_LABELMARK		/* itoc.020307: æä¾›çœ‹æ¿æ–‡ç« åŠ å¾…ç æ¨™è¨˜ */
 
-#undef	POST_PREFIX		/* itoc.020113: µoªí¤å³¹®É¼ĞÃD¥i¿ï¾ÜºØÃş */
+#undef	POST_PREFIX		/* itoc.020113: ç™¼è¡¨æ–‡ç« æ™‚æ¨™é¡Œå¯é¸æ“‡ç¨®é¡ */
 
-#define	MULTI_MAIL		/* ¸s²Õ±H«H¥\¯à */
+#define	MULTI_MAIL		/* ç¾¤çµ„å¯„ä¿¡åŠŸèƒ½ */
 
-#define	HAVE_MAIL_ZIP		/* itoc.010228: ´£¨Ñ§â«H¥ó/ºëµØ°ÏÀ£ÁYÂà±Hªº¥\¯à */
+#define	HAVE_MAIL_ZIP		/* itoc.010228: æä¾›æŠŠä¿¡ä»¶/ç²¾è¯å€å£“ç¸®è½‰å¯„çš„åŠŸèƒ½ */
 
-#undef	OVERDUE_MAILDEL		/* itoc.020217: ²M°£¹L´Á«H¥ó */
+#undef	OVERDUE_MAILDEL		/* itoc.020217: æ¸…é™¤éæœŸä¿¡ä»¶ */
 
   /* ------------------------------------------------- */
-  /* ²ÕºA³W¹º£»¥~±¾µ{¦¡                                */
+  /* çµ„æ…‹è¦åŠƒË™å¤–æ›ç¨‹å¼                                */
   /* ------------------------------------------------- */
 
-#define	HAVE_EXTERNAL		/* Xyz ¿ï³æ */
+#define	HAVE_EXTERNAL		/* Xyz é¸å–® */
 
 #ifdef HAVE_EXTERNAL
-#  define HAVE_SONG		/* itoc.010205: ´£¨ÑÂIºq¥\¯à */
-#  define HAVE_NETTOOL		/* itoc.010209: ´£¨Ñºô¸ôªA°È¤u¨ã */
-#  define HAVE_GAME		/* itoc.010208: ´£¨Ñ¹CÀ¸ */
-#  define HAVE_BUY		/* itoc.010716: ´£¨ÑÁÊ¶RÅv­­ */
-#  define HAVE_TIP		/* itoc.010301: ´£¨Ñ¨C¤é¤p¯µ³Z */
-#  define HAVE_CLASSTABLE	/* itoc.010907: ´£¨Ñ¥\½Òªí */
-#  define HAVE_CREDIT		/* itoc.020125: ´£¨Ñ°O±b¥» */
-#  define HAVE_LOVELETTER	/* itoc.020602: ´£¨Ñ±¡®Ñ²£¥Í¾¹ */
-#  define HAVE_CALENDAR		/* itoc.020831: ´£¨Ñ¸U¦~¾ä */
+#  define HAVE_SONG		/* itoc.010205: æä¾›é»æ­ŒåŠŸèƒ½ */
+#  define HAVE_NETTOOL		/* itoc.010209: æä¾›ç¶²è·¯æœå‹™å·¥å…· */
+#  define HAVE_GAME		/* itoc.010208: æä¾›éŠæˆ² */
+#  define HAVE_BUY		/* itoc.010716: æä¾›è³¼è²·æ¬Šé™ */
+#  define HAVE_TIP		/* itoc.010301: æä¾›æ¯æ—¥å°ç§˜è¨£ */
+#  define HAVE_CLASSTABLE	/* itoc.010907: æä¾›åŠŸèª²è¡¨ */
+#  define HAVE_CREDIT		/* itoc.020125: æä¾›è¨˜å¸³æœ¬ */
+#  define HAVE_LOVELETTER	/* itoc.020602: æä¾›æƒ…æ›¸ç”¢ç”Ÿå™¨ */
+#  define HAVE_CALENDAR		/* itoc.020831: æä¾›è¬å¹´æ›† */
 #endif
 
 #ifdef HAVE_SONG
-#  define HAVE_SONG_CAMERA	/* itoc.010207: ´£¨ÑÂIºq¨ì°ÊºA¬İªO¥\¯à */
-#  define LOG_SONG_USIES	/* itoc.010928: ÂIºq°O¿ı */
+#  define HAVE_SONG_CAMERA	/* itoc.010207: æä¾›é»æ­Œåˆ°å‹•æ…‹çœ‹æ¿åŠŸèƒ½ */
+#  define LOG_SONG_USIES	/* itoc.010928: é»æ­Œè¨˜éŒ„ */
 #endif
 
 
 /* ----------------------------------------------------- */
-/* ²ÕºA³]©w                                              */
+/* çµ„æ…‹è¨­å®š                                              */
 /* ------------------------------------------------------*/
 
 #ifdef HAVE_SIGNED_MAIL
-#define PRIVATE_KEY_PERIOD 0	/* ¥­§¡´X¤Ñ´«¤@¦¸key¡A0 ªí¥Ü¤£´«key¡A¦Û°Ê²£¥Í */
+#define PRIVATE_KEY_PERIOD 0	/* å¹³å‡å¹¾å¤©æ›ä¸€æ¬¡keyï¼Œ0 è¡¨ç¤ºä¸æ›keyï¼Œè‡ªå‹•ç”¢ç”Ÿ */
 #endif
 
 #ifndef	SHOW_USER_IN_TEXT
@@ -266,129 +266,129 @@
 
 
 /* ----------------------------------------------------- */
-/* ¨t²Î°Ñ¼Æ£»ÀH BBS ¯¸³W¼Ò¦¨ªø¦ÓÂX¼W		         */
+/* ç³»çµ±åƒæ•¸Ë™éš¨ BBS ç«™è¦æ¨¡æˆé•·è€Œæ“´å¢		         */
 /* ----------------------------------------------------- */
 
-#define MAXBOARD	1024		/* ³Ì¤j¶}ªO­Ó¼Æ */
+#define MAXBOARD	1024		/* æœ€å¤§é–‹æ¿å€‹æ•¸ */
 
-#define MAXACTIVE	512		/* ³Ì¦h¦P®É¤W¯¸¤H¼Æ */
+#define MAXACTIVE	512		/* æœ€å¤šåŒæ™‚ä¸Šç«™äººæ•¸ */
 
 /* ----------------------------------------------------- */
-/* ¨t²Î°Ñ¼Æ£»¨ä¥L±`¥Î°Ñ¼Æ                                */
+/* ç³»çµ±åƒæ•¸Ë™å…¶ä»–å¸¸ç”¨åƒæ•¸                                */
 /* ----------------------------------------------------- */
 
-/* bbsd.c ¤W¯¸µn¤J */
+/* bbsd.c ä¸Šç«™ç™»å…¥ */
 
-#define LOGINATTEMPTS	3		/* ³Ì¤j¶i¯¸±K½X¥´¿ù¦¸¼Æ */
-#define MULTI_MAX	2		/* ¤@¯ë¨Ï¥ÎªÌ³Ì¤j multi-login ­Ó¼Æ */
+#define LOGINATTEMPTS	3		/* æœ€å¤§é€²ç«™å¯†ç¢¼æ‰“éŒ¯æ¬¡æ•¸ */
+#define MULTI_MAX	2		/* ä¸€èˆ¬ä½¿ç”¨è€…æœ€å¤§ multi-login å€‹æ•¸ */
 
-/* bbsd.c user.c admutil.c ©w´Á¨­¤À»{ÃÒ¡A°O±o¦P¨B­×§ï gem/@/@re-reg */
+/* bbsd.c user.c admutil.c å®šæœŸèº«åˆ†èªè­‰ï¼Œè¨˜å¾—åŒæ­¥ä¿®æ”¹ gem/@/@re-reg */
 
 #ifdef JUSTIFY_PERIODICAL
-#define VALID_PERIOD		(86400 * 365)	/* ¨­¤À»{ÃÒ¦³®Ä´Á(¬í) */
-#define INVALID_NOTICE_PERIOD	(86400 * 10)	/* ¨­¤À»{ÃÒ¥¢®Ä«e¦h¤[®É¶¡´£¿ô¨Ï¥ÎªÌ(¬í) */
+#define VALID_PERIOD		(86400 * 365)	/* èº«åˆ†èªè­‰æœ‰æ•ˆæœŸ(ç§’) */
+#define INVALID_NOTICE_PERIOD	(86400 * 10)	/* èº«åˆ†èªè­‰å¤±æ•ˆå‰å¤šä¹…æ™‚é–“æé†’ä½¿ç”¨è€…(ç§’) */
 #endif
 
-/* talk.c ªB¤Í¦W³æ/¤ô²y¦Cªí */
+/* talk.c æœ‹å‹åå–®/æ°´çƒåˆ—è¡¨ */
 
-/* itoc.010825: ª`·N BMW_LOCAL_MAX >= BMW_PER_USER */
+/* itoc.010825: æ³¨æ„ BMW_LOCAL_MAX >= BMW_PER_USER */
 
-#define PAL_MAX		200		/* ªB¤Í¦W³æ¤W­­(¤H) */
-#define BMW_EXPIRE	60		/* ¤ô²y³B²z®É¶¡(¬í) */
-#define BMW_PER_USER	5		/* ¤ô²y³B²z®É¶¡¤º¡A¤¹³\¥á´X­Ó¤ô²y */
-#define BMW_MAX		128		/* UCACHE ¤¤ pool ¤W­­ */
-#define BMW_LOCAL_MAX	8		/* Ctrl+R ¤W¤U©Ò¯àÂsÄı¤§«e¤ô²y­Ó¼Æ */
+#define PAL_MAX		200		/* æœ‹å‹åå–®ä¸Šé™(äºº) */
+#define BMW_EXPIRE	60		/* æ°´çƒè™•ç†æ™‚é–“(ç§’) */
+#define BMW_PER_USER	5		/* æ°´çƒè™•ç†æ™‚é–“å…§ï¼Œå…è¨±ä¸Ÿå¹¾å€‹æ°´çƒ */
+#define BMW_MAX		128		/* UCACHE ä¸­ pool ä¸Šé™ */
+#define BMW_LOCAL_MAX	8		/* Ctrl+R ä¸Šä¸‹æ‰€èƒ½ç€è¦½ä¹‹å‰æ°´çƒå€‹æ•¸ */
 
-/* aloha.c ¤W¯¸³qª¾ */
+/* aloha.c ä¸Šç«™é€šçŸ¥ */
 
 #ifdef HAVE_ALOHA
-#define ALOHA_MAX	64		/* ¤W¯¸³qª¾¤W­­(¤H) */
+#define ALOHA_MAX	64		/* ä¸Šç«™é€šçŸ¥ä¸Šé™(äºº) */
 #endif
 
-/* menu.c ¯d¨¥ªO */
+/* menu.c ç•™è¨€æ¿ */
 
-#define NOTE_MAX	100		/* ¯d¨¥ªO«O¯d½g¼Æ */
-#define NOTE_DUE	48		/* ¯d¨¥ªO«O¯d®É¶¡(¤Ñ) */
+#define NOTE_MAX	100		/* ç•™è¨€æ¿ä¿ç•™ç¯‡æ•¸ */
+#define NOTE_DUE	48		/* ç•™è¨€æ¿ä¿ç•™æ™‚é–“(å¤©) */
 
-/* mail.c ¥Î¨ÓÀË¬d«H½c¤j¤p¡A¶W¹L«h´£¥Ü¡A°O±o¦P¨B­×§ï etc/justified gem/@/@mailover */
+/* mail.c ç”¨ä¾†æª¢æŸ¥ä¿¡ç®±å¤§å°ï¼Œè¶…éå‰‡æç¤ºï¼Œè¨˜å¾—åŒæ­¥ä¿®æ”¹ etc/justified gem/@/@mailover */
 
-#define	MAX_BBSMAIL	500		/* PERM_MBOX ¦¬«H¤W­­(«Ê) */
-#define	MAX_VALIDMAIL	300		/* »{ÃÒ user ¦¬«H¤W­­(«Ê) */
-#define	MAX_NOVALIDMAIL	100		/* ¥¼»{ÃÒ user ¦¬«H¤W­­(«Ê) */
+#define	MAX_BBSMAIL	500		/* PERM_MBOX æ”¶ä¿¡ä¸Šé™(å°) */
+#define	MAX_VALIDMAIL	300		/* èªè­‰ user æ”¶ä¿¡ä¸Šé™(å°) */
+#define	MAX_NOVALIDMAIL	100		/* æœªèªè­‰ user æ”¶ä¿¡ä¸Šé™(å°) */
 
-/* bquota.c mail.c ¥Î¨Ó²M¹L´ÁÀÉ®×/«H¥óªº®É¶¡¡A°O±o¦P¨B­×§ï etc/justified */
+/* bquota.c mail.c ç”¨ä¾†æ¸…éæœŸæª”æ¡ˆ/ä¿¡ä»¶çš„æ™‚é–“ï¼Œè¨˜å¾—åŒæ­¥ä¿®æ”¹ etc/justified */
 
 #ifdef OVERDUE_MAILDEL
-#define MARK_DUE        180		/* ¼Ğ°O«O¦s¤§«H¥ó«O¯d®É¶¡(¤Ñ) */
-#define MAIL_DUE        60		/* ¤@¯ë«H¥ó«O¯d®É¶¡(¤Ñ) */
-#define FILE_DUE        30		/* ¨ä¥LÀÉ®×«O¯d®É¶¡(¤Ñ) */
+#define MARK_DUE        180		/* æ¨™è¨˜ä¿å­˜ä¹‹ä¿¡ä»¶ä¿ç•™æ™‚é–“(å¤©) */
+#define MAIL_DUE        60		/* ä¸€èˆ¬ä¿¡ä»¶ä¿ç•™æ™‚é–“(å¤©) */
+#define FILE_DUE        30		/* å…¶ä»–æª”æ¡ˆä¿ç•™æ™‚é–“(å¤©) */
 #endif
 
-/* newbrd.c ¬İªO³s¸p */
+/* newbrd.c çœ‹æ¿é€£ç½² */
 
 #ifdef HAVE_COSIGN
-#define NBRD_NUM_BRD	12		/* ¶}ªO»İ­n³s¸p¤H¼Æ */
-#define NBRD_DAY_BRD	3		/* ¶}ªO¥i³s¸p¤Ñ¼Æ */
+#define NBRD_NUM_BRD	12		/* é–‹æ¿éœ€è¦é€£ç½²äººæ•¸ */
+#define NBRD_DAY_BRD	3		/* é–‹æ¿å¯é€£ç½²å¤©æ•¸ */
 #endif
 
-/* post.c °»´ú cross-post */
+/* post.c åµæ¸¬ cross-post */
 
 #ifdef  HAVE_DETECT_CROSSPOST
-#define	MAX_CROSS_POST		3	/* cross post ³Ì¤j¼Æ¶q(½g) */
-#define CROSSPOST_DENY_DAY	30	/* cross post °±Åv®É¶¡(¤Ñ) */
+#define	MAX_CROSS_POST		3	/* cross post æœ€å¤§æ•¸é‡(ç¯‡) */
+#define CROSSPOST_DENY_DAY	30	/* cross post åœæ¬Šæ™‚é–“(å¤©) */
 #endif
 
-/* visio.c bguard.c ¦Û°Ê½ğ¤H */
+/* visio.c bguard.c è‡ªå‹•è¸¢äºº */
 
 #ifdef TIME_KICKER
-#define IDLE_TIMEOUT	30		/* visio.c bguard.c µo§b¹L¤[¦Û°ÊÃ±°h(¤À) */
-#define IDLE_WARNOUT	3		/* visio.c µo§b¹L¤[´£¿ô(¤À) -- ¦Û°ÊÃ±°h«e¤T¤ÀÄÁ«e */
+#define IDLE_TIMEOUT	30		/* visio.c bguard.c ç™¼å‘†éä¹…è‡ªå‹•ç°½é€€(åˆ†) */
+#define IDLE_WARNOUT	3		/* visio.c ç™¼å‘†éä¹…æé†’(åˆ†) -- è‡ªå‹•ç°½é€€å‰ä¸‰åˆ†é˜å‰ */
 #endif
 
-/* more.c edit.c Â½­¶ */
+/* more.c edit.c ç¿»é  */
 
-#define PAGE_SCROLL	(b_lines - 1)	/* «ö PgUp/PgDn ­n±²°Ê´X¦C */
+#define PAGE_SCROLL	(b_lines - 1)	/* æŒ‰ PgUp/PgDn è¦æ²å‹•å¹¾åˆ— */
 
 #define MAXLASTCMD	8		/* line input buffer */
 #define	BLK_SIZ		4096		/* disk I/O block size */
-#define MAXSIGLINES	6		/* edit.c Ã±¦WÀÉ¤Ş¤J³Ì¤j¦æ¼Æ */
-#define MAXQUERYLINES	17		/* talk.c xchatd.c Åã¥Ü Query/Plan °T®§³Ì¤j¦æ¼Æ */
-#define	MAX_CHOICES	32		/* vote.c §ë²¼®É³Ì¦h¦³ 32 ºØ¿ï¾Ü */
-#define	TAG_MAX		256		/* xover.c TagList ¼ĞÅÒ¼Æ¥Ø¤§¤W­­ */
-#define LINE_HEADER	3		/* more.c bhttpd.c ÀÉÀY¦³¤T¦C */
+#define MAXSIGLINES	6		/* edit.c ç°½åæª”å¼•å…¥æœ€å¤§è¡Œæ•¸ */
+#define MAXQUERYLINES	17		/* talk.c xchatd.c é¡¯ç¤º Query/Plan è¨Šæ¯æœ€å¤§è¡Œæ•¸ */
+#define	MAX_CHOICES	32		/* vote.c æŠ•ç¥¨æ™‚æœ€å¤šæœ‰ 32 ç¨®é¸æ“‡ */
+#define	TAG_MAX		256		/* xover.c TagList æ¨™ç±¤æ•¸ç›®ä¹‹ä¸Šé™ */
+#define LINE_HEADER	3		/* more.c bhttpd.c æª”é ­æœ‰ä¸‰åˆ— */
 
-/* bbsd.c mail.c ¾ã²z¶g´Á */
+/* bbsd.c mail.c æ•´ç†é€±æœŸ */
 
-#define	CHECK_PERIOD	(86400 * 20)	/* ¾ã²z«H½c/ªB¤Í¦W³æªº¶g´Á(¬í) */
+#define	CHECK_PERIOD	(86400 * 20)	/* æ•´ç†ä¿¡ç®±/æœ‹å‹åå–®çš„é€±æœŸ(ç§’) */
 
-/* camera.c °ÊºA¬İªO */
+/* camera.c å‹•æ…‹çœ‹æ¿ */
 
-#define	MOVIE_MAX	180		/* °Êµe±i¼Æ */
-#define	MOVIE_SIZE	(108 * 1024)	/* °Êµe cache size */
+#define	MOVIE_MAX	180		/* å‹•ç•«å¼µæ•¸ */
+#define	MOVIE_SIZE	(108 * 1024)	/* å‹•ç•« cache size */
 
-/* expire.c ¬İªO¦Û°Ê¬å¹L´Á¤å³¹ */
+/* expire.c çœ‹æ¿è‡ªå‹•ç éæœŸæ–‡ç«  */
 
-#define BRD_EXPIRE_DAYS	365		/* ¹w³]²M°£¶W¹L 365 ¤Ñªº¤å³¹ */
-#define BRD_EXPIRE_MAXP	5000		/* ¹w³]²M°£¶W¹L 5000 ½gªº¤å³¹ */
-#define BRD_EXPIRE_MINP	500		/* ¹w³]§C©ó 500 ½gªº¬İªO¤£¬å¤å³¹ */
+#define BRD_EXPIRE_DAYS	365		/* é è¨­æ¸…é™¤è¶…é 365 å¤©çš„æ–‡ç«  */
+#define BRD_EXPIRE_MAXP	5000		/* é è¨­æ¸…é™¤è¶…é 5000 ç¯‡çš„æ–‡ç«  */
+#define BRD_EXPIRE_MINP	500		/* é è¨­ä½æ–¼ 500 ç¯‡çš„çœ‹æ¿ä¸ç æ–‡ç«  */
 
-/* reaper.c ¦Û°Ê¬å¤Ó¤[¨S¤W¯¸ªº±b¸¹ */
+/* reaper.c è‡ªå‹•ç å¤ªä¹…æ²’ä¸Šç«™çš„å¸³è™Ÿ */
 
-/* «O¯d±b¸¹´Á­­ -- ¾Ç´Á¤¤ */
-#define REAPER_DAY_NEWUSR	7	/* µn¤J¤£¶W¹L¤T¦¸ªº¨Ï¥ÎªÌ«O¯d 7 ¤Ñ */
-#define REAPER_DAY_FORFUN	120	/* ¥¼§¹¦¨¨­¤À»{ÃÒªº¨Ï¥ÎªÌ«O¯d 120 ¤Ñ */
-#define REAPER_DAY_OCCUPY	120	/* ¤w§¹¦¨¨­¤À»{ÃÒªº¨Ï¥ÎªÌ«O¯d 120 ¤Ñ */
-/* «O¯d±b¸¹´Á­­ -- ´»°² */
-#define REAPER_VAC_NEWUSR	7	/* µn¤J¤£¶W¹L¤T¦¸ªº¨Ï¥ÎªÌ«O¯d 7 ¤Ñ */
-#define REAPER_VAC_FORFUN	180	/* ¥¼§¹¦¨¨­¤À»{ÃÒªº¨Ï¥ÎªÌ«O¯d 180 ¤Ñ */
-#define REAPER_VAC_OCCUPY	180	/* ¤w§¹¦¨¨­¤À»{ÃÒªº¨Ï¥ÎªÌ«O¯d 180 ¤Ñ */
+/* ä¿ç•™å¸³è™ŸæœŸé™ -- å­¸æœŸä¸­ */
+#define REAPER_DAY_NEWUSR	7	/* ç™»å…¥ä¸è¶…éä¸‰æ¬¡çš„ä½¿ç”¨è€…ä¿ç•™ 7 å¤© */
+#define REAPER_DAY_FORFUN	120	/* æœªå®Œæˆèº«åˆ†èªè­‰çš„ä½¿ç”¨è€…ä¿ç•™ 120 å¤© */
+#define REAPER_DAY_OCCUPY	120	/* å·²å®Œæˆèº«åˆ†èªè­‰çš„ä½¿ç”¨è€…ä¿ç•™ 120 å¤© */
+/* ä¿ç•™å¸³è™ŸæœŸé™ -- æš‘å‡ */
+#define REAPER_VAC_NEWUSR	7	/* ç™»å…¥ä¸è¶…éä¸‰æ¬¡çš„ä½¿ç”¨è€…ä¿ç•™ 7 å¤© */
+#define REAPER_VAC_FORFUN	180	/* æœªå®Œæˆèº«åˆ†èªè­‰çš„ä½¿ç”¨è€…ä¿ç•™ 180 å¤© */
+#define REAPER_VAC_OCCUPY	180	/* å·²å®Œæˆèº«åˆ†èªè­‰çš„ä½¿ç”¨è€…ä¿ç•™ 180 å¤© */
 
 
 /* ----------------------------------------------------- */
-/* chat.c & xchatd.c ¤¤±Ä¥Îªº protocol			 */
+/* chat.c & xchatd.c ä¸­æ¡ç”¨çš„ protocol			 */
 /* ------------------------------------------------------*/
 
-#define CHAT_SECURE			/* ¦w¥şªº²á¤Ñ«Ç */
+#define CHAT_SECURE			/* å®‰å…¨çš„èŠå¤©å®¤ */
 
 #define EXIT_LOGOUT     0
 #define EXIT_LOSTCONN   -1
@@ -403,36 +403,36 @@
 
 
 /* ----------------------------------------------------- */
-/* BBS ªA°È©Ò¥Îªº port					 */
+/* BBS æœå‹™æ‰€ç”¨çš„ port					 */
 /* ------------------------------------------------------*/
 
-/* itoc.030512: ¦pªG­n¦b¦P¤@¥x¾÷¾¹¤W¬[¤G­Ó bbs ¯¸¡A¨º»ò­n¡G
+/* itoc.030512: å¦‚æœè¦åœ¨åŒä¸€å°æ©Ÿå™¨ä¸Šæ¶äºŒå€‹ bbs ç«™ï¼Œé‚£éº¼è¦ï¼š
 
-   1) ¦b OS ¶}¤@­Ó·sªº user (¨Ò¦p¥s bbs2)¡A¨ä uid ­n©M¥t¤@­Ó bbs ¤£¦P
-   2) §ï BBSHOME¡BBAKPATH¡BBBSUID¡BBBSGID ¬° bbs2 ªº¸ô®|¤ÎUID¡BGID
-   3) §ï¥H¤Uªº *_PORT ¤Î *_KEY ©M¥t¤@­Ó bbs ¤£¦P (¨Ò¦p³£¥[¤W 10000)
+   1) åœ¨ OS é–‹ä¸€å€‹æ–°çš„ user (ä¾‹å¦‚å« bbs2)ï¼Œå…¶ uid è¦å’Œå¦ä¸€å€‹ bbs ä¸åŒ
+   2) æ”¹ BBSHOMEã€BAKPATHã€BBSUIDã€BBSGID ç‚º bbs2 çš„è·¯å¾‘åŠUIDã€GID
+   3) æ”¹ä»¥ä¸‹çš„ *_PORT åŠ *_KEY å’Œå¦ä¸€å€‹ bbs ä¸åŒ (ä¾‹å¦‚éƒ½åŠ ä¸Š 10000)
 */
 
-#define MAX_BBSDPORT	1		/* bbsd ­n¶}´X­Ó port¡AÀH BBSD_PORT ¦ÓÅÜ */
-#define BBSD_PORT	{23 /*,3456*/}	/* bbsd   ©Ò¥Îªº port (bbsd.c) */
-#define BMTA_PORT	25		/* SMTP   ©Ò¥Îªº port (bmtad.c) */
-#define GEMD_PORT	70		/* Gopher ©Ò¥Îªº port (gemd.c) */
-#define FINGER_PORT	79		/* Finger ©Ò¥Îªº port (bguard.c) */
-#define BHTTP_PORT	80		/* HTTP   ©Ò¥Îªº port (bhttpd.c) */
-#define POP3_PORT	110		/* POP3   ©Ò¥Îªº port (bpop3d.c) */
-#define BNNTP_PORT	119		/* NNTP   ©Ò¥Îªº port (bnntp.c) */
-#define CHAT_PORT	3838		/* ²á¤Ñ«Ç ©Ò¥Îªº port (chat.c xchatd.c) */
-#define INNBBS_PORT	7777		/* Âà«H   ©Ò¥Îªº port (channel.c) */
+#define MAX_BBSDPORT	1		/* bbsd è¦é–‹å¹¾å€‹ portï¼Œéš¨ BBSD_PORT è€Œè®Š */
+#define BBSD_PORT	{23 /*,3456*/}	/* bbsd   æ‰€ç”¨çš„ port (bbsd.c) */
+#define BMTA_PORT	25		/* SMTP   æ‰€ç”¨çš„ port (bmtad.c) */
+#define GEMD_PORT	70		/* Gopher æ‰€ç”¨çš„ port (gemd.c) */
+#define FINGER_PORT	79		/* Finger æ‰€ç”¨çš„ port (bguard.c) */
+#define BHTTP_PORT	80		/* HTTP   æ‰€ç”¨çš„ port (bhttpd.c) */
+#define POP3_PORT	110		/* POP3   æ‰€ç”¨çš„ port (bpop3d.c) */
+#define BNNTP_PORT	119		/* NNTP   æ‰€ç”¨çš„ port (bnntp.c) */
+#define CHAT_PORT	3838		/* èŠå¤©å®¤ æ‰€ç”¨çš„ port (chat.c xchatd.c) */
+#define INNBBS_PORT	7777		/* è½‰ä¿¡   æ‰€ç”¨çš„ port (channel.c) */
 
 
 /* ----------------------------------------------------- */
-/* SHM ¤Î SEM ©Ò¥Îªº key				 */
+/* SHM åŠ SEM æ‰€ç”¨çš„ key				 */
 /* ----------------------------------------------------- */
 
-#define BRDSHM_KEY	2997	/* ¬İªO */
-#define UTMPSHM_KEY	1998	/* ¨Ï¥ÎªÌ */
-#define FILMSHM_KEY	2999	/* °ÊºA¬İªO */
-#define PIPSHM_KEY	4998	/* ¹q¤lÂû¹ï¾Ô */
+#define BRDSHM_KEY	2997	/* çœ‹æ¿ */
+#define UTMPSHM_KEY	1998	/* ä½¿ç”¨è€… */
+#define FILMSHM_KEY	2999	/* å‹•æ…‹çœ‹æ¿ */
+#define PIPSHM_KEY	4998	/* é›»å­é›å°æˆ° */
 
 #define	BSEM_KEY	2000	/* semaphore key */
 #define	BSEM_FLG	0600	/* semaphore mode */

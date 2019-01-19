@@ -1,31 +1,31 @@
-�@��: itoc (���իB���A������w) �ݪO: plan
-���D: [�\��] �ϥΪ̦۩w�D���(1)
-�ɶ�: Wed Jul 16 22:12:25 2003                          Updated: 2003/07/16
+作者: itoc (風調雨順，國泰民安) 看板: plan
+標題: [功能] 使用者自定主選單(1)
+時間: Wed Jul 16 22:12:25 2003                          Updated: 2003/07/16
 
-  �ϥΪ̦۩w�D���G
+  使用者自定主選單：
 
-  1. �����A�ϥΪ̭n���s��ۤv���۩w��椺�e
-  2. ���}�ߺD�����u�۩w�D���v
-  3. ���s�W���Y�i���ۤv���D���
-  4. �p�G�ϥΪ̫ᮬ�F�A�i�H�b�۩w���D��椤�� ^X�A�A���s�W���N��_
-     ��Ӫ��������
-  5. �ϥΪ̩ү��ܪ��ﶵ�ѯ����b�{�����ҭ���
+  1. 首先，使用者要先編輯自己的自定選單內容
+  2. 打開習慣中的「自定主選單」
+  3. 重新上站即可有自己的主選單
+  4. 如果使用者後悔了，可以在自定的主選單中按 ^X，再重新上站就恢復
+     原來的公版選單
+  5. 使用者所能選擇的選項由站長在程式中所限制
 
-  ps. ���[���n�D���\�� ~_~
+  ps. 應觀眾要求的功能 ~_~
 
 
-  �ϥΪ̦۩w�D���(1) �W�[ ufo ���
+  使用者自定主選單(1) 增加 ufo 欄位
 
 : ufo.h
 
-#define UFO_KIMONEWS    BFLAG(18)       /* itoc.010601: �_���s�D */
-+ #define UFO_USERSKIN   BFLAG(19)       /* itoc.030716: �۩w�D��� */
+#define UFO_KIMONEWS    BFLAG(18)       /* itoc.010601: 奇摩新聞 */
++ #define UFO_USERSKIN   BFLAG(19)       /* itoc.030716: 自定主選單 */
 
   ...
   ...
 
-- #define NUMUFOS_USER    19      /* �@��ϥΪ� �i�H�Ϋe 19 �� ufo */
-+ #define NUMUFOS_USER    20      /* �@��ϥΪ� �i�H�Ϋe 20 �� ufo */
+- #define NUMUFOS_USER    19      /* 一般使用者 可以用前 19 個 ufo */
++ #define NUMUFOS_USER    20      /* 一般使用者 可以用前 20 個 ufo */
 
 - #define STR_UFO         "-mpsnemPBQFANbwtSHK-----CAH"
 + #define STR_UFO         "-mpsnemPBQFANbwtSHKM----CAH"
@@ -33,10 +33,10 @@
   ...
   ...
 
-  "�W���s���_���s�D(�s��/��Ū)",        /* UFO_KIMONEWS */
+  "上站瀏覽奇摩新聞(瀏覽/不讀)",        /* UFO_KIMONEWS */
 
-- "�O�d",
-+ "�۩w�D���      (�۩w/����)",        /* UFO_USERSKIN */
+- "保留",
++ "自定主選單      (自定/公版)",        /* UFO_USERSKIN */
 
 
 : bbsd.c:tn_main()
@@ -52,4 +52,4 @@ void menu(void);
 + void skin(void);
 
 --
-[1;37m�� ���峹�� [33mitoc[37m �q [32mitoc.Dorm11.NCTU.edu.tw[37m �o��[m
+[1;37m□ 本文章由 [33mitoc[37m 從 [32mitoc.Dorm11.NCTU.edu.tw[37m 發表[m

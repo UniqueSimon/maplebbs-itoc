@@ -1,11 +1,11 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G802) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¨Ï¥ÎªÌ¦W³æ¨Ì¶¢¸m®É¶¡±Æ§Ç
-®É¶¡: 2004/11/13 Sat 11:12:02                           Updated: 2004/11/13
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š802) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] ä½¿ç”¨è€…åå–®ä¾é–’ç½®æ™‚é–“æ’åº
+æ™‚é–“: 2004/11/13 Sat 11:12:02                           Updated: 2004/11/13
 
-  ­Y #define DETAIL_IDLETIME¡A«h¬°¶¢¸m®É¶¡¦hªº¦b«e­±
-  ­Y #undef  DETAIL_IDLETIME¡A«h¬°¶¢¸m®É¶¡¤Öªº¦b«e­±
+  è‹¥ #define DETAIL_IDLETIMEï¼Œå‰‡ç‚ºé–’ç½®æ™‚é–“å¤šçš„åœ¨å‰é¢
+  è‹¥ #undef  DETAIL_IDLETIMEï¼Œå‰‡ç‚ºé–’ç½®æ™‚é–“å°‘çš„åœ¨å‰é¢
 
-: ulist.c:ulist_cmp_idle() ·s¼W¦b ulist_cmp_mode() «á­±
+: ulist.c:ulist_cmp_idle() æ–°å¢åœ¨ ulist_cmp_mode() å¾Œé¢
 
 static int
 ulist_cmp_idle(i, j)
@@ -41,25 +41,25 @@ static int (*ulist_cmp[PICKUP_WAYS]) () =
 
 static char *msg_pickup_way[PICKUP_WAYS] =
 {
-  "ºô¤Í¥N¸¹",
-  "«È³~¬G¶m",
-  "ºô¤Í°ÊºA",
-+ "¶¢¸m®É¶¡",
+  "ç¶²å‹ä»£è™Ÿ",
+  "å®¢é€”æ•…é„‰",
+  "ç¶²å‹å‹•æ…‹",
++ "é–’ç½®æ™‚é–“",
 #ifdef HAVE_BRDMATE
-  "ªO¦ñ¥N¸¹",
+  "æ¿ä¼´ä»£è™Ÿ",
 #endif
 };
 
 : ulist.c:ulist_toggle()
 
 #ifdef HAVE_BRDMATE
-- ans = vans("±Æ¦C¤è¦¡ [1]¥N¸¹ [2]¨Ó·½ [3]°ÊºA [4]ªO¦ñ ") - '1';
-+ ans = vans("±Æ¦C¤è¦¡ [1]¥N¸¹ [2]¨Ó·½ [3]°ÊºA [4]¶¢¸m [5]ªO¦ñ ") - '1';
+- ans = vans("æ’åˆ—æ–¹å¼ [1]ä»£è™Ÿ [2]ä¾†æº [3]å‹•æ…‹ [4]æ¿ä¼´ ") - '1';
++ ans = vans("æ’åˆ—æ–¹å¼ [1]ä»£è™Ÿ [2]ä¾†æº [3]å‹•æ…‹ [4]é–’ç½® [5]æ¿ä¼´ ") - '1';
 #else
-- ans = vans("±Æ¦C¤è¦¡ [1]¥N¸¹ [2]¨Ó·½ [3]°ÊºA ") - '1';
-+ ans = vans("±Æ¦C¤è¦¡ [1]¥N¸¹ [2]¨Ó·½ [3]°ÊºA [4]¶¢¸m ") - '1';
+- ans = vans("æ’åˆ—æ–¹å¼ [1]ä»£è™Ÿ [2]ä¾†æº [3]å‹•æ…‹ ") - '1';
++ ans = vans("æ’åˆ—æ–¹å¼ [1]ä»£è™Ÿ [2]ä¾†æº [3]å‹•æ…‹ [4]é–’ç½® ") - '1';
 #endif
 
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

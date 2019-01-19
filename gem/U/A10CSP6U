@@ -1,24 +1,24 @@
-µo«H¤H: chwaian.bbs@processor.tfcis.org (µL¨¥) ¬İªO: plan
-¼Ğ  ÃD: ¦r¨å
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/02/14 Sat 16:43:32)                Updated: 2004/03/28
+ç™¼ä¿¡äºº: chwaian.bbs@processor.tfcis.org (ç„¡è¨€) çœ‹æ¿: plan
+æ¨™  é¡Œ: å­—å…¸
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/02/14 Sat 16:43:32)                Updated: 2004/03/28
 
-Dr.Eye ¤w¸g¼È®ÉÃö³¬¦n¤@°}¤l°Õ
+Dr.Eye å·²ç¶“æš«æ™‚é—œé–‰å¥½ä¸€é™£å­å•¦
 
-¥i¥H¼È®É®³WindTopªºdictd¨Ó´À¥N
+å¯ä»¥æš«æ™‚æ‹¿WindTopçš„dictdä¾†æ›¿ä»£
 
-¥ı¸Ëdictd («DFreeBSD¨t²ÎªÌ½Ğ¦Û¦æ¸Ñ¨M)
+å…ˆè£dictd (éFreeBSDç³»çµ±è€…è«‹è‡ªè¡Œè§£æ±º)
 
 http://freebsd.sinica.edu.tw/zh-tut/dict.html
 
 
-µM«á§â¤U­±ªºµ{¦¡¥[¨ìso¥Ø¿ı©³¤U
+ç„¶å¾ŒæŠŠä¸‹é¢çš„ç¨‹å¼åŠ åˆ°soç›®éŒ„åº•ä¸‹
 
 
 /*-------------------------------------------------------*/
 /* dictd.c    ( YZU WindTOPBBS Ver 3.10 )                */
 /*-------------------------------------------------------*/
 /* author : statue.bbs@bbs.yzu.edu.tw                    */
-/* target : ¦r¨å                                         */
+/* target : å­—å…¸                                         */
 /* create : 01/11/18                                     */
 /* update : 01/11/18                                     */
 /*-------------------------------------------------------*/
@@ -37,12 +37,12 @@ main_dictd()
   {
     clear();
     move(0, 23);
-    outs("\033[1;37;44m¡· ¦h¥Î³~¦r¨å ¡·\033[m");
+    outs("\033[1;37;44mâ— å¤šç”¨é€”å­—å…¸ â—\033[m");
     move(2, 0);
-    outs("¦¹¦r¨å¨Ó·½¬° FreeBSD ªº dict-database¡C"
-      "¦r¨å¥²¶·¿é¤J§¹¾ã³æ¦r©Î¤ù»y¡C\n");
+    outs("æ­¤å­—å…¸ä¾†æºç‚º FreeBSD çš„ dict-databaseã€‚"
+      "å­—å…¸å¿…é ˆè¼¸å…¥å®Œæ•´å–®å­—æˆ–ç‰‡èªã€‚\n");
     move(4, 0);
-    outs("¦r¨å¥N¸¹   ¦r¨å»¡©ú\n");
+    outs("å­—å…¸ä»£è™Ÿ   å­—å…¸èªªæ˜\n");
     outs("=============================================================="
       "==============\n");
     outs("web1913    Chinese to English dictionary\n");
@@ -77,7 +77,7 @@ main_dictd()
     while (str < pend)
     {
       if (*str >= 0x81 && *str < 0xFE && *(str + 1) >= 0x40
-        && *(str + 1) <= 0xFE && *(str + 1) != 0x7F)    /* ¤¤¤å¦r BIG5+ */
+        && *(str + 1) <= 0xFE && *(str + 1) != 0x7F)    /* ä¸­æ–‡å­— BIG5+ */
       {
         if (*(str + 1) == 0x5C)
         {
@@ -112,10 +112,10 @@ main_dictd()
       word2, fname);
     system(tmp);
     more(fname, NULL);
-    sprintf(tmp, "¬O§_§â %s ªº¬d¸ßµ²ªG±H¦^¦Û¤v«H½c¡H (y/N) ", word);
+    sprintf(tmp, "æ˜¯å¦æŠŠ %s çš„æŸ¥è©¢çµæœå¯„å›è‡ªå·±ä¿¡ç®±ï¼Ÿ (y/N) ", word);
     if (vans(tmp) == 'y')
     {
-      sprintf(tmp, "[³Æ §Ñ ¿ı] %s ªº¦r¨å¬d¸ßµ²ªG", word);
+      sprintf(tmp, "[å‚™ å¿˜ éŒ„] %s çš„å­—å…¸æŸ¥è©¢çµæœ", word);
       mail_self(fname, cuser.userid, tmp, 0);
     }
     unlink(fname);
@@ -125,57 +125,57 @@ main_dictd()
 }
 
 
-/usr/local/etc/dictd.conf ¬İ§A¸Ë¤F­ş¨Çdictd-database ­n°O±o¹ïÀ³­×§ï
+/usr/local/etc/dictd.conf çœ‹ä½ è£äº†å“ªäº›dictd-database è¦è¨˜å¾—å°æ‡‰ä¿®æ”¹
 
-µ{¦¡ªº¦ì¸m¬İ§A¬O¸Ë¦b
+ç¨‹å¼çš„ä½ç½®çœ‹ä½ æ˜¯è£åœ¨
 
-/usr/local/bin/dict ÁÙ¬O /usr/local/sbin/dictd
+/usr/local/bin/dict é‚„æ˜¯ /usr/local/sbin/dictd
 
-¤]­n°O±o§ï¤@¤U
+ä¹Ÿè¦è¨˜å¾—æ”¹ä¸€ä¸‹
 
-µM«á§âmain_dictd¥[¨ìmenu´N¦n°Õ
-
-
-¦pªG­n§ï¸Ëcdict5¬°¦r¨å (´N¬OµL¦W¸ò¨g¯X¥Îªº¨º­Ó)
+ç„¶å¾ŒæŠŠmain_dictdåŠ åˆ°menuå°±å¥½å•¦
 
 
-¥ı¤U¸ü©³¤U³o¨â­ÓÀÉ®×
+å¦‚æœè¦æ”¹è£cdict5ç‚ºå­—å…¸ (å°±æ˜¯ç„¡åè·Ÿç‹‚ç‹·ç”¨çš„é‚£å€‹)
+
+
+å…ˆä¸‹è¼‰åº•ä¸‹é€™å…©å€‹æª”æ¡ˆ
 
 http://ftp.isu.edu.tw/pub/Unix/BBS/PolyU/cdict5-library.tgz
 ftp://ftp.tw.freebsd.org/pub/FreeBSD/ports/local-distfiles/ijliao/cdict5.tgz
 
 
-µM«á¥ş³¡¸ÑÀ£ÁY©ñ¨ì/usr/local/lib/cdict5©³¤U
+ç„¶å¾Œå…¨éƒ¨è§£å£“ç¸®æ”¾åˆ°/usr/local/lib/cdict5åº•ä¸‹
 
 
-µM«á¦b³o¥Ø¿ı°õ¦æmake
+ç„¶å¾Œåœ¨é€™ç›®éŒ„åŸ·è¡Œmake
 
-¦A°õ¦æmake index (¥i¥H¬İINSTALLªº»¡©ú)
+å†åŸ·è¡Œmake index (å¯ä»¥çœ‹INSTALLçš„èªªæ˜)
 
-¦pªG¹Lµ{¤¤§ä¤£¨ìlibgdbm.a
+å¦‚æœéç¨‹ä¸­æ‰¾ä¸åˆ°libgdbm.a
 
-½Ğ¬İ¬İ¬O§_¦b/usr/local/lib©³¤U §â³o­ÓÀÉ®×«ş¨©¨ì/usr/lib©³¤U§Y¥i
+è«‹çœ‹çœ‹æ˜¯å¦åœ¨/usr/local/libåº•ä¸‹ æŠŠé€™å€‹æª”æ¡ˆæ‹·è²åˆ°/usr/libåº•ä¸‹å³å¯
 
-¦pªG§ä¤£¨ìgdbm.h
+å¦‚æœæ‰¾ä¸åˆ°gdbm.h
 
-¥i¥H¤U¸ühttp://www.klid.dk/pub/gnu/gnu-utils/include/gdbm.h
+å¯ä»¥ä¸‹è¼‰http://www.klid.dk/pub/gnu/gnu-utils/include/gdbm.h
 
-¨ìcdict5¥Ø¿ı¤U µM«á­×§ï¬ÛÃö»İ­ngdbm.hµ{¦¡½Xªº³¡¤À
+åˆ°cdict5ç›®éŒ„ä¸‹ ç„¶å¾Œä¿®æ”¹ç›¸é—œéœ€è¦gdbm.hç¨‹å¼ç¢¼çš„éƒ¨åˆ†
 
-( #include <gdbm.h> §ï¦¨  #include "gdbm.h")
+( #include <gdbm.h> æ”¹æˆ  #include "gdbm.h")
 
-µM«á°µ§¹¤W­z¨â­Ó°Ê§@ ( make ; make index)
+ç„¶å¾Œåšå®Œä¸Šè¿°å…©å€‹å‹•ä½œ ( make ; make index)
 
-·|²£¥Í¤@­ÓÀÉ®×¥s°µcdict5
+æœƒç”¢ç”Ÿä¸€å€‹æª”æ¡ˆå«åšcdict5
 
-¥i¥H§â¦¹ÀÉ«ş¨©¨ì/home/bbs/bin©³¤UµM«á¦Achown§ï¤@¤UÅv­­ §Y¥i
+å¯ä»¥æŠŠæ­¤æª”æ‹·è²åˆ°/home/bbs/binåº•ä¸‹ç„¶å¾Œå†chownæ”¹ä¸€ä¸‹æ¬Šé™ å³å¯
 
-±µ¤U¨Óªº´N¸ò¤W­±´X½g¤@¼Ë°Õ
+æ¥ä¸‹ä¾†çš„å°±è·Ÿä¸Šé¢å¹¾ç¯‡ä¸€æ¨£å•¦
 
-§ï±¼¤W­± "/usr/local/bin/dict -h localhost \"%s\"
+æ”¹æ‰ä¸Šé¢ "/usr/local/bin/dict -h localhost \"%s\"
 
-ªº³¡¤À§Y¥i
+çš„éƒ¨åˆ†å³å¯
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mchwaian [30m±q [35m61-216-219-252.HINET-IP.hinet.net [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mchwaian [30må¾ [35m61-216-219-252.HINET-IP.hinet.net [30mç™¼è¡¨[m

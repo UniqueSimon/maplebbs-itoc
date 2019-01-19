@@ -1,26 +1,26 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ½Ğ°İ³o¼Ëªº¥\¯à
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/12/22 Wed 15:00:24)                Updated: 2004/12/22
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: è«‹å•é€™æ¨£çš„åŠŸèƒ½
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/12/22 Wed 15:00:24)                Updated: 2004/12/22
 
-¡° ¤Ş­z¡mkevin007.bbs@bbs.ctu.edu.tw (µl¤lÀ°Á`²ë¥D)¡n¤§»Ê¨¥¡G
-> ¨º§â ¶³¹C¥|®üªº¥\¯àµ¹¯¸ªø±MÄİ
-> ·|¤£·|¬Ù¨ÆÂI....
-> ¡° ¤Ş­z¡mbluestorm.bbs@bluestorm.twbbs.org (¡¯§V¤O¦V«e¨«(*-*)¡¯)¡n¤§»Ê¨¥¡G
-> > ¦³¨S¦³¿ìªk°µ¨ì±q¯¸ªøªº¬Y­Ó¿ï³æ¶i¥h¤§«á
-> > ¥i¥Hª½±µ¦¨¬°bbs³o­Óuser³o¼Ë
-> > µM«á¥i¥Hª½±µ¦b¸Ì­±¶i¦æ¥ô¦ó«ü¥O¾Ş§@¡Gls,cd,ping,vi..µ¥
-> > ´N¬O±q¿ï³æ¶i¤Jterminalªº·N«ä
-> > ¸õ¥Xªº¸Ü´N¿é¤Jexit,logoutµ¥
+â€» å¼•è¿°ã€Škevin007.bbs@bbs.ctu.edu.tw (ç—å­å¹«ç¸½èˆµä¸»)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> é‚£æŠŠ é›²éŠå››æµ·çš„åŠŸèƒ½çµ¦ç«™é•·å°ˆå±¬
+> æœƒä¸æœƒçœäº‹é»....
+> â€» å¼•è¿°ã€Šbluestorm.bbs@bluestorm.twbbs.org (ï¼ŠåŠªåŠ›å‘å‰èµ°(*-*)ï¼Š)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> > æœ‰æ²’æœ‰è¾¦æ³•åšåˆ°å¾ç«™é•·çš„æŸå€‹é¸å–®é€²å»ä¹‹å¾Œ
+> > å¯ä»¥ç›´æ¥æˆç‚ºbbsé€™å€‹useré€™æ¨£
+> > ç„¶å¾Œå¯ä»¥ç›´æ¥åœ¨è£¡é¢é€²è¡Œä»»ä½•æŒ‡ä»¤æ“ä½œï¼šls,cd,ping,vi..ç­‰
+> > å°±æ˜¯å¾é¸å–®é€²å…¥terminalçš„æ„æ€
+> > è·³å‡ºçš„è©±å°±è¼¸å…¥exit,logoutç­‰
 
-  ¶}­Ó telnet ¦b port 2323
+  é–‹å€‹ telnet åœ¨ port 2323
 
-: bbsnet.c:x_bbsnet_myaddr() ·s¼W¦¹¨ç¦¡¦b x_bbsnet() «á­±
+: bbsnet.c:x_bbsnet_myaddr() æ–°å¢æ­¤å‡½å¼åœ¨ x_bbsnet() å¾Œé¢
 
 int
 x_bbsnet_myaddr()
 {
   cutmp->status |= STATUS_REJECT;
-  telnet(MYIPADDR, 2323);           [1;44m // port¦Û©w [m
+  telnet(MYIPADDR, 2323);           [1;44m // portè‡ªå®š [m
   cutmp->status ^= STATUS_REJECT;
   return 0;
 }
@@ -28,12 +28,12 @@ x_bbsnet_myaddr()
 : menu.c:menu_net[]
 
   "bin/bbsnet.so:x_bbsnet", PERM_INTERNET, - M_XMODE,
-  "BBSnet     ¶³¹C¥|®ü",
+  "BBSnet     é›²éŠå››æµ·",
 
 + "bin/bbsnet.so:x_bbsnet_myaddr", PERM_SYSOP, - M_XMODE,
-+ "LocalHost  ¶³¹C¥»¾÷",
++ "LocalHost  é›²éŠæœ¬æ©Ÿ",
 
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mpc512-2.EE.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mpc512-2.EE.NCTU.edu.tw [30mç™¼è¡¨[m

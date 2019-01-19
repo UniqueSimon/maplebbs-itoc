@@ -1,13 +1,13 @@
-╣o╚H╓H: BioStar.bbs@micro.bio.ncue.edu.tw (╪Й╢Р╓p╤ЁЁ╤) ╛щ╙O: itoc
-╪п  цD: [╓Е╔С] ╨К╣ь╟о╙╨╫g╪ф╓W╜╜╘M╝e╤q╓W╜╜
-╣o╚H╞╦: ю╨╓я╠^ (Sun, 06 Jul 2003 15:21:41 +0800 (CST))    Updated: 2003/07/15
+Г≥╪Д©║Д╨╨: BioStar.bbs@micro.bio.ncue.edu.tw (Ф╬▌Ф╧√Е╟▐И⌡╡И⌡─) Г°▀Ф²©: itoc
+Ф╗≥  И║▄: [Ф√┤Д╩╤] Г╡╬Х▐╞Е█─Г └Г╞┤Ф∙╦Д╦┼И≥░Е▓▄Е╝╧И┤▐Д╦┼И≥░
+Г≥╪Д©║Г╚≥: Ф⌠▌Е╓╘Е╢≈ (Sun, 06 Jul 2003 15:21:41 +0800 (CST))    Updated: 2003/07/15
 
-  (3) ╜с╓H╨К╣ь╟о╓W╜╜Ё]╘w
+  (3) Е─▀Д╨╨Г╡╬Х▐╞Е█─Д╦┼И≥░Х╗╜Е╝ 
 
 : include/perm.h:
 
 - #define PERM_9          0x00000100
-+ #define PERM_MYGEM      0x00000100      /* ╜с╓H╨К╣ь╟о╣L╓W╜╜ */
++ #define PERM_MYGEM      0x00000100      /* Е─▀Д╨╨Г╡╬Х▐╞Е█─Г└║Д╦┼И≥░ */
 
 : include/perm.h:
 
@@ -16,44 +16,44 @@
 
 : include/perm.h:perm_tbl[]
 
-- "╚O╞d",                       /* PERM_9 */
-+ "╜с╓H╨К╣ь╟о╣L╓W╜╜",           /* PERM_MYGEM */
+- "Д©²Г∙≥",                       /* PERM_9 */
++ "Е─▀Д╨╨Г╡╬Х▐╞Е█─Г└║Д╦┼И≥░",           /* PERM_MYGEM */
 
 : maple/bbsd.c:acct_apply()
 
   cuser.ufo = UFO_DEFAULT_NEW;
   cuser.numlogins = 1;
-+ cuser.gemsize_n = 1000;       /* ╜с╓H╨К╣ь╟о╧wЁ]╓W╜╜ 1000 ╫g */
-+ cuser.gemsize_k = 100 << 10;  /* ╜с╓H╨К╣ь╟о╧wЁ]╓W╜╜ 100 KB */
++ cuser.gemsize_n = 1000;       /* Е─▀Д╨╨Г╡╬Х▐╞Е█─И═░Х╗╜Д╦┼И≥░ 1000 Г╞┤ */
++ cuser.gemsize_k = 100 << 10;  /* Е─▀Д╨╨Г╡╬Х▐╞Е█─И═░Х╗╜Д╦┼И≥░ 100 KB */
 
 : maple/acct.c:acct_show()
 
-  prints("  \033[32m╔За{╓И╢а║G\033[37m%s", Btime(&u->lastlogin));
+  prints("  \033[32mЕ┘┴Х┤╗Ф≈╔Ф°÷О╪ \033[37m%s", Btime(&u->lastlogin));
 
-+ prints("  \033[32m╨К╣ь╟о╫g╪ф╓W╜╜║G\033[37m%-29d\033[32m╝e╤q╓W╜╜║G"
++ prints("  \033[32mГ╡╬Х▐╞Е█─Г╞┤Ф∙╦Д╦┼И≥░О╪ \033[37m%-29d\033[32mЕ╝╧И┤▐Д╦┼И≥░О╪ "
 +   "\033[37m%dKB\n", u->gemsize_n, u->gemsize_k / 1024);
 
 : maple/acct.c:acct_setup()
 
     sprintf(buf, "%d", u->numemails);
-    vget(++i, 0, "╣o╚H╕╦╪ф║G", buf, 10, GCARRY);
+    vget(++i, 0, "Г≥╪Д©║Ф╛║Ф∙╦О╪ ", buf, 10, GCARRY);
     if ((num = atoi(buf)) >= 0)
       x.numemails = num;
 
-    vget(++i, 0, "╓W╞╦╕aбI║G", x.lasthost, sizeof(x.lasthost), GCARRY);
-    vget(++i, 0, "╤l╔С╚H╫c║G", x.email, sizeof(x.email), GCARRY);
+    vget(++i, 0, "Д╦┼Г╚≥Е°╟И╩·О╪ ", x.lasthost, sizeof(x.lasthost), GCARRY);
+    vget(++i, 0, "И┐╣Д╩╤Д©║Г╝╠О╪ ", x.email, sizeof(x.email), GCARRY);
 
-+   if (vget(++i, 0, "Ё]╘w╨К╣ь╟о╓W╜╜(Y/N)║H[N] ", buf, 3, LCECHO) == 'y')
++   if (vget(++i, 0, "Х╗╜Е╝ Г╡╬Х▐╞Е█─Д╦┼И≥░(Y/N)О╪÷[N] ", buf, 3, LCECHO) == 'y')
 +   {
 +     sprintf(buf, "%d", u->gemsize_n);
-+     if (vget(++i, 0, "╫g╪ф╓W╜╜", buf, 6, GCARRY))
++     if (vget(++i, 0, "Г╞┤Ф∙╦Д╦┼И≥░", buf, 6, GCARRY))
 +     {
 +       int gemsize = atoi(buf);
 +       if (gemsize > 0)
 +         x.gemsize_n = gemsize;
 +     }
 +     sprintf(buf, "%d", u->gemsize_k >> 10);
-+     if (vget(i, 16, "╝e╤q╓W╜╜(KB)", buf, 12, GCARRY))
++     if (vget(i, 16, "Е╝╧И┤▐Д╦┼И≥░(KB)", buf, 12, GCARRY))
 +     {
 +       int gemsize = atoi(buf);
 +       if (gemsize > 0)
@@ -62,5 +62,5 @@
 +   }
 
 --
-[1;31m|[33m Origin [31m| [0;45m ╧Э╓ф╝v╓j╔м╙╚╗t ╖u╜╥║E╡╥╓К║Eю╨╓я╠^ [35;47m micro.bio.ncue.edu.tw [m
+[1;31m|[33m Origin [31m| [0;45m Е╫╟Е▄√Е╦╚Е╓╖Г■÷Г┴╘ГЁ╩ Е░÷И╒╗?Г°╨Ф°┬?Ф⌠▌Е╓╘Е╢≈ [35;47m micro.bio.ncue.edu.tw [m
 [1;31m|[35m Author [31m| [36m218-163-206-115.HINET-IP.hinet.net[m

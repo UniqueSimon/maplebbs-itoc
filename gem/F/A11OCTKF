@@ -1,29 +1,29 @@
-µo«H¤H: LHD.bbs@bbs.cs.nctu.edu.tw (¤£°È¥¿·~) ¬İªO: plan
-¼Ğ  ÃD: [­×¥¿] ¥¿±`Åª¨ú«D Big5 ¤¤¤å½s½X
-µo«H¯¸: ¦¸¥@¥N¢Ğ¢á¢± (2005/11/25 Fri 02:32:13)          Updated: 2005/11/25
+ç™¼ä¿¡äºº: LHD.bbs@bbs.cs.nctu.edu.tw (ä¸å‹™æ­£æ¥­) çœ‹æ¿: plan
+æ¨™  é¡Œ: [ä¿®æ­£] æ­£å¸¸è®€å–é Big5 ä¸­æ–‡ç·¨ç¢¼
+ç™¼ä¿¡ç«™: æ¬¡ä¸–ä»£ï¼¢ï¼³ï¼’ (2005/11/25 Fri 02:32:13)          Updated: 2005/11/25
 
-ºëµØ°Ï²{¦³ªº¤å¥ó¦³¤@¨Ç¤£§¹µ½ªº¦a¤è:
+ç²¾è¯å€ç¾æœ‰çš„æ–‡ä»¶æœ‰ä¸€äº›ä¸å®Œå–„çš„åœ°æ–¹:
 
-1. Subject ¥u°µ decode ¦ı¨S¦³ conv
-   ¸Ñ¨M¤èªk¬O§â PaulLiu ¤j¤j·íªì po ªº patch ©ñ¶i¥h
-2. ¥Ø«e¤º¤å¥u¦³¦b³Q QP ©Î base64 ½s½X®É¡A¤~·|°µ conv ªº°Ê§@
-   ­ì¦]À³¸Ó¬O mm_getencode §â 8bit µø¦Ó¤£¨£
-   ¸Ñ¨M¤èªk¬O mm_getencode §â 8bit ¤]ºâ¤@­Ó encode
-   µM«á¦b mmdecode ®É¡Acase '8' ¦^¶Ç strlen(src) + 1;
-   ·íµM­Y¬O·Q§â¨S¼g encode ªº³£·í°µ 8bit¡A´N¤£¥Î°Ê¨ì str_decode.c
-   ¦Ó¬O¤À§O¦b bbsmail/rec_article.c §ï¡A¦ı code ¤]§ï¤ñ¸û¦h
-   ¥H¤Uªº¼gªk¬O«áªÌ¡A¦ı§Ú§Æ±æ«eªÌ¯à¦¨¬°¥¿¦¡ release @@~
-3. bbsmail/brdmail ¤£¤ä´©¦h¦æ header (¤W¦¸¤~¥[¤W RFC2047 Subcect ¦h¦æ¤ä´©)
-   ©Ò¥H charset ¥i¯à·|§ì¤£¨ì¡A¦p
+1. Subject åªåš decode ä½†æ²’æœ‰ conv
+   è§£æ±ºæ–¹æ³•æ˜¯æŠŠ PaulLiu å¤§å¤§ç•¶åˆ po çš„ patch æ”¾é€²å»
+2. ç›®å‰å…§æ–‡åªæœ‰åœ¨è¢« QP æˆ– base64 ç·¨ç¢¼æ™‚ï¼Œæ‰æœƒåš conv çš„å‹•ä½œ
+   åŸå› æ‡‰è©²æ˜¯ mm_getencode æŠŠ 8bit è¦–è€Œä¸è¦‹
+   è§£æ±ºæ–¹æ³•æ˜¯ mm_getencode æŠŠ 8bit ä¹Ÿç®—ä¸€å€‹ encode
+   ç„¶å¾Œåœ¨ mmdecode æ™‚ï¼Œcase '8' å›å‚³ strlen(src) + 1;
+   ç•¶ç„¶è‹¥æ˜¯æƒ³æŠŠæ²’å¯« encode çš„éƒ½ç•¶åš 8bitï¼Œå°±ä¸ç”¨å‹•åˆ° str_decode.c
+   è€Œæ˜¯åˆ†åˆ¥åœ¨ bbsmail/rec_article.c æ”¹ï¼Œä½† code ä¹Ÿæ”¹æ¯”è¼ƒå¤š
+   ä»¥ä¸‹çš„å¯«æ³•æ˜¯å¾Œè€…ï¼Œä½†æˆ‘å¸Œæœ›å‰è€…èƒ½æˆç‚ºæ­£å¼ release @@~
+3. bbsmail/brdmail ä¸æ”¯æ´å¤šè¡Œ header (ä¸Šæ¬¡æ‰åŠ ä¸Š RFC2047 Subcect å¤šè¡Œæ”¯æ´)
+   æ‰€ä»¥ charset å¯èƒ½æœƒæŠ“ä¸åˆ°ï¼Œå¦‚
    Content-Type: text/plain;
         charset="utf-8";
-   innbbsd ¥»¨Ó´N¦³¤ä´©¡A´N¤£¥Î§ï¤F¡C
+   innbbsd æœ¬ä¾†å°±æœ‰æ”¯æ´ï¼Œå°±ä¸ç”¨æ”¹äº†ã€‚
 
-¤U­±¬O¨Ì³Ì·sªºµ{¦¡½X + ºëµØ°Ï¦A patch
-PS. bmtad §Ú«Ü¤[¨S¥Î¡A´NÃi±o¼g¤F
+ä¸‹é¢æ˜¯ä¾æœ€æ–°çš„ç¨‹å¼ç¢¼ + ç²¾è¯å€å† patch
+PS. bmtad æˆ‘å¾ˆä¹…æ²’ç”¨ï¼Œå°±æ‡¶å¾—å¯«äº†
 
 
-: lib/str_decode.c::str_decode() ²¾¨ì str_conv() «á¨Ã­×§ï
+: lib/str_decode.c::str_decode() ç§»åˆ° str_conv() å¾Œä¸¦ä¿®æ”¹
 
 +#ifndef    MYCHARSET
 +#define    MYCHARSET   "big5"
@@ -51,7 +51,7 @@ str_decode(str)
 +       i = 0;
         while (*tmp && *tmp != '?')
 +       {
-+         /* PaulLiu: §â =?%s? ¤¤ªº %s ¦s¨ì charset ¸Ì */
++         /* PaulLiu: æŠŠ =?%s? ä¸­çš„ %s å­˜åˆ° charset è£¡ */
 +         if (i + 1 < sizeof(charset))
 +           charset[i++] = *tmp;
           tmp++;
@@ -64,7 +64,7 @@ str_decode(str)
           if (i >= 0)
 
 
-: util/bbsmail.c ¤Î brdmail.c
+: util/bbsmail.c åŠ brdmail.c
 
     else if (!memcmp(buf, "Content-Type: ", 14))
     {
@@ -75,7 +75,7 @@ str_decode(str)
 #endif
 +     if (!strstr(str, "charset=") && fgets(buf, sizeof(buf), stdin))
 +     {
-+       if (*buf == ' ' || *buf == '\t')    /* charset ¦b¤U¤@¦C */
++       if (*buf == ' ' || *buf == '\t')    /* charset åœ¨ä¸‹ä¸€åˆ— */
 +         str = buf;
 +       else
 +         goto start;
@@ -90,8 +90,8 @@ str_decode(str)
   {
     if (decode && ((fd = mmdecode(buf, decode, buf)) > 0))
       buf[fd] = '\0';
-+   else    /* 8bit ©Î®Ú¥»¨Sµù©ú encode */
-+     fd = strlen(buf) + 1;     /* ¥]¬A '\0' */
++   else    /* 8bit æˆ–æ ¹æœ¬æ²’è¨»æ˜ encode */
++     fd = strlen(buf) + 1;     /* åŒ…æ‹¬ '\0' */
 
 +   if (*charset)
 +     str_conv(charset, MYCHARSET, buf, fd);
@@ -101,16 +101,16 @@ str_decode(str)
 
 : innbbsd/rec_article.c::receive_article()
 
-  /* Âà charset */
+  /* è½‰ charset */
   mm_getencode(CONTENTENCODE, &decode);
   cc = mmdecode(BODY, decode, BODY);
   mm_getcharset(CONTENTTYPE, charset, sizeof(charset));
   if (!*charset)
     strcpy(charset, nf->charset);
 
-/* ÁöµM str_conv ·|§PÂ_ charset ¬Û¦P®É´N¤£°µ
-  ¦ı¦]¬° BODY ¥i¯à«Üªø¡A©Ò¥H´N¥ı§PÂ_ charset ¬O§_¬Ûµ¥
-  §K±o°µ strlen ªº¥Õ¤u */   /* ³o­Óµù¸Ñ¥u¬O¦b¦¹»¡©ú À³¸Ó¤£¥Î¥[.. */
+/* é›–ç„¶ str_conv æœƒåˆ¤æ–· charset ç›¸åŒæ™‚å°±ä¸åš
+  ä½†å› ç‚º BODY å¯èƒ½å¾ˆé•·ï¼Œæ‰€ä»¥å°±å…ˆåˆ¤æ–· charset æ˜¯å¦ç›¸ç­‰
+  å…å¾—åš strlen çš„ç™½å·¥ */   /* é€™å€‹è¨»è§£åªæ˜¯åœ¨æ­¤èªªæ˜ æ‡‰è©²ä¸ç”¨åŠ .. */
 + if (str_cmp(charset, MYCHARSET))
 + {
 +   if (cc < 0)
@@ -126,14 +126,14 @@ str_decode(str)
       gb2b5(SITE);
   }
 ---
-¨ä¹êÁÙ¬O¦³¤@¨Ç¤p°İÃD
-¦p¼ĞÃD¬° GB2312 + RFC2047
-´N·|¦h°µ¤@¦¸ gb2b5 ¤Ï¦ÓÅÜ¶Ã½X
-¦ı¤j³° BBS ´X¥G¤£¨Ì RFC2047,³sOE°e¥XGB2312«H¥ó®É¤]¤£·|°µ(UTF-8·|)
-©Ò¥HÀ³¸ÓÁÙ¦n~
+å…¶å¯¦é‚„æ˜¯æœ‰ä¸€äº›å°å•é¡Œ
+å¦‚æ¨™é¡Œç‚º GB2312 + RFC2047
+å°±æœƒå¤šåšä¸€æ¬¡ gb2b5 åè€Œè®Šäº‚ç¢¼
+ä½†å¤§é™¸ BBS å¹¾ä¹ä¸ä¾ RFC2047,é€£OEé€å‡ºGB2312ä¿¡ä»¶æ™‚ä¹Ÿä¸æœƒåš(UTF-8æœƒ)
+æ‰€ä»¥æ‡‰è©²é‚„å¥½~
 
 --
-[1;34m¢e¢e¢e¢e¢e¢e¢e        ¢e¢e¢e¢e  ¢e¢e¢e¢e¢e¢e[;1m  ¡Õtelnet://bbs.cs.nctu.edu.tw¡Ö[m
-[1;34m  ¢i¢e¢e¢e¢e¢i        ¢i        ¢e¢e¢e¢e¢e¢i [;30;47mPlayer: [32mLHD                      [m
-[1;36m¢e¢i¢e¢e¢e¢e¢i  ¢e¢e¢e¢i        ¢i¢e¢e¢e¢e¢e [;30;47mFrom: [31mbsd3.cis.nctu.edu.tw       [m
-¡¸ ¦¸¥@¥N¢Ğ¢á¢± ¡¸ ¥i¥Ó½Ğ­Ó¤HªO [1m150MB ¶W¤j¬ÛÃ¯ http://pic.bs2.to ¸ê°T¤H 250MB[m
+[1;34mâ–„â–„â–„â–„â–„â–„â–„        â–„â–„â–„â–„  â–„â–„â–„â–„â–„â–„[;1m  ï¼œtelnet://bbs.cs.nctu.edu.twï¼[m
+[1;34m  â–ˆâ–„â–„â–„â–„â–ˆ        â–ˆ        â–„â–„â–„â–„â–„â–ˆ [;30;47mPlayer: [32mLHD                      [m
+[1;36mâ–„â–ˆâ–„â–„â–„â–„â–ˆ  â–„â–„â–„â–ˆ        â–ˆâ–„â–„â–„â–„â–„ [;30;47mFrom: [31mbsd3.cis.nctu.edu.tw       [m
+â˜† æ¬¡ä¸–ä»£ï¼¢ï¼³ï¼’ â˜† å¯ç”³è«‹å€‹äººæ¿ [1m150MB è¶…å¤§ç›¸ç°¿ http://pic.bs2.to è³‡è¨Šäºº 250MB[m

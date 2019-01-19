@@ -1,25 +1,25 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (¦å¦b²I....¦å¦b¬y...) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] Æ[¹î¥ş¯¸«H½c¨Ï¥Îª¬ªp¡C
-µo«H¯¸: ¤¤¿³¸ê¬ì (Sat, 13 Sep 2003 11:51:19 +0800 (CST))  Updated: 2005/06/11
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (è¡€åœ¨æ·Œ....è¡€åœ¨æµ...) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] è§€å¯Ÿå…¨ç«™ä¿¡ç®±ä½¿ç”¨ç‹€æ³ã€‚
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (Sat, 13 Sep 2003 11:51:19 +0800 (CST))  Updated: 2005/06/11
 
-    §Û WinTop ªº.... :p
-
-
-    ³o­Óµ{¦¡¡A·|±N¥ş³¡¨Ï¥ÎªÌªº«H½c¤ºªº«H¥ó¼Æ¶q¡A¥H¤Î¥ş³¡«H¥óªº¤j¤p¡]¢ó¢ê¡^
-
-    ±Æ§Ç¦L¥X¡C
-
-    ²£¥ÍÀÉ®×¦b ~/gem/@/@-mailsize
-
-    ¥i¥H¦b BBS ¯¸¤ºª½±µÆ[¬İ¡C
+    æŠ„ WinTop çš„.... :p
 
 
-    ¨ä¹ê¡A³o¯uªº¬O¤@­ÓÅÜºAªº¥\¯à....
+    é€™å€‹ç¨‹å¼ï¼Œæœƒå°‡å…¨éƒ¨ä½¿ç”¨è€…çš„ä¿¡ç®±å…§çš„ä¿¡ä»¶æ•¸é‡ï¼Œä»¥åŠå…¨éƒ¨ä¿¡ä»¶çš„å¤§å°ï¼ˆï½‹ï½‚ï¼‰
 
-    ¯¸ªø³£§â¨Ï¥ÎªÌªº¥ÍºA¬İªº¤@²M¤G·¡....>"<
+    æ’åºå°å‡ºã€‚
+
+    ç”¢ç”Ÿæª”æ¡ˆåœ¨ ~/gem/@/@-mailsize
+
+    å¯ä»¥åœ¨ BBS ç«™å…§ç›´æ¥è§€çœ‹ã€‚
 
 
-    ¦pªG¯¸¥xªº¨Ï¥ÎªÌµù¥U¤H¼Æ²³¦h¡A¨º¶]°_¨ÓÀ³¸Ó¬O«Ü¦Y¸ê·½ªº....^^a
+    å…¶å¯¦ï¼Œé€™çœŸçš„æ˜¯ä¸€å€‹è®Šæ…‹çš„åŠŸèƒ½....
+
+    ç«™é•·éƒ½æŠŠä½¿ç”¨è€…çš„ç”Ÿæ…‹çœ‹çš„ä¸€æ¸…äºŒæ¥š....>"<
+
+
+    å¦‚æœç«™å°çš„ä½¿ç”¨è€…è¨»å†Šäººæ•¸çœ¾å¤šï¼Œé‚£è·‘èµ·ä¾†æ‡‰è©²æ˜¯å¾ˆåƒè³‡æºçš„....^^a
 
 ==============================================================================
 
@@ -27,12 +27,12 @@
 
 EXE =   ... [1;33mshowMailsize[m
 
-: src/util/showMailsize.c   ·s¼W¤U­±¾ã¤äµ{¦¡
+: src/util/showMailsize.c   æ–°å¢ä¸‹é¢æ•´æ”¯ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* util/showMailsize.c  ( NTHU CS MapleBBS Ver 3.00 )    */
 /*-------------------------------------------------------*/
-/* target : Æ[¹î¥ş¯¸«H½c¨Ï¥Îª¬ªp                         */
+/* target : è§€å¯Ÿå…¨ç«™ä¿¡ç®±ä½¿ç”¨ç‹€æ³                         */
 /* create : 03/09/13                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw (util/topusr.c) */
@@ -50,7 +50,7 @@ typedef struct
   int mailsize;
 }      DATA;
 
-static int i = 0;  /* ¬ö¿ı¦³´X­Ó USER */
+static int i = 0;  /* ç´€éŒ„æœ‰å¹¾å€‹ USER */
 
 static DATA *mail;
 
@@ -86,14 +86,14 @@ write_data(fpath, title, data)
     return;
 
   j = 12 - (strlen(title) >> 1);
-  sprintf(buf, " \033[1;33m¡³ ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¡÷ "
+  sprintf(buf, " \033[1;33mâ—‹ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â†’ "
     "\033[41m%%%ds%%s%%%ds"
-    "\033[40m ¡ö¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w ¡³\033[m\n\n", j, j);
+    "\033[40m â†â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ â—‹\033[m\n\n", j, j);
   fprintf(fp, buf, "", title, "");
 
   for (j = 0; j < i; j++)
   {
-    fprintf(fp, "[%3d] %-13s %3d «Ê   %5d ¢ó\n", j + 1,
+    fprintf(fp, "[%3d] %-13s %3d å°   %5d ï½‹\n", j + 1,
       data[j].userid, data[j].mailnum, data[j].mailsize);
   }
 
@@ -177,19 +177,19 @@ topusr(cuser)
 }
 
 /*-------------------------------------------------------*/
-/* ¥Dµ{¦¡                                                */
+/* ä¸»ç¨‹å¼                                                */
 /*-------------------------------------------------------*/
 
 
 int
 main()
 {
-  int numuser;          /* Á`¦@¦³´X­Óµù¥U±b¸¹ */
+  int numuser;          /* ç¸½å…±æœ‰å¹¾å€‹è¨»å†Šå¸³è™Ÿ */
   char c;
 
   chdir(BBSHOME);
   numuser = rec_num(FN_SCHEMA, sizeof(SCHEMA)) + 100;
-                                              /* ¥[ 100 ¥H§K­è¦n¦³¤Hµù¥U */
+                                              /* åŠ  100 ä»¥å…å‰›å¥½æœ‰äººè¨»å†Š */
   mail = (DATA *) malloc(sizeof(DATA) * numuser);
   memset(mail, 0, sizeof(DATA) * numuser);
 
@@ -222,20 +222,20 @@ main()
       read(fd, &cuser, sizeof(cuser));
       close(fd);
 
-      chdir(BBSHOME);       /* ´«¨ì®Ú¥Ø¿ı¡Aµ¹ usr_fpath() ¥Î */
+      chdir(BBSHOME);       /* æ›åˆ°æ ¹ç›®éŒ„ï¼Œçµ¦ usr_fpath() ç”¨ */
       topusr(cuser);
-      chdir(buf);           /* ´«¦^¨ì user ¥Ø¿ı */
+      chdir(buf);           /* æ›å›åˆ° user ç›®éŒ„ */
     }
 
     closedir(dirp);
   }
 
   qsort(mail, numuser, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_MAILSIZE, "«H½c®e¶q±Æ¦æº]", mail);
+  write_data(OUTFILE_MAILSIZE, "ä¿¡ç®±å®¹é‡æ’è¡Œæ¦œ", mail);
 
   return 0;
 }
 
 --
- [1m[42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m csNCHU.twbbs.org [m
- [1m[44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mqazq [30m±q [35m61-216-137-121.HINET-IP.hinet.net [30mµoªí[m
+ [1m[42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m csNCHU.twbbs.org [m
+ [1m[44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mqazq [30må¾ [35m61-216-137-121.HINET-IP.hinet.net [30mç™¼è¡¨[m

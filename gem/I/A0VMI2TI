@@ -1,24 +1,24 @@
-�o�H�H: amaki.bbs@luna.twbbs.org (�۳�䭷����) �ݪO: itoc
-��  �D: Re: [�ץ�]�\Ū�峹�W���̫�@�������U���Ĥ@��
-�o�H��: ��U�]�Q (Wed, 17 Sep 2003 09:18:41 +0800 (CST))  Updated: 2004/11/14
+發信人: amaki.bbs@luna.twbbs.org (招喚颱風的羊) 看板: itoc
+標  題: Re: [修正]閱讀文章上頁最後一行應為下頁第一行
+發信站: 月下夜想 (Wed, 17 Sep 2003 09:18:41 +0800 (CST))  Updated: 2004/11/14
 
-  �ƪ��]�H�{��  �W���̫�@�椣�����U���Ĥ@��
+  排版魔人認為  上頁最後一行不應為下頁第一行
 
-  ����@�I���ק�A�ѯ��ި̦ۤv���ߦn�ۤv�M�w:)
+  完整一點的修改，由站管依自己的喜好自己決定:)
 
-  �p�G���ާƱ�����ɡA����½�W���άO�U���A��½�Ѥ@�ˤ��|�o�ͦ��e�����ƨ�
+  如果站管希望跳頁時，不管翻上頁或是下頁，像翻書一樣不會發生有畫面重複到
 
-  �����ΡA�i�H�o�˧�:
+  的情形，可以這樣改:
 
 : config.h
 
-- #define PAGE_SCROLL     (b_lines - 1)   /* �� PgUp/PgDn �n���ʴX�C */
-+ #define PAGE_SCROLL     b_lines         /* �� PgUp/PgDn �n���ʴX�C */
+- #define PAGE_SCROLL     (b_lines - 1)   /* 按 PgUp/PgDn 要捲動幾列 */
++ #define PAGE_SCROLL     b_lines         /* 按 PgUp/PgDn 要捲動幾列 */
 
 
-  ���]�O�i�H�˭Ӽ��Ҩ�user�o��ɥΡA��Ӫ�more�Pı������b�ݳ���(�e���O�@���s
+  其實也是可以弄個標籤供user發文時用，原來的more感覺比較像在看報表(畫面是一直連
 
-  ��)�A�ӳo��more�Pı������O�b�ݮѡA��̦U�����P�Pı�C
+  續)，而這個more感覺比較像是在看書，兩者各有不同感覺。
 
 --
   [1;33mOrigin: luna.twbbs.org[m

@@ -1,20 +1,20 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ½Ğ°İ ¦p¦ó¨ú®øª©¥D¥i¥H§ó§ï¬İªOÄİ©Ê
-µo«H¯¸: °Ê¤O®Ö¤ß (2005/05/26 Thu 09:46:30)                Updated: 2005/05/26
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: è«‹å• å¦‚ä½•å–æ¶ˆç‰ˆä¸»å¯ä»¥æ›´æ”¹çœ‹æ¿å±¬æ€§
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2005/05/26 Thu 09:46:30)                Updated: 2005/05/26
 
-¡° ¤Ş­z¡mpapago (papago)¡n¤§»Ê¨¥¡G
->     ½Ğ°İ.°£¤F¥H¤W ¤£¶}©ñª©¥D­×§ï¬İªOÄİ©Ê ªº¥\¯à¥~
->     ¯à§_³]©w ¯S©wÀu¨qª©¥D ¯à­×§ï©O ?
+â€» å¼•è¿°ã€Špapago (papago)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>     è«‹å•.é™¤äº†ä»¥ä¸Š ä¸é–‹æ”¾ç‰ˆä¸»ä¿®æ”¹çœ‹æ¿å±¬æ€§ çš„åŠŸèƒ½å¤–
+>     èƒ½å¦è¨­å®š ç‰¹å®šå„ªç§€ç‰ˆä¸» èƒ½ä¿®æ”¹å‘¢ ?
 
 : global.h
 
-#define FN_ETC_EXPIRE   "etc/expire.conf"       /* ¬İªO¤å³¹½g¼Æ¤W­­³]©w */
-+ #define FN_ETC_GOODBM "etc/goodbm"            /* Àu¨}ªO¥D²M³æ */
+#define FN_ETC_EXPIRE   "etc/expire.conf"       /* çœ‹æ¿æ–‡ç« ç¯‡æ•¸ä¸Šé™è¨­å®š */
++ #define FN_ETC_GOODBM "etc/goodbm"            /* å„ªè‰¯æ¿ä¸»æ¸…å–® */
 
 : admutil.c:a_xfile()
 
-    "¦¬«H¶Â¦W³æ",
-+   "Àu¨}ªO¥D²M³æ",
+    "æ”¶ä¿¡é»‘åå–®",
++   "å„ªè‰¯æ¿ä¸»æ¸…å–®",
 
   ...
   ...
@@ -22,7 +22,7 @@
     UNMAIL_ACLFILE,
 +   FN_ETC_GOODBM,
 
-: manage.c:belong_goodbm() ¥[¦b post_manage() «e­±
+: manage.c:belong_goodbm() åŠ åœ¨ post_manage() å‰é¢
 
 static int
 belong_goodbm()
@@ -51,14 +51,14 @@ belong_goodbm()
 
 : post.c:post_manage()
 
-  [1;44m// ±µ¤U¨Ó´N¬İ§A­n¸T¤î¡u¤£¦bÀu¨}ªO¥D¦W³æ¤WªºªO¥D¡v°µ­ş¨Ç¨Æ¡A     [m
-  [1;44m// ´N¦b¨º case ¸Ì­±¥[ if (belong_goodbm())                      [m
-  [1;44m// ¨Ò¦p¡u¥u¦³¦bÀu¨}ªO¥D¦W³æ¤WªºªO¥D¤~¯à§ïÅÜ¬O§_¶}©ñª`­µ¤å¡v     [m
+  [1;44m// æ¥ä¸‹ä¾†å°±çœ‹ä½ è¦ç¦æ­¢ã€Œä¸åœ¨å„ªè‰¯æ¿ä¸»åå–®ä¸Šçš„æ¿ä¸»ã€åšå“ªäº›äº‹ï¼Œ     [m
+  [1;44m// å°±åœ¨é‚£ case è£¡é¢åŠ  if (belong_goodbm())                      [m
+  [1;44m// ä¾‹å¦‚ã€Œåªæœ‰åœ¨å„ªè‰¯æ¿ä¸»åå–®ä¸Šçš„æ¿ä¸»æ‰èƒ½æ”¹è®Šæ˜¯å¦é–‹æ”¾æ³¨éŸ³æ–‡ã€     [m
 
   case 's':
 +   if (belong_goodbm())
       return post_battr_noscore(xo);
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

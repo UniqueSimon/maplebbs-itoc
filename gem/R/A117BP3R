@@ -1,10 +1,10 @@
-�@��: itoc (�֤߰ʤO) ����: itoc
-���D: Re: ��������Ƴs����媺���D?
-�ɶ�: 2005/04/06 Wed 22:56:09                           Updated: 2005/04/07
+作者: itoc (核心動力) 站內: itoc
+標題: Re: 限制不限次數連續推文的問題?
+時間: 2005/04/06 Wed 22:56:09                           Updated: 2005/04/07
 
-�� �ޭz�mcomfan (���L  �ˤ�)�n���ʨ��G
-> �аݬO�_�i�H�α��妩�����λȹ����覡����P�@��id�s��ʱ���欰
-> �Ҧp:����@��  ������O1000�ӳ�쪺����
+※ 引述《comfan (難過  傷心)》之銘言：
+> 請問是否可以用推文扣金幣或銀幣的方式限制同一個id連續性推文行為
+> 例如:推文一次  必須花費1000個單位的金幣
 
 : post.c:post_score()
 
@@ -16,7 +16,7 @@
 
 + if (cuser.money < 1000)
 + {
-+   vmsg("�n 1000 �ȹ��~�����");
++   vmsg("要 1000 銀幣才能評分");
 +   return XO_FOOT;
 + }
 
@@ -38,5 +38,5 @@
   }
 
 --
- [1;43m��[46m��[m Or[1mig[30min[m: [41m Maple-itoc���ʤO�֤� [36;47m cpu.tfcis.org [m
- [1;44m��[41m��[m A[1mut[30mho[mr: [1;33mitoc [30m�q [31mitoc.Dorm11.NCTU.edu.tw [30m�o��[m
+ [1;43m◤[46m◥[m Or[1mig[30min[m: [41m Maple-itoc˙動力核心 [36;47m cpu.tfcis.org [m
+ [1;44m◣[41m◢[m A[1mut[30mho[mr: [1;33mitoc [30m從 [31mitoc.Dorm11.NCTU.edu.tw [30m發表[m

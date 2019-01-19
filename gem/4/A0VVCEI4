@@ -1,20 +1,20 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ½Ğ°İ~»{ÃÒ¦³¿ìªk¼W¥[³o­Ó¥\¯à¶Ü?
-µo«H¯¸: °Ê¤O®Ö¤ß (2003/12/24 Wed 11:27:51)                Updated: 2005/04/29
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: è«‹å•~èªè­‰æœ‰è¾¦æ³•å¢åŠ é€™å€‹åŠŸèƒ½å—?
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2003/12/24 Wed 11:27:51)                Updated: 2005/04/29
 
-¡° ¤Ş­z¡msbs (SBS)¡n¤§»Ê¨¥¡G
-> ¦b¥ÎColaªº®É­Ô¡A¦³¤@­Ó¥\¯à´N¬O·í¯¸ªø¼f®Ö
-> §¹µù¥U³æ«á¡A·|¦Û°Ê±N¤º®ePO¦b¤@­ÓªO¤W¡A
-> ¼ĞÃD·|µù©ú[½T»{¦¨¥\]or[½T»{¥¢±Ñ]
-> ¦P®É¨º½g¤å³¹´N·|¥X²{¨Ï¥ÎªÌµù¥Uªº¤º®e¡B
-> ¥Ñ½Ö¼f®Ö¡B®É¶¡µ¥¡C
-> ³o¼Ëªº¦n³B¬O·í¦³¹ê²ß¯¸ªø¦b³B²z®É¡A
-> §A¥i¥H¬İ¨º­ÓªO´Nª¾¹D¥L¦³¨S¦³¶Ã»{ÃÒ
+â€» å¼•è¿°ã€Šsbs (SBS)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> åœ¨ç”¨Colaçš„æ™‚å€™ï¼Œæœ‰ä¸€å€‹åŠŸèƒ½å°±æ˜¯ç•¶ç«™é•·å¯©æ ¸
+> å®Œè¨»å†Šå–®å¾Œï¼Œæœƒè‡ªå‹•å°‡å…§å®¹POåœ¨ä¸€å€‹æ¿ä¸Šï¼Œ
+> æ¨™é¡Œæœƒè¨»æ˜[ç¢ºèªæˆåŠŸ]or[ç¢ºèªå¤±æ•—]
+> åŒæ™‚é‚£ç¯‡æ–‡ç« å°±æœƒå‡ºç¾ä½¿ç”¨è€…è¨»å†Šçš„å…§å®¹ã€
+> ç”±èª°å¯©æ ¸ã€æ™‚é–“ç­‰ã€‚
+> é€™æ¨£çš„å¥½è™•æ˜¯ç•¶æœ‰å¯¦ç¿’ç«™é•·åœ¨è™•ç†æ™‚ï¼Œ
+> ä½ å¯ä»¥çœ‹é‚£å€‹æ¿å°±çŸ¥é“ä»–æœ‰æ²’æœ‰äº‚èªè­‰
 
-  ¥ı°µºëµØ°Ï³o½g
-  [¥\¯à] post.c µo¤å¨ì¬İªO
+  å…ˆåšç²¾è¯å€é€™ç¯‡
+  [åŠŸèƒ½] post.c ç™¼æ–‡åˆ°çœ‹æ¿
 
-: admutil.c ·s¼W¥H¤U¨ç¦¡¦b scan_register_form() «e­±
+: admutil.c æ–°å¢ä»¥ä¸‹å‡½å¼åœ¨ scan_register_form() å‰é¢
 
 static void
 log_register(rform, pass)
@@ -24,25 +24,25 @@ log_register(rform, pass)
   char fpath[64], title[TTLEN + 1];
   FILE *fp;
 
-  sprintf(fpath, "tmp/log_register.%s", cuser.userid);   /* ¼È¦sÀÉ */
+  sprintf(fpath, "tmp/log_register.%s", cuser.userid);   /* æš«å­˜æª” */
   if (fp = fopen(fpath, "w"))
   {
-    sprintf(title, "¯¸ªø %s ¼f®Ö %s ªºµù¥U³æ%s³q¹L",
-      cuser.userid, rform->userid, pass ? "" : "¤£");
+    sprintf(title, "ç«™é•· %s å¯©æ ¸ %s çš„è¨»å†Šå–®%sé€šé",
+      cuser.userid, rform->userid, pass ? "" : "ä¸");
 
-    /* ¤å³¹ÀÉÀY */
+    /* æ–‡ç« æª”é ­ */
     fprintf(fp, "%s %s (%s) %s %s\n",
       str_author1, cuser.userid, cuser.username,
       str_post2, BN_SECURITY);
-    fprintf(fp, "¼ĞÃD: %s\n®É¶¡: %s\n\n", title, Now());
+    fprintf(fp, "æ¨™é¡Œ: %s\næ™‚é–“: %s\n\n", title, Now());
 
-    /* ¤å³¹¤º®e */
+    /* æ–‡ç« å…§å®¹ */
     fprintf(fp, "%s\n\n", title);
-    fprintf(fp, "¥Ó½Ğ¥N¸¹: %s (¥Ó½Ğ®É¶¡¡G%s)\n",
+    fprintf(fp, "ç”³è«‹ä»£è™Ÿ: %s (ç”³è«‹æ™‚é–“ï¼š%s)\n",
       rform->userid, Btime(&(rform->rtime)));
-    fprintf(fp, "ªA°È³æ¦ì: %s\n", rform->career);
-    fprintf(fp, "¥Ø«e¦í§}: %s\n", rform->address);
-    fprintf(fp, "³sµ¸¹q¸Ü: %s\n", rform->phone);
+    fprintf(fp, "æœå‹™å–®ä½: %s\n", rform->career);
+    fprintf(fp, "ç›®å‰ä½å€: %s\n", rform->address);
+    fprintf(fp, "é€£çµ¡é›»è©±: %s\n", rform->phone);
 
     fclose(fp);
 
@@ -56,7 +56,7 @@ log_register(rform, pass)
     case 'y':
 
 +     log_register(&rform, 1);
-      /* ´£¤ÉÅv­­ */
+      /* æå‡æ¬Šé™ */
 
     ...
     ...
@@ -67,5 +67,5 @@ log_register(rform, pass)
       move(9, 0);
 
 --
- [1;43m¢z[44m¢q[m Or[1mig[30min[m: [44m Maple-itoc£»°Ê¤O®Ö¤ß [31;47m processor.tfcis.org [m
- [1;41m¢|[42m¢}[m A[1mut[30mho[mr: [1;36mitoc [30m±q [35mpc512-2.ee.nctu.edu.tw [30mµoªí[m
+ [1;43mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [44m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [31;47m processor.tfcis.org [m
+ [1;41mâ””[42mâ”˜[m A[1mut[30mho[mr: [1;36mitoc [30må¾ [35mpc512-2.ee.nctu.edu.tw [30mç™¼è¡¨[m

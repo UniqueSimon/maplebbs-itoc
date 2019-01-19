@@ -1,11 +1,11 @@
-§@ªÌ: itoc (­·½Õ«B¶¶¡A°ê®õ¥Á¦w) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ·s¼W¤£¦P id ªº guest
-®É¶¡: Sun Aug 17 21:06:37 2003                          Updated: 2003/09/29
+ä½œè€…: itoc (é¢¨èª¿é›¨é †ï¼Œåœ‹æ³°æ°‘å®‰) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] æ–°å¢ä¸åŒ id çš„ guest
+æ™‚é–“: Sun Aug 17 21:06:37 2003                          Updated: 2003/09/29
 
-  ·s¼W¤£¦P id ªº³X«È¡A¨Ò¦p·s¼W id ¬° adam ©M eve
+  æ–°å¢ä¸åŒ id çš„è¨ªå®¢ï¼Œä¾‹å¦‚æ–°å¢ id ç‚º adam å’Œ eve
 
-  µù¥U¤G°¦·s id ¥s adam ©M eve¡A¸ê®Æ/±K½X¥ô·N
-  ²Ä¤G¦¸¤W¯¸¥H«á¡A´N¤£·|°İ±K½X¤F
+  è¨»å†ŠäºŒéš»æ–° id å« adam å’Œ eveï¼Œè³‡æ–™/å¯†ç¢¼ä»»æ„
+  ç¬¬äºŒæ¬¡ä¸Šç«™ä»¥å¾Œï¼Œå°±ä¸æœƒå•å¯†ç¢¼äº†
 
 : global.h
 
@@ -16,24 +16,24 @@
 : bbsd.c:login_user()
 
   move(b_lines, 0);
-- outs("   ¡° °ÑÆ[±b¸¹¡G\033[1;32m" STR_GUEST "\033[m"
--   "  ¥Ó½Ğ·s±b¸¹¡G\033[1;31m" STR_NEW "\033[m");
-+ outs("   ¡° °ÑÆ[±b¸¹¡G\033[1;32m" STR_GUEST STR_GUEST2 STR_GUEST3 "\033[m"
-+   "  ¥Ó½Ğ·s±b¸¹¡G\033[1;31m" STR_NEW "\033[m");
+- outs("   â€» åƒè§€å¸³è™Ÿï¼š\033[1;32m" STR_GUEST "\033[m"
+-   "  ç”³è«‹æ–°å¸³è™Ÿï¼š\033[1;31m" STR_NEW "\033[m");
++ outs("   â€» åƒè§€å¸³è™Ÿï¼š\033[1;32m" STR_GUEST STR_GUEST2 STR_GUEST3 "\033[m"
++   "  ç”³è«‹æ–°å¸³è™Ÿï¼š\033[1;31m" STR_NEW "\033[m");
 
   ...
   ...
 
--     outs("\n¥»¨t²Î¥Ø«e¼È°±½u¤Wµù¥U, ½Ğ¥Î " STR_GUEST " ¶i¤J");
-+     outs("\n¥»¨t²Î¥Ø«e¼È°±½u¤Wµù¥U, ½Ğ¥Î "
-+       STR_GUEST STR_GUEST2 STR_GUEST3 " ¶i¤J");
+-     outs("\næœ¬ç³»çµ±ç›®å‰æš«åœç·šä¸Šè¨»å†Š, è«‹ç”¨ " STR_GUEST " é€²å…¥");
++     outs("\næœ¬ç³»çµ±ç›®å‰æš«åœç·šä¸Šè¨»å†Š, è«‹ç”¨ "
++       STR_GUEST STR_GUEST2 STR_GUEST3 " é€²å…¥");
 
   ...
   ...
 
--   else if (str_cmp(uid, STR_GUEST))   /* ¤@¯ë¨Ï¥ÎªÌ */
-+   else if (str_cmp(uid, STR_GUEST) && /* ¤@¯ë¨Ï¥ÎªÌ */
+-   else if (str_cmp(uid, STR_GUEST))   /* ä¸€èˆ¬ä½¿ç”¨è€… */
++   else if (str_cmp(uid, STR_GUEST) && /* ä¸€èˆ¬ä½¿ç”¨è€… */
 +     str_cmp(uid, STR_GUEST2) && str_cmp(uid, STR_GUEST3))
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

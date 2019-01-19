@@ -1,15 +1,15 @@
-§@ªÌ: itoc (­·½Õ«B¶¶¡A°ê®õ¥Á¦w) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¬İªO»¡©ú
-®É¶¡: Sun Jun  1 11:56:03 2003                          Updated: 2006/04/17
+ä½œè€…: itoc (é¢¨èª¿é›¨é †ï¼Œåœ‹æ³°æ°‘å®‰) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] çœ‹æ¿èªªæ˜
+æ™‚é–“: Sun Jun  1 11:56:03 2003                          Updated: 2006/04/17
 
-  1. µ¹¤©¨C­Ó¬İªOÂ²³æªº»¡©úÂ²¤¶
-  2. ­Y­n§ïÅÜ¬İªO»¡©úªº¦æ¼Æ½Ğ§ó§ï xover.c:xover()
-  3. §Ë¦¨Habit¿ï¶µ¡A¦]¬°³oªF¦è¦³¤H³ßÅw¦³°Q¹½
-  4. ¦b§Úªº³Ì·R¤¤¤]¥i¥H¥¿±`Åã¥Ü
+  1. çµ¦äºˆæ¯å€‹çœ‹æ¿ç°¡å–®çš„èªªæ˜ç°¡ä»‹
+  2. è‹¥è¦æ”¹è®Šçœ‹æ¿èªªæ˜çš„è¡Œæ•¸è«‹æ›´æ”¹ xover.c:xover()
+  3. å¼„æˆHabité¸é …ï¼Œå› ç‚ºé€™æ±è¥¿æœ‰äººå–œæ­¡æœ‰è¨å­
+  4. åœ¨æˆ‘çš„æœ€æ„›ä¸­ä¹Ÿå¯ä»¥æ­£å¸¸é¡¯ç¤º
 
 : include/config.h
 
-+ #define HAVE_BRD_EXPLAIN              /* kenshieh.010114: ¬İªO»¡©ú */
++ #define HAVE_BRD_EXPLAIN              /* kenshieh.010114: çœ‹æ¿èªªæ˜ */
 
 : include/global.h
 
@@ -33,24 +33,24 @@
 
 : include/ufo.h
 
-#define UFO_KIMONEWS    BFLAG(18)       /* itoc.020130: ¤W¯¸¬İ Kimo News */
-+ #define UFO_BRDEXP      BFLAG(19)       /* amaki.030524: ¬İªO»¡©úªº¼ĞÅÒ */
+#define UFO_KIMONEWS    BFLAG(18)       /* itoc.020130: ä¸Šç«™çœ‹ Kimo News */
++ #define UFO_BRDEXP      BFLAG(19)       /* amaki.030524: çœ‹æ¿èªªæ˜çš„æ¨™ç±¤ */
 
   ...
   ...
 
-- #define NUMUFOS_USER    19      /* ¤@¯ë¨Ï¥ÎªÌ ¥i¥H¥Î«e 19 ­Ó ufo */
-+ #define NUMUFOS_USER    20      /* ¤@¯ë¨Ï¥ÎªÌ ¥i¥H¥Î«e 20 ­Ó ufo */
+- #define NUMUFOS_USER    19      /* ä¸€èˆ¬ä½¿ç”¨è€… å¯ä»¥ç”¨å‰ 19 å€‹ ufo */
++ #define NUMUFOS_USER    20      /* ä¸€èˆ¬ä½¿ç”¨è€… å¯ä»¥ç”¨å‰ 20 å€‹ ufo */
 
 - #define STR_UFO         "-mpsnemPBQFANbwtSHK-----CHA"
 + #define STR_UFO         "-mpsnemPBQFANbwtSHKE----CHA"
 
-  §ï¤@¤Uufo_tbl[]¡A°O±o­n¹ï»ô¤W­±ªºSTR_UFO¦ì¸m¡C
+  æ”¹ä¸€ä¸‹ufo_tbl[]ï¼Œè¨˜å¾—è¦å°é½Šä¸Šé¢çš„STR_UFOä½ç½®ã€‚
 
 +#ifdef HAVE_BRD_EXPLAIN                 /* UFO_BRDEXP */
-+  "¬İªO»¡©ú        (Åã¥Ü/ÁôÂÃ)",
++  "çœ‹æ¿èªªæ˜        (é¡¯ç¤º/éš±è—)",
 +#else
-  "«O¯d",
+  "ä¿ç•™",
 +#endif
 
 : bbsd.c:term_init()
@@ -73,10 +73,10 @@
 - } while (++n < b_lines);
 + } while (++n < XO_TALL + 3);
 
-: so/manage.c:post_explain_edit() ·s¼W³o¨ç¦¡©ó post_memo_edit() «á­±
+: so/manage.c:post_explain_edit() æ–°å¢é€™å‡½å¼æ–¼ post_memo_edit() å¾Œé¢
 
 /* ----------------------------------------------------- */
-/* ªO¥D¥\¯à : ­×§ï¬İªO»¡©ú                               */
+/* æ¿ä¸»åŠŸèƒ½ : ä¿®æ”¹çœ‹æ¿èªªæ˜                               */
 /* ----------------------------------------------------- */
 
 
@@ -88,7 +88,7 @@ post_explain_edit(xo)
   int mode;
   char fpath[64];
 
-  mode = vans("¬İªO»¡©ú (D)§R°£ (E)­×§ï (Q)¨ú®ø¡H[E] ");
+  mode = vans("çœ‹æ¿èªªæ˜ (D)åˆªé™¤ (E)ä¿®æ”¹ (Q)å–æ¶ˆï¼Ÿ[E] ");
 
   if (mode != 'q')
   {
@@ -97,7 +97,7 @@ post_explain_edit(xo)
       unlink(fpath);
     else
     {
-      if (vedit(fpath, 0)) /* Thor.981020: ª`·N³Qtalkªº°İÃD */
+      if (vedit(fpath, 0)) /* Thor.981020: æ³¨æ„è¢«talkçš„å•é¡Œ */
         vmsg(msg_cancel);
 
       return XO_HEAD;
@@ -110,18 +110,18 @@ post_explain_edit(xo)
 
 : so/manage.c:post_manage()
 
-    "WMemo   ½s¿è¶iªOµe­±",
+    "WMemo   ç·¨è¼¯é€²æ¿ç•«é¢",
 +#ifdef HAVE_BRD_EXPLAIN
-+   "Explain ½s¿è¬İªO»¡©ú",
++   "Explain ç·¨è¼¯çœ‹æ¿èªªæ˜",
 +#endif
 
   ...
   ...
 
 +#ifdef HAVE_BRD_EXPLAIN
-+ char *menu = "¡· ªO¥D¿ï³æ (B)¥DÃD (W)¶iªO (E)»¡©ú (M)°ÆªO"
++ char *menu = "â— æ¿ä¸»é¸å–® (B)ä¸»é¡Œ (W)é€²æ¿ (E)èªªæ˜ (M)å‰¯æ¿"
 +#else
-  char *menu = "¡· ªO¥D¿ï³æ (B)¥DÃD (W)¶iªO (M)°ÆªO"
+  char *menu = "â— æ¿ä¸»é¸å–® (B)ä¸»é¡Œ (W)é€²æ¿ (M)å‰¯æ¿"
 +#endif
 
   ...
@@ -135,11 +135,11 @@ post_explain_edit(xo)
 +   ret = post_explain_edit(xo);
 +   break;
 
-: maple/xover.c:XoBoard() ·s¼W³o¨ç¦¡©ó xover() «e­±
+: maple/xover.c:XoBoard() æ–°å¢é€™å‡½å¼æ–¼ xover() å‰é¢
 
 #ifdef HAVE_BRD_EXPLAIN
 static void
-XoBoard(xo, zone)           /* ¬İªO»¡©ú */
+XoBoard(xo, zone)           /* çœ‹æ¿èªªæ˜ */
   XO *xo;
   int zone;
 {
@@ -182,7 +182,7 @@ XoBoard(xo, zone)           /* ¬İªO»¡©ú */
 
     if (fp = fopen(buf, "r"))
     {
-      for (bno = XO_TALL + 4; bno < b_lines; bno++)     /* ­É¥Î bno */
+      for (bno = XO_TALL + 4; bno < b_lines; bno++)     /* å€Ÿç”¨ bno */
       {
         if (!(fgets(buf, ANSILINELEN, fp)))
           break;
@@ -198,7 +198,7 @@ XoBoard(xo, zone)           /* ¬İªO»¡©ú */
 }
 #endif
 
-: xover.c:xover() ¶i¤J¬İªO¦Cªí/§Úªº³Ì·R®É¡A±N XO_TALL §ï¬° b_lines-7
+: xover.c:xover() é€²å…¥çœ‹æ¿åˆ—è¡¨/æˆ‘çš„æœ€æ„›æ™‚ï¼Œå°‡ XO_TALL æ”¹ç‚º b_lines-7
 
   int pos, num, zone, sysmode;
   XO *xo;
@@ -213,8 +213,8 @@ XoBoard(xo, zone)           /* ¬İªO»¡©ú */
     while (cmd != XO_NONE)
     {
 +#ifdef HAVE_BRD_EXPLAIN
-+     /* ¤T¦æ¬İªO»¡©ú¡B¤@¦æ¤À¹j½u¡A¦@¥|¦æ */
-+     /* 7 - 3 = 4¡A­Y­n§ï¬İªO»¡©úªº¦æ¼Æ¡A§ï 7 ³o­Ó¼Æ¦r */
++     /* ä¸‰è¡Œçœ‹æ¿èªªæ˜ã€ä¸€è¡Œåˆ†éš”ç·šï¼Œå…±å››è¡Œ */
++     /* 7 - 3 = 4ï¼Œè‹¥è¦æ”¹çœ‹æ¿èªªæ˜çš„è¡Œæ•¸ï¼Œæ”¹ 7 é€™å€‹æ•¸å­— */
 +     XO_TALL = ((cuser.ufo&UFO_BRDEXP) && (zone==XZ_CLASS || zone==XZ_MF)) ?
 +       b_lines - 7 : b_lines - 3;
 +#endif
@@ -226,15 +226,15 @@ XoBoard(xo, zone)           /* ¬İªO»¡©ú */
         xcmd = xz[cmd].cb;
         sysmode = xz[cmd].mode;
 +#ifdef HAVE_BRD_EXPLAIN
-+       /* ¤T¦æ¬İªO»¡©ú¡B¤@¦æ¤À¹j½u¡A¦@¥|¦æ */
-+       /* 7 - 3 = 4¡A­Y­n§ï¬İªO»¡©úªº¦æ¼Æ¡A§ï 7 ³o­Ó¼Æ¦r */
++       /* ä¸‰è¡Œçœ‹æ¿èªªæ˜ã€ä¸€è¡Œåˆ†éš”ç·šï¼Œå…±å››è¡Œ */
++       /* 7 - 3 = 4ï¼Œè‹¥è¦æ”¹çœ‹æ¿èªªæ˜çš„è¡Œæ•¸ï¼Œæ”¹ 7 é€™å€‹æ•¸å­— */
 +       XO_TALL = ((cuser.ufo&UFO_BRDEXP) && (zone==XZ_CLASS || zone==XZ_MF)) ?
 +         b_lines - 7 : b_lines - 3;
 +#endif
   ...
   ...
 
-    if (xo->max > 0)            /* Thor: ­Y¬OµLªF¦è´N¤£show¤F */
+    if (xo->max > 0)            /* Thor: è‹¥æ˜¯ç„¡æ±è¥¿å°±ä¸showäº† */
     {
       num = 3 + pos - xo->top;
       move(num, 0);
@@ -244,7 +244,7 @@ XoBoard(xo, zone)           /* ¬İªO»¡©ú */
 +#endif
     }
 
-: xover.c:xover()  Â÷¶}®É¡A±N XO_TALL ÁÙ­ì
+: xover.c:xover()  é›¢é–‹æ™‚ï¼Œå°‡ XO_TALL é‚„åŸ
 
           if (cmd == XO_QUIT)
 +         {
@@ -269,11 +269,11 @@ class_head(xo)
   XO *xo;
 {
 +#ifdef HAVE_BRD_EXPLAIN
-+ /* ¤T¦æ¬İªO»¡©ú¡B¤@¦æ¤À¹j½u¡A¦@¥|¦æ */
-+ /* 7 - 3 = 4¡A­Y­n§ï¬İªO»¡©úªº¦æ¼Æ¡A§ï 7 ³o­Ó¼Æ¦r */
++ /* ä¸‰è¡Œçœ‹æ¿èªªæ˜ã€ä¸€è¡Œåˆ†éš”ç·šï¼Œå…±å››è¡Œ */
++ /* 7 - 3 = 4ï¼Œè‹¥è¦æ”¹çœ‹æ¿èªªæ˜çš„è¡Œæ•¸ï¼Œæ”¹ 7 é€™å€‹æ•¸å­— */
 + XO_TALL = (cuser.ufo & UFO_BRDEXP) ? b_lines - 7 : b_lines - 3;
 +#endif
-  vs_head("¬İªO¦Cªí", str_site);
+  vs_head("çœ‹æ¿åˆ—è¡¨", str_site);
   return class_neck(xo);
 }
 
@@ -284,8 +284,8 @@ mf_init(xo)
   XO *xo;
 {
 +#ifdef HAVE_BRD_EXPLAIN
-+ /* ¤T¦æ¬İªO»¡©ú¡B¤@¦æ¤À¹j½u¡A¦@¥|¦æ */
-+ /* 7 - 3 = 4¡A­Y­n§ï¬İªO»¡©úªº¦æ¼Æ¡A§ï 7 ³o­Ó¼Æ¦r */
++ /* ä¸‰è¡Œçœ‹æ¿èªªæ˜ã€ä¸€è¡Œåˆ†éš”ç·šï¼Œå…±å››è¡Œ */
++ /* 7 - 3 = 4ï¼Œè‹¥è¦æ”¹çœ‹æ¿èªªæ˜çš„è¡Œæ•¸ï¼Œæ”¹ 7 é€™å€‹æ•¸å­— */
 + XO_TALL = (cuser.ufo & UFO_BRDEXP) ? b_lines - 7 : b_lines - 3;
 +#endif
   xo_load(xo, sizeof(MF));
@@ -293,4 +293,4 @@ mf_init(xo)
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

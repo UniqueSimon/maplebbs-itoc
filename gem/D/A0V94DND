@@ -1,10 +1,10 @@
-µo«H¤H: cne.bbs@processor.tfcis.org (§b§bªº) ¬İªO: plan
-¼Ğ  ÃD: ¤@­Ó·s¥\¯à
-µo«H¯¸: XEON (Wed, 02 Apr 2003 16:28:29 +0800 (CST))      Updated: 2003/04/08
+ç™¼ä¿¡äºº: cne.bbs@processor.tfcis.org (å‘†å‘†çš„) çœ‹æ¿: plan
+æ¨™  é¡Œ: ä¸€å€‹æ–°åŠŸèƒ½
+ç™¼ä¿¡ç«™: XEON (Wed, 02 Apr 2003 16:28:29 +0800 (CST))      Updated: 2003/04/08
 
-  ¤ô²yÀËÁ|ªO¡A¨Ï¥ÎªÌ¦b¤ô²y°O¿ı¤¤«ö x
-  ¥i¥H°Î¦W§â¤ô²yÂà¥h Evidence ªO
-  (¥Î bmw ³oÀÉ®×¨Ó°µªº¡A©Ò¥H¨Ï¥ÎªÌ¨ä¹ê¥i¥H­×§ï)
+  æ°´çƒæª¢èˆ‰æ¿ï¼Œä½¿ç”¨è€…åœ¨æ°´çƒè¨˜éŒ„ä¸­æŒ‰ x
+  å¯ä»¥åŒ¿åæŠŠæ°´çƒè½‰å» Evidence æ¿
+  (ç”¨ bmw é€™æª”æ¡ˆä¾†åšçš„ï¼Œæ‰€ä»¥ä½¿ç”¨è€…å…¶å¯¦å¯ä»¥ä¿®æ”¹)
 
 : bmw.c: bmw_cb[] =
 
@@ -12,13 +12,13 @@
 
 : etc/help/bmw/bmw.hlp
 
-  (x)          ÀËÁ|
+  (x)          æª¢èˆ‰
 
 : global.h
 
-#define BN_EVIDENCE   "Evidence"      /* ¤ô²yÀËÁ|ªO */
+#define BN_EVIDENCE   "Evidence"      /* æ°´çƒæª¢èˆ‰æ¿ */
 
-: bmw.c:bmw_post() ·s¼W³o¨ç¦¡©ó bmw_help() ¤§«e
+: bmw.c:bmw_post() æ–°å¢é€™å‡½å¼æ–¼ bmw_help() ä¹‹å‰
 
 static int
 bmw_post(xo)
@@ -40,15 +40,15 @@ bmw_post(xo)
       ll_add(bmw->userid);
   }
 
-  if (!vget(1, 0, "½Ğ¿é¤J¥N¸¹(«öªÅ¥ÕÁä¦C¥X¨Ï¥ÎªÌ)¡G", userid,
+  if (!vget(1, 0, "è«‹è¼¸å…¥ä»£è™Ÿ(æŒ‰ç©ºç™½éµåˆ—å‡ºä½¿ç”¨è€…)ï¼š", userid,
     IDLEN + 1, GET_LIST))
   {
-    vmsg("¸Ó¨Ï¥ÎªÌ¨S¦³¥á¤ô²yµ¹±z­ò¡I");
+    vmsg("è©²ä½¿ç”¨è€…æ²’æœ‰ä¸Ÿæ°´çƒçµ¦æ‚¨å”·ï¼");
     close(fd);
     return XO_HEAD;
   }
 
-  sprintf(fpath, "[ÀËÁ|ÄÌÂZ] ¬O§_Âà¿ı¦Ü %s ªO(Y/N)¡H[N] ", BN_EVIDENCE);
+  sprintf(fpath, "[æª¢èˆ‰é¨·æ“¾] æ˜¯å¦è½‰éŒ„è‡³ %s æ¿(Y/N)ï¼Ÿ[N] ", BN_EVIDENCE);
   if (vans(fpath) == 'y')
   {
     FILE *fp;
@@ -56,12 +56,12 @@ bmw_post(xo)
     HDR hdr;
     int ans;
 
-    ans = vans("±z·Q­n¼Ê¦W¶Ü(Y/N)¡H[N] ");
+    ans = vans("æ‚¨æƒ³è¦æš±åå—(Y/N)ï¼Ÿ[N] ");
 
     sprintf(fname, "tmp/%s.bmw", cuser.userid);
     fp = fopen(fname, "w");
-    fprintf(fp, "´£¥XÀËÁ|ªÌ: %s (%s)\n\n",
-      ans == 'y' ? "²q²q§Ú¬O½Ö" : cuser.userid,
+    fprintf(fp, "æå‡ºæª¢èˆ‰è€…: %s (%s)\n\n",
+      ans == 'y' ? "çŒœçŒœæˆ‘æ˜¯èª°" : cuser.userid,
       ans == 'y' ? "^o^" : cuser.username);
     fprintf(fp, "%s\n", msg_seperator);
 
@@ -80,9 +80,9 @@ bmw_post(xo)
 
     brd_fpath(fpath, BN_EVIDENCE, fn_dir);
     hdr_stamp(fpath, HDR_LINK | 'A', &hdr, fname);
-    strcpy(hdr.owner, "[¨t²ÎÀËÁ|]");
-    strcpy(hdr.nick, cuser.userid);    /* °Î¦W¥i¦b hdr.nick ¤¤¬d¨ì id */
-    sprintf(hdr.title, "[ÀËÁ|] ¤ô²yÄÌÂZ (%s)", userid);
+    strcpy(hdr.owner, "[ç³»çµ±æª¢èˆ‰]");
+    strcpy(hdr.nick, cuser.userid);    /* åŒ¿åå¯åœ¨ hdr.nick ä¸­æŸ¥åˆ° id */
+    sprintf(hdr.title, "[æª¢èˆ‰] æ°´çƒé¨·æ“¾ (%s)", userid);
     rec_add(fpath, &hdr, sizeof(HDR));
 
     unlink(fname);
@@ -96,5 +96,5 @@ bmw_post(xo)
   Author: weichung.bbs@bbs.ntit.edu.tw
 
 --
-    [1;32m¢~¢w Origin ¢wùß [0;36m°[1mÊ[0;36m¤[1mO[0;36m®[1mÖ[0;36m¤[1mß [1;31m processor.tfcis.org [32m ¡ã £e£f£g ¢w¢t[m
-    [1;32m¢u   Author   ùë [33;44m61-217-97-3.HINET-IP.hinet.net           [m
+    [1;32mâ•­â”€ Origin â”€â•— [0;36m?[1m?[0;36m?[1mO[0;36m?[1m?[0;36m?[1m?[1;31m processor.tfcis.org [32m ï½ ÎºÎ»Î¼ â”€â”¤[m
+    [1;32mâ”œ   Author   â•¡ [33;44m61-217-97-3.HINET-IP.hinet.net           [m

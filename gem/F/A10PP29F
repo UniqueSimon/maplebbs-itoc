@@ -1,11 +1,11 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [½Ğ°İ]§Úªº³Ì·R§Ö³tÁä
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/11/18 Thu 18:33:17)                Updated: 2004/11/18
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [è«‹å•]æˆ‘çš„æœ€æ„›å¿«é€Ÿéµ
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/11/18 Thu 18:33:17)                Updated: 2004/11/18
 
-¡° ¤Ş­z¡mseeseeya.bbs@bala.mis.ccu.edu.tw (¤@ºØ©t±I)¡n¤§»Ê¨¥¡G
-> ¦b ¬İªO¦Cªí¦a¤è«ö¤U a ©M f ³£¬O±N¬İªO¥[¤J§Úªº³Ì·R
-> ­n«ç»ò­×§ï ¤~¯à a ¬O¥[¤J  f ¬O¶i¤J§Úªº³Ì·R?
-> ÁÙ¦³§Æ±æ ³o¼Ëªº§Ö³tÁä¦b¤ÀÃş¬İªO¦Cªí¤]¦³¤@¼Ëªº¥\®Ä
+â€» å¼•è¿°ã€Šseeseeya.bbs@bala.mis.ccu.edu.tw (ä¸€ç¨®å­¤å¯‚)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> åœ¨ çœ‹æ¿åˆ—è¡¨åœ°æ–¹æŒ‰ä¸‹ a å’Œ f éƒ½æ˜¯å°‡çœ‹æ¿åŠ å…¥æˆ‘çš„æœ€æ„›
+> è¦æ€éº¼ä¿®æ”¹ æ‰èƒ½ a æ˜¯åŠ å…¥  f æ˜¯é€²å…¥æˆ‘çš„æœ€æ„›?
+> é‚„æœ‰å¸Œæœ› é€™æ¨£çš„å¿«é€Ÿéµåœ¨åˆ†é¡çœ‹æ¿åˆ—è¡¨ä¹Ÿæœ‰ä¸€æ¨£çš„åŠŸæ•ˆ
 
 : board.c:class_cb[]
 
@@ -13,7 +13,7 @@
 - 'f', class_addMF,
 + 'f', class_MF,
 
-: board.c:class_MF() ¥[¦¹¨ç¦¡¦b class_help() ¤§«e
+: board.c:class_MF() åŠ æ­¤å‡½å¼åœ¨ class_help() ä¹‹å‰
 
 static int
 class_MF(xo)
@@ -29,5 +29,5 @@ class_MF(xo)
 
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

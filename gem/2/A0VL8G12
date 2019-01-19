@@ -1,23 +1,23 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (¦¿¤ô¨ÌÂÂ¬ÂÄn¡Aª_¦åªy) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¯¸¤è³B²z¼Ğ°O¢á¡C
-µo«H¯¸: ¤¤¿³¸ê¬ì (Tue, 02 Sep 2003 13:02:41 +0800 (CST))  Updated: 2004/03/11
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (æ±Ÿæ°´ä¾èˆŠç²ç“ï¼Œæ³£è¡€æ³Š) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] ç«™æ–¹è™•ç†æ¨™è¨˜ï¼³ã€‚
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (Tue, 02 Sep 2003 13:02:41 +0800 (CST))  Updated: 2004/03/11
 
-    ¯¸¤è³B²z§¹¼Ğ°O¢á
+    ç«™æ–¹è™•ç†å®Œæ¨™è¨˜ï¼³
 
-    ¥H«e´N¼g¦n¤F.... :p
+    ä»¥å‰å°±å¯«å¥½äº†.... :p
 
-    §Ñ°O¢ø¢÷¤F....^^|||
+    å¿˜è¨˜ï½ï½äº†....^^|||
 
 ==============================================================================
 
 
 : src/include/hdr.h
 
-#define POST_RESERVED   0x00001000  /* ­­¨î¯Å¤å³¹¡A¶· sysop ¤~¯à§ó§ï */
+#define POST_RESERVED   0x00001000  /* é™åˆ¶ç´šæ–‡ç« ï¼Œé ˆ sysop æ‰èƒ½æ›´æ”¹ */
 
-+#define POST_DONE       0x00002000  /* qazq.030815: ¯¸¤è³B²z§¹¼Ğ°O¢û */
++#define POST_DONE       0x00002000  /* qazq.030815: ç«™æ–¹è™•ç†å®Œæ¨™è¨˜ï½“ */
 
-#define POST_SCORE      0x00004000  /* ¼Ğ°Oµû¤À¹Lªº */
+#define POST_SCORE      0x00004000  /* æ¨™è¨˜è©•åˆ†éçš„ */
 
 
 
@@ -30,16 +30,16 @@
 #endif
 
 + if (mode & POST_DONE)
-+   attr |= 'S';        /* qazq.030815: ¯¸¤è³B²z§¹¼Ğ°O¢û */
++   attr |= 'S';        /* qazq.030815: ç«™æ–¹è™•ç†å®Œæ¨™è¨˜ï½“ */
 + else
 
-: post.c:post_done_mark()   ·s¼W¾ã­Ó¨ç¦¡¦b post_mark() ¤U­±
+: post.c:post_done_mark()   æ–°å¢æ•´å€‹å‡½å¼åœ¨ post_mark() ä¸‹é¢
 
-static int          /* qazq.030815: ¯¸¤è³B²z§¹¦¨¼Ğ°O¢á*/
+static int          /* qazq.030815: ç«™æ–¹è™•ç†å®Œæˆæ¨™è¨˜ï¼³*/
 post_done_mark(xo)
   XO *xo;
 {
-  if (HAS_PERM(PERM_SYSOP)) /* qazq.030815: ¥u¦³¯¸ªø¥i¥H¼Ğ°O */
+  if (HAS_PERM(PERM_SYSOP)) /* qazq.030815: åªæœ‰ç«™é•·å¯ä»¥æ¨™è¨˜ */
   {
     HDR *hdr;
     int pos, cur, xmode;
@@ -50,7 +50,7 @@ post_done_mark(xo)
     xmode = hdr->xmode;
 
 #ifdef HAVE_LABELMARK
-    if (xmode & POST_DELETE)    /* «İ¬åªº¤å³¹¤£¯à mark */
+    if (xmode & POST_DELETE)    /* å¾…ç çš„æ–‡ç« ä¸èƒ½ mark */
       return XO_NONE;
 #endif
 
@@ -70,12 +70,12 @@ post_done_mark(xo)
 
 : post.c:post_cb[]
 
-+ Ctrl('S'), post_done_mark,    /* qazq.030815: ¯¸¤è³B²z§¹¦¨¼Ğ°O¢á*/
++ Ctrl('S'), post_done_mark,    /* qazq.030815: ç«™æ–¹è™•ç†å®Œæˆæ¨™è¨˜ï¼³*/
 
 : post.c:xpost_cb[]
 
-+ Ctrl('S'), post_done_mark,    /* qazq.030815: ¯¸¤è³B²z§¹¦¨¼Ğ°O¢á*/
++ Ctrl('S'), post_done_mark,    /* qazq.030815: ç«™æ–¹è™•ç†å®Œæˆæ¨™è¨˜ï¼³*/
 
 --
- [1m[42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m bbs.cs.nchu.edu.tw [m
- [1m[44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mqazq [30m±q [35m61-216-136-200.HINET-IP.hinet.net [30mµoªí[m
+ [1m[42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m bbs.cs.nchu.edu.tw [m
+ [1m[44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mqazq [30må¾ [35m61-216-136-200.HINET-IP.hinet.net [30mç™¼è¡¨[m

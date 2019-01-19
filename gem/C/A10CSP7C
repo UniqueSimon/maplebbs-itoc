@@ -1,25 +1,25 @@
-§@ªÌ: itoc (¤Ó¶§ªá¨à~) ¯¸¤º: plan
-¼ĞÃD: [¥\¯à] dreye.c Ä¶¨å³q½u¤W¦r¨å
-®É¶¡: Sun Dec 15 16:56:01 2002                          Updated: 2006/03/11
+ä½œè€…: itoc (å¤ªé™½èŠ±å…’~) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] dreye.c è­¯å…¸é€šç·šä¸Šå­—å…¸
+æ™‚é–“: Sun Dec 15 16:56:01 2002                          Updated: 2006/03/11
 
-  ÁöµM http://www.dreye.com.tw ­º­¶­­¨î­n·|­û¤~¯à¥Î
-  ¦ı¨ä¹ê³sµ²¨S¦³ÅÜ¡A©Ò¥HÁÙ¬O¥i¥H¥Î
+  é›–ç„¶ http://www.dreye.com.tw é¦–é é™åˆ¶è¦æœƒå“¡æ‰èƒ½ç”¨
+  ä½†å…¶å¯¦é€£çµæ²’æœ‰è®Šï¼Œæ‰€ä»¥é‚„æ˜¯å¯ä»¥ç”¨
 
-: menu.c ¾A·íªº¿ï³æ
+: menu.c é©ç•¶çš„é¸å–®
 
   "bin/dreye.so:main_dreye", 0, - M_XMODE,
-  "Dr.eye     ¡ñ [Ä¶¨å³q] ¡ğ",
+  "Dr.eye     â™‚ [è­¯å…¸é€š] â™€",
 
 : game/Makefile
 
 SO =    .... [1;32mdreye.so[m
 
-: game/dreye.c ·s¼W³oµ{¦¡
+: game/dreye.c æ–°å¢é€™ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* dreye.c    ( YZU WindTopBBS Ver 3.02 )                */
 /*-------------------------------------------------------*/
-/* target : Dreye Ä¶¨å³q½u¤W¦r¨å                         */
+/* target : Dreye è­¯å…¸é€šç·šä¸Šå­—å…¸                         */
 /* create : 01/07/09                                     */
 /* update :   /  /                                       */
 /* author : statue.bbs@bbs.yzu.edu.tw                    */
@@ -28,9 +28,9 @@ SO =    .... [1;32mdreye.so[m
 
 #if 0
 
-          ´¶³q http://www.dreye.com/tw/dict/dict.phtml?w=hello&d=010300
-        ÅÜ¤Æ§Î http://www.dreye.com/tw/dict/dict.phtml?w=hello&d=010301
- ¦P¸q¦r/¤Ï¸q¦r http://www.dreye.com/tw/dict/dict.phtml?w=hello&d=010304
+          æ™®é€š http://www.dreye.com/tw/dict/dict.phtml?w=hello&d=010300
+        è®ŠåŒ–å½¢ http://www.dreye.com/tw/dict/dict.phtml?w=hello&d=010301
+ åŒç¾©å­—/åç¾©å­— http://www.dreye.com/tw/dict/dict.phtml?w=hello&d=010304
 
 #endif
 
@@ -49,7 +49,7 @@ SO =    .... [1;32mdreye.so[m
 
 static void
 url_encode(dst, src)    /* URL encoding */
-  unsigned char *dst;   /* Thor.990331: ­n src ªº¤T­¿ªÅ¶¡ */
+  unsigned char *dst;   /* Thor.990331: è¦ src çš„ä¸‰å€ç©ºé–“ */
   unsigned char *src;
 {
   for (; *src; src++)
@@ -80,12 +80,12 @@ http_conn(server, s)
   static char pool[2048];
   FILE *fp;
 
-  mouts(b_lines - 1, 0, "³s±µ¦øªA¾¹¤¤¡A½Ğµy­Ô.............");
+  mouts(b_lines - 1, 0, "é€£æ¥ä¼ºæœå™¨ä¸­ï¼Œè«‹ç¨å€™.............");
   refresh();
 
   if ((sockfd = dns_open(server, HTTP_PORT)) < 0)
   {
-    vmsg("µLªk»P¦øªA¾¹¨ú±o³sµ²¡A¬d¸ß¥¢±Ñ");
+    vmsg("ç„¡æ³•èˆ‡ä¼ºæœå™¨å–å¾—é€£çµï¼ŒæŸ¥è©¢å¤±æ•—");
     return -1;
   }
 
@@ -104,7 +104,7 @@ http_conn(server, s)
     return -1;
 
   fprintf(fp, "%-24s\033[1;37;44m  Dr.eye \033[31mi\033[37mDictionary "
-    "½u¤W¦r¨å  \033[m\n%s", "", MSG_SEPERATOR);
+    "ç·šä¸Šå­—å…¸  \033[m\n%s", "", MSG_SEPERATOR);
 
   for (;;)
   {
@@ -118,11 +118,11 @@ http_conn(server, s)
     }
     cc = *xhead++;
 
-    /* ±q </table> ¤U­±¶}©l¦L */
+    /* å¾ </table> ä¸‹é¢é–‹å§‹å° */
     if ((tlen == 7) && (!str_ncmp(tag, "/table", 6)))
       start_show = 1;
 
-    /* ¦L¨ì <hr width ... ¬°¤î */
+    /* å°åˆ° <hr width ... ç‚ºæ­¢ */
     if ((tlen == 3) && (!str_ncmp(tag, "hr", 2)))
       start_show = 0;
 
@@ -178,7 +178,7 @@ http_conn(server, s)
   close(sockfd);
 
   fprintf(fp, "\n\n%s\n%-26s\033[1;36;40mDr.eye \033[37miDictionary "
-    "½u¤W¦r¨å\033[m\n", MSG_SEPERATOR, "");
+    "ç·šä¸Šå­—å…¸\033[m\n", MSG_SEPERATOR, "");
 
   fclose(fp);
 
@@ -217,15 +217,15 @@ main_dreye()
     clear();
 
     move(0, 25);
-    outs("\033[1;37;44m¡· DreyeÄ¶¨å³q½u¤W¦r¨å ¡·\033[m");
+    outs("\033[1;37;44mâ— Dreyeè­¯å…¸é€šç·šä¸Šå­—å…¸ â—\033[m");
     move(3, 0);
-    outs("¦¹¦r¨å¨Ó·½¬° Dreye Ä¶¨å³q½u¤W¦r¨å¡C\n\n");
+    outs("æ­¤å­—å…¸ä¾†æºç‚º Dreye è­¯å…¸é€šç·šä¸Šå­—å…¸ã€‚\n\n");
     outs("WWW: http://www.dreye.com/");
 
-    if (!vget(8, 0, "¬d¸ß¦r·J¡G", word, 30, DOECHO))
+    if (!vget(8, 0, "æŸ¥è©¢å­—å½™ï¼š", word, 30, DOECHO))
       break;
 
-    if (vget(10, 0, "1)·N¸q 2)ÅÜ¤Æ§Î 3)¦P¸q¦r/¤Ï¸q¦r Q)Â÷¶} [1] ",
+    if (vget(10, 0, "1)æ„ç¾© 2)è®ŠåŒ–å½¢ 3)åŒç¾©å­—/åç¾©å­— Q)é›¢é–‹ [1] ",
       ans, 3, LCECHO) == 'q')
       break;
 
@@ -237,4 +237,4 @@ main_dreye()
 #endif  /* HAVE_NETTOOL */
 
 --
-[1m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

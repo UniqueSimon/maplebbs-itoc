@@ -1,30 +1,30 @@
 /*-------------------------------------------------------*/
 /* util/expire.c	( NTHU CS MapleBBS Ver 3.00 )	 */
 /*-------------------------------------------------------*/
-/* target : ¦Û°Ê¬å¹L´Á¤å³¹¤u¨ã				 */
+/* target : è‡ªå‹•ç éŽæœŸæ–‡ç« å·¥å…·				 */
 /* create : 95/03/29				 	 */
 /* update : 97/03/29				 	 */
 /*-------------------------------------------------------*/
 /* syntax : expire [day max min board]		 	 */
-/* notice : ¥[¤W board ®É¡A¥i expire+sync ¬Y¤@ board	 */
+/* notice : åŠ ä¸Š board æ™‚ï¼Œå¯ expire+sync æŸä¸€ board	 */
 /*-------------------------------------------------------*/
 
 
 #include "bbs.h"
 
 
-#if 0	/* itoc.030325: Â²©ö»¡©ú */
+#if 0	/* itoc.030325: ç°¡æ˜“èªªæ˜Ž */
 
-  expire.c ¥]§t¤GºØ°Ê§@¡Gexpire ©M sync
+  expire.c åŒ…å«äºŒç¨®å‹•ä½œï¼šexpire å’Œ sync
 
-  1) ©Ò¿×¡u¹L´Á¡v¡A´N¬O ¤å³¹¤é´Á¹L¤[/¬ÝªO½g¼Æ¹L¦h
+  1) æ‰€è¬‚ã€ŒéŽæœŸã€ï¼Œå°±æ˜¯ æ–‡ç« æ—¥æœŸéŽä¹…/çœ‹æ¿ç¯‡æ•¸éŽå¤š
 
-  2) ©Ò¿×¡uexpire¡v¡A´N¬O¦b .DIR ¯Á¤Þ¤¤§ä¥X¹L´Áªº¤å³¹¡A§â³o hdr ±q¯Á¤Þ¤¤²¾°£¡A
-     ¨Ã±N¸ÓÀÉ®×§R°£
+  2) æ‰€è¬‚ã€Œexpireã€ï¼Œå°±æ˜¯åœ¨ .DIR ç´¢å¼•ä¸­æ‰¾å‡ºéŽæœŸçš„æ–‡ç« ï¼ŒæŠŠé€™ hdr å¾žç´¢å¼•ä¸­ç§»é™¤ï¼Œ
+     ä¸¦å°‡è©²æª”æ¡ˆåˆªé™¤
 
-  3) ©Ò¿×¡usync¡v¡A¬°¤FÁ×§KµwºÐ¦³¦h¾lªº©U§£¡A¨t²Î¨C 32 ¤Ñ·|¹ï¬ÝªO¤ºªºÀÉ®×¤@¤@
-     ÀËµø¡A­Y¨ä¤£¦b .DIR ¤¤¡Aªí¥Ü³o­ÓÀÉ®×¤w¸g±q¯Á¤Þ¤¤¿ò¥¢¤F¡A¦¹®É¨t²Î·|ª½±µ±N
-     ³oÀÉ®×§R°£
+  3) æ‰€è¬‚ã€Œsyncã€ï¼Œç‚ºäº†é¿å…ç¡¬ç¢Ÿæœ‰å¤šé¤˜çš„åžƒåœ¾ï¼Œç³»çµ±æ¯ 32 å¤©æœƒå°çœ‹æ¿å…§çš„æª”æ¡ˆä¸€ä¸€
+     æª¢è¦–ï¼Œè‹¥å…¶ä¸åœ¨ .DIR ä¸­ï¼Œè¡¨ç¤ºé€™å€‹æª”æ¡ˆå·²ç¶“å¾žç´¢å¼•ä¸­éºå¤±äº†ï¼Œæ­¤æ™‚ç³»çµ±æœƒç›´æŽ¥å°‡
+     é€™æª”æ¡ˆåˆªé™¤
 
 #endif
 
@@ -50,7 +50,7 @@ life_cmp(a, b)
 
 
 /* ----------------------------------------------------- */
-/* board¡Gshm ³¡¥÷¶·»P cache.c ¬Û®e                      */
+/* boardï¼šshm éƒ¨ä»½é ˆèˆ‡ cache.c ç›¸å®¹                      */
 /* ----------------------------------------------------- */
 
 
@@ -60,12 +60,12 @@ static BCACHE *bshm;
 static void
 init_bshm()
 {
-  /* itoc.030727: ¦b¶}±Ò bbsd ¤§«e¡AÀ³¸Ó´N­n°õ¦æ¹L account¡A
-     ©Ò¥H bshm À³¸Ó¤w³]©w¦n */
+  /* itoc.030727: åœ¨é–‹å•Ÿ bbsd ä¹‹å‰ï¼Œæ‡‰è©²å°±è¦åŸ·è¡ŒéŽ accountï¼Œ
+     æ‰€ä»¥ bshm æ‡‰è©²å·²è¨­å®šå¥½ */
 
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-  if (bshm->uptime <= 0)	/* bshm ¥¼³]©w§¹¦¨ */
+  if (bshm->uptime <= 0)	/* bshm æœªè¨­å®šå®Œæˆ */
     exit(0);
 }
 
@@ -81,8 +81,8 @@ static time_t synctime;
 typedef struct
 {
   time_t chrono;
-  char prefix;		/* ÀÉ®×ªº family */
-  char exotic;		/* 1:¤£¦b.DIR¤¤  0:¦b.DIR¤¤ */
+  char prefix;		/* æª”æ¡ˆçš„ family */
+  char exotic;		/* 1:ä¸åœ¨.DIRä¸­  0:åœ¨.DIRä¸­ */
 } SyncData;
 
 
@@ -132,10 +132,10 @@ sync_init(fname)
   *fname++ = '/';
   fname[1] = '\0';
 
-  /* itoc.030325.µù¸Ñ: ¥ý§â brd/brdname/?/* ªº©Ò¦³ÀÉ®×³£¥á¶i¥h xpool[]
-     ³o¥÷Æ[¹î¦W³æ¤¤¡AµM«á¦^¨ì expire() ¤¤ÀË¬d¸ÓÀÉ®×¬O§_¦b .DIR ¤¤
-     ­Y¦b .DIR ¤¤¡A´N§â exotic ³]¦^ 0
-     ³Ì«á¦b sync_check() ¤¤§âÆ[¹î¦W³æ¤¤ exotic ÁÙ¬O 1 ªºÀÉ®×³£§R°£ */
+  /* itoc.030325.è¨»è§£: å…ˆæŠŠ brd/brdname/?/* çš„æ‰€æœ‰æª”æ¡ˆéƒ½ä¸Ÿé€²åŽ» xpool[]
+     é€™ä»½è§€å¯Ÿåå–®ä¸­ï¼Œç„¶å¾Œå›žåˆ° expire() ä¸­æª¢æŸ¥è©²æª”æ¡ˆæ˜¯å¦åœ¨ .DIR ä¸­
+     è‹¥åœ¨ .DIR ä¸­ï¼Œå°±æŠŠ exotic è¨­å›ž 0
+     æœ€å¾Œåœ¨ sync_check() ä¸­æŠŠè§€å¯Ÿåå–®ä¸­ exotic é‚„æ˜¯ 1 çš„æª”æ¡ˆéƒ½åˆªé™¤ */
 
   ch = '0';
   for (;;)
@@ -153,7 +153,7 @@ sync_init(fname)
 
 	chrono = chrono32(str);
 
-	if (chrono > synctime)	/* ³o¬O³Ìªñ­èµoªíªº¤å³¹¡A¤£»Ý­n¥[¤J xpool[] ¥h sync */
+	if (chrono > synctime)	/* é€™æ˜¯æœ€è¿‘å‰›ç™¼è¡¨çš„æ–‡ç« ï¼Œä¸éœ€è¦åŠ å…¥ xpool[] åŽ» sync */
 	  continue;
 
 	if (xhead >= xsize)
@@ -164,7 +164,7 @@ sync_init(fname)
 
 	xpool[xhead].chrono = chrono;
 	xpool[xhead].prefix = prefix;
-	xpool[xhead].exotic = 1;	/* ¥ý¥þ³¡¥O¬° 1¡A©ó expire() ¤¤¦A§ï¦^ 0 */
+	xpool[xhead].exotic = 1;	/* å…ˆå…¨éƒ¨ä»¤ç‚º 1ï¼Œæ–¼ expire() ä¸­å†æ”¹å›ž 0 */
 	xhead++;
       }
 
@@ -297,11 +297,11 @@ expire(flog, life, sync)
     {
       if (xsync = (SyncData *) bsearch(&hdr.chrono, xpool, xhead, sizeof(SyncData), sync_cmp))
       {
-	xsync->exotic = 0;	/* ³o½g¦b .DIR ¤¤¡A¤£ sync */
+	xsync->exotic = 0;	/* é€™ç¯‡åœ¨ .DIR ä¸­ï¼Œä¸ sync */
       }
       else
       {
-        keep = 0;		/* ¤@«ß¤£«O¯d */
+        keep = 0;		/* ä¸€å¾‹ä¸ä¿ç•™ */
       }
     }
 
@@ -311,7 +311,7 @@ expire(flog, life, sync)
       {
 	fprintf(flog, "\tError in write DIR.n: %s\n", hdr.xname);
 	done = 0;
-        sync = 0; /* Thor.990127: ¨S§@¦¨, ´N§O¬å¤F§a */
+        sync = 0; /* Thor.990127: æ²’ä½œæˆ, å°±åˆ¥ç äº†å§ */
 	break;
       }
     }
@@ -333,7 +333,7 @@ expire(flog, life, sync)
     if (!rename(index, fpath))
     {
       if (rename(fnew, index))
-        rename(fpath, index);		/* ´«¦^¨Ó */
+        rename(fpath, index);		/* æ›å›žä¾† */
     }
   }
   unlink(fnew);
@@ -354,14 +354,14 @@ main(argc, argv)
   char *ptr, *bname, buf[256];
   BRD *brdp, *bend;
 
-  /* itoc.030325: ­n¹À¤£«ü©w°Ñ¼Æ¡A­n¹À«ü©w©Ò¦³°Ñ¼Æ */
+  /* itoc.030325: è¦å˜›ä¸æŒ‡å®šåƒæ•¸ï¼Œè¦å˜›æŒ‡å®šæ‰€æœ‰åƒæ•¸ */
   if (argc != 1 && argc != 5)
   {
     printf("%s [day max min board]\n", argv[0]);
     exit(-1);
   }
 
-  /* ­YµL«ü©w°Ñ¼Æ¡A«h¥Î¹w³]­È */
+  /* è‹¥ç„¡æŒ‡å®šåƒæ•¸ï¼Œå‰‡ç”¨é è¨­å€¼ */
   db.days = ((argc == 5) && (number = atoi(argv[1])) > 0) ? number : BRD_EXPIRE_DAYS;
   db.maxp = ((argc == 5) && (number = atoi(argv[2])) > 0) ? number : BRD_EXPIRE_MAXP;
   db.minp = ((argc == 5) && (number = atoi(argv[3])) > 0) ? number : BRD_EXPIRE_MINP;
@@ -377,7 +377,7 @@ main(argc, argv)
   init_bshm();
 
   count = 0;
-  if (argc != 5)	/* ­Y¨S¦³«ü©w°Ñ¼Æ¡A¤~»Ý­n¥hÅª expire.conf */
+  if (argc != 5)	/* è‹¥æ²’æœ‰æŒ‡å®šåƒæ•¸ï¼Œæ‰éœ€è¦åŽ»è®€ expire.conf */
   {
     if (fp = fopen(FN_ETC_EXPIRE, "r"))
     {
@@ -408,7 +408,7 @@ main(argc, argv)
 		key->minp = number;
 	    }
 
-	    /* expire.conf ¥i¯à¨S¦³ºûÅ@¦Ó¶W¹L MAXBOARD ­ÓªO */
+	    /* expire.conf å¯èƒ½æ²’æœ‰ç¶­è­·è€Œè¶…éŽ MAXBOARD å€‹æ¿ */
 	    if (++count >= MAXBOARD)
 	      break;
 	  }
@@ -429,7 +429,7 @@ main(argc, argv)
 
   chdir("brd");
 
-  synctime = time(NULL) - 10 * 60;	/* ¤Q¤ÀÄÁ¤ºªº·s¤å³¹¤£»Ý­n sync */
+  synctime = time(NULL) - 10 * 60;	/* ååˆ†é˜å…§çš„æ–°æ–‡ç« ä¸éœ€è¦ sync */
   number = synctime / 86400;
 
   brdp = bshm->bcache;
@@ -440,13 +440,13 @@ main(argc, argv)
     if (!*bname)
       continue;
 
-    /* Thor.981027: ¥[¤W board ®É¡A¥i expire+sync ¬Y¤@ board */
+    /* Thor.981027: åŠ ä¸Š board æ™‚ï¼Œå¯ expire+sync æŸä¸€ board */
     if (argc == 5)
     {
       if (str_cmp(argv[4], bname))
 	continue;
 
-      number = 0;	/* ±j­¢ sync ³oªO */
+      number = 0;	/* å¼·è¿« sync é€™æ¿ */
     }
 
     if (count)
@@ -460,8 +460,8 @@ main(argc, argv)
       key = &db;
     }
 
-    strcpy(key->bname, bname);		/* ´«¦¨¥¿½Tªº¤j¤p¼g */
-    expire(fp, key, !(number & 31));	/* ¨C¹j 32 ¤Ñ sync ¤@¦¸ */
+    strcpy(key->bname, bname);		/* æ›æˆæ­£ç¢ºçš„å¤§å°å¯« */
+    expire(fp, key, !(number & 31));	/* æ¯éš” 32 å¤© sync ä¸€æ¬¡ */
     number++;
     brdp->btime = -1;
   } while (++brdp < bend);

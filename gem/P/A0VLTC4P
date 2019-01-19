@@ -1,169 +1,169 @@
-µo«H¤H: verit.bbs@bbs.yzu.edu.tw (BBS ¯¸ªø¤j·|), ¬ÝªO: installbbs
-¼Ð  ÃD: [WindTop]¤ß²z´úÅçµ{¦¡
-µo«H¯¸: ¤¸´¼¤j¾Ç­·¤§¶ð (Tue Sep  9 20:00:52 2003)         Updated: 2003/09/10
+ç™¼ä¿¡äºº: verit.bbs@bbs.yzu.edu.tw (BBS ç«™é•·å¤§æœƒ), çœ‹æ¿: installbbs
+æ¨™  é¡Œ: [WindTop]å¿ƒç†æ¸¬é©—ç¨‹å¼
+ç™¼ä¿¡ç«™: å…ƒæ™ºå¤§å­¸é¢¨ä¹‹å¡” (Tue Sep  9 20:00:52 2003)         Updated: 2003/09/10
 
-: menu.c ¾A·íªº¿ï³æ¥[¤J
+: menu.c é©ç•¶çš„é¸å–®åŠ å…¥
 
   "bin/mind.so:main_mind", 0, - M_XMODE,
-  "Mind       ¡ñ ¤ß²z´úÅç ¡ð",
+  "Mind       â™‚ å¿ƒç†æ¸¬é©— â™€",
 
 : run/mind
 
-  «Ø¥ß¦¹¥Ø¿ý
+  å»ºç«‹æ­¤ç›®éŒ„
 
-: run/mind/help ·s¼W¦¹ÀÉ®×
+: run/mind/help æ–°å¢žæ­¤æª”æ¡ˆ
 
-¤ß²z´úÅç§ë½Z®æ¦¡¦³¤TºØ :
+å¿ƒç†æ¸¬é©—æŠ•ç¨¿æ ¼å¼æœ‰ä¸‰ç¨® :
 
-1. ¤@¯ëÃD¥Ø , ±µ¤U¤@ÃD
+1. ä¸€èˆ¬é¡Œç›® , æŽ¥ä¸‹ä¸€é¡Œ
 
-    [Q]ÃD¥Ø
-    [A-1]»¡©ú1
-    [A-7]»¡©ú2
+    [Q]é¡Œç›®
+    [A-1]èªªæ˜Ž1
+    [A-7]èªªæ˜Ž2
 
-    ¤W­±²Ä¤G¦æ¥Nªí , ²Ä¤@­Óµª®×±µ²Ä¤GÃD
-    ¤W­±²Ä¤T¦æ¥Nªí , ²Ä¤G­ÓÀÉ®×±µ²Ä¤KÃD
+    ä¸Šé¢ç¬¬äºŒè¡Œä»£è¡¨ , ç¬¬ä¸€å€‹ç­”æ¡ˆæŽ¥ç¬¬äºŒé¡Œ
+    ä¸Šé¢ç¬¬ä¸‰è¡Œä»£è¡¨ , ç¬¬äºŒå€‹æª”æ¡ˆæŽ¥ç¬¬å…«é¡Œ
 
-2. ÃD¥Ø±µµ²ªG
+2. é¡Œç›®æŽ¥çµæžœ
 
-    [Q]ÃD¥Ø
-    [A-R-1]»¡©ú¤@
-    [A-0]»¡©ú¤G
+    [Q]é¡Œç›®
+    [A-R-1]èªªæ˜Žä¸€
+    [A-0]èªªæ˜ŽäºŒ
 
-    ¤W­±²Ä¤G¦æ¥Nªí , ²Ä¤@­Óµª®×±µ²Ä¤@­Óµ²ªG
-    ¤W­±²Ä¤G¦æ¥Nªí , ²Ä¤G­Óµª®×±µ²Ä¤@ÃD
+    ä¸Šé¢ç¬¬äºŒè¡Œä»£è¡¨ , ç¬¬ä¸€å€‹ç­”æ¡ˆæŽ¥ç¬¬ä¸€å€‹çµæžœ
+    ä¸Šé¢ç¬¬äºŒè¡Œä»£è¡¨ , ç¬¬äºŒå€‹ç­”æ¡ˆæŽ¥ç¬¬ä¸€é¡Œ
 
-    ps) ±µÃD¥Øªº¸Ü , ÃD¸¹°O±o´î¤@
-        ±µµ²ªGªº¸Ü , ½s¸¹¤£¥Î´î¤@
+    ps) æŽ¥é¡Œç›®çš„è©± , é¡Œè™Ÿè¨˜å¾—æ¸›ä¸€
+        æŽ¥çµæžœçš„è©± , ç·¨è™Ÿä¸ç”¨æ¸›ä¸€
 
-3. µ²ªG
+3. çµæžœ
 
-    [R]µ²ªG¼ÐÃD
-    µ²ªG¤º®e
+    [R]çµæžœæ¨™é¡Œ
+    çµæžœå…§å®¹
 
-    ps) µ²ªG¤º®e¥u¯à¤@¦æ :p
+    ps) çµæžœå…§å®¹åªèƒ½ä¸€è¡Œ :p
 
 
-¥i¥H°Ñ¦Ò¤U­±ªº½d¨Ò :)
+å¯ä»¥åƒè€ƒä¸‹é¢çš„ç¯„ä¾‹ :)
 ===
-[Q]ª½±µ¤F·íªº»¡,©p¬O?
-[A-1]·¥­«µø¥~ªí
-[A-2]¸û­«µø¤º¦b
+[Q]ç›´æŽ¥äº†ç•¶çš„èªª,å¦³æ˜¯?
+[A-1]æ¥µé‡è¦–å¤–è¡¨
+[A-2]è¼ƒé‡è¦–å…§åœ¨
 
-[Q]¹ï©ó³ßÅwªº¤HºA«×«Ü¿n·¥
+[Q]å°æ–¼å–œæ­¡çš„äººæ…‹åº¦å¾ˆç©æ¥µ
 [A-3]YES
 [A-5]NO
 
-[Q]±`±`¹Ú¨£³ßÅwªº¤H
+[Q]å¸¸å¸¸å¤¢è¦‹å–œæ­¡çš„äºº
 [A-6]YES
 [A-4]NO
 
-[Q]¦bµó¤W¥©¹J¦Û¤v·tÅÊªº¤H,©p·|
-[A-5]ÁÜ½Ð¥L¤@¶ô¥h³Ü¯ù
-[A-14]¥u¥´©Û©I
+[Q]åœ¨è¡—ä¸Šå·§é‡è‡ªå·±æš—æˆ€çš„äºº,å¦³æœƒ
+[A-5]é‚€è«‹ä»–ä¸€å¡ŠåŽ»å–èŒ¶
+[A-14]åªæ‰“æ‹›å‘¼
 
-[Q]¤W½Ò(¤W¯Z)®É,±`¨nµÛ³ßÅwªº¤H¬Ý¡C
+[Q]ä¸Šèª²(ä¸Šç­)æ™‚,å¸¸ç›¯è‘—å–œæ­¡çš„äººçœ‹ã€‚
 [A-7]YES
 [A-1]NO
 
-[Q]¹ï©ó³ßÅwªº¤H:
-[A-8]¥ý±qªB¤Í°µ°_
-[A=16]²@¤£µS¦a¦V¥L§i¥Õ,¨M¤ß¤@©w­n©M¥L¦¨¬°ÅÊ¤H¡C
+[Q]å°æ–¼å–œæ­¡çš„äºº:
+[A-8]å…ˆå¾žæœ‹å‹åšèµ·
+[A=16]æ¯«ä¸çŒ¶åœ°å‘ä»–å‘Šç™½,æ±ºå¿ƒä¸€å®šè¦å’Œä»–æˆç‚ºæˆ€äººã€‚
 
-[Q]ÅÊ¤H¤ñªB¤ÍÁÙ­«­n¡C
+[Q]æˆ€äººæ¯”æœ‹å‹é‚„é‡è¦ã€‚
 [A-10]YES
 [A-4]NO
 
-[Q]¤£À´±o¾A®É¦aªí¥Õ,§Y¨Ï¬OµL²áªºª±¯º,¤]·|¨Ï©pÁy¬õ¡C
+[Q]ä¸æ‡‚å¾—é©æ™‚åœ°è¡¨ç™½,å³ä½¿æ˜¯ç„¡èŠçš„çŽ©ç¬‘,ä¹Ÿæœƒä½¿å¦³è‡‰ç´…ã€‚
 [A-11]YES
 [A-5]NO
 
-[Q]´¿¸g¥h¹L³ßÅwªº¤H®a¸Ì¡C
+[Q]æ›¾ç¶“åŽ»éŽå–œæ­¡çš„äººå®¶è£¡ã€‚
 [A-12]YES
 [A-9]NO
 
-[Q]·tÅÊ¤§¤H´¿¥D°Ê»P§A»¡¸Ü¡C
+[Q]æš—æˆ€ä¹‹äººæ›¾ä¸»å‹•èˆ‡ä½ èªªè©±ã€‚
 [A-18]YES
 [A-16]NO
 
-[Q]¦³«Ü¦h²§©ÊªB¤Í¡C
+[Q]æœ‰å¾ˆå¤šç•°æ€§æœ‹å‹ã€‚
 [A-7]YES
 [A-11]NO
 
-[Q]·tÅÊªº¤H¦pªG·h¤F®a:
-[A-8]°¨¤W´M§ä§OªºÅÊ·R¹ï¶H
-[A-12]§Y¨Ï¤À¹j¨â¦aÁÙ¬O¤@¤ß¤@·N³ßÅw¥L
+[Q]æš—æˆ€çš„äººå¦‚æžœæ¬äº†å®¶:
+[A-8]é¦¬ä¸Šå°‹æ‰¾åˆ¥çš„æˆ€æ„›å°è±¡
+[A-12]å³ä½¿åˆ†éš”å…©åœ°é‚„æ˜¯ä¸€å¿ƒä¸€æ„å–œæ­¡ä»–
 
-[Q]°Q¹½¾ã¤Ñ¦b¤@°_ªºÅÊ·R,­«µø¾Ö¦³­Ó¤Hªº®É¶¡¤ÎªÅ¶¡¡C
+[Q]è¨ŽåŽ­æ•´å¤©åœ¨ä¸€èµ·çš„æˆ€æ„›,é‡è¦–æ“æœ‰å€‹äººçš„æ™‚é–“åŠç©ºé–“ã€‚
 [A-20]YES
 [A-9]NO
 
-[Q]³ßÅw·ÓÅU¦Û¤v·tÅÊªº¤H¡C
+[Q]å–œæ­¡ç…§é¡§è‡ªå·±æš—æˆ€çš„äººã€‚
 [A-R-3]YES
 [A-R-1]NO
 
-[Q]±¡¤H¸`®É¤£´±¿Ë¤â°eµ¹¥L¥©§J¤O¡C
+[Q]æƒ…äººç¯€æ™‚ä¸æ•¢è¦ªæ‰‹é€çµ¦ä»–å·§å…‹åŠ›ã€‚
 [A-13]YES
 [A-16]NO
 
-[Q]·í­±¦V¥L§i¥Õ,·|·P¨ì¤Q¤ÀÃø¬°±¡¡C
+[Q]ç•¶é¢å‘ä»–å‘Šç™½,æœƒæ„Ÿåˆ°ååˆ†é›£ç‚ºæƒ…ã€‚
 [A-R-1]YES
 [A-R-2]NO
 
-[Q]¤£³ßÅwÁ¿ªø®É¶¡ªº¹q¸Ü¡C
+[Q]ä¸å–œæ­¡è¬›é•·æ™‚é–“çš„é›»è©±ã€‚
 [A-13]YES
 [A-14]NO
 
-[Q]­Y¨ü¨ìÀ£¤O,«K·|¶É¥X¥þ¤O¤Ï§Ü¡C
+[Q]è‹¥å—åˆ°å£“åŠ›,ä¾¿æœƒå‚¾å‡ºå…¨åŠ›åæŠ—ã€‚
 [A-R-4]YES
 [A-R-3]NO
 
-[Q]¦³¹L(·tÅÊ)¤Î³Q§i¥Õªº¸gÅç¡C
+[Q]æœ‰éŽ(æš—æˆ€)åŠè¢«å‘Šç™½çš„ç¶“é©—ã€‚
 [A-13]YES
 [A-20]NO
 
-[Q]§AÄ±±o¨º¤@ºØ¸û¦n:
-[A-R-2]³Q§i¥Õ
-[A-R-4]¦V¤H§i¥Õ
+[Q]ä½ è¦ºå¾—é‚£ä¸€ç¨®è¼ƒå¥½:
+[A-R-2]è¢«å‘Šç™½
+[A-R-4]å‘äººå‘Šç™½
 
-[Q]´Nºâ¦³¤H¦V©p§i¥Õ,¦pªG¤£¬O¦Û¤v³ßÅwªºÃþ«¬,«K¤£·|»P¥L¥æ©¹¡C
+[Q]å°±ç®—æœ‰äººå‘å¦³å‘Šç™½,å¦‚æžœä¸æ˜¯è‡ªå·±å–œæ­¡çš„é¡žåž‹,ä¾¿ä¸æœƒèˆ‡ä»–äº¤å¾€ã€‚
 [A-17]YES
 [A-19]NO
 
-[R][³¢¹t]Ãþ«¬ªº¤H
-¹ï©ó³ßÅw·ÓÅU§O¤Hªº¦n¤j­ô§Î¶H,§âÂ÷®a¦Ó¦Û¤vÂô¦¿´òªº¶À»T·í°µ [1;36m(µLÂ_¦æ«ö¤U¦æ)[m
-(¥i«H¿àªº¤H)¨Ã©M¦o©¼¦¹¨Ì¿à¬Û¤¬·ÓÅU,¬O­Ó·Å©MÅé¶Kªº¹ï¶H¡C«Ü [1;36m(µLÂ_¦æ«ö¤U¦æ)[m
-®e©ö»P¤H±µªñ³oºØ¿Ë¤O¥¿¬O©p(§A)ªº¾y¤O©Ò¦b¡C
+[R][éƒ­é–]é¡žåž‹çš„äºº
+å°æ–¼å–œæ­¡ç…§é¡§åˆ¥äººçš„å¥½å¤§å“¥å½¢è±¡,æŠŠé›¢å®¶è€Œè‡ªå·±é—–æ±Ÿæ¹–çš„é»ƒè“‰ç•¶åš [1;36m(ç„¡æ–·è¡ŒæŒ‰ä¸‹è¡Œ)[m
+(å¯ä¿¡è³´çš„äºº)ä¸¦å’Œå¥¹å½¼æ­¤ä¾è³´ç›¸äº’ç…§é¡§,æ˜¯å€‹æº«å’Œé«”è²¼çš„å°è±¡ã€‚å¾ˆ [1;36m(ç„¡æ–·è¡ŒæŒ‰ä¸‹è¡Œ)[m
+å®¹æ˜“èˆ‡äººæŽ¥è¿‘é€™ç¨®è¦ªåŠ›æ­£æ˜¯å¦³(ä½ )çš„é­…åŠ›æ‰€åœ¨ã€‚
 
-[R][³¢ªÜ]Ãþ«¬ªº¤H
-¦b³ßÅwªº¤H­±«eÁ`¬OµLªkªí¹F¥X¦Û¤vªº¥»·N,¨Æ«á¤~¦Û§Ú©ê«è¤£¤w,[1;36m(µLÂ_¦æ«ö¤U¦æ)[m
-¤£¹L«ÜÀ´±o¼»¼b¡B­A¿à¡B¤]«ÜÀ´±o¥D°Ê°Q¤H³ßÅw¡B»P¤H²á¤Ñ,¦]¦¹ [1;36m(µLÂ_¦æ«ö¤U¦æ)[m
-²§©ÊªB¤Í¤£¤Ö,¥u­n¯à±q¥¢±Ñ¤¤²Ö¿n¸gÅç,·¥¦³¥i¯à¦¨¬°¤j¨üÅwªïªº[1;36m(µLÂ_¦æ«ö¤U¦æ)[m
-¤H¡C
+[R][éƒ­èŠ™]é¡žåž‹çš„äºº
+åœ¨å–œæ­¡çš„äººé¢å‰ç¸½æ˜¯ç„¡æ³•è¡¨é”å‡ºè‡ªå·±çš„æœ¬æ„,äº‹å¾Œæ‰è‡ªæˆ‘æŠ±æ€¨ä¸å·²,[1;36m(ç„¡æ–·è¡ŒæŒ‰ä¸‹è¡Œ)[m
+ä¸éŽå¾ˆæ‡‚å¾—æ’’å¬Œã€è€è³´ã€ä¹Ÿå¾ˆæ‡‚å¾—ä¸»å‹•è¨Žäººå–œæ­¡ã€èˆ‡äººèŠå¤©,å› æ­¤ [1;36m(ç„¡æ–·è¡ŒæŒ‰ä¸‹è¡Œ)[m
+ç•°æ€§æœ‹å‹ä¸å°‘,åªè¦èƒ½å¾žå¤±æ•—ä¸­ç´¯ç©ç¶“é©—,æ¥µæœ‰å¯èƒ½æˆç‚ºå¤§å—æ­¡è¿Žçš„[1;36m(ç„¡æ–·è¡ŒæŒ‰ä¸‹è¡Œ)[m
+äººã€‚
 
-[R][¤pÀs¤k]Ãþ«¬ªº¤H
-¤º¼ö¥~§N,²M¯Âµ½¨}«¬ªº¤H:¨ä¹ê¬OÄÝ©ó¸û¦Û³¬¡B¤º¦Vªº©Ê®æ,¦ý¹ï [1;36m(µLÂ_¦æ«ö¤U¦æ)[m
-©ó¦Û¤v³ßÅwªº¨Æ¡Bª«·|¥þ¤ß¥hÃöª`,Áö¤£¥Î¨¥»yª½±µ»¡©ú,¦ý·|¥H  [1;36m(µLÂ_¦æ«ö¤U¦æ)[m
-¦æ°Ê¤£¸g·N¦a¬yÅS·R·N,¦b¤º¤ßªº¼ê´û¼ö±¡¤§¤¤ÁÙ¬O±aÂI¨IÃ­,©M  [1;36m(µLÂ_¦æ«ö¤U¦æ)[m
-³oÃþ«¬ªº¦b¤@°_À³¸Ó·|·P¨ì¦w¤ß¦Û¦b¡C
+[R][å°é¾å¥³]é¡žåž‹çš„äºº
+å…§ç†±å¤–å†·,æ¸…ç´”å–„è‰¯åž‹çš„äºº:å…¶å¯¦æ˜¯å±¬æ–¼è¼ƒè‡ªé–‰ã€å…§å‘çš„æ€§æ ¼,ä½†å° [1;36m(ç„¡æ–·è¡ŒæŒ‰ä¸‹è¡Œ)[m
+æ–¼è‡ªå·±å–œæ­¡çš„äº‹ã€ç‰©æœƒå…¨å¿ƒåŽ»é—œæ³¨,é›–ä¸ç”¨è¨€èªžç›´æŽ¥èªªæ˜Ž,ä½†æœƒä»¥  [1;36m(ç„¡æ–·è¡ŒæŒ‰ä¸‹è¡Œ)[m
+è¡Œå‹•ä¸ç¶“æ„åœ°æµéœ²æ„›æ„,åœ¨å…§å¿ƒçš„æ¾Žæ¹ƒç†±æƒ…ä¹‹ä¸­é‚„æ˜¯å¸¶é»žæ²‰ç©©,å’Œ  [1;36m(ç„¡æ–·è¡ŒæŒ‰ä¸‹è¡Œ)[m
+é€™é¡žåž‹çš„åœ¨ä¸€èµ·æ‡‰è©²æœƒæ„Ÿåˆ°å®‰å¿ƒè‡ªåœ¨ã€‚
 
-[R][·¨¹L]Ãþ«¬ªº¤H
-¦]¬°­Ó©Ê°õµÛ,¹ï¦Û¤v¤ß»öªº¤H·|§V¤Oªº¦u­Ô¦b¦o(¥L)¨­®Ç,¦³®É  [1;36m(µLÂ_¦æ«ö¤U¦æ)[m
-¥i¯à·|¤£´±©ú©ú¥Õ¥Õ§@¥X·Rªº§i¥Õ,¦ý±M±¡ªº¦o(¥L),­Y¹J¨ìÅÊ¤H  [1;36m(µLÂ_¦æ«ö¤U¦æ)[m
-ªº­I«q,¥L¥²·|¨ÏºÉ¥þ¤O¥h®¾¦^,¬O¨üÀ£¤O·U¤j¤Ï¼u·U¤j,¥Ã»·¤£ªA [1;36m(µLÂ_¦æ«ö¤U¦æ)[m
-¿éªº¤H¡C
+[R][æ¥ŠéŽ]é¡žåž‹çš„äºº
+å› ç‚ºå€‹æ€§åŸ·è‘—,å°è‡ªå·±å¿ƒå„€çš„äººæœƒåŠªåŠ›çš„å®ˆå€™åœ¨å¥¹(ä»–)èº«æ—,æœ‰æ™‚  [1;36m(ç„¡æ–·è¡ŒæŒ‰ä¸‹è¡Œ)[m
+å¯èƒ½æœƒä¸æ•¢æ˜Žæ˜Žç™½ç™½ä½œå‡ºæ„›çš„å‘Šç™½,ä½†å°ˆæƒ…çš„å¥¹(ä»–),è‹¥é‡åˆ°æˆ€äºº  [1;36m(ç„¡æ–·è¡ŒæŒ‰ä¸‹è¡Œ)[m
+çš„èƒŒå›,ä»–å¿…æœƒä½¿ç›¡å…¨åŠ›åŽ»æŒ½å›ž,æ˜¯å—å£“åŠ›æ„ˆå¤§åå½ˆæ„ˆå¤§,æ°¸é ä¸æœ [1;36m(ç„¡æ–·è¡ŒæŒ‰ä¸‹è¡Œ)[m
+è¼¸çš„äººã€‚
 
 : src/so/Makeifle
 
 SO =    .... [1;33mmind.so[m
 
-: src/so/mind.c ·s¼W¦¹µ{¦¡
+: src/so/mind.c æ–°å¢žæ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* mind.c        ( YZU_CSE WindTop BBS )                 */
 /*-------------------------------------------------------*/
 /* author : verit.bbs@bbs.yzu.edu.tw                     */
-/* target : ¤ß²z´úÅç                                     */
+/* target : å¿ƒç†æ¸¬é©—                                     */
 /* create : 03/08/05                                     */
 /* update :   /  /                                       */
 /*-------------------------------------------------------*/
@@ -172,16 +172,16 @@ SO =    .... [1;33mmind.so[m
 #include "bbs.h"
 
 
-#define MAX_DESC_LENGTH      256        /* ±Ô­zªºªø«× */
-#define MAX_TEXT_LENGTH      512        /* ¤º¤åªºªø«× */
+#define MAX_DESC_LENGTH      256        /* æ•˜è¿°çš„é•·åº¦ */
+#define MAX_TEXT_LENGTH      512        /* å…§æ–‡çš„é•·åº¦ */
 
-#define MAX_MIND_QUESTION    50         /* ³Ì¦hÃD¥Ø­Ó¼Æ */
-#define MAX_MIND_ANSWER      5          /* ¨CÃD³Ì¦hµª®×¼Æ */
-#define MAX_MIND_RESULT      10         /* ³Ì¦hµ²ªG¼Æ */
+#define MAX_MIND_QUESTION    50         /* æœ€å¤šé¡Œç›®å€‹æ•¸ */
+#define MAX_MIND_ANSWER      5          /* æ¯é¡Œæœ€å¤šç­”æ¡ˆæ•¸ */
+#define MAX_MIND_RESULT      10         /* æœ€å¤šçµæžœæ•¸ */
 
-#define LEN                  50         /* ¤@¦æ³Ì¦hÅã¥Ü´X­Ó¦r */
-#define MIND_XPOS            5          /* ¹w³]¿é¥X x ®y¼Ð */
-#define MIND_YPOS            10         /* ¹w³]¿é¥X y ®y¼Ð */
+#define LEN                  50         /* ä¸€è¡Œæœ€å¤šé¡¯ç¤ºå¹¾å€‹å­— */
+#define MIND_XPOS            5          /* é è¨­è¼¸å‡º x åº§æ¨™ */
+#define MIND_YPOS            10         /* é è¨­è¼¸å‡º y åº§æ¨™ */
 
 #define DEF_PATH        "run/mind/"
 
@@ -305,7 +305,7 @@ print_quiz(src)
     height++;
     tmp = str;
     move(x++, y);
-    outs(" \033[0;37m¢j\033[1;37m");
+    outs(" \033[0;37mâ–\033[1;37m");
 
     wstate = 0;
     word = 0;
@@ -322,9 +322,9 @@ print_quiz(src)
     strncpy(buf, tmp, str - tmp);
     prints(form, buf);
     if (strlen(buf) == pos)
-      outs("\033[0;47;30m¢p\033[40;30;1m¢p\033[m ");
+      outs("\033[0;47;30mâ–‰\033[40;30;1mâ–‰\033[m ");
     else
-      outs("\033[0;47;30m¢p\033[40;30;1m¢p\033[m ");
+      outs("\033[0;47;30mâ–‰\033[40;30;1mâ–‰\033[m ");
   }
 
   return height;
@@ -339,12 +339,12 @@ draw_item(src, pos, mode)
 {
   char buf[128];
 
-  sprintf(buf, "%%d;37m %s %%-%ds", (mode) ? "¡»" : "  ", LEN - 2);
+  sprintf(buf, "%%d;37m %s %%-%ds", (mode) ? "â—†" : "  ", LEN - 2);
   move(MIND_XPOS + pos + 2, MIND_YPOS);
 
-  outs(" \033[0;37m¢j\033[1;");
+  outs(" \033[0;37mâ–\033[1;");
   prints(buf, (mode) ? 41 : 40, src);
-  outs("\033[0;47;30m¢p\033[40;30;1m¢p\033[m ");
+  outs("\033[0;47;30mâ–‰\033[40;30;1mâ–‰\033[m ");
 }
 
 
@@ -361,26 +361,26 @@ draw_menu(question, no)
   y = MIND_YPOS;
 
   move(x++, y);
-  outs(" \033[0;40;37m¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å\033[m");
+  outs(" \033[0;40;37m????????????????????????????\033[m");
   move(x++, y);
-  prints(" \033[0;37;44m¢j\033[1m²Ä %02d ÃD%-43s \033[0;47;34m¢p\033[m", no + 1, " ");
+  prints(" \033[0;37;44mâ–\033[1mç¬¬ %02d é¡Œ%-43s \033[0;47;34mâ–‰\033[m", no + 1, " ");
   move(x++, y);
-  prints(" \033[0;37m¢j\033[1m%-51s \033[0;47;30m¢p\033[40;30;1m¢p\033[m", " ");
+  prints(" \033[0;37mâ–\033[1m%-51s \033[0;47;30mâ–‰\033[40;30;1mâ–‰\033[m", " ");
   cur = 0;
   h = print_quiz(question[no].question) + 2;
 
   move(x++, y);
-  prints(" \033[0;37m¢j\033[1m%-51s \033[0;47;30m¢p\033[40;30;1m¢p\033[m", " ");
+  prints(" \033[0;37mâ–\033[1m%-51s \033[0;47;30mâ–‰\033[40;30;1mâ–‰\033[m", " ");
 
   for (i = 0; i < question[no].ans; ++i, ++x)
     draw_item(question[no].ans_desc[i], i + h, (i == cur) ? 1 : 0);
 
   move(x++, y);
-  prints(" \033[0;37m¢j\033[1m%-51s \033[0;47;30m¢p\033[40;30;1m¢p\033[m", " ");
+  prints(" \033[0;37mâ–\033[1m%-51s \033[0;47;30mâ–‰\033[40;30;1mâ–‰\033[m", " ");
   move(x++, y);
-  outs(" \033[0;47;30m¢h\033[30;1m¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h\033[40;30;1m¢p\033[m");
+  outs(" \033[0;47;30mâ–‡\033[30;1mâ–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡\033[40;30;1mâ–‰\033[m");
 
-  outz("\033[1;37;42m ¡i¾Þ§@»¡©ú¡jq)Â÷¶} Enter)§@µª                                                \033[m");
+  outz("\033[1;37;42m ã€æ“ä½œèªªæ˜Žã€‘q)é›¢é–‹ Enter)ä½œç­”                                                \033[m");
 
   while (c = vkey())
   {
@@ -421,9 +421,9 @@ do_test(fpath, title)
   no = 0;
   while (1)
   {
-    vs_bar("¤ß²z´úÅç");
+    vs_bar("å¿ƒç†æ¸¬é©—");
     move(3, MIND_YPOS);
-    prints("¥Ø«e´úÅçªºÃD¥Ø¬O : %s", title);
+    prints("ç›®å‰æ¸¬é©—çš„é¡Œç›®æ˜¯ : %s", title);
     ans = draw_menu(m.question, no);
     if (ans == -892226)
       return;
@@ -435,20 +435,20 @@ do_test(fpath, title)
       no = -no;
       --no;
 
-      vs_bar("¤ß²z´úÅç");
+      vs_bar("å¿ƒç†æ¸¬é©—");
       move(x++, y);
-      prints(" \033[0;40;37m¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å¡Å\033[m   ");
+      prints(" \033[0;40;37m????????????????????????????\033[m   ");
       move(x++, y);
-      prints(" \033[0;37;42m¢j\033[1mµ²ªG¡G%-45s \033[0;47;32m¢p\033[m   ", m.result[no].title);
+      prints(" \033[0;37;42mâ–\033[1mçµæžœï¼š%-45s \033[0;47;32mâ–‰\033[m   ", m.result[no].title);
       move(x++, y);
-      prints(" \033[0;37m¢j\033[1m%-51s \033[0;47;30m¢p\033[40;30;1m¢p\033[m ", " ");
+      prints(" \033[0;37mâ–\033[1m%-51s \033[0;47;30mâ–‰\033[40;30;1mâ–‰\033[m ", " ");
 
       print_quiz(m.result[no].desc);
 
       move(x++, y);
-      prints(" \033[0;37m¢j\033[1m%-51s \033[0;47;30m¢p\033[40;30;1m¢p\033[m ", " ");
+      prints(" \033[0;37mâ–\033[1m%-51s \033[0;47;30mâ–‰\033[40;30;1mâ–‰\033[m ", " ");
       move(x++, y);
-      prints(" \033[0;47;30m¢h\033[30;1m¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h¢h\033[40;30;1m¢p\033[m ");
+      prints(" \033[0;47;30mâ–‡\033[30;1mâ–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡â–‡\033[40;30;1mâ–‰\033[m ");
       vmsg(NULL);
       break;
     }
@@ -457,7 +457,7 @@ do_test(fpath, title)
 
 
 /*-------------------------------------------------------*/
-/* xover ¿ï³æ                                            */
+/* xover é¸å–®                                            */
 /*-------------------------------------------------------*/
 
 extern XZ xz[];
@@ -493,7 +493,7 @@ mind_body(xo)
   max = xo->max;
   if (max <= 0)
   {
-    if (vans("­n·s¼W¸ê®Æ¶Ü(Y/N)¡H[N] ") == 'y')
+    if (vans("è¦æ–°å¢žè³‡æ–™å—Ž(Y/N)ï¼Ÿ[N] ") == 'y')
       return mind_add(xo);
     return XO_QUIT;
   }
@@ -517,9 +517,9 @@ static int
 mind_head(xo)
   XO *xo;
 {
-  vs_head("¤ß²z´úÅç", str_site);
-  outs("[¡ö]Â÷¶} [Enter]´úÅç [q]ÂsÄý [^P]·s¼W [c]­×§ï [d]§R°£ [h]§ë½Z®æ¦¡\n"
-    "\033[30;47m  ½s¸¹     ´ú  Åç  ¦W  ºÙ                                                     \033[m");
+  vs_head("å¿ƒç†æ¸¬é©—", str_site);
+  outs("[â†]é›¢é–‹ [Enter]æ¸¬é©— [q]ç€è¦½ [^P]æ–°å¢ž [c]ä¿®æ”¹ [d]åˆªé™¤ [h]æŠ•ç¨¿æ ¼å¼\n"
+    "\033[30;47m  ç·¨è™Ÿ     æ¸¬  é©—  å  ç¨±                                                     \033[m");
   return mind_body(xo);
 }
 
@@ -542,7 +542,7 @@ mind_init(xo)
 }
 
 
-static int      /* 1:·s¼W/­×§ï  0:¨ú®ø */
+static int      /* 1:æ–°å¢ž/ä¿®æ”¹  0:å–æ¶ˆ */
 mind_edit(mind, echo)
   XMIND *mind;
   int echo;
@@ -556,12 +556,12 @@ mind_edit(mind, echo)
     archiv32(t, mind->fpath);
   }
 
-  if (vget(b_lines, 0, "¦WºÙ¡G", mind->title, sizeof(mind->title), echo))
+  if (vget(b_lines, 0, "åç¨±ï¼š", mind->title, sizeof(mind->title), echo))
   {
     sprintf(fpath, "%s%s", DEF_PATH, mind->fpath);
     if (!vedit(fpath, 0))
       return 1;
-    vmsg(echo == DOECHO ? "¨ú®ø·s¼W" : "¨ú®ø­×§ï");
+    vmsg(echo == DOECHO ? "å–æ¶ˆæ–°å¢ž" : "å–æ¶ˆä¿®æ”¹");
   }
 
   return 0;
@@ -702,7 +702,7 @@ main_mind()
   XO *xo;
   char fpath[64];
 
-  /* ­É¥Î XZ_PAL¡A©Ò¥H feeter ·|¤£¹ï¡A¨S®t :p */
+  /* å€Ÿç”¨ XZ_PALï¼Œæ‰€ä»¥ feeter æœƒä¸å°ï¼Œæ²’å·® :p */
   sprintf(fpath, "%sindex", DEF_PATH);
   xz[XZ_PAL - XO_ZONE].xo = xo = xo_new(fpath);
   xz[XZ_PAL - XO_ZONE].cb = mind_cb;
@@ -713,5 +713,5 @@ main_mind()
 }
 
 --
-[1;32m¡° Origin: [33m¤¸´¼¤j¾Ç ­·¤§¶ð [37m<bbs.yzu.edu.tw> [m
-[1;32m¡° From  : [36mbbs.yzu.edu.tw[m
+[1;32mâ€» Origin: [33må…ƒæ™ºå¤§å­¸ é¢¨ä¹‹å¡” [37m<bbs.yzu.edu.tw> [m
+[1;32mâ€» From  : [36mbbs.yzu.edu.tw[m

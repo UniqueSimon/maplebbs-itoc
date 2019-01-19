@@ -1,29 +1,29 @@
-�o�H�H: cpd.bbs@pitch.twbbs.org (always on my mind) �ݪO: plan
-��  �D: Re: �p�G�Ʊ�H��sysop���H�i�H�۰����Y�����ê�
-�o�H��: pitch�p�� (2004/01/14 Wed 19:00:41)               Updated: 2004/02/07
+發信人: cpd.bbs@pitch.twbbs.org (always on my mind) 看板: plan
+標  題: Re: 如果希望寄給sysop的信可以自動轉到某個隱藏版
+發信站: pitch小站 (2004/01/14 Wed 19:00:41)               Updated: 2004/02/07
 
-�� �ޭz�mlokaa.bbs@processor.tfcis.org (lokaa)�n���ʨ��G
-> �]���i�H��sysop�H�c�����n�X�ӤH
-> �ȬݬݧѰO�άO�o�ӬݤF�S��k�B�z�t�@�ӤS�S�o�{��
-> �Q���p�G�i�H���ܴN��sysop���H�������Y�ݪO
-> �i�H���C��admin���O�`�N�쩳���S���ݹL
+※ 引述《lokaa.bbs@processor.tfcis.org (lokaa)》之銘言：
+> 因為可以看sysop信箱的有好幾個人
+> 怕看看忘記或是這個看了沒辦法處理另一個又沒發現到
+> 想說如果可以的話就讓sysop的信直接轉到某看板
+> 可以讓每個admin分別注意到底有沒有看過
 
-�i�H�H�ݪO�Φ����覡�s�b...
+可以以看板形式的方式存在...
 
-1) ���إߤ@�ӬݪO Mail_SYSOP �ݪO�ݩʳ]�����K�ݪO
-2) �H�U��t�ΤU�ާ@�A���O�Olink .DIR�� �� link sysop���H�c
+1) 先建立一個看板 Mail_SYSOP 看板屬性設為秘密看板
+2) 以下於系統下操作，分別是link .DIR檔 及 link sysop的信箱
 
    ln -s ~/usr/s/sysop/.DIR ~/brd/Mail_SYSOP/.DIR
    rm -rf ~/brd/Mail_SYSOP/@
    ln -s ~/usr/s/sysop/@ ~/brd/Mail_SYSOP/@
 
-�o�˴N�i�H�F�A�u�O�^�ЫH�󤣷|�� 'r' ���аO
-�i�H�Τ@��ݪO���аO���N�A�� 'm' 'g' 's' �������i�H:)
+這樣就可以了，只是回覆信件不會有 'r' 的標記
+可以用一般看板的標記取代，像 'm' 'g' 's' 等等都可以:)
 
-�٦��N�O�^�Цb Mail_SYSOP�O���峹�A��SYSOP�b���i�H�c�|�L�k�\Ū
-�]�����|���F�A���L�S�t�A�]���� Mail_SYSOP�ݪO �٬O�i�H���`�\Ū
+還有就是回覆在 Mail_SYSOP板的文章，用SYSOP帳號進信箱會無法閱讀
+因為路徑錯了，不過沒差，因為到 Mail_SYSOP看板 還是可以正常閱讀
 
 --
-[;1;30mOrigin�G[32m������         �x[30m       pitch�p��[m
-      [;1;42m  ������C[37m ��z�w�u�w�{  [;32;47m pitch.twbbs.org [m
-      [;1;32m  ��    [32m�| ��[32m�|�w�|  �|[m   From�G[sw68-16-50.adsl.seed.net.tw][m
+[;1;30mOrigin：[32m╔═╮         │[30m       pitch小站[m
+      [;1;42m  ╟═╝。[37m ╬┌─├─┐  [;32;47m pitch.twbbs.org [m
+      [;1;32m  ╚    [32m└ ╚[32m└─└  └[m   From：[sw68-16-50.adsl.seed.net.tw][m

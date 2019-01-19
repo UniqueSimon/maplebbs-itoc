@@ -1,10 +1,10 @@
-µo«H¤H: itoc.bbs@xeon.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ±K½X¥[ªø
-µo«H¯¸: °Ê¤O®Ö¤ß (Wed, 15 Oct 2003 23:57:48 +0800 (CST))  Updated: 2004/03/15
+ç™¼ä¿¡äºº: itoc.bbs@xeon.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: å¯†ç¢¼åŠ é•·
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (Wed, 15 Oct 2003 23:57:48 +0800 (CST))  Updated: 2004/03/15
 
-  ¬°¤F¼W¥[±K½Xªø«×¦Ó¤£»İ­nÂà´« .ACCT
-  ¬G±N±K½X±q·t½X§ï¦¨©ú½X
-  ¥H¤U­×§ï¡AÅı ©ú½X/DES·t½X ³£¯à¦Y
+  ç‚ºäº†å¢åŠ å¯†ç¢¼é•·åº¦è€Œä¸éœ€è¦è½‰æ› .ACCT
+  æ•…å°‡å¯†ç¢¼å¾æš—ç¢¼æ”¹æˆæ˜ç¢¼
+  ä»¥ä¸‹ä¿®æ”¹ï¼Œè®“ æ˜ç¢¼/DESæš—ç¢¼ éƒ½èƒ½åƒ
 
 : lib/str_passwd()
 
@@ -33,5 +33,5 @@ chkpasswd(passwd, test)
 + #define PSWDLEN         PASSLEN
 
 --
- [1;43m¢z[44m¢q[m Or[1mig[30min[m: [44m ¥x«n¤@¤¤£»°Ê¤O®Ö¤ß [31;47m processor.tfcis.org [m
- [1;41m¢|[42m¢}[m A[1mut[30mho[mr: [1;36mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [44m å°å—ä¸€ä¸­Ë™å‹•åŠ›æ ¸å¿ƒ [31;47m processor.tfcis.org [m
+ [1;41mâ””[42mâ”˜[m A[1mut[30mho[mr: [1;36mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

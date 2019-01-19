@@ -1,19 +1,19 @@
-µo«H¤H: hightman.bbs@bbs.hightman.net («İ©w) ¬İªO: plan
-¼Ğ  ÃD: Re: ½Ğ°İ«ç¤\±q¨t²Îpidª¾¹D¨º¦ì¨Ï¥ÎªÌ¬O½Ö?...
-µo«H¯¸: ©ú¤ë¤ô°aBBS (Sat, 05 Jul 2003 12:31:45 +0800)     Updated: 2004/09/11
+ç™¼ä¿¡äºº: hightman.bbs@bbs.hightman.net (å¾…å®š) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: è«‹å•æ€ä¹ˆå¾ç³»çµ±pidçŸ¥é“é‚£ä½ä½¿ç”¨è€…æ˜¯èª°?...
+ç™¼ä¿¡ç«™: æ˜æœˆæ°´è»’BBS (Sat, 05 Jul 2003 12:31:45 +0800)     Updated: 2004/09/11
 
-¥H«e¼gªº¤@­Ó¤pµ{§Ç¡A©ñ¨ì util/ ¤U¡A­×§ï Makefile ½sÄ¶¥¦¡C
+ä»¥å‰å¯«çš„ä¸€å€‹å°ç¨‹åºï¼Œæ”¾åˆ° util/ ä¸‹ï¼Œä¿®æ”¹ Makefile ç·¨è­¯å®ƒã€‚
 
 : src/util/Makefile
 
 EXE =   ... [1;33mpid2user[m
 
-: src/util/pid2user.c ·s¼W¦¹µ{¦¡
+: src/util/pid2user.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* util/pid2user.c      (MapleBBS Ver 3.10)              */
 /*-------------------------------------------------------*/
-/* target : ¥Ñpid§ä¥X·í«e¯¸¤º¨Ï¥ÎªÌid©M°ÊºA              */
+/* target : ç”±pidæ‰¾å‡ºç•¶å‰ç«™å…§ä½¿ç”¨è€…idå’Œå‹•æ…‹              */
 /* author : hightman.bbs@bbs.hightman.net                */
 /* create : 02/05/19                                     */
 /* update :   /  /                                       */
@@ -21,8 +21,8 @@ EXE =   ... [1;33mpid2user[m
 
 
 /* hightman.020519: 0
- * ªñ¤éµo²{­Ó§O¶iµ{¥e¥Îcpu©Mmemory¸ê·½¹L¦h¡A
- * ¾Ú¦¹µ{§ÇÆ[¹î¸Ó¥Î¤á¦b°µ¤°¤\
+ * è¿‘æ—¥ç™¼ç¾å€‹åˆ¥é€²ç¨‹å ç”¨cpuå’Œmemoryè³‡æºéå¤šï¼Œ
+ * æ“šæ­¤ç¨‹åºè§€å¯Ÿè©²ç”¨æˆ¶åœ¨åšä»€ä¹ˆ
  */
 
 #define _MODES_C_
@@ -32,7 +32,7 @@ EXE =   ... [1;33mpid2user[m
 static UCACHE *ushm;
 
 
-static int      /* 0: §ä¤£¨ì¨Ï¥ÎªÌ¬O¦¹ pid */
+static int      /* 0: æ‰¾ä¸åˆ°ä½¿ç”¨è€…æ˜¯æ­¤ pid */
 pid2user(pid)
   pid_t pid;
 {
@@ -52,7 +52,7 @@ pid2user(pid)
   {
     if (utmp->pid == pid)
     {
-      printf("¨Ï¥ÎªÌ¥N¸¹: %s ª¬ºA: %s [%d] ¡C (¨Ó¦Û %s)\n",
+      printf("ä½¿ç”¨è€…ä»£è™Ÿ: %s ç‹€æ…‹: %s [%d] ã€‚ (ä¾†è‡ª %s)\n",
         utmp->userid, ModeTypeTable[utmp->mode], utmp->mode, utmp->from);
       offset = 2;
       break;
@@ -84,20 +84,20 @@ main(argc, argv)
 
   pid = atol(argv[1]);
 
-  printf("±z¿é¤Jªº¶iµ{¸¹¬°¡G [%ld]\n", (long) pid);
+  printf("æ‚¨è¼¸å…¥çš„é€²ç¨‹è™Ÿç‚ºï¼š [%ld]\n", (long) pid);
   if (!pid2user(pid))
   {
-    printf("©êºp¡A®Ú¾Ú pid: [%ld] §ä¤£¨ì BBS ¨Ï¥ÎªÌ¡C\n", (long) pid);
+    printf("æŠ±æ­‰ï¼Œæ ¹æ“š pid: [%ld] æ‰¾ä¸åˆ° BBS ä½¿ç”¨è€…ã€‚\n", (long) pid);
     exit(0);
   }
 
-  printf("¬O§_±ş¦º¸Ó¶iµ{(Y/N)¡H[N] ");
+  printf("æ˜¯å¦æ®ºæ­»è©²é€²ç¨‹(Y/N)ï¼Ÿ[N] ");
   c = getchar();
   if (c == 'y')
   {
     if (kill(pid, SIGKILL) == 0)
     {
-      printf("\n¦¨¥\\±ş±¼¶iµ{!\n");
+      printf("\næˆåŠŸ\æ®ºæ‰é€²ç¨‹!\n");
     }
     else
     {
@@ -127,5 +127,5 @@ main(argc, argv)
 }
 
 --
-[1;32m¡° Origin: [33m©ú¤ë¤ô°a [37m<bbs.hightman.net> [m
-[1;31m¡» From: [36m218.72.33.236[m
+[1;32mâ€» Origin: [33mæ˜æœˆæ°´è»’ [37m<bbs.hightman.net> [m
+[1;31mâ—† From: [36m218.72.33.236[m

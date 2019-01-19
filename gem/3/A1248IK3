@@ -1,32 +1,32 @@
-�@��: itoc (cygreadline4.dll) �ݪO: plan
-���D: [�\��] ���n�峹�m��
-�ɶ�: 2004/05/16 Sun 16:52:10                           Updated: 2007/02/28
+作者: itoc (cygreadline4.dll) 看板: plan
+標題: [功能] 重要文章置底
+時間: 2004/05/16 Sun 16:52:10                           Updated: 2007/02/28
 
-  �N���n���峹��b�ݪO�C���̫�
+  將重要的文章放在看板列表最後
 
-  ���M�m���媺���e�O�s�ʪ��A�ק�α�����]�|�ܰʸm����
+  原文和置底文的內容是連動的，修改或推文原文也會變動置底文
 
-: hdr.h   �u���L�A�X�Хκ��F :(
+: hdr.h   真難過，旗標用滿了 :(
 
-#define POST_RESERVED   0x00001000      /* ����Ť峹�A�� sysop �~���� */
+#define POST_RESERVED   0x00001000      /* 限制級文章，須 sysop 才能更改 */
 
-+ #define POST_BOTTOM1  0x00002000      /* �m���峹������ */
-#define POST_SCORE      0x00004000      /* �аO�����L�� */
-+ #define POST_BOTTOM2  0x00008000      /* �m���峹���å� */
++ #define POST_BOTTOM1  0x00002000      /* 置底文章的正本 */
+#define POST_SCORE      0x00004000      /* 標記評分過的 */
++ #define POST_BOTTOM2  0x00008000      /* 置底文章的謄本 */
 + #define POST_BOTTOM   (POST_BOTTOM1 | POST_BOTTOM2)
 
 : global.h
 
 #define FN_DIR          ".DIR"          /* index */
 #define FN_VCH          ".VCH"          /* vote control header */
-#define FN_NOTE         "note"          /* �i�O�e�� */
-+ #define FN_BOTTOM     ".BOTTOM"       /* �m���峹 index */
+#define FN_NOTE         "note"          /* 進板畫面 */
++ #define FN_BOTTOM     ".BOTTOM"       /* 置底文章 index */
 
 : config.h
 
-+ #define MAX_BOTTOM    5               /* �m���峹�̤j�ƶq */
++ #define MAX_BOTTOM    5               /* 置底文章最大數量 */
 
-: post.c:post_attr() �m���Ÿ��i�H�۩w
+: post.c:post_attr() 置底符號可以自定
 
 +  if (mode & POST_BOTTOM)
 +    attr |= 'B';
@@ -34,14 +34,14 @@
 #ifdef HAVE_REFUSEMARK
    if (mode & POST_RESTRICT)
 
-: post.c:post_item() ���G�B�n��
+: post.c:post_item() 有二處要改
 
-+ if (hdr->xmode & POST_BOTTOM2)   /* �å��~�ݭn�Сu���n�v */
-+   prints("  ���n%c%c", tag_char(hdr->chrono), post_attr(hdr));
++ if (hdr->xmode & POST_BOTTOM2)   /* 謄本才需要標「重要」 */
++   prints("  重要%c%c", tag_char(hdr->chrono), post_attr(hdr));
 + else
     prints("%6d%c%c", num, tag_char(hdr->chrono), post_attr(hdr));
 
-: post.c:post_bottom() �s�W�b post_mark() �U��
+: post.c:post_bottom() 新增在 post_mark() 下面
 
 static int
 post_bottom(xo)
@@ -58,59 +58,59 @@ post_bottom(xo)
     xmode = hdr->xmode;
 
 #ifdef HAVE_LABELMARK
-    if (xmode & POST_DELETE)    /* �ݬ媺�峹����m�� */
+    if (xmode & POST_DELETE)    /* 待砍的文章不能置底 */
       return XO_NONE;
 #endif
 
 #ifdef HAVE_REFUSEMARK
-    if (xmode & POST_RESTRICT)  /* �[�K�峹����m�� */
+    if (xmode & POST_RESTRICT)  /* 加密文章不能置底 */
       return XO_NONE;
 #endif
 
     if (vans(xmode & POST_BOTTOM ?
-      "�����m�����i(Y/N)�H[N] " : "�[�J�m�����i(Y/N)�H[N] ") != 'y')
+      "取消置底公告(Y/N)？[N] " : "加入置底公告(Y/N)？[N] ") != 'y')
       return XO_FOOT;
 
     brd_fpath(fpath, currboard, FN_BOTTOM);
     currchrono = hdr->chrono;
 
-    if (xmode & POST_BOTTOM)        /* �b����/�å������m�� */
+    if (xmode & POST_BOTTOM)        /* 在正本/謄本取消置底 */
     {
       xmode &= ~POST_BOTTOM;
 
-      /* ���� FN_BOTTOM ���å� */
+      /* 移除 FN_BOTTOM 中謄本 */
       rec_del(fpath, sizeof(HDR), 0, cmpchrono);
     }
-    else                             /* �b�����[�W�m�� */
+    else                             /* 在正本加上置底 */
     {
       if (rec_num(fpath, sizeof(HDR)) >= MAX_BOTTOM)
       {
-        vmsg("�m���g�ƹL�h�I");
+        vmsg("置底篇數過多！");
         return XO_FOOT;
       }
 
-      /* �Y�m���]�[ mark�A�o�˥i�H�P�ɸT�� delete/rangdel/prune/label */
+      /* 若置底也加 mark，這樣可以同時禁止 delete/rangdel/prune/label */
       xmode |= POST_MARKED;
 
-      /* �N�å��[�J FN_BOTTOM */
+      /* 將謄本加入 FN_BOTTOM */
       hdr->xmode = xmode ^ POST_BOTTOM2;
       rec_add(fpath, hdr, sizeof(HDR));
 
       xmode |= POST_BOTTOM1;
     }
 
-    /* �����Υ[�W�m���󥿥� */
+    /* 取消或加上置底於正本 */
     hdr->xmode = xmode;
     rec_put(xo->dir, hdr, sizeof(HDR), pos, cmpchrono);
 
-    return post_load(xo);  /* �ߨ���ܸm���峹 */
+    return post_load(xo);  /* 立刻顯示置底文章 */
   }
   return XO_NONE;
 }
 
 : post.c:post_cb[]
 
-+ '_', post_bottom,             [1;44m // ����۩w [m
++ '_', post_bottom,             [1;44m // 按鍵自定 [m
 
   'h', post_help
 
@@ -122,7 +122,7 @@ post_bottom(xo)
     {
 +     char fpath[64];
 +     int size;
-+     int count = 0;    /* ���h�ָm���峹 */
++     int count = 0;    /* 有多少置底文章 */
 +
 +     if (xo->key == XZ_POST)
 +     {
@@ -143,12 +143,12 @@ post_bottom(xo)
 -     read(fd, xo_pool, recsiz * XO_TALL);
 +     pos = recsiz * XO_TALL;
 +     size = read(fd, xo_pool, pos);
-+     if (count && (pos -= size))  /* ���m���峹�ӥB�٦��Ŷ� */
++     if (count && (pos -= size))  /* 有置底文章而且還有空間 */
 +     {
 +       int fd2;
 +       if ((fd2 = open(fpath, O_RDONLY)) >= 0)
 +       {
-+         top -= max - count;  /* �e���wŪ�X�g�m���峹 */
++         top -= max - count;  /* 前頁已讀幾篇置底文章 */
 +         if (top < 0)
 +           top = 0;
 +         lseek(fd2, (off_t) (sizeof(HDR) * top), SEEK_SET);
@@ -163,11 +163,11 @@ post_bottom(xo)
 : post.c:post_mark()
 
 #ifdef HAVE_LABELMARK
-    if (xmode & POST_DELETE)    /* �ݬ媺�峹���� mark */
+    if (xmode & POST_DELETE)    /* 待砍的文章不能 mark */
       return XO_NONE;
 #endif
 
-+   if (xmode & POST_BOTTOM)    /* �m�����峹����Ѱ� mark */
++   if (xmode & POST_BOTTOM)    /* 置底的文章不能解除 mark */
 +     return XO_NONE;
 
 : post.c:post_refuse()
@@ -176,7 +176,7 @@ post_bottom(xo)
   cur = pos - xo->top;
   hdr = (HDR *) xo_pool + cur;
 
-+ if (hdr->xmode & POST_BOTTOM)  /* �[�K�峹����m�� */
++ if (hdr->xmode & POST_BOTTOM)  /* 加密文章不能置底 */
 +   return XO_NONE;
 
 : post.c:post_title()
@@ -187,7 +187,7 @@ post_bottom(xo)
     currchrono = fhdr->chrono;
 
 +   if (fhdr->xmode & POST_BOTTOM2)
-+     fhdr->xmode ^= POST_BOTTOM;       /* �קK�����ܦ��å� */
++     fhdr->xmode ^= POST_BOTTOM;       /* 避免正本變成謄本 */
 
     rec_put(xo->dir, fhdr, sizeof(HDR), xo->key == XZ_XPOST ?
       fhdr->xid : pos, cmpchrono);
@@ -197,7 +197,7 @@ post_bottom(xo)
 
     header_replace(xo, fhdr);
 
-+   if (fhdr->xmode & POST_BOTTOM)      /* �P�B�m�����å� */
++   if (fhdr->xmode & POST_BOTTOM)      /* 同步置底的謄本 */
 +   {
 +     char fpath[64];
 +     brd_fpath(fpath, currboard, FN_BOTTOM);
@@ -218,7 +218,7 @@ post_bottom(xo)
     rec_ref(dir, hdr, sizeof(HDR), xo->key == XZ_XPOST ?
       hdr->xid : pos, cmpchrono, addscore);
 
-+   if (hdr->xmode & POST_BOTTOM)  /* �P�B�m�����å� */
++   if (hdr->xmode & POST_BOTTOM)  /* 同步置底的謄本 */
 +   {
 +     brd_fpath(fpath, currboard, FN_BOTTOM);
 +     rec_ref(fpath, hdr, sizeof(HDR), 0, cmpchrono, addscore);
@@ -232,7 +232,7 @@ post_bottom(xo)
   cur = pos - xo->top;
   hdr = (HDR *) xo_pool + cur;
 
-+ if (hdr->xmode & POST_BOTTOM2)   /* �T������å� */
++ if (hdr->xmode & POST_BOTTOM2)   /* 禁止標籤謄本 */
 +   return XO_NONE;
 
   if (xo->key == XZ_XPOST)
@@ -240,7 +240,7 @@ post_bottom(xo)
 
 : post.c:post_visit()
 
-  ans = vans("�]�w�Ҧ��峹 (U)��Ū (V)�wŪ (W)�e�wŪ�᥼Ū (Q)�����H[Q] ");
+  ans = vans("設定所有文章 (U)未讀 (V)已讀 (W)前已讀後未讀 (Q)取消？[Q] ");
   if (ans == 'v' || ans == 'u' || ans == 'w')
   {
 +   int pos;
@@ -253,40 +253,40 @@ post_bottom(xo)
     hdr = (HDR *) xo_pool;
 -   brh_visit(ans == 'w' ? hdr[xo->pos - row].chrono : ans == 'u');
 +   pos = xo->pos - row;
-+   /* weiyu.20041010: �b�m����W�� w ���������wŪ */
++   /* weiyu.20041010: 在置底文上選 w 視為全部已讀 */
 +   brh_visit(ans == 'w' ? hdr[pos].xmode & POST_BOTTOM2 ? 0 :
 +                          hdr[pos].chrono : ans == 'u');
 
     row = 3;
 
-  �w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w
+  ─────────────────────────────────────
 
-  �Ĥ@���i�O�N��Щ�b���m�����̫�@�g
+  第一次進板將游標放在未置底的最後一篇
 
 : board.c:XoPost()
 
     xo->key = XZ_POST;
     xo->xyz = brd->title;
 
-+   if (xo->pos == XO_TAIL)   /* �Ĥ@���i�O�N��Щ�b���m�����̫�@�g */
++   if (xo->pos == XO_TAIL)   /* 第一次進板將游標放在未置底的最後一篇 */
 +     xo->pos = (brd->btime < 0 ? rec_num(fpath, sizeof(HDR)) : brd->bpost) - 1;
 
-  �w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w
+  ─────────────────────────────────────
 
-  �b�걵���p�G�j�M��m����A����]�m��
+  在串接中如果搜尋到置底文，那麼也置底
 
 : xpost.c:XoXpost()
 
-+ static int XZ_Xcount;     /* XZ_XPOST �θm���峹�O�ƾ� */
++ static int XZ_Xcount;     /* XZ_XPOST 用置底文章記數器 */
 
 static int
 XoXpost(xo, hdr, on, off, fchk)
   XO *xo;
-  HDR *hdr;             /* �j�M������ */
-  int on, off;          /* �j�M���d�� */
-  int (*fchk) ();       /* �j�M���禡 */
+  HDR *hdr;             /* 搜尋的條件 */
+  int on, off;          /* 搜尋的範圍 */
+  int (*fchk) ();       /* 搜尋的函式 */
 {
-+ int loc_bottom[MAX_BOTTOM]; /* �x��w�j�M�쪺�m���峹���� pos */
++ int loc_bottom[MAX_BOTTOM]; /* 儲放已搜尋到的置底文章正本 pos */
 + int i;
 
   ...
@@ -297,7 +297,7 @@ XoXpost(xo, hdr, on, off, fchk)
   xlist = xypostI = (int *) malloc(sizeof(int) * max);
 
   max = 0;
-+ XZ_Xcount = 0;               /* Reset �m���峹�p�ƾ� */
++ XZ_Xcount = 0;               /* Reset 置底文章計數器 */
   head = (HDR *) fimage;
   tail = (HDR *) (fimage + fsize);
 
@@ -307,7 +307,7 @@ XoXpost(xo, hdr, on, off, fchk)
     if (!(* fchk) (head, hdr))
       continue;
 
-+   if (head->xmode & POST_BOTTOM1) /* �ˬd�O�_���m���奿�� */
++   if (head->xmode & POST_BOTTOM1) /* 檢查是否為置底文正本 */
 +     loc_bottom[XZ_Xcount++] = locus;
 
     xlist[max++] = locus;
@@ -324,7 +324,7 @@ XoXpost(xo, hdr, on, off, fchk)
     if (pos >= num)
       continue;
     *hdr = fimage[pos];
-    hdr->xid = pos;             /* �� hdr->xid �ӰO�������b�ݪO���� pos */
+    hdr->xid = pos;             /* 用 hdr->xid 來記錄其原先在看板中的 pos */
 +   if ((max - top) < XZ_Xcount)
 +   {
 +     char fpath[64];
@@ -347,4 +347,4 @@ XoXpost(xo, hdr, on, off, fchk)
   } while (top < max);
 
 --
-[1;37m�� ���峹�� [33mitoc[37m �q [32mpc512-2.EE.NCTU.edu.tw[37m �o��[m
+[1;37m□ 本文章由 [33mitoc[37m 從 [32mpc512-2.EE.NCTU.edu.tw[37m 發表[m

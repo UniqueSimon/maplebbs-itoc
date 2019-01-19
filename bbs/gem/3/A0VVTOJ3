@@ -1,32 +1,32 @@
-�@��: itoc (�\��о�) ����: SYSOP
-���D: �N�ݪO�[�J���հQ�װ�
-�ɶ�: Sat Jan  1 00:00:00 2000
+作者: itoc (功能教學) 站內: SYSOP
+標題: 將看板加入分組討論區
+時間: Sat Jan  1 00:00:00 2000
 
-                        [1;42m �� �N�ݪO�[�J���հQ�װ� �� [m
+                        [1;42m □ 將看板加入分組討論區 □ [m
 
-# �إ߷s������
+# 建立新的分類
 
-  % �i�J (A)nnounce��Class/ �ݪO��ءA�� [1;31m^P[m �� (C)����
+  % 進入 (A)nnounce→Class/ 看板精華，按 [1;31m^P[m 選 (C)分類
 
-    ���D�G�ӤH�Ѯa
-    �ɦW�GPersonal
+    標題：個人老家
+    檔名：Personal
 
-    �N�|�h�@�� Personal ���l����
-    �i�J�o�Ӥl�����H��A�A�i�H�A�s�W�l�����άO�s�W�ݪO
+    就會多一個 Personal 的子分類
+    進入這個子分類以後，你可以再新增子分類或是新增看板
 
-# �N�ݪO�[�J�w��������
+# 將看板加入已有的分類
 
-  % �i�J (A)nnounce��Class/ �̭������@�����A�� [1;31m^P[m �� (B)�ݪO
+  % 進入 (A)nnounce→Class/ 裡面的任一分類，按 [1;31m^P[m 選 (B)看板
 
-    ��J�ݪO�W�١A����o�ӬݪO�N�Q�k���b�o�Ӥ����̭��F
+    輸入看板名稱，那麼這個看板就被歸類在這個分類裡面了
 
-# �粒�n���s���J (0)Admin �� (B)BSreset �� 2)�����s��
-  �p�G���h��ʭ��s���J�Acrontab �]�|�۰ʥh��s�C
+# 改完要重新載入 (0)Admin → (B)BSreset → 2)分類群組
+  如果不去手動重新載入，crontab 也會自動去更新。
 
-# �� [1;31mm[m �i�H���ܶ��ǡA�������ƧǬO�ۥѪ��A�����b (A)nnounce��Class/ �ݪO���
-  �̭��ҳ]�w�����ǴN�N�O���հQ�װϸ̭������ǡC
+# 按 [1;31mm[m 可以改變順序，分類的排序是自由的，站長在 (A)nnounce→Class/ 看板精華
+  裡面所設定的順序就將是分組討論區裡面的順序。
 
-# �P�@�ӬݪO�i�H�X�{�b�\�h�����C
+# 同一個看板可以出現在許多分類。
 
 --
-[1;37m�� ���峹�Ӧ� [33;44m ��j�q�l [0;1;37m �� [32mEE.NCTU.edu.tw[37m �ҵo��[m
+[1;37m□ 本文章來自 [33;44m 交大電子 [0;1;37m 由 [32mEE.NCTU.edu.tw[37m 所發表[m

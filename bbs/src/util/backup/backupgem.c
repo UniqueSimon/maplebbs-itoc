@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/backupgem.c	( NTHU MapleBBS Ver 3.10 )       */
 /*-------------------------------------------------------*/
-/* target : ³Æ¥÷©Ò¦³ºëµØ°Ï¸ê®Æ                           */
+/* target : å‚™ä»½æ‰€æœ‰ç²¾è¯å€è³‡æ–™                           */
 /* create : 01/10/19                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -24,7 +24,7 @@ main()
   chdir(BBSHOME);
   umask(077);
 
-  /* «Ø¥ß³Æ¥÷¸ô®|¥Ø¿ý */
+  /* å»ºç«‹å‚™ä»½è·¯å¾‘ç›®éŒ„ */
   time(&now);
   ptime = localtime(&now);
   sprintf(bakpath, "%s/gem%02d%02d%02d", BAKPATH, ptime->tm_year % 100, ptime->tm_mon + 1, ptime->tm_mday);
@@ -36,12 +36,12 @@ main()
   sprintf(cmd, "cp %s %s/", FN_DIR, bakpath);
   system(cmd);  
 
-  /* §â 0~9 @ A~V ¤À§OÀ£ÁY¦¨¤@­ÓÀ£ÁYÀÉ */
+  /* æŠŠ 0~9 @ A~V åˆ†åˆ¥å£“ç¸®æˆä¸€å€‹å£“ç¸®æª” */
   while (de = readdir(dirp))
   {
     ptr = de->d_name;
 
-    /* ¬ÝªOªººëµØ°Ï¥t¥~³Æ¥÷ */
+    /* çœ‹æ¿çš„ç²¾è¯å€å¦å¤–å‚™ä»½ */
     if (!strcmp(ptr, "brd"))
       continue;
 
@@ -54,16 +54,16 @@ main()
   closedir(dirp);
 
 
-  /* ³Æ¥÷¬ÝªO */
+  /* å‚™ä»½çœ‹æ¿ */
 
   if (chdir(BBSHOME "/gem/brd") || !(dirp = opendir(".")))
     exit(-1);
 
-  /* «Ø¥ß³Æ¥÷¸ô®|¥Ø¿ý */
+  /* å»ºç«‹å‚™ä»½è·¯å¾‘ç›®éŒ„ */
   sprintf(gempath, "%s/brd", bakpath);
   mkdir(gempath, 0700);
 
-  /* §â¦U¬ÝªO¤À§OÀ£ÁY¦¨¤@­ÓÀ£ÁYÀÉ */
+  /* æŠŠå„çœ‹æ¿åˆ†åˆ¥å£“ç¸®æˆä¸€å€‹å£“ç¸®æª” */
   while (de = readdir(dirp))
   {
     ptr = de->d_name;

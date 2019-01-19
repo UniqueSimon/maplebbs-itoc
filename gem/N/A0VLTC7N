@@ -1,33 +1,33 @@
-µo«H¤H: jd.bbs@bbs.eo.nhit.edu.tw (jd©f¥N¥´¤¤), ¬İªO: plan
-¼Ğ  ÃD: [­×§ï] Áåª÷³Nµ{¦¡(¥[¤JÁåª÷¬ö¿ı)
-µo«H¯¸: ¥ú°ì¤p±Ú (Wed Nov 27 15:36:18 2002)               Updated: 2005/11/29
+ç™¼ä¿¡äºº: jd.bbs@bbs.eo.nhit.edu.tw (jdå¦¹ä»£æ‰“ä¸­), çœ‹æ¿: plan
+æ¨™  é¡Œ: [ä¿®æ”¹] éŠé‡‘è¡“ç¨‹å¼(åŠ å…¥éŠé‡‘ç´€éŒ„)
+ç™¼ä¿¡ç«™: å…‰åŸŸå°æ— (Wed Nov 27 15:36:18 2002)               Updated: 2005/11/29
 
-¤p§Ì©ÒºŞªºBBS¯¸­è¥ÑMagicBBS¨t²ÎÂà¬°Maple-itocª©
-§Ú¸ÕµÛ§â¬Y¨Ç­ìMagic¤Wªº¤@¨Ç¹CÀ¸²¾´Ó¨ìMaple-itoc¤W
+å°å¼Ÿæ‰€ç®¡çš„BBSç«™å‰›ç”±MagicBBSç³»çµ±è½‰ç‚ºMaple-itocç‰ˆ
+æˆ‘è©¦è‘—æŠŠæŸäº›åŸMagicä¸Šçš„ä¸€äº›éŠæˆ²ç§»æ¤åˆ°Maple-itocä¸Š
 
-¾A¦X ª÷:»È = 1:1000000 ªºª÷¿Ä¨î«×
+é©åˆ é‡‘:éŠ€ = 1:1000000 çš„é‡‘èåˆ¶åº¦
 
 : global.h
 
 #ifdef HAVE_BUY
-#define FN_RUN_BANK_LOG "run/bank.log"  /* ¶×¿ú°O¿ı */
+#define FN_RUN_BANK_LOG "run/bank.log"  /* åŒ¯éŒ¢è¨˜éŒ„ */
 #endif
 
 + #ifdef HAVE_GAME
-+ #define FN_RUN_MAKEGOLD_LOG "run/makegold.log" /* jd.021127: ·Òª÷³N¬ö¿ı */
++ #define FN_RUN_MAKEGOLD_LOG "run/makegold.log" /* jd.021127: ç…‰é‡‘è¡“ç´€éŒ„ */
 + #endif
 
 : account.c:main()
 
 #ifdef HAVE_BUY
-    /* itoc.020831: §â ¶×¿ú°O¿ı ©ñ¤J [BN_SECURITY] */
-    sprintf(title, "%s¶×¿ú°O¿ı", date);
+    /* itoc.020831: æŠŠ åŒ¯éŒ¢è¨˜éŒ„ æ”¾å…¥ [BN_SECURITY] */
+    sprintf(title, "%såŒ¯éŒ¢è¨˜éŒ„", date);
     keeplog(FN_RUN_BANK_LOG, BN_SECURITY, title, 2);
 #endif
 
 + #ifdef HAVE_GAME
-+   /* jd.021127: §â Áåª÷°O¿ı ©ñ¤J [BN_SECURITY] */
-+   sprintf(title, "%sÁåª÷°O¿ı", date);
++   /* jd.021127: æŠŠ éŠé‡‘è¨˜éŒ„ æ”¾å…¥ [BN_SECURITY] */
++   sprintf(title, "%séŠé‡‘è¨˜éŒ„", date);
 +   keeplog(FN_RUN_MAKEGOLD_LOG, BN_SECURITY, title, 2);
 + #endif
 
@@ -40,7 +40,7 @@ SO =    ... [1;33malchemy.so[m
 /*-------------------------------------------------------*/
 /* alchemy.c    ( NTHU CS MapleBBS Ver 3.10 )            */
 /*-------------------------------------------------------*/
-/* target : ·Òª÷³N                                       */
+/* target : ç…‰é‡‘è¡“                                       */
 /* create : 02/11/27                                     */
 /* update :   /  /                                       */
 /* author : jd.bbs@bbs.nhit.edu.tw                       */
@@ -61,23 +61,23 @@ main_alchemy()
 
   while(1)
   {
-    vs_bar("·Òª÷³N");
+    vs_bar("ç…‰é‡‘è¡“");
 
-    mouts(2, 0, "¥u»İªá¶O 50000 »È¹ô");
-    mouts(3, 0, "´N¦³¾÷·|±o¨ìª÷¹ô¡I");
+    mouts(2, 0, "åªéœ€èŠ±è²» 50000 éŠ€å¹£");
+    mouts(3, 0, "å°±æœ‰æ©Ÿæœƒå¾—åˆ°é‡‘å¹£ï¼");
     move(4, 0);
-    prints("\033[1;30m±z¥Ø«e¦³ %d »È %d ª÷ \033[m", cuser.money, cuser.gold);
+    prints("\033[1;30mæ‚¨ç›®å‰æœ‰ %d éŠ€ %d é‡‘ \033[m", cuser.money, cuser.gold);
 
-    if (vans("­n¦©±¼ 50000 »È¹ô¨Ó·Òª÷¶Ü(Y/N)¡H[N] ") != 'y')
+    if (vans("è¦æ‰£æ‰ 50000 éŠ€å¹£ä¾†ç…‰é‡‘å—(Y/N)ï¼Ÿ[N] ") != 'y')
       break;
 
     if (cuser.money < 50000)
       break;
     cuser.money -= 50000;
 
-    mouts(6, 15, "¼K¼K¡ã¿ú¤£¤Ó°÷¤F¡A¨ÓÅÜ¤@ÂI¿ú§a¡ã");
-    mouts(7, 15, "²Î±s¥|¤èªºª÷¦â¤§Às°Ú¡ã");
-    mouts(8, 15, "¿í±q±zªº¥ú½÷¡A½Ğ­É§Ú¤O¶q¡ã");
+    mouts(6, 15, "å˜¿å˜¿ï½éŒ¢ä¸å¤ªå¤ äº†ï¼Œä¾†è®Šä¸€é»éŒ¢å§ï½");
+    mouts(7, 15, "çµ±å¾¡å››æ–¹çš„é‡‘è‰²ä¹‹é¾å•Šï½");
+    mouts(8, 15, "éµå¾æ‚¨çš„å…‰è¼ï¼Œè«‹å€Ÿæˆ‘åŠ›é‡ï½");
     sleep(1);
 
     make_gold = 0;
@@ -86,42 +86,42 @@ main_alchemy()
     {
       make_gold = 1 + randnum;
       cuser.gold += make_gold;
-      mouts(9, 15, "µ¹§Ú§ó¦hªºª÷¹ô¢C§a¡ã");
+      mouts(9, 15, "çµ¦æˆ‘æ›´å¤šçš„é‡‘å¹£ï¼„å§ï½");
       move(11,15);
-      prints("­C¡ã¹B®ğ¯u¤£¿ù¡ã·Ò±o¤F %d ª÷¡ã", make_gold);
+      prints("è€¶ï½é‹æ°£çœŸä¸éŒ¯ï½ç…‰å¾—äº† %d é‡‘ï½", make_gold);
     }
     else if (randnum < 20)
     {
-      mouts(9, 15, "¢èZ£Cz¡ã");
-      mouts(11, 15, "«x¡ã«ç»ò©G»y©À¨ì¤@¥b¡ãºÎµÛ¤F°Õ¡ã¡ã¶ã¶ã¡ã");
+      mouts(9, 15, "ï¼ºZï½šzï½");
+      mouts(11, 15, "å’¦ï½æ€éº¼å’’èªå¿µåˆ°ä¸€åŠï½ç¡è‘—äº†å•¦ï½ï½å—šå—šï½");
     }
     else if (randnum < 40)
     {
-      mouts(9, 15, "§Ú­n¡K§Ú­n¡K§Ú­nª÷¹ô°Õ¡K");
-      mouts(11, 15, "«x¡Hª÷¹ô©O¡H");
+      mouts(9, 15, "æˆ‘è¦â€¦æˆ‘è¦â€¦æˆ‘è¦é‡‘å¹£å•¦â€¦");
+      mouts(11, 15, "å’¦ï¼Ÿé‡‘å¹£å‘¢ï¼Ÿ");
     }
     else if (randnum < 60)
     {
-      mouts(9, 15, "<\033[1;33mª÷¦â¤§Às\033[m>§A§ä§Ú¶Ü¡H");
-      mouts(11,15, "<\033[1;33mª÷¦â¤§Às\033[m>¨SªÅ¡A¤£­n§n¡I");
+      mouts(9, 15, "<\033[1;33mé‡‘è‰²ä¹‹é¾\033[m>ä½ æ‰¾æˆ‘å—ï¼Ÿ");
+      mouts(11,15, "<\033[1;33mé‡‘è‰²ä¹‹é¾\033[m>æ²’ç©ºï¼Œä¸è¦åµï¼");
     }
     else
     {
-      mouts(9, 15, "«¢«¢¡ã§Öµ¹§Ú¿ú§a¡ã");
-      mouts(10, 15, "¡]µ¥«İ¡ã¡^");
-      mouts(11, 15, "¡]µ¥«İ¡ã¡^");
-      mouts(12, 15, "«x¡ã«ç»ò¬Æ»ò¤]¨Sµo¥Í...:Q");
+      mouts(9, 15, "å“ˆå“ˆï½å¿«çµ¦æˆ‘éŒ¢å§ï½");
+      mouts(10, 15, "ï¼ˆç­‰å¾…ï½ï¼‰");
+      mouts(11, 15, "ï¼ˆç­‰å¾…ï½ï¼‰");
+      mouts(12, 15, "å’¦ï½æ€éº¼ç”šéº¼ä¹Ÿæ²’ç™¼ç”Ÿ...:Q");
     }
 
-    /* jd.021127: ¥[¤J·Òª÷°O¿ı¡A¥H¨¾¤j¶q¼É¤O·Òª÷ */
-    if (make_gold)      /* ·Òª÷¦¨¥\¤~°O¿ı */
+    /* jd.021127: åŠ å…¥ç…‰é‡‘è¨˜éŒ„ï¼Œä»¥é˜²å¤§é‡æš´åŠ›ç…‰é‡‘ */
+    if (make_gold)      /* ç…‰é‡‘æˆåŠŸæ‰è¨˜éŒ„ */
     {
       char buf[80];
-      sprintf(buf, "%-13s·Ò±o %d ª÷ (%s)\n", cuser.userid, make_gold, Now());
+      sprintf(buf, "%-13sç…‰å¾— %d é‡‘ (%s)\n", cuser.userid, make_gold, Now());
       f_cat(FN_RUN_MAKEGOLD_LOG, buf);
     }
 
-    vmsg("·Òª÷¦n²Ö³á");
+    vmsg("ç…‰é‡‘å¥½ç´¯å–”");
   }
 
   return 0;
@@ -131,8 +131,8 @@ main_alchemy()
 : menu.c
 
 + "bin/alchemy.so:main_alchemy", 0, - M_GAME,
-+ "Alchemy    ¡ñ ·Òª÷¤jªk ¡ğ",
++ "Alchemy    â™‚ ç…‰é‡‘å¤§æ³• â™€",
 
 --
-[1;32m¡¼ Origin: [33m¥ú°ì¤p±Ú - bbs.eo.nhit.edu.tw
-[31m¡¼ From: [36msw107-199.adsl.seed.net.tw[m
+[1;32mâ–¡ Origin: [33må…‰åŸŸå°æ— - bbs.eo.nhit.edu.tw
+[31mâ–¡ From: [36msw107-199.adsl.seed.net.tw[m

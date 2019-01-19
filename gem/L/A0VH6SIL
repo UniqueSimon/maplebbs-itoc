@@ -1,21 +1,21 @@
-§@ªÌ: itoc (ºñ¥¨¤H¦n«È¡H) ¬ÝªO: itoc
-¼ÐÃD: [¥\¯à] ¾ã¦æ¥ú´Î(11)¡Ðnewbrd.c ³s¸p
-®É¶¡: Tue Jul 15 10:57:02 2003                          Updated: 2003/07/15
+ä½œè€…: itoc (ç¶ å·¨äººå¥½å®¢ï¼Ÿ) çœ‹æ¿: itoc
+æ¨™é¡Œ: [åŠŸèƒ½] æ•´è¡Œå…‰æ£’(11)ï¼newbrd.c é€£ç½²
+æ™‚é–“: Tue Jul 15 10:57:02 2003                          Updated: 2003/07/15
 
-: newbrd.c:nbrd_item_bar()  ¥[¦b nbrd_item() «á­±
+: newbrd.c:nbrd_item_bar()  åŠ åœ¨ nbrd_item() å¾Œé¢
 
 #ifdef HAVE_LIGHTBAR
 static int
 nbrd_item_bar(xo, mode)
   XO *xo;
-  int mode;     /* 1:¤W¥ú´Î  0:¥h¥ú´Î */
+  int mode;     /* 1:ä¸Šå…‰æ£’  0:åŽ»å…‰æ£’ */
 {
   NBRD *nbrd;
 
   nbrd = (NBRD *) xo_pool + xo->pos - xo->top;
 
   prints("%s%6d %c %-5s %-13s %-13s:%-22.22s%s",
-    mode ? "\033[44m" : "",         //³o¸Ì¬O¥ú´ÎªºÃC¦â¡A¥i¥H¦Û¤v§ï
+    mode ? "\033[44m" : "",         //é€™è£¡æ˜¯å…‰æ£’çš„é¡è‰²ï¼Œå¯ä»¥è‡ªå·±æ”¹
     xo->pos + 1, nbrd_attr(nbrd), nbrd->date + 3, nbrd->owner,
     nbrd->brdname, nbrd->title,
     mode ? "\033[m" : "");
@@ -34,5 +34,5 @@ static KeyFunc nbrd_cb[] =
 ...
 
 --
-[1;31m|[33m Origin [31m| [0;45m MapleBBS-itoc °Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
+[1;31m|[33m Origin [31m| [0;45m MapleBBS-itoc å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
 [1;31m|[35m Author [31m| [36mitoc.dorm11.nctu.edu.tw[m

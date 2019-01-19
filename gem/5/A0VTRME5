@@ -1,8 +1,8 @@
-µo«H¤H: amaki.bbs@luna.twbbs.org (¤ÈÄ±¦Ï) ¬İªO: plan
-¼Ğ  ÃD: [­×¥¿]¯¸ªø§ïID¸ò§ïuserno¤]­n¶¶«K§ï.USR
-µo«H¯¸: ¤ë¤U©]·Q (2003/12/15 Mon 22:16:09)                Updated: 2004/01/28
+ç™¼ä¿¡äºº: amaki.bbs@luna.twbbs.org (åˆè¦ºç¾Š) çœ‹æ¿: plan
+æ¨™  é¡Œ: [ä¿®æ­£]ç«™é•·æ”¹IDè·Ÿæ”¹usernoä¹Ÿè¦é †ä¾¿æ”¹.USR
+ç™¼ä¿¡ç«™: æœˆä¸‹å¤œæƒ³ (2003/12/15 Mon 22:16:09)                Updated: 2004/01/28
 
-  ³o½g¬O°t¦X§â.USR©ñ¤Jshm¨º½gpatchªº­×¥¿¡C
+  é€™ç¯‡æ˜¯é…åˆæŠŠ.USRæ”¾å…¥shmé‚£ç¯‡patchçš„ä¿®æ­£ã€‚
 
 : maple / acct.c
 
@@ -10,16 +10,16 @@ extern BCACHE *bshm;
 +extern SCACHE *schema_shm;
 
 
-  acct_setup()«e­±§Û¤W³o¤ä
+  acct_setup()å‰é¢æŠ„ä¸Šé€™æ”¯
 
-static void /* amaki.031120: ³B²z¯¸ªøÅÜ§óID»Puserno */
+static void /* amaki.031120: è™•ç†ç«™é•·è®Šæ›´IDèˆ‡userno */
 schema_rename(old, new)
   ACCT *old, *new;
 {
   int scheno;
   SCHEMA u, *p;
 
-  if (old->userno == new->userno) /* ¨SÅÜ§óusernoªº³B²z */
+  if (old->userno == new->userno) /* æ²’è®Šæ›´usernoçš„è™•ç† */
   {
     scheno = old->userno - 1;
     memset(&u, 0, sizeof(SCHEMA));
@@ -30,9 +30,9 @@ schema_rename(old, new)
     p = schema_shm->schema + scheno;
     memcpy(p, &u, sizeof(SCHEMA));
   }
-  else /* ¦³ÅÜ§óusernoªº³B²z */
+  else /* æœ‰è®Šæ›´usernoçš„è™•ç† */
   {
-    /* amaki: ¥ı§â·sªº¼g¶i¥h */
+    /* amaki: å…ˆæŠŠæ–°çš„å¯«é€²å» */
     scheno = new->userno - 1;
     memset(&u, 0, sizeof(SCHEMA));
     u.uptime = time(0);
@@ -41,7 +41,7 @@ schema_rename(old, new)
     p = schema_shm->schema + scheno;
     memcpy(p, &u, sizeof(SCHEMA));
 
-    /* ¦A¼gÂÂªº */
+    /* å†å¯«èˆŠçš„ */
     scheno = old->userno - 1;
     memset(&u, 0, sizeof(SCHEMA));
     u.uptime = time(0);
@@ -53,7 +53,7 @@ schema_rename(old, new)
 
 
 
-  §ïacct_setup()
+  æ”¹acct_setup()
 
 void
 acct_setup(u, adm)
@@ -68,21 +68,21 @@ acct_setup(u, adm)
   ......
   ......
 
-      vget(i, 0, "¨Ï¥ÎªÌ¥N¸¹(¤£§ï½Ğ«ö Enter)¡G", str, IDLEN + 1, GCARRY);
+      vget(i, 0, "ä½¿ç”¨è€…ä»£è™Ÿ(ä¸æ”¹è«‹æŒ‰ Enter)ï¼š", str, IDLEN + 1, GCARRY);
       if (!str_cmp(str, u->userid))
         break;
 +     if (!acct_userno(str))
 +     {
-+       ID_dirty = 1; /* amaki.031120: §ï¤FID³sSCHEMA¤]­n¤@°_§ï */
++       ID_dirty = 1; /* amaki.031120: æ”¹äº†IDé€£SCHEMAä¹Ÿè¦ä¸€èµ·æ”¹ */
 +       break;
 +     }
-      vmsg("¿ù»~¡I¤w¦³¬Û¦P ID ªº¨Ï¥ÎªÌ");
+      vmsg("éŒ¯èª¤ï¼å·²æœ‰ç›¸åŒ ID çš„ä½¿ç”¨è€…");
     }
 
   ......
   ......
 
-    vget(++i, 0, "¥Î¤á½s¸¹¡G", buf, 10, GCARRY);
+    vget(++i, 0, "ç”¨æˆ¶ç·¨è™Ÿï¼š", buf, 10, GCARRY);
     if ((num = atoi(buf)) > 0)
 -     x.userno = num;
 +   {
@@ -93,7 +93,7 @@ acct_setup(u, adm)
 +       ID_dirty = (num == u->userno) ? ID_dirty : 1;
 +     }
 +     else
-+       zmsg("³o­Ó½s¸¹¤w¸g¦³¤H¨Ï¥Î¡I");
++       zmsg("é€™å€‹ç·¨è™Ÿå·²ç¶“æœ‰äººä½¿ç”¨ï¼");
 +   }
 
   ......
@@ -108,7 +108,7 @@ acct_setup(u, adm)
   acct_save(u, adm);
 
 
-: maple / bbsd.c  ·sµù¥U±b¸¹¤]­n¼g¤Jshm
+: maple / bbsd.c  æ–°è¨»å†Šå¸³è™Ÿä¹Ÿè¦å¯«å…¥shm
 
 #define MAXPORTS        1
 static int myports[MAXPORTS] = {23 /* , 3456 */};
@@ -116,7 +116,7 @@ static int myports[MAXPORTS] = {23 /* , 3456 */};
 extern UCACHE *ushm;
 +extern SCACHE *schema_shm;
 
-  §ïacct_apply()
+  æ”¹acct_apply()
 
 static void
 acct_apply()
@@ -132,7 +132,7 @@ acct_apply()
   fd = open(FN_SCHEMA, O_RDWR | O_CREAT, 0600);
   {
     /* flock(fd, LOCK_EX); */
-    /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+    /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
     f_exlock(fd);
 
     cuser.userno = try = uniq_userno(fd);
@@ -140,7 +140,7 @@ acct_apply()
 +   p = schema_shm->schema + (cuser.userno - 1);
 +   memcpy(p, &slot, sizeof(SCHEMA));
     /* flock(fd, LOCK_UN); */
-    /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+    /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
     f_unlock(fd);
   }
   close(fd);

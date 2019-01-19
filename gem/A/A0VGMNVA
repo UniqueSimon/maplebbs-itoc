@@ -1,41 +1,41 @@
-µo«H¤H: BioStar.bbs@micro.bio.ncue.edu.tw (¼ê´ò¤p¶³³¶) ¬İªO: itoc
-¼Ğ  ÃD: [¤å¥ó] ºëµØ°Ïªº½g¼Æ¤W­­©M®e¶q¤W­­
-µo«H¯¸: Àº¤Ñ±^ (Sun, 06 Jul 2003 15:21:41 +0800 (CST))    Updated: 2003/07/15
+ç™¼ä¿¡äºº: BioStar.bbs@micro.bio.ncue.edu.tw (æ¾æ¹–å°é›²é›€) çœ‹æ¿: itoc
+æ¨™  é¡Œ: [æ–‡ä»¶] ç²¾è¯å€çš„ç¯‡æ•¸ä¸Šé™å’Œå®¹é‡ä¸Šé™
+ç™¼ä¿¡ç«™: æ“å¤©å´— (Sun, 06 Jul 2003 15:21:41 +0800 (CST))    Updated: 2003/07/15
 
-  (2) Âà´« .BRD
+  (2) è½‰æ› .BRD
 
-  ­º¥ıÃö¯¸
+  é¦–å…ˆé—œç«™
 
 : src/util/tran/transbrd.c:NEW
 
-struct NEW                      /* ­n©M·sª©µ{¦¡ struct ¤@¼Ë */
+struct NEW                      /* è¦å’Œæ–°ç‰ˆç¨‹å¼ struct ä¸€æ¨£ */
 {
   ...
   ...
-  int bpost;                    /* ¦@¦³´X½g post */
-  time_t blast;                 /* ³Ì«á¤@½g post ªº®É¶¡ */
-+ int gemsize_n;                /* ºëµØ°Ï½g¼Æ¤W­­ */
-+ int gemsize_k;                /* ºëµØ°Ï®e¶q¤W­­ */
+  int bpost;                    /* å…±æœ‰å¹¾ç¯‡ post */
+  time_t blast;                 /* æœ€å¾Œä¸€ç¯‡ post çš„æ™‚é–“ */
++ int gemsize_n;                /* ç²¾è¯å€ç¯‡æ•¸ä¸Šé™ */
++ int gemsize_k;                /* ç²¾è¯å€å®¹é‡ä¸Šé™ */
 }       NEW;
 
 : src/util/tran/transbrd.c:main()
 
     new.bpost = 0;
     new.blast = 0;
-+   new.gemsize_n = 10000;       /* ¬İªOºëµØ°Ï¹w³]¤W­­ 10000 ½g */
-+   new.gemsize_k = 1000 << 10;  /* ¬İªOºëµØ°Ï¹w³]¤W­­ 1000 KB */
++   new.gemsize_n = 10000;       /* çœ‹æ¿ç²¾è¯å€é è¨­ä¸Šé™ 10000 ç¯‡ */
++   new.gemsize_k = 1000 << 10;  /* çœ‹æ¿ç²¾è¯å€é è¨­ä¸Šé™ 1000 KB */
 
 
-  µM«á compile transbrd.c ¨Ã°õ¦æ transbrd
+  ç„¶å¾Œ compile transbrd.c ä¸¦åŸ·è¡Œ transbrd
 
-: include/struct.h:struct BoardHeader:BRDªºµ²ºc
+: include/struct.h:struct BoardHeader:BRDçš„çµæ§‹
 
-  int bpost;                    /* ¦@¦³´X½g post */
-  time_t blast;                 /* ³Ì«á¤@½g post ªº®É¶¡ */
-+ int gemsize_n;                /* ºëµØ°Ï½g¼Æ¤W­­ */
-+ int gemsize_k;                /* ºëµØ°Ï®e¶q¤W­­ */
+  int bpost;                    /* å…±æœ‰å¹¾ç¯‡ post */
+  time_t blast;                 /* æœ€å¾Œä¸€ç¯‡ post çš„æ™‚é–“ */
++ int gemsize_n;                /* ç²¾è¯å€ç¯‡æ•¸ä¸Šé™ */
++ int gemsize_k;                /* ç²¾è¯å€å®¹é‡ä¸Šé™ */
 }           BRD;
 
 --
-[1;31m|[33m Origin [31m| [;37;45m ¹ü¤Æ®v¤j¥Íª«¨t §u­·¡E²·¤ë¡EÀº¤Ñ±^ [35;47m micro.bio.ncue.edu.tw [m
+[1;31m|[33m Origin [31m| [;37;45m å½°åŒ–å¸«å¤§ç”Ÿç‰©ç³» åŸé¢¨?çœºæœˆ?æ“å¤©å´— [35;47m micro.bio.ncue.edu.tw [m
 [1;31m|[35m Author [31m| [36m218-163-206-115.HINET-IP.hinet.net[m

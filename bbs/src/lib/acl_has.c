@@ -15,15 +15,15 @@
 /* ACL config file format				 */
 /* ----------------------------------------------------- */
 /* user:	majordomo@* bad@cs.nthu.edu.tw		 */
-/*                        ^ Thor.980825: À³¬°ªÅ¥Õ        */
+/*                        ^ Thor.980825: æ‡‰ç‚ºç©ºç™½        */
 /* host:	cs.nthu.edu.tw	140.114.77.1		 */
 /* subnet:	.nthu.edu.tw	140.114.77.		 */
 /* ----------------------------------------------------- */
 
 
-/* return -1 : ACL file ¤£¦s¦b */
-/* return 0 : ACL ¤£¥]§t¸Ó pattern */
-/* return 1 : ACL ²Å¦X¸Ó pattern */
+/* return -1 : ACL file ä¸å­˜åœ¨ */
+/* return 0 : ACL ä¸åŒ…å«è©² pattern */
+/* return 1 : ACL ç¬¦åˆè©² pattern */
 
 
 int
@@ -48,7 +48,7 @@ acl_has(acl, user, host)
     addr = NULL;
 
     for (str = filter; (cc = *str) > ' '; str++)
-    { /* Thor.980825: µù¸Ñ: ¹J¨ì ªÅ¥Õ ´Nºâ¦¹¦æµ²§ô */
+    { /* Thor.980825: è¨»è§£: é‡åˆ° ç©ºç™½ å°±ç®—æ­¤è¡ŒçµæŸ */
       if (cc == '@')
 	addr = str;
     }
@@ -56,7 +56,7 @@ acl_has(acl, user, host)
     if (str == filter)		/* empty line */
       continue;
 
-    *str = '\0'; /* Thor.980825: µù¸Ñ: ±Nµ²§ô³B¶ñ0, §K¥ÍªK¸` */
+    *str = '\0'; /* Thor.980825: è¨»è§£: å°‡çµæŸè™•å¡«0, å…ç”Ÿæç¯€ */
     str_lower(filter, filter);  /* lkchu.981201: lower-case string */
     
     if (addr)			/* match user name */

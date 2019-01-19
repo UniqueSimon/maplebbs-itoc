@@ -1,18 +1,18 @@
-§@ªÌ: itoc (League) ¬İªO: plan
-¼ĞÃD: [­×¥¿] §ï bmtad ¥ÎÂà±H«H¨Ó mirror ªO
-®É¶¡: 2004/01/14 Wed 09:48:49                           Updated: 2005/05/14
+ä½œè€…: itoc (League) çœ‹æ¿: plan
+æ¨™é¡Œ: [ä¿®æ­£] æ”¹ bmtad ç”¨è½‰å¯„ä¿¡ä¾† mirror æ¿
+æ™‚é–“: 2004/01/14 Wed 09:48:49                           Updated: 2005/05/14
 
-  ¥Ò¯¸¤£´£¨Ñ¥´¥]¬İªO/ºëµØ°Ïªº¥\¯à
-  ¦Ó¥B¥Ò¯¸ªø¤]¤£Ä@·N´£¨Ñ¬İªO/ºëµØ°ÏªºÀ£ÁYÀÉ
-  ³o®É­Ô¥i¥Hµy·L§ï¤@¤U bmtad §â¸ÓªO¾ã­Ó mirror ¦^¨Ó¦Û¤v¯¸
+  ç”²ç«™ä¸æä¾›æ‰“åŒ…çœ‹æ¿/ç²¾è¯å€çš„åŠŸèƒ½
+  è€Œä¸”ç”²ç«™é•·ä¹Ÿä¸é¡˜æ„æä¾›çœ‹æ¿/ç²¾è¯å€çš„å£“ç¸®æª”
+  é€™æ™‚å€™å¯ä»¥ç¨å¾®æ”¹ä¸€ä¸‹ bmtad æŠŠè©²æ¿æ•´å€‹ mirror å›ä¾†è‡ªå·±ç«™
 
-  ©ÎªÌ¬O§Y¨Ï§A®³¨ì¥Ò¯¸ªºÀ£ÁYÀÉ
-  ¦ı¬O¦]¬°ª©¥»¤£¦X¡A¤S¤£ª¾¹D¦p¦óÂà´«ªº¸Ü
+  æˆ–è€…æ˜¯å³ä½¿ä½ æ‹¿åˆ°ç”²ç«™çš„å£“ç¸®æª”
+  ä½†æ˜¯å› ç‚ºç‰ˆæœ¬ä¸åˆï¼Œåˆä¸çŸ¥é“å¦‚ä½•è½‰æ›çš„è©±
 
-: bmtad.c:change_hdr() ·s¼W¦¹¨ç¦¡©ó bbs_brd() ªº«e­±
+: bmtad.c:change_hdr() æ–°å¢æ­¤å‡½å¼æ–¼ bbs_brd() çš„å‰é¢
 
 static void
-change_hdr(hdr, fpath)  /* ¥Ñ¤å³¹ªº²Ä¤T¦C¨Ó§ä¥X­ì©lµo¤å¤é´Á */
+change_hdr(hdr, fpath)  /* ç”±æ–‡ç« çš„ç¬¬ä¸‰åˆ—ä¾†æ‰¾å‡ºåŸå§‹ç™¼æ–‡æ—¥æœŸ */
   HDR *hdr;
   char *fpath;
 {
@@ -46,7 +46,7 @@ change_hdr(hdr, fpath)  /* ¥Ñ¤å³¹ªº²Ä¤T¦C¨Ó§ä¥X­ì©lµo¤å¤é´Á */
         ptr2 = strchr(ptr1 + 1, '@');
         ptr3 = strchr(ptr1 + 1, '(');
 
-        if (ptr2 && (!ptr3 || ptr2 < ptr3))   /* ¦b¼ÊºÙ¸Ì­±ªº @ ¤£ºâ¬O email */
+        if (ptr2 && (!ptr3 || ptr2 < ptr3))   /* åœ¨æš±ç¨±è£¡é¢çš„ @ ä¸ç®—æ˜¯ email */
         {
           str_from(ptr1, hdr->owner, hdr->nick);
           hdr->xmode |= POST_INCOME;     /* also MAIL_INCOME */
@@ -68,8 +68,8 @@ change_hdr(hdr, fpath)  /* ¥Ñ¤å³¹ªº²Ä¤T¦C¨Ó§ä¥X­ì©lµo¤å¤é´Á */
         strlen(buf) > 30 &&
         (ptr = strchr(buf, ':')))
       {
-        /* ­Y¥Ò¯¸¤å³¹®æ¦¡¤£¬O³o¼Ë¡A­n¥t¥~§ï */
-        /* ®É¶¡: Sun Apr 24 18:21:52 2005 */
+        /* è‹¥ç”²ç«™æ–‡ç« æ ¼å¼ä¸æ˜¯é€™æ¨£ï¼Œè¦å¦å¤–æ”¹ */
+        /* æ™‚é–“: Sun Apr 24 18:21:52 2005 */
 
         ptr[9] = ptr[12] = ptr[15] = ptr[18] = ptr[21] = ptr[26] = '\0';
 
@@ -100,14 +100,14 @@ change_hdr(hdr, fpath)  /* ¥Ñ¤å³¹ªº²Ä¤T¦C¨Ó§ä¥X­ì©lµo¤å¤é´Á */
   }
 }
 
-: bmtad.c:bbs_brd() ¤£­n¥[¤JÂà±HªºÀÉÀY
+: bmtad.c:bbs_brd() ä¸è¦åŠ å…¥è½‰å¯„çš„æª”é ­
 
   if (method == 'A')
   {
     if (!*title)
-      sprintf(title, "¨Ó¦Û %.64s", author);
+      sprintf(title, "ä¾†è‡ª %.64s", author);
 
--   sprintf(buf, "µo«H¤H: %.50s ¬İªO: %s\n¼Ğ  ÃD: %.72s\nµo«H¯¸: %s\n\n",
+-   sprintf(buf, "ç™¼ä¿¡äºº: %.50s çœ‹æ¿: %s\næ¨™  é¡Œ: %.72s\nç™¼ä¿¡ç«™: %s\n\n",
 -     from, brdname, title, Btime(&hdr.chrono));
 
 -   write(fd, buf, strlen(buf));
@@ -124,17 +124,17 @@ change_hdr(hdr, fpath)  /* ¥Ñ¤å³¹ªº²Ä¤T¦C¨Ó§ä¥X­ì©lµo¤å¤é´Á */
 
 : bmtad.c
 
-  µM«á°µ³o½g patch
-  [­×¥¿] bmtad.c ±H«Hµ¹ºëµØ°Ï
+  ç„¶å¾Œåšé€™ç¯‡ patch
+  [ä¿®æ­£] bmtad.c å¯„ä¿¡çµ¦ç²¾è¯å€
 
-: bmtad.c:bbs_gem() ¤£­n¥[¤JÂà±HªºÀÉÀY
+: bmtad.c:bbs_gem() ä¸è¦åŠ å…¥è½‰å¯„çš„æª”é ­
 
   if (method == 'A')
   {
     if (!*title)
-      sprintf(title, "¨Ó¦Û %.64s", author);
+      sprintf(title, "ä¾†è‡ª %.64s", author);
 
--   sprintf(buf, "µo«H¤H: %.50s ¬İªO: %s\n¼Ğ  ÃD: %.72s\nµo«H¯¸: %s\n\n",
+-   sprintf(buf, "ç™¼ä¿¡äºº: %.50s çœ‹æ¿: %s\næ¨™  é¡Œ: %.72s\nç™¼ä¿¡ç«™: %s\n\n",
 -     from, brdname, title, Btime(&hdr.chrono));
 
 -   write(fd, buf, strlen(buf));
@@ -142,7 +142,7 @@ change_hdr(hdr, fpath)  /* ¥Ñ¤å³¹ªº²Ä¤T¦C¨Ó§ä¥X­ì©lµo¤å¤é´Á */
     close(fd);
   }
 
-: bmtad.c:mta_mailer() ¸õ¹L anti-spam ÀË¬d¡AÁ×§K¤@¦¸Âà±H¤Ó¦h³Q ban ¤F
+: bmtad.c:mta_mailer() è·³é anti-spam æª¢æŸ¥ï¼Œé¿å…ä¸€æ¬¡è½‰å¯„å¤ªå¤šè¢« ban äº†
 
   /* --------------------------------------------------- */
   /* check E-mail address for anti-spam first            */
@@ -161,28 +161,28 @@ change_hdr(hdr, fpath)  /* ¥Ñ¤å³¹ªº²Ä¤T¦C¨Ó§ä¥X­ì©lµo¤å¤é´Á */
   /* mail post                                           */
   /* --------------------------------------------------- */
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  1. §ï§¹ bmtad.c ¥H«á¡A0Admin¡÷BBSreset¡÷«ü¦W¤Î¾×«H ­«¶} bmtad
+  1. æ”¹å®Œ bmtad.c ä»¥å¾Œï¼Œ0Adminâ†’BBSresetâ†’æŒ‡ååŠæ“‹ä¿¡ é‡é–‹ bmtad
 
-  2. mirror ¬İªO¤å³¹
+  2. mirror çœ‹æ¿æ–‡ç« 
 
-     µn¤J¥Ò¯¸¡A¶i¤J¸ÓªO¡A¥Î tag ¤@¦¸§â©Ò¦³¤å³¹ F Âà±H¨ì
+     ç™»å…¥ç”²ç«™ï¼Œé€²å…¥è©²æ¿ï¼Œç”¨ tag ä¸€æ¬¡æŠŠæ‰€æœ‰æ–‡ç«  F è½‰å¯„åˆ°
      brdname.brd@my.domain.name
-     (¦pªG¸Ó¯¸¤£´£¨Ñ tag¡A¨º´N¥u¦n¤@½g¤@½gÂà)
+     (å¦‚æœè©²ç«™ä¸æä¾› tagï¼Œé‚£å°±åªå¥½ä¸€ç¯‡ä¸€ç¯‡è½‰)
 
-  3. mirror ºëµØ°Ï¤å³¹
+  3. mirror ç²¾è¯å€æ–‡ç« 
 
-     µn¤J¥Ò¯¸¡A¶i¤J¸ÓªOºëµØ°Ï¡A¥Î tag ¤@¦¸§â©Ò¦³¤å³¹ F Âà±H¨ì
+     ç™»å…¥ç”²ç«™ï¼Œé€²å…¥è©²æ¿ç²¾è¯å€ï¼Œç”¨ tag ä¸€æ¬¡æŠŠæ‰€æœ‰æ–‡ç«  F è½‰å¯„åˆ°
      brdname.gem@my.domain.name
-     (±_ª¬µ²ºc­n¦Û¤v¤@¼h¤@¼h¶i¥hÂà±H)
+     (å·¢ç‹€çµæ§‹è¦è‡ªå·±ä¸€å±¤ä¸€å±¤é€²å»è½‰å¯„)
 
-     ºëµØ°Ï mirror ¦^¨Ó®É¡A±_ª¬µ²ºc·|®ø¥¢
-     ©Ò¥H¥i¥H¦b¨C mirror ¤@­Ó¥Ø¿ı¡A´N¦^¦Û¤vªº¯¸¦¬¿ı¤@­Ó¥Ø¿ı
+     ç²¾è¯å€ mirror å›ä¾†æ™‚ï¼Œå·¢ç‹€çµæ§‹æœƒæ¶ˆå¤±
+     æ‰€ä»¥å¯ä»¥åœ¨æ¯ mirror ä¸€å€‹ç›®éŒ„ï¼Œå°±å›è‡ªå·±çš„ç«™æ”¶éŒ„ä¸€å€‹ç›®éŒ„
 
-  4. ³o¼Ë´N¥i¥H¾ã­Ó mirror ¦^¨Ó¤F
-     mirror §¹¥H«á¡A°O±o§â bmtad.c §ï¦^­ì¨Óªº¼Ë¤l¡A¦A­«¶} bmtad
+  4. é€™æ¨£å°±å¯ä»¥æ•´å€‹ mirror å›ä¾†äº†
+     mirror å®Œä»¥å¾Œï¼Œè¨˜å¾—æŠŠ bmtad.c æ”¹å›åŸä¾†çš„æ¨£å­ï¼Œå†é‡é–‹ bmtad
 
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

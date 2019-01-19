@@ -1,22 +1,22 @@
-µo«H¤H: itoc.bbs@xeon.tfcis.org (®Ö¤ß°Ê¤O) ¬ÝªO: plan
-¼Ð  ÃD: Re: Ãö©óªO¥D
-µo«H¯¸: °Ê¤O®Ö¤ß (2003/12/16 Tue 10:59:36)                Updated: 2003/12/16
+ç™¼ä¿¡äºº: itoc.bbs@xeon.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: é—œæ–¼æ¿ä¸»
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2003/12/16 Tue 10:59:36)                Updated: 2003/12/16
 
-¡° ¤Þ­z¡mjoue (¤p¤l)¡n¤§»Ê¨¥¡G
-> §Ú°O±o«e­±¦³½g¤£¯àª©¥D§ï¤¤¤å±Ô­z¥u¦³­Ó¤Hª©¥i¥Hªº¤å³¹
+â€» å¼•è¿°ã€Šjoue (å°å­)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æˆ‘è¨˜å¾—å‰é¢æœ‰ç¯‡ä¸èƒ½ç‰ˆä¸»æ”¹ä¸­æ–‡æ•˜è¿°åªæœ‰å€‹äººç‰ˆå¯ä»¥çš„æ–‡ç« 
 
 : manage.c:post_brdtitle()
 
   oldbrd = bshm->bcache + currbno;
-+ if (strcmp(oldbrd->class, "­Ó¤H"))
++ if (strcmp(oldbrd->class, "å€‹äºº"))
 +  return XO_NONE;
 
 : acct.c:brd_title()
 
   bhdr = bshm->bcache + bno;
-+ if (strcmp(bhdr->class, "­Ó¤H"))
++ if (strcmp(bhdr->class, "å€‹äºº"))
 +  return;
 
 --
- [1;43m¢z[44m¢q[m Or[1mig[30min[m: [44m Maple-itoc£»°Ê¤O®Ö¤ß [31;47m processor.tfcis.org [m
- [1;41m¢|[42m¢}[m A[1mut[30mho[mr: [1;36mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [44m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [31;47m processor.tfcis.org [m
+ [1;41mâ””[42mâ”˜[m A[1mut[30mho[mr: [1;36mitoc [30må¾ž [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

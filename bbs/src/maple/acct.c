@@ -17,7 +17,7 @@ extern BCACHE *bshm;
 
 
 /* ----------------------------------------------------- */
-/* (.ACCT) ¨Ï¥ÎªÌ±b¸¹ (account) subroutines		 */
+/* (.ACCT) ä½¿ç”¨è€…å¸³è™Ÿ (account) subroutines		 */
 /* ----------------------------------------------------- */
 
 
@@ -32,7 +32,7 @@ acct_load(acct, userid)
   fd = open((char *) acct, O_RDONLY);
   if (fd >= 0)
   {
-    /* Thor.990416: ¯S§Oª`·N, ¦³®É .ACCTªºªø«×·|¬O0 */
+    /* Thor.990416: ç‰¹åˆ¥æ³¨æ„, æœ‰æ™‚ .ACCTçš„é•·åº¦æœƒæ˜¯0 */
     read(fd, acct, sizeof(ACCT));
     close(fd);
   }
@@ -40,7 +40,7 @@ acct_load(acct, userid)
 }
 
 
-/* static */	/* itoc.010408: µ¹¨ä¥Lµ{¦¡¥Î */
+/* static */	/* itoc.010408: çµ¦å…¶ä»–ç¨‹å¼ç”¨ */
 void
 acct_save(acct)
   ACCT *acct;
@@ -48,12 +48,12 @@ acct_save(acct)
   int fd;
   char fpath[64];
 
-  /* itoc.010811: ­Y³Q¯¸ªøÂê©w¡A´N¤£¯à¼g¦^¦Û¤vªºÀÉ®× */
+  /* itoc.010811: è‹¥è¢«ç«™é•·é–å®šï¼Œå°±ä¸èƒ½å¯«å›è‡ªå·±çš„æª”æ¡ˆ */
   if ((acct->userno == cuser.userno) && HAS_STATUS(STATUS_DATALOCK) && !HAS_PERM(PERM_ALLACCT))
     return;
 
   usr_fpath(fpath, acct->userid, fn_acct);
-  fd = open(fpath, O_WRONLY, 0600);	/* fpath ¥²¶·¤w¸g¦s¦b */
+  fd = open(fpath, O_WRONLY, 0600);	/* fpath å¿…é ˆå·²ç¶“å­˜åœ¨ */
   if (fd >= 0)
   {
     write(fd, acct, sizeof(ACCT));
@@ -86,9 +86,9 @@ acct_userno(userid)
 /* name complete for user ID				 */
 /* ----------------------------------------------------- */
 /* return value :					 */
-/* 0 : ¨Ï¥Îª½±µ«ö enter ==> cancel			 */
+/* 0 : ä½¿ç”¨ç›´æ¥æŒ‰ enter ==> cancel			 */
 /* -1 : bad user id					 */
-/* ow.: ¶Ç¦^¸Ó userid ¤§ userno				 */
+/* ow.: å‚³å›è©² userid ä¹‹ userno				 */
 /* ----------------------------------------------------- */
 
 
@@ -97,7 +97,7 @@ acct_get(msg, acct)
   char *msg;
   ACCT *acct;
 {
-  outz("¡¹ ¿é¤J­º¦r¥À«á¡A¥i¥H«öªÅ¥ÕÁä¦Û°Ê·j´M");
+  outz("â˜… è¼¸å…¥é¦–å­—æ¯å¾Œï¼Œå¯ä»¥æŒ‰ç©ºç™½éµè‡ªå‹•æœå°‹");
   
   if (!vget(1, 0, msg, acct->userid, IDLEN + 1, GET_USER))
     return 0;
@@ -115,8 +115,8 @@ acct_get(msg, acct)
 /* ----------------------------------------------------- */
 
 
-#define BIT_ON		"¡½"
-#define BIT_OFF		"¡¼"
+#define BIT_ON		"â– "
+#define BIT_OFF		"â–¡"
 
 
 void
@@ -141,8 +141,8 @@ bitmsg(msg, str, level)
 usint
 bitset(pbits, count, maxon, msg, perms)
   usint pbits;
-  int count;			/* ¦@¦³´X­Ó¿ï¶µ */
-  int maxon;			/* ³Ì¦h¥i¥H enable ´X¶µ */
+  int count;			/* å…±æœ‰å¹¾å€‹é¸é … */
+  int maxon;			/* æœ€å¤šå¯ä»¥ enable å¹¾é … */
   char *msg;
   char *perms[];
 {
@@ -166,7 +166,7 @@ bitset(pbits, count, maxon, msg, perms)
     j <<= 1;
   }
 
-  while (i = vans("½Ğ«öÁä¤Á´«³]©w¡A©Î«ö [Return] µ²§ô¡G"))
+  while (i = vans("è«‹æŒ‰éµåˆ‡æ›è¨­å®šï¼Œæˆ–æŒ‰ [Return] çµæŸï¼š"))
   {
     i -= '0';
     if (i >= 10)
@@ -204,22 +204,22 @@ setperm(level)
   if (HAS_PERM(PERM_SYSOP))
     return bitset(level, NUMPERMS, NUMPERMS, MSG_USERPERM, perm_tbl);
 
-  /* [±b¸¹ºŞ²z­û] ¤£¯àºŞ PERM_SYSOP */
+  /* [å¸³è™Ÿç®¡ç†å“¡] ä¸èƒ½ç®¡ PERM_SYSOP */
   if (level & PERM_SYSOP)
     return level;
 
-  /* [±b¸¹ºŞ²z­û] ¤£¯à§ó§ïÅv­­ PERM_ACCOUNTS CHATROOM BOARD SYSOP */
+  /* [å¸³è™Ÿç®¡ç†å“¡] ä¸èƒ½æ›´æ”¹æ¬Šé™ PERM_ACCOUNTS CHATROOM BOARD SYSOP */
   return bitset(level, NUMPERMS - 4, NUMPERMS - 4, MSG_USERPERM, perm_tbl);
 }
 
 
 /* ----------------------------------------------------- */
-/* ±b¸¹ºŞ²z						 */
+/* å¸³è™Ÿç®¡ç†						 */
 /* ----------------------------------------------------- */
 
 
 static void
-bm_list(userid)			/* Åã¥Ü userid ¬O­ş¨ÇªOªºªO¥D */
+bm_list(userid)			/* é¡¯ç¤º userid æ˜¯å“ªäº›æ¿çš„æ¿ä¸» */
   char *userid;
 {
   int len;
@@ -227,7 +227,7 @@ bm_list(userid)			/* Åã¥Ü userid ¬O­ş¨ÇªOªºªO¥D */
   BRD *bhead, *btail;
 
   len = strlen(userid);
-  outs("  \033[32m¾á¥ôªO¥D¡G\033[37m");		/* itoc.010922: ´« user info ª©­± */
+  outs("  \033[32mæ“”ä»»æ¿ä¸»ï¼š\033[37m");		/* itoc.010922: æ› user info ç‰ˆé¢ */
 
   bhead = bshm->bcache;
   btail = bhead + bshm->number;
@@ -255,15 +255,15 @@ adm_log(old, new)
   char *userid, buf[80];
 
   userid = new->userid;
-  alog("²§°Ê¸ê®Æ", userid);
+  alog("ç•°å‹•è³‡æ–™", userid);
 
   if (strcmp(old->passwd, new->passwd))
-    alog("²§°Ê±K½X", userid);
+    alog("ç•°å‹•å¯†ç¢¼", userid);
 
   if ((old->money != new->money) || (old->gold != new->gold))
   {
-    sprintf(buf, "%-13s»È%d¡÷%d ª÷%d¡÷%d", userid, old->money, new->money, old->gold, new->gold);
-    alog("²§°Ê¿ú¹ô", buf);
+    sprintf(buf, "%-13séŠ€%dâ†’%d é‡‘%dâ†’%d", userid, old->money, new->money, old->gold, new->gold);
+    alog("ç•°å‹•éŒ¢å¹£", buf);
   }
 
   /* Thor.990405: log permission modify */
@@ -274,7 +274,7 @@ adm_log(old, new)
     if ((newl & bit) != (oldl & bit))
     {
       sprintf(buf, "%-13s%s %s", userid, (newl & bit) ? BIT_ON : BIT_OFF, perm_tbl[i]);
-      alog("²§°ÊÅv­­", buf);
+      alog("ç•°å‹•æ¬Šé™", buf);
     }
   }
 }
@@ -291,90 +291,90 @@ acct_show(u, adm)
 
   clrtobot();
 
-  /* itoc.010922: ´« user info ª©­± */
+  /* itoc.010922: æ› user info ç‰ˆé¢ */
   if (adm == 0)
   {
-    outs("\n        \033[30;41m¢s¢r¢s¢r¢s¢r\033[m  \033[45mùüùŞùŞùûùúùŞùùùû"
-      "ùİùŞùùùûùúùŞùùùû\033[m  \033[30;41m¢s¢r¢s¢r¢s¢r\033[m\n"
-      "        \033[30;41m¢r¢s¢r¢s¢r¢s\033[m  \033[1;37;45m  ùàùâ  ùàùâ"
-      "  ùøùàùáùâ  ùàùâ  ùø\033[m  \033[30;41m¢r¢s¢r¢s¢r¢s\033[m\n"
-      "        \033[30;41m¢s¢r¢s¢r¢s¢r\033[m  \033[45m  ùàùâ  ùàùâ  ùø"
-      "ùàùâùı  ùàùâ  ùø\033[m  \033[30;41m¢s¢r¢s¢r¢s¢r\033[m\n"
-      "        \033[30;41m¢r¢s¢r¢s¢r¢s\033[m  \033[1;30;45mùüùäùäùûùãùå"
-      "  ùüùãùå    ùüùäùùùı\033[m  \033[30;41m¢r¢s¢r¢s¢r¢s\033[m\n");
+    outs("\n        \033[30;41mâ”¬â”´â”¬â”´â”¬â”´\033[m  \033[45mâ•°â•¦â•¦â•®â•­â•¦â•â•®"
+      "â•”â•¦â•â•®â•­â•¦â•â•®\033[m  \033[30;41mâ”¬â”´â”¬â”´â”¬â”´\033[m\n"
+      "        \033[30;41mâ”´â”¬â”´â”¬â”´â”¬\033[m  \033[1;37;45m  â• â•£  â• â•£"
+      "  â•‘â• â•¬â•£  â• â•£  â•‘\033[m  \033[30;41mâ”´â”¬â”´â”¬â”´â”¬\033[m\n"
+      "        \033[30;41mâ”¬â”´â”¬â”´â”¬â”´\033[m  \033[45m  â• â•£  â• â•£  â•‘"
+      "â• â•£â•¯  â• â•£  â•‘\033[m  \033[30;41mâ”¬â”´â”¬â”´â”¬â”´\033[m\n"
+      "        \033[30;41mâ”´â”¬â”´â”¬â”´â”¬\033[m  \033[1;30;45mâ•°â•©â•©â•®â•šâ•"
+      "  â•°â•šâ•    â•°â•©â•â•¯\033[m  \033[30;41mâ”´â”¬â”´â”¬â”´â”¬\033[m\n");
   }
 
   uid = u->userid;
 
   outs("\n\033[1m");
 
-  /* itoc.010408: ·s¼Wª÷¿ú/¥Í¤é/©Ê§OÄæ¦ì */
+  /* itoc.010408: æ–°å¢é‡‘éŒ¢/ç”Ÿæ—¥/æ€§åˆ¥æ¬„ä½ */
 
   if (adm != 2)
-    prints("  \033[32m­^¤å¥N¸¹¡G\033[37m%-35s\033[32m¥Î¤á½s¸¹¡G\033[37m%d\n", uid, u->userno);
+    prints("  \033[32mè‹±æ–‡ä»£è™Ÿï¼š\033[37m%-35s\033[32mç”¨æˆ¶ç·¨è™Ÿï¼š\033[37m%d\n", uid, u->userno);
 
-  prints("  \033[32m§Úªº¼ÊºÙ¡G\033[37m%-35s\033[32m¾Ö¦³»È¹ô¡G\033[37m%d\n", u->username, u->money);
+  prints("  \033[32mæˆ‘çš„æš±ç¨±ï¼š\033[37m%-35s\033[32mæ“æœ‰éŠ€å¹£ï¼š\033[37m%d\n", u->username, u->money);
 
-  prints("  \033[32m¯u¹ê©m¦W¡G\033[37m%-35s\033[32m¾Ö¦³ª÷¹ô¡G\033[37m%d\n", u->realname, u->gold);
+  prints("  \033[32mçœŸå¯¦å§“åï¼š\033[37m%-35s\033[32mæ“æœ‰é‡‘å¹£ï¼š\033[37m%d\n", u->realname, u->gold);
 
-  prints("  \033[32m¥X¥Í¤é´Á¡G\033[37m¥Á°ê %02d ¦~ %02d ¤ë %02d ¤é             \033[32m§Úªº©Ê§O¡G\033[37m%.2s\n", u->year, u->month, u->day, "¡H¡ñ¡ğ" + (u->sex << 1));
+  prints("  \033[32må‡ºç”Ÿæ—¥æœŸï¼š\033[37mæ°‘åœ‹ %02d å¹´ %02d æœˆ %02d æ—¥             \033[32mæˆ‘çš„æ€§åˆ¥ï¼š\033[37m%.2s\n", u->year, u->month, u->day, "ï¼Ÿâ™‚â™€" + (u->sex << 1));
 
-  prints("  \033[32m¤W¯¸¦¸¼Æ¡G\033[37m%-35d\033[32m¤å³¹½g¼Æ¡G\033[37m%d\n", u->numlogins, u->numposts);
+  prints("  \033[32mä¸Šç«™æ¬¡æ•¸ï¼š\033[37m%-35d\033[32mæ–‡ç« ç¯‡æ•¸ï¼š\033[37m%d\n", u->numlogins, u->numposts);
 
-  prints("  \033[32m¶l¥ó«H½c¡G\033[37m%s\n", u->email);
+  prints("  \033[32méƒµä»¶ä¿¡ç®±ï¼š\033[37m%s\n", u->email);
 
-  prints("  \033[32mµù¥U¤é´Á¡G\033[37m%s\n", Btime(&u->firstlogin));
+  prints("  \033[32mè¨»å†Šæ—¥æœŸï¼š\033[37m%s\n", Btime(&u->firstlogin));
 
-  prints("  \033[32m¥úÁ{¤é´Á¡G\033[37m%s\n", Btime(&u->lastlogin));
+  prints("  \033[32må…‰è‡¨æ—¥æœŸï¼š\033[37m%s\n", Btime(&u->lastlogin));
 
   ulevel = u->userlevel;
 
   if (ulevel & PERM_ALLDENY)
   {
-    /* yiting: Åã¥Ü°±Åv¤Ñ¼Æ */
-    outs("  \033[32m°±Åv¤Ñ¼Æ¡G\033[37m");
+    /* yiting: é¡¯ç¤ºåœæ¬Šå¤©æ•¸ */
+    outs("  \033[32måœæ¬Šå¤©æ•¸ï¼š\033[37m");
     if ((diff = u->tvalid - time(0)) < 0)
     {
-      outs("°±Åv´Á­­¤w¨ì¡A¥i¦Û¦æ¥Ó½Ğ´_Åv\n");
+      outs("åœæ¬ŠæœŸé™å·²åˆ°ï¼Œå¯è‡ªè¡Œç”³è«‹å¾©æ¬Š\n");
     }
     else
     {
-      /* ¤£º¡¤@¤p®Éªº³¡¥÷¥[¤@¤p®É­pºâ¡A³o¼ËÅã¥Ü0¤p®É´Nªí¥Ü¥i¥H¥h´_Åv¤F */
+      /* ä¸æ»¿ä¸€å°æ™‚çš„éƒ¨ä»½åŠ ä¸€å°æ™‚è¨ˆç®—ï¼Œé€™æ¨£é¡¯ç¤º0å°æ™‚å°±è¡¨ç¤ºå¯ä»¥å»å¾©æ¬Šäº† */
       diff += 3600;
-      prints("ÁÙ¦³ %d ¤Ñ %d ¤p®É\n", diff / 86400, (diff % 86400) / 3600);
+      prints("é‚„æœ‰ %d å¤© %d å°æ™‚\n", diff / 86400, (diff % 86400) / 3600);
     }
   }
   else
   {
-    prints("  \033[32m¨­¤À»{ÃÒ¡G\033[37m%s\n", (ulevel & PERM_VALID) ? Btime(&u->tvalid) : "½Ğ°Ñ¦Ò¥»¯¸¤½§GÄæ¶i¦æ½T»{¡A¥H´£ª@Åv­­");
+    prints("  \033[32mèº«åˆ†èªè­‰ï¼š\033[37m%s\n", (ulevel & PERM_VALID) ? Btime(&u->tvalid) : "è«‹åƒè€ƒæœ¬ç«™å…¬ä½ˆæ¬„é€²è¡Œç¢ºèªï¼Œä»¥ææ˜‡æ¬Šé™");
   }
 
   usr_fpath(buf, uid, fn_dir);
-  prints("  \033[32m­Ó¤H«H¥ó¡G\033[37m%d «Ê\n", rec_num(buf, sizeof(HDR)));
+  prints("  \033[32må€‹äººä¿¡ä»¶ï¼š\033[37m%d å°\n", rec_num(buf, sizeof(HDR)));
 
   if (adm)
   {
-    prints("  \033[32m¤W¯¸¦aÂI¡G\033[37m%-35s\033[32mµo«H¦¸¼Æ¡G\033[37m%d\n", u->lasthost, u->numemails);
-    bitmsg("  \033[32mÅv­­µ¥¯Å¡G\033[37m", STR_PERM, ulevel);
-    bitmsg("  \033[32m²ßºDºX¼Ğ¡G\033[37m", STR_UFO, u->ufo);
+    prints("  \033[32mä¸Šç«™åœ°é»ï¼š\033[37m%-35s\033[32mç™¼ä¿¡æ¬¡æ•¸ï¼š\033[37m%d\n", u->lasthost, u->numemails);
+    bitmsg("  \033[32mæ¬Šé™ç­‰ç´šï¼š\033[37m", STR_PERM, ulevel);
+    bitmsg("  \033[32mç¿’æ…£æ——æ¨™ï¼š\033[37m", STR_UFO, u->ufo);
   }
   else
   {
     diff = (time(0) - ap_start) / 60;
-    prints("  \033[32m°±¯d´Á¶¡¡G\033[37m%d ¤p®É %d ¤À\n", diff / 60, diff % 60);
+    prints("  \033[32måœç•™æœŸé–“ï¼š\033[37m%d å°æ™‚ %d åˆ†\n", diff / 60, diff % 60);
   }
 
   if (adm == 2)
     goto end_show;
 
-  /* Thor: ·Q¬İ¬İ³o­Ó user ¬O¨º¨ÇªOªºªO¥D */
+  /* Thor: æƒ³çœ‹çœ‹é€™å€‹ user æ˜¯é‚£äº›æ¿çš„æ¿ä¸» */
 
   if (ulevel & PERM_BM)
     bm_list(uid);
 
 #ifdef NEWUSER_LIMIT
   if (u->lastlogin - u->firstlogin < 3 * 86400)
-    outs("\n  \033[36m·s¤â¤W¸ô¡G¤T¤Ñ«á¶}©ñÅv­­\n");
+    outs("\n  \033[36mæ–°æ‰‹ä¸Šè·¯ï¼šä¸‰å¤©å¾Œé–‹æ”¾æ¬Šé™\n");
 #endif
 
 end_show:
@@ -396,7 +396,7 @@ acct_setup(u, adm)
 
   if (adm)
   {
-    adm = vans("³]©w 1)¸ê®Æ 2)Åv­­ Q)¨ú®ø [Q] ");
+    adm = vans("è¨­å®š 1)è³‡æ–™ 2)æ¬Šé™ Q)å–æ¶ˆ [Q] ");
     if (adm == '2')
       goto set_perm;
 
@@ -405,7 +405,7 @@ acct_setup(u, adm)
   }
   else
   {
-    if (vans("­×§ï¸ê®Æ(Y/N)¡H[N] ") != 'y')
+    if (vans("ä¿®æ”¹è³‡æ–™(Y/N)ï¼Ÿ[N] ") != 'y')
       return;
   }
 
@@ -417,34 +417,34 @@ acct_setup(u, adm)
     str = x.userid;
     for (;;)
     {
-      /* itoc.010804.µù¸Ñ: §ï¨Ï¥ÎªÌ¥N¸¹®É½Ğ½T©w¸Ó user ¤£¦b¯¸¤W */
-      vget(i, 0, "¨Ï¥ÎªÌ¥N¸¹(¤£§ï½Ğ«ö Enter)¡G", str, IDLEN + 1, GCARRY);
+      /* itoc.010804.è¨»è§£: æ”¹ä½¿ç”¨è€…ä»£è™Ÿæ™‚è«‹ç¢ºå®šè©² user ä¸åœ¨ç«™ä¸Š */
+      vget(i, 0, "ä½¿ç”¨è€…ä»£è™Ÿ(ä¸æ”¹è«‹æŒ‰ Enter)ï¼š", str, IDLEN + 1, GCARRY);
       if (!str_cmp(str, u->userid) || !acct_userno(str))
 	break;
-      vmsg("¿ù»~¡I¤w¦³¬Û¦P ID ªº¨Ï¥ÎªÌ");
+      vmsg("éŒ¯èª¤ï¼å·²æœ‰ç›¸åŒ ID çš„ä½¿ç”¨è€…");
     }
   }
   else
   {
-    vget(i, 0, "½Ğ½T»{±K½X¡G", buf, PSWDLEN + 1, NOECHO);
+    vget(i, 0, "è«‹ç¢ºèªå¯†ç¢¼ï¼š", buf, PSWDLEN + 1, NOECHO);
     if (chkpasswd(u->passwd, buf))
     {
-      vmsg("±K½X¿ù»~");
+      vmsg("å¯†ç¢¼éŒ¯èª¤");
       return;
     }
   }
 
-  /* itoc.030223: ¥u¦³ PERM_SYSOP ¯àÅÜ§ó¨ä¥L¯¸°Èªº±K½X */
+  /* itoc.030223: åªæœ‰ PERM_SYSOP èƒ½è®Šæ›´å…¶ä»–ç«™å‹™çš„å¯†ç¢¼ */
   if (!adm || !(u->userlevel & PERM_ALLADMIN) || HAS_PERM(PERM_SYSOP))
   {
     i++;
     for (;;)
     {
-      if (!vget(i, 0, "³]©w·s±K½X(¤£§ï½Ğ«ö Enter)¡G", buf, PSWDLEN + 1, NOECHO))
+      if (!vget(i, 0, "è¨­å®šæ–°å¯†ç¢¼(ä¸æ”¹è«‹æŒ‰ Enter)ï¼š", buf, PSWDLEN + 1, NOECHO))
 	break;
 
       strcpy(pass, buf);
-      vget(i + 1, 0, "ÀË¬d·s±K½X¡G", buf, PSWDLEN + 1, NOECHO);
+      vget(i + 1, 0, "æª¢æŸ¥æ–°å¯†ç¢¼ï¼š", buf, PSWDLEN + 1, NOECHO);
       if (!strcmp(buf, pass))
       {
 	str_ncpy(x.passwd, genpasswd(buf), sizeof(x.passwd));
@@ -457,87 +457,87 @@ acct_setup(u, adm)
   str = x.username;
   while (1)
   {
-    if (vget(i, 0, "¼Ê    ºÙ¡G", str, UNLEN + 1, GCARRY))
+    if (vget(i, 0, "æš±    ç¨±ï¼š", str, UNLEN + 1, GCARRY))
       break;
   };
 
-  /* itoc.010408: ·s¼W¥Í¤é/©Ê§OÄæ¦ì¡A¤£±j­¢¨Ï¥ÎªÌ¶ñ (¤¹³\¶ñ 0) */
+  /* itoc.010408: æ–°å¢ç”Ÿæ—¥/æ€§åˆ¥æ¬„ä½ï¼Œä¸å¼·è¿«ä½¿ç”¨è€…å¡« (å…è¨±å¡« 0) */
   i++;
   do
   {
-    sprintf(buf, "¥Í¤é¡Ğ¥Á°ê %02d ¦~¡G", u->year);
+    sprintf(buf, "ç”Ÿæ—¥ï¼æ°‘åœ‹ %02d å¹´ï¼š", u->year);
     if (!vget(i, 0, buf, buf, 3, DOECHO))
       break;
     x.year = atoi(buf);
   } while (x.year < 0 || x.year > 99);
   do
   {
-    sprintf(buf, "¥Í¤é¡Ğ %02d ¤ë¡G", u->month);
+    sprintf(buf, "ç”Ÿæ—¥ï¼ %02d æœˆï¼š", u->month);
     if (!vget(i, 0, buf, buf, 3, DOECHO))
       break;
     x.month = atoi(buf);
   } while (x.month < 0 || x.month > 12);
   do
   {
-    sprintf(buf, "¥Í¤é¡Ğ %02d ¤é¡G", u->day);
+    sprintf(buf, "ç”Ÿæ—¥ï¼ %02d æ—¥ï¼š", u->day);
     if (!vget(i, 0, buf, buf, 3, DOECHO))
       break;
     x.day = atoi(buf);
   } while (x.day < 0 || x.day > 31);
 
   i++;
-  sprintf(buf, "©Ê§O (0)¤¤©Ê (1)¨k©Ê (2)¤k©Ê¡G[%d] ", u->sex);
+  sprintf(buf, "æ€§åˆ¥ (0)ä¸­æ€§ (1)ç”·æ€§ (2)å¥³æ€§ï¼š[%d] ", u->sex);
   if (vget(i, 0, buf, buf, 3, DOECHO))
     x.sex = (*buf - '0') & 3;
 
   if (adm)
   {
-    /* itoc.010317: ¤£Åı user §ï©m¦W */
+    /* itoc.010317: ä¸è®“ user æ”¹å§“å */
     i++;
     str = x.realname;
     do
     {
-      vget(i, 0, "¯u¹ê©m¦W¡G", str, RNLEN + 1, GCARRY);
+      vget(i, 0, "çœŸå¯¦å§“åï¼š", str, RNLEN + 1, GCARRY);
     } while (strlen(str) < 4);
 
     sprintf(buf, "%d", u->userno);
-    vget(++i, 0, "¥Î¤á½s¸¹¡G", buf, 10, GCARRY);
+    vget(++i, 0, "ç”¨æˆ¶ç·¨è™Ÿï¼š", buf, 10, GCARRY);
     if ((num = atoi(buf)) > 0)
       x.userno = num;
 
     sprintf(buf, "%d", u->numlogins);
-    vget(++i, 0, "¤W½u¦¸¼Æ¡G", buf, 10, GCARRY);
+    vget(++i, 0, "ä¸Šç·šæ¬¡æ•¸ï¼š", buf, 10, GCARRY);
     if ((num = atoi(buf)) >= 0)
       x.numlogins = num;
 
     sprintf(buf, "%d", u->numposts);
-    vget(++i, 0, "¤å³¹½g¼Æ¡G", buf, 10, GCARRY);
+    vget(++i, 0, "æ–‡ç« ç¯‡æ•¸ï¼š", buf, 10, GCARRY);
     if ((num = atoi(buf)) >= 0)
       x.numposts = num;
 
-    /* itoc.010408: ·s¼Wª÷¿úÄæ¦ì */
+    /* itoc.010408: æ–°å¢é‡‘éŒ¢æ¬„ä½ */
     sprintf(buf, "%d", u->money);
-    vget(++i, 0, "»È    ¹ô¡G", buf, 10, GCARRY);
+    vget(++i, 0, "éŠ€    å¹£ï¼š", buf, 10, GCARRY);
     if ((num = atoi(buf)) >= 0)
       x.money = num;
 
     sprintf(buf, "%d", u->gold);
-    vget(++i, 0, "ª÷    ¹ô¡G", buf, 10, GCARRY);
+    vget(++i, 0, "é‡‘    å¹£ï¼š", buf, 10, GCARRY);
     if ((num = atoi(buf)) >= 0)
       x.gold = num;
 
     sprintf(buf, "%d", u->numemails);
-    vget(++i, 0, "µo«H¦¸¼Æ¡G", buf, 10, GCARRY);
+    vget(++i, 0, "ç™¼ä¿¡æ¬¡æ•¸ï¼š", buf, 10, GCARRY);
     if ((num = atoi(buf)) >= 0)
       x.numemails = num;
 
-    vget(++i, 0, "¤W¯¸¦aÂI¡G", x.lasthost, sizeof(x.lasthost), GCARRY);
-    vget(++i, 0, "¶l¥ó«H½c¡G", x.email, sizeof(x.email), GCARRY);
+    vget(++i, 0, "ä¸Šç«™åœ°é»ï¼š", x.lasthost, sizeof(x.lasthost), GCARRY);
+    vget(++i, 0, "éƒµä»¶ä¿¡ç®±ï¼š", x.email, sizeof(x.email), GCARRY);
 
-    if (vans("³]©w²ßºD(Y/N)¡H[N] ") == 'y')
+    if (vans("è¨­å®šç¿’æ…£(Y/N)ï¼Ÿ[N] ") == 'y')
       x.ufo = bitset(x.ufo, NUMUFOS, NUMUFOS, MSG_USERUFO, ufo_tbl);
 
-    if (vans("³]©wÅv­­(Y/N)¡H[N] ") == 'y')
+    if (vans("è¨­å®šæ¬Šé™(Y/N)ï¼Ÿ[N] ") == 'y')
     {
 set_perm:
 
@@ -545,7 +545,7 @@ set_perm:
 
       if (i == num)
       {
-	vmsg("¨ú®ø­×§ï");
+	vmsg("å–æ¶ˆä¿®æ”¹");
 	if (adm == '2')
 	  return;
       }
@@ -553,11 +553,11 @@ set_perm:
       {
 	x.userlevel = i;
 
-	/* itoc.011120: ¯¸ªø©ñ¤ô¥[¤W»{ÃÒ³q¹LÅv­­¡A­nªş¥[§ï»{ÃÒ®É¶¡ */
+	/* itoc.011120: ç«™é•·æ”¾æ°´åŠ ä¸Šèªè­‰é€šéæ¬Šé™ï¼Œè¦é™„åŠ æ”¹èªè­‰æ™‚é–“ */
 	if ((i & PERM_VALID) && !(num & PERM_VALID))
 	  time(&x.tvalid);
 
-	/* itoc.050413: ¦pªG¯¸ªø¤â°Ê°±Åv¡A´N­n¥Ñ¯¸ªø¤~¯à¨Ó´_Åv */
+	/* itoc.050413: å¦‚æœç«™é•·æ‰‹å‹•åœæ¬Šï¼Œå°±è¦ç”±ç«™é•·æ‰èƒ½ä¾†å¾©æ¬Š */
 	if ((i & PERM_ALLDENY) && (i & PERM_ALLDENY) != (num & PERM_ALLDENY))
 	  x.tvalid = INT_MAX;
       }
@@ -570,20 +570,20 @@ set_perm:
   if (adm)
   {
     if (str_cmp(u->userid, x.userid))
-    { /* Thor: 980806: ¯S§Oª`·N¦pªG usr¨C­Ó¦r¥À¤£¦b¦P¤@partitionªº¸Ü·|¦³°İÃD */
+    { /* Thor: 980806: ç‰¹åˆ¥æ³¨æ„å¦‚æœ usræ¯å€‹å­—æ¯ä¸åœ¨åŒä¸€partitionçš„è©±æœƒæœ‰å•é¡Œ */
       char dst[80];
 
       usr_fpath(buf, u->userid, NULL);
       usr_fpath(dst, x.userid, NULL);
       rename(buf, dst);
-      /* Thor.990416: ¯S§Oª`·N! .USR¨Ã¥¼¤@¨Ö§ó·s, ¥i¯à¦³³¡¤À°İÃD */
+      /* Thor.990416: ç‰¹åˆ¥æ³¨æ„! .USRä¸¦æœªä¸€ä½µæ›´æ–°, å¯èƒ½æœ‰éƒ¨åˆ†å•é¡Œ */
     }
 
-    /* itoc.010811: °ÊºA³]©w½u¤W¨Ï¥ÎªÌ */
-    /* ³Q¯¸ªø§ï¹L¸ê®Æªº½u¤W¨Ï¥ÎªÌ(¥]¬A¯¸ªø¦Û¤v)¡A¨ä cutmp->status ·|³Q¥[¤W STATUS_DATALOCK
-       ³o­ÓºX¼Ğ¡A´NµLªk acct_save()¡A©ó¬O¯¸ªø«K¥i¥H­×§ï½u¤W¨Ï¥ÎªÌ¸ê®Æ */
-    /* ¦b¯¸ªø­×§ï¹L¤~¤W½uªº ID ¦]¬°¨ä cutmp->status ¨S¦³ STATUS_DATALOCK ªººX¼Ğ¡A
-       ©Ò¥H±N¥i¥HÄ~Äò¦s¨ú¡A©Ò¥H½u¤W¦pªG¦P®É¦³­×§ï«e¡B­×§ï«áªº¦P¤@°¦ ID multi-login¡A¤]¬OµL§«¡C */
+    /* itoc.010811: å‹•æ…‹è¨­å®šç·šä¸Šä½¿ç”¨è€… */
+    /* è¢«ç«™é•·æ”¹éè³‡æ–™çš„ç·šä¸Šä½¿ç”¨è€…(åŒ…æ‹¬ç«™é•·è‡ªå·±)ï¼Œå…¶ cutmp->status æœƒè¢«åŠ ä¸Š STATUS_DATALOCK
+       é€™å€‹æ——æ¨™ï¼Œå°±ç„¡æ³• acct_save()ï¼Œæ–¼æ˜¯ç«™é•·ä¾¿å¯ä»¥ä¿®æ”¹ç·šä¸Šä½¿ç”¨è€…è³‡æ–™ */
+    /* åœ¨ç«™é•·ä¿®æ”¹éæ‰ä¸Šç·šçš„ ID å› ç‚ºå…¶ cutmp->status æ²’æœ‰ STATUS_DATALOCK çš„æ——æ¨™ï¼Œ
+       æ‰€ä»¥å°‡å¯ä»¥ç¹¼çºŒå­˜å–ï¼Œæ‰€ä»¥ç·šä¸Šå¦‚æœåŒæ™‚æœ‰ä¿®æ”¹å‰ã€ä¿®æ”¹å¾Œçš„åŒä¸€éš» ID multi-loginï¼Œä¹Ÿæ˜¯ç„¡å¦¨ã€‚ */
     utmp_admset(x.userno, STATUS_DATALOCK | STATUS_COINLOCK);
 
     /* lkchu.981201: security log */
@@ -591,7 +591,7 @@ set_perm:
   }
   else
   {
-    /* itoc.010804.µù¸Ñ: ½u¤Wªº userlevel/tvalid ¬OÂÂªº¡A.ACCT ¸Ì¤~¬O·sªº */
+    /* itoc.010804.è¨»è§£: ç·šä¸Šçš„ userlevel/tvalid æ˜¯èˆŠçš„ï¼Œ.ACCT è£¡æ‰æ˜¯æ–°çš„ */
     if (acct_load(u, x.userid) >= 0)
     {
       x.userlevel = u->userlevel;
@@ -604,33 +604,33 @@ set_perm:
 }
 
 
-#if 0	/* itoc.010805.µù¸Ñ */
+#if 0	/* itoc.010805.è¨»è§£ */
 
-  »{ÃÒ¦¨¥\¥u¥[¤W PERM_VALID¡AÅı user ¦b¤U¦¸¶i¯¸¤~¦Û°Ê±o¨ì PERM_POST | PERM_PAGE | PERM_CHAT
-  ¥H§K·s¤â¤W¸ô¡B°±Åvªº¥\¯à¥¢®Ä
+  èªè­‰æˆåŠŸåªåŠ ä¸Š PERM_VALIDï¼Œè®“ user åœ¨ä¸‹æ¬¡é€²ç«™æ‰è‡ªå‹•å¾—åˆ° PERM_POST | PERM_PAGE | PERM_CHAT
+  ä»¥å…æ–°æ‰‹ä¸Šè·¯ã€åœæ¬Šçš„åŠŸèƒ½å¤±æ•ˆ
 
-  ¦ı­«¶ñ email ®³±¼»{ÃÒªÌ»İ®³±¼ PERM_VALID | PERM_POST | PERM_PAGE | PERM_CHAT
-  §_«h user ¥i¥H¦b¤U¦¸¶i¯¸«e¥ô·N¨Ï¥Î bbs_post
+  ä½†é‡å¡« email æ‹¿æ‰èªè­‰è€…éœ€æ‹¿æ‰ PERM_VALID | PERM_POST | PERM_PAGE | PERM_CHAT
+  å¦å‰‡ user å¯ä»¥åœ¨ä¸‹æ¬¡é€²ç«™å‰ä»»æ„ä½¿ç”¨ bbs_post
 
 #endif
 
-#if 0	/* itoc.010831.µù¸Ñ */
+#if 0	/* itoc.010831.è¨»è§£ */
 
-  ¦]¬°½u¤W cuser.userlevel ¨Ã¤£¬O³Ì·sªº¡A¨Ï¥ÎªÌ¦pªG¦b½u¤W»{ÃÒ©Î¬O³Q°±Åv¡A
-  µwºĞ¤¤ªº .ACCT ¼gªº¤~¬O¥¿½Tªº userlevel¡A
-  ©Ò¥H­n¥ıÅª¥X .ACCT¡A¥[¤J level «á¦A»\¦^¥h¡C
+  å› ç‚ºç·šä¸Š cuser.userlevel ä¸¦ä¸æ˜¯æœ€æ–°çš„ï¼Œä½¿ç”¨è€…å¦‚æœåœ¨ç·šä¸Šèªè­‰æˆ–æ˜¯è¢«åœæ¬Šï¼Œ
+  ç¡¬ç¢Ÿä¸­çš„ .ACCT å¯«çš„æ‰æ˜¯æ­£ç¢ºçš„ userlevelï¼Œ
+  æ‰€ä»¥è¦å…ˆè®€å‡º .ACCTï¼ŒåŠ å…¥ level å¾Œå†è“‹å›å»ã€‚
 
-  ¨Ï¥Î acct_seperm(&acct, adm) ¤§«e­n¥ı acct_load(&acct, userid)¡A
-  ¨ä¤¤ &acct ¤£¯à¬O &cuser¡C
-  ¨Ï¥ÎªÌ­n­«·s¤W¯¸¤~·|´«¦¨·sªºÅv­­¡C
+  ä½¿ç”¨ acct_seperm(&acct, adm) ä¹‹å‰è¦å…ˆ acct_load(&acct, userid)ï¼Œ
+  å…¶ä¸­ &acct ä¸èƒ½æ˜¯ &cuserã€‚
+  ä½¿ç”¨è€…è¦é‡æ–°ä¸Šç«™æ‰æœƒæ›æˆæ–°çš„æ¬Šé™ã€‚
 
 #endif
 
 void
-acct_setperm(u, levelup, leveldown)	/* itoc.000219: ¥[/´îÅv­­µ{¦¡ */
+acct_setperm(u, levelup, leveldown)	/* itoc.000219: åŠ /æ¸›æ¬Šé™ç¨‹å¼ */
   ACCT *u;
-  usint levelup;		/* ¥[Åv­­ */
-  usint leveldown;		/* ´îÅv­­ */
+  usint levelup;		/* åŠ æ¬Šé™ */
+  usint leveldown;		/* æ¸›æ¬Šé™ */
 {
   u->userlevel |= levelup;
   u->userlevel &= ~leveldown;
@@ -640,7 +640,7 @@ acct_setperm(u, levelup, leveldown)	/* itoc.000219: ¥[/´îÅv­­µ{¦¡ */
 
 
 /* ----------------------------------------------------- */
-/* ¼W¥[ª÷»È¹ô						 */
+/* å¢åŠ é‡‘éŠ€å¹£						 */
 /* ----------------------------------------------------- */
 
 
@@ -648,7 +648,7 @@ void
 addmoney(addend)
   int addend;
 {
-  if (addend < (INT_MAX - cuser.money))	/* Á×§K·¸¦ì */
+  if (addend < (INT_MAX - cuser.money))	/* é¿å…æº¢ä½ */
     cuser.money += addend;
   else
     cuser.money = INT_MAX;
@@ -659,7 +659,7 @@ void
 addgold(addend)
   int addend;
 {
-  if (addend < (INT_MAX - cuser.gold))	/* Á×§K·¸¦ì */
+  if (addend < (INT_MAX - cuser.gold))	/* é¿å…æº¢ä½ */
     cuser.gold += addend;
   else
     cuser.gold = INT_MAX;
@@ -667,14 +667,14 @@ addgold(addend)
 
 
 /* ----------------------------------------------------- */
-/* ¬İªOºŞ²z						 */
+/* çœ‹æ¿ç®¡ç†						 */
 /* ----------------------------------------------------- */
 
 
 #ifndef HAVE_COSIGN
 static
 #endif
-int			/* 1:¦XªkªºªO¦W */
+int			/* 1:åˆæ³•çš„æ¿å */
 valid_brdname(brd)
   char *brd;
 {
@@ -709,61 +709,61 @@ brd_set(brd, row)
   {
     if (!vget(i, 0, MSG_BID, brdname, BNLEN + 1, GCARRY))
     {
-      if (i == 1)	/* ¶}·sªO­YµL¿é¤JªO¦Wªí¥ÜÂ÷¶} */
+      if (i == 1)	/* é–‹æ–°æ¿è‹¥ç„¡è¼¸å…¥æ¿åè¡¨ç¤ºé›¢é–‹ */
 	return -1;
 
-      strcpy(brdname, buf);	/* Thor: ­Y¬O²MªÅ«h³]¬°­ì¦WºÙ */
+      strcpy(brdname, buf);	/* Thor: è‹¥æ˜¯æ¸…ç©ºå‰‡è¨­ç‚ºåŸåç¨± */
       continue;
     }
 
     if (!valid_brdname(brdname))
       continue;
 
-    if (!str_cmp(buf, brdname))	/* Thor: »PÂÂªO­ì¦W¬Û¦P«h¸õ¹L */
+    if (!str_cmp(buf, brdname))	/* Thor: èˆ‡èˆŠæ¿åŸåç›¸åŒå‰‡è·³é */
       break;
 
     if (brd_bno(brdname) >= 0)
-      outs("\n¿ù»~¡IªO¦W¹p¦P");
+      outs("\néŒ¯èª¤ï¼æ¿åé›·åŒ");
     else
       break;
   }
 
-  vget(++i, 0, "¬İªO¤ÀÃş¡G", brd->class, BCLEN + 1, GCARRY);
-  vget(++i, 0, "¬İªO¥DÃD¡G", brd->title, BTLEN + 1, GCARRY);
+  vget(++i, 0, "çœ‹æ¿åˆ†é¡ï¼š", brd->class, BCLEN + 1, GCARRY);
+  vget(++i, 0, "çœ‹æ¿ä¸»é¡Œï¼š", brd->title, BTLEN + 1, GCARRY);
 
-  /* vget(++i, 0, "ªO¥D¦W³æ¡G", brd->BM, BMLEN + 1, GCARRY); */
+  /* vget(++i, 0, "æ¿ä¸»åå–®ï¼š", brd->BM, BMLEN + 1, GCARRY); */
 
-  /* itoc.010212: ¶}·sªO/­×§ï¬İªO¦Û°Ê¥[¤WªO¥DÅv­­. */
-  /* ¥Ø«eªº§@ªk¬O¤@¿é¤J§¹ id ´N¥[¤JªO¥DÅv­­¡A§Y¨Ï³Ì«á¿ï¾Ü¤£ÅÜ°Ê¡A
-     ¦pªG¦]¦¹¦h¥[¤FªO¥DÅv­­¡A¦b reaper.c ¤¤®³¤U */
+  /* itoc.010212: é–‹æ–°æ¿/ä¿®æ”¹çœ‹æ¿è‡ªå‹•åŠ ä¸Šæ¿ä¸»æ¬Šé™. */
+  /* ç›®å‰çš„ä½œæ³•æ˜¯ä¸€è¼¸å…¥å®Œ id å°±åŠ å…¥æ¿ä¸»æ¬Šé™ï¼Œå³ä½¿æœ€å¾Œé¸æ“‡ä¸è®Šå‹•ï¼Œ
+     å¦‚æœå› æ­¤å¤šåŠ äº†æ¿ä¸»æ¬Šé™ï¼Œåœ¨ reaper.c ä¸­æ‹¿ä¸‹ */
 
   i += 4;
   move(i - 2, 0);
-  prints("¥Ø«eªO¥D¬° %s\n½Ğ¿é¤J·sªºªO¥D¦W³æ¡A©Î«ö [Return] ¤£§ï", brd->BM);
+  prints("ç›®å‰æ¿ä¸»ç‚º %s\nè«‹è¼¸å…¥æ–°çš„æ¿ä¸»åå–®ï¼Œæˆ–æŒ‰ [Return] ä¸æ”¹", brd->BM);
 
   strcpy(buf, brd->BM);
   BMlen = strlen(buf);
 
-  while (vget(i, 0, "½Ğ¿é¤JªO¥D¡Aµ²§ô½Ğ«ö Enter¡A²M±¼©Ò¦³ªO¥D½Ğ¥´¡uµL¡v¡G", userid, IDLEN + 1, DOECHO))
+  while (vget(i, 0, "è«‹è¼¸å…¥æ¿ä¸»ï¼ŒçµæŸè«‹æŒ‰ Enterï¼Œæ¸…æ‰æ‰€æœ‰æ¿ä¸»è«‹æ‰“ã€Œç„¡ã€ï¼š", userid, IDLEN + 1, DOECHO))
   {
-    if (!strcmp(userid, "µL"))
+    if (!strcmp(userid, "ç„¡"))
     {
       buf[0] = '\0';
       BMlen = 0;
     }
-    else if (is_bm(buf, userid))	/* §R°£ÂÂ¦³ªºªO¥D */
+    else if (is_bm(buf, userid))	/* åˆªé™¤èˆŠæœ‰çš„æ¿ä¸» */
     {
       len = strlen(userid);
       if (BMlen == len)
       {
 	buf[0] = '\0';
       }
-      else if (!str_cmp(buf + BMlen - len, userid) && buf[BMlen - len - 1] == '/')	/* ¦W³æ¤W³Ì«á¤@¦ì¡AID «á­±¤£±µ '/' */
+      else if (!str_cmp(buf + BMlen - len, userid) && buf[BMlen - len - 1] == '/')	/* åå–®ä¸Šæœ€å¾Œä¸€ä½ï¼ŒID å¾Œé¢ä¸æ¥ '/' */
       {
-	buf[BMlen - len - 1] = '\0';			/* §R°£ ID ¤Î«e­±ªº '/' */
+	buf[BMlen - len - 1] = '\0';			/* åˆªé™¤ ID åŠå‰é¢çš„ '/' */
 	len++;
       }
-      else						/* ID «á­±·|±µ '/' */
+      else						/* ID å¾Œé¢æœƒæ¥ '/' */
       {
 	str_lower(userid, userid);
 	strcat(userid, "/");
@@ -773,7 +773,7 @@ brd_set(brd, row)
       }
       BMlen -= len;
     }
-    else if (acct_load(&acct, userid) >= 0 && !is_bm(buf, userid))	/* ¿é¤J·sªO¥D */
+    else if (acct_load(&acct, userid) >= 0 && !is_bm(buf, userid))	/* è¼¸å…¥æ–°æ¿ä¸» */
     {
       len = strlen(userid);
       if (BMlen)
@@ -781,7 +781,7 @@ brd_set(brd, row)
 	len++;		/* '/' + userid */
 	if (BMlen + len > BMLEN)
 	{
-	  vmsg("ªO¥D¦W³æ¹Lªø¡AµLªk±N³o ID ³]¬°ªO¥D");
+	  vmsg("æ¿ä¸»åå–®éé•·ï¼Œç„¡æ³•å°‡é€™ ID è¨­ç‚ºæ¿ä¸»");
 	  continue;
 	}
 	sprintf(buf + BMlen, "/%s", acct.userid);
@@ -799,40 +799,40 @@ brd_set(brd, row)
       continue;
 
     move(i - 2, 0);
-    prints("¥Ø«eªO¥D¬° %s", buf);
+    prints("ç›®å‰æ¿ä¸»ç‚º %s", buf);
     clrtoeol();
   }
   strcpy(brd->BM, buf);
 
 
 #ifdef HAVE_MODERATED_BOARD
-  /* itoc.011208: §ï¥Î¸û«K§Qªº¬İªOÅv­­³]©w */
-  switch (vget(++i, 0, "¬İªOÅv­­ A)¤@¯ë B)¦Û©w C)¯µ±K D)¦n¤Í¡H[Q] ", buf, 3, LCECHO))
+  /* itoc.011208: æ”¹ç”¨è¼ƒä¾¿åˆ©çš„çœ‹æ¿æ¬Šé™è¨­å®š */
+  switch (vget(++i, 0, "çœ‹æ¿æ¬Šé™ A)ä¸€èˆ¬ B)è‡ªå®š C)ç§˜å¯† D)å¥½å‹ï¼Ÿ[Q] ", buf, 3, LCECHO))
   {
   case 'c':
-    brd->readlevel = PERM_SYSOP;	/* ¯µ±K¬İªO */
+    brd->readlevel = PERM_SYSOP;	/* ç§˜å¯†çœ‹æ¿ */
     brd->postlevel = 0;
     brd->battr |= (BRD_NOSTAT | BRD_NOVOTE);
     break;
 
   case 'd':
-    brd->readlevel = PERM_BOARD;	/* ¦n¤Í¬İªO */
+    brd->readlevel = PERM_BOARD;	/* å¥½å‹çœ‹æ¿ */
     brd->postlevel = 0;
     brd->battr |= (BRD_NOSTAT | BRD_NOVOTE);
     break;
 #else
-  switch (vget(++i, 0, "¬İªOÅv­­ A)¤@¯ë B)¦Û©w¡H[Q] ", buf, 3, LCECHO))
+  switch (vget(++i, 0, "çœ‹æ¿æ¬Šé™ A)ä¸€èˆ¬ B)è‡ªå®šï¼Ÿ[Q] ", buf, 3, LCECHO))
   {
 #endif
 
   case 'a':
     brd->readlevel = 0;
-    brd->postlevel = PERM_POST;		/* ¤@¯ë¬İªOµoªíÅv­­¬° PERM_POST */
-    brd->battr &= ~(BRD_NOSTAT | BRD_NOVOTE);	/* ®³±¼¦n¤Í¡®¯µ±KªOÄİ©Ê */
+    brd->postlevel = PERM_POST;		/* ä¸€èˆ¬çœ‹æ¿ç™¼è¡¨æ¬Šé™ç‚º PERM_POST */
+    brd->battr &= ~(BRD_NOSTAT | BRD_NOVOTE);	/* æ‹¿æ‰å¥½å‹ï¼†ç§˜å¯†æ¿å±¬æ€§ */
     break;
 
   case 'b':
-    if (vget(++i, 0, "¾\\ÅªÅv­­(Y/N)¡H[N] ", buf, 3, LCECHO) == 'y')
+    if (vget(++i, 0, "é–±\è®€æ¬Šé™(Y/N)ï¼Ÿ[N] ", buf, 3, LCECHO) == 'y')
     {
       brd->readlevel = bitset(brd->readlevel, NUMPERMS, NUMPERMS, MSG_READPERM, perm_tbl);
       move(2, 0);
@@ -840,7 +840,7 @@ brd_set(brd, row)
       i = 1;
     }
 
-    if (vget(++i, 0, "µoªíÅv­­(Y/N)¡H[N] ", buf, 3, LCECHO) == 'y')
+    if (vget(++i, 0, "ç™¼è¡¨æ¬Šé™(Y/N)ï¼Ÿ[N] ", buf, 3, LCECHO) == 'y')
     {
       brd->postlevel = bitset(brd->postlevel, NUMPERMS, NUMPERMS, MSG_POSTPERM, perm_tbl);
       move(2, 0);
@@ -849,25 +849,25 @@ brd_set(brd, row)
     }
     break;
 
-  default:	/* ¹w³]¤£ÅÜ°Ê */
+  default:	/* é è¨­ä¸è®Šå‹• */
     break;
   }
 
-  if (vget(++i, 0, "³]©wÄİ©Ê(Y/N)¡H[N] ", buf, 3, LCECHO) == 'y')
+  if (vget(++i, 0, "è¨­å®šå±¬æ€§(Y/N)ï¼Ÿ[N] ", buf, 3, LCECHO) == 'y')
     brd->battr = bitset(brd->battr, NUMBATTRS, NUMBATTRS, MSG_BRDATTR, battr_tbl);
 
   return 0;
 }
 
 
-int			/* 0:¶}ªO¦¨¥\ -1:¶}ªO¥¢±Ñ */
+int			/* 0:é–‹æ¿æˆåŠŸ -1:é–‹æ¿å¤±æ•— */
 brd_new(brd)
   BRD *brd;
 {
   int bno;
   char fpath[64];
 
-  vs_bar("«Ø¥ß·sªO");
+  vs_bar("å»ºç«‹æ–°æ¿");
 
   if (brd_set(brd, 1))
     return -1;
@@ -877,7 +877,7 @@ brd_new(brd)
 
   if (brd_bno(brd->brdname) >= 0)
   {
-    vmsg("¿ù»~¡IªO¦W¹p¦P¡A¥i¯à¦³¨ä¥L¯¸°È­è¶}±Ò¦¹ªO");
+    vmsg("éŒ¯èª¤ï¼æ¿åé›·åŒï¼Œå¯èƒ½æœ‰å…¶ä»–ç«™å‹™å‰›é–‹å•Ÿæ­¤æ¿");
     return -1;
   }
 
@@ -886,15 +886,15 @@ brd_new(brd)
   {
     rec_put(FN_BRD, brd, sizeof(BRD), bno, NULL);
   }
-  /* Thor.981102: ¨¾¤î¶W¹Lshm¬İªO­Ó¼Æ */
+  /* Thor.981102: é˜²æ­¢è¶…éshmçœ‹æ¿å€‹æ•¸ */
   else if (bshm->number >= MAXBOARD)
   {
-    vmsg("¶W¹L¨t²Î©Ò¯à®e¯Ç¬İªO­Ó¼Æ¡A½Ğ½Õ¾ã¨t²Î°Ñ¼Æ");
+    vmsg("è¶…éç³»çµ±æ‰€èƒ½å®¹ç´çœ‹æ¿å€‹æ•¸ï¼Œè«‹èª¿æ•´ç³»çµ±åƒæ•¸");
     return -1;
   }
   else if (rec_add(FN_BRD, brd, sizeof(BRD)) < 0)
   {
-    vmsg("µLªk«Ø¥ß·sªO");
+    vmsg("ç„¡æ³•å»ºç«‹æ–°æ¿");
     return -1;
   }
 
@@ -912,10 +912,10 @@ brd_new(brd)
 
 
 static void
-brd_classchange(folder, oldname, newbrd)	/* itoc.020117: ²§°Ê @Class ¤¤ªº¬İªO */
+brd_classchange(folder, oldname, newbrd)	/* itoc.020117: ç•°å‹• @Class ä¸­çš„çœ‹æ¿ */
   char *folder;
   char *oldname;
-  BRD *newbrd;		/* ­Y¬° NULL¡Aªí¥Ü­n§R°£¬İªO */
+  BRD *newbrd;		/* è‹¥ç‚º NULLï¼Œè¡¨ç¤ºè¦åˆªé™¤çœ‹æ¿ */
 {
   int pos, xmode;
   char fpath[64];
@@ -926,23 +926,23 @@ brd_classchange(folder, oldname, newbrd)	/* itoc.020117: ²§°Ê @Class ¤¤ªº¬İªO */
   {
     xmode = hdr.xmode & (GEM_BOARD | GEM_FOLDER);
 
-    if (xmode == (GEM_BOARD | GEM_FOLDER))	/* ¬İªOºëµØ°Ï±¶®| */
+    if (xmode == (GEM_BOARD | GEM_FOLDER))	/* çœ‹æ¿ç²¾è¯å€æ·å¾‘ */
     {
       if (!strcmp(hdr.xname, oldname))
       {
-	if (newbrd)	/* ¬İªO§ó¦W */
+	if (newbrd)	/* çœ‹æ¿æ›´å */
 	{
 	  brd2gem(newbrd, &hdr);
 	  rec_put(folder, &hdr, sizeof(HDR), pos, NULL);
 	}
-	else		/* ¬İªO§R°£ */
+	else		/* çœ‹æ¿åˆªé™¤ */
 	{
 	  rec_del(folder, sizeof(HDR), pos, NULL);
-	  continue;	/* rec_del ¥H«á¤£»İ­n pos++ */
+	  continue;	/* rec_del ä»¥å¾Œä¸éœ€è¦ pos++ */
 	}
       }
     }
-    else if (xmode == GEM_FOLDER)		/* ¤ÀÃş recursive ¶i¥h¬å */
+    else if (xmode == GEM_FOLDER)		/* åˆ†é¡ recursive é€²å»ç  */
     {
       hdr_fpath(fpath, folder, &hdr);
       brd_classchange(fpath, oldname, newbrd);
@@ -959,17 +959,17 @@ brd_edit(bno)
   BRD *bhdr, newbh;
   char *bname, src[64], dst[64];;
 
-  vs_bar("¬İªO³]©w");
+  vs_bar("çœ‹æ¿è¨­å®š");
   bhdr = bshm->bcache + bno;
   memcpy(&newbh, bhdr, sizeof(BRD));
-  prints("¬İªO¦WºÙ¡G%s\n¬İªO»¡©ú¡G[%s] %s\nªO¥D¦W³æ¡G%s\n",
+  prints("çœ‹æ¿åç¨±ï¼š%s\nçœ‹æ¿èªªæ˜ï¼š[%s] %s\næ¿ä¸»åå–®ï¼š%s\n",
     newbh.brdname, newbh.class, newbh.title, newbh.BM);
 
   bitmsg(MSG_READPERM, STR_PERM, newbh.readlevel);
   bitmsg(MSG_POSTPERM, STR_PERM, newbh.postlevel);
   bitmsg(MSG_BRDATTR, STR_BATTR, newbh.battr);
 
-  switch (vget(8, 0, "(D)§R°£ (E)³]©w (Q)¨ú®ø¡H[Q] ", src, 3, LCECHO))
+  switch (vget(8, 0, "(D)åˆªé™¤ (E)è¨­å®š (Q)å–æ¶ˆï¼Ÿ[Q] ", src, 3, LCECHO))
   {
   case 'd':
 
@@ -980,24 +980,24 @@ brd_edit(bno)
     else
     {
       bname = bhdr->brdname;
-      if (*bname)	/* itoc.000512: ¦P®É¬å°£¦P¤@­Ó¬İªO·|³y¦¨ºëµØ°Ï¡B¬İªO¥ş·´ */
+      if (*bname)	/* itoc.000512: åŒæ™‚ç é™¤åŒä¸€å€‹çœ‹æ¿æœƒé€ æˆç²¾è¯å€ã€çœ‹æ¿å…¨æ¯€ */
       {
-	alog("§R°£¬İªO", bname);
+	alog("åˆªé™¤çœ‹æ¿", bname);
 
 	gem_fpath(src, bname, NULL);
 	f_rm(src);
 	f_rm(src + 4);
-	brd_classchange("gem/@/@"CLASS_INIFILE, bname, NULL);	/* itoc.020117: §R°£ @Class ¤¤ªº¬İªOºëµØ°Ï±¶®| */
+	brd_classchange("gem/@/@"CLASS_INIFILE, bname, NULL);	/* itoc.020117: åˆªé™¤ @Class ä¸­çš„çœ‹æ¿ç²¾è¯å€æ·å¾‘ */
 	memset(&newbh, 0, sizeof(BRD));
 	sprintf(newbh.title, "[%s] deleted by %s", bname, cuser.userid);
 	memcpy(bhdr, &newbh, sizeof(BRD));
 	rec_put(FN_BRD, &newbh, sizeof(BRD), bno, NULL);
 
-	/* itoc.050531: ¬åªO·|³y¦¨¬İªO¤£¬O«ö¦r¥À±Æ§Ç¡A©Ò¥H­n­×¥¿ numberOld */
+	/* itoc.050531: ç æ¿æœƒé€ æˆçœ‹æ¿ä¸æ˜¯æŒ‰å­—æ¯æ’åºï¼Œæ‰€ä»¥è¦ä¿®æ­£ numberOld */
 	if (bshm->numberOld > bno)
 	  bshm->numberOld = bno;
 
-	vmsg("§RªO§¹²¦");
+	vmsg("åˆªæ¿å®Œç•¢");
       }
     }
     break;
@@ -1005,23 +1005,23 @@ brd_edit(bno)
   case 'e':
 
     move(9, 0);
-    outs("ª½±µ«ö [Return] ¤£­×§ï¸Ó¶µ³]©w");
+    outs("ç›´æ¥æŒ‰ [Return] ä¸ä¿®æ”¹è©²é …è¨­å®š");
 
     if (!brd_set(&newbh, 11))
     {
       if (memcmp(&newbh, bhdr, sizeof(BRD)) && vans(msg_sure_ny) == 'y')
       {
 	bname = bhdr->brdname;
-	if (strcmp(bname, newbh.brdname))	/* ¬İªO§ó¦W­n²¾¥Ø¿ı */
+	if (strcmp(bname, newbh.brdname))	/* çœ‹æ¿æ›´åè¦ç§»ç›®éŒ„ */
 	{
-	  /* Thor.980806: ¯S§Oª`·N¦pªG¬İªO¤£¦b¦P¤@partition¸Ìªº¸Ü·|¦³°İÃD */
+	  /* Thor.980806: ç‰¹åˆ¥æ³¨æ„å¦‚æœçœ‹æ¿ä¸åœ¨åŒä¸€partitionè£¡çš„è©±æœƒæœ‰å•é¡Œ */
 	  gem_fpath(src, bname, NULL);
 	  gem_fpath(dst, newbh.brdname, NULL);
 	  rename(src, dst);
 	  rename(src + 4, dst + 4);
-	  brd_classchange("gem/@/@"CLASS_INIFILE, bname, &newbh);/* itoc.050329: ²§°Ê @Class ¤¤ªº¬İªOºëµØ°Ï±¶®| */
+	  brd_classchange("gem/@/@"CLASS_INIFILE, bname, &newbh);/* itoc.050329: ç•°å‹• @Class ä¸­çš„çœ‹æ¿ç²¾è¯å€æ·å¾‘ */
 
-	  /* itoc.050520: §ï¤FªO¦W·|³y¦¨¬İªO¤£¬O«ö¦r¥À±Æ§Ç¡A©Ò¥H­n­×¥¿ numberOld */
+	  /* itoc.050520: æ”¹äº†æ¿åæœƒé€ æˆçœ‹æ¿ä¸æ˜¯æŒ‰å­—æ¯æ’åºï¼Œæ‰€ä»¥è¦ä¿®æ­£ numberOld */
 	  if (bshm->numberOld > bno)
 	    bshm->numberOld = bno;
 	}
@@ -1029,14 +1029,14 @@ brd_edit(bno)
 	rec_put(FN_BRD, &newbh, sizeof(BRD), bno, NULL);
       }
     }
-    vmsg("³]©w§¹²¦");
+    vmsg("è¨­å®šå®Œç•¢");
     break;
   }
 }
 
 
 void
-brd_title(bno)		/* itoc.000312: ªO¥D­×§ï¤¤¤å±Ô­z */
+brd_title(bno)		/* itoc.000312: æ¿ä¸»ä¿®æ”¹ä¸­æ–‡æ•˜è¿° */
   int bno;
 {
   BRD *bhdr, newbh;
@@ -1049,9 +1049,9 @@ brd_title(bno)		/* itoc.000312: ªO¥D­×§ï¤¤¤å±Ô­z */
 
   if (blist[0] > ' ' && is_bm(blist, cuser.userid))
   {
-    if (vans("¬O§_­×§ï¤¤¤åªO¦W±Ô­z(Y/N)¡H[N] ") == 'y')
+    if (vans("æ˜¯å¦ä¿®æ”¹ä¸­æ–‡æ¿åæ•˜è¿°(Y/N)ï¼Ÿ[N] ") == 'y')
     {
-      vget(b_lines, 0, "¬İªO¥DÃD¡G", newbh.title, BTLEN + 1, GCARRY);
+      vget(b_lines, 0, "çœ‹æ¿ä¸»é¡Œï¼š", newbh.title, BTLEN + 1, GCARRY);
       memcpy(bhdr, &newbh, sizeof(BRD));
       rec_put(FN_BRD, &newbh, sizeof(BRD), bno, NULL);
     }

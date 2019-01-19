@@ -1,12 +1,12 @@
-§@ªÌ: itoc (Internet Explorer) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ªì¦¸¤W¯¸ªº¨Ï¥ÎªÌ¶i Hi_All ªO
-®É¶¡: Mon Mar  3 21:16:57 2003                          Updated: 2004/03/13
+ä½œè€…: itoc (Internet Explorer) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] åˆæ¬¡ä¸Šç«™çš„ä½¿ç”¨è€…é€² Hi_All æ¿
+æ™‚é–“: Mon Mar  3 21:16:57 2003                          Updated: 2004/03/13
 
-  ªì¦¸¤W¯¸ªº¨Ï¥ÎªÌ¶i Hi_All ªO
-  (µ¹¥L­Ì post ¦Û§Ú¤¶²Ğ¡A¤£±j­¢­n post)
+  åˆæ¬¡ä¸Šç«™çš„ä½¿ç”¨è€…é€² Hi_All æ¿
+  (çµ¦ä»–å€‘ post è‡ªæˆ‘ä»‹ç´¹ï¼Œä¸å¼·è¿«è¦ post)
 
-  Hi_All ªOªº postlevel ­n³]¦¨ PERM_BASIC ´N¦n
-  Åı¥¼³q¹L»{ÃÒªº¨Ï¥ÎªÌ¤]¯à post
+  Hi_All æ¿çš„ postlevel è¦è¨­æˆ PERM_BASIC å°±å¥½
+  è®“æœªé€šéèªè­‰çš„ä½¿ç”¨è€…ä¹Ÿèƒ½ post
 
 : maple.p
 
@@ -14,7 +14,7 @@ void brh_save(void);
 void brd_force(void);
 + void brd_hiall(void);
 
-: board.c:brd_hiall() ·s¼W³o¨ç¦¡©ó brd_force() ¤U­±
+: board.c:brd_hiall() æ–°å¢é€™å‡½å¼æ–¼ brd_force() ä¸‹é¢
 
 void
 brd_hiall()
@@ -22,7 +22,7 @@ brd_hiall()
   int bno;
 
   bno = brd_bno("Hi_ALL");
-  vmsg("ªì¦¸¤W¯¸¡A¨Ó½g¦Û§Ú¤¶²Ğ§a");
+  vmsg("åˆæ¬¡ä¸Šç«™ï¼Œä¾†ç¯‡è‡ªæˆ‘ä»‹ç´¹å§");
   XoPost(bno);
   xover(XZ_POST);
 
@@ -34,15 +34,15 @@ brd_hiall()
 : bbsd.c:tn_motd()
 
 #ifdef HAVE_FORCE_BOARD
-  brd_force();  /* itoc.000319: ±j¨î¾\Åª¤½§iªO */
+  brd_force();  /* itoc.000319: å¼·åˆ¶é–±è®€å…¬å‘Šæ¿ */
 #endif
 
-+ if (cuser.numlogins == 1)     /* ªì¦¸¤W¯¸¤~­n¥h Hi_ALL ªO */
++ if (cuser.numlogins == 1)     /* åˆæ¬¡ä¸Šç«™æ‰è¦å» Hi_ALL æ¿ */
 + {
 +   brd_hiall();
-+   cuser.numlogins++;      /* itoc.030217: ¥H§K¤W¯¸¥¼¹F¤@¤ÀÄÁ¡A¤£­p¦¸¼Æ */
++   cuser.numlogins++;      /* itoc.030217: ä»¥å…ä¸Šç«™æœªé”ä¸€åˆ†é˜ï¼Œä¸è¨ˆæ¬¡æ•¸ */
 + }
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

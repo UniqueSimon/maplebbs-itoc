@@ -1,31 +1,31 @@
-�o�H�H: guessi.bbs@bbs.wretch.cc (�S) �ݪO: plan
-��  �D: [�\��] �峹�C����ܧ@�̤��n�����O
-�o�H��: �L�W�p�� (2006/04/08 Sat 03:45:24)                Updated: 2006/04/08
+發信人: guessi.bbs@bbs.wretch.cc (沒) 看板: plan
+標  題: [功能] 文章列表顯示作者之好友類別
+發信站: 無名小站 (2006/04/08 Sat 03:45:24)                Updated: 2006/04/08
 
-: /src/maple/post.c:hdr_outs() �峹�C����ܧ@�̻P�ڪ��n�ͫ��A
+: /src/maple/post.c:hdr_outs() 文章列表顯示作者與我的好友型態
 
   /* --------------------------------------------------- */
-  /* �L�X�@��                                            */
+  /* 印出作者                                            */
   /* --------------------------------------------------- */
 
 #ifdef CHECK_ONLINE
 -  if (online = utmp_seek(hdr))
 -    outs(COLOR7);
 +  online = utmp_seek(hdr);
-+  if (online) /* �ˬd�O�_�b�u�W ���b�u�W�h�����C���ܤ� */
++  if (online) /* 檢查是否在線上 不在線上則不做顏色變化 */
 +  {
 +    if (is_mygood(acct_userno(hdr->owner)) && is_ogood(online))
-+      outs(CCOLOR_BOTHGOOD);           /* �������۳]�w���n�� ��ܫG�� */
-+    else if (is_mygood(acct_userno(hdr->owner))) /* �ڪ��n�� ��ܺ�� */
++      outs(CCOLOR_BOTHGOOD);           /* 彼此互相設定為好友 顯示亮白 */
++    else if (is_mygood(acct_userno(hdr->owner))) /* 我的好友 顯示綠色 */
 +      outs(COLOR_MYGOOD);
-+    else if (is_ogood(online))         /* �֥[�ڦn�� ��ܶ��� */
++    else if (is_ogood(online))         /* 誰加我好友 顯示黃色 */
 +      outs(COLOR_OGOOD);
 +  }
 #endif
 
 --
-[1;30;40m�ҧL�̤����������δc���G���D�̤��B�g�l�~�h�Q���ΧL�h�Q�k�L�̤��������D�g�l[m
-[1;30m�������o�w[37m[30m�ӥΤ���H���W�ӦӤ����Ӭ����̬O�ֱ��H�Ҽֱ��H�̫h���i�o�ө�ѤU
-[m[1;30m�o�N�Ʃ|�����Ʃ|�k���N�x�~���W�N�x�~�k���H��§�B�����H�����H�s�d�_���ԳӥH[m
-[1;30m��§�B���D�`[37m�L�W[30m�����p�ѤU����ګJ���Y��u���U���N�ۻ��Ѧa�ۦX�H�����S����[m
-[1;30m���O�Ӧۧ��l��W�W��J���ҥ�N�����[37m61-231-211-167.dynamic.hinet.net[30m��[m
+[1;30;40m夫兵者不祥之器物或惡之故有道者不處君子居則貴左用兵則貴右兵者不祥之器非君子[m
+[1;30m之器不得已[37m[30m而用之恬淡為上勝而不美而美之者是樂殺人夫樂殺人者則不可得志於天下
+[m[1;30m矣吉事尚左凶事尚右偏將軍居左上將軍居右言以喪禮處之殺人之眾以哀悲泣之戰勝以[m
+[1;30m喪禮處之道常[37m無名[30m樸雖小天下莫能臣侯王若能守之萬物將自賓天地相合以降甘露民莫[m
+[1;30m之令而自均始制有名名亦既有夫亦將知止知止[37m61-231-211-167.dynamic.hinet.net[30m海[m

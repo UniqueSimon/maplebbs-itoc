@@ -1,20 +1,20 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: [°İÃD]§ä¥XºëµØ°Ï®e¶q¹L¤jªº¬İªO
-®É¶¡: Wed Dec 10 19:15:36 2003                          Updated: 2003/12/11
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: [å•é¡Œ]æ‰¾å‡ºç²¾è¯å€å®¹é‡éå¤§çš„çœ‹æ¿
+æ™‚é–“: Wed Dec 10 19:15:36 2003                          Updated: 2003/12/11
 
-¡° ¤Ş­z¡mchwaian (µL¨¥)¡n¤§»Ê¨¥¡G
-> §Ú°Ñ¦Òbrdir¼g¤F¤@¤ä §äºëµØ°Ï®e¶q¶W¹L5000KB¤j¤pªº¬İªO
+â€» å¼•è¿°ã€Šchwaian (ç„¡è¨€)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æˆ‘åƒè€ƒbrdirå¯«äº†ä¸€æ”¯ æ‰¾ç²¾è¯å€å®¹é‡è¶…é5000KBå¤§å°çš„çœ‹æ¿
 
 : src/util/Makefile
 
 EXE =   .... gem-over
 
-: src/util/gem-over.c ·s¼W¦¹µ{¦¡
+: src/util/gem-over.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* util/gem-over.c      ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ²Î­pºëµØ°Ï¹L¤jªº¬İªO                         */
+/* target : çµ±è¨ˆç²¾è¯å€éå¤§çš„çœ‹æ¿                         */
 /* create : 03/12/10                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -22,8 +22,8 @@ EXE =   .... gem-over
 
 #include "bbs.h"
 
-static int total_n;         /* ½g¼Æ */
-static int total_k;         /* byte ¼Æ */
+static int total_n;         /* ç¯‡æ•¸ */
+static int total_k;         /* byte æ•¸ */
 
 static void
 gem_checksize(fpath)
@@ -91,14 +91,14 @@ main()
 
   while (fread(&brd, sizeof(BRD), 1, fp) == 1)
   {
-    if (!*brd.brdname)  /* ¦¹ªO¤w³Q§R°£ */
+    if (!*brd.brdname)  /* æ­¤æ¿å·²è¢«åˆªé™¤ */
       continue;
 
     sprintf(fpath, "gem/brd/%s/%s", brd.brdname, FN_DIR);
     gem_checksize(fpath);
 
-    if (total_n > 1000 || total_k > 5000)       /* 1000½g¡B5000KB */
-      printf("%s ªO %d ½g %d bytes\n", brd.brdname, total_n, total_k);
+    if (total_n > 1000 || total_k > 5000)       /* 1000ç¯‡ã€5000KB */
+      printf("%s æ¿ %d ç¯‡ %d bytes\n", brd.brdname, total_n, total_k);
   }
   fclose(fp);
 
@@ -106,5 +106,5 @@ main()
 }
 
 --
- [1;43m¢z[44m¢q[m Or[1mig[30min[m: [44m Maple-itoc£»°Ê¤O®Ö¤ß [31;47m processor.tfcis.org [m
- [1;41m¢|[42m¢}[m A[1mut[30mho[mr: [1;36mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [44m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [31;47m processor.tfcis.org [m
+ [1;41mâ””[42mâ”˜[m A[1mut[30mho[mr: [1;36mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

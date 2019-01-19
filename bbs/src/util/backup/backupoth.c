@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/backupoth.c     ( YZU WindTopBBS Ver 3.00 )      */
 /*-------------------------------------------------------*/
-/* target : ³Æ¥÷©Ò¦³¨Ï¥ÎªÌ¸ê®Æ                           */
+/* target : å‚™ä»½æ‰€æœ‰ä½¿ç”¨è€…è³‡æ–™                           */
 /* create : 95/03/29                                     */
 /* update : 97/03/29                                     */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -24,7 +24,7 @@ main()
   chdir(BBSHOME);
   umask(077);
 
-  /* «Ø¥ß³Æ¥÷¸ô®|¥Ø¿ı */
+  /* å»ºç«‹å‚™ä»½è·¯å¾‘ç›®éŒ„ */
   time(&now);
   ptime = localtime(&now);
   sprintf(bakpath, "%s/oth%02d%02d%02d", BAKPATH, ptime->tm_year % 100, ptime->tm_mon + 1, ptime->tm_mday);

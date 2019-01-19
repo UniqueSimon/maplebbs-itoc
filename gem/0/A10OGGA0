@@ -1,11 +1,11 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ½Ğ°İ¤jD¤å³¹ªºdeleted
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/03/08 Mon 23:31:01)                Updated: 2004/09/10
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: è«‹å•å¤§Dæ–‡ç« çš„deleted
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/03/08 Mon 23:31:01)                Updated: 2004/09/10
 
-¡° ¤Ş­z¡mmaya.bbs@maya.csie.ncku.edu.tw ( ¢i  ¢i  ¢i  ¢i  ¢i)¡n¤§»Ê¨¥¡G
-> §Ú·Q§â¤jDªº¤å³¹¹³¤pdªº¤å³¹¤@¼Ë·h¨ìdeleted
+â€» å¼•è¿°ã€Šmaya.bbs@maya.csie.ncku.edu.tw ( â–ˆ  â–ˆ  â–ˆ  â–ˆ  â–ˆ)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æˆ‘æƒ³æŠŠå¤§Dçš„æ–‡ç« åƒå°dçš„æ–‡ç« ä¸€æ¨£æ¬åˆ°deleted
 
-  ¤jD ©M tag ^D §R°£ªº¤å³¹°e¥h [deleted] ªO
+  å¤§D å’Œ tag ^D åˆªé™¤çš„æ–‡ç« é€å» [deleted] æ¿
 
 : post.c:delpost()
 
@@ -23,13 +23,13 @@ delpost(xo, hdr)
 }
 
 
-  n ^N §R°£ªº¤å³¹°e¥h [deleted] ªO
+  n ^N åˆªé™¤çš„æ–‡ç« é€å» [deleted] æ¿
 
 : post.c:post_delabel()
 
     else
     {
--     /* ³s½u¬å«H */
+-     /* é€£ç·šç ä¿¡ */
 -     cancel_post(hdr);
 -     hdr_fpath(fold, folder, hdr);
 -     unlink(fold);
@@ -37,5 +37,5 @@ delpost(xo, hdr)
     }
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

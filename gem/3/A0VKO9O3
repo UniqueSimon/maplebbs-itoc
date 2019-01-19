@@ -1,26 +1,26 @@
-µo«H¤H: BioStar.bbs@micro.bio.ncue.edu.tw (¼ê´ò¤p¶³³¶) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD] ¦p¦ó¨Ï¨t²Î¦Û°Ê±H¥Í¤é¯¬¶P«Hµ¹¹Ø¬P
-µo«H¯¸: Àº¤Ñ±^ (Wed, 27 Aug 2003 19:10:53 +0800 (CST))    Updated: 2003/08/27
+ç™¼ä¿¡äºº: BioStar.bbs@micro.bio.ncue.edu.tw (æ¾æ¹–å°é›²é›€) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] å¦‚ä½•ä½¿ç³»çµ±è‡ªå‹•å¯„ç”Ÿæ—¥ç¥è³€ä¿¡çµ¦å£½æ˜Ÿ
+ç™¼ä¿¡ç«™: æ“å¤©å´— (Wed, 27 Aug 2003 19:10:53 +0800 (CST))    Updated: 2003/08/27
 
-¦]¬°±Í¯¸ªº util/topusr.c ¬O¨C¤p®É¤@¦¸......
-¡]¦]¬°¬Y¨Ç¨Ï¥ÎªÌ«æ©ó¬İ¨ì¦Û¤vªº¡uÂ×¥\°¶·~¡v¡^
+å› ç‚ºæ•ç«™çš„ util/topusr.c æ˜¯æ¯å°æ™‚ä¸€æ¬¡......
+ï¼ˆå› ç‚ºæŸäº›ä½¿ç”¨è€…æ€¥æ–¼çœ‹åˆ°è‡ªå·±çš„ã€Œè±åŠŸå‰æ¥­ã€ï¼‰
 
-©Ò¥H±N³o¥\¯à¿W¥ß¦¨ util/birth.c ......
+æ‰€ä»¥å°‡é€™åŠŸèƒ½ç¨ç«‹æˆ util/birth.c ......
 
 : src/util/Makefile
 
 EXE = ..... birth
 
-: crontab -e ¥[¤J
+: crontab -e åŠ å…¥
 
 1 0 * * * bin/birth > /dev/null 2>&1
 
-: util/birth.c ·s¼W¦¹µ{¦¡
+: util/birth.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* util/birth.c     ( NTHU CS MapleBBS Ver 3.00 )        */
 /*-------------------------------------------------------*/
-/* target : ¨t²Î¦Û°Ê°e¥Í¤é¯¬¶P«H¥ó                       */
+/* target : ç³»çµ±è‡ªå‹•é€ç”Ÿæ—¥ç¥è³€ä¿¡ä»¶                       */
 /* create : 99/03/29                                     */
 /* update : 01/10/01                                     */
 /* modify : BioStar.bbs@bbs.bio.ncue.edu.tw              */
@@ -108,7 +108,7 @@ main()
       read(fd, &acct, sizeof(ACCT));
       close(fd);
 
-      if (acct.month == month && acct.day == day)   /* ¥»¤é¹Ø¬P */
+      if (acct.month == month && acct.day == day)   /* æœ¬æ—¥å£½æ˜Ÿ */
       {
         HDR hdr;
         char folder[64], lowid[IDLEN + 1];
@@ -117,7 +117,7 @@ main()
         sprintf(folder, "%s/.DIR", lowid);
         hdr_stamp(folder, HDR_COPY, &hdr, BBSHOME "etc/birth");
         strcpy(hdr.owner, STR_SYSOP);
-        strcpy(hdr.title, "¥Í¤é§Ö¼Ö");
+        strcpy(hdr.title, "ç”Ÿæ—¥å¿«æ¨‚");
         hdr.xmode = 0;
         rec_add(folder, &hdr, sizeof(HDR));
         bbs_biff(acct.userid);
@@ -129,5 +129,5 @@ main()
 }
 
 --
- [1;43m¢z[44m¢q[m Au[1mth[30mor[m: [44m ¹ü¤Æ®v¤j¥Íª«¨t£»§u­·¡E²·¤ë¡EÀº¤Ñ±^ [31;47m micro.bio.ncue.edu.tw [m
- [1;41m¢|[42m¢}[m O[1mri[30mgi[mn: [1;36mBioStar [30m±q [35m163.23.212.15 [30mµoªí[m
+ [1;43mâ”Œ[44mâ”¼[m Au[1mth[30mor[m: [44m å½°åŒ–å¸«å¤§ç”Ÿç‰©ç³»Ë™åŸé¢¨?çœºæœˆ?æ“å¤©å´— [31;47m micro.bio.ncue.edu.tw [m
+ [1;41mâ””[42mâ”˜[m O[1mri[30mgi[mn: [1;36mBioStar [30må¾ [35m163.23.212.15 [30mç™¼è¡¨[m

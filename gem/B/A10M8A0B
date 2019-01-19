@@ -1,19 +1,19 @@
-�@��: itoc (�֤߰ʤO) �ݪO: itoc
-���D: Re: [���D]Tagger���bmw
-�ɶ�: 2004/03/04 Thu 14:38:25                           Updated: 2005/06/12
+作者: itoc (核心動力) 看板: itoc
+標題: Re: [問題]Tagger放到bmw
+時間: 2004/03/04 Thu 14:38:25                           Updated: 2005/06/12
 
-�� �ޭz�mchwaian (�L��)�n���ʨ��G
-> �p�G�O�n���ulist_XXXXXX
-> call ulist_write �ɥ��ˬd���LTag
+※ 引述《chwaian (無言)》之銘言：
+> 如果是要改到ulist_XXXXXX
+> call ulist_write 時先檢查有無Tag
 
-  ���� tag �\��[�J userlist �t��
+  先把 tag 功能加入 userlist 系統
 
-: ulist.c:ulist_item() �[�J * ���Ÿ�
+: ulist.c:ulist_item() 加入 * 的符號
 
 -   num, ufo & UFO_CLOAK ? ')' : ' ', pager,
 +   num, tag_char(up->pid) == '*' ? '*' : ufo & UFO_CLOAK ? ')' : ' ', pager,
 
-: ulist.c:ulist_tag() �s�W���禡�b ulist_help() �e��
+: ulist.c:ulist_tag() 新增此函式在 ulist_help() 前面
 
 static int
 ulist_tag(xo)
@@ -36,27 +36,27 @@ ulist_tag(xo)
   }
 
   /* return XO_NONE; */
-  return xo->pos + 1 + XO_MOVE; /* lkchu.981201: ���ܤU�@�� */
+  return xo->pos + 1 + XO_MOVE; /* lkchu.981201: 跳至下一項 */
 }
 
-: ulist.c:ulist_cb[] �s�W tag ���O
+: ulist.c:ulist_cb[] 新增 tag 指令
 
 + 't', ulist_tag,
 
   'h', ulist_help
 
-> �w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w <
+> ───────────────────────────────────── <
 
-  �o�˴N�w�g�� tag �\��F�A���U�ӴN�ݧA�n�������
+  這樣就已經有 tag 功能了，接下來就看你要做什麼事
 
 static int
-ulist_xxxx(xo)            // xxxx �O�禡�R�W
+ulist_xxxx(xo)            // xxxx 是函式命名
   XO *xo;
 {
   int tag, locus, pos;
   UTMP *up;
 
-  tag = AskTag("���򤰻��");
+  tag = AskTag("什麼什麼事");
 
   if (tag < 0)
     return XO_FOOT;
@@ -71,24 +71,24 @@ ulist_xxxx(xo)            // xxxx �O�禡�R�W
     {
       pos = TagList[locus].recno;
       up = ulist_pool[pos];
-      if (up->pid != TagList[locus].chrono)     /* �Ӧ�l���H�F */
+      if (up->pid != TagList[locus].chrono)     /* 該位子換人了 */
         continue;
     }
 
-    // ���U�ӳo��N�ݧA�n�� up �Ӱ������
+    // 接下來這邊就看你要拿 up 來做什麼事
 
   } while (++locus < tag);
 
-  return XO_FOOT;       // �]�\�O ulist_head()�A�̵e����ø�өw
+  return XO_FOOT;       // 也許是 ulist_head()，依畫面重繪而定
 }
 
 : ulist.c:ulist_cb[]
 
-+ 'x', ulist_xxxx,        // ����Ψ禡�W�۩w
++ 'x', ulist_xxxx,        // 按鍵及函式名自定
 
   'h', ulist_help
 
 
 --
- [1;43m�~[46m�q[m Or[1mig[30min[m: [41m Maple-itoc���ʤO�֤� [32;47m processor.tfcis.org [m
- [1;44m�q[41m��[m A[1mut[30mho[mr: [1;33mitoc [30m�q [35mpc512-2.ee.nctu.edu.tw [30m�o��[m
+ [1;43m╭[46m┼[m Or[1mig[30min[m: [41m Maple-itoc˙動力核心 [32;47m processor.tfcis.org [m
+ [1;44m┼[41m╯[m A[1mut[30mho[mr: [1;33mitoc [30m從 [35mpc512-2.ee.nctu.edu.tw [30m發表[m

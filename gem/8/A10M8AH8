@@ -1,20 +1,20 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ·Q­n¤@­Óµ{¦¡...
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/10/06 Wed 23:24:46)                Updated: 2005/06/12
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: æƒ³è¦ä¸€å€‹ç¨‹å¼...
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/10/06 Wed 23:24:46)                Updated: 2005/06/12
 
-¡° ¤Ş­z¡mFrank.bbs@cpp.twbbs.org (¨©¨©)¡n¤§»Ê¨¥¡G
-> check ¦pªG .BRD ¸Ì¦³¥ô¦ó¤@­Ó¬İªO,¨S¦³¥X²{¦b newsfeeds.bbs ¤¤
+â€» å¼•è¿°ã€ŠFrank.bbs@cpp.twbbs.org (è²è²)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> check å¦‚æœ .BRD è£¡æœ‰ä»»ä½•ä¸€å€‹çœ‹æ¿,æ²’æœ‰å‡ºç¾åœ¨ newsfeeds.bbs ä¸­
 
-: src/util/Makefile ¥[¤J check_newsfeeds
+: src/util/Makefile åŠ å…¥ check_newsfeeds
 
 EXE =   account acl-sort bbsmail [1;33mcheck_newsfeeds[m ...
 
-: src/util/check_newsfeeds.c ·s¼Wµ{¦¡¦p¤U
+: src/util/check_newsfeeds.c æ–°å¢ç¨‹å¼å¦‚ä¸‹
 
 /*-------------------------------------------------------*/
 /* util/check_newsfeeds.c  ( NTHU CS MapleBBS Ver 3.10 ) */
 /*-------------------------------------------------------*/
-/* target : ÀË¬d newsfeeds.bbs ¬O§_¦³¤£Âà«Hªº¬İªO        */
+/* target : æª¢æŸ¥ newsfeeds.bbs æ˜¯å¦æœ‰ä¸è½‰ä¿¡çš„çœ‹æ¿        */
 /* create : 04/10/06                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -24,7 +24,7 @@ EXE =   account acl-sort bbsmail [1;33mcheck_newsfeeds[m ...
 #include "bbs.h"
 
 
-static int              /* 1: brdname ¦b newsfeeds.bbs ¤º */
+static int              /* 1: brdname åœ¨ newsfeeds.bbs å…§ */
 in_newsfeeds(brdname)
   char *brdname;
 {
@@ -63,11 +63,11 @@ main()
     {
       str = brd.brdname;
 
-      if (!*str)  /* ¦¹ªO¤w³Q§R°£ */
+      if (!*str)  /* æ­¤æ¿å·²è¢«åˆªé™¤ */
         continue;
 
       if (!(brd.battr & BRD_NOTRAN) && !in_newsfeeds(str))
-        printf("%s ªºÄİ©Ê­nÂà«H¥X¥h¡A¦ı¤£¦b newsfeeds.bbs ¤¤\n", str);
+        printf("%s çš„å±¬æ€§è¦è½‰ä¿¡å‡ºå»ï¼Œä½†ä¸åœ¨ newsfeeds.bbs ä¸­\n", str);
     }
     close(fd);
   }
@@ -76,5 +76,5 @@ main()
 }
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m Maple-itoc£»°Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
- [1;43m¢¢[46mùñ[m [1mMo[30mdi[mfy: [1;35m2004/10/06 Wed 23:24:46[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
+ [1;43mâ•°[46mâ•–[m [1mMo[30mdi[mfy: [1;35m2004/10/06 Wed 23:24:46[m

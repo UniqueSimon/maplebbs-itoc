@@ -1,17 +1,17 @@
-�o�H�H: TonyQ.bbs@bbs.wretch.cc (�I�q�O��) �ݪO: plan
-��  �D: Re: ��������
-�o�H��: �L�W�p�� (2007/04/27 Fri 03:29:23)                Updated: 2007/04/27
+發信人: TonyQ.bbs@bbs.wretch.cc (沉默是金) 看板: plan
+標  題: Re: 有關推文
+發信站: 無名小站 (2007/04/27 Fri 03:29:23)                Updated: 2007/04/27
 
-�� �ޭz�mbrucebee.bbs@cpu.tfcis.org (bruce)�n���ʨ��G
-> �����D�ण��b�@������
-> ��ܥX�ѴX�Ӧr �γѴX��b��??
-> �n���M���ɥ���̫�~���D���I��  �n�Q��k�@�Y
+※ 引述《brucebee.bbs@cpu.tfcis.org (bruce)》之銘言：
+> 不知道能不能在一邊推文時
+> 顯示出剩幾個字 或剩幾格半型??
+> 要不然有時打到最後才知道有點長  要想辦法濃縮
 
 : modes.h
 
-  #define LCECHO          0x0200    /* low case echo�A�����p�g */
-  #define GCARRY          0x0400    /* �|��ܤW�@��/�ثe���� */
-+ #define CTECHO          0x0800    /* Bone.070427: count echo �[�W������� */
+  #define LCECHO          0x0200    /* low case echo，換成小寫 */
+  #define GCARRY          0x0400    /* 會顯示上一次/目前的值 */
++ #define CTECHO          0x0800    /* Bone.070427: count echo 加上長度顯示 */
 
 : visio.c:vgets()
 
@@ -27,16 +27,16 @@
     ch = vkey();
 
 
-: �w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w
+: ────────────────────────────────────
 
-  �ܩ�Ϊk��²��A�h�O�� vget() ������ -6 �B�[�� COUNTECHO
+  至於用法很簡單，則是把 vget() 的長度 -6 且加個 COUNTECHO
 
-  �d�Ҧp�U�G
+  範例如下：
 
 : post.c:post_score()
 
-- if (!vget(b_lines, 0, "�п�J�z�ѡG", reason, maxlen, DOECHO))
-+ if (!vget(b_lines, 0, "�п�J�z�ѡG", reason, maxlen - 6, DOECHO | CTECHO))
+- if (!vget(b_lines, 0, "請輸入理由：", reason, maxlen, DOECHO))
++ if (!vget(b_lines, 0, "請輸入理由：", reason, maxlen - 6, DOECHO | CTECHO))
 
 : bmw.c:bmw_edit()
 
@@ -44,8 +44,8 @@
 +  ch = vget(0, 0, hint, bmw->msg, 56, GCARRY | CTECHO);
 
 --
-[1;30;40m�ҧL�̤����������δc���G���D�̤��B�g�l�~�h�Q���ΧL�h�Q�k�L�̤��������D�g�l[m
-[1;30m�������o�w[37m[30m�ӥΤ���H���W�ӦӤ����Ӭ����̬O�ֱ��H�Ҽֱ��H�̫h���i�o�ө�ѤU
-[m[1;30m�o�N�Ʃ|�����Ʃ|�k���N�x�~���W�N�x�~�k���H��§�B�����H�����H�s�d�_���ԳӥH[m
-[1;30m��§�B���D�`[37m�L�W[30m�����p�ѤU����ګJ���Y��u���U���N�ۻ��Ѧa�ۦX�H�����S����[m
-[1;30m���O�Ӧۧ��l��W�W��J���ҥ�N�����[37m220-134-27-68.HINET-IP.hinet.net[30m��[m
+[1;30;40m夫兵者不祥之器物或惡之故有道者不處君子居則貴左用兵則貴右兵者不祥之器非君子[m
+[1;30m之器不得已[37m[30m而用之恬淡為上勝而不美而美之者是樂殺人夫樂殺人者則不可得志於天下
+[m[1;30m矣吉事尚左凶事尚右偏將軍居左上將軍居右言以喪禮處之殺人之眾以哀悲泣之戰勝以[m
+[1;30m喪禮處之道常[37m無名[30m樸雖小天下莫能臣侯王若能守之萬物將自賓天地相合以降甘露民莫[m
+[1;30m之令而自均始制有名名亦既有夫亦將知止知止[37m220-134-27-68.HINET-IP.hinet.net[30m海[m

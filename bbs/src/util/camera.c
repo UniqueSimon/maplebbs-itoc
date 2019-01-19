@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/camera.c	( NTHU CS MapleBBS Ver 3.00 )	 */
 /*-------------------------------------------------------*/
-/* target : «Ø¥ß [°ÊºA¬İªO] cache			 */
+/* target : å»ºç«‹ [å‹•æ…‹çœ‹æ¿] cache			 */
 /* create : 95/03/29				 	 */
 /* update : 97/03/29				 	 */
 /*-------------------------------------------------------*/
@@ -33,7 +33,7 @@ static char *list[] = 		/* src/include/struct.h */
 
 
 static void
-str_strip(str, size)		/* itoc.060417: ±N°ÊºA¬İªO¨C¦Cªº¼e«×Õt¦b SCR_WIDTH */
+str_strip(str, size)		/* itoc.060417: å°‡å‹•æ…‹çœ‹æ¿æ¯åˆ—çš„å¯¬åº¦æåœ¨ SCR_WIDTH */
   char *str;
   int size;
 {
@@ -41,9 +41,9 @@ str_strip(str, size)		/* itoc.060417: ±N°ÊºA¬İªO¨C¦Cªº¼e«×Õt¦b SCR_WIDTH */
   char *ptr;
   const char *strip = "\033[m\n";
 
-  /* ­Y°ÊºA¬İªO¦³¤@¦Cªº¼e«×¶W¹L SCR_WIDTH¡A·|Åã¥Ü¤G¦C¡A³y¦¨±Æª©¿ù»~ (¥D­n¬OÂIºqªº³¡¤À)
-     ©Ò¥H´N°®¯Ü§â¶W¹L SCR_WIDTH ªº³¡¤À§R°£ (¦b¦¹¤£¦Ò¼{¼e¿Ã¹õ) */
-  /* ­Y¥»¦C¤¤¦³ \033*s ©Î \033*n¡AÅã¥Ü¥X¨Ó·|§óªø¡A©Ò¥H­n¯S§O³B²z */
+  /* è‹¥å‹•æ…‹çœ‹æ¿æœ‰ä¸€åˆ—çš„å¯¬åº¦è¶…é SCR_WIDTHï¼Œæœƒé¡¯ç¤ºäºŒåˆ—ï¼Œé€ æˆæ’ç‰ˆéŒ¯èª¤ (ä¸»è¦æ˜¯é»æ­Œçš„éƒ¨åˆ†)
+     æ‰€ä»¥å°±ä¹¾è„†æŠŠè¶…é SCR_WIDTH çš„éƒ¨åˆ†åˆªé™¤ (åœ¨æ­¤ä¸è€ƒæ…®å¯¬è¢å¹•) */
+  /* è‹¥æœ¬åˆ—ä¸­æœ‰ \033*s æˆ– \033*nï¼Œé¡¯ç¤ºå‡ºä¾†æœƒæ›´é•·ï¼Œæ‰€ä»¥è¦ç‰¹åˆ¥è™•ç† */
 
   ansi = len = 0;
   ptr = str;
@@ -59,13 +59,13 @@ str_strip(str, size)		/* itoc.060417: ±N°ÊºA¬İªO¨C¦Cªº¼e«×Õt¦b SCR_WIDTH */
     }
     else if (ansi)
     {
-      if (ch == '*')	/* KEY_ESC + * + s/n ¨q¥X ID/username¡A¦Ò¼{³Ì¤jªø«× */
+      if (ch == '*')	/* KEY_ESC + * + s/n ç§€å‡º ID/usernameï¼Œè€ƒæ…®æœ€å¤§é•·åº¦ */
       {
 	ansi = 0;
 	len += BMAX(IDLEN, UNLEN) - 1;
 	if (len > SCR_WIDTH)
 	{
-	  if (ptr - 1 + strlen(strip) < str + size)	/* Á×§K overflow */
+	  if (ptr - 1 + strlen(strip) < str + size)	/* é¿å… overflow */
 	    strcpy(ptr - 1, strip);
 	  else
 	    strcpy(ptr - 1, "\n");
@@ -79,7 +79,7 @@ str_strip(str, size)		/* itoc.060417: ±N°ÊºA¬İªO¨C¦Cªº¼e«×Õt¦b SCR_WIDTH */
     {
       if (++len > SCR_WIDTH)
       {
-	if (ptr - 1 + strlen(strip) < str + size)	/* Á×§K overflow */
+	if (ptr - 1 + strlen(strip) < str + size)	/* é¿å… overflow */
 	  strcpy(ptr - 1, strip);
 	else
 	  strcpy(ptr - 1, "\n");
@@ -91,14 +91,14 @@ str_strip(str, size)		/* itoc.060417: ±N°ÊºA¬İªO¨C¦Cªº¼e«×Õt¦b SCR_WIDTH */
 
 
 static FCACHE image;
-static int number;	/* ¥Ø«e¤w mirror ´X½g¤F */
-static int total;	/* ¥Ø«e¤w mirror ´X byte ¤F */
+static int number;	/* ç›®å‰å·² mirror å¹¾ç¯‡äº† */
+static int total;	/* ç›®å‰å·² mirror å¹¾ byte äº† */
 
 
-static int		/* 1:¦¨¥\ 0:¤w¶W¹L½g¼Æ©Î®e¶q */
+static int		/* 1:æˆåŠŸ 0:å·²è¶…éç¯‡æ•¸æˆ–å®¹é‡ */
 mirror(fpath, line)
   char *fpath;
-  int line;		/* 0:¨t²Î¤å¥ó¡A¤£­­¨î¦C¼Æ  !=0:°ÊºA¬İªO¡Aline ¦C */
+  int line;		/* 0:ç³»çµ±æ–‡ä»¶ï¼Œä¸é™åˆ¶åˆ—æ•¸  !=0:å‹•æ…‹çœ‹æ¿ï¼Œline åˆ— */
 {
   int size, i;
   char buf[FILM_SIZ];
@@ -106,7 +106,7 @@ mirror(fpath, line)
   struct stat st;
   FILE *fp;
 
-  /* ­Y¤w¸g¶W¹L³Ì¤j½g¼Æ¡A«h¤£¦AÄ~Äò mirror */
+  /* è‹¥å·²ç¶“è¶…éæœ€å¤§ç¯‡æ•¸ï¼Œå‰‡ä¸å†ç¹¼çºŒ mirror */
   if (number >= MOVIE_MAX - 1)
     return 0;
 
@@ -127,7 +127,7 @@ mirror(fpath, line)
   
       if (line)
       {
-	/* °ÊºA¬İªO¡A³Ì¦h line ¦C */
+	/* å‹•æ…‹çœ‹æ¿ï¼Œæœ€å¤š line åˆ— */
 	if (++i >= line)
 	  break;
       }
@@ -136,7 +136,7 @@ mirror(fpath, line)
 
     if (i != line)	
     {
-      /* °ÊºA¬İªO¡A­Y¤£¨ì line ¦C¡A­n¶ñº¡ line ¦C */
+      /* å‹•æ…‹çœ‹æ¿ï¼Œè‹¥ä¸åˆ° line åˆ—ï¼Œè¦å¡«æ»¿ line åˆ— */
       for (; i < line; i++)
       {
 	buf[size] = '\n';
@@ -148,18 +148,18 @@ mirror(fpath, line)
 
   if (size <= 0 || size >= FILM_SIZ)
   {
-    if (line)		/* ¦pªG¬O °ÊºA¬İªO/ÂIºq ¯ÊÀÉ®×¡A´N¤£ mirror */
+    if (line)		/* å¦‚æœæ˜¯ å‹•æ…‹çœ‹æ¿/é»æ­Œ ç¼ºæª”æ¡ˆï¼Œå°±ä¸ mirror */
       return 1;
 
-    /* ¦pªG¬O¨t²Î¤å¥ó¥X¿ùªº¸Ü¡A­n¸É¤W¥h */
-    sprintf(buf, "½Ğ§i¶D¯¸ªøÀÉ®× %s ¿ò¥¢©Î¬O¹L¤j", fpath);
+    /* å¦‚æœæ˜¯ç³»çµ±æ–‡ä»¶å‡ºéŒ¯çš„è©±ï¼Œè¦è£œä¸Šå» */
+    sprintf(buf, "è«‹å‘Šè¨´ç«™é•·æª”æ¡ˆ %s éºå¤±æˆ–æ˜¯éå¤§", fpath);
     size = strlen(buf);
   }
 
-  size++;	/* Thor.980804: +1 ±Nµ²§Àªº '\0' ¤]ºâ¤J */
+  size++;	/* Thor.980804: +1 å°‡çµå°¾çš„ '\0' ä¹Ÿç®—å…¥ */
 
   i = total + size;
-  if (i >= MOVIE_SIZE)	/* ­Y¥[¤J³o½g·|¶W¹L¥ş³¡®e¶q¡A«h¤£ mirror */
+  if (i >= MOVIE_SIZE)	/* è‹¥åŠ å…¥é€™ç¯‡æœƒè¶…éå…¨éƒ¨å®¹é‡ï¼Œå‰‡ä¸ mirror */
     return 0;
 
   memcpy(image.film + total, buf, size);
@@ -170,8 +170,8 @@ mirror(fpath, line)
 
 
 static void
-do_gem(folder)		/* itoc.011105: §â¬İªO/ºëµØ°Ïªº¤å³¹¦¬¶i movie */
-  char *folder;		/* index ¸ô®| */
+do_gem(folder)		/* itoc.011105: æŠŠçœ‹æ¿/ç²¾è¯å€çš„æ–‡ç« æ”¶é€² movie */
+  char *folder;		/* index è·¯å¾‘ */
 {
   char fpath[64];
   FILE *fp;
@@ -181,12 +181,12 @@ do_gem(folder)		/* itoc.011105: §â¬İªO/ºëµØ°Ïªº¤å³¹¦¬¶i movie */
   {
     while (fread(&hdr, sizeof(HDR), 1, fp) == 1)
     {
-      if (hdr.xmode & (GEM_RESTRICT | GEM_RESERVED | GEM_BOARD | GEM_LINE))	/* ­­¨î¯Å¡B¬İªO¡B¤À¹j½u ¤£©ñ¤J movie ¤¤ */
+      if (hdr.xmode & (GEM_RESTRICT | GEM_RESERVED | GEM_BOARD | GEM_LINE))	/* é™åˆ¶ç´šã€çœ‹æ¿ã€åˆ†éš”ç·š ä¸æ”¾å…¥ movie ä¸­ */
 	continue;
 
       hdr_fpath(fpath, folder, &hdr);
 
-      if (hdr.xmode & GEM_FOLDER)	/* ¹J¨ì¨÷©v«h°j°é¶i¥h¦¬ movie */
+      if (hdr.xmode & GEM_FOLDER)	/* é‡åˆ°å·å®—å‰‡è¿´åœˆé€²å»æ”¶ movie */
       {
 	do_gem(fpath);
       }
@@ -202,50 +202,50 @@ do_gem(folder)		/* itoc.011105: §â¬İªO/ºëµØ°Ïªº¤å³¹¦¬¶i movie */
 
 
 static void
-lunar_calendar(key, now, ptime)	/* itoc.050528: ¥Ñ¶§¾äºâ¹A¾ä¤é´Á */
+lunar_calendar(key, now, ptime)	/* itoc.050528: ç”±é™½æ›†ç®—è¾²æ›†æ—¥æœŸ */
   char *key;
   time_t *now;
   struct tm *ptime;
 {
-#if 0	/* Table ªº·N¸q */
+#if 0	/* Table çš„æ„ç¾© */
 
-  (1) "," ¥u¬O¤À¹j¡A¤è«Kµ¹¤H¾\Åª¦Ó¤w
-  (2) «e 12 ­Ó byte ¤À§O¥Nªí¹A¾ä 1-12 ¤ë¬°¤j¤ë©Î¬O¤p¤ë¡C"L":¤j¤ë¤T¤Q¤Ñ¡A"-":¤p¤ë¤G¤Q¤E¤Ñ
-  (3) ²Ä 14 ­Ó byte ¥Nªí¤µ¦~¹A¾ä¶|¤ë¡C"X":µL¶|¤ë¡A"123456789:;<" ¤À§O¥Nªí¹A¾ä 1-12 ¬O¶|¤ë
-  (4) ²Ä 16-20 ­Ó bytes ¥Nªí¤µ¦~¹A¾ä·s¦~¬O­ş¤Ñ¡C¨Ò¦p "02/15" ªí¥Ü¶§¾ä¤G¤ë¤Q¤­¤é¬O¹A¾ä·s¦~
+  (1) "," åªæ˜¯åˆ†éš”ï¼Œæ–¹ä¾¿çµ¦äººé–±è®€è€Œå·²
+  (2) å‰ 12 å€‹ byte åˆ†åˆ¥ä»£è¡¨è¾²æ›† 1-12 æœˆç‚ºå¤§æœˆæˆ–æ˜¯å°æœˆã€‚"L":å¤§æœˆä¸‰åå¤©ï¼Œ"-":å°æœˆäºŒåä¹å¤©
+  (3) ç¬¬ 14 å€‹ byte ä»£è¡¨ä»Šå¹´è¾²æ›†é–æœˆã€‚"X":ç„¡é–æœˆï¼Œ"123456789:;<" åˆ†åˆ¥ä»£è¡¨è¾²æ›† 1-12 æ˜¯é–æœˆ
+  (4) ç¬¬ 16-20 å€‹ bytes ä»£è¡¨ä»Šå¹´è¾²æ›†æ–°å¹´æ˜¯å“ªå¤©ã€‚ä¾‹å¦‚ "02/15" è¡¨ç¤ºé™½æ›†äºŒæœˆåäº”æ—¥æ˜¯è¾²æ›†æ–°å¹´
 
 #endif
 
   #define TABLE_INITAIL_YEAR	2005
   #define TABLE_FINAL_YEAR	2016
 
-  /* °Ñ¦Ò http://sean.tw.googlepages.com/calendar.htm ¦Ó±o */
+  /* åƒè€ƒ http://sean.tw.googlepages.com/calendar.htm è€Œå¾— */
   char Table[TABLE_FINAL_YEAR - TABLE_INITAIL_YEAR + 1][21] = 
   {
-    "-L-L-LL-L-L-,X,02/09",	/* 2005 Âû¦~ */
-    "L-L-L-L-LL-L,7,01/29",	/* 2006 ª¯¦~ */
-    "--L--L-LLL-L,X,02/18",	/* 2007 ½Ş¦~ */
-    "L--L--L-LL-L,X,02/07",	/* 2008 ¹«¦~ */
-    "LL--L-L-L-LL,5,01/26",	/* 2009 ¤û¦~ */
-    "L-L-L--L-L-L,X,02/14",	/* 2010 ªê¦~ */
-    "L-LL-L--L-L-,X,02/03",	/* 2011 ¨ß¦~ */
-    "L-LLL-L-L-L-,4,01/23",	/* 2012 Às¦~ */
-    "L-L-LL-L-L-L,X,02/10",	/* 2013 ³D¦~ */
-    "-L-L-L-LLL-L,9,01/31",	/* 2014 °¨¦~ */
-    "-L--L-LLL-L-,X,02/19",	/* 2015 ¦Ï¦~ */
-    "L-L--L-LL-LL,X,02/08",	/* 2016 µU¦~ */
+    "-L-L-LL-L-L-,X,02/09",	/* 2005 é›å¹´ */
+    "L-L-L-L-LL-L,7,01/29",	/* 2006 ç‹—å¹´ */
+    "--L--L-LLL-L,X,02/18",	/* 2007 è±¬å¹´ */
+    "L--L--L-LL-L,X,02/07",	/* 2008 é¼ å¹´ */
+    "LL--L-L-L-LL,5,01/26",	/* 2009 ç‰›å¹´ */
+    "L-L-L--L-L-L,X,02/14",	/* 2010 è™å¹´ */
+    "L-LL-L--L-L-,X,02/03",	/* 2011 å…”å¹´ */
+    "L-LLL-L-L-L-,4,01/23",	/* 2012 é¾å¹´ */
+    "L-L-LL-L-L-L,X,02/10",	/* 2013 è›‡å¹´ */
+    "-L-L-L-LLL-L,9,01/31",	/* 2014 é¦¬å¹´ */
+    "-L--L-LLL-L-,X,02/19",	/* 2015 ç¾Šå¹´ */
+    "L-L--L-LL-LL,X,02/08",	/* 2016 çŒ´å¹´ */
   };
 
   char year[21];
 
-  time_t nyd;	/* ¤µ¦~ªº¹A¾ä·s¦~ */
+  time_t nyd;	/* ä»Šå¹´çš„è¾²æ›†æ–°å¹´ */
   struct tm ntime;
 
   int i;
   int Mon, Day;
-  int leap;	/* 0:¥»¦~µL¶|¤ë */
+  int leap;	/* 0:æœ¬å¹´ç„¡é–æœˆ */
 
-  /* ¥ı§ä¥X¤µ¤Ñ¬O¹A¾ä­ş¤@¦~ */
+  /* å…ˆæ‰¾å‡ºä»Šå¤©æ˜¯è¾²æ›†å“ªä¸€å¹´ */
 
   memcpy(&ntime, ptime, sizeof(ntime));
 
@@ -261,7 +261,7 @@ lunar_calendar(key, now, ptime)	/* itoc.050528: ¥Ñ¶§¾äºâ¹A¾ä¤é´Á */
       break;
   }
 
-  /* ¦A±q¹A¾ä¥¿¤ëªì¤@¶}©l¼Æ¨ì¤µ¤Ñ */
+  /* å†å¾è¾²æ›†æ­£æœˆåˆä¸€é–‹å§‹æ•¸åˆ°ä»Šå¤© */
 
   leap = (year[13] == 'X') ? 0 : 1;
 
@@ -277,11 +277,11 @@ lunar_calendar(key, now, ptime)	/* itoc.050528: ¥Ñ¶§¾äºâ¹A¾ä¤é´Á */
       {
 	leap = 0;
 	Mon--;
-	year[Mon - 1] = '-';	/* ¶|¤ë¥²¤p¤ë */
+	year[Mon - 1] = '-';	/* é–æœˆå¿…å°æœˆ */
       }
       else if (year[13] == Mon + '0')
       {
-	if (leap == 1)		/* ¤U¤ë¬O¶|¤ë */
+	if (leap == 1)		/* ä¸‹æœˆæ˜¯é–æœˆ */
 	  leap++;
       }
     }
@@ -296,9 +296,9 @@ do_today()
 {
   FILE *fp;
   char buf[80], *ptr1, *ptr2, *ptr3, *today;
-  char key1[6];			/* mm/dd: ¶§¾ä mm¤ëdd¤é */
-  char key2[6];			/* mm/#A: ¶§¾ä mm¤ëªº²Ä#­Ó¬P´ÁA */
-  char key3[6];			/* MM\DD: ¹A¾ä MM¤ëDD¤é */
+  char key1[6];			/* mm/dd: é™½æ›† mmæœˆddæ—¥ */
+  char key2[6];			/* mm/#A: é™½æ›† mmæœˆçš„ç¬¬#å€‹æ˜ŸæœŸA */
+  char key3[6];			/* MM\DD: è¾²æ›† MMæœˆDDæ—¥ */
   time_t now;
   struct tm *ptime;
   static char feast[64];
@@ -310,7 +310,7 @@ do_today()
   lunar_calendar(key3, &now, ptime);
 
   today = image.today;
-  sprintf(today, "%s %.2s", key1, "¤é¤@¤G¤T¥|¤­¤»" + (ptime->tm_wday << 1));
+  sprintf(today, "%s %.2s", key1, "æ—¥ä¸€äºŒä¸‰å››äº”å…­" + (ptime->tm_wday << 1));
 
   if (fp = fopen(FN_ETC_FEAST, "r"))
   {
@@ -355,13 +355,13 @@ main()
   number = total = 0;
 
   /* --------------------------------------------------- */
-  /* ¤µ¤Ñ¸`¤é					 	 */
+  /* ä»Šå¤©ç¯€æ—¥					 	 */
   /* --------------------------------------------------- */
 
   feast = do_today();
 
   /* --------------------------------------------------- */
-  /* ¸ü¤J±`¥Îªº¤å¥ó¤Î help			 	 */
+  /* è¼‰å…¥å¸¸ç”¨çš„æ–‡ä»¶åŠ help			 	 */
   /* --------------------------------------------------- */
 
   strcpy(fpath, "gem/@/@");
@@ -369,7 +369,7 @@ main()
 
   for (i = 0; str = list[i]; i++)
   {
-    if (i >= FILM_OPENING0 && i <= FILM_OPENING2 && feast[0])	/* ­Y¬O¸`¤é¡A¶}ÀYµe­±¥Î¸Ó¸`¤éªºµe­± */
+    if (i >= FILM_OPENING0 && i <= FILM_OPENING2 && feast[0])	/* è‹¥æ˜¯ç¯€æ—¥ï¼Œé–‹é ­ç•«é¢ç”¨è©²ç¯€æ—¥çš„ç•«é¢ */
     {
       mirror(feast, 0);
     }
@@ -380,27 +380,27 @@ main()
     }
   }
 
-  /* itoc.µù¸Ñ: ¨ì³o¸Ì¥H«á¡AÀ³¸Ó¤w¦³ FILM_MOVIE ½g */
+  /* itoc.è¨»è§£: åˆ°é€™è£¡ä»¥å¾Œï¼Œæ‡‰è©²å·²æœ‰ FILM_MOVIE ç¯‡ */
 
   /* --------------------------------------------------- */
-  /* ¸ü¤J°ÊºA¬İªO					 */
+  /* è¼‰å…¥å‹•æ…‹çœ‹æ¿					 */
   /* --------------------------------------------------- */
 
-  /* itoc.µù¸Ñ: °ÊºA¬İªO¤ÎÂIºq¥»¦X­p¥u¦³ MOVIE_MAX - FILM_MOVIE - 1 ½g¤~·|³Q¦¬¶i movie */
+  /* itoc.è¨»è§£: å‹•æ…‹çœ‹æ¿åŠé»æ­Œæœ¬åˆè¨ˆåªæœ‰ MOVIE_MAX - FILM_MOVIE - 1 ç¯‡æ‰æœƒè¢«æ”¶é€² movie */
 
-  sprintf(fpath, "gem/brd/%s/@/@note", BN_CAMERA);	/* °ÊºA¬İªOªº¸s²ÕÀÉ®×¦WºÙÀ³©R¦W¬° @note */
-  do_gem(fpath);					/* §â [note] ºëµØ°Ï¦¬¶i movie */
+  sprintf(fpath, "gem/brd/%s/@/@note", BN_CAMERA);	/* å‹•æ…‹çœ‹æ¿çš„ç¾¤çµ„æª”æ¡ˆåç¨±æ‡‰å‘½åç‚º @note */
+  do_gem(fpath);					/* æŠŠ [note] ç²¾è¯å€æ”¶é€² movie */
 
 #ifdef HAVE_SONG_CAMERA
   brd_fpath(fpath, BN_KTV, FN_DIR);
-  do_gem(fpath);					/* §â³QÂIªººq¦¬¶i movie */
+  do_gem(fpath);					/* æŠŠè¢«é»çš„æ­Œæ”¶é€² movie */
 #endif
 
   /* --------------------------------------------------- */
   /* resolve shared memory				 */
   /* --------------------------------------------------- */
 
-  image.shot[0] = number;	/* Á`¦@¦³´X¤ù */
+  image.shot[0] = number;	/* ç¸½å…±æœ‰å¹¾ç‰‡ */
 
   fshm = (FCACHE *) shm_new(FILMSHM_KEY, sizeof(FCACHE));
   memcpy(fshm, &image, sizeof(FCACHE));

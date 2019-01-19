@@ -1,27 +1,27 @@
-§@ªÌ: itoc (League) ¬İªO: plan
-¼ĞÃD: ªÑ¥«¤j¦ë
-®É¶¡: 2004/02/03 Tue 14:49:04                           Updated: 2004/03/02
+ä½œè€…: itoc (League) çœ‹æ¿: plan
+æ¨™é¡Œ: è‚¡å¸‚å¤§äº¨
+æ™‚é–“: 2004/02/03 Tue 14:49:04                           Updated: 2004/03/02
 
-: src/maple/menu.c ¾A·íªº¿ï³æ¥[¤J
+: src/maple/menu.c é©ç•¶çš„é¸å–®åŠ å…¥
 
   "bin/stock.so:main_stock", PERM_BASIC, - M_GAME,
-  "1Stock     ¡ñ ªÑ¥«¤j¦ë ¡ğ",
+  "1Stock     â™‚ è‚¡å¸‚å¤§äº¨ â™€",
 
 : src/include/config.h
 
-+ #define STOCKSHM_KEY    4999    /* ªÑ¥« */
-#define PIPSHM_KEY      4998    /* ¹q¤lÂû¹ï¾Ô */
++ #define STOCKSHM_KEY    4999    /* è‚¡å¸‚ */
+#define PIPSHM_KEY      4998    /* é›»å­é›å°æˆ° */
 
 : src/game/Makefile
 
 SO =     ..... stock.so
 
-: src/game/stock.c ·s¼W¦¹µ{¦¡
+: src/game/stock.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* stock.c        ( NTHU CS MapleBBS Ver 3.10 )          */
 /*-------------------------------------------------------*/
-/* target : ¯u¹êªÑ²¼¹CÀ¸                                 */
+/* target : çœŸå¯¦è‚¡ç¥¨éŠæˆ²                                 */
 /* create : 98/06/21                                     */
 /* update : 01/05/08                                     */
 /* author : dsyan.bbs@forever.twbbs.org                  */
@@ -31,15 +31,15 @@ SO =     ..... stock.so
 
 #if 0
 
- ¥»ªÑ¥«»İ­n°t¦X bin/stock-open.pl ³oµ{¦¡¥h§ì¸ê®Æ¡Acrontab ¦p¤U¡G
+ æœ¬è‚¡å¸‚éœ€è¦é…åˆ bin/stock-open.pl é€™ç¨‹å¼å»æŠ“è³‡æ–™ï¼Œcrontab å¦‚ä¸‹ï¼š
 
-# ¨C¤Ñ 3:50PM Âà´«ªÑ¥«®æ¦¡
+# æ¯å¤© 3:50PM è½‰æ›è‚¡å¸‚æ ¼å¼
 50 15 * * * bin/stock-open.pl > etc/game/stock_data
 
- etc/game/stock_name ¬O©Ò¦³ªÑ²¼ªº¦Cªí¡A­Y¦³·sªÑ¥[¤J¡A¥i¥H¥[¦b³Ì«á
- etc/game/stock_data ¬O©Ò¦³ªÑ²¼ªº¥«»ù¡Astock-open.pl ·|¥h§ì
+ etc/game/stock_name æ˜¯æ‰€æœ‰è‚¡ç¥¨çš„åˆ—è¡¨ï¼Œè‹¥æœ‰æ–°è‚¡åŠ å…¥ï¼Œå¯ä»¥åŠ åœ¨æœ€å¾Œ
+ etc/game/stock_data æ˜¯æ‰€æœ‰è‚¡ç¥¨çš„å¸‚åƒ¹ï¼Œstock-open.pl æœƒå»æŠ“
 
- ­n¨Ï¥Î stock-open.c ¥²¶·¸Ë¦³ lynx¡C
+ è¦ä½¿ç”¨ stock-open.c å¿…é ˆè£æœ‰ lynxã€‚
 
 #endif
 
@@ -50,30 +50,30 @@ SO =     ..... stock.so
 #ifdef HAVE_GAME
 
 
-#define STOSUM          2000       /* ¹CÀ¸¤¤³Ì¦h¤¹³\´X®a¤½¥q */
-#define STOCKNAME       "ªÑ¥«¤j¦ë"
+#define STOSUM          2000       /* éŠæˆ²ä¸­æœ€å¤šå…è¨±å¹¾å®¶å…¬å¸ */
+#define STOCKNAME       "è‚¡å¸‚å¤§äº¨"
 
-#define FN_STOCK        "stock"    /* usr ¥Ø¿ı¤U­Ó¤HªºªÑ¥«ÀÉ®×¡Ğ¦UªÑ¾Ö¦³±i¼Æ */
-#define FN_STOCK_LOG    "stock.log"/* usr ¥Ø¿ı¤U­Ó¤HªºªÑ¥«ÀÉ®×¡Ğ¾ú¥v°O¿ı */
+#define FN_STOCK        "stock"    /* usr ç›®éŒ„ä¸‹å€‹äººçš„è‚¡å¸‚æª”æ¡ˆï¼å„è‚¡æ“æœ‰å¼µæ•¸ */
+#define FN_STOCK_LOG    "stock.log"/* usr ç›®éŒ„ä¸‹å€‹äººçš„è‚¡å¸‚æª”æ¡ˆï¼æ­·å²è¨˜éŒ„ */
 
 
 typedef struct
 {
-  char name[STOSUM][12];    /* ©Ò¦³¦U®aªÑ²¼ªº¦W¦r #### ¥Ò¤A¤ş
-                               ¥|­Ó¼Æ¦r¡B¤@­ÓªÅ¥Õ¡B¤T­Ó°ê¦r */
-  char update[11];          /* §ó·s¤é´Á®æ¦¡ [90/05/08] */
-  int price[STOSUM];        /* »ù®æ */
-                            /* ¬°¤Fµ{¦¡¤è«K¡A23.45 ¤¸´NÀx¦s¦¨ 23450¡A
-                               §Y¤@±i(1000ªÑªº»ù®æ) */
-  int max;                  /* ¦@¦³´X®a¤½¥q */
-  int maxpage;              /* ¦@»İ­n´X­¶ */
+  char name[STOSUM][12];    /* æ‰€æœ‰å„å®¶è‚¡ç¥¨çš„åå­— #### ç”²ä¹™ä¸™
+                               å››å€‹æ•¸å­—ã€ä¸€å€‹ç©ºç™½ã€ä¸‰å€‹åœ‹å­— */
+  char update[11];          /* æ›´æ–°æ—¥æœŸæ ¼å¼ [90/05/08] */
+  int price[STOSUM];        /* åƒ¹æ ¼ */
+                            /* ç‚ºäº†ç¨‹å¼æ–¹ä¾¿ï¼Œ23.45 å…ƒå°±å„²å­˜æˆ 23450ï¼Œ
+                               å³ä¸€å¼µ(1000è‚¡çš„åƒ¹æ ¼) */
+  int max;                  /* å…±æœ‰å¹¾å®¶å…¬å¸ */
+  int maxpage;              /* å…±éœ€è¦å¹¾é  */
 } STOCK;
 
 
 int
 main_stock()
 {
-  int own[STOSUM];      /* ¹ï¦UªÑªº¾Ö¦³ªÑ¥÷ */
+  int own[STOSUM];      /* å°å„è‚¡çš„æ“æœ‰è‚¡ä»½ */
   char *fname = FN_STOCK_LOG;
   char name[12], buf[128];
   FILE *fp;
@@ -90,52 +90,52 @@ main_stock()
 
   if (!dashf("etc/game/stock_data") || !dashf("etc/game/stock_name"))
   {
-    vmsg("ªÑ¥«ÀÉ®×¿ò¥¢¡A½Ğ§i¶D¯¸ªø");
+    vmsg("è‚¡å¸‚æª”æ¡ˆéºå¤±ï¼Œè«‹å‘Šè¨´ç«™é•·");
     return XEASY;
   }
 
   /* initialize shared memory */
   sto = shm_new(STOCKSHM_KEY, sizeof(STOCK));
 
-  /* Åª¸ê®ÆÀÉ */
+  /* è®€è³‡æ–™æª” */
 
-  fp = fopen("etc/game/stock_data", "r");   /* Åª¨ú¥Ø«eªÑ»ù */
+  fp = fopen("etc/game/stock_data", "r");   /* è®€å–ç›®å‰è‚¡åƒ¹ */
   fgets(buf, 30, fp);
-  if (strcmp(buf, sto->update))     /* ­Y shm ¤¤¤£¬O¤µ¤Ñªº¸ê®Æ¡A¤~§ó·s */
+  if (strcmp(buf, sto->update))     /* è‹¥ shm ä¸­ä¸æ˜¯ä»Šå¤©çš„è³‡æ–™ï¼Œæ‰æ›´æ–° */
   {
     FILE *fn;
 
-    strcpy(sto->update, buf);       /* §ó·s¤é´Á */
+    strcpy(sto->update, buf);       /* æ›´æ–°æ—¥æœŸ */
 
     ch = 0;
     fn = fopen("etc/game/stock_name", "r");
     while (fgets(sto->name[ch], 12, fn))
     {
       fgets(buf, 12, fn);
-      ch++;             /* ­É¥Î ch §@¬° stock_name ¤¤ªº¤½¥q¼Æ */
+      ch++;             /* å€Ÿç”¨ ch ä½œç‚º stock_name ä¸­çš„å…¬å¸æ•¸ */
     }
     fclose(fn);
 
     num = 0;
     fn = fopen("etc/game/stock_name", "a");
 
-    while (fgets(buf, 80, fp))  /* ±q stock_data ¨ú¥XªÑ»ù¦s¤J shm */
+    while (fgets(buf, 80, fp))  /* å¾ stock_data å–å‡ºè‚¡åƒ¹å­˜å…¥ shm */
     {
-      /* ¦b¥» while °j°é¤¤¡A
-         ch ¬O«ü stock_name ¤¤ªº¤½¥q¼Æ¡Anum ¬O«ü stock_data ¤¤ªº¤½¥q¼Æ */
+      /* åœ¨æœ¬ while è¿´åœˆä¸­ï¼Œ
+         ch æ˜¯æŒ‡ stock_name ä¸­çš„å…¬å¸æ•¸ï¼Œnum æ˜¯æŒ‡ stock_data ä¸­çš„å…¬å¸æ•¸ */
 
       if (buf[0] < '0' || buf[0] > '9')
-        continue;       /* ¤£¦X²zªº®æ¦¡ */
+        continue;       /* ä¸åˆç†çš„æ ¼å¼ */
 
       buf[11] = '\0';
       buf[21] = '\0';
       num++;
 
-      strcpy(name, buf);            /* buf[0] ~ buf[11] ¬°¤½¥q¦WºÙ */
-      price = atoi(buf + 16) * 10;  /* buf[16] ~ buf[21] ¬°»ù®æ */
+      strcpy(name, buf);            /* buf[0] ~ buf[11] ç‚ºå…¬å¸åç¨± */
+      price = atoi(buf + 16) * 10;  /* buf[16] ~ buf[21] ç‚ºåƒ¹æ ¼ */
 
-      /* ¬°¤FÁ×§Kºô­¶ªºÅÜ°Ê©Î·s¤W¥«¤½¥q¡A¦Ó¨Ï stock_name ©M stock_data
-         ¤£¬O¤@¹ï¤@¹ïÀ³¡A¬O¬G±q stock_data ¤¤§ì¨ì»ù®æ¥H«á¡A­n·j´M¥¿½TªºÄæ¦ì */
+      /* ç‚ºäº†é¿å…ç¶²é çš„è®Šå‹•æˆ–æ–°ä¸Šå¸‚å…¬å¸ï¼Œè€Œä½¿ stock_name å’Œ stock_data
+         ä¸æ˜¯ä¸€å°ä¸€å°æ‡‰ï¼Œæ˜¯æ•…å¾ stock_data ä¸­æŠ“åˆ°åƒ¹æ ¼ä»¥å¾Œï¼Œè¦æœå°‹æ­£ç¢ºçš„æ¬„ä½ */
 
       for (i = 0; i < ch; i++)
       {
@@ -143,8 +143,8 @@ main_stock()
           break;
       }
 
-      if (i == ch && ch < STOSUM)   /* ¦pªG¦³·s¼W¤½¥q¡A­n¼g¤J stock_name */
-      {                 /* ¦pªG¤w¸g¶W¹L STOSUM¡A«h¤£±o¼W¥[ */
+      if (i == ch && ch < STOSUM)   /* å¦‚æœæœ‰æ–°å¢å…¬å¸ï¼Œè¦å¯«å…¥ stock_name */
+      {                 /* å¦‚æœå·²ç¶“è¶…é STOSUMï¼Œå‰‡ä¸å¾—å¢åŠ  */
         strcpy(sto->name[i], name);
         fprintf(fn, "%s\n", name);
         ch++;
@@ -155,23 +155,23 @@ main_stock()
     fclose(fn);
     sto->max = num;
     sto->maxpage = num / 40 + ((num % 40) ? 1 : 0);
-    /* maxpage = max/40 ¨ú¤ÑªáªO¨ç¼Æ */
+    /* maxpage = max/40 å–å¤©èŠ±æ¿å‡½æ•¸ */
   }
   fclose(fp);
 
   max = sto->max;
   maxpage = sto->maxpage;
 
-  /* Åª¨ú user ¸ê®ÆÀÉ */
+  /* è®€å– user è³‡æ–™æª” */
 
   usr_fpath(buf, cuser.userid, FN_STOCK);
 
-  if (fp = fopen(buf, "r")) /* ¥H«eª±¹LªÑ¥«¡AÅª¨ú¥Ø«e©Ò¦³ªºªÑ¥÷ */
+  if (fp = fopen(buf, "r")) /* ä»¥å‰ç©éè‚¡å¸‚ï¼Œè®€å–ç›®å‰æ‰€æœ‰çš„è‚¡ä»½ */
   {
     for (i = 0; i < STOSUM; i++)
       fscanf(fp, "%d\n", &own[i]);
   }
-  else              /* ¨Sª±¹LªÑ¥«¡A«Ø¥ß·sÀÉ */
+  else              /* æ²’ç©éè‚¡å¸‚ï¼Œå»ºç«‹æ–°æª” */
   {
     fp = fopen(buf, "w");
     for (i = 0; i < STOSUM; i++)
@@ -183,7 +183,7 @@ main_stock()
   fclose(fp);
 
 
-  /* µe­±¥Dµ{¦¡ */
+  /* ç•«é¢ä¸»ç¨‹å¼ */
 
   page = 0;
 
@@ -191,11 +191,11 @@ main_stock()
   {
     vs_bar(STOCKNAME);
     move(1, 0);
-    outs("\033[1;31;46m ½s¸¹ \033[42m ªÑ ²¼ ¦W ºÙ \033[43m »ù ®æ \033[45m"
-      " «ù¦³±i¼Æ \033[46m     ½s¸¹ \033[42m ªÑ ²¼ ¦W ºÙ \033[43m"
-      " »ù ®æ \033[45m «ù¦³±i¼Æ  \033[m");
+    outs("\033[1;31;46m ç·¨è™Ÿ \033[42m è‚¡ ç¥¨ å ç¨± \033[43m åƒ¹ æ ¼ \033[45m"
+      " æŒæœ‰å¼µæ•¸ \033[46m     ç·¨è™Ÿ \033[42m è‚¡ ç¥¨ å ç¨± \033[43m"
+      " åƒ¹ æ ¼ \033[45m æŒæœ‰å¼µæ•¸  \033[m");
 
-    /* ±N¥»­¶ªºªÑ»ù¤À¦¨¤GÄæÅã¥Ü */
+    /* å°‡æœ¬é çš„è‚¡åƒ¹åˆ†æˆäºŒæ¬„é¡¯ç¤º */
 
     for (i = 0; i < 20; i++)
     {
@@ -205,7 +205,7 @@ main_stock()
       if (num + 1 <= max)
       {
         price = sto->price[num];
-        ch = (price % 1000) / 10;   /* ¤p¼Æ¦ì */
+        ch = (price % 1000) / 10;   /* å°æ•¸ä½ */
         prints(" %3d)  %11s%5d.%02d %5d         ",
           num + 1, sto->name[num], price / 1000,
           (ch < 10 ? ch * 10 : ch), own[num]);
@@ -215,7 +215,7 @@ main_stock()
       if (num + 1 <= max)
       {
         price = sto->price[num];
-        ch = (price % 1000) / 10;   /* ¤p¼Æ¦ì */
+        ch = (price % 1000) / 10;   /* å°æ•¸ä½ */
         prints("%3d)  %11s%5d.%02d %5d\n",
           num + 1, sto->name[num], price / 1000,
           (ch < 10 ? ch * 10 : ch), own[num]);
@@ -223,45 +223,45 @@ main_stock()
     }
 
     move(b_lines - 1, 0);
-    prints(COLOR1 " n:¤U­¶ p:¤W­¶ b:¶R s:½æ v:¬İ e:­× q:Â÷¶} "
-      "¿ú:%-8d %2d/%2d­¶   %-12.10s\033[m",
+    prints(COLOR1 " n:ä¸‹é  p:ä¸Šé  b:è²· s:è³£ v:çœ‹ e:ä¿® q:é›¢é–‹ "
+      "éŒ¢:%-8d %2d/%2dé    %-12.10s\033[m",
       cuser.money, page + 1, maxpage, sto->update);
 
 get_key:
     switch (ch = vkey())
     {
 
-    /* ¥H¤U name, price, num, i ±N¤£¦A¥Î¨ì¡A­É¨Ó°µ¦^µª */
+    /* ä»¥ä¸‹ name, price, num, i å°‡ä¸å†ç”¨åˆ°ï¼Œå€Ÿä¾†åšå›ç­” */
 
-    /* itoc.010512.µù¸Ñ: ¥Ñ©ó¬O¦b¤U¤È¤TÂI¥b¤µ¤Ñªº½L¤w¸gÃö¤F¥H«á¡A¤~¥h§ì¤µ¤Ñ
-       ªº¦¬½L­È¡A©Ò¥H¥i¥H¥ıª¾¹D¹ê»Ú¤µ¤Ñ¦UªÑªºº¦¶^¡A¦pªG¤£­­¨î¥æ©ö®É¶¡¡A¨º»ò
-       ±N¥i¥H¥H¬Q¤Ñªº»ù®æªº¶R¶i¡C¦P²z¡A½æ¥X¤]­n­­¨î®É¶¡ */
+    /* itoc.010512.è¨»è§£: ç”±æ–¼æ˜¯åœ¨ä¸‹åˆä¸‰é»åŠä»Šå¤©çš„ç›¤å·²ç¶“é—œäº†ä»¥å¾Œï¼Œæ‰å»æŠ“ä»Šå¤©
+       çš„æ”¶ç›¤å€¼ï¼Œæ‰€ä»¥å¯ä»¥å…ˆçŸ¥é“å¯¦éš›ä»Šå¤©å„è‚¡çš„æ¼²è·Œï¼Œå¦‚æœä¸é™åˆ¶äº¤æ˜“æ™‚é–“ï¼Œé‚£éº¼
+       å°‡å¯ä»¥ä»¥æ˜¨å¤©çš„åƒ¹æ ¼çš„è²·é€²ã€‚åŒç†ï¼Œè³£å‡ºä¹Ÿè¦é™åˆ¶æ™‚é–“ */
 
     case 'b':   /* buy */
       now = time(0);
       ptime = localtime(&now);
       if (ptime->tm_hour >= 6 && ptime->tm_hour <= 15)
       {
-        vmsg("¥æ©ö®É¶¡¬°¨C¤Ñ 4:00pm ¨ì¹j¤Ñ¦­¤W 7:00am .. :)");
+        vmsg("äº¤æ˜“æ™‚é–“ç‚ºæ¯å¤© 4:00pm åˆ°éš”å¤©æ—©ä¸Š 7:00am .. :)");
         break;
       }
 
-      sprintf(buf, "­n¶R­ş®a(1-%d)¡H", max);
+      sprintf(buf, "è¦è²·å“ªå®¶(1-%d)ï¼Ÿ", max);
       vget(b_lines, 0, buf, name, 4, DOECHO);
       i = atoi(name);
       if (i < 1 || i > max)
         break;
 
       price = sto->price[i - 1];
-      price += price / 300; /* ©âµ|¤d¤À¤§¤T */
-      money = price ? cuser.money / price : 0; /* itoc.010716: ¹w¨¾ price=0 */
-      sprintf(buf, "­n¶R´X±i(1-%d)¡H", money);
+      price += price / 300; /* æŠ½ç¨…åƒåˆ†ä¹‹ä¸‰ */
+      money = price ? cuser.money / price : 0; /* itoc.010716: é é˜² price=0 */
+      sprintf(buf, "è¦è²·å¹¾å¼µ(1-%d)ï¼Ÿ", money);
       vget(b_lines, 0, buf, name, 4, DOECHO);
       num = atoi(name);
       if (num < 1 || num > money)
         break;
 
-      /* ¶R²Ä i ¸¹ªÑ²¼ num ±i */
+      /* è²·ç¬¬ i è™Ÿè‚¡ç¥¨ num å¼µ */
       own[i - 1] += num;
       money = num * price;
       if (cuser.money <= money)
@@ -269,11 +269,11 @@ get_key:
       else
         cuser.money -= money;
 
-      /* °O¿ıÁÊ¶R°O¿ı */
+      /* è¨˜éŒ„è³¼è²·è¨˜éŒ„ */
       usr_fpath(buf, cuser.userid, fname);
       fp = fopen(buf, "a+");
-      ch = (price % 1000) / 10; /* ¤p¼Æ¦ì */
-      fprintf(fp, "[%s] %5d.%02d ¶R¶i %s %d ±i ªá¶O %d\n",
+      ch = (price % 1000) / 10; /* å°æ•¸ä½ */
+      fprintf(fp, "[%s] %5d.%02d è²·é€² %s %d å¼µ èŠ±è²» %d\n",
         Btime(&now), price / 1000, (ch < 10 ? ch * 10 : ch),
         sto->name[i - 1], num, money);
       fclose(fp);
@@ -285,37 +285,37 @@ get_key:
       ptime = localtime(&now);
       if (ptime->tm_hour >= 3 && ptime->tm_hour <= 18)
       {
-        vmsg("¥æ©ö®É¶¡¬°¨C¤Ñ 7:00pm ¨ì¹j¤Ñ¦­¤W 4:00am .. :)");
+        vmsg("äº¤æ˜“æ™‚é–“ç‚ºæ¯å¤© 7:00pm åˆ°éš”å¤©æ—©ä¸Š 4:00am .. :)");
         break;
       }
 
-      sprintf(buf, "­n½æ­ş®a(1-%d)¡H", max);
+      sprintf(buf, "è¦è³£å“ªå®¶(1-%d)ï¼Ÿ", max);
       vget(b_lines, 0, buf, name, 4, DOECHO);
       i = atoi(name);
       if (i < 1 || i > max)
         break;
       price = own[i - 1];
-      if (!price)       /* ¨S¦³«ùªÑ¤£¯à½æ */
+      if (!price)       /* æ²’æœ‰æŒè‚¡ä¸èƒ½è³£ */
         break;
 
-      sprintf(buf, "­n½æ´X±i(1-%d)¡H", price);
+      sprintf(buf, "è¦è³£å¹¾å¼µ(1-%d)ï¼Ÿ", price);
       vget(b_lines, 0, buf, name, 4, DOECHO);
       num = atoi(name);
       if (num < 1 || num > price)
         break;
 
-      /* ½æ²Ä i ¸¹ªÑ²¼ num ±i */
+      /* è³£ç¬¬ i è™Ÿè‚¡ç¥¨ num å¼µ */
       own[i - 1] -= num;
       price = sto->price[i - 1];
-      price -= price / 300; /* ©âµ|¤d¤À¤§¤T */
+      price -= price / 300; /* æŠ½ç¨…åƒåˆ†ä¹‹ä¸‰ */
       money = num * price;
       cuser.money += money;
 
-      /* °O¿ı½æ¥X°O¿ı */
+      /* è¨˜éŒ„è³£å‡ºè¨˜éŒ„ */
       usr_fpath(buf, cuser.userid, fname);
       fp = fopen(buf, "a+");
-      ch = (price % 1000) / 10; /* ¤p¼Æ¦ì */
-      fprintf(fp, "[%s] %5d.%02d ½æ¥X %s %d ±i ¦¬¤J %d\n",
+      ch = (price % 1000) / 10; /* å°æ•¸ä½ */
+      fprintf(fp, "[%s] %5d.%02d è³£å‡º %s %d å¼µ æ”¶å…¥ %d\n",
         Btime(&now), price / 1000, (ch < 10 ? ch * 10 : ch),
         sto->name[i - 1], num, money);
       fclose(fp);
@@ -356,7 +356,7 @@ get_key:
 
     case 'q':
     case KEY_LEFT:
-      /* ¦bÂ÷¶}ªÑ¥«®É¤~¦^¦s©Ò¦³ªÑ²¼±i¼Æ¤Îª÷¿ú¡A¸`¬ÙI/O */
+      /* åœ¨é›¢é–‹è‚¡å¸‚æ™‚æ‰å›å­˜æ‰€æœ‰è‚¡ç¥¨å¼µæ•¸åŠé‡‘éŒ¢ï¼Œç¯€çœI/O */
       usr_fpath(buf, cuser.userid, FN_STOCK);
       fp = fopen(buf, "w");
       for (i = 0; i < STOSUM; i++)
@@ -368,7 +368,7 @@ get_key:
     default:
       if (ch >= '1' && ch <= '9')
       {
-        if (vget(b_lines, 0, "¸õ¦Ü²Ä´X­¶¡G", name, 3, DOECHO))
+        if (vget(b_lines, 0, "è·³è‡³ç¬¬å¹¾é ï¼š", name, 3, DOECHO))
         {
           i = atoi(name) - 1;
           if (i < maxpage)
@@ -376,11 +376,11 @@ get_key:
         }
         break;
       }
-      goto get_key; /* ¤£¥Î­«Ã¸µe­± */
+      goto get_key; /* ä¸ç”¨é‡ç¹ªç•«é¢ */
     }
   }
 }
 #endif              /* HAVE_GAME */
 
 --
-[1m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mpc512-2.EE.NCTU.edu.tw[37m µoªí[m
+[1mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mpc512-2.EE.NCTU.edu.tw[37m ç™¼è¡¨[m

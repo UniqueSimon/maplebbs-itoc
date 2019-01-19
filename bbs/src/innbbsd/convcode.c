@@ -1,5 +1,5 @@
 /* ----------------------------------------------------- */
-/* Â²ÁcÅéº~¦rÂà´«                                        */
+/* ç°¡ç¹é«”æ¼¢å­—è½‰æ›                                        */
 /* ----------------------------------------------------- */
 /* create :   /  /  					 */
 /* update : 03/05/16					 */
@@ -33,7 +33,7 @@ conv_init()
   if (BtoG != NULL)
     return;
 
-  BGsize = BtoG_count << 1;	/* ¨C­Óº~¦r 2-byte */ 
+  BGsize = BtoG_count << 1;	/* æ¯å€‹æ¼¢å­— 2-byte */ 
   GBsize = GtoB_count << 1;
   BtoG = (unsigned char *) malloc(BGsize + GBsize);
   GtoB = BtoG + BGsize;
@@ -119,7 +119,7 @@ static char *
 hzconvert(src, dst, dbcvrt)
   char *src;			/* source char buffer pointer */
   char *dst;			/* destination char buffer pointer */
-  void (*dbcvrt) ();		/* º~¦r 2-byte conversion funcntion */
+  void (*dbcvrt) ();		/* æ¼¢å­— 2-byte conversion funcntion */
 {
   int len;
   char *end, *p;
@@ -131,20 +131,20 @@ hzconvert(src, dst, dbcvrt)
   end = src + len;
   while (src < end)
   {
-    if (*src & 0x80)		/* hi-bit on ªí¥Ü¬Oº~¦r */
+    if (*src & 0x80)		/* hi-bit on è¡¨ç¤ºæ˜¯æ¼¢å­— */
     {
       dbcvrt(src, p);
-      src += 2;			/* ¤@¦¸Âà¤G½X */
+      src += 2;			/* ä¸€æ¬¡è½‰äºŒç¢¼ */
       p += 2;
     }
     else
     {
-      /* *p = *src; */		/* ¤£»İ­n¡A¦]¬°¦b b52gb()¡Bgb2b5() ªºÀ³¥Î¸Ì src == dst */
+      /* *p = *src; */		/* ä¸éœ€è¦ï¼Œå› ç‚ºåœ¨ b52gb()ã€gb2b5() çš„æ‡‰ç”¨è£¡ src == dst */
       src++;
       p++;
     }
   }
-  /* dst[len] = '\0'; */	/* ¤£»İ­n¡A¦]¬°¦b b52gb()¡Bgb2b5() ªºÀ³¥Î¸Ì src == dst */
+  /* dst[len] = '\0'; */	/* ä¸éœ€è¦ï¼Œå› ç‚ºåœ¨ b52gb()ã€gb2b5() çš„æ‡‰ç”¨è£¡ src == dst */
 
   return dst;
 }

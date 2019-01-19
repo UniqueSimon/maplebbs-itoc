@@ -1,37 +1,37 @@
-�o�H�H: itoc.bbs@processor.tfcis.org (�֤߰ʤO) �ݪO: plan
-��  �D: Re: �ण�๳�L�W���I�q�p�O�覡 ?
-�o�H��: �ʤO�֤� (2004/10/20 Wed 00:48:55)                Updated: 2004/10/20
+發信人: itoc.bbs@processor.tfcis.org (核心動力) 看板: plan
+標  題: Re: 能不能像無名的點歌計費方式 ?
+發信站: 動力核心 (2004/10/20 Wed 00:48:55)                Updated: 2004/10/20
 
-�� �ޭz�mallean.bbs@micro.bio.ncue.edu.tw (allean)�n���ʨ��G
->     �I�@���q 100 �� �ΦW�u���@�d
->     �I�h���q�� �Ĥ@�� 1000 ��
->                �� i�� 10+1000(i-1)��
+※ 引述《allean.bbs@micro.bio.ncue.edu.tw (allean)》之銘言：
+>     點一首歌 100 塊 匿名酌收一千
+>     點多首歌時 第一首 1000 塊
+>                第 i首 10+1000(i-1)塊
 
 : song.c:song_order()
 
-- if (count_ktv() >= 3)         /* �����I�T�� */
+- if (count_ktv() >= 3)         /* 限制點三首 */
 - {
--   vmsg("�L�h�G�Q�|�p�ɤ��z�w�I��L�h�q��");
+-   vmsg("過去二十四小時內您已點選過多歌曲");
 -   return XO_FOOT;
 - }
 
 - if (cuser.money < 1000)
 - {
--   vmsg("�n 1000 �ȹ��~���I�q��ݪO��");
+-   vmsg("要 1000 銀幣才能點歌到看板喔");
 -   return XO_FOOT;
 - }
 
   ...
   ...
 
-  annoy = vans("�Q�n�ΦW��(Y/N)�H[N] ") == 'y';
+  annoy = vans("想要匿名嗎(Y/N)？[N] ") == 'y';
 
-+ fd = count_ktv() * 1000 + 100; /* �I��i���n�� 100+1000*i �� */
++ fd = count_ktv() * 1000 + 100; /* 點第i首要花 100+1000*i 元 */
 + if (annoy)
-+   fd += 500;                  /* �ΦW�A�[ 500 */
++   fd += 500;                  /* 匿名再加 500 */
 + if (cuser.money < fd)
 + {
-+   sprintf(buf, "�n %d �ȹ��~���I�q��ݪO��", fd);
++   sprintf(buf, "要 %d 銀幣才能點歌到看板喔", fd);
 +   vmsg(buf);
 +   return XO_FOOT;
 + }
@@ -43,5 +43,5 @@
 + cuser.monery -= fd;
 
 --
- [1;41m�~[44m�q[m Or[1mig[30min[m: [43m Maple-itoc���ʤO�֤� [35;47m processor.tfcis.org [m
- [1;42m�q[45m�}[m A[1mut[30mho[mr: [1;31mitoc [30m�q [36mitoc.Dorm11.NCTU.edu.tw [30m�o��[m
+ [1;41m╭[44m┼[m Or[1mig[30min[m: [43m Maple-itoc˙動力核心 [35;47m processor.tfcis.org [m
+ [1;42m┼[45m┘[m A[1mut[30mho[mr: [1;31mitoc [30m從 [36mitoc.Dorm11.NCTU.edu.tw [30m發表[m

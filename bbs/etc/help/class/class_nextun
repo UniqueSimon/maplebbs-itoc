@@ -1,9 +1,9 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x`     �xclass_nextun�x�j�M�U�@�ӥ�Ū�ݪO                              �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │`     │class_nextun│搜尋下一個未讀看板                              │
+  └───┴──────┴────────────────────────┘
 
-    �� ` �i�H�j�M�U�@�ӥ�Ū�ݪO�A�j�M�ɷ|���L z �����ݪO�C
+    按 ` 可以搜尋下一個未讀看板，搜尋時會跳過 z 掉的看板。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

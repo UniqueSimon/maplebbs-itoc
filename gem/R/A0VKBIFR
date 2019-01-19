@@ -1,11 +1,11 @@
-§@ªÌ: itoc (©BÂP¬°¤°»ò³o»ò¦h¤H) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¶}ÀYµe­±¦³ tip
-®É¶¡: Fri Dec 13 18:39:57 2002                          Updated: 2002/02/13
+ä½œè€…: itoc (å’•åš•ç‚ºä»€éº¼é€™éº¼å¤šäºº) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] é–‹é ­ç•«é¢æœ‰ tip
+æ™‚é–“: Fri Dec 13 18:39:57 2002                          Updated: 2002/02/13
 
-  ¶}ÀYµe­±¦³ tip
-  ¬Û¶Ç³o¬O Ptt ªº¯S¦â¤§¤@
+  é–‹é ­ç•«é¢æœ‰ tip
+  ç›¸å‚³é€™æ˜¯ Ptt çš„ç‰¹è‰²ä¹‹ä¸€
 
-: bbsd.c:show_tip()   ¥[¦b tn_main() ¤§«e
+: bbsd.c:show_tip()   åŠ åœ¨ tn_main() ä¹‹å‰
 
 static inline void
 show_tip(randnum)
@@ -19,18 +19,18 @@ show_tip(randnum)
     return;
 
   fgets(msg, 128, fp);
-  msg_num = atoi(msg);          /* ²Ä¤@¦æ°O¿ıÁ`½g¼Æ */
+  msg_num = atoi(msg);          /* ç¬¬ä¸€è¡Œè¨˜éŒ„ç¸½ç¯‡æ•¸ */
   i = randnum % msg_num + 1;
   j = 0;
 
-  while (j < i)                 /* ¨ú²Ä i ­Ó tip */
+  while (j < i)                 /* å–ç¬¬ i å€‹ tip */
   {
     fgets(msg, 128, fp);
     if (msg[0] == '#')
       j++;
   }
 
-  /* ®æ¦¡­n¨Ì @opening.? ¦ÓÅÜ */
+  /* æ ¼å¼è¦ä¾ @opening.? è€Œè®Š */
   move(b_lines - 6, 0);
   fgets(msg, 128, fp);
   prints("            %s", msg);
@@ -49,15 +49,15 @@ tn_main()
   ...
   ...
 
-- film_out((time(&ap_start) % 3) + FILM_OPENING0, 3);   /* ¶Ã¼ÆÅã¥Ü¶}ÀYµe­± */
+- film_out((time(&ap_start) % 3) + FILM_OPENING0, 3);   /* äº‚æ•¸é¡¯ç¤ºé–‹é ­ç•«é¢ */
 + randnum = time(&ap_start);
-+ film_out((randnum % 3) + FILM_OPENING0, 0);   /* ¶Ã¼ÆÅã¥Ü¶}ÀYµe­± */
++ film_out((randnum % 3) + FILM_OPENING0, 0);   /* äº‚æ•¸é¡¯ç¤ºé–‹é ­ç•«é¢ */
 + show_tip(randnum);
 
   currpid = getpid();
 
 --
-  ¦pªG­n¥Î DL_get("bin/xyz.so:x_tip") ¤]¬O¥i¥H
+  å¦‚æœè¦ç”¨ DL_get("bin/xyz.so:x_tip") ä¹Ÿæ˜¯å¯ä»¥
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

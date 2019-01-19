@@ -1,21 +1,21 @@
-§@ªÌ: itoc (ºñ¥¨¤H¦n«È¡H) ¬ÝªO: itoc
-¼ÐÃD: [¥\¯à] ¾ã¦æ¥ú´Î(10)¡Ðvote.c §ë²¼
-®É¶¡: Tue Jul 15 10:54:09 2003                          Updated: 2004/03/06
+ä½œè€…: itoc (ç¶ å·¨äººå¥½å®¢ï¼Ÿ) çœ‹æ¿: itoc
+æ¨™é¡Œ: [åŠŸèƒ½] æ•´è¡Œå…‰æ£’(10)ï¼vote.c æŠ•ç¥¨
+æ™‚é–“: Tue Jul 15 10:54:09 2003                          Updated: 2004/03/06
 
-: vote.c:vote_item_bar()  ¥[¦b vote_item() «á­±
+: vote.c:vote_item_bar()  åŠ åœ¨ vote_item() å¾Œé¢
 
 #ifdef HAVE_LIGHTBAR
 static int
 vote_item_bar(xo, mode)
   XO *xo;
-  int mode;     /* 1:¤W¥ú´Î  0:¥h¥ú´Î */
+  int mode;     /* 1:ä¸Šå…‰æ£’  0:åŽ»å…‰æ£’ */
 {
   VCH *vch;
 
   vch = (VCH *) xo_pool + xo->pos - xo->top;
 
   prints("%s%6d%c%c%c%c %-9.8s%-12s %-45.45s%s",
-    mode ? "\033[44m" : "",         //³o¸Ì¬O¥ú´ÎªºÃC¦â¡A¥i¥H¦Û¤v§ï
+    mode ? "\033[44m" : "",         //é€™è£¡æ˜¯å…‰æ£’çš„é¡è‰²ï¼Œå¯ä»¥è‡ªå·±æ”¹
     xo->pos + 1, tag_char(vch->chrono),
     vch->vsort, vch->vpercent, vch->vprivate,
     vch->cdate, vch->owner, vch->title,
@@ -35,5 +35,5 @@ static KeyFunc vote_cb[] =
 ...
 
 --
-[1;31m|[33m Origin [31m| [0;45m MapleBBS-itoc °Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
+[1;31m|[33m Origin [31m| [0;45m MapleBBS-itoc å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
 [1;31m|[35m Author [31m| [36mitoc.dorm11.nctu.edu.tw[m

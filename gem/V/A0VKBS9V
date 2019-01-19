@@ -1,22 +1,22 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (§Ú¦b­úª_....²\ºw...) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¤å³¹¦¬¿ıºëµØ°Ï¥[¤W¼Ğ°O¢ï¡C
-µo«H¯¸: ¤¤¿³¸ê¬ì (Fri, 22 Aug 2003 17:46:42 +0800 (CST))  Updated: 2006/07/07
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (æˆ‘åœ¨å“­æ³£....æ·šæ»´...) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] æ–‡ç« æ”¶éŒ„ç²¾è¯å€åŠ ä¸Šæ¨™è¨˜ï½‡ã€‚
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (Fri, 22 Aug 2003 17:46:42 +0800 (CST))  Updated: 2006/07/07
 
-    ¦¹µ{¦¡¥i¥HÅıªO¥D¦Û¦æ¼Ğ°O¦¬¨ìºëµØ°Ïªº¤å³¹¡A´N¹³¢õ¤@¼Ë¡C
+    æ­¤ç¨‹å¼å¯ä»¥è®“æ¿ä¸»è‡ªè¡Œæ¨™è¨˜æ”¶åˆ°ç²¾è¯å€çš„æ–‡ç« ï¼Œå°±åƒï½ä¸€æ¨£ã€‚
 
-    «öÁä¦Û³]¡A¤º³]¬O Ctrl + G
+    æŒ‰éµè‡ªè¨­ï¼Œå…§è¨­æ˜¯ Ctrl + G
 
 ==============================================================================
 
 : hdr.h
 
 - #define POST_3        0x00000004
-+ #define POST_GEM      0x00000004  /* ¦¬¿ıºëµØ°Ï¼Ğ°O */
++ #define POST_GEM      0x00000004  /* æ”¶éŒ„ç²¾è¯å€æ¨™è¨˜ */
 
 : post.c:post_attr()
 
-+ if ((bbstate & STAT_BOARD) && (mode & POST_GEM))      /* ªO¥D¤~¬İ±o¨ì G/B */
-+  attr |= (mode & POST_MARKED ? 'B' : 'G');        /* ­Y¦³ mark+gem¡AÅã¥Ü B */
++ if ((bbstate & STAT_BOARD) && (mode & POST_GEM))      /* æ¿ä¸»æ‰çœ‹å¾—åˆ° G/B */
++  attr |= (mode & POST_MARKED ? 'B' : 'G');        /* è‹¥æœ‰ mark+gemï¼Œé¡¯ç¤º B */
 + else
 
 #ifdef HAVE_LABELMARK
@@ -25,10 +25,10 @@
   else
 #endif
 
-: post.c:post_gem_mark()    ·s¼W¾ã¤ä¨ç¦¡¦b post_mark() ¤U­±
+: post.c:post_gem_mark()    æ–°å¢æ•´æ”¯å‡½å¼åœ¨ post_mark() ä¸‹é¢
 
 static int
-post_gem_mark(xo)       /* qazq.030822: ¦¬¿ıºëµØ°Ï¼Ğ°O */
+post_gem_mark(xo)       /* qazq.030822: æ”¶éŒ„ç²¾è¯å€æ¨™è¨˜ */
   XO *xo;
 {
   if (bbstate & STAT_BOARD)
@@ -42,7 +42,7 @@ post_gem_mark(xo)       /* qazq.030822: ¦¬¿ıºëµØ°Ï¼Ğ°O */
     xmode = hdr->xmode;
 
 #ifdef HAVE_LABELMARK
-    if (xmode & POST_DELETE)    /* «İ¬åªº¤å³¹¤£¯à mark */
+    if (xmode & POST_DELETE)    /* å¾…ç çš„æ–‡ç« ä¸èƒ½ mark */
       return XO_NONE;
 #endif
 
@@ -54,7 +54,7 @@ post_gem_mark(xo)       /* qazq.030822: ¦¬¿ıºëµØ°Ï¼Ğ°O */
     move(3 + cur, 7);
     outc(post_attr(hdr));
 
-    return pos + 1 + XO_MOVE;   /* ¸õ¦Ü¤U¤@¶µ */
+    return pos + 1 + XO_MOVE;   /* è·³è‡³ä¸‹ä¸€é … */
   }
   return XO_NONE;
 }
@@ -62,13 +62,13 @@ post_gem_mark(xo)       /* qazq.030822: ¦¬¿ıºëµØ°Ï¼Ğ°O */
 
 : post.c:post_cb[]
 
-+ Ctrl('G'), post_gem_mark, /* qazq.030822: ¦¬¿ıºëµØ°Ï¼Ğ°O */
++ Ctrl('G'), post_gem_mark, /* qazq.030822: æ”¶éŒ„ç²¾è¯å€æ¨™è¨˜ */
 
 
 : post.c:xpost_cb[]
 
-+ Ctrl('G'), post_gem_mark, /* qazq.030822: ¦¬¿ıºëµØ°Ï¼Ğ°O */
++ Ctrl('G'), post_gem_mark, /* qazq.030822: æ”¶éŒ„ç²¾è¯å€æ¨™è¨˜ */
 
 --
- [1m[42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m bbs.cs.nchu.edu.tw [m
- [1m[44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mqazq [30m±q [35m61-216-251-124.HINET-IP.hinet.net [30mµoªí[m
+ [1m[42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m bbs.cs.nchu.edu.tw [m
+ [1m[44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mqazq [30må¾ [35m61-216-251-124.HINET-IP.hinet.net [30mç™¼è¡¨[m

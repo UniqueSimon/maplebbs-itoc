@@ -1,19 +1,19 @@
-§@ªÌ: itoc (¬@±Ï¤@­ÓÆF»î) ¬İªO: plan
-¼ĞÃD: [¥\¯à] µoªí¤å³¹ªº prefix ¥ÑªO¥D³]©w
-®É¶¡: Tue Jun 18 23:36:31 2002                          Updated: 2007/04/16
+ä½œè€…: itoc (æ‹¯æ•‘ä¸€å€‹éˆé­‚) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] ç™¼è¡¨æ–‡ç« çš„ prefix ç”±æ¿ä¸»è¨­å®š
+æ™‚é–“: Tue Jun 18 23:36:31 2002                          Updated: 2007/04/16
 
-¡° ¤Ş­z¡mtandrian.bbs@ntcb.twbbs.org.tw (¤Û°ìÅ]«°«á¯ª)¡n¤§»Ê¨¥¡G
-> ½Ğ¿ï¾Ü¤å³¹Ãş§O¡]«ö Enter ¸õ¹L¡^¡G
-> Ãş§O¡G1.[¤½§i] 2.[·s»D] 3.[¶¢²á] 4.[¤å¥ó] 5.[°İÃD] 6.[´ú¸Õ]
-> ½Ğ°İ¬O§_¥i¥HÅıªO¥D¦Û¦æ­×§ï¥H¤Wªº¤å³¹Ãş§O??  ^^
+â€» å¼•è¿°ã€Štandrian.bbs@ntcb.twbbs.org.tw (å¹»åŸŸé­”åŸå¾Œç¥–)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> è«‹é¸æ“‡æ–‡ç« é¡åˆ¥ï¼ˆæŒ‰ Enter è·³éï¼‰ï¼š
+> é¡åˆ¥ï¼š1.[å…¬å‘Š] 2.[æ–°è] 3.[é–’èŠ] 4.[æ–‡ä»¶] 5.[å•é¡Œ] 6.[æ¸¬è©¦]
+> è«‹å•æ˜¯å¦å¯ä»¥è®“æ¿ä¸»è‡ªè¡Œä¿®æ”¹ä»¥ä¸Šçš„æ–‡ç« é¡åˆ¥??  ^^
 
-  config.h ­n #define POPUP_ANSWER ¤Î POST_PREFIX ¤~¥i¥H¨Ï¥Î¥»¥\¯à
+  config.h è¦ #define POPUP_ANSWER åŠ POST_PREFIX æ‰å¯ä»¥ä½¿ç”¨æœ¬åŠŸèƒ½
 
-: manage.c:post_prefix_edit() ·s¼W©ó post_memo_edit() «á­±
+: manage.c:post_prefix_edit() æ–°å¢æ–¼ post_memo_edit() å¾Œé¢
 
 #ifdef POST_PREFIX
 /* ----------------------------------------------------- */
-/* ªO¥D¥\¯à : ­×§ïµo¤åÃş§O                               */
+/* æ¿ä¸»åŠŸèƒ½ : ä¿®æ”¹ç™¼æ–‡é¡åˆ¥                               */
 /* ----------------------------------------------------- */
 
 
@@ -25,15 +25,15 @@ post_prefix_edit(xo)
   int i;
   FILE *fp;
   char fpath[64], buf[20], prefix[NUM_PREFIX][20], *menu[NUM_PREFIX + 3];
-  char *prefix_def[NUM_PREFIX] =   /* ¹w³]ªºÃş§O */
+  char *prefix_def[NUM_PREFIX] =   /* é è¨­çš„é¡åˆ¥ */
   {
-    "¤½§i", "´ú¸Õ", "¶¢²á", "Äé¤ô", "µL²á", "¥´²V"
+    "å…¬å‘Š", "æ¸¬è©¦", "é–’èŠ", "çŒæ°´", "ç„¡èŠ", "æ‰“æ··"
   };
 
   if (!(bbstate & STAT_BOARD))
     return XO_NONE;
 
-  i = vans("Ãş§O (D)§R°£ (E)­×§ï (Q)¨ú®ø¡H[E] ");
+  i = vans("é¡åˆ¥ (D)åˆªé™¤ (E)ä¿®æ”¹ (Q)å–æ¶ˆï¼Ÿ[E] ");
 
   if (i == 'q')
     return XO_FOOT;
@@ -59,24 +59,24 @@ post_prefix_edit(xo)
     fclose(fp);
   }
 
-  /* ¶ñº¡¦Ü NUM_PREFIX ­Ó */
+  /* å¡«æ»¿è‡³ NUM_PREFIX å€‹ */
   for (; i < NUM_PREFIX; i++)
     sprintf(prefix[i], "%d.%s", i + 1, prefix_def[i]);
 
   menu[0] = "10";
   for (i = 1; i <= NUM_PREFIX; i++)
     menu[i] = prefix[i - 1];
-  menu[NUM_PREFIX + 1] = "0.Â÷¶}";
+  menu[NUM_PREFIX + 1] = "0.é›¢é–‹";
   menu[NUM_PREFIX + 2] = NULL;
 
   do
   {
-    /* ¦b popupmenu ¸Ì­±«ö ¥ªÁä Â÷¶} */
-    i = pans(3, 20, "¤å³¹Ãş§O", menu) - '0';
+    /* åœ¨ popupmenu è£¡é¢æŒ‰ å·¦éµ é›¢é–‹ */
+    i = pans(3, 20, "æ–‡ç« é¡åˆ¥", menu) - '0';
     if (i >= 1 && i <= NUM_PREFIX)
     {
       strcpy(buf, prefix[i - 1] + 2);
-      if (vget(b_lines, 0, "Ãş§O¡G", buf, 10, GCARRY))
+      if (vget(b_lines, 0, "é¡åˆ¥ï¼š", buf, 10, GCARRY))
         strcpy(prefix[i - 1] + 2, buf);
     }
   } while (i);
@@ -94,16 +94,16 @@ post_prefix_edit(xo)
 
 : manage.c:post_manage()
 
-    "WMemo   ½s¿è¶iªOµe­±",
+    "WMemo   ç·¨è¼¯é€²æ¿ç•«é¢",
 +#ifdef POST_PREFIX
-+   "RPrefix ½s¿è¤å³¹Ãş§O",
++   "RPrefix ç·¨è¼¯æ–‡ç« é¡åˆ¥",
 +#endif
 
   ...
   ...
 
-- char *menu = "¡· ªO¥D¿ï³æ (B)¥DÃD (W)¶iªO (M)°ÆªO"
-+ char *menu = "¡· ªO¥D¿ï³æ (B)¥DÃD (W)¶iªO (R)Ãş§O (M)°ÆªO"
+- char *menu = "â— æ¿ä¸»é¸å–® (B)ä¸»é¡Œ (W)é€²æ¿ (M)å‰¯æ¿"
++ char *menu = "â— æ¿ä¸»é¸å–® (B)ä¸»é¡Œ (W)é€²æ¿ (R)é¡åˆ¥ (M)å‰¯æ¿"
 
   ...
   ...
@@ -118,14 +118,14 @@ post_prefix_edit(xo)
 
 : post.c:do_post()
 
-  else          /* itoc.020113: ·s¤å³¹¿ï¾Ü¼ĞÃD¤ÀÃş */
+  else          /* itoc.020113: æ–°æ–‡ç« é¸æ“‡æ¨™é¡Œåˆ†é¡ */
   {
 #define NUM_PREFIX 6
 +   FILE *fp;
 +   char prefix[NUM_PREFIX][10];
 -   char *prefix[NUM_PREFIX] =
 +   char *prefix_default[NUM_PREFIX] =
-      {"[¤½§i] ", "[·s»D] ", "[¶¢²á] ", "[¤å¥ó] ", "[°İÃD] ", "[´ú¸Õ] "};
+      {"[å…¬å‘Š] ", "[æ–°è] ", "[é–’èŠ] ", "[æ–‡ä»¶] ", "[å•é¡Œ] ", "[æ¸¬è©¦] "};
 
 +   for (mode = 0; mode < NUM_PREFIX; mode++)
 +     strcpy(prefix[mode], prefix_default[mode]);
@@ -141,17 +141,17 @@ post_prefix_edit(xo)
 +   }
 
     move(21, 0);
-    outs("Ãş§O¡G");
+    outs("é¡åˆ¥ï¼š");
     for (mode = 0; mode < NUM_PREFIX; mode++)
       prints("%d.%s", mode + 1, prefix[mode]);
 
-    mode = vget(20, 0, "½Ğ¿ï¾Ü¤å³¹Ãş§O¡]«ö Enter ¸õ¹L¡^¡G",
+    mode = vget(20, 0, "è«‹é¸æ“‡æ–‡ç« é¡åˆ¥ï¼ˆæŒ‰ Enter è·³éï¼‰ï¼š",
       fpath, 3, DOECHO) - '1';
-    if (mode >= 0 && mode < NUM_PREFIX)         /* ¿é¤J¼Æ¦r¿ï¶µ */
+    if (mode >= 0 && mode < NUM_PREFIX)         /* è¼¸å…¥æ•¸å­—é¸é … */
       rcpt = prefix[mode];
-    else                                        /* ªÅ¥Õ¸õ¹L */
+    else                                        /* ç©ºç™½è·³é */
       rcpt = NULL;
   }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mnctu5566.Dorm3.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mnctu5566.Dorm3.NCTU.edu.tw[37m ç™¼è¡¨[m

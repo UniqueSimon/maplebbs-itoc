@@ -1,12 +1,12 @@
 /*-------------------------------------------------------*/
 /* util/account.c	( NTHU CS MapleBBS Ver 3.00 )	 */
 /*-------------------------------------------------------*/
-/* target : ¤W¯¸¤H¦¸²Î­p¡B¨t²Î¸ê®Æ³Æ¥÷¡B¶}²¼		 */
+/* target : ä¸Šç«™äººæ¬¡çµ±è¨ˆã€ç³»çµ±è³‡æ–™å‚™ä»½ã€é–‹ç¥¨		 */
 /* create : 95/03/29				 	 */
 /* update : 97/03/29				 	 */
 /*-------------------------------------------------------*/
-/* syntax : ¥»µ{¦¡©y¥H crontab °õ¦æ¡A³]©w®É¶¡¬°¨C¤p®É	 */
-/* 1-5 ¤À ¤§¶¡						 */
+/* syntax : æœ¬ç¨‹å¼å®œä»¥ crontab åŸ·è¡Œï¼Œè¨­å®šæ™‚é–“ç‚ºæ¯å°æ™‚	 */
+/* 1-5 åˆ† ä¹‹é–“						 */
 /*-------------------------------------------------------*/
 /* notice : brdshm (board shared memory) synchronize	 */
 /*-------------------------------------------------------*/
@@ -22,18 +22,18 @@
 #define	ADJUST_M	10	/* adjust back 10 minutes */
 
 
-/* itoc.011004.µù¸Ñ: ¥Î - ¥Nªí³o¦¸ªº¡A¥Î = ¥Nªí¤W¦¸ªº¡C¦b gem/@/ ¤U¦³«Ü¦h³o¼Ëªº½d¨Ò */
+/* itoc.011004.è¨»è§£: ç”¨ - ä»£è¡¨é€™æ¬¡çš„ï¼Œç”¨ = ä»£è¡¨ä¸Šæ¬¡çš„ã€‚åœ¨ gem/@/ ä¸‹æœ‰å¾ˆå¤šé€™æ¨£çš„ç¯„ä¾‹ */
 
-static char fn_today[] = "gem/@/@-act";		/* ¤µ¤é¤W¯¸¤H¦¸²Î­p */
-static char fn_yesday[] = "gem/@/@=act";	/* ¬Q¤é¤W¯¸¤H¦¸²Î­p */
+static char fn_today[] = "gem/@/@-act";		/* ä»Šæ—¥ä¸Šç«™äººæ¬¡çµ±è¨ˆ */
+static char fn_yesday[] = "gem/@/@=act";	/* æ˜¨æ—¥ä¸Šç«™äººæ¬¡çµ±è¨ˆ */
 static char log_file[] = FN_RUN_USIES "=";
-static char act_file[] = "run/var/act";		/* ¤W¯¸¤H¦¸²Î­p¬ö¿ıÀÉ */
+static char act_file[] = "run/var/act";		/* ä¸Šç«™äººæ¬¡çµ±è¨ˆç´€éŒ„æª” */
 
-static time_t now;			/* °õ¦æµ{¦¡ªº®É¶¡ */
+static time_t now;			/* åŸ·è¡Œç¨‹å¼çš„æ™‚é–“ */
 
 
 /* ----------------------------------------------------- */
-/* ¶}²¼¡Gshm ³¡¥÷¶·»P cache.c ¬Û®e			 */
+/* é–‹ç¥¨ï¼šshm éƒ¨ä»½é ˆèˆ‡ cache.c ç›¸å®¹			 */
 /* ----------------------------------------------------- */
 
 
@@ -64,7 +64,7 @@ fix_brd()
     if (fread(&brd, sizeof(BRD), 1, fp) != 1)
       break;
 
-    if (!*brd.brdname)	/* ¦¹ªO¤w³Q§R°£ */
+    if (!*brd.brdname)	/* æ­¤æ¿å·²è¢«åˆªé™¤ */
       continue;
 
     memcpy(&allbrd[num], &brd, sizeof(BRD));
@@ -73,7 +73,7 @@ fix_brd()
 
   fclose(fp);
 
-  /* itoc.041110: ¦b²Ä¤@¦¸¸ü¤J bshm ®É¡A±N bno ¨ÌªO¦W±Æ§Ç */
+  /* itoc.041110: åœ¨ç¬¬ä¸€æ¬¡è¼‰å…¥ bshm æ™‚ï¼Œå°‡ bno ä¾æ¿åæ’åº */
   if (num > 1)
     qsort(allbrd, num, sizeof(BRD), boardname_cmp);
 
@@ -112,9 +112,9 @@ init_allbrd()
 
   do
   {
-    /* itoc.040314: ªO¥D§ó§ï¬İªO±Ô­z©Î¬O¯¸ªø§ó§ï¬İªO®É¤~·|§â bpost/blast ¼g¶i .BRD ¤¤ 
-       ©Ò¥H .BRD ¸Ìªº bpost/blast ¥¼¥²¬O¹ïªº¡A­n­«·s initial¡C
-       initial ªº¤èªk¬O±N btime ³]¦¨ -1¡AÅı class_item() ¥h§ó·s */
+    /* itoc.040314: æ¿ä¸»æ›´æ”¹çœ‹æ¿æ•˜è¿°æˆ–æ˜¯ç«™é•·æ›´æ”¹çœ‹æ¿æ™‚æ‰æœƒæŠŠ bpost/blast å¯«é€² .BRD ä¸­ 
+       æ‰€ä»¥ .BRD è£¡çš„ bpost/blast æœªå¿…æ˜¯å°çš„ï¼Œè¦é‡æ–° initialã€‚
+       initial çš„æ–¹æ³•æ˜¯å°‡ btime è¨­æˆ -1ï¼Œè®“ class_item() å»æ›´æ–° */
     head->btime = -1;
 
 #ifdef HAVE_MODERATED_BOARD
@@ -171,7 +171,7 @@ init_bshm()
   for (;;)
   {
     n = *uptime;
-    if (n > 0)		/* bshm ¤w initial §¹¦¨ */
+    if (n > 0)		/* bshm å·² initial å®Œæˆ */
       return;
 
     if (n < 0)
@@ -185,7 +185,7 @@ init_bshm()
 
     *uptime = -1;
 
-    fix_brd();			/* itoc.030725: ¦b²Ä¤@¦¸¸ü¤J bshm «e¡A¥ı¾ã²z .BRD */
+    fix_brd();			/* itoc.030725: åœ¨ç¬¬ä¸€æ¬¡è¼‰å…¥ bshm å‰ï¼Œå…ˆæ•´ç† .BRD */
 
     if ((n = open(FN_BRD, O_RDONLY)) >= 0)
     {
@@ -196,7 +196,7 @@ init_bshm()
       init_allbrd();
     }
 
-    /* µ¥©Ò¦³ boards ¸ê®Æ§ó·s«á¦A³]©w uptime */
+    /* ç­‰æ‰€æœ‰ boards è³‡æ–™æ›´æ–°å¾Œå†è¨­å®š uptime */
 
     time(uptime);
     fprintf(stderr, "[account]\tCACHE\treload bcache\n");
@@ -241,7 +241,7 @@ keeplog(fnlog, board, title, mode)
   int fd;
   FILE *fp;
 
-  if (!dashf(fnlog))	/* Kudo.010804: ÀÉ®×¬OªÅªº´N¤£ keeplog */
+  if (!dashf(fnlog))	/* Kudo.010804: æª”æ¡ˆæ˜¯ç©ºçš„å°±ä¸ keeplog */
     return;
 
   if (!board)
@@ -256,12 +256,12 @@ keeplog(fnlog, board, title, mode)
   {
     close(fd);
     /* rename(fnlog, fpath); */
-    f_mv(fnlog, fpath);		/* Thor.990409: ¥i¸ópartition */
+    f_mv(fnlog, fpath);		/* Thor.990409: å¯è·¨partition */
   }
   else
   {
     fp = fdopen(fd, "w");
-    fprintf(fp, "§@ªÌ: %s (%s)\n¼ĞÃD: %s\n®É¶¡: %s\n\n",
+    fprintf(fp, "ä½œè€…: %s (%s)\næ¨™é¡Œ: %s\næ™‚é–“: %s\n\n",
       STR_SYSOP, SYSOPNICK, title, Btime(&hdr.chrono));
     f_suck(fp, fnlog);
     fclose(fp);
@@ -299,7 +299,7 @@ TchoiceCompare(i, j)
 
 static int
 draw_vote(brd, fpath, vch)
-  BRD *brd;			/* Thor: ¶Ç¤J BRD, ¥i¬d battr */
+  BRD *brd;			/* Thor: å‚³å…¥ BRD, å¯æŸ¥ battr */
   char *fpath;
   VCH *vch;
 {
@@ -308,7 +308,7 @@ draw_vote(brd, fpath, vch)
   char *fname, *bid, buf[80];
   int total, items, num, fd, ticket, bollt;
   VLOG vlog;
-  char *list = "@IOLGZ";	/* itoc.µù¸Ñ: ²M vote file */
+  char *list = "@IOLGZ";	/* itoc.è¨»è§£: æ¸… vote file */
 
   bid = brd->brdname;
   fname = strrchr(fpath, '@');
@@ -331,10 +331,10 @@ draw_vote(brd, fpath, vch)
   if (items == 0)
     return 0;
 
-  /* ²Ö­p§ë²¼µ²ªG */
+  /* ç´¯è¨ˆæŠ•ç¥¨çµæœ */
 
   *fname = 'G';
-  bollt = 0;		/* Thor: Á`²¼¼ÆÂk¹s */
+  bollt = 0;		/* Thor: ç¸½ç¥¨æ•¸æ­¸é›¶ */
   total = 0;
 
   if ((fd = open(fpath, O_RDONLY)) >= 0)
@@ -354,21 +354,21 @@ draw_vote(brd, fpath, vch)
     close(fd);
   }
 
-  /* ²£¥Í¶}²¼µ²ªG */
+  /* ç”¢ç”Ÿé–‹ç¥¨çµæœ */
 
   *fname = 'Z';
   if (!(fp = fopen(fpath, "w")))
     return 0;
 
   fprintf(fp, "\n\033[1;34m" MSG_SEPERATOR "\033[m\n\n"
-    "\033[1;32m¡» [%s] ¬İªO§ë²¼¡G%s\033[m\n\nÁ|¿ìªO¥D¡G%s\n\nÁ|¿ì¤é´Á¡G%s\n\n",
+    "\033[1;32mâ—† [%s] çœ‹æ¿æŠ•ç¥¨ï¼š%s\033[m\n\nèˆ‰è¾¦æ¿ä¸»ï¼š%s\n\nèˆ‰è¾¦æ—¥æœŸï¼š%s\n\n",
     bid, vch->title, vch->owner, Btime(&vch->chrono));
-  fprintf(fp, "¶}²¼¤é´Á¡G%s\n\n\033[1;32m¡» §ë²¼¥DÃD¡G\033[m\n\n", Btime(&vch->vclose));
+  fprintf(fp, "é–‹ç¥¨æ—¥æœŸï¼š%s\n\n\033[1;32mâ—† æŠ•ç¥¨ä¸»é¡Œï¼š\033[m\n\n", Btime(&vch->vclose));
 
   *fname = '@';
   f_suck(fp, fpath);
 
-  fprintf(fp, "\n\033[1;32m¡» §ë²¼µ²ªG¡G¨C¤H¥i§ë %d ²¼¡A¦@ %d ¤H°Ñ¥[¡A§ë¥X %d ²¼\033[m\n\n",
+  fprintf(fp, "\n\033[1;32mâ—† æŠ•ç¥¨çµæœï¼šæ¯äººå¯æŠ• %d ç¥¨ï¼Œå…± %d äººåƒåŠ ï¼ŒæŠ•å‡º %d ç¥¨\033[m\n\n",
     vch->maxblt, total, bollt);
 
   if (vch->vsort == 's')
@@ -383,20 +383,20 @@ draw_vote(brd, fpath, vch)
   {
     ticket = choice[num].count;
     if (fd)
-      fprintf(fp, "    %-36s%5d ²¼ (%4.1f%%)\n", choice[num].vitem, ticket, 100.0 * ticket / fd);
+      fprintf(fp, "    %-36s%5d ç¥¨ (%4.1f%%)\n", choice[num].vitem, ticket, 100.0 * ticket / fd);
     else
-      fprintf(fp, "    %-36s%5d ²¼\n", choice[num].vitem, ticket);
+      fprintf(fp, "    %-36s%5d ç¥¨\n", choice[num].vitem, ticket);
   }
 
   /* other opinions */
 
   *fname = 'O';
-  fputs("\n\033[1;32m¡» §Ú¦³¸Ü­n»¡¡G\033[m\n\n", fp);
+  fputs("\n\033[1;32mâ—† æˆ‘æœ‰è©±è¦èªªï¼š\033[m\n\n", fp);
   f_suck(fp, fpath);
   fputs("\n", fp);
   fclose(fp);
 
-  fp = fopen(fpath, "w");	/* Thor: ¥Î O_ ¼È¦s¤@¤U¤U... */
+  fp = fopen(fpath, "w");	/* Thor: ç”¨ O_ æš«å­˜ä¸€ä¸‹ä¸‹... */
   *fname = 'Z';
   f_suck(fp, fpath);
   sprintf(buf, "brd/%s/@/@vote", bid);
@@ -405,28 +405,28 @@ draw_vote(brd, fpath, vch)
   *fname = 'O';
   rename(fpath, buf);
 
-  /* ±N¶}²¼µ²ªG post ¨ì [BN_RECORD] »P ¥»¬İªO */
+  /* å°‡é–‹ç¥¨çµæœ post åˆ° [BN_RECORD] èˆ‡ æœ¬çœ‹æ¿ */
 
   *fname = 'Z';
 
-  /* Thor: ­Y¬İªOÄİ©Ê¬° BRD_NOVOTE¡A«h¤£ post ¨ì [BN_RECORD] */
+  /* Thor: è‹¥çœ‹æ¿å±¬æ€§ç‚º BRD_NOVOTEï¼Œå‰‡ä¸ post åˆ° [BN_RECORD] */
 
   if (!(brd->battr & BRD_NOVOTE))
   {
-    sprintf(buf, "[°O¿ı] %s <<¬İªO¿ï±¡³ø¾É>>", bid);
+    sprintf(buf, "[è¨˜éŒ„] %s <<çœ‹æ¿é¸æƒ…å ±å°>>", bid);
     keeplog(fpath, NULL, buf, 0);
   }
 
-  keeplog(fpath, bid, "[°O¿ı] ¿ï±¡³ø¾É", 2);
+  keeplog(fpath, bid, "[è¨˜éŒ„] é¸æƒ…å ±å°", 2);
 
   while (*fname = *list++)
-    unlink(fpath); /* Thor: ½T©w¦W¦r´N¬å */
+    unlink(fpath); /* Thor: ç¢ºå®šåå­—å°±ç  */
 
   return 1;
 }
 
 
-static int		/* 0:¤£»İ¼g¦^.BRD !=0:»İ¼g¦^.BRD */
+static int		/* 0:ä¸éœ€å¯«å›.BRD !=0:éœ€å¯«å›.BRD */
 draw_board(brd)
   BRD *brd;
 {
@@ -436,7 +436,7 @@ draw_board(brd)
   char *fname, fpath[64], buf[64];
   struct stat st;
 
-  /* ¥Ñ account ¨Ó maintain brd->bvote */
+  /* ç”± account ä¾† maintain brd->bvote */
 
   oldbvote = brd->bvote;
 
@@ -456,7 +456,7 @@ draw_board(brd)
   vch = (VCH *) malloc(fsize);
 
   /* flock(fd, LOCK_EX); */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_exlock(fd);
 
   read(fd, vch, fsize);
@@ -474,10 +474,10 @@ draw_board(brd)
 
   do
   {
-    if (head->vclose < now && head->vgamble == ' ')	/* ½ä½L¤£Åı account ¶} */
+    if (head->vclose < now && head->vgamble == ' ')	/* è³­ç›¤ä¸è®“ account é–‹ */
     {
       strcpy(fname, head->xname);
-      draw_vote(brd, buf, head);/* Thor: ¶Ç¤J BRD, ¥i¬d battr */
+      draw_vote(brd, buf, head);/* Thor: å‚³å…¥ BRD, å¯æŸ¥ battr */
       head->chrono = 0;
     }
     else
@@ -504,7 +504,7 @@ draw_board(brd)
   }
 
   /* flock(fd, LOCK_UN);  */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_unlock(fd);
 
   close(fd);
@@ -514,7 +514,7 @@ draw_board(brd)
   if (!alive)
     unlink(fpath);
   else if (!newbvote)
-    newbvote = 1;	/* ¥u¦³§ë²¼¡A¨S¦³½ä½L */
+    newbvote = 1;	/* åªæœ‰æŠ•ç¥¨ï¼Œæ²’æœ‰è³­ç›¤ */
 
   if (oldbvote != newbvote)
   {
@@ -550,13 +550,13 @@ closepolls()
     return;
 
   /* flock(dirty, LOCK_EX); */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_exlock(dirty);
 
   write(dirty, bcache, (char *)tail - (char *)bcache);
 
   /* flock(dirty, LOCK_UN); */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_unlock(dirty);
 
   close(dirty);
@@ -624,13 +624,13 @@ class_parse(key)
       return CH_END;
     }
 
-    /* itoc.030723: ÀË¬d Class ¼Æ¶q¬O§_¶W¹L CH_MAX */
+    /* itoc.030723: æª¢æŸ¥ Class æ•¸é‡æ˜¯å¦è¶…é CH_MAX */
     if (chn >= CH_MAX - 1)
     {
       static int show_error = 0;
-      if (!show_error)		/* ¿ù»~°T®§¥u¦L¤@¦¸ */
+      if (!show_error)		/* éŒ¯èª¤è¨Šæ¯åªå°ä¸€æ¬¡ */
       {
-	fprintf(stderr, "[account]\t½Ğ¥[¤j±zªº CH_MAX ©w¸q¡ACH_MAX ¥²¶·¶W¹L Class ªº¼Æ¶q\n");
+	fprintf(stderr, "[account]\tè«‹åŠ å¤§æ‚¨çš„ CH_MAX å®šç¾©ï¼ŒCH_MAX å¿…é ˆè¶…é Class çš„æ•¸é‡\n");
 	show_error = 1;
       }
       fclose(fp);
@@ -672,7 +672,7 @@ class_parse(key)
       }
       else
       {
-	/* recursive ¦a¤@¼h¤@¼h¶i¥h«Ø Class */
+	/* recursive åœ°ä¸€å±¤ä¸€å±¤é€²å»å»º Class */
 	i = class_parse(hdr.title);
 
 	if (i == CH_END)
@@ -701,12 +701,12 @@ brdname_cmp(i, j)
 
 
 static int
-brdtitle_cmp(i, j)		/* itoc.010413: ¨Ì¬İªO¤¤¤å±Ô­z±Æ§Ç */
+brdtitle_cmp(i, j)		/* itoc.010413: ä¾çœ‹æ¿ä¸­æ–‡æ•˜è¿°æ’åº */
   short *i, *j;
 {
   /* return strcmp(bhead[*i].title, bhead[*j].title); */
 
-  /* itoc.010413: ¤ÀÃş/ªO¦W¥æ¤e¤ñ¹ï */
+  /* itoc.010413: åˆ†é¡/æ¿åäº¤å‰æ¯”å° */
   int k = strcmp(bhead[*i].class, bhead[*j].class);
   return k ? k : str_cmp(bhead[*i].brdname, bhead[*j].brdname);
 }
@@ -750,13 +750,13 @@ class_image()
   short len, pos[CH_MAX];
   ClassHeader *chp;
 
-  for (times = 2; times > 0; times--)	/* itoc.010413: ²£¥Í¤G¥÷ class image */
+  for (times = 2; times > 0; times--)	/* itoc.010413: ç”¢ç”ŸäºŒä»½ class image */
   {
     chn = 0;
     class_sort(times == 1 ? brdname_cmp : brdtitle_cmp);
     class_parse(CLASS_INIFILE);
 
-    if (chn < 2)		/* lkchu.990106: ©|¨S¦³¤ÀÃş */
+    if (chn < 2)		/* lkchu.990106: å°šæ²’æœ‰åˆ†é¡ */
       return;
 
     len = sizeof(short) * (chn + 1);
@@ -789,7 +789,7 @@ class_image()
 
 
 /* ----------------------------------------------------- */
-/* ¤W¯¸¤H¼Æ²Î­p						 */
+/* ä¸Šç«™äººæ•¸çµ±è¨ˆ						 */
 /* ----------------------------------------------------- */
 
 
@@ -798,7 +798,7 @@ error(fpath)
   char *fpath;
 {
   printf("can not open [%s]\n", fpath);
-  /* exit(1); */	/* itoc.011004: ¤W¯¸¤H¦¸²Î­p¥¢±Ñ¡AµL»İ¤¤Â_ account °õ¦æ */
+  /* exit(1); */	/* itoc.011004: ä¸Šç«™äººæ¬¡çµ±è¨ˆå¤±æ•—ï¼Œç„¡éœ€ä¸­æ–· account åŸ·è¡Œ */
 }
 
 
@@ -826,7 +826,7 @@ draw_usies(ptime)
   int fact, hour, max, item, total, i, j, over;
   char buf[256];
   FILE *fp, *fpw;
-  int act[26];			/* act[0~23]:0~23®É¦U¤p®Éªº¤W¯¸¤H¦¸ act[24]:°±¯d²Ö­p®É¶¡ act[25]:²Ö¿n¤H¦¸ */
+  int act[26];			/* act[0~23]:0~23æ™‚å„å°æ™‚çš„ä¸Šç«™äººæ¬¡ act[24]:åœç•™ç´¯è¨ˆæ™‚é–“ act[25]:ç´¯ç©äººæ¬¡ */
 
   static char run_file[] = FN_RUN_USIES;
   static char tmp_file[] = FN_RUN_USIES ".tmp";
@@ -834,22 +834,22 @@ draw_usies(ptime)
   rename(run_file, tmp_file);
   if (!(fp = fopen(tmp_file, "r")))
   {
-    /* error(tmp_file); */	/* itoc.011004.µù¸Ñ: ¨S¦³ tmp_file ªí¥Ü¨S¦³ run_file¡Aªí¥Ü±q¤W¦¸¶] account ¨ì²{¦b¡A */
-    return;			/* ¨S¦³¤H login ¹L bbs¡C³q±`µo¥Í¦b¤â°Ê¶] account ÀWÁc®É¡C */
+    /* error(tmp_file); */	/* itoc.011004.è¨»è§£: æ²’æœ‰ tmp_file è¡¨ç¤ºæ²’æœ‰ run_fileï¼Œè¡¨ç¤ºå¾ä¸Šæ¬¡è·‘ account åˆ°ç¾åœ¨ï¼Œ */
+    return;			/* æ²’æœ‰äºº login é bbsã€‚é€šå¸¸ç™¼ç”Ÿåœ¨æ‰‹å‹•è·‘ account é »ç¹æ™‚ã€‚ */
   }
 
   if (!(fpw = fopen(log_file, "a")))
   {
     fclose(fp);
-    error(log_file);		/* itoc.011004.µù¸Ñ: log_file ¬O¬Q¤Ñ run_file¡C¦pªG¬Q¤Ñ¾ã¤Ñ³£¨S¦³¤H login ¹L bbs¡A */
-    return;			/* ´N·|µo¥Í¨S¦³ log_file ªºª¬ªp */
+    error(log_file);		/* itoc.011004.è¨»è§£: log_file æ˜¯æ˜¨å¤© run_fileã€‚å¦‚æœæ˜¨å¤©æ•´å¤©éƒ½æ²’æœ‰äºº login é bbsï¼Œ */
+    return;			/* å°±æœƒç™¼ç”Ÿæ²’æœ‰ log_file çš„ç‹€æ³ */
   }
 
   if ((fact = open(act_file, O_RDWR | O_CREAT, 0600)) < 0)
   {
     fclose(fp);
     fclose(fpw);
-    error(act_file);		/* itoc.011004.µù¸Ñ: ³£¤w¸g¦³ O_CREAT ¦pªGÁÙ¨S¦³ act_file ªº¸Ü..¦n¦Û¬°¤§§a :P */
+    error(act_file);		/* itoc.011004.è¨»è§£: éƒ½å·²ç¶“æœ‰ O_CREAT å¦‚æœé‚„æ²’æœ‰ act_file çš„è©±..å¥½è‡ªç‚ºä¹‹å§ :P */
     return;
   }
 
@@ -892,7 +892,7 @@ draw_usies(ptime)
 
   for (i = max = total = 0; i < 24; i++)
   {
-    total += act[i];		/* itoc.030415.µù¸Ñ: act[25] ¥¼¥²µ¥©ó total¡A¦³¤H¤]³\¤£¥¿±`Â÷¯¸ */
+    total += act[i];		/* itoc.030415.è¨»è§£: act[25] æœªå¿…ç­‰æ–¼ totalï¼Œæœ‰äººä¹Ÿè¨±ä¸æ­£å¸¸é›¢ç«™ */
     if (act[i] > max)
       max = act[i];
   }
@@ -907,7 +907,7 @@ draw_usies(ptime)
   }
 
   /* Thor.990329: y2k */
-  fprintf(fp, "%24s\033[1;33;46m [%02d/%02d/%02d] ¤W¯¸¤H¦¸²Î­p \033[40m\n",
+  fprintf(fp, "%24s\033[1;33;46m [%02d/%02d/%02d] ä¸Šç«™äººæ¬¡çµ±è¨ˆ \033[40m\n",
     "", ptime->tm_year % 100, ptime->tm_mon + 1, ptime->tm_mday);
 
   for (i = MAX_LINE + 1; i > 0; i--)
@@ -927,7 +927,7 @@ draw_usies(ptime)
       else if (max <= hour)
       {
 	ansi_puts(fp, buf, '1');
-	fprintf(fp, "¢i ");
+	fprintf(fp, "â–ˆ ");
       }
       else
 	strcat(buf, "   ");
@@ -936,19 +936,19 @@ draw_usies(ptime)
   }
 
   if (act[25] == 0)
-    act[25] = 1;		/* Thor.980928: lkchu patch: ¨¾¤î°£¼Æ¬°0 */
+    act[25] = 1;		/* Thor.980928: lkchu patch: é˜²æ­¢é™¤æ•¸ç‚º0 */
 
   fprintf(fp, "\033[34m"
-    "  ùæùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùè\n  \033[32m"
+    "  â•’â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â••\n  \033[32m"
     "0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23\n\n"
-    "        %s     \033[35mÁ`¦@¤W¯¸¤H¦¸¡G\033[37m%-9d\033[35m¥­§¡¨Ï¥Î®É¶¡¡G\033[37m%d\033[m\n",
-    over ? "\033[35m³æ¦ì¡G\033[37m10 ¤H" : "", total, act[24] / act[25] + 1);
+    "        %s     \033[35mç¸½å…±ä¸Šç«™äººæ¬¡ï¼š\033[37m%-9d\033[35må¹³å‡ä½¿ç”¨æ™‚é–“ï¼š\033[37m%d\033[m\n",
+    over ? "\033[35må–®ä½ï¼š\033[37m10 äºº" : "", total, act[24] / act[25] + 1);
   fclose(fp);
 }
 
 
 /* ----------------------------------------------------- */
-/* À£ÁYµ{¦¡						 */
+/* å£“ç¸®ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -962,14 +962,14 @@ gzip(source, target, stamp)
   {
     sprintf(buf, "/usr/bin/gzip -n log/%s%s", target, stamp);
     /* rename(source, buf + 17); */
-    f_mv(source, buf + 17);	/* Thor.990409: ¥i¸ó partition */
+    f_mv(source, buf + 17);	/* Thor.990409: å¯è·¨ partition */
     system(buf);
   }
 }
 
 
 /* ----------------------------------------------------- */
-/* ²£¥ÍÅçÃÒ«Hªº private key				 */
+/* ç”¢ç”Ÿé©—è­‰ä¿¡çš„ private key				 */
 /* ----------------------------------------------------- */
 
 
@@ -1008,7 +1008,7 @@ private_key(ymd)
 
 
 /* ----------------------------------------------------- */
-/* ¥Dµ{¦¡						 */
+/* ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -1020,7 +1020,7 @@ main(argc, argv)
   struct tm ntime, *ptime;
   FILE *fp;
 
-  now = time(NULL);	/* ¤@¶}©l´N­n°¨¤W°O¿ı®É¶¡ */
+  now = time(NULL);	/* ä¸€é–‹å§‹å°±è¦é¦¬ä¸Šè¨˜éŒ„æ™‚é–“ */
 
   setgid(BBSGID);
   setuid(BBSUID);
@@ -1028,7 +1028,7 @@ main(argc, argv)
   umask(077);
 
   /* --------------------------------------------------- */
-  /* ªì©l¤Æ board shm ¥Î¨Ó«Ø Class ¤Î¶}²¼		 */
+  /* åˆå§‹åŒ– board shm ç”¨ä¾†å»º Class åŠé–‹ç¥¨		 */
   /* --------------------------------------------------- */
 
   init_bshm();
@@ -1040,37 +1040,37 @@ main(argc, argv)
   class_image();
 
   /* --------------------------------------------------- */
-  /* ¨t²Î¶}²¼						 */
+  /* ç³»çµ±é–‹ç¥¨						 */
   /* --------------------------------------------------- */
 
   closepolls();
 
   /* --------------------------------------------------- */
-  /* ¸ê®Æ²Î­p®É¶¡					 */
+  /* è³‡æ–™çµ±è¨ˆæ™‚é–“					 */
   /* --------------------------------------------------- */
 
-  /* itoc.030911: ­Y¥[¤F°Ñ¼Æ¡Aªí¥Ü¤£¬O¦b crontab ¸Ì¶]ªº¡A¨º»ò¤£°µ¸ê®Æ²Î­p */
+  /* itoc.030911: è‹¥åŠ äº†åƒæ•¸ï¼Œè¡¨ç¤ºä¸æ˜¯åœ¨ crontab è£¡è·‘çš„ï¼Œé‚£éº¼ä¸åšè³‡æ–™çµ±è¨ˆ */
   if (argc != 1)
     exit(0);
 
-  /* ntime ¬O¤µ¤Ñ */
+  /* ntime æ˜¯ä»Šå¤© */
   ptime = localtime(&now);
-  memcpy(&ntime, ptime, sizeof(ntime));	/* ¥ı¦s°_¨Ó¡A¦]¬°ÁÙ­n°µ¤@¦¸ localtime() */
+  memcpy(&ntime, ptime, sizeof(ntime));	/* å…ˆå­˜èµ·ä¾†ï¼Œå› ç‚ºé‚„è¦åšä¸€æ¬¡ localtime() */
 
-  /* ptime ¬O¬Q¤Ñ */
-  /* itoc.011004.µù¸Ñ: ¥Ñ©ó account ¬Oºâ«e¤@¤p®É²Î­p¡A©Ò¥H¦b¹s®É®É­n§â®ÉÄÁÂà¦^ 10 ¤ÀÄÁ¡A¨ì¬Q¤Ñ¥h */
-  /* itoc.030911.µù¸Ñ: ©Ò¥H account ¥²¶·¦b¨C¤p®Éªº 1-10 ¤À¤º°õ¦æ */
+  /* ptime æ˜¯æ˜¨å¤© */
+  /* itoc.011004.è¨»è§£: ç”±æ–¼ account æ˜¯ç®—å‰ä¸€å°æ™‚çµ±è¨ˆï¼Œæ‰€ä»¥åœ¨é›¶æ™‚æ™‚è¦æŠŠæ™‚é˜è½‰å› 10 åˆ†é˜ï¼Œåˆ°æ˜¨å¤©å» */
+  /* itoc.030911.è¨»è§£: æ‰€ä»¥ account å¿…é ˆåœ¨æ¯å°æ™‚çš„ 1-10 åˆ†å…§åŸ·è¡Œ */
   now -= ADJUST_M * 60;		/* back to ancent */
   ptime = localtime(&now);
 
   /* --------------------------------------------------- */
-  /* ¤W¯¸¤H¦¸²Î­p					 */
+  /* ä¸Šç«™äººæ¬¡çµ±è¨ˆ					 */
   /* --------------------------------------------------- */
 
   draw_usies(ptime);
 
   /* --------------------------------------------------- */
-  /* ¸ê®ÆÀ£ÁY³Æ¥÷¡B¼öªù¸ÜÃD²Î­p				 */
+  /* è³‡æ–™å£“ç¸®å‚™ä»½ã€ç†±é–€è©±é¡Œçµ±è¨ˆ				 */
   /* --------------------------------------------------- */
 
   if (ntime.tm_hour == 0)
@@ -1081,40 +1081,40 @@ main(argc, argv)
     sprintf(ymd, "-%02d%02d%02d",
       ptime->tm_year % 100, ptime->tm_mon + 1, ptime->tm_mday);	/* Thor.990329: y2k */
 
-    sprintf(date, "[%d ¤ë %d ¤é] ", ptime->tm_mon + 1, ptime->tm_mday);
+    sprintf(date, "[%d æœˆ %d æ—¥] ", ptime->tm_mon + 1, ptime->tm_mday);
 
 
     /* ------------------------------------------------- */
-    /* ¨C¤é­â±á¹s®É°µªº¨Æ				 */
+    /* æ¯æ—¥å‡Œæ™¨é›¶æ™‚åšçš„äº‹				 */
     /* ------------------------------------------------- */
 
-    gzip(log_file, "usies", ymd);		/* ³Æ¥÷©Ò¦³ [¤W¯¸] °O¿ı */
+    gzip(log_file, "usies", ymd);		/* å‚™ä»½æ‰€æœ‰ [ä¸Šç«™] è¨˜éŒ„ */
 
 #ifdef HAVE_SIGNED_MAIL
     private_key(ymd);
 #endif
 
-    sprintf(title, "%s¤å³¹½g¼Æ²Î­p", date);
+    sprintf(title, "%sæ–‡ç« ç¯‡æ•¸çµ±è¨ˆ", date);
     keeplog(FN_RUN_POST_LOG, BN_SECURITY, title, 2);
 
-    sprintf(title, "%s±H«H°O¿ı", date);
+    sprintf(title, "%så¯„ä¿¡è¨˜éŒ„", date);
     keeplog(FN_RUN_MAIL_LOG, BN_SECURITY, title, 2);
 
 #ifdef HAVE_ANONYMOUS
-    sprintf(title, "%s°Î¦W¤å³¹µoªí", date);
+    sprintf(title, "%såŒ¿åæ–‡ç« ç™¼è¡¨", date);
     keeplog(FN_RUN_ANONYMOUS, BN_SECURITY, title, 2);
 #endif
 
 #ifdef HAVE_BUY
-    sprintf(title, "%s¶×¿ú°O¿ı", date);
+    sprintf(title, "%såŒ¯éŒ¢è¨˜éŒ„", date);
     keeplog(FN_RUN_BANK_LOG, BN_SECURITY, title, 2);
 #endif
 
     system("grep OVER " BMTA_LOGFILE " | cut -f2 | cut -d' ' -f2- | sort | uniq -c > run/over.log");
-    sprintf(title, "%sE-Mail over max connection ²Î­p", date);
+    sprintf(title, "%sE-Mail over max connection çµ±è¨ˆ", date);
     keeplog("run/over.log", BN_SECURITY, title, 2);
 
-    sprintf(title, "%s»Ä²¢­W»¶¯d¨¥ªO", date);
+    sprintf(title, "%sé…¸ç”œè‹¦è¾£ç•™è¨€æ¿", date);
     keeplog(FN_RUN_NOTE_ALL, NULL, title, 2);
 
     if (fp = fopen(fn_yesday, "w"))
@@ -1122,52 +1122,52 @@ main(argc, argv)
       f_suck(fp, fn_today);
       fclose(fp);
     }
-    sprintf(title, "%s¤W¯¸¤H¦¸²Î­p", date);
+    sprintf(title, "%sä¸Šç«™äººæ¬¡çµ±è¨ˆ", date);
     keeplog(fn_today, NULL, title, 1);
     unlink(act_file);
 
 
     /* ------------------------------------------------- */
-    /* ¨C¶g¤@­â±á¹s®É°µªº¨Æ				 */
+    /* æ¯é€±ä¸€å‡Œæ™¨é›¶æ™‚åšçš„äº‹				 */
     /* ------------------------------------------------- */
 
     if (ntime.tm_wday == 0)
     {
-      sprintf(title, "%s¥»¶g¼öªù¸ÜÃD", date);
+      sprintf(title, "%sæœ¬é€±ç†±é–€è©±é¡Œ", date);
       keeplog("gem/@/@-week", NULL, title, 0);
 
-      sprintf(title, "%s°½ÃiªO¥D²Î­p", date);
+      sprintf(title, "%så·æ‡¶æ¿ä¸»çµ±è¨ˆ", date);
       keeplog(FN_RUN_LAZYBM, BN_SECURITY, title, 2);
 
-      sprintf(title, "%s¯S®íÅv­­¨Ï¥ÎªÌ¦Cªí", date);
+      sprintf(title, "%sç‰¹æ®Šæ¬Šé™ä½¿ç”¨è€…åˆ—è¡¨", date);
       keeplog(FN_RUN_MANAGER, BN_SECURITY, title, 2);
 
-      sprintf(title, "%sªø´Á¥¼¤W¯¸³Q²M°£ªº¨Ï¥ÎªÌ¦Cªí", date);
+      sprintf(title, "%sé•·æœŸæœªä¸Šç«™è¢«æ¸…é™¤çš„ä½¿ç”¨è€…åˆ—è¡¨", date);
       keeplog(FN_RUN_REAPER, BN_SECURITY, title, 2);
 
-      sprintf(title, "%s¦P¤@ email »{ÃÒ¦h¦¸", date);
+      sprintf(title, "%såŒä¸€ email èªè­‰å¤šæ¬¡", date);
       keeplog(FN_RUN_EMAILADDR, BN_SECURITY, title, 2);
     }
 
 
     /* ------------------------------------------------- */
-    /* ¨C¤ë¤@¤é­â±á¹s®É°µªº¨Æ				 */
+    /* æ¯æœˆä¸€æ—¥å‡Œæ™¨é›¶æ™‚åšçš„äº‹				 */
     /* ------------------------------------------------- */
 
     if (ntime.tm_mday == 1)
     {
-      sprintf(title, "%s¥»¤ë¼öªù¸ÜÃD", date);
+      sprintf(title, "%sæœ¬æœˆç†±é–€è©±é¡Œ", date);
       keeplog("gem/@/@-month", NULL, title, 0);
     }
 
 
     /* ------------------------------------------------- */
-    /* ¨C¦~¤@¤ë¤@¤é­â±á¹s®É°µªº¨Æ			 */
+    /* æ¯å¹´ä¸€æœˆä¸€æ—¥å‡Œæ™¨é›¶æ™‚åšçš„äº‹			 */
     /* ------------------------------------------------- */
 
     if (ntime.tm_yday == 1)
     {
-      sprintf(title, "%s¦~«×¼öªù¸ÜÃD", date);
+      sprintf(title, "%så¹´åº¦ç†±é–€è©±é¡Œ", date);
       keeplog("gem/@/@-year", NULL, title, 0);
     }
   }

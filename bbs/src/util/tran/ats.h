@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/tran/ats.h                                       */
 /*-------------------------------------------------------*/
-/* target : ATS ¦Ü Maple 3.02 Âà´«                       */
+/* target : ATS è‡³ Maple 3.02 è½‰æ›                       */
 /* create : 02/10/26                                     */
 /* author : ernie@micro8.ee.nthu.edu.tw                  */
 /* modify : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -10,37 +10,37 @@
 
 #if 0
 
-  1. ³]©w OLD_BBSHOME¡BFN_PASSWD¡BFN_BOARD
-  2. ­×§ï©Ò¦³ªº old struct
+  1. è¨­å®š OLD_BBSHOMEã€FN_PASSWDã€FN_BOARD
+  2. ä¿®æ”¹æ‰€æœ‰çš„ old struct
 
-  3. ¥²¶·¦b brd Âà§¹¤~¥i¥HÂà´« gem
-  4. ¥²¶·¦b usr ¤Î brd ³£Âà§¹¤~¥i¥HÂà´« mf
-  5. ¥²¶·¦b usr ¤Î brd ³£Âà§¹¤~¥i¥HÂà´« pal
-  6. ¥²¶·¦b usr Âà§¹¤~¥i¥HÂà´« bmw
-  7. «ØÄ³Âà´«¶¶§Ç¬° usr -> brd -> gem -> mf -> pal -> bmw
+  3. å¿…é ˆåœ¨ brd è½‰å®Œæ‰å¯ä»¥è½‰æ› gem
+  4. å¿…é ˆåœ¨ usr åŠ brd éƒ½è½‰å®Œæ‰å¯ä»¥è½‰æ› mf
+  5. å¿…é ˆåœ¨ usr åŠ brd éƒ½è½‰å®Œæ‰å¯ä»¥è½‰æ› pal
+  6. å¿…é ˆåœ¨ usr è½‰å®Œæ‰å¯ä»¥è½‰æ› bmw
+  7. å»ºè­°è½‰æ›é †åºç‚º usr -> brd -> gem -> mf -> pal -> bmw
           
 #endif
 
 
 #include "bbs.h"
 
-/* --------------------- ½Ğª`·N ³o¤­ªÌ¥u¯à¾Ü¤@©w¸q ---------------------- */
-#define  NEW_STATION                  /* ©w¸q¬° ·s«Ø/¼Ğ·Ç ¯¸¥x            */
-#undef   OLD_ATSVERSION               /* ©w¸q¬°ÂÂªº¨È¯¸ª©¥» (1.20a ¥H«á)  */
-                                      /* ±ıÅıÂÂª©¥»¨Ï¥Î³Ì¤p¨Ï¥ÎªÌ¸ê®Æµ²ºc */
-                                      /* ¥²»İ°õ¦æÂà´«µ{¦¡ single_multi_st */
-#undef   TRANS_FROM_SOB               /* ©w¸q¬°¨FÅyÂà´«                   */
-#undef   TRANS_FROM_FB3               /* ©w¸q¬°¤õ³¾Âà´«                   */
-#undef   TRANS_FROM_COLA              /* ©w¸q¬°¥i¼ÖÂà´«                   */
+/* --------------------- è«‹æ³¨æ„ é€™äº”è€…åªèƒ½æ“‡ä¸€å®šç¾© ---------------------- */
+#define  NEW_STATION                  /* å®šç¾©ç‚º æ–°å»º/æ¨™æº– ç«™å°            */
+#undef   OLD_ATSVERSION               /* å®šç¾©ç‚ºèˆŠçš„äºç«™ç‰ˆæœ¬ (1.20a ä»¥å¾Œ)  */
+                                      /* æ¬²è®“èˆŠç‰ˆæœ¬ä½¿ç”¨æœ€å°ä½¿ç”¨è€…è³‡æ–™çµæ§‹ */
+                                      /* å¿…éœ€åŸ·è¡Œè½‰æ›ç¨‹å¼ single_multi_st */
+#undef   TRANS_FROM_SOB               /* å®šç¾©ç‚ºæ²™ç˜è½‰æ›                   */
+#undef   TRANS_FROM_FB3               /* å®šç¾©ç‚ºç«é³¥è½‰æ›                   */
+#undef   TRANS_FROM_COLA              /* å®šç¾©ç‚ºå¯æ¨‚è½‰æ›                   */
 /* ---------------------------------------------------------------------- */
 
 #ifdef   TRANS_FROM_FB3
-  #undef ENCPASSLEN                   /* ©w¸q­Y¤õ³¾Âà´« ¦³µL³]©w ENCPASSLEN */
+  #undef ENCPASSLEN                   /* å®šç¾©è‹¥ç«é³¥è½‰æ› æœ‰ç„¡è¨­å®š ENCPASSLEN */
 #endif
 #ifndef  OLD_ATSVERSION
-#undef   MIN_USEREC_STRUCT            /* ©w¸q¨Ï¥Î³Ì¤p¨Ï¥ÎªÌ¸ê®Æµ²ºc ¦¹¥\¯à */
-#endif                                /* ¤£«ØÄ³¨Ï¥Î ·|¥¢¥h³\¦h¥\¯à °£«D¯¸  */
-                                      /* ¥x¦³ÄY­«µwÅé­­¨î ¥B¤£·Q¶]¤Ó¦h¥\¯à */
+#undef   MIN_USEREC_STRUCT            /* å®šç¾©ä½¿ç”¨æœ€å°ä½¿ç”¨è€…è³‡æ–™çµæ§‹ æ­¤åŠŸèƒ½ */
+#endif                                /* ä¸å»ºè­°ä½¿ç”¨ æœƒå¤±å»è¨±å¤šåŠŸèƒ½ é™¤éç«™  */
+                                      /* å°æœ‰åš´é‡ç¡¬é«”é™åˆ¶ ä¸”ä¸æƒ³è·‘å¤ªå¤šåŠŸèƒ½ */
 
 
 #define OLD_BBSHOME     "/home/bbs/bbsrs"           /* SOB */
@@ -48,7 +48,7 @@
 #define FN_BOARD        "/home/bbs/bbsrs/.BOARDS"   /* SOB */
 
 
-#undef HAVE_PERSONAL_GEM                       /* SOB ¬O¨S¦³­Ó¤HºëµØ°Ïªº */
+#undef HAVE_PERSONAL_GEM                       /* SOB æ˜¯æ²’æœ‰å€‹äººç²¾è¯å€çš„ */
 
 
 #define ASTRLEN   80             /* Length of most string data */
@@ -211,12 +211,12 @@ typedef struct userec userec;
   #ifndef TRANS_FROM_COLA
 struct fileheader {
   char filename[AFNLEN-1];       /* M.109876543210.A */
-  char report;                  /* Dopin : ·s¨î´£³ø */
+  char report;                  /* Dopin : æ–°åˆ¶æå ± */
   char savemode;                /* file save mode */
   char owner[AIDLEN + 2];        /* uid[.] */
   char date[6];                 /* [02/02] or space(5) */
   char title[ATTLEN];
-  uschar goodpost;              /* ±ÀÂË¤å³¹ */
+  uschar goodpost;              /* æ¨è–¦æ–‡ç«  */
   uschar filemode;              /* must be last field @ boards.c */
 };
   #else
@@ -224,25 +224,25 @@ struct fileheader {             /* For Cola BBS */
   char filename[ASTRLEN];
   char owner[ASTRLEN];
   char title[ASTRLEN];
-  char date[6];                 /* ¸É¤W for ATS/SOB */
+  char date[6];                 /* è£œä¸Š for ATS/SOB */
   char savemode;
   uschar filemode;
   char report;
   uschar goodpost;
-  char backup_char[6];          /* ¨ì³o¸Ì */
+  char backup_char[6];          /* åˆ°é€™è£¡ */
 };
   #endif
 #else
 struct fileheader {             /* This structure is used to hold data in */
   char filename[ASTRLEN-2];      /* the DIR files */
-  char report;                  /* ¨È¯¸´£³ø */
+  char report;                  /* äºç«™æå ± */
   char savemode;                /* file save mode */
   char owner[ASTRLEN-6];
   char date[6];
   char title[ASTRLEN];
   unsigned level;
   unsigned char accessed[10];
-  uschar goodpost;              /* ±ÀÂË¤å³¹ */
+  uschar goodpost;              /* æ¨è–¦æ–‡ç«  */
   uschar filemode;              /* must be last field @ boards.c */
 };
 #endif

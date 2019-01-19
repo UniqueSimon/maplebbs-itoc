@@ -1,13 +1,13 @@
-§@ªÌ: itoc (©_©Çªº¼ÊºÙ) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¶i¤ÀÃşµe­±
-®É¶¡: 2004/08/16 Mon 11:27:14                           Updated: 2004/08/16
+ä½œè€…: itoc (å¥‡æ€ªçš„æš±ç¨±) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] é€²åˆ†é¡ç•«é¢
+æ™‚é–“: 2004/08/16 Mon 11:27:14                           Updated: 2004/08/16
 
-¡° ¤Ş­z¡mchwaian.bbs@processor.tfcis.org (µL¨¥)¡n¤§»Ê¨¥¡G
-> ¶i¤J¤ÀÃş®É¦Û°Êshow¥XÃş¦ü¶iªOµe­±ªº¥\¯à
+â€» å¼•è¿°ã€Šchwaian.bbs@processor.tfcis.org (ç„¡è¨€)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> é€²å…¥åˆ†é¡æ™‚è‡ªå‹•showå‡ºé¡ä¼¼é€²æ¿ç•«é¢çš„åŠŸèƒ½
 
-  ¶}¤@­Ó¥Ø¿ı¥s gem/brdnote
+  é–‹ä¸€å€‹ç›®éŒ„å« gem/brdnote
 
-  ¶i¤J¸Ó¤ÀÃş«á¡A¯¸ªø«ö B §Y¥i½s¿è¸Ó¤ÀÃşªº¡u¶i¤ÀÃşµe­±¡v
+  é€²å…¥è©²åˆ†é¡å¾Œï¼Œç«™é•·æŒ‰ B å³å¯ç·¨è¼¯è©²åˆ†é¡çš„ã€Œé€²åˆ†é¡ç•«é¢ã€
 
 : board.c:XoClass()
 
@@ -20,7 +20,7 @@
     return 0;
   }
 
-+ /* ¶i¤ÀÃşµe­± */
++ /* é€²åˆ†é¡ç•«é¢ */
 + if (!(class_bits[-chn] & BRD_V_BIT) || (cuser.ufo & UFO_BRDNOTE))
 + {
 +   short *chx;
@@ -41,7 +41,7 @@
   xt = xz[XZ_CLASS - XO_ZONE].xo;
   xz[XZ_CLASS - XO_ZONE].xo = &xo;
 
-: board.c:class_memo_edit() ¥[¦b class_help() «e­±
+: board.c:class_memo_edit() åŠ åœ¨ class_help() å‰é¢
 
 static int
 class_memo_edit(xo)
@@ -61,7 +61,7 @@ class_memo_edit(xo)
   if (!(ptr = strchr(str, '/')))
     return XO_NONE;
 
-  mode = vans("¶iªOµe­± (D)§R°£ (E)­×§ï (Q)¨ú®ø¡H[E] ");
+  mode = vans("é€²æ¿ç•«é¢ (D)åˆªé™¤ (E)ä¿®æ”¹ (Q)å–æ¶ˆï¼Ÿ[E] ");
 
   if (mode != 'q')
   {
@@ -73,7 +73,7 @@ class_memo_edit(xo)
       return XO_FOOT;
     }
 
-    if (vedit(fpath, 0))       /* Thor.981020: ª`·N³Qtalkªº°İÃD */
+    if (vedit(fpath, 0))       /* Thor.981020: æ³¨æ„è¢«talkçš„å•é¡Œ */
       vmsg(msg_cancel);
     return class_head(xo);
   }
@@ -87,4 +87,4 @@ class_memo_edit(xo)
   'h', class_help
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mpc512-2.EE.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mpc512-2.EE.NCTU.edu.tw[37m ç™¼è¡¨[m

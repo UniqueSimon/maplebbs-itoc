@@ -1,32 +1,32 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¯¸¤º: itoc
-¼ĞÃD: Re: ½Ğ°İrpg«_ÀIªÌªº±Æ¦æº]À³¸Ó«ç»ò°µ©O???
-®É¶¡: 2004/10/25 Mon 23:55:04                           Updated: 2004/10/26
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) ç«™å…§: itoc
+æ¨™é¡Œ: Re: è«‹å•rpgå†’éšªè€…çš„æ’è¡Œæ¦œæ‡‰è©²æ€éº¼åšå‘¢???
+æ™‚é–“: 2004/10/25 Mon 23:55:04                           Updated: 2004/10/26
 
-¡° ¤Ş­z¡mcomfan (Ãø¹L  ¶Ë¤ß)¡n¤§»Ê¨¥¡G
-> wdªºrpg¨¤¦â§êºt¹CÀ¸¸Ì­±¦³¤@­Ó¤l¿ï³æ [L]istTop    ¨Ï¥ÎªÌ±Æ¦æº]
-> ¶i¤J¸Ó¿ï³æ¤§«á   ¬İ¨ìªº¬O¤U¦Cªºµe­±   ¤£ª¾¹D¦bMaple¸Ì­±¬O§_¤]¦³¿ìªk°µ¥X
-> ¹³¯¸¤Wrpg¨Ï¥ÎªÌªº±Æ¦æº]Ãş¦üªº¥\¯à
+â€» å¼•è¿°ã€Šcomfan (é›£é  å‚·å¿ƒ)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> wdçš„rpgè§’è‰²æ‰®æ¼”éŠæˆ²è£¡é¢æœ‰ä¸€å€‹å­é¸å–® [L]istTop    ä½¿ç”¨è€…æ’è¡Œæ¦œ
+> é€²å…¥è©²é¸å–®ä¹‹å¾Œ   çœ‹åˆ°çš„æ˜¯ä¸‹åˆ—çš„ç•«é¢   ä¸çŸ¥é“åœ¨Mapleè£¡é¢æ˜¯å¦ä¹Ÿæœ‰è¾¦æ³•åšå‡º
+> åƒç«™ä¸Šrpgä½¿ç”¨è€…çš„æ’è¡Œæ¦œé¡ä¼¼çš„åŠŸèƒ½
 
-  ¦b¥»¨Ò¤¤¥u±Æ¦æ maxhp ¤Î str Äæ¦ì
-  ·Qª¾¹D¦³­ş¨ÇÄæ¦ì¡A½Ğ°Ñ¦Ò rpg.h
+  åœ¨æœ¬ä¾‹ä¸­åªæ’è¡Œ maxhp åŠ str æ¬„ä½
+  æƒ³çŸ¥é“æœ‰å“ªäº›æ¬„ä½ï¼Œè«‹åƒè€ƒ rpg.h
 
-  ¦b (A)nnounce ¸Ì­±·s¼W¸ê®Æ¡A¸ô®|¬° -rpgmaxhp ¤Î -rpgstr
+  åœ¨ (A)nnounce è£¡é¢æ–°å¢è³‡æ–™ï¼Œè·¯å¾‘ç‚º -rpgmaxhp åŠ -rpgstr
 
-: crontab -e ¥[¤J³o¤G¦æ
+: crontab -e åŠ å…¥é€™äºŒè¡Œ
 
-# ¨C¤Ñ§@¤G¦¸ RPG ±Æ¦æ
+# æ¯å¤©ä½œäºŒæ¬¡ RPG æ’è¡Œ
 35 3,15 * * * * bin/toprpg > /dev/null 2>&1
 
 : src/util/Makefile
 
 EXE =   ... [1;33mtoprpg[m
 
-: src/util/toprpg.c ·s¼W¦¹µ{¦¡
+: src/util/toprpg.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* util/toprpg.c        ( NTHU CS MapleBBS Ver 3.00 )    */
 /*-------------------------------------------------------*/
-/* target : ¨Ï¥ÎªÌ RPG ¸ê®Æ²Î­p¤Î±Æ¦W                    */
+/* target : ä½¿ç”¨è€… RPG è³‡æ–™çµ±è¨ˆåŠæ’å                    */
 /* create : 04/10/25                                     */
 /* update :   /  /                                       */
 /* modify : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -36,8 +36,8 @@ EXE =   ... [1;33mtoprpg[m
 #include "bbs.h"
 
 
-[1;44m// ÁÙ­n²Î­p§OªºÄæ¦ìªº¸Ü¡A³o¸Ì¥[¤@¦æÀÉ®×¸ô®| [m
-[1;44m// ¨Ã¦b (A)nnounce ·s¼W¡u¸ê®Æ¡v«ü¦V³o¨ÇÀÉ®× [m
+[1;44m// é‚„è¦çµ±è¨ˆåˆ¥çš„æ¬„ä½çš„è©±ï¼Œé€™è£¡åŠ ä¸€è¡Œæª”æ¡ˆè·¯å¾‘ [m
+[1;44m// ä¸¦åœ¨ (A)nnounce æ–°å¢ã€Œè³‡æ–™ã€æŒ‡å‘é€™äº›æª”æ¡ˆ [m
 #define OUTFILE_RPGMAXHP BBSHOME"/gem/@/@-rpgmaxhp"
 #define OUTFILE_RPGSTR   BBSHOME"/gem/@/@-rpgstr"
 
@@ -59,7 +59,7 @@ typedef struct
   int num;
 }      DATA;
 
-[1;44m// ÁÙ­n²Î­p§OªºÄæ¦ìªº¸Ü¡A³o¸Ì¥[¤@­Ó«Å§i [m
+[1;44m// é‚„è¦çµ±è¨ˆåˆ¥çš„æ¬„ä½çš„è©±ï¼Œé€™è£¡åŠ ä¸€å€‹å®£å‘Š [m
 static DATA topmaxhp[TOPNUM];
 static DATA topstr[TOPNUM];
 
@@ -127,13 +127,13 @@ write_data(fpath, title, data)
     return;
 
   i = 12 - (strlen(title) >> 1);
-  sprintf(buf, " \033[1;33m¡³ ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¡÷ \033[41m%%%ds%%s%%%ds"
-    "\033[40m ¡ö¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w ¡³\033[m\n\n", i, i);
+  sprintf(buf, " \033[1;33mâ—‹ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â†’ \033[41m%%%ds%%s%%%ds"
+    "\033[40m â†â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ â—‹\033[m\n\n", i, i);
   fprintf(fp, buf, "", title, "");
 
   fprintf(fp,
-    "\033[1;37m¦W¦¸  \033[33m¥N¸¹(¼ÊºÙ)                \033[36m¼Æ¶q\033[m   "
-    "\033[1;37m¦W¦¸  \033[33m¥N¸¹(¼ÊºÙ)                \033[36m¼Æ¶q\033[m\n"
+    "\033[1;37måæ¬¡  \033[33mä»£è™Ÿ(æš±ç¨±)                \033[36mæ•¸é‡\033[m   "
+    "\033[1;37måæ¬¡  \033[33mä»£è™Ÿ(æš±ç¨±)                \033[36mæ•¸é‡\033[m\n"
     "\033[1;32m%s\033[m\n", MSG_SEPERATOR);
 
   for (i = 0; i < TOPNUM_HALF; i++)
@@ -144,10 +144,10 @@ write_data(fpath, title, data)
     merge_id_nick(buf2, data[i + TOPNUM_HALF].userid,
       data[i + TOPNUM_HALF].username);
 
-    /* itoc.010408: ¸Ñ¨M¿ú¤Ó¦h¡Aµe­±Ãz±¼ªº°İÃD */
+    /* itoc.010408: è§£æ±ºéŒ¢å¤ªå¤šï¼Œç•«é¢çˆ†æ‰çš„å•é¡Œ */
     num1 = data[i].num / 1000000;
     num2 = data[i + TOPNUM_HALF].num / 1000000;
-    if (num2)                   /* ¨º»ò data[i].num ¤]¥²©w > 10^6 */
+    if (num2)                   /* é‚£éº¼ data[i].num ä¹Ÿå¿…å®š > 10^6 */
     {
       fprintf(fp, "[%2d] %-25s %5dM  [%2d] %-25s %5dM\n", i + 1, buf1, num1,
         i + 1 + TOPNUM_HALF, buf2, num2);
@@ -185,7 +185,7 @@ topusr(acct)
   read(fd, &rpg, sizeof(RPG));
   close(fd);
 
-  [1;44m// ÁÙ­n²Î­p§OªºÄæ¦ìªº¸Ü¡A³o¸Ì¥[¤@­Ó if (...) {...} ¦@¤»¦æ [m
+  [1;44m// é‚„è¦çµ±è¨ˆåˆ¥çš„æ¬„ä½çš„è©±ï¼Œé€™è£¡åŠ ä¸€å€‹ if (...) {...} å…±å…­è¡Œ [m
 
   if ((p = findmin(&topmaxhp))->num < rpg.maxhp)
   {
@@ -204,7 +204,7 @@ topusr(acct)
 
 
 /*-------------------------------------------------------*/
-/* ¥Dµ{¦¡                                                */
+/* ä¸»ç¨‹å¼                                                */
 /*-------------------------------------------------------*/
 
 
@@ -216,7 +216,7 @@ main()
   time_t now;
   struct tm *ptime;
 
-  [1;44m// ÁÙ­n²Î­p§OªºÄæ¦ìªº¸Ü¡A³o¸Ì¥[¤@¦æ [m
+  [1;44m// é‚„è¦çµ±è¨ˆåˆ¥çš„æ¬„ä½çš„è©±ï¼Œé€™è£¡åŠ ä¸€è¡Œ [m
   memset(&topmaxhp, 0, sizeof(topmaxhp));
   memset(&topstr, 0, sizeof(topstr));
 
@@ -262,18 +262,18 @@ main()
     closedir(dirp);
   }
 
-  [1;44m// ÁÙ­n²Î­p§OªºÄæ¦ìªº¸Ü¡A³o¸Ì¥[¤G¦æ [m
+  [1;44m// é‚„è¦çµ±è¨ˆåˆ¥çš„æ¬„ä½çš„è©±ï¼Œé€™è£¡åŠ äºŒè¡Œ [m
 
   qsort(topmaxhp, TOPNUM, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_RPGMAXHP, "¢à¢Ş¢Õ¦å¤û±Æ¦æº]", &topmaxhp);
+  write_data(OUTFILE_RPGMAXHP, "ï¼²ï¼°ï¼§è¡€ç‰›æ’è¡Œæ¦œ", &topmaxhp);
 
   qsort(topstr, TOPNUM, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_RPGSTR, "¢à¢Ş¢Õ¤O¤h±Æ¦æº]", &topstr);
+  write_data(OUTFILE_RPGSTR, "ï¼²ï¼°ï¼§åŠ›å£«æ’è¡Œæ¦œ", &topstr);
 
   return 0;
 }
 
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m Maple-itoc£»°Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
- [1;42m¢q[45m¢}[m A[1mut[30mho[mr: [1;31mitoc [30m±q [36mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
+ [1;42mâ”¼[45mâ”˜[m A[1mut[30mho[mr: [1;31mitoc [30må¾ [36mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

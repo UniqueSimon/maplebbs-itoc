@@ -1,13 +1,13 @@
-µo«H¤H: Dinsam.bbs@ccudream.twbbs.org («e¥@.. o.O) ¬İªO: plan
-¼Ğ  ÃD: BLog for itoc-maple ¦w¸Ë¸É¥R
-µo«H¯¸: ¤¤¥¿¿v¹Ú¶é (Fri, 26 Sep 2003 20:17:24 +0800)      Updated: 2005/10/07
+ç™¼ä¿¡äºº: Dinsam.bbs@ccudream.twbbs.org (å‰ä¸–.. o.O) çœ‹æ¿: plan
+æ¨™  é¡Œ: BLog for itoc-maple å®‰è£è£œå……
+ç™¼ä¿¡ç«™: ä¸­æ­£ç¯‰å¤¢åœ’ (Fri, 26 Sep 2003 20:17:24 +0800)      Updated: 2005/10/07
 
 
-SnowWolf©Ò´£¨Ñªºcode¬O¨Ï¥Î­Ó¤HºëµØ
+SnowWolfæ‰€æä¾›çš„codeæ˜¯ä½¿ç”¨å€‹äººç²¾è¯
 
-¦pªG§A­n§ï¦¨¬İªOºëµØ°Ï
+å¦‚æœä½ è¦æ”¹æˆçœ‹æ¿ç²¾è¯å€
 
-½Ğ§ï gem.c:BlogMain() ¤Î gem.c:gem_blog()
+è«‹æ”¹ gem.c:BlogMain() åŠ gem.c:gem_blog()
 
 static void
 BlogMain(brdname, num)
@@ -16,26 +16,26 @@ BlogMain(brdname, num)
 {
   char cmd[256], hash[35];
 
-  vs_bar("³¡¸¨®æ");
+  vs_bar("éƒ¨è½æ ¼");
 
   move(1, 0);
-  outs("½Ğ¿ï¾Ü±z­n°õ¦æªº­«§@:\n"
-    "0.¦^¨ì¤W¤@¼h\n"
-    "1.»s§@³¡¸¨®æ¼ËªO®æ¦¡\n"
-    "  ¨Ï¥Î·sªº config ¥Ø¿ı¤U¼ËªO¸ê®Æ\n"
-    "  ³q±`¦b²Ä¤@¦¸¨Ï¥Î³¡¸¨®æ©Î¼ËªO§ó·sªº®É­Ô¨Ï¥Î\n"
+  outs("è«‹é¸æ“‡æ‚¨è¦åŸ·è¡Œçš„é‡ä½œ:\n"
+    "0.å›åˆ°ä¸Šä¸€å±¤\n"
+    "1.è£½ä½œéƒ¨è½æ ¼æ¨£æ¿æ ¼å¼\n"
+    "  ä½¿ç”¨æ–°çš„ config ç›®éŒ„ä¸‹æ¨£æ¿è³‡æ–™\n"
+    "  é€šå¸¸åœ¨ç¬¬ä¸€æ¬¡ä½¿ç”¨éƒ¨è½æ ¼æˆ–æ¨£æ¿æ›´æ–°çš„æ™‚å€™ä½¿ç”¨\n"
     "\n"
-    "2.­«·s»s§@³¡¸¨®æ\n"
-    "  ¥u¦b³¡¸¨®æ¸ê®Æ¾ã­Ó¶Ã±¼ªº®É­Ô¤~¨Ï¥Î\n"
+    "2.é‡æ–°è£½ä½œéƒ¨è½æ ¼\n"
+    "  åªåœ¨éƒ¨è½æ ¼è³‡æ–™æ•´å€‹äº‚æ‰çš„æ™‚å€™æ‰ä½¿ç”¨\n"
     "\n"
-    "3.±N¥»¤å¥[¤J³¡¸¨®æ\n"
-    "  ±N´å¼Ğ©Ò¦b¦ì¸mªº¤å³¹¥[¤J³¡¸¨®æ\n"
+    "3.å°‡æœ¬æ–‡åŠ å…¥éƒ¨è½æ ¼\n"
+    "  å°‡æ¸¸æ¨™æ‰€åœ¨ä½ç½®çš„æ–‡ç« åŠ å…¥éƒ¨è½æ ¼\n"
     "\n"
-    "4.§R°£°jÅT\n");
+    "4.åˆªé™¤è¿´éŸ¿\n");
 
   while (1)
   {
-    switch (vans("½Ğ¿ï¾Ü(0-3)¡H[0] "))
+    switch (vans("è«‹é¸æ“‡(0-3)ï¼Ÿ[0] "))
     {
     case '1':
       sprintf(cmd, "bin/builddb.pl -c %s", brdname);
@@ -50,7 +50,7 @@ BlogMain(brdname, num)
       system(cmd);
       break;
     case '4':
-      if (vget(16, 0, "½Ğ¿é¤J¸Ó½gªºÂø´ê­È¡G", hash, sizeof(hash), DOECHO) &&
+      if (vget(16, 0, "è«‹è¼¸å…¥è©²ç¯‡çš„é›œæ¹Šå€¼ï¼š", hash, sizeof(hash), DOECHO) &&
         vans(msg_del_ny) == 'y')
       {
         sprintf(cmd, "bin/bmysql %s %s", hash, brdname);
@@ -73,14 +73,14 @@ gem_blog(xo)
   if (!(xo->key & GEM_W_BIT))
     return XO_NONE;
 
-  /* ¥Ñ xo->dir §ä¥X¥Ø«e¦b­ş¤@­ÓªOªººëµØ°Ï */
+  /* ç”± xo->dir æ‰¾å‡ºç›®å‰åœ¨å“ªä¸€å€‹æ¿çš„ç²¾è¯å€ */
   dir = xo->dir;
 
-  /* ¥u­­¬İªOºëµØ°Ï¨Ï¥Î */
+  /* åªé™çœ‹æ¿ç²¾è¯å€ä½¿ç”¨ */
   if (dir[0] != 'g' || dir[4] != 'b')
     return XO_NONE;
 
-  dir += 8;  /* ¸õ¹L "gem/brd/" */
+  dir += 8;  /* è·³é "gem/brd/" */
   if (str = strchr(dir, '/'))
   {
     *str = '\0';
@@ -88,7 +88,7 @@ gem_blog(xo)
     *str = '/';
   }
 
-  switch (vans("1)°µ³¡¸¨®æ 2)§ó·s³¡¸¨®æ¡H[N] "))
+  switch (vans("1)åšéƒ¨è½æ ¼ 2)æ›´æ–°éƒ¨è½æ ¼ï¼Ÿ[N] "))
   {
   case '1':
     BlogMain(brdname, xo->pos);
@@ -98,7 +98,7 @@ gem_blog(xo)
     str_lower(userid, cuser.userid);
     sprintf(cmd, "bin/builddb.pl -f -n %d %s", xo->pos, brdname);
     system(cmd);
-    vmsg("¸ê®Æ§ó·s§¹¦¨");
+    vmsg("è³‡æ–™æ›´æ–°å®Œæˆ");
     break;
   }
 
@@ -109,23 +109,23 @@ gem_blog(xo)
 
 -------------------------------------------------------------------
 
-  LocalVars.pm©ñ¦bweb¥Ø¿ı¤Uªº½Ğ¤£­n¥ÎLocalVars.pm·íÀÉ¦W
-  ¦]¬°³o­ÓÀÉ®×¬O¥i¥H³Q¤U¸üªº
-  ¸Ì­±ªºBLOGdbpasswd¸ê°T«Ü®e©ö³QÅÑ¨ú
-  ¦pªG¨t²Î¤W«Ü¦h¦a¤è­n±K½Xµn¤J§A«o²ßºD¥Î¦P¤@²Õ±K½Xªº¸Ü ¨º´N......
-  ¥i¥H¥Î¤@­Ó¤ñ¸û¯S§OªºÀÉ¦W ¨Ò¦pxxx.pm
+  LocalVars.pmæ”¾åœ¨webç›®éŒ„ä¸‹çš„è«‹ä¸è¦ç”¨LocalVars.pmç•¶æª”å
+  å› ç‚ºé€™å€‹æª”æ¡ˆæ˜¯å¯ä»¥è¢«ä¸‹è¼‰çš„
+  è£¡é¢çš„BLOGdbpasswdè³‡è¨Šå¾ˆå®¹æ˜“è¢«ç«Šå–
+  å¦‚æœç³»çµ±ä¸Šå¾ˆå¤šåœ°æ–¹è¦å¯†ç¢¼ç™»å…¥ä½ å»ç¿’æ…£ç”¨åŒä¸€çµ„å¯†ç¢¼çš„è©± é‚£å°±......
+  å¯ä»¥ç”¨ä¸€å€‹æ¯”è¼ƒç‰¹åˆ¥çš„æª”å ä¾‹å¦‚xxx.pm
 
-  ¨º xxx.pm ¸Ì­±ªº ­×§ï
+  é‚£ xxx.pm è£¡é¢çš„ ä¿®æ”¹
 
 -package LocalVars;
 +package xxx;
 require Exporter;
 
-index.pl¡Bblog.pl¡Bbuilddb.pl¸Ì­±ªº ­×§ï
+index.plã€blog.plã€builddb.plè£¡é¢çš„ ä¿®æ”¹
 
 -use LocalVars;
 +use xxx;
 use DB_File;
 
 --
-[m[1;30m¡¯ Origin: ¤¤¥¿¿v¹Ú¶é (CcuDream.twbbs.org) ¡¹ From: 218.171.104.101[m
+[m[1;30mï¼Š Origin: ä¸­æ­£ç¯‰å¤¢åœ’ (CcuDream.twbbs.org) â˜… From: 218.171.104.101[m

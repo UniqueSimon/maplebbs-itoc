@@ -1,28 +1,28 @@
-╣o╚H╓H: simple.bbs@bbs.wfc.edu.tw (╬i╖L╓d╓И ╔н╕b╓@╝и) ╛щ╙O: plan
-╪п  цD: [╔\╞Ю]╪жЁz╠m-╓j╪жЁz(╜в╖О╙╘)
-╣o╚H╞╦: ╔d╔╛╘_©у (2004/10/27 Wed 00:39:26)                Updated: 2005/11/14
+Г≥╪Д©║Д╨╨: simple.bbs@bbs.wfc.edu.tw (И╓┼Е┘╣Е█┐Ф≈╔ Г■╗Е°╗Д╦─Ф≥┌) Г°▀Ф²©: plan
+Ф╗≥  И║▄: [Е┼÷Х┐╫]Ф╗┌И─▐Е╫╘-Е╓╖Ф╗┌И─▐(Д©╝Ф■╧Г┴┬)
+Г≥╪Д©║Г╚≥: Е█║Е╦┐Е╔┤Х╚╬ (2004/10/27 Wed 00:39:26)                Updated: 2005/11/14
 
-: struct.h ╥s╪WЁo╜с struct ╕b MODELOG ╚А╜╠
+: struct.h Ф√╟Е╒·И─≥Е─▀ struct Е°╗ MODELOG Е╬▄И²╒
 
 /* ----------------------------------------------------- */
-/* lottery.c ╓╓╧B╔н╙╨╦Й╝ф╣╡╨c                            */
+/* lottery.c Д╦╜И│▀Г■╗Г └ХЁ┤Ф√≥Г╣░Ф╖▀                            */
 /* ----------------------------------------------------- */
 
 typedef struct
 {
-  char userid[IDLEN + 1];       /* ай╤R╙л */
-  int num[6];                   /* ╘рай╤R╙╨╠m╗И6╜с╦╧╫X */
-  int prize;                    /* ╓╓╓╟╩Р╪З╤╣ */
+  char userid[IDLEN + 1];       /* ХЁ╪Х╡╥Х─┘ */
+  int num[6];                   /* Ф┴─ХЁ╪Х╡╥Г └Е╫╘Е┬╦6Е─▀Х≥÷Г╒╪ */
+  int prize;                    /* Д╦╜Д╩─И╨╪Г█▌И═┘ */
 }      BUY_LOTTERY;
 
 
 : global.h
 
-+ #define FN_RUN_LOTTERY        "run/lottery"       /* ╔╩╕╦╪жЁz╔Ч╞╦ай╤R╕WЁФ */
-+ #define LAST_KEEP_MONEY   "run/lottery.lastmoney"  /* ╟O©Щ╓W╢а╔╪╣o╙╨╪З╙В */
++ #define FN_RUN_LOTTERY        "run/lottery"       /* Ф°╛Ф╛║Ф╗┌И─▐Е┘╗Г╚≥ХЁ╪Х╡╥Е░█Е√╝ */
++ #define LAST_KEEP_MONEY   "run/lottery.lastmoney"  /* Х╗≤И▄└Д╦┼Ф°÷Ф°╙Г≥╪Г └Г█▌И┤▒ */
 
-#define BMTA_LOGFILE    "run/bmta.log"  /* ╕╛╔~Ё║╚H╙╨╟O©Щ */
+#define BMTA_LOGFILE    "run/bmta.log"  /* Ф■╤Е╓√И┐╗Д©║Г └Х╗≤И▄└ */
 
 --
-[m[1;32m║╟ Origin: [33m╖d╩Я╖чЁN╬г╟|╧q╨Б╓╓╓ъ ╔d╔╛╘_©у [37m<bbs.wfc.edu.tw>[m
-[1;31m║╩ From: [36mbbs.wfc.edu.tw[m
+[m[1;32mБ─╩ Origin: [33mЕ░ЁИЁЁФ┼─Х║⌠Е╜╦И≥╒И⌡╩Г╝≈Д╦╜Е©┐ Е█║Е╦┐Е╔┤Х╚╬ [37m<bbs.wfc.edu.tw>[m
+[1;31mБ≈├ From: [36mbbs.wfc.edu.tw[m

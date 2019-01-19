@@ -1,23 +1,23 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (¢Û¢é¢ø¢ô¢í¡Ğ¢ñ¢ü¢÷¢ë) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¬İªOÄİ©Ê¡Ğ¤£¯à¦^ÂĞ¤å³¹¨ì¬İªO¡C
-µo«H¯¸: ¤¤¿³¸ê¬ì (2004/01/11 Sun 11:16:07)                Updated: 2005/05/26
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (ï¼­ï½ï½ï½Œï½…ï¼ï½‰ï½”ï½ï½ƒ) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] çœ‹æ¿å±¬æ€§ï¼ä¸èƒ½å›è¦†æ–‡ç« åˆ°çœ‹æ¿ã€‚
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (2004/01/11 Sun 11:16:07)                Updated: 2005/05/26
 
-    ¦]¬°¯¸¤W¦³¨Ç¬İªO·|¦³¤j¶qªºÄé¤ô²{¶H¡A¦ı¬O¤S¤£²Å¦X¸ÓªOªº­·®æ¡C
+    å› ç‚ºç«™ä¸Šæœ‰äº›çœ‹æ¿æœƒæœ‰å¤§é‡çš„çŒæ°´ç¾è±¡ï¼Œä½†æ˜¯åˆä¸ç¬¦åˆè©²æ¿çš„é¢¨æ ¼ã€‚
 
-    ¤ñ¦p»¡¬O feeling ªO¡B blame ªO¡C
+    æ¯”å¦‚èªªæ˜¯ feeling æ¿ã€ blame æ¿ã€‚
 
-    §ï¦¨¤£¯à¦^¤åÀ³¸Ó¥i¥H´î¤ÖÄé¤ô²{¶H¡C
+    æ”¹æˆä¸èƒ½å›æ–‡æ‡‰è©²å¯ä»¥æ¸›å°‘çŒæ°´ç¾è±¡ã€‚
 
-    ¦ı¬O¤]¥u¬Oªv¼Ğ¤£¯àªv¥»°Õ¡I¦Û¤v§â¼ĞÃD§ï¦¨ Re: xxxxx ¤]¬O¥i¥Hªº¡I
+    ä½†æ˜¯ä¹Ÿåªæ˜¯æ²»æ¨™ä¸èƒ½æ²»æœ¬å•¦ï¼è‡ªå·±æŠŠæ¨™é¡Œæ”¹æˆ Re: xxxxx ä¹Ÿæ˜¯å¯ä»¥çš„ï¼
 
-    ¦ı¬O¦h¤Ö¥i¥H´î¤Ö§a¡I¨ş¨ş¡ã
+    ä½†æ˜¯å¤šå°‘å¯ä»¥æ¸›å°‘å§ï¼å‘µå‘µï½
 
 ==============================================================================
 
 : battr.h
 
-#define BRD_ANONYMOUS   0x20    /* °Î¦W¬İªO */
-+ #define BRD_NOREPLY   0x40    /* ¤£¯à¦^À³¤å³¹¨ì¬İªO */
+#define BRD_ANONYMOUS   0x20    /* åŒ¿åçœ‹æ¿ */
++ #define BRD_NOREPLY   0x40    /* ä¸èƒ½å›æ‡‰æ–‡ç« åˆ°çœ‹æ¿ */
 
   ...
   ...
@@ -30,28 +30,28 @@
 
 : battr.h:battr_tbl[]
 
-  "°Î¦W¬İªO",           /* BRD_ANONYMOUS */
-+ "¤£¯à¦^À³¤å³¹¨ì¬İªO", /* BRD_NOREPLY */
+  "åŒ¿åçœ‹æ¿",           /* BRD_ANONYMOUS */
++ "ä¸èƒ½å›æ‡‰æ–‡ç« åˆ°çœ‹æ¿", /* BRD_NOREPLY */
 
 : post.c:do_reply()
 
-- switch (vans("¡¶ ¦^À³¦Ü (F)¬İªO (M)§@ªÌ«H½c (B)¤GªÌ¬Ò¬O (Q)¨ú®ø¡H[F] "))
+- switch (vans("â–² å›æ‡‰è‡³ (F)çœ‹æ¿ (M)ä½œè€…ä¿¡ç®± (B)äºŒè€…çš†æ˜¯ (Q)å–æ¶ˆï¼Ÿ[F] "))
 + switch (vans((currbattr & BRD_NOREPLY) ?
-+   "¡¶ ¦^À³¦Ü (M)§@ªÌ«H½c (Q)¨ú®ø¡H[Q] " :
-+   "¡¶ ¦^À³¦Ü (F)¬İªO (M)§@ªÌ«H½c (B)¤GªÌ¬Ò¬O (Q)¨ú®ø¡H[F] "))
++   "â–² å›æ‡‰è‡³ (M)ä½œè€…ä¿¡ç®± (Q)å–æ¶ˆï¼Ÿ[Q] " :
++   "â–² å›æ‡‰è‡³ (F)çœ‹æ¿ (M)ä½œè€…ä¿¡ç®± (B)äºŒè€…çš†æ˜¯ (Q)å–æ¶ˆï¼Ÿ[F] "))
   {
     ...
     ...
 
   case 'b':
-+   if (currbattr & BRD_NOREPLY)    /* qazq.040110: ¤£¯à¦^¤å¨ì¬İªO */
++   if (currbattr & BRD_NOREPLY)    /* qazq.040110: ä¸èƒ½å›æ–‡åˆ°çœ‹æ¿ */
 +     return XO_FOOT;
-    if (cuser.userlevel)    /* guest ¿ï Both ¤´¥u¦^¨ì¬İªO¤W¡A¤£¦^§@ªÌ«H½c */
+    if (cuser.userlevel)    /* guest é¸ Both ä»åªå›åˆ°çœ‹æ¿ä¸Šï¼Œä¸å›ä½œè€…ä¿¡ç®± */
       curredit = EDIT_BOTH;
     break;
   }
 
-+ if (currbattr & BRD_NOREPLY)  /* qazq.040110: ¤£¯à¦^¤å¨ì¬İªO */
++ if (currbattr & BRD_NOREPLY)  /* qazq.040110: ä¸èƒ½å›æ–‡åˆ°çœ‹æ¿ */
 + {
 +   *quote_file = '\0';
 +   return XO_FOOT;
@@ -60,11 +60,11 @@
   if (hdr->xmode & (POST_INCOME | POST_OUTGO))
     curredit |= EDIT_OUTGO;
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  ¦pªG§Æ±æ¶}©ñµ¹ªO¥D¦Û¦æ³]©w
+  å¦‚æœå¸Œæœ›é–‹æ”¾çµ¦æ¿ä¸»è‡ªè¡Œè¨­å®š
 
-: manage.c §â¥H¤U³o¬q¥[¦b post_battr_noscore() «á­±
+: manage.c æŠŠä»¥ä¸‹é€™æ®µåŠ åœ¨ post_battr_noscore() å¾Œé¢
 
 static int
 post_battr_noreply(xo)
@@ -75,7 +75,7 @@ post_battr_noreply(xo)
   oldbrd = bshm->bcache + currbno;
   memcpy(&newbrd, oldbrd, sizeof(BRD));
 
-  switch (vans("1)¥i¥H¦^À³¤å³¹ 2)¤£¥i¦^À³¤å³¹ [Q] "))
+  switch (vans("1)å¯ä»¥å›æ‡‰æ–‡ç«  2)ä¸å¯å›æ‡‰æ–‡ç«  [Q] "))
   {
   case '1':
     newbrd.battr &= ~BRD_NOREPLY;
@@ -99,17 +99,17 @@ post_battr_noreply(xo)
 : manage.c:post_manage()
 
 #  ifdef HAVE_SCORE
-    "Score   ³]©w¥i§_µû¤À",
+    "Score   è¨­å®šå¯å¦è©•åˆ†",
 #  endif
-+   "Reply   ¦^À³¤å³¹³]©w",
++   "Reply   å›æ‡‰æ–‡ç« è¨­å®š",
 
   ...
   ...
 
 #  ifdef HAVE_SCORE
-    " (S)µû¤À"
+    " (S)è©•åˆ†"
 #  endif
-+   " (R)¦^¤å"
++   " (R)å›æ–‡"
 
   ...
   ...
@@ -123,5 +123,5 @@ post_battr_noreply(xo)
 +   return post_battr_noreply(xo);
 
 --
- [1m[42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m csNCHU.twbbs.org [m
- [1m[44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mqazq [30m±q [35m61-216-137-2.HINET-IP.hinet.net [30mµoªí[m
+ [1m[42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m csNCHU.twbbs.org [m
+ [1m[44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mqazq [30må¾ [35m61-216-137-2.HINET-IP.hinet.net [30mç™¼è¡¨[m

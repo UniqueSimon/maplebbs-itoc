@@ -1,35 +1,35 @@
-§@ªÌ: itoc (test) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¤å³¹µû¤À¥\¯à
-®É¶¡: Sun Aug 18 14:45:05 2002                          Updated: 2005/05/19
+ä½œè€…: itoc (test) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] æ–‡ç« è©•åˆ†åŠŸèƒ½
+æ™‚é–“: Sun Aug 18 14:45:05 2002                          Updated: 2005/05/19
 
-  µû¤À±Æ¦æº]
+  è©•åˆ†æ’è¡Œæ¦œ
 
 : crontab -e
 
-# ¨C¤Ñ°µ¤@¦¸±Æ¦æº]²Î­p
+# æ¯å¤©åšä¸€æ¬¡æ’è¡Œæ¦œçµ±è¨ˆ
 28 3 * * * bin/topgem > /dev/null 2>&1
 30 3 * * * bin/topsong > /dev/null 2>&1
 + 32 3 * * * bin/topscore > /dev/null 2>&1
 34 3 * * * bin/topusr > /dev/null 2>&1
 
-: BBS ¯¸¤W (A)nnounce ¸Ì­±ªº {±Æ¦æ} ²Î­p¸ê®Æ
+: BBS ç«™ä¸Š (A)nnounce è£¡é¢çš„ {æ’è¡Œ} çµ±è¨ˆè³‡æ–™
 
-  Ctrl+P ·s¼W (D)¸ê®Æ
-  ¼ĞÃD¡Gµû¤À¦¸¼Æ²Î­p
-  ÀÉ¦W¡G-topscore
+  Ctrl+P æ–°å¢ (D)è³‡æ–™
+  æ¨™é¡Œï¼šè©•åˆ†æ¬¡æ•¸çµ±è¨ˆ
+  æª”åï¼š-topscore
 
-: src/util/Makefile ¥[¤J topscore
+: src/util/Makefile åŠ å…¥ topscore
 
 TOOL =  ... \
         ... \
         ... topgem [1;33mtopscore[m topsong ...
 
-: src/util/topscore.c ·s¼W³oµ{¦¡¡A¤º®e¦p¤U
+: src/util/topscore.c æ–°å¢é€™ç¨‹å¼ï¼Œå…§å®¹å¦‚ä¸‹
 
 /*-------------------------------------------------------*/
 /* util/topscore.c      ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ¤å³¹µû¤À±Æ¦W                                 */
+/* target : æ–‡ç« è©•åˆ†æ’å                                 */
 /* create : 03/04/26                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -41,7 +41,7 @@ TOOL =  ... \
 #include "bbs.h"
 
 
-#define FN_RUN_SCOREUSIES       "run/score_usies"       /* µû¤À°O¿ı */
+#define FN_RUN_SCOREUSIES       "run/score_usies"       /* è©•åˆ†è¨˜éŒ„ */
 #define OUTFILE_TOPSCORE        "gem/@/@-topscore"
 
 
@@ -55,7 +55,7 @@ typedef struct
 
 
 /*-------------------------------------------------------*/
-/* §â©Ò¦³³Qµû¤Àªº¤å³¹§ä¥X¨Ó                              */
+/* æŠŠæ‰€æœ‰è¢«è©•åˆ†çš„æ–‡ç« æ‰¾å‡ºä¾†                              */
 /*-------------------------------------------------------*/
 
 
@@ -79,7 +79,7 @@ do_find(brdname)
     read(fd, hdr, size);
     close(fd);
 
-    due = time(NULL) - 86400 * 10;      /* ³Ì¦h²Î­p¨ì¤Q¤Ñ«eªº¤å³¹ */
+    due = time(NULL) - 86400 * 10;      /* æœ€å¤šçµ±è¨ˆåˆ°åå¤©å‰çš„æ–‡ç«  */
 
     size /= sizeof(HDR);
     for (i = 0; i < size; i++)
@@ -100,7 +100,7 @@ do_find(brdname)
 
 
 /*-------------------------------------------------------*/
-/* »s§@±Æ¦W                                              */
+/* è£½ä½œæ’å                                              */
 /*-------------------------------------------------------*/
 
 
@@ -115,13 +115,13 @@ write_data(score, num)
   if (!(fp = fopen(OUTFILE_TOPSCORE, "w")))
     return;
 
-  fprintf(fp, "\033[37m¦W¦¸\033[36m¢w\033[37m¬İªO\033[36m¢w¢w¢w¢w"
-    "\033[37m§@ªÌ\033[36m¢w¢w¢w¢w¢w\033[37m¼Ğ  ÃD\033[36m¢w¢w¢w¢w"
-    "¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w\033[37m¤À¼Æ\033[36m¢w\033[m\n");
+  fprintf(fp, "\033[37måæ¬¡\033[36mâ”€\033[37mçœ‹æ¿\033[36mâ”€â”€â”€â”€"
+    "\033[37mä½œè€…\033[36mâ”€â”€â”€â”€â”€\033[37mæ¨™  é¡Œ\033[36mâ”€â”€â”€â”€"
+    "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\033[37måˆ†æ•¸\033[36mâ”€\033[m\n");
 
-  for (n = 0; n < 50 && n < num; n++)           /* ¥u¨ú«e 50 ¦W */
+  for (n = 0; n < 50 && n < num; n++)           /* åªå–å‰ 50 å */
   {
-    fprintf(fp, "%3d. %-13.13s%-13.13s%-38.38s %4d ¦¸\033[m\n",
+    fprintf(fp, "%3d. %-13.13s%-13.13s%-38.38s %4d æ¬¡\033[m\n",
       n + 1, score[n].brdname, score[n].owner, score[n].title, score[n].score);
   }
 
@@ -152,7 +152,7 @@ main()
   size = 0;
   while (!rec_get(FN_BRD, &brd, sizeof(BRD), size))
   {
-    if ((brd.readlevel | brd.postlevel) < (PERM_VALID << 1)) /* ÁôÂÃªO¤£²Î­p */
+    if ((brd.readlevel | brd.postlevel) < (PERM_VALID << 1)) /* éš±è—æ¿ä¸çµ±è¨ˆ */
       do_find(brd.brdname);
     size++;
   }
@@ -180,4 +180,4 @@ main()
 }
 
 --
-[1;32m¡¼ Origin: [33m°Ê¤O®Ö¤ß [37mxeon.tfcis.org  [31m¡¼ From: [36mitoc.Dorm-GD2.NCTU.edu.tw[m
+[1;32mâ–¡ Origin: [33må‹•åŠ›æ ¸å¿ƒ [37mxeon.tfcis.org  [31mâ–¡ From: [36mitoc.Dorm-GD2.NCTU.edu.tw[m

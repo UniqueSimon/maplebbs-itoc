@@ -1,14 +1,14 @@
-§@ªÌ: itoc (League) ¬İªO: plan
-¼ĞÃD: [­×¥¿] bmtad.c ±H«Hµ¹ºëµØ°Ï
-®É¶¡: 2004/01/14 Wed 11:04:38                           Updated: 2004/01/14
+ä½œè€…: itoc (League) çœ‹æ¿: plan
+æ¨™é¡Œ: [ä¿®æ­£] bmtad.c å¯„ä¿¡çµ¦ç²¾è¯å€
+æ™‚é–“: 2004/01/14 Wed 11:04:38                           Updated: 2004/01/14
 
-  ª½±µ±H«H¨ìºëµØ°Ï¦¬¿ı
-  (³o«Ü¼É¤Oªº¡A¤°»ò¨Ó·½³£¤£ÀË¬dªº :p)
+  ç›´æ¥å¯„ä¿¡åˆ°ç²¾è¯å€æ”¶éŒ„
+  (é€™å¾ˆæš´åŠ›çš„ï¼Œä»€éº¼ä¾†æºéƒ½ä¸æª¢æŸ¥çš„ :p)
 
-: bmtad.c:bbs_gem() ·s¼W¦b bbs_brd() «á­±
+: bmtad.c:bbs_gem() æ–°å¢åœ¨ bbs_brd() å¾Œé¢
 
 static int
-bbs_gem(ap, data, brdname)      /* itoc.030323: ±H«Hµ¹ºëµØ°Ï */
+bbs_gem(ap, data, brdname)      /* itoc.030323: å¯„ä¿¡çµ¦ç²¾è¯å€ */
   Agent *ap;
   char *data;
   char *brdname;
@@ -46,9 +46,9 @@ bbs_gem(ap, data, brdname)      /* itoc.030323: ±H«Hµ¹ºëµØ°Ï */
   if (method == 'A')
   {
     if (!*title)
-      sprintf(title, "¨Ó¦Û %.64s", author);
+      sprintf(title, "ä¾†è‡ª %.64s", author);
 
-    sprintf(buf, "µo«H¤H: %.50s ¬İªO: %s\n¼Ğ  ÃD: %.72s\nµo«H¯¸: %s\n\n",
+    sprintf(buf, "ç™¼ä¿¡äºº: %.50s çœ‹æ¿: %s\næ¨™  é¡Œ: %.72s\nç™¼ä¿¡ç«™: %s\n\n",
       from, brdname, title, Btime(&hdr.chrono));
 
     write(fd, buf, strlen(buf));
@@ -109,4 +109,4 @@ bbs_gem(ap, data, brdname)      /* itoc.030323: ±H«Hµ¹ºëµØ°Ï */
 
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

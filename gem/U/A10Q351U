@@ -1,15 +1,15 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [½Ğ¯q] ¦³¨S¦³¨ººØ"¦n¤Íª©¥[¤JÁÜ½Ğ¨ç"
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/11/22 Mon 12:51:42)                Updated: 2004/11/23
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [è«‹ç›Š] æœ‰æ²’æœ‰é‚£ç¨®"å¥½å‹ç‰ˆåŠ å…¥é‚€è«‹å‡½"
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/11/22 Mon 12:51:42)                Updated: 2004/11/23
 
-¡° ¤Ş­z¡mchwaian (µL¨¥)¡n¤§»Ê¨¥¡G
-> ¤£ª¾¹D¥i§_ ´N¼g¤@­Ó¥\¯à ¨Ò¦p¦A¬İªO¦Cªí«ö¬YÁä
-> ¥i¥H¦C¥X©Ò¦³read level¬OSYSOPªºªO ¥B¦Û¤v¤S¦³¾\ÅªÅv­­ªº
-> ¦pªG¥i¥H¤£ºŞ¦³µLZap ¨º´N§ó¦n¤F
+â€» å¼•è¿°ã€Šchwaian (ç„¡è¨€)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> ä¸çŸ¥é“å¯å¦ å°±å¯«ä¸€å€‹åŠŸèƒ½ ä¾‹å¦‚å†çœ‹æ¿åˆ—è¡¨æŒ‰æŸéµ
+> å¯ä»¥åˆ—å‡ºæ‰€æœ‰read levelæ˜¯SYSOPçš„æ¿ ä¸”è‡ªå·±åˆæœ‰é–±è®€æ¬Šé™çš„
+> å¦‚æœå¯ä»¥ä¸ç®¡æœ‰ç„¡Zap é‚£å°±æ›´å¥½äº†
 
 : board.c:class_load()
 
-+ static int class_flag2 = 0;  /* 1:¦C¥X¦n¤Í/¯µ±KªO¡A¥B¦Û¤v¤S¦³¾\ÅªÅv­­ªº */
++ static int class_flag2 = 0;  /* 1:åˆ—å‡ºå¥½å‹/ç§˜å¯†æ¿ï¼Œä¸”è‡ªå·±åˆæœ‰é–±è®€æ¬Šé™çš„ */
 
 static int
 class_load(xo)
@@ -17,7 +17,7 @@ class_load(xo)
 {
   ...
 
-    if (chn >= 0)       /* ¤@¯ë¬İªO */
+    if (chn >= 0)       /* ä¸€èˆ¬çœ‹æ¿ */
     {
       val = bits[chn];
 +     if (class_flag2 &&
@@ -30,7 +30,7 @@ class_load(xo)
     }
 
 
-: board.c:class_yank2() ·s¼W¨ç¦¡¦b class_yank() «á­±
+: board.c:class_yank2() æ–°å¢å‡½å¼åœ¨ class_yank() å¾Œé¢
 
 static int
 class_yank2(xo)
@@ -46,8 +46,8 @@ class_yank2(xo)
 : board.c:class_cb[]
 
   'y', class_yank,
-+ 'i', class_yank2,         [1;44m // «öÁä¦Û©w [m
++ 'i', class_yank2,         [1;44m // æŒ‰éµè‡ªå®š [m
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mpc512-2.EE.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mpc512-2.EE.NCTU.edu.tw [30mç™¼è¡¨[m

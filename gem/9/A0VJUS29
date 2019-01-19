@@ -1,44 +1,44 @@
-§@ªÌ: itoc (¬@±Ï¤@­ÓÆF»î) ¬İªO: plan
-¼ĞÃD: Re: [¥\¯à] ²Î­p¸ê®Æ°Ï¿W¥ß¥X¨Ó¬° menu ªº¤@­Ó¿ï¶µ
-®É¶¡: Sat Jun 15 19:00:08 2002                          Updated: 2005/10/07
+ä½œè€…: itoc (æ‹¯æ•‘ä¸€å€‹éˆé­‚) çœ‹æ¿: plan
+æ¨™é¡Œ: Re: [åŠŸèƒ½] çµ±è¨ˆè³‡æ–™å€ç¨ç«‹å‡ºä¾†ç‚º menu çš„ä¸€å€‹é¸é …
+æ™‚é–“: Sat Jun 15 19:00:08 2002                          Updated: 2005/10/07
 
-: menu.c:menu_XoGem() ·s¼W¦¹¨ç¦¡©ó Gem() «e­±
+: menu.c:menu_XoGem() æ–°å¢æ­¤å‡½å¼æ–¼ Gem() å‰é¢
 
 static void
 menu_XoGem(fpath, title)
   char *fpath, *title;
 {
-  /* itoc.001109: ¬İªOÁ`ºŞ¦b (A)nnounce ¤U¦³ GEM_X_BIT¡A¤è«K¶}ªO */
+  /* itoc.001109: çœ‹æ¿ç¸½ç®¡åœ¨ (A)nnounce ä¸‹æœ‰ GEM_X_BITï¼Œæ–¹ä¾¿é–‹æ¿ */
   XoGem(fpath, title,
     (HAS_PERM(PERM_ALLBOARD) ? (GEM_W_BIT | GEM_X_BIT | GEM_M_BIT) : 0));
 }
 
-: menu.c:Gem() ´«·s
+: menu.c:Gem() æ›æ–°
 
 static int
 Gem()
 {
-  menu_XoGem("gem/.DIR", "ºëµØ§G§iÄæ");
+  menu_XoGem("gem/.DIR", "ç²¾è¯ä½ˆå‘Šæ¬„");
   return 0;
 }
 
-: menu.c:menu_history() ·s¼W¦¹¨ç¦¡©ó Gem() «á­±
+: menu.c:menu_history() æ–°å¢æ­¤å‡½å¼æ–¼ Gem() å¾Œé¢
 
 static int
 menu_history()
 {
-  menu_XoGem("gem/S/F0TL0ORS", "²Î­p¸ê®Æ°Ï");
+  menu_XoGem("gem/S/F0TL0ORS", "çµ±è¨ˆè³‡æ–™å€");
   return 0;
 }
 
-  ¨ä¤¤ "gem/S/F0TL0ORS" ¬O ²Î­p¸ê®Æ°Ïªº .DIR
-  ¦U¯¸¤£¦P¡A¦Û©w
+  å…¶ä¸­ "gem/S/F0TL0ORS" æ˜¯ çµ±è¨ˆè³‡æ–™å€çš„ .DIR
+  å„ç«™ä¸åŒï¼Œè‡ªå®š
 
 
-: menu.c ¦b¾A·íªº¦a¤è¥[¤J¿ï¶µ
+: menu.c åœ¨é©ç•¶çš„åœ°æ–¹åŠ å…¥é¸é …
 
   menu_history, 0, M_GEM,
-  "History   £^ ¾ú¥v¦^ÅU°Ï £^",
+  "History   Î³ æ­·å²å›é¡§å€ Î³",
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mnctu5566.Dorm3.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mnctu5566.Dorm3.NCTU.edu.tw[37m ç™¼è¡¨[m

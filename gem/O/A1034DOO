@@ -1,17 +1,17 @@
-µo«H¤H: BioStar.bbs@micro.bio.ncue.edu.tw (¼ê´ò¤p¶³³¶(Skyl ¬İªO: plan
-¼Ğ  ÃD: [¤å¥ó] Âù¤H¶¤«³¾ÔÁZ²Î­p
-µo«H¯¸: Àº¤Ñ±^ (2004/01/11 Sun 01:22:09)                  Updated: 2005/06/11
+ç™¼ä¿¡äºº: BioStar.bbs@micro.bio.ncue.edu.tw (æ¾æ¹–å°é›²é›€(Skyl çœ‹æ¿: plan
+æ¨™  é¡Œ: [æ–‡ä»¶] é›™äººéšŠå¥•æˆ°ç¸¾çµ±è¨ˆ
+ç™¼ä¿¡ç«™: æ“å¤©å´— (2004/01/11 Sun 01:22:09)                  Updated: 2005/06/11
 
 : src/util/Makefile
 
 EXE =   ... [1;33mtopbwboard[m
 
-: ·s¼W util/topbwboard.c
+: æ–°å¢ util/topbwboard.c
 
 /*-------------------------------------------------------*/
 /* util/topboard.c      ( NTHU CS MapleBBS Ver 3.00 )    */
 /*-------------------------------------------------------*/
-/* target : ¨Ï¥ÎªÌ¸ê®Æ²Î­p¤Î±Æ¦W                         */
+/* target : ä½¿ç”¨è€…è³‡æ–™çµ±è¨ˆåŠæ’å                         */
 /* create : 99/03/29                                     */
 /* update : 01/10/01                                     */
 /* modify : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -155,16 +155,16 @@ write_data(fpath, title, data, wl)
     return;
 
   i = 12 - (strlen(title) >> 1);
-  sprintf(buf, " \033[1;33m¡³ ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¡÷ "
-    "\033[41m%%%ds%%s%%%ds\033[40m ¡ö¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w ¡³\033[m\n\n",
+  sprintf(buf, " \033[1;33mâ—‹ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â†’ "
+    "\033[41m%%%ds%%s%%%ds\033[40m â†â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ â—‹\033[m\n\n",
     i, i);
   fprintf(fp, buf, "", title, "");
 
   fprintf(fp,
-    "\033[1;37m¦W¦¸  \033[33m¥N¸¹(¼ÊºÙ)                \033[36m%s\033[m   "
-    "\033[1;37m¦W¦¸  \033[33m¥N¸¹(¼ÊºÙ)                \033[36m%s\033[m\n"
+    "\033[1;37måæ¬¡  \033[33mä»£è™Ÿ(æš±ç¨±)                \033[36m%s\033[m   "
+    "\033[1;37måæ¬¡  \033[33mä»£è™Ÿ(æš±ç¨±)                \033[36m%s\033[m\n"
     "\033[1;32m%s\033[m\n",
-    wl ? "³Ó³õ" : "±Ñ³õ", wl ? "³Ó³õ" : "±Ñ³õ", MSG_SEPERATOR);
+    wl ? "å‹å ´" : "æ•—å ´", wl ? "å‹å ´" : "æ•—å ´", MSG_SEPERATOR);
 
   for (i = 0; i < TOPNUM_HALF; i++)
   {
@@ -174,10 +174,10 @@ write_data(fpath, title, data, wl)
     merge_id_nick(buf2, data[i + TOPNUM_HALF].userid,
       data[i + TOPNUM_HALF].username);
 
-    /* itoc.010408: ¸Ñ¨M¿ú¤Ó¦h¡Aµe­±Ãz±¼ªº°İÃD */
+    /* itoc.010408: è§£æ±ºéŒ¢å¤ªå¤šï¼Œç•«é¢çˆ†æ‰çš„å•é¡Œ */
     num1 = data[i].num / 1000000;
     num2 = data[i + TOPNUM_HALF].num / 1000000;
-    if (num2)                   /* ¨º»ò data[i].num ¤]¥²©w > 10^6 */
+    if (num2)                   /* é‚£éº¼ data[i].num ä¹Ÿå¿…å®š > 10^6 */
     {
       fprintf(fp, "[%2d] %-25s %5dM  [%2d] %-25s %5dM\n", i + 1, buf1, num1,
         i + 1 + TOPNUM_HALF, buf2, num2);
@@ -270,7 +270,7 @@ topusr(userid, bwboard)
 
 
 /*-------------------------------------------------------*/
-/* ¥Dµ{¦¡                                                */
+/* ä¸»ç¨‹å¼                                                */
 /*-------------------------------------------------------*/
 
 
@@ -344,43 +344,43 @@ main()
   fill_username(&topbwel);
 
   qsort(topbwaw, TOPNUM, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_BW_A_W, "¶Â¥Õ´Ñ³Ó³õ­^¶¯º]", &topbwaw, 1);
+  write_data(OUTFILE_BW_A_W, "é»‘ç™½æ£‹å‹å ´è‹±é›„æ¦œ", &topbwaw, 1);
 
   qsort(topbwal, TOPNUM, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_BW_A_L, "¶Â¥Õ´Ñ±Ñ³õª¯ºµº]", &topbwal, 0);
+  write_data(OUTFILE_BW_A_L, "é»‘ç™½æ£‹æ•—å ´ç‹—ç†Šæ¦œ", &topbwal, 0);
 
   qsort(topbwbw, TOPNUM, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_BW_B_W, "¤­¤l´Ñ³Ó³õ­^¶¯º]", &topbwbw, 1);
+  write_data(OUTFILE_BW_B_W, "äº”å­æ£‹å‹å ´è‹±é›„æ¦œ", &topbwbw, 1);
 
   qsort(topbwbl, TOPNUM, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_BW_B_L, "¤­¤l´Ñ±Ñ³õª¯ºµº]", &topbwbl, 0);
+  write_data(OUTFILE_BW_B_L, "äº”å­æ£‹æ•—å ´ç‹—ç†Šæ¦œ", &topbwbl, 0);
 
   qsort(topbwcw, TOPNUM, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_BW_C_W, "³ò´Ñ³Ó³õ­^¶¯º]", &topbwcw, 1);
+  write_data(OUTFILE_BW_C_W, "åœæ£‹å‹å ´è‹±é›„æ¦œ", &topbwcw, 1);
 
   qsort(topbwcl, TOPNUM, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_BW_C_L, "³ò´Ñ±Ñ³õª¯ºµº]", &topbwcl, 0);
+  write_data(OUTFILE_BW_C_L, "åœæ£‹æ•—å ´ç‹—ç†Šæ¦œ", &topbwcl, 0);
 
   qsort(topbwdw, TOPNUM, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_BW_D_W, "­x´Ñ³Ó³õ­^¶¯º]", &topbwdw, 1);
+  write_data(OUTFILE_BW_D_W, "è»æ£‹å‹å ´è‹±é›„æ¦œ", &topbwdw, 1);
 
   qsort(topbwdl, TOPNUM, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_BW_D_L, "­x´Ñ±Ñ³õª¯ºµº]", &topbwdl, 0);
+  write_data(OUTFILE_BW_D_L, "è»æ£‹æ•—å ´ç‹—ç†Šæ¦œ", &topbwdl, 0);
 
   qsort(topbwew, TOPNUM, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_BW_E_W, "·t´Ñ³Ó³õ­^¶¯º]", &topbwew, 1);
+  write_data(OUTFILE_BW_E_W, "æš—æ£‹å‹å ´è‹±é›„æ¦œ", &topbwew, 1);
 
   qsort(topbwel, TOPNUM, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_BW_E_L, "·t´Ñ±Ñ³õª¯ºµº]", &topbwel, 0);
+  write_data(OUTFILE_BW_E_L, "æš—æ£‹æ•—å ´ç‹—ç†Šæ¦œ", &topbwel, 0);
 
   return 0;
 }
 
 
-µM«á¦b¨t²ÎºëµØ°Ï¤¤¥[¤J @-bwaw ¡B @-bwal ¡B @-bwbw ¡B @-bwbl ¡B @-bwcw ¡B
-@-bwcl ¡B @-bwdw ¡B @-bwdl ¡B @-bwew ¡B @-bwel §@¬°¸ê®Æ¡I
+ç„¶å¾Œåœ¨ç³»çµ±ç²¾è¯å€ä¸­åŠ å…¥ @-bwaw ã€ @-bwal ã€ @-bwbw ã€ @-bwbl ã€ @-bwcw ã€
+@-bwcl ã€ @-bwdw ã€ @-bwdl ã€ @-bwew ã€ @-bwel ä½œç‚ºè³‡æ–™ï¼
 
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m ¹ü¤Æ®v¤j¥Íª«¨t£»§u­·¡E²·¤ë¡EÀº¤Ñ±^ [32;47m micro.bio.ncue.edu.tw [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mBioStar [30m±q [35mxman.bio.ncue.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m å½°åŒ–å¸«å¤§ç”Ÿç‰©ç³»Ë™åŸé¢¨?çœºæœˆ?æ“å¤©å´— [32;47m micro.bio.ncue.edu.tw [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mBioStar [30må¾ [35mxman.bio.ncue.edu.tw [30mç™¼è¡¨[m

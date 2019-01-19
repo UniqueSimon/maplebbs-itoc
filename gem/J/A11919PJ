@@ -1,6 +1,6 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: ±N more.c ¥Ñ buffered file read §ï¦¨ full file read
-µo«H¯¸: °Ê¤O®Ö¤ß (2005/05/22 Thu 23:50:50)                Updated: 2005/11/17
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: å°‡ more.c ç”± buffered file read æ”¹æˆ full file read
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2005/05/22 Thu 23:50:50)                Updated: 2005/11/17
 
 : more.c
 
@@ -9,11 +9,11 @@
 - static off_t more_off;
 + static uschar *fimage;          /* file image begin */
 + static uschar *fend;            /* file image end */
-+ static uschar *foff;            /* ¥Ø«eÅª¨ì­ş¸Ì */
++ static uschar *foff;            /* ç›®å‰è®€åˆ°å“ªè£¡ */
 
 : more.c:more_goto()
 
-  ¦¹¨ç¦¡¾ã­Ó§R°£
+  æ­¤å‡½å¼æ•´å€‹åˆªé™¤
 
 : more.c:more_line()
 
@@ -95,7 +95,7 @@ outs_footer(buf, lino, fsize)
 - /* prints(FOOTER_MORE, ..., (more_off * 100) / fsize); */
 + /* prints(FOOTER_MORE, ..., ((foff - fimage) * 100) / fsize); */
 
-  /* itoc.010821: ¬°¤F©M FOOTER ¹ï»ô */
+  /* itoc.010821: ç‚ºäº†å’Œ FOOTER å°é½Š */
 - sprintf(buf, FOOTER_MORE, ..., (more_off * 100) / fsize);
 + sprintf(buf, FOOTER_MORE, ..., (foff - fimage) * 100 / fsize);
   outs(buf);
@@ -110,8 +110,8 @@ outs_footer(buf, lino, fsize)
   ...
   ...
 
-- off_t fsize;                  /* ÀÉ®×¤j¤p */
-+ int fsize;                    /* ÀÉ®×¤j¤p */
+- off_t fsize;                  /* æª”æ¡ˆå¤§å° */
++ int fsize;                    /* æª”æ¡ˆå¤§å° */
   static off_t block[MAXBLOCK]; /*
 
 - if ((fd = open(fpath, O_RDONLY)) < 0)
@@ -123,7 +123,7 @@ outs_footer(buf, lino, fsize)
 + foff = fimage;
 + fend = fimage + fsize;
 
-  /* Åª¥XÀÉ®×²Ä¤@¦æ¡A¨Ó§PÂ_¯¸¤º«HÁÙ¬O¯¸¥~«H */
+  /* è®€å‡ºæª”æ¡ˆç¬¬ä¸€è¡Œï¼Œä¾†åˆ¤æ–·ç«™å…§ä¿¡é‚„æ˜¯ç«™å¤–ä¿¡ */
 - if (fstat(fd, &st) || (fsize = st.st_size) <= 0 || !more_line(fd, buf))
 + if (fsize <= 0 || !more_line(buf))
   {
@@ -135,7 +135,7 @@ outs_footer(buf, lino, fsize)
   ...
   ...
 
-  /* Âk¹s */
+  /* æ­¸é›¶ */
 - more_base = 0;
 - more_size += more_off;
 - more_off = 0;
@@ -158,15 +158,15 @@ outs_footer(buf, lino, fsize)
 +         more_line(buf);
   ...
   ...
--   if (more_off >= fsize)      /* ¤w¸gÅª§¹¥ş³¡ªºÀÉ®× */
-+   if (foff >= fend)           /* ¤w¸gÅª§¹¥ş³¡ªºÀÉ®× */
+-   if (more_off >= fsize)      /* å·²ç¶“è®€å®Œå…¨éƒ¨çš„æª”æ¡ˆ */
++   if (foff >= fend)           /* å·²ç¶“è®€å®Œå…¨éƒ¨çš„æª”æ¡ˆ */
   ...
   ...
 -       if ((shift & END_MASK) && (fsize - more_off >= MORE_BUFSIZE))
 +       if ((shift & END_MASK) && (fend - foff >= MORE_BUFSIZE))
   ...
   ...
-          /* ¥ıÅª¨ì³Ì«á¤@¦C¬İ¬İ¥ş³¡¦³´X¦C */
+          /* å…ˆè®€åˆ°æœ€å¾Œä¸€åˆ—çœ‹çœ‹å…¨éƒ¨æœ‰å¹¾åˆ— */
 -         while (more_line(fd, buf))
 +         while (more_line(buf))
           {
@@ -180,7 +180,7 @@ outs_footer(buf, lino, fsize)
 -         more_goto(fd, (off_t) block[i]);
 +         foff = fimage + block[i];
           i = i << 5;
-          /* ¦A±q¤W¤@­Ó block ªº§Àºİ¦ì²¾¨ì totallino-b_lines+1 ¦C */
+          /* å†å¾ä¸Šä¸€å€‹ block çš„å°¾ç«¯ä½ç§»åˆ° totallino-b_lines+1 åˆ— */
           for (i = totallino - b_lines - i; i > 0; i--)
 -           more_line(fd, buf);
 +           more_line(buf);
@@ -195,7 +195,7 @@ outs_footer(buf, lino, fsize)
 -       more_goto(fd, (off_t) block[i]);
 +       foff = fimage + block[i];
         i = i << 5;
-        /* ¦A±q¤W¤@­Ó block ªº§Àºİ¦ì²¾¨ì lino-b_lines+1 ¦C */
+        /* å†å¾ä¸Šä¸€å€‹ block çš„å°¾ç«¯ä½ç§»åˆ° lino-b_lines+1 åˆ— */
         for (i = lino - b_lines - i; i > 0; i--)
 -         more_line(fd, buf);
 +         more_line(buf);
@@ -211,5 +211,5 @@ outs_footer(buf, lino, fsize)
 + free(fimage);
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

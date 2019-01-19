@@ -1,42 +1,42 @@
-�o�H�H: guessi.bbs@bbs.wretch.cc (�S) �ݪO: plan
-��  �D: [�ץ�] �����{��
-�o�H��: �L�W�p�� (2006/03/31 Fri 18:02:59)                Updated: 2007/05/18
+發信人: guessi.bbs@bbs.wretch.cc (沒) 看板: plan
+標  題: [修正] 雙重認證
+發信站: 無名小站 (2006/03/31 Fri 18:02:59)                Updated: 2007/05/18
 
-[�ץ�] user.c �ݯ����f�ֵ��U���~����U���\ ���{
-                                               �x
- �w�惡�g���Ӹ`�ץ� �ץ��L�{�ҫ�H�e�H�󤺮e �s�}
- ����ץ��夺�e������r�ʺ|�ɻ� �ѦU��Ѧ� �}
+[修正] user.c 需站長審核註冊單後才算註冊成功 ←┐
+                                               │
+ 針對此篇做細節修正 修正過認證後寄送信件內容 ┬┘
+ 對於原修正文內容說明文字缺漏補齊 供各位參考 ┘
 
-  ������ Email �{�ҡA�~�����U��
-  ���U��f�ֳq�L��~�ள�� PERM_VALID
+  先完成 Email 認證，才能填註冊單
+  註冊單審核通過後才能拿到 PERM_VALID
 
 
-[32m:/src/include/perm.h �s�W�v��[m
+[32m:/src/include/perm.h 新增權限[m
 - #define PERM_9          0x00000100
-+ #define PERM_MVALID     0x00000100      /* VALID ��B�{�� */
++ #define PERM_MVALID     0x00000100      /* VALID 初步認證 */
 
 
 [1;32m![m#define STR_PERM        "bctpjm#x[1;32mM[m------@PTCM--L*B#-RACBS"
 
-- "�O�d",                       /* PERM_9 */
-+ "�q�L��B�{��",               /* PERM_MVALID */
+- "保留",                       /* PERM_9 */
++ "通過初步認證",               /* PERM_MVALID */
 
 
-[32m:/src/include/global.h[m  [32m(�P�ɷs���ɮ�etc/mjustified)[m
+[32m:/src/include/global.h[m  [32m(同時新建檔案etc/mjustified)[m
   #define FN_ETC_JUSTIFIED  "etc/justified"
 + #define FN_ETC_MJUSTIFIED "etc/mjustified"
 
-  #define MSG_REG_VALID   "�z�w�g�q�L�����{�ҡA�Э��s�W��"
-+ #define MSG_REG_MVALID  "�z�w�g�q�L��B�{�ҡA�Э��s�W��"
+  #define MSG_REG_VALID   "您已經通過身分認證，請重新上站"
++ #define MSG_REG_MVALID  "您已經通過初步認證，請重新上站"
 
   VAR char *msg_reg_valid INI(MSG_REG_VALID);
 + VAR char *msg_reg_mvalid INI(MSG_REG_MVALID);
 
 
 [32m:/src/so/admutil.c:a_xfile()[m
--   "�{�ҳq�L�q��",
-+   "�q�L����{��",
-+   "�q�L��B�{��",
+-   "認證通過通知",
++   "通過完整認證",
++   "通過初步認證",
 
     FN_ETC_JUSTIFIED,
 +   FN_ETC_MJUSTIFIED,
@@ -44,7 +44,7 @@
 
 [32m:/src/daemon/bmtad.c:bbs_valid()[m
 
-  /* �����v�� */
+  /* 提升權限 */
 - acct.userlevel |= PERM_VALID;
 + acct.userlevel |= PERM_MVALID;
 
@@ -62,15 +62,15 @@
 -  if (!hdr_stamp(fpath, HDR_LINK, &hdr, FN_ETC_JUSTIFIED))
 +  if (!hdr_stamp(fpath, HDR_LINK, &hdr, FN_ETC_MJUSTIFIED))
    {
--    strcpy(hdr.title, "�z�w�g�q�L�����{�ҤF�I");
-+    strcpy(hdr.title, "�z�w�g�q�L��B�{�ҤF�I");
+-    strcpy(hdr.title, "您已經通過身分認證了！");
++    strcpy(hdr.title, "您已經通過初步認證了！");
 
 
 [32m:/src/maple/user.c:do_pop3()[m
 -     acct_setperm(&acct, PERM_VALID, 0);
 +     acct_setperm(&acct, PERM_MVALID, 0);
 
-      /* �H�H�q���ϥΪ� */
+      /* 寄信通知使用者 */
 -     mail_self(FN_ETC_JUSTIFIED, str_sysop, msg_reg_valid, 0);
 +     mail_self(FN_ETC_MJUSTIFIED, str_sysop, msg_reg_mvalid, 0);
       cutmp->status |= STATUS_BIFF;
@@ -83,13 +83,13 @@
 - if (HAS_PERM(PERM_VALID))
 + if (HAS_PERM(PERM_MVALID))
   {
--   zmsg("�z�������T�{�w�g�����A���ݶ�g�{�ҽX");
-+   zmsg("�z����B�T�{�w�g�����A���ݶ�g�{�ҽX");
+-   zmsg("您的身分確認已經完成，不需填寫認證碼");
++   zmsg("您的初步確認已經完成，不需填寫認證碼");
 
 -         acct_setperm(&acct, PERM_VALID, 0);
 +         acct_setperm(&acct, PERM_MVALID, 0);
 
-        /* �H�H�q���ϥΪ� */
+        /* 寄信通知使用者 */
 -       mail_self(FN_ETC_JUSTIFIED, str_sysop, msg_reg_valid, 0);
 +       mail_self(FN_ETC_MJUSTIFIED, str_sysop, msg_reg_mvalid, 0);
 
@@ -101,7 +101,7 @@
 
 + if (!HAS_PERM(PERM_MVALID))
 + {
-+   zmsg("�z�|���q�L��B�{�ҡA�L�k����U��");
++   zmsg("您尚未通過初步認證，無法填註冊單");
 +   return XEASY;
 + }
 
@@ -112,15 +112,15 @@
     {
 -     level ^= PERM_VALID;
 +     level &= ~PERM_VALID;
-+     level &= ~PERM_MVALID; /* ��������VALID & MVALID */
-                             /* ���s�{�� ��Ƴ�update  */
++     level &= ~PERM_MVALID; /* 直接拿除VALID & MVALID */
+                             /* 重新認證 資料都update  */
 
-      /* itoc.011116: �D�ʵo�H�q���ϥΪ̡A�@���e�H�����D�|���|�ӯӪŶ� !? */
-      mail_self(FN_ETC_REREG, str_sysop, "�z���{�Ҥw�g�L���A�Э��s�{��", 0);
+      /* itoc.011116: 主動發信通知使用者，一直送信不知道會不會太耗空間 !? */
+      mail_self(FN_ETC_REREG, str_sysop, "您的認證已經過期，請重新認證", 0);
     }
 #endif
 
-�̫� ���M�O�ѤF�ץ��H�U�ɮ� ��r�������e
+最後 當然別忘了修正以下檔案 文字說明內容
 
 etc/justified
 etc/mjustified
@@ -129,8 +129,8 @@ gem/@/@e-mail
 
 
 --
-[1;30;40m�ҧL�̤����������δc���G���D�̤��B�g�l�~�h�Q���ΧL�h�Q�k�L�̤��������D�g�l[m
-[1;30m�������o�w[37m[30m�ӥΤ���H���W�ӦӤ����Ӭ����̬O�ֱ��H�Ҽֱ��H�̫h���i�o�ө�ѤU
-[m[1;30m�o�N�Ʃ|�����Ʃ|�k���N�x�~���W�N�x�~�k���H��§�B�����H�����H�s�d�_���ԳӥH[m
-[1;30m��§�B���D�`[37m�L�W[30m�����p�ѤU����ګJ���Y��u���U���N�ۻ��Ѧa�ۦX�H�����S����[m
-[1;30m���O�Ӧۧ��l��W�W��J���ҥ�N����� [37m61-231-204-84.dynamic.hinet.net[30m��[m
+[1;30;40m夫兵者不祥之器物或惡之故有道者不處君子居則貴左用兵則貴右兵者不祥之器非君子[m
+[1;30m之器不得已[37m[30m而用之恬淡為上勝而不美而美之者是樂殺人夫樂殺人者則不可得志於天下
+[m[1;30m矣吉事尚左凶事尚右偏將軍居左上將軍居右言以喪禮處之殺人之眾以哀悲泣之戰勝以[m
+[1;30m喪禮處之道常[37m無名[30m樸雖小天下莫能臣侯王若能守之萬物將自賓天地相合以降甘露民莫[m
+[1;30m之令而自均始制有名名亦既有夫亦將知止知止 [37m61-231-204-84.dynamic.hinet.net[30m海[m

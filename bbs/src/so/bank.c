@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* bank.c	( NTHU CS MapleBBS Ver 3.10 )		 */
 /*-------------------------------------------------------*/
-/* target : »È¦æ¡BÁÊ¶RÅv­­¥\¯à				 */
+/* target : éŠ€è¡Œã€è³¼è²·æ¬Šé™åŠŸèƒ½				 */
 /* create : 01/07/16					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -23,7 +23,7 @@ x_give()
   time_t now;
   PAYCHECK paycheck;
 
-  if (!vget(13, 0, "±z­n§â¿úÂàµ¹½Ö©O¡H", userid, IDLEN + 1, DOECHO))
+  if (!vget(13, 0, "æ‚¨è¦æŠŠéŒ¢è½‰çµ¦èª°å‘¢ï¼Ÿ", userid, IDLEN + 1, DOECHO))
     return;
 
   if (acct_userno(userid) <= 0)
@@ -32,13 +32,13 @@ x_give()
     return;
   }
 
-  way = vget(15, 0, "Âà±b 1)Âà»È¹ô 2)Âàª÷¹ô¡G", buf, 3, DOECHO) - '1';
+  way = vget(15, 0, "è½‰å¸³ 1)è½‰éŠ€å¹£ 2)è½‰é‡‘å¹£ï¼š", buf, 3, DOECHO) - '1';
   if (way < 0 || way > 1)
     return;
 
   do
   {
-    if (!vget(17, 0, "­nÂà¦h¤Ö¿ú¹L¥h¡H", buf, 9, DOECHO))	/* ³Ì¦hÂà 99999999 Á×§K·¸¦ì */
+    if (!vget(17, 0, "è¦è½‰å¤šå°‘éŒ¢éå»ï¼Ÿ", buf, 9, DOECHO))	/* æœ€å¤šè½‰ 99999999 é¿å…æº¢ä½ */
       return;
 
     dollar = atoi(buf);
@@ -46,19 +46,19 @@ x_give()
     if (!way)
     {
       if (dollar > cuser.money)
-	dollar = cuser.money;	/* ¥şÂà¹L¥h */
+	dollar = cuser.money;	/* å…¨è½‰éå» */
     }
     else
     {
       if (dollar > cuser.gold)
-	dollar = cuser.gold;	/* ¥şÂà¹L¥h */
+	dollar = cuser.gold;	/* å…¨è½‰éå» */
     }
-  } while (dollar <= 1);	/* ¤£¯à¥uÂà 1¡A·|¥şÅÜ¤âÄò¶O */
+  } while (dollar <= 1);	/* ä¸èƒ½åªè½‰ 1ï¼Œæœƒå…¨è®Šæ‰‹çºŒè²» */
 
-  if (!vget(19, 0, "½Ğ¿é¤J²z¥Ñ¡G", reason, 40, DOECHO))
-    strcpy(reason, "¿ú¤Ó¦h");
+  if (!vget(19, 0, "è«‹è¼¸å…¥ç†ç”±ï¼š", reason, 40, DOECHO))
+    strcpy(reason, "éŒ¢å¤ªå¤š");
 
-  sprintf(buf, "¬O§_­nÂà±bµ¹ %s %s¹ô %d (Y/N)¡H[N] ", userid, !way ? "»È" : "ª÷", dollar);
+  sprintf(buf, "æ˜¯å¦è¦è½‰å¸³çµ¦ %s %så¹£ %d (Y/N)ï¼Ÿ[N] ", userid, !way ? "éŠ€" : "é‡‘", dollar);
   if (vget(21, 0, buf, fpath, 3, LCECHO) == 'y')
   {
     if (!way)
@@ -66,23 +66,23 @@ x_give()
     else
       cuser.gold -= dollar;
 
-    dollar -= dollar / 10 + ((dollar % 10) ? 1 : 0);	/* 10% ¤âÄò¶O */
+    dollar -= dollar / 10 + ((dollar % 10) ? 1 : 0);	/* 10% æ‰‹çºŒè²» */
 
-    /* itoc.020831: ¥[¤J¶×¿ú°O¿ı */
+    /* itoc.020831: åŠ å…¥åŒ¯éŒ¢è¨˜éŒ„ */
     time(&now);
-    sprintf(buf, "%-13sÂàµ¹ %-13s­p %d %s (%s)\n",
-      cuser.userid, userid, dollar, !way ? "»È" : "ª÷", Btime(&now));
+    sprintf(buf, "%-13sè½‰çµ¦ %-13sè¨ˆ %d %s (%s)\n",
+      cuser.userid, userid, dollar, !way ? "éŠ€" : "é‡‘", Btime(&now));
     f_cat(FN_RUN_BANK_LOG, buf);
 
     usr_fpath(folder, userid, fn_dir);
     if (fp = fdopen(hdr_stamp(folder, 0, &hdr, fpath), "w"))
     {
-      fprintf(fp, "%s %s (%s)\n¼ĞÃD: Âà±b³qª¾\n®É¶¡: %s\n\n", 
+      fprintf(fp, "%s %s (%s)\næ¨™é¡Œ: è½‰å¸³é€šçŸ¥\næ™‚é–“: %s\n\n", 
 	str_author1, cuser.userid, cuser.username, Btime(&now));
-      fprintf(fp, "%s\n¥Lªº²z¥Ñ¬O¡G%s\n\n½Ğ±z¦Üª÷¿Ä¤¤¤ß±N¤ä²¼§I²{", buf, reason);
+      fprintf(fp, "%s\nä»–çš„ç†ç”±æ˜¯ï¼š%s\n\nè«‹æ‚¨è‡³é‡‘èä¸­å¿ƒå°‡æ”¯ç¥¨å…Œç¾", buf, reason);
       fclose(fp);      
 
-      strcpy(hdr.title, "Âà±b³qª¾");
+      strcpy(hdr.title, "è½‰å¸³é€šçŸ¥");
       strcpy(hdr.owner, cuser.userid);
       rec_add(folder, &hdr, sizeof(HDR));
     }
@@ -93,22 +93,22 @@ x_give()
       paycheck.money = dollar;
     else
       paycheck.gold = dollar;
-    sprintf(paycheck.reason, "[Âà±b] %s", cuser.userid);
+    sprintf(paycheck.reason, "[è½‰å¸³] %s", cuser.userid);
     usr_fpath(fpath, userid, FN_PAYCHECK);
     rec_add(fpath, &paycheck, sizeof(PAYCHECK));
 
-    sprintf(buf, "±z¨­¤W¦³»È¹ô %d ¤¸¡Aª÷¹ô %d ¤¸", cuser.money, cuser.gold);
+    sprintf(buf, "æ‚¨èº«ä¸Šæœ‰éŠ€å¹£ %d å…ƒï¼Œé‡‘å¹£ %d å…ƒ", cuser.money, cuser.gold);
     vmsg(buf);
   }
   else
   {
-    vmsg("¨ú®ø¥æ©ö");
+    vmsg("å–æ¶ˆäº¤æ˜“");
   }
 }
 
 
-#define GOLD2MONEY	900000	/* ª÷¹ô¡÷»È¹ô ¶×²v */
-#define MONEY2GOLD	1100000	/* »È¹ô¡÷ª÷¹ô ¶×²v */
+#define GOLD2MONEY	900000	/* é‡‘å¹£â†’éŠ€å¹£ åŒ¯ç‡ */
+#define MONEY2GOLD	1100000	/* éŠ€å¹£â†’é‡‘å¹£ åŒ¯ç‡ */
 
 static void
 x_exchange()
@@ -117,9 +117,9 @@ x_exchange()
   char buf[80], ans[8];
 
   move(13, 0);
-  prints("»È¹ô¡÷ª÷¹ô = %d¡G1  ª÷¹ô¡÷»È¹ô = 1¡G%d", MONEY2GOLD, GOLD2MONEY);
+  prints("éŠ€å¹£â†’é‡‘å¹£ = %dï¼š1  é‡‘å¹£â†’éŠ€å¹£ = 1ï¼š%d", MONEY2GOLD, GOLD2MONEY);
 
-  way = vget(15, 0, "¶×§I 1)»È¹ô¡÷ª÷¹ô 2)ª÷¹ô¡÷»È¹ô¡G", ans, 3, DOECHO) - '1';
+  way = vget(15, 0, "åŒ¯å…Œ 1)éŠ€å¹£â†’é‡‘å¹£ 2)é‡‘å¹£â†’éŠ€å¹£ï¼š", ans, 3, DOECHO) - '1';
 
   if (!way)
     money = cuser.money / MONEY2GOLD;
@@ -129,11 +129,11 @@ x_exchange()
     return;
 
   if (!way)
-    sprintf(buf, "±z­n±N»È¹ô§I´«¦¨¦h¤Ö­Óª÷¹ô©O¡H[1 - %d] ", money);
+    sprintf(buf, "æ‚¨è¦å°‡éŠ€å¹£å…Œæ›æˆå¤šå°‘å€‹é‡‘å¹£å‘¢ï¼Ÿ[1 - %d] ", money);
   else
-    sprintf(buf, "±z­n§I´«¦h¤Ö­Óª÷¹ô¦¨¬°»È¹ô©O¡H[1 - %d] ", money);
+    sprintf(buf, "æ‚¨è¦å…Œæ›å¤šå°‘å€‹é‡‘å¹£æˆç‚ºéŠ€å¹£å‘¢ï¼Ÿ[1 - %d] ", money);
     
-  if (!vget(17, 0, buf, ans, 4, DOECHO))	/* ªø«×¤ñ¸ûµu¡AÁ×§K·¸¦ì */
+  if (!vget(17, 0, buf, ans, 4, DOECHO))	/* é•·åº¦æ¯”è¼ƒçŸ­ï¼Œé¿å…æº¢ä½ */
     return;
 
   gold = atoi(ans);
@@ -144,21 +144,21 @@ x_exchange()
   {
     if (gold > (INT_MAX - cuser.gold))
     {
-      vmsg("±z´«¤Ó¦h¿úÅo¡ã·|·¸¦ìªº¡I");
+      vmsg("æ‚¨æ›å¤ªå¤šéŒ¢å›‰ï½æœƒæº¢ä½çš„ï¼");
       return;
     }
     money = gold * MONEY2GOLD;
-    sprintf(buf, "¬O§_­n§I´«»È¹ô %d ¤¸ ¬°ª÷¹ô %d (Y/N)¡H[N] ", money, gold);
+    sprintf(buf, "æ˜¯å¦è¦å…Œæ›éŠ€å¹£ %d å…ƒ ç‚ºé‡‘å¹£ %d (Y/N)ï¼Ÿ[N] ", money, gold);
   }
   else
   {
     money = gold * GOLD2MONEY;
     if (money > (INT_MAX - cuser.money))
     {
-      vmsg("±z´«¤Ó¦h¿úÅo¡ã·|·¸¦ìªº¡I");
+      vmsg("æ‚¨æ›å¤ªå¤šéŒ¢å›‰ï½æœƒæº¢ä½çš„ï¼");
       return;
     }
-    sprintf(buf, "¬O§_­n§I´«ª÷¹ô %d ¤¸ ¬°»È¹ô %d (Y/N)¡H[N] ", gold, money);
+    sprintf(buf, "æ˜¯å¦è¦å…Œæ›é‡‘å¹£ %d å…ƒ ç‚ºéŠ€å¹£ %d (Y/N)ï¼Ÿ[N] ", gold, money);
   }
 
   if (vget(19, 0, buf, ans, 3, LCECHO) == 'y')
@@ -173,12 +173,12 @@ x_exchange()
       cuser.gold -= gold;
       addmoney(money);
     }
-    sprintf(buf, "±z¨­¤W¦³»È¹ô %d ¤¸¡Aª÷¹ô %d ¤¸", cuser.money, cuser.gold);
+    sprintf(buf, "æ‚¨èº«ä¸Šæœ‰éŠ€å¹£ %d å…ƒï¼Œé‡‘å¹£ %d å…ƒ", cuser.money, cuser.gold);
     vmsg(buf);
   }
   else
   {
-    vmsg("¨ú®ø¥æ©ö");
+    vmsg("å–æ¶ˆäº¤æ˜“");
   }
 }
 
@@ -194,33 +194,33 @@ x_cash()
   usr_fpath(fpath, cuser.userid, FN_PAYCHECK);
   if ((fd = open(fpath, O_RDONLY)) < 0)
   {
-    vmsg("±z¥Ø«e¨S¦³¤ä²¼¥¼§I²{");
+    vmsg("æ‚¨ç›®å‰æ²’æœ‰æ”¯ç¥¨æœªå…Œç¾");
     return;
   }
 
   usr_fpath(buf, cuser.userid, "cashed");
   fp = fopen(buf, "w");
-  fputs("¥H¤U¬O±zªº¤ä²¼§I´«²M³æ¡G\n\n", fp);
+  fputs("ä»¥ä¸‹æ˜¯æ‚¨çš„æ”¯ç¥¨å…Œæ›æ¸…å–®ï¼š\n\n", fp);
 
   money = gold = 0;
   while (read(fd, &paycheck, sizeof(PAYCHECK)) == sizeof(PAYCHECK))
   {
-    if (paycheck.money < (INT_MAX - money))	/* Á×§K·¸¦ì */
+    if (paycheck.money < (INT_MAX - money))	/* é¿å…æº¢ä½ */
       money += paycheck.money;
     else
       money = INT_MAX;
-    if (paycheck.gold < (INT_MAX - gold))	/* Á×§K·¸¦ì */
+    if (paycheck.gold < (INT_MAX - gold))	/* é¿å…æº¢ä½ */
       gold += paycheck.gold;
     else
       gold = INT_MAX;
 
-    fprintf(fp, "%s %s %d »È %d ª÷\n", 
+    fprintf(fp, "%s %s %d éŠ€ %d é‡‘\n", 
       Btime(&paycheck.tissue), paycheck.reason, paycheck.money, paycheck.gold);
   }
   close(fd);
   unlink(fpath);
 
-  fprintf(fp, "\n±z¦@§I²{ %d »È %d ª÷\n", money, gold);
+  fprintf(fp, "\næ‚¨å…±å…Œç¾ %d éŠ€ %d é‡‘\n", money, gold);
   fclose(fp);
 
   addmoney(money);
@@ -242,26 +242,26 @@ x_bank()
     return XEASY;
   }
 
-  vs_bar("«H°U»È¦æ");
+  vs_bar("ä¿¡è¨—éŠ€è¡Œ");
   move(2, 0);
 
-  /* itoc.011208: ¥H¨¾¸U¤@ */
+  /* itoc.011208: ä»¥é˜²è¬ä¸€ */
   if (cuser.money < 0)
     cuser.money = 0;
   if (cuser.gold < 0)
     cuser.gold = 0;
 
-  outs("\033[1;36m  ùúùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùû\n");
-  prints("  ùø\033[32m±z²{¦b¦³»È¹ô \033[33m%12d\033[32m ¤¸¡Aª÷¹ô \033[33m%12d\033[32m ¤¸\033[36m        ùø\n", 
+  outs("\033[1;36m  â•­â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•®\n");
+  prints("  â•‘\033[32mæ‚¨ç¾åœ¨æœ‰éŠ€å¹£ \033[33m%12d\033[32m å…ƒï¼Œé‡‘å¹£ \033[33m%12d\033[32m å…ƒ\033[36m        â•‘\n", 
     cuser.money, cuser.gold);
-  outs("  ùàùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùâ\n"
-    "  ùø ¥Ø«e»È¦æ´£¨Ñ¤U¦C´X¶µªA°È¡G                               ùø\n"
-    "  ùø\033[33m1.\033[37m Âà±b -- Âà±bµ¹¨ä¥L¤H   (©â¨ú 10% ¤âÄò¶O) \033[36m              ùø\n"
-    "  ùø\033[33m2.\033[37m ¶×§I -- »È¹ô/ª÷¹ô §I´« (©â¨ú 10% ¤âÄò¶O) \033[36m              ùø\n"
-    "  ùø\033[33m3.\033[37m §I²{ -- ¤ä²¼§I²{                         \033[36m              ùø\n"
-    "  ùüùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùı\033[m");
+  outs("  â• â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•£\n"
+    "  â•‘ ç›®å‰éŠ€è¡Œæä¾›ä¸‹åˆ—å¹¾é …æœå‹™ï¼š                               â•‘\n"
+    "  â•‘\033[33m1.\033[37m è½‰å¸³ -- è½‰å¸³çµ¦å…¶ä»–äºº   (æŠ½å– 10% æ‰‹çºŒè²») \033[36m              â•‘\n"
+    "  â•‘\033[33m2.\033[37m åŒ¯å…Œ -- éŠ€å¹£/é‡‘å¹£ å…Œæ› (æŠ½å– 10% æ‰‹çºŒè²») \033[36m              â•‘\n"
+    "  â•‘\033[33m3.\033[37m å…Œç¾ -- æ”¯ç¥¨å…Œç¾                         \033[36m              â•‘\n"
+    "  â•°â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•¯\033[m");
 
-  vget(11, 0, "½Ğ¿é¤J±z»İ­nªºªA°È¡G", ans, 3, DOECHO);
+  vget(11, 0, "è«‹è¼¸å…¥æ‚¨éœ€è¦çš„æœå‹™ï¼š", ans, 3, DOECHO);
   if (ans[0] == '1')
     x_give();
   else if (ans[0] == '2')
@@ -284,43 +284,43 @@ b_invis()
 
   if (cuser.ufo & UFO_CLOAK)
   {
-    if (vans("¬O§_²{¨­(Y/N)¡H[N] ") != 'y')
+    if (vans("æ˜¯å¦ç¾èº«(Y/N)ï¼Ÿ[N] ") != 'y')
       return XEASY; 
-    /* ²{¨­§K¶O */
+    /* ç¾èº«å…è²» */
   }
   else
   {
     if (HAS_PERM(PERM_CLOAK))
     {
-      if (vans("¬O§_Áô§Î(Y/N)¡H[N] ") != 'y')
+      if (vans("æ˜¯å¦éš±å½¢(Y/N)ï¼Ÿ[N] ") != 'y')
 	return XEASY;
-      /* ¦³µL­­Áô§ÎÅv­­ªÌ§K¶O */
+      /* æœ‰ç„¡é™éš±å½¢æ¬Šé™è€…å…è²» */
     }
     else
     {
       if (cuser.gold < 10)
       {
-	vmsg("­n 10 ª÷¹ô¤~¯àÁô§Î³á");
+	vmsg("è¦ 10 é‡‘å¹£æ‰èƒ½éš±å½¢å–”");
 	return XEASY;
       }
-      if (vans("¬O§_ªá 10 ª÷¹ôÁô§Î(Y/N)¡H[N] ") != 'y')
+      if (vans("æ˜¯å¦èŠ± 10 é‡‘å¹£éš±å½¢(Y/N)ï¼Ÿ[N] ") != 'y')
 	return XEASY;
       cuser.gold -= 10;
     }
   }
 
   cuser.ufo ^= UFO_CLOAK;
-  cutmp->ufo ^= UFO_CLOAK;	/* ufo ­n¦P¨B */
+  cutmp->ufo ^= UFO_CLOAK;	/* ufo è¦åŒæ­¥ */
 
   return XEASY;
 }
 
 
 static void
-buy_level(userlevel)		/* itoc.010830: ¥u¦s level Äæ¦ì¡A¥H§KÅÜ°Ê¨ì¦b½u¤W§ó°Êªº»{ÃÒÄæ¦ì */
+buy_level(userlevel)		/* itoc.010830: åªå­˜ level æ¬„ä½ï¼Œä»¥å…è®Šå‹•åˆ°åœ¨ç·šä¸Šæ›´å‹•çš„èªè­‰æ¬„ä½ */
   usint userlevel;
 {
-  if (!HAS_STATUS(STATUS_DATALOCK))	/* itoc.010811: ­n¨S¦³³Q¯¸ªøÂê©w¡A¤~¯à¼g¤J */
+  if (!HAS_STATUS(STATUS_DATALOCK))	/* itoc.010811: è¦æ²’æœ‰è¢«ç«™é•·é–å®šï¼Œæ‰èƒ½å¯«å…¥ */
   {
     int fd;
     char fpath[80];
@@ -335,7 +335,7 @@ buy_level(userlevel)		/* itoc.010830: ¥u¦s level Äæ¦ì¡A¥H§KÅÜ°Ê¨ì¦b½u¤W§ó°Êªº»{Ã
 	tuser.userlevel |= userlevel;
 	lseek(fd, (off_t) 0, SEEK_SET);
 	write(fd, &tuser, sizeof(ACCT));
-	vmsg("±z¤w¸gÀò±oÅv­­¡A½Ğ­«·s¤W¯¸");
+	vmsg("æ‚¨å·²ç¶“ç²å¾—æ¬Šé™ï¼Œè«‹é‡æ–°ä¸Šç«™");
       }
       close(fd);
     }
@@ -354,15 +354,15 @@ b_cloak()
 
   if (HAS_PERM(PERM_CLOAK))
   {
-    vmsg("±z¤w¸g¯àµL­­Áô§Î¤F");
+    vmsg("æ‚¨å·²ç¶“èƒ½ç„¡é™éš±å½¢äº†");
   }
   else
   {
     if (cuser.gold < 1000)
     {
-      vmsg("­n 1000 ª÷¹ô¤~¯àÁÊ¶RµL­­Áô§ÎÅv­­³á");
+      vmsg("è¦ 1000 é‡‘å¹£æ‰èƒ½è³¼è²·ç„¡é™éš±å½¢æ¬Šé™å–”");
     }
-    else if (vans("¬O§_ªá 1000 ª÷¹ôÁÊ¶RµL­­Áô§ÎÅv­­(Y/N)¡H[N] ") == 'y')
+    else if (vans("æ˜¯å¦èŠ± 1000 é‡‘å¹£è³¼è²·ç„¡é™éš±å½¢æ¬Šé™(Y/N)ï¼Ÿ[N] ") == 'y')
     {
       cuser.gold -= 1000;
       buy_level(PERM_CLOAK);
@@ -384,15 +384,15 @@ b_mbox()
 
   if (HAS_PERM(PERM_MBOX))
   {
-    vmsg("±zªº«H½c¤w¸g¨S¦³¤W­­¤F");
+    vmsg("æ‚¨çš„ä¿¡ç®±å·²ç¶“æ²’æœ‰ä¸Šé™äº†");
   }
   else
   {
     if (cuser.gold < 1000)
     {
-      vmsg("­n 1000 ª÷¹ô¤~¯àÁÊ¶R«H½cµL­­Åv­­³á");
+      vmsg("è¦ 1000 é‡‘å¹£æ‰èƒ½è³¼è²·ä¿¡ç®±ç„¡é™æ¬Šé™å–”");
     }
-    else if (vans("¬O§_ªá 1000 ª÷¹ôÁÊ¶R«H½cµL­­Åv­­(Y/N)¡H[N] ") == 'y')
+    else if (vans("æ˜¯å¦èŠ± 1000 é‡‘å¹£è³¼è²·ä¿¡ç®±ç„¡é™æ¬Šé™(Y/N)ï¼Ÿ[N] ") == 'y')
     {
       cuser.gold -= 1000;
       buy_level(PERM_MBOX);
@@ -414,15 +414,15 @@ b_xempt()
 
   if (HAS_PERM(PERM_XEMPT))
   {
-    vmsg("±zªº±b¸¹¤w¸g¥Ã¤[«O¯d¤F");
+    vmsg("æ‚¨çš„å¸³è™Ÿå·²ç¶“æ°¸ä¹…ä¿ç•™äº†");
   }
   else
   {
     if (cuser.gold < 1000)
     {
-      vmsg("­n 1000 ª÷¹ô¤~¯àÁÊ¶R±b¸¹¥Ã¤[«O¯dÅv­­³á");
+      vmsg("è¦ 1000 é‡‘å¹£æ‰èƒ½è³¼è²·å¸³è™Ÿæ°¸ä¹…ä¿ç•™æ¬Šé™å–”");
     }
-    else if (vans("¬O§_ªá 1000 ª÷¹ôÁÊ¶R±b¸¹¥Ã¤[«O¯dÅv­­(Y/N)¡H[N] ") == 'y')
+    else if (vans("æ˜¯å¦èŠ± 1000 é‡‘å¹£è³¼è²·å¸³è™Ÿæ°¸ä¹…ä¿ç•™æ¬Šé™(Y/N)ï¼Ÿ[N] ") == 'y')
     {
       cuser.gold -= 1000;
       buy_level(PERM_XEMPT);
@@ -433,7 +433,7 @@ b_xempt()
 }
 
 
-#if 0	/* ¤£´£¨ÑÁÊ¶R¦Û±ş¥\¯à */
+#if 0	/* ä¸æä¾›è³¼è²·è‡ªæ®ºåŠŸèƒ½ */
 int
 b_purge()
 {
@@ -445,15 +445,15 @@ b_purge()
 
   if (HAS_PERM(PERM_PURGE))
   {
-    vmsg("¨t²Î¦b¤U¦¸©w´Á²M±b¸¹®É¡A±N²M°£¦¹ ID");
+    vmsg("ç³»çµ±åœ¨ä¸‹æ¬¡å®šæœŸæ¸…å¸³è™Ÿæ™‚ï¼Œå°‡æ¸…é™¤æ­¤ ID");
   }
   else
   {
     if (cuser.gold < 1000)
     {
-      vmsg("­n 1000 ª÷¹ô¤~¯à¦Û±ş³á");
+      vmsg("è¦ 1000 é‡‘å¹£æ‰èƒ½è‡ªæ®ºå–”");
     }
-    else if (vans("¬O§_ªá 1000 ª÷¹ô¦Û±ş(Y/N)¡H[N] ") == 'y')
+    else if (vans("æ˜¯å¦èŠ± 1000 é‡‘å¹£è‡ªæ®º(Y/N)ï¼Ÿ[N] ") == 'y')
     {
       cuser.gold -= 1000;
       buy_level(PERM_PURGE);

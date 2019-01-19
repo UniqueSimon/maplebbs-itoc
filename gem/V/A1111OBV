@@ -1,20 +1,20 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G802) ¯¸¤º: plan
-¼ĞÃD: [¥\¯à] ²M°£¹LÂÂªº¤W¯¸¨Ó·½°O¿ı
-®É¶¡: 2005/02/15 Tue 01:25:24                           Updated: 2005/08/15
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š802) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] æ¸…é™¤éèˆŠçš„ä¸Šç«™ä¾†æºè¨˜éŒ„
+æ™‚é–“: 2005/02/15 Tue 01:25:24                           Updated: 2005/08/15
 
-  usr/u/userid/log ³o­Ó¡y¤W¯¸¨Ó·½°O¿ı¡z·|¦]¦~¥N¤[»·¦ÓÅÜ±o«ÜªÎ¤j
-  ³o­Óµ{¦¡¥i¥H§R°£¹LÂÂªº°O¿ı
+  usr/u/userid/log é€™å€‹ã€ä¸Šç«™ä¾†æºè¨˜éŒ„ã€æœƒå› å¹´ä»£ä¹…é è€Œè®Šå¾—å¾ˆè‚¥å¤§
+  é€™å€‹ç¨‹å¼å¯ä»¥åˆªé™¤éèˆŠçš„è¨˜éŒ„
 
 : src/util/Makefile
 
 EXE =   ..... [1;33mdelog[m
 
-: src/util/delog.c ·s¼W³oµ{¦¡
+: src/util/delog.c æ–°å¢é€™ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* util/delog.c         ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ²M°£¹LÂÂªº¤W¯¸¨Ó·½°O¿ı                       */
+/* target : æ¸…é™¤éèˆŠçš„ä¸Šç«™ä¾†æºè¨˜éŒ„                       */
 /* create : 05/02/14                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -30,9 +30,9 @@ EXE =   ..... [1;33mdelog[m
 
 
 #ifdef QUICK_DELOG
-#define KEEP_BYTES      20480   /* ¥u«O¯d³Ì«á 20480 bytes ªº¤W¯¸¨Ó·½°O¿ı */
+#define KEEP_BYTES      20480   /* åªä¿ç•™æœ€å¾Œ 20480 bytes çš„ä¸Šç«™ä¾†æºè¨˜éŒ„ */
 #else
-#define KEEP_DAYS       180     /* ¥u«O¯d³Ìªñ 180 ¤Ñªº¤W¯¸¨Ó·½°O¿ı */
+#define KEEP_DAYS       180     /* åªä¿ç•™æœ€è¿‘ 180 å¤©çš„ä¸Šç«™ä¾†æºè¨˜éŒ„ */
 static int now;
 #endif
 
@@ -76,14 +76,14 @@ static int
 decode_Btime(str)
   char *str;
 {
-  /* ¨Ì Btime() ®æ¦¡¤£¦P¦ÓÅÜ */
+  /* ä¾ Btime() æ ¼å¼ä¸åŒè€Œè®Š */
 
-  /* ¬°Â²³æ°_¨£¡A¤£¦Ò¼{¶|¦~¤Î¤j¤p¤ë¡A©Ò¥H¹ê»Ú«O¯dªº¤é´Á
-     ·|©M KEEP_DAYS ²¤¦³¤£¦P */
+  /* ç‚ºç°¡å–®èµ·è¦‹ï¼Œä¸è€ƒæ…®é–å¹´åŠå¤§å°æœˆï¼Œæ‰€ä»¥å¯¦éš›ä¿ç•™çš„æ—¥æœŸ
+     æœƒå’Œ KEEP_DAYS ç•¥æœ‰ä¸åŒ */
 
-  if (*str == '2')      /* ·s®æ¦¡: 2003/12/01 Mon 22:05:38 */
+  if (*str == '2')      /* æ–°æ ¼å¼: 2003/12/01 Mon 22:05:38 */
     return atoi(str) * 365 + atoi(str + 5) * 31 + atoi(str + 8);
-  else                  /* ÂÂ®æ¦¡: 03/12/01 15:33:08 */
+  else                  /* èˆŠæ ¼å¼: 03/12/01 15:33:08 */
     return atoi(str) * 365 + atoi(str + 3) * 31 + atoi(str + 6);
 }
 
@@ -154,7 +154,7 @@ main(argc, argv)
 
   for (c = 'a'; c <= 'z'; c++)
   {
-    printf("¥¿¶}©l³B²z %c ¶}ÀYªº ID\n", c);
+    printf("æ­£é–‹å§‹è™•ç† %c é–‹é ­çš„ ID\n", c);
 
     sprintf(fpath, BBSHOME "/usr/%c", c);
     chdir(fpath);
@@ -179,7 +179,7 @@ main(argc, argv)
 }
 
 --
-  ­Y #undef QUICK_DELOG ªº¸Ü¡AÆZ¦Y I/O ªº¡A¤[¤[¶]¤@¦¸´N¥i¥H¤F
+  è‹¥ #undef QUICK_DELOG çš„è©±ï¼Œè »åƒ I/O çš„ï¼Œä¹…ä¹…è·‘ä¸€æ¬¡å°±å¯ä»¥äº†
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

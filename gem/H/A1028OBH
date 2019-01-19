@@ -1,8 +1,8 @@
-§@ªÌ: itoc (¯¬©p¬P¬P§Ö¼Ö :)) ¬İªO: plan
-¼ĞÃD: [¤å¥ó] ¤@¨Ç±`¥Î°Ñ¼Æªº¦WºÙ
-®É¶¡: Sun Sep  8 21:03:48 2002
+ä½œè€…: itoc (ç¥å¦³æ˜Ÿæ˜Ÿå¿«æ¨‚ :)) çœ‹æ¿: plan
+æ¨™é¡Œ: [æ–‡ä»¶] ä¸€äº›å¸¸ç”¨åƒæ•¸çš„åç¨±
+æ™‚é–“: Sun Sep  8 21:03:48 2002
 
-  ¤@¨Ç±`¥ÎªºÅÜ¼Æ¦WºÙ
+  ä¸€äº›å¸¸ç”¨çš„è®Šæ•¸åç¨±
 
   FILE *fp;             // file pointer
   int fd;               // file descriptor
@@ -30,7 +30,7 @@
   screenline slp[2];    // screenline pointer
   screenline slt[T_LINES]; // screenline total
 
-  HDR hdr;              // header (ÀÉÀY)
+  HDR hdr;              // header (æª”é ­)
   HDR mhdr, fhdr, ghdr; // mail/file/gem header
 
   BRD brd;              // board header
@@ -47,11 +47,11 @@
   ALOHA aloha;          // aloha (==hello)
 
   BMW bmw;              // bbs message write
-  BENZ benz;            // ¦³ bmw ·íµM¦³ benz :p (¨t²Î¨ó´M)
+  BENZ benz;            // æœ‰ bmw ç•¶ç„¶æœ‰ benz :p (ç³»çµ±å”å°‹)
 
   XO *xo;               // overall (xover) interactive routines
   XO *xt;               // xover temporary
   XZ xz;                // xover zone
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

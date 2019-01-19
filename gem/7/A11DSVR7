@@ -1,32 +1,32 @@
-µo«H¤H: bluesway.bbs@bluesway.tfcis.org (¶³²H­·»´) ¬İªO: plan
-¼Ğ  ÃD: cygwin ¬ÛÃ¯¥\¯à
-µo«H¯¸: çn¸ô¤p¿v (2005/07/20 Wed 21:13:20)                Updated: 2005/07/20
+ç™¼ä¿¡äºº: bluesway.bbs@bluesway.tfcis.org (é›²æ·¡é¢¨è¼•) çœ‹æ¿: plan
+æ¨™  é¡Œ: cygwin ç›¸ç°¿åŠŸèƒ½
+ç™¼ä¿¡ç«™: è“½è·¯å°ç¯‰ (2005/07/20 Wed 21:13:20)                Updated: 2005/07/20
 
-¦]¬°ºëµØ°Ï¸Ìªº BBS ±b¸¹»P¬ÛÃ¯¦P¨B ¤@ª½§Ë¤£°_¨Ó
+å› ç‚ºç²¾è¯å€è£¡çš„ BBS å¸³è™Ÿèˆ‡ç›¸ç°¿åŒæ­¥ ä¸€ç›´å¼„ä¸èµ·ä¾†
 
-¥[¤W·Q¦h¨Ç¥\¯à
+åŠ ä¸Šæƒ³å¤šäº›åŠŸèƒ½
 
-´N¦Û¤v¼g¤F¤@¤äµ{¦¡
+å°±è‡ªå·±å¯«äº†ä¸€æ”¯ç¨‹å¼
 
-¨Ï¥ÎªÌ¦Û¤v¨M©w­n¤£­n¶}¬ÛÃ¯
+ä½¿ç”¨è€…è‡ªå·±æ±ºå®šè¦ä¸è¦é–‹ç›¸ç°¿
 
-ÁÙ¥i¥Hªá¿ú¶R¬ÛÃ¯ªºªÅ¶¡ (¤£µM¦³¿ú³£¨S¦a¤èªá)
+é‚„å¯ä»¥èŠ±éŒ¢è²·ç›¸ç°¿çš„ç©ºé–“ (ä¸ç„¶æœ‰éŒ¢éƒ½æ²’åœ°æ–¹èŠ±)
 
-­n¥ı§Q¥Î AppServ ¬[¯¸¡A¦A¬[³] Coppermine Photo Gallery
+è¦å…ˆåˆ©ç”¨ AppServ æ¶ç«™ï¼Œå†æ¶è¨­ Coppermine Photo Gallery
 
-¥H¤Uµ{¦¡³]­p¦b cygwin ¤¤¹B§@
+ä»¥ä¸‹ç¨‹å¼è¨­è¨ˆåœ¨ cygwin ä¸­é‹ä½œ
 
-¨ä¥¦§@·~¨t²Î¥i¯à¦³¨Ç¦a¤è­n¦Û¤v­×¥¿¤@¤U
+å…¶å®ƒä½œæ¥­ç³»çµ±å¯èƒ½æœ‰äº›åœ°æ–¹è¦è‡ªå·±ä¿®æ­£ä¸€ä¸‹
 
-¥t¥~¡A§Úªº¥\¤O«Ü²L¡A¥i¯àµ{¦¡¹B§@®Ä²v¤£¬O«Ü¦n
+å¦å¤–ï¼Œæˆ‘çš„åŠŸåŠ›å¾ˆæ·ºï¼Œå¯èƒ½ç¨‹å¼é‹ä½œæ•ˆç‡ä¸æ˜¯å¾ˆå¥½
 
-Åwªï°ª¤â«ü¥¿­×§ï :)
+æ­¡è¿é«˜æ‰‹æŒ‡æ­£ä¿®æ”¹ :)
 
 
-: maple/menu.c ¾A·í¿ï¶µ¤¤¥[¤J
+: maple/menu.c é©ç•¶é¸é …ä¸­åŠ å…¥
 
 + main_album, PERM_BASIC, M_GAME,
-+ "Gallery    ¡ñ ³]©w¬ÛÃ¯ ¡ğ",
++ "Gallery    â™‚ è¨­å®šç›¸ç°¿ â™€",
 
 
 : maple/Makefile
@@ -38,10 +38,10 @@ OBJ =
         ../so/jcee.o ../so/dict.o ../so/lottery.o [1;33m../so/album.o[m \
 
 
-: maple/bbsd.c:belong_list() ®³±¼ static
+: maple/bbsd.c:belong_list() æ‹¿æ‰ static
 
-- static int         /* 1:¦blist¤¤ 0:¤£¦blist¤¤ */
-+ int         /* 1:¦blist¤¤ 0:¤£¦blist¤¤ */
+- static int         /* 1:åœ¨listä¸­ 0:ä¸åœ¨listä¸­ */
++ int         /* 1:åœ¨listä¸­ 0:ä¸åœ¨listä¸­ */
 belong_list(filelist, key, desc)
 
 
@@ -58,23 +58,23 @@ belong_list(filelist, key, desc)
 
 : include/global.h
 
-#define FN_ETC_LOVELETTER "etc/loveletter"  /* ±¡®Ñ²£¥Í¾¹¤å®w */
-#define FN_ETC_CLASS    "etc/class"           /* ¬İªO¤ÀÃşÃC¦â */
-+ #define FN_ETC_ALBUM        "etc/album"     /* ¬ÛÃ¯ */
+#define FN_ETC_LOVELETTER "etc/loveletter"  /* æƒ…æ›¸ç”¢ç”Ÿå™¨æ–‡åº« */
+#define FN_ETC_CLASS    "etc/class"           /* çœ‹æ¿åˆ†é¡é¡è‰² */
++ #define FN_ETC_ALBUM        "etc/album"     /* ç›¸ç°¿ */
 
 ...
 
 /* ----------------------------------------------------- */
-/* °T®§¦r¦ê¡G¿W¥ß¥X¨Ó¡A¥H§Q¤ä´©¦UºØ»y¨¥          */
+/* è¨Šæ¯å­—ä¸²ï¼šç¨ç«‹å‡ºä¾†ï¼Œä»¥åˆ©æ”¯æ´å„ç¨®èªè¨€          */
 /* ----------------------------------------------------- */
 
 + #define MYSQL_PATH  "/cygdrive/c/AppServ/mysql/bin/mysql"
-+                                  /* MySQL °õ¦æÀÉªº¸ô®| */
++                                  /* MySQL åŸ·è¡Œæª”çš„è·¯å¾‘ */
 + #define ROOTPASS    "bedbtkbryowtdemrcouwxkatieixhxgns"
-+                                  /* MySQL ºŞ²zªÌ±K½X */
++                                  /* MySQL ç®¡ç†è€…å¯†ç¢¼ */
 
 
-: maple/acct.c:acct_setup() §ï±K½X®É¶¶«K§ï¬ÛÃ¯±K½X
+: maple/acct.c:acct_setup() æ”¹å¯†ç¢¼æ™‚é †ä¾¿æ”¹ç›¸ç°¿å¯†ç¢¼
 
 acct_setup(u, adm)
   ACCT *u;
@@ -87,7 +87,7 @@ acct_setup(u, adm)
 
 ...
 
-      vget(i + 1, 0, "ÀË¬d·s±K½X¡G", buf, PSWDLEN + 1, NOECHO);
+      vget(i + 1, 0, "æª¢æŸ¥æ–°å¯†ç¢¼ï¼š", buf, PSWDLEN + 1, NOECHO);
       if (!strcmp(buf, pass))
       {
         str_ncpy(x.passwd, genpasswd(buf), sizeof(x.passwd));
@@ -103,12 +103,12 @@ acct_setup(u, adm)
         break;
       }
 
-: so/album.c ·s¼W¦¹µ{¦¡
+: so/album.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* so/album.c           ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ¬ÛÃ¯¥\¯à                                     */
+/* target : ç›¸ç°¿åŠŸèƒ½                                     */
 /* create : 05/06/06                                     */
 /* author : bluesway@tfcis.org                           */
 /*-------------------------------------------------------*/
@@ -117,20 +117,20 @@ acct_setup(u, adm)
 
 #if 0
 
-    ¥»µ{¦¡°²³] AppServ ¬O«ö·Ó¹w³]¸ô®|¦w¸Ë (¤£¬Oªº¸Ü­n§ï MYSQL_PATH)
-    cpg ¸ê®Æ®wªº¬ÛÃö³]©w¤]³£«ö·Ó¹w³]­È¨Ó¦w¸Ë
+    æœ¬ç¨‹å¼å‡è¨­ AppServ æ˜¯æŒ‰ç…§é è¨­è·¯å¾‘å®‰è£ (ä¸æ˜¯çš„è©±è¦æ”¹ MYSQL_PATH)
+    cpg è³‡æ–™åº«çš„ç›¸é—œè¨­å®šä¹Ÿéƒ½æŒ‰ç…§é è¨­å€¼ä¾†å®‰è£
 
-    ¦b cpg ¸ê®Æ®w¤¤¡A¨C­Ó¨Ï¥ÎªÌ¦U¦Û¦¨¤@­Ó group (¤~¯à§ï quota)
-    ¨Ã¥H userno ·í§@ group id
+    åœ¨ cpg è³‡æ–™åº«ä¸­ï¼Œæ¯å€‹ä½¿ç”¨è€…å„è‡ªæˆä¸€å€‹ group (æ‰èƒ½æ”¹ quota)
+    ä¸¦ä»¥ userno ç•¶ä½œ group id
 
-    ¨Ï¥ÎªÌ¥i¥H¥ÎªºªÅ¶¡­­¨î°O¿ı¦b FN_ETC_ALBUM
+    ä½¿ç”¨è€…å¯ä»¥ç”¨çš„ç©ºé–“é™åˆ¶è¨˜éŒ„åœ¨ FN_ETC_ALBUM
 
 #endif
 
-#define P_ALBUM     50000   /* ¨C¥»¬ÛÃ¯ªº»ù®æ */
-#define P_BQUOTA    10      /* ¨C¶R 1KB ¬ÛÃ¯ªÅ¶¡ªº»ù®æ */
-#define P_SQUOTA    8       /* ¨C½æ 1KB ¬ÛÃ¯ªÅ¶¡ªº»ù®æ */
-#define QUOTA       10240   /* ¹w³]ªº¬ÛÃ¯ªÅ¶¡ (KB) */
+#define P_ALBUM     50000   /* æ¯æœ¬ç›¸ç°¿çš„åƒ¹æ ¼ */
+#define P_BQUOTA    10      /* æ¯è²· 1KB ç›¸ç°¿ç©ºé–“çš„åƒ¹æ ¼ */
+#define P_SQUOTA    8       /* æ¯è³£ 1KB ç›¸ç°¿ç©ºé–“çš„åƒ¹æ ¼ */
+#define QUOTA       10240   /* é è¨­çš„ç›¸ç°¿ç©ºé–“ (KB) */
 
 static int
 album_create()
@@ -140,26 +140,26 @@ album_create()
   time_t now;
   FILE *fp;
 
-  /* regtime ­É¨Ó¶ñ¤@¤U°Ñ¼Æ */
+  /* regtime å€Ÿä¾†å¡«ä¸€ä¸‹åƒæ•¸ */
   if (!belong_list(FN_ETC_ALBUM, cuser.userid, regtime))
   {
-    sprintf(cmd, "¶R¬ÛÃ¯»İ­nªá %d »È¹ô³á¡I", P_ALBUM);
+    sprintf(cmd, "è²·ç›¸ç°¿éœ€è¦èŠ± %d éŠ€å¹£å–”ï¼", P_ALBUM);
     vmsg(cmd);
 
-    if (cuser.money < 50000 || vans("½T©w­n¶R¶Ü¡H[Y/n]") == 'n')
+    if (cuser.money < 50000 || vans("ç¢ºå®šè¦è²·å—ï¼Ÿ[Y/n]") == 'n')
       return XO_FOOT;
   }
   else
   {
-    vmsg("±z¤w¸g¦³¬ÛÃ¯¤F¡I");
+    vmsg("æ‚¨å·²ç¶“æœ‰ç›¸ç°¿äº†ï¼");
     return XO_FOOT;
   }
 
-  vget(b_lines, 0, "¡» ½Ğ¿é¤J±K½X½T»{¡G", passwd, PSWDLEN + 1, NOECHO);
+  vget(b_lines, 0, "â—† è«‹è¼¸å…¥å¯†ç¢¼ç¢ºèªï¼š", passwd, PSWDLEN + 1, NOECHO);
 
   if (chkpasswd(cuser.passwd, passwd))
   {
-    vmsg("Sorry..±K½X¦³»~¡I");
+    vmsg("Sorry..å¯†ç¢¼æœ‰èª¤ï¼");
     return XO_FOOT;
   }
 
@@ -169,7 +169,7 @@ album_create()
         local->tm_mon + 1, local->tm_mday, local->tm_hour, local->tm_min,
         local->tm_sec);
 
-  if (!HAS_PERM(PERM_SYSOP))  /* ¯¸ªø¤@©w¬O CPG ºŞ²z­û¸s²Õ¡A¤£¥²¥t«Ø¸s²Õ */
+  if (!HAS_PERM(PERM_SYSOP))  /* ç«™é•·ä¸€å®šæ˜¯ CPG ç®¡ç†å“¡ç¾¤çµ„ï¼Œä¸å¿…å¦å»ºç¾¤çµ„ */
   {
     sprintf(cmd, MYSQL_PATH" -p"ROOTPASS" -e \"use cpg132;Insert "
       "cpg132_usergroups(group_id,group_name) Values(%d,\'%s\');\"",
@@ -185,17 +185,17 @@ album_create()
   system(cmd);
 
   fp = fopen(FN_ETC_ALBUM, "a");
-  /* ¯¸ªø¤£»İ­n­­¨î quota */
+  /* ç«™é•·ä¸éœ€è¦é™åˆ¶ quota */
   fprintf(fp, "%s %d\n", cuser.userid, (HAS_PERM(PERM_SYSOP) ? 0 : QUOTA));
   fclose(fp);
 
-  /* ¯¸ªø¶R¬ÛÃ¯¤£¥Î¿ú */
+  /* ç«™é•·è²·ç›¸ç°¿ä¸ç”¨éŒ¢ */
   cuser.money -= HAS_PERM(PERM_SYSOP) ? 0 : P_ALBUM;
 
-  /* ­É regtime ©M cmd ¨Ó ¨q°T®§ */
+  /* å€Ÿ regtime å’Œ cmd ä¾† ç§€è¨Šæ¯ */
   sprintf(regtime, "%.3f MB", QUOTA / 1024.0);
-  sprintf(cmd, "¬ÛÃ¯«Ø¥ß§¹¦¨¡I¯¬¨Ï¥Î´r§Ö..±z¥Ø«e¦³¥i¥ÎªÅ¶¡ %s¡C",
-        (HAS_PERM(PERM_SYSOP) ? "µL­­¤j" : regtime));
+  sprintf(cmd, "ç›¸ç°¿å»ºç«‹å®Œæˆï¼ç¥ä½¿ç”¨æ„‰å¿«..æ‚¨ç›®å‰æœ‰å¯ç”¨ç©ºé–“ %sã€‚",
+        (HAS_PERM(PERM_SYSOP) ? "ç„¡é™å¤§" : regtime));
   vmsg(cmd);
 }
 
@@ -209,11 +209,11 @@ album_buyquota()
 
   if (!belong_list(FN_ETC_ALBUM, cuser.userid, quota))
   {
-    vmsg("±z©|¥¼ÁÊ¶R¬ÛÃ¯³á¡I");
+    vmsg("æ‚¨å°šæœªè³¼è²·ç›¸ç°¿å–”ï¼");
     return XO_FOOT;
   }
 
-  sprintf(cmd, "¬ÛÃ¯ªÅ¶¡ %d»È / KBytes¡A±z­n¶R¦h¤Ö KB ©O¡H", P_BQUOTA);
+  sprintf(cmd, "ç›¸ç°¿ç©ºé–“ %déŠ€ / KBytesï¼Œæ‚¨è¦è²·å¤šå°‘ KB å‘¢ï¼Ÿ", P_BQUOTA);
 
   if (!vget(b_lines, 0, cmd, buf, 11, DOECHO))
     return XO_FOOT;
@@ -222,7 +222,7 @@ album_buyquota()
 
   if (cuser.money < num * P_BQUOTA)
   {
-    vmsg("±zªº²{ª÷¤£¨¬¡I");
+    vmsg("æ‚¨çš„ç¾é‡‘ä¸è¶³ï¼");
     return XO_FOOT;
   }
 
@@ -230,7 +230,7 @@ album_buyquota()
 
   if (update < 0)
   {
-    vmsg("±z¨S¦³¨¬°÷ªÅ¶¡¥i¥HÄÀ¥X");
+    vmsg("æ‚¨æ²’æœ‰è¶³å¤ ç©ºé–“å¯ä»¥é‡‹å‡º");
     return XO_FOOT;
   }
 
@@ -243,7 +243,7 @@ album_buyquota()
   sprintf(fpath, "%s.tmp", FN_ETC_ALBUM);
   fpw = fopen(fpath, "w");
 
-  /* ­É¥Î cmd, buf ¨Ó§ó·s¸ê®Æ */
+  /* å€Ÿç”¨ cmd, buf ä¾†æ›´æ–°è³‡æ–™ */
   while (fgets(cmd, sizeof(cmd), fpr))
   {
     if (strstr(cmd, cuser.userid))
@@ -261,10 +261,10 @@ album_buyquota()
   cuser.money -= num < 0 ? num * P_SQUOTA : num * P_BQUOTA;
 
   if (num >= 0)
-    sprintf(cmd, "ÁÊ¶R %d KB¡Aªá¶O %d »È¹ô¡I±z¥Ø«e¥i¨Ï¥ÎªºªÅ¶¡¬O %.3f MB¡C",
+    sprintf(cmd, "è³¼è²· %d KBï¼ŒèŠ±è²» %d éŠ€å¹£ï¼æ‚¨ç›®å‰å¯ä½¿ç”¨çš„ç©ºé–“æ˜¯ %.3f MBã€‚",
         num, num * P_BQUOTA, update / 1024.0);
   else
-    sprintf(cmd, "ÄÀ¥X %d KB¡A´«¦^ %d »È¹ô¡I±z¥Ø«e¥i¨Ï¥ÎªºªÅ¶¡¬O %.3f MB¡C",
+    sprintf(cmd, "é‡‹å‡º %d KBï¼Œæ›å› %d éŠ€å¹£ï¼æ‚¨ç›®å‰å¯ä½¿ç”¨çš„ç©ºé–“æ˜¯ %.3f MBã€‚",
         num * -1, num * P_SQUOTA * -1, update / 1024.0);
   vmsg(cmd);
 }
@@ -275,14 +275,14 @@ main_album()
 {
   int ans;
 
-  switch (ans = vans("¡· ¬ÛÃ¯ 1)«Ø¥ß¬ÛÃ¯ 2)ÁÊ¶R®e¶q¡H[Q] "))
+  switch (ans = vans("â— ç›¸ç°¿ 1)å»ºç«‹ç›¸ç°¿ 2)è³¼è²·å®¹é‡ï¼Ÿ[Q] "))
   {
     case '1':
       album_create();
       break;
 
     case '2':
-      if (!HAS_PERM(PERM_SYSOP)) /* ¯¸ªø¤£»İ­n */
+      if (!HAS_PERM(PERM_SYSOP)) /* ç«™é•·ä¸éœ€è¦ */
         album_buyquota();
       break;
 
@@ -294,8 +294,8 @@ main_album()
 --
 
 
-        [1m§A¤w¸g©úÁA¤F¶Ü¡H¨º´N¥h°µ§a¡I[m
+        [1mä½ å·²ç¶“æ˜ç­äº†å—ï¼Ÿé‚£å°±å»åšå§ï¼[m
 
 --
- [1;36;44m¢¨[;37;44m¢©[1;30;40m±­±­©óÂ²µuªº [37;47mbluesway.tfcis.org[30;40m §ÚµLªk¨¥»y©t¿W±jÅ§¤W [37;44mçn¸ô¤p¿v[m
- [1;44m¢ª[34m¢«[30;40m¤Û¤Æ¬°Ëñ®F¤¤¤@©Ù [34;44mbluesway[30;40m ªº²H¼v§Ú§ä¤£¨ì¥X¤f¦^¨ì [34;47m218-171-208-186.dynamic.[m
+ [1;36;44mâ—¢[;37;44mâ—£[1;30;40mæˆšæˆšæ–¼ç°¡çŸ­çš„ [37;47mbluesway.tfcis.org[30;40m æˆ‘ç„¡æ³•è¨€èªå­¤ç¨å¼·è¥²ä¸Š [37;44mè“½è·¯å°ç¯‰[m
+ [1;44mâ—¥[34mâ—¤[30;40må¹»åŒ–ç‚ºå›¹åœ„ä¸­ä¸€æŠ¹ [34;44mbluesway[30;40m çš„æ·¡å½±æˆ‘æ‰¾ä¸åˆ°å‡ºå£å›åˆ° [34;47m218-171-208-186.dynamic.[m

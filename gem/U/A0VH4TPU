@@ -1,12 +1,12 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (£i·R±¡±s¦u£i) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¾ã¦æ¥ú´Î(0)¡Ğxover.c
-µo«H¯¸: ¤¤¿³¸ê¬ì (Mon, 14 Jul 2003 16:11:55 +0800 (CST))  Update: 2003/12/11
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (Î¾æ„›æƒ…å¾¡å®ˆÎ¾) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] æ•´è¡Œå…‰æ£’(0)ï¼xover.c
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (Mon, 14 Jul 2003 16:11:55 +0800 (CST))  Update: 2003/12/11
 
 : src/include/config.h
 
-#define CURSOR_BAR              /* itoc.010113: ¿ï³æ¥ú´Î */
+#define CURSOR_BAR              /* itoc.010113: é¸å–®å…‰æ£’ */
 
-+ #define HAVE_LIGHTBAR         /* xover ¾ã¦æ¥ú´Î */
++ #define HAVE_LIGHTBAR         /* xover æ•´è¡Œå…‰æ£’ */
 
 : src/include/modes.h
 
@@ -15,17 +15,17 @@
 
 : src/include/ufo.h
 
-#define UFO_SHOWSIGN    BFLAG(17)       /* itoc.000319: ¦sÀÉ«eÅã¥ÜÃ±¦WÀÉ */
+#define UFO_SHOWSIGN    BFLAG(17)       /* itoc.000319: å­˜æª”å‰é¡¯ç¤ºç°½åæª” */
 
 - #define UFO_NOUSE18   BFLAG(18)
-+ #define UFO_LIGHTBAR  BFLAG(18)       /* ¾ã¦æ¥ú´Î */
++ #define UFO_LIGHTBAR  BFLAG(18)       /* æ•´è¡Œå…‰æ£’ */
 
   ...
   ...
 
-#define NUMUFOS_GUEST   5       /* guest ¥i¥H¥Î«e 5 ­Ó ufo */
-- #define NUMUFOS_USER  19      /* ¤@¯ë¨Ï¥ÎªÌ ¥i¥H¥Î«e 19 ­Ó ufo */
-+ #define NUMUFOS_USER  20      /* ¤@¯ë¨Ï¥ÎªÌ ¥i¥H¥Î«e 20 ­Ó ufo */
+#define NUMUFOS_GUEST   5       /* guest å¯ä»¥ç”¨å‰ 5 å€‹ ufo */
+- #define NUMUFOS_USER  19      /* ä¸€èˆ¬ä½¿ç”¨è€… å¯ä»¥ç”¨å‰ 19 å€‹ ufo */
++ #define NUMUFOS_USER  20      /* ä¸€èˆ¬ä½¿ç”¨è€… å¯ä»¥ç”¨å‰ 20 å€‹ ufo */
 
 - #define STR_UFO         "-mpsnemPBQFANbwtSH------CAH"
 + #define STR_UFO         "-mpsnemPBQFANbwtSHL-----CAH"
@@ -33,21 +33,21 @@
   ...
   ...
 
-  "Åã¥ÜÃ±¦WÀÉ      (Åã¥Ü/¤£¬İ)",        /* UFO_SHOWSIGN */
+  "é¡¯ç¤ºç°½åæª”      (é¡¯ç¤º/ä¸çœ‹)",        /* UFO_SHOWSIGN */
 
 +#ifdef HAVE_LIGHTBAR
-+ "¾ã¦æ¥ú´Î        (¥ú´Î/´¶³q)",        /* UFO_LIGHTBAR */
++ "æ•´è¡Œå…‰æ£’        (å…‰æ£’/æ™®é€š)",        /* UFO_LIGHTBAR */
 +#else
-  "«O¯d",
+  "ä¿ç•™",
 +#endif
 
-: src/maple/xover.c:xover()    §@ªÌ¡G verit.bbs@bbs.yzu.edu.tw
+: src/maple/xover.c:xover()    ä½œè€…ï¼š verit.bbs@bbs.yzu.edu.tw
 
         else
         {
           move(3 + cmd - num, 0);
 +#ifdef HAVE_LIGHTBAR
-+         /* verit.030129 : xover ¥ú´Î */
++         /* verit.030129 : xover å…‰æ£’ */
 +         if (cuser.ufo & UFO_LIGHTBAR && xcmd[0].key == XO_ITEM)
 +         {
 +           int tmp = xo->pos;
@@ -60,19 +60,19 @@
 +#endif
             outc(' ');
 
-          break;                /* ¥u²¾°Ê´å¼Ğ */
+          break;                /* åªç§»å‹•æ¸¸æ¨™ */
         }
 
   ...
   ...
 
-    if (xo->max > 0)            /* Thor:­Y¬OµLªF¦è´N¤£show¤F */
+    if (xo->max > 0)            /* Thor:è‹¥æ˜¯ç„¡æ±è¥¿å°±ä¸showäº† */
     {
       num = 3 + pos - xo->top;
 
       move(num, 0);
 +#ifdef HAVE_LIGHTBAR
-+     /* verit.20030129 : xover ¥ú´Î */
++     /* verit.20030129 : xover å…‰æ£’ */
 +     if (cuser.ufo & UFO_LIGHTBAR && xcmd[0].key == XO_ITEM)
 +     {
 +       clrtoeol();
@@ -86,11 +86,11 @@
   ...
   ...
 
-          if (cmd < 0)      /* ¦b¥»­¶§ä¨ì match */
+          if (cmd < 0)      /* åœ¨æœ¬é æ‰¾åˆ° match */
           {
             move(num, 0);
 +#ifdef HAVE_LIGHTBAR
-+           /* verit.030129 : xover ¥ú´Î */
++           /* verit.030129 : xover å…‰æ£’ */
 +           if (cuser.ufo & UFO_LIGHTBAR && xcmd[0].key == XO_ITEM)
 +           {
 +              int tmp = xo->pos;
@@ -103,16 +103,16 @@
 +#endif
               outc(' ');
 
-            /* itoc.010913: ¬Y¨Ç·j´M­n§â b_lines ¶ñ¤W feeter */
+            /* itoc.010913: æŸäº›æœå°‹è¦æŠŠ b_lines å¡«ä¸Š feeter */
             cmd = (cmd == -1) ? XO_NONE : XO_FOOT;
           }
 
 ------------------------------
 
-  ±µ¤U¨Ó´N­n§ï¦U­Ó xo_zone ¤¤ªº xxxx_item_bar()
+  æ¥ä¸‹ä¾†å°±è¦æ”¹å„å€‹ xo_zone ä¸­çš„ xxxx_item_bar()
 
-  ¦Ó®æ¦¡¤]³\©M¶Q¯¸¦³©Ò¤£¦P¡A½Ğ¨Ì xxxx_item() ¦Ó¦Û¦æ­×§ï
+  è€Œæ ¼å¼ä¹Ÿè¨±å’Œè²´ç«™æœ‰æ‰€ä¸åŒï¼Œè«‹ä¾ xxxx_item() è€Œè‡ªè¡Œä¿®æ”¹
 
 --
-[1;31m|[33m Origin [31m| [0;45m ¤¤¿³¸ê¬ì ¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [35;47m bbs.cs.nchu.edu.tw [m
+[1;31m|[33m Origin [31m| [0;45m ä¸­èˆˆè³‡ç§‘ ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [35;47m bbs.cs.nchu.edu.tw [m
 [1;31m|[35m Author [31m| [36m61-216-136-210.HINET-IP.hinet.net[m

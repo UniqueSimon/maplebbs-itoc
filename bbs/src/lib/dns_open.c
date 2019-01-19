@@ -74,7 +74,7 @@ dns_open(host, port)
   struct sockaddr_in sin;
   ip_addr addr;
   
-  /* Thor.990811: check ¬O§_¤w¬°ip */
+  /* Thor.990811: check æ˜¯å¦å·²ç‚ºip */
   if ((addr.addr = dns_aton(host)) != INADDR_NONE 
     || (addr.addr = dns_a(host)) != INADDR_NONE)
   {

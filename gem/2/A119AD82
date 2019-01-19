@@ -1,14 +1,14 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: ¤£¥i¥[±K
-®É¶¡: 2004/06/16 Wed 08:41:11                           Updated: 2005/05/26
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: ä¸å¯åŠ å¯†
+æ™‚é–“: 2004/06/16 Wed 08:41:11                           Updated: 2005/05/26
 
-¡° ¤Ş­z¡mUizmp (¶Â³Tªk®v)¡n¤§»Ê¨¥¡G
-> ½Ğ°İ¥i§_­­¨î¬Y¬İªO¤å³¹¤£±o¥[±K§r?
+â€» å¼•è¿°ã€ŠUizmp (é»‘è¢æ³•å¸«)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> è«‹å•å¯å¦é™åˆ¶æŸçœ‹æ¿æ–‡ç« ä¸å¾—åŠ å¯†å‘€?
 
 : battr.h
 
-#define BRD_ANONYMOUS   0x20    /* °Î¦W¬İªO */
-+ #define BRD_NORESTRICT   0x40    /* ¤£¥i¥[±K¬İªO */
+#define BRD_ANONYMOUS   0x20    /* åŒ¿åçœ‹æ¿ */
++ #define BRD_NORESTRICT   0x40    /* ä¸å¯åŠ å¯†çœ‹æ¿ */
 
   ...
   ...
@@ -21,24 +21,24 @@
 
 : battr.h:battr_tbl[]
 
-  "°Î¦W¬İªO",                   /* BRD_ANONYMOUS */
-+ "¤£¥i¥[±K¬İªO",               /* BRD_NORESTRICT */
+  "åŒ¿åçœ‹æ¿",                   /* BRD_ANONYMOUS */
++ "ä¸å¯åŠ å¯†çœ‹æ¿",               /* BRD_NORESTRICT */
 
 : edit.c:ve_filer()
 
 #ifdef HAVE_REFUSEMARK
   case 'x':
--  if (ve_op < 0)               /* itoc.010301: ¤£¯àÀx¦s */
+-  if (ve_op < 0)               /* itoc.010301: ä¸èƒ½å„²å­˜ */
 +  if (ve_op < 0 || currbattr & BRD_NORESTRICT)
      return VE_FOOTER;
    curredit |= EDIT_RESTRICT;
-   curredit &= ~EDIT_OUTGO;     /* ¥[±K¥²¬O local save */
+   curredit &= ~EDIT_OUTGO;     /* åŠ å¯†å¿…æ˜¯ local save */
    break;
 #endif
 
 : post.c:post_refuse()
 
-  if (!cuser.userlevel) /* itoc.020114: guest ¤£¯à¹ï¨ä¥L guest ªº¤å³¹¥[±K */
+  if (!cuser.userlevel) /* itoc.020114: guest ä¸èƒ½å°å…¶ä»– guest çš„æ–‡ç« åŠ å¯† */
     return XO_NONE;
 
 + if (currbattr & BRD_NORESTRICT)
@@ -52,11 +52,11 @@
        xpost.xmode = POST_RESTRICT;
 #endif
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  ¦pªG§Æ±æ¶}©ñµ¹ªO¥D¦Û¦æ³]©w
+  å¦‚æœå¸Œæœ›é–‹æ”¾çµ¦æ¿ä¸»è‡ªè¡Œè¨­å®š
 
-: manage.c §â¥H¤U³o¬q¥[¦b post_battr_noscore() «á­±
+: manage.c æŠŠä»¥ä¸‹é€™æ®µåŠ åœ¨ post_battr_noscore() å¾Œé¢
 
 static int
 post_battr_norestrict(xo)
@@ -67,7 +67,7 @@ post_battr_norestrict(xo)
   oldbrd = bshm->bcache + currbno;
   memcpy(&newbrd, oldbrd, sizeof(BRD));
 
-  switch (vans("1)¥i¥H¥[±K¤å³¹ 2)¤£¥i¥[±K¤å³¹ [Q] "))
+  switch (vans("1)å¯ä»¥åŠ å¯†æ–‡ç«  2)ä¸å¯åŠ å¯†æ–‡ç«  [Q] "))
   {
   case '1':
     newbrd.battr &= ~BRD_NORESTRICT;
@@ -91,17 +91,17 @@ post_battr_norestrict(xo)
 : manage.c:post_manage()
 
 #  ifdef HAVE_SCORE
-    "Score   ³]©w¥i§_µû¤À",
+    "Score   è¨­å®šå¯å¦è©•åˆ†",
 #  endif
-+   "Xrefuse ¥[±K¤å³¹³]©w",
++   "Xrefuse åŠ å¯†æ–‡ç« è¨­å®š",
 
   ...
   ...
 
 #  ifdef HAVE_SCORE
-    " (S)µû¤À"
+    " (S)è©•åˆ†"
 #  endif
-+   " (X)¥[±K"
++   " (X)åŠ å¯†"
 
   ...
   ...
@@ -115,5 +115,5 @@ post_battr_norestrict(xo)
 +   return post_battr_norestrict(xo);
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m Maple-itoc£»°Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
- [1;42m¢q[45m¢}[m A[1mut[30mho[mr: [1;31mitoc [30m±q [36mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
+ [1;42mâ”¼[45mâ”˜[m A[1mut[30mho[mr: [1;31mitoc [30må¾ [36mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

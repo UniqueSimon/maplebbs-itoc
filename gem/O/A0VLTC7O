@@ -1,13 +1,13 @@
-µo«H¤H: IQgame.bbs@amtigers.adsldns.org (IQgame), ¬İªO: plan
-¼Ğ  ÃD: [¤å¥ó] IQgame ­ì©l½X
-µo«H¯¸: ¤­ªêÀ° (Tue Dec 24 00:27:40 2002)                 Updated: 2005/03/23
+ç™¼ä¿¡äºº: IQgame.bbs@amtigers.adsldns.org (IQgame), çœ‹æ¿: plan
+æ¨™  é¡Œ: [æ–‡ä»¶] IQgame åŸå§‹ç¢¼
+ç™¼ä¿¡ç«™: äº”è™å¹« (Tue Dec 24 00:27:40 2002)                 Updated: 2005/03/23
 
-: src/game/iq.c ·s¼W¦¹µ{¦¡
+: src/game/iq.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* iq.c     ( NTHU CS MapleBBS Ver 3.10 )                */
 /*-------------------------------------------------------*/
-/* target : ¼Æ¾Ç¤j´I¯Î                                   */
+/* target : æ•¸å­¸å¤§å¯Œç¿                                   */
 /* create : 02/12/18                                     */
 /* update :   /  /                                       */
 /* author : codeman.bbs@amtigers.adsldns.org             */
@@ -19,54 +19,54 @@
 
 #ifdef  HAVE_GAME
 
-/* ÃD¥Ø¼Æ(Q_MAX)­n¤j©ó¥XÃD¼Æ(Q_MUCH) */
+/* é¡Œç›®æ•¸(Q_MAX)è¦å¤§æ–¼å‡ºé¡Œæ•¸(Q_MUCH) */
 
-#define Q_LENTH     160         /* ÃD¥Øªø«× */
-#define Q_MAX       1024        /* ³Ì¦h¯à¦³´XÃD */
-#define Q_MUCH      10          /* ¥X¦h¤ÖÃD */
-#define Q_TOTAL     total       /* ÀÉ®×¤¤¦@¦³¦h¤ÖÃD¥Ø */
-#define FULLSCORE   100         /* ©w¸qº¡¤À¬O 100 ¤À */
+#define Q_LENTH     160         /* é¡Œç›®é•·åº¦ */
+#define Q_MAX       1024        /* æœ€å¤šèƒ½æœ‰å¹¾é¡Œ */
+#define Q_MUCH      10          /* å‡ºå¤šå°‘é¡Œ */
+#define Q_TOTAL     total       /* æª”æ¡ˆä¸­å…±æœ‰å¤šå°‘é¡Œç›® */
+#define FULLSCORE   100         /* å®šç¾©æ»¿åˆ†æ˜¯ 100 åˆ† */
 
-#undef  SHOWRANSER              /* show the right anser ¨q¥X¸Ñµª */
-                                /* «ØÄ³¤£­n¡A¦]¬°³o¼Ë´N¤£¦nª±¤F */
+#undef  SHOWRANSER              /* show the right anser ç§€å‡ºè§£ç­” */
+                                /* å»ºè­°ä¸è¦ï¼Œå› ç‚ºé€™æ¨£å°±ä¸å¥½ç©äº† */
 
 /*-------------------------------------------------------*/
-/* ÃD®w®æ¦¡                                              */
-/* ÃD¥Øªø¥H¤@­Ó¿Ã¹õ¥i¿é¥X¬°­­                            */
-/* ½d¨Ò:                                                 */
+/* é¡Œåº«æ ¼å¼                                              */
+/* é¡Œç›®é•·ä»¥ä¸€å€‹è¢å¹•å¯è¼¸å‡ºç‚ºé™                            */
+/* ç¯„ä¾‹:                                                 */
 /* 1+1=2? y                                              */
 /* 2+3=4? n                                              */
-/* ^^ÃD¥Ø ^µª®×                                          */
-/* µù:µª®×¬O¸Ó¦r¦ê¦©±¼´«¦æªº³Ì«á¤@­Ó¦r¤¸                 */
+/* ^^é¡Œç›® ^ç­”æ¡ˆ                                          */
+/* è¨»:ç­”æ¡ˆæ˜¯è©²å­—ä¸²æ‰£æ‰æ›è¡Œçš„æœ€å¾Œä¸€å€‹å­—å…ƒ                 */
 /*-------------------------------------------------------*/
 
 
-#define IQFILE  "etc/iqdata.aq"             /* ©w¸qÃD®wÀÉªºÀÉ¦W */
+#define IQFILE  "etc/iqdata.aq"             /* å®šç¾©é¡Œåº«æª”çš„æª”å */
 
 
 static int
-logo()              /* ¼ĞÃD */
+logo()              /* æ¨™é¡Œ */
 {
   move(1,0);
   outs("\033[1;33;41m");
   outs("*****************************************************************\n");
   outs("*                            IQgame                             *\n");
-  outs("*                         Åwªï§ë½ZÃD¥Ø                          *\n");
-  outs("*               ½Ğpo¨ì telnet://amtigers.adsldns.org            *\n");
-  outs("*                           IQgameªO                            *\n");
+  outs("*                         æ­¡è¿æŠ•ç¨¿é¡Œç›®                          *\n");
+  outs("*               è«‹poåˆ° telnet://amtigers.adsldns.org            *\n");
+  outs("*                           IQgameæ¿                            *\n");
   outs("*****************************************************************");
   outs("\033[m");
 }
 
 
 static int
-showans(anser)              /* §â¨Ï¥ÎªÌ¿é¤Jªºµª®×¨q¥X¨Ó */
+showans(anser)              /* æŠŠä½¿ç”¨è€…è¼¸å…¥çš„ç­”æ¡ˆç§€å‡ºä¾† */
   char anser[Q_MAX];
 {
   int i;
 
   move(Q_MUCH + 1, 0);
-  outs("±zªºµª®×¬O:\n");
+  outs("æ‚¨çš„ç­”æ¡ˆæ˜¯:\n");
   for (i = 0; i < Q_MUCH; i++)
     prints("%d:%c  ", i + 1, anser[i]);
 }
@@ -74,22 +74,22 @@ showans(anser)              /* §â¨Ï¥ÎªÌ¿é¤Jªºµª®×¨q¥X¨Ó */
 
 #ifdef SHOWRANSER
 static int
-showrans(ranser, aqnum, question)   /* ¨q¥X¥¿¸Ñªº¨ç¦¡ */
+showrans(ranser, aqnum, question)   /* ç§€å‡ºæ­£è§£çš„å‡½å¼ */
   char ranser[Q_MAX];
   int aqnum[Q_MUCH];
   char *question[Q_LENTH];
 {
   int i;
 
-  vs_bar("¼Æ¾Ç¤j´I¯Î");
+  vs_bar("æ•¸å­¸å¤§å¯Œç¿");
   for (i = 0; i < Q_MUCH; i++)
     prints("%d.%s :%c\n", i+1, question[aqnum[i]], ranser[aqnum[i]]);
 }
 #endif
 
 
-static int          /* ¦^¶Ç¹ï¤F´XÃD */
-anscompare(anser, ranser, aqnum)   /* ¤ñ¹ïµª®×ªº¨ç¦¡ */
+static int          /* å›å‚³å°äº†å¹¾é¡Œ */
+anscompare(anser, ranser, aqnum)   /* æ¯”å°ç­”æ¡ˆçš„å‡½å¼ */
   char anser[Q_MAX];
   char ranser[Q_MAX];
   int aqnum[Q_MUCH];
@@ -106,8 +106,8 @@ anscompare(anser, ranser, aqnum)   /* ¤ñ¹ïµª®×ªº¨ç¦¡ */
 }
 
 
-static int          /* ¦^¶Ç¤À¼Æ */
-countscore(rmuch)               /* ­pºâ¤À¼Æªº¨ç¦¡ */
+static int          /* å›å‚³åˆ†æ•¸ */
+countscore(rmuch)               /* è¨ˆç®—åˆ†æ•¸çš„å‡½å¼ */
   int rmuch;
 {
   return rmuch * FULLSCORE / Q_MUCH;
@@ -116,14 +116,14 @@ countscore(rmuch)               /* ­pºâ¤À¼Æªº¨ç¦¡ */
 
 static void
 startgame(fpath)
-  char *fpath;           /* ÃD®wªºÀÉ¦W */
+  char *fpath;           /* é¡Œåº«çš„æª”å */
 {
   FILE *fp;
   char *question[Q_MAX];
-  char anser[Q_MAX], ranser[Q_MAX]; /* anser¬O¨Ï¥ÎªÌªºµª®×,ranser¬O¥¿¸Ñ */
-  int qnum, total;                  /* total¬OÀÉ®×¤¤ªºÁ`ÃD¥Ø¼Æ,qnum¬OÃD¸¹ */
-  int aqnum[Q_MUCH] = {0};          /* aqnum¬O¤v¥X²{¹LªºÃD¸¹ */
-  int alnum[Q_MAX] = {0};           /* already exists num ¤v¥X²{¹LªºÃD¸¹ */
+  char anser[Q_MAX], ranser[Q_MAX]; /* anseræ˜¯ä½¿ç”¨è€…çš„ç­”æ¡ˆ,ranseræ˜¯æ­£è§£ */
+  int qnum, total;                  /* totalæ˜¯æª”æ¡ˆä¸­çš„ç¸½é¡Œç›®æ•¸,qnumæ˜¯é¡Œè™Ÿ */
+  int aqnum[Q_MUCH] = {0};          /* aqnumæ˜¯å·±å‡ºç¾éçš„é¡Œè™Ÿ */
+  int alnum[Q_MAX] = {0};           /* already exists num å·±å‡ºç¾éçš„é¡Œè™Ÿ */
   int i;
   char buf[3];
 
@@ -132,28 +132,28 @@ startgame(fpath)
 
   logo();
 
-  /* ±N question ªº°O¾ĞÅé·Ç³Æ¦n */
+  /* å°‡ question çš„è¨˜æ†¶é«”æº–å‚™å¥½ */
   for (i = 0; i < Q_MAX; i++)
     question[i] = (char *) malloc(Q_LENTH);
 
-  /* §âÃD¥ØÅª¨ì question °}¦C¤¤ */
+  /* æŠŠé¡Œç›®è®€åˆ° question é™£åˆ—ä¸­ */
   total = 0;
   while (fgets(question[total], Q_LENTH, fp))
   {
     i = strlen(question[total]) - 2;
     ranser[total] = (char) *(question[total] + i);
-                                        /* §â­Ë¼Æ²Ä¤G­Ó¦r¤¸Åª¤Jranser°}¦C */
+                                        /* æŠŠå€’æ•¸ç¬¬äºŒå€‹å­—å…ƒè®€å…¥ranseré™£åˆ— */
     *(question[total] + i) = '\0';
     total++;
   }
 
   fclose(fp);
 
-  /* ¶Ã¼Æ¨úÃD,¦C¦L¨ì¿Ã¹õ¤W,¨Ã±Nµª®×¦s¨ìanser°}¦C */
+  /* äº‚æ•¸å–é¡Œ,åˆ—å°åˆ°è¢å¹•ä¸Š,ä¸¦å°‡ç­”æ¡ˆå­˜åˆ°anseré™£åˆ— */
   srand(time(NULL) + cuser.userno);
   for (i = 0; i < Q_MUCH; i++)
   {
-    /* §PÂ_¶Ã¼Æ¬O§_¥X²{¹L,­Y¦³´N­«¨ú */
+    /* åˆ¤æ–·äº‚æ•¸æ˜¯å¦å‡ºç¾é,è‹¥æœ‰å°±é‡å– */
     do
     {
       qnum = rnd(total);
@@ -163,23 +163,23 @@ startgame(fpath)
     move(9, 0);
     clrtobot();
     prints("\033[1m%s\033[m", question[qnum]);
-    anser[i] = vget(10, 0, "½Ğ¿é¤Jµª®× : ", buf, 3, LCECHO);
+    anser[i] = vget(10, 0, "è«‹è¼¸å…¥ç­”æ¡ˆ : ", buf, 3, LCECHO);
     aqnum[i] = qnum;
   }
 
-  /* ¤ñ¹ïranser©Manserµª®× */
+  /* æ¯”å°ranserå’Œanserç­”æ¡ˆ */
   i = anscompare(anser, ranser, aqnum);
 
-  /* ­p¤À */
+  /* è¨ˆåˆ† */
   move(9, 0);
   clrtobot();
   move(9, 18);
-  prints("±zµª¹ï¤F %d ÃD¡I", i);
+  prints("æ‚¨ç­”å°äº† %d é¡Œï¼", i);
   move(10, 18);
-  prints("±z±o¤F %d ¤À¡Aº¡¤À¬O %d ¤À¡C", countscore(rmuch), FULLSCORE);
+  prints("æ‚¨å¾—äº† %d åˆ†ï¼Œæ»¿åˆ†æ˜¯ %d åˆ†ã€‚", countscore(rmuch), FULLSCORE);
   vmsg(NULL);
 
-#ifdef SHOWRANSER  /* ¨q¥X¸Ñµª */
+#ifdef SHOWRANSER  /* ç§€å‡ºè§£ç­” */
   showrans(ranser, aqnum, question);
   showans(anser);
   vmsg(NULL);
@@ -195,8 +195,8 @@ startgame(fpath)
 int
 main_iq()
 {
-  vs_bar("¼Æ¾Ç¤j´I¯Î");
-  startgame(IQFILE);                    /* ¥HIQFILE¬°ÃD®w¶}©l¹CÀ¸ */
+  vs_bar("æ•¸å­¸å¤§å¯Œç¿");
+  startgame(IQFILE);                    /* ä»¥IQFILEç‚ºé¡Œåº«é–‹å§‹éŠæˆ² */
   return 0;
 }
 #endif  /* HAVE_GAME */
@@ -209,16 +209,16 @@ SO =    .... iq.so
 : src/maple/menu.c
 
   "bin/tetris.so:main_tetris", 0, - M_GAME,
-  "Tetris     ¡ñ «XÃ¹´µ¶ô ¡ğ",
+  "Tetris     â™‚ ä¿„ç¾…æ–¯å¡Š â™€",
 
 + "bin/iq.so:main_iq", 0, - M_GAME,
-+ "IQgame     ¡ñ ¼Æ¾Ç´I¯Î ¡ğ",
++ "IQgame     â™‚ æ•¸å­¸å¯Œç¿ â™€",
 
 
 : etc/iqdata.aq
 
-  §âÃD®wÀÉ(iqdata.aq)©ñ¦betc¤U
+  æŠŠé¡Œåº«æª”(iqdata.aq)æ”¾åœ¨etcä¸‹
 
 --
-    [1;36m¢~¢w¢w Origin ¢¡ [37m¤­ªêÀ° [33;45m amtigers.adsldns.org [36;40m ¡ã £\£]£^ ¢w¢w¢q[m
-    [1;36m¢q     Author ¢£ [32msw59-202-248.adsl.seed.net.tw[m
+    [1;36mâ•­â”€â”€ Origin â•® [37mäº”è™å¹« [33;45m amtigers.adsldns.org [36;40m ï½ Î±Î²Î³ â”€â”€â”¼[m
+    [1;36mâ”¼     Author â•¯ [32msw59-202-248.adsl.seed.net.tw[m

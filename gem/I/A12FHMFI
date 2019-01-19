@@ -1,53 +1,53 @@
-µo«H¤H: kevinblue.bbs@nightless.twbbs.org (³Í¤åÂÅ) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¤¤¤åª©BBC·s»D
-µo«H¯¸: «°°Ï©]¥¼¯v (2006/08/28 Mon 21:57:03)              Updated: 2006/08/28
+ç™¼ä¿¡äºº: kevinblue.bbs@nightless.twbbs.org (å‡±æ–‡è—) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] ä¸­æ–‡ç‰ˆBBCæ–°è
+ç™¼ä¿¡ç«™: åŸå€å¤œæœªçœ  (2006/08/28 Mon 21:57:03)              Updated: 2006/08/28
 
-¤µ¤Ñµy·Lªá¤FÂI®É¶¡¹Á¸Õparse¬İ¬İ¨ä¥L¦³´£¨Ñ·s»D¯¸¥xªººô¯¸
+ä»Šå¤©ç¨å¾®èŠ±äº†é»æ™‚é–“å˜—è©¦parseçœ‹çœ‹å…¶ä»–æœ‰æä¾›æ–°èç«™å°çš„ç¶²ç«™
 
-¿ïBBC¦³´X­Ó­ì¦]
-1. ¤£¹³yahoo¦³cookieÁÙ¦³¤@°ï©_©_©Ç©Çªº³W«h
-2. ¦³´£¨Ñ¯Â¤å¦rª©·s»D(¤è«Kparse)
+é¸BBCæœ‰å¹¾å€‹åŸå› 
+1. ä¸åƒyahooæœ‰cookieé‚„æœ‰ä¸€å †å¥‡å¥‡æ€ªæ€ªçš„è¦å‰‡
+2. æœ‰æä¾›ç´”æ–‡å­—ç‰ˆæ–°è(æ–¹ä¾¿parse)
 
-¥H¤U¬O§Ú§ïªºcode(±q©_¼¯·s»D­×§ï¡Aparse RSS§ì·s»D)
+ä»¥ä¸‹æ˜¯æˆ‘æ”¹çš„code(å¾å¥‡æ‘©æ–°èä¿®æ”¹ï¼Œparse RSSæŠ“æ–°è)
 http://opensvn.csie.org/nightlessbbs/freebsd/trunk/src/util/bbc-enews-open.c
-¬°¤F°t¦XBBC·s»D§Ú­×§ï¤FENEWSªºstruct
+ç‚ºäº†é…åˆBBCæ–°èæˆ‘ä¿®æ”¹äº†ENEWSçš„struct
 
 typedef struct
 {
-  time_t chrono;                /* ½s¸¹ */
-  char kind;                    /* ºØÃş */
-  char xname[50];               /* ÀÉ®×¦WºÙ */
+  time_t chrono;                /* ç·¨è™Ÿ */
+  char kind;                    /* ç¨®é¡ */
+  char xname[50];               /* æª”æ¡ˆåç¨± */
 
-  char link[128];               /* ³sµ²¸ô®| */
-[1;33m+ char description[512];        /* ·s»D¤j­n */[m
-  char title[TTLEN + 1];        /* ¤å³¹¼ĞÃD */
+  char link[128];               /* é€£çµè·¯å¾‘ */
+[1;33m+ char description[512];        /* æ–°èå¤§è¦ */[m
+  char title[TTLEN + 1];        /* æ–‡ç« æ¨™é¡Œ */
 } ENEWS;
 
-·s»D¤j­n¥i¥H©ñ¦bcna¤W
+æ–°èå¤§è¦å¯ä»¥æ”¾åœ¨cnaä¸Š
 
-¥t¥~¥Ñ©óBBCªº·s»D³sµ²³£«Üªø¡A©Ò¥H§Ú¥ÎlibcurlªºAPI¼g¤Fbbs¦Û°ÊÁYºô§}ªºfunction
-½Ğ°t¦Xshorten_url.c¬İ
+å¦å¤–ç”±æ–¼BBCçš„æ–°èé€£çµéƒ½å¾ˆé•·ï¼Œæ‰€ä»¥æˆ‘ç”¨libcurlçš„APIå¯«äº†bbsè‡ªå‹•ç¸®ç¶²å€çš„function
+è«‹é…åˆshorten_url.cçœ‹
 http://opensvn.csie.org/nightlessbbs/freebsd/trunk/src/lib/mk0rz.c
 
-ÁÙ¦³¨Ñ¥~³¡©I¥sªº°õ¦æÀÉ
+é‚„æœ‰ä¾›å¤–éƒ¨å‘¼å«çš„åŸ·è¡Œæª”
 http://opensvn.csie.org/nightlessbbs/freebsd/trunk/src/util/shorten_url.c
 
-·s»Dparseªº³¡¥÷¤£´±»¡³£¨S¦³°İÃD¡A¦]¬°BBCªººô­¶¤º®eÁÙÆZ¦h®æ¦¡ªº
-§Ú¥u¬O§Æ±æºÉ¶q¥i¥H§â·s»D§ì¶i¨Ó¡A¤£¨¬ªº³¡¥÷§Æ±æ¦³¤H¥i¥H¤@°_¸É¨¬ :)
+æ–°èparseçš„éƒ¨ä»½ä¸æ•¢èªªéƒ½æ²’æœ‰å•é¡Œï¼Œå› ç‚ºBBCçš„ç¶²é å…§å®¹é‚„è »å¤šæ ¼å¼çš„
+æˆ‘åªæ˜¯å¸Œæœ›ç›¡é‡å¯ä»¥æŠŠæ–°èæŠ“é€²ä¾†ï¼Œä¸è¶³çš„éƒ¨ä»½å¸Œæœ›æœ‰äººå¯ä»¥ä¸€èµ·è£œè¶³ :)
 
-libcurl³¡¥÷½Ğ°Ñ¦Ò http://curl.haxx.se/libcurl/c/allfuncs.html
+libcurléƒ¨ä»½è«‹åƒè€ƒ http://curl.haxx.se/libcurl/c/allfuncs.html
 
-ps.¦³¨S¦³¤H·Q¹Á¸Õ¬İ¬İÄ«ªG¤é³ø¡H
-   ¦pªG§A­n¥Î§Úªºmk0rz½Ğ¦w¸Ëcurl
-   Ãö©ó¦p¦ó©Mlibcurl linking½Ğ°õ¦æcurl-config
-   ©ÎªÌ¦bMakefile¤W¥[¤W -lcurl ¸Õ¸Õ(§Ú³o¼Ë¬O¥i¦æªº)
+ps.æœ‰æ²’æœ‰äººæƒ³å˜—è©¦çœ‹çœ‹è˜‹æœæ—¥å ±ï¼Ÿ
+   å¦‚æœä½ è¦ç”¨æˆ‘çš„mk0rzè«‹å®‰è£curl
+   é—œæ–¼å¦‚ä½•å’Œlibcurl linkingè«‹åŸ·è¡Œcurl-config
+   æˆ–è€…åœ¨Makefileä¸ŠåŠ ä¸Š -lcurl è©¦è©¦(æˆ‘é€™æ¨£æ˜¯å¯è¡Œçš„)
 
-: src/util/bbc-enews-open.c ·s¼W¦¹µ{¦¡¡AMakefile ­n¦P¨B§ï
+: src/util/bbc-enews-open.c æ–°å¢æ­¤ç¨‹å¼ï¼ŒMakefile è¦åŒæ­¥æ”¹
 
 /*-------------------------------------------------------*/
 /* util/enews-open.c    ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : BBC·s»D§ó·s                                 */
+/* target : BBCæ–°èæ›´æ–°                                 */
 /* create : 02/01/29                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -56,52 +56,52 @@ ps.¦³¨S¦³¤H·Q¹Á¸Õ¬İ¬İÄ«ªG¤é³ø¡H
 
 #if 0
 
-¥»BBC·s»D§ó·sµ{¦¡»İ­n°t¦X contab ¥h§ì¸ê®Æ¡Acrontab ¦p¤U¡G
+æœ¬BBCæ–°èæ›´æ–°ç¨‹å¼éœ€è¦é…åˆ contab å»æŠ“è³‡æ–™ï¼Œcrontab å¦‚ä¸‹ï¼š
 
-# ¨C¤Ñ 10:30AM 4:30PM §ì©_¼¯·s»D
+# æ¯å¤© 10:30AM 4:30PM æŠ“å¥‡æ‘©æ–°è
    30 10,16 * * * bin/enews-open
-      ­n¨Ï¥Î enews-open.c ¥²¶·¸Ë¦³ lynx¡Aª`·N lynx ªº¸ô®|­n©Mµ{¦¡§k¦X¡C
-         ¦pªG¥D¾÷»İ³z¹L proxy ¤~¯à³s¥~ªº¸Ü¡A¨º»ò­n­×§ï lynx.cfg ªº http_proxy
-³]©w­È¡C
-            ¤å³¹ÀÉ®×©ñ¦b run/kimo/
+      è¦ä½¿ç”¨ enews-open.c å¿…é ˆè£æœ‰ lynxï¼Œæ³¨æ„ lynx çš„è·¯å¾‘è¦å’Œç¨‹å¼å»åˆã€‚
+         å¦‚æœä¸»æ©Ÿéœ€é€é proxy æ‰èƒ½é€£å¤–çš„è©±ï¼Œé‚£éº¼è¦ä¿®æ”¹ lynx.cfg çš„ http_proxy
+è¨­å®šå€¼ã€‚
+            æ–‡ç« æª”æ¡ˆæ”¾åœ¨ run/kimo/
 
             bbc rss
             http://news.bbc.co.uk/chinese/trad/hi/institutional/rss/default.st
 m#userss?
-            XML RSS feed¤¤¤åºô¥D­¶
+            XML RSS feedä¸­æ–‡ç¶²ä¸»é 
             http://newsrss.bbc.co.uk/rss/chinese/trad/news/rss.xml
 
-            XML RSS feed°ê»Ú·s»D
+            XML RSS feedåœ‹éš›æ–°è
             http://newsrss.bbc.co.uk/rss/chinese/trad/world/rss.xml
 
-            XML RSS feed¤¤°ê³ø¾É
+            XML RSS feedä¸­åœ‹å ±å°
             http://newsrss.bbc.co.uk/rss/chinese/trad/china_news/rss.xml
 
-            XML RSS feed´ä¥x®ø®§
+            XML RSS feedæ¸¯å°æ¶ˆæ¯
             http://newsrss.bbc.co.uk/rss/chinese/trad/taiwan_hk/rss.xml
 
-            XML RSS feed­^°ê°ÊºA
+            XML RSS feedè‹±åœ‹å‹•æ…‹
             http://newsrss.bbc.co.uk/rss/chinese/trad/uk/rss.xml
 
-            XML RSS feed­^»y±Ğ¾Ç
+            XML RSS feedè‹±èªæ•™å­¸
             http://newsrss.bbc.co.uk/rss/chinese/trad/learn_english/rss.xml
 
-            XML RSS feedª÷¿Ä°]¸g
+            XML RSS feedé‡‘èè²¡ç¶“
             http://newsrss.bbc.co.uk/rss/chinese/trad/business/rss.xml
 
-            XML RSS feed¬ì§Ş°·±d
+            XML RSS feedç§‘æŠ€å¥åº·
             http://newsrss.bbc.co.uk/rss/chinese/trad/sci/tech/rss.xml
 
-            XML RSS feed­^°ê³øºK
+            XML RSS feedè‹±åœ‹å ±æ‘˜
             http://newsrss.bbc.co.uk/rss/chinese/trad/press/rss.xml
 
-            note. rss¸Ì­±ªºlink³£¬O¥H¹Ï¤åª©¬°¥D¡A¤£¹Lparse¤ñ¸û®e©öªº¬O¯Â¤å¦rª©
-            linkªº®t§O¥u¦blow¸òhi
+            note. rssè£¡é¢çš„linkéƒ½æ˜¯ä»¥åœ–æ–‡ç‰ˆç‚ºä¸»ï¼Œä¸éparseæ¯”è¼ƒå®¹æ˜“çš„æ˜¯ç´”æ–‡å­—ç‰ˆ
+            linkçš„å·®åˆ¥åªåœ¨lowè·Ÿhi
             ex.
-            ¹Ï¤åª©
+            åœ–æ–‡ç‰ˆ
             http://news8.thdo.bbc.co.uk/chinese/trad/hi/newsid_5290000/newsid_
 5290200/5290212.stm
-            ¯Â¤å¦rª©
+            ç´”æ–‡å­—ç‰ˆ
             http://news8.thdo.bbc.co.uk/chinese/trad/low/newsid_5290000/newsid
 _5290200/5290212.stm
 
@@ -109,8 +109,8 @@ _5290200/5290212.stm
 
 #include "bbs.h"
 
-#define LYNX_PATH   "/usr/local/bin/lynx --source"  /* lynx ªºµ´¹ï¸ô®| */
-#define POSTBOARD   "bbc_news"      //±ıpost·s»Dªºª©¦W
+#define LYNX_PATH   "/usr/local/bin/lynx --source"  /* lynx çš„çµ•å°è·¯å¾‘ */
+#define POSTBOARD   "bbc_news"      //æ¬²postæ–°èçš„ç‰ˆå
 #define INDEX_FILE  "tmp/bbc_index"
 #define NEWS_FILE   "tmp/bbc_news"
 #define RSS         "http://newsrss.bbc.co.uk/rss/chinese/trad/"
@@ -118,18 +118,18 @@ _5290200/5290212.stm
 #define BBC_NEWS_HI "http://news8.thdo.bbc.co.uk/chinese/trad/hi/"
 
             /*-------------------------------------------------------*/
-            /* ¤å³¹Âà¨ì¬İªO                                          */
+            /* æ–‡ç« è½‰åˆ°çœ‹æ¿                                          */
             /*-------------------------------------------------------*/
 
             static BCACHE *bshm;
          static void
             init_bshm()
             {
-               /* itoc.030727: ¦b¶}±Ò bbsd ¤§«e¡AÀ³¸Ó´N­n°õ¦æ¹L account¡A©Ò¥H
-bshm À³¸Ó¤w³]©w¦n */
+               /* itoc.030727: åœ¨é–‹å•Ÿ bbsd ä¹‹å‰ï¼Œæ‡‰è©²å°±è¦åŸ·è¡Œé accountï¼Œæ‰€ä»¥
+bshm æ‡‰è©²å·²è¨­å®šå¥½ */
          bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-         if (bshm->uptime <= 0)        /* bshm ¥¼³]©w§¹¦¨ */
+         if (bshm->uptime <= 0)        /* bshm æœªè¨­å®šå®Œæˆ */
             exit(0);
       }
 
@@ -151,7 +151,7 @@ bshm À³¸Ó¤w³]©w¦n */
       } while (++bhdr < tail);
    }
 
-   static bool                      /* return true: ¥H«e´N§ì¹Lªº³sµ² */
+   static bool                      /* return true: ä»¥å‰å°±æŠ“éçš„é€£çµ */
       old_link(fold, link)
       char *fold;
    char *link;
@@ -175,15 +175,15 @@ bshm À³¸Ó¤w³]©w¦n */
       }
 
       /*if(rc)
-         printf("link­«½Æ\n");
+         printf("linké‡è¤‡\n");
       else
-         printf("·slink\n");*/
+         printf("æ–°link\n");*/
 
       return rc;
    }
 
-   static char* Userid = "·s»D³ø°¨¥J";
-   static char* Usernick="CTRL+O¥i¥H§¹¾ã¾\\Åª!";
+   static char* Userid = "æ–°èå ±é¦¬ä»”";
+   static char* Usernick="CTRL+Oå¯ä»¥å®Œæ•´é–±\è®€!";
 
    static void
       post_board(fpath, title, kind)
@@ -195,11 +195,11 @@ bshm À³¸Ó¤w³]©w¦n */
       HDR hdr;
       char *class[] =
       {
-         "°ê»Ú·s»D", "¤¤°ê³ø¾É", "´ä¥x®ø®§", "­^°ê°ÊºA",
-         "ª÷¿Ä°]¸g", "¬ì§Ş°·±d"
+         "åœ‹éš›æ–°è", "ä¸­åœ‹å ±å°", "æ¸¯å°æ¶ˆæ¯", "è‹±åœ‹å‹•æ…‹",
+         "é‡‘èè²¡ç¶“", "ç§‘æŠ€å¥åº·"
       };
 
-      char *board = POSTBOARD;    // Âà¥h KimoNews ªO¡A¦Û©w
+      char *board = POSTBOARD;    // è½‰å» KimoNews æ¿ï¼Œè‡ªå®š
 
       brd_fpath(folder, board, FN_DIR);
       hdr_stamp(folder, HDR_COPY | 'A', &hdr, fpath);
@@ -213,20 +213,20 @@ bshm À³¸Ó¤w³]©w¦n */
 
 
    /*-------------------------------------------------------*/
-   /* ¤ÀªR html                                             */
+   /* åˆ†æ html                                             */
    /*-------------------------------------------------------*/
 
 
-   static int wlen;    /* ¥»¦æ¦³¦h¤Ö¦r */
-   static int slen;    /* ¥»¦æ¦³¦h¤Ö¥b§Î¦r */
+   static int wlen;    /* æœ¬è¡Œæœ‰å¤šå°‘å­— */
+   static int slen;    /* æœ¬è¡Œæœ‰å¤šå°‘åŠå½¢å­— */
 
    static void
       foutc(ch, fp)
       int ch;
    FILE *fp;
    {
-      static int in_tag = 0;    /* 1: ¦b <tag> ¤¤ */
-      static int in_chi = 0;    /* 1: «e¤@½X¬O¤¤¤å¦r */
+      static int in_tag = 0;    /* 1: åœ¨ <tag> ä¸­ */
+      static int in_chi = 0;    /* 1: å‰ä¸€ç¢¼æ˜¯ä¸­æ–‡å­— */
 
       if (ch == '<')
       {
@@ -236,18 +236,18 @@ bshm À³¸Ó¤w³]©w¦n */
 
       if (!in_tag)
       {
-         if (in_chi || ch & 0x80)    /* «e¤@­Óchar©Î³ochar¬O¤¤¤å¦rªº²Ä¤@½X */
+         if (in_chi || ch & 0x80)    /* å‰ä¸€å€‹charæˆ–é€™charæ˜¯ä¸­æ–‡å­—çš„ç¬¬ä¸€ç¢¼ */
             in_chi ^= 1;
-         else                        /* ¦pªG³£¤£¬O¡Aªí¥Ü³ochar¬O¥b§Î¦r */
+         else                        /* å¦‚æœéƒ½ä¸æ˜¯ï¼Œè¡¨ç¤ºé€™charæ˜¯åŠå½¢å­— */
             slen++;
 
-         if (wlen >= 60 - slen % 2)  /* ¤@¦æ³Ì¦h 60 ¦r¡A­Y¦³©_¼Æ­Ó¥b§Î¦r¡A
-                                        ¸Ó¦æ¥u¦L 59 ¦r */
+         if (wlen >= 60 - slen % 2)  /* ä¸€è¡Œæœ€å¤š 60 å­—ï¼Œè‹¥æœ‰å¥‡æ•¸å€‹åŠå½¢å­—ï¼Œ
+                                        è©²è¡Œåªå° 59 å­— */
          {
-            fputs("\n  ", fp);      /* ¨C¦æ«e­±³£ªÅ¥|®æ */
+            fputs("\n  ", fp);      /* æ¯è¡Œå‰é¢éƒ½ç©ºå››æ ¼ */
             wlen = 0;
             /* slen = 0; */
-            slen = !in_chi;           /* ­Y·sªº³o¦æ²Ä¤@­Óchar¬O¥b§Î¦r¡Aslen=1
+            slen = !in_chi;           /* è‹¥æ–°çš„é€™è¡Œç¬¬ä¸€å€‹charæ˜¯åŠå½¢å­—ï¼Œslen=1
 */
          }
 
@@ -271,7 +271,7 @@ bshm À³¸Ó¤w³]©w¦n */
 
       wlen = 0;
       slen = 0;
-      fputs("\n  ", fp);      /* ¨C¦æ«e­±³£ªÅ¥|®æ */
+      fputs("\n  ", fp);      /* æ¯è¡Œå‰é¢éƒ½ç©ºå››æ ¼ */
 
       while (ch = *str)
       {
@@ -282,34 +282,34 @@ bshm À³¸Ó¤w³]©w¦n */
 
 
    static void
-      html_download(enews, kind)        /* ¤U¸ü¤å³¹¨ÃÂà´«¬°¤å¦rÀÉ */
+      html_download(enews, kind)        /* ä¸‹è¼‰æ–‡ç« ä¸¦è½‰æ›ç‚ºæ–‡å­—æª” */
       ENEWS *enews;
    int kind;
    {
       char *strS, *strE;
-      char buf[2048];   /* °²³]¤å³¹¨C¬q¤£·|¶W¹L 2048 ¦r */
+      char buf[2048];   /* å‡è¨­æ–‡ç« æ¯æ®µä¸æœƒè¶…é 2048 å­— */
       char fpath[64];
       FILE *fpr, *fpw;
       bool skip = false;
 
-      /* ¤U¸ü¤å³¹ */
+      /* ä¸‹è¼‰æ–‡ç«  */
       if(enews->link)
          sprintf(buf, LYNX_PATH " " BBC_NEWS "%s  > " NEWS_FILE, enews->link);
 
       system(buf);
 
-      /* Âà´«¬°¤å¦rÀÉ */
+      /* è½‰æ›ç‚ºæ–‡å­—æª” */
       if (fpr = fopen(NEWS_FILE, "r"))
       {
          sprintf(fpath, "run/bbc/%d/%s", kind, enews->xname);
-         //printf("¼g¤J¡G %s\n", fpath);
+         //printf("å¯«å…¥ï¼š %s\n", fpath);
 
          if (fpw = fopen(fpath, "w"))
          {
-            /* ¶}ÀY¥[¤W¼ĞÃD */
+            /* é–‹é ­åŠ ä¸Šæ¨™é¡Œ */
          fprintf(fpw, "%s %s (%s) %s %s\n",STR_AUTHOR1, Userid, Usernick, STR_
 POST2, "BBCNews");
-         fprintf(fpw, "¼ĞÃD: %s\n®É¶¡: %s\n", enews->title, Now());
+         fprintf(fpw, "æ¨™é¡Œ: %s\næ™‚é–“: %s\n", enews->title, Now());
 
          /* html -> text */
          fgets(buf, sizeof(buf), fpr);
@@ -321,7 +321,7 @@ POST2, "BBCNews");
 
          while(!strstr(buf, "<!-- E BO --><!-- E BO -->") &&
                !strstr(buf, "<!-- E BO --><br>")&&
-               !strstr(buf, "ºô¤Í·N¨£¿ïµn¡G"))
+               !strstr(buf, "ç¶²å‹æ„è¦‹é¸ç™»ï¼š"))
          {
             if(strstr(buf, "<p>") || strstr(buf, "<P>") || strstr(buf, "<!-- S
  SF -->") ||
@@ -335,7 +335,7 @@ POST2, "BBCNews");
                if(strE)
                   *(strE) = '\0';
 
-               str_ncpy(buf, buf+4, sizeof(buf)); //§â<li>¥h±¼;
+               str_ncpy(buf, buf+4, sizeof(buf)); //æŠŠ<li>å»æ‰;
             }
             else if((strS = strstr(buf, "<b>")))
             {
@@ -344,7 +344,7 @@ POST2, "BBCNews");
                if(strE)
                   *(strE)= '\0';
 
-               str_ncpy(buf, buf+3, sizeof(buf));//§â<b>¥h±¼
+               str_ncpy(buf, buf+3, sizeof(buf));//æŠŠ<b>å»æ‰
 
                //printf("%s\n", buf);
             }
@@ -352,16 +352,16 @@ POST2, "BBCNews");
             {
                strE = strstr(buf, "</B>");
 
-               if(strE)//¦³</B>
+               if(strE)//æœ‰</B>
                   *(strE)= '\0';
 
-               str_ncpy(buf, buf+3, sizeof(buf));//§â<b>¥h±¼
+               str_ncpy(buf, buf+3, sizeof(buf));//æŠŠ<b>å»æ‰
 
                //printf("%s\n", buf);
             }
             else if((strS = strstr(buf, "<br />")))
             {
-               //*(strS) = "\n"; //§â<br />´«¦¨\n
+               //*(strS) = "\n"; //æŠŠ<br />æ›æˆ\n
             }
             else if(strstr(buf, "<!-- S IIMA -->"))
             {
@@ -379,22 +379,22 @@ POST2, "BBCNews");
             fgets(buf, sizeof(buf), fpr);
          }
 
-         /* µ²§À¥[¤W³sµ² */
+         /* çµå°¾åŠ ä¸Šé€£çµ */
          sprintf(buf, BBC_NEWS_HI"%s", enews->link);
-         fprintf(fpw, "\n--\n­^°êBBC·s»D %s\n\n", mk0rz(buf));
+         fprintf(fpw, "\n--\nè‹±åœ‹BBCæ–°è %s\n\n", mk0rz(buf));
          fclose(fpw);
 
          post_board(fpath, enews->title, kind);
       }
       fclose(fpr);
-      unlink(NEWS_FILE);  /* ²M°£¼È¦sÀÉ */
+      unlink(NEWS_FILE);  /* æ¸…é™¤æš«å­˜æª” */
    }
 }//end
 
 void
-xml_fetch(fpath, kind)  /* ±N³oÀÉ®×¤¤¦³®Äªº³sµ²§ä¥X¨Ó */
+xml_fetch(fpath, kind)  /* å°‡é€™æª”æ¡ˆä¸­æœ‰æ•ˆçš„é€£çµæ‰¾å‡ºä¾† */
 char *fpath;
-int kind;        /* ºØÃş */
+int kind;        /* ç¨®é¡ */
 {
    static int chrono = 0;
    FILE *fp;
@@ -412,39 +412,39 @@ int kind;        /* ºØÃş */
    f_mv(folder, fold);
 
 #if 0
-   ³B²z XML ®æ¦¡¦p¤U¡G
+   è™•ç† XML æ ¼å¼å¦‚ä¸‹ï¼š
       <item>
-      <title>¬ü°ê­¸¾÷¥¢¨Æ¡§¶]¹D¨Æ¬G¤Ş°_¡¨</title>
-      <description>¬ü°êComairªí¥Ü¡A¯Z¾÷5191¸¹¦]¡§¶]¹D¨Æ¬G¡¨¥¢¨Æ¡A50¦W­¼«È©M¾÷
-²Õ¤H­û¤¤¤@¤H¥ÍÁÙ¡C</description>
+      <title>ç¾åœ‹é£›æ©Ÿå¤±äº‹â€œè·‘é“äº‹æ•…å¼•èµ·â€</title>
+      <description>ç¾åœ‹Comairè¡¨ç¤ºï¼Œç­æ©Ÿ5191è™Ÿå› â€œè·‘é“äº‹æ•…â€å¤±äº‹ï¼Œ50åä¹˜å®¢å’Œæ©Ÿ
+çµ„äººå“¡ä¸­ä¸€äººç”Ÿé‚„ã€‚</description>
       <link>http://news.bbc.co.uk/go/rss/-/chinese/trad/hi/newsid_5290000/news
 id_5290800/5290846.stm</link>
       <guid isPermaLink="false">http://news.bbc.co.uk/chinese/simp/hi/newsid_5
 290000/newsid_5290800/5290846.stm</guid>
       <pubDate>Sun, 27 Aug 2006 14:43:31 GMT</pubDate>
-      <category>¤¤¤åºô¥D­¶</category>
+      <category>ä¸­æ–‡ç¶²ä¸»é </category>
       </item>
 
 #endif
 
-      //while (fgets(buf, sizeof(buf), fp) && article_num <= 30)//¨C¦¸§ì30«h·s
-»D
+      //while (fgets(buf, sizeof(buf), fp) && article_num <= 30)//æ¯æ¬¡æŠ“30å‰‡æ–°
+è
       while (fgets(buf, sizeof(buf), fp))
       {
          if (strstr(buf, "<item>"))
          {
-            /* ¥[¤J record */
+            /* åŠ å…¥ record */
             memset(&enews, 0, sizeof(ENEWS));
-            enews.chrono = ++chrono;      /* ¨C½g¤å³¹¤@­Ó½s¸¹ */
+            enews.chrono = ++chrono;      /* æ¯ç¯‡æ–‡ç« ä¸€å€‹ç·¨è™Ÿ */
             enews.kind = kind;
-            sprintf(enews.xname, "A%06d%d", chrono, kind); //ÀÉ¦W
-            //printf("filename: %s\n", enews.xname); //ÀÉ¦W
+            sprintf(enews.xname, "A%06d%d", chrono, kind); //æª”å
+            //printf("filename: %s\n", enews.xname); //æª”å
 
-            fgets(buf, sizeof(buf), fp); /* ¦pªG§ä¨ìitem«h¤U¤@­Ó¥²¬O<title> */
-            strA = strstr(buf, "</title>");//§ì¨ì</title>¬°¤î
+            fgets(buf, sizeof(buf), fp); /* å¦‚æœæ‰¾åˆ°itemå‰‡ä¸‹ä¸€å€‹å¿…æ˜¯<title> */
+            strA = strstr(buf, "</title>");//æŠ“åˆ°</title>ç‚ºæ­¢
 
-            if(!strA)//¦pªG<title>¸ò</title>¤£¦A¦P¤@¦æ
-               skip = true; //´£¿ô­n¦hskip±¼¤£¬O¦P¤@¦æªº</title>
+            if(!strA)//å¦‚æœ<title>è·Ÿ</title>ä¸å†åŒä¸€è¡Œ
+               skip = true; //æé†’è¦å¤šskipæ‰ä¸æ˜¯åŒä¸€è¡Œçš„</title>
             else
                *strA = '\0';
 
@@ -455,7 +455,7 @@ id_5290800/5290846.stm</link>
                strB++;
             }
             str_ncpy(enews.title, buf + space + 7, sizeof(enews.title));//buf+
-7: <title>¤£­n
+7: <title>ä¸è¦
             //printf("title: %s\n", enews.title);
             space=0;
             if(skip)
@@ -463,8 +463,8 @@ id_5290800/5290846.stm</link>
             skip = false;
 
 
-            fgets(buf, sizeof(buf), fp);/* §ädescription*/
-            strA = strstr(buf, "</description>");//§ì¨ì</description>¬°¤î
+            fgets(buf, sizeof(buf), fp);/* æ‰¾description*/
+            strA = strstr(buf, "</description>");//æŠ“åˆ°</description>ç‚ºæ­¢
 
             if(!strA)
                skip = true;
@@ -478,7 +478,7 @@ id_5290800/5290846.stm</link>
                strB++;
             }
             str_ncpy(enews.description, buf + space + 13, sizeof(enews.title))
-;//buf+13: <description>¤£­n
+;//buf+13: <description>ä¸è¦
             //printf("description: %s\n", enews.description);
             space=0;
             if(skip)
@@ -486,19 +486,19 @@ id_5290800/5290846.stm</link>
             skip = false;
 
 
-            fgets(buf, sizeof(buf), fp); /* ¤U¤@­Ó¥²¬O<link> */
-            strA = strstr(buf, "newsid");//hi¤£­n(¤è«Kparse)
+            fgets(buf, sizeof(buf), fp); /* ä¸‹ä¸€å€‹å¿…æ˜¯<link> */
+            strA = strstr(buf, "newsid");//hiä¸è¦(æ–¹ä¾¿parse)
 
-            if(strA)//¦³newsid linkªº¤~parse url
+            if(strA)//æœ‰newsid linkçš„æ‰parse url
             {
                strB = strstr(strA, "</link>");
 
                if(!strB)
-                  fgets(buf, sizeof(buf), fp); /* ¤U¤@­Ó¥²¬O<link> */
+                  fgets(buf, sizeof(buf), fp); /* ä¸‹ä¸€å€‹å¿…æ˜¯<link> */
                else
                   *strB = '\0';
 
-               sprintf(enews.link, strA);//¥u§ìºô§}¦³newidªº
+               sprintf(enews.link, strA);//åªæŠ“ç¶²å€æœ‰newidçš„
                //printf("link: %s\n", enews.link);
          }
 
@@ -515,7 +515,7 @@ fclose(fp);
 
 
 /*-------------------------------------------------------*/
-/* ¥Dµ{¦¡                                                */
+/* ä¸»ç¨‹å¼                                                */
 /*-------------------------------------------------------*/
 
 
@@ -532,7 +532,7 @@ int main(void)
 
    init_bshm();
 
-   /* §ì¸ê®Æ¨Ã¤ÀªR¤§ */
+   /* æŠ“è³‡æ–™ä¸¦åˆ†æä¹‹ */
    for (kind = 0 ; kind <= 5 ; kind++)
    {
       sprintf(cmd, LYNX_PATH " " RSS "%s/rss.xml > " INDEX_FILE, class[kind]);
@@ -541,11 +541,11 @@ int main(void)
       xml_fetch(INDEX_FILE, kind);
    }
 
-   unlink(INDEX_FILE);     /* ²M°£¼È¦sÀÉ */
+   unlink(INDEX_FILE);     /* æ¸…é™¤æš«å­˜æª” */
    return 0;
 }
 
-: src/lib/mk0rz.c ·s¼W¦¹µ{¦¡¡AMakefile ­n¦P¨B§ï
+: src/lib/mk0rz.c æ–°å¢æ­¤ç¨‹å¼ï¼ŒMakefile è¦åŒæ­¥æ”¹
 
 #include "bbs.h"
 
@@ -582,20 +582,20 @@ char* mk0rz(char* post_url)
    return buf;
 }
 
-: src/util/shorten_url.c ·s¼W¦¹µ{¦¡¡AMakefile ­n¦P¨B§ï
+: src/util/shorten_url.c æ–°å¢æ­¤ç¨‹å¼ï¼ŒMakefile è¦åŒæ­¥æ”¹
 
 /*-------------------------------------------------------*/
 /* shorten_url.c ( NTHU CS MapleBBS Ver 3.10 )           */
 /*-------------------------------------------------------*/
-/* target : §Q¥Îlibcurl¦^¶Ç0rz.netµuurl                  */
+/* target : åˆ©ç”¨libcurlå›å‚³0rz.netçŸ­url                  */
 /* create : 06/08/28                                     */
 /* update :   /  /                                       */
 /* author : kevinblue.bbs@nightless.twbbs.org            */
 /*-------------------------------------------------------*/
 
 /*
-   0rz.net¦³2­ÓÄæ¦ì»İ­n¶ñ¤W¤~¥i¥H¨Ï¥Îhttp post
-   ¤À§O¬°
+   0rz.netæœ‰2å€‹æ¬„ä½éœ€è¦å¡«ä¸Šæ‰å¯ä»¥ä½¿ç”¨http post
+   åˆ†åˆ¥ç‚º
    1. <input type="text" name="url" size="30" length=505>
    2. <input type="Submit" value="Make Shorter" style="border:1px solid gray;"
 >
@@ -607,8 +607,8 @@ char* mk0rz(char* post_url)
    </textarea>
    </form>
 
-   ¥Îªk¡G./shorten_url §Aªººô§}
-   ½d¨Ò¡G./shorten_url http://www.google.com.tw
+   ç”¨æ³•ï¼š./shorten_url ä½ çš„ç¶²å€
+   ç¯„ä¾‹ï¼š./shorten_url http://www.google.com.tw
 
  */
 
@@ -632,14 +632,14 @@ int main(int argc, char *argv[])
 
    curl_global_init(CURL_GLOBAL_ALL);
 
-   /*¶ñ¤Wurl*/
+   /*å¡«ä¸Šurl*/
    curl_formadd(&formpost,
          &lastptr,
          CURLFORM_COPYNAME, "url",
          CURLFORM_COPYCONTENTS, argv[1],
          CURLFORM_END);
 
-   /*¶ñ¤WSubmit*/
+   /*å¡«ä¸ŠSubmit*/
    curl_formadd(&formpost,
          &lastptr,
          CURLFORM_COPYNAME, "Submit",
@@ -666,11 +666,11 @@ int main(int argc, char *argv[])
 }
 
 --
-   [m                                                      [1;47;34m¢«¢«¢«[40m¢©             [;40;37m
-   [1m·¥ºİ©È³Â·Ğªº³Ã¥ë¬°¤F»´ÃP¸Ñ¨M°İÃD©Ò·Q¥X¨Óªº³Ğ·N»P¥©«ä  [;47;30m£»[40;37m¢i[47;30m£»[40;37m¢i
-   [33m¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w  [37m¢i¢i¢i¢i
-                 [1m±a°Ê¤F¤HÃşªºµo©ú©M¶i¨B                  [;40;37m¢ª¢i¢i¢«
-                                                          [1;34m¢Û¢i  £rKidult73 [;40;37m[m
+   [m                                                      [1;47;34mâ—¤â—¤â—¤[40mâ—£             [;40;37m
+   [1mæ¥µç«¯æ€•éº»ç…©çš„å‚¢ä¼™ç‚ºäº†è¼•é¬†è§£æ±ºå•é¡Œæ‰€æƒ³å‡ºä¾†çš„å‰µæ„èˆ‡å·§æ€  [;47;30mË™[40;37mâ–ˆ[47;30mË™[40;37mâ–ˆ
+   [33mâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€  [37mâ–ˆâ–ˆâ–ˆâ–ˆ
+                 [1må¸¶å‹•äº†äººé¡çš„ç™¼æ˜å’Œé€²æ­¥                  [;40;37mâ—¥â–ˆâ–ˆâ—¤
+                                                          [1;34mï¼­â–ˆ  ÏˆKidult73 [;40;37m[m
 
 --
-[1;36;42m   Origin:ªF§d¸ê¬ì«°°Ï©]¥¼¯v(nightless.twbbs.org)[;32;40m¢o¢n¢k [33m[FROM:61.216.2.244][m
+[1;36;42m   Origin:æ±å³è³‡ç§‘åŸå€å¤œæœªçœ (nightless.twbbs.org)[;32;40mâ–Šâ–‹â– [33m[FROM:61.216.2.244][m

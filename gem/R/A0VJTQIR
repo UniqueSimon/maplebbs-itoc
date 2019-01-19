@@ -1,6 +1,6 @@
-§@ªÌ: itoc (Internet Explorer) ¯¸¤º: plan
-¼ĞÃD: [¥\¯à] ¤ä´©¶W¹L 24 ¦Cªºµe­±
-®É¶¡: Thu Mar 27 23:11:04 2003                          Updated: 2005/01/10
+ä½œè€…: itoc (Internet Explorer) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] æ”¯æ´è¶…é 24 åˆ—çš„ç•«é¢
+æ™‚é–“: Thu Mar 27 23:11:04 2003                          Updated: 2005/01/10
 
 : include/global.h
 
@@ -9,7 +9,7 @@ VAR int b_lines;                /* bottom line */
 
 : bbsd.c:tn_login()
 
-  bbstate = STAT_STARTED;       /* ¶i¤J¨t²Î¥H«á¤~¥i¥H¦^¤ô²y */
+  bbstate = STAT_STARTED;       /* é€²å…¥ç³»çµ±ä»¥å¾Œæ‰å¯ä»¥å›æ°´çƒ */
 + screen_resized = 0;
 
 : visio.c:iac_count()
@@ -34,7 +34,7 @@ VAR int b_lines;                /* bottom line */
 
     vi_head = (*data) == IAC ? iac_count(data) : 0;
 +   if (screen_resized)
-+     return Ctrl('L'); /* ­è¦n³Q igetch() ®³¨Ó·í§@¥ş°ì redraw */
++     return Ctrl('L'); /* å‰›å¥½è¢« igetch() æ‹¿ä¾†ç•¶ä½œå…¨åŸŸ redraw */
 
 : visio.c:vget()
 
@@ -42,9 +42,9 @@ VAR int b_lines;                /* bottom line */
   {
     move(x, y + col);
     ch = vkey();
-+   /* Kyo: ¥¼¥[¤W screen_resized §PÂ_ªº¸Ü
-+      ·|¾É­P¤@¨Ç¤@¶}©l´N·|°e TELOPT_NAWS ªº telnet ³nÅé, µLªk¿é¤J¥ô¦ó¦r¤¸
-+      ³o¥u¾A¥Î©ó§Y®É¿Ã¹õ§ó·s, ¨ä¥L¤£·|³Q¼vÅT */
++   /* Kyo: æœªåŠ ä¸Š screen_resized åˆ¤æ–·çš„è©±
++      æœƒå°è‡´ä¸€äº›ä¸€é–‹å§‹å°±æœƒé€ TELOPT_NAWS çš„ telnet è»Ÿé«”, ç„¡æ³•è¼¸å…¥ä»»ä½•å­—å…ƒ
++      é€™åªé©ç”¨æ–¼å³æ™‚è¢å¹•æ›´æ–°, å…¶ä»–ä¸æœƒè¢«å½±éŸ¿ */
 +   if (screen_resized)
 +   {
 +     screen_resized = 0;
@@ -55,7 +55,7 @@ VAR int b_lines;                /* bottom line */
 
     cmd = vkey();
 
-+   if (screen_resized)     /* ­YÅÜ°Ê¤F¿Ã¹õ¤j¤p¡A­n­«·s¸ü¤J */
++   if (screen_resized)     /* è‹¥è®Šå‹•äº†è¢å¹•å¤§å°ï¼Œè¦é‡æ–°è¼‰å…¥ */
 +   {
 +     screen_resized = 0;
 +     xo->top = pos / XO_TALL * XO_TALL;
@@ -78,7 +78,7 @@ VAR int b_lines;                /* bottom line */
 
     cmd = vkey();
 
-+   if (screen_resized)     /* ­YÅÜ°Ê¤F¿Ã¹õ¤j¤p¡A­n­«Ã¸ menu */
++   if (screen_resized)     /* è‹¥è®Šå‹•äº†è¢å¹•å¤§å°ï¼Œè¦é‡ç¹ª menu */
 +   {
 +     screen_resized = 0;
 +     mode = MENU_DRAW | MENU_FILM;
@@ -103,7 +103,7 @@ VAR int b_lines;                /* bottom line */
 +       goto resized;
 +     }
 
-: edit.c:vedit()  /* Kyo: ¬°¤Fµe­±Åã¥Ü¥¿±`, ©Ò¥H¤~©î¦¨¨â¬q @@ */
+: edit.c:vedit()  /* Kyo: ç‚ºäº†ç•«é¢é¡¯ç¤ºæ­£å¸¸, æ‰€ä»¥æ‰æ‹†æˆå…©æ®µ @@ */
 
 +   if (screen_resized)
 +   {
@@ -122,21 +122,21 @@ VAR int b_lines;                /* bottom line */
 
 
 
-Kyo: µM«áÁÙ¦³ pans ¤]«ÜºG, ¯u­n§Y®É³B¸Ì·|§ï¨ìºÆ±¼
-     ©Ò¥H´Nºû«ù¥b¦Û°Ê, ¤]´N¬OÂ÷¶}¿ï³æ«á¦A«ö¤@Áä´N·|§ó·sµe­±
+Kyo: ç„¶å¾Œé‚„æœ‰ pans ä¹Ÿå¾ˆæ…˜, çœŸè¦å³æ™‚è™•è£¡æœƒæ”¹åˆ°ç˜‹æ‰
+     æ‰€ä»¥å°±ç¶­æŒåŠè‡ªå‹•, ä¹Ÿå°±æ˜¯é›¢é–‹é¸å–®å¾Œå†æŒ‰ä¸€éµå°±æœƒæ›´æ–°ç•«é¢
 
-     ¦]¬° screen_resized «á­n±N screen_resized ÁÙ­ì
-     ©Ò¥H®³ tmp_screen ¨Ó¼È©ñ ...
+     å› ç‚º screen_resized å¾Œè¦å°‡ screen_resized é‚„åŸ
+     æ‰€ä»¥æ‹¿ tmp_screen ä¾†æš«æ”¾ ...
 
 : windows.c:pans()
 
 - int cur, old_cur, max, ch, i;
 + int cur, old_cur, max, ch, i, tmp_screen;
 
-  /* µe¥X¾ã­Ó¿ï³æ */
+  /* ç•«å‡ºæ•´å€‹é¸å–® */
 
 + resized:
-    if (x == -1 && y == -1)          /* tsaikd.041007 ¦Û°Ê§ä¦ì¸m */
+    if (x == -1 && y == -1)          /* tsaikd.041007 è‡ªå‹•æ‰¾ä½ç½® */
     {
       x = (b_lines - 4 - ch) / 2;
       y = (b_cols - 12 - desc_maxlen) / 2;
@@ -150,11 +150,11 @@ Kyo: µM«áÁÙ¦³ pans ¤]«ÜºG, ¯u­n§Y®É³B¸Ì·|§ï¨ìºÆ±¼
 +   case Ctrl('L'):
 +     if (screen_resized)
 +     {
-+       clear();         /* ¤£²Mµe­±ªº¸Ü, ·|«Ü´dºG */
++       clear();         /* ä¸æ¸…ç•«é¢çš„è©±, æœƒå¾ˆæ‚²æ…˜ */
 +       tmp_screen = 1;
 +       screen_resized = 0;
 +       hotkey = desc[cur][0];
-+       x = y = -1; /* ¸m¤¤ */
++       x = y = -1; /* ç½®ä¸­ */
 +       goto resized;
 +     }
 +     continue;
@@ -228,4 +228,4 @@ Kyo: µM«áÁÙ¦³ pans ¤]«ÜºG, ¯u­n§Y®É³B¸Ì·|§ï¨ìºÆ±¼
 +     break;
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

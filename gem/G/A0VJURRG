@@ -1,26 +1,26 @@
-§@ªÌ: itoc (¬@±Ï¤@­ÓÆF»î) ¬İªO: plan
-¼ĞÃD: [¥\¯à] menu.c xover.c °ÊºA´å¼Ğ
-®É¶¡: Thu Jul  4 16:38:27 2002                          Updated: 2005/04/12
+ä½œè€…: itoc (æ‹¯æ•‘ä¸€å€‹éˆé­‚) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] menu.c xover.c å‹•æ…‹æ¸¸æ¨™
+æ™‚é–“: Thu Jul  4 16:38:27 2002                          Updated: 2005/04/12
 
-  §â´å¼Ğ > ´«¦¨·|ÅÜªº¡A¥Ñ¨Ï¥ÎªÌ¦Û©w
+  æŠŠæ¸¸æ¨™ > æ›æˆæœƒè®Šçš„ï¼Œç”±ä½¿ç”¨è€…è‡ªå®š
 
 : global.h
 
 VAR char hunt[32];
-+ VAR int cursor_count;              /* ¥Ø«e¬O¥Î²Ä´X­Ó´å¼Ğ */
-+ VAR int cursor_max;                /* ¥ş³¡¦³´X­Ó´å¼Ğ */
-+ VAR char cursor_table[10][3];      /* ´å¼Ğ */
++ VAR int cursor_count;              /* ç›®å‰æ˜¯ç”¨ç¬¬å¹¾å€‹æ¸¸æ¨™ */
++ VAR int cursor_max;                /* å…¨éƒ¨æœ‰å¹¾å€‹æ¸¸æ¨™ */
++ VAR char cursor_table[10][3];      /* æ¸¸æ¨™ */
 
 : acct.c u_xfile()
 
-+   "¦Û©w´å¼Ğ",
-    "¼È¦sÀÉ.1",
++   "è‡ªå®šæ¸¸æ¨™",
+    "æš«å­˜æª”.1",
   ...
   ...
 +   "cursor",
     "buf.1",
 
-: bbsd.c:get_cursor_table() ¦b tn_motd() «e­±·s¼W¦¹¨ç¦¡
+: bbsd.c:get_cursor_table() åœ¨ tn_motd() å‰é¢æ–°å¢æ­¤å‡½å¼
 
 static void
 get_cursor_table()
@@ -29,10 +29,10 @@ get_cursor_table()
   char fpath[64], *str;
   int i;
 
-  /* ¹w³]ªº´å¼Ğ */
-  strcpy(cursor_table[0], "¡÷");
-  strcpy(cursor_table[1], "¡ñ");
-  strcpy(cursor_table[2], "¡ğ");
+  /* é è¨­çš„æ¸¸æ¨™ */
+  strcpy(cursor_table[0], "â†’");
+  strcpy(cursor_table[1], "â™‚");
+  strcpy(cursor_table[2], "â™€");
   cursor_max = 3;
   cursor_count = 0;
 
@@ -58,7 +58,7 @@ get_cursor_table()
 + get_cursor_table();
 
 #ifdef HAVE_FORCE_BOARD
-  brd_force();  /* itoc.000319: ±j¨î¾\Åª¤½§iªO */
+  brd_force();  /* itoc.000319: å¼·åˆ¶é–±è®€å…¬å‘Šæ¿ */
 #endif
 }
 
@@ -71,7 +71,7 @@ get_cursor_table()
 +     prints(COLOR4 "%s(%c)%s \033[m",
 +       cursor_table[++cursor_count%cursor_max], *str, str + 1);
       cx = cc;
-#else           /* ¨S¦³ CURSOR_BAR */
+#else           /* æ²’æœ‰ CURSOR_BAR */
       if (cx >= 0)
       {
         move(MENU_XPOS + cx, MENU_YPOS);
@@ -81,11 +81,11 @@ get_cursor_table()
       move(MENU_XPOS + cc, MENU_YPOS);
 -     outc('>');
 +     outs(cursor_table[++cursor_count % cursor_max]);
-+     move(MENU_XPOS + cc, MENU_YPOS + 1);  /* itoc.020105: Á×§K¥ªÁä¥ş§Î°»´ú */
++     move(MENU_XPOS + cc, MENU_YPOS + 1);  /* itoc.020105: é¿å…å·¦éµå…¨å½¢åµæ¸¬ */
       cx = cc;
 #endif
     }
-    else                /* ­Y´å¼Ğªº¦ì¸m¨S¦³ÅÜ */
+    else                /* è‹¥æ¸¸æ¨™çš„ä½ç½®æ²’æœ‰è®Š */
     {
 #ifdef CURSOR_BAR
       move(MENU_XPOS + cc, MENU_YPOS);
@@ -113,7 +113,7 @@ menu_key:
 -         outc(' ');
 +         outs("  ");
 
-          break;                /* ¥u²¾°Ê´å¼Ğ */
+          break;                /* åªç§»å‹•æ¸¸æ¨™ */
         }
 
   ...
@@ -121,13 +121,13 @@ menu_key:
 
     pos = xo->pos;
 
-    if (xo->max > 0)            /* Thor:­Y¬OµLªF¦è´N¤£show¤F */
+    if (xo->max > 0)            /* Thor:è‹¥æ˜¯ç„¡æ±è¥¿å°±ä¸showäº† */
     {
       num = 3 + pos - xo->top;
       move(num, 0);
 -     outc('>');
 +     outs(cursor_table[++cursor_count % cursor_max]);
-+     move(num, 1);     /* itoc.020105: Á×§K¥ªÁä¥ş§Î°»´ú */
++     move(num, 1);     /* itoc.020105: é¿å…å·¦éµå…¨å½¢åµæ¸¬ */
     }
 
     cmd = vkey();
@@ -135,23 +135,23 @@ menu_key:
   ...
   ...
 
-          if (cmd < 0)          /* ¦b¥»­¶§ä¨ì match */
+          if (cmd < 0)          /* åœ¨æœ¬é æ‰¾åˆ° match */
           {
             move(num, 0);
 -           outc(' ');
 +           outs("  ");
             /* cmd = XO_NONE; */
-            /* itoc.010913: ¬Y¨Ç·j´M­n§â b_lines ¶ñ¤W feeter */
+            /* itoc.010913: æŸäº›æœå°‹è¦æŠŠ b_lines å¡«ä¸Š feeter */
             cmd = cmd == -1 ? XO_NONE : XO_FOOT;
           }
 
 : ------------------------------------------------------
 
-  usr/_/_/cursor ªº®æ¦¡¬O
+  usr/_/_/cursor çš„æ ¼å¼æ˜¯
 
-¡÷¡ö¢H
+â†’â†ï¼…
 
-  ¤@¦C¤Q­Ó´å¼Ğ¡A¥i¥H¤£¨ì¤Q­Ó¡A¶W¹L¤Q­Ó¨S¥Î
+  ä¸€åˆ—åå€‹æ¸¸æ¨™ï¼Œå¯ä»¥ä¸åˆ°åå€‹ï¼Œè¶…éåå€‹æ²’ç”¨
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mapple.Dorm3.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mapple.Dorm3.NCTU.edu.tw[37m ç™¼è¡¨[m

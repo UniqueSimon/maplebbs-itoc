@@ -1,10 +1,10 @@
-µo«H¤H: LHD.bbs@YoMin.twbbs.org (§Ú²Ö¤F) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¾ã¦æ¥ú´Î(6)¡Ğmail.c «H½c¦Cªí
-µo«H¯¸: ¹C¥Á¤§®a (Mon, 14 Jul 2003 17:32:32 +0800 (CST))  Updated: 2004/03/06
+ç™¼ä¿¡äºº: LHD.bbs@YoMin.twbbs.org (æˆ‘ç´¯äº†) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] æ•´è¡Œå…‰æ£’(6)ï¼mail.c ä¿¡ç®±åˆ—è¡¨
+ç™¼ä¿¡ç«™: éŠæ°‘ä¹‹å®¶ (Mon, 14 Jul 2003 17:32:32 +0800 (CST))  Updated: 2004/03/06
 
-[1;31m¥²»İ¥ı°µpost.cªº hdr_outs_bar();[m
+[1;31må¿…éœ€å…ˆåšpost.cçš„ hdr_outs_bar();[m
 
-: mbox_item_bar() ©ñ¦b mbox_item() «á­±
+: mbox_item_bar() æ”¾åœ¨ mbox_item() å¾Œé¢
 
 #ifdef HAVE_LIGHTBAR
 static int
@@ -60,6 +60,6 @@ KeyFunc xmbox_cb[] =
 ...
 
 --
-[m¢d¢e¢f¢g¢h¢f¢e¢d¢c¢b                [33m¢©  ¢¨      ¢i¢©¢¨¢i ¡´   [1;30mbbs.cis95.net[m
-[30;47m¢h¢f¢e¢c¢b¡Å¢d¢f¢g[0;35m   ©~µL©w©Òªº¶³   [33m¢ª¢i¢« ¢«¢ª ¢i¢ª¢«¢i ¡¶ ¢i¢h¢© [0;1m¹C¥Á¤§®a[m
-[1;34mÄÆ¦Û [31mcismpc19.cis.nctu.edu.tw         [0;33m¢i   ¢©¢¨ ¢i    ¢i ¢i ¢i  ¢i¡Etwbbs¡Eorg[m
+[mâ–ƒâ–„â–…â–†â–‡â–…â–„â–ƒâ–‚â–                [33mâ—£  â—¢      â–ˆâ—£â—¢â–ˆ â—   [1;30mbbs.cis95.net[m
+[30;47mâ–‡â–…â–„â–‚â–?â–ƒâ–…â–†[0;35m   å±…ç„¡å®šæ‰€çš„é›²   [33mâ—¥â–ˆâ—¤ â—¤â—¥ â–ˆâ—¥â—¤â–ˆ â–² â–ˆâ–‡â—£ [0;1méŠæ°‘ä¹‹å®¶[m
+[1;34mé£„è‡ª [31mcismpc19.cis.nctu.edu.tw         [0;33mâ–ˆ   â—£â—¢ â–ˆ    â–ˆ â–ˆ â–ˆ  â–ˆ?twbbs?org[m

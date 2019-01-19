@@ -1,26 +1,26 @@
-µo«H¤H: maya.bbs@cpu.tfcis.org (º¿¶®) ¬İªO: plan
-¼Ğ  ÃD: [°Q½×] ¤jD¤å³¹³Æ¥÷
-µo«H¯¸: °Ê¤O®Ö¤ß (2007/05/18 Fri 17:19:36)                Updated: 2007/05/18
+ç™¼ä¿¡äºº: maya.bbs@cpu.tfcis.org (ç‘ªé›…) çœ‹æ¿: plan
+æ¨™  é¡Œ: [è¨è«–] å¤§Dæ–‡ç« å‚™ä»½
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2007/05/18 Fri 17:19:36)                Updated: 2007/05/18
 
-§Ú·Q­n§â¤jDªº¤å³¹³Æ¥÷¦Ürangedel¬İªO¡A
-©ó¬O°µ¤F¥H¤U­×§ï¡A´ú¸Õ¤F¤pd¡B¤jD¡B¦Ûd¡A¥\¯à¦ü¥G¥¿±`¡A
+æˆ‘æƒ³è¦æŠŠå¤§Dçš„æ–‡ç« å‚™ä»½è‡³rangedelçœ‹æ¿ï¼Œ
+æ–¼æ˜¯åšäº†ä»¥ä¸‹ä¿®æ”¹ï¼Œæ¸¬è©¦äº†å°dã€å¤§Dã€è‡ªdï¼ŒåŠŸèƒ½ä¼¼ä¹æ­£å¸¸ï¼Œ
 
 : global.h
 
-  deleted     ¯¸°È ¤å³¹¬@±Ï¡E¸ê·½¦^¦¬ PERM_BM       PERM_SYSOP
-+ rangedel    ¯¸°È ¤å³¹¬@±Ï¡E¤j¤M¦^¦¬ PERM_ALLBOARD PERM_SYSOP
+  deleted     ç«™å‹™ æ–‡ç« æ‹¯æ•‘?è³‡æºå›æ”¶ PERM_BM       PERM_SYSOP
++ rangedel    ç«™å‹™ æ–‡ç« æ‹¯æ•‘?å¤§åˆ€å›æ”¶ PERM_ALLBOARD PERM_SYSOP
 
   ...
   ...
 
-  #define BN_DELETED      "deleted"       /* ªO¥D§R°£ªº¤å³¹©ñ¦b¦¹ */
-+ #define BN_RANGEDELETED "rangedel"      /* ªO¥D¤jDªº¤å³¹©ñ¦b¦¹ */
+  #define BN_DELETED      "deleted"       /* æ¿ä¸»åˆªé™¤çš„æ–‡ç« æ”¾åœ¨æ­¤ */
++ #define BN_RANGEDELETED "rangedel"      /* æ¿ä¸»å¤§Dçš„æ–‡ç« æ”¾åœ¨æ­¤ */
 
-: ¤â°Ê¶}ªO
+: æ‰‹å‹•é–‹æ¿
 
-  ¤â°Ê¼W¥[¬İªOrangedel
+  æ‰‹å‹•å¢åŠ çœ‹æ¿rangedel
 
-: post.c:delpost_movepost() ·s¼W¦¹¨ç¦¡¦b delpost() «á­±
+: post.c:delpost_movepost() æ–°å¢æ­¤å‡½å¼åœ¨ delpost() å¾Œé¢
 
 static void
 delpost_movepost(xo, hdr)
@@ -78,5 +78,5 @@ static inline int
 +     pos = move_post(hdr, xo->dir, by_BM, 0);
 
 --
-[1;36m=[37m[[36m¡É[37m:[33m¡[37mİ¢¨[m¢©¡[1;33mİ[37m:[36m¡É [31mOrigin[37m ]|[[m  [0;31m°[1mÊ[1m¤[0;31mO[0;31m®[1mÖ[1m¤[0;31mß [1mcpu.tfcis.org  [37m]|[¡[33mİ£»¡[mİ[1;36m¡É[37m:][36m=[m
-[1;36m=[0m[[1;36m¡Ç[37m:[33m¡[30mİ¢ª[m¢¬¡[1;33mİ[37m:[36m¡Ç [31mAuthor[m ]|[[1m220-133-248-167.hinet-ip.h[m]|[¡[1;33mİ[30m¡[37m´¡[30mİ[36m¡Ç[37m:[m][1;36m=[m
+[1;36m=[37m[[36mï¹[37m:[33m?[37mæ‘ƒ?[mâ—£?[1;33m?[37m:[36mï¹ [31mOrigin[37m ]|[[m  [0;31m?[1m?[1m?[0;31mO[0;31m?[1m?[1m?[0;31m?[1mcpu.tfcis.org  [37m]|[?[33mæŸèªª[m?[1;36mï¹[37m:][36m=[m
+[1;36m=[0m[[1;36mï¹Š[37m:[33m?[30mæ‘ƒ?[mâ•±?[1;33m?[37m:[36mï¹Š [31mAuthor[m ]|[[1m220-133-248-167.hinet-ip.h[m]|[?[1;33m?[30m?[37mæ’[30m?[36mï¹Š[37m:[m][1;36m=[m

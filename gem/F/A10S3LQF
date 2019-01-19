@@ -1,17 +1,17 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬ÝªO: plan
-¼Ð  ÃD: Re: [¥\¯à] ¤å³¹¸m©³
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/12/17 Fri 01:37:37)                Updated: 2004/12/17
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [åŠŸèƒ½] æ–‡ç« ç½®åº•
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/12/17 Fri 01:37:37)                Updated: 2004/12/17
 
-¡° ¤Þ­z¡mitoc (®Ö¤ß°Ê¤O)¡n¤§»Ê¨¥¡G
->   µL½×¤èªk¤@ÁÙ¬O¤èªk¤G¡Aµû¤À³£¬O¥i¥H³s°Ê¡A¥u¬O¤èªk¤G¨S¼g¦Ó¤w
+â€» å¼•è¿°ã€Šitoc (æ ¸å¿ƒå‹•åŠ›)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>   ç„¡è«–æ–¹æ³•ä¸€é‚„æ˜¯æ–¹æ³•äºŒï¼Œè©•åˆ†éƒ½æ˜¯å¯ä»¥é€£å‹•ï¼Œåªæ˜¯æ–¹æ³•äºŒæ²’å¯«è€Œå·²
 
-  ¤èªk¤Gªº±À¤å¤À¼Æ³s°Ê
+  æ–¹æ³•äºŒçš„æŽ¨æ–‡åˆ†æ•¸é€£å‹•
 
 : hdr.h:struct HDR
 
-- char xname[32];               /* ÀÉ®×¦WºÙ */
-+ char xname[28];               /* ÀÉ®×¦WºÙ */
-+ time_t parent_chrono;         /* ¸m©³¤åªº¥¿¥»¬O­þ½g */
+- char xname[32];               /* æª”æ¡ˆåç¨± */
++ char xname[28];               /* æª”æ¡ˆåç¨± */
++ time_t parent_chrono;         /* ç½®åº•æ–‡çš„æ­£æœ¬æ˜¯å“ªç¯‡ */
 
 : post.c:post_bottom()
 
@@ -27,32 +27,32 @@
     rec_ref(dir, hdr, sizeof(HDR), xo->key == XZ_XPOST ?
       hdr->xid : pos, cmpchrono, addscore);
 
-+   if (hdr->xmode & POST_BOTTOM)  /* ­Y¬Oµû¤À¸m©³¤å³¹¡A¥h§ä¥¿¥»¨Ó³s°Ê¤À¼Æ */
++   if (hdr->xmode & POST_BOTTOM)  /* è‹¥æ˜¯è©•åˆ†ç½®åº•æ–‡ç« ï¼ŒåŽ»æ‰¾æ­£æœ¬ä¾†é€£å‹•åˆ†æ•¸ */
 +   {
 +     currchrono = hdr->parent_chrono;
 +     rec_ref(dir, hdr, sizeof(HDR), 0, cmpchrono, addscore);
 +   }
-+   else                           /* ­Y¬Oµû¤À¤@¯ë¤å³¹¡A¥h§äÁÃ¥»¨Ó³s°Ê¤À¼Æ */
++   else                           /* è‹¥æ˜¯è©•åˆ†ä¸€èˆ¬æ–‡ç« ï¼ŒåŽ»æ‰¾è¬„æœ¬ä¾†é€£å‹•åˆ†æ•¸ */
 +   {
-+     /* currchrono = hdr->chrono; */ /* «e­±¦³¤F */
++     /* currchrono = hdr->chrono; */ /* å‰é¢æœ‰äº† */
 +     rec_ref(dir, hdr, sizeof(HDR), 0, cmpparent, addscore);
 +   }
 
     return XO_LOAD;
   }
 
-: post.c:cmpparent() ¥[¦b cmpchrono() «á­±
+: post.c:cmpparent() åŠ åœ¨ cmpchrono() å¾Œé¢
 
 static int
 cmpparent(hdr)
   HDR *hdr;
 {
-  /* ¥i¥H¤£¥ÎÀË¬d POST_BOTTOM¡A¦]¬°¤@¯ë¤å³¹ªº parent_chrono = 0 */
+  /* å¯ä»¥ä¸ç”¨æª¢æŸ¥ POST_BOTTOMï¼Œå› ç‚ºä¸€èˆ¬æ–‡ç« çš„ parent_chrono = 0 */
   return /* (hdr->xmode & POST_BOTTOM) && */
     (hdr->parent_chrono == currchrono);
 }
 
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ž [31mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

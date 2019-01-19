@@ -1,9 +1,9 @@
-§@ªÌ: itoc (ºñ¥¨¤H¦n«È¡H) ¬İªO: itoc
-¼ĞÃD: Re: [°İÃD]¦Û°Ê¦³¶}ªO²Ä¤@PO
-®É¶¡: Fri Jul 18 14:51:27 2003                          Updated: 2005/04/27
+ä½œè€…: itoc (ç¶ å·¨äººå¥½å®¢ï¼Ÿ) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: [å•é¡Œ]è‡ªå‹•æœ‰é–‹æ¿ç¬¬ä¸€PO
+æ™‚é–“: Fri Jul 18 14:51:27 2003                          Updated: 2005/04/27
 
-¡° ¤Ş­z¡mDinsam.bbs@whshs.cs.nccu.edu.tw («e¥@.. o.O)¡n¤§»Ê¨¥¡G
-> ¶}ªO¤§«á¦Û°Ê·|POST¤@½g¤½§i¦b·sªO
+â€» å¼•è¿°ã€ŠDinsam.bbs@whshs.cs.nccu.edu.tw (å‰ä¸–.. o.O)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> é–‹æ¿ä¹‹å¾Œè‡ªå‹•æœƒPOSTä¸€ç¯‡å…¬å‘Šåœ¨æ–°æ¿
 
 : board.c:class_newbrd()
 
@@ -21,7 +21,7 @@ class_newbrd(xo)
 + hdr_stamp(folder, HDR_COPY | 'A', &hdr, "etc/newboard");
 + strcpy(hdr.owner, str_sysop);
 + strcpy(hdr.nick, SYSOPNICK);
-+ strcpy(hdr.title, "[¤½§i] ¬İªO¦¨¥ß");
++ strcpy(hdr.title, "[å…¬å‘Š] çœ‹æ¿æˆç«‹");
 + hdr.xmode = POST_MARKED;
 + rec_add(folder, &hdr, sizeof(HDR));
 
@@ -30,8 +30,8 @@ class_newbrd(xo)
 
 : newbrd.c:nbrd_newbrd()
 
-int                          /* -1:¤£¯à¶}ªO  0: ©ñ±ó¶}ªO  1:¶}ªO¦¨¥\ */
-nbrd_newbrd()               /* ¶}·sªO */
+int                          /* -1:ä¸èƒ½é–‹æ¿  0: æ”¾æ£„é–‹æ¿  1:é–‹æ¿æˆåŠŸ */
+nbrd_newbrd()               /* é–‹æ–°æ¿ */
   NBRD *nbrd;
 {
   BRD newboard;
@@ -48,26 +48,26 @@ nbrd_newbrd()               /* ¶}·sªO */
 + hdr_stamp(folder, HDR_COPY | 'A', &hdr, "etc/newboard");
 + strcpy(hdr.owner, str_sysop);
 + strcpy(hdr.nick, SYSOPNICK);
-+ strcpy(hdr.title, "[¤½§i] ¬İªO¦¨¥ß");
++ strcpy(hdr.title, "[å…¬å‘Š] çœ‹æ¿æˆç«‹");
 + hdr.xmode = POST_MARKED;
 + rec_add(folder, &hdr, sizeof(HDR));
 
-  vmsg("·sªO¦¨¥ß¡A°OµÛ¥[¤J¤ÀÃş¸s²Õ");
+  vmsg("æ–°æ¿æˆç«‹ï¼Œè¨˜è‘—åŠ å…¥åˆ†é¡ç¾¤çµ„");
   return 1;
 }
 
-: etc/newboard  ·s¼W³o­ÓÀÉ®×¡A¤º®e¡B®æ¦¡¦Û©w
+: etc/newboard  æ–°å¢é€™å€‹æª”æ¡ˆï¼Œå…§å®¹ã€æ ¼å¼è‡ªå®š
 
-§@ªÌ: SYSOP (§Ú¬O¯¸ªø) ¯¸¤º: [¨t²Î¤½§i]
-¼ĞÃD: [¤½§i] ¬İªO¦¨¥ß
-®É¶¡: Sun Jun 01 00:00:00 2000
+ä½œè€…: SYSOP (æˆ‘æ˜¯ç«™é•·) ç«™å…§: [ç³»çµ±å…¬å‘Š]
+æ¨™é¡Œ: [å…¬å‘Š] çœ‹æ¿æˆç«‹
+æ™‚é–“: Sun Jun 01 00:00:00 2000
 
-  ®¥³ß¶}ªO¡IªO¥D½Ğ¦Ü [bm] ªO³ø¨ì
+  æ­å–œé–‹æ¿ï¼æ¿ä¸»è«‹è‡³ [bm] æ¿å ±åˆ°
 
 --
 [1;31mAuthor: [36mmybbs.twbbs.org[m
 
 
 --
-[1;31m|[33m Origin [31m| [0;45m MapleBBS-itoc °Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
+[1;31m|[33m Origin [31m| [0;45m MapleBBS-itoc å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
 [1;31m|[35m Author [31m| [36mitoc.Dorm11.NCTU.edu.tw[m

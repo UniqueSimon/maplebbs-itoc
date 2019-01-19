@@ -1,30 +1,30 @@
-�@��: itoc (�@�Ϥ@���F��) �ݪO: plan
-���D: [�\��] menu.c �Y�����U��A������ vs_head �|�{�ʴ���
-�ɶ�: Sat Jul 13 12:46:40 2002                          Updated: 2004/03/05
+作者: itoc (拯救一個靈魂) 看板: plan
+標題: [功能] menu.c 若有註冊單，站長的 vs_head 會閃動提示
+時間: Sat Jul 13 12:46:40 2002                          Updated: 2004/03/05
 
-�� �ޭz�mdream.bbs@sea.twbbs.org (�i ����� �i)�n���ʨ��G
-> ���s�ϥΪ̶���U��ɡA�����ä��|����q���C
-> ��ק令�@
-> [1;36;44m��ؤ峹  [37;46m           [5;33;45m  ���s���ϥΪ̵��U�o!  [;1;37;46m                �ݪO [33;44m  [36mSYSOP  [m
+※ 引述《dream.bbs@sea.twbbs.org (ξ 秋海棠 ξ)》之銘言：
+> 有新使用者填註冊單時，站長並不會收到通知。
+> 能修改成　
+> [1;36;44m精華文章  [37;46m           [5;33;45m  有新的使用者註冊囉!  [;1;37;46m                看板 [33;44m  [36mSYSOP  [m
 
 : menu.c:vs_head()
 
   if (HAS_STATUS(STATUS_BIFF))
   {
-    mid = "\033[5;41m �l�t�ӫ��a�F \033[m";
+    mid = "\033[5;41m 郵差來按鈴了 \033[m";
     spc = 14;
   }
 + else if (HAS_PERM(PERM_ALLREG) &&
 +   rec_num(FN_RUN_RFORM, sizeof(RFORM)))
 + {
-+   mid = "\033[5;45m ���H����U�� \033[m";
++   mid = "\033[5;45m 有人填註冊單 \033[m";
 +   spc = 20;
 + }
   else
   {
 
 --
-  �o�|�Y I/O
+  這會吃 I/O
 
 --
-[1;37m�� ���峹�� [33mitoc[37m �q [32ma128124.Dorm-GD2.NCTU.edu.tw[37m �o��[m
+[1;37m□ 本文章由 [33mitoc[37m 從 [32ma128124.Dorm-GD2.NCTU.edu.tw[37m 發表[m

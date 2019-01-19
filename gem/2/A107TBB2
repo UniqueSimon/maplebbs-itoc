@@ -1,34 +1,34 @@
-µo«H¤H: truck66.bbs@bbs2.ba.ccu.edu.tw (§Q°I·´ÅAºÙÃÕ­W¼Ö) ¬ÝªO: itoc
-¼Ð  ÃD: ¤â°ÊÂà«H¥\¯à®³¨ì¥\¯àªí¦C
-µo«H¯¸: »Å¤Ú·s¯¸ (2004/04/15 Thu 19:45:58)                Updated: 2004/10/23
+ç™¼ä¿¡äºº: truck66.bbs@bbs2.ba.ccu.edu.tw (åˆ©è¡°æ¯€è­½ç¨±è­è‹¦æ¨‚) çœ‹æ¿: itoc
+æ¨™  é¡Œ: æ‰‹å‹•è½‰ä¿¡åŠŸèƒ½æ‹¿åˆ°åŠŸèƒ½è¡¨åˆ—
+ç™¼ä¿¡ç«™: é…·å·´æ–°ç«™ (2004/04/15 Thu 19:45:58)                Updated: 2004/10/23
 
-    ¬ì§Þ©l²×¨Ó¦Û©óÃi´k  :D
-
-
-    ¦³¯¸ªøÅv­­ªº¥i¥H¦b¿é¤J¿ï¶µªº¦a¤è¿ï¨ä¥L¡A¥´¨ä¥L«ü¥O¡A
-
-    ¤£¹L¶W¹L¤@¦æ³á¡ã
+    ç§‘æŠ€å§‹çµ‚ä¾†è‡ªæ–¼æ‡¶æƒ°  :D
 
 
-    ¨ä¥L¯¸°È¶È¥i¥H±Ò°ÊÂà«H«ü¥O
+    æœ‰ç«™é•·æ¬Šé™çš„å¯ä»¥åœ¨è¼¸å…¥é¸é …çš„åœ°æ–¹é¸å…¶ä»–ï¼Œæ‰“å…¶ä»–æŒ‡ä»¤ï¼Œ
+
+    ä¸éŽè¶…éŽä¸€è¡Œå–”ï½ž
 
 
-    news ¯¸¥xªº¦a¤è¦Û¦æ­×§ïÅo¡ã  ^^
+    å…¶ä»–ç«™å‹™åƒ…å¯ä»¥å•Ÿå‹•è½‰ä¿¡æŒ‡ä»¤
 
 
-: maple/menu.c   ·s¼W¥H¤U¦b static MENU menu_admin[] ¤§«e
+    news ç«™å°çš„åœ°æ–¹è‡ªè¡Œä¿®æ”¹å›‰ï½ž  ^^
+
+
+: maple/menu.c   æ–°å¢žä»¥ä¸‹åœ¨ static MENU menu_admin[] ä¹‹å‰
 
 static int
 system_cmd()
 {
   char cmd[60];
 
-  /* ¥u¦³¯¸ªø¥i¥H¨Ï¥Î¨ä¥L«ü¥O */
+  /* åªæœ‰ç«™é•·å¯ä»¥ä½¿ç”¨å…¶ä»–æŒ‡ä»¤ */
   if (HAS_PERM(PERM_SYSOP))
   {
-    if (vans("½Ð¿é¤J¿ï¶µ¡G1)Âà«H 2)¨ä¥L [1] ") == '2')
+    if (vans("è«‹è¼¸å…¥é¸é …ï¼š1)è½‰ä¿¡ 2)å…¶ä»– [1] ") == '2')
     {
-      vget(b_lines, 0, "«ü¥O¡G", cmd, sizeof(cmd), DOECHO);
+      vget(b_lines, 0, "æŒ‡ä»¤ï¼š", cmd, sizeof(cmd), DOECHO);
       system(cmd);
       return XEASY;
     }
@@ -42,22 +42,22 @@ system_cmd()
 : maple/menu.c : static MENU menu_admin[]
 
 + system_cmd, PERM_ALLADMIN,  M_SYSTEM,
-+ "Cmd        ¢« Âà«H«ü¥O ¢¨",
++ "Cmd        â—¤ è½‰ä¿¡æŒ‡ä»¤ â—¢",
 
   a_user, PERM_ALLACCT, M_SYSTEM,
-  "User       ¢« ÅU«È¸ê®Æ ¢¨",
+  "User       â—¤ é¡§å®¢è³‡æ–™ â—¢",
 
 --
 
-   ½Äªü¡ã¡ã[1;30m¥d¨®[37m¯S§ð¶¤[m¡ã¡ã      [1;33m¡³     [30m¢d¢e¢f¢g¢g¢h¢h¢i¢«[m      ¹Í[1;30m¹Í[m¡ã
-                             [1;33m¡Ã[34m¢i[33m>  [30m¢¨¢i¢i¢i¢i¢i¢i¢i¢«[m        §A¶W[1;30m³t[m¤F¡ã
-     ¨S¦b[1;30m©È[mªº°Õ¡ã¡ã            [1;33m/| [30m¢¨¢i¢i¢i¢i¢i¢i¢i¢«[m          [1;30m§Ö[m°±¨®¡ã¡ã
-                      [30m   [m  ¢¨¢i¢i[47m [1;30m¢[40mi¢i¢i¢i¢i¢i¢i¢«[m   =====
-       ½Ä[1;30m½Ä[m½Ä¡ã¡ã   [30m   [m ¢¨¢i¢i¢i[1;30;47m¢¨[40m¢i¢i¢i¢i¢i¢i¢«[m   =====
-                     ¢¨¢[43mi¢« ¢[mi[1;30;47m¢¨[40m¢i¢i¢[43mi¢«  ¢i[40m¢«[m   =====
-                         [30;43m¢©¢¨[40m¢e¢e¢e¢e¢[43m© ¢¨[40m¢«[m
+   è¡é˜¿ï½žï½ž[1;30må¡è»Š[37mç‰¹æ”»éšŠ[mï½žï½ž      [1;33mâ—‹     [30mâ–ƒâ–„â–…â–†â–†â–‡â–‡â–ˆâ—¤[m      å—¶[1;30må—¶[mï½ž
+                             [1;33mï¿£[34mâ–ˆ[33m>  [30mâ—¢â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ—¤[m        ä½ è¶…[1;30mé€Ÿ[mäº†ï½ž
+     æ²’åœ¨[1;30mæ€•[mçš„å•¦ï½žï½ž            [1;33m/| [30mâ—¢â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ—¤[m          [1;30må¿«[måœè»Šï½žï½ž
+                      [30m   [m  â—¢â–ˆâ–ˆ[47m [1;30m?[40miâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ—¤[m   =====
+       è¡[1;30mè¡[mè¡ï½žï½ž   [30m   [m â—¢â–ˆâ–ˆâ–ˆ[1;30;47mâ—¢[40mâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ—¤[m   =====
+                     â—¢?[43miâ—¤ ?[mi[1;30;47mâ—¢[40mâ–ˆâ–ˆ?[43miâ—¤  â–ˆ[40mâ—¤[m   =====
+                         [30;43mâ—£â—¢[40mâ–„â–„â–„â–„?[43m?â—¢[40mâ—¤[m
 
 --
-[1;35m¢¨[45m [40m¢©¢¨[45m [40m¢©¢© ¢¨ ¢¨[45m [40m¢© ¢¨[45m [40m¢© [37mOrigin: ¤¤¥¿»Å¤Ú¯¸   ccuba.twbbs.org[m
-[1;35m¢iùâ ¢iùâ ¢i ¢i ¢i [45mù[40mâ ¢i ¢i [30mAuthor: truck66      ±q u2501d.dorm.ccu.edu.t µoªí[m
-[1;45m¢ª ¢«¢ª ¢«¢ª ¢« ¢ª ¢« ¢« ¢ª[34m   . [37mo     ¡C  [;37;45m.¡O    . O   [1;35m  .  ¡E      [37m¡O¡Co  [;34;45m [1;36m  [m
+[1;35mâ—¢[45m [40mâ—£â—¢[45m [40mâ—£â—£ â—¢ â—¢[45m [40mâ—£ â—¢[45m [40mâ—£ [37mOrigin: ä¸­æ­£é…·å·´ç«™   ccuba.twbbs.org[m
+[1;35mâ–ˆâ•£ â–ˆâ•£ â–ˆ â–ˆ â–ˆ [45m?[40m?â–ˆ â–ˆ [30mAuthor: truck66      å¾ž u2501d.dorm.ccu.edu.t ç™¼è¡¨[m
+[1;45mâ—¥ â—¤â—¥ â—¤â—¥ â—¤ â—¥ â—¤ â—¤ â—¥[34m   . [37mo     ã€‚  [;37;45m.ï¹’    . O   [1;35m  .  ?      [37mï¹’ã€‚o  [;34;45m [1;36m  [m

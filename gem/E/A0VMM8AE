@@ -1,20 +1,20 @@
-µo«H¤H: itoc.bbs@xeon.tfcis.org (·¦­·¼s³õ..ÁÙ´¹µØ«°«¨) ¬İªO: plan
-¼Ğ  ÃD: Re: ¡i°İÃD¡j¦n¤Íªº¬ÛÃö°İÃD
-µo«H¯¸: °Ê¤O®Ö¤ß (Fri, 19 Sep 2003 17:39:02 +0800 (CST))  Updated: 2004/10/02
+ç™¼ä¿¡äºº: itoc.bbs@xeon.tfcis.org (æ¤°é¢¨å»£å ´..é‚„æ™¶è¯åŸå’§) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: ã€å•é¡Œã€‘å¥½å‹çš„ç›¸é—œå•é¡Œ
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (Fri, 19 Sep 2003 17:39:02 +0800 (CST))  Updated: 2004/10/02
 
-¡° ¤Ş­z¡monline (¥u¦b¤W½u®É·R§A)¡n¤§»Ê¨¥¡G
-> ½Ğ°İ¦p¦ó­­¨î¡A©Ò¦³¨Ï¥ÎªÌ±Nguest¥[¤J¦n¤Í©O?
+â€» å¼•è¿°ã€Šonline (åªåœ¨ä¸Šç·šæ™‚æ„›ä½ )ã€‹ä¹‹éŠ˜è¨€ï¼š
+> è«‹å•å¦‚ä½•é™åˆ¶ï¼Œæ‰€æœ‰ä½¿ç”¨è€…å°‡gueståŠ å…¥å¥½å‹å‘¢?
 
 : pal.c:pal_add()
 
-  if (userno == cuser.userno)   /* lkchu.981201: ªB¤Í¦W³æ¤£¥i¥[¦Û¤v */
+  if (userno == cuser.userno)   /* lkchu.981201: æœ‹å‹åå–®ä¸å¯åŠ è‡ªå·± */
   {
-    vmsg("¦Û¤v¤£¶·¥[¤JªB¤Í¦W³æ¤¤");
+    vmsg("è‡ªå·±ä¸é ˆåŠ å…¥æœ‹å‹åå–®ä¸­");
     return XO_HEAD;
   }
 + else if (!str_cmp(acct.userid, STR_GUEST))
 + {
-+   vmsg("¸ô¤H¤£¯à¥[¤JªB¤Í¦W³æ");
++   vmsg("è·¯äººä¸èƒ½åŠ å…¥æœ‹å‹åå–®");
 +   return XO_HEAD;
 + }
 
@@ -28,5 +28,5 @@
     {
 
 --
- [1;43m¢z[44m¢q[m Or[1mig[30min[m: [44m ¥x«n¤@¤¤£»°Ê¤O®Ö¤ß [31;47m processor.tfcis.org [m
- [1;41m¢|[42m¢}[m A[1mut[30mho[mr: [1;36mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [44m å°å—ä¸€ä¸­Ë™å‹•åŠ›æ ¸å¿ƒ [31;47m processor.tfcis.org [m
+ [1;41mâ””[42mâ”˜[m A[1mut[30mho[mr: [1;36mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

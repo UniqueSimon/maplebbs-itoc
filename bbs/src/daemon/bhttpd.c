@@ -9,31 +9,31 @@
 /*-------------------------------------------------------*/
 
 
-#if 0	/* ³sµ²¤@Äıªí */
+#if 0	/* é€£çµä¸€è¦½è¡¨ */
 
-  http://my.domain/                            ­º­¶
-  http://my.domain/brdlist                     ¬İªO¦Cªí
-  http://my.domain/fvrlist                     §Úªº³Ì·R
-  http://my.domain/usrlist                     ¨Ï¥ÎªÌ¦W³æ
-  http://my.domain/brd?brdname&##              ¤å³¹¦Cªí¡A¦C¥X¬İªO [brdname] ½s¸¹ ## ¶}©lªº 50 ½g¤å³¹
-  http://my.domain/gem?brdname&folder          ºëµØ°Ï¦Cªí¡A¦C¥X¬İªO [brdname] ºëµØ°Ï¤¤ folder ³o­Ó¨÷©v¤Uªº©Ò¦³ªF¦è
-  http://my.domain/mbox?##                     «H½c¦Cªí¡A¦C¥X«H½c¤¤½s¸¹ ## ¶}©lªº 50 ½g¤å³¹
-  http://my.domain/bmore?brdname&##            ¾\Åª¬İªO¤å³¹¡A¾\Åª¬İªO [brdname] ªº²Ä ## ½g¤å³¹
-  http://my.domain/bmost?brdname&##            ¾\Åª¬İªO¤å³¹¡A¾\Åª¬İªO [brdname] ¤¤©Ò¦³¦W²Ä ## ½g¦P¼ĞÃDªº¤å³¹
-  http://my.domain/gmore?brdname&folder&##     ¾\ÅªºëµØ°Ï¤å³¹¡A¾\Åª¬İªO [brdname] ºëµØ°Ï¤¤ folder ³o­Ó¨÷©v¤Uªº²Ä ## ½g¤å³¹
-  http://my.domain/mmore?##                    ¾\Åª«H½c¤å³¹¡A¾\Åª«H½c¤¤²Ä ## ½g¤å³¹
-  http://my.domain/dopost?brdname              µoªí¤å³¹©ó¬İªO [brdname]
-  http://my.domain/domail?userid               µo°e«H¥óµ¹ [userid]
-  http://my.domain/dpost?brdname&##&###        ¸ß°İ½T©w§R°£¬İªO [brdname] ¤¤²Ä ## ½g¤å³¹ (¨ä chrono ¬O ###)
-  http://my.domain/delpost?brdname&##&###      §R°£¬İªO [brdname] ¤¤²Ä ## ½g¤å³¹ (¨ä chrono ¬O ###)
-  http://my.domain/mpost?brdname&##&###        ¼Ğ°O¬İªO [brdname] ¤¤²Ä ## ½g¤å³¹ (¨ä chrono ¬O ###)
-  http://my.domain/dmail?##&###                ¸ß°İ½T©w§R°£«H½c¤¤²Ä ## ½g¤å³¹ (¨ä chrono ¬O ###)
-  http://my.domain/delmail?##&###              §R°£«H½c¤¤²Ä ## ½g¤å³¹ (¨ä chrono ¬O ###)
-  http://my.domain/mmail?##&###                ¼Ğ°O«H½c¤¤²Ä ## ½g¤å³¹ (¨ä chrono ¬O ###)
-  http://my.domain/query?userid                ¬d¸ß userid
-  http://my.domain/img?filename                Åã¥Ü¹ÏÀÉ
-  http://my.domain/rss?brdname                 ¦U¬İªOªºRSS Feed
-  http://my.domain/class?folder                ¦C¥X¤ÀÃş¤¤ [folder] ³o­Ó¨÷©v¤Uªº©Ò¦³¬İªO
+  http://my.domain/                            é¦–é 
+  http://my.domain/brdlist                     çœ‹æ¿åˆ—è¡¨
+  http://my.domain/fvrlist                     æˆ‘çš„æœ€æ„›
+  http://my.domain/usrlist                     ä½¿ç”¨è€…åå–®
+  http://my.domain/brd?brdname&##              æ–‡ç« åˆ—è¡¨ï¼Œåˆ—å‡ºçœ‹æ¿ [brdname] ç·¨è™Ÿ ## é–‹å§‹çš„ 50 ç¯‡æ–‡ç« 
+  http://my.domain/gem?brdname&folder          ç²¾è¯å€åˆ—è¡¨ï¼Œåˆ—å‡ºçœ‹æ¿ [brdname] ç²¾è¯å€ä¸­ folder é€™å€‹å·å®—ä¸‹çš„æ‰€æœ‰æ±è¥¿
+  http://my.domain/mbox?##                     ä¿¡ç®±åˆ—è¡¨ï¼Œåˆ—å‡ºä¿¡ç®±ä¸­ç·¨è™Ÿ ## é–‹å§‹çš„ 50 ç¯‡æ–‡ç« 
+  http://my.domain/bmore?brdname&##            é–±è®€çœ‹æ¿æ–‡ç« ï¼Œé–±è®€çœ‹æ¿ [brdname] çš„ç¬¬ ## ç¯‡æ–‡ç« 
+  http://my.domain/bmost?brdname&##            é–±è®€çœ‹æ¿æ–‡ç« ï¼Œé–±è®€çœ‹æ¿ [brdname] ä¸­æ‰€æœ‰åç¬¬ ## ç¯‡åŒæ¨™é¡Œçš„æ–‡ç« 
+  http://my.domain/gmore?brdname&folder&##     é–±è®€ç²¾è¯å€æ–‡ç« ï¼Œé–±è®€çœ‹æ¿ [brdname] ç²¾è¯å€ä¸­ folder é€™å€‹å·å®—ä¸‹çš„ç¬¬ ## ç¯‡æ–‡ç« 
+  http://my.domain/mmore?##                    é–±è®€ä¿¡ç®±æ–‡ç« ï¼Œé–±è®€ä¿¡ç®±ä¸­ç¬¬ ## ç¯‡æ–‡ç« 
+  http://my.domain/dopost?brdname              ç™¼è¡¨æ–‡ç« æ–¼çœ‹æ¿ [brdname]
+  http://my.domain/domail?userid               ç™¼é€ä¿¡ä»¶çµ¦ [userid]
+  http://my.domain/dpost?brdname&##&###        è©¢å•ç¢ºå®šåˆªé™¤çœ‹æ¿ [brdname] ä¸­ç¬¬ ## ç¯‡æ–‡ç«  (å…¶ chrono æ˜¯ ###)
+  http://my.domain/delpost?brdname&##&###      åˆªé™¤çœ‹æ¿ [brdname] ä¸­ç¬¬ ## ç¯‡æ–‡ç«  (å…¶ chrono æ˜¯ ###)
+  http://my.domain/mpost?brdname&##&###        æ¨™è¨˜çœ‹æ¿ [brdname] ä¸­ç¬¬ ## ç¯‡æ–‡ç«  (å…¶ chrono æ˜¯ ###)
+  http://my.domain/dmail?##&###                è©¢å•ç¢ºå®šåˆªé™¤ä¿¡ç®±ä¸­ç¬¬ ## ç¯‡æ–‡ç«  (å…¶ chrono æ˜¯ ###)
+  http://my.domain/delmail?##&###              åˆªé™¤ä¿¡ç®±ä¸­ç¬¬ ## ç¯‡æ–‡ç«  (å…¶ chrono æ˜¯ ###)
+  http://my.domain/mmail?##&###                æ¨™è¨˜ä¿¡ç®±ä¸­ç¬¬ ## ç¯‡æ–‡ç«  (å…¶ chrono æ˜¯ ###)
+  http://my.domain/query?userid                æŸ¥è©¢ userid
+  http://my.domain/img?filename                é¡¯ç¤ºåœ–æª”
+  http://my.domain/rss?brdname                 å„çœ‹æ¿çš„RSS Feed
+  http://my.domain/class?folder                åˆ—å‡ºåˆ†é¡ä¸­ [folder] é€™å€‹å·å®—ä¸‹çš„æ‰€æœ‰çœ‹æ¿
   http://my.domain/robots.txt                  Robot Exclusion
 
 #endif
@@ -52,16 +52,16 @@
 
 
 #define SERVER_USAGE
-#undef	LOG_VERBOSE		/* ¸Ô²Ó¬ö¿ı */
+#undef	LOG_VERBOSE		/* è©³ç´°ç´€éŒ„ */
 
 
 #define BHTTP_PIDFILE	"run/bhttp.pid"
 #define BHTTP_LOGFILE	"run/bhttp.log"
 
 
-#define BHTTP_PERIOD	(60 * 5)	/* ¨C 5 ¤ÀÄÁ check ¤@¦¸ */
-#define BHTTP_TIMEOUT	(60 * 3)	/* ¶W¹L 3 ¤ÀÄÁªº³s½u´Nµø¬°¿ù»~ */
-#define BHTTP_FRESH	86400		/* ¨C 1 ¤Ñ¾ã²z¤@¦¸ log ÀÉ */
+#define BHTTP_PERIOD	(60 * 5)	/* æ¯ 5 åˆ†é˜ check ä¸€æ¬¡ */
+#define BHTTP_TIMEOUT	(60 * 3)	/* è¶…é 3 åˆ†é˜çš„é€£ç·šå°±è¦–ç‚ºéŒ¯èª¤ */
+#define BHTTP_FRESH	86400		/* æ¯ 1 å¤©æ•´ç†ä¸€æ¬¡ log æª” */
 
 
 #define TCP_BACKLOG	3
@@ -69,10 +69,10 @@
 
 
 #define MIN_DATA_SIZE	(TCP_RCVSIZ + 3)
-#define MAX_DATA_SIZE   262143		/* POST ªº¤j¤p­­¨î(byte) */
+#define MAX_DATA_SIZE   262143		/* POST çš„å¤§å°é™åˆ¶(byte) */
 
 
-/* Thor.000425: POSIX ¥Î O_NONBLOCK */
+/* Thor.000425: POSIX ç”¨ O_NONBLOCK */
 
 #ifndef O_NONBLOCK
 #define M_NONBLOCK  FNDELAY
@@ -80,23 +80,23 @@
 #define M_NONBLOCK  O_NONBLOCK
 #endif
 
-#define HTML_TALL	50	/* ¦Cªí¤@­¶ 50 ½g */
+#define HTML_TALL	50	/* åˆ—è¡¨ä¸€é  50 ç¯‡ */
 
 
 /* ----------------------------------------------------- */
-/* ¿ï³æªºÃC¦â						 */
+/* é¸å–®çš„é¡è‰²						 */
 /* ----------------------------------------------------- */
 
-#define HCOLOR_BG	"#000000"	/* ­I´ºªºÃC¦â */
-#define HCOLOR_TEXT	"#ffffff"	/* ¤å¦rªºÃC¦â */
-#define HCOLOR_LINK	"#00ffff"	/* ¥¼ÂsÄı¹L³sµ²ªºÃC¦â */
-#define HCOLOR_VLINK	"#c0c0c0"	/* ¤wÂsÄı¹L³sµ²ªºÃC¦â */
-#define HCOLOR_ALINK	"#ff0000"	/* ³sµ²³QÀ£¤U®ÉªºÃC¦â */
+#define HCOLOR_BG	"#000000"	/* èƒŒæ™¯çš„é¡è‰² */
+#define HCOLOR_TEXT	"#ffffff"	/* æ–‡å­—çš„é¡è‰² */
+#define HCOLOR_LINK	"#00ffff"	/* æœªç€è¦½éé€£çµçš„é¡è‰² */
+#define HCOLOR_VLINK	"#c0c0c0"	/* å·²ç€è¦½éé€£çµçš„é¡è‰² */
+#define HCOLOR_ALINK	"#ff0000"	/* é€£çµè¢«å£“ä¸‹æ™‚çš„é¡è‰² */
 
-#define HCOLOR_NECK	"#000070"	/* ²ä¤lªºÃC¦â */
-#define HCOLOR_TIE	"#a000a0"	/* »â±aªºÃC¦â */
+#define HCOLOR_NECK	"#000070"	/* è„–å­çš„é¡è‰² */
+#define HCOLOR_TIE	"#a000a0"	/* é ˜å¸¶çš„é¡è‰² */
 
-#define HCOLOR_BAR	"#808080"	/* ¥ú´ÎÃC¦â */
+#define HCOLOR_BAR	"#808080"	/* å…‰æ£’é¡è‰² */
 
 
 /* ----------------------------------------------------- */
@@ -124,10 +124,10 @@ typedef struct Agent
 
   unsigned int ip_addr;
 
-  time_t tbegin;		/* ³s½u¶}©l®É¶¡ */
-  time_t uptime;		/* ¤W¦¸¤U«ü¥Oªº®É¶¡ */
+  time_t tbegin;		/* é€£ç·šé–‹å§‹æ™‚é–“ */
+  time_t uptime;		/* ä¸Šæ¬¡ä¸‹æŒ‡ä»¤çš„æ™‚é–“ */
 
-  char url[48];			/* ±ıÂsÄıªººô­¶ */
+  char url[48];			/* æ¬²ç€è¦½çš„ç¶²é  */
   char *urlp;
 
   char cookie[32];
@@ -135,13 +135,13 @@ typedef struct Agent
 
   char modified[30];
 
-  /* ¨Ï¥ÎªÌ¸ê®Æ­n¥ı acct_fetch() ¤~¯à¨Ï¥Î */
+  /* ä½¿ç”¨è€…è³‡æ–™è¦å…ˆ acct_fetch() æ‰èƒ½ä½¿ç”¨ */
   int userno;
   char userid[IDLEN + 1];
   char username[UNLEN + 1];
   usint userlevel;
 
-  /* ©Ò¯à¬İ¨ìªº¬İªO¦Cªí©Î¨Ï¥ÎªÌ¦W³æ */
+  /* æ‰€èƒ½çœ‹åˆ°çš„çœ‹æ¿åˆ—è¡¨æˆ–ä½¿ç”¨è€…åå–® */
 
 #if MAXBOARD > MAXACTIVE
   void *myitem[MAXBOARD];
@@ -150,13 +150,13 @@ typedef struct Agent
 #endif
   int total_item;
 
-  /* input ¥Î */
+  /* input ç”¨ */
 
   char *data;
-  int size;			/* ¥Ø«e data ©Ò malloc ªºªÅ¶¡¤j¤p */
+  int size;			/* ç›®å‰ data æ‰€ malloc çš„ç©ºé–“å¤§å° */
   int used;
 
-  /* output ¥Î */
+  /* output ç”¨ */
 
   FILE *fpw;
 }     Agent;
@@ -170,22 +170,22 @@ enum
 {
   HS_END,
 
-  HS_ERROR,			/* »yªk¿ù»~ */
-  HS_ERR_LOGIN,			/* ©|¥¼µn¤J */
-  HS_ERR_USER,			/* ±b¸¹Åª¨ú¿ù»~ */
-  HS_ERR_MORE,			/* ¤å³¹Åª¨ú¿ù»~ */
-  HS_ERR_BOARD,			/* ¬İªOÅª¨ú¿ù»~ */
-  HS_ERR_MAIL,			/* «H¥óÅª¨ú¿ù»~ */
-  HS_ERR_CLASS,			/* ¤ÀÃşÅª¨ú¿ù»~ */
-  HS_ERR_PERM,			/* Åv­­¤£¨¬ */
+  HS_ERROR,			/* èªæ³•éŒ¯èª¤ */
+  HS_ERR_LOGIN,			/* å°šæœªç™»å…¥ */
+  HS_ERR_USER,			/* å¸³è™Ÿè®€å–éŒ¯èª¤ */
+  HS_ERR_MORE,			/* æ–‡ç« è®€å–éŒ¯èª¤ */
+  HS_ERR_BOARD,			/* çœ‹æ¿è®€å–éŒ¯èª¤ */
+  HS_ERR_MAIL,			/* ä¿¡ä»¶è®€å–éŒ¯èª¤ */
+  HS_ERR_CLASS,			/* åˆ†é¡è®€å–éŒ¯èª¤ */
+  HS_ERR_PERM,			/* æ¬Šé™ä¸è¶³ */
 
   HS_OK,
 
-  HS_REDIRECT,			/* ­«·s¾É¦V */
-  HS_NOTMOIDIFY,		/* ÀÉ®×¨S¦³ÅÜ§ó */
-  HS_BADREQUEST,		/* ¿ù»~ªº­n¨D */
-  HS_FORBIDDEN,			/* ¥¼±ÂÅvªº­¶­± */
-  HS_NOTFOUND,			/* §ä¤£¨ìÀÉ®× */
+  HS_REDIRECT,			/* é‡æ–°å°å‘ */
+  HS_NOTMOIDIFY,		/* æª”æ¡ˆæ²’æœ‰è®Šæ›´ */
+  HS_BADREQUEST,		/* éŒ¯èª¤çš„è¦æ±‚ */
+  HS_FORBIDDEN,			/* æœªæˆæ¬Šçš„é é¢ */
+  HS_NOTFOUND,			/* æ‰¾ä¸åˆ°æª”æ¡ˆ */
 
   LAST_HS
 };
@@ -195,14 +195,14 @@ static char *http_msg[LAST_HS] =
 {
   NULL,
 
-  "»yªk¿ù»~",
-  "±z©|¥¼µn¤J",
-  "¨S¦³³o­Ó±b¸¹",
-  "¾Ş§@¿ù»~¡G±z©Ò¿ï¨úªº¤å³¹¤£¦s¦b©Î¤w§R°£",
-  "¾Ş§@¿ù»~¡GµL¦¹¬İªO©Î±zªºÅv­­¤£¨¬",
-  "¾Ş§@¿ù»~¡GµL¦¹«H¥ó©Î±z©|¥¼µn¤J",
-  "¾Ş§@¿ù»~¡G±z©Ò¿ï¨úªº¤ÀÃş¤£¦s¦b©Î¤w§R°£",
-  "¾Ş§@¿ù»~¡G±z©|¥¼µn¤J©ÎÅv­­¤£¨¬¡AµLªk¶i¦æ³o¶µ¾Ş§@",
+  "èªæ³•éŒ¯èª¤",
+  "æ‚¨å°šæœªç™»å…¥",
+  "æ²’æœ‰é€™å€‹å¸³è™Ÿ",
+  "æ“ä½œéŒ¯èª¤ï¼šæ‚¨æ‰€é¸å–çš„æ–‡ç« ä¸å­˜åœ¨æˆ–å·²åˆªé™¤",
+  "æ“ä½œéŒ¯èª¤ï¼šç„¡æ­¤çœ‹æ¿æˆ–æ‚¨çš„æ¬Šé™ä¸è¶³",
+  "æ“ä½œéŒ¯èª¤ï¼šç„¡æ­¤ä¿¡ä»¶æˆ–æ‚¨å°šæœªç™»å…¥",
+  "æ“ä½œéŒ¯èª¤ï¼šæ‚¨æ‰€é¸å–çš„åˆ†é¡ä¸å­˜åœ¨æˆ–å·²åˆªé™¤",
+  "æ“ä½œéŒ¯èª¤ï¼šæ‚¨å°šæœªç™»å…¥æˆ–æ¬Šé™ä¸è¶³ï¼Œç„¡æ³•é€²è¡Œé€™é …æ“ä½œ",
 
   "200 OK",
 
@@ -214,7 +214,7 @@ static char *http_msg[LAST_HS] =
 };
 
 
-#define HS_REFRESH	0x0100	/* ¦Û°Ê¸õ­¶(¹w³]¬O3¬í) */
+#define HS_REFRESH	0x0100	/* è‡ªå‹•è·³é (é è¨­æ˜¯3ç§’) */
 
 
 /* ----------------------------------------------------- */
@@ -302,14 +302,14 @@ log_open()
 #define ANSI_TAG	27
 #define is_ansi(ch)	((ch >= '0' && ch <= '9') || ch == ';' || ch == '[')
 
-#define	HAVE_HYPERLINK		/* ³B²z¶W³sµ² */
-#undef	HAVE_ANSIATTR		/* «Ü¤Ö¥Î¨ì¦Ó¥BIE¤£¤ä´©°{Ã{¡A°®¯Ü¤£³B²z :( */
-#define HAVE_SAKURA		/* Äåªá¤é¤å¦Û°ÊÂàUnicode */
+#define	HAVE_HYPERLINK		/* è™•ç†è¶…é€£çµ */
+#undef	HAVE_ANSIATTR		/* å¾ˆå°‘ç”¨åˆ°è€Œä¸”IEä¸æ”¯æ´é–ƒçˆï¼Œä¹¾è„†ä¸è™•ç† :( */
+#define HAVE_SAKURA		/* æ«»èŠ±æ—¥æ–‡è‡ªå‹•è½‰Unicode */
 
 #ifdef HAVE_ANSIATTR
-#define ATTR_UNDER	0x1	/* ©³½u */
-#define ATTR_BLINK	0x2	/* °{°Ê */
-#define ATTR_ITALIC	0x4	/* ±×Åé */
+#define ATTR_UNDER	0x1	/* åº•ç·š */
+#define ATTR_BLINK	0x2	/* é–ƒå‹• */
+#define ATTR_ITALIC	0x4	/* æ–œé«” */
 
 static int old_attr, now_attr;
 #endif
@@ -428,7 +428,7 @@ ansi_color(psrc)
 	attr |= ATTR_UNDER;
       else if (value == 5)
 	attr |= ATTR_BLINK;
-      else if (value == 7)	/* ¤Ï¥Õªº®ÄªG¥Î±×Åé¨Ó¥N´À */
+      else if (value == 7)	/* åç™½çš„æ•ˆæœç”¨æ–œé«”ä¾†ä»£æ›¿ */
 	attr |= ATTR_ITALIC;
 #endif
 
@@ -462,7 +462,7 @@ ansi_tag(fpw)
   FILE *fpw;
 {
 #ifdef HAVE_ANSIATTR
-  /* Äİ©Ê¤£¦P¤~»İ­n¦L¥X */
+  /* å±¬æ€§ä¸åŒæ‰éœ€è¦å°å‡º */
   if (!(now_attr & ATTR_ITALIC) && (old_attr & ATTR_ITALIC))
   {
     fputs("</I>", fpw);
@@ -477,7 +477,7 @@ ansi_tag(fpw)
   }
 #endif
 
-  /* ÃC¦â¤£¦P¤~»İ­n¦L¥X */
+  /* é¡è‰²ä¸åŒæ‰éœ€è¦å°å‡º */
   if (old_color != now_color)
   {
     fprintf(fpw, "</font><font class=A%05X>", now_color);
@@ -485,7 +485,7 @@ ansi_tag(fpw)
   }
 
 #ifdef HAVE_ANSIATTR
-  /* Äİ©Ê¤£¦P¤~»İ­n¦L¥X */
+  /* å±¬æ€§ä¸åŒæ‰éœ€è¦å°å‡º */
   if (oldattr != attr)
   {
     if ((now_attr & ATTR_ITALIC) && !(old_attr & ATTR_ITALIC))
@@ -527,17 +527,17 @@ ansi_html(fpw, src)
     {
       while (ch2 == ANSI_TAG)
       {
-	if (*(++src) == '[')	/* ÃC¦â */
+	if (*(++src) == '[')	/* é¡è‰² */
 	{
 	  ch2 = ansi_color(&src);
 	  has_ansi = 1;
 	}
-	else			/* ¨ä¥Lª½±µ§R°£ */
+	else			/* å…¶ä»–ç›´æ¥åˆªé™¤ */
 	  ch2 = ansi_remove(&src);
       }
       if (ch2)
       {
-	if (ch2 < ' ')		/* ©È¥X²{\n */
+	if (ch2 < ' ')		/* æ€•å‡ºç¾\n */
 	  fputc(ch2, fpw);
 #ifdef HAVE_SAKURA
 	else if (scode = sakura2unicode((ch1 << 8) | ch2))
@@ -562,17 +562,17 @@ ansi_html(fpw, src)
     {
       do
       {
-	if (ch2 == '[')		/* ÃC¦â */
+	if (ch2 == '[')		/* é¡è‰² */
 	  ch2 = ansi_color(&src);
-	else if (ch2 == '*')	/* ±±¨î½X */
+	else if (ch2 == '*')	/* æ§åˆ¶ç¢¼ */
 	  fputc('*', fpw);
-	else			/* ¨ä¥Lª½±µ§R°£ */
+	else			/* å…¶ä»–ç›´æ¥åˆªé™¤ */
 	  ch2 = ansi_remove(&src);
       } while (ch2 == ANSI_TAG && (ch2 = *(++src)));
       ansi_tag(fpw);
       continue;
     }
-    /* ³Ñ¤Uªº¦r¤¸°µhtmlÂà´« */
+    /* å‰©ä¸‹çš„å­—å…ƒåšhtmlè½‰æ› */
     if (ch1 == '<')
     {
       fputs("&lt;", fpw);
@@ -584,7 +584,7 @@ ansi_html(fpw, src)
     else if (ch1 == '&')
     {
       fputc(ch1, fpw);
-      if (ch2 == '#')		/* Unicode¦r¤¸¤£Âà´« */
+      if (ch2 == '#')		/* Unicodeå­—å…ƒä¸è½‰æ› */
       {
 	fputc(ch2, fpw);
 	ch2 = *(++src);
@@ -597,7 +597,7 @@ ansi_html(fpw, src)
       }
     }
 #ifdef HAVE_HYPERLINK
-    else if (linkEnd)		/* ³B²z¶W³sµ² */
+    else if (linkEnd)		/* è™•ç†è¶…é€£çµ */
     {
       fputc(ch1, fpw);
       if (linkEnd <= src)
@@ -610,7 +610,7 @@ ansi_html(fpw, src)
     else
     {
 #ifdef HAVE_HYPERLINK
-      /* ¨ä¥Lªº¦Û¤v¥[§a :) */
+      /* å…¶ä»–çš„è‡ªå·±åŠ å§ :) */
       if (!str_ncmp(src - 1, "http://", 7))
 	ansi_hyperlink(fpw, src - 1);
       else if (!str_ncmp(src - 1, "telnet://", 9))
@@ -645,7 +645,7 @@ str_html(src, len)
 
       if (in_chi)
       {
-	if (in_chi < ' ')	/* ¥i¯à¥u¦³¥b­Ó¦r¡A«e¥b³¡´N¤£­n¤F */
+	if (in_chi < ' ')	/* å¯èƒ½åªæœ‰åŠå€‹å­—ï¼Œå‰åŠéƒ¨å°±ä¸è¦äº† */
 	  *dst++ = in_chi;
 #ifdef HAVE_SAKURA
 	else if (len = sakura2unicode((ch << 8) + in_chi))
@@ -684,7 +684,7 @@ str_html(src, len)
       ch = *(++src);
       if (ch == '#')
       {
-	if ((uschar *) strchr(src + 1, ';') >= end)	/* ¥i¯à·|¤£¬O©Îªø«×¨S¶W¹L */
+	if ((uschar *) strchr(src + 1, ';') >= end)	/* å¯èƒ½æœƒä¸æ˜¯æˆ–é•·åº¦æ²’è¶…é */
 	  break;
 	*dst++ = '&';
 	*dst++ = '#';
@@ -707,7 +707,7 @@ str_html(src, len)
 
 
 static int
-ansi_quote(fpw, src)		/* ¦pªG¬O¤Ş¨¥¡A´N²¤¹L©Ò¦³ªº ANSI ½X */
+ansi_quote(fpw, src)		/* å¦‚æœæ˜¯å¼•è¨€ï¼Œå°±ç•¥éæ‰€æœ‰çš„ ANSI ç¢¼ */
   FILE *fpw;
   uschar *src;
 {
@@ -715,22 +715,22 @@ ansi_quote(fpw, src)		/* ¦pªG¬O¤Ş¨¥¡A´N²¤¹L©Ò¦³ªº ANSI ½X */
 
   ch1 = src[0];
   ch2 = src[1];
-  if (ch2 == ' ' && (ch1 == QUOTE_CHAR1 || ch1 == QUOTE_CHAR2))	/* ¤Ş¨¥ */
+  if (ch2 == ' ' && (ch1 == QUOTE_CHAR1 || ch1 == QUOTE_CHAR2))	/* å¼•è¨€ */
   {
     ch2 = src[2];
-    if (ch2 == QUOTE_CHAR1 || ch2 == QUOTE_CHAR2)	/* ¤Ş¥Î¤@¼h/¤G¼h¤£¦PÃC¦â */
+    if (ch2 == QUOTE_CHAR1 || ch2 == QUOTE_CHAR2)	/* å¼•ç”¨ä¸€å±¤/äºŒå±¤ä¸åŒé¡è‰² */
       now_color = 0x00003340;
     else
       now_color = 0x00003640;
   }
-  else if (ch1 == '\241' && ch2 == '\260')	/* ¡° ¤Ş¨¥ªÌ */
+  else if (ch1 == '\241' && ch2 == '\260')	/* â€» å¼•è¨€è€… */
   {
     now_color = 0x00013640;
   }
   else
   {
     ansi_tag(fpw);
-    return 0;			/* ¤£¬O¤Ş¨¥ */
+    return 0;			/* ä¸æ˜¯å¼•è¨€ */
   }
 
   ansi_tag(fpw);
@@ -745,27 +745,27 @@ txt2htm(fpw, fp)
   FILE *fpw;
   FILE *fp;
 {
-  static const char header1[LINE_HEADER][LEN_AUTHOR1] = {"§@ªÌ", "¼ĞÃD", "®É¶¡"};
-  static const char header2[LINE_HEADER][LEN_AUTHOR2] = {"µo«H¤H", "¼Ğ  ÃD", "µo«H¯¸"};
+  static const char header1[LINE_HEADER][LEN_AUTHOR1] = {"ä½œè€…", "æ¨™é¡Œ", "æ™‚é–“"};
+  static const char header2[LINE_HEADER][LEN_AUTHOR2] = {"ç™¼ä¿¡äºº", "æ¨™  é¡Œ", "ç™¼ä¿¡ç«™"};
   int i;
   char *headvalue, *pbrd, *board;
   char buf[ANSILINELEN];
 
   fputs("<table width=760 cellspacing=0 cellpadding=0 border=0>\n", fpw);
-  /* ³B²zÀÉÀY */
+  /* è™•ç†æª”é ­ */
   for (i = 0; i < LINE_HEADER; i++)
   {
-    if (!fgets(buf, ANSILINELEN, fp))	/* ÁöµM³sÀÉÀY³£ÁÙ¨S¦L§¹¡A¦ı¬OÀÉ®×¤w¸gµ²§ô¡Aª½±µÂ÷¶} */
+    if (!fgets(buf, ANSILINELEN, fp))	/* é›–ç„¶é€£æª”é ­éƒ½é‚„æ²’å°å®Œï¼Œä½†æ˜¯æª”æ¡ˆå·²ç¶“çµæŸï¼Œç›´æ¥é›¢é–‹ */
     {
       fputs("</table>\n", fpw);
       return;
     }
 
-    if (memcmp(buf, header1[i], LEN_AUTHOR1 - 1) && memcmp(buf, header2[i], LEN_AUTHOR2 - 1))	/* ¤£¬OÀÉÀY */
+    if (memcmp(buf, header1[i], LEN_AUTHOR1 - 1) && memcmp(buf, header2[i], LEN_AUTHOR2 - 1))	/* ä¸æ˜¯æª”é ­ */
       break;
 
-    /* §@ªÌ/¬İªO ÀÉÀY¦³¤GÄæ¡A¯S§O³B²z */
-    if (i == 0 && ((pbrd = strstr(buf, "¬İªO:")) || (pbrd = strstr(buf, "¯¸¤º:"))))
+    /* ä½œè€…/çœ‹æ¿ æª”é ­æœ‰äºŒæ¬„ï¼Œç‰¹åˆ¥è™•ç† */
+    if (i == 0 && ((pbrd = strstr(buf, "çœ‹æ¿:")) || (pbrd = strstr(buf, "ç«™å…§:"))))
     {
       if (board = strchr(pbrd, '\n'))
 	*board = '\0';
@@ -805,10 +805,10 @@ txt2htm(fpw, fp)
   old_attr = now_attr = 0;
 #endif
 
-  if (i >= LINE_HEADER)		/* ³Ì«á¤@¦æ¬OÀÉÀY */
+  if (i >= LINE_HEADER)		/* æœ€å¾Œä¸€è¡Œæ˜¯æª”é ­ */
     fgets(buf, ANSILINELEN, fp);
 
-  /* ³B²z¤º¤å */
+  /* è™•ç†å…§æ–‡ */
   do
   {
     if (!ansi_quote(fpw, buf))
@@ -847,7 +847,7 @@ out_http(ap, code, type)
   fpw = ap->fpw;
   state = code & ~HS_REFRESH;
 
-  /* HTTP 1.0 ÀÉÀY */
+  /* HTTP 1.0 æª”é ­ */
   time(&now);
 
   fprintf(fpw, "HTTP/1.0 %s\r\n"
@@ -859,7 +859,7 @@ out_http(ap, code, type)
   {
     fputs("\r\n", fpw);
   }
-  else if (state == HS_REDIRECT)/* Location¤§«á¤£»İ­n¤º®e */
+  else if (state == HS_REDIRECT)/* Locationä¹‹å¾Œä¸éœ€è¦å…§å®¹ */
   {
 #if BHTTP_PORT == 80
     fprintf(fpw, "Location: http://" MYHOSTNAME "/\r\n\r\n");
@@ -877,13 +877,13 @@ out_http(ap, code, type)
     }
     if ((code & HS_REFRESH) || !type)
     {
-      fputs("Pragma: no-cache\r\n"	/* ºô­¶¤@«ß¤£Åıproxy°µcache */
+      fputs("Pragma: no-cache\r\n"	/* ç¶²é ä¸€å¾‹ä¸è®“proxyåšcache */
 	"Content-Type: text/html; charset=" MYCHARSET "\r\n", fpw);
     }
     else
       fprintf(fpw, "Content-Type: %s\r\n", type);
 
-    if (ap->setcookie)		/* cmd_login() §¹¥H«á¤~»İ­n Set-Cookie */
+    if (ap->setcookie)		/* cmd_login() å®Œä»¥å¾Œæ‰éœ€è¦ Set-Cookie */
       fprintf(fpw, "Set-Cookie: user=%s; path=/\r\n", ap->cookie);
   }
 
@@ -892,7 +892,7 @@ out_http(ap, code, type)
 
 
 static void
-out_error(ap, code)		/* code¤£¥i¥H¬OHS_OK */
+out_error(ap, code)		/* codeä¸å¯ä»¥æ˜¯HS_OK */
   Agent *ap;
   int code;
 {
@@ -919,7 +919,7 @@ out_error(ap, code)		/* code¤£¥i¥H¬OHS_OK */
   default:			/* HS_REDIRECT, HS_NOTMOIDIFY */
     return;
   }
-  /* html ÀÉ®×¶}©l */
+  /* html æª”æ¡ˆé–‹å§‹ */
   fprintf(ap->fpw, "\r\n<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2 Final//EN\">\n"
     "<HTML><HEAD>\n"
     "<TITLE>%s</TITLE>\n"
@@ -930,8 +930,8 @@ out_error(ap, code)		/* code¤£¥i¥H¬OHS_OK */
 }
 
 
-/* out_head() ¤¤ªº <HTML> <BODY> <CENTER> ¤T­Ó¤j¼g¼ĞÅÒ³e¬ï¾ã­Ó html ÀÉ
-   ª½¨ì out_tail() ¤~¥Ñ </HTML> </BODY> </CENTER> ÁÙ­ì */
+/* out_head() ä¸­çš„ <HTML> <BODY> <CENTER> ä¸‰å€‹å¤§å¯«æ¨™ç±¤è²«ç©¿æ•´å€‹ html æª”
+   ç›´åˆ° out_tail() æ‰ç”± </HTML> </BODY> </CENTER> é‚„åŸ */
 
 
 static void
@@ -939,7 +939,7 @@ out_title(fpw, title)
   FILE *fpw;
   char *title;
 {
-  /* html ÀÉ®×¶}©l */
+  /* html æª”æ¡ˆé–‹å§‹ */
   fprintf(fpw, "\r\n<HTML><HEAD>\n"
     "<meta http-equiv=Content-Type content=\"text/html; charset=" MYCHARSET "\">\n"
 #ifdef ROBOT_EXCLUSION
@@ -1029,7 +1029,7 @@ out_tail(fpw)
 
 
 static void
-out_reload(fpw, msg)		/* God.050327: ±N¥Dµøµ¡ reload ¨ÃÃö±¼·s¶}µøµ¡ */
+out_reload(fpw, msg)		/* God.050327: å°‡ä¸»è¦–çª— reload ä¸¦é—œæ‰æ–°é–‹è¦–çª— */
   FILE *fpw;
   char *msg;
 {
@@ -1041,20 +1041,20 @@ out_reload(fpw, msg)		/* God.050327: ±N¥Dµøµ¡ reload ¨ÃÃö±¼·s¶}µøµ¡ */
 
 
 /* ----------------------------------------------------- */
-/* ¸Ñ½X¤ÀªR°Ñ¼Æ						 */
+/* è§£ç¢¼åˆ†æåƒæ•¸						 */
 /* ----------------------------------------------------- */
 
 #define hex2int(x)	((x >= 'A') ? (x - 'A' + 10) : (x - '0'))
 
-static int			/* 1:¦¨¥\ */
+static int			/* 1:æˆåŠŸ */
 arg_analyze(argc, mark, str, arg1, arg2, arg3, arg4)
-  int argc;			/* ¦³´X­Ó°Ñ¼Æ */
-  int mark;			/* !=0: str ­n¬O mark ¶}ÀYªº¦r¦ê */
-  char *str;			/* ¤Ş¼Æ */
-  char **arg1;			/* °Ñ¼Æ¤@ */
-  char **arg2;			/* °Ñ¼Æ¤G */
-  char **arg3;			/* °Ñ¼Æ¤T */
-  char **arg4;			/* °Ñ¼Æ¥| */
+  int argc;			/* æœ‰å¹¾å€‹åƒæ•¸ */
+  int mark;			/* !=0: str è¦æ˜¯ mark é–‹é ­çš„å­—ä¸² */
+  char *str;			/* å¼•æ•¸ */
+  char **arg1;			/* åƒæ•¸ä¸€ */
+  char **arg2;			/* åƒæ•¸äºŒ */
+  char **arg3;			/* åƒæ•¸ä¸‰ */
+  char **arg4;			/* åƒæ•¸å›› */
 {
   int i, ch;
   char *dst;
@@ -1095,7 +1095,7 @@ arg_analyze(argc, mark, str, arg1, arg2, arg3, arg4)
       {
 	ch = (hex2int(ch) << 4) + hex2int(str[1]);
 	str++;
-	if (ch != '\r')		/* '\r' ´N¤£­n¤F */
+	if (ch != '\r')		/* '\r' å°±ä¸è¦äº† */
 	  *dst++ = ch;
       }
       else
@@ -1116,7 +1116,7 @@ arg_analyze(argc, mark, str, arg1, arg2, arg3, arg4)
 
 
 /* ----------------------------------------------------- */
-/* ¥Ñ Cookie ¬İ¨Ï¥ÎªÌ¬O§_µn¤J				 */
+/* ç”± Cookie çœ‹ä½¿ç”¨è€…æ˜¯å¦ç™»å…¥				 */
 /* ----------------------------------------------------- */
 
 static int guestuno = 0;
@@ -1132,7 +1132,7 @@ guest_userno()
     guestuno = acct.userno;
 }
 
-static int			/* 1:µn¤J¦¨¥\ 0:µn¤J¥¢±Ñ */
+static int			/* 1:ç™»å…¥æˆåŠŸ 0:ç™»å…¥å¤±æ•— */
 acct_fetch(ap)
   Agent *ap;
 {
@@ -1153,7 +1153,7 @@ acct_fetch(ap)
       usr_fpath(fpath, userid, FN_ACCT);
       if (!rec_get(fpath, &acct, sizeof(ACCT), 0) &&
 	!(acct.userlevel & (PERM_DENYLOGIN | PERM_PURGE)) &&
-	!strncmp(acct.passwd, passwd, PASSLEN))	/* µn¤J¦¨¥\ */
+	!strncmp(acct.passwd, passwd, PASSLEN))	/* ç™»å…¥æˆåŠŸ */
       {
 	ap->userno = acct.userno;
 	strcpy(ap->userid, acct.userid);
@@ -1164,8 +1164,8 @@ acct_fetch(ap)
     }
   }
 
-  /* ¨S¦³µn¤J¡Bµn¤J¥¢±Ñ */
-  ap->userno = guestuno;		/* ¶ñ¤J¹ê»Úguestªºuserno¡A¥H«K°µpalÀË¬d */
+  /* æ²’æœ‰ç™»å…¥ã€ç™»å…¥å¤±æ•— */
+  ap->userno = guestuno;		/* å¡«å…¥å¯¦éš›guestçš„usernoï¼Œä»¥ä¾¿åšpalæª¢æŸ¥ */
   ap->userlevel = 0;
   strcpy(ap->userid, STR_GUEST);
   strcpy(ap->username, STR_GUEST);
@@ -1174,7 +1174,7 @@ acct_fetch(ap)
 
 
 /* ----------------------------------------------------- */
-/* UTMP shm ³¡¤À¶·»P cache.c ¬Û®e			 */
+/* UTMP shm éƒ¨åˆ†é ˆèˆ‡ cache.c ç›¸å®¹			 */
 /* ----------------------------------------------------- */
 
 static UCACHE *ushm;
@@ -1186,8 +1186,8 @@ init_ushm()
 }
 
 
-static int			/* 1: userno ¦b pool ¦W³æ¤W */
-pertain_pal(pool, max, userno)	/* °Ñ¦Ò pal.c:belong_pal() */
+static int			/* 1: userno åœ¨ pool åå–®ä¸Š */
+pertain_pal(pool, max, userno)	/* åƒè€ƒ pal.c:belong_pal() */
   int *pool;
   int max;
   int userno;
@@ -1215,8 +1215,8 @@ pertain_pal(pool, max, userno)	/* °Ñ¦Ò pal.c:belong_pal() */
 }
 
 
-static int			/* 1: ¹ï¤è³]§Ú¬°Ãa¤H */
-is_hisbad(up, userno)		/* °Ñ¦Ò pal.c:is_obad() */
+static int			/* 1: å°æ–¹è¨­æˆ‘ç‚ºå£äºº */
+is_hisbad(up, userno)		/* åƒè€ƒ pal.c:is_obad() */
   UTMP *up;
   int userno;
 {
@@ -1228,8 +1228,8 @@ is_hisbad(up, userno)		/* °Ñ¦Ò pal.c:is_obad() */
 }
 
 
-static int			/* 1:¥i¬İ¨£ 0:¤£¥i¬İ¨£ */
-can_seen(up, userno, ulevel)	/* °Ñ¦Ò bmw.c:can_see() */
+static int			/* 1:å¯çœ‹è¦‹ 0:ä¸å¯çœ‹è¦‹ */
+can_seen(up, userno, ulevel)	/* åƒè€ƒ bmw.c:can_see() */
   UTMP *up;
   int userno;
   usint ulevel;
@@ -1250,7 +1250,7 @@ can_seen(up, userno, ulevel)	/* °Ñ¦Ò bmw.c:can_see() */
 }
 
 
-/* itoc.030711: ¥[¤WÀË¬d¨Ï¥ÎªÌ±b¸¹ªº³¡¤À¡A¥H§K¦³¤H¶Ã¿å */
+/* itoc.030711: åŠ ä¸Šæª¢æŸ¥ä½¿ç”¨è€…å¸³è™Ÿçš„éƒ¨åˆ†ï¼Œä»¥å…æœ‰äººäº‚è¸¹ */
 static int
 allow_userid(ap, userid)
   Agent *ap;
@@ -1280,7 +1280,7 @@ allow_userid(ap, userid)
 
 
 /* ----------------------------------------------------- */
-/* board¡Gshm ³¡¥÷¶·»P cache.c ¬Û®e			 */
+/* boardï¼šshm éƒ¨ä»½é ˆèˆ‡ cache.c ç›¸å®¹			 */
 /* ----------------------------------------------------- */
 
 static BCACHE *bshm;
@@ -1288,22 +1288,22 @@ static BCACHE *bshm;
 static void
 init_bshm()
 {
-  /* itoc.030727: ¦b¶}±Ò bbsd ¤§«e¡AÀ³¸Ó´N­n°õ¦æ¹L account¡A
-     ©Ò¥H bshm À³¸Ó¤w³]©w¦n */
+  /* itoc.030727: åœ¨é–‹å•Ÿ bbsd ä¹‹å‰ï¼Œæ‡‰è©²å°±è¦åŸ·è¡Œé accountï¼Œ
+     æ‰€ä»¥ bshm æ‡‰è©²å·²è¨­å®šå¥½ */
 
   if (bshm)
     return;
 
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-  if (bshm->uptime <= 0)	/* bshm ¥¼³]©w§¹¦¨ */
+  if (bshm->uptime <= 0)	/* bshm æœªè¨­å®šå®Œæˆ */
     exit(0);
 }
 
 
 #ifdef HAVE_MODERATED_BOARD
-static int			/* !=0:¬OªO¦n  0:¤£¦b¦W³æ¤¤ */
-is_brdgood(userno, bpal)	/* °Ñ¦Ò pal.c:is_bgood() */
+static int			/* !=0:æ˜¯æ¿å¥½  0:ä¸åœ¨åå–®ä¸­ */
+is_brdgood(userno, bpal)	/* åƒè€ƒ pal.c:is_bgood() */
   int userno;
   BPAL *bpal;
 {
@@ -1311,8 +1311,8 @@ is_brdgood(userno, bpal)	/* °Ñ¦Ò pal.c:is_bgood() */
 }
 
 
-static int			/* !=0:¬OªOÃa  0:¤£¦b¦W³æ¤¤ */
-is_brdbad(userno, bpal)		/* °Ñ¦Ò pal.c:is_bbad() */
+static int			/* !=0:æ˜¯æ¿å£  0:ä¸åœ¨åå–®ä¸­ */
+is_brdbad(userno, bpal)		/* åƒè€ƒ pal.c:is_bbad() */
   int userno;
   BPAL *bpal;
 {
@@ -1326,7 +1326,7 @@ is_brdbad(userno, bpal)		/* °Ñ¦Ò pal.c:is_bbad() */
 
 
 static int
-Ben_Perm(brd, uno, uid, ulevel)	/* °Ñ¦Ò board.c:Ben_Perm() */
+Ben_Perm(brd, uno, uid, ulevel)	/* åƒè€ƒ board.c:Ben_Perm() */
   BRD *brd;
   int uno;
   char *uid;
@@ -1337,26 +1337,26 @@ Ben_Perm(brd, uno, uid, ulevel)	/* °Ñ¦Ò board.c:Ben_Perm() */
 
 #ifdef HAVE_MODERATED_BOARD
   BPAL *bpal;
-  int ftype;			/* 0:¤@¯ëID 1:ªO¦n 2:ªOÃa */
+  int ftype;			/* 0:ä¸€èˆ¬ID 1:æ¿å¥½ 2:æ¿å£ */
 
-  /* itoc.040103: ¬İªO¾\Åªµ¥¯Å»¡©úªí
+  /* itoc.040103: çœ‹æ¿é–±è®€ç­‰ç´šèªªæ˜è¡¨
 
-  ¢z¢w¢w¢w¢w¢s¢w¢w¢w¢w¢s¢w¢w¢w¢w¢s¢w¢w¢w¢w¢{
-  ¢x        ¢x¤@¯ë¥Î¤á¢x¬İªO¦n¤Í¢x¬İªOÃa¤H¢x
-  ¢u¢w¢w¢w¢w¢q¢w¢w¢w¢w¢q¢w¢w¢w¢w¢q¢w¢w¢w¢w¢t
-  ¢x¤@¯ë¬İªO¢xÅv­­¨M©w¢x  ¤ô±í  ¢x ¬İ¤£¨£ ¢x    ¬İ¤£¨£¡G¦b¬İªO¦Cªí¤¤µLªk¬İ¨ì³o­ÓªO¡A¤]¶i¤£¥h
-  ¢u¢w¢w¢w¢w¢q¢w¢w¢w¢w¢q¢w¢w¢w¢w¢q¢w¢w¢w¢w¢t    ¶i¤£¥h¡G¦b¬İªO¦Cªí¤¤¥i¥H¬İ¨ì³o­ÓªO¡A¦ı¬O¶i¤£¥h
-  ¢x¦n¤Í¬İªO¢x ¶i¤£¥h ¢x  §¹¾ã  ¢x  ¤ô±í  ¢x    ¤ô  ±í¡G¦b¬İªO¦Cªí¤¤¥i¥H¬İ¨ì³o­ÓªO¡A¤]¶i±o¥h¡A¦ı¬O¤£¯àµo¤å
-  ¢u¢w¢w¢w¢w¢q¢w¢w¢w¢w¢q¢w¢w¢w¢w¢q¢w¢w¢w¢w¢t    §¹  ¾ã¡G¦b¬İªO¦Cªí¤¤¥i¥H¬İ¨ì³o­ÓªO¡A¤]¶i±o¥h¤Îµo¤å
-  ¢x¯µ±K¬İªO¢x ¬İ¤£¨£ ¢x  §¹¾ã  ¢x  ¤ô±í  ¢x
-  ¢|¢w¢w¢w¢w¢r¢w¢w¢w¢w¢r¢w¢w¢w¢w¢r¢w¢w¢w¢w¢}
+  â”Œâ”€â”€â”€â”€â”¬â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”
+  â”‚        â”‚ä¸€èˆ¬ç”¨æˆ¶â”‚çœ‹æ¿å¥½å‹â”‚çœ‹æ¿å£äººâ”‚
+  â”œâ”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¤
+  â”‚ä¸€èˆ¬çœ‹æ¿â”‚æ¬Šé™æ±ºå®šâ”‚  æ°´æ¡¶  â”‚ çœ‹ä¸è¦‹ â”‚    çœ‹ä¸è¦‹ï¼šåœ¨çœ‹æ¿åˆ—è¡¨ä¸­ç„¡æ³•çœ‹åˆ°é€™å€‹æ¿ï¼Œä¹Ÿé€²ä¸å»
+  â”œâ”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¤    é€²ä¸å»ï¼šåœ¨çœ‹æ¿åˆ—è¡¨ä¸­å¯ä»¥çœ‹åˆ°é€™å€‹æ¿ï¼Œä½†æ˜¯é€²ä¸å»
+  â”‚å¥½å‹çœ‹æ¿â”‚ é€²ä¸å» â”‚  å®Œæ•´  â”‚  æ°´æ¡¶  â”‚    æ°´  æ¡¶ï¼šåœ¨çœ‹æ¿åˆ—è¡¨ä¸­å¯ä»¥çœ‹åˆ°é€™å€‹æ¿ï¼Œä¹Ÿé€²å¾—å»ï¼Œä½†æ˜¯ä¸èƒ½ç™¼æ–‡
+  â”œâ”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¤    å®Œ  æ•´ï¼šåœ¨çœ‹æ¿åˆ—è¡¨ä¸­å¯ä»¥çœ‹åˆ°é€™å€‹æ¿ï¼Œä¹Ÿé€²å¾—å»åŠç™¼æ–‡
+  â”‚ç§˜å¯†çœ‹æ¿â”‚ çœ‹ä¸è¦‹ â”‚  å®Œæ•´  â”‚  æ°´æ¡¶  â”‚
+  â””â”€â”€â”€â”€â”´â”€â”€â”€â”€â”´â”€â”€â”€â”€â”´â”€â”€â”€â”€â”˜
   */
 
   static int bit_data[9] =
-  {                /* ¤@¯ë¥Î¤á   ¬İªO¦n¤Í                           ¬İªOÃa¤H */
-    /* ¤½¶}¬İªO */    0,         BRD_L_BIT | BRD_R_BIT,             0,
-    /* ¦n¤Í¬İªO */    BRD_L_BIT, BRD_L_BIT | BRD_R_BIT | BRD_W_BIT, BRD_L_BIT | BRD_R_BIT,
-    /* ¯µ±K¬İªO */    0,         BRD_L_BIT | BRD_R_BIT | BRD_W_BIT, BRD_L_BIT | BRD_R_BIT,
+  {                /* ä¸€èˆ¬ç”¨æˆ¶   çœ‹æ¿å¥½å‹                           çœ‹æ¿å£äºº */
+    /* å…¬é–‹çœ‹æ¿ */    0,         BRD_L_BIT | BRD_R_BIT,             0,
+    /* å¥½å‹çœ‹æ¿ */    BRD_L_BIT, BRD_L_BIT | BRD_R_BIT | BRD_W_BIT, BRD_L_BIT | BRD_R_BIT,
+    /* ç§˜å¯†çœ‹æ¿ */    0,         BRD_L_BIT | BRD_R_BIT | BRD_W_BIT, BRD_L_BIT | BRD_R_BIT,
   };
 #endif
 
@@ -1372,13 +1372,13 @@ Ben_Perm(brd, uno, uid, ulevel)	/* °Ñ¦Ò board.c:Ben_Perm() */
   bpal = bshm->pcache + (brd - bshm->bcache);
   ftype = is_brdgood(uno, bpal) ? 1 : is_brdbad(uno, bpal) ? 2 : 0;
 
-  if (readlevel == PERM_SYSOP)		/* ¯µ±K¬İªO */
+  if (readlevel == PERM_SYSOP)		/* ç§˜å¯†çœ‹æ¿ */
     bits = bit_data[6 + ftype];
-  else if (readlevel == PERM_BOARD)	/* ¦n¤Í¬İªO */
+  else if (readlevel == PERM_BOARD)	/* å¥½å‹çœ‹æ¿ */
     bits = bit_data[3 + ftype];
-  else if (ftype)			/* ¤½¶}¬İªO¡A­Y¦bªO¦n/ªOÃa¦W³æ¤¤ */
+  else if (ftype)			/* å…¬é–‹çœ‹æ¿ï¼Œè‹¥åœ¨æ¿å¥½/æ¿å£åå–®ä¸­ */
     bits = bit_data[ftype];
-  else					/* ¤½¶}¬İªO¡A¨ä¥L¨ÌÅv­­§P©w */
+  else					/* å…¬é–‹çœ‹æ¿ï¼Œå…¶ä»–ä¾æ¬Šé™åˆ¤å®š */
 #endif
 
   if (!readlevel || (readlevel & ulevel))
@@ -1394,12 +1394,12 @@ Ben_Perm(brd, uno, uid, ulevel)	/* °Ñ¦Ò board.c:Ben_Perm() */
     bits = 0;
   }
 
-  /* Thor.980813.µù¸Ñ: ¯S§O¬° BM ¦Ò¶q¡AªO¥D¦³¸ÓªOªº©Ò¦³Åv­­ */
+  /* Thor.980813.è¨»è§£: ç‰¹åˆ¥ç‚º BM è€ƒé‡ï¼Œæ¿ä¸»æœ‰è©²æ¿çš„æ‰€æœ‰æ¬Šé™ */
   blist = brd->BM;
   if ((ulevel & PERM_BM) && blist[0] > ' ' && str_has(blist, uid, strlen(uid)))
     bits = BRD_L_BIT | BRD_R_BIT | BRD_W_BIT | BRD_X_BIT | BRD_M_BIT;
 
-  /* itoc.030515: ¬İªOÁ`ºŞ­«·s§PÂ_ */
+  /* itoc.030515: çœ‹æ¿ç¸½ç®¡é‡æ–°åˆ¤æ–· */
   else if (ulevel & PERM_ALLBOARD)
     bits = BRD_L_BIT | BRD_R_BIT | BRD_W_BIT | BRD_X_BIT;
 
@@ -1424,7 +1424,7 @@ brd_get(bname)
 }
 
 
-static int		/* ¦^¶ÇPermBits¤è«K°µ¦h¦¸§PÂ_ */
+static int		/* å›å‚³PermBitsæ–¹ä¾¿åšå¤šæ¬¡åˆ¤æ–· */
 ben_perm(ap, brdname)
   Agent *ap;
   char *brdname;
@@ -1446,7 +1446,7 @@ allow_brdname(ap, brdname)
 
   if (bhdr = brd_get(brdname))
   {
-    /* ­Y readlevel == 0¡Aªí¥Ü guest ¥iÅª¡AµL»İ acct_fetch() */
+    /* è‹¥ readlevel == 0ï¼Œè¡¨ç¤º guest å¯è®€ï¼Œç„¡éœ€ acct_fetch() */
     if (!bhdr->readlevel)
       return bhdr;
 
@@ -1458,7 +1458,7 @@ allow_brdname(ap, brdname)
 
 
 /* ----------------------------------------------------- */
-/* movie¡Gshm ³¡¥÷¶·»P cache.c ¬Û®e			 */
+/* movieï¼šshm éƒ¨ä»½é ˆèˆ‡ cache.c ç›¸å®¹			 */
 /* ----------------------------------------------------- */
 
 static FCACHE *fshm;
@@ -1484,7 +1484,7 @@ out_film(fpw, tag)
     sleep(1);
 
   if (!(*shot))
-    return;		/* ­Y 5 ¬í¥H«áÁÙ¨S´«¦n¤ù¡A¥i¯à¬O¨S¶] camera¡Aª½±µÂ÷¶} */
+    return;		/* è‹¥ 5 ç§’ä»¥å¾Œé‚„æ²’æ›å¥½ç‰‡ï¼Œå¯èƒ½æ˜¯æ²’è·‘ cameraï¼Œç›´æ¥é›¢é–‹ */
 
   film = fshm->film;
   if (tag)
@@ -1513,7 +1513,7 @@ out_film(fpw, tag)
 /* ----------------------------------------------------- */
 
   /* --------------------------------------------------- */
-  /* ³q¥Î²M³æ						 */
+  /* é€šç”¨æ¸…å–®						 */
   /* --------------------------------------------------- */
 
 static void
@@ -1527,7 +1527,7 @@ list_neck(fpw, start, total, title)
     "<tr bgcolor=" HCOLOR_NECK ">\n  <td width=15%", fpw);
   if (start != 1)
   {
-    fprintf(fpw, " align=center><a href=?%d>¤W%d­Ó</a",
+    fprintf(fpw, " align=center><a href=?%d>ä¸Š%då€‹</a",
       (start > HTML_TALL ? start - HTML_TALL : 1), HTML_TALL);
   }
   fputs("></td>\n  <td width=15%", fpw);
@@ -1535,14 +1535,14 @@ list_neck(fpw, start, total, title)
   start += HTML_TALL;
   if (start <= total)
   {
-    fprintf(fpw, " align=center><a href=?%d>¤U%d­Ó</a",
+    fprintf(fpw, " align=center><a href=?%d>ä¸‹%då€‹</a",
       start, HTML_TALL);
   }
   fputs("></td>\n  <td width=40% align=center>", fpw);
   fprintf(fpw, title, total);
   fprintf(fpw, "</td>\n"
-    "  <td width=15%% align=center><a href=?1>«e%d­Ó</a></td>\n"
-    "  <td width=15%% align=center><a href=?0>¥½%d­Ó</a></td>\n"
+    "  <td width=15%% align=center><a href=?1>å‰%då€‹</a></td>\n"
+    "  <td width=15%% align=center><a href=?0>æœ«%då€‹</a></td>\n"
     "</tr></table><br>\n", HTML_TALL, HTML_TALL);
 }
 
@@ -1563,7 +1563,7 @@ cmdlist_list(ap, title, list_tie, list_item)
   else
     start = atoi(number);
   total = ap->total_item;
-  if (start <= 0 || start > total)	/* ¶W¹L½d³òªº¸Ü¡Aª½±µ¨ì³Ì«á¤@­¶ */
+  if (start <= 0 || start > total)	/* è¶…éç¯„åœçš„è©±ï¼Œç›´æ¥åˆ°æœ€å¾Œä¸€é  */
     start = total > HTML_TALL ? total - HTML_TALL + 1 : 1;
 
   fpw = ap->fpw;
@@ -1586,7 +1586,7 @@ cmdlist_list(ap, title, list_tie, list_item)
 
 
   /* --------------------------------------------------- */
-  /* ¨Ï¥ÎªÌ¦W³æ						 */
+  /* ä½¿ç”¨è€…åå–®						 */
   /* --------------------------------------------------- */
 
 static int
@@ -1632,11 +1632,11 @@ static void
 userlist_tie(fpw)
   FILE *fpw;
 {
-  fputs("  <td width=40>½s¸¹</td>\n"
-    "  <td width=100>ºô¤Í¥N¸¹</td>\n"
-    "  <td width=210>ºô¤Í¼ÊºÙ</td>\n"
-    "  <td width=230>«È³~¬G¶m</td>\n"
-    "  <td width=100>ºô¤Í°ÊºA</td>\n"
+  fputs("  <td width=40>ç·¨è™Ÿ</td>\n"
+    "  <td width=100>ç¶²å‹ä»£è™Ÿ</td>\n"
+    "  <td width=210>ç¶²å‹æš±ç¨±</td>\n"
+    "  <td width=230>å®¢é€”æ•…é„‰</td>\n"
+    "  <td width=100>ç¶²å‹å‹•æ…‹</td>\n"
     "</tr>\n", fpw);
 }
 
@@ -1666,23 +1666,23 @@ cmd_userlist(ap)
   Agent *ap;
 {
   init_myusr(ap);
-  out_head(ap, "¨Ï¥ÎªÌ¦W³æ");
+  out_head(ap, "ä½¿ç”¨è€…åå–®");
 
-  cmdlist_list(ap, "¥Ø«e¯¸¤W¦³ %d ­Ó¤H", userlist_tie, userlist_item);
+  cmdlist_list(ap, "ç›®å‰ç«™ä¸Šæœ‰ %d å€‹äºº", userlist_tie, userlist_item);
 
   return HS_END;
 }
 
 
   /* --------------------------------------------------- */
-  /* ¬İªO¦Cªí						 */
+  /* çœ‹æ¿åˆ—è¡¨						 */
   /* --------------------------------------------------- */
 
 static int
 brdtitle_cmp(a, b)
   BRD **a, **b;
 {
-  /* itoc.010413: ¤ÀÃş/ªO¦W¥æ¤e¤ñ¹ï */
+  /* itoc.010413: åˆ†é¡/æ¿åäº¤å‰æ¯”å° */
   int k = strcmp((*a)->class, (*b)->class);
   return k ? k : str_cmp((*a)->brdname, (*b)->brdname);
 }
@@ -1725,12 +1725,12 @@ static void
 boardlist_tie(fpw)
   FILE *fpw;
 {
-  fputs("  <td width=40>½s¸¹</td>\n"
-    "  <td width=80>¬İªO</td>\n"
-    "  <td width=40>Ãş§O</td>\n"
-    "  <td width=25>Âà</td>\n"
-    "  <td width=350>¤¤¤å±Ô­z</td>\n"
-    "  <td width=75>ªO¥D</td>\n"
+  fputs("  <td width=40>ç·¨è™Ÿ</td>\n"
+    "  <td width=80>çœ‹æ¿</td>\n"
+    "  <td width=40>é¡åˆ¥</td>\n"
+    "  <td width=25>è½‰</td>\n"
+    "  <td width=350>ä¸­æ–‡æ•˜è¿°</td>\n"
+    "  <td width=75>æ¿ä¸»</td>\n"
     "</tr>\n", fpw);
 }
 
@@ -1762,16 +1762,16 @@ cmd_boardlist(ap)
   Agent *ap;
 {
   init_mybrd(ap);
-  out_head(ap, "¬İªO¦Cªí");
+  out_head(ap, "çœ‹æ¿åˆ—è¡¨");
 
-  cmdlist_list(ap, "¥Ø«e¯¸¤W¦³ %d ­ÓªO", boardlist_tie, boardlist_item);
+  cmdlist_list(ap, "ç›®å‰ç«™ä¸Šæœ‰ %d å€‹æ¿", boardlist_tie, boardlist_item);
 
   return HS_END;
 }
 
 
   /* --------------------------------------------------- */
-  /* §Úªº³Ì·R						 */
+  /* æˆ‘çš„æœ€æ„›						 */
   /* --------------------------------------------------- */
 
 static void
@@ -1795,7 +1795,7 @@ init_myfavor(ap)
   {
     while (fread(&mf, sizeof(MF), 1, fp) == 1)
     {
-      /* ¥u¤ä´©²Ä¤@¼hªº¬İªO */
+      /* åªæ”¯æ´ç¬¬ä¸€å±¤çš„çœ‹æ¿ */
       if ((mf.mftype & MF_BOARD) &&
 	(bhdr = brd_get(mf.xname)) &&
 	(Ben_Perm(bhdr, uno, uid, ulevel) & BRD_R_BIT))
@@ -1814,20 +1814,20 @@ static int
 cmd_favorlist(ap)
   Agent *ap;
 {
-  out_head(ap, "§Úªº³Ì·R");
+  out_head(ap, "æˆ‘çš„æœ€æ„›");
   if (!acct_fetch(ap))
     return HS_ERR_LOGIN;
 
   init_myfavor(ap);
 
-  cmdlist_list(ap, "§Úªº³Ì·R", boardlist_tie, boardlist_item);
+  cmdlist_list(ap, "æˆ‘çš„æœ€æ„›", boardlist_tie, boardlist_item);
 
   return HS_END;
 }
 
 
   /* --------------------------------------------------- */
-  /* ¤ÀÃş¬İªO¦Cªí					 */
+  /* åˆ†é¡çœ‹æ¿åˆ—è¡¨					 */
   /* --------------------------------------------------- */
 
 static void
@@ -1838,7 +1838,7 @@ class_neck(fpw)
     "<table cellspacing=0 cellpadding=1 border=0 width=760>\n"
     "<tr bgcolor=" HCOLOR_NECK ">\n"
     "  <td width=50%></td>\n"
-    "  <td width=50% align=center><a href=/class>¦^³Ì¤W¼h</a></td>\n"
+    "  <td width=50% align=center><a href=/class>å›æœ€ä¸Šå±¤</a></td>\n"
     "</tr></table><br>\n", fpw);
 }
 
@@ -1852,7 +1852,7 @@ cmd_class(ap)
   char folder[64], *xname, *userid;
   BRD *brd;
   HDR hdr;
-  FILE *fpw = out_head(ap, "¤ÀÃş¬İªO");
+  FILE *fpw = out_head(ap, "åˆ†é¡çœ‹æ¿");
 
   if (!arg_analyze(1, '?', ap->urlp, &xname, NULL, NULL, NULL))
     xname = CLASS_INIFILE;
@@ -1876,7 +1876,7 @@ cmd_class(ap)
   while (read(fd, &hdr, sizeof(HDR)) == sizeof(HDR))
   {
     fputs("<tr onmouseover=mOver(this); onmouseout=mOut(this);>\n", fpw);
-    if (hdr.xmode & GEM_BOARD)	/* ¬İªO */
+    if (hdr.xmode & GEM_BOARD)	/* çœ‹æ¿ */
     {
       if ((brd = brd_get(hdr.xname)) &&
 	Ben_Perm(brd, userno, userid, ulevel) & BRD_R_BIT)
@@ -1886,18 +1886,18 @@ cmd_class(ap)
       else
 	continue;
     }
-    else if ((hdr.xmode & GEM_FOLDER) && *hdr.xname == '@')	/* ¤ÀÃş */
+    else if ((hdr.xmode & GEM_FOLDER) && *hdr.xname == '@')	/* åˆ†é¡ */
     {
       fprintf(fpw, "  <td>%d</td>\n"
 	"  <td><a href=/class?%s>%s/</a></td>\n"
-	"  <td>¤ÀÃş</td>\n"
-	"  <td>¡¼</td>\n"
+	"  <td>åˆ†é¡</td>\n"
+	"  <td>â–¡</td>\n"
 	"  <td colspan=2>%s</td>\n</tr>\n",
 	i,
 	hdr.xname + 1, hdr.xname + 1,
 	str_html(hdr.title + 21, 52));
     }
-    else			/* ¨ä¥LÃş§O´N¤£¨q¤F */
+    else			/* å…¶ä»–é¡åˆ¥å°±ä¸ç§€äº† */
     {
       continue;
     }
@@ -1912,7 +1912,7 @@ cmd_class(ap)
 
 
   /* --------------------------------------------------- */
-  /* ¤å³¹¦Cªí						 */
+  /* æ–‡ç« åˆ—è¡¨						 */
   /* --------------------------------------------------- */
 
 static void
@@ -1926,25 +1926,25 @@ postlist_list(fpw, folder, brdname, start, total)
   int fd, xmode;
 
   fputs("<table cellspacing=0 cellpadding=4 border=0>\n<tr bgcolor=" HCOLOR_TIE ">\n"
-    "  <td width=15>¼Ğ</td>\n"
-    "  <td width=15>§R</td>\n"
-    "  <td width=50>½s¸¹</td>\n"
+    "  <td width=15>æ¨™</td>\n"
+    "  <td width=15>åˆª</td>\n"
+    "  <td width=50>ç·¨è™Ÿ</td>\n"
     "  <td width=10>m</td>\n"
 
 #ifdef HAVE_SCORE
     "  <td width=10>&nbsp;</td>\n"
 #endif
 
-    "  <td width=50>¤é´Á</td>\n"
-    "  <td width=100>§@ªÌ</td>\n"
-    "  <td width=400>¼ĞÃD</td>\n"
+    "  <td width=50>æ—¥æœŸ</td>\n"
+    "  <td width=100>ä½œè€…</td>\n"
+    "  <td width=400>æ¨™é¡Œ</td>\n"
     "</tr>\n", fpw);
 
   if ((fd = open(folder, O_RDONLY)) >= 0)
   {
     int i, end;
 
-    /* ¨q¥X¬İªOªº²Ä start ½g¶}©lªº HTML_TALL ½g */
+    /* ç§€å‡ºçœ‹æ¿çš„ç¬¬ start ç¯‡é–‹å§‹çš„ HTML_TALL ç¯‡ */
     i = start;
     end = i + HTML_TALL;
 
@@ -1953,9 +1953,9 @@ postlist_list(fpw, folder, brdname, start, total)
     while (i < end && read(fd, &hdr, sizeof(HDR)) == sizeof(HDR))
     {
       strcpy(owner, hdr.owner);
-      if (ptr1 = strchr(owner, '.'))	/* ¯¸¥~§@ªÌ */
+      if (ptr1 = strchr(owner, '.'))	/* ç«™å¤–ä½œè€… */
 	*(ptr1 + 1) = '\0';
-      if (ptr2 = strchr(owner, '@'))	/* ¯¸¥~§@ªÌ */
+      if (ptr2 = strchr(owner, '@'))	/* ç«™å¤–ä½œè€… */
 	*ptr2 = '\0';
 
       fputs("<tr onmouseover=mOver(this); onmouseout=mOut(this);>\n", fpw);
@@ -2013,7 +2013,7 @@ postlist_neck(fpw, start, total, brdname)
 
   if (start > HTML_TALL)
   {
-    fprintf(fpw, " align=center><a href=?%s&%d>¤W%d½g</a",
+    fprintf(fpw, " align=center><a href=?%s&%d>ä¸Š%dç¯‡</a",
       brdname, start - HTML_TALL, HTML_TALL);
   }
   fputs("></td>\n  <td width=20%", fpw);
@@ -2021,14 +2021,14 @@ postlist_neck(fpw, start, total, brdname)
   start += HTML_TALL;
   if (start <= total)
   {
-    fprintf(fpw, " align=center><a href=?%s&%d>¤U%d½g</a",
+    fprintf(fpw, " align=center><a href=?%s&%d>ä¸‹%dç¯‡</a",
       brdname, start, HTML_TALL);
   }
 
-  fprintf(fpw, "></td>\n  <td width=20%% align=center><a href=/dopost?%s target=_blank>µoªí¤å³¹</a></td>\n"
-    "  <td width=20%% align=center><a href=/gem?%s>ºëµØ°Ï</a></td>\n"
-    "  <td width=20%% align=center><a href=/brdlist>¬İªO¦Cªí</a>&nbsp;"
-    "<a href=/rss?%s><img border=0 src=/img?xml.gif alt=\"RSS ­q¾\\³o­Ó¬İªO\"></a></td>\n"
+  fprintf(fpw, "></td>\n  <td width=20%% align=center><a href=/dopost?%s target=_blank>ç™¼è¡¨æ–‡ç« </a></td>\n"
+    "  <td width=20%% align=center><a href=/gem?%s>ç²¾è¯å€</a></td>\n"
+    "  <td width=20%% align=center><a href=/brdlist>çœ‹æ¿åˆ—è¡¨</a>&nbsp;"
+    "<a href=/rss?%s><img border=0 src=/img?xml.gif alt=\"RSS è¨‚é–±\é€™å€‹çœ‹æ¿\"></a></td>\n"
     "</tr></table><br>\n",
     brdname, brdname, brdname);
 }
@@ -2040,7 +2040,7 @@ cmd_postlist(ap)
 {
   int start, total;
   char folder[64], *brdname, *number;
-  FILE *fpw = out_head(ap, "¤å³¹¦Cªí");
+  FILE *fpw = out_head(ap, "æ–‡ç« åˆ—è¡¨");
 
   if (!arg_analyze(2, '?', ap->urlp, &brdname, &number, NULL, NULL))
   {
@@ -2057,7 +2057,7 @@ cmd_postlist(ap)
 
   start = atoi(number);
   total = rec_num(folder, sizeof(HDR));
-  if (start <= 0 || start > total)	/* ¶W¹L½d³òªº¸Ü¡Aª½±µ¨ì³Ì«á¤@­¶ */
+  if (start <= 0 || start > total)	/* è¶…éç¯„åœçš„è©±ï¼Œç›´æ¥åˆ°æœ€å¾Œä¸€é  */
     start = (total - 1) / HTML_TALL * HTML_TALL + 1;
 
   postlist_neck(fpw, start, total, brdname);
@@ -2070,7 +2070,7 @@ cmd_postlist(ap)
 
 
   /* --------------------------------------------------- */
-  /* «H½c¦Cªí						 */
+  /* ä¿¡ç®±åˆ—è¡¨						 */
   /* --------------------------------------------------- */
 
 static void
@@ -2084,7 +2084,7 @@ mboxlist_neck(fpw, start, total)
 
   if (start > HTML_TALL)
   {
-    fprintf(fpw, "align=center><a href=?%d>¤W%d½g</a",
+    fprintf(fpw, "align=center><a href=?%d>ä¸Š%dç¯‡</a",
       start - HTML_TALL, HTML_TALL);
   }
   fputs("></td>\n  <td width=33%", fpw);
@@ -2092,11 +2092,11 @@ mboxlist_neck(fpw, start, total)
   start += HTML_TALL;
   if (start <= total)
   {
-    fprintf(fpw, " align=center><a href=?%d>¤U%d½g</a",
+    fprintf(fpw, " align=center><a href=?%d>ä¸‹%dç¯‡</a",
       start, HTML_TALL);
   }
 
-  fputs("></td>\n  <td width=34% align=center><a href=/domail target=_blank>µo°e«H¥ó</a></td>\n"
+  fputs("></td>\n  <td width=34% align=center><a href=/domail target=_blank>ç™¼é€ä¿¡ä»¶</a></td>\n"
     "</tr></table><br>\n", fpw);
 }
 
@@ -2107,7 +2107,7 @@ cmd_mboxlist(ap)
 {
   int start, total;
   char folder[64], *number;
-  FILE *fpw = out_head(ap, "«H½c¦Cªí");
+  FILE *fpw = out_head(ap, "ä¿¡ç®±åˆ—è¡¨");
 
   if (!acct_fetch(ap))
     return HS_ERR_LOGIN;
@@ -2119,7 +2119,7 @@ cmd_mboxlist(ap)
 
   start = atoi(number);
   total = rec_num(folder, sizeof(HDR));
-  if (start <= 0 || start > total)	/* ¶W¹L½d³òªº¸Ü¡Aª½±µ¨ì³Ì«á¤@­¶ */
+  if (start <= 0 || start > total)	/* è¶…éç¯„åœçš„è©±ï¼Œç›´æ¥åˆ°æœ€å¾Œä¸€é  */
     start = (total - 1) / HTML_TALL * HTML_TALL + 1;
 
   mboxlist_neck(fpw, start, total);
@@ -2132,7 +2132,7 @@ cmd_mboxlist(ap)
 
 
   /* --------------------------------------------------- */
-  /* ºëµØ°Ï¦Cªí						 */
+  /* ç²¾è¯å€åˆ—è¡¨						 */
   /* --------------------------------------------------- */
 
 static void
@@ -2143,8 +2143,8 @@ gemlist_neck(fpw, brdname)
   fprintf(fpw, "<br>\n"
     "<table cellspacing=0 cellpadding=1 border=0 width=760>\n"
     "<tr bgcolor=" HCOLOR_NECK ">\n"
-    "  <td width=50%% align=center><a href=/brd?%s>¦^¨ì¬İªO</a></td>\n"
-    "  <td width=50%% align=center><a href=/brdlist>¬İªO¦Cªí</a></td>\n"
+    "  <td width=50%% align=center><a href=/brd?%s>å›åˆ°çœ‹æ¿</a></td>\n"
+    "  <td width=50%% align=center><a href=/brdlist>çœ‹æ¿åˆ—è¡¨</a></td>\n"
     "</tr></table><br>\n",
     brdname);
 }
@@ -2157,7 +2157,7 @@ cmd_gemlist(ap)
   int fd, i;
   char folder[64], *brdname, *xname;
   HDR hdr;
-  FILE *fpw = out_head(ap, "ºëµØ°Ï");
+  FILE *fpw = out_head(ap, "ç²¾è¯å€");
 
   if (!arg_analyze(2, '?', ap->urlp, &brdname, &xname, NULL, NULL))
   {
@@ -2177,8 +2177,8 @@ cmd_gemlist(ap)
 
   fputs("<table cellspacing=0 cellpadding=4 border=0>\n"
     "<tr bgcolor=" HCOLOR_TIE ">\n"
-    "  <td width=50>½s¸¹</td>\n"
-    "  <td width=400>¼ĞÃD</td>\n"
+    "  <td width=50>ç·¨è™Ÿ</td>\n"
+    "  <td width=400>æ¨™é¡Œ</td>\n"
     "</tr>\n", fpw);
 
   if (*xname == '.')
@@ -2195,21 +2195,21 @@ cmd_gemlist(ap)
 	"  <td>%d</td>\n", i);
       if (hdr.xmode & GEM_RESTRICT)
       {
-	fputs("  <td>¡º ¸ê®Æ«O±K</td>\n</tr>\n", fpw);
+	fputs("  <td>â—‡ è³‡æ–™ä¿å¯†</td>\n</tr>\n", fpw);
       }
-      else if (hdr.xname[0] == 'A')	/* ¤å³¹ */
+      else if (hdr.xname[0] == 'A')	/* æ–‡ç«  */
       {
-	fprintf(fpw, "  <td><a href=/gmore?%s&%s&%d>¡º %s</a></td>\n</tr>\n",
+	fprintf(fpw, "  <td><a href=/gmore?%s&%s&%d>â—‡ %s</a></td>\n</tr>\n",
 	  brdname, xname, i, str_html(hdr.title, TTLEN));
       }
-      else if (hdr.xname[0] == 'F')	/* ¨÷©v */
+      else if (hdr.xname[0] == 'F')	/* å·å®— */
       {
-	fprintf(fpw, "  <td><a href=/gem?%s&%s>¡» %s</a></td>\n</tr>\n",
+	fprintf(fpw, "  <td><a href=/gem?%s&%s>â—† %s</a></td>\n</tr>\n",
 	  brdname, hdr.xname, str_html(hdr.title, TTLEN));
       }
-      else				/* ¨ä¥LÃş§O´N¤£¨q¤F */
+      else				/* å…¶ä»–é¡åˆ¥å°±ä¸ç§€äº† */
       {
-	fputs("  <td>¡º ¨ä¥L¸ê®Æ</td>\n</tr>\n", fpw);
+	fputs("  <td>â—‡ å…¶ä»–è³‡æ–™</td>\n</tr>\n", fpw);
       }
 
       i++;
@@ -2225,7 +2225,7 @@ cmd_gemlist(ap)
 
 
   /* --------------------------------------------------- */
-  /* ¾\Åª¬İªO¤å³¹					 */
+  /* é–±è®€çœ‹æ¿æ–‡ç« 					 */
   /* --------------------------------------------------- */
 
 static void
@@ -2245,7 +2245,7 @@ more_neck(fpw, pos, total, brdname, xname)
       fprintf(fpw, "%s&", brdname);
     if (xname)
       fprintf(fpw, "%s&", xname);
-    fprintf(fpw, "%d>¤W¤@½g</a", pos - 1);
+    fprintf(fpw, "%d>ä¸Šä¸€ç¯‡</a", pos - 1);
   }
   fputs("></td>\n  <td width=20%", fpw);
 
@@ -2256,21 +2256,21 @@ more_neck(fpw, pos, total, brdname, xname)
       fprintf(fpw, "%s&", brdname);
     if (xname)
       fprintf(fpw, "%s&", xname);
-    fprintf(fpw, "%d>¤U¤@½g</a", pos + 1);
+    fprintf(fpw, "%d>ä¸‹ä¸€ç¯‡</a", pos + 1);
   }
 
   if (xname)
-    fprintf(fpw, "></td>\n  <td width=60%% align=center><a href=/gem?%s&%s>¦^¨ì¨÷©v</a", brdname, xname);
+    fprintf(fpw, "></td>\n  <td width=60%% align=center><a href=/gem?%s&%s>å›åˆ°å·å®—</a", brdname, xname);
   else if (brdname)
   {
-    fprintf(fpw, "></td>\n  <td width=20%% align=center><a href=/bmost?%s&%d target=_blank>¦P¼ĞÃD</a></td>\n"
-      "  <td width=20%% align=center><a href=/dopost?%s target=_blank>µoªí¤å³¹</a></td>\n"
-      "  <td width=20%% align=center><a href=/brd?%s>¤å³¹¦Cªí</a",
+    fprintf(fpw, "></td>\n  <td width=20%% align=center><a href=/bmost?%s&%d target=_blank>åŒæ¨™é¡Œ</a></td>\n"
+      "  <td width=20%% align=center><a href=/dopost?%s target=_blank>ç™¼è¡¨æ–‡ç« </a></td>\n"
+      "  <td width=20%% align=center><a href=/brd?%s>æ–‡ç« åˆ—è¡¨</a",
       brdname, pos,
       brdname, brdname);
   }
   else
-    fputs("></td>\n  <td width=60% align=center><a href=/mbox>«H½c¦Cªí</a", fpw);
+    fputs("></td>\n  <td width=60% align=center><a href=/mbox>ä¿¡ç®±åˆ—è¡¨</a", fpw);
 
   fputs("></td>\n</tr></table><br>\n", fpw);
 }
@@ -2309,7 +2309,7 @@ more_item(fpw, folder, pos, brdname)
 #ifdef HAVE_REFUSEMARK
       }
       else
-	out_mesg(fpw, "³o¬O¥[±Kªº¤å³¹¡A±zµLªk¾\\Åª");
+	out_mesg(fpw, "é€™æ˜¯åŠ å¯†çš„æ–‡ç« ï¼Œæ‚¨ç„¡æ³•é–±\è®€");
 #endif
 
       more_neck(fpw, pos, total, brdname, NULL);
@@ -2327,7 +2327,7 @@ cmd_brdmore(ap)
 {
   int pos;
   char folder[64], *brdname, *number;
-  FILE *fpw = out_head(ap, "¾\\Åª¬İªO¤å³¹");
+  FILE *fpw = out_head(ap, "é–±\è®€çœ‹æ¿æ–‡ç« ");
 
   if (!arg_analyze(2, '?', ap->urlp, &brdname, &number, NULL, NULL))
     return HS_ERROR;
@@ -2345,7 +2345,7 @@ cmd_brdmore(ap)
 
 
   /* --------------------------------------------------- */
-  /* ¾\Åª«H½c¤å³¹					 */
+  /* é–±è®€ä¿¡ç®±æ–‡ç« 					 */
   /* --------------------------------------------------- */
 
 static int
@@ -2354,7 +2354,7 @@ cmd_mboxmore(ap)
 {
   int pos;
   char folder[64], *number;
-  FILE *fpw = out_head(ap, "¾\\Åª«H½c¤å³¹");
+  FILE *fpw = out_head(ap, "é–±\è®€ä¿¡ç®±æ–‡ç« ");
 
   if (!arg_analyze(1, '?', ap->urlp, &number, NULL, NULL, NULL))
     return HS_ERROR;
@@ -2372,7 +2372,7 @@ cmd_mboxmore(ap)
 
 
   /* --------------------------------------------------- */
-  /* ¾\Åª¬İªO¦P¼ĞÃD¤å³¹					 */
+  /* é–±è®€çœ‹æ¿åŒæ¨™é¡Œæ–‡ç« 					 */
   /* --------------------------------------------------- */
 
 static void
@@ -2416,7 +2416,7 @@ brdmost_neck(fpw)
   fputs("<br>\n"
     "<table cellspacing=0 cellpadding=1 border=0 width=760>\n"
     "<tr bgcolor=" HCOLOR_NECK ">\n"
-    "  <td align=center>¦P¼ĞÃD¾\\Åª</td>\n"
+    "  <td align=center>åŒæ¨™é¡Œé–±\è®€</td>\n"
     "</tr></table><br>\n", fpw);
 }
 
@@ -2428,7 +2428,7 @@ cmd_brdmost(ap)
   int fd, pos;
   char folder[64], *brdname, *number;
   HDR hdr;
-  FILE *fpw = out_head(ap, "¾\\Åª¬İªO¦P¼ĞÃD¤å³¹");
+  FILE *fpw = out_head(ap, "é–±\è®€çœ‹æ¿åŒæ¨™é¡Œæ–‡ç« ");
 
   if (!arg_analyze(2, '?', ap->urlp, &brdname, &number, NULL, NULL))
     return HS_ERROR;
@@ -2463,7 +2463,7 @@ cmd_brdmost(ap)
 
 
   /* --------------------------------------------------- */
-  /* ¾\ÅªºëµØ°Ï¤å³¹					 */
+  /* é–±è®€ç²¾è¯å€æ–‡ç« 					 */
   /* --------------------------------------------------- */
 
 static int
@@ -2473,7 +2473,7 @@ cmd_gemmore(ap)
   int fd, pos, total;
   char *brdname, *xname, *number, folder[64];
   HDR hdr;
-  FILE *fpw = out_head(ap, "¾\\ÅªºëµØ°Ï¤å³¹");
+  FILE *fpw = out_head(ap, "é–±\è®€ç²¾è¯å€æ–‡ç« ");
 
   if (!arg_analyze(3, '?', ap->urlp, &brdname, &xname, &number, NULL))
     return HS_ERROR;
@@ -2512,10 +2512,10 @@ cmd_gemmore(ap)
 	  out_article(fpw, folder);
 	}
 	else
-	  out_mesg(fpw, "¦¹¬°«O±KºëµØ°Ï¡A±zµLªk¾\\Åª");
+	  out_mesg(fpw, "æ­¤ç‚ºä¿å¯†ç²¾è¯å€ï¼Œæ‚¨ç„¡æ³•é–±\è®€");
       }
       else
-	out_mesg(fpw, "³o¬O¨÷©v©Î°ßÅª¸ê®Æ¡A±z¥²¶·¥ÑºëµØ°Ï¦Cªí¨ÓÅª¨ú");
+	out_mesg(fpw, "é€™æ˜¯å·å®—æˆ–å”¯è®€è³‡æ–™ï¼Œæ‚¨å¿…é ˆç”±ç²¾è¯å€åˆ—è¡¨ä¾†è®€å–");
       more_neck(fpw, pos, total, brdname, xname);
       return HS_END;
     }
@@ -2526,7 +2526,7 @@ cmd_gemmore(ap)
 
 
   /* --------------------------------------------------- */
-  /* µoªí¤å³¹						 */
+  /* ç™¼è¡¨æ–‡ç« 						 */
   /* --------------------------------------------------- */
 
 static int
@@ -2534,7 +2534,7 @@ cmd_dopost(ap)
   Agent *ap;
 {
   char *brdname;
-  FILE *fpw = out_head(ap, "µoªí¤å³¹");
+  FILE *fpw = out_head(ap, "ç™¼è¡¨æ–‡ç« ");
 
   if (!arg_analyze(1, '?', ap->urlp, &brdname, NULL, NULL, NULL))
     return HS_ERROR;
@@ -2542,17 +2542,17 @@ cmd_dopost(ap)
   if (!(ben_perm(ap, brdname) & BRD_W_BIT))
     return HS_ERR_BOARD;
 
-  fputs("<form method=post onsubmit=\"if(t.value.length==0 || c.value.length==0) {alert('¼ĞÃD¡B¤º®e§¡¤£¥i¬°ªÅ¥Õ'); return false;} return true;\">\n"
+  fputs("<form method=post onsubmit=\"if(t.value.length==0 || c.value.length==0) {alert('æ¨™é¡Œã€å…§å®¹å‡ä¸å¯ç‚ºç©ºç™½'); return false;} return true;\">\n"
     "  <input type=hidden name=dopost>\n"
-    "  ½Ğ¿é¤J¼ĞÃD¡G<br>\n", fpw);
+    "  è«‹è¼¸å…¥æ¨™é¡Œï¼š<br>\n", fpw);
   fprintf(fpw,
     "  <input type=hidden name=b value=%s>\n"
     "  <input type=text name=t size=%d maxlength=%d><br><br>\n"
-    "  ½Ğ¿é¤J¤º®e¡G<br>\n"
+    "  è«‹è¼¸å…¥å…§å®¹ï¼š<br>\n"
     "  <textarea name=c rows=10 cols=%d></textarea><br><br>\n"
     "  <input type=hidden name=end>\r\n"
-    "  <input type=submit value=°e¥X¤å³¹> "
-    "  <input type=reset value=­«·s¶ñ¼g>"
+    "  <input type=submit value=é€å‡ºæ–‡ç« > "
+    "  <input type=reset value=é‡æ–°å¡«å¯«>"
     "</form>\n",
     brdname,
     TTLEN, TTLEN,
@@ -2563,7 +2563,7 @@ cmd_dopost(ap)
 
 
   /* --------------------------------------------------- */
-  /* µo°e«H¥ó						 */
+  /* ç™¼é€ä¿¡ä»¶						 */
   /* --------------------------------------------------- */
 
 static int
@@ -2571,7 +2571,7 @@ cmd_domail(ap)
   Agent *ap;
 {
   char *userid;
-  FILE *fpw = out_head(ap, "µo°e«H¥ó");
+  FILE *fpw = out_head(ap, "ç™¼é€ä¿¡ä»¶");
 
   if (!acct_fetch(ap))
     return HS_ERR_LOGIN;
@@ -2579,18 +2579,18 @@ cmd_domail(ap)
   if (!arg_analyze(1, '?', ap->urlp, &userid, NULL, NULL, NULL))
     userid = "";
 
-  fputs("<form method=post onsubmit=\"if(u.value.length==0 || t.value.length==0 || c.value.length==0) {alert('¦¬«H¤H¡B¼ĞÃD¡B¤º®e§¡¤£¥i¬°ªÅ¥Õ'); return false;} return true;\">\n"
+  fputs("<form method=post onsubmit=\"if(u.value.length==0 || t.value.length==0 || c.value.length==0) {alert('æ”¶ä¿¡äººã€æ¨™é¡Œã€å…§å®¹å‡ä¸å¯ç‚ºç©ºç™½'); return false;} return true;\">\n"
     "  <input type=hidden name=domail>\n"
-    "  ½Ğ¿é¤J¦¬«H¤H¢×¢Ò¡G<br>\n", fpw);
+    "  è«‹è¼¸å…¥æ”¶ä¿¡äººï¼©ï¼¤ï¼š<br>\n", fpw);
   fprintf(fpw,
     "  <input type=text name=u size=%d maxlength=%d value=%s><br><br>\n"
-    "  ½Ğ¿é¤J¼ĞÃD¡G<br>\n"
+    "  è«‹è¼¸å…¥æ¨™é¡Œï¼š<br>\n"
     "  <input type=text name=t size=%d maxlength=%d><br><br>\n"
-    "  ½Ğ¿é¤J¤º®e¡G<br>\n"
+    "  è«‹è¼¸å…¥å…§å®¹ï¼š<br>\n"
     "  <textarea name=c rows=10 cols=%d></textarea><br><br>\n"
     "  <input type=hidden name=end>\r\n"
-    "  <input type=submit value=°e¥X«H¥ó> "
-    "  <input type=reset value=­«·s¶ñ¼g>"
+    "  <input type=submit value=é€å‡ºä¿¡ä»¶> "
+    "  <input type=reset value=é‡æ–°å¡«å¯«>"
     "</form>\n",
     IDLEN, IDLEN, userid,
     TTLEN, TTLEN,
@@ -2601,13 +2601,13 @@ cmd_domail(ap)
 
 
   /* --------------------------------------------------- */
-  /* ¼Ğ°O/§R°£ ¤å³¹					 */
+  /* æ¨™è¨˜/åˆªé™¤ æ–‡ç« 					 */
   /* --------------------------------------------------- */
 
 static void outgo_post();
 
 static void
-move_post(userid, hdr, folder, by_bm)	/* ±N hdr ±q folder ·h¨ì§OªºªO */
+move_post(userid, hdr, folder, by_bm)	/* å°‡ hdr å¾ folder æ¬åˆ°åˆ¥çš„æ¿ */
   char *userid;
   HDR *hdr;
   char *folder;
@@ -2620,10 +2620,10 @@ move_post(userid, hdr, folder, by_bm)	/* ±N hdr ±q folder ·h¨ì§OªºªO */
   xmode = hdr->xmode;
   hdr_fpath(fpath, folder, hdr);
 
-  if (!(xmode & POST_BOTTOM))	/* ¸m©³¤å³Q¬å¤£¥Î move_post */
+  if (!(xmode & POST_BOTTOM))	/* ç½®åº•æ–‡è¢«ç ä¸ç”¨ move_post */
   {
 #ifdef HAVE_REFUSEMARK
-    board = by_bm && !(xmode & POST_RESTRICT) ? BN_DELETED : BN_JUNK;	/* ¥[±K¤å³¹¥á¥h junk */
+    board = by_bm && !(xmode & POST_RESTRICT) ? BN_DELETED : BN_JUNK;	/* åŠ å¯†æ–‡ç« ä¸Ÿå» junk */
 #else
     board = by_bm ? BN_DELETED : BN_JUNK;
 #endif
@@ -2631,7 +2631,7 @@ move_post(userid, hdr, folder, by_bm)	/* ±N hdr ±q folder ·h¨ì§OªºªO */
     brd_fpath(fnew, board, FN_DIR);
     hdr_stamp(fnew, HDR_LINK | 'A', &post, fpath);
 
-    /* ª½±µ½Æ»s trailing data¡Gowner(§t)¥H¤U©Ò¦³Äæ¦ì */
+    /* ç›´æ¥è¤‡è£½ trailing dataï¼šowner(å«)ä»¥ä¸‹æ‰€æœ‰æ¬„ä½ */
     memcpy(post.owner, hdr->owner, sizeof(HDR) -
       (sizeof(post.chrono) + sizeof(post.xmode) + sizeof(post.xid) + sizeof(post.xname)));
 
@@ -2701,9 +2701,9 @@ post_op(ap, title, msg)
 	rec_del(folder, sizeof(HDR), pos, NULL);
 	move_post(ap->userid, &hdr, folder, bits & BRD_X_BIT);
 	brd_get(brdname)->btime = -1;
-	/* ³s½u¬å«H */
-	if ((hdr.xmode & POST_OUTGO) &&		/* ¥~Âà«H¥ó */
-	  hdr.chrono > (time(0) - 7 * 86400))	/* 7 ¤Ñ¤§¤º¦³®Ä */
+	/* é€£ç·šç ä¿¡ */
+	if ((hdr.xmode & POST_OUTGO) &&		/* å¤–è½‰ä¿¡ä»¶ */
+	  hdr.chrono > (time(0) - 7 * 86400))	/* 7 å¤©ä¹‹å…§æœ‰æ•ˆ */
 	{
 	  hdr.chrono = -1;
 	  outgo_post(&hdr, brdname);
@@ -2715,7 +2715,7 @@ post_op(ap, title, msg)
     fpw = out_http(ap, HS_OK | HS_REFRESH, folder);
     out_title(fpw, title + 1);
     out_mesg(fpw, msg);
-    fprintf(fpw, "<a href=%s>¦^¤å³¹¦Cªí</a>\n", folder);
+    fprintf(fpw, "<a href=%s>å›æ–‡ç« åˆ—è¡¨</a>\n", folder);
 
     return HS_END;
   }
@@ -2727,7 +2727,7 @@ static int
 cmd_markpost(ap)
   Agent *ap;
 {
-  return op_shell(post_op, ap, "m¼Ğ°O¤å³¹", "¤w°õ¦æ(¨ú®ø)¼Ğ°O«ü¥O");
+  return op_shell(post_op, ap, "mæ¨™è¨˜æ–‡ç« ", "å·²åŸ·è¡Œ(å–æ¶ˆ)æ¨™è¨˜æŒ‡ä»¤");
 }
 
 
@@ -2735,7 +2735,7 @@ static int
 cmd_delpost(ap)
   Agent *ap;
 {
-  return op_shell(post_op, ap, "d§R°£¤å³¹", "¤w°õ¦æ§R°£«ü¥O¡A­Y¥¼§R°£ªí¥Ü¦¹¤å³¹³Q¼Ğ°O¤F");
+  return op_shell(post_op, ap, "dåˆªé™¤æ–‡ç« ", "å·²åŸ·è¡Œåˆªé™¤æŒ‡ä»¤ï¼Œè‹¥æœªåˆªé™¤è¡¨ç¤ºæ­¤æ–‡ç« è¢«æ¨™è¨˜äº†");
 }
 
 
@@ -2744,13 +2744,13 @@ cmd_predelpost(ap)
   Agent *ap;
 {
   char *brdname, *number, *stamp;
-  FILE *fpw = out_head(ap, "½T»{§R°£¤å³¹");
+  FILE *fpw = out_head(ap, "ç¢ºèªåˆªé™¤æ–‡ç« ");
 
   if (!arg_analyze(3, '?', ap->urlp, &brdname, &number, &stamp, NULL))
     return HS_ERROR;
 
-  out_mesg(fpw, "­Y½T©w­n§R°£¦¹½g¤å³¹¡A½Ğ¦A¦¸ÂI¿ï¥H¤U³sµ²¡F­Y­n¨ú®ø§R°£¡A½Ğ«ö [¤W¤@­¶]");
-  fprintf(fpw, "<a href=/delpost?%s&%s&%s>§R°£ [%s] ªO²Ä %s ½g¤å³¹</a><br>\n",
+  out_mesg(fpw, "è‹¥ç¢ºå®šè¦åˆªé™¤æ­¤ç¯‡æ–‡ç« ï¼Œè«‹å†æ¬¡é»é¸ä»¥ä¸‹é€£çµï¼›è‹¥è¦å–æ¶ˆåˆªé™¤ï¼Œè«‹æŒ‰ [ä¸Šä¸€é ]");
+  fprintf(fpw, "<a href=/delpost?%s&%s&%s>åˆªé™¤ [%s] æ¿ç¬¬ %s ç¯‡æ–‡ç« </a><br>\n",
     brdname, number, stamp, brdname, number);
 
   return HS_END;
@@ -2758,7 +2758,7 @@ cmd_predelpost(ap)
 
 
   /* --------------------------------------------------- */
-  /* ¼Ğ°O/§R°£ «H¥ó					 */
+  /* æ¨™è¨˜/åˆªé™¤ ä¿¡ä»¶					 */
   /* --------------------------------------------------- */
 
 static int
@@ -2801,7 +2801,7 @@ mail_op(ap, title, msg)
     sprintf(folder, "/mbox?%d", (pos - 1) / HTML_TALL * HTML_TALL + 1);
     out_title(out_http(ap, HS_OK | HS_REFRESH, folder), title + 1);
     out_mesg(ap->fpw, msg);
-    fprintf(ap->fpw, "<a href=%s>¦^«H½c¦Cªí</a>\n", folder);
+    fprintf(ap->fpw, "<a href=%s>å›ä¿¡ç®±åˆ—è¡¨</a>\n", folder);
     return HS_END;
   }
   return HS_ERR_LOGIN;
@@ -2812,7 +2812,7 @@ static int
 cmd_markmail(ap)
   Agent *ap;
 {
-  return op_shell(mail_op, ap, "m¼Ğ°O«H¥ó", "¤w°õ¦æ(¨ú®ø)¼Ğ°O«ü¥O");
+  return op_shell(mail_op, ap, "mæ¨™è¨˜ä¿¡ä»¶", "å·²åŸ·è¡Œ(å–æ¶ˆ)æ¨™è¨˜æŒ‡ä»¤");
 }
 
 
@@ -2820,7 +2820,7 @@ static int
 cmd_delmail(ap)
   Agent *ap;
 {
-  return op_shell(mail_op, ap, "d§R°£«H¥ó", "¤w°õ¦æ§R°£«ü¥O¡A­Y¥¼§R°£ªí¥Ü¦¹«H¥ó³Q¼Ğ°O¤F");
+  return op_shell(mail_op, ap, "dåˆªé™¤ä¿¡ä»¶", "å·²åŸ·è¡Œåˆªé™¤æŒ‡ä»¤ï¼Œè‹¥æœªåˆªé™¤è¡¨ç¤ºæ­¤ä¿¡ä»¶è¢«æ¨™è¨˜äº†");
 }
 
 
@@ -2829,13 +2829,13 @@ cmd_predelmail(ap)
   Agent *ap;
 {
   char *number, *stamp;
-  FILE *fpw = out_head(ap, "½T»{§R°£«H¥ó");
+  FILE *fpw = out_head(ap, "ç¢ºèªåˆªé™¤ä¿¡ä»¶");
 
   if (!arg_analyze(2, '?', ap->urlp, &number, &stamp, NULL, NULL))
     return HS_ERROR;
 
-  out_mesg(fpw, "­Y½T©w­n§R°£¦¹½g«H¥ó¡A½Ğ¦A¦¸ÂI¿ï¥H¤U³sµ²¡F­Y­n¨ú®ø§R°£¡A½Ğ«ö [¤W¤@­¶]");
-  fprintf(fpw, "<a href=/delmail?%s&%s>§R°£«H½c²Ä %s ½g«H¥ó</a><br>\n",
+  out_mesg(fpw, "è‹¥ç¢ºå®šè¦åˆªé™¤æ­¤ç¯‡ä¿¡ä»¶ï¼Œè«‹å†æ¬¡é»é¸ä»¥ä¸‹é€£çµï¼›è‹¥è¦å–æ¶ˆåˆªé™¤ï¼Œè«‹æŒ‰ [ä¸Šä¸€é ]");
+  fprintf(fpw, "<a href=/delmail?%s&%s>åˆªé™¤ä¿¡ç®±ç¬¬ %s ç¯‡ä¿¡ä»¶</a><br>\n",
     number, stamp, number);
 
   return HS_END;
@@ -2843,7 +2843,7 @@ cmd_predelmail(ap)
 
 
   /* --------------------------------------------------- */
-  /* ¬d¸ß¨Ï¥ÎªÌ						 */
+  /* æŸ¥è©¢ä½¿ç”¨è€…						 */
   /* --------------------------------------------------- */
 
 static int
@@ -2853,7 +2853,7 @@ cmd_query(ap)
   int fd;
   ACCT acct;
   char fpath[64], *userid;
-  FILE *fpw = out_head(ap, "¬d¸ß¨Ï¥ÎªÌ");
+  FILE *fpw = out_head(ap, "æŸ¥è©¢ä½¿ç”¨è€…");
 
   if (!arg_analyze(1, '?', ap->urlp, &userid, NULL, NULL, NULL))
     return HS_ERROR;
@@ -2869,12 +2869,12 @@ cmd_query(ap)
 
     fprintf(fpw, "<pre>\n"
       "<a target=_blank href=domail?%s>%s (%s)</a><br>\n"
-      "%s³q¹L»{ÃÒ¡A¦@¤W¯¸ %d ¦¸¡Aµoªí¹L %d ½g¤å³¹<br>\n"
-      "³Ìªñ(%s)±q[%s]¤W¯¸<br>\n"
+      "%sé€šéèªè­‰ï¼Œå…±ä¸Šç«™ %d æ¬¡ï¼Œç™¼è¡¨é %d ç¯‡æ–‡ç« <br>\n"
+      "æœ€è¿‘(%s)å¾[%s]ä¸Šç«™<br>\n"
       "</pre>\n",
       acct.userid, acct.userid,
       str_html(acct.username, UNLEN),
-      (acct.userlevel & PERM_VALID) ? "¤w" : "¥¼", acct.numlogins, acct.numposts,
+      (acct.userlevel & PERM_VALID) ? "å·²" : "æœª", acct.numlogins, acct.numposts,
       Btime(&(acct.lastlogin)), acct.lasthost);
 
     usr_fpath(fpath, acct.userid, FN_PLANS);
@@ -2887,7 +2887,7 @@ cmd_query(ap)
 
 
   /* --------------------------------------------------- */
-  /* Åã¥Ü¹Ï¤ù						 */
+  /* é¡¯ç¤ºåœ–ç‰‡						 */
   /* --------------------------------------------------- */
 
 static int
@@ -2922,7 +2922,7 @@ cmd_image(ap)
   if (!valid_path(fname) || !(ptr = strchr(fname, '.')))
     return HS_NOTFOUND;
 
-  /* ¤ä´©®æ¦¡ */
+  /* æ”¯æ´æ ¼å¼ */
   if (!str_cmp(ptr, ".html"))
     ptr = "text/html";
   else if (!str_cmp(ptr, ".gif"))
@@ -2940,7 +2940,7 @@ cmd_image(ap)
   if (stat(fpath, &st))
     return HS_NOTFOUND;
 
-  if (ap->modified[0] && !strcmp(Gtime(&st.st_mtime), ap->modified))	/* ¨S¦³ÅÜ§ó¤£»İ­n¶Ç¿é */
+  if (ap->modified[0] && !strcmp(Gtime(&st.st_mtime), ap->modified))	/* æ²’æœ‰è®Šæ›´ä¸éœ€è¦å‚³è¼¸ */
     return HS_NOTMOIDIFY;
 
   fpw = out_http(ap, HS_OK, ptr);
@@ -2973,12 +2973,12 @@ cmd_rss(ap)
   if (!(brd = brd_get(brdname)))
     return HS_NOTFOUND;
 
-  if (brd->readlevel)		/* ¥u¦³¤½¶}ªO¤~´£¨Ñ rss */
+  if (brd->readlevel)		/* åªæœ‰å…¬é–‹æ¿æ‰æä¾› rss */
     return HS_FORBIDDEN;
 
   blast = brd->blast;
 
-  if (ap->modified[0] && !strcmp(Gtime(&blast), ap->modified))	/* ¨S¦³ÅÜ§ó¤£»İ­n¶Ç¿é */
+  if (ap->modified[0] && !strcmp(Gtime(&blast), ap->modified))	/* æ²’æœ‰è®Šæ›´ä¸éœ€è¦å‚³è¼¸ */
     return HS_NOTMOIDIFY;
 
   fpw = out_http(ap, HS_OK, "application/xml");
@@ -2990,7 +2990,7 @@ cmd_rss(ap)
     "<channel>\n", fpw);
   ptr = Gtime(&blast);
   ptr[4] = '\0';
-  fprintf(fpw, "<title>" BBSNAME "-%sªO</title>\n"
+  fprintf(fpw, "<title>" BBSNAME "-%sæ¿</title>\n"
 #if BHTTP_PORT == 80
     "<link>http://" MYHOSTNAME "/brd?%s</link>\n"
 #else
@@ -3035,7 +3035,7 @@ cmd_rss(ap)
     {
       int i, end;
 
-      /* ¥u¦C¥X³Ì«á¤G¤Q½g */
+      /* åªåˆ—å‡ºæœ€å¾ŒäºŒåç¯‡ */
       if (fsize > 20 * sizeof(HDR))
 	end = fsize - 20 * sizeof(HDR);
       else
@@ -3091,8 +3091,8 @@ cmd_robots(ap)
 {
   FILE *fpw = out_http(ap, HS_OK, NULL);
 
-  fprintf(fpw, "Content-Length: 28\r\n");	/* robots.txt ªºªø«× */
-  fprintf(fpw, "Last-Modified: Sat, 01 Jan 2000 00:02:21 GMT\r\n\r\n");	/* ÀH«Kµ¹­Ó®É¶¡ */
+  fprintf(fpw, "Content-Length: 28\r\n");	/* robots.txt çš„é•·åº¦ */
+  fprintf(fpw, "Last-Modified: Sat, 01 Jan 2000 00:02:21 GMT\r\n\r\n");	/* éš¨ä¾¿çµ¦å€‹æ™‚é–“ */
 
   fprintf(fpw, "User-agent: *\r\nDisallow: /\r\n");
       
@@ -3102,7 +3102,7 @@ cmd_robots(ap)
 
 
   /* --------------------------------------------------- */
-  /* ­º­¶						 */
+  /* é¦–é 						 */
   /* --------------------------------------------------- */
 
 static void
@@ -3114,10 +3114,10 @@ mainpage_neck(fpw, userid, logined)
   fprintf(fpw, "<br>\n"
     "<table cellspacing=0 cellpadding=1 border=0 width=760>\n"
     "<tr bgcolor=" HCOLOR_NECK ">\n"
-    "  <td width=100%% align=center>%s%sÅwªï¥úÁ{</td>\n"
+    "  <td width=100%% align=center>%s%sæ­¡è¿å…‰è‡¨</td>\n"
     "</tr></table><br>\n",
     logined ? userid : "",
-    logined ? "¡A" : "");
+    logined ? "ï¼Œ" : "");
 }
 
 
@@ -3132,16 +3132,16 @@ cmd_mainpage(ap)
   mainpage_neck(fpw, ap->userid, logined);
 
   out_film(fpw, (ap->uptime % 3) + FILM_OPENING0);
-  /* µn¤J */
+  /* ç™»å…¥ */
   if (!logined)
   {
-    /* ¶}ÀYµe­± */
+    /* é–‹é ­ç•«é¢ */
     fputs("<form method=post>\n"
       "  <input type=hidden name=login>\n"
-      "  ±b¸¹ <input type=text name=u size=12 maxlength=12> "
-      "  ±K½X <input type=password name=p size=12 maxlength=8> "
-      "  <input type=submit value=µn¤J> "
-      "  <input type=reset value=²M°£>"
+      "  å¸³è™Ÿ <input type=text name=u size=12 maxlength=12> "
+      "  å¯†ç¢¼ <input type=password name=p size=12 maxlength=8> "
+      "  <input type=submit value=ç™»å…¥> "
+      "  <input type=reset value=æ¸…é™¤>"
       "</form>\n", fpw);
   }
 
@@ -3151,7 +3151,7 @@ cmd_mainpage(ap)
 
 
   /* --------------------------------------------------- */
-  /* «ü¥O¶°						 */
+  /* æŒ‡ä»¤é›†						 */
   /* --------------------------------------------------- */
 
 static Command cmd_table_get[] =
@@ -3212,7 +3212,7 @@ getfromhost(pip)
 
 
   /* --------------------------------------------------- */
-  /* ¨Ï¥ÎªÌµn¤J						 */
+  /* ä½¿ç”¨è€…ç™»å…¥						 */
   /* --------------------------------------------------- */
 
 static int
@@ -3235,9 +3235,9 @@ cmd_login(ap)
     usr_fpath(fpath, userid, FN_ACCT);
     if (!rec_get(fpath, &acct, sizeof(ACCT), 0) &&
       !(acct.userlevel & (PERM_DENYLOGIN | PERM_PURGE)) &&
-      !chkpasswd(acct.passwd, passwd))	/* µn¤J¦¨¥\ */
+      !chkpasswd(acct.passwd, passwd))	/* ç™»å…¥æˆåŠŸ */
     {
-      /* itoc.040308: ²£¥Í Cookie */
+      /* itoc.040308: ç”¢ç”Ÿ Cookie */
       sprintf(ap->cookie, "%s&p=%s", userid, acct.passwd);
       ap->setcookie = 1;
     }
@@ -3248,7 +3248,7 @@ cmd_login(ap)
 
 
   /* --------------------------------------------------- */
-  /* µoªí·s¤å³¹						 */
+  /* ç™¼è¡¨æ–°æ–‡ç« 						 */
   /* --------------------------------------------------- */
 
 static void
@@ -3278,7 +3278,7 @@ cmd_addpost(ap)
   HDR hdr;
   BRD *brd;
   FILE *fp;
-  FILE *fpw = out_head(ap, "¤å³¹µoªí");
+  FILE *fpw = out_head(ap, "æ–‡ç« ç™¼è¡¨");
 
   if (!acct_fetch(ap))
     return HS_ERR_LOGIN;
@@ -3302,7 +3302,7 @@ cmd_addpost(ap)
 	  STR_AUTHOR1, ap->userid, ap->username,
 	  STR_POST2, brdname);
 	str_ncpy(hdr.title, title, sizeof(hdr.title));
-	fprintf(fp, "¼ĞÃD: %s\n®É¶¡: %s\n\n", hdr.title, Now());
+	fprintf(fp, "æ¨™é¡Œ: %s\næ™‚é–“: %s\n\n", hdr.title, Now());
 	fprintf(fp, "%s\n", content);
 	fprintf(fp, EDIT_BANNER, ap->userid, getfromhost(&(ap->ip_addr)));
 	fclose(fp);
@@ -3316,20 +3316,20 @@ cmd_addpost(ap)
 	if (hdr.xmode & POST_OUTGO)
 	  outgo_post(&hdr, brdname);
 
-	out_reload(fpw, "±zªº¤å³¹µoªí¦¨¥\\");
+	out_reload(fpw, "æ‚¨çš„æ–‡ç« ç™¼è¡¨æˆåŠŸ\");
 	return HS_OK;
       }
       return HS_ERR_BOARD;
     }
   }
 
-  out_reload(fpw, "±zªº¤å³¹µoªí¥¢±Ñ");
+  out_reload(fpw, "æ‚¨çš„æ–‡ç« ç™¼è¡¨å¤±æ•—");
   return HS_OK;
 }
 
 
   /* --------------------------------------------------- */
-  /* µo°e·s«H¥ó						 */
+  /* ç™¼é€æ–°ä¿¡ä»¶						 */
   /* --------------------------------------------------- */
 
 static int
@@ -3340,7 +3340,7 @@ cmd_addmail(ap)
   char folder[64], fpath[64];
   HDR hdr;
   FILE *fp;
-  FILE *fpw = out_head(ap, "«H¥óµo°e");
+  FILE *fpw = out_head(ap, "ä¿¡ä»¶ç™¼é€");
 
   /* u=userid&t=title&c=content&end= */
   if (arg_analyze(4, 0, ap->urlp, &userid, &title, &content, &end))
@@ -3360,7 +3360,7 @@ cmd_addmail(ap)
 	fprintf(fp, "%s %s (%s)\n",
 	  STR_AUTHOR1, ap->userid, ap->username);
 	str_ncpy(hdr.title, title, sizeof(hdr.title));
-	fprintf(fp, "¼ĞÃD: %s\n®É¶¡: %s\n\n", hdr.title, Now());
+	fprintf(fp, "æ¨™é¡Œ: %s\næ™‚é–“: %s\n\n", hdr.title, Now());
 	fprintf(fp, "%s\n", content);
 	fprintf(fp, EDIT_BANNER, ap->userid, getfromhost(&(ap->ip_addr)));
 	fclose(fp);
@@ -3369,19 +3369,19 @@ cmd_addmail(ap)
 	strcpy(hdr.nick, ap->username);
 	rec_add(folder, &hdr, sizeof(HDR));
 
-	out_reload(fpw, "±zªº«H¥óµo°e¦¨¥\\");
+	out_reload(fpw, "æ‚¨çš„ä¿¡ä»¶ç™¼é€æˆåŠŸ\");
 	return HS_OK;
       }
     }
   }
 
-  out_reload(fpw, "±zªº«H¥óµo°e¥¢±Ñ¡A¤]³\\¬O¦]¬°±z©|¥¼µn¤J©Î¬O¬dµL¦¹¨Ï¥ÎªÌ");
+  out_reload(fpw, "æ‚¨çš„ä¿¡ä»¶ç™¼é€å¤±æ•—ï¼Œä¹Ÿè¨±\æ˜¯å› ç‚ºæ‚¨å°šæœªç™»å…¥æˆ–æ˜¯æŸ¥ç„¡æ­¤ä½¿ç”¨è€…");
   return HS_OK;
 }
 
 
   /* --------------------------------------------------- */
-  /* «ü¥O¶°						 */
+  /* æŒ‡ä»¤é›†						 */
   /* --------------------------------------------------- */
 
 static Command cmd_table_post[] =
@@ -3423,10 +3423,10 @@ agent_fire(ap)
 /* receive request from client				 */
 /* ----------------------------------------------------- */
 
-static int		/* >=0:mode -1:µ²§ô */
+static int		/* >=0:mode -1:çµæŸ */
 do_cmd(ap, str, end, mode)
   Agent *ap;
-  uschar *str, *end;		/* command line ªº¶}ÀY©Mµ²§À */
+  uschar *str, *end;		/* command line çš„é–‹é ­å’Œçµå°¾ */
   int mode;
 {
   int code;
@@ -3434,7 +3434,7 @@ do_cmd(ap, str, end, mode)
 
   if (!(mode & (AM_GET | AM_POST)))
   {
-    if (!str_ncmp(str, "GET ", 4))		/* str ®æ¦¡¬° GET /index.htm HTTP/1.0 */
+    if (!str_ncmp(str, "GET ", 4))		/* str æ ¼å¼ç‚º GET /index.htm HTTP/1.0 */
     {
       mode ^= AM_GET;
       str += 4;
@@ -3455,32 +3455,32 @@ do_cmd(ap, str, end, mode)
 	*ap->url = '\0';
       }
     }
-    else if (!str_ncmp(str, "POST ", 5))	/* str ®æ¦¡¬° POST /dopost?sysop HTTP/1.0 */
+    else if (!str_ncmp(str, "POST ", 5))	/* str æ ¼å¼ç‚º POST /dopost?sysop HTTP/1.0 */
     {
       mode ^= AM_POST;
     }
   }
   else
   {
-    if (*str)		/* ¤£¬OªÅ¦æ¡GÀÉÀY */
+    if (*str)		/* ä¸æ˜¯ç©ºè¡Œï¼šæª”é ­ */
     {
-      /* ¤ÀªR Cookie */
+      /* åˆ†æ Cookie */
       if (!str_ncmp(str, "Cookie: user=", 13))
       {
 	str_ncpy(ap->cookie, str + 13, LEN_COOKIE);
       }
-      else if (!str_ncmp(str, "Cookie: ", 8))	/* waynesan.081018: ­×¥¿¦h cookie ªºª¬ªp */
+      else if (!str_ncmp(str, "Cookie: ", 8))	/* waynesan.081018: ä¿®æ­£å¤š cookie çš„ç‹€æ³ */
       {
 	char *user;
 	if (user = strstr(str, "user="))
 	  str_ncpy(ap->cookie, user + 5, LEN_COOKIE);
       }
 
-      /* ¤ÀªR If-Modified-Since */
-      if ((mode & AM_GET) && !str_ncmp(str, "If-Modified-Since: ", 19))	/* str ®æ¦¡¬° If-Modified-Since: Sat, 29 Oct 1994 19:43:31 GMT */
+      /* åˆ†æ If-Modified-Since */
+      if ((mode & AM_GET) && !str_ncmp(str, "If-Modified-Since: ", 19))	/* str æ ¼å¼ç‚º If-Modified-Since: Sat, 29 Oct 1994 19:43:31 GMT */
 	str_ncpy(ap->modified, str + 19, sizeof(ap->modified));
     }
-    else		/* ªÅ¦æ */
+    else		/* ç©ºè¡Œ */
     {
       Command *cmd;
       char *url;
@@ -3493,8 +3493,8 @@ do_cmd(ap, str, end, mode)
       else /* if (mode & AM_POST) */
       {
 	cmd = cmd_table_post;
-	/* ¦b AM_POST ®É¡AªÅ¦æªº¤U¤@¦æ¬O POST ªº¤º®e */
-	for (url = end + 1; *url == '\r' || *url == '\n'; url++)	/* §ä¤U¤@¦æ */
+	/* åœ¨ AM_POST æ™‚ï¼Œç©ºè¡Œçš„ä¸‹ä¸€è¡Œæ˜¯ POST çš„å…§å®¹ */
+	for (url = end + 1; *url == '\r' || *url == '\n'; url++)	/* æ‰¾ä¸‹ä¸€è¡Œ */
 	  ;
       }
 
@@ -3504,7 +3504,7 @@ do_cmd(ap, str, end, mode)
 	  break;
       }
 
-      /* waynesan.081018: ¦pªG¦b command_table ¸Ì­±§ä¤£¨ì¡A¨º»ò°e 404 Not Found */
+      /* waynesan.081018: å¦‚æœåœ¨ command_table è£¡é¢æ‰¾ä¸åˆ°ï¼Œé‚£éº¼é€ 404 Not Found */
       if (!ptr)
       {
 	out_error(ap, HS_NOTFOUND);
@@ -3597,11 +3597,11 @@ agent_recv(ap)
   head[cc] = '\0';
   ap->used = (used += cc);
 
-  /* itoc.050807: recv() ¤@¦¸ÁÙÅª¤£§¹ªº¡A¤@©w¬O cmd_dopost ©Î cmd_domail¡A³o¤GªÌªºµ²§ô³£¦³ &end= */
+  /* itoc.050807: recv() ä¸€æ¬¡é‚„è®€ä¸å®Œçš„ï¼Œä¸€å®šæ˜¯ cmd_dopost æˆ– cmd_domailï¼Œé€™äºŒè€…çš„çµæŸéƒ½æœ‰ &end= */
   if (used >= TCP_RCVSIZ)
   {
-    /* ¦h -2 ¬O¦]¬°¦³¨ÇÂsÄı¾¹·|¦Û°Ê¸É¤W \r\n */
-    if (!strstr(head + cc - strlen("&end=") - 2, "&end="))	/* ÁÙ¨SÅª§¹¡AÄ~ÄòÅª */
+    /* å¤š -2 æ˜¯å› ç‚ºæœ‰äº›ç€è¦½å™¨æœƒè‡ªå‹•è£œä¸Š \r\n */
+    if (!strstr(head + cc - strlen("&end=") - 2, "&end="))	/* é‚„æ²’è®€å®Œï¼Œç¹¼çºŒè®€ */
       return 1;
   }
 
@@ -3620,7 +3620,7 @@ agent_recv(ap)
 
       if ((mode = do_cmd(ap, data, head, mode)) < 0)
       {
-	fflush(ap->fpw);	/* do_cmd() ¦^¶Ç -1 ªí¥Üµ²§ô¡A´N fflush ©Ò¦³µ²ªG */
+	fflush(ap->fpw);	/* do_cmd() å›å‚³ -1 è¡¨ç¤ºçµæŸï¼Œå°± fflush æ‰€æœ‰çµæœ */
 	return 0;
       }
 
@@ -3666,7 +3666,7 @@ agent_accept(ipaddr)
   }
 
   value = 1;
-  /* Thor.000511: µù¸Ñ: don't delay send to coalesce(Áp¦X) packets */
+  /* Thor.000511: è¨»è§£: don't delay send to coalesce(è¯åˆ) packets */
   setsockopt(csock, IPPROTO_TCP, TCP_NODELAY, (char *)&value, sizeof(value));
 
   *ipaddr = csin.sin_addr.s_addr;
@@ -3749,9 +3749,9 @@ servo_signal()
 {
   struct sigaction act;
 
-  /* sigblock(sigmask(SIGPIPE)); *//* Thor.981206: ²Î¤@ POSIX ¼Ğ·Ç¥Îªk */
+  /* sigblock(sigmask(SIGPIPE)); *//* Thor.981206: çµ±ä¸€ POSIX æ¨™æº–ç”¨æ³• */
 
-  /* act.sa_mask = 0; *//* Thor.981105: ¼Ğ·Ç¥Îªk */
+  /* act.sa_mask = 0; *//* Thor.981105: æ¨™æº–ç”¨æ³• */
   sigemptyset(&act.sa_mask);
   act.sa_flags = 0;
 
@@ -3760,7 +3760,7 @@ servo_signal()
   sigaction(SIGSEGV, &act, NULL);	/* if rlimit violate */
   sigaction(SIGBUS, &act, NULL);
 
-#if 1	/* Thor.990203: §ì signal */
+#if 1	/* Thor.990203: æŠ“ signal */
   sigaction(SIGURG, &act, NULL);
   sigaction(SIGXCPU, &act, NULL);
   sigaction(SIGXFSZ, &act, NULL);
@@ -3774,7 +3774,7 @@ servo_signal()
 #ifdef LINUX
   sigaction(SIGSYS, &act, NULL);
   /* sigaction(SIGEMT, &act, NULL); */
-  /* itoc.010317: §Úªº linux ¨S¦³³o­Ó»¡ :p */
+  /* itoc.010317: æˆ‘çš„ linux æ²’æœ‰é€™å€‹èªª :p */
 #endif
 
   sigaction(SIGFPE, &act, NULL);
@@ -3800,8 +3800,8 @@ servo_signal()
   sigaction(SIGPROF, &act, NULL);
 #endif
 
-  /* Thor.981206: lkchu patch: ²Î¤@ POSIX ¼Ğ·Ç¥Îªk */
-  /* ¦b¦¹­É¥Î sigset_t act.sa_mask */
+  /* Thor.981206: lkchu patch: çµ±ä¸€ POSIX æ¨™æº–ç”¨æ³• */
+  /* åœ¨æ­¤å€Ÿç”¨ sigset_t act.sa_mask */
   sigaddset(&act.sa_mask, SIGPIPE);
   sigprocmask(SIG_BLOCK, &act.sa_mask, NULL);
 }
@@ -3961,7 +3961,7 @@ main(argc, argv)
     if (tcheck < uptime)
     {
       /* ----------------------------------------------- */
-      /* ±N¹L¤[¨S¦³°Ê§@ªº agent ½ğ°£			 */
+      /* å°‡éä¹…æ²’æœ‰å‹•ä½œçš„ agent è¸¢é™¤			 */
       /* ----------------------------------------------- */
 
       tcheck = uptime - BHTTP_TIMEOUT;
@@ -4054,7 +4054,7 @@ main(argc, argv)
 	continue;
       }
 
-      if (cc > 0)		/* ÁÙ¦³¸ê®Æ­n recv */
+      if (cc > 0)		/* é‚„æœ‰è³‡æ–™è¦ recv */
 	agent->uptime = uptime;
 
       FBI = &(agent->anext);
@@ -4064,7 +4064,7 @@ main(argc, argv)
     /* serve new connection				 */
     /* ------------------------------------------------- */
 
-    /* Thor.000209: ¦Ò¼{²¾«e¦¹³¡¤À, §K±o¥d¦b accept() */
+    /* Thor.000209: è€ƒæ…®ç§»å‰æ­¤éƒ¨åˆ†, å…å¾—å¡åœ¨ accept() */
     if (FD_ISSET(0, &rset))
     {
       unsigned int ip_addr;

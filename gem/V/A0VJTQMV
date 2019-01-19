@@ -1,21 +1,21 @@
-§@ªÌ: itoc (:MM:) ¬ÝªO: plan
-¼ÐÃD: [¥\¯à] reaper.c µoÁ~¤ô ¦©©Ò±oµ|
-®É¶¡: Sat Feb  8 13:51:36 2003                          Updated: 2005/05/08
+ä½œè€…: itoc (:MM:) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] reaper.c ç™¼è–ªæ°´ æ‰£æ‰€å¾—ç¨…
+æ™‚é–“: Sat Feb  8 13:51:36 2003                          Updated: 2005/05/08
 
-  µoªO¥DÁ~¤ô¡B¥þ¯¸µo¿ú
-  ³£¥i¥H¦b reaper.c ³B²z
+  ç™¼æ¿ä¸»è–ªæ°´ã€å…¨ç«™ç™¼éŒ¢
+  éƒ½å¯ä»¥åœ¨ reaper.c è™•ç†
 
 : reaper.c:reaper()
 
   ulevel = acct.userlevel;
-  life = acct.lastlogin;        /* ¥²¤£¬° 0 */
+  life = acct.lastlogin;        /* å¿…ä¸ç‚º 0 */
   login = acct.numlogins;
 
 + levy_tax(&acct, fpath);
 
-: reaper.c ·s¼W¥H¤U³o¬q©ó reaper() ¤§«e
+: reaper.c æ–°å¢žä»¥ä¸‹é€™æ®µæ–¼ reaper() ä¹‹å‰
 
-static int              /* ¬O´X­ÓªOªºªO¥D */
+static int              /* æ˜¯å¹¾å€‹æ¿çš„æ¿ä¸» */
 how_many_bm_i_am(userid)
   char *userid;
 {
@@ -39,15 +39,15 @@ how_many_bm_i_am(userid)
 
 
 /*-------------------------------------------------------*/
-/* µo«Hµ¹¨Ï¥ÎªÌ                                          */
+/* ç™¼ä¿¡çµ¦ä½¿ç”¨è€…                                          */
 /*-------------------------------------------------------*/
 
 
 static void
-add_mail(userid, fpath, title)           /* µo¤åµ¹¨Ï¥ÎªÌ */
-  char *userid;         /* ±ý mail ªº¨Ï¥ÎªÌ */
-  char *fpath;          /* ÀÉ®×¸ô®| */
-  char *title;          /* ¤å³¹¼ÐÃD */
+add_mail(userid, fpath, title)           /* ç™¼æ–‡çµ¦ä½¿ç”¨è€… */
+  char *userid;         /* æ¬² mail çš„ä½¿ç”¨è€… */
+  char *fpath;          /* æª”æ¡ˆè·¯å¾‘ */
+  char *title;          /* æ–‡ç« æ¨™é¡Œ */
 {
   HDR hdr;
   char folder[64];
@@ -69,24 +69,24 @@ tax_mail(acct, gold, money)
   char fpath[64];
   FILE *fp;
 
-  sprintf(fpath, "tmp/tax_mail_%s", acct->userid);   /* ¼È¦sÀÉ */
+  sprintf(fpath, "tmp/tax_mail_%s", acct->userid);   /* æš«å­˜æª” */
   if (fp = fopen(fpath, "w"))
   {
-    fprintf(fp, "\n    \033[1;37;44m %s µoÁ~¤Î¦©µ| \033[m \n\n", acct->userid);
+    fprintf(fp, "\n    \033[1;37;44m %s ç™¼è–ªåŠæ‰£ç¨… \033[m \n\n", acct->userid);
     if (gold)
-      fprintf(fp, "      ª÷¹ô%sÃB¡G%d\n", gold > 0 ? "¼W" : "´î", abs(gold));
+      fprintf(fp, "      é‡‘å¹£%sé¡ï¼š%d\n", gold > 0 ? "å¢ž" : "æ¸›", abs(gold));
     if (money)
-      fprintf(fp, "      »È¹ô%sÃB¡G%d\n", money > 0 ? "¼W" : "´î", abs(money));
+      fprintf(fp, "      éŠ€å¹£%sé¡ï¼š%d\n", money > 0 ? "å¢ž" : "æ¸›", abs(money));
     fclose(fp);
 
-    add_mail(acct->userid, fpath, "[¬ö¿ý] Á~¤ô³U¡B¦©Ãº¾Ì³æ");
+    add_mail(acct->userid, fpath, "[ç´€éŒ„] è–ªæ°´è¢‹ã€æ‰£ç¹³æ†‘å–®");
     unlink(fpath);
   }
 }
 
 
 /*-------------------------------------------------------*/
-/* µoÁ~¤ô                                                */
+/* ç™¼è–ªæ°´                                                */
 /*-------------------------------------------------------*/
 
 
@@ -102,25 +102,25 @@ levy_tax(acct, userid)
   time(&start);
   ptime = localtime(&start);
 
-  [1;44m// ¥H¤U³o¾ã¬qªº¤½¦¡ÀH«K«ç»ò¼g [m
-  [1;44m// ­Y­n¥þ¯¸µo¼úª÷¡A¤]¬O§ï³o¸Ìªº¤½¦¡´N¥i¥H [m
+  [1;44m// ä»¥ä¸‹é€™æ•´æ®µçš„å…¬å¼éš¨ä¾¿æ€Žéº¼å¯« [m
+  [1;44m// è‹¥è¦å…¨ç«™ç™¼çŽé‡‘ï¼Œä¹Ÿæ˜¯æ”¹é€™è£¡çš„å…¬å¼å°±å¯ä»¥ [m
 
   money = gold = 0;
 
-  /* ¥þ¯¸µo¿ú¡A¨C¤H 10 ¤¸ */
+  /* å…¨ç«™ç™¼éŒ¢ï¼Œæ¯äºº 10 å…ƒ */
   money += 10;
 
-  /* ªO¥DµoÁ~¨CªO 200 ¤¸ */
+  /* æ¿ä¸»ç™¼è–ªæ¯æ¿ 200 å…ƒ */
   if (acct->userlevel & PERM_BM)
     money += how_many_bm_i_am(acct->userid) * 200;
 
-  /* ¯¸°ÈµoÁ~ª÷¹ô 500 ¤¸ */
+  /* ç«™å‹™ç™¼è–ªé‡‘å¹£ 500 å…ƒ */
   if (acct->userlevel & PERM_ALLADMIN)
     gold += 500;
 
-  [1;44m// ¥H¤W³o¾ã¬qªº¤½¦¡ÀH«K«ç»ò¼g [m
+  [1;44m// ä»¥ä¸Šé€™æ•´æ®µçš„å…¬å¼éš¨ä¾¿æ€Žéº¼å¯« [m
 
-  if (money || gold)   /* ¦³ª÷ÃBÅÜ°Ê¤~µo«H¡Bµo¤ä²¼ */
+  if (money || gold)   /* æœ‰é‡‘é¡è®Šå‹•æ‰ç™¼ä¿¡ã€ç™¼æ”¯ç¥¨ */
   {
     PAYCHECK paycheck;
     char fpath[64];
@@ -131,7 +131,7 @@ levy_tax(acct, userid)
     time(&paycheck.tissue);
     paycheck.money = money;
     paycheck.gold = gold;
-    strcpy(paycheck.reason, "¨t²Îµo¼úª÷");
+    strcpy(paycheck.reason, "ç³»çµ±ç™¼çŽé‡‘");
 
     usr_fpath(fpath, acct->userid, FN_PAYCHECK);
     rec_add(fpath, &paycheck, sizeof(PAYCKECK));
@@ -140,5 +140,5 @@ levy_tax(acct, userid)
 
 
 --
-    [1;32m¢~¢w¢w Origin ¢¡ [33;45m °Ê¤O®Ö¤ß [37m processor.tfcis.org [32;40m ¡ã £_£`£a ¢w¢w¢q[m
-    [1;32m¢x     Modify ¢£ [31m03/02/08 13:52:09 [m
+    [1;32mâ•­â”€â”€ Origin â•® [33;45m å‹•åŠ›æ ¸å¿ƒ [37m processor.tfcis.org [32;40m ï½ž Î´ÎµÎ¶ â”€â”€â”¼[m
+    [1;32mâ”‚     Modify â•¯ [31m03/02/08 13:52:09 [m

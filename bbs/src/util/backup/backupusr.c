@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/backupusr.c	( NTHU MapleBBS Ver 3.10 )       */
 /*-------------------------------------------------------*/
-/* target : ³Æ¥÷©Ò¦³¨Ï¥ÎªÌ¸ê®Æ                           */
+/* target : å‚™ä»½æ‰€æœ‰ä½¿ç”¨è€…è³‡æ–™                           */
 /* create : 01/10/19                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -24,13 +24,13 @@ main()
   chdir(BBSHOME);
   umask(077);
 
-  /* «Ø¥ß³Æ¥÷¸ô®|¥Ø¿ý */
+  /* å»ºç«‹å‚™ä»½è·¯å¾‘ç›®éŒ„ */
   time(&now);
   ptime = localtime(&now);
   sprintf(bakpath, "%s/usr%02d%02d%02d", BAKPATH, ptime->tm_year % 100, ptime->tm_mon + 1, ptime->tm_mday);
   mkdir(bakpath, 0700);
 
-  /* ³Æ¥÷ .USR */
+  /* å‚™ä»½ .USR */
   sprintf(cmd, "%s/%s", bakpath, FN_SCHEMA);
   f_cp(FN_SCHEMA, cmd, O_EXCL);
 
@@ -43,7 +43,7 @@ main()
     sprintf(usrpath, "%s/%c", bakpath, ch);
     mkdir(usrpath, 0700);
 
-    /* §â¦U¨Ï¥ÎªÌ¤À§OÀ£ÁY¦¨¤@­ÓÀ£ÁYÀÉ */
+    /* æŠŠå„ä½¿ç”¨è€…åˆ†åˆ¥å£“ç¸®æˆä¸€å€‹å£“ç¸®æª” */
     while (de = readdir(dirp))
     {
       ptr = de->d_name;

@@ -1,15 +1,15 @@
-�o�H�H: guessi.bbs@bbs.wretch.cc (�S) �ݪO: plan
-��  �D: [�\��] �d�ߨϥΪ̤W���ӷ�
-�o�H��: �L�W�p�� (2006/06/07 Wed 15:40:30)                Updated: 2006/06/07
+發信人: guessi.bbs@bbs.wretch.cc (沒) 看板: plan
+標  題: [功能] 查詢使用者上站來源
+發信站: 無名小站 (2006/06/07 Wed 15:40:30)                Updated: 2006/06/07
 
-Admin���s�W�d�ߨϥΪ̤W���ӷ� :p
+Admin選單新增查詢使用者上站來源 :p
 
 [32m:/src/maple/menu.c[m
 
 +  "bin/admutil.so:a_show_from", PERM_ALLREG, - M_SYSTEM,
-+  "ShowFrom   �� �ӷ���� ��",
++  "ShowFrom   ◤ 來源顯示 ◢",
 
-[32m:/src/so/admutil.c �s�W[m
+[32m:/src/so/admutil.c 新增[m
 
 int
 a_show_from()
@@ -17,17 +17,17 @@ a_show_from()
   ACCT acct;
   char fpath[64], tmp[64], last[4], cmd[128];
 
-  if (vans("�O�_�d��(Y/N)�H[N] ") != 'y')
-    return XEASY; /* �w�]���d�� */
+  if (vans("是否查詢(Y/N)？[N] ") != 'y')
+    return XEASY; /* 預設不查詢 */
 
   if (acct_get(msg_uid, &acct) > 0)
   {
     usr_fpath(fpath, acct.userid, FN_LOG);
 
-    sprintf(cmd, "�d�ߨϥΪ� %-13s�W���ӷ�", acct.userid);
-    alog("�d�ߨӷ�", cmd);
+    sprintf(cmd, "查詢使用者 %-13s上站來源", acct.userid);
+    alog("查詢來源", cmd);
 
-    if (vget(b_lines, 0, "���d�̫߳�X�����(��ܥ����Ы�Enter���~��) ",
+    if (vget(b_lines, 0, "欲查詢最後幾筆資料(顯示全部請按Enter鍵繼續) ",
       last, 4, DOECHO))
     {
       sprintf(tmp, "tmp/showfrom.%s", acct.userid);
@@ -43,8 +43,8 @@ a_show_from()
 }
 
 --
-[1;30;40m�ҧL�̤����������δc���G���D�̤��B�g�l�~�h�Q���ΧL�h�Q�k�L�̤��������D�g�l[m
-[1;30m�������o�w[37m[30m�ӥΤ���H���W�ӦӤ����Ӭ����̬O�ֱ��H�Ҽֱ��H�̫h���i�o�ө�ѤU
-[m[1;30m�o�N�Ʃ|�����Ʃ|�k���N�x�~���W�N�x�~�k���H��§�B�����H�����H�s�d�_���ԳӥH[m
-[1;30m��§�B���D�`[37m�L�W[30m�����p�ѤU����ګJ���Y��u���U���N�ۻ��Ѧa�ۦX�H�����S����[m
-[1;30m���O�Ӧۧ��l��W�W��J���ҥ�N����� [37m61-231-202-81.dynamic.hinet.net[30m��[m
+[1;30;40m夫兵者不祥之器物或惡之故有道者不處君子居則貴左用兵則貴右兵者不祥之器非君子[m
+[1;30m之器不得已[37m[30m而用之恬淡為上勝而不美而美之者是樂殺人夫樂殺人者則不可得志於天下
+[m[1;30m矣吉事尚左凶事尚右偏將軍居左上將軍居右言以喪禮處之殺人之眾以哀悲泣之戰勝以[m
+[1;30m喪禮處之道常[37m無名[30m樸雖小天下莫能臣侯王若能守之萬物將自賓天地相合以降甘露民莫[m
+[1;30m之令而自均始制有名名亦既有夫亦將知止知止 [37m61-231-202-81.dynamic.hinet.net[30m海[m

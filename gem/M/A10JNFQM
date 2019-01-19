@@ -1,48 +1,48 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: Ãö©óÂà±H«H¥óªº°İÃD
-®É¶¡: 2004/05/18 Tue 11:15:15
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: é—œæ–¼è½‰å¯„ä¿¡ä»¶çš„å•é¡Œ
+æ™‚é–“: 2004/05/18 Tue 11:15:15
 
-  ±N ¬Y¯¸ ¥[¤J¥Õ¦W³æ¤èªk¡G
+  å°‡ æŸç«™ åŠ å…¥ç™½åå–®æ–¹æ³•ï¼š
 
-  1. ±q ¬Y¯¸ ±H¤@«Ê«H±H¦Û¤v¯¸¤W
+  1. å¾ æŸç«™ å¯„ä¸€å°ä¿¡å¯„è‡ªå·±ç«™ä¸Š
 
-  2. ¤W¤u§@¯¸½s¿è ~/run/bmta.log¡A¬İ³Ì«á´X¦æ¡A§ä¨ì
+  2. ä¸Šå·¥ä½œç«™ç·¨è¼¯ ~/run/bmta.logï¼Œçœ‹æœ€å¾Œå¹¾è¡Œï¼Œæ‰¾åˆ°
      CONN    [12345] banana.domain.name ip:12CD34AB   04/05/18 10:57:32
 
-  3. ±N banana.domain.name ¥[¤J (0)Admin -> (X)file -> (14) ¦¬«H¥Õ¦W³æ
-     ¨Ã (0)Admin -> (B)BSreset -> 3)«ü¦W¤Î¾×«H
+  3. å°‡ banana.domain.name åŠ å…¥ (0)Admin -> (X)file -> (14) æ”¶ä¿¡ç™½åå–®
+     ä¸¦ (0)Admin -> (B)BSreset -> 3)æŒ‡ååŠæ“‹ä¿¡
 
-  4. ¦A±q ¬Y¯¸ ±H¤@«Ê«H±H¦Û¤v¯¸¤W¡A¦pªG¤w¸g¥i¥H¦¬¨ì¡A¨º´Nµ²§ô¤F
-     ¦pªGÁÙ¬O¤£¯à¦¬¨ì¡AÄ~Äò¥H¤U¨BÆJ
+  4. å†å¾ æŸç«™ å¯„ä¸€å°ä¿¡å¯„è‡ªå·±ç«™ä¸Šï¼Œå¦‚æœå·²ç¶“å¯ä»¥æ”¶åˆ°ï¼Œé‚£å°±çµæŸäº†
+     å¦‚æœé‚„æ˜¯ä¸èƒ½æ”¶åˆ°ï¼Œç¹¼çºŒä»¥ä¸‹æ­¥é©Ÿ
 
-  5. ¤W¤u§@¯¸½s¿è ~/run/bmta.log¡A¬İ³Ì«á´X¦æ¡A§ä¨ì
+  5. ä¸Šå·¥ä½œç«™ç·¨è¼¯ ~/run/bmta.logï¼Œçœ‹æœ€å¾Œå¹¾è¡Œï¼Œæ‰¾åˆ°
      SPAM-M  [54321] orange.domain.name
 
-  6. ±N orange.domain.name ¥[¤J (0)Admin -> (X)file -> (14) ¦¬«H¥Õ¦W³æ
-     ¨Ã (0)Admin -> (B)BSreset -> 3)«ü¦W¤Î¾×«H
+  6. å°‡ orange.domain.name åŠ å…¥ (0)Admin -> (X)file -> (14) æ”¶ä¿¡ç™½åå–®
+     ä¸¦ (0)Admin -> (B)BSreset -> 3)æŒ‡ååŠæ“‹ä¿¡
 
-  ³o¼Ë´N§¹¦¨¤F
+  é€™æ¨£å°±å®Œæˆäº†
 
-  ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+  â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  ¥H§å½ğ½ğ¨ß¬°¹ê»Ú¨Ò¤l
-  ¨ä SMTP server ¬° pttx.ptt.cc
-  ¨ä From ÀÉÀY ¬° userid.bbs@ptt2.cc
-  ©Ò¥H¥u­n§â pttx.ptt.cc ¤Î ptt2.cc ¥[¤J mail.acl
-  ¨º»ò§Y¥i¦¬§å½ğ½ğ¨ßªº¨Ó«H¤F
+  ä»¥æ‰¹è¸¢è¸¢å…”ç‚ºå¯¦éš›ä¾‹å­
+  å…¶ SMTP server ç‚º pttx.ptt.cc
+  å…¶ From æª”é ­ ç‚º userid.bbs@ptt2.cc
+  æ‰€ä»¥åªè¦æŠŠ pttx.ptt.cc åŠ ptt2.cc åŠ å…¥ mail.acl
+  é‚£éº¼å³å¯æ”¶æ‰¹è¸¢è¸¢å…”çš„ä¾†ä¿¡äº†
 
-  ¦A¥Hºô¸ô¶H°gÁp½Ë·|¬°¥t¤@­Ó¹ê»Ú¨Ò¤l
-  ¨ä SMTP server ¬° goodhorse.idv.tw
-  ¨ä From ÀÉÀY ¬° userid.bbs@brother.twbbs.org
-  ©Ò¥H¥u­n§â goodhorse.idv.tw ¤Î brother.twbbs.org ¥[¤J mail.acl [µù]
-  ¨º»ò§Y¥i¦¬ºô¸ô¶H°gÁp½Ë·|ªº¨Ó«H¤F
+  å†ä»¥ç¶²è·¯è±¡è¿·è¯èª¼æœƒç‚ºå¦ä¸€å€‹å¯¦éš›ä¾‹å­
+  å…¶ SMTP server ç‚º goodhorse.idv.tw
+  å…¶ From æª”é ­ ç‚º userid.bbs@brother.twbbs.org
+  æ‰€ä»¥åªè¦æŠŠ goodhorse.idv.tw åŠ brother.twbbs.org åŠ å…¥ mail.acl [è¨»]
+  é‚£éº¼å³å¯æ”¶ç¶²è·¯è±¡è¿·è¯èª¼æœƒçš„ä¾†ä¿¡äº†
 
-  ¥[¤J mail.acl ¥H«á¡A­n°O±o­«¶} bmtad¡A§Y
-  (0)Admin -> (B)BSreset -> 3)«ü¦W¤Î¾×«H
+  åŠ å…¥ mail.acl ä»¥å¾Œï¼Œè¦è¨˜å¾—é‡é–‹ bmtadï¼Œå³
+  (0)Admin -> (B)BSreset -> 3)æŒ‡ååŠæ“‹ä¿¡
 
-  [µù] ¹ê°È¤W¬O±N .twbbs.org ¥[¤J mail.acl
-       ³o¼Ë´N¤¹³\ *.twbbs.org ªº¨Ó«H¤F
+  [è¨»] å¯¦å‹™ä¸Šæ˜¯å°‡ .twbbs.org åŠ å…¥ mail.acl
+       é€™æ¨£å°±å…è¨± *.twbbs.org çš„ä¾†ä¿¡äº†
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mpc512-2.ee.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mpc512-2.ee.nctu.edu.tw [30mç™¼è¡¨[m

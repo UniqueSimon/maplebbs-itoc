@@ -1,46 +1,46 @@
-§@ªÌ: itoc.bbs@bbs.cs.nthu.edu.tw ¯¸¤º: plan
-¼ĞÃD: Re: ½Ğ±Ğ¤@¤U¦p¦ó­««Ø .BRD
-®É¶¡: Sun Oct 20 17:34:53 2002                          Updated: 2005/05/19
+ä½œè€…: itoc.bbs@bbs.cs.nthu.edu.tw ç«™å…§: plan
+æ¨™é¡Œ: Re: è«‹æ•™ä¸€ä¸‹å¦‚ä½•é‡å»º .BRD
+æ™‚é–“: Sun Oct 20 17:34:53 2002                          Updated: 2005/05/19
 
-¡° ¤Ş­z¡mrojer¡n¤§»Ê¨¥¡G
->         ­Y .BRD Äê±¼
->         ¦³¿ìªk¥Îµ{¦¡¥h­«·s«Ø¥ß¶Ü?!
+â€» å¼•è¿°ã€Šrojerã€‹ä¹‹éŠ˜è¨€ï¼š
+>         è‹¥ .BRD çˆ›æ‰
+>         æœ‰è¾¦æ³•ç”¨ç¨‹å¼å»é‡æ–°å»ºç«‹å—?!
 
-  °õ¦æ¦¹µ{¦¡¥H«á¡A¦A±N .BRD_new ÂĞ»\ .BRD §Y¥i
+  åŸ·è¡Œæ­¤ç¨‹å¼ä»¥å¾Œï¼Œå†å°‡ .BRD_new è¦†è“‹ .BRD å³å¯
 
-  ªO¥D­n¤â°Ê­««Ø
-  ¯S®í¬İªOÅv­­(¯µ±K/¦n¤Í/¯¸°ÈªO)­n¤â°Ê­«³]
-  ¤ÀÃş­n¤â°Ê§ï
+  æ¿ä¸»è¦æ‰‹å‹•é‡å»º
+  ç‰¹æ®Šçœ‹æ¿æ¬Šé™(ç§˜å¯†/å¥½å‹/ç«™å‹™æ¿)è¦æ‰‹å‹•é‡è¨­
+  åˆ†é¡è¦æ‰‹å‹•æ”¹
 
 : src/util/Makefile
 
 EXE =   ..... [1;33mrebrd[m
 
-: src/util/rebrd.c ·s¼W³oµ{¦¡
+: src/util/rebrd.c æ–°å¢é€™ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* util/rebrd.c         ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ­««Ø .BRD                                    */
+/* target : é‡å»º .BRD                                    */
 /* create : 02/10/20                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
 /*-------------------------------------------------------*/
 
 /*
-  ­^¤åªO¦W¥h brd/* §ì
-  ¤¤¤åªO¦W¥h gem/@/@Class §ì
-  ¬İªOÄİ©Ê¥h innd/newsfeeds.bbs §ì
-  ªO¥D­n¤â°Ê­««Ø
-  ¯S®í¬İªOÅv­­(¯µ±K/¦n¤Í/¯¸°ÈªO)­n¤â°Ê­«³]
-  ¤ÀÃş­n¤â°Ê§ï
+  è‹±æ–‡æ¿åå» brd/* æŠ“
+  ä¸­æ–‡æ¿åå» gem/@/@Class æŠ“
+  çœ‹æ¿å±¬æ€§å» innd/newsfeeds.bbs æŠ“
+  æ¿ä¸»è¦æ‰‹å‹•é‡å»º
+  ç‰¹æ®Šçœ‹æ¿æ¬Šé™(ç§˜å¯†/å¥½å‹/ç«™å‹™æ¿)è¦æ‰‹å‹•é‡è¨­
+  åˆ†é¡è¦æ‰‹å‹•æ”¹
 */
 
 
 #include "bbs.h"
 
 
-static int                  /* 1:¦¹¬İªOÂà«H 0:¦¹¬İªO¤£Âà«H */
+static int                  /* 1:æ­¤çœ‹æ¿è½‰ä¿¡ 0:æ­¤çœ‹æ¿ä¸è½‰ä¿¡ */
 board_outgo(brdname)
   char *brdname;
 {
@@ -48,7 +48,7 @@ board_outgo(brdname)
   int fd;
   int rc = 0;
 
-  /* ­Y newsfeeds ¸Ì­±¦³¸ê®Æ¡A´N¥Nªí­nÂà«H */
+  /* è‹¥ newsfeeds è£¡é¢æœ‰è³‡æ–™ï¼Œå°±ä»£è¡¨è¦è½‰ä¿¡ */
 
   if ((fd = open("innd/newsfeeds.bbs", O_RDONLY)) >= 0)
   {
@@ -68,7 +68,7 @@ board_outgo(brdname)
 
 
 static void
-board_title(folder, brdname, title)  /* ¥h gem/@/@Class §ä brd.title */
+board_title(folder, brdname, title)  /* å» gem/@/@Class æ‰¾ brd.title */
   char *folder;
   char *brdname;
   char *title;
@@ -78,7 +78,7 @@ board_title(folder, brdname, title)  /* ¥h gem/@/@Class §ä brd.title */
   HDR hdr;
   FILE *fp;
 
-  if (*title)           /* ¤w¸g§ä¨ì */
+  if (*title)           /* å·²ç¶“æ‰¾åˆ° */
     return;
 
   if (fp = fopen(folder, "r"))
@@ -87,16 +87,16 @@ board_title(folder, brdname, title)  /* ¥h gem/@/@Class §ä brd.title */
     {
       xmode = hdr.xmode & (GEM_BOARD | GEM_FOLDER);
 
-      if (xmode == (GEM_BOARD | GEM_FOLDER))      /* ¬İªOºëµØ°Ï±¶®| */
+      if (xmode == (GEM_BOARD | GEM_FOLDER))      /* çœ‹æ¿ç²¾è¯å€æ·å¾‘ */
       {
         if (!strcmp(hdr.xname, brdname))
         {
-          /* °Ñ¦Ò gem.c:brd2gem() ªº®æ¦¡ */
+          /* åƒè€ƒ gem.c:brd2gem() çš„æ ¼å¼ */
           str_ncpy(title, hdr.title + BNLEN + 1 + BCLEN + 1, BTLEN + 1);
           break;
         }
       }
-      else if (xmode == GEM_FOLDER)               /* ¨÷©v recursive ¶i¥h§ä */
+      else if (xmode == GEM_FOLDER)               /* å·å®— recursive é€²å»æ‰¾ */
       {
         hdr_fpath(fpath, folder, &hdr);
         board_title(fpath, brdname, title);
@@ -124,21 +124,21 @@ transbrd(brdname)
   str_ncpy(brd.brdname, brdname, sizeof(brd.brdname));
   title[0] = '\0';
   board_title("gem/@/@"CLASS_INIFILE, brdname, title);
-  sprintf(brd.title, "¤ÀÃş %s", title);  /* ¤ÀÃş¤â°Ê§ï */
-  /* brd.BM ¯d¥Õ¡A¤â°Ê«ì´_ */
+  sprintf(brd.title, "åˆ†é¡ %s", title);  /* åˆ†é¡æ‰‹å‹•æ”¹ */
+  /* brd.BM ç•™ç™½ï¼Œæ‰‹å‹•æ¢å¾© */
 
-  brd.bvote = 0;                /* §ë²¼·|¬y¥¢ */
+  brd.bvote = 0;                /* æŠ•ç¥¨æœƒæµå¤± */
   brd.bstamp = ++chrono;
-  brd.readlevel = 0;            /* ¯S®íªOÅv­­¤â°Ê§ï */
+  brd.readlevel = 0;            /* ç‰¹æ®Šæ¿æ¬Šé™æ‰‹å‹•æ”¹ */
   brd.postlevel = PERM_POST;
   brd.battr = outgo ? 0 : BRD_NOTRAN;
 
-  /* ³o¨Ç·|¦Û°Ê§ó·s */
+  /* é€™äº›æœƒè‡ªå‹•æ›´æ–° */
   brd.btime = 0;
   brd.bpost = 0;
   brd.blast = 0;
 
-  /* ·sÀÉ®×«Ø¦b .BRD_new ¦AÂĞ»\ .BRD §Y¥i */
+  /* æ–°æª”æ¡ˆå»ºåœ¨ .BRD_new å†è¦†è“‹ .BRD å³å¯ */
   rec_add(".BRD_new", &brd, sizeof(BRD));
 }
 
@@ -171,4 +171,4 @@ main()
 }
 
 --
-¡° Origin: ·¬¾ôÅæ¯¸<bbs.cs.nthu.edu.tw> ¡» From: itoc.Dorm-GD2.NCTU.edu.tw
+â€» Origin: æ¥“æ©‹é©›ç«™<bbs.cs.nthu.edu.tw> â—† From: itoc.Dorm-GD2.NCTU.edu.tw

@@ -1,20 +1,20 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G802) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ªO¥D±Ï¦^ deleted ªO¤å³¹
-®É¶¡: 2004/10/28 Thu 21:10:49                           Updated: 2004/10/28
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š802) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] æ¿ä¸»æ•‘å› deleted æ¿æ–‡ç« 
+æ™‚é–“: 2004/10/28 Thu 21:10:49                           Updated: 2004/10/28
 
-¡° ¤Ş­z¡mFish.bbs@fishocean.twbbs.org (³½²Â³½Äø§b§b³½)¡n¤§»Ê¨¥¡G
->     §Ú¤@ª½¥H¬° Junk ©M Delete ªO¬O­nÁ×§K»~§R¤å³¹
->     ¦³¿ìªk°µ¨ì¤å³¹±Ï¦^£v???
+â€» å¼•è¿°ã€ŠFish.bbs@fishocean.twbbs.org (é­šç¬¨é­šè ¢å‘†å‘†é­š)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>     æˆ‘ä¸€ç›´ä»¥ç‚º Junk å’Œ Delete æ¿æ˜¯è¦é¿å…èª¤åˆªæ–‡ç« 
+>     æœ‰è¾¦æ³•åšåˆ°æ–‡ç« æ•‘å›ã„‡???
 
-  ­Y­ì¤å¼ĞÃD¹Lªø¡A¨º»ò±Ï¦^ªº¼ĞÃD·|ÅÜµu
-  (¦]¬°¦b§R°£®É move_post() ´N±N¼ĞÃD§ïµu¤F)
+  è‹¥åŸæ–‡æ¨™é¡Œéé•·ï¼Œé‚£éº¼æ•‘å›çš„æ¨™é¡Œæœƒè®ŠçŸ­
+  (å› ç‚ºåœ¨åˆªé™¤æ™‚ move_post() å°±å°‡æ¨™é¡Œæ”¹çŸ­äº†)
 
 : post.c:post_cb[]
 
-+ 'i', post_undelete,       [1;44m// «öÁä¦Û©w [m
++ 'i', post_undelete,       [1;44m// æŒ‰éµè‡ªå®š [m
   'h', post_help
 
-: post.c:post_undelete() ·s¼W¦b post_delete() «á­±
+: post.c:post_undelete() æ–°å¢åœ¨ post_delete() å¾Œé¢
 
 static int
 post_undelete(xo)
@@ -33,7 +33,7 @@ post_undelete(xo)
     sprintf(userid, "%-13s", cuser.userid);
     if (strncmp(hdr->title, userid, IDLEN + 1))
     {
-      vmsg("³o¤£¬O±z©Ò§R°£ªº¤å³¹¡AµLªk±Ï¦^");
+      vmsg("é€™ä¸æ˜¯æ‚¨æ‰€åˆªé™¤çš„æ–‡ç« ï¼Œç„¡æ³•æ•‘å›");
       return XO_FOOT;
     }
   }
@@ -61,20 +61,20 @@ post_undelete(xo)
     hdr_stamp(buf, HDR_COPY | 'A', &xpost, fpath);
     strcpy(xpost.owner, hdr->owner);
     strcpy(xpost.nick, hdr->nick);
-    strcpy(xpost.date, hdr->date);      /* ­ì¤åÂà¸ü«O¯d­ì¤é´Á */
+    strcpy(xpost.date, hdr->date);      /* åŸæ–‡è½‰è¼‰ä¿ç•™åŸæ—¥æœŸ */
     strcpy(xpost.title, hdr->title + IDLEN + 1);
     rec_add(buf, &xpost, sizeof(HDR));
 
-    sprintf(fpath, "¤w¦¨¥\\¦a±N¥»¤å±Ï¦^ %s ªO", brdname);
+    sprintf(fpath, "å·²æˆåŠŸ\åœ°å°‡æœ¬æ–‡æ•‘å› %s æ¿", brdname);
     vmsg(fpath);
   }
   else
   {
-    vmsg("¥»¤åÀÉÀY¨S¦³°O¿ı¬İªO¦WºÙ¡A½Ğ¨Ï¥ÎÂà¿ı¨Ó±Ï¦^");
+    vmsg("æœ¬æ–‡æª”é ­æ²’æœ‰è¨˜éŒ„çœ‹æ¿åç¨±ï¼Œè«‹ä½¿ç”¨è½‰éŒ„ä¾†æ•‘å›");
   }
 
   return XO_FOOT;
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

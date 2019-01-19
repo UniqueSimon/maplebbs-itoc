@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/cola2usr.c  ( NTHU CS MapleBBS Ver 3.10 )	 */
 /*-------------------------------------------------------*/
-/* target : Cola ¦Ü Maple 3.02 ¨Ï¥ÎªÌÂà´«		 */
+/* target : Cola è‡³ Maple 3.02 ä½¿ç”¨è€…è½‰æ›		 */
 /* create : 03/02/11					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -12,7 +12,7 @@
 
 
 /* ----------------------------------------------------- */
-/* Âà´« .ACCT						 */
+/* è½‰æ› .ACCT						 */
 /* ----------------------------------------------------- */
 
 
@@ -46,7 +46,7 @@ uniq_userno(fd)
 {
   char buf[4096];
   int userno, size;
-  SCHEMA *sp;			/* record length 16 ¥i¾ã°£ 4096 */
+  SCHEMA *sp;			/* record length 16 å¯æ•´é™¤ 4096 */
 
   userno = 1;
 
@@ -111,7 +111,7 @@ creat_dirs(old)
   mkdir(fpath, 0700);
   usr_fpath(fpath, new.userid, "MF");
   mkdir(fpath, 0700);
-  usr_fpath(fpath, new.userid, "gem");		/* itoc.010727: ­Ó¤HºëµØ°Ï */
+  usr_fpath(fpath, new.userid, "gem");		/* itoc.010727: å€‹äººç²¾è¯å€ */
   mak_links(fpath);
 
   usr_fpath(fpath, new.userid, ".ACCT");
@@ -122,7 +122,7 @@ creat_dirs(old)
 
 
 /* ----------------------------------------------------- */
-/* Âà´«Ã±¦WÀÉ¡B­pµeÀÉ					 */
+/* è½‰æ›ç°½åæª”ã€è¨ˆç•«æª”					 */
 /* ----------------------------------------------------- */
 
 
@@ -158,7 +158,7 @@ trans_plans(old)
 
 
 /* ----------------------------------------------------- */
-/* Âà´««H¥ó						 */
+/* è½‰æ›ä¿¡ä»¶						 */
 /* ----------------------------------------------------- */
 
 
@@ -168,7 +168,7 @@ trans_hdr_chrono(filename)
 {
   char time_str[11];
 
-  /* M.1087654321.A ©Î M.987654321.A */
+  /* M.1087654321.A æˆ– M.987654321.A */
   str_ncpy(time_str, filename + 2, filename[2] == '1' ? 11 : 10);
 
   return (time_t) atoi(time_str);
@@ -194,11 +194,11 @@ trans_mail(old)
     {
       sprintf(buf, COLABBS_HOME "/%s/mail/%s", old->blank2, fh.filename);
 
-      if (dashf(buf))     /* ¤å³¹ÀÉ®×¦b¤~°µÂà´« */
+      if (dashf(buf))     /* æ–‡ç« æª”æ¡ˆåœ¨æ‰åšè½‰æ› */
       {
 	char new_name[10] = "@";      
 
-	/* Âà´«¤å³¹ .DIR */
+	/* è½‰æ›æ–‡ç«  .DIR */
 	memset(&hdr, 0, sizeof(HDR));
 	chrono = trans_hdr_chrono(fh.filename);
 	new_name[1] = radix32[chrono & 31];
@@ -211,11 +211,11 @@ trans_mail(old)
 	  *ptr = '\0';
 	str_ncpy(hdr.title, fh.title + 3, sizeof(hdr.title));
 	str_stamp(hdr.date, &hdr.chrono);
-	hdr.xmode = MAIL_READ;	/* ³]¬°¤wÅª */
+	hdr.xmode = MAIL_READ;	/* è¨­ç‚ºå·²è®€ */
 
 	rec_add(folder, &hdr, sizeof(HDR));
 
-	/* «ş¨©ÀÉ®× */
+	/* æ‹·è²æª”æ¡ˆ */
 	usr_fpath(fpath, old->userid, "@/");
 	strcat(fpath, new_name);
 	f_cp(buf, fpath, O_TRUNC);
@@ -227,7 +227,7 @@ trans_mail(old)
 
 
 /* ----------------------------------------------------- */
-/* Âà´«¥Dµ{¦¡						 */
+/* è½‰æ›ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -237,18 +237,18 @@ transusr(user)
 {
   char buf[64];
 
-  printf("Âà´« %s ¨Ï¥ÎªÌ\n", user->userid);
+  printf("è½‰æ› %s ä½¿ç”¨è€…\n", user->userid);
 
   if (is_bad_userid(user->userid))
   {
-    printf("%s ¤£¬O¦Xªk ID\n", user->userid);
+    printf("%s ä¸æ˜¯åˆæ³• ID\n", user->userid);
     return;
   }
 
   usr_fpath(buf, user->userid, NULL);
   if (dashd(buf))
   {
-    printf("%s ¤w¸g¦³¦¹ ID\n", user->userid);
+    printf("%s å·²ç¶“æœ‰æ­¤ ID\n", user->userid);
     return;
   }
 
@@ -280,7 +280,7 @@ main()
 
     sprintf(buf, COLABBS_HOME "/%s/USERDATA.DAT", str);
     rec_get(buf, &user, sizeof(user), 0);    
-    strcpy(user.blank2, str);			/* ­É¥Î°µ¬° path */
+    strcpy(user.blank2, str);			/* å€Ÿç”¨åšç‚º path */
 
     transusr(&user);
   }

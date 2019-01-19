@@ -1,18 +1,18 @@
-µo«H¤H: chwaian.bbs@cpu.tfcis.org (µL¨¥) ¬İªO: plan
-¼Ğ  ÃD: «öTAB¶i¤J¤Q¤j¼öªù¸ÜÃD
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/11/04 Thu 11:55:21)                Updated: 2004/11/04
+ç™¼ä¿¡äºº: chwaian.bbs@cpu.tfcis.org (ç„¡è¨€) çœ‹æ¿: plan
+æ¨™  é¡Œ: æŒ‰TABé€²å…¥åå¤§ç†±é–€è©±é¡Œ
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/11/04 Thu 11:55:21)                Updated: 2004/11/04
 
-¦b¹ï©¤¬Y­ÓBBS¬İ¨ì³o­Ó¥\¯à Ä±±o«Ü¹ê¥Î´N®³¶i¨Ó¤F
+åœ¨å°å²¸æŸå€‹BBSçœ‹åˆ°é€™å€‹åŠŸèƒ½ è¦ºå¾—å¾ˆå¯¦ç”¨å°±æ‹¿é€²ä¾†äº†
 
-µ{¦¡½X¥u¦³´X¦æ @_@
+ç¨‹å¼ç¢¼åªæœ‰å¹¾è¡Œ @_@
 
-: board.c:day_line() ·s¼W¦¹¨ç¦¡¦b Select() «á­±
+: board.c:day_line() æ–°å¢æ­¤å‡½å¼åœ¨ Select() å¾Œé¢
 
 static int
 class_dayline(xo)
   XO *xo;
 {
-  more("gem/@/@-day", NULL);    /* ¤µ¤é¼öªù¸ÜÃD */
+  more("gem/@/@-day", NULL);    /* ä»Šæ—¥ç†±é–€è©±é¡Œ */
 
   return class_head(xo);
 }
@@ -23,9 +23,9 @@ class_dayline(xo)
   'a', class_addMF,
   'f', class_MF,
 #endif
-+  KEY_TAB, class_dayline,       /* ¤µ¤é¼öªù¸ÜÃD */  [1;44m // «öÁä¦Û©w [m
++  KEY_TAB, class_dayline,       /* ä»Šæ—¥ç†±é–€è©±é¡Œ */  [1;44m // æŒ‰éµè‡ªå®š [m
 
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mchwaian [30m±q [31m61-216-216-171.dynamic.hinet.net [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mchwaian [30må¾ [31m61-216-216-171.dynamic.hinet.net [30mç™¼è¡¨[m

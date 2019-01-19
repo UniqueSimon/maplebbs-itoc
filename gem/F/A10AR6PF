@@ -1,21 +1,21 @@
-§@ªÌ: itoc (League) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ²Î­p¨Ï¥Î²v¤£°ªªº¬İªO
-®É¶¡: 2003/12/07 Sun 10:23:58                           Updated: 2005/05/25
+ä½œè€…: itoc (League) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] çµ±è¨ˆä½¿ç”¨ç‡ä¸é«˜çš„çœ‹æ¿
+æ™‚é–“: 2003/12/07 Sun 10:23:58                           Updated: 2005/05/25
 
 : src/util/Makefile
 
 EXE =   ... nouse-brd
 
-: crontab -e ¥[¤J
+: crontab -e åŠ å…¥
 
 10 4 * * * bin/nouse-brd > /dev/null 2>&1
 
-: src/util/nouse-brd.c ·s¼Wµ{¦¡¦p¤U
+: src/util/nouse-brd.c æ–°å¢ç¨‹å¼å¦‚ä¸‹
 
 /*-------------------------------------------------------*/
 /* util/nouse_brd.c     ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ²Î­p¨Ï¥Î²v¤£°ªªº¬İªO                         */
+/* target : çµ±è¨ˆä½¿ç”¨ç‡ä¸é«˜çš„çœ‹æ¿                         */
 /* create : 03/12/06                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -25,12 +25,12 @@ EXE =   ... nouse-brd
 #include "bbs.h"
 
 
-static char *Title = "¨Ï¥Î²v¤£°ªªº¬İªO";
-static char *Brdname = "sysop";         [1;44m// ¬İªO¦Û©w [m
-static char *ftmp = "tmp/nouse-board";  /* ¼È¦sÀÉ */
+static char *Title = "ä½¿ç”¨ç‡ä¸é«˜çš„çœ‹æ¿";
+static char *Brdname = "sysop";         [1;44m// çœ‹æ¿è‡ªå®š [m
+static char *ftmp = "tmp/nouse-board";  /* æš«å­˜æª” */
 
 static void
-add_post()           /* µo¤å¨ì¬İªO */
+add_post()           /* ç™¼æ–‡åˆ°çœ‹æ¿ */
 {
   HDR hdr;
   char folder[64];
@@ -45,8 +45,8 @@ add_post()           /* µo¤å¨ì¬İªO */
 
 
 static time_t now;
-static time_t delta;      /* ³Ì«á¤@½g¤å³¹¶Z¥Ø«e´X¤Ñ */
-static int page;          /* ¦³´X½g¤å³¹ */
+static time_t delta;      /* æœ€å¾Œä¸€ç¯‡æ–‡ç« è·ç›®å‰å¹¾å¤© */
+static int page;          /* æœ‰å¹¾ç¯‡æ–‡ç«  */
 
 static void
 expire(brd)
@@ -64,14 +64,14 @@ expire(brd)
     fsize = st.st_size;
     page = fsize / sizeof(HDR);
 
-    if (page <= 0)  /* ¨S¦³¤å³¹«h¬İ¶}ªO®É¶¡ */
+    if (page <= 0)  /* æ²’æœ‰æ–‡ç« å‰‡çœ‹é–‹æ¿æ™‚é–“ */
     {
       delta = brd->bstamp;
     }
     else
     {
-      delta = brd->bstamp;      /* Á×§K©Ò¦³¤å³¹³£¬O¸m©³¤å */
-      while ((fsize -= sizeof(HDR)) >= 0)   /* §ä³Ì«á¤@½g¤£¬O¸m©³¤åªº®É¶¡ */
+      delta = brd->bstamp;      /* é¿å…æ‰€æœ‰æ–‡ç« éƒ½æ˜¯ç½®åº•æ–‡ */
+      while ((fsize -= sizeof(HDR)) >= 0)   /* æ‰¾æœ€å¾Œä¸€ç¯‡ä¸æ˜¯ç½®åº•æ–‡çš„æ™‚é–“ */
       {
         lseek(fd, fsize, SEEK_SET);
         read(fd, &hdr, sizeof(HDR));
@@ -104,25 +104,25 @@ main()
 
   fprintf(fpw, "%s %s (%s) %s %s\n",
     STR_AUTHOR1, STR_SYSOP, SYSOPNICK, STR_POST2, Brdname);
-  fprintf(fpw, "¼ĞÃD: %s\n®É¶¡: %s\n\n", Title, Btime(&now));
+  fprintf(fpw, "æ¨™é¡Œ: %s\næ™‚é–“: %s\n\n", Title, Btime(&now));
 
   while (fread(&brd, sizeof(BRD), 1, fpr) == 1)
   {
-    if (!*brd.brdname)  /* ¦¹ªO¤w³Q§R°£ */
+    if (!*brd.brdname)  /* æ­¤æ¿å·²è¢«åˆªé™¤ */
       continue;
 
     expire(&brd);
 
-    score = page / 5 - delta;    [1;44m// ¤½¦¡¦Û©w [m
+    score = page / 5 - delta;    [1;44m// å…¬å¼è‡ªå®š [m
     if (score <= -200)
     {
-      fprintf(fpw, "%-12s ªO %4d ¤À¡A³Ì«á¤@½g¤å³¹©ó %3d ¤Ñ«e¡A"
-        "Á`¦@¦³ %4d ½g¤å³¹\n",
+      fprintf(fpw, "%-12s æ¿ %4d åˆ†ï¼Œæœ€å¾Œä¸€ç¯‡æ–‡ç« æ–¼ %3d å¤©å‰ï¼Œ"
+        "ç¸½å…±æœ‰ %4d ç¯‡æ–‡ç« \n",
         brd.brdname, score, delta, page);
     }
   }
 
-  fprintf(fpw, "\n--\n¡° ¥»¤å¥Ñ¦Û°Êµo¤å¨t²Î©Òµoªí\n");
+  fprintf(fpw, "\n--\nâ€» æœ¬æ–‡ç”±è‡ªå‹•ç™¼æ–‡ç³»çµ±æ‰€ç™¼è¡¨\n");
 
   fclose(fpr);
   fclose(fpw);
@@ -134,4 +134,4 @@ main()
 
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mthree.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mthree.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

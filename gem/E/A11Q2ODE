@@ -1,28 +1,28 @@
-µo«H¤H: appleboy.bbs@bbs.freestudio.twbbs.org (¤p´cÅ]) ¬İªO: plan
-¼Ğ  ÃD: [­×¥¿] BBS »P Coppermine Photo Gallery ±b¸¹¦P¨B
-µo«H¯¸: ºÖ§Q³Ğ·N¤u§@«Ç (2005/12/16 Fri 04:06:15)          Updated: 2005/12/16
+ç™¼ä¿¡äºº: appleboy.bbs@bbs.freestudio.twbbs.org (å°æƒ¡é­”) çœ‹æ¿: plan
+æ¨™  é¡Œ: [ä¿®æ­£] BBS èˆ‡ Coppermine Photo Gallery å¸³è™ŸåŒæ­¥
+ç™¼ä¿¡ç«™: ç¦åˆ©å‰µæ„å·¥ä½œå®¤ (2005/12/16 Fri 04:06:15)          Updated: 2005/12/16
 
-­ì§@ªÌ¬O¡GTitan.bbs@KH.twbbs.org
+åŸä½œè€…æ˜¯ï¼šTitan.bbs@KH.twbbs.org
 
-³o­Ó³¡¥÷ ¦]¬°¥Î¨ìMySQL¸ò php³¡¥÷ ©Ò¥H­×§ï½Ğ¤p¤ß¤@ÂI
+é€™å€‹éƒ¨ä»½ å› ç‚ºç”¨åˆ°MySQLè·Ÿ phpéƒ¨ä»½ æ‰€ä»¥ä¿®æ”¹è«‹å°å¿ƒä¸€é»
 
-¦Ó§Ú¬O¦b©³¤UªºÀô¹Ò­×§ï
+è€Œæˆ‘æ˜¯åœ¨åº•ä¸‹çš„ç’°å¢ƒä¿®æ”¹
 
 FreeBSD 6.0release
 apache 2.0.55
 mysql-server-5.0.16
 php5-5.1.1
-§Ú¥Î cpg 1.4.2 (stable)ª©
+æˆ‘ç”¨ cpg 1.4.2 (stable)ç‰ˆ
 
-¤W­±À³¸Ó¬O ¤ñ¸û·sªºÀô¹Ò¡A§Ú¤£´±½T©w¨ä¥L¥­¥x¡A¤£¹L§Ú·Q¤j­P¤W³£ok
+ä¸Šé¢æ‡‰è©²æ˜¯ æ¯”è¼ƒæ–°çš„ç’°å¢ƒï¼Œæˆ‘ä¸æ•¢ç¢ºå®šå…¶ä»–å¹³å°ï¼Œä¸éæˆ‘æƒ³å¤§è‡´ä¸Šéƒ½ok
 
-¥H¤U¬O­×§ï
+ä»¥ä¸‹æ˜¯ä¿®æ”¹
 
 : login.php
 
-: §ä¨ì $cookie_warning = ''; ¦b«á­±¥[¤W
+: æ‰¾åˆ° $cookie_warning = ''; åœ¨å¾Œé¢åŠ ä¸Š
 
-function is_ok($string)  //rocet´£¨Ñ
+function is_ok($string)  //rocetæä¾›
 {
   $flag = trim(preg_replace("/(^[+-])((.+))/", "\\1", $string));
   if ($flag == "+")
@@ -31,11 +31,11 @@ function is_ok($string)  //rocet´£¨Ñ
     return false;
 }
 
-$socket = 0;  // socket ¶}±Ò§¹¦¨
-$user = 0;    // user ÀË¬d³q¹L
-$pass = 0;    // pass ÀË¬d³q¹L
-$ok = 0;      // socket/user/pass ³£¥¿½T
-$bbs_host = "" // ½Ğ¶ñ¤W ¦Û¤v¬[³]ªºbbs Domain
+$socket = 0;  // socket é–‹å•Ÿå®Œæˆ
+$user = 0;    // user æª¢æŸ¥é€šé
+$pass = 0;    // pass æª¢æŸ¥é€šé
+$ok = 0;      // socket/user/pass éƒ½æ­£ç¢º
+$bbs_host = "" // è«‹å¡«ä¸Š è‡ªå·±æ¶è¨­çš„bbs Domain
 
 if (isset($HTTP_POST_VARS['submitted']))
 {
@@ -94,7 +94,7 @@ if (isset($HTTP_POST_VARS['submitted']))
   }
 }
 
-: §ä¨ì $USER_DATA = $cpg_udb->login ³o¦æ ¦b©³¤U¤£»·³B
+: æ‰¾åˆ° $USER_DATA = $cpg_udb->login é€™è¡Œ åœ¨åº•ä¸‹ä¸é è™•
 
 - if ( $USER_DATA = $cpg_udb->login( addslashes($_POST['username']),
 -    addslashes($_POST['password']), isset($_POST['remember_me']) ) ) {
@@ -103,22 +103,22 @@ if (isset($HTTP_POST_VARS['submitted']))
 + addslashes($_POST['password']), isset($_POST['remember_me']) )) && $ok ==
 +    "1") {
 
-¤W­± «Ü¦hphp ³£¸g¹LÂ_¦æ ©Ò¥H ½Ğ¤p¤ß¥[¤W¥h ¦Ü¤Ö­nÀ´¤@ÂIÂIphp
+ä¸Šé¢ å¾ˆå¤šphp éƒ½ç¶“éæ–·è¡Œ æ‰€ä»¥ è«‹å°å¿ƒåŠ ä¸Šå» è‡³å°‘è¦æ‡‚ä¸€é»é»php
 
-±b¸¹¦P¨B¡A¨º´N¤£»İ­n­×§ï±K½Xªº¿ï¶µ¤F
+å¸³è™ŸåŒæ­¥ï¼Œé‚£å°±ä¸éœ€è¦ä¿®æ”¹å¯†ç¢¼çš„é¸é …äº†
 
-§ä¨ì³o¤@¦æ¡A¬ù308¦æ¥ª¥k  §â¤U­±³o¬q§R°£
+æ‰¾åˆ°é€™ä¸€è¡Œï¼Œç´„308è¡Œå·¦å³  æŠŠä¸‹é¢é€™æ®µåˆªé™¤
 
 <input type="submit" name="change_pass"
           value="{$lang_register_php['change_pass']}" class="button">
 
-©Î¬Oµù¸Ñ°_¨Ó¡A¦p¡G
+æˆ–æ˜¯è¨»è§£èµ·ä¾†ï¼Œå¦‚ï¼š
 
 <!-- <input type="submit" name="change_pass" value="{$lan
           value="{$lang_register_php['change_pass']}" class="button"> -->
 
-¦pªG¦³°İÃD ½Ğ±H«H¸ò§Ú»¡
+å¦‚æœæœ‰å•é¡Œ è«‹å¯„ä¿¡è·Ÿæˆ‘èªª
 
 --
- [1;41m¡÷[44m¡õ[m O[1mri[30mgi[mn: [1;43m FreeBSD ´cÅ]¤u§@¯¸£»ºÖ§Q³Ğ·N¤u§@«Ç [47m freestudio.twbbs.org [m
- [1;45m¡ô[42m¡ö[m Au[1mt[30mho[mr: [1;33mappleboy[m ±q [1;34mFreeBSD.ee.CCU.edu.tw[m µoªí
+ [1;41mâ†’[44mâ†“[m O[1mri[30mgi[mn: [1;43m FreeBSD æƒ¡é­”å·¥ä½œç«™Ë™ç¦åˆ©å‰µæ„å·¥ä½œå®¤ [47m freestudio.twbbs.org [m
+ [1;45mâ†‘[42mâ†[m Au[1mt[30mho[mr: [1;33mappleboy[m å¾ [1;34mFreeBSD.ee.CCU.edu.tw[m ç™¼è¡¨

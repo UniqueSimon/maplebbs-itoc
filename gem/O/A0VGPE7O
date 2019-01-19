@@ -1,26 +1,26 @@
-§@ªÌ: itoc (­·½Õ«B¶¶¡A°ê®õ¥Á¦w) ¬ÝªO: plan
-¼ÐÃD: [¥\¯à] ¬Ý¨£Áô§Î¦W³æ
-®É¶¡: Thu Jul 10 08:49:28 2003                          Updated: 2004/01/30
+ä½œè€…: itoc (é¢¨èª¿é›¨é †ï¼Œåœ‹æ³°æ°‘å®‰) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] çœ‹è¦‹éš±å½¢åå–®
+æ™‚é–“: Thu Jul 10 08:49:28 2003                          Updated: 2004/01/30
 
-  ªB¤Í¦W³æ·s¼W¡u³Â¦N¡v
+  æœ‹å‹åå–®æ–°å¢žã€Œéº»å‰ã€
 
 : struct.h
 
-#define PAL_BAD         0x02    /* ¦n¤Í vs Ãa¤H */
-+ #define PAL_MATE      0x04    /* ³Â¦N */
+#define PAL_BAD         0x02    /* å¥½å‹ vs å£žäºº */
++ #define PAL_MATE      0x04    /* éº»å‰ */
 
 + #define MATE_MASK     0x01000000
 
 : pal.c:pal_item()
 
-- prints("%6d %-3s%-14s%s\n", num, pal->ftype & PAL_BAD ? "¢æ" : "",
+- prints("%6d %-3s%-14s%s\n", num, pal->ftype & PAL_BAD ? "ï¼¸" : "",
 -   pal->userid, pal->ship);
 + prints("%6d %-3s%-14s%s\n", num,
-+   pal->ftype & PAL_BAD ? "¢æ" :
-+   pal->ftype & PAL_MATE ? "¡³" : "",
++   pal->ftype & PAL_BAD ? "ï¼¸" :
++   pal->ftype & PAL_MATE ? "â—‹" : "",
 +   pal->userid, pal->ship);
 
-: pal.c:pal_edit() ´«·s
+: pal.c:pal_edit() æ›æ–°
 
 void
 pal_edit(pal, echo)
@@ -29,13 +29,13 @@ pal_edit(pal, echo)
 {
   if (echo == DOECHO)
     memset(pal, 0, sizeof(PAL));
-  vget(b_lines, 0, "¤Í½Ë¡G", pal->ship, sizeof(pal->ship), echo);
+  vget(b_lines, 0, "å‹èª¼ï¼š", pal->ship, sizeof(pal->ship), echo);
 #ifdef HAVE_BADPAL
-  if (vans("Ãa¤H(Y/N)¡H[N] ") == 'y')
+  if (vans("å£žäºº(Y/N)ï¼Ÿ[N] ") == 'y')
     pal->ftype = PAL_BAD;
   else
 #endif
-  if (vans("³Â¦N(Y/N)¡H[N] ") == 'y')
+  if (vans("éº»å‰(Y/N)ï¼Ÿ[N] ") == 'y')
     pal->ftype = PAL_MATE;
   else
     pal->ftype = 0;
@@ -45,14 +45,14 @@ pal_edit(pal, echo)
 
       do
       {
--       /* ­Y¬OÃa¤H¡A¦s -userno¡F­Y¬O¦n¤Í¡A¦s +userno */
+-       /* è‹¥æ˜¯å£žäººï¼Œå­˜ -usernoï¼›è‹¥æ˜¯å¥½å‹ï¼Œå­˜ +userno */
 -       *plist++ = (phead->ftype & PAL_BAD) ? -(phead->userno) : phead->userno;
-+       /* ­Y¬OÃa¤H¡A¦s -userno¡F­Y¬O¦n¤Í¡A¦s +userno¡F
-+          ­Y¬O³Â¦N¡A¦s userno+MASK */
++       /* è‹¥æ˜¯å£žäººï¼Œå­˜ -usernoï¼›è‹¥æ˜¯å¥½å‹ï¼Œå­˜ +usernoï¼›
++          è‹¥æ˜¯éº»å‰ï¼Œå­˜ userno+MASK */
 +       *plist++ = (phead->ftype & PAL_BAD) ? -(phead->userno) :
 +         (phead->ftype & PAL_MATE) ? phead->userno | MATE_MASK :
 +         phead->userno;
       } while (++phead < ptail);
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

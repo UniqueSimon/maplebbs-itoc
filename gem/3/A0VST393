@@ -1,10 +1,10 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (¤­¶ô¿úªº¤ß¨Æ...) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¬İªO¦Cªí Ctrl + P ¶}ÅP·sª©¡C
-µo«H¯¸: ¤¤¿³¸ê¬ì (2003/12/04 Thu 08:38:27)                Updated: 2003/12/04
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (äº”å¡ŠéŒ¢çš„å¿ƒäº‹...) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] çœ‹æ¿åˆ—è¡¨ Ctrl + P é–‹é—¢æ–°ç‰ˆã€‚
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (2003/12/04 Thu 08:38:27)                Updated: 2003/12/04
 
-: src/maple/baord.c:class_newbrd()  ·s¼W¦¹¨ç¦¡¦b class_edit() ¤U­±¡C
+: src/maple/baord.c:class_newbrd()  æ–°å¢æ­¤å‡½å¼åœ¨ class_edit() ä¸‹é¢ã€‚
 
-static int      /* qazq.031204: ¬İªO¦Cªí Ctrl + P ¶}ÅP·sª© */
+static int      /* qazq.031204: çœ‹æ¿åˆ—è¡¨ Ctrl + P é–‹é—¢æ–°ç‰ˆ */
 class_newbrd(xo)
   XO *xo;
 {
@@ -24,5 +24,5 @@ class_newbrd(xo)
 
 
 --
- [1m[42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m csNCHU.twbbs.org [m
- [1m[44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mqazq [30m±q [35m61-216-137-41.HINET-IP.hinet.net [30mµoªí[m
+ [1m[42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m csNCHU.twbbs.org [m
+ [1m[44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mqazq [30må¾ [35m61-216-137-41.HINET-IP.hinet.net [30mç™¼è¡¨[m

@@ -1,16 +1,16 @@
-§@ªÌ: itoc (¤Ó¶§ªá¨à~) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¹wÄı
-®É¶¡: Sun Dec 22 17:29:07 2002                          Updated: 2006/04/17
+ä½œè€…: itoc (å¤ªé™½èŠ±å…’~) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] é è¦½
+æ™‚é–“: Sun Dec 22 17:29:07 2002                          Updated: 2006/04/17
 
-  [µù] °µ¤F¥»¥\¯à·s¼W¡A´NµL»İ°µ "¬İªO»¡©ú" ³o½g¥\¯àªº·s¼W
+  [è¨»] åšäº†æœ¬åŠŸèƒ½æ–°å¢ï¼Œå°±ç„¡éœ€åš "çœ‹æ¿èªªæ˜" é€™ç¯‡åŠŸèƒ½çš„æ–°å¢
 
-  ­º¥ı·s¼W¬İªO»¡©úªºµ{¦¡
+  é¦–å…ˆæ–°å¢çœ‹æ¿èªªæ˜çš„ç¨‹å¼
 
 : global.h
 
 #define FN_VCH          ".VCH"          /* vote control header */
-#define FN_NOTE         "note"          /* ¶iªOµe­± */
-[1;33m+[m #define FN_EXPLAIN      "explain"       /* ¬İªO»¡©ú */
+#define FN_NOTE         "note"          /* é€²æ¿ç•«é¢ */
+[1;33m+[m #define FN_EXPLAIN      "explain"       /* çœ‹æ¿èªªæ˜ */
 
 : global.h
 
@@ -18,7 +18,7 @@ VAR char *fn_plans      INI(FN_PLANS);
 VAR char *fn_note       INI(FN_NOTE);
 [1;33m+[m VAR char *fn_explain    INI(FN_EXPLAIN);
 
-: board.c:class_explain() ·s¼W³o¨ç¦¡¦b class_help() ¤§«e
+: board.c:class_explain() æ–°å¢é€™å‡½å¼åœ¨ class_help() ä¹‹å‰
 
 static int
 class_explain(xo)
@@ -33,20 +33,20 @@ class_explain(xo)
   chp = (short *) xo->xyz + xo->pos;
   chn = *chp;
 
-  if (chn >= 0)     /* ¤@¯ë¬İªO */
+  if (chn >= 0)     /* ä¸€èˆ¬çœ‹æ¿ */
   {
     brd = bshm->bcache + chn;
     blist = brd->BM;
     if (!(blist[0] > ' ' && is_bm(blist, cuser.userid)))
       return XO_NONE;
   }
-  else              /* ¤ÀÃş¸s²Õ */
+  else              /* åˆ†é¡ç¾¤çµ„ */
   {
     if (!HAS_PERM(PERM_ALLBOARD))
       return XO_NONE;
   }
 
-  mode = vans("¬İªO»¡©ú (D)§R°£ (E)­×§ï (Q)¨ú®ø¡H[E] ");
+  mode = vans("çœ‹æ¿èªªæ˜ (D)åˆªé™¤ (E)ä¿®æ”¹ (Q)å–æ¶ˆï¼Ÿ[E] ");
   if (mode != 'q')
   {
     if (chn >= 0)
@@ -69,7 +69,7 @@ class_explain(xo)
     }
     else
     {
-      if (vedit(fpath, 0))  /* Thor.981020: ª`·N³Qtalkªº°İÃD */
+      if (vedit(fpath, 0))  /* Thor.981020: æ³¨æ„è¢«talkçš„å•é¡Œ */
         vmsg(msg_cancel);
       return class_head(xo);
     }
@@ -79,17 +79,17 @@ class_explain(xo)
 
 : board.c:class_cb[]
 
-[1;33m+[m 'l', class_explain,         [1;44m // «öÁä¦Û©w [m
+[1;33m+[m 'l', class_explain,         [1;44m // æŒ‰éµè‡ªå®š [m
   'h', class_help,
 
 > ---------------------------------------------------------------- <
 
-  ±µ¤U¨Ó·s¼W xo_knee() ªº³¡¤À
+  æ¥ä¸‹ä¾†æ–°å¢ xo_knee() çš„éƒ¨åˆ†
 
-  §â XO ®æ¦¡§ï¦¨ head + neck + body + knee + foot
-  ¨ä¤¤ knee ¬O¹wÄı
-  ¨Ï¥ÎªÌ¦b¬İªO¦Cªí/¤å³¹¦Cªí/¨Ï¥ÎªÌ¦W³æ/¦n¤Í¦W³æ/...µ¥¦a¤è«ö !
-  ¤Á´«¹wÄı¼Ò¦¡¡A¥i¥H¹wÄı¤å³¹/Query/¬İªO»¡©ú/...
+  æŠŠ XO æ ¼å¼æ”¹æˆ head + neck + body + knee + foot
+  å…¶ä¸­ knee æ˜¯é è¦½
+  ä½¿ç”¨è€…åœ¨çœ‹æ¿åˆ—è¡¨/æ–‡ç« åˆ—è¡¨/ä½¿ç”¨è€…åå–®/å¥½å‹åå–®/...ç­‰åœ°æ–¹æŒ‰ !
+  åˆ‡æ›é è¦½æ¨¡å¼ï¼Œå¯ä»¥é è¦½æ–‡ç« /Query/çœ‹æ¿èªªæ˜/...
 
 : modes.h
 
@@ -116,7 +116,7 @@ VAR int b_lines;                /* bottom line */
 
 : visio.c:iac_count()
 
-      /* fuse.030518: ½u¤W½Õ¾ãµe­±¤j¤p¡A­«§ì b_lines */
+      /* fuse.030518: ç·šä¸Šèª¿æ•´ç•«é¢å¤§å°ï¼Œé‡æŠ“ b_lines */
       if ((*look) == TELOPT_NAWS)
       {
 [1;33m+[m       int knee;
@@ -139,7 +139,7 @@ VAR int b_lines;                /* bottom line */
 
 [1;31m-[m static pickup ulist_pool[MAXACTIVE];
 [1;33m+[m pickup ulist_pool[MAXACTIVE];
-static int pickup_ship = 0;     /* 0:¬G¶m !=0:¤Í½Ë±Ô­z */
+static int pickup_ship = 0;     /* 0:æ•…é„‰ !=0:å‹èª¼æ•˜è¿° */
 
 : board.c
 
@@ -163,7 +163,7 @@ BRD *xbrd;
 
 : xover.c:xover()
 
-    if (xo->max > 0)            /* Thor:­Y¬OµLªF¦è´N¤£show¤F */
+    if (xo->max > 0)            /* Thor:è‹¥æ˜¯ç„¡æ±è¥¿å°±ä¸showäº† */
     {
       num = 3 + pos - xo->top;
       move(num, 0);
@@ -176,7 +176,7 @@ BRD *xbrd;
 : xover.c:preview_tip()
 : xover.c:xo_knee()
 
-  ³o¨Ç¨ç¦¡¥[¦b xover() ¤§«e­±
+  é€™äº›å‡½å¼åŠ åœ¨ xover() ä¹‹å‰é¢
 
 static void
 preview_file(fpath, skipline)
@@ -190,10 +190,10 @@ preview_file(fpath, skipline)
   if (!(fp = fopen(fpath, "r")))
     return;
 
-  for (i = 0; i < skipline; i++)        /* ²¤¹L«e´X¦æ */
+  for (i = 0; i < skipline; i++)        /* ç•¥éå‰å¹¾è¡Œ */
     fgets(buf, ANSILINELEN, fp);
 
-  for (i = 0; i < 3;)                   /* ¹wÄı¤T¦æ */
+  for (i = 0; i < 3;)                   /* é è¦½ä¸‰è¡Œ */
   {
     if (fgets(buf, SCR_WIDTH + 1, fp))
     {
@@ -202,7 +202,7 @@ preview_file(fpath, skipline)
       if (i == 2)
       {
         if (str = strchr(fpath, '\n'))
-          *str = '\0';  /* §â '\n' ´«¦¨ '\0'¡AÁ×§K§â foot ¦Y¤F */
+          *str = '\0';  /* æŠŠ '\n' æ›æˆ '\0'ï¼Œé¿å…æŠŠ foot åƒäº† */
       }
       outx(buf);
       i++;
@@ -211,7 +211,7 @@ preview_file(fpath, skipline)
       break;
   }
 
-  outs(str_ransi);      /* ÁÙ­ì ansi-code Á×§K¤å³¹¸Ì­±¨S¦³ÁÙ­ì */
+  outs(str_ransi);      /* é‚„åŸ ansi-code é¿å…æ–‡ç« è£¡é¢æ²’æœ‰é‚„åŸ */
   fclose(fp);
 }
 
@@ -223,10 +223,10 @@ preview_userid(userid)
   ACCT acct;
 
   acct_load(&acct, userid);
-  prints("%s(%s) ¤W¯¸ %d ¦¸¡A¤å³¹ %d ½g¡A%s³q¹L¨­¤À»{ÃÒ\n",
+  prints("%s(%s) ä¸Šç«™ %d æ¬¡ï¼Œæ–‡ç«  %d ç¯‡ï¼Œ%sé€šéèº«åˆ†èªè­‰\n",
     userid, acct.username, acct.numlogins, acct.numposts,
-    acct.userlevel & PERM_VALID ? "¤w¸g" : "©|¥¼");
-  prints("¤W¦¸(%s)¨Ó¦Û(%s)", Btime(&acct.lastlogin), acct.lasthost);
+    acct.userlevel & PERM_VALID ? "å·²ç¶“" : "å°šæœª");
+  prints("ä¸Šæ¬¡(%s)ä¾†è‡ª(%s)", Btime(&acct.lastlogin), acct.lasthost);
 }
 
 
@@ -241,11 +241,11 @@ preview_tip()
     return;
 
   fgets(msg, 128, fp);
-  msg_num = atoi(msg);         /* ²Ä¤@¦æ°O¿ıÁ`½g¼Æ */
+  msg_num = atoi(msg);         /* ç¬¬ä¸€è¡Œè¨˜éŒ„ç¸½ç¯‡æ•¸ */
   i = time(0) % msg_num + 1;
   j = 0;
 
-  while (j < i)                        /* ¨ú²Ä i ­Ó tip */
+  while (j < i)                        /* å–ç¬¬ i å€‹ tip */
   {
     fgets(msg, 128, fp);
     if (msg[0] == '#')
@@ -284,7 +284,7 @@ xo_knee(xo, zone)
   switch (zone)
   {
   /* ------------ */
-  /* ¹wÄı¬İªO»¡©ú */
+  /* é è¦½çœ‹æ¿èªªæ˜ */
   /* ------------ */
   case XZ_CLASS:
     {
@@ -292,12 +292,12 @@ xo_knee(xo, zone)
       int chn;
       chp = (short *) xo->xyz + xo->pos;
       chn = *chp;
-      if (chn >= 0)     /* ¤@¯ë¬İªO */
+      if (chn >= 0)     /* ä¸€èˆ¬çœ‹æ¿ */
       {
         extern BCACHE *bshm;
         brd_fpath(fpath, (bshm->bcache + chn)->brdname, fn_explain);
       }
-      else              /* ¤ÀÃş¸s²Õ */
+      else              /* åˆ†é¡ç¾¤çµ„ */
       {
         extern char *class_img;
         char *img, *str;
@@ -315,7 +315,7 @@ xo_knee(xo, zone)
     break;
 
   /* ------------ */
-  /* ¹wÄı Query   */
+  /* é è¦½ Query   */
   /* ------------ */
   case XZ_ULIST:
     {
@@ -340,7 +340,7 @@ xo_knee(xo, zone)
     break;
 
   /* ------------ */
-  /* ¹wÄı¤å³¹«H¥ó */
+  /* é è¦½æ–‡ç« ä¿¡ä»¶ */
   /* ------------ */
   case XZ_XPOST:
   case XZ_MBOX:
@@ -356,7 +356,7 @@ xo_knee(xo, zone)
     break;
 
   /* ------------ */
-  /* ¹wÄı¤å³¹     */
+  /* é è¦½æ–‡ç«      */
   /* ------------ */
 #ifdef HAVE_SONG
   case XZ_SONG:
@@ -373,7 +373,7 @@ xo_knee(xo, zone)
     break;
 
   /* ------------ */
-  /* ¹wÄı Tip     */
+  /* é è¦½ Tip     */
   /* ------------ */
   case XZ_VOTE:
 #ifdef MY_FAVORITE
@@ -391,4 +391,4 @@ xo_knee(xo, zone)
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

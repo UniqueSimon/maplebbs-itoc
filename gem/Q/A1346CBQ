@@ -1,14 +1,14 @@
-µo«H¤H: hpo14.bbs@ntust.org (­¯¥Í) ¬ÝªO: plan
-¼Ð  ÃD: [­×¥¿] Âà¿ý¤å³¹¦Ü«H½c: ­ì¤å³¹¥[µù°O¿ý
-µo«H¯¸: ¸ê¤u²M¬y¯¸ (2007/05/10 Thu 03:58:15)              Updated: 2007/05/10
+ç™¼ä¿¡äºº: hpo14.bbs@ntust.org (é™Œç”Ÿ) çœ‹æ¿: plan
+æ¨™  é¡Œ: [ä¿®æ­£] è½‰éŒ„æ–‡ç« è‡³ä¿¡ç®±: åŽŸæ–‡ç« åŠ è¨»è¨˜éŒ„
+ç™¼ä¿¡ç«™: è³‡å·¥æ¸…æµç«™ (2007/05/10 Thu 03:58:15)              Updated: 2007/05/10
 
-°Ñ¦Ò³o½g¼gªº [1;42m[­×¥¿] Âà¿ý¤å³¹: ­ì¤å³¹¥[µù°O¿ý[m by guessi
+åƒè€ƒé€™ç¯‡å¯«çš„ [1;42m[ä¿®æ­£] è½‰éŒ„æ–‡ç« : åŽŸæ–‡ç« åŠ è¨»è¨˜éŒ„[m by guessi
 
-¤p§Ì»{¬°¡A°£Âà¿ý¤å³¹¨ì¬ÝªOÀ³¸Ó¦b­ì¤å¥[µù¬ö¿ý¥H¥~
+å°å¼Ÿèªç‚ºï¼Œé™¤è½‰éŒ„æ–‡ç« åˆ°çœ‹æ¿æ‡‰è©²åœ¨åŽŸæ–‡åŠ è¨»ç´€éŒ„ä»¥å¤–
 
-­Y¦³¨Ï¥ÎªÌ±N¤å³¹Âà¦^¦Û¤v©Î¬O¥L¤H«H½cªº¸Ü¡A¤]À³¸Ó¦b­ì¤å¥[µù¬ö¿ý
+è‹¥æœ‰ä½¿ç”¨è€…å°‡æ–‡ç« è½‰å›žè‡ªå·±æˆ–æ˜¯ä»–äººä¿¡ç®±çš„è©±ï¼Œä¹Ÿæ‡‰è©²åœ¨åŽŸæ–‡åŠ è¨»ç´€éŒ„
 
-¥Ø«e¦Û¤v¨Ï¥Î¬O¨S¦³°ÝÃD¡C
+ç›®å‰è‡ªå·±ä½¿ç”¨æ˜¯æ²’æœ‰å•é¡Œã€‚
 
 : src/maple: post_forward(xo)
 
@@ -22,9 +22,9 @@ post_forward(xo)
 
   hdr = (HDR *) xo_pool + (xo->pos - xo->top);
 
-   ¡K¡K
+   â€¦â€¦
 
-  if (acct_get("Âà¹F«H¥óµ¹¡G", &muser) > 0)
+  if (acct_get("è½‰é”ä¿¡ä»¶çµ¦ï¼š", &muser) > 0)
   {
     strcpy(quote_user, hdr->owner);
     strcpy(quote_nick, hdr->nick);
@@ -32,7 +32,7 @@ post_forward(xo)
     sprintf(ve_title, "%.64s (fwd)", hdr->title);
     move(1, 0);
     clrtobot();
-    prints("Âà¹Fµ¹: %s (%s)\n¼Ð  ÃD: %s\n",
+    prints("è½‰é”çµ¦: %s (%s)\næ¨™  é¡Œ: %s\n",
       muser.userid, muser.username, ve_title);
 
 -   mail_send(muser.userid);
@@ -45,9 +45,9 @@ post_forward(xo)
 +
 +     hdr_fpath(fpath, xo->dir, hdr);
 
-      //³oÃä¤p§Ì¤£½T©w¯à§_ª½±µ¨Ï¥Î¤W­±¼Ð¶À¦âªºÅÜ¼Æ·í§@ FILEªºÀÉ®×¸ô®|
-      //¦]¬° hdr_path §ìªº³£¤@¼Ë
-      //¦pªG¥i¥H¡A«h¤U­±ªº [1;32mfpath[m ½Ð§ï¦¨ [1;33mquote_file[m
+      //é€™é‚Šå°å¼Ÿä¸ç¢ºå®šèƒ½å¦ç›´æŽ¥ä½¿ç”¨ä¸Šé¢æ¨™é»ƒè‰²çš„è®Šæ•¸ç•¶ä½œ FILEçš„æª”æ¡ˆè·¯å¾‘
+      //å› ç‚º hdr_path æŠ“çš„éƒ½ä¸€æ¨£
+      //å¦‚æžœå¯ä»¥ï¼Œå‰‡ä¸‹é¢çš„ [1;32mfpath[m è«‹æ”¹æˆ [1;33mquote_file[m
 +
 +     if (fp = fopen([1;32mfpath[m, "a"))
 +     {
@@ -59,18 +59,18 @@ post_forward(xo)
 +       time(&now);
 +       ptime = localtime(&now);
 +
-+       sprintf(msg, "Âà¿ý¦Ü %s «H½c", (muser.userid == cuser.userid) ?
-+         muser.userid : "¨p¤H");
++       sprintf(msg, "è½‰éŒ„è‡³ %s ä¿¡ç®±", (muser.userid == cuser.userid) ?
++         muser.userid : "ç§äºº");
 +
-+       fprintf(fp, "\033[32m¡­ \033[1m%s\033[;32m %-*s\033[m"
++       fprintf(fp, "\033[32mï¼ƒ \033[1m%s\033[;32m %-*s\033[m"
 +         " %02d/%02d %02d:%02d\033[m\n",
 +         cuser.userid, 62 - strlen(cuser.userid), msg,
 +         ptime->tm_mon + 1, ptime->tm_mday, ptime->tm_hour, ptime->tm_min);
-+         /* ®æ¦¡¦Û­q ºÉ¶q»P±À¤åÃþ¦ü */
++         /* æ ¼å¼è‡ªè¨‚ ç›¡é‡èˆ‡æŽ¨æ–‡é¡žä¼¼ */
 +
 +       fclose(fp);
 +
-+     } /* Âà¿ý­ì¤åµù°O¿ý 070510 hpo14 */
++     } /* è½‰éŒ„åŽŸæ–‡è¨»è¨˜éŒ„ 070510 hpo14 */
 +   }
 
     *quote_file = '\0';
@@ -79,5 +79,5 @@ post_forward(xo)
 }
 
 --
-[1m>> [33m¥xÆW¬ì§Þ¤j¾Ç ¸ê¤u²M¬y¯¸ [;31m# [1;31mntust.org [;31m#[m
+[1m>> [33må°ç£ç§‘æŠ€å¤§å­¸ è³‡å·¥æ¸…æµç«™ [;31m# [1;31mntust.org [;31m#[m
 [1m>> [;32mAu[1mthor: 61.59.78.243[m

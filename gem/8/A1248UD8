@@ -1,12 +1,12 @@
-µo«H¤H: kevinblue.bbs@cpu.tfcis.org (³Í¤åÂÅ) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] stardict¥»¾÷¦r¨å
-µo«H¯¸: °Ê¤O®Ö¤ß (2006/04/18 Tue 11:22:12)                Updated: 2006/04/18
+ç™¼ä¿¡äºº: kevinblue.bbs@cpu.tfcis.org (å‡±æ–‡è—) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] stardictæœ¬æ©Ÿå­—å…¸
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2006/04/18 Tue 11:22:12)                Updated: 2006/04/18
 
-¥ÎAJAX½u¤W¦r¨å + dreye.c §ïªº...
+ç”¨AJAXç·šä¸Šå­—å…¸ + dreye.c æ”¹çš„...
 
-¦r¨å¨Ó·½            : http://stardict.sourceforge.net/
-½u¤W¦r¨å(­ì§@ªÌºô­¶): http://gais4.cs.ccu.edu.tw/~sys89/ajaxdict.html
-Autor¡Gsyshen@gmail.com
+å­—å…¸ä¾†æº            : http://stardict.sourceforge.net/
+ç·šä¸Šå­—å…¸(åŸä½œè€…ç¶²é ): http://gais4.cs.ccu.edu.tw/~sys89/ajaxdict.html
+Autorï¼šsyshen@gmail.com
 
 http://opensvn.csie.org/nightlessbbs/trunk/src/game/ajaxdict.c
 http://opensvn.csie.org/nightlessbbs/trunk/src/dict/query.c
@@ -22,11 +22,11 @@ http://opensvn.csie.org/nightlessbbs/trunk/src/dict/
 # cdict-big5.l1idx
 # query.c
 
-¦]¬°dreye¤Ó¾÷¨®
-©Ò¥H¦Û¤v§ï¤F¤@­Óµ¹bbs¬d¸ß...
-¦³»İ­n½Ğ¦Û¤vsvn¤U¨Ó§a
+å› ç‚ºdreyeå¤ªæ©Ÿè»Š
+æ‰€ä»¥è‡ªå·±æ”¹äº†ä¸€å€‹çµ¦bbsæŸ¥è©¢...
+æœ‰éœ€è¦è«‹è‡ªå·±svnä¸‹ä¾†å§
 
-·PÁÂ­ì§@ªÌsyshen <(_ _)>
+æ„Ÿè¬åŸä½œè€…syshen <(_ _)>
 --
-[1;36m=[37m[[36m¡É[37m:[33m¡[37mİ¢¨[m¢©¡[1;33mİ[37m:[36m¡É [31mOrigin[37m ]|[[m  [0;31m°[1mÊ[1m¤[0;31mO[0;31m®[1mÖ[1m¤[0;31mß [1mcpu.tfcis.org  [37m]|[¡[33mİ£»¡[mİ[1;36m¡É[37m:][36m=[m
-[1;36m=[0m[[1;36m¡Ç[37m:[33m¡[30mİ¢ª[m¢¬¡[1;33mİ[37m:[36m¡Ç [31mAuthor[m ]|[[1mpc142.wireless2.scu.edu.tw[m]|[¡[1;33mİ[30m¡[37m´¡[30mİ[36m¡Ç[37m:[m][1;36m=[m
+[1;36m=[37m[[36mï¹[37m:[33m?[37mæ‘ƒ?[mâ—£?[1;33m?[37m:[36mï¹ [31mOrigin[37m ]|[[m  [0;31m?[1m?[1m?[0;31mO[0;31m?[1m?[1m?[0;31m?[1mcpu.tfcis.org  [37m]|[?[33mæŸèªª[m?[1;36mï¹[37m:][36m=[m
+[1;36m=[0m[[1;36mï¹Š[37m:[33m?[30mæ‘ƒ?[mâ•±?[1;33m?[37m:[36mï¹Š [31mAuthor[m ]|[[1mpc142.wireless2.scu.edu.tw[m]|[?[1;33m?[30m?[37mæ’[30m?[36mï¹Š[37m:[m][1;36m=[m

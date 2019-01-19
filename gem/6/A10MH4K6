@@ -1,11 +1,11 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (:MM:) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD] ¦p¦ó¦bµo¤å®É¡A¨¾¤î¥Î½Æ»s¶K¤WÁÈ¿ú
-µo«H¯¸: XEON (Thu, 15 May 2003 21:02:49 +0800 (CST))      Updated: 2004/04/10
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (:MM:) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] å¦‚ä½•åœ¨ç™¼æ–‡æ™‚ï¼Œé˜²æ­¢ç”¨è¤‡è£½è²¼ä¸Šè³ºéŒ¢
+ç™¼ä¿¡ç«™: XEON (Thu, 15 May 2003 21:02:49 +0800 (CST))      Updated: 2004/04/10
 
-¡° ¤Ş­z¡mqazq (¤@¥­®ü©¤½u)¡n¤§»Ê¨¥¡G
-> ¦³¨S¦³¤°»ò¤èªk¥i¥H¤@­Ó¦r¤@­Ó¦r§PÂ_©O¡H
+â€» å¼•è¿°ã€Šqazq (ä¸€å¹³æµ·å²¸ç·š)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æœ‰æ²’æœ‰ä»€éº¼æ–¹æ³•å¯ä»¥ä¸€å€‹å­—ä¸€å€‹å­—åˆ¤æ–·å‘¢ï¼Ÿ
 
-¡° ªk¤@ ¶§¬K«¬
+â€» æ³•ä¸€ é™½æ˜¥å‹
 
 : post.c:do_post()
 
@@ -13,24 +13,24 @@
     {
 +     if (wordsnum > spendtime * 3)
 +     {
-        mode = BMIN(wordsnum, spendtime) / 10;    /* ¨C¤Q¦r/¬í ¤@¤¸ */
-        prints("³o¬O±zªº²Ä %d ½g¤å³¹¡A±o %d »È¡C", ++cuser.numposts, mode);
+        mode = BMIN(wordsnum, spendtime) / 10;    /* æ¯åå­—/ç§’ ä¸€å…ƒ */
+        prints("é€™æ˜¯æ‚¨çš„ç¬¬ %d ç¯‡æ–‡ç« ï¼Œå¾— %d éŠ€ã€‚", ++cuser.numposts, mode);
         cuser.money += mode;
 +     }
 +     else
-+       prints("½Ğ¤£­n¨Ï¥Î copy-paste ªº¤èªk¨ÓÄF½Z¶O");
++       prints("è«‹ä¸è¦ä½¿ç”¨ copy-paste çš„æ–¹æ³•ä¾†é¨™ç¨¿è²»");
     }
 
-¡° ªk¤G ¼É¤O«¬
+â€» æ³•äºŒ æš´åŠ›å‹
 
-  ³o¤èªk¹ï·sª`­µ¿é¤Jªk¨ººØ¥´«Ü¦h¦A¤@¦¸¿é¤Jªº
-  ¤]·|§PÂ_¬° copy-paste :p
+  é€™æ–¹æ³•å°æ–°æ³¨éŸ³è¼¸å…¥æ³•é‚£ç¨®æ‰“å¾ˆå¤šå†ä¸€æ¬¡è¼¸å…¥çš„
+  ä¹Ÿæœƒåˆ¤æ–·ç‚º copy-paste :p
 
 : edit.c:vedit()
 
-+ int copypaste;    /* 1: ¥Î copy-paste ªº */
++ int copypaste;    /* 1: ç”¨ copy-paste çš„ */
 
-int             /* -1:¨ú®ø½s¿è 0:§¹¦¨½s¿è */
+int             /* -1:å–æ¶ˆç·¨è¼¯ 0:å®Œæˆç·¨è¼¯ */
 vedit(fpath, ve_op)
   char *fpath;
   int ve_op;
@@ -45,7 +45,7 @@ vedit(fpath, ve_op)
 + time(&lastype);
 
   /* --------------------------------------------------- */
-  /* ªì©l³]©w¡G¸ü¤JÀÉ®×¡B¤Ş¥Î¤å³¹¡B³]©w½s¿è¼Ò¦¡          */
+  /* åˆå§‹è¨­å®šï¼šè¼‰å…¥æª”æ¡ˆã€å¼•ç”¨æ–‡ç« ã€è¨­å®šç·¨è¼¯æ¨¡å¼          */
   /* --------------------------------------------------- */
 
   ...
@@ -55,10 +55,10 @@ vedit(fpath, ve_op)
 
     if (isprint2(cc))
     {
-+     if (!copypaste)         /* copy paste ÀË¬d */
++     if (!copypaste)         /* copy paste æª¢æŸ¥ */
 +     {
 +       typing++;
-+       if (typing == 5)      /* ¤@¬í³Ì¦h¿é¤J 5 ­Ó¦r */
++       if (typing == 5)      /* ä¸€ç§’æœ€å¤šè¼¸å…¥ 5 å€‹å­— */
 +       {
 +         typing = 0;
 +         time(&now);
@@ -78,16 +78,16 @@ vedit(fpath, ve_op)
 +     extern int copypaste;
 +     if (!copypaste)
 +     {
-        mode = BMIN(wordsnum, spendtime) / 10;    /* ¨C¤Q¦r/¤À ¤@¤¸ */
-        prints("³o¬O±zªº²Ä %d ½g¤å³¹¡A±o %d »È¡C", ++cuser.numposts, mode);
+        mode = BMIN(wordsnum, spendtime) / 10;    /* æ¯åå­—/åˆ† ä¸€å…ƒ */
+        prints("é€™æ˜¯æ‚¨çš„ç¬¬ %d ç¯‡æ–‡ç« ï¼Œå¾— %d éŠ€ã€‚", ++cuser.numposts, mode);
         cuser.money += mode;
-        /* itoc.010408: ¨Ì¤å³¹ªø«×/©Ò¶O®É¶¡¨Ó¨M©w­nµ¹¦h¤Ö¿ú */
-        /* itoc.µù¸Ñ: ¿ú­nÃøÁÈ¡A¹ô¨î¤~·|¦³·N¸q */
+        /* itoc.010408: ä¾æ–‡ç« é•·åº¦/æ‰€è²»æ™‚é–“ä¾†æ±ºå®šè¦çµ¦å¤šå°‘éŒ¢ */
+        /* itoc.è¨»è§£: éŒ¢è¦é›£è³ºï¼Œå¹£åˆ¶æ‰æœƒæœ‰æ„ç¾© */
 +     }
 +     else
-+       prints("½Ğ¤£­n¨Ï¥Î copy-paste ªº¤èªk¨ÓÄF½Z¶O");
++       prints("è«‹ä¸è¦ä½¿ç”¨ copy-paste çš„æ–¹æ³•ä¾†é¨™ç¨¿è²»");
     }
 
 --
-    [1;32m¢~¢w Origin ¢wùß [0;36m°[1mÊ[0;36m¤[1mO[0;36m®[1mÖ[0;36m¤[1mß [1;31m processor.tfcis.org [32m ¡ã £e£f£g ¢w¢t[m
-    [1;32m¢u   Author   ùë [33;44mitoc.Dorm-GD2.NCTU.edu.tw                [m
+    [1;32mâ•­â”€ Origin â”€â•— [0;36m?[1m?[0;36m?[1mO[0;36m?[1m?[0;36m?[1m?[1;31m processor.tfcis.org [32m ï½ ÎºÎ»Î¼ â”€â”¤[m
+    [1;32mâ”œ   Author   â•¡ [33;44mitoc.Dorm-GD2.NCTU.edu.tw                [m

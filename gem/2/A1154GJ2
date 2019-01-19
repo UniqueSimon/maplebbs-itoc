@@ -1,40 +1,40 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD] Cross-Post ¥ÎÃº»@³æªº¤è¦¡ ?
-µo«H¯¸: °Ê¤O®Ö¤ß (2005/04/05 Tue 12:01:25)                Updated: 2005/04/05
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] Cross-Post ç”¨ç¹³ç½°å–®çš„æ–¹å¼ ?
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2005/04/05 Tue 12:01:25)                Updated: 2005/04/05
 
-¡° ¤Ş­z¡mallean.bbs@micro.bio.ncue.edu.tw (allean)¡n¤§»Ê¨¥¡G
->     ¦³¨Ç¨Ï¥ÎªÌ¤£·Qµ¥¤T¤Ñ.¯à¤£¯à¸ò ptt ¤@¼Ë.
->     ¥ÎÃº»@³æªº¤è¦¡.¸Ñ¶}Åv­­ ?
+â€» å¼•è¿°ã€Šallean.bbs@micro.bio.ncue.edu.tw (allean)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>     æœ‰äº›ä½¿ç”¨è€…ä¸æƒ³ç­‰ä¸‰å¤©.èƒ½ä¸èƒ½è·Ÿ ptt ä¸€æ¨£.
+>     ç”¨ç¹³ç½°å–®çš„æ–¹å¼.è§£é–‹æ¬Šé™ ?
 
-  ¦b°±Åv®É¶¡¥¼º¡®É¡A¥i¥ÎÃº¶O¨Ó´£«e´_Åv
+  åœ¨åœæ¬Šæ™‚é–“æœªæ»¿æ™‚ï¼Œå¯ç”¨ç¹³è²»ä¾†æå‰å¾©æ¬Š
 
 : user.c:u_deny()
 
     else
     {
       ptime = gmtime(&diff);
-      sprintf(msg, "±zÁÙ­nµ¥ %d ¤Ñ %d ®É %d ¤À %d ¬í",
+      sprintf(msg, "æ‚¨é‚„è¦ç­‰ %d å¤© %d æ™‚ %d åˆ† %d ç§’",
         ptime->tm_yday, ptime->tm_hour, ptime->tm_min, ptime->tm_sec);
       vmsg(msg);
 
 +     if (!HAS_STATUS(STATUS_COINLOCK) &&
-+       cuser.money >= 100000 &&            [1;44m //»ù®æ¦Û©w [m
-+       vans("¬O§_Ãº¿ú´£«e¸Ñ°£°±Åv¡H[N] ") == 'y')
++       cuser.money >= 100000 &&            [1;44m //åƒ¹æ ¼è‡ªå®š [m
++       vans("æ˜¯å¦ç¹³éŒ¢æå‰è§£é™¤åœæ¬Šï¼Ÿ[N] ") == 'y')
 +     {
 +       if (acct_load(&acct, cuser.userid) >= 0)
 +       {
-+         cuser.money -= 100000;            [1;44m //»ù®æ¦Û©w [m
++         cuser.money -= 100000;            [1;44m //åƒ¹æ ¼è‡ªå®š [m
 +         time(&acct.tvalid);
 +#ifdef JUSTIFY_PERIODICAL
 +         acct_setperm(&acct, 0, PERM_ALLVALID | PERM_ALLDENY);
 +#else
 +         acct_setperm(&acct, 0, PERM_ALLDENY);
 +#endif
-+         vmsg("¤U¦¸½Ğ¤Å¦A¥Ç");
++         vmsg("ä¸‹æ¬¡è«‹å‹¿å†çŠ¯");
 +       }
 +     }
     }
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

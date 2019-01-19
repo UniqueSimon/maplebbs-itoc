@@ -1,12 +1,12 @@
-µo«H¤H: amaki.bbs@luna.twbbs.org (©Û³ê»ä­·ªº¦Ï) ¬İªO: plan
-¼Ğ  ÃD: [­×§ï]¦Û­q°ÆªO¥D«áÅÜ°Ê½u¤W¨Ï¥ÎªÌÅv­­
-µo«H¯¸: ¤ë¤U©]·Q (Thu, 11 Sep 2003 02:23:01 +0800 (CST))  Updated: 2003/09/13
+ç™¼ä¿¡äºº: amaki.bbs@luna.twbbs.org (æ‹›å–šé¢±é¢¨çš„ç¾Š) çœ‹æ¿: plan
+æ¨™  é¡Œ: [ä¿®æ”¹]è‡ªè¨‚å‰¯æ¿ä¸»å¾Œè®Šå‹•ç·šä¸Šä½¿ç”¨è€…æ¬Šé™
+ç™¼ä¿¡ç«™: æœˆä¸‹å¤œæƒ³ (Thu, 11 Sep 2003 02:23:01 +0800 (CST))  Updated: 2003/09/13
 
-  ÅÜ§ó°ÆªO¥D«á¡AÅı³Q¨ø¥ôªºªO¥D®³¤UÅv­­¡A·s¤W¥ôªO¥D±¾¤WÅv­­¡A³o­Ó­×§ï½Ğ¤Åª¼¥Ø§Û
+  è®Šæ›´å‰¯æ¿ä¸»å¾Œï¼Œè®“è¢«å¸ä»»çš„æ¿ä¸»æ‹¿ä¸‹æ¬Šé™ï¼Œæ–°ä¸Šä»»æ¿ä¸»æ›ä¸Šæ¬Šé™ï¼Œé€™å€‹ä¿®æ”¹è«‹å‹¿ç›²ç›®æŠ„
 
-  ¤U­±ªºµ{¦¡½X¡A±z¥²¶·¦³°µ¡u½u¤WÅÜ§ó¨Ï¥ÎªÌÅv­­¡v¥B·s¼W¬ÛÃö¨ç¦¡¡A¥i°Ñ¦ÒitocºëµØ
+  ä¸‹é¢çš„ç¨‹å¼ç¢¼ï¼Œæ‚¨å¿…é ˆæœ‰åšã€Œç·šä¸Šè®Šæ›´ä½¿ç”¨è€…æ¬Šé™ã€ä¸”æ–°å¢ç›¸é—œå‡½å¼ï¼Œå¯åƒè€ƒitocç²¾è¯
 
-  °Ï¡C
+  å€ã€‚
 
 : manage.c : post_changeBM()
 
@@ -25,9 +25,9 @@ post_changeBM(xo)
 
   while (1)
   {
-    if (!vget(10, 0, "½Ğ¿é¤JªO¥D¡Aµ²§ô½Ğ«ö .....", uid, IDLEN + 1, DOECHO))
+    if (!vget(10, 0, "è«‹è¼¸å…¥æ¿ä¸»ï¼ŒçµæŸè«‹æŒ‰ .....", uid, IDLEN + 1, DOECHO))
     {
--      if (dirty != strlen(cuser.userid))    /* ¦³°µ­×§ï */
+-      if (dirty != strlen(cuser.userid))    /* æœ‰åšä¿®æ”¹ */
 -        strcpy(newbrd.BM, buf);
 +      if ((*uid == '\0' || !strcmp(cuser.userid, uid)) && !has_set)
 +        return XO_BODY;
@@ -40,11 +40,11 @@ post_changeBM(xo)
 
       strcat(buf, "/");
       strcat(buf, acct.userid);
-      buf[BMLEN] = '\0';                /* Á×§K¹Lªø */
+      buf[BMLEN] = '\0';                /* é¿å…éé•· */
 +      strcpy(newbrd.BM, buf);
 
       move(8, 0);
-      prints("¥Ø«eªO¥D¬° %s", buf);
+      prints("ç›®å‰æ¿ä¸»ç‚º %s", buf);
       clrtoeol();
 
 +      has_set = 1;
@@ -62,12 +62,12 @@ post_changeBM(xo)
 
 : cache.c : utmp_BMset()
 
-  ·s¼W³o¤ä¨ç¦¡¡A¦ı½Ğ¤Åª¼¥Ø§Û¿ı¤U­±µ{¦¡½X¡A¤U­±µ{¦¡½X¦W³æÀÉªº¸ô®|½Ğ¥Î¦Û¤v¯¸¤Wªº
+  æ–°å¢é€™æ”¯å‡½å¼ï¼Œä½†è«‹å‹¿ç›²ç›®æŠ„éŒ„ä¸‹é¢ç¨‹å¼ç¢¼ï¼Œä¸‹é¢ç¨‹å¼ç¢¼åå–®æª”çš„è·¯å¾‘è«‹ç”¨è‡ªå·±ç«™ä¸Šçš„
 
-  ¦W³æÀÉ¸ô®|©Î¬OÀÉ¦W¡A¥B¶·°µÅÜ§ó¡C
+  åå–®æª”è·¯å¾‘æˆ–æ˜¯æª”åï¼Œä¸”é ˆåšè®Šæ›´ã€‚
 
 void
-utmp_BMset(blist, bno)   /* amaki.030909: °ÊºA³]©w½u¤WªO¥Dªº¬İªO¾\ÅªÅv­­ */
+utmp_BMset(blist, bno)   /* amaki.030909: å‹•æ…‹è¨­å®šç·šä¸Šæ¿ä¸»çš„çœ‹æ¿é–±è®€æ¬Šé™ */
   char *blist;
   int bno;
 {
@@ -96,7 +96,7 @@ utmp_BMset(blist, bno)   /* amaki.030909: °ÊºA³]©w½u¤WªO¥Dªº¬İªO¾\ÅªÅv­­ */
 
   do
   {
-    /* ­«·s§PÂ_¸ÓªOªº brd_bits */
+    /* é‡æ–°åˆ¤æ–·è©²æ¿çš„ brd_bits */
     if (is_bm(blist, uentp->userid))
     {
       uentp->brd_bits[bno] =(uentp->brd_bits[bno] &

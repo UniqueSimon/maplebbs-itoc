@@ -1,15 +1,15 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD]Ãö©ó¬İªOÄİ©Ê...
-µo«H¯¸: °Ê¤O®Ö¤ß (2005/02/18 Fri 09:42:21)                Updated: 2006/02/13
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ]é—œæ–¼çœ‹æ¿å±¬æ€§...
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2005/02/18 Fri 09:42:21)                Updated: 2006/02/13
 
-¡° ¤Ş­z¡mdavidliu.bbs@bbs.dlit.edu.tw (David)¡n¤§»Ê¨¥¡G
-> ½Ğ°İ¤@¤U¬O§_¦³¿ìªk³]©w¬Y¬İªO¬°"§R¤å«á¤å³¹¤£¶ideleted/junkªO"?
-> ¦Ó¤£¬O¥u¦³¯¦±KªO¤~¥i³]©w¦¹¥\¯à¡C
+â€» å¼•è¿°ã€Šdavidliu.bbs@bbs.dlit.edu.tw (David)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> è«‹å•ä¸€ä¸‹æ˜¯å¦æœ‰è¾¦æ³•è¨­å®šæŸçœ‹æ¿ç‚º"åˆªæ–‡å¾Œæ–‡ç« ä¸é€²deleted/junkæ¿"?
+> è€Œä¸æ˜¯åªæœ‰ç¥•å¯†æ¿æ‰å¯è¨­å®šæ­¤åŠŸèƒ½ã€‚
 
 : battr.h
 
-  #define BRD_NOSCORE     0x40    /* ¤£µû¤À¬İªO */
-+ #define BRD_NOGODELETE  0x80    /* §R¤å«á¤å³¹¤£¶i deleted/junk ªO */
+  #define BRD_NOSCORE     0x40    /* ä¸è©•åˆ†çœ‹æ¿ */
++ #define BRD_NOGODELETE  0x80    /* åˆªæ–‡å¾Œæ–‡ç« ä¸é€² deleted/junk æ¿ */
 
 - #define NUMBATTRS       7
 - #define STR_BATTR       "zTcsvA%"
@@ -18,14 +18,14 @@
 
 : battr.h:battr_tbl[]
 
-  "¤£µû¤À¬İªO",                 /* BRD_NOSCORE */
-+ "§R¤å¤£¶i [deleted]",         /* BRD_NOGODELETED */
+  "ä¸è©•åˆ†çœ‹æ¿",                 /* BRD_NOSCORE */
++ "åˆªæ–‡ä¸é€² [deleted]",         /* BRD_NOGODELETED */
 
 : post.c:move_post()
 
-- if (!(xmode & POST_BOTTOM))   /* ¸m©³¤å³Q¬å¤£¥Î move_post */
+- if (!(xmode & POST_BOTTOM))   /* ç½®åº•æ–‡è¢«ç ä¸ç”¨ move_post */
 + if (!(xmode & POST_BOTTOM) && !(currbattr & BRD_NOGODELETE))
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

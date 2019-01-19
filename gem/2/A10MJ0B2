@@ -1,19 +1,19 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G602) ¯¸¤º: plan
-¼ĞÃD: [¥\¯à] ­««Ø©Ò¦³¨Ï¥ÎªÌªº¤W¯¸³qª¾ÀÉ
-®É¶¡: 2004/10/11 Mon 02:19:41                           Updated: 2004/11/22
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š602) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] é‡å»ºæ‰€æœ‰ä½¿ç”¨è€…çš„ä¸Šç«™é€šçŸ¥æª”
+æ™‚é–“: 2004/10/11 Mon 02:19:41                           Updated: 2004/11/22
 
-  §Q¥Î FN_ALOHA ¨Ó­««Ø FN_FRIENZ
+  åˆ©ç”¨ FN_ALOHA ä¾†é‡å»º FN_FRIENZ
 
 : src/util/Makefile
 
 EXE =   ..... [1;33mfix_frienz[m
 
-: util/fix_frienz.c ·s¼W¦¹µ{¦¡
+: util/fix_frienz.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* util/fix_frienz.c    ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ­««Ø©Ò¦³¨Ï¥ÎªÌªº¤W¯¸³qª¾ÀÉ                   */
+/* target : é‡å»ºæ‰€æœ‰ä½¿ç”¨è€…çš„ä¸Šç«™é€šçŸ¥æª”                   */
 /* create : 04/10/11                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -100,7 +100,7 @@ main()
 
     closedir(dirp);
 
-    printf("§R°£ frienz: ³B²z§¹ %c ¶}ÀYªº ID\n", c);
+    printf("åˆªé™¤ frienz: è™•ç†å®Œ %c é–‹é ­çš„ ID\n", c);
   }
 
   for (c = 'a'; c <= 'z'; c++)
@@ -122,11 +122,11 @@ main()
 
     closedir(dirp);
 
-    printf("­««Ø frienz: ³B²z§¹ %c ¶}ÀYªº ID\n", c);
+    printf("é‡å»º frienz: è™•ç†å®Œ %c é–‹é ­çš„ ID\n", c);
   }
 
   return 0;
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

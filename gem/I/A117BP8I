@@ -1,14 +1,14 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¯¸¤º: itoc
-¼ĞÃD: Re: ¬O§_¥i¥H¦Ò¼{¼W¥[²M°£±À¤å¤º®eªº¥\¯à(¤£¶®ªº¤@¦æ¤å)???
-®É¶¡: 2004/10/15 Fri 22:26:48                           Updated: 2004/10/24
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) ç«™å…§: itoc
+æ¨™é¡Œ: Re: æ˜¯å¦å¯ä»¥è€ƒæ…®å¢åŠ æ¸…é™¤æ¨æ–‡å…§å®¹çš„åŠŸèƒ½(ä¸é›…çš„ä¸€è¡Œæ–‡)???
+æ™‚é–“: 2004/10/15 Fri 22:26:48                           Updated: 2004/10/24
 
-¡° ¤Ş­z¡mcomfan (Ãø¹L  ¶Ë¤ß)¡n¤§»Ê¨¥¡G
-> ¦³¨Ç¤HÀİ¥Î±ÀÂË¤å³¹¥\¯àªº¦^¤@¦æ¤å ¦b¦^À³§O¤Hªº¤å³¹¤§¤¤¥X²{¤F
-> ¤£¶®©Î½|¤H  ¤H¨­§ğÀ»....µ¥ªº¦r²´
-> ¬O§_¥i¥H¼W¥[¤@­Ó¥\¯àÅıª©¥D¦b¥L­t³dºŞ²zªº¬İªO¸Ì­±«ö¬Y­Ó«öÁä(«ü¥O)
-> ²M°£¤@¦æ¤åªº¤º®e
+â€» å¼•è¿°ã€Šcomfan (é›£é  å‚·å¿ƒ)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æœ‰äº›äººæ¿«ç”¨æ¨è–¦æ–‡ç« åŠŸèƒ½çš„å›ä¸€è¡Œæ–‡ åœ¨å›æ‡‰åˆ¥äººçš„æ–‡ç« ä¹‹ä¸­å‡ºç¾äº†
+> ä¸é›…æˆ–ç½µäºº  äººèº«æ”»æ“Š....ç­‰çš„å­—çœ¼
+> æ˜¯å¦å¯ä»¥å¢åŠ ä¸€å€‹åŠŸèƒ½è®“ç‰ˆä¸»åœ¨ä»–è² è²¬ç®¡ç†çš„çœ‹æ¿è£¡é¢æŒ‰æŸå€‹æŒ‰éµ(æŒ‡ä»¤)
+> æ¸…é™¤ä¸€è¡Œæ–‡çš„å…§å®¹
 
-: post.c:post_delscore() ·s¼W¦b post_help() «e­±
+: post.c:post_delscore() æ–°å¢åœ¨ post_help() å‰é¢
 
 #ifdef HAVE_SCORE
 static int
@@ -22,15 +22,15 @@ post_delscore(xo)
   struct tm *ptime;
   time_t now;
 
-  if (!cuser.userlevel || !(bbstate & STAT_POST))       /* µû¤Àµø¦Pµoªí¤å³¹ */
+  if (!cuser.userlevel || !(bbstate & STAT_POST))       /* è©•åˆ†è¦–åŒç™¼è¡¨æ–‡ç«  */
     return XO_NONE;
 
-  if (!vget(b_lines, 0, "­n§R°£ªºµû¤À(ÃöÁä¦r)¡G", reason, 50, DOECHO))
+  if (!vget(b_lines, 0, "è¦åˆªé™¤çš„è©•åˆ†(é—œéµå­—)ï¼š", reason, 50, DOECHO))
     return XO_FOOT;
 
   if (!(bbstate & STAT_BOARD))
   {
-    sprintf(userid, "¡÷ \033[36m%s \033[3", cuser.userid);
+    sprintf(userid, "â†’ \033[36m%s \033[3", cuser.userid);
     len = strlen(userid);
   }
 
@@ -59,12 +59,12 @@ post_delscore(xo)
       if ((bbstate & STAT_BOARD || !strncmp(buf, userid, len)) &&
         strstr(buf, reason))
       {
-        [1;44m// ­Y¥[¤J¤U¤@¦æ continue; ¨º»ò¦b¤å³¹¤º´N¤£·|Åã¥Ü±À¤å³Q§R°£ªº°T®§ [m
+        [1;44m// è‹¥åŠ å…¥ä¸‹ä¸€è¡Œ continue; é‚£éº¼åœ¨æ–‡ç« å…§å°±ä¸æœƒé¡¯ç¤ºæ¨æ–‡è¢«åˆªé™¤çš„è¨Šæ¯ [m
         /* continue; */
 
-        sprintf(buf, "¡÷ \033[36m%s \033[35m§R\033[m¡G"
+        sprintf(buf, "â†’ \033[36m%s \033[35måˆª\033[mï¼š"
           "\033[1;33m%-*s\033[m%02d/%02d/%02d\n",
-          cuser.userid, 62 - strlen(cuser.userid), "¦¹·N¨£³Q§R°£",
+          cuser.userid, 62 - strlen(cuser.userid), "æ­¤æ„è¦‹è¢«åˆªé™¤",
           ptime->tm_year % 100, ptime->tm_mon + 1, ptime->tm_mday);
       }
     }
@@ -85,10 +85,10 @@ post_delscore(xo)
 
 #ifdef HAVE_SCORE
   '%', post_score,
-+ 'K', post_delscore,           [1;44m // «öÁä¦Û©w [m
++ 'K', post_delscore,           [1;44m // æŒ‰éµè‡ªå®š [m
 #endif
 
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m Maple-itoc£»°Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
- [1;43m¢¢[46mùñ[m [1mMo[30mdi[mfy: [1;35m2004/10/15 Fri 22:27:14[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
+ [1;43mâ•°[46mâ•–[m [1mMo[30mdi[mfy: [1;35m2004/10/15 Fri 22:27:14[m

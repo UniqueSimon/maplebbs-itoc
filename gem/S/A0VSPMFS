@@ -1,20 +1,20 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: Ãö©óM3 for win
-®É¶¡: Wed Dec  3 02:25:27 2003                          Updated: 2005/04/05
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: é—œæ–¼M3 for win
+æ™‚é–“: Wed Dec  3 02:25:27 2003                          Updated: 2005/04/05
 
-¡° ¤Ş­z¡mGainer.bbs@venus.nhit.edu.tw (GAI)¡n¤§»Ê¨¥¡G
-> §Ú¤w¸g¬[³]Maple¤£¹L¦b¨t²ÎºûÅ@°Ï¸Ì­±¤Ö¤F¤@¦V'³]©wÅv­­'
-> ­n¦p¦ó·s¼W©O??
+â€» å¼•è¿°ã€ŠGainer.bbs@venus.nhit.edu.tw (GAI)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æˆ‘å·²ç¶“æ¶è¨­Mapleä¸éåœ¨ç³»çµ±ç¶­è­·å€è£¡é¢å°‘äº†ä¸€å‘'è¨­å®šæ¬Šé™'
+> è¦å¦‚ä½•æ–°å¢å‘¢??
 
 : menu.c:menu_admin[]
 
   "bin/admutil.so:a_user", PERM_ALLACCT, - M_SYSTEM,
-  "User       ¢« ÅU«È¸ê®Æ ¢¨",
+  "User       â—¤ é¡§å®¢è³‡æ–™ â—¢",
 
 + "bin/admutil.so:a_setperm", PERM_ALLBOARD, - M_SYSTEM,
-+ "Perm       ¢« ³]©wÅv­­ ¢¨",
++ "Perm       â—¤ è¨­å®šæ¬Šé™ â—¢",
 
-: admutil.c:a_setperm() ¥[¦b a_user() «á­±
+: admutil.c:a_setperm() åŠ åœ¨ a_user() å¾Œé¢
 
 int
 a_setperm()
@@ -29,22 +29,22 @@ a_setperm()
 
   while (acct_get(msg_uid, &acct) > 0)
   {
-    if (acct.userlevel & PERM_ALLADMIN)        /* ¤£¯à§ï¯¸°ÈªºÅv­­ */
+    if (acct.userlevel & PERM_ALLADMIN)        /* ä¸èƒ½æ”¹ç«™å‹™çš„æ¬Šé™ */
       return 0;
 
-    [1;44m// ¦pªG¤j¯¸ªø¤£·QÅı¤p¯¸ªø¥Î  ¢« ³]©wÅv­­ ¢¨ ³o¿ï¶µ¬İ¨Ï¥ÎªÌ¸ê®Æ [m
-    [1;44m// ¨º»ò¥i¥H§â¤U­±³o¦æ®³±¼                                      [m
-    acct_show(&acct, 1);        /* Åã¥Ü¨Ï¥ÎªÌ¸ê®Æ */
+    [1;44m// å¦‚æœå¤§ç«™é•·ä¸æƒ³è®“å°ç«™é•·ç”¨  â—¤ è¨­å®šæ¬Šé™ â—¢ é€™é¸é …çœ‹ä½¿ç”¨è€…è³‡æ–™ [m
+    [1;44m// é‚£éº¼å¯ä»¥æŠŠä¸‹é¢é€™è¡Œæ‹¿æ‰                                      [m
+    acct_show(&acct, 1);        /* é¡¯ç¤ºä½¿ç”¨è€…è³‡æ–™ */
 
     if (HAS_PERM(PERM_ALLACCT))
     {
-      adm = vans("³]©w 1)ªO¥D¤W¥ô 2)ªO¥D¨ø¥ô 3)°±Åv 4)´_Åv 5)¬å±b¸¹¡H[Q] ");
+      adm = vans("è¨­å®š 1)æ¿ä¸»ä¸Šä»» 2)æ¿ä¸»å¸ä»» 3)åœæ¬Š 4)å¾©æ¬Š 5)ç å¸³è™Ÿï¼Ÿ[Q] ");
       if (adm < '1' || adm > '5')
         return 0;
     }
     else /* if (HAS_PERM(PERM_ALLBOARD)) */
     {
-      adm = vans("³]©w 1)ªO¥D¤W¥ô 2)ªO¥D¨ø¥ô Q)¨ú®ø [Q] ");
+      adm = vans("è¨­å®š 1)æ¿ä¸»ä¸Šä»» 2)æ¿ä¸»å¸ä»» Q)å–æ¶ˆ [Q] ");
       if (adm < '1' || adm > '2')
         return 0;
     }
@@ -66,22 +66,22 @@ a_setperm()
 
     case '3':
       levelup = 0;
-      if (vans("½Ğ°İ­n°±¤î³o¦ì¨Ï¥ÎªÌªºµo¤åÅv¶Ü(Y/N)¡H[Y] ") != 'n')
+      if (vans("è«‹å•è¦åœæ­¢é€™ä½ä½¿ç”¨è€…çš„ç™¼æ–‡æ¬Šå—(Y/N)ï¼Ÿ[Y] ") != 'n')
         levelup |= PERM_DENYPOST;
-      if (vans("½Ğ°İ­n°±¤î³o¦ì¨Ï¥ÎªÌªº½Í¸ÜÅv¶Ü(Y/N)¡H[Y] ") != 'n')
+      if (vans("è«‹å•è¦åœæ­¢é€™ä½ä½¿ç”¨è€…çš„è«‡è©±æ¬Šå—(Y/N)ï¼Ÿ[Y] ") != 'n')
         levelup |= PERM_DENYTALK;
-      if (vans("½Ğ°İ­n°±¤î³o¦ì¨Ï¥ÎªÌªº²á¤ÑÅv¶Ü(Y/N)¡H[Y] ") != 'n')
+      if (vans("è«‹å•è¦åœæ­¢é€™ä½ä½¿ç”¨è€…çš„èŠå¤©æ¬Šå—(Y/N)ï¼Ÿ[Y] ") != 'n')
         levelup |= PERM_DENYCHAT;
-      if (vans("½Ğ°İ­n°±¤î³o¦ì¨Ï¥ÎªÌªº±H«HÅv¶Ü(Y/N)¡H[Y] ") != 'n')
+      if (vans("è«‹å•è¦åœæ­¢é€™ä½ä½¿ç”¨è€…çš„å¯„ä¿¡æ¬Šå—(Y/N)ï¼Ÿ[Y] ") != 'n')
         levelup |= PERM_DENYMAIL;
       leveldown = 0;
 
-      /* °±Åv­n«ü©w´Á­­ */
+      /* åœæ¬Šè¦æŒ‡å®šæœŸé™ */
       adm = -1;
-      if (vget(b_lines, 0, "°±Åv´X¤Ñ¡G", ans, 4, DOECHO))
+      if (vget(b_lines, 0, "åœæ¬Šå¹¾å¤©ï¼š", ans, 4, DOECHO))
         adm = atoi(ans);
       if (adm <= 0)
-        adm = 30;         /* ¹w³] 30 ¤Ñ */
+        adm = 30;         /* é è¨­ 30 å¤© */
       acct.tvalid = time(0) + adm * 86400;
       break;
 
@@ -103,17 +103,17 @@ a_setperm()
   return 0;
 }
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  ¯¸°È°±Åv»İ­n¿é¤J²z¥Ñ¡A¨Ã¥B§â²z¥Ñ°O¦b log ªO
+  ç«™å‹™åœæ¬Šéœ€è¦è¼¸å…¥ç†ç”±ï¼Œä¸¦ä¸”æŠŠç†ç”±è¨˜åœ¨ log æ¿
 
-: admutil.c ·s¼W¥H¤U¨ç¦¡¦b a_setperm() «e­±
+: admutil.c æ–°å¢ä»¥ä¸‹å‡½å¼åœ¨ a_setperm() å‰é¢
 
 static void
-add_post(brdname, fpath, title)           /* µo¤å¨ì¬İªO */
-  char *brdname;        /* ±ı post ªº¬İªO */
-  char *fpath;          /* ÀÉ®×¸ô®| */
-  char *title;          /* ¤å³¹¼ĞÃD */
+add_post(brdname, fpath, title)           /* ç™¼æ–‡åˆ°çœ‹æ¿ */
+  char *brdname;        /* æ¬² post çš„çœ‹æ¿ */
+  char *fpath;          /* æª”æ¡ˆè·¯å¾‘ */
+  char *title;          /* æ–‡ç« æ¨™é¡Œ */
 {
   HDR hdr;
   char folder[64];
@@ -136,21 +136,21 @@ log_setperm(userid, day, reason)
   char fpath[64], title[TTLEN + 1];
   FILE *fp;
 
-  sprintf(fpath, "tmp/log_setperm.%s", cuser.userid);   /* ¼È¦sÀÉ */
+  sprintf(fpath, "tmp/log_setperm.%s", cuser.userid);   /* æš«å­˜æª” */
   if (fp = fopen(fpath, "w"))
   {
-    sprintf(title, "¯¸ªø %s °± %s Åv %d ¤Ñ",
+    sprintf(title, "ç«™é•· %s åœ %s æ¬Š %d å¤©",
       cuser.userid, userid, day);
 
-    /* ¤å³¹ÀÉÀY */
+    /* æ–‡ç« æª”é ­ */
     fprintf(fp, "%s %s (%s) %s %s\n",
       str_author1, cuser.userid, cuser.username,
       str_post2, BN_SECURITY);
-    fprintf(fp, "¼ĞÃD: %s\n®É¶¡: %s\n\n", title, Now());
+    fprintf(fp, "æ¨™é¡Œ: %s\næ™‚é–“: %s\n\n", title, Now());
 
-    /* ¤å³¹¤º®e */
+    /* æ–‡ç« å…§å®¹ */
     fprintf(fp, "%s\n\n", title);
-    fprintf(fp, "²z¥Ñ¡G%s\n\n", reason);
+    fprintf(fp, "ç†ç”±ï¼š%s\n\n", reason);
     fclose(fp);
 
     add_post(BN_SECURITY, fpath, title);
@@ -169,18 +169,18 @@ log_setperm(userid, day, reason)
   ...
   ...
 
-      /* °±Åv­n«ü©w´Á­­ */
+      /* åœæ¬Šè¦æŒ‡å®šæœŸé™ */
       adm = -1;
-      if (vget(b_lines, 0, "°±Åv´X¤Ñ¡G", ans, 4, DOECHO))
+      if (vget(b_lines, 0, "åœæ¬Šå¹¾å¤©ï¼š", ans, 4, DOECHO))
         adm = atoi(ans);
       if (adm <= 0)
-        adm = 30;         /* ¹w³] 30 ¤Ñ */
+        adm = 30;         /* é è¨­ 30 å¤© */
       acct.tvalid = time(0) + adm * 86400;
-+     if (!vget(b_lines, 0, "°±Åv²z¥Ñ¡G", reason, 50, DOECHO))
-+       strcpy(reason, "²ö¶·¦³");
++     if (!vget(b_lines, 0, "åœæ¬Šç†ç”±ï¼š", reason, 50, DOECHO))
++       strcpy(reason, "è«é ˆæœ‰");
 +     log_setperm(acct.userid, adm, reason);
       break;
 
 --
- [1;43m¢z[44m¢q[m Or[1mig[30min[m: [44m Maple-itoc£»°Ê¤O®Ö¤ß [31;47m processor.tfcis.org [m
- [1;41m¢|[42m¢}[m A[1mut[30mho[mr: [1;36mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [44m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [31;47m processor.tfcis.org [m
+ [1;41mâ””[42mâ”˜[m A[1mut[30mho[mr: [1;36mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

@@ -1,22 +1,22 @@
-µo«H¤H: verit.bbs@bbs.yzu.edu.tw (.......................) ¬İªO: InstallBBS
-¼Ğ  ÃD: [WindTop]·s®ö¬P®y¹B¶Õ¬d¸ß
-µo«H¯¸: ¤¸´¼¤j¾Ç­·¤§¶ğ (Fri, 18 Jul 2003 02:42:53 +0800)  Updated: 2004/09/07
+ç™¼ä¿¡äºº: verit.bbs@bbs.yzu.edu.tw (.......................) çœ‹æ¿: InstallBBS
+æ¨™  é¡Œ: [WindTop]æ–°æµªæ˜Ÿåº§é‹å‹¢æŸ¥è©¢
+ç™¼ä¿¡ç«™: å…ƒæ™ºå¤§å­¸é¢¨ä¹‹å¡” (Fri, 18 Jul 2003 02:42:53 +0800)  Updated: 2004/09/07
 
-³o°¦µ{¦¡­n #define POPUP_ANSWER ¤~¯àª½±µ¨Ï¥Î¡ã
+é€™éš»ç¨‹å¼è¦ #define POPUP_ANSWER æ‰èƒ½ç›´æ¥ä½¿ç”¨ï½
 
-°²¦p¨S¦³ªº¸Ü , ±o§â main_sinastar() ¤¤ªº pans §ï¦¨ vans  :)
+å‡å¦‚æ²’æœ‰çš„è©± , å¾—æŠŠ main_sinastar() ä¸­çš„ pans æ”¹æˆ vans  :)
 
-: maple/menu.c:¾A·í¿ï¶µ¤¤¥[¤J
+: maple/menu.c:é©ç•¶é¸é …ä¸­åŠ å…¥
 
 + "bin/sinastar.so:main_sinastar", 0, - M_XMODE,
-+ "NStar      ¡ñ ¬P®y¹B¶Õ ¡ğ",
++ "NStar      â™‚ æ˜Ÿåº§é‹å‹¢ â™€",
 
 
 : so/Makefile
 
         bbsnet.so dreye.so enews.so railway.so [1;33msinastar.so[m \
 
-: so/sinastar.c ¥[¤J³o°¦µ{¦¡
+: so/sinastar.c åŠ å…¥é€™éš»ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* sinastar.c   (YZU WindTopBBS Ver 3.02 )               */
@@ -64,12 +64,12 @@ http_conn(server, s, kind)
   };
 
 
-  mouts(b_lines - 1, 0, "³s±µ¦øªA¾¹¤¤¡A½Ğµy­Ô.............");
+  mouts(b_lines - 1, 0, "é€£æ¥ä¼ºæœå™¨ä¸­ï¼Œè«‹ç¨å€™.............");
   refresh();
 
   if ((sockfd = dns_open(server, HTTP_PORT)) < 0)
   {
-    vmsg("µLªk»P¦øªA¾¹¨ú±o³sµ²¡A¬d¸ß¥¢±Ñ");
+    vmsg("ç„¡æ³•èˆ‡ä¼ºæœå™¨å–å¾—é€£çµï¼ŒæŸ¥è©¢å¤±æ•—");
     return -1;
   }
 
@@ -166,20 +166,20 @@ http_conn(server, s, kind)
     }
   }
   close(sockfd);
-  fputs("\n\n    ¸ê®Æ¨Ó·½¬°·s®ö¬P®yºâ©Rºô http://mindcity.sina.com.tw/\n\n.", fp);
+  fputs("\n\n    è³‡æ–™ä¾†æºç‚ºæ–°æµªæ˜Ÿåº§ç®—å‘½ç¶² http://mindcity.sina.com.tw/\n\n.", fp);
   fclose(fp);
 
   if (more(fname, (char *) -1) >= 0)
   {
-    if (vans("±z­n±N¬d¸ßµ²ªG±H¦^«H½c¶Ü¡H[N] ") == 'y')
-      mail_self(fname, cuser.userid, "[³Æ §Ñ ¿ı] ·s®ö¬P®y¬d¸ßµ²ªG", MAIL_READ);
+    if (vans("æ‚¨è¦å°‡æŸ¥è©¢çµæœå¯„å›ä¿¡ç®±å—ï¼Ÿ[N] ") == 'y')
+      mail_self(fname, cuser.userid, "[å‚™ å¿˜ éŒ„] æ–°æµªæ˜Ÿåº§æŸ¥è©¢çµæœ", MAIL_READ);
   }
 
   unlink(fname);
   return 0;
 }
 
-/* °_©lÂI */
+/* èµ·å§‹é» */
 int
 main_sinastar()
 {
@@ -196,26 +196,26 @@ main_sinastar()
   char *strades[14] =
   {
     "A0",
-    "AAries        ¨d¦Ï®y",  "BTaurus       ª÷¤û®y",  "CGemini       Âù¤l®y",
-    "DCancer       ¥¨ÃÉ®y",  "ELeo          ·à¤l®y",  "FVirgo        ³B¤k®y",
-    "GLibra        ¤Ñ¯¯®y",  "HScorpio      ¤ÑÃÈ®y",  "ISagittarius  ®g¤â®y",
-    "JCapricorn    Å]½~®y",  "KAquarius     ¤ô²~®y",  "LPisces       Âù³½®y",
+    "AAries        ç‰¡ç¾Šåº§",  "BTaurus       é‡‘ç‰›åº§",  "CGemini       é›™å­åº§",
+    "DCancer       å·¨èŸ¹åº§",  "ELeo          ç…å­åº§",  "FVirgo        è™•å¥³åº§",
+    "GLibra        å¤©ç§¤åº§",  "HScorpio      å¤©è åº§",  "ISagittarius  å°„æ‰‹åº§",
+    "JCapricorn    é­”ç¾¯åº§",  "KAquarius     æ°´ç“¶åº§",  "LPisces       é›™é­šåº§",
     NULL
   };
 
   char *_kind[7] =
   {
     "A0",
-    "AToday      ¤µ¤é¹B¶Õ", "BTomorrow   ©ú¤é¹B¶Õ", "CWeek       ¤@¶g¹B¶Õ",
-    "DMonth      ¥»¤ë¹B¶Õ", "EYear       ¦~«×¹B¶Õ",
+    "AToday      ä»Šæ—¥é‹å‹¢", "BTomorrow   æ˜æ—¥é‹å‹¢", "CWeek       ä¸€é€±é‹å‹¢",
+    "DMonth      æœ¬æœˆé‹å‹¢", "EYear       å¹´åº¦é‹å‹¢",
     NULL
   };
 
   clear();
-  if ((c1 = pans(3, 18, "¿ï¾Ü¬P®y", strades)) >= 'a')
+  if ((c1 = pans(3, 18, "é¸æ“‡æ˜Ÿåº§", strades)) >= 'a')
   {
     clear();
-    if ((c2 = pans(6, 18, "¿ï¾ÜÃş«¬", _kind)) >= 'a')
+    if ((c2 = pans(6, 18, "é¸æ“‡é¡å‹", _kind)) >= 'a')
     {
       c1 -= 'a';
       c2 -= 'a';
@@ -228,5 +228,5 @@ main_sinastar()
 }
 
 --
-[1;32m¡° Origin: [33m¤¸´¼¤j¾Ç ­·¤§¶ğ [37m<bbs.yzu.edu.tw>[m
-[1;32m¡° From  : [36mbbs.yzu.edu.tw[m
+[1;32mâ€» Origin: [33må…ƒæ™ºå¤§å­¸ é¢¨ä¹‹å¡” [37m<bbs.yzu.edu.tw>[m
+[1;32mâ€» From  : [36mbbs.yzu.edu.tw[m

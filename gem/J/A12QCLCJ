@@ -1,25 +1,25 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬ÝªO: plan
-¼Ð  ÃD: Re: [°ÝÃD] ¦p¦ó°µ©w®É­«¸m¤H®ð
-µo«H¯¸: °Ê¤O®Ö¤ß (2007/01/11 Thu 23:04:38)                Updated: 2007/01/11
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] å¦‚ä½•åšå®šæ™‚é‡ç½®äººæ°£
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2007/01/11 Thu 23:04:38)                Updated: 2007/01/11
 
-¡° ¤Þ­z¡mguessi (¨S)¡n¤§»Ê¨¥¡G
-> ·Qªk: crontab¨C¤@¤p®É ±½board list ¦A±½ulist §ó·smantime
+â€» å¼•è¿°ã€Šguessi (æ²’)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æƒ³æ³•: crontabæ¯ä¸€å°æ™‚ æŽƒboard list å†æŽƒulist æ›´æ–°mantime
 
-: crontab -e ¥[¤J³o¤G¦æ©ó³Ì«á
+: crontab -e åŠ å…¥é€™äºŒè¡Œæ–¼æœ€å¾Œ
 
-# ¨C¤p®É§@¤T¦¸­«¸m¬ÝªO¤H®ð
+# æ¯å°æ™‚ä½œä¸‰æ¬¡é‡ç½®çœ‹æ¿äººæ°£
 6,26,46 * * * * bin/resetbh > /dev/null 2>&1
 
 : src/util/Makefile
 
 EXE =   ... [1;33mresetbh[m
 
-: src/util/resetbh.c ·s¼W¦¹µ{¦¡
+: src/util/resetbh.c æ–°å¢žæ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* util/resetbh.c   ( NTHU MapleBBS Ver 3.10 )           */
 /*-------------------------------------------------------*/
-/* target : ­«¸m¬ÝªO¤H®ð                                 */
+/* target : é‡ç½®çœ‹æ¿äººæ°£                                 */
 /* create : 07/01/11                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -35,7 +35,7 @@ init_bshm()
 {
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-  if (bshm->uptime <= 0)        /* bshm ¥¼³]©w§¹¦¨ */
+  if (bshm->uptime <= 0)        /* bshm æœªè¨­å®šå®Œæˆ */
     exit(0);
 }
 
@@ -93,5 +93,5 @@ main()
 
 
 --
-[1;36m=[37m[[36m¡É[37m:[33m¡[37mÝ¢¨[m¢©¡[1;33mÝ[37m:[36m¡É [31mOrigin[37m ]|[[m  [0;31m°[1mÊ[1m¤[0;31mO[0;31m®[1mÖ[1m¤[0;31mß [1mcpu.tfcis.org  [37m]|[¡[33mÝ£»¡[mÝ[1;36m¡É[37m:][36m=[m
-[1;36m=[0m[[1;36m¡Ç[37m:[33m¡[30mÝ¢ª[m¢¬¡[1;33mÝ[37m:[36m¡Ç [31mAuthor[m ]|[[1m218-168-179-31.dynamic.hin[m]|[¡[1;33mÝ[30m¡[37m´¡[30mÝ[36m¡Ç[37m:[m][1;36m=[m
+[1;36m=[37m[[36mï¹Ž[37m:[33m?[37mæ‘ƒ?[mâ—£?[1;33m?[37m:[36mï¹Ž [31mOrigin[37m ]|[[m  [0;31m?[1m?[1m?[0;31mO[0;31m?[1m?[1m?[0;31m?[1mcpu.tfcis.org  [37m]|[?[33mæŸèªª[m?[1;36mï¹Ž[37m:][36m=[m
+[1;36m=[0m[[1;36mï¹Š[37m:[33m?[30mæ‘ƒ?[mâ•±?[1;33m?[37m:[36mï¹Š [31mAuthor[m ]|[[1m218-168-179-31.dynamic.hin[m]|[?[1;33m?[30m?[37mæ’[30m?[36mï¹Š[37m:[m][1;36m=[m

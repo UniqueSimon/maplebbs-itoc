@@ -1,26 +1,26 @@
-µo«H¤H: allen501pc.bbs@bbs.sa.ncyu.edu.tw (²×©ó¦£§¹¤F) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à]Âà¿ı¤å³¹·|Åã¥ÜÂà¹F¥Øªº¬İªO¦ì¸m
-µo«H¯¸: ·sºñ¶é (2006/10/22 Sun 01:55:05)                  Updated: 2006/10/22
+ç™¼ä¿¡äºº: allen501pc.bbs@bbs.sa.ncyu.edu.tw (çµ‚æ–¼å¿™å®Œäº†) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]è½‰éŒ„æ–‡ç« æœƒé¡¯ç¤ºè½‰é”ç›®çš„çœ‹æ¿ä½ç½®
+ç™¼ä¿¡ç«™: æ–°ç¶ åœ’ (2006/10/22 Sun 01:55:05)                  Updated: 2006/10/22
 
-Ãş¦üpttªº¥\¯à Âà¿ı¤å³¹®É·|¦b¨Ó·½¤å³¹¤U¤èµù©ú¬İªO¥Øªº¦a»PÂà¿ı®É¶¡
+é¡ä¼¼pttçš„åŠŸèƒ½ è½‰éŒ„æ–‡ç« æ™‚æœƒåœ¨ä¾†æºæ–‡ç« ä¸‹æ–¹è¨»æ˜çœ‹æ¿ç›®çš„åœ°èˆ‡è½‰éŒ„æ™‚é–“
 
-µe­±¦p¤U¡G
-[1;33;46m ¼ĞÃD [m sdgsdagsa
-[1;33;46m ®É¶¡ [m 2006/10/22 Sun 01:55:04
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+ç•«é¢å¦‚ä¸‹ï¼š
+[1;33;46m æ¨™é¡Œ [m sdgsdagsa
+[1;33;46m æ™‚é–“ [m 2006/10/22 Sun 01:55:04
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 sadgdasgasd
 
 --
-    [1;32m¢~¢w Origin ¢wùß ·sºñ¶é´ú¸Õ¯¸ [31m --------------- [32m ¡ã £e£f£g ¢w¢t[m
-    [1;32m¢u   Author   ùë [33;44m220-129-166-187.dynamic.hinet.net           [m
-[32m¡° allen501pc   Âà¿ı¦Ü¬İªO sysop                                   10/22 01:55[m
-[32m¡° allen501pc   Âà¿ı¦Ü¬İªO sysop                                   10/22 01:55[m
-[32m¡° allen501pc   Âà¿ı¦Ü¬Y¯µ±K¬İªO                                   10/22 01:56[m
+    [1;32mâ•­â”€ Origin â”€â•— æ–°ç¶ åœ’æ¸¬è©¦ç«™ [31m --------------- [32m ï½ ÎºÎ»Î¼ â”€â”¤[m
+    [1;32mâ”œ   Author   â•¡ [33;44m220-129-166-187.dynamic.hinet.net           [m
+[32mâ€» allen501pc   è½‰éŒ„è‡³çœ‹æ¿ sysop                                   10/22 01:55[m
+[32mâ€» allen501pc   è½‰éŒ„è‡³çœ‹æ¿ sysop                                   10/22 01:55[m
+[32mâ€» allen501pc   è½‰éŒ„è‡³æŸç§˜å¯†çœ‹æ¿                                   10/22 01:56[m
 
 : post.c:post_cross()
 
-  /* ´_­ì currboard¡Bcurrbattr */
+  /* å¾©åŸ currboardã€currbattr */
   if (method)
   {
     strcpy(currboard, tmpboard);
@@ -37,19 +37,19 @@ sadgdasgasd
 +    ptime = localtime(&now);
 +    level = (bshm->bcache + xbno)->readlevel;
 +    if (level == PERM_SYSOP || level == PERM_BOARD)
-+      sprintf(buf, "¡° %-12s Âà¿ı¦Ü¬Y¯µ±K¬İªO", cuser.userid);
++      sprintf(buf, "â€» %-12s è½‰éŒ„è‡³æŸç§˜å¯†çœ‹æ¿", cuser.userid);
 +    else
-+      sprintf(buf, "¡° %-12s Âà¿ı¦Ü¬İªO %s", cuser.userid, xboard);
++      sprintf(buf, "â€» %-12s è½‰éŒ„è‡³çœ‹æ¿ %s", cuser.userid, xboard);
 +    fpw = fopen(fpath, "a");
 +    fprintf(fpw, "\033[32m%-67s%02d/%02d %02d:%02d\033[m\n",
 +      buf, ptime->tm_mon + 1, ptime->tm_mday, ptime->tm_hour, ptime->tm_min);
 +    fclose(fpw);
 +  }
 
-   vmsg("Âà¿ı§¹¦¨");
+   vmsg("è½‰éŒ„å®Œæˆ");
    return XO_HEAD;
 }
 
 --
-    [0;1;32m¢~¢w Origin ¢wùß ·sºñ¶é [1;31m bbs.sa.ncyu.edu.tw [32m ¡ã £e£f£g ¢w¢t[m
-    [1;32m¢u   Author   ùë [33;44m220-129-166-187.dynamic.hinet.net     [m
+    [0;1;32mâ•­â”€ Origin â”€â•— æ–°ç¶ åœ’ [1;31m bbs.sa.ncyu.edu.tw [32m ï½ ÎºÎ»Î¼ â”€â”¤[m
+    [1;32mâ”œ   Author   â•¡ [33;44m220-129-166-187.dynamic.hinet.net     [m

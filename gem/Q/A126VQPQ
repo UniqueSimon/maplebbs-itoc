@@ -1,22 +1,22 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G802) ¯¸¤º: plan
-¼ÐÃD: [¥\¯à] ¥xÅK®É¨è¬d¸ß
-®É¶¡: 2006/05/21 Sun 12:17:12                           Updated: 2006/05/21
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š802) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] å°éµæ™‚åˆ»æŸ¥è©¢
+æ™‚é–“: 2006/05/21 Sun 12:17:12                           Updated: 2006/05/21
 
-: menu.c ¾A·íªº¿ï³æ¥[¤W³o¤G¦æ
+: menu.c é©ç•¶çš„é¸å–®åŠ ä¸Šé€™äºŒè¡Œ
 
 + "bin/railway.so:main_railway", 0, - M_XMODE,
-+ "Railway    ¡ñ ¤õ¨®®É¨è ¡ð",
++ "Railway    â™‚ ç«è»Šæ™‚åˆ» â™€",
 
 : game/Makefile
 
 SO =    ... [1;33mrailway.so[m
 
-: game/railway.c ·s¼W¦¹µ{¦¡
+: game/railway.c æ–°å¢žæ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* railway.c    ( NTHU CS MapleBBS Ver 3.10 )            */
 /*-------------------------------------------------------*/
-/* target : ¥xÅK¤õ¨®®É¨èªí¬d¸ß                           */
+/* target : å°éµç«è»Šæ™‚åˆ»è¡¨æŸ¥è©¢                           */
 /* create : 02/05/29                                     */
 /* update :   /  /                                       */
 /* author : lp@micro.ee.nthu.edu.tw                      */
@@ -25,9 +25,9 @@ SO =    ... [1;33mrailway.so[m
 
 
 #if 0
-  1. »Ý­n¦w¸Ë lynx¡Bpiconv¡Bgrep¡A¥B½ÐÀË¬d³o¤TªÌ¦b http_conn()
-     ¸Ì­±ªº¸ô®|¬O§_¥¿½T¡C
-  2. µ{¦¡ÁöµM¦³Âà¨®¯¸ªº³¡¤À¡A¦ý¬O¥Ø«e¨S¦³¥Î¡C
+  1. éœ€è¦å®‰è£ lynxã€piconvã€grepï¼Œä¸”è«‹æª¢æŸ¥é€™ä¸‰è€…åœ¨ http_conn()
+     è£¡é¢çš„è·¯å¾‘æ˜¯å¦æ­£ç¢ºã€‚
+  2. ç¨‹å¼é›–ç„¶æœ‰è½‰è»Šç«™çš„éƒ¨åˆ†ï¼Œä½†æ˜¯ç›®å‰æ²’æœ‰ç”¨ã€‚
 #endif
 
 #include "bbs.h"
@@ -41,31 +41,31 @@ SO =    ... [1;33mrailway.so[m
 #define RAILWAY_XPOS    1
 #define RAILWAY_YPOS    0
 #define MAX_SITE        212
-#define SITE_PER_LINE   13      /* ¨C¦C¨q 13 ­Ó¯¸¥x */
+#define SITE_PER_LINE   13      /* æ¯åˆ—ç§€ 13 å€‹ç«™å° */
 
-static char *siteid[MAX_SITE] = /* ¨®¯¸¯¸¥x */
+static char *siteid[MAX_SITE] = /* è»Šç«™ç«™å° */
 {
-  "¥xªF", "¤s¨½", "³À³¥", "·ç·½", "·ç©M", "¤ë¬ü", "Ãö¤s", "®üºÝ", "¦À¤W", "´I¨½", "ªF¦Ë", "ªF¨½", "¦w³q",
-  "¥É¨½", "¤T¥Á", "·çÁJ", "´I·½", "¤j´I", "¥ú´_", "¸Uºa", "»ñªL", "«n¥­", "·Ë¤f", "Â×¥Ð", "¹ØÂ×", "¥­©M",
-  "§Ó¾Ç", "¦N¦w", "ªá½¬", "¥_®H", "´º¬ü", "·s«°", "±R¼w", "©M¤¯", "©M¥­", "º~¥»", "ªZ¶ð", "«n¿D", "ªF¿D",
-  "¥Ã¼Ö", "Ä¬¿D","Ä¬¿D·s","·s°¨", "¥V¤s", "Ã¹ªF", "¤¤¨½", "¤Gµ²", "©yÄõ", "¥|«°", "ÁG·Ë", "³»®H", "ÀY«°",
-  "¥~¿D", "Àt¤s", "¤j·Ë", "¤j¨½", "¥Û«°", "ºÖ¶©", "°^¼d", "Âù·Ë", "¨d¤¦","¤T¶IÀ­","«JÖ»","·çªÚ","¥|¸}«F",
-  "·x·x", "°ò¶©", "¤T§|", "¤K°ô", "¤C°ô", "¤­°ô", "¦Á¤î", "«n´ä", "ªQ¤s", "¥x¥_", "¸UµØ", "ªO¾ô", "¾ðªL",
-  "¤s¨Î", "Åaºq", "®ç¶é", "¤ºÃc", "¤¤Ãc", "®H¤ß", "·¨±ö", "´I©£", "´ò¤f", "·sÂ×", "¦Ë¥_", "·s¦Ë", "­»¤s",
-  "±T³»", "¦Ë«n", "½Í¤å", "¤j¤s", "«áÀs", "Às´ä","¥Õ¨F¤Ù","·s®H", "³q¾]", "­b¸Ì", "¤é«n","¤j¥Ò","¥x¤¤´ä",
-  "²M¤ô", "¨F³À", "Às¤«", "¤j¨{", "°l¤À", "³y¾ô", "Â×´I", "­]®ß", "«n¶Õ", "»ÉÆr", "¤T¸q", "®õ¦w", "¦Z¨½",
-  "Â×­ì", "¼æ¤l", "¤Ó­ì", "¥x¤¤", "¤j¼y", "¯Q¤é", "¦¨¥\\","¹ü¤Æ", "ªá¾Â", "¤j§ø", "­ûªL", "¥Ã¹t", "ªÀÀY",
-  "¥Ð¤¤", "¤G¤ô", "ªL¤º", "¥Ûºh", "¤æ¤»", "¤æ«n", "¥ÛÀt", "¤jªL", "¥Á¶¯", "¹Å¸q", "¤ô¤W", "«n¹t", "¹Å¥_",
-  "«á¾À", "·sÀç", "¬hÀç","ªL»ñÀç","¶©¥Ð", "©ÞªL", "µ½¤Æ", "·s¥«", "¥Ã±d", "¤j¾ô", "¥x«n", "«O¦w", "¤¤¬w",
-  "¤j´ò", "¸ô¦Ë", "©£¤s", "¾ôÀY", "·£±ê", "¥ªÀç", "°ª¶¯", "»ñ¤s", "«áÉÜ","¤E¦±°ó","¤»¶ô­í","«ÌªF","Âk¨Ó",
-  "Åï¬¥", "¦è¶Õ", "¦Ë¥Ð", "¼é¦{", "®r³»", "«n¦{", "Âí¦w", "ªLÃä", "¨Î¥V", "ªF®ü", "ªD¼d", "¥[¸S", "¤º·à",
-  "ªD¤s", "¥j²ø", "¤jªZ", "ò]·Ë", "¦h¨}", "ª÷±[","¤Ó³Â¨½","ª¾¥»", "±d¼Ö", "¤jµØ", "¤Q¤À", "±æ¥j", "À­¸}",
-  "¥­·Ë", "µ×®ä", "¦Ë¤¤", "¤W­û", "ºaµØ", "¦ËªF", "¾î¤s","¤EÆgÀY","¦X¿³", "´I¶Q", "¤ºÆW", "·½¬u", "¿B¤ô",
-  "Às¬u", "¶°¶°", "¤ô¨½", "¨®ÑL"
+  "å°æ±", "å±±é‡Œ", "é¹¿é‡Ž", "ç‘žæº", "ç‘žå’Œ", "æœˆç¾Ž", "é—œå±±", "æµ·ç«¯", "æ± ä¸Š", "å¯Œé‡Œ", "æ±ç«¹", "æ±é‡Œ", "å®‰é€š",
+  "çŽ‰é‡Œ", "ä¸‰æ°‘", "ç‘žç©—", "å¯Œæº", "å¤§å¯Œ", "å…‰å¾©", "è¬æ¦®", "é³³æž—", "å—å¹³", "æºªå£", "è±ç”°", "å£½è±", "å¹³å’Œ",
+  "å¿—å­¸", "å‰å®‰", "èŠ±è“®", "åŒ—åŸ”", "æ™¯ç¾Ž", "æ–°åŸŽ", "å´‡å¾·", "å’Œä»", "å’Œå¹³", "æ¼¢æœ¬", "æ­¦å¡”", "å—æ¾³", "æ±æ¾³",
+  "æ°¸æ¨‚", "è˜‡æ¾³","è˜‡æ¾³æ–°","æ–°é¦¬", "å†¬å±±", "ç¾…æ±", "ä¸­é‡Œ", "äºŒçµ", "å®œè˜­", "å››åŸŽ", "ç¤æºª", "é ‚åŸ”", "é ­åŸŽ",
+  "å¤–æ¾³", "é¾œå±±", "å¤§æºª", "å¤§é‡Œ", "çŸ³åŸŽ", "ç¦éš†", "è²¢å¯®", "é›™æºª", "ç‰¡ä¸¹","ä¸‰è²‚å¶º","ä¾¯ç¡","ç‘žèŠ³","å››è…³äº­",
+  "æš–æš–", "åŸºéš†", "ä¸‰å‘", "å…«å µ", "ä¸ƒå µ", "äº”å µ", "æ±æ­¢", "å—æ¸¯", "æ¾å±±", "å°åŒ—", "è¬è¯", "æ¿æ©‹", "æ¨¹æž—",
+  "å±±ä½³", "é¶¯æ­Œ", "æ¡ƒåœ’", "å…§å£¢", "ä¸­å£¢", "åŸ”å¿ƒ", "æ¥Šæ¢…", "å¯Œå²¡", "æ¹–å£", "æ–°è±", "ç«¹åŒ—", "æ–°ç«¹", "é¦™å±±",
+  "å´Žé ‚", "ç«¹å—", "è«‡æ–‡", "å¤§å±±", "å¾Œé¾", "é¾æ¸¯","ç™½æ²™å±¯","æ–°åŸ”", "é€šéœ„", "è‹‘è£¡", "æ—¥å—","å¤§ç”²","å°ä¸­æ¸¯",
+  "æ¸…æ°´", "æ²™é¹¿", "é¾äº•", "å¤§è‚š", "è¿½åˆ†", "é€ æ©‹", "è±å¯Œ", "è‹—æ —", "å—å‹¢", "éŠ…é‘¼", "ä¸‰ç¾©", "æ³°å®‰", "åŽé‡Œ",
+  "è±åŽŸ", "æ½­å­", "å¤ªåŽŸ", "å°ä¸­", "å¤§æ…¶", "çƒæ—¥", "æˆåŠŸ\","å½°åŒ–", "èŠ±å£‡", "å¤§æ‘", "å“¡æž—", "æ°¸é–", "ç¤¾é ­",
+  "ç”°ä¸­", "äºŒæ°´", "æž—å…§", "çŸ³æ¦´", "æ–—å…­", "æ–—å—", "çŸ³é¾œ", "å¤§æž—", "æ°‘é›„", "å˜‰ç¾©", "æ°´ä¸Š", "å—é–", "å˜‰åŒ—",
+  "å¾Œå£", "æ–°ç‡Ÿ", "æŸ³ç‡Ÿ","æž—é³³ç‡Ÿ","éš†ç”°", "æ‹”æž—", "å–„åŒ–", "æ–°å¸‚", "æ°¸åº·", "å¤§æ©‹", "å°å—", "ä¿å®‰", "ä¸­æ´²",
+  "å¤§æ¹–", "è·¯ç«¹", "å²¡å±±", "æ©‹é ­", "æ¥ æ¢“", "å·¦ç‡Ÿ", "é«˜é›„", "é³³å±±", "å¾Œåº„","ä¹æ›²å ‚","å…­å¡ŠåŽ","å±æ±","æ­¸ä¾†",
+  "éºŸæ´›", "è¥¿å‹¢", "ç«¹ç”°", "æ½®å·ž", "å´é ‚", "å—å·ž", "éŽ®å®‰", "æž—é‚Š", "ä½³å†¬", "æ±æµ·", "æž‹å¯®", "åŠ ç¥¿", "å…§ç…",
+  "æž‹å±±", "å¤èŽŠ", "å¤§æ­¦", "ç€§æºª", "å¤šè‰¯", "é‡‘å´™","å¤ªéº»é‡Œ","çŸ¥æœ¬", "åº·æ¨‚", "å¤§è¯", "ååˆ†", "æœ›å¤", "å¶ºè…³",
+  "å¹³æºª", "èæ¡", "ç«¹ä¸­", "ä¸Šå“¡", "æ¦®è¯", "ç«¹æ±", "æ©«å±±","ä¹è®šé ­","åˆèˆˆ", "å¯Œè²´", "å…§ç£", "æºæ³‰", "æ¿æ°´",
+  "é¾æ³‰", "é›†é›†", "æ°´é‡Œ", "è»ŠåŸ•"
 };
 
 
-static char *siteno[MAX_SITE] = /* ¨®¯¸¥N½X */
+static char *siteno[MAX_SITE] = /* è»Šç«™ä»£ç¢¼ */
 {
   "1632", "1631", "1630", "1629", "1628", "1627", "1626", "1625", "1624", "1623", "1622", "1621", "1620",
   "1619", "1617", "1616", "1614", "1613", "1612", "1611", "1610", "1609", "1608", "1607", "1606", "1605",
@@ -89,8 +89,8 @@ static char *siteno[MAX_SITE] = /* ¨®¯¸¥N½X */
 
 static int cx, cy;
 static int fr_pos, to_pos, tr_pos;
-static char fr_no[5], to_no[5], tr_no[4];       /* °_¨´ ¥N½X */
-static char typer[5];                           /* ¹ï¸¹/«D¹ï¸¹ */
+static char fr_no[5], to_no[5], tr_no[4];       /* èµ·è¿„ ä»£ç¢¼ */
+static char typer[5];                           /* å°è™Ÿ/éžå°è™Ÿ */
 
 
 static void
@@ -114,13 +114,13 @@ outs_info(color, msg)
 {
   move(b_lines, 0);
   clrtoeol();
-  move(b_lines, 30);     /* ¸m¤¤ */
+  move(b_lines, 30);     /* ç½®ä¸­ */
   prints("\033[%dm %s \033[m", color, msg);
 }
 
 
 static void
-site_drawrow(x)          /* ­«Ã¸ x ¦C */
+site_drawrow(x)          /* é‡ç¹ª x åˆ— */
   int x;
 {
   int i;
@@ -152,7 +152,7 @@ site_show()
 
   clear();
   move(0, 23);
-  outs("\033[1;37;44m¡· ¥xÅK¤õ¨®®É¨èªí¬d¸ß¨t²Î ¡·\033[5;33m ´ú¸Õª©\033[m");
+  outs("\033[1;37;44mâ—Ž å°éµç«è»Šæ™‚åˆ»è¡¨æŸ¥è©¢ç³»çµ± â—Ž\033[5;33m æ¸¬è©¦ç‰ˆ\033[m");
 
   for (i = 0; i < MAX_SITE; i++)
   {
@@ -162,11 +162,11 @@ site_show()
   }
 
   move(b_lines - 4, 0);
-  outs("±Òµ{¨®¯¸¡G         ¨ì¹F¨®¯¸¡G");
+  outs("å•Ÿç¨‹è»Šç«™ï¼š         åˆ°é”è»Šç«™ï¼š");
   move(b_lines - 3, 0);
-  outs("¬d¸ß®É¶¡¡G00:00 ¦Ü 24:00 (¤º©w, µLªk§ï)");
+  outs("æŸ¥è©¢æ™‚é–“ï¼š00:00 è‡³ 24:00 (å…§å®š, ç„¡æ³•æ”¹)");
   move(b_lines - 2, 0);
-  outs("¬d¸ß¨®ºØ¡G1)¹ï¸¹§Ö¨® 2)«D¹ï¸¹¨® 3)¥þ³¡¨®ºØ");
+  outs("æŸ¥è©¢è»Šç¨®ï¼š1)å°è™Ÿå¿«è»Š 2)éžå°è™Ÿè»Š 3)å…¨éƒ¨è»Šç¨®");
 
   cx = cy = 0;
   fr_pos = to_pos = tr_pos = -1;
@@ -174,13 +174,13 @@ site_show()
 }
 
 
-static int              /* 1:¦¨¥\ */
+static int              /* 1:æˆåŠŸ */
 site_choose(flag)
-  int flag;             /* 1:¿ï°_¯¸  2:¿ï¨´¯¸  4: ¿ïÂà¯¸ */
+  int flag;             /* 1:é¸èµ·ç«™  2:é¸è¿„ç«™  4: é¸è½‰ç«™ */
 {
   int pos;
 
-  /* ³o´X®æ¨S¦³¯¸¥x */
+  /* é€™å¹¾æ ¼æ²’æœ‰ç«™å° */
   if (cx == MAX_SITE / SITE_PER_LINE && cy >= MAX_SITE % SITE_PER_LINE)
     return 0;
 
@@ -213,17 +213,17 @@ site_choose(flag)
   }
 
   site_drawrow(cx);
-  return 1;       /* ¿ï¤U¤@­Ó */
+  return 1;       /* é¸ä¸‹ä¸€å€‹ */
 }
 
 
-static int              /* 1: ¤w¨M©w°_¨´¯¸ */
-site_menu(flag)         /* ¥Ø«e¦b¿ï 1:°_ 4:¨´ 2:Âà ¯¸ */
+static int              /* 1: å·²æ±ºå®šèµ·è¿„ç«™ */
+site_menu(flag)         /* ç›®å‰åœ¨é¸ 1:èµ· 4:è¿„ 2:è½‰ ç«™ */
   int flag;
 {
   for (;;)
   {
-    /* itoc.031209: ­Y¹J¨ì¤T­Ó¦rªº¯¸¦W¡A¤S°»´ú¥þ§Î®É¡A¨º»ò·|¦h¸õ¤@¦¸¡A¼È®É¤£ºÞ¤F :p */
+    /* itoc.031209: è‹¥é‡åˆ°ä¸‰å€‹å­—çš„ç«™åï¼Œåˆåµæ¸¬å…¨å½¢æ™‚ï¼Œé‚£éº¼æœƒå¤šè·³ä¸€æ¬¡ï¼Œæš«æ™‚ä¸ç®¡äº† :p */
     move(cx + RAILWAY_XPOS, cy * 6 + RAILWAY_YPOS + 2);
     switch (vkey())
     {
@@ -269,23 +269,23 @@ rail_query()
 {
   char ans[3], *msg;
 
-  outs_info(45, "½Ð¿ï¾Ü¬d¸ß¨®ºØ");
+  outs_info(45, "è«‹é¸æ“‡æŸ¥è©¢è»Šç¨®");
 
-  switch (vget(b_lines - 2, 0, "¬d¸ß¨®ºØ¡G1)¹ï¸¹§Ö¨® 2)«D¹ï¸¹¨® 3)¥þ³¡¨®ºØ¡G[3] ", ans, 3, DOECHO))
+  switch (vget(b_lines - 2, 0, "æŸ¥è©¢è»Šç¨®ï¼š1)å°è™Ÿå¿«è»Š 2)éžå°è™Ÿè»Š 3)å…¨éƒ¨è»Šç¨®ï¼š[3] ", ans, 3, DOECHO))
   {
   case '1':
     strcpy(typer, "0");
-    msg = "1)¹ï¸¹§Ö¨®";
+    msg = "1)å°è™Ÿå¿«è»Š";
     break;
 
   case '2':
     strcpy(typer, "1");
-    msg = "2)«D¹ï¸¹¨®";
+    msg = "2)éžå°è™Ÿè»Š";
     break;
 
   default:
     strcpy(typer, "2");
-    msg = "3)¥þ³¡¨®ºØ";
+    msg = "3)å…¨éƒ¨è»Šç¨®";
     break;
   }
 
@@ -293,19 +293,19 @@ rail_query()
   outs(msg);
   clrtoeol();
 
-  refresh();        /* ¦A¦¸ vget() ·|¥X²{«e­±ªº±±¨î½X¡A­n refresh */
+  refresh();        /* å†æ¬¡ vget() æœƒå‡ºç¾å‰é¢çš„æŽ§åˆ¶ç¢¼ï¼Œè¦ refresh */
 }
 
 
 static char
-Tcolor(str)        /* ¨Ì¨®¦¸¨Ó¨M©wÃC¦â */
+Tcolor(str)        /* ä¾è»Šæ¬¡ä¾†æ±ºå®šé¡è‰² */
   char *str;
 {
-  if (!strncmp(str, "¦Û±j", 4))
+  if (!strncmp(str, "è‡ªå¼·", 4))
     return '1';
-  if (!strncmp(str, "²÷¥ú", 4))
+  if (!strncmp(str, "èŽ’å…‰", 4))
     return '6';
-  if (!strncmp(str, "´_¿³", 4))
+  if (!strncmp(str, "å¾©èˆˆ", 4))
     return '4';
   return '0';
 }
@@ -319,7 +319,7 @@ html_parser(src, dst)
   char data[256];
   char *result;
   int line_num;
-  int tcount;         /* Á`¦@¦³´X¯Z¦¸ */
+  int tcount;         /* ç¸½å…±æœ‰å¹¾ç­æ¬¡ */
   struct stat st;
 
   if ((!stat(src, &st) && !st.st_size) || !(fpr = fopen(src, "r")))
@@ -339,9 +339,9 @@ html_parser(src, dst)
 
   line_num++;
   fprintf(fpw, "\n"
-    "¢z¢w¢w¢w¢s¢w¢w¢s¢w¢s¢w¢w¢w¢w¢w¢w¢w¢s¢w¢w¢w¢w¢w¢s¢w¢w¢w¢w¢w¢s¢w¢w¢s¢w¢w¢w¢w¢w¢{\n"
-    "¢x ­¼§¤ ¢x¨®¦¸¢x¤s¢x©lµo¯¸->²×ÂI¯¸¢xµn¨®¨®¯¸  ¢x¤U¨®¨®¯¸  ¢x¥þ²¼¢x¦æ¾p®É¶¡  ¢x\n"
-    "¢x ¨®ºØ ¢x½s¸¹¢x®ü¢x              ¢x¶}¨®®É¶¡  ¢x¨ì¹F®É¶¡  ¢x»ù¿ú¢x          ¢x");
+    "â”Œâ”€â”€â”€â”¬â”€â”€â”¬â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”¬â”€â”€â”¬â”€â”€â”€â”€â”€â”\n"
+    "â”‚ ä¹˜å â”‚è»Šæ¬¡â”‚å±±â”‚å§‹ç™¼ç«™->çµ‚é»žç«™â”‚ç™»è»Šè»Šç«™  â”‚ä¸‹è»Šè»Šç«™  â”‚å…¨ç¥¨â”‚è¡Œé§›æ™‚é–“  â”‚\n"
+    "â”‚ è»Šç¨® â”‚ç·¨è™Ÿâ”‚æµ·â”‚              â”‚é–‹è»Šæ™‚é–“  â”‚åˆ°é”æ™‚é–“  â”‚åƒ¹éŒ¢â”‚          â”‚");
 
   while (fgets(data, sizeof(data), fpr))
   {
@@ -355,47 +355,47 @@ html_parser(src, dst)
     if (!fgets(data, sizeof(data), fpr) || !(result = strtok(data, " ")))
       break;
 
-    fprintf(fpw, "\n¢u¢w¢w¢w¢q¢w¢w¢q¢w¢q¢w¢w¢w¢w¢w¢w¢w¢q¢w¢w¢w¢w¢w¢q¢w¢w¢w¢w¢w¢q¢w¢w¢q¢w¢w¢w¢w¢w¢t");
+    fprintf(fpw, "\nâ”œâ”€â”€â”€â”¼â”€â”€â”¼â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”¼â”€â”€â”¼â”€â”€â”€â”€â”€â”¤");
 
-    /* ¨®«¬¡A6 bytes */
-    fprintf(fpw, "\n¢x\033[1;4%c;37m%6.6s\033[m", Tcolor(result), result);        /* §N®ð®ã«È·|¶W¹L 6 bytes */
+    /* è»Šåž‹ï¼Œ6 bytes */
+    fprintf(fpw, "\nâ”‚\033[1;4%c;37m%6.6s\033[m", Tcolor(result), result);        /* å†·æ°£æŸ´å®¢æœƒè¶…éŽ 6 bytes */
 
-    /* ¨®¦¸¥N½X¡A4 bytes */
+    /* è»Šæ¬¡ä»£ç¢¼ï¼Œ4 bytes */
     if (!(result = strtok(NULL, " ")))
       break;
-    fprintf(fpw, "¢x%4.4s", result);        /* §N®ð®ã«È·|¶W¹L 4 bytes */
+    fprintf(fpw, "â”‚%4.4s", result);        /* å†·æ°£æŸ´å®¢æœƒè¶…éŽ 4 bytes */
 
-    /* ¤s½u©Î®ü½u©ÎªÅªº¡A2 bytes */
+    /* å±±ç·šæˆ–æµ·ç·šæˆ–ç©ºçš„ï¼Œ2 bytes */
     if (!fgets(data, sizeof(data), fpr) || !(result = strtok(data, "\n")))
       break;
-    fprintf(fpw, "¢x%2s", result + 37);
+    fprintf(fpw, "â”‚%2s", result + 37);
 
-    /* ±Òµ{¯¸¡B¨ì¹F¯¸¡A6 bytes */
+    /* å•Ÿç¨‹ç«™ã€åˆ°é”ç«™ï¼Œ6 bytes */
     if (!fgets(data, sizeof(data), fpr) || !(result = strtok(data, "\n")))
       break;
-    fprintf(fpw, "¢x%14s", result + 31);
+    fprintf(fpw, "â”‚%14s", result + 31);
 
-    /* ¶}¨®®É¶¡ */
+    /* é–‹è»Šæ™‚é–“ */
     if (!fgets(data, sizeof(data), fpr) || !(result = strtok(data, "\n")))
       break;
-    fprintf(fpw, "¢x%8s  ", result + 32);
+    fprintf(fpw, "â”‚%8s  ", result + 32);
 
-    /* ¨ì¹F®É¶¡ */
+    /* åˆ°é”æ™‚é–“ */
     if (!fgets(data, sizeof(data), fpr) || !(result = strtok(data, "\n")))
       break;
-    fprintf(fpw, "¢x%8s  ", result + 32);
+    fprintf(fpw, "â”‚%8s  ", result + 32);
 
-    /* ¥þ²¼»ù®æ 3 bytes */
+    /* å…¨ç¥¨åƒ¹æ ¼ 3 bytes */
     if (!fgets(data, sizeof(data), fpr) || !(result = strtok(data, "\n")))
       break;
-    fprintf(fpw, "¢x%4s", result + 34);
+    fprintf(fpw, "â”‚%4s", result + 34);
 
-    /* ¦æ¾p®É¶¡ */
+    /* è¡Œé§›æ™‚é–“ */
     if (!fgets(data, sizeof(data), fpr) || !(result = strtok(data, "\n")) || !(result = strtok( result, " ")))
       break;
-    fprintf(fpw, "¢x%10s¢x", result);
+    fprintf(fpw, "â”‚%10sâ”‚", result);
 
-    /* ¸õ¹L³Æµù */
+    /* è·³éŽå‚™è¨» */
     if (!fgets(data, sizeof(data), fpr))
       break;
 
@@ -403,10 +403,10 @@ html_parser(src, dst)
   }                 /* end of while */
 
 
-  fprintf(fpw,  "\n¢|¢w¢w¢w¢r¢w¢w¢r¢w¢r¢w¢w¢w¢w¢w¢w¢w¢r¢w¢w¢w¢w¢w¢r¢w¢w¢w¢w¢w¢r¢w¢w¢r¢w¢w¢w¢w¢w¢}\n\n\n\n");
+  fprintf(fpw,  "\nâ””â”€â”€â”€â”´â”€â”€â”´â”€â”´â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”´â”€â”€â”´â”€â”€â”€â”€â”€â”˜\n\n\n\n");
 
   if (!tcount)
-    fprintf(fpw, "\n\n©êºp¡I¨S¦³±z±ý·f­¼ªº¯Z¨®");
+    fprintf(fpw, "\n\næŠ±æ­‰ï¼æ²’æœ‰æ‚¨æ¬²æ­ä¹˜çš„ç­è»Š");
 
   fclose(fpr);
   fclose(fpw);
@@ -420,13 +420,13 @@ http_conn(s)
   char src[30], dst[30];
   char cmd[768];
 
-  mouts(b_lines - 1, 0, "³s±µ¦øªA¾¹¤¤¡A½Ðµy­Ô...");
+  mouts(b_lines - 1, 0, "é€£æŽ¥ä¼ºæœå™¨ä¸­ï¼Œè«‹ç¨å€™...");
     refresh();
 
   sprintf(src, "tmp/%s.rail", cuser.userid);
   sprintf(cmd, "/usr/local/bin/lynx -display_charset=utf-8 -nolist -dump  "
     "http://new.twtraffic.com.tw/twrail/nonscript_search_result.aspx?%s | "
-    "/usr/local/bin/piconv -f utf8 -t big5 | /usr/bin/grep -v '¹Ï¥Ü' > %s",
+    "/usr/local/bin/piconv -f utf8 -t big5 | /usr/bin/grep -v 'åœ–ç¤º' > %s",
     s, src);
   system(cmd);
 
@@ -438,8 +438,8 @@ http_conn(s)
 
   if (more(dst, (char *) -1) >= 0)
   {
-    if (vans("±z­n±N¬d¸ßµ²ªG±H¦^«H½c¶Ü¡H[N] ") == 'y')
-      mail_self(dst, cuser.userid, "[³Æ §Ñ ¿ý] ¤õ¨®®É¨è¬d¸ßµ²ªG", MAIL_READ);
+    if (vans("æ‚¨è¦å°‡æŸ¥è©¢çµæžœå¯„å›žä¿¡ç®±å—Žï¼Ÿ[N] ") == 'y')
+      mail_self(dst, cuser.userid, "[å‚™ å¿˜ éŒ„] ç«è»Šæ™‚åˆ»æŸ¥è©¢çµæžœ", MAIL_READ);
   }
   unlink(dst);
   unlink(src);
@@ -476,20 +476,20 @@ main_railway()
 
   site_show();
 
-  outs_info(41, "½Ð¿ï¾Ü±Òµ{¨®¯¸");
+  outs_info(41, "è«‹é¸æ“‡å•Ÿç¨‹è»Šç«™");
   if (!site_menu(1))
     return 0;
 
-  outs_info(44, "½Ð¿ï¾Ü¨ì¹F¨®¯¸");
+  outs_info(44, "è«‹é¸æ“‡åˆ°é”è»Šç«™");
   if (!site_menu(4))
     return 0;
 
-  rail_query();  /* ¨M©w¹ï¸¹/«D¹ï¸¹ */
+  rail_query();  /* æ±ºå®šå°è™Ÿ/éžå°è™Ÿ */
 
-  ch = vans("¬d¸ß 0)¤µ¤Ñ 1)©ú¤Ñ 2)«á¤Ñ 3456789)¤Ñ«áªº®É¨èªí Q)Â÷¶}¡H[0] ");
+  ch = vans("æŸ¥è©¢ 0)ä»Šå¤© 1)æ˜Žå¤© 2)å¾Œå¤© 3456789)å¤©å¾Œçš„æ™‚åˆ»è¡¨ Q)é›¢é–‹ï¼Ÿ[0] ");
   if (ch == 'q')
   {
-    vmsg("hmm.....¤£·Q¬dÅo...^o^");
+    vmsg("hmm.....ä¸æƒ³æŸ¥å›‰...^o^");
     return 0;
   }
   if (ch < '0' || ch > '9')
@@ -503,4 +503,4 @@ main_railway()
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

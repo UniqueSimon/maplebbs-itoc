@@ -1,19 +1,19 @@
-�@��: itoc (�֤߰ʤO) ����: itoc
-���D: Re: �а�rpg�_�I�̪��Ʀ�]���ӫ�򰵩O???
-�ɶ�: 2004/10/27 Wed 10:42:33                           Updated: 2004/10/27
+作者: itoc (核心動力) 站內: itoc
+標題: Re: 請問rpg冒險者的排行榜應該怎麼做呢???
+時間: 2004/10/27 Wed 10:42:33                           Updated: 2004/10/27
 
-�� �ޭz�mcomfan (���L  �ˤ�)�n���ʨ��G
-> �q�X���W�������ѥ[RPG���ϥΪ̪��C����T
-> �i�_�I�̤��|�j
-> �ϥΪ̥N��   �Y��       �g���  ���� ��O �]�k �ԤO ����
-> allure       �L��       88956   9    100  100  100  0
-> leechan      �W�t��     6767    6    100  100  100  0
-> �аݤ@�U  ���ӵ��Ŧp�G�Q�n�Ƨ�  �ѵ��Ÿ��������U�Ƶ��Ÿ��C����b�����̪��U��
+※ 引述《comfan (難過  傷心)》之銘言：
+> 秀出站上全部有參加RPG的使用者的列表資訊
+> 【冒險者公會】
+> 使用者代號   頭銜       經驗值  等級 體力 魔法 戰力 金幣
+> allure       俠客       88956   9    100  100  100  0
+> leechan      獨孤者     6767    6    100  100  100  0
+> 請問一下  那個等級如果想要排序  由等級較高的往下排等級較低的放在較高者的下方
 
-  �o������ذϳo�g
-  [�\��] RPG �Ʀ�]
+  得先做精華區這篇
+  [功能] RPG 排行榜
 
-  �b (A)nnounce �̭��s�W��ơA���|�� allrpg
+  在 (A)nnounce 裡面新增資料，路徑為 allrpg
 
 : toprpg.c
 
@@ -33,7 +33,7 @@
 
 static DATA topmaxhp[TOPNUM];
 static DATA topstr[TOPNUM];
-+ static DATA2 alluserrpg[20000];    [1;44m// ���]���W���W�L 20000 �� id [m
++ static DATA2 alluserrpg[20000];    [1;44m// 假設站上不超過 20000 個 id [m
 + static int allusernum = 0;
 
 static int
@@ -99,9 +99,9 @@ sort_compare(p1, p2)
 +
 + if (fpall = fopen(OUTFILE_ALLRPG, "w"))
 + {
-+   fprintf(fpall, "\033[1;44m�i�_�I�̤��|�j\033[m\n");
++   fprintf(fpall, "\033[1;44m【冒險者公會】\033[m\n");
 +   fprintf(fpall, "\033[30;47m%-13s%-11s%-5s%-5s \033[m\n",
-+     "�ϥΪ̥N��", "�Y��", "����", "��");
++     "使用者代號", "頭銜", "等級", "血");
 +
 +   for (i = 0; i < allusernum; i++)
 +   {
@@ -114,5 +114,5 @@ sort_compare(p1, p2)
 + }
 
 --
- [1;41m�~[44m�q[m Or[1mig[30min[m: [43m Maple-itoc���ʤO�֤� [35;47m processor.tfcis.org [m
- [1;42m�q[45m�}[m A[1mut[30mho[mr: [1;31mitoc [30m�q [36mitoc.Dorm11.NCTU.edu.tw [30m�o��[m
+ [1;41m╭[44m┼[m Or[1mig[30min[m: [43m Maple-itoc˙動力核心 [35;47m processor.tfcis.org [m
+ [1;42m┼[45m┘[m A[1mut[30mho[mr: [1;31mitoc [30m從 [36mitoc.Dorm11.NCTU.edu.tw [30m發表[m

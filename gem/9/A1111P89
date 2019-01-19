@@ -1,22 +1,22 @@
-µo«H¤H: TKyo.bbs@cpu.tfcis.org (·t¶Â¶Q¤½¤l) ¬ÝªO: plan
-¼Ð  ÃD: [¥\¯à]Ãö©ó sudo ªº»Ý¨D
-µo«H¯¸: °Ê¤O®Ö¤ß (2005/02/04 Fri 16:14:22)                Updated: 2005/02/04
+ç™¼ä¿¡äºº: TKyo.bbs@cpu.tfcis.org (æš—é»‘è²´å…¬å­) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]é—œæ–¼ sudo çš„éœ€æ±‚
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2005/02/04 Fri 16:14:22)                Updated: 2005/02/04
 
-«e¨¥ :
+å‰è¨€ :
 
-    ¤£ª¾¹D¦³¦h¤Ö¤H¸ò¤p§Ì¤@¼Ë·|¦³ sudo ªº»Ý¨D (§ó§ï route/¤â°ÊÂà«H/¨t²Î¹ï®É)
-    ©Ò¥H¯S§O´£¨Ñ, ¥i¥Hª½±µ³z¹L BBS ¤¶­±°õ¦æ sudo «ü¥Oªº¤p¨ç¦¡, ¦Ó¤£¥Îµn¤J¥D¾÷
+    ä¸çŸ¥é“æœ‰å¤šå°‘äººè·Ÿå°å¼Ÿä¸€æ¨£æœƒæœ‰ sudo çš„éœ€æ±‚ (æ›´æ”¹ route/æ‰‹å‹•è½‰ä¿¡/ç³»çµ±å°æ™‚)
+    æ‰€ä»¥ç‰¹åˆ¥æä¾›, å¯ä»¥ç›´æŽ¥é€éŽ BBS ä»‹é¢åŸ·è¡Œ sudo æŒ‡ä»¤çš„å°å‡½å¼, è€Œä¸ç”¨ç™»å…¥ä¸»æ©Ÿ
 
-¯S§Oª`·N :
+ç‰¹åˆ¥æ³¨æ„ :
 
-    1.©³¤U¨â«h¨ç¦¡´£¨Ñµ¹ UNIX like OS ±M¥Î
-    2.¨Ï¥Î©³¤U¨â«h¨ç¦¡ªº°õ¦æÀÉ¥²¶·¬O¿W¥ß°õ¦æÀÉ (¦p¦P account ... etc)
-      ¤£µM, ±NµLªk°õ¦æ¥B°õ¦æ popen ³B¥²©w¥¢±Ñ (¸Ô±¡½Ð man popen)
-    3.¦Ó .so °ÊºA°õ¦æÀÉ³¡¤À, «h¬O©|¥¼´ú¸Õ¬O§_¥i¥H°õ¦æ
-    4.¥Ñ©ó sudo ¦³®É®Ä©Ê, ¥u­n²Ä¤@¦¸±K½X¥¿½T¼f®Ö³q¹L
-      ¤@¬q®É¶¡¤º, sudo ±N¤£·|¦AÅçÃÒ¨ä±K½X¬O§_¥¿½T, ©³¤U¨â«h¨ç¦¡¦P²z
-    5. ©Î¬O±N sudo ³]©w¦¨¤£¥Î¥´±K½X
-       ½s¿èvisudoªº³]©wÀÉ®×
+    1.åº•ä¸‹å…©å‰‡å‡½å¼æä¾›çµ¦ UNIX like OS å°ˆç”¨
+    2.ä½¿ç”¨åº•ä¸‹å…©å‰‡å‡½å¼çš„åŸ·è¡Œæª”å¿…é ˆæ˜¯ç¨ç«‹åŸ·è¡Œæª” (å¦‚åŒ account ... etc)
+      ä¸ç„¶, å°‡ç„¡æ³•åŸ·è¡Œä¸”åŸ·è¡Œ popen è™•å¿…å®šå¤±æ•— (è©³æƒ…è«‹ man popen)
+    3.è€Œ .so å‹•æ…‹åŸ·è¡Œæª”éƒ¨åˆ†, å‰‡æ˜¯å°šæœªæ¸¬è©¦æ˜¯å¦å¯ä»¥åŸ·è¡Œ
+    4.ç”±æ–¼ sudo æœ‰æ™‚æ•ˆæ€§, åªè¦ç¬¬ä¸€æ¬¡å¯†ç¢¼æ­£ç¢ºå¯©æ ¸é€šéŽ
+      ä¸€æ®µæ™‚é–“å…§, sudo å°‡ä¸æœƒå†é©—è­‰å…¶å¯†ç¢¼æ˜¯å¦æ­£ç¢º, åº•ä¸‹å…©å‰‡å‡½å¼åŒç†
+    5. æˆ–æ˜¯å°‡ sudo è¨­å®šæˆä¸ç”¨æ‰“å¯†ç¢¼
+       ç·¨è¼¯visudoçš„è¨­å®šæª”æ¡ˆ
        bbs ALL=NOPASSWD:/sbin/reboot
 
 /*
@@ -64,5 +64,5 @@ sudo_run_command(passwd, command)
 
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mTKyo [30m±q [31mcszone.twbbs.org [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mTKyo [30må¾ž [31mcszone.twbbs.org [30mç™¼è¡¨[m

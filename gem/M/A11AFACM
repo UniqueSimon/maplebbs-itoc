@@ -1,12 +1,12 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD]¦³Á|¿ì§ë²¼or½ä½L¦P®É¦bªO¤Wpo¤å
-µo«H¯¸: °Ê¤O®Ö¤ß (2005/06/09 Thu 03:13:06)                Updated: 2005/06/09
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ]æœ‰èˆ‰è¾¦æŠ•ç¥¨orè³­ç›¤åŒæ™‚åœ¨æ¿ä¸Špoæ–‡
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2005/06/09 Thu 03:13:06)                Updated: 2005/06/09
 
-¡° ¤Ş­z¡mdreambird.bbs@bbs.wretch.cc (bird)¡n¤§»Ê¨¥¡G
-> ¦³Á|¿ì§ë²¼or½ä½L¦P®É¦bªO¤Wpo¤å
+â€» å¼•è¿°ã€Šdreambird.bbs@bbs.wretch.cc (bird)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æœ‰èˆ‰è¾¦æŠ•ç¥¨orè³­ç›¤åŒæ™‚åœ¨æ¿ä¸Špoæ–‡
 
-  ¥ı°µºëµØ°Ï
-  [¥\¯à] post.c µo¤å¨ì¬İªO
+  å…ˆåšç²¾è¯å€
+  [åŠŸèƒ½] post.c ç™¼æ–‡åˆ°çœ‹æ¿
 
 : vote.c:vote_add()
 
@@ -24,13 +24,13 @@ vote_add(xo)
 + sprintf(fpath, "tmp/vote.%s", cuser.userid);
 + if (fp = fopen(fpath, "w"))
 + {
-+   sprintf(title, "¥»ªO¶}©l%s", vch.vgamble == '$' ? "½ä½L" : "§ë²¼");
++   sprintf(title, "æœ¬æ¿é–‹å§‹%s", vch.vgamble == '$' ? "è³­ç›¤" : "æŠ•ç¥¨");
 +
-+   /* ¤å³¹ÀÉÀY */
++   /* æ–‡ç« æª”é ­ */
 +   fprintf(fp, "%s %s (%s)\n", str_author1, cuser.userid, cuser.username);
-+   fprintf(fp, "¼ĞÃD: %s\n®É¶¡: %s\n\n", title, Now());
++   fprintf(fp, "æ¨™é¡Œ: %s\næ™‚é–“: %s\n\n", title, Now());
 +
-+   /* ¤å³¹¤º®e */
++   /* æ–‡ç« å…§å®¹ */
 +   fprintf(fp, "%s\n%s\n", title, vch.title);
 +   fclose(fp);
 +
@@ -38,9 +38,9 @@ vote_add(xo)
 +   unlink(fpath);
 + }
 
-  vmsg("¶}©l§ë²¼¤F¡I");
+  vmsg("é–‹å§‹æŠ•ç¥¨äº†ï¼");
   return vote_init(xo);
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

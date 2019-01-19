@@ -1,9 +1,9 @@
-µo«H¤H: heeroy.bbs@starlight.twbbs.org (®üÇU¨£ÆîÇrµó) ¬İªO: plan
-¼Ğ  ÃD: [­×¥¿] ªO¥D¦Û­q¤ÀÃşÃC¦â
-µo«H¯¸: ¬P¥ú¡E¤ß±¡ (2005/06/16 Thu 15:43:55)              Updated: 2005/08/02
+ç™¼ä¿¡äºº: heeroy.bbs@starlight.twbbs.org (æµ·?è¦‹??è¡—) çœ‹æ¿: plan
+æ¨™  é¡Œ: [ä¿®æ­£] æ¿ä¸»è‡ªè¨‚åˆ†é¡é¡è‰²
+ç™¼ä¿¡ç«™: æ˜Ÿå…‰?å¿ƒæƒ… (2005/06/16 Thu 15:43:55)              Updated: 2005/08/02
 
-±NºëµØ°Ï¤¤amaki¤jªºpatch°µ¤@ÂI­×¥¿,
-µM«á±N¥\¯à±q¬İªO¥DÃD¿W¥ß¥X¨Ó
+å°‡ç²¾è¯å€ä¸­amakiå¤§çš„patchåšä¸€é»ä¿®æ­£,
+ç„¶å¾Œå°‡åŠŸèƒ½å¾çœ‹æ¿ä¸»é¡Œç¨ç«‹å‡ºä¾†
 
 : transbrd.c:struct NEW
 
@@ -19,19 +19,19 @@
       new.bvote = old.bvote;
 
 compile transbrd
-±µ¤U¨Ó½Ğ±N©Ò¦³¨Ï¥ÎªÌ½ğ¤U½u,Ãö¯¸,²Mshm,
-¦A°õ¦æ transbrd Âà´« .BRD, ¦A¥Î¨ä¥Lªº port ¶}¯¸´ú¸Õ,
-½T©w¤@¤Á¥¿±`¤§«á¦AÄ~Äò§ï¤U­±ªºªF¦è
+æ¥ä¸‹ä¾†è«‹å°‡æ‰€æœ‰ä½¿ç”¨è€…è¸¢ä¸‹ç·š,é—œç«™,æ¸…shm,
+å†åŸ·è¡Œ transbrd è½‰æ› .BRD, å†ç”¨å…¶ä»–çš„ port é–‹ç«™æ¸¬è©¦,
+ç¢ºå®šä¸€åˆ‡æ­£å¸¸ä¹‹å¾Œå†ç¹¼çºŒæ”¹ä¸‹é¢çš„æ±è¥¿
 
 : struct.h:struct BRD
 
  char BM[BMLEN + 1];
 +char bcolor[3];
 
-: manage.c:post_class_color() ·s¼W¥H¤Ufunction¦bpost_brdtitle()¤§«e
+: manage.c:post_class_color() æ–°å¢ä»¥ä¸‹functionåœ¨post_brdtitle()ä¹‹å‰
 
 /* ----------------------------------------------------- */
-/* ªO¥D¥\¯à : ­×§ï¤ÀÃşÃC¦â                               */
+/* æ¿ä¸»åŠŸèƒ½ : ä¿®æ”¹åˆ†é¡é¡è‰²                               */
 /* ----------------------------------------------------- */
 
 static int
@@ -43,30 +43,30 @@ post_class_color(xo)
   oldbrd = bshm->bcache + currbno;
   memcpy(&newbrd, oldbrd, sizeof(BRD));
 
-  if (vans("­×§ï¬İªO¤ÀÃşÃC¦â(Y/N)¡H[N] ") == 'y')
+  if (vans("ä¿®æ”¹çœ‹æ¿åˆ†é¡é¡è‰²(Y/N)ï¼Ÿ[N] ") == 'y')
   {
     do
     {
-      newbrd.bcolor[0] = vans("«e´º«G«× 0)´¶³q 1)°ª«G¡H ");
+      newbrd.bcolor[0] = vans("å‰æ™¯äº®åº¦ 0)æ™®é€š 1)é«˜äº®ï¼Ÿ ");
     } while (newbrd.bcolor[0] < '0' || newbrd.bcolor[0] > '1');
 
     do
     {
       newbrd.bcolor[1] =
-        vans("«e´º 0)¶Â 1)¬õ 2)ºñ 3)¶À 4)ÂÅ 5)µµ 6)ÀQ 7)¥Õ¡H ");
+        vans("å‰æ™¯ 0)é»‘ 1)ç´… 2)ç¶  3)é»ƒ 4)è— 5)ç´« 6)é› 7)ç™½ï¼Ÿ ");
     } while (newbrd.bcolor[1] < '0' || newbrd.bcolor[1] > '7');
 
     do
     {
       newbrd.bcolor[2] =
-        vans("­I´º 0)¶Â 1)¬õ 2)ºñ 3)¶À 4)ÂÅ 5)µµ 6)ÀQ 7)¥Õ¡H ");
+        vans("èƒŒæ™¯ 0)é»‘ 1)ç´… 2)ç¶  3)é»ƒ 4)è— 5)ç´« 6)é› 7)ç™½ï¼Ÿ ");
     } while (newbrd.bcolor[2] < '0' || newbrd.bcolor[2] > '7');
 
     if (memcmp(&newbrd, oldbrd, sizeof(BRD)) && vans(msg_sure_ny) == 'y')
     {
       memcpy(oldbrd, &newbrd, sizeof(BRD));
       rec_put(FN_BRD, &newbrd, sizeof(BRD), currbno, NULL);
-      return XO_HEAD;   /* itoc.011125: ­n­«Ã¸¤¤¤åªO¦W */
+      return XO_HEAD;   /* itoc.011125: è¦é‡ç¹ªä¸­æ–‡æ¿å */
     }
   }
 
@@ -75,13 +75,13 @@ post_class_color(xo)
 
 : manage.c:post_manege()
 
-    "Manager ¼W´î°ÆªO¥D",
-+   "Tcolor ¦Û­q¤ÀÃşÃC¦â",
+    "Manager å¢æ¸›å‰¯æ¿ä¸»",
++   "Tcolor è‡ªè¨‚åˆ†é¡é¡è‰²",
 
   ...
 
-- char *menu = "¡· ªO¥D¿ï³æ (B)¥DÃD (W)¶iªO (M)°ÆªO"
-+ char *menu = "¡· ªO¥D¿ï³æ (B)¥DÃD (W)¶iªO (M)°ÆªO (T)ÃC¦â"
+- char *menu = "â— æ¿ä¸»é¸å–® (B)ä¸»é¡Œ (W)é€²æ¿ (M)å‰¯æ¿"
++ char *menu = "â— æ¿ä¸»é¸å–® (B)ä¸»é¡Œ (W)é€²æ¿ (M)å‰¯æ¿ (T)é¡è‰²"
 
   ...
 
@@ -93,56 +93,56 @@ post_class_color(xo)
 
 : acct.c:brd_set()
 
-  vget(++i, 0, "¬İªO¥DÃD¡G", brd->title, BTLEN + 1, GCARRY);
+  vget(++i, 0, "çœ‹æ¿ä¸»é¡Œï¼š", brd->title, BTLEN + 1, GCARRY);
 
 + if (brd->bcolor[0] != '0' && brd->bcolor[0] != '1')
 + {
-+   /* ·s¼W¬İªOª½±µassign¹w³]­È */
++   /* æ–°å¢çœ‹æ¿ç›´æ¥assigné è¨­å€¼ */
 +   sprintf(brd->bcolor, "1%d0", brd->class[3] & 7);
 + }
 + else
-+ { /* ­×§ï¬İªO®É¦A½T»{­n¤£­n§ï¤ÀÃşÃC¦â */
-+   if (vans("­×§ï¬İªO¤ÀÃşÃC¦â¡H[N] ") == 'y')
++ { /* ä¿®æ”¹çœ‹æ¿æ™‚å†ç¢ºèªè¦ä¸è¦æ”¹åˆ†é¡é¡è‰² */
++   if (vans("ä¿®æ”¹çœ‹æ¿åˆ†é¡é¡è‰²ï¼Ÿ[N] ") == 'y')
 +   {
 +     do
 +     {
-+       brd->bcolor[0] = vans("«e´ºÃC¦â¡G0)¤@¯ë 1)°ª«G«×¡H");
++       brd->bcolor[0] = vans("å‰æ™¯é¡è‰²ï¼š0)ä¸€èˆ¬ 1)é«˜äº®åº¦ï¼Ÿ");
 +     } while(brd->bcolor[0] > '1' || brd->bcolor[0] < '0');
 +     do
 +     {
 +       brd->bcolor[1] =
-+         vans("«e´º 0)¶Â 1)¬õ 2)ºñ 3)¶À 4)ÂÅ 5)µµ 6)ÀQ 7)¥Õ¡H ");
++         vans("å‰æ™¯ 0)é»‘ 1)ç´… 2)ç¶  3)é»ƒ 4)è— 5)ç´« 6)é› 7)ç™½ï¼Ÿ ");
 +     } while(brd->bcolor[1] > '7' || brd->bcolor[1] < '0');
 +     do
 +     {
 +       brd->bcolor[2] =
-+         vans("­I´º 0)¶Â 1)¬õ 2)ºñ 3)¶À 4)ÂÅ 5)µµ 6)ÀQ 7)¥Õ¡H ");
++         vans("èƒŒæ™¯ 0)é»‘ 1)ç´… 2)ç¶  3)é»ƒ 4)è— 5)ç´« 6)é› 7)ç™½ï¼Ÿ ");
 +     } while(brd->bcolor[2] > '7' || brd->bcolor[2] < '0');
 +   }
 + }
 
 --
-·R¹³¸¨¦b¤ßÀYªº¤õªá,
-§â¤ß¨Æ§¹¥şÂI«G,
-²`²`¦b¥G¹ï¤è,
-´NµLªkÁôÂÃ~
+æ„›åƒè½åœ¨å¿ƒé ­çš„ç«èŠ±,
+æŠŠå¿ƒäº‹å®Œå…¨é»äº®,
+æ·±æ·±åœ¨ä¹å°æ–¹,
+å°±ç„¡æ³•éš±è—~
 
 --
-          [5;36m¡¸[m[0;36m¬[1mP[0;36m¥[1mú[0;36m¡[1mE[0;36m¤[1mß[0;36m±[1m¡¡Î   [1;35m¡Î      [34m¡D[31mstarlight.twbbs.org[1;33m¡´[m
-          [1;30mby[5;36m¡D[;1;33mheeroy      [m¡D        [1;32m¡Î              [5;36m¡D[m
-          [1;30mfrom[32m¡Î[34mheeroy.arch.cycu.edu.tw                     [36m¡D[m
-                [1;30m¡Ä¡Å¢b¢c¢d¢e¢f¢h¢g¢f¢g¢h¢i¢i¢i¢h¢g¢f¢e¢d¢c¢b¡Å¡Ä[m
+          [5;36mâ˜†[m[0;36m?[1mP[0;36m?[1m?[0;36m?[1mE[0;36m?[1m?[0;36m?[1mï¹›?  [1;35mï¹¡      [34mï¼[31mstarlight.twbbs.org[1;33mâ—[m
+          [1;30mby[5;36mï¼[;1;33mheeroy      [mï¼        [1;32mï¹¡              [5;36mï¼[m
+          [1;30mfrom[32mï¹¡[34mheeroy.arch.cycu.edu.tw                     [36mï¼[m
+                [1;30mï¼¿?â–â–‚â–ƒâ–„â–…â–‡â–†â–…â–†â–‡â–ˆâ–ˆâ–ˆâ–‡â–†â–…â–„â–ƒâ–‚â–?ï¼¿[m
 
 --
-¹ïµÛ¬PªÅ»¡¥X§Úªº¦W¦r¬O­µ¼Ö
-¤]³\§Ú·Rªº¬O¤s»P®ü
-²oµÛ©pªº¤âµ¥«İ¤Ñ©ú
-¦b³o¶ô¤g¦a¤W
-§Æ±æ¤@ª½³£¦s¦b
-³o¸Ì¡A¬O§Ú¥Ã»·ªº¬G¶m
+å°è‘—æ˜Ÿç©ºèªªå‡ºæˆ‘çš„åå­—æ˜¯éŸ³æ¨‚
+ä¹Ÿè¨±æˆ‘æ„›çš„æ˜¯å±±èˆ‡æµ·
+ç‰½è‘—å¦³çš„æ‰‹ç­‰å¾…å¤©æ˜
+åœ¨é€™å¡ŠåœŸåœ°ä¸Š
+å¸Œæœ›ä¸€ç›´éƒ½å­˜åœ¨
+é€™è£¡ï¼Œæ˜¯æˆ‘æ°¸é çš„æ•…é„‰
 
 --
-          [5;36m¡¸[m[0;36m¬[1mP[0;36m¥[1mú[0;36m¡[1mE[0;36m¤[1mß[0;36m±[1m¡¡Î   [1;35m¡Î      [34m¡D[31mstarlight.twbbs.org[1;33m¡´[m
-          [1;30mby[5;36m¡D[;1;33mheeroy      [m¡D        [1;32m¡Î              [5;36m¡D[m
-          [1;30mfrom[32m¡Î[34mheeroy.arch.cycu.edu.tw                     [36m¡D[m
-                [1;30m¡Ä¡Å¢b¢c¢d¢e¢f¢h¢g¢f¢g¢h¢i¢i¢i¢h¢g¢f¢e¢d¢c¢b¡Å¡Ä[m
+          [5;36mâ˜†[m[0;36m?[1mP[0;36m?[1m?[0;36m?[1mE[0;36m?[1m?[0;36m?[1mï¹›?  [1;35mï¹¡      [34mï¼[31mstarlight.twbbs.org[1;33mâ—[m
+          [1;30mby[5;36mï¼[;1;33mheeroy      [mï¼        [1;32mï¹¡              [5;36mï¼[m
+          [1;30mfrom[32mï¹¡[34mheeroy.arch.cycu.edu.tw                     [36mï¼[m
+                [1;30mï¼¿?â–â–‚â–ƒâ–„â–…â–‡â–†â–…â–†â–‡â–ˆâ–ˆâ–ˆâ–‡â–†â–…â–„â–ƒâ–‚â–?ï¼¿[m

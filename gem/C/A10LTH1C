@@ -1,18 +1,18 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G602)
-¼ĞÃD: [¥\¯à] newboard ªO³sµ²¨ì¬İªO³s¸p
-®É¶¡: 2004/10/02 Sat 23:06:10                           Updated: 2004/10/03
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š602)
+æ¨™é¡Œ: [åŠŸèƒ½] newboard æ¿é€£çµåˆ°çœ‹æ¿é€£ç½²
+æ™‚é–“: 2004/10/02 Sat 23:06:10                           Updated: 2004/10/03
 
-¡° ¤Ş­z¡mbogigu (bogigu)¡n¤§»Ê¨¥¡G
-> ¦pªG§Ú·Q»¡¦bnewboardªO  ¤W¬Y­Ó¯S©wÁä  ´N¸õ¨ì³s¸p¾÷
-> ¨º­n«ç»ò§ï©O..
+â€» å¼•è¿°ã€Šbogigu (bogigu)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å¦‚æœæˆ‘æƒ³èªªåœ¨newboardæ¿  ä¸ŠæŸå€‹ç‰¹å®šéµ  å°±è·³åˆ°é€£ç½²æ©Ÿ
+> é‚£è¦æ€éº¼æ”¹å‘¢..
 
-: post.c:post_newbrd() ¥[¦b post_help() «e­±
+: post.c:post_newbrd() åŠ åœ¨ post_help() å‰é¢
 
 static int
 post_newbrd(xo)
   XO *xo;
 {
-  if (HAS_PERM(PERM_VALID) && !strcmp(currboard, "newboard"))  [1;44m// ªO¦W¦Û©w [m
+  if (HAS_PERM(PERM_VALID) && !strcmp(currboard, "newboard"))  [1;44m// æ¿åè‡ªå®š [m
   {
     DL_func("bin/newbrd.so:XoNewBoard");
     return post_init(xo);
@@ -22,13 +22,13 @@ post_newbrd(xo)
 
 : post.c:post_cb[]
 
-+ 'J', post_newbrd,         [1;44m // «öÁä¦Û©w [m
++ 'J', post_newbrd,         [1;44m // æŒ‰éµè‡ªå®š [m
   'h', post_help
 
 
-  ­Y§Æ±æ§ï¦¨©Ò¦³ªO«ö J ³£¥i¥H¶i¬İªO³s¸p¡A¨º»ò±N post.c:post_newbrd() ªº
-  if (HAS_PERM(PERM_VALID) && !strcmp(currboard, "newboard")) §ï¦¨
-  if (HAS_PERM(PERM_VALID)) §Y¥i
+  è‹¥å¸Œæœ›æ”¹æˆæ‰€æœ‰æ¿æŒ‰ J éƒ½å¯ä»¥é€²çœ‹æ¿é€£ç½²ï¼Œé‚£éº¼å°‡ post.c:post_newbrd() çš„
+  if (HAS_PERM(PERM_VALID) && !strcmp(currboard, "newboard")) æ”¹æˆ
+  if (HAS_PERM(PERM_VALID)) å³å¯
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

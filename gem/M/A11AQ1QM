@@ -1,30 +1,30 @@
-�o�H�H: amaki.bbs@luna.twbbs.org (�x�ϥ�����) �ݪO: plan
-��  �D: [�\��]�ݪO�H��B�s���ɶ��BCP�Ʀ�P�έp~5
-�o�H��: ��U�]�Q (Sat, 16 Aug 2003 10:20:10 +0800 (CST))  Updated: 2003/08/16
+發信人: amaki.bbs@luna.twbbs.org (灑羊奶轉圈圈) 看板: plan
+標  題: [功能]看板人氣、瀏覽時間、CP排行與統計~5
+發信站: 月下夜想 (Sat, 16 Aug 2003 10:20:10 +0800 (CST))  Updated: 2003/08/16
 
   1.
 
-  �Ĥ@���sĶtopbrd.c�e�A��ADJUST���}�A�n���s�s�y�X��bdata�̭��Ҧ���쳣�k�s�A
+  第一次編譯topbrd.c前，把ADJUST打開，要讓新製造出的bdata裡面所有欄位都歸零，
 
-  �p�G���k�s�A���N�n���@�~��~�|�����ƭȥ��`�C
+  如果不歸零，那就要等一年後才會全部數值正常。
 
-  �sĶ���A��ʰ���topbrd�A�A��ADJUST���_�ӡA��N�N���A���}�C
+  編譯完，手動執行topbrd，再把ADJUST關起來，日就就不再打開。
 
-  DEBUG�o�ﶵ�O�����Ϊ��A�O�h�ʥ��a!
+  DEBUG這選項是除錯用的，別去動它吧!
 
-  ����᪺�e�����ӷ|�O�o�ˡA�i�J�ݪO��A���pl�A���ӷ|�X�U�����e��
+  執行後的畫面應該會是這樣，進入看板後，按小l，應該會出下面的畫面
 
 
   2.
 
-  �����}�@��rec_board���ݪO�A�H�e�ǨC�ӪO���y�q�έp�ϡC
+  站長開一個rec_board的看板，以容納每個板的流量統計圖。
 
 
   3.
 
-  �O�D�άO�����Y�O���]�ݪO���ǤJ�έp�AAnnounce�̴N���|�X�{�ӪO�A���O�ݪO�٬O
+  板主或是站長若是有設看板不納入統計，Announce裡就不會出現該板，但是看板還是
 
-  �|���ۤv���έp����ϡA�C�Ӷg���������rec_board���ݪO�]�|�۰ʥ[�K�C
+  會有自己的統計直方圖，每個週期滿後轉到rec_board的看板也會自動加密。
 
 --
   [1;33mOrigin: luna.twbbs.org[m

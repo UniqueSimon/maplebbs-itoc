@@ -23,9 +23,9 @@
 #define BNNTP_LOGFILE	"run/bnntp.log"
 
 
-#define BNNTP_PERIOD	(60 * 15)	/* ¨C 15 ¤ÀÄÁ check ¤@¦¸ */
-#define BNNTP_TIMEOUT	(60 * 30)	/* ¶W¹L 30 ¤ÀÄÁªº³s½u´Nµø¬°¿ù»~ */
-#define BNNTP_FRESH	86400		/* ¨C 1 ¤Ñ¾ã²z¤@¦¸ */
+#define BNNTP_PERIOD	(60 * 15)	/* æ¯ 15 åˆ†é˜ check ä¸€æ¬¡ */
+#define BNNTP_TIMEOUT	(60 * 30)	/* è¶…é 30 åˆ†é˜çš„é€£ç·šå°±è¦–ç‚ºéŒ¯èª¤ */
+#define BNNTP_FRESH	86400		/* æ¯ 1 å¤©æ•´ç†ä¸€æ¬¡ */
 
 
 #define TCP_BACKLOG	3
@@ -38,7 +38,7 @@
 #define MAX_CMD_LEN	1024
 
 
-/* Thor.000425: POSIX ¥Î O_NONBLOCK */
+/* Thor.000425: POSIX ç”¨ O_NONBLOCK */
 
 #ifndef O_NONBLOCK
 #define M_NONBLOCK  FNDELAY
@@ -73,14 +73,14 @@ typedef struct Agent
   int mode;
   unsigned int ip_addr;
 
-  time_t tbegin;		/* ³s½u¶}©l®É¶¡ */
-  time_t uptime;		/* ¤W¦¸¤U«ü¥Oªº®É¶¡ */
+  time_t tbegin;		/* é€£ç·šé–‹å§‹æ™‚é–“ */
+  time_t uptime;		/* ä¸Šæ¬¡ä¸‹æŒ‡ä»¤çš„æ™‚é–“ */
 
-  char newsgroup[BNLEN + 1];	/* ¥Ø«e©Ò¦bªº¬İªO */
+  char newsgroup[BNLEN + 1];	/* ç›®å‰æ‰€åœ¨çš„çœ‹æ¿ */
 
   char *data;
   int used;
-  int size;			/* ¥Ø«e data ©Ò malloc ªºªÅ¶¡¤j¤p */
+  int size;			/* ç›®å‰ data æ‰€ malloc çš„ç©ºé–“å¤§å° */
 }     Agent;
 
 
@@ -189,7 +189,7 @@ agent_log(ap, key, msg)
 
 
 static void
-agent_reply(ap, msg)		/* ±N msg °e¥X¥h */
+agent_reply(ap, msg)		/* å°‡ msg é€å‡ºå» */
   Agent *ap;
   char *msg;
 {
@@ -209,7 +209,7 @@ agent_reply(ap, msg)		/* ±N msg °e¥X¥h */
 
 
 static void
-agent_write(ap, ftemp)		/* ±N ftemp ¸Ì­±ªº¤º®e°e¥X¥h */
+agent_write(ap, ftemp)		/* å°‡ ftemp è£¡é¢çš„å…§å®¹é€å‡ºå» */
   Agent *ap;
   char *ftemp;
 {
@@ -241,7 +241,7 @@ agent_write(ap, ftemp)		/* ±N ftemp ¸Ì­±ªº¤º®e°e¥X¥h */
 
 
 /* ----------------------------------------------------- */
-/* board¡Gshm ³¡¥÷¶·»P cache.c ¬Û®e			 */
+/* boardï¼šshm éƒ¨ä»½é ˆèˆ‡ cache.c ç›¸å®¹			 */
 /* ----------------------------------------------------- */
 
 
@@ -251,15 +251,15 @@ static BCACHE *bshm;
 static void
 init_bshm()
 {
-  /* itoc.030727: ¦b¶}±Ò bbsd ¤§«e¡AÀ³¸Ó´N­n°õ¦æ¹L account¡A
-     ©Ò¥H bshm À³¸Ó¤w³]©w¦n */
+  /* itoc.030727: åœ¨é–‹å•Ÿ bbsd ä¹‹å‰ï¼Œæ‡‰è©²å°±è¦åŸ·è¡Œé accountï¼Œ
+     æ‰€ä»¥ bshm æ‡‰è©²å·²è¨­å®šå¥½ */
 
   if (bshm)
     return;
 
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-  if (bshm->uptime <= 0)	/* bshm ¥¼³]©w§¹¦¨ */
+  if (bshm->uptime <= 0)	/* bshm æœªè¨­å®šå®Œæˆ */
     exit(0);
 }
 
@@ -270,7 +270,7 @@ init_bshm()
 
 
   /* --------------------------------------------------- */
-  /* ¯S®í«ü¥O						 */
+  /* ç‰¹æ®ŠæŒ‡ä»¤						 */
   /* --------------------------------------------------- */
 
 
@@ -314,7 +314,7 @@ cmd_quit(ap)
 
 
   /* --------------------------------------------------- */
-  /* ¼Ò¦¡						 */
+  /* æ¨¡å¼						 */
   /* --------------------------------------------------- */
 
 
@@ -330,7 +330,7 @@ cmd_mode(ap)
 
 
   /* --------------------------------------------------- */
-  /* ¦C¥X©Ò¦³¬İªO					 */
+  /* åˆ—å‡ºæ‰€æœ‰çœ‹æ¿					 */
   /* --------------------------------------------------- */
 
 
@@ -352,7 +352,7 @@ cmd_list(ap)
 
   do
   {
-    if (brdp->brdname[0] && !brdp->readlevel)	/* guest ¥iÅª */
+    if (brdp->brdname[0] && !brdp->readlevel)	/* guest å¯è®€ */
       fprintf(fp, "%s %d 1 y\r\n", brdp->brdname, brdp->bpost);
   } while (++brdp < bend);
 
@@ -364,7 +364,7 @@ cmd_list(ap)
 
 
   /* --------------------------------------------------- */
-  /* ¤Á´«¸s²Õ						 */
+  /* åˆ‡æ›ç¾¤çµ„						 */
   /* --------------------------------------------------- */
 
 
@@ -381,7 +381,7 @@ brd_get(brdname)
   {
     if (!str_cmp(brdname, bhdr->brdname))
     {
-      if (!bhdr->readlevel)	/* guest ¥iÅª */
+      if (!bhdr->readlevel)	/* guest å¯è®€ */
 	return bhdr;
       return NULL;
     }
@@ -414,7 +414,7 @@ cmd_group(ap)
 
 
   /* --------------------------------------------------- */
-  /* ´M°İÀÉÀY						 */
+  /* å°‹å•æª”é ­						 */
   /* --------------------------------------------------- */
 
 
@@ -462,7 +462,7 @@ cmd_xhdr(ap)
 
   str = ap->data + 5;
 
-  /* ¥u¤ä´© subject from date message-id ³o¥|ºØÀÉÀY */
+  /* åªæ”¯æ´ subject from date message-id é€™å››ç¨®æª”é ­ */
   if (!str_ncmp(str, "subject", 7))
     patern = 1;
   else if (!str_ncmp(str, "from", 4))
@@ -594,7 +594,7 @@ cmd_xover(ap)
       fprintf(fp, "%s\t", Gtime(hdr.chrono));
       fprintf(fp, "<%s$%s@"MYHOSTNAME">\t", hdr.xname, newsgroup);
       fprintf(fp, "%d\t", low);
-      fprintf(fp, "6\t");	/* lines ÀH«Kµ¹ */
+      fprintf(fp, "6\t");	/* lines éš¨ä¾¿çµ¦ */
       fprintf(fp, "%s.%s\r\n", newsgroup, hdr.xname);
     }
     close(fd);
@@ -608,7 +608,7 @@ cmd_xover(ap)
 
 
   /* --------------------------------------------------- */
-  /* §ì¨ú¤å³¹						 */
+  /* æŠ“å–æ–‡ç« 						 */
   /* --------------------------------------------------- */
 
 
@@ -653,7 +653,7 @@ fetch_article(ap, str, mode)
   fprintf(fp, "22%d %d article retrieved - %s follows\r\n", mode, pos + 1, mode ? "head" : "article");
   if (!rec_get(folder, &hdr, sizeof(HDR), pos))
   {
-    /* ¤å³¹ÀÉÀY */
+    /* æ–‡ç« æª”é ­ */
     fprintf(fp, "From: %s (%s)\r\n", postowner(hdr.owner), hdr.nick);
     fprintf(fp, "Newsgroups: %s\r\n", newsgroup);
     output_rfc2047_qp(fp, "Subject: ", hdr.title, MYCHARSET, "\r\n");
@@ -663,10 +663,10 @@ fetch_article(ap, str, mode)
     fprintf(fp, "Content-Type: text/plain; charset=\""MYCHARSET"\"\r\n");
     fprintf(fp, "Content-Transfer-Encoding: 8bit\r\n");
 
-    /* ¤å³¹¤º®e */
+    /* æ–‡ç« å…§å®¹ */
     if (!mode)
     {
-      fputs("\r\n", fp);	/* ÀÉÀY©M¤º¤åªÅ¤@¦æ */
+      fputs("\r\n", fp);	/* æª”é ­å’Œå…§æ–‡ç©ºä¸€è¡Œ */
 
 #ifdef HAVE_REFUSEMARK
       if (!(hdr.xmode & POST_RESTRICT))
@@ -677,7 +677,7 @@ fetch_article(ap, str, mode)
 	{
 	  while (fgets(buf, ANSILINELEN, fpr))
 	  {
-	    str_ansi(buf, buf, sizeof(buf));	/* ¥h°£ '\n' ¤Î±±¨î½X */
+	    str_ansi(buf, buf, sizeof(buf));	/* å»é™¤ '\n' åŠæ§åˆ¶ç¢¼ */
 	    fprintf(fp, "%s\r\n", buf);
 	  }
 	  fclose(fpr);
@@ -712,7 +712,7 @@ cmd_article(ap)
 
 
   /* --------------------------------------------------- */
-  /* «ü¥O¶°						 */
+  /* æŒ‡ä»¤é›†						 */
   /* --------------------------------------------------- */
 
 
@@ -952,7 +952,7 @@ agent_accept()
 
   value = 1;
 
-  /* Thor.000511: µù¸Ñ: don't delay send to coalesce(Áp¦X) packets */
+  /* Thor.000511: è¨»è§£: don't delay send to coalesce(è¯åˆ) packets */
   setsockopt(csock, IPPROTO_TCP, TCP_NODELAY, (char *) &value, sizeof(value));
 
   /* --------------------------------------------------- */
@@ -1060,9 +1060,9 @@ servo_signal()
 {
   struct sigaction act;
 
-  /* sigblock(sigmask(SIGPIPE)); *//* Thor.981206: ²Î¤@ POSIX ¼Ğ·Ç¥Îªk */
+  /* sigblock(sigmask(SIGPIPE)); *//* Thor.981206: çµ±ä¸€ POSIX æ¨™æº–ç”¨æ³• */
 
-  /* act.sa_mask = 0; *//* Thor.981105: ¼Ğ·Ç¥Îªk */
+  /* act.sa_mask = 0; *//* Thor.981105: æ¨™æº–ç”¨æ³• */
   sigemptyset(&act.sa_mask);
   act.sa_flags = 0;
 
@@ -1073,7 +1073,7 @@ servo_signal()
   sigaction(SIGSEGV, &act, NULL);	/* if rlimit violate */
   sigaction(SIGBUS, &act, NULL);
 
-#if 1	/* Thor.990203: §ì signal */
+#if 1	/* Thor.990203: æŠ“ signal */
   sigaction(SIGURG, &act, NULL);
   sigaction(SIGXCPU, &act, NULL);
   sigaction(SIGXFSZ, &act, NULL);
@@ -1087,7 +1087,7 @@ servo_signal()
 #ifdef LINUX
   sigaction(SIGSYS, &act, NULL);
   /* sigaction(SIGEMT, &act, NULL); */
-  /* itoc.010317: §Úªº linux ¨S¦³³o­Ó»¡ :p */
+  /* itoc.010317: æˆ‘çš„ linux æ²’æœ‰é€™å€‹èªª :p */
 #endif
 
   sigaction(SIGFPE, &act, NULL);
@@ -1114,8 +1114,8 @@ servo_signal()
   sigaction(SIGPROF, &act, NULL);
 #endif
 
-  /* Thor.981206: lkchu patch: ²Î¤@ POSIX ¼Ğ·Ç¥Îªk */
-  /* ¦b¦¹­É¥Î sigset_t act.sa_mask */
+  /* Thor.981206: lkchu patch: çµ±ä¸€ POSIX æ¨™æº–ç”¨æ³• */
+  /* åœ¨æ­¤å€Ÿç”¨ sigset_t act.sa_mask */
   sigaddset(&act.sa_mask, SIGPIPE);
   sigprocmask(SIG_BLOCK, &act.sa_mask, NULL);
 }
@@ -1445,7 +1445,7 @@ main(argc, argv)
     /* serve new connection				 */
     /* ------------------------------------------------- */
 
-    /* Thor.000209: ¦Ò¼{²¾«e¦¹³¡¤À, §K±o¥d¦b accept() */
+    /* Thor.000209: è€ƒæ…®ç§»å‰æ­¤éƒ¨åˆ†, å…å¾—å¡åœ¨ accept() */
     if (FD_ISSET(0, &rset))
     {
       /* Thor.990319: check maximum connection number */
@@ -1461,7 +1461,7 @@ main(argc, argv)
 	else
 	{
 	  agent = (Agent *) malloc(sizeof(Agent));
-	  if (!agent)		/* Thor.990205: °O¿ıªÅ¶¡¤£°÷ */
+	  if (!agent)		/* Thor.990205: è¨˜éŒ„ç©ºé–“ä¸å¤  */
 	    logit("ERROR", "Not enough space in main()");
 	}
 
@@ -1480,7 +1480,7 @@ main(argc, argv)
 	agent->ip_addr = ip_addr;
 
 	agent->data = (char *) malloc(MIN_DATA_SIZE);
-	if (!agent->data)	/* Thor.990205: °O¿ıªÅ¶¡¤£°÷ */
+	if (!agent->data)	/* Thor.990205: è¨˜éŒ„ç©ºé–“ä¸å¤  */
 	  logit("ERROR", "Not enough space in agent->data");
 	sprintf(agent->data, "200 MapleBBS NNTP server ready (read only)\r\n");
 	agent->used = strlen(agent->data);

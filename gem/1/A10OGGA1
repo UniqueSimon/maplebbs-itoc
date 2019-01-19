@@ -1,10 +1,10 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ½Ğ°İ«İ¬å¤å³¹¥\¯à
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/06/28 Mon 00:32:54)                Updated: 2005/03/15
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: è«‹å•å¾…ç æ–‡ç« åŠŸèƒ½
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/06/28 Mon 00:32:54)                Updated: 2005/03/15
 
-¡° ¤Ş­z¡msbs (SBS)¡n¤§»Ê¨¥¡G
-> ½Ğ°İ¦³¿ìªk¥[¤J¹³¤£¨}¤û¤jD¥\¯à¶Ü?
-> ¥ı¼Ğ°O¡AµM«á©T©w¤Ñ¼Æ«á¨t²Î·|¦Û°Ê§R°£
+â€» å¼•è¿°ã€Šsbs (SBS)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> è«‹å•æœ‰è¾¦æ³•åŠ å…¥åƒä¸è‰¯ç‰›å¤§DåŠŸèƒ½å—?
+> å…ˆæ¨™è¨˜ï¼Œç„¶å¾Œå›ºå®šå¤©æ•¸å¾Œç³»çµ±æœƒè‡ªå‹•åˆªé™¤
 
 : hdr.h:struct HDR
 
@@ -15,18 +15,18 @@ typedef struct
 
   int xid;                      /* reserved */
 
-- char xname[32];               /* ÀÉ®×¦WºÙ */
-+ char xname[28];               /* ÀÉ®×¦WºÙ */
-+ time_t delday;                /* ´X¤Ñ«á§R°£ */
-  char owner[80];               /* §@ªÌ (E-mail address) */
-  char nick[49];                /* ¼ÊºÙ */
-  char score;                   /* ¤å³¹µû¤ñ¤À¼Æ */
+- char xname[32];               /* æª”æ¡ˆåç¨± */
++ char xname[28];               /* æª”æ¡ˆåç¨± */
++ time_t delday;                /* å¹¾å¤©å¾Œåˆªé™¤ */
+  char owner[80];               /* ä½œè€… (E-mail address) */
+  char nick[49];                /* æš±ç¨± */
+  char score;                   /* æ–‡ç« è©•æ¯”åˆ†æ•¸ */
 
   char date[9];                 /* 96/12/31 */
-  /* Thor.990329:¯S§Oª`·N, date¥u¨ÑÅã¥Ü¥Î, ¤£§@¤ñ¸û, ¥HÁ×§K y2k °İÃD,
-                 ©w¸q 2000¬° 00, 2001¬°01 */
+  /* Thor.990329:ç‰¹åˆ¥æ³¨æ„, dateåªä¾›é¡¯ç¤ºç”¨, ä¸ä½œæ¯”è¼ƒ, ä»¥é¿å… y2k å•é¡Œ,
+                 å®šç¾© 2000ç‚º 00, 2001ç‚º01 */
 
-  char title[73];               /* ¥DÃD TTLEN + 1 */
+  char title[73];               /* ä¸»é¡Œ TTLEN + 1 */
 }          HDR;
 
 : post.c:post_attr()
@@ -42,7 +42,7 @@ post_attr(hdr)
 
   mode = hdr->xmode;
 
-: post.c:post_delday() ·s¼W¦¹¨ç¦¡¦b post_mark() «á­±
+: post.c:post_delday() æ–°å¢æ­¤å‡½å¼åœ¨ post_mark() å¾Œé¢
 
 static int
 post_delday(xo)
@@ -61,7 +61,7 @@ post_delday(xo)
     if (hdr->xmode & POST_MARKED)
       return XO_NONE;
 
-    if (vget(b_lines, 0, "´X¤Ñ«á§R°£¡G", ans, 3, DOECHO))
+    if (vget(b_lines, 0, "å¹¾å¤©å¾Œåˆªé™¤ï¼š", ans, 3, DOECHO))
     {
       if ((day = atoi(ans)) > 0)
       {
@@ -79,7 +79,7 @@ post_delday(xo)
 : post.c:post_cb[]
 
   'm', post_mark,
-+ 'p', post_delday,             [1;44m // «öÁä¦Û©w [m
++ 'p', post_delday,             [1;44m // æŒ‰éµè‡ªå®š [m
 
 : expire.c:expire()
 
@@ -93,5 +93,5 @@ post_delday(xo)
       keep = 1;
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m Maple-itoc£»°Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
- [1;42m¢q[45m¢}[m A[1mut[30mho[mr: [1;31mitoc [30m±q [36mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
+ [1;42mâ”¼[45mâ”˜[m A[1mut[30mho[mr: [1;31mitoc [30må¾ [36mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

@@ -1,29 +1,29 @@
-µo«H¤H: itoc.bbs@xeon.tfcis.org (¬İ¤FÃD¥Ø´Nª¾¹D¸Ó©ñ±ó) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD] °Î¦WªOªº°İÃD
-µo«H¯¸: °Ê¤O®Ö¤ß (Tue, 19 Aug 2003 09:54:52 +0800 (CST))  Updated: 2003/08/19
+ç™¼ä¿¡äºº: itoc.bbs@xeon.tfcis.org (çœ‹äº†é¡Œç›®å°±çŸ¥é“è©²æ”¾æ£„) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] åŒ¿åæ¿çš„å•é¡Œ
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (Tue, 19 Aug 2003 09:54:52 +0800 (CST))  Updated: 2003/08/19
 
-¡° ¤Ş­z¡mgokui (gokui)¡n¤§»Ê¨¥¡G
-> ©Ò¥H·Q½Ğ°İ¤@¤U¡A­n«ç»ò§â°Î¦W¹w³]­È§ï¦¨¨Ï¥Î¯u¦W
+â€» å¼•è¿°ã€Šgokui (gokui)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æ‰€ä»¥æƒ³è«‹å•ä¸€ä¸‹ï¼Œè¦æ€éº¼æŠŠåŒ¿åé è¨­å€¼æ”¹æˆä½¿ç”¨çœŸå
 
--     if (!vget(b_lines, 0, "½Ğ¿é¤J§A·Q¥ÎªºID¡A¤]¥iª½±µ«ö[Enter]"
--            "¡A©Î¬O«ö[r]¥Î¯u¦W¡G", anonymousid, IDLEN, DOECHO))
--     {                                         /* ¯d 1 byte ¥[ "." */
+-     if (!vget(b_lines, 0, "è«‹è¼¸å…¥ä½ æƒ³ç”¨çš„IDï¼Œä¹Ÿå¯ç›´æ¥æŒ‰[Enter]"
+-            "ï¼Œæˆ–æ˜¯æŒ‰[r]ç”¨çœŸåï¼š", anonymousid, IDLEN, DOECHO))
+-     {                                         /* ç•™ 1 byte åŠ  "." */
 -       strcpy(anonymousid, STR_ANONYMOUS);
 -       curredit |= EDIT_ANONYMOUS;
 -     }
 -     else if (strcmp(anonymousid, "r"))
 -     {
--       strcat(anonymousid, ".");    /* ­Y¬O¦Û©wID¡A­n¦b«á­±¥[­Ó . ªí¥Ü¤£¦P */
+-       strcat(anonymousid, ".");    /* è‹¥æ˜¯è‡ªå®šIDï¼Œè¦åœ¨å¾Œé¢åŠ å€‹ . è¡¨ç¤ºä¸åŒ */
 -       curredit |= EDIT_ANONYMOUS;
 -     }
 
-+     if (vget(b_lines, 0, "½Ğ¿é¤J§A·Q¥ÎªºID¡A¤]¥iª½±µ«ö[Enter]¨Ï¥Î¯u¦W¡G",
-+       anonymousid, IDLEN, DOECHO))        /* ¯d 1 byte ¥[ "." */
++     if (vget(b_lines, 0, "è«‹è¼¸å…¥ä½ æƒ³ç”¨çš„IDï¼Œä¹Ÿå¯ç›´æ¥æŒ‰[Enter]ä½¿ç”¨çœŸåï¼š",
++       anonymousid, IDLEN, DOECHO))        /* ç•™ 1 byte åŠ  "." */
 +     {
-+       strcat(anonymousid, ".");    /* ­Y¬O¦Û©wID¡A­n¦b«á­±¥[­Ó . ªí¥Ü¤£¦P */
++       strcat(anonymousid, ".");    /* è‹¥æ˜¯è‡ªå®šIDï¼Œè¦åœ¨å¾Œé¢åŠ å€‹ . è¡¨ç¤ºä¸åŒ */
 +       curredit |= EDIT_ANONYMOUS;
 +     }
 
 --
-[1;36m=[37m[[36m¡É[37m:[33m¡[37mİ¢¨[m¢©¡[1;33mİ[37m:[36m¡É [31mOrigin[37m ]|[[m     [31m°[1mÊ¤[0;31mO®[1mÖ¤[0;31mß [1mprocessor.tfcis.org    [37m]|[¡[33mİ£»¡[mİ[1;36m¡É[37m:][36m=[m
-[1;36m=[m[[1;36m¡Ç[37m:[33m¡[30mİ¢ª[m¢¬¡[1;33mİ[37m:[36m¡Ç [31mAuthor[m ]|[ [1m    itoc.dorm11.nctu.edu.tw         [m]|[¡[1;33mİ[30m¡[37m´¡[30mİ[36m¡Ç[37m:[m][1;36m=[m
+[1;36m=[37m[[36mï¹[37m:[33m?[37mæ‘ƒ?[mâ—£?[1;33m?[37m:[36mï¹ [31mOrigin[37m ]|[[m     [31m?[1må¨[0;31mO?[1mç—[0;31m?[1mprocessor.tfcis.org    [37m]|[?[33mæŸèªª[m?[1;36mï¹[37m:][36m=[m
+[1;36m=[m[[1;36mï¹Š[37m:[33m?[30mæ‘ƒ?[mâ•±?[1;33m?[37m:[36mï¹Š [31mAuthor[m ]|[ [1m    itoc.dorm11.nctu.edu.tw         [m]|[?[1;33m?[30m?[37mæ’[30m?[36mï¹Š[37m:[m][1;36m=[m

@@ -1,13 +1,13 @@
-µo«H¤H: Efen.bbs@backwind.g1.dorm.ncku.edu.tw (,,,,,,) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à]¶i¯¸°Êµe
-µo«H¯¸: °j­·¨¦ (2003/12/26 Fri 17:53:12)                  Updated: 2004/01/12
+ç™¼ä¿¡äºº: Efen.bbs@backwind.g1.dorm.ncku.edu.tw (,,,,,,) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]é€²ç«™å‹•ç•«
+ç™¼ä¿¡ç«™: è¿´é¢¨è°· (2003/12/26 Fri 17:53:12)                  Updated: 2004/01/12
 
-°ò¥»¤W´N¬O¶i¯¸®É¡A³s¼·´X±i¹Ï¨Ó°µ¬°°Êµe¡A
-­º¥ı¥ı¦b¦UÃşµe­±¤U·s¼W¤T­Ó¸ê®Æ
+åŸºæœ¬ä¸Šå°±æ˜¯é€²ç«™æ™‚ï¼Œé€£æ’¥å¹¾å¼µåœ–ä¾†åšç‚ºå‹•ç•«ï¼Œ
+é¦–å…ˆå…ˆåœ¨å„é¡ç•«é¢ä¸‹æ–°å¢ä¸‰å€‹è³‡æ–™
 enter-0  enter-1  enter-2
-¡]­n³s¼·´X±i´N·s¼W´X­Ó¡^
+ï¼ˆè¦é€£æ’¥å¹¾å¼µå°±æ–°å¢å¹¾å€‹ï¼‰
 
-: maple/bbsd.c:tn_main()¡A¦³¶W¹L¤T±iªº¸Ü¡A´N¦Û¦æ·ÓµÛ¥[¤J
+: maple/bbsd.c:tn_main()ï¼Œæœ‰è¶…éä¸‰å¼µçš„è©±ï¼Œå°±è‡ªè¡Œç…§è‘—åŠ å…¥
 
 static inline void
 tn_main()
@@ -18,19 +18,19 @@ tn_main()
 
 #ifdef HAVE_LOGIN_DENIED
   if (acl_has(BBS_ACLFILE, "", fromhost))
-    login_abort("\n¶Q¾÷¾¹©ó¤£³Q±Í¯¸±µ¨ü");
+    login_abort("\nè²´æ©Ÿå™¨æ–¼ä¸è¢«æ•ç«™æ¥å—");
 #endif
 
-+ for (i = 0; i < 3; i++)      /* ¦³¤T±i¶i¯¸°Êµe */
++ for (i = 0; i < 3; i++)      /* æœ‰ä¸‰å¼µé€²ç«™å‹•ç•« */
 + {
 +   film_out(FILM_ENTER0 + i,  0);
 +   refresh();
-+   usleep(300000);            /* ¨C±i°±¯d0.3¬í */
++   usleep(300000);            /* æ¯å¼µåœç•™0.3ç§’ */
 +   clear();
 + }
 
-  prints(MYHOSTNAME " ¡ó " SCHOOLNAME " ¡ó " MYIPADDR "\n"
-    "Åwªï¥úÁ{¡i\033[1;33;46m %s \033[m¡j¥Ø«e½u¤W¤H¼Æ [%d/300] ¤H",
+  prints(MYHOSTNAME " âŠ™ " SCHOOLNAME " âŠ™ " MYIPADDR "\n"
+    "æ­¡è¿å…‰è‡¨ã€\033[1;33;46m %s \033[mã€‘ç›®å‰ç·šä¸Šäººæ•¸ [%d/300] äºº",
     str_site, ushm->count);
 
 
@@ -48,21 +48,21 @@ static char *list[] =           /* src/include/struct.h */
 };
 
 
-: include/struct.h   ½s¸¹­n«ö¶¶§Ç
+: include/struct.h   ç·¨è™Ÿè¦æŒ‰é †åº
 
-- #define FILM_MOVIE      17      /* °ÊºA¬İªO FILM_MOVIE ­n©ñ¦b³Ì«á­± */
-+ #define FILM_ENTER0     17      /* ¶i¯¸°Êµe(¢¯) */
-+ #define FILM_ENTER1     18      /* ¶i¯¸°Êµe(¢°) */
-+ #define FILM_ENTER2     19      /* ¶i¯¸°Êµe(¢±) */
-+ #define FILM_MOVIE      20      /* °ÊºA¬İªO FILM_MOVIE ­n©ñ¦b³Ì«á­± */
+- #define FILM_MOVIE      17      /* å‹•æ…‹çœ‹æ¿ FILM_MOVIE è¦æ”¾åœ¨æœ€å¾Œé¢ */
++ #define FILM_ENTER0     17      /* é€²ç«™å‹•ç•«(ï¼) */
++ #define FILM_ENTER1     18      /* é€²ç«™å‹•ç•«(ï¼‘) */
++ #define FILM_ENTER2     19      /* é€²ç«™å‹•ç•«(ï¼’) */
++ #define FILM_MOVIE      20      /* å‹•æ…‹çœ‹æ¿ FILM_MOVIE è¦æ”¾åœ¨æœ€å¾Œé¢ */
 
 
-make§¹­«¶}¾÷´N¦æ¤F¡K
-¼·©ñ¬O¦³¶¶§Çªº¡A±qenter-0 ¦Aenter-1 ³Ì«áenter-2
-°Êµe½s¿è´N·Ó¦¹½s´N¥i¥H¡C
+makeå®Œé‡é–‹æ©Ÿå°±è¡Œäº†â€¦
+æ’¥æ”¾æ˜¯æœ‰é †åºçš„ï¼Œå¾enter-0 å†enter-1 æœ€å¾Œenter-2
+å‹•ç•«ç·¨è¼¯å°±ç…§æ­¤ç·¨å°±å¯ä»¥ã€‚
 
-­n¬İ½d¨Òªº½Ğ³s¦Ü¥»¯¸¡G
+è¦çœ‹ç¯„ä¾‹çš„è«‹é€£è‡³æœ¬ç«™ï¼š
 backwind.twbbs.org
 --
-[0m[1;31;44m ¡y¢~¢£[33m¦¨¤jÂå¾Ç[31m¢~¢£ [32m¢ª[35m¢¨      [37m¡Ë  ¡¸ [35m¢[32mi[33m¢[36mi [32mbbs.med.ncku.edu.tw [36m¢[33mi[32m¢[35mi [37m¡¸  ¡Ê     [0m
-[0m[1;31;42m ¢~¢£[33m°j ­· ¨¦[31m¢~¢£¡z [31m¢«[34m¢© [37m¡÷From¡G[36m140.116.131.76                             [37m¡ö[0m
+[0m[1;31;44m ã€â•­â•¯[33mæˆå¤§é†«å­¸[31mâ•­â•¯ [32mâ—¥[35mâ—¢      [37mï¹Œ  â˜† [35m?[32mi[33m?[36mi [32mbbs.med.ncku.edu.tw [36m?[33mi[32m?[35mi [37mâ˜†  ï¹‹     [0m
+[0m[1;31;42m â•­â•¯[33mè¿´ é¢¨ è°·[31mâ•­â•¯ã€ [31mâ—¤[34mâ—£ [37mâ†’Fromï¼š[36m140.116.131.76                             [37mâ†[0m

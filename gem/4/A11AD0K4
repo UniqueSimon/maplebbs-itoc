@@ -1,34 +1,34 @@
-�@��: chwaian (�L��) �ݪO: itoc
-���D: Re: �Q�аݦ�����L������
-�ɶ�: 2004/08/23 Mon 20:20:27                           Updated: 2004/08/23
+作者: chwaian (無言) 看板: itoc
+標題: Re: 想請問有做賭盤的站長
+時間: 2004/08/23 Mon 20:20:27                           Updated: 2004/08/23
 
-: etc/game �W�[ bet�ؿ�
+: etc/game 增加 bet目錄
 
   % mkdir ~/etc/game/bet
 
-: /etc/game/bet/  �W�[ bet.welcome ���e�p�U
+: /etc/game/bet/  增加 bet.welcome 內容如下
 
-                        [44;1m�i�}���W�h�P�`�N�ƶ��j[m
+                        [44;1m【開局規則與注意事項】[m
 
-�򥻷Q�k�G���a��U�`�����浹�t�ΡA�Ҧ��q�諸���a�����Ҧ��m���C
-          �q�������a�S���b����C
+基本想法：玩家把下注的錢交給系統，所有猜對的玩家均分所有彩金。
+          猜錯的玩家沒有半毛錢。
 
-0.�w��j�a�h�}���C
-1.�����H�}�����i�U�`�C
-2.�}���̻ݦ۳ƪ��B (10*�ﶵ+5)*�@�i�m��������C
-  �}����۰��ʶR�U�ﶵ�U 10 �i�m���C
-  5 �i�m�����B���}���]�w�O�C
-3.�Ҧ��U�`���m���̫᧡����Ĺ���ϥΪ̡A�}���̩⦨ 5%�A�t�Ω�| 1%�C
-4.�ɶ��@��N����A�U�`�C�ݶ}���̤��G���G��A
-  �m���󦸤� 6:30am ���o�A�ðO���� Bet ���C
-5.�ɶ��H�@���(24�p��)�����A�Ъ`�N�}�����ɶ��H���������ʡC
-  (eg:�b�o���@�ɬר��y�ɵ��G��~����)
-[33;1m6.�}���̭Y�������欰�� (�p�ᦱ�ƹ�ۦ�ϧQ..��) �g�ϥΪ����|��
-  �S���Ҧ��]���ì�b���A�Цۭ��C[m
-7.�Y�|����l�N���w��� Bet ���Q�סC
+0.歡迎大家多開局。
+1.先有人開局後方可下注。
+2.開局者需自備金額 (10*選項+5)*一張彩票的價格。
+  開局後自動購買各選項各 10 張彩票。
+  5 張彩票金額為開局設定費。
+3.所有下注的彩金最後均分給贏的使用者，開局者抽成 5%，系統抽稅 1%。
+4.時間一到就不能再下注。待開局者公佈結果後，
+  彩金於次日 6:30am 分發，並記錄於 Bet 版。
+5.時間以一整天(24小時)為單位，請注意開局的時間以維持公平性。
+  (eg:在得知世界盃足球賽結果後才結束)
+[33;1m6.開局者若有不當行為者 (如扭曲事實自行圖利..等) 經使用者檢舉後
+  沒收所有財產並砍帳號，請自重。[m
+7.若尚有其餘意見歡迎至 Bet 版討論。
 
 
-: /etc/game/bet/  �W�[ bet.list ���e�p�U
+: /etc/game/bet/  增加 bet.list 內容如下
 
 0 111 dsyan
 dsyan
@@ -112,5 +112,5 @@ dsyan
 dsyan
 
 --
- [1;41m�~[44m�q[m Or[1mig[30min[m: [43m Maple-itoc���ʤO�֤� [35;47m processor.tfcis.org [m
- [1;42m�q[45m�}[m A[1mut[30mho[mr: [1;31mchwaian [30m�q [36m218-171-119-168.dynamic.hinet.net [30m�o��[m
+ [1;41m╭[44m┼[m Or[1mig[30min[m: [43m Maple-itoc˙動力核心 [35;47m processor.tfcis.org [m
+ [1;42m┼[45m┘[m A[1mut[30mho[mr: [1;31mchwaian [30m從 [36m218-171-119-168.dynamic.hinet.net [30m發表[m

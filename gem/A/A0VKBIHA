@@ -1,29 +1,29 @@
-µo«H¤H: etnba.bbs@bbs.leader.edu.tw (´Á«İ6/30), ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD] bbsd.c ¶i¯¸µe­±§ï¦¨¤­­Ó¶]
-µo«H¯¸: »â¾ÉªÌ¤§®a (Tue Jul 16 08:52:46 2002)             Updated: 2006/01/24
+ç™¼ä¿¡äºº: etnba.bbs@bbs.leader.edu.tw (æœŸå¾…6/30), çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] bbsd.c é€²ç«™ç•«é¢æ”¹æˆäº”å€‹è·‘
+ç™¼ä¿¡ç«™: é ˜å°è€…ä¹‹å®¶ (Tue Jul 16 08:52:46 2002)             Updated: 2006/01/24
 
 : src/include/struct.h
-: ·s¼W FILM_OPENING3 FILM_OPENING4
-: FILM_WELCOME «á¨Ó¥H«áªº¨ä¥L¼Æ¦r³£¥[¤G
+: æ–°å¢ FILM_OPENING3 FILM_OPENING4
+: FILM_WELCOME å¾Œä¾†ä»¥å¾Œçš„å…¶ä»–æ•¸å­—éƒ½åŠ äºŒ
 
 /* ----------------------------------------------------- */
-/* cache.c ¤¤¹B¥Îªº¸ê®Æµ²ºc                              */
+/* cache.c ä¸­é‹ç”¨çš„è³‡æ–™çµæ§‹                              */
 /* ----------------------------------------------------- */
 
-#define FILM_OPENING0   0       /* ¶}ÀYµe­±(¢¯) */
-#define FILM_OPENING1   1       /* ¶}ÀYµe­±(¢°) */
-#define FILM_OPENING2   2       /* ¶}ÀYµe­±(¢±) */
-+ #define FILM_OPENING3   3     /* ¶}ÀYµe­±(¢²) */
-+ #define FILM_OPENING4   4     /* ¶}ÀYµe­±(¢³) */
+#define FILM_OPENING0   0       /* é–‹é ­ç•«é¢(ï¼) */
+#define FILM_OPENING1   1       /* é–‹é ­ç•«é¢(ï¼‘) */
+#define FILM_OPENING2   2       /* é–‹é ­ç•«é¢(ï¼’) */
++ #define FILM_OPENING3   3     /* é–‹é ­ç•«é¢(ï¼“) */
++ #define FILM_OPENING4   4     /* é–‹é ­ç•«é¢(ï¼”) */
 
-  [1;44m// ³Ñ¤U«á­±ªº¼Æ¦r´N¨Ì§Ç¥[ 2 [m
+  [1;44m// å‰©ä¸‹å¾Œé¢çš„æ•¸å­—å°±ä¾åºåŠ  2 [m
 
-- #define FILM_GOODBYE    3       /* ¦A¨£µe­± */
-+ #define FILM_GOODBYE    5       /* ¦A¨£µe­± */
+- #define FILM_GOODBYE    3       /* å†è¦‹ç•«é¢ */
++ #define FILM_GOODBYE    5       /* å†è¦‹ç•«é¢ */
   ...
   ...
-- #define FILM_MOVIE      16      /* °ÊºA¬İªO FILM_MOVIE ­n©ñ¦b³Ì«á­± */
-+ #define FILM_MOVIE      18      /* °ÊºA¬İªO FILM_MOVIE ­n©ñ¦b³Ì«á­± */
+- #define FILM_MOVIE      16      /* å‹•æ…‹çœ‹æ¿ FILM_MOVIE è¦æ”¾åœ¨æœ€å¾Œé¢ */
++ #define FILM_MOVIE      18      /* å‹•æ…‹çœ‹æ¿ FILM_MOVIE è¦æ”¾åœ¨æœ€å¾Œé¢ */
 
 
 : src/util/camera.c
@@ -47,8 +47,8 @@ static char *list[] =           /* src/include/struct.h */
 
 : src/maple/bbsd.c:tn_main()
 
-- film_out((ap_start % 3) + FILM_OPENING0, 3);  /* ¶Ã¼ÆÅã¥Ü¶}ÀYµe­± */
-+ film_out((ap_start % 5) + FILM_OPENING0, 3);  /* ¶Ã¼ÆÅã¥Ü¶}ÀYµe­± */
+- film_out((ap_start % 3) + FILM_OPENING0, 3);  /* äº‚æ•¸é¡¯ç¤ºé–‹é ­ç•«é¢ */
++ film_out((ap_start % 5) + FILM_OPENING0, 3);  /* äº‚æ•¸é¡¯ç¤ºé–‹é ­ç•«é¢ */
 
 --
-[1;32m¡¼ Origin: [33m¥ß¼w»â¾ÉªÌ¤§®a [37mbbs.leader.edu.tw  [31m¡¼ From: [36m61-216-130-237.HINET-IP.[m
+[1;32mâ–¡ Origin: [33mç«‹å¾·é ˜å°è€…ä¹‹å®¶ [37mbbs.leader.edu.tw  [31mâ–¡ From: [36m61-216-130-237.HINET-IP.[m

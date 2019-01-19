@@ -1,19 +1,19 @@
-�o�H�H: BioStar.bbs@micro.bio.ncue.edu.tw (���p����) �ݪO: itoc
-��  �D: [���] ��ذϪ��g�ƤW���M�e�q�W��
-�o�H��: ���ѱ^ (Sun, 06 Jul 2003 15:21:41 +0800 (CST))    Updated: 2003/07/09
+發信人: BioStar.bbs@micro.bio.ncue.edu.tw (澎湖小雲雀) 看板: itoc
+標  題: [文件] 精華區的篇數上限和容量上限
+發信站: 擎天崗 (Sun, 06 Jul 2003 15:21:41 +0800 (CST))    Updated: 2003/07/09
 
-�b itoc �P�U��e�������ޤU...  �ש����䧹��...
-�ڥu�O�y�L��z�@�U�Ӥw...  ��ڪ��\�������k��U��e��...
+在 itoc 與各位前輩的指引下...  終於讓其完備...
+我只是稍微整理一下而已...  實際的功勞應該歸於各位前輩...
 
-�s�W�\�঳�G
+新增功能有：
 
-  1. ����ӤH�P�ݪO��ذϪ��W�� (�]�A byte �Ƥνg��)
-  2. �i�H�b�޲z�Ϥ��]�w�W��
-  3. �i�H�}���Y�ǤH�άݪO���ˬd��ذϤj�p...
-  4. ��ܺ�ذϨϥζq
+  1. 限制個人與看板精華區的上限 (包括 byte 數及篇數)
+  2. 可以在管理區中設定上限
+  3. 可以開給某些人或看板不檢查精華區大小...
+  4. 顯示精華區使用量
 
-�o�\��O�ܶ˵w�Ъ��A�мf�V�M�w�O�_�u���ݭn�o�\��
+這功能是很傷硬碟的，請審慎決定是否真的需要這功能
 
 --
-[1;31m|[33m Origin [31m| [;37;45m ���Ʈv�j�ͪ��t �u���E����E���ѱ^ [35;47m micro.bio.ncue.edu.tw [m
+[1;31m|[33m Origin [31m| [;37;45m 彰化師大生物系 吟風?眺月?擎天崗 [35;47m micro.bio.ncue.edu.tw [m
 [1;31m|[35m Author [31m| [36m218-163-206-115.HINET-IP.hinet.net[m

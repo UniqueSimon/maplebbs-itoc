@@ -1,17 +1,17 @@
-§@ªÌ: itoc (SS ­n§¹³J¤F) ¯¸¤º: plan
-¼ĞÃD: [°İÃD] ©w´Á²M±¼¹L°ªªº process
-®É¶¡: Sun Jan 12 00:24:10 2003
+ä½œè€…: itoc (SS è¦å®Œè›‹äº†) ç«™å…§: plan
+æ¨™é¡Œ: [å•é¡Œ] å®šæœŸæ¸…æ‰éé«˜çš„ process
+æ™‚é–“: Sun Jan 12 00:24:10 2003
 
-¡° ¤Ş­z¡mYangwenli.bbs@bbs.sa.ncyu.edu.tw (·¨«Â§Q)¡n¤§»Ê¨¥¡G
->     ³Ì«á¥u¦n¦Û¤v¼g­Ó¤pshell script¡A©w®É±N±Æ¦W«e¤T¦Wªº bbsd kill±¼¡C
+â€» å¼•è¿°ã€ŠYangwenli.bbs@bbs.sa.ncyu.edu.tw (æ¥Šå¨åˆ©)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>     æœ€å¾Œåªå¥½è‡ªå·±å¯«å€‹å°shell scriptï¼Œå®šæ™‚å°‡æ’åå‰ä¸‰åçš„ bbsd killæ‰ã€‚
 
-  §â³oµ{¦¡ gcc ¤@¤U
-  µM«á©ñ¶i crontab ©w®É¶]
-  ¥i¥H kill ±¼¶W¹L 5% ªº bbsd
+  æŠŠé€™ç¨‹å¼ gcc ä¸€ä¸‹
+  ç„¶å¾Œæ”¾é€² crontab å®šæ™‚è·‘
+  å¯ä»¥ kill æ‰è¶…é 5% çš„ bbsd
 
 #include <stdio.h>
 
-#define THRESHOLD       5       /* top >= 5% ´N¬å */
+#define THRESHOLD       5       /* top >= 5% å°±ç  */
 
 int
 main()
@@ -39,14 +39,14 @@ main()
         ((str2 = (char *) strchr(i, '.')) ||
         (str2 = (char *) strchr(j, '%'))))
       {
-        /* ¥h±¼ usage ªº . ©M % */
+        /* å»æ‰ usage çš„ . å’Œ % */
         *str1 = '\0';
         *str2 = '\0';
 
-        /* ­Y³o process ­t¸ü¹L°ª¡A´N kill ±¼ */
+        /* è‹¥é€™ process è² è¼‰éé«˜ï¼Œå°± kill æ‰ */
         if (atoi(i) >= THRESHOLD || atoi(j) >= THRESHOLD)
         {
-          /* ¥Î kill -9 ¥H§K¦º·í¤F¬å¤£±¼ */
+          /* ç”¨ kill -9 ä»¥å…æ­»ç•¶äº†ç ä¸æ‰ */
           sprintf(cmd, "kill -9 %s", a);
           system(cmd);
         }
@@ -60,4 +60,4 @@ main()
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

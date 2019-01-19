@@ -1,11 +1,11 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: [°İÃD]ºëµØ°Ï¼ĞÃD¦Y±±¨î½X
-®É¶¡: Fri Nov 14 14:17:06 2003                          Updated: 2003/11/14
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: [å•é¡Œ]ç²¾è¯å€æ¨™é¡Œåƒæ§åˆ¶ç¢¼
+æ™‚é–“: Fri Nov 14 14:17:06 2003                          Updated: 2003/11/14
 
-¡° ¤Ş­z¡mchwaian (µL¨¥)¡n¤§»Ê¨¥¡G
-> ¼ĞÃD¦Y±±¨î½X¥i¦æ¶Ü¡H
+â€» å¼•è¿°ã€Šchwaian (ç„¡è¨€)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æ¨™é¡Œåƒæ§åˆ¶ç¢¼å¯è¡Œå—ï¼Ÿ
 
-  ¦b vget «ö Ctrl+U §Y¥i§Yªí¥Ü KEY_ESC
+  åœ¨ vget æŒ‰ Ctrl+U å³å¯å³è¡¨ç¤º KEY_ESC
 
 : visio.c:vget()
 
@@ -33,8 +33,8 @@
         *prompt++ = ch;
 
 --
-  ¤£¹L±o¤p¤ß³QÀİ¥Î :p
+  ä¸éå¾—å°å¿ƒè¢«æ¿«ç”¨ :p
 
 --
- [1;43m¢z[44m¢q[m Or[1mig[30min[m: [44m Maple-itoc£»°Ê¤O®Ö¤ß [31;47m processor.tfcis.org [m
- [1;41m¢|[42m¢}[m A[1mut[30mho[mr: [1;36mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [44m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [31;47m processor.tfcis.org [m
+ [1;41mâ””[42mâ”˜[m A[1mut[30mho[mr: [1;36mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

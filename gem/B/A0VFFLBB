@@ -1,18 +1,18 @@
-µo«H¤H: BioStar.bbs@bbs.bio.ncue.edu.tw (¼ê´ò¤p¶³³¶) ¬ÝªO: plan
-¼Ð  ÃD: Re: [¥\¯à] ¤ô²y¨t²Î
-µo«H¯¸: Àº¤Ñ±^ (Tue, 24 Jun 2003 11:31:00 +0800 (CST))    Updated: 2003/06/24
+ç™¼ä¿¡äºº: BioStar.bbs@bbs.bio.ncue.edu.tw (æ¾Žæ¹–å°é›²é›€) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [åŠŸèƒ½] æ°´çƒç³»çµ±
+ç™¼ä¿¡ç«™: æ“Žå¤©å´— (Tue, 24 Jun 2003 11:31:00 +0800 (CST))    Updated: 2003/06/24
 
-®Ú¾Ú itoc «e½ú©Ò¼gªº¤ô²y¦^ÂÐ®Éªº¥ú´Î......
+æ ¹æ“š itoc å‰è¼©æ‰€å¯«çš„æ°´çƒå›žè¦†æ™‚çš„å…‰æ£’......
 
-¨Ì¦¹¬°°òÂ¦......
+ä¾æ­¤ç‚ºåŸºç¤Ž......
 
-³o¼Ë¥i¥H§â¤ô²y¦^ÂÐ®É´å¼Ð©Ò¦b¨º¤@¦C¤ô²y¯S§O®³¥X¨Ó¨Ï¥Î......
+é€™æ¨£å¯ä»¥æŠŠæ°´çƒå›žè¦†æ™‚æ¸¸æ¨™æ‰€åœ¨é‚£ä¸€åˆ—æ°´çƒç‰¹åˆ¥æ‹¿å‡ºä¾†ä½¿ç”¨......
 
-¦pªG¤£¥Î¥ú´Î...  §ï¦¨¤Ï¬Û...  ¦n¹³¤]¬O¤£¿ùªº¥D·N......
+å¦‚æžœä¸ç”¨å…‰æ£’...  æ”¹æˆåç›¸...  å¥½åƒä¹Ÿæ˜¯ä¸éŒ¯çš„ä¸»æ„......
 
-³o¼Ëªº®ÄªG´NÃþ¦ü¥ú´Î...  ¶¶«K¤]§ï±¼ ">" ÅÜ¦¨ "¡÷" ...
+é€™æ¨£çš„æ•ˆæžœå°±é¡žä¼¼å…‰æ£’...  é †ä¾¿ä¹Ÿæ”¹æŽ‰ ">" è®Šæˆ "â†’" ...
 
-³¥¤HÄmÃn¤@¤U...  §Æ±æ¦U¦ì«e½ú¤©¥H«ü¾É...
+é‡Žäººç»æ›ä¸€ä¸‹...  å¸Œæœ›å„ä½å‰è¼©äºˆä»¥æŒ‡å°Ž...
 
 :include/config.h
 
@@ -23,11 +23,11 @@
 
 :maple/bmw.c:
 
-#define BMW_FORMAT      "\033[1;33;46m¡¹%s \033[37;45m %s \033[m"
-#define BMW_FORMAT2     "\033[1;33;41m¡¸%s \033[34;47m %s \033[m"
+#define BMW_FORMAT      "\033[1;33;46mâ˜…%s \033[37;45m %s \033[m"
+#define BMW_FORMAT2     "\033[1;33;41mâ˜†%s \033[34;47m %s \033[m"
 + #ifdef HAVE_BMW_CURSOR_BAR
-+ #define BMW_FORMAT3     "\033[1;36;43m¡¹%s \033[35;47m %s \033[m"
-                          /* BMW_FORMAT3 ¥i¥H¨Ì»Ý¨D§ó§ïÃC¦â */
++ #define BMW_FORMAT3     "\033[1;36;43mâ˜…%s \033[35;47m %s \033[m"
+                          /* BMW_FORMAT3 å¯ä»¥ä¾éœ€æ±‚æ›´æ”¹é¡è‰² */
 + #endif
 
 
@@ -51,7 +51,7 @@
 +    benz = &bmw_lslot[bmw_pos];
 +    move(2 + max - bmw_pos, 0);
 +    clrtoeol();
-+    prints("¡÷" BMW_FORMAT3, benz->userid, benz->msg);
++    prints("â†’" BMW_FORMAT3, benz->userid, benz->msg);
 +#else   /* HAVE_BMW_CURSOR_BAR */
     move(2 + max - pos, 0);
     outc(' ');
@@ -68,7 +68,7 @@
 
 :maple/bmw.c:bmw_reply()
 
-  tmpmode = bbsmode;    /* lkchu.981201: Àx¦s bbsmode */
+  tmpmode = bbsmode;    /* lkchu.981201: å„²å­˜ bbsmode */
   utmp_mode(M_BMW_REPLY);
 
 #ifdef BMW_DISPLAY
@@ -78,15 +78,15 @@
 +#ifdef HAVE_BMW_CURSOR_BAR
 +    BMW *benz;
 +
-+    vs_save(slt);       /* itoc.010313: °O¿ý bmd_display ¤§«eªº screen */
-+    bmw_display(max);   /* itoc.010313: display ¥H«eªº¤ô²y */
++    vs_save(slt);       /* itoc.010313: è¨˜éŒ„ bmd_display ä¹‹å‰çš„ screen */
++    bmw_display(max);   /* itoc.010313: display ä»¥å‰çš„æ°´çƒ */
 +    benz = &bmw_lslot[bmw_pos];
 +    move(2 + max - bmw_pos, 0);
 +    clrtoeol();
-+    prints("¡÷" BMW_FORMAT3, benz->userid, benz->msg);
++    prints("â†’" BMW_FORMAT3, benz->userid, benz->msg);
 +#else   /* HAVE_BMW_CURSOR_BAR */
-    vs_save(slt);       /* itoc.010313: °O¿ý bmd_display ¤§«eªº screen */
-    bmw_display(max);   /* itoc.010313: display ¥H«eªº¤ô²y */
+    vs_save(slt);       /* itoc.010313: è¨˜éŒ„ bmd_display ä¹‹å‰çš„ screen */
+    bmw_display(max);   /* itoc.010313: display ä»¥å‰çš„æ°´çƒ */
     move(2 + max - bmw_pos, 0);
     outc('>');
 +#endif  /* HAVE_BMW_CURSOR_BAR */
@@ -97,13 +97,13 @@
     save_foot(slp);
 
 --
-[0m[1mùÝùùùùùùùùùùùùùùùùùß[35m®É¶¡¤w°µ¤F¿ï¾Ü  ¤°»ò¤H¥s°µªB¤Í  °¸¦Ó¸IÀY  ¤ß±¡«o¯à¤@ÂI´N³q[0m
-[0m[1mùø[33;46m--[31m¡´[33m-¢w [37m¢c¢d[30m¢b  [37;40mùø[0;35m¦]¬°§Ú­Ì´¿¦³¹L  ²z·QÃþ¦üªº¥Í¬¡ ¤Ó¦h·P¨ü µ´«D¤T¨¥¨â»y¯à§Î®e[37m
-[0m[1mùø[33;46m¢¬¢x¢­      [37m¢c¢b[40mùø[0;34m¥i¯à¦³®É§Ú­ÌÅU¼{¤Ó¦h  ¤Ó¦h¨M©w»Ý­n§Ú­Ì¥h¿ï¾Ü[37m
-[0m[1mùø[0;30;46m       ¡t[32m¢¨¢©   [37;40;1mùø[34m¾á¤ß·|¥Ç¿ù  Ãø§K·|¨ü®À  ©¯¦n¤@¸ô¤W¦³§A³­§Ú   [37m   ¡´   ¡´[0m
-[0m[1mùø[0;34;46m¡t[32m¢¨¢© ¢¨¢i¢i¢© [37;40;1mùø[36m»P§A¤À¨Éªº§Ö¼Ö  ³Ó¹L¿W¦Û¾Ö¦³  ¦Ü¤µ§Ú¤´²`²`·P°Ê[37mùü[31m¡½[37mùý /[36m¡½[37mùû[0m
-[0m[1mùø[32;46m¢¨¢i¢i¢©    ¢¨¢©[37;40mùø[0;36m¦n¤Í¦p¦P¤@®°µ¡  ¯àÅýµø³¥¤£¦P               [37;1m     //    \\[0m
+[0m[1mâ•”â•â•â•â•â•â•â•â•â•—[35mæ™‚é–“å·²åšäº†é¸æ“‡  ä»€éº¼äººå«åšæœ‹å‹  å¶è€Œç¢°é ­  å¿ƒæƒ…å»èƒ½ä¸€é»žå°±é€š[0m
+[0m[1mâ•‘[33;46m--[31mâ—[33m-â”€ [37mâ–‚â–ƒ[30mâ–  [37;40mâ•‘[0;35må› ç‚ºæˆ‘å€‘æ›¾æœ‰éŽ  ç†æƒ³é¡žä¼¼çš„ç”Ÿæ´» å¤ªå¤šæ„Ÿå— çµ•éžä¸‰è¨€å…©èªžèƒ½å½¢å®¹[37m
+[0m[1mâ•‘[33;46mâ•±â”‚â•²      [37mâ–‚â–[40mâ•‘[0;34må¯èƒ½æœ‰æ™‚æˆ‘å€‘é¡§æ…®å¤ªå¤š  å¤ªå¤šæ±ºå®šéœ€è¦æˆ‘å€‘åŽ»é¸æ“‡[37m
+[0m[1mâ•‘[0;30;46m       ï¹€[32mâ—¢â—£   [37;40;1mâ•‘[34mæ“”å¿ƒæœƒçŠ¯éŒ¯  é›£å…æœƒå—æŒ«  å¹¸å¥½ä¸€è·¯ä¸Šæœ‰ä½ é™ªæˆ‘   [37m   â—   â—[0m
+[0m[1mâ•‘[0;34;46mï¹€[32mâ—¢â—£ â—¢â–ˆâ–ˆâ—£ [37;40;1mâ•‘[36mèˆ‡ä½ åˆ†äº«çš„å¿«æ¨‚  å‹éŽç¨è‡ªæ“æœ‰  è‡³ä»Šæˆ‘ä»æ·±æ·±æ„Ÿå‹•[37mâ•°[31mâ– [37mâ•¯ /[36mâ– [37mâ•®[0m
+[0m[1mâ•‘[32;46mâ—¢â–ˆâ–ˆâ—£    â—¢â—£[37;40mâ•‘[0;36må¥½å‹å¦‚åŒä¸€æ‰‡çª—  èƒ½è®“è¦–é‡Žä¸åŒ               [37;1m     //    \\[0m
 
 --
-[1;31m|[33m Origin [31m| [0;45m ¹ü¤Æ®v¤j¥Íª«¨t §u­·¡E²·¤ë¡EÀº¤Ñ±^ [35;47m micro.bio.ncue.edu.tw [m
+[1;31m|[33m Origin [31m| [0;45m å½°åŒ–å¸«å¤§ç”Ÿç‰©ç³» åŸé¢¨?çœºæœˆ?æ“Žå¤©å´— [35;47m micro.bio.ncue.edu.tw [m
 [1;31m|[35m Author [31m| [36m218-163-205-152.HINET-IP.hinet.net[m

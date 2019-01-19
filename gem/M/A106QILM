@@ -1,31 +1,31 @@
-µo«H¤H: Efen.bbs@bbs.med.ncku.edu.tw (^^) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à]POP3¶l¥ó¦øªA¾¹
-µo«H¯¸: °j­·¨¦ (2004/04/02 Fri 13:22:41)                  Updated: 2004/04/03
+ç™¼ä¿¡äºº: Efen.bbs@bbs.med.ncku.edu.tw (^^) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]POP3éƒµä»¶ä¼ºæœå™¨
+ç™¼ä¿¡ç«™: è¿´é¢¨è°· (2004/04/02 Fri 13:22:41)                  Updated: 2004/04/03
 
-±qWindtop¨ºÃäÂà´Ó¹L¨Óªº¡C
+å¾Windtopé‚£é‚Šè½‰æ¤éä¾†çš„ã€‚
 
 : modes.h
 
-#define XZ_GEM          (XO_ZONE + 13)  /* ºëµØ°Ï */
-+ #define XZ_MIME       (XO_ZONE + 14)  /* MIME ¦¬«H */
+#define XZ_GEM          (XO_ZONE + 13)  /* ç²¾è¯å€ */
++ #define XZ_MIME       (XO_ZONE + 14)  /* MIME æ”¶ä¿¡ */
 
 : ufo.h
 
-#define UFO_LOGINCLOAK  BFLAG(21)       /* ¤W¯¸ª½±µÁô¨­ */
-+ #define UFO_MIME      BFLAG(22)       /* MIME ¸Ñ½X */
+#define UFO_LOGINCLOAK  BFLAG(21)       /* ä¸Šç«™ç›´æ¥éš±èº« */
++ #define UFO_MIME      BFLAG(22)       /* MIME è§£ç¢¼ */
 
-  "Áô¨­¤W¯¸        (Áô¨­/²{¨­)",        /* UFO_LOGINCLOAK */
-+ "MIME½s½X        (¶}±Ò/Ãö³¬)",        /* UFO_MIME */
+  "éš±èº«ä¸Šç«™        (éš±èº«/ç¾èº«)",        /* UFO_LOGINCLOAK */
++ "MIMEç·¨ç¢¼        (é–‹å•Ÿ/é—œé–‰)",        /* UFO_MIME */
 
 : global.h
 
-+ #define FN_MAILSERVICE_LOG  "run/mailservice.log"   /* MailSevice ¨Ï¥Î¬ö¿ı */
-+ #define FN_ETC_MAILSERVICE  "etc/mailservice"       /* ¹q¤l¶l¥óªA°È */
++ #define FN_MAILSERVICE_LOG  "run/mailservice.log"   /* MailSevice ä½¿ç”¨ç´€éŒ„ */
++ #define FN_ETC_MAILSERVICE  "etc/mailservice"       /* é›»å­éƒµä»¶æœå‹™ */
 
 : theme.h
 
 + #define FEETER_POP3     \
-COLOR1 " POP3ªA°È " COLOR2 " (y)¦^«H (F/x)Âà±H (d)§R°£ (D)°Ï¬q§R°£ (m)¼Ğ°O
+COLOR1 " POP3æœå‹™ " COLOR2 " (y)å›ä¿¡ (F/x)è½‰å¯„ (d)åˆªé™¤ (D)å€æ®µåˆªé™¤ (m)æ¨™è¨˜
  \033[m"
 
 : maple.p
@@ -35,13 +35,13 @@ COLOR1 " POP3ªA°È " COLOR2 " (y)¦^«H (F/x)Âà±H (d)§R°£ (D)°Ï¬q§R°£ (m)¼Ğ°O
 
 : admutil.c
 
-    "¦¬«H¥Õ¦W³æ",
-    "¦¬«H¶Â¦W³æ",
+    "æ”¶ä¿¡ç™½åå–®",
+    "æ”¶ä¿¡é»‘åå–®",
 
 #ifdef HAVE_LOGIN_DENIED
-    "©Úµ´³s½u¦W³æ",
+    "æ‹’çµ•é€£ç·šåå–®",
 #endif
-+   "POP3ªA°È»¡©ú",
++   "POP3æœå‹™èªªæ˜",
 
 
     MAIL_ACLFILE,
@@ -54,31 +54,31 @@ COLOR1 " POP3ªA°È " COLOR2 " (y)¦^«H (F/x)Âà±H (d)§R°£ (D)°Ï¬q§R°£ (m)¼Ğ°O
 
 : menu.c
 
-§ä¦a¤è¥[¤W
+æ‰¾åœ°æ–¹åŠ ä¸Š
   "bin/pop3mail.so:Pop3mail", PERM_BASIC, -M_XMODE,
-  "Pop3       ¢u POP3 ¶l¥ó¢t",
+  "Pop3       â”œ POP3 éƒµä»¶â”¤",
 
 : so/Makefile
 
-¥[¤W pop3mail.so
+åŠ ä¸Š pop3mail.so
 
 : ~/mailservice
 
-»İ­n¦b/home/bbs¤§¤U¡A
+éœ€è¦åœ¨/home/bbsä¹‹ä¸‹ï¼Œ
 mkdir mailservice
 
 : so/pop3mail.c
 
-¥[¤W¤U­±³o¬qµ{¦¡
-..³o³¡¤ÀÁÙ¦³°İÃD¡AÂà«H/±H«H/¦^«Hªº°Ê§@³£¥i¥H¤F¡A
-¥u¬O§R¤åªº³¡¤ÀÁÙ¨S§ï¦n¡K
-­ì¨Óªº§R¤å¬O¥Î¤jD¼Ğ¦n¡AµM«áÂ÷¶}®É°İ§A­n¤£­n§R°£(WindTop³£³o¼Ë???)
-³Ì«áÂ÷¶}¦øªA¾¹®É¦A§R±¼
+åŠ ä¸Šä¸‹é¢é€™æ®µç¨‹å¼
+..é€™éƒ¨åˆ†é‚„æœ‰å•é¡Œï¼Œè½‰ä¿¡/å¯„ä¿¡/å›ä¿¡çš„å‹•ä½œéƒ½å¯ä»¥äº†ï¼Œ
+åªæ˜¯åˆªæ–‡çš„éƒ¨åˆ†é‚„æ²’æ”¹å¥½â€¦
+åŸä¾†çš„åˆªæ–‡æ˜¯ç”¨å¤§Dæ¨™å¥½ï¼Œç„¶å¾Œé›¢é–‹æ™‚å•ä½ è¦ä¸è¦åˆªé™¤(WindTopéƒ½é€™æ¨£???)
+æœ€å¾Œé›¢é–‹ä¼ºæœå™¨æ™‚å†åˆªæ‰
 
-²{¦b§Ú§ï¤F«e¥b¡AÅı¥Lª½±µ§R±¼¡K
-µM«á«á¥bÁÙ¨S·Q¨ì«ç»ò§ï¡K
-so...^^;;ÅÜ¦¨¨S¿ìªk¦³®Äªº§R¥ó¡A¥u¬O¦Û¤vÂsÄı®É¡A§R¦nª±ªº¡A
-»·ºİªºmail server¤£·|¨ü¨ì¼vÅT¡I@.@
+ç¾åœ¨æˆ‘æ”¹äº†å‰åŠï¼Œè®“ä»–ç›´æ¥åˆªæ‰â€¦
+ç„¶å¾Œå¾ŒåŠé‚„æ²’æƒ³åˆ°æ€éº¼æ”¹â€¦
+so...^^;;è®Šæˆæ²’è¾¦æ³•æœ‰æ•ˆçš„åˆªä»¶ï¼Œåªæ˜¯è‡ªå·±ç€è¦½æ™‚ï¼Œåˆªå¥½ç©çš„ï¼Œ
+é ç«¯çš„mail serverä¸æœƒå—åˆ°å½±éŸ¿ï¼@.@
 
 
 /*-------------------------------------------------------*/
@@ -98,7 +98,7 @@ so...^^;;ÅÜ¦¨¨S¿ìªk¦³®Äªº§R¥ó¡A¥u¬O¦Û¤vÂsÄı®É¡A§R¦nª±ªº¡A
 #define MIME_QP         0x20000000
 #define MIME_MIME       0x40000000
 
-static int is_mime; /* ¤Á´« MIME ¥ÎªººX¼Ğ */
+static int is_mime; /* åˆ‡æ› MIME ç”¨çš„æ——æ¨™ */
 static int is_base64;
 static int is_qp;
 static int is_bbsmail;
@@ -107,9 +107,9 @@ static char boundary[128];
 extern XZ xz[];
 extern char xo_pool[];
 
-static FILE *fsock; /* ³s½u¥Îªº FILE */
+static FILE *fsock; /* é€£ç·šç”¨çš„ FILE */
 
-static int del_num; /* ¥Î¨Ó UnDelete ¥Î , ¤w§R°£¤å³¹¼Æ*/
+static int del_num; /* ç”¨ä¾† UnDelete ç”¨ , å·²åˆªé™¤æ–‡ç« æ•¸*/
 
 extern int TagNum;
 static int server_login();
@@ -137,8 +137,8 @@ logitfile(file, key, msg)
 
 /* ----------------------------------------------------- */
 /* QP code : "0123456789ABCDEF"                          */
-/* QP ¬O¤@ºØ¸Ñ½X¤è¦¡ quoted-printable                    */
-/* ¤@½g¤å³¹¤¤ªº '=' ¦³¨S¦³¶W¹L¤@©w¼Æ¥Ø.                  */
+/* QP æ˜¯ä¸€ç¨®è§£ç¢¼æ–¹å¼ quoted-printable                    */
+/* ä¸€ç¯‡æ–‡ç« ä¸­çš„ '=' æœ‰æ²’æœ‰è¶…éä¸€å®šæ•¸ç›®.                  */
 /* ----------------------------------------------------- */
 
 static int
@@ -157,7 +157,7 @@ qp_code(x)
 /* ------------------------------------------------------------------ */
 /* BASE64 :                                                           */
 /* "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/" */
-/* Base64µLªk§PÂ_, °£«D§Ú­Ì¦³header                                   */
+/* Base64ç„¡æ³•åˆ¤æ–·, é™¤éæˆ‘å€‘æœ‰header                                   */
 /* ------------------------------------------------------------------ */
 
 static int
@@ -181,13 +181,13 @@ base64_code(x)
 /* judge & decode QP / BASE64                            */
 /* ----------------------------------------------------- */
 
-/* ¥h°£¤£¥²­nªº¼ĞÀY */
+/* å»é™¤ä¸å¿…è¦çš„æ¨™é ­ */
 static int
 pop3_mime_cut(unsigned char* src,HDR *hdr, FILE *fp,FILE *sock)
 {
   char *ptr;
 
-  /* ­Y¨S¦³¶}±Ò MIME ¸Ñ½X¿ï¶µ«h¤£¤©¸Ñ½X */
+  /* è‹¥æ²’æœ‰é–‹å•Ÿ MIME è§£ç¢¼é¸é …å‰‡ä¸äºˆè§£ç¢¼ */
   if(!is_mime)
     return 1;
 
@@ -209,7 +209,7 @@ pop3_mime_cut(unsigned char* src,HDR *hdr, FILE *fp,FILE *sock)
 
   if(!strncmp(src, "----", strlen("----"))||
      !strncmp(src, "\tboundary", strlen("\tboundary")))
-    return 0; /* ¸õ¹L¦¹³¡¥÷¸Ñ½X */
+    return 0; /* è·³éæ­¤éƒ¨ä»½è§£ç¢¼ */
 
 #if 1
   if(!strncmp(src, "Content-Type: ", strlen("Content-Type: ")))
@@ -218,38 +218,38 @@ pop3_mime_cut(unsigned char* src,HDR *hdr, FILE *fp,FILE *sock)
     if(!str_ncmp(ptr, "text/html",strlen("text/html")))
     {
       hdr->xmode |= MIME_MIME;
-      fprintf(fp, "html ¦³ºô­¶®æ¦¡\n");
+      fprintf(fp, "html æœ‰ç¶²é æ ¼å¼\n");
       return 0;
     }
     if(!str_ncmp(ptr, "image",strlen("image")))
     {
       hdr->xmode |= MIME_MIME;
-      fprintf(fp, "image ¦³ªş¥ó : ¹Ï¤ùÀÉ\n");
+      fprintf(fp, "image æœ‰é™„ä»¶ : åœ–ç‰‡æª”\n");
       return 0;
     }
     if(!str_ncmp(ptr, "audio",strlen("audio")))
     {
       hdr->xmode |= MIME_MIME;
-      fprintf(fp, "audio ¦³ªş¥ó : ­µ®ÄÀÉ\n");
+      fprintf(fp, "audio æœ‰é™„ä»¶ : éŸ³æ•ˆæª”\n");
       return 0;
     }
     if(!str_ncmp(ptr, "video",strlen("video")))
     {
       hdr->xmode |= MIME_MIME;
-      fprintf(fp, "video ¦³ªş¥ó : ¼v­µÀÉ\n");
+      fprintf(fp, "video æœ‰é™„ä»¶ : å½±éŸ³æª”\n");
       return 0;
     }
     if(!str_ncmp(ptr, "application",strlen("application")))
     {
       hdr->xmode |= MIME_MIME;
-      fprintf(fp, "application ¦³ªş¥ó : ¤£©ú®æ¦¡\n");
+      fprintf(fp, "application æœ‰é™„ä»¶ : ä¸æ˜æ ¼å¼\n");
       return 0;
     }
     hdr->xmode &= (MIME_QP|MIME_BASE64);
 
-    /* ¹J¨ì text or image µ²§ô¸Ñ½X°Ê§@ */
+    /* é‡åˆ° text or image çµæŸè§£ç¢¼å‹•ä½œ */
     fgets(src, 256, sock);
-    if(*src == '\t') /* Contect-Type «á¦³ boundary & charset,«e·|¦³ tab */
+    if(*src == '\t') /* Contect-Type å¾Œæœ‰ boundary & charset,å‰æœƒæœ‰ tab */
     {
       return 0;
     }
@@ -262,12 +262,12 @@ pop3_mime_cut(unsigned char* src,HDR *hdr, FILE *fp,FILE *sock)
     ptr = strchr(ptr,'"');
     end = strchr(ptr+1,'"');
     *end = 0;
-    fprintf(fp, "\tªş¥ó¦WºÙ : %s\n",pop3_mime_transfer((char *)ptr+1));
+    fprintf(fp, "\té™„ä»¶åç¨± : %s\n",pop3_mime_transfer((char *)ptr+1));
     return 0;
   }
   if(!strncmp(src, "Content-Transfer-Encoding: ", strlen("Content-Transfer-Enco
 ding: ")))
-  { /* ¸Ñ rfc1522 body code */
+  { /* è§£ rfc1522 body code */
     ptr = src + strlen("Content-Transfer-Encoding: ");
     if(!strncmp(ptr, "base64", strlen("base64")))
     {
@@ -284,10 +284,10 @@ ding: ")))
   if(hdr->xmode & MIME_MIME)
     return 0;
 
-  return 1; /* ¶i¦æ¸Ñ½X°Ê§@ */
+  return 1; /* é€²è¡Œè§£ç¢¼å‹•ä½œ */
 }
 
-/* ¸Ñ½X , ¸ò bmtad.c ªº multipart() «Ü¹³*/
+/* è§£ç¢¼ , è·Ÿ bmtad.c çš„ multipart() å¾ˆåƒ*/
 static char*
 pop3_mime_transfer(unsigned char* src)
 {
@@ -296,24 +296,24 @@ pop3_mime_transfer(unsigned char* src)
   register int is_done;
   register int c1, c2, c3, c4;
 
-  /* ­Y¨S¦³¶}±Ò MIME ¸Ñ½X¿ï¶µ«h¤£¤©¸Ñ½X */
+  /* è‹¥æ²’æœ‰é–‹å•Ÿ MIME è§£ç¢¼é¸é …å‰‡ä¸äºˆè§£ç¢¼ */
   if(!is_mime)
     return src;
 
   ans = src;
 
-   /* §PÂ_«e 10 ­Ó¦r¤¸¬O§_³£¦bbase64 ¤¤ */
+   /* åˆ¤æ–·å‰ 10 å€‹å­—å…ƒæ˜¯å¦éƒ½åœ¨base64 ä¸­ */
   for (c1 = 0; c1 < 10 ; c1++)
      if (base64_code(src[c1]) == -1)
      {
         is_base64 = 0;
         break;
      }
-  for (is_done = 0; c1 = *src; src++) /* §â¶Ç¶i¨Óªº­È§@¸Ñ½X */
+  for (is_done = 0; c1 = *src; src++) /* æŠŠå‚³é€²ä¾†çš„å€¼ä½œè§£ç¢¼ */
   {
-    if (c1 == '?' && src[1] == '=') /* qb code ªº To: From: */
+    if (c1 == '?' && src[1] == '=') /* qb code çš„ To: From: */
     {
-      if(src[2] == ' ') /* ³q±` qb code ©Î base64 ªº²Ä¤T­Ó¤£·|¬OªÅ¥Õ */
+      if(src[2] == ' ') /* é€šå¸¸ qb code æˆ– base64 çš„ç¬¬ä¸‰å€‹ä¸æœƒæ˜¯ç©ºç™½ */
       {
         src++;
         is_qp = is_base64 = 0;
@@ -435,7 +435,7 @@ int_len(num)
   return i;
 }
 
-/* §â¨Ó·½¨ú¥X»İ­nªº³¡¤À */
+/* æŠŠä¾†æºå–å‡ºéœ€è¦çš„éƒ¨åˆ† */
 static char *
 parse_owner(token)
   char *token;
@@ -445,7 +445,7 @@ parse_owner(token)
   /* =?big5?B?qHSyzrresnqt+w==?= <postmaster@mail86.yzu.edu.tw> */
 
   ptr = strchr(token,'>'); /* > */
-  if(ptr) /* ¬İ³Ì«á¤@­Ó¦r¤¸¬O§_¬° > */
+  if(ptr) /* çœ‹æœ€å¾Œä¸€å€‹å­—å…ƒæ˜¯å¦ç‚º > */
   {
     *ptr = 0; /*  */
     ptr = strchr(token, '<'); /* <postmaster@mail86.yzu.edu.tw */
@@ -478,7 +478,7 @@ parse_nick(token)
   return token; /* =?big5?B?qHSyzrresnqt+w==?= */
 }
 
-/* ±q header ¨ú¥X»İ­nªº³¡¤À */
+/* å¾ header å–å‡ºéœ€è¦çš„éƒ¨åˆ† */
 static void
 parse_header(hdr, count)
   HDR *hdr;
@@ -495,7 +495,7 @@ parse_header(hdr, count)
 
   while(strncmp(buf, ".", 1))
   {
-    /* §@ªÌ */
+    /* ä½œè€… */
     if(!strncmp(buf, "From: ", strlen("From: ")))
     {
       char tmp[256];
@@ -504,16 +504,16 @@ parse_header(hdr, count)
       buf[strlen(buf)-2] = 0;
       tmp[strlen(tmp)-2] = 0;
 
-      /* ­n¤£­n is_base64 | is_qb */
+      /* è¦ä¸è¦ is_base64 | is_qb */
       snprintf(hdr->nick, 48, "%s", pop3_mime_transfer(parse_nick(token)));
-      /* ¨Ó·½»İ¨ú¥X¥u»İ­nªº³¡¤À <s874070@mail.yzu.edu.tw> */
+      /* ä¾†æºéœ€å–å‡ºåªéœ€è¦çš„éƒ¨åˆ† <s874070@mail.yzu.edu.tw> */
       hdr->nick[48] = 0;
 
       snprintf(hdr->owner, 78, "%s", pop3_mime_transfer(parse_owner(tmp)));
       hdr->owner[78] = 0;
     }
 
-    /* ¤é´Á */
+    /* æ—¥æœŸ */
     /* Date: Sun, 26 Dec 1999 02:07:46 -0800 */
     /* Date: 04 Jul 2000 07:18:54 GMT */
     if(!strncmp(buf, "Date: ", strlen("Date: ")))
@@ -529,7 +529,7 @@ parse_header(hdr, count)
                (tmdate.tm_year)%100, tmdate.tm_mon+1, tmdate.tm_mday);
     }
 
-    /* ¼ĞÃD */
+    /* æ¨™é¡Œ */
     /* Subject: xxxxxx */
     if(!strncmp(buf, "Subject: ", strlen("Subject: ")))
     {
@@ -561,11 +561,11 @@ pop3_load_dir()
         total = atoi(buf+4);
 /*        count = int_len(total);
         totalsize = atoi(buf+4+count);
-        sprintf(tmp,"«H¥ó¡G%d «Ê¡A¦@ %d bytes", total, totalsize);
+        sprintf(tmp,"ä¿¡ä»¶ï¼š%d å°ï¼Œå…± %d bytes", total, totalsize);
         vmsg(tmp);*/
         if(total == 0)
         {
-          vmsg("±zªº¹q¤l¶l¥ó«H½c¨S¦³«H¥ó¡C");
+          vmsg("æ‚¨çš„é›»å­éƒµä»¶ä¿¡ç®±æ²’æœ‰ä¿¡ä»¶ã€‚");
           return 1;
         }
         else
@@ -583,7 +583,7 @@ pop3_load_dir()
     hdr.xmode = MAIL_READ;
     hdr.chrono = count;
     snprintf(hdr.xname, 32, "%s.mail", cuser.userid);
-    parse_header(&hdr, count); // ¸ÑÄ¶ header
+    parse_header(&hdr, count); // è§£è­¯ header
     write(step, &hdr, sizeof(HDR)); /* hdr to file */
   }
   close(step);
@@ -677,7 +677,7 @@ pop3_get(fpath,hdr)
 
   if(totalsize > 10485760)
   {
-    fprintf(fp, "\n«H¥ó®e¶q¤Ó¤j¡AµLªk¦¬¨ú¡C\n");
+    fprintf(fp, "\nä¿¡ä»¶å®¹é‡å¤ªå¤§ï¼Œç„¡æ³•æ”¶å–ã€‚\n");
     fclose(fp);
     return 0;
   }
@@ -685,9 +685,9 @@ pop3_get(fpath,hdr)
 
   if(!is_bbsmail)
   {
-    fprintf(fp, "§@ªÌ: %s\n", hdr->owner); /* §â From §ï¦¨ §@ªÌ */
-    fprintf(fp, "¼ĞÃD: %s\n", hdr->title);
-    fprintf(fp, "®É¶¡: %s\n\n", hdr->date);
+    fprintf(fp, "ä½œè€…: %s\n", hdr->owner); /* æŠŠ From æ”¹æˆ ä½œè€… */
+    fprintf(fp, "æ¨™é¡Œ: %s\n", hdr->title);
+    fprintf(fp, "æ™‚é–“: %s\n\n", hdr->date);
   }
 
   /* GET BODY */
@@ -733,7 +733,7 @@ pop3_get(fpath,hdr)
       totalsize += strlen(buf);
       if(totalsize > 10485760)
       {
-        fprintf(fp, "\n«H¥ó®e¶q¤Ó¤j¡AµLªk¦¬¨ú¡C\n");
+        fprintf(fp, "\nä¿¡ä»¶å®¹é‡å¤ªå¤§ï¼Œç„¡æ³•æ”¶å–ã€‚\n");
         check_size = 1;
       }
     }
@@ -741,7 +741,7 @@ pop3_get(fpath,hdr)
   } while(strcmp(buf, ".\r\n") && ptr);
   if((hdr->xmode & (MIME_BASE64|MIME_QP)) && is_mime)
   {
-    fprintf(fp, "\n**³o¬O¤@«Ê¸g¹L MIME ¸Ñ½Xªº¤å¥ó¡A¦p¦³°İÃD½Ğ³qª¾¨t²ÎºŞ²zªÌ¡C**
+    fprintf(fp, "\n**é€™æ˜¯ä¸€å°ç¶“é MIME è§£ç¢¼çš„æ–‡ä»¶ï¼Œå¦‚æœ‰å•é¡Œè«‹é€šçŸ¥ç³»çµ±ç®¡ç†è€…ã€‚**
 \n");
   }
   fclose(fp);
@@ -764,7 +764,7 @@ pop3_browse(xo)
   if(!pop3_get(file, hdr))
     return XO_NONE;
 
-  strncpy(currtitle, hdr->title, 40); /* title ¥u¨ú¥Î«e 40 ­Ó ? */
+  strncpy(currtitle, hdr->title, 40); /* title åªå–ç”¨å‰ 40 å€‹ ? */
 
   more(file, NULL);
   hdr->xmode |= MAIL_READ;
@@ -899,7 +899,7 @@ pop3_body(xo)
 
   if (max <= 0)
   {
-    vmsg("±zªº¹q¤l¶l¥ó«H½c¨S¦³«H¥ó¡C");
+    vmsg("æ‚¨çš„é›»å­éƒµä»¶ä¿¡ç®±æ²’æœ‰ä¿¡ä»¶ã€‚");
     return XO_QUIT;
   }
 
@@ -923,14 +923,14 @@ static int
 pop3_head(xo)
   XO *xo;
 {
-  vs_head("Pop3ªA°È", str_site);
-  outs("[¡ö]Â÷¶} [¡÷,r]Åª«H [d]§R°£/±Ï¦^ [S]­«Åª [R]¦^«H [x]Âà¹F [h]»¡©ú");
+  vs_head("Pop3æœå‹™", str_site);
+  outs("[â†]é›¢é–‹ [â†’,r]è®€ä¿¡ [d]åˆªé™¤/æ•‘å› [S]é‡è®€ [R]å›ä¿¡ [x]è½‰é” [h]èªªæ˜");
   if(is_mime)
-    outs(" [MIME ¸Ñ½X]");
+    outs(" [MIME è§£ç¢¼]");
   else
-    outs(" [ µL  ¸Ñ½X]");
+    outs(" [ ç„¡  è§£ç¢¼]");
   outs("\n\033[44m\
-  ½s¸¹   ¤é ´Á §@ ªÌ        «H  ¥ó  ¼Ğ  ÃD                                  \03
+  ç·¨è™Ÿ   æ—¥ æœŸ ä½œ è€…        ä¿¡  ä»¶  æ¨™  é¡Œ                                  \03
 3[m");
 
   return pop3_body(xo);
@@ -956,7 +956,7 @@ static int
 pop3_help(xo)
   XO *xo;
 {
-  vmsg("Ãi±o¼g :p");
+  vmsg("æ‡¶å¾—å¯« :p");
   return XO_FOOT;
 }
 
@@ -997,7 +997,7 @@ pop3_forward(xo)
   sprintf(fpath,"mailservice/%s.mail",cuser.userid);
   if(!pop3_get(fpath,hdr))
     return XO_NONE;
-  if (!vget(b_lines, 0, "¥Øªº¦a¡G", rcpt, sizeof(rcpt), GCARRY))
+  if (!vget(b_lines, 0, "ç›®çš„åœ°ï¼š", rcpt, sizeof(rcpt), GCARRY))
     return XO_FOOT;
 
   if (mail_external(rcpt))
@@ -1033,10 +1033,10 @@ pop3_reload_dir(xo)
   if(pop3_load_dir())
   {
     fclose(fsock);
-    vmsg("­«Åª¥¢±Ñ");
+    vmsg("é‡è®€å¤±æ•—");
     return XO_QUIT;
   }
-  del_num = 0; /* ­«³]¤w§R°£¤å³¹¬° 1 */
+  del_num = 0; /* é‡è¨­å·²åˆªé™¤æ–‡ç« ç‚º 1 */
   return XO_INIT;
 }
 
@@ -1062,7 +1062,7 @@ pop3_mailsize(xo)
     total = atoi(str);
     str = strchr(str+1,' ');
     totalsize = atoi(str);
-    sprintf(msg,"«H¥ó¡G²Ä %d «Ê¡A¦@ %d bytes", total, totalsize);
+    sprintf(msg,"ä¿¡ä»¶ï¼šç¬¬ %d å°ï¼Œå…± %d bytes", total, totalsize);
     vmsg(msg);
   }
   else
@@ -1090,7 +1090,7 @@ pop3_stat(xo)
     total = atoi(str);
     str = strchr(str+1,' ');
     totalsize = atoi(str);
-    sprintf(msg,"«H¥ó¡G%d «Ê¡A¦@ %d bytes", total, totalsize);
+    sprintf(msg,"ä¿¡ä»¶ï¼š%d å°ï¼Œå…± %d bytes", total, totalsize);
     vmsg(msg);
   }
   else
@@ -1137,18 +1137,18 @@ server_login(inputemail)
   if(inputemail)
     strcpy(email,inputemail);
   else
-    strcpy(email,cuser.email); /* ¦Û°ÊÀ° user ¥[¤W±b¸¹¦W */
+    strcpy(email,cuser.email); /* è‡ªå‹•å¹« user åŠ ä¸Šå¸³è™Ÿå */
 
   pass[0] = 0;
-  if(!vget(21, 0, "±b¸¹¡G", email, 60, GCARRY) ||
-     !vget(22, 0, "±K½X¡G", pass, 20, NOECHO))
-  {                                             /* ¦³¤@¶µ¨S¿é¤J«h©ñ±ó */
+  if(!vget(21, 0, "å¸³è™Ÿï¼š", email, 60, GCARRY) ||
+     !vget(22, 0, "å¯†ç¢¼ï¼š", pass, 20, NOECHO))
+  {                                             /* æœ‰ä¸€é …æ²’è¼¸å…¥å‰‡æ”¾æ£„ */
     return -1;
   }
 
   if(!strchr(email, '@'))
   {
-    vmsg("¿é¤J±b¸¹¦³»~");
+    vmsg("è¼¸å…¥å¸³è™Ÿæœ‰èª¤");
     return 1;
   }
 
@@ -1158,7 +1158,7 @@ server_login(inputemail)
 
   if(Get_Socket(host, &sock))
   {
-    vmsg("¥D¾÷µLªk³s½u");
+    vmsg("ä¸»æ©Ÿç„¡æ³•é€£ç·š");
     return 1;
   }
 
@@ -1174,23 +1174,23 @@ server_login(inputemail)
     fgets(buf, 256, fsock);
     if(strncmp(buf, "+OK", 3))
     {
-      logitfile(FN_MAILSERVICE_LOG, "-pop3  NO-", email);       /* µn¤J¥¢±Ñ°O¿ı
+      logitfile(FN_MAILSERVICE_LOG, "-pop3  NO-", email);       /* ç™»å…¥å¤±æ•—è¨˜éŒ„
  */
-      vmsg("µn¤J¥¢±Ñ, ±K½X¿ù»~.");
+      vmsg("ç™»å…¥å¤±æ•—, å¯†ç¢¼éŒ¯èª¤.");
       fclose(fsock);
       return 1;
     }
     else
     {
-      logitfile(FN_MAILSERVICE_LOG, "-pop3  OK-", email);       /* µn¤J¦¨¥\°O¿ı
+      logitfile(FN_MAILSERVICE_LOG, "-pop3  OK-", email);       /* ç™»å…¥æˆåŠŸè¨˜éŒ„
  */
     }
   }
   else
   {
-    logitfile(FN_MAILSERVICE_LOG, "-pop3  NO-", email);       /* µn¤J¥¢±Ñ°O¿ı *
+    logitfile(FN_MAILSERVICE_LOG, "-pop3  NO-", email);       /* ç™»å…¥å¤±æ•—è¨˜éŒ„ *
 /
-    vmsg("µn¤J¥¢±Ñ, µL¦¹±b¸¹.");
+    vmsg("ç™»å…¥å¤±æ•—, ç„¡æ­¤å¸³è™Ÿ.");
     fclose(fsock);
     return 1;
   }
@@ -1241,9 +1241,9 @@ Pop3mail()
   XO *xo;
   char currsmaildir[30];
 
-  del_num = is_base64 = is_qp = 0; /* ¹w³]¤w§R°£¤å³¹¼Æ¬° 0, µL¸Ñ½X¤è¦¡ */
+  del_num = is_base64 = is_qp = 0; /* é è¨­å·²åˆªé™¤æ–‡ç« æ•¸ç‚º 0, ç„¡è§£ç¢¼æ–¹å¼ */
 
-  is_mime = (cuser.ufo & UFO_MIME) ? 1 : 0; /* ­YµL UFO_MIME «h±N³o¦æ¨ú®ø */
+  is_mime = (cuser.ufo & UFO_MIME) ? 1 : 0; /* è‹¥ç„¡ UFO_MIME å‰‡å°‡é€™è¡Œå–æ¶ˆ */
 
   sprintf(currsmaildir, "mailservice/%s.DIR", cuser.userid); /*DIRECTORY/MBOX*/
 
@@ -1251,7 +1251,7 @@ Pop3mail()
   if (server_login(NULL))
     return 0;
 
-  xz[XZ_MIME - XO_ZONE].xo = xo = xo_new(currsmaildir); /* ³]¨ú .DIR ¸ô®| */
+  xz[XZ_MIME - XO_ZONE].xo = xo = xo_new(currsmaildir); /* è¨­å– .DIR è·¯å¾‘ */
   xz[XZ_MIME - XO_ZONE].cb = pop3_cb;
   xover(XZ_MIME);
 
@@ -1268,9 +1268,9 @@ Pop3Contact(email)
   XO *xo;
   char currsmaildir[30];
 
-  del_num = is_base64 = is_qp = 0; /* ¹w³]¤w§R°£¤å³¹¼Æ¬° 0, µL¸Ñ½X¤è¦¡ */
+  del_num = is_base64 = is_qp = 0; /* é è¨­å·²åˆªé™¤æ–‡ç« æ•¸ç‚º 0, ç„¡è§£ç¢¼æ–¹å¼ */
 
-  is_mime = (cuser.ufo & UFO_MIME) ? 1 : 0; /* ­YµL UFO_MIME «h±N³o¦æ¨ú®ø */
+  is_mime = (cuser.ufo & UFO_MIME) ? 1 : 0; /* è‹¥ç„¡ UFO_MIME å‰‡å°‡é€™è¡Œå–æ¶ˆ */
 
   sprintf(currsmaildir, "mailservice/%s.DIR", cuser.userid); /*DIRECTORY/MBOX*/
 
@@ -1278,7 +1278,7 @@ Pop3Contact(email)
   if (server_login(email))
     return 0;
 
-  xz[XZ_MIME - XO_ZONE].xo = xo = xo_new(currsmaildir); /* ³]¨ú .DIR ¸ô®| */
+  xz[XZ_MIME - XO_ZONE].xo = xo = xo_new(currsmaildir); /* è¨­å– .DIR è·¯å¾‘ */
   xz[XZ_MIME - XO_ZONE].cb = pop3_cb;
   xover(XZ_MIME);
 
@@ -1290,5 +1290,5 @@ Pop3Contact(email)
 
 
 --
-[0m[1;31;44m ¡y¢~¢£[33m¦¨¤jÂå¾Ç[31m¢~¢£ [32m¢ª[35m¢¨      [37m¡Ë  ¡¸ [35m¢[32mi[33m¢[36mi [32mbbs.med.ncku.edu.tw [36m¢[33mi[32m¢[35mi [37m¡¸  ¡Ê     [0m
-[0m[1;31;42m ¢~¢£[33m°j ­· ¨¦[31m¢~¢£¡z [31m¢«[34m¢© [37m¡÷From¡G[36mbackwind.g1.dorm.ncku.edu.tw               [37m¡ö[0m
+[0m[1;31;44m ã€â•­â•¯[33mæˆå¤§é†«å­¸[31mâ•­â•¯ [32mâ—¥[35mâ—¢      [37mï¹Œ  â˜† [35m?[32mi[33m?[36mi [32mbbs.med.ncku.edu.tw [36m?[33mi[32m?[35mi [37mâ˜†  ï¹‹     [0m
+[0m[1;31;42m â•­â•¯[33mè¿´ é¢¨ è°·[31mâ•­â•¯ã€ [31mâ—¤[34mâ—£ [37mâ†’Fromï¼š[36mbackwind.g1.dorm.ncku.edu.tw               [37mâ†[0m

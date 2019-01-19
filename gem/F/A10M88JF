@@ -1,17 +1,17 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (¡¯¿W¤@µL¤G¡¯) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¦n¤Í¦W¤ùÀÉ¡C
-µo«H¯¸: ¤¤¿³¸ê¬ì (2004/08/09 Mon 14:05:44)                Updated: 2004/10/07
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (ï¼Šç¨ä¸€ç„¡äºŒï¼Š) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] å¥½å‹åç‰‡æª”ã€‚
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (2004/08/09 Mon 14:05:44)                Updated: 2004/10/07
 
-¡° ¤Ş­z¡mmdfh.bbs@processor.tfcis.org (´cÅ]ÄÒ)¡n¤§»Ê¨¥¡G
-> ¤£ª¾¹D¦³¨S¦³¿ìªk°µ¥X³o¼ËªºªF¦è
-> ¨Ï¥ÎªÌ«ØÄ³ªº ._.
-> ¦W¤ùÀÉ¤À¦¨¨âºØ¡A¦b«öENTER¬d¸ß®É¥i¥H¿ï¾Ü ¤@¯ë¦W¤ùÀÉ  ©M  ¦n¤Í¦W¤ùÀÉ
-> ¦pªG¹ï¤è¦³¥[¤J§A¬°¦n¤Í ´N¥i¥H¬İ¨ì ¦n¤Í¦W¤ùÀÉªº¿ï¶µ
+â€» å¼•è¿°ã€Šmdfh.bbs@processor.tfcis.org (æƒ¡é­”é»¨)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> ä¸çŸ¥é“æœ‰æ²’æœ‰è¾¦æ³•åšå‡ºé€™æ¨£çš„æ±è¥¿
+> ä½¿ç”¨è€…å»ºè­°çš„ ._.
+> åç‰‡æª”åˆ†æˆå…©ç¨®ï¼Œåœ¨æŒ‰ENTERæŸ¥è©¢æ™‚å¯ä»¥é¸æ“‡ ä¸€èˆ¬åç‰‡æª”  å’Œ  å¥½å‹åç‰‡æª”
+> å¦‚æœå°æ–¹æœ‰åŠ å…¥ä½ ç‚ºå¥½å‹ å°±å¯ä»¥çœ‹åˆ° å¥½å‹åç‰‡æª”çš„é¸é …
 
 : global.h
 
 /* ----------------------------------------------------- */
-/* ­Ó¤H¥Ø¿ıÀÉ¦W³]©w                                      */
+/* å€‹äººç›®éŒ„æª”åè¨­å®š                                      */
 /* ----------------------------------------------------- */
 
 
@@ -19,17 +19,17 @@
 #define FN_BRH      ".BRH"      /* board reading history */
 #define FN_CZH      ".CZH"      /* class zap history */
 
-#define FN_PLANS    "plans"     /* ­pµeÀÉ */
-+ #define FN_GOODPLANS    "GoodPlans" /* ¦n¤Í¦W¤ùÀÉ */    [1;44m // ÀÉ¦W¦Û¤v§ï [m
+#define FN_PLANS    "plans"     /* è¨ˆç•«æª” */
++ #define FN_GOODPLANS    "GoodPlans" /* å¥½å‹åç‰‡æª” */    [1;44m // æª”åè‡ªå·±æ”¹ [m
 
 
 : acct.c:u_xfile()
 
   static char *desc[] =
   {
-    "¤W¯¸¦aÂI³]©wÀÉ",
-    "¦W¤ùÀÉ",
-+   "¦n¤Í¦W¤ùÀÉ",
+    "ä¸Šç«™åœ°é»è¨­å®šæª”",
+    "åç‰‡æª”",
++   "å¥½å‹åç‰‡æª”",
 
   ......
   ......
@@ -44,7 +44,7 @@
 
 + int is_hisgood(UTMP *up, char *userid);
 
-: pal.c:is_hisgood() ·s¼W¦¹¨ç¦¡¦b is_ogood() «á­±
+: pal.c:is_hisgood() æ–°å¢æ­¤å‡½å¼åœ¨ is_ogood() å¾Œé¢
 
 int
 is_hisgood(up, userid)
@@ -66,14 +66,14 @@ is_hisgood(up, userid)
 
 : talk.c:do_query()
 
-+ if (is_hispal(up, userid) && vans("¬O§_¬İ¦n¤Í±MÄİ¦W¤ù(Y/N)¡H[N] ") == 'y')
++ if (is_hispal(up, userid) && vans("æ˜¯å¦çœ‹å¥½å‹å°ˆå±¬åç‰‡(Y/N)ï¼Ÿ[N] ") == 'y')
 +   showgoodplans(userid);
 + else
     showplans(userid);
   vmsg(NULL);
 }
 
-: talk.c:showgoodplans()  ·s¼W¾ã¤ä¨ç¦¡¦b showplans() ¤U­±
+: talk.c:showgoodplans()  æ–°å¢æ•´æ”¯å‡½å¼åœ¨ showplans() ä¸‹é¢
 
 static void
 showgoodplans(userid)
@@ -94,5 +94,5 @@ showgoodplans(userid)
 }
 
 --
- [1m[42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m csNCHU.twbbs.org [m
- [1m[44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mqazq [30m±q [35m218-170-129-23.dynamic.hinet.net [30mµoªí[m
+ [1m[42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m csNCHU.twbbs.org [m
+ [1m[44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mqazq [30må¾ [35m218-170-129-23.dynamic.hinet.net [30mç™¼è¡¨[m

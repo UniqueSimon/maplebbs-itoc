@@ -1,8 +1,8 @@
-§@ªÌ: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O)
-¼ĞÃD: Re: [°İÃD] ½Ğ°İ·sª©gcc©Ò³y¦¨ªº°İÃD
-®É¶¡: Sun Nov 23 01:29:04 2003
+ä½œè€…: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›)
+æ¨™é¡Œ: Re: [å•é¡Œ] è«‹å•æ–°ç‰ˆgccæ‰€é€ æˆçš„å•é¡Œ
+æ™‚é–“: Sun Nov 23 01:29:04 2003
 
-    ¤£¦PªºÀÉ®×¦³
+    ä¸åŒçš„æª”æ¡ˆæœ‰
 
     src/maple/Makefile
     src/Makefile
@@ -11,13 +11,13 @@
     help.c bwboard.c
     str_time.c mak_dir.c
 
-    ¦h 0readme.htm ¤Î killbbs.bat
+    å¤š 0readme.htm åŠ killbbs.bat
 
   =======================================================================
 
-     °Ñ¦ÒºëµØ°Ï³o½g¡u [°İÃD] ±N dso ªº³¡¤À³£²¾°£¡v
+     åƒè€ƒç²¾è¯å€é€™ç¯‡ã€Œ [å•é¡Œ] å°‡ dso çš„éƒ¨åˆ†éƒ½ç§»é™¤ã€
 
-     ­n§ï
+     è¦æ”¹
 
      src/maple/Makefile
 
@@ -32,13 +32,13 @@
 
      src/Makefile
 
-     §â
+     æŠŠ
 
         @cd so; make install
         @cd game; make install
         @cd pip; make install
 
-     §ï¦¨
+     æ”¹æˆ
 
 #       @cd so; make install
 #       @cd game; make install
@@ -46,15 +46,15 @@
 
   =======================================================================
 
-     src/lib/str_time.c ªº Atime() ­×§ï (¦]¬° strftime ¤£§¹¥ş¯à¥Î)
+     src/lib/str_time.c çš„ Atime() ä¿®æ”¹ (å› ç‚º strftime ä¸å®Œå…¨èƒ½ç”¨)
 
 char *
-Atime(clock) /* Thor.990125: °²¸ËARPANET®É¶¡®æ¦¡ */
+Atime(clock) /* Thor.990125: å‡è£ARPANETæ™‚é–“æ ¼å¼ */
   time_t *clock;
 {
   /* ARPANET format: Thu, 11 Feb 1999 06:00:37 +0800 (CST) */
   /* strftime(datemsg, 40, "%a, %d %b %Y %T %Z", localtime(clock)); */
-  /* Thor.990125: time zoneªº¶Ç¦^­È¤£ª¾©MARPANET®æ¦¡¬O§_¤@¼Ë,¥ıµwµ¹,¦Psendmail*/
+  /* Thor.990125: time zoneçš„å‚³å›å€¼ä¸çŸ¥å’ŒARPANETæ ¼å¼æ˜¯å¦ä¸€æ¨£,å…ˆç¡¬çµ¦,åŒsendmail*/
 
 #if 0000
   strftime(datemsg, 40, "%a, %d %b %Y %T +0800 (CST)", localtime(clock));
@@ -71,12 +71,12 @@ Atime(clock) /* Thor.990125: °²¸ËARPANET®É¶¡®æ¦¡ */
 }
 
 
-     ÁÙ¦³¦U daemon ¶} port ®Éªº srttime() ¥Î¨ì %D ©M %T
-     ¤£¹L³oµLÃöºò­n¡A¤£ºŞ¤F :p
+     é‚„æœ‰å„ daemon é–‹ port æ™‚çš„ srttime() ç”¨åˆ° %D å’Œ %T
+     ä¸éé€™ç„¡é—œç·Šè¦ï¼Œä¸ç®¡äº† :p
 
   =======================================================================
 
-     src/lib/mak_dir.c:mak_links() §ï¦¨³o¼Ë
+     src/lib/mak_dir.c:mak_links() æ”¹æˆé€™æ¨£
 
 void
 mak_links(fpath)
@@ -87,23 +87,23 @@ mak_links(fpath)
 
   =======================================================================
 
-     src/maple/xover.c:xo_help() §R°£
-     src/so/help.c:vaHelp() §R°£
-     src/so/help.c:do_help() §ï¦W¬° xo_help() ¨Ã®³±¼ static
+     src/maple/xover.c:xo_help() åˆªé™¤
+     src/so/help.c:vaHelp() åˆªé™¤
+     src/so/help.c:do_help() æ”¹åç‚º xo_help() ä¸¦æ‹¿æ‰ static
 
   =======================================================================
 
-     src/game/bwboard.c:vaBWboard() §R°£
-     src/game/bwboard.c:main_board() §ï¦W¬° vaBWboard() ¨Ã®³±¼ static
+     src/game/bwboard.c:vaBWboard() åˆªé™¤
+     src/game/bwboard.c:main_board() æ”¹åç‚º vaBWboard() ä¸¦æ‹¿æ‰ static
 
   =======================================================================
 
-     0readme.htm ·s¼W¦¹¦w¸Ë»¡©úÀÉ®×
+     0readme.htm æ–°å¢æ­¤å®‰è£èªªæ˜æª”æ¡ˆ
 
   =======================================================================
 
-     ¤£°µ src/maple/CHANGE °O¿ı
+     ä¸åš src/maple/CHANGE è¨˜éŒ„
 
 --
- [1;43m¢z[44m¢q[m Or[1mig[30min[m: [44m Maple-itoc£»°Ê¤O®Ö¤ß [31;47m processor.tfcis.org [m
- [1;41m¢|[42m¢}[m A[1mut[30mho[mr: [1;36mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [44m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [31;47m processor.tfcis.org [m
+ [1;41mâ””[42mâ”˜[m A[1mut[30mho[mr: [1;36mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

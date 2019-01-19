@@ -1,9 +1,9 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (ºñ¥¨¤H¦n«È¡H) ¬İªO: plan
-¼Ğ  ÃD: Re: [¥\¯à]¯à¦Û­q¬İªO¤ÀÃşÃC¦â¶Ü
-µo«H¯¸: XEON (Tue, 15 Jul 2003 01:55:47 +0800 (CST))      Updated: 2007/04/29
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (ç¶ å·¨äººå¥½å®¢ï¼Ÿ) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [åŠŸèƒ½]èƒ½è‡ªè¨‚çœ‹æ¿åˆ†é¡é¡è‰²å—
+ç™¼ä¿¡ç«™: XEON (Tue, 15 Jul 2003 01:55:47 +0800 (CST))      Updated: 2007/04/29
 
-¡° ¤Ş­z¡mstarunion.bbs@xeon.tfcis.org (             )¡n¤§»Ê¨¥¡G
-> ¯à¦Û­q¬İªO¤ÀÃşÃC¦â¶Ü¡H
+â€» å¼•è¿°ã€Šstarunion.bbs@xeon.tfcis.org (             )ã€‹ä¹‹éŠ˜è¨€ï¼š
+> èƒ½è‡ªè¨‚çœ‹æ¿åˆ†é¡é¡è‰²å—ï¼Ÿ
 
 : board.c:class_item()
 
@@ -29,20 +29,20 @@
 -         str, str[BNLEN + 4] & 7, str + BNLEN + 1, ...);
 +         str, class_color(class), str + BNLEN + 1, ...);
 
-: board.c:class_color() ¥[¦b class_item() «e­±
+: board.c:class_color() åŠ åœ¨ class_item() å‰é¢
 
-static char *       /* ¦^¶ÇÃC¦â */
+static char *       /* å›å‚³é¡è‰² */
 class_color(class)
   char *class;
 {
-  [1;44m// ¦Û¦æ§ï table[] ¤Î color[] ¹ïÀ³ [m
-  /* ¤ÀÃş»P¨ä¹ïÀ³ÃC¦â¡A¤@­Ó¹ï¤@­Ó¡ANULL «h¬O¹ïÀ³¨ä¥L¥¼¦C¥Xªº¤ÀÃş */
+  [1;44m// è‡ªè¡Œæ”¹ table[] åŠ color[] å°æ‡‰ [m
+  /* åˆ†é¡èˆ‡å…¶å°æ‡‰é¡è‰²ï¼Œä¸€å€‹å°ä¸€å€‹ï¼ŒNULL å‰‡æ˜¯å°æ‡‰å…¶ä»–æœªåˆ—å‡ºçš„åˆ†é¡ */
   static char *table[] =
   {
-    "¤H¤å",    "¤å¾Ç",
-    "¯¸°È",
-    "­Ó¤H",
-    "­µ¼Ö",    "ÃÀ¤H",    "¹q¼v",
+    "äººæ–‡",    "æ–‡å­¸",
+    "ç«™å‹™",
+    "å€‹äºº",
+    "éŸ³æ¨‚",    "è—äºº",    "é›»å½±",
     NULL
   };
   static char *color[] =
@@ -66,5 +66,5 @@ class_color(class)
 }
 
 --
-[1;31m|[33m Origin [31m| [0;45m MapleBBS-itoc °Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
+[1;31m|[33m Origin [31m| [0;45m MapleBBS-itoc å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
 [1;31m|[35m Author [31m| [36mitoc.dorm11.nctu.edu.tw[m

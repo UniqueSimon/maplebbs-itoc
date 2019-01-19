@@ -1,19 +1,19 @@
-µo«H¤H: amaki.bbs@luna.twbbs.org (¬Y¦Ï) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à]¥ş¤å¸m´«
-µo«H¯¸: ¤ë¤U©]·Q (Sat, 25 Oct 2003 13:42:18 +0800 (CST))  Updated: 2007/04/26
+ç™¼ä¿¡äºº: amaki.bbs@luna.twbbs.org (æŸç¾Š) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]å…¨æ–‡ç½®æ›
+ç™¼ä¿¡ç«™: æœˆä¸‹å¤œæƒ³ (Sat, 25 Oct 2003 13:42:18 +0800 (CST))  Updated: 2007/04/26
 
-  vi¦³¡AM3·íµM¤]¥i¥H¦³¡AÁÙ¥i¥H¥[¤Wgrepªº§Ş³N¡AÅı¥ş¤å·j´MÅÜ¦¨¸m´«¬İªO¤U¯S©w¦r¦ê
+  viæœ‰ï¼ŒM3ç•¶ç„¶ä¹Ÿå¯ä»¥æœ‰ï¼Œé‚„å¯ä»¥åŠ ä¸Šgrepçš„æŠ€è¡“ï¼Œè®“å…¨æ–‡æœå°‹è®Šæˆç½®æ›çœ‹æ¿ä¸‹ç‰¹å®šå­—ä¸²
 
-  ªº¥ş³¡¤å³¹©Çª«¯Åµ{¦¡:p
+  çš„å…¨éƒ¨æ–‡ç« æ€ªç‰©ç´šç¨‹å¼:p
 
-  ¦ı¬O³o¥\¯àµ´¹ï­­¨î¥u¦³¯¸ªø¯à¥Î¡A¤U­±patch¤w¸g°µ¤F­­¨î¡C
+  ä½†æ˜¯é€™åŠŸèƒ½çµ•å°é™åˆ¶åªæœ‰ç«™é•·èƒ½ç”¨ï¼Œä¸‹é¢patchå·²ç¶“åšäº†é™åˆ¶ã€‚
 
 
 static int
 XoXpost2(xo, on, off, key, fchk_1, fchk_2)  /* Thor: eXtended post : call from post_cb */
   XO *xo;
   int on, off, key;
-  int (*fchk_1) (); /* ·j´Mªº¨ç¦¡ */
+  int (*fchk_1) (); /* æœå°‹çš„å‡½å¼ */
   int (*fchk_2) ();
 {
   int *xlist, fsize, max, locus, *ptr = NULL, shmid;
@@ -25,7 +25,7 @@ XoXpost2(xo, on, off, key, fchk_1, fchk_2)  /* Thor: eXtended post : call from p
   int returnPos;
 #endif
 
-  if ((max = xo->max) <= 0) /* Thor.980911: µù¸Ñ: ¥H¨¾¸U¤@ */
+  if ((max = xo->max) <= 0) /* Thor.980911: è¨»è§£: ä»¥é˜²è¬ä¸€ */
     return XO_FOOT;
 
   /* build index according to input condition */
@@ -34,13 +34,13 @@ XoXpost2(xo, on, off, key, fchk_1, fchk_2)  /* Thor: eXtended post : call from p
 
   if (fimage == (char *) -1)
   {
-    vmsg("¥Ø«eµLªk¶}±Ò¯Á¤ŞÀÉ");
+    vmsg("ç›®å‰ç„¡æ³•é–‹å•Ÿç´¢å¼•æª”");
     return XO_FOOT;
   }
 
   /* allocate index memory, remember free first */
 
-  /* Thor.990113: ©È°İtitle, authorªºÀş¶¡¤S¦³¤Hpost */
+  /* Thor.990113: æ€•å•title, authorçš„ç¬é–“åˆæœ‰äººpost */
   max = fsize / sizeof(HDR);
   xlist = xypostI = (int *) malloc(sizeof(int) * max);
   shmid = (!key) ? shmget(XYSHMID, sizeof(int), 0) : -1;
@@ -79,7 +79,7 @@ XoXpost2(xo, on, off, key, fchk_1, fchk_2)  /* Thor: eXtended post : call from p
         if (!(search_all % 10000) && search_all > 0)
         {
           move(b_lines, 0);
-          prints("¤w¸g·j´M¤F %d ½g¤å³¹¡A­nÄ~Äò½Ğ«ö¥ô·NÁä¡A­nµ²§ô½Ğ«öEscÁä¡C"
+          prints("å·²ç¶“æœå°‹äº† %d ç¯‡æ–‡ç« ï¼Œè¦ç¹¼çºŒè«‹æŒ‰ä»»æ„éµï¼Œè¦çµæŸè«‹æŒ‰Escéµã€‚"
             , search_all);
           if (igetch() == KEY_ESC)
             break;
@@ -142,7 +142,7 @@ XoXpost2(xo, on, off, key, fchk_1, fchk_2)  /* Thor: eXtended post : call from p
       if (!(search_all % 10000) && search_all > 0)
       {
         move(b_lines, 0);
-        prints("¤w¸g·j´M¤F %d ½g¤å³¹¡A­nÄ~Äò½Ğ«ö¥ô·NÁä¡A­nµ²§ô½Ğ«öEscÁä¡C"
+        prints("å·²ç¶“æœå°‹äº† %d ç¯‡æ–‡ç« ï¼Œè¦ç¹¼çºŒè«‹æŒ‰ä»»æ„éµï¼Œè¦çµæŸè«‹æŒ‰Escéµã€‚"
           , search_all * 2);
         if (igetch() == KEY_ESC)
           break;
@@ -155,7 +155,7 @@ XoXpost2(xo, on, off, key, fchk_1, fchk_2)  /* Thor: eXtended post : call from p
       xlist[max++] = locus;
     } while (++head < tail);
   }
-  sleep(1); /* amaki.030912: ¤÷µ{§Ç¤pºÎ¤ù¨è¡A¤lµ{§Ç­Y¨S§ä§¹´Nºâ¤F */
+  sleep(1); /* amaki.030912: çˆ¶ç¨‹åºå°ç¡ç‰‡åˆ»ï¼Œå­ç¨‹åºè‹¥æ²’æ‰¾å®Œå°±ç®—äº† */
 
   munmap(fimage, fsize);
 
@@ -205,10 +205,10 @@ XoXpost2(xo, on, off, key, fchk_1, fchk_2)  /* Thor: eXtended post : call from p
 
 #ifdef HAVE_XYNEWS
   if (xz[XZ_NEWS - XO_ZONE].xo)
-    xo->pos = returnPos;    /* ±q XZ_XPOST ¦^¨ì XZ_NEWS ´å¼Ğ²¾¥h­ì¨Óªº¦a¤è */
+    xo->pos = returnPos;    /* å¾ XZ_XPOST å›åˆ° XZ_NEWS æ¸¸æ¨™ç§»å»åŸä¾†çš„åœ°æ–¹ */
   else
 #endif
-    xo->pos = comebackPos;  /* ±q XZ_XPOST ¦^¨ì XZ_POST ´å¼Ğ²¾¥h©Ò¿ï¨ú¤å³¹ªº¯u¥¿¦ì¸m */
+    xo->pos = comebackPos;  /* å¾ XZ_XPOST å›åˆ° XZ_POST æ¸¸æ¨™ç§»å»æ‰€é¸å–æ–‡ç« çš„çœŸæ­£ä½ç½® */
 
   /* free xpost_xo */
 
@@ -237,10 +237,10 @@ XoXpost2(xo, on, off, key, fchk_1, fchk_2)  /* Thor: eXtended post : call from p
 }
 
 
-/* ¤G¶i¦ì¤¸·j´Mªk */
-static int                      /* 0:¤£º¡¨¬±ø¥ó  !=0:º¡¨¬±ø¥ó */
+/* äºŒé€²ä½å…ƒæœå°‹æ³• */
+static int                      /* 0:ä¸æ»¿è¶³æ¢ä»¶  !=0:æ»¿è¶³æ¢ä»¶ */
 filter_full_2(head)
-  HDR *head;    /* «İ´úª« */
+  HDR *head;    /* å¾…æ¸¬ç‰© */
 {
   char *ptr, buf[32768];
   struct timeval tv = {0, 0};
@@ -274,9 +274,9 @@ filter_full_2(head)
 }
 
 
-static int                      /* 0:¤£º¡¨¬±ø¥ó  !=0:º¡¨¬±ø¥ó */
+static int                      /* 0:ä¸æ»¿è¶³æ¢ä»¶  !=0:æ»¿è¶³æ¢ä»¶ */
 filter_full_1(head, key)
-  HDR *head;    /* «İ´úª« */
+  HDR *head;    /* å¾…æ¸¬ç‰© */
   int key;
 {
   char *ptr, *offset, buf[32768], tmp[32768];
@@ -291,12 +291,12 @@ filter_full_1(head, key)
   if ((fd = open(buf, (!key) ? O_RDONLY : O_RDWR, 0600)) < 0)
     return 0;
 
-  if (search_all % 100 == 0)    /* ¨C 100 ½g¤~ refresh ¤@¦¸ */
+  if (search_all % 100 == 0)    /* æ¯ 100 ç¯‡æ‰ refresh ä¸€æ¬¡ */
   {
     move(b_lines, 0);
     clrtoeol();
-    prints("¥Ø«e§ä¨ì \033[1;33m%d / %d\033[m ½g¡A¥ş¤å·j´M¤¤\033[5m...\033[m"
-      "«ö¥ô·NÁä¤¤Â_", search_fit, search_all * 2);
+    prints("ç›®å‰æ‰¾åˆ° \033[1;33m%d / %d\033[m ç¯‡ï¼Œå…¨æ–‡æœå°‹ä¸­\033[5m...\033[m"
+      "æŒ‰ä»»æ„éµä¸­æ–·", search_fit, search_all * 2);
     refresh();
   }
   search_all++;
@@ -311,7 +311,7 @@ filter_full_1(head, key)
     {
       rc = 1;
       search_fit++;
-      if (key) /* amaki.031024: §ó´«¦r¦ê */
+      if (key) /* amaki.031024: æ›´æ›å­—ä¸² */
       {
         article_len = strlen(buf);
         hunt_len = strlen(out_hunt);
@@ -361,11 +361,11 @@ XoXfull(xo)
 
   if (!(bbstate & STAT_BOARD))
   {
-    zmsg("©êºp¡I±z¤£¬OªO¥D¤£¯à¥Î³o¥\\¯à¡I");
+    zmsg("æŠ±æ­‰ï¼æ‚¨ä¸æ˜¯æ¿ä¸»ä¸èƒ½ç”¨é€™åŠŸ\èƒ½ï¼");
     return XO_FOOT;
   }
 
-  if (xz[XZ_XPOST - XO_ZONE].xo)        /* itoc.020308: ¤£±o²Ö¿n¶i¤J¤G¦¸ */
+  if (xz[XZ_XPOST - XO_ZONE].xo)        /* itoc.020308: ä¸å¾—ç´¯ç©é€²å…¥äºŒæ¬¡ */
   {
     vmsg(MSG_XYDENY);
     return XO_FOOT;
@@ -373,29 +373,29 @@ XoXfull(xo)
 
   /* input condition */
 
-  if (vans("±z­n¿ï¾Ü­şºØªA°È¡H 1)¥ş¤å·j´M 2)¥ş¤å´À´«¦r¦ê [1]") != '2')
+  if (vans("æ‚¨è¦é¸æ“‡å“ªç¨®æœå‹™ï¼Ÿ 1)å…¨æ–‡æœå°‹ 2)å…¨æ–‡æ›¿æ›å­—ä¸² [1]") != '2')
   {
-    if (!vget(b_lines, 0, "¥ş¤å·j´M¡G", out_hunt, sizeof(out_hunt), DOECHO))
+    if (!vget(b_lines, 0, "å…¨æ–‡æœå°‹ï¼š", out_hunt, sizeof(out_hunt), DOECHO))
       return XO_FOOT;
 
-    sprintf(xypostHintword, "[¥ş¤å·j´M] %s", out_hunt);
+    sprintf(xypostHintword, "[å…¨æ–‡æœå°‹] %s", out_hunt);
   }
-  else if (key = 1) /* amaki.031024: ¥ş¤å¸m´« */
+  else if (key = 1) /* amaki.031024: å…¨æ–‡ç½®æ› */
   {
     if (!HAS_PERM(PERM_SYSOP))
     {
-      zmsg("©êºp¡I±z¤£¬O¯¸ªø¡A¤£¯à¨Ï¥Î¸Ó¥\\¯à¡I");
+      zmsg("æŠ±æ­‰ï¼æ‚¨ä¸æ˜¯ç«™é•·ï¼Œä¸èƒ½ä½¿ç”¨è©²åŠŸ\èƒ½ï¼");
       return XO_FOOT;
     }
-    if (!vget(b_lines, 0, "­n´À´«ªºÂÂ¦r¦ê¡G", out_hunt, sizeof(out_hunt), DOECHO))
+    if (!vget(b_lines, 0, "è¦æ›¿æ›çš„èˆŠå­—ä¸²ï¼š", out_hunt, sizeof(out_hunt), DOECHO))
       return XO_FOOT;
-    if (!vget(b_lines, 0, "­n´À´«ªº·s¦r¦ê¡G", Replace_string, sizeof(Replace_string), DOECHO))
+    if (!vget(b_lines, 0, "è¦æ›¿æ›çš„æ–°å­—ä¸²ï¼š", Replace_string, sizeof(Replace_string), DOECHO))
     {
       memset(out_hunt, 0, sizeof(out_hunt));
       return XO_FOOT;
     }
 
-    sprintf(xypostHintword, "[¥ş¤å¦r¦ê´À´«] %s ´À´« %s", out_hunt, Replace_string);
+    sprintf(xypostHintword, "[å…¨æ–‡å­—ä¸²æ›¿æ›] %s æ›¿æ› %s", out_hunt, Replace_string);
   }
   xypostHintauthor[0] = '\0';
 
@@ -405,29 +405,29 @@ XoXfull(xo)
   search_fit = 0;
   search_all = 0;
 
-  if (vget(b_lines, 0, (!key) ? "[³]©w·j´M½d³ò] °_ÂI¡G" : "[³]©w´À´«½d³ò] °_ÂI¡G", ans, 6, DOECHO))
+  if (vget(b_lines, 0, (!key) ? "[è¨­å®šæœå°‹ç¯„åœ] èµ·é»ï¼š" : "[è¨­å®šæ›¿æ›ç¯„åœ] èµ·é»ï¼š", ans, 6, DOECHO))
     head = atoi(ans);
   else
     return XO_FOOT;
 
   if (head < 0)
   {
-    zmsg("°_ÂI¦³»~");
+    zmsg("èµ·é»æœ‰èª¤");
     return XO_FOOT;
   }
   else if (head > xo->max || head == 0)
   {
     head = 1;
     tail = xo->max;
-    strcpy(MSG, (!key) ? "­n¶i¦æ¥ş°ì·j´M¡A½Ğ±z½T©w(Y/N)¡H[N]" : "­n¶i¦æ¥ş°ì´À´«¡A½Ğ±z½T©w(Y/N)¡H[N]");
+    strcpy(MSG, (!key) ? "è¦é€²è¡Œå…¨åŸŸæœå°‹ï¼Œè«‹æ‚¨ç¢ºå®š(Y/N)ï¼Ÿ[N]" : "è¦é€²è¡Œå…¨åŸŸæ›¿æ›ï¼Œè«‹æ‚¨ç¢ºå®š(Y/N)ï¼Ÿ[N]");
   }
   else
   {
-    vget(b_lines, 28, "²×ÂI¡G", ans, 6, DOECHO);
+    vget(b_lines, 28, "çµ‚é»ï¼š", ans, 6, DOECHO);
     tail = atoi(ans);
     if (tail < head)
     {
-      zmsg("²×ÂI¦³»~");
+      zmsg("çµ‚é»æœ‰èª¤");
       return XO_FOOT;
     }
     if (tail > xo->max)

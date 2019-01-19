@@ -1,36 +1,36 @@
-§@ªÌ: itoc (:MM:) ¬ÝªO: itoc
-¼ÐÃD: Re: [°ÝÃD]WindTopªºFirewall¥\¯à
-®É¶¡: Sat Jan  4 14:18:29 2003                          Updated: 2006/11/10
+ä½œè€…: itoc (:MM:) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: [å•é¡Œ]WindTopçš„FirewallåŠŸèƒ½
+æ™‚é–“: Sat Jan  4 14:18:29 2003                          Updated: 2006/11/10
 
-¡° ¤Þ­z¡mdundung.bbs@no.bbs.ee.nchu.edu.tw.spam (¬P®ü¤¤ªºµo§b¦Ï)¡n¤§»Ê¨¥¡G
-> ·Q­n¦Û­q±ø¥óÂo«Hªº¸Ü³o¥\¯à¯uªº¤£¿ù¥Î
+â€» å¼•è¿°ã€Šdundung.bbs@no.bbs.ee.nchu.edu.tw.spam (æ˜Ÿæµ·ä¸­çš„ç™¼å‘†ç¾Š)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æƒ³è¦è‡ªè¨‚æ¢ä»¶æ¿¾ä¿¡çš„è©±é€™åŠŸèƒ½çœŸçš„ä¸éŒ¯ç”¨
 
-  ¦b rec_article.c ªº bbspost_add()
+  åœ¨ rec_article.c çš„ bbspost_add()
 
-  board    ¬O ­nÂà¶iªº¬ÝªO
-  userid   ¬O §@ªÌªº email
-  usernick ¬O §@ªÌªº¼ÊºÙ
-  SUBJECT  ¬O ¤å³¹¼ÐÃD
-  SITE     ¬O Organization:
-  MSGID    ¬O MessageID:
-  BODY     ¬O ¤º®e
+  board    æ˜¯ è¦è½‰é€²çš„çœ‹æ¿
+  userid   æ˜¯ ä½œè€…çš„ email
+  usernick æ˜¯ ä½œè€…çš„æš±ç¨±
+  SUBJECT  æ˜¯ æ–‡ç« æ¨™é¡Œ
+  SITE     æ˜¯ Organization:
+  MSGID    æ˜¯ MessageID:
+  BODY     æ˜¯ å…§å®¹
 
-  ©Ò¥H§A¥u­n¦b³o¸Ì°Ê¤â¸}§Y¥i
+  æ‰€ä»¥ä½ åªè¦åœ¨é€™è£¡å‹•æ‰‹è…³å³å¯
 
 : rec_article.c:bbspost_add()
 
-+ brd_fpath(fpath, board, "spam");                  /* ¨C­ÓªO¦Û¤vªº spam */
++ brd_fpath(fpath, board, "spam");                  /* æ¯å€‹æ¿è‡ªå·±çš„ spam */
 + if (belong_spam(fpath, addr, nick))
 + {
-+   board = "apple";   [1;44m// §â¦³Âo±¼ªº«H°e¥h apple ªO¡AªO¦W¦Û©w [m
++   board = "apple";   [1;44m// æŠŠæœ‰æ¿¾æŽ‰çš„ä¿¡é€åŽ» apple æ¿ï¼Œæ¿åè‡ªå®š [m
 + }
 
-  /* ¼g¤J¤å³¹¤º®e */
+  /* å¯«å…¥æ–‡ç« å…§å®¹ */
 
   brd_fpath(folder, board, FN_DIR);
 
-: ¦Ó belong_spam() ¥i¥H³o¼Ë¼g
-: rec_article.c ¦b bbspost_add() «e­±·s¼W¥H¤U¨ç¦¡
+: è€Œ belong_spam() å¯ä»¥é€™æ¨£å¯«
+: rec_article.c åœ¨ bbspost_add() å‰é¢æ–°å¢žä»¥ä¸‹å‡½å¼
 
 static int
 belong_spam(filelist, addr, nick)
@@ -45,7 +45,7 @@ belong_spam(filelist, addr, nick)
   rc = 0;
   if (fp = fopen(filelist, "r"))
   {
-    str_ncpy(user, addr, sizeof(user));  /* ¨¾¤î¦r¦ê¤Óªø»\¹LÀY */
+    str_ncpy(user, addr, sizeof(user));  /* é˜²æ­¢å­—ä¸²å¤ªé•·è“‹éŽé ­ */
     if (host = (char *) strchr(user, '@'))
     {
       *host = '\0';
@@ -55,10 +55,10 @@ belong_spam(filelist, addr, nick)
     checknum = 0;
     while (fgets(buf, 80, fp))
     {
-      if (buf[0] == '#')    /* ¥[ # ¬Oµù¸Ñ */
+      if (buf[0] == '#')    /* åŠ  # æ˜¯è¨»è§£ */
         continue;
 
-      if (++checknum >= 100)    /* ­­ 100 ±ø rule */
+      if (++checknum >= 100)    /* é™ 100 æ¢ rule */
         break;
 
       type = (char *) strtok(buf, " \t\r\n");
@@ -67,7 +67,7 @@ belong_spam(filelist, addr, nick)
         spam = (char *) strtok(NULL, " \t\r\n");
         if (spam && *spam)
         {
-          /* nick¡Bhost ¥i¥H¬O NULL¡A¬G­nÀË¬d */
+          /* nickã€host å¯ä»¥æ˜¯ NULLï¼Œæ•…è¦æª¢æŸ¥ */
           str_lowest(spam, spam);
           if ((!strcmp(type, "user") && str_sub(user, spam)) ||
             (!strcmp(type, "host") && host && str_sub(host, spam)) ||
@@ -88,8 +88,8 @@ belong_spam(filelist, addr, nick)
   return rc;
 }
 
-: ±µ¤U¨Ó§A­n¦b¬ÝªOÅýªO¥D¥i¥H½s spam ³o­ÓÀÉ®×
-: src/so/manage.c:post_spam_edit() ·s¼W©ó post_memo_edit() «á­±
+: æŽ¥ä¸‹ä¾†ä½ è¦åœ¨çœ‹æ¿è®“æ¿ä¸»å¯ä»¥ç·¨ spam é€™å€‹æª”æ¡ˆ
+: src/so/manage.c:post_spam_edit() æ–°å¢žæ–¼ post_memo_edit() å¾Œé¢
 
 static int
 post_spam_edit(xo)
@@ -98,7 +98,7 @@ post_spam_edit(xo)
   int mode;
   char fpath[64];
 
-  mode = vans("¾×«H¦Cªí (D)§R°£ (E)­×§ï (Q)¨ú®ø¡H[E] ");
+  mode = vans("æ“‹ä¿¡åˆ—è¡¨ (D)åˆªé™¤ (E)ä¿®æ”¹ (Q)å–æ¶ˆï¼Ÿ[E] ");
 
   if (mode != 'q')
   {
@@ -111,7 +111,7 @@ post_spam_edit(xo)
     }
     else
     {
-      if (vedit(fpath, 0))      /* Thor.981020: ª`·N³Qtalkªº°ÝÃD */
+      if (vedit(fpath, 0))      /* Thor.981020: æ³¨æ„è¢«talkçš„å•é¡Œ */
         vmsg(msg_cancel);
     }
 
@@ -122,15 +122,15 @@ post_spam_edit(xo)
 
 : manage.c:post_manage()
 
-    "WMemo   ½s¿è¶iªOµe­±",
-+   "Spam    ¬ÝªO¾×«H¦Cªí",
-    "Manager ¼W´î°ÆªO¥D",
+    "WMemo   ç·¨è¼¯é€²æ¿ç•«é¢",
++   "Spam    çœ‹æ¿æ“‹ä¿¡åˆ—è¡¨",
+    "Manager å¢žæ¸›å‰¯æ¿ä¸»",
 
   ...
   ...
 
-- char *menu = "¡· ªO¥D¿ï³æ (B)¥DÃD (W)¶iªO (M)°ÆªO"
-+ char *menu = "¡· ªO¥D¿ï³æ (B)¥DÃD (W)¶iªO (S)¾×«H (M)°ÆªO"
+- char *menu = "â—Ž æ¿ä¸»é¸å–® (B)ä¸»é¡Œ (W)é€²æ¿ (M)å‰¯æ¿"
++ char *menu = "â—Ž æ¿ä¸»é¸å–® (B)ä¸»é¡Œ (W)é€²æ¿ (S)æ“‹ä¿¡ (M)å‰¯æ¿"
 
   ...
   ...
@@ -143,44 +143,44 @@ post_spam_edit(xo)
 +   ret = post_spam_edit(xo);
 +   break;
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  spam ³oÀÉ®×ªº®æ¦¡¬°
+  spam é€™æª”æ¡ˆçš„æ ¼å¼ç‚º
 
-# ³o¬Oµù¸Ñ¡A­n¾×¤G­Ó´N¼g¤G¦¸
-# ­nª`·N­^¤å­n¥þ¬°¤p¼g
+# é€™æ˜¯è¨»è§£ï¼Œè¦æ“‹äºŒå€‹å°±å¯«äºŒæ¬¡
+# è¦æ³¨æ„è‹±æ–‡è¦å…¨ç‚ºå°å¯«
 user    fuck
 user    shit
 host    hinet.net
-nick    ·F
-subj    ¤£­nªº¼ÐÃD
+nick    å¹¹
+subj    ä¸è¦çš„æ¨™é¡Œ
 site    hinet
 from    someone@some.domain
 msgi    netnews.seed.net.tw
 msgi    netnews.hinet.net
 #
-# ¦pªG«á­± spam ªº¤º®e¦³ªÅ®æ¡A¥u·|§ì¨ì²Ä¤@­Ó¦r¦ê
-# ¤]´N¬O»¡¤U­±³o¤G¦æªº®ÄªG¬O¤@¼Ëªº
+# å¦‚æžœå¾Œé¢ spam çš„å…§å®¹æœ‰ç©ºæ ¼ï¼ŒåªæœƒæŠ“åˆ°ç¬¬ä¸€å€‹å­—ä¸²
+# ä¹Ÿå°±æ˜¯èªªä¸‹é¢é€™äºŒè¡Œçš„æ•ˆæžœæ˜¯ä¸€æ¨£çš„
 site    giga news service
 site    giga
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  spam ¤ñ¸ûªº¤º®e¬O
+  spam æ¯”è¼ƒçš„å…§å®¹æ˜¯
 
-µo«H¤H: itoc.bbs@processor.tfcis.org (¤µ¤Ñ¤U«B), ¬ÝªO: itoc
-¼Ð  ÃD: Re: ¬ÝªOªº¾\ÅªÅv­­
-µo«H¯¸: XEON (Sun Jan  5 01:04:28 2003)
-Âà«H¯¸: kulu!TomatoNEWS!news.tfcis.org!PROCESSOR
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (ä»Šå¤©ä¸‹é›¨), çœ‹æ¿: itoc
+æ¨™  é¡Œ: Re: çœ‹æ¿çš„é–±è®€æ¬Šé™
+ç™¼ä¿¡ç«™: XEON (Sun Jan  5 01:04:28 2003)
+è½‰ä¿¡ç«™: kulu!TomatoNEWS!news.tfcis.org!PROCESSOR
 Origin: zhouer.mcl.math.ncu.edu.tw
 
-  user ¤ñ¹ï itoc.bbs
-  host ¤ñ¹ï processor.tfcis.org
-  nick ¤ñ¹ï ¤µ¤Ñ¤U«B
-  subj ¤ñ¹ï Re: ¬ÝªOªº¾\ÅªÅv­­
-  site ¤ñ¹ï XEON
-  from ¤ñ¹ï itoc.bbs@processor.tfcis.org
+  user æ¯”å° itoc.bbs
+  host æ¯”å° processor.tfcis.org
+  nick æ¯”å° ä»Šå¤©ä¸‹é›¨
+  subj æ¯”å° Re: çœ‹æ¿çš„é–±è®€æ¬Šé™
+  site æ¯”å° XEON
+  from æ¯”å° itoc.bbs@processor.tfcis.org
 
 --
-    [1;32m¢~¢w¢w Origin ¢¡ [33;45m °Ê¤O®Ö¤ß [37m processor.tfcis.org [32;40m ¡ã £_£`£a ¢w¢w¢q[m
-    [1;32m¢q     Author ¢£ [36mitoc.Dorm-GD2.NCTU.edu.tw[m
+    [1;32mâ•­â”€â”€ Origin â•® [33;45m å‹•åŠ›æ ¸å¿ƒ [37m processor.tfcis.org [32;40m ï½ž Î´ÎµÎ¶ â”€â”€â”¼[m
+    [1;32mâ”¼     Author â•¯ [36mitoc.Dorm-GD2.NCTU.edu.tw[m

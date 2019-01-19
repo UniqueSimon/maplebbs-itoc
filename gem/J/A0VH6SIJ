@@ -1,14 +1,14 @@
-§@ªÌ: itoc (ºñ¥¨¤H¦n«È¡H) ¬ÝªO: itoc
-¼ÐÃD: [¥\¯à] ¾ã¦æ¥ú´Î(9)¡Ðaloha.c ¤W¯¸³qª¾¦W³æ
-®É¶¡: Tue Jul 15 10:50:07 2003                          Updated: 2005/08/08
+ä½œè€…: itoc (ç¶ å·¨äººå¥½å®¢ï¼Ÿ) çœ‹æ¿: itoc
+æ¨™é¡Œ: [åŠŸèƒ½] æ•´è¡Œå…‰æ£’(9)ï¼aloha.c ä¸Šç«™é€šçŸ¥åå–®
+æ™‚é–“: Tue Jul 15 10:50:07 2003                          Updated: 2005/08/08
 
-: aloha.c:aloha_item_bar()  ¥[¦b aloha_item() «á­±
+: aloha.c:aloha_item_bar()  åŠ åœ¨ aloha_item() å¾Œé¢
 
 #ifdef HAVE_LIGHTBAR
 static int
 aloha_item_bar(xo, mode)
   XO *xo;
-  int mode;     /* 1:¤W¥ú´Î  0:¥h¥ú´Î */
+  int mode;     /* 1:ä¸Šå…‰æ£’  0:åŽ»å…‰æ£’ */
 {
   ALOHA *aloha;
 #ifdef CHECK_ONLINE
@@ -24,7 +24,7 @@ aloha_item_bar(xo, mode)
 #endif
 
   prints("%s%6d%c   %s%-14s%s%54s%s",
-    mode ? "\033[44m" : "",         //³o¸Ì¬O¥ú´ÎªºÃC¦â¡A¥i¥H¦Û¤v§ï
+    mode ? "\033[44m" : "",         //é€™è£¡æ˜¯å…‰æ£’çš„é¡è‰²ï¼Œå¯ä»¥è‡ªå·±æ”¹
     xo->pos + 1, tag_char(aloha->userno),
     online ? "\033[33m" : "",
     aloha->userid, "",
@@ -45,5 +45,5 @@ static KeyFunc aloha_cb[] =
 ...
 
 --
-[1;31m|[33m Origin [31m| [0;45m MapleBBS-itoc °Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
+[1;31m|[33m Origin [31m| [0;45m MapleBBS-itoc å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
 [1;31m|[35m Author [31m| [36mitoc.dorm11.nctu.edu.tw[m

@@ -1,15 +1,15 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G802) ¬İªO: plan
-¼ĞÃD: [¥\¯à] §@ªÌ§R°£¤å³¹®É¡A¸ó¶K­p¼Æ¸òµÛ´î¤Ö
-®É¶¡: 2005/11/05 Sat 09:12:03                           Updated: 2005/11/05
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š802) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] ä½œè€…åˆªé™¤æ–‡ç« æ™‚ï¼Œè·¨è²¼è¨ˆæ•¸è·Ÿè‘—æ¸›å°‘
+æ™‚é–“: 2005/11/05 Sat 09:12:03                           Updated: 2005/11/05
 
-  ¦pªG¦³°µºëµØ°Ï "µoªí¤å³¹¤]§ì Cross-Post" ªº¸Ü
-  ¨º»ò±`¦³¤H·|©ê«è¥L©ú©ú§â¤å³¹§R°£¤F¡A¬°¤°»òÁÙºâ cross-post¡H
+  å¦‚æœæœ‰åšç²¾è¯å€ "ç™¼è¡¨æ–‡ç« ä¹ŸæŠ“ Cross-Post" çš„è©±
+  é‚£éº¼å¸¸æœ‰äººæœƒæŠ±æ€¨ä»–æ˜æ˜æŠŠæ–‡ç« åˆªé™¤äº†ï¼Œç‚ºä»€éº¼é‚„ç®— cross-postï¼Ÿ
 
-  ­Y¬O§@ªÌ¦Û¤v§R°£¤å³¹®É¡Across-post °»´ú­p¼Æ´N´î¤@
+  è‹¥æ˜¯ä½œè€…è‡ªå·±åˆªé™¤æ–‡ç« æ™‚ï¼Œcross-post åµæ¸¬è¨ˆæ•¸å°±æ¸›ä¸€
 
 : post.c:checksum_find()
 
-- static int                      /* 1:¬Ocross-post 0:¤£¬Ocross-post */
+- static int                      /* 1:æ˜¯cross-post 0:ä¸æ˜¯cross-post */
 - checksum_find(fpath)
 + static int                      /* return checksum */
 + checksum_count(fpath)
@@ -46,7 +46,7 @@
 +       checksum_rmv(sum);
 +#endif
 
-: post.c:checksum_rmv() ·s¼W¦¹¨ç¦¡©ó checksum_put() «á­±
+: post.c:checksum_rmv() æ–°å¢æ­¤å‡½å¼æ–¼ checksum_put() å¾Œé¢
 
 static inline void
 checksum_rmv(sum)
@@ -69,4 +69,4 @@ checksum_rmv(sum)
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

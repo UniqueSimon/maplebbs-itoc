@@ -1,19 +1,19 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ªO¥D§ïÅÜ¬İªO¤ÀÃş
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/01/10 Sat 10:26:12)                Updated: 2005/05/26
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: æ¿ä¸»æ”¹è®Šçœ‹æ¿åˆ†é¡
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/01/10 Sat 10:26:12)                Updated: 2005/05/26
 
-¡° ¤Ş­z¡mTitan.bbs@KH.twbbs.org (Âû±Æ¬ü¤Ö¤k)¡n¤§»Ê¨¥¡G
->         ¥i¥H°µ¨ìÅıªO¥D¦Û¤v§ïÅÜ¬İªO¤ÀÃş¶Ü¡H
->         ´N¬OÃş¦ü"­Ó¤H"§ï¦¨"¹ÎÅé"³o¼Ë...
->         ¥u¦³±Ô­zÅÜ¦Ó¤w¡A¤£»İ­n§ïÅÜ¦ì¸m
->         ºëµØ°Ï¦³´£¨ì¥i¥H§ïÅÜ¤ÀÃşÃC¦â¡A¤£¹L¦n¹³¨S¬İ¨ì¥i¥H§ï¤ÀÃş
+â€» å¼•è¿°ã€ŠTitan.bbs@KH.twbbs.org (é›æ’ç¾å°‘å¥³)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>         å¯ä»¥åšåˆ°è®“æ¿ä¸»è‡ªå·±æ”¹è®Šçœ‹æ¿åˆ†é¡å—ï¼Ÿ
+>         å°±æ˜¯é¡ä¼¼"å€‹äºº"æ”¹æˆ"åœ˜é«”"é€™æ¨£...
+>         åªæœ‰æ•˜è¿°è®Šè€Œå·²ï¼Œä¸éœ€è¦æ”¹è®Šä½ç½®
+>         ç²¾è¯å€æœ‰æåˆ°å¯ä»¥æ”¹è®Šåˆ†é¡é¡è‰²ï¼Œä¸éå¥½åƒæ²’çœ‹åˆ°å¯ä»¥æ”¹åˆ†é¡
 
-  ¥u§ï¤ÀÃş±Ô­z¡A¤£§ï (A)nnounce¡÷Class ¸Ì­±ªº¦ì¸m
+  åªæ”¹åˆ†é¡æ•˜è¿°ï¼Œä¸æ”¹ (A)nnounceâ†’Class è£¡é¢çš„ä½ç½®
 
-: manage.c ·s¼W³o¤@¬q©ó post_manage() «e­±
+: manage.c æ–°å¢é€™ä¸€æ®µæ–¼ post_manage() å‰é¢
 
 /* ----------------------------------------------------- */
-/* ªO¥D¥\¯à : ­×§ï¤ÀÃş                                   */
+/* æ¿ä¸»åŠŸèƒ½ : ä¿®æ”¹åˆ†é¡                                   */
 /* ----------------------------------------------------- */
 
 static int
@@ -25,9 +25,9 @@ post_brdclass(xo)
   oldbrd = bshm->bcache + currbno;
   memcpy(&newbrd, oldbrd, sizeof(BRD));
 
-  if (vans("¬O§_­×§ï¬İªO¤ÀÃş(Y/N)¡H[N] ") == 'y')
+  if (vans("æ˜¯å¦ä¿®æ”¹çœ‹æ¿åˆ†é¡(Y/N)ï¼Ÿ[N] ") == 'y')
   {
-    vget(b_lines, 0, "¬İªO¤ÀÃş¡G", newbrd.class, BCLEN + 1, GCARRY);
+    vget(b_lines, 0, "çœ‹æ¿åˆ†é¡ï¼š", newbrd.class, BCLEN + 1, GCARRY);
 
     if (memcmp(&newbrd, oldbrd, sizeof(BRD)) && vans(msg_sure_ny) == 'y')
     {
@@ -41,13 +41,13 @@ post_brdclass(xo)
 
 : manage.c:post_manage()
 
-    "Manager ¼W´î°ÆªO¥D",
-+   "Class   §ïÅÜ¤ÀÃş",
+    "Manager å¢æ¸›å‰¯æ¿ä¸»",
++   "Class   æ”¹è®Šåˆ†é¡",
 
   ...
 
-- char *menu = "¡· ªO¥D¿ï³æ (B)¥DÃD (W)¶iªO (M)°ÆªO"
-+ char *menu = "¡· ªO¥D¿ï³æ (B)¥DÃD (W)¶iªO (M)°ÆªO (C)¤ÀÃş"
+- char *menu = "â— æ¿ä¸»é¸å–® (B)ä¸»é¡Œ (W)é€²æ¿ (M)å‰¯æ¿"
++ char *menu = "â— æ¿ä¸»é¸å–® (B)ä¸»é¡Œ (W)é€²æ¿ (M)å‰¯æ¿ (C)åˆ†é¡"
 
   ...
 
@@ -58,5 +58,5 @@ post_brdclass(xo)
 +   return post_brdclass(xo);
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

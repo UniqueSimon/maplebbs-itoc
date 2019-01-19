@@ -1,19 +1,19 @@
-§@ªÌ: itoc (¤Ó¶§ªá¨à~) ¬İªO: plan
-¼ĞÃD: [­×¥¿] ¨Ï¥ÎªÌ¦W³æ¤Á´«¦©¾÷
-®É¶¡: Sun Dec 15 16:53:35 2002                          Updated: 2002/12/31
+ä½œè€…: itoc (å¤ªé™½èŠ±å…’~) çœ‹æ¿: plan
+æ¨™é¡Œ: [ä¿®æ­£] ä½¿ç”¨è€…åå–®åˆ‡æ›æ‰£æ©Ÿ
+æ™‚é–“: Sun Dec 15 16:53:35 2002                          Updated: 2002/12/31
 
-¡° ¤Ş­z¡myiyihi.bbs@bbs.kmvs.km.edu.tw (<ÀR>----((())))¡n¤§»Ê¨¥¡G
-> ­n¦p¦ó¦b¨Ï¥ÎªÌ¦W³æ¼W¥[¤@­Ó (p)«ü¥O¡B¥i¦b¨Ï¥ÎªÌ¦W³æ
-> ¤Á´«¦©¾÷¬° 1)§¹¥ş¶}©ñ 2)¦n¤Í±M½u 3)»·Â÷¹ĞÄÛ
+â€» å¼•è¿°ã€Šyiyihi.bbs@bbs.kmvs.km.edu.tw (<éœ>----((())))ã€‹ä¹‹éŠ˜è¨€ï¼š
+> è¦å¦‚ä½•åœ¨ä½¿ç”¨è€…åå–®å¢åŠ ä¸€å€‹ (p)æŒ‡ä»¤ã€å¯åœ¨ä½¿ç”¨è€…åå–®
+> åˆ‡æ›æ‰£æ©Ÿç‚º 1)å®Œå…¨é–‹æ”¾ 2)å¥½å‹å°ˆç·š 3)é é›¢å¡µå›‚
 
-: ulist.c:ulist_pager() ¥[¤J·s¨ç¦¡©ó ulist_ship() ¤U­±
+: ulist.c:ulist_pager() åŠ å…¥æ–°å‡½å¼æ–¼ ulist_ship() ä¸‹é¢
 
 static int
 ulist_pager(xo)
   XO *xo;
 {
   t_pager();
-  return ulist_body(xo);   /* ¦P¨B§ó·s¦Û¤vªº©I¥s¾¹ª¬ºA */
+  return ulist_body(xo);   /* åŒæ­¥æ›´æ–°è‡ªå·±çš„å‘¼å«å™¨ç‹€æ…‹ */
 }
 
 : ulist.c:ulist_cb[]
@@ -22,4 +22,4 @@ ulist_pager(xo)
 + 'p', ulist_pager,
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

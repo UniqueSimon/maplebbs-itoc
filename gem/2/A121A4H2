@@ -1,6 +1,6 @@
-µo«H¤H: lzch.bbs@lzch.twbbs.org (³á­C) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] dict.c Yahoo! ½u¤W¦r¨å
-µo«H¯¸: ¢°¢³¢°¢¶ (2006/03/13 Mon 13:03:08)                Updated: 2006/03/13
+ç™¼ä¿¡äºº: lzch.bbs@lzch.twbbs.org (å–”è€¶) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] dict.c Yahoo! ç·šä¸Šå­—å…¸
+ç™¼ä¿¡ç«™: ï¼‘ï¼”ï¼‘ï¼— (2006/03/13 Mon 13:03:08)                Updated: 2006/03/13
 
 : src/game/Makefile
 
@@ -11,12 +11,12 @@ SO = ......  tetris.so [1;33;40mdict.so[m
 freebsd:
         @$(MAKE) CC=gcc ......  -I../include [1;33;40m-I/usr/local/include[m" $(SO)
 
-: src/game/dict.c ·s¼W¦¹µ{¦¡
+: src/game/dict.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* dict.c        (YZU WindTopBBS Ver 3.02 )              */
 /*-------------------------------------------------------*/
-/* target : Yahoo ½u¤W¦r¨å                               */
+/* target : Yahoo ç·šä¸Šå­—å…¸                               */
 /* create : 01/07/09                                     */
 /* update :   /  /                                       */
 /* author : statue.bbs@bbs.yzu.edu.tw                    */
@@ -26,7 +26,7 @@ freebsd:
 
 #if 0
 
-  ´¶³q
+  æ™®é€š
   http://tw.dictionary.yahoo.com/search?p=hello
 
 #endif
@@ -93,42 +93,42 @@ encode_from_utf8_to_big5_and_more_out(server, s)
               continue;
       }
 
-      /* ¹J¨ì¼ĞÃD */
+      /* é‡åˆ°æ¨™é¡Œ */
       if( !strncmp( bufout, "lzch_h200000000", 15 ) ){
 
-          /* §â«á­±ªº¦r©¿²¤±¼ (¦b¤@¤j°ïªÅ¥Õ«á­±) */
+          /* æŠŠå¾Œé¢çš„å­—å¿½ç•¥æ‰ (åœ¨ä¸€å¤§å †ç©ºç™½å¾Œé¢) */
           for( i = 0; strncmp( &bufout[i], "   ", 3 ) != 0 && i < 1024; i++ )
               ;
           bufout[i] = '\n';
           bufout[i+1] = '\0';
-          fprintf( fout, "\n%s", bufout+15 ); /* µ¹¼ĞÃD¤@­Ó enter */
+          fprintf( fout, "\n%s", bufout+15 ); /* çµ¦æ¨™é¡Œä¸€å€‹ enter */
 
-          /* ³æ¦r»P¸ÑÄÀªº¤À¹j½u */
+          /* å–®å­—èˆ‡è§£é‡‹çš„åˆ†éš”ç·š */
           for( i = 0; i < 39; i++ ){
-              fprintf( fout, "¢w"  );
+              fprintf( fout, "â”€"  );
           }
           fprintf( fout, "\n"  );
           continue;
       }
 
-      /* ¹J¨ìÄ¶µü */
+      /* é‡åˆ°è­¯è© */
       if( !strncmp( bufout, "lzch_explain000", 15 ) ){
-          fprintf( fout, "¡° %s", bufout+15 );
+          fprintf( fout, "â€» %s", bufout+15 );
           continue;
       }
 
-      /* ¹J¨ìµü©Ê */
+      /* é‡åˆ°è©æ€§ */
       if( !strncmp( bufout, "lzch_pcixin0000", 15 ) ){
           bufout[strlen(bufout) - 1] = '\0';
           fprintf( fout, "> > %s < <\n", bufout+15 );
           continue;
       }
 
-      /* ´¶³qªº¿é¥X */
+      /* æ™®é€šçš„è¼¸å‡º */
       fprintf( fout, "%s", bufout );
   }
 
-  fprintf(fout, "\n\n--\nYahoo!©_¼¯¦r¨å\nhttp://%s%s\n\n", server, s + 4);
+  fprintf(fout, "\n\n--\nYahoo!å¥‡æ‘©å­—å…¸\nhttp://%s%s\n\n", server, s + 4);
   fclose(fout);
   more(fname_big, NULL);
   unlink(fname_big);
@@ -142,7 +142,7 @@ encode_from_utf8_to_big5_and_more_out(server, s)
 
 static void
 url_encode(dst, src)        /* URL encoding */
-  uschar *dst;              /* Thor.990331: ­n src ªº¤T­¿ªÅ¶¡ */
+  uschar *dst;              /* Thor.990331: è¦ src çš„ä¸‰å€ç©ºé–“ */
   uschar *src;
 {
   for (; *src; src++)
@@ -172,7 +172,7 @@ write_file(sockfd, fp)
   int cc, i;
   char *xhead, *xtail;
   int show, start_show;
-  int space;                /* ¦b html ¤¤¡A³sÄòªº space ¥u·|ºâ¤@¦¸ */
+  int space;                /* åœ¨ html ä¸­ï¼Œé€£çºŒçš„ space åªæœƒç®—ä¸€æ¬¡ */
 
   char *start_str[] =
   {
@@ -189,17 +189,17 @@ write_file(sockfd, fp)
     NULL
   };
 
-  char *newline_str[] =         /* ¨ú¥N´«¦æ¦r¤¸ªº²Å¸¹ */
+  char *newline_str[] =         /* å–ä»£æ›è¡Œå­—å…ƒçš„ç¬¦è™Ÿ */
   {
     "<br>",
     "</td>",
-    "<h2>",                   /* ¬d´Mªº³æ¦r lzch_h200000000 */
-    "<div class=chinese>",    /* ¤¤¤åµo­µ */
-    "<div class=peng>",       /* ­^¤å¨Ò¥y lzch_peng000000 */
-    "<div class=pchi>",       /* ­^¤å¨Ò¥yªºÂ½Ä¶ lzch_pchi000000 */
-    "<div class=pexplain>",   /* (­^)¤¤Ä¶ (¤¤)­^Ä¶ lzch_explain000 */
-    "<div class=ptitle>",     /* ¤¤¤å¦r¨å¸Ìªº­^¤å¬ÛÃö³æ¦r¡A­^¤å¦r¨å¸Ìªº­µ¼Ğ */
-    "<div class=pcixin>",     /* µü©Ê lzch_pcixin0000 */
+    "<h2>",                   /* æŸ¥å°‹çš„å–®å­— lzch_h200000000 */
+    "<div class=chinese>",    /* ä¸­æ–‡ç™¼éŸ³ */
+    "<div class=peng>",       /* è‹±æ–‡ä¾‹å¥ lzch_peng000000 */
+    "<div class=pchi>",       /* è‹±æ–‡ä¾‹å¥çš„ç¿»è­¯ lzch_pchi000000 */
+    "<div class=pexplain>",   /* (è‹±)ä¸­è­¯ (ä¸­)è‹±è­¯ lzch_explain000 */
+    "<div class=ptitle>",     /* ä¸­æ–‡å­—å…¸è£¡çš„è‹±æ–‡ç›¸é—œå–®å­—ï¼Œè‹±æ–‡å­—å…¸è£¡çš„éŸ³æ¨™ */
+    "<div class=pcixin>",     /* è©æ€§ lzch_pcixin0000 */
     NULL
   };
 
@@ -259,16 +259,16 @@ write_file(sockfd, fp)
       {
         fputc('\n', fp);
         if( !strncmp( xhead, "<h2>", 4 ) ){
-            fprintf( fp, "lzch_h200000000" ); /* ¼Ğ°O¦¹¬°¼ĞÃD */
+            fprintf( fp, "lzch_h200000000" ); /* æ¨™è¨˜æ­¤ç‚ºæ¨™é¡Œ */
         }
         else if( !strncmp( xhead, "<div class=pcixin>", 18 ) ){
-            fprintf( fp, "lzch_pcixin0000" ); /* ¼Ğ°O¦¹¬°µü©Ê */
+            fprintf( fp, "lzch_pcixin0000" ); /* æ¨™è¨˜æ­¤ç‚ºè©æ€§ */
         }
         else if( !strncmp( xhead, "<div class=pexplain>", 20 ) ){
-            fprintf( fp, "lzch_explain000" ); /* ¼Ğ°O¦¹¬°Ä¶µü */
+            fprintf( fp, "lzch_explain000" ); /* æ¨™è¨˜æ­¤ç‚ºè­¯è© */
         }
         else if( !strncmp( xhead, "<br>\n<li>", 9 ) ){
-            fprintf( fp, "lzch_explain000" ); /* ¼Ğ°O¦¹¬°Ä¶µü */
+            fprintf( fp, "lzch_explain000" ); /* æ¨™è¨˜æ­¤ç‚ºè­¯è© */
         }
         else if( !strncmp( xhead, "<div class=peng>", 16 ) ){
         }
@@ -282,7 +282,7 @@ write_file(sockfd, fp)
       }
     }
 
-    /* ¼ĞÅÒ²¤¹L */
+    /* æ¨™ç±¤ç•¥é */
     cc = *xhead;
     switch(cc)
     {
@@ -322,12 +322,12 @@ http_conn(server, s)
 
   if ((sockfd = dns_open(server, HTTP_PORT)) < 0)
   {
-    vmsg("µLªk»P¦øªA¾¹¨ú±o³sµ²¡A¬d¸ß¥¢±Ñ");
+    vmsg("ç„¡æ³•èˆ‡ä¼ºæœå™¨å–å¾—é€£çµï¼ŒæŸ¥è©¢å¤±æ•—");
     return 0;
   }
   else
   {
-    mouts(22, 0, "¥¿¦b³s±µ¦øªA¾¹¡A½Ğµy«á(«ö¥ô·NÁäÂ÷¶}).............");
+    mouts(22, 0, "æ­£åœ¨é€£æ¥ä¼ºæœå™¨ï¼Œè«‹ç¨å¾Œ(æŒ‰ä»»æ„éµé›¢é–‹).............");
     refresh();
   }
   write(sockfd, s, strlen(s));
@@ -383,12 +383,12 @@ main_dreye()
   {
     clear();
     move(0, 23);
-    outs("\033[1;37;44m¡· Yahoo! ½u¤W¦r¨å v0.1 ¡·\033[m");
+    outs("\033[1;37;44mâ— Yahoo! ç·šä¸Šå­—å…¸ v0.1 â—\033[m");
     move(3, 0);
-    outs("¦¹¦r¨å¨Ó·½¬° Yahoo! ½u¤W¦r¨å¡C\n");
+    outs("æ­¤å­—å…¸ä¾†æºç‚º Yahoo! ç·šä¸Šå­—å…¸ã€‚\n");
     prints("WWW: %s\n", REF);
     outs("author: statue.bbs@bbs.yzu.edu.tw\n");
-    if (!vget(8, 0, "¬d¸ß¦r·J¡G", word, 30, DOECHO))
+    if (!vget(8, 0, "æŸ¥è©¢å­—å½™ï¼š", word, 30, DOECHO))
       break;
 
     yahoo_dict(word);
@@ -400,15 +400,15 @@ main_dreye()
 
 
 ==
-§Úªº OS ¬O freebsd 6.0 release
-linux §ï Makefile ªº¤èªk¥i¯à¤£¤Ó¤@¼Ë...
-code ¼gªº¤£¬O«Ü¦n¡AÁ`¤§¤èªk¬O¥Î iconv() §â yahoo ¦r¨åªº½s½XÂà¦¨ big5
-¦³¿³½ìªº¦A¦Û¤v§ï§a :)
+æˆ‘çš„ OS æ˜¯ freebsd 6.0 release
+linux æ”¹ Makefile çš„æ–¹æ³•å¯èƒ½ä¸å¤ªä¸€æ¨£...
+code å¯«çš„ä¸æ˜¯å¾ˆå¥½ï¼Œç¸½ä¹‹æ–¹æ³•æ˜¯ç”¨ iconv() æŠŠ yahoo å­—å…¸çš„ç·¨ç¢¼è½‰æˆ big5
+æœ‰èˆˆè¶£çš„å†è‡ªå·±æ”¹å§ :)
 
-ÁÙ¬O¦³ bug ªº.. ¥u¬O§Ú¤£¤Óª¾¹D¬O¬°¤°»ò?? (¤£·|§ï°Õ...)
+é‚„æ˜¯æœ‰ bug çš„.. åªæ˜¯æˆ‘ä¸å¤ªçŸ¥é“æ˜¯ç‚ºä»€éº¼?? (ä¸æœƒæ”¹å•¦...)
 
 http://xcin.linux.org.tw/i18n/pc2000/p4/node2.html
 http://netlab.cse.yzu.edu.tw/~statue/freebsd/zh-tut/converter.html#ICONV
 http://opensvn.csie.org/pttbbs/tags/stable.rc/docs/FAQ
 --
-[1;32m¡¼ Origin: [33mlzch.twbbs.org  [31m¡¼ From: [36m140.122.37.121[m
+[1;32mâ–¡ Origin: [33mlzch.twbbs.org  [31mâ–¡ From: [36m140.122.37.121[m

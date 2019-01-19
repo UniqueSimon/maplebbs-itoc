@@ -1,11 +1,11 @@
-§@ªÌ: Kudo (²H³J~~) ¬İªO: plan
-¼ĞÃD: [¥\¯à] expire ¼g¶i .BRD [transbrd.c]
-®É¶¡: Thu Apr 11 04:20:41 2002                          Updated: 2005/05/19
+ä½œè€…: Kudo (æ·¡è›‹~~) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] expire å¯«é€² .BRD [transbrd.c]
+æ™‚é–“: Thu Apr 11 04:20:41 2002                          Updated: 2005/05/19
 
 /*-------------------------------------------------------*/
 /* util/transbrd.c     ( NTHU CS MapleBBS Ver 3.10 )     */
 /*-------------------------------------------------------*/
-/* target : M3 ¬İªOÂà´«µ{¦¡                              */
+/* target : M3 çœ‹æ¿è½‰æ›ç¨‹å¼                              */
 /* create : 02/03/10                                     */
 /* update :   /  /                                       */
 /* author : Kudo.bbs@kudo.twbbs.org                      */
@@ -16,23 +16,23 @@
 
 #if 0
 
-  ¨Ï¥Î¤èªk¡G
+  ä½¿ç”¨æ–¹æ³•ï¼š
 
   0. For Maple 3.X To Maple 3.X
-  1. ¨Ï¥Î«e½Ğ¥ı³Æ¥÷ .BRD
+  1. ä½¿ç”¨å‰è«‹å…ˆå‚™ä»½ .BRD
   2. make transbrd.c
-  3. °õ¦æ transbrd, ²£¥Í BRD.NEW, ½Ğ¦Û¦æ rename ¬° .BRD
-  4. Âà´«§¹«á¡A±N·s¥[¤JªºÄæ¦ì¡A¥[¤J struct.h ¸Ì
-  5. ±N¥ş³¡ source make clean «á­«·s make
+  3. åŸ·è¡Œ transbrd, ç”¢ç”Ÿ BRD.NEW, è«‹è‡ªè¡Œ rename ç‚º .BRD
+  4. è½‰æ›å®Œå¾Œï¼Œå°‡æ–°åŠ å…¥çš„æ¬„ä½ï¼ŒåŠ å…¥ struct.h è£¡
+  5. å°‡å…¨éƒ¨ source make clean å¾Œé‡æ–° make
 
 #endif
 
 
 #include "bbs.h"
 
-#define DEF_MAXP        3000          /* ¬İªO¤å³¹¹w³]¤W­­¼Æ¶q */
-#define DEF_MINP        500           /* ¬İªO¤å³¹¹w³]¤U­­¼Æ¶q */
-#define DEF_MAXT        365           /* ¬İªO¤å³¹¹w³]«O¯d¤Ñ¼Æ */
+#define DEF_MAXP        3000          /* çœ‹æ¿æ–‡ç« é è¨­ä¸Šé™æ•¸é‡ */
+#define DEF_MINP        500           /* çœ‹æ¿æ–‡ç« é è¨­ä¸‹é™æ•¸é‡ */
+#define DEF_MAXT        365           /* çœ‹æ¿æ–‡ç« é è¨­ä¿ç•™å¤©æ•¸ */
 
 typedef struct
 {
@@ -48,18 +48,18 @@ struct NEW
   char title[BTLEN + 1];
   char BM[BMLEN + 1];           /* BMs' uid, token '/' */
 
-  uschar bvote;                 /* ¦@¦³´X¶µ§ë²¼Á|¦æ¤¤ */
+  uschar bvote;                 /* å…±æœ‰å¹¾é …æŠ•ç¥¨èˆ‰è¡Œä¸­ */
 
-  time_t bstamp;                /* «Ø¥ß¬İªOªº®É¶¡, unique */
-  usint readlevel;              /* ¾\Åª¤å³¹ªºÅv­­ */
-  usint postlevel;              /* µoªí¤å³¹ªºÅv­­ */
-  usint battr;                  /* ¬İªOÄİ©Ê */
-  time_t btime;                 /* .DIR ªº st_mtime */
-  int bpost;                    /* ¦@¦³´X½g post */
-  time_t blast;                 /* ³Ì«á¤@½g post ªº®É¶¡ */
-  int maxpost;                /* ¤å³¹¤W­­ */
-  int minpost;                /* ¤å³¹¤U­­ */
-  int maxtime;                /* ¤å³¹«O¯d®É¶¡ */
+  time_t bstamp;                /* å»ºç«‹çœ‹æ¿çš„æ™‚é–“, unique */
+  usint readlevel;              /* é–±è®€æ–‡ç« çš„æ¬Šé™ */
+  usint postlevel;              /* ç™¼è¡¨æ–‡ç« çš„æ¬Šé™ */
+  usint battr;                  /* çœ‹æ¿å±¬æ€§ */
+  time_t btime;                 /* .DIR çš„ st_mtime */
+  int bpost;                    /* å…±æœ‰å¹¾ç¯‡ post */
+  time_t blast;                 /* æœ€å¾Œä¸€ç¯‡ post çš„æ™‚é–“ */
+  int maxpost;                /* æ–‡ç« ä¸Šé™ */
+  int minpost;                /* æ–‡ç« ä¸‹é™ */
+  int maxtime;                /* æ–‡ç« ä¿ç•™æ™‚é–“ */
 };
 
 typedef struct NEW NEW;
@@ -117,7 +117,7 @@ main()
     }
     fclose(fp);
   }
-  number = count;      /* ­É number ¨Ó¦sÅª¥X¨Óªº¸ê®Æ¼Æ¥Ø */
+  number = count;      /* å€Ÿ number ä¾†å­˜è®€å‡ºä¾†çš„è³‡æ–™æ•¸ç›® */
 
   /* --------------------------------------------------- */
   /* create BRD.NEW                                      */
@@ -175,5 +175,5 @@ Chih-Kuan Chien (Kudo)
 kudo@ms21.url.com.tw
 
 --
-[1;32m¡¼ Origin: [33m²H³Jªº¤pºÛ [37mbbs.kudo.idv.tw
-[1;31m¡¼ From: [36mwww.kudo.idv.tw[m
+[1;32mâ–¡ Origin: [33mæ·¡è›‹çš„å°çª© [37mbbs.kudo.idv.tw
+[1;31mâ–¡ From: [36mwww.kudo.idv.tw[m

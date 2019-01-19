@@ -1,24 +1,24 @@
-µo«H¤H: chonsi.bbs@WithHeart.twbbs.org (¦B¶ô¤¤ªº¯P¤õ - ¦BµK), ¬ÝªO: plan
-¼Ð  ÃD: Re: °Ý¤@­ÓªÑ¥«ªº²Â°ÝÃD
-µo«H¯¸: ÀH¤ß§{ (Wed Jan  8 16:57:33 2003)
+ç™¼ä¿¡äºº: chonsi.bbs@WithHeart.twbbs.org (å†°å¡Šä¸­çš„çƒˆç« - å†°ç„°), çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: å•ä¸€å€‹è‚¡å¸‚çš„ç¬¨å•é¡Œ
+ç™¼ä¿¡ç«™: éš¨å¿ƒåŠ (Wed Jan  8 16:57:33 2003)
 
 : config.h
 
-#define BRDSHM_KEY      2997    /* 0x00000bb5 */    /* ¬ÝªO */
-#define UTMPSHM_KEY     1998    /* 0x000007ce */    /* ¨Ï¥ÎªÌ */
-#define FILMSHM_KEY     2999    /* 0x00000bb7 */    /* °ÊºA¬ÝªO */
-#define STOCKSHM_KEY    4999    /* 0x00001387 */    /* ªÑ¥« */
-#define PIPSHM_KEY      4998    /* 0x00001386 */    /* ¹q¤lÂû¹ï¾Ô */
+#define BRDSHM_KEY      2997    /* 0x00000bb5 */    /* çœ‹æ¿ */
+#define UTMPSHM_KEY     1998    /* 0x000007ce */    /* ä½¿ç”¨è€… */
+#define FILMSHM_KEY     2999    /* 0x00000bb7 */    /* å‹•æ…‹çœ‹æ¿ */
+#define STOCKSHM_KEY    4999    /* 0x00001387 */    /* è‚¡å¸‚ */
+#define PIPSHM_KEY      4998    /* 0x00001386 */    /* é›»å­é›žå°æˆ° */
 #define BSEM_KEY        2000    /* 0x000007d0 */    /* semaphore key */
 
-  ¦pªG­n²M°£ shm|sem ªº¸Ü¡A¥i°t¦X ipcs ¨Ï¥Î ipcrm
+  å¦‚æžœè¦æ¸…é™¤ shm|sem çš„è©±ï¼Œå¯é…åˆ ipcs ä½¿ç”¨ ipcrm
 
-  ²M±¼ BRDSHM¡A­n¦A«×°õ¦æ ~/bin/account ¨Ó­«·s¸ü¤J
-  ²M±¼ FILMSHM¡A­n¦A«×°õ¦æ ~/bin/camera ¨Ó­«·s¸ü¤J
+  æ¸…æŽ‰ BRDSHMï¼Œè¦å†åº¦åŸ·è¡Œ ~/bin/account ä¾†é‡æ–°è¼‰å…¥
+  æ¸…æŽ‰ FILMSHMï¼Œè¦å†åº¦åŸ·è¡Œ ~/bin/camera ä¾†é‡æ–°è¼‰å…¥
 
 > ------------------------------------------------------- <
 
-: ¥H¤U¬O FreeBSD ªº¨Ï¥Î½d¨Ò
+: ä»¥ä¸‹æ˜¯ FreeBSD çš„ä½¿ç”¨ç¯„ä¾‹
 
 % [1;33mipcs[m
 
@@ -34,19 +34,19 @@
     T     ID     KEY        MODE       OWNER    GROUP
     s  65536       2000 --rw-------      bbs      bbs
 
-% [1;33mipcrm -M 2997[m         // ­Y­n²M±¼ ¬ÝªO shm
-% [1;33mipcrm -M 1998[m         // ­Y­n²M±¼ ¨Ï¥ÎªÌ shm
-% [1;33mipcrm -M 2999[m         // ­Y­n²M±¼ °ÊºA¬ÝªO shm
-% [1;33mipcrm -M 4999[m         // ­Y­n²M±¼ ªÑ¥« shm
-% [1;33mipcrm -M 4998[m         // ­Y­n²M±¼ ¹q¤lÂû shm
-% [1;33mipcrm -M 2000[m         // ­Y­n²M±¼ semphores
+% [1;33mipcrm -M 2997[m         // è‹¥è¦æ¸…æŽ‰ çœ‹æ¿ shm
+% [1;33mipcrm -M 1998[m         // è‹¥è¦æ¸…æŽ‰ ä½¿ç”¨è€… shm
+% [1;33mipcrm -M 2999[m         // è‹¥è¦æ¸…æŽ‰ å‹•æ…‹çœ‹æ¿ shm
+% [1;33mipcrm -M 4999[m         // è‹¥è¦æ¸…æŽ‰ è‚¡å¸‚ shm
+% [1;33mipcrm -M 4998[m         // è‹¥è¦æ¸…æŽ‰ é›»å­é›ž shm
+% [1;33mipcrm -M 2000[m         // è‹¥è¦æ¸…æŽ‰ semphores
 
-  ¦]¬° KEY ©T©w³£¬O 1998 2997 2999 4997 4998 4999
-  ©Ò¥H¦b FreeBSD ¤U¡A¨ä¹ê¤£»Ý­n ipcs¡A¥i¥Hª½±µ ipcrm -M key
+  å› ç‚º KEY å›ºå®šéƒ½æ˜¯ 1998 2997 2999 4997 4998 4999
+  æ‰€ä»¥åœ¨ FreeBSD ä¸‹ï¼Œå…¶å¯¦ä¸éœ€è¦ ipcsï¼Œå¯ä»¥ç›´æŽ¥ ipcrm -M key
 
 > ------------------------------------------------------- <
 
-: ¥H¤U¬O Linux ªº¨Ï¥Î½d¨Ò
+: ä»¥ä¸‹æ˜¯ Linux çš„ä½¿ç”¨ç¯„ä¾‹
 
 % [1;33mipcs[m
 
@@ -61,18 +61,18 @@
     key        semid      owner      perms      nsems      status
     0x000007d0 229383     bbs       600        1
 
-  ¨ä¤¤ key ¥H HEX ¨Óªí¥Ü¡A¦b¥»¤å¤@¶}©lªºµù¸Ñ§Y¦³ HEX ªº¹ïÀ³
+  å…¶ä¸­ key ä»¥ HEX ä¾†è¡¨ç¤ºï¼Œåœ¨æœ¬æ–‡ä¸€é–‹å§‹çš„è¨»è§£å³æœ‰ HEX çš„å°æ‡‰
 
-% [1;33mipcrm shm 163845[m      // ­Y­n²M±¼ ¬ÝªO shm
-% [1;33mipcrm shm 196614[m      // ­Y­n²M±¼ ¨Ï¥ÎªÌ shm
-% [1;33mipcrm shm 131076[m      // ­Y­n²M±¼ °ÊºA¬ÝªO shm
-% [1;33mipcrm shm 491531[m      // ­Y­n²M±¼ ªÑ¥« shm
-% [1;33mipcrm shm 434272[m      // ­Y­n²M±¼ ¹q¤lÂû shm
-% [1;33mipcrm sem 229383[m      // ­Y­n²M±¼ semphores
+% [1;33mipcrm shm 163845[m      // è‹¥è¦æ¸…æŽ‰ çœ‹æ¿ shm
+% [1;33mipcrm shm 196614[m      // è‹¥è¦æ¸…æŽ‰ ä½¿ç”¨è€… shm
+% [1;33mipcrm shm 131076[m      // è‹¥è¦æ¸…æŽ‰ å‹•æ…‹çœ‹æ¿ shm
+% [1;33mipcrm shm 491531[m      // è‹¥è¦æ¸…æŽ‰ è‚¡å¸‚ shm
+% [1;33mipcrm shm 434272[m      // è‹¥è¦æ¸…æŽ‰ é›»å­é›ž shm
+% [1;33mipcrm sem 229383[m      // è‹¥è¦æ¸…æŽ‰ semphores
 
-  ¦]¬° shmid ¤£©T©w¼Æ¦r
-  ©Ò¥H¦b Linux ¤U¡A»Ý­n°t¦X ipcs¡A¨Ó°õ¦æ ipcrm shm|sem id
+  å› ç‚º shmid ä¸å›ºå®šæ•¸å­—
+  æ‰€ä»¥åœ¨ Linux ä¸‹ï¼Œéœ€è¦é…åˆ ipcsï¼Œä¾†åŸ·è¡Œ ipcrm shm|sem id
 
 --
-    [1;36m¢~¢w¢w Origin ¢¡ [37mÀH¤ß§{ [33;45m chonsi.dorm8.nctu.edu.tw [36;40m ¡ã £\£]£^ ¢w¢w¢q[m
-    [1;36m¢q     Author ¢£ [32m192.168.53.1[m
+    [1;36mâ•­â”€â”€ Origin â•® [37méš¨å¿ƒåŠ [33;45m chonsi.dorm8.nctu.edu.tw [36;40m ï½ž Î±Î²Î³ â”€â”€â”¼[m
+    [1;36mâ”¼     Author â•¯ [32m192.168.53.1[m

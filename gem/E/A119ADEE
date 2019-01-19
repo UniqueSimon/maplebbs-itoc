@@ -1,19 +1,19 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [½Ğ±Ğ]¦³Ãö¤£¯àµo¤å
-µo«H¯¸: °Ê¤O®Ö¤ß (2005/05/26 Thu 02:06:24)                Updated: 2005/05/26
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [è«‹æ•™]æœ‰é—œä¸èƒ½ç™¼æ–‡
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2005/05/26 Thu 02:06:24)                Updated: 2005/05/26
 
-¡° ¤Ş­z¡mhatvito.bbs@cpu.tfcis.org (123)¡n¤§»Ê¨¥¡G
-> ¦pªG»¡
-> ·Q­nÅıªO¥D¦Û­q¯à¤£¯àµo¤å
-> Ä´¦p»¡
-> ¦³¤j§å¶m¥Á¾xªO
-> ªO¥D¨Ó¤£¤Î³B²z
-> ·Q­n¥ı°±¤îµo¤å¨Ó¾ã²zªO­±
+â€» å¼•è¿°ã€Šhatvito.bbs@cpu.tfcis.org (123)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å¦‚æœèªª
+> æƒ³è¦è®“æ¿ä¸»è‡ªè¨‚èƒ½ä¸èƒ½ç™¼æ–‡
+> è­¬å¦‚èªª
+> æœ‰å¤§æ‰¹é„‰æ°‘é¬§æ¿
+> æ¿ä¸»ä¾†ä¸åŠè™•ç†
+> æƒ³è¦å…ˆåœæ­¢ç™¼æ–‡ä¾†æ•´ç†æ¿é¢
 
 : battr.h
 
-#define BRD_ANONYMOUS   0x20    /* °Î¦W¬İªO */
-+ #define BRD_NOPOST    0x40    /* ¤£¯àµoªí¤å³¹¨ì¬İªO */
+#define BRD_ANONYMOUS   0x20    /* åŒ¿åçœ‹æ¿ */
++ #define BRD_NOPOST    0x40    /* ä¸èƒ½ç™¼è¡¨æ–‡ç« åˆ°çœ‹æ¿ */
 
   ...
   ...
@@ -26,8 +26,8 @@
 
 : battr.h:battr_tbl[]
 
-  "°Î¦W¬İªO",           /* BRD_ANONYMOUS */
-+ "¤£¯àµoªí¤å³¹¨ì¬İªO", /* BRD_NOPOST */
+  "åŒ¿åçœ‹æ¿",           /* BRD_ANONYMOUS */
++ "ä¸èƒ½ç™¼è¡¨æ–‡ç« åˆ°çœ‹æ¿", /* BRD_NOPOST */
 
 : post.c:do_post()
 
@@ -36,11 +36,11 @@
 
   if (!(bbstate & STAT_POST))
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  ¦pªG§Æ±æ¶}©ñµ¹ªO¥D¦Û¦æ³]©w
+  å¦‚æœå¸Œæœ›é–‹æ”¾çµ¦æ¿ä¸»è‡ªè¡Œè¨­å®š
 
-: manage.c §â¥H¤U³o¬q¥[¦b post_battr_noscore() «á­±
+: manage.c æŠŠä»¥ä¸‹é€™æ®µåŠ åœ¨ post_battr_noscore() å¾Œé¢
 
 static int
 post_battr_nopost(xo)
@@ -51,7 +51,7 @@ post_battr_nopost(xo)
   oldbrd = bshm->bcache + currbno;
   memcpy(&newbrd, oldbrd, sizeof(BRD));
 
-  switch (vans("1)¥i¥H§R°£¤å³¹ 2)¤£¥i§R°£¤å³¹ [Q] "))
+  switch (vans("1)å¯ä»¥åˆªé™¤æ–‡ç«  2)ä¸å¯åˆªé™¤æ–‡ç«  [Q] "))
   {
   case '1':
     newbrd.battr &= ~BRD_NOPOST;
@@ -75,17 +75,17 @@ post_battr_nopost(xo)
 : manage.c:post_manage()
 
 #  ifdef HAVE_SCORE
-    "Score   ³]©w¥i§_µû¤À",
+    "Score   è¨­å®šå¯å¦è©•åˆ†",
 #  endif
-+   "Post    µoªí¤å³¹³]©w",
++   "Post    ç™¼è¡¨æ–‡ç« è¨­å®š",
 
   ...
   ...
 
 #  ifdef HAVE_SCORE
-    " (S)µû¤À"
+    " (S)è©•åˆ†"
 #  endif
-+   " (P)µo¤å"
++   " (P)ç™¼æ–‡"
 
   ...
   ...
@@ -99,5 +99,5 @@ post_battr_nopost(xo)
 +   return post_battr_nopost(xo);
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

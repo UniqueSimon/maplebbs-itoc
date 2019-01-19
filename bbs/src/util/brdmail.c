@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/brdmail.c	( NTHU CS MapleBBS Ver 3.00 )	 */
 /*-------------------------------------------------------*/
-/* target : ¥Ñ Internet ±H«Hµ¹ BBS ¯¸¤º¬İªO¡Aµø¬° post	 */
+/* target : ç”± Internet å¯„ä¿¡çµ¦ BBS ç«™å…§çœ‹æ¿ï¼Œè¦–ç‚º post	 */
 /* create : 95/03/29					 */
 /* update : 97/03/29					 */
 /*-------------------------------------------------------*/
@@ -11,8 +11,8 @@
 
 #include <sysexits.h>
 
-#define	ANTI_HTMLMAIL		/* itoc.021014: ¾× html_mail */
-#define	ANTI_NOTMYCHARSETMAIL	/* itoc.030513: ¾× not-mycharset mail */
+#define	ANTI_HTMLMAIL		/* itoc.021014: æ“‹ html_mail */
+#define	ANTI_NOTMYCHARSETMAIL	/* itoc.030513: æ“‹ not-mycharset mail */
 
 
 static void
@@ -38,7 +38,7 @@ mailog(msg)
 
 
 /* ----------------------------------------------------- */
-/* board¡Gshm ³¡¥÷¶·»P cache.c ¬Û®e			 */
+/* boardï¼šshm éƒ¨ä»½é ˆèˆ‡ cache.c ç›¸å®¹			 */
 /* ----------------------------------------------------- */
 
 
@@ -48,12 +48,12 @@ static BCACHE *bshm;
 static void
 init_bshm()
 {
-  /* itoc.030727: ¦b¶}±Ò bbsd ¤§«e¡AÀ³¸Ó´N­n°õ¦æ¹L account¡A
-     ©Ò¥H bshm À³¸Ó¤w³]©w¦n */
+  /* itoc.030727: åœ¨é–‹å•Ÿ bbsd ä¹‹å‰ï¼Œæ‡‰è©²å°±è¦åŸ·è¡Œé accountï¼Œ
+     æ‰€ä»¥ bshm æ‡‰è©²å·²è¨­å®šå¥½ */
 
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-  if (bshm->uptime <= 0)	/* bshm ¥¼³]©w§¹¦¨ */
+  if (bshm->uptime <= 0)	/* bshm æœªè¨­å®šå®Œæˆ */
     exit(0);
 }
 
@@ -76,7 +76,7 @@ brd_get(bname)
 
 
 /* ----------------------------------------------------- */
-/* ¥Dµ{¦¡						 */
+/* ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -127,8 +127,8 @@ start:
       else
 	strcpy(sender, owner);
 
-      /* itoc.040804: ¾×«H¶Â¥Õ¦W³æ */
-      str_lower(buf, owner);	/* «O«ù­ì email ªº¤j¤p¼g */
+      /* itoc.040804: æ“‹ä¿¡é»‘ç™½åå–® */
+      str_lower(buf, owner);	/* ä¿æŒåŸ email çš„å¤§å°å¯« */
       if (ptr = (char *) strchr(buf, '@'))
       {
 	*ptr++ = '\0';
@@ -147,12 +147,12 @@ start:
     {
       str_ansi(title, buf + 9, sizeof(title));
       /* str_decode(title); */
-      /* LHD.051106: ­Y¥i¯à¸g RFC 2047 QP encode «h¦³¥i¯à¦h¦æ subject */
+      /* LHD.051106: è‹¥å¯èƒ½ç¶“ RFC 2047 QP encode å‰‡æœ‰å¯èƒ½å¤šè¡Œ subject */
       if (strstr(buf + 9, "=?"))
       {
 	while (fgets(buf, sizeof(buf), stdin))
 	{
-	  if (buf[0] == ' ' || buf[0] == '\t')  /* ²Ä¤G¦æ¥H«á·|¥HªÅ¥Õ©Î TAB ¶}ÀY */
+	  if (buf[0] == ' ' || buf[0] == '\t')  /* ç¬¬äºŒè¡Œä»¥å¾Œæœƒä»¥ç©ºç™½æˆ– TAB é–‹é ­ */
 	    str_ansi(title + strlen(title), strstr(buf, "=?"), sizeof(title));
 	  else
 	  {
@@ -168,9 +168,9 @@ start:
       str = buf + 14;
 
 #ifdef ANTI_HTMLMAIL
-      /* ¤@¯ë BBS ¨Ï¥ÎªÌ³q±`¥u±H¤å¦r¶l¥ó©Î¬O±q¨ä¥L BBS ¯¸±H¤å³¹¨ì¦Û¤vªº«H½c
-         ¦Ó¼s§i«H¥ó³q±`¬O html ®æ¦¡©Î¬O¸Ì­±¦³§¨±a¨ä¥LÀÉ®×
-         §Q¥Î¶l¥óªºÀÉÀY¦³ Content-Type: ªºÄİ©Ê§â°£¤F text/plain (¤å¦r¶l¥ó) ªº«H¥ó³£¾×¤U¨Ó */
+      /* ä¸€èˆ¬ BBS ä½¿ç”¨è€…é€šå¸¸åªå¯„æ–‡å­—éƒµä»¶æˆ–æ˜¯å¾å…¶ä»– BBS ç«™å¯„æ–‡ç« åˆ°è‡ªå·±çš„ä¿¡ç®±
+         è€Œå»£å‘Šä¿¡ä»¶é€šå¸¸æ˜¯ html æ ¼å¼æˆ–æ˜¯è£¡é¢æœ‰å¤¾å¸¶å…¶ä»–æª”æ¡ˆ
+         åˆ©ç”¨éƒµä»¶çš„æª”é ­æœ‰ Content-Type: çš„å±¬æ€§æŠŠé™¤äº† text/plain (æ–‡å­—éƒµä»¶) çš„ä¿¡ä»¶éƒ½æ“‹ä¸‹ä¾† */
       if (*str != '\0' && str_ncmp(str, "text/plain", 10))
       {
 	sprintf(buf, "ANTI-HTML [%d] %s => %s", getppid(), sender, brdname);
@@ -212,14 +212,14 @@ start:
   str_ncpy(hdr.owner, owner, sizeof(hdr.owner));
   str_ncpy(hdr.nick, nick, sizeof(hdr.nick));
   if (!title[0])
-    sprintf(title, "¨Ó¦Û %.64s", sender);
+    sprintf(title, "ä¾†è‡ª %.64s", sender);
   str_ncpy(hdr.title, title, sizeof(hdr.title));
 
   /* copy the stdin to the specified file */
 
   fp = fdopen(fd, "w");
 
-  fprintf(fp, "µo«H¤H: %.50s ¬İªO: %s\n¼Ğ  ÃD: %.72s\nµo«H¯¸: %s\n\n",
+  fprintf(fp, "ç™¼ä¿¡äºº: %.50s çœ‹æ¿: %s\næ¨™  é¡Œ: %.72s\nç™¼ä¿¡ç«™: %s\n\n",
     sender, brdname, title, Btime(&hdr.chrono));
 
   while (fgets(buf, sizeof(buf), stdin))
@@ -236,10 +236,10 @@ start:
 
   rec_bot(folder, &hdr, sizeof(HDR));
 
-  /* amaki.040311: ­nÅıclass_item()§ó·s¥Î */
+  /* amaki.040311: è¦è®“class_item()æ›´æ–°ç”¨ */
   brd->btime = -1;
 
-  /* Thor.0827: ¥[¤W parent process id¡A¥H«K§ì©U§£«H */
+  /* Thor.0827: åŠ ä¸Š parent process idï¼Œä»¥ä¾¿æŠ“åƒåœ¾ä¿¡ */
   sprintf(buf, "[%d] %s => %s", getppid(), sender, brdname); 
   mailog(buf);
 

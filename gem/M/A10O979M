@@ -1,6 +1,6 @@
-�o�H�H: itoc.bbs@processor.tfcis.org (�񥨤H�n�ȡH) �ݪO: plan
-��  �D: Re: [�\��]��ۭq�ݪO�����C���
-�o�H��: XEON (Tue, 15 Jul 2003 01:55:47 +0800 (CST))      Updated: 2007/04/29
+發信人: itoc.bbs@processor.tfcis.org (綠巨人好客？) 看板: plan
+標  題: Re: [功能]能自訂看板分類顏色嗎
+發信站: XEON (Tue, 15 Jul 2003 01:55:47 +0800 (CST))      Updated: 2007/04/29
 
 : board.c:class_item()
 
@@ -26,9 +26,9 @@
 -         str, str[BNLEN + 4] & 7, str + BNLEN + 1, ...);
 +         str, class_color(class), str + BNLEN + 1, ...);
 
-: board.c:class_color() �[�b class_item() �e��
+: board.c:class_color() 加在 class_item() 前面
 
-static char *       /* �^���C�� */
+static char *       /* 回傳顏色 */
 class_color(class)
   char *class;
 {
@@ -51,15 +51,15 @@ class_color(class)
 
 : global.h
 
-#define FN_ETC_LOVELETTER "etc/loveletter"      /* ���Ѳ��;���w */
-+ #define FN_ETC_CLASS    "etc/class"           /* �ݪO�����C�� */
+#define FN_ETC_LOVELETTER "etc/loveletter"      /* 情書產生器文庫 */
++ #define FN_ETC_CLASS    "etc/class"           /* 看板分類顏色 */
 
 : admutil.c:a_xfile()
 
 #ifdef HAVE_LOVELETTER
-    "���Ѳ��;���w",
+    "情書產生器文庫",
 #endif
-+   "�ݪO�����C��",
++   "看板分類顏色",
 
   ...
   ...
@@ -73,13 +73,13 @@ class_color(class)
 
 typedef struct
 {
-  int shot[MOVIE_MAX];          /* Thor.980805: �X�z�d�� 0..MOVIE_MAX - 1 */
+  int shot[MOVIE_MAX];          /* Thor.980805: 合理範圍為 0..MOVIE_MAX - 1 */
   char film[MOVIE_SIZE];
 + char classtable[100][BCLEN + 1];
 + char colortable[100][20];
 } FCACHE;
 
-: camera.c:do_color() �[�J main() �e��
+: camera.c:do_color() 加入 main() 前面
 
 static void
 do_color(fshm)
@@ -110,7 +110,7 @@ do_color(fshm)
   }
 
   fshm->classtable[i][0] = '\0';
-  strcpy(fshm->colortable[i], "1;37"); /* �b list �̭��䤣��ɪ��w�]�C�� */
+  strcpy(fshm->colortable[i], "1;37"); /* 在 list 裡面找不到時的預設顏色 */
 }
 
 : camera.c:main()
@@ -120,19 +120,19 @@ do_color(fshm)
   exit(0);
 }
 
-: etc/class �s�W���ɮ�
-: �άO�q BBS ���W 0Admin->Xfile �̭���
+: etc/class 新增此檔案
+: 或是從 BBS 站上 0Admin->Xfile 裡面改
 
-# ���r�}�Y���O����
-# �榡�O�G   ����+�@�ӪŮ�+�C�ⱱ��X
-�H�� 1;35
-��� 1;35
-���� 1;34;41
-�ӤH 1;32
-���� 1;31
-���H 1;31
-�q�v 1;31
+# 井字開頭的是註解
+# 格式是：   分類+一個空格+顏色控制碼
+人文 1;35
+文學 1;35
+站務 1;34;41
+個人 1;32
+音樂 1;31
+藝人 1;31
+電影 1;31
 
 --
-[1;31m|[33m Origin [31m| [0;45m MapleBBS-itoc �ʤO�֤� [35;47m processor.tfcis.org [m
+[1;31m|[33m Origin [31m| [0;45m MapleBBS-itoc 動力核心 [35;47m processor.tfcis.org [m
 [1;31m|[35m Author [31m| [36mitoc.dorm11.nctu.edu.tw[m

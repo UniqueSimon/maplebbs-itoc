@@ -1,27 +1,27 @@
-µo«H¤H: kevin.bbs@cpu.tfcis.org (µl¤lÀ°Á`²ë¥D) ¬ÝªO: plan
-¼Ð  ÃD: Re: [°ÝÃD] BSD6.0¤Ustandalone¶]¤£°_¨ÓËç
-µo«H¯¸: °Ê¤O®Ö¤ß (2006/07/26 Wed 05:48:06)
+ç™¼ä¿¡äºº: kevin.bbs@cpu.tfcis.org (ç—žå­å¹«ç¸½èˆµä¸») çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] BSD6.0ä¸‹standaloneè·‘ä¸èµ·ä¾†å‘¦
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2006/07/26 Wed 05:48:06)
 
-§Ú¤]¬OÄéFreeBSD6.1¡A¤]¹J¨ì¸ò§A¦P¼Ë°ÝÃD
-inetd.conf©Mservices³]©w³£§Ë¦n¤F
-´N¬O¨S¿ìªk³s¤W¦Û¤vªºftpd¸òtelnetd
-¥»¨Ó·Q»¡¥Îstandalone¶]¦n¤F
-¬Ý¤F¤@¤U/etc/rc.conf»¡³o­ÓÀÉ¬O¨Ì¾Ú/etc/defaults/rc.conf³o¤@­Ó
-§ä¤F¤@¤Uµo²{6.1¹w³]¬O¨S¦³¶}±Òinetdªº¡A³ssshd¸òftpd³£¨S¦³¶}±Ò=.=||
-©ó¬O§Ú§âinetd_enable="NO"§ï¦¨inetd_enable="YES"
-¶¶«K§âsshd©Mftpd³£§ï¦¨YES¡A§ÚÃi´k¡A©Ò¥HÅý¥Lreboot
-°ÝÃD¸Ñ¨M¡A¥i¥Htelnet¤]¥i¥H¥Îssh©Mftp¡A´Nºâ¥Îstandalone³£¨S°ÝÃD:p
-Åo­ù¥zÁY¤@°ï¡Aµ¹§A°Ñ¦Ò¬Ý¬Ý
+æˆ‘ä¹Ÿæ˜¯çŒFreeBSD6.1ï¼Œä¹Ÿé‡åˆ°è·Ÿä½ åŒæ¨£å•é¡Œ
+inetd.confå’Œservicesè¨­å®šéƒ½å¼„å¥½äº†
+å°±æ˜¯æ²’è¾¦æ³•é€£ä¸Šè‡ªå·±çš„ftpdè·Ÿtelnetd
+æœ¬ä¾†æƒ³èªªç”¨standaloneè·‘å¥½äº†
+çœ‹äº†ä¸€ä¸‹/etc/rc.confèªªé€™å€‹æª”æ˜¯ä¾æ“š/etc/defaults/rc.confé€™ä¸€å€‹
+æ‰¾äº†ä¸€ä¸‹ç™¼ç¾6.1é è¨­æ˜¯æ²’æœ‰é–‹å•Ÿinetdçš„ï¼Œé€£sshdè·Ÿftpdéƒ½æ²’æœ‰é–‹å•Ÿ=.=||
+æ–¼æ˜¯æˆ‘æŠŠinetd_enable="NO"æ”¹æˆinetd_enable="YES"
+é †ä¾¿æŠŠsshdå’Œftpdéƒ½æ”¹æˆYESï¼Œæˆ‘æ‡¶æƒ°ï¼Œæ‰€ä»¥è®“ä»–reboot
+å•é¡Œè§£æ±ºï¼Œå¯ä»¥telnetä¹Ÿå¯ä»¥ç”¨sshå’Œftpï¼Œå°±ç®—ç”¨standaloneéƒ½æ²’å•é¡Œ:p
+å›‰å“©å­ç¸®ä¸€å †ï¼Œçµ¦ä½ åƒè€ƒçœ‹çœ‹
 
-¡° ¤Þ­z¡mBeastXIII (Beast. XIII)¡n¤§»Ê¨¥¡G
-> Äé¤FFreeBSD6.1...¥Î³Ì°®²bªº¨t²Î¶}¾÷
-> ¦w¸Ë¦nitoc³Ì·sª©¥».. make³£¨S¿ù»~
-> camera, account³£¶]¤F
-> ¤]¥Îroot¶]bbsd¤F
-> ¦ýtelnet¤£¶i¥h.. ¦³¤H¹J¹LÃþ¦üªº°ÝÃD¹À:(
+â€» å¼•è¿°ã€ŠBeastXIII (Beast. XIII)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> çŒäº†FreeBSD6.1...ç”¨æœ€ä¹¾æ·¨çš„ç³»çµ±é–‹æ©Ÿ
+> å®‰è£å¥½itocæœ€æ–°ç‰ˆæœ¬.. makeéƒ½æ²’éŒ¯èª¤
+> camera, accountéƒ½è·‘äº†
+> ä¹Ÿç”¨rootè·‘bbsdäº†
+> ä½†telnetä¸é€²åŽ».. æœ‰äººé‡éŽé¡žä¼¼çš„å•é¡Œå˜›:(
 
 
 --
-[1;36m=[37m[[36m¡É[37m:[33m¡[37mÝ¢¨[m¢©¡[1;33mÝ[37m:[36m¡É [31mOrigin[37m ]|[[m  [0;31m°[1mÊ[1m¤[0;31mO[0;31m®[1mÖ[1m¤[0;31mß [1mcpu.tfcis.org  [37m]|[¡[33mÝ£»¡[mÝ[1;36m¡É[37m:][36m=[m
-[1;36m=[0m[[1;36m¡Ç[37m:[33m¡[30mÝ¢ª[m¢¬¡[1;33mÝ[37m:[36m¡Ç [31mAuthor[m ]|[[1m       163.23.57.23       [m]|[¡[1;33mÝ[30m¡[37m´¡[30mÝ[36m¡Ç[37m:[m][1;36m=[m
-[1;36m=[m ¢o¢m[1m¢k¢k[31mModify[37m ¢k¢m[m¢n¢o[1;30m¢o[33m¡Ý[37m:[32m Wed, 26 Jul 2006 05:49:52 CST [37m:[33m¡Ý[37m:[30m][36m=[m
+[1;36m=[37m[[36mï¹Ž[37m:[33m?[37mæ‘ƒ?[mâ—£?[1;33m?[37m:[36mï¹Ž [31mOrigin[37m ]|[[m  [0;31m?[1m?[1m?[0;31mO[0;31m?[1m?[1m?[0;31m?[1mcpu.tfcis.org  [37m]|[?[33mæŸèªª[m?[1;36mï¹Ž[37m:][36m=[m
+[1;36m=[0m[[1;36mï¹Š[37m:[33m?[30mæ‘ƒ?[mâ•±?[1;33m?[37m:[36mï¹Š [31mAuthor[m ]|[[1m       163.23.57.23       [m]|[?[1;33m?[30m?[37mæ’[30m?[36mï¹Š[37m:[m][1;36m=[m
+[1;36m=[m â–Šâ–Œ[1mâ–Žâ–Ž[31mModify[37m â–Žâ–Œ[mâ–‹â–Š[1;30mâ–Š[33mâ‰¡[37m:[32m Wed, 26 Jul 2006 05:49:52 CST [37m:[33mâ‰¡[37m:[30m][36m=[m

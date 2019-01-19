@@ -1,17 +1,17 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G802) ¯¸¤º: plan
-¼ĞÃD: [¥\¯à] ±N©|¥¼¦sÀÉªº¤ô²y¦s©ó«H½c
-®É¶¡: 2005/10/09 Sun 00:58:44                           Updated: 2005/10/09
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š802) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] å°‡å°šæœªå­˜æª”çš„æ°´çƒå­˜æ–¼ä¿¡ç®±
+æ™‚é–“: 2005/10/09 Sun 00:58:44                           Updated: 2005/10/09
 
 : src/util/Makefile
 
 EXE =   ... [1;33msaveBMWtoMbox[m
 
-: src/util/saveBMWtoMbox.c ·s¼Wµ{¦¡¦p¤U
+: src/util/saveBMWtoMbox.c æ–°å¢ç¨‹å¼å¦‚ä¸‹
 
 /*-------------------------------------------------------*/
 /* saveBMWtoMbox.c      ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ±N©|¥¼¦sÀÉªº¤ô²y¦s©ó«H½c                     */
+/* target : å°‡å°šæœªå­˜æª”çš„æ°´çƒå­˜æ–¼ä¿¡ç®±                     */
 /* create : 05/10/08                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -21,9 +21,9 @@ EXE =   ... [1;33msaveBMWtoMbox[m
 #include "bbs.h"
 
 
-/* §Û bmw.c */
-#define BMW_FORMAT  "\033[1;33;46m¡¹%s \033[37;45m %s \033[m" /* ¦¬¨ìªº¤ô²y */
-#define BMW_FORMAT2 "\033[1;33;41m¡¸%s \033[34;47m %s \033[m" /* °e¥Xªº¤ô²y */
+/* æŠ„ bmw.c */
+#define BMW_FORMAT  "\033[1;33;46mâ˜…%s \033[37;45m %s \033[m" /* æ”¶åˆ°çš„æ°´çƒ */
+#define BMW_FORMAT2 "\033[1;33;41mâ˜†%s \033[34;47m %s \033[m" /* é€å‡ºçš„æ°´çƒ */
 
 
 int
@@ -53,12 +53,12 @@ main()
       if (*str <= ' ' || *str == '.')
         continue;
 
-      /* ÀË¬d¦³µL¥¼¦sÀÉªº FN_BMW */
+      /* æª¢æŸ¥æœ‰ç„¡æœªå­˜æª”çš„ FN_BMW */
       sprintf(fbmw, "%s/" FN_BMW, str);
       if (!dashf(fbmw))
         continue;
 
-      /* ¨ú±o¸Ó ID ªº¥¿½T¤j¤p¼g¡Buserno */
+      /* å–å¾—è©² ID çš„æ­£ç¢ºå¤§å°å¯«ã€userno */
       sprintf(buf, "%s/" FN_ACCT, str);
       if ((fd = open(buf, O_RDONLY)) >= 0)
       {
@@ -70,13 +70,13 @@ main()
         strcpy(acct.userid, str);
       }
 
-      /* ±N¤ô²y°O¿ıÅÜ¦¨«H¥ó */
+      /* å°‡æ°´çƒè¨˜éŒ„è®Šæˆä¿¡ä»¶ */
       if ((fd = open(fbmw, O_RDONLY)) >= 0)
       {
         sprintf(folder, "%s/" FN_DIR, str);
         if (fp = fdopen(hdr_stamp(folder, 0, &hdr, buf), "w"))
         {
-          fprintf(fp, "              == ¤ô²y°O¿ı %s ==\n\n", Now());
+          fprintf(fp, "              == æ°´çƒè¨˜éŒ„ %s ==\n\n", Now());
 
           while (read(fd, &bmw, sizeof(BMW)) == sizeof(BMW))
           {
@@ -89,12 +89,12 @@ main()
         close(fd);
 
         strcpy(hdr.owner, acct.userid);
-        strcpy(hdr.title, "[³Æ §Ñ ¿ı] ¤ô²y¬ö¿ı");
+        strcpy(hdr.title, "[å‚™ å¿˜ éŒ„] æ°´çƒç´€éŒ„");
         hdr.xmode = MAIL_READ | MAIL_NOREPLY;
         rec_add(folder, &hdr, sizeof(HDR));
       }
 
-      /* ¦s¨ì«H½c«á´N§R°£ FN_BMW ¤Î FN_AMW */
+      /* å­˜åˆ°ä¿¡ç®±å¾Œå°±åˆªé™¤ FN_BMW åŠ FN_AMW */
       unlink(fbmw);
       sprintf(fbmw, "%s/" FN_AMW, str);
       unlink(fbmw);
@@ -108,4 +108,4 @@ main()
 
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

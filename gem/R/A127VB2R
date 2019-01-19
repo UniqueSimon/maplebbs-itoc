@@ -1,33 +1,33 @@
-µo«H¤H: kewang.bbs@bbs.niu.edu.tw (kewang) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¦Û­q¤å³¹½d¥»
-µo«H¯¸: Äõ«B±¡Ãh¸ê°T¯¸ (2006/06/01 Thu 20:19:17)          Updated: 2005/06/02
+ç™¼ä¿¡äºº: kewang.bbs@bbs.niu.edu.tw (kewang) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] è‡ªè¨‚æ–‡ç« ç¯„æœ¬
+ç™¼ä¿¡ç«™: è˜­é›¨æƒ…æ‡·è³‡è¨Šç«™ (2006/06/01 Thu 20:19:17)          Updated: 2005/06/02
 
-¤@ª½¨S¬İ¨ì¦³¤H¼g³o­Ó¥\¯à¥X¨Ó
+ä¸€ç›´æ²’çœ‹åˆ°æœ‰äººå¯«é€™å€‹åŠŸèƒ½å‡ºä¾†
 
-³Ìªñ¦³®É¶¡  §Ú´N¬ã¨s¤F¤@¤U
+æœ€è¿‘æœ‰æ™‚é–“  æˆ‘å°±ç ”ç©¶äº†ä¸€ä¸‹
 
 ==============================================================================
 
-¥ı°µ¤U­±³o­Ó¥\¯à  ­n¤£µM°µ¤F¦Û­q½d¥»¤]¨S¤°»ò·N¸q
+å…ˆåšä¸‹é¢é€™å€‹åŠŸèƒ½  è¦ä¸ç„¶åšäº†è‡ªè¨‚ç¯„æœ¬ä¹Ÿæ²’ä»€éº¼æ„ç¾©
 
-[1;33m[¥\¯à] manage.c ªO¥D¦Û­qµo¤åÃş§O[m
+[1;33m[åŠŸèƒ½] manage.c æ¿ä¸»è‡ªè¨‚ç™¼æ–‡é¡åˆ¥[m
 
 ==============================================================================
 
 include/config.h
 
-+ #ifdef POST_PREFIX              //¦Û­q¤å³¹Ãş§O¼Æ¥Ø  by  kewang  2006.06.01
++ #ifdef POST_PREFIX              //è‡ªè¨‚æ–‡ç« é¡åˆ¥æ•¸ç›®  by  kewang  2006.06.01
 + #define NUM_PREFIX      6
-+ #define HAVE_TEMPLATE           //¦Û­q¤å³¹½d¥»  by  kewang  2006.06.01
++ #define HAVE_TEMPLATE           //è‡ªè¨‚æ–‡ç« ç¯„æœ¬  by  kewang  2006.06.01
 + #endif
 
 ==============================================================================
 
-·s¼Wpost_template_edit()³o­Ó¨ç¦¡¦b so/manage.c:post_manage() «e­±
+æ–°å¢post_template_edit()é€™å€‹å‡½å¼åœ¨ so/manage.c:post_manage() å‰é¢
 
-#ifdef HAVE_TEMPLATE            //¦Û­q¤å³¹½d¥»  by  kewang 2006.06.01
+#ifdef HAVE_TEMPLATE            //è‡ªè¨‚æ–‡ç« ç¯„æœ¬  by  kewang 2006.06.01
 /* ----------------------------------------------------- */
-/* ªO¥D¥\¯à : ¦Û­q¤å³¹½d¥»                               */
+/* æ¿ä¸»åŠŸèƒ½ : è‡ªè¨‚æ–‡ç« ç¯„æœ¬                               */
 /* ----------------------------------------------------- */
 
 
@@ -45,7 +45,7 @@ post_template_edit(xo)
 
   for (i = 0; i < NUM_PREFIX; i++)
   {
-    sprintf(buf, "½d¥»%d (D)§R°£ (E)­×§ï (Q)¨ú®ø¡H[E] ", i+1);
+    sprintf(buf, "ç¯„æœ¬%d (D)åˆªé™¤ (E)ä¿®æ”¹ (Q)å–æ¶ˆï¼Ÿ[E] ", i+1);
     ans = vans(buf);
 
     if (ans == 'q')
@@ -61,7 +61,7 @@ post_template_edit(xo)
       continue;
     }
 
-    if (vedit(fpath, 0))        /* Thor.981020: ª`·N³Qtalkªº°İÃD */
+    if (vedit(fpath, 0))        /* Thor.981020: æ³¨æ„è¢«talkçš„å•é¡Œ */
       vmsg(msg_cancel);
     return XO_HEAD;
   }
@@ -72,17 +72,17 @@ post_template_edit(xo)
 
 ==============================================================================
 
-­×§ïso/manage.c:post_prefix_edit()
+ä¿®æ”¹so/manage.c:post_prefix_edit()
 
 : #define NUM_PREFIX 6
 - #define NUM_PREFIX 6
 
 ==============================================================================
 
-­×§ïmaple/post.c:do_post()
+ä¿®æ”¹maple/post.c:do_post()
 
   utmp_mode(M_POST);
-+#ifdef HAVE_TEMPLATE    //¦Û­q¤å³¹½d¥»  by  kewang 2006.06.01
++#ifdef HAVE_TEMPLATE    //è‡ªè¨‚æ–‡ç« ç¯„æœ¬  by  kewang 2006.06.01
 + if (mode >= 0 && mode < NUM_PREFIX)
 + {
 +   char ftemplate[11];
@@ -95,22 +95,22 @@ post_template_edit(xo)
 
 ==============================================================================
 
-­×§ïmaple/edit.c:vedit()
+ä¿®æ”¹maple/edit.c:vedit()
 
      case Ctrl('X'):           /* Save and exit */
 
-+ #ifdef HAVE_TEMPLATE            //¦Û­q¤å³¹½d¥»  by  kewang 2006.06.01
++ #ifdef HAVE_TEMPLATE            //è‡ªè¨‚æ–‡ç« ç¯„æœ¬  by  kewang 2006.06.01
 +        if (strstr(fpath, "template_") != NULL && ve_op == 1)
 +          fpath[0] = '\0';
 + #endif
 
 ==============================================================================
 
-­×§ïso/manage.c:post_manage()
+ä¿®æ”¹so/manage.c:post_manage()
 
-    "WMemo   ½s¿è¶iªOµe­±",
+    "WMemo   ç·¨è¼¯é€²æ¿ç•«é¢",
 +#ifdef HAVE_TEMPLATE
-+   "CusPost ¦Û­q¤å³¹½d¥»",
++   "CusPost è‡ªè¨‚æ–‡ç« ç¯„æœ¬",
 +#endif
 
  ...
@@ -126,16 +126,16 @@ post_template_edit(xo)
 
 ==============================================================================
 
-¤j·§´N¬O³o¼Ë¤l~
+å¤§æ¦‚å°±æ˜¯é€™æ¨£å­~
 
-¤£¹L¦Û­qÃş§O¨º­Ó³¡¤À¤j®a¦b°µªº®É­Ô¥i¯à·|²£¥Í¤@¨Ç°İÃD
+ä¸éè‡ªè¨‚é¡åˆ¥é‚£å€‹éƒ¨åˆ†å¤§å®¶åœ¨åšçš„æ™‚å€™å¯èƒ½æœƒç”¢ç”Ÿä¸€äº›å•é¡Œ
 
-¤j®a¦Û¤v§ä§ä¦n¤F  ¦]¬°§Ú¤§«e§ïªº§Ñ¤F°µµù¸Ñ
+å¤§å®¶è‡ªå·±æ‰¾æ‰¾å¥½äº†  å› ç‚ºæˆ‘ä¹‹å‰æ”¹çš„å¿˜äº†åšè¨»è§£
 
 
 
-¦pªGÄ±±o­şÃä¥i¥H¦A§ï¶i  Åwªï«ü±Ğ
+å¦‚æœè¦ºå¾—å“ªé‚Šå¯ä»¥å†æ”¹é€²  æ­¡è¿æŒ‡æ•™
 
 --
- [1;42m Site [40;31m °ê¥ß©yÄõ¤j¾Ç£»Äõ«B±¡Ãh¸ê°T¯¸ [37m¡ibbs.niu.edu.tw¡j[m
+ [1;42m Site [40;31m åœ‹ç«‹å®œè˜­å¤§å­¸Ë™è˜­é›¨æƒ…æ‡·è³‡è¨Šç«™ [37mã€bbs.niu.edu.twã€‘[m
  [1;44m From [40;33m 220-132-68-25.HINET-IP.hinet.net[m

@@ -1,14 +1,14 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (£i·R±¡±s¦u£i) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¾ã¦æ¥ú´Î(1)¡Ğpal.c ¦n¤Í¦W³æ
-µo«H¯¸: ¤¤¿³¸ê¬ì (Mon, 14 Jul 2003 16:17:49 +0800 (CST))  Updated: 2005/08/08
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (Î¾æ„›æƒ…å¾¡å®ˆÎ¾) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] æ•´è¡Œå…‰æ£’(1)ï¼pal.c å¥½å‹åå–®
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (Mon, 14 Jul 2003 16:17:49 +0800 (CST))  Updated: 2005/08/08
 
-: pal.c:pal_item1()  ¥[¦b pal_item() «á­±
+: pal.c:pal_item1()  åŠ åœ¨ pal_item() å¾Œé¢
 
 #ifdef HAVE_LIGHTBAR
 static int
 pal_item_bar(xo, mode)
   XO *xo;
-  int mode;     /* 1:¤W¥ú´Î  0:¥h¥ú´Î */
+  int mode;     /* 1:ä¸Šå…‰æ£’  0:å»å…‰æ£’ */
 {
   PAL *pal;
 #ifdef CHECK_ONLINE
@@ -24,9 +24,9 @@ pal_item_bar(xo, mode)
 #endif
 
   prints("%s%6d%c%-3s%s%-14s%s%-54s%s",
-    mode ? "\033[44m" : "",         //³o¸Ì¬O¥ú´ÎªºÃC¦â¡A¥i¥H¦Û¤v§ï¡C
+    mode ? "\033[44m" : "",         //é€™è£¡æ˜¯å…‰æ£’çš„é¡è‰²ï¼Œå¯ä»¥è‡ªå·±æ”¹ã€‚
     xo->pos + 1, tag_char(pal->userno),
-    pal->ftype & PAL_BAD ? "¢æ" : "",
+    pal->ftype & PAL_BAD ? "ï¼¸" : "",
     online ? "\033[33m" : "",
     pal->userid,
     online ? "\033[31m" : "",
@@ -47,5 +47,5 @@ KeyFunc pal_cb[] =
 #endif
 
 --
-[1;31m|[33m Origin [31m| [0;45m ¤¤¿³¸ê¬ì ¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [35;47m bbs.cs.nchu.edu.tw [m
+[1;31m|[33m Origin [31m| [0;45m ä¸­èˆˆè³‡ç§‘ ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [35;47m bbs.cs.nchu.edu.tw [m
 [1;31m|[35m Author [31m| [36m61-216-136-210.HINET-IP.hinet.net[m

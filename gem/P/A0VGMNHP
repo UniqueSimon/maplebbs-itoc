@@ -1,42 +1,42 @@
-µo«H¤H: BioStar.bbs@micro.bio.ncue.edu.tw (¼ê´ò¤p¶³³¶) ¬İªO: itoc
-¼Ğ  ÃD: [¤å¥ó] ºëµØ°Ïªº½g¼Æ¤W­­©M®e¶q¤W­­
-µo«H¯¸: Àº¤Ñ±^ (Sun, 06 Jul 2003 15:21:41 +0800 (CST))    Updated: 2003/07/09
+ç™¼ä¿¡äºº: BioStar.bbs@micro.bio.ncue.edu.tw (æ¾æ¹–å°é›²é›€) çœ‹æ¿: itoc
+æ¨™  é¡Œ: [æ–‡ä»¶] ç²¾è¯å€çš„ç¯‡æ•¸ä¸Šé™å’Œå®¹é‡ä¸Šé™
+ç™¼ä¿¡ç«™: æ“å¤©å´— (Sun, 06 Jul 2003 15:21:41 +0800 (CST))    Updated: 2003/07/09
 
-  (1) Âà´« .ACCT
+  (1) è½‰æ› .ACCT
 
-  ­º¥ıÃö¯¸
+  é¦–å…ˆé—œç«™
 
 : src/util/tran/transacct.c:NEW
 
-struct NEW                      /* ­n©M·sª©µ{¦¡ struct ¤@¼Ë */
+struct NEW                      /* è¦å’Œæ–°ç‰ˆç¨‹å¼ struct ä¸€æ¨£ */
 {
   ...
   ...
-  char lasthost[30];            /* ¤W¦¸µn¤J¨Ó·½ */
-  char email[60];               /* ¥Ø«eµn°Oªº¹q¤l«H½c */
+  char lasthost[30];            /* ä¸Šæ¬¡ç™»å…¥ä¾†æº */
+  char email[60];               /* ç›®å‰ç™»è¨˜çš„é›»å­ä¿¡ç®± */
 
-+ int gemsize_n;                /* ­Ó¤HºëµØ°Ï½g¼Æ¤W­­ */
-+ int gemsize_k;                /* ­Ó¤HºëµØ°Ï®e¶q¤W­­ */
++ int gemsize_n;                /* å€‹äººç²¾è¯å€ç¯‡æ•¸ä¸Šé™ */
++ int gemsize_k;                /* å€‹äººç²¾è¯å€å®¹é‡ä¸Šé™ */
 };
 
 : src/util/tran/transacct.c:main()
 
       strcpy(new.lasthost, old.lasthost);
       strcpy(new.email, old.email);
-+     new.gemsize_n = 1000;        /* ¹w³]¤W­­ 1000 ½g */
-+     new.semsize_k = 100000;      /* ¹w³]¤W­­ 100000 bytes */
++     new.gemsize_n = 1000;        /* é è¨­ä¸Šé™ 1000 ç¯‡ */
++     new.semsize_k = 100000;      /* é è¨­ä¸Šé™ 100000 bytes */
 
 
-  µM«á compile transacct.c ¨Ã°õ¦æ transacct
+  ç„¶å¾Œ compile transacct.c ä¸¦åŸ·è¡Œ transacct
 
-: include/struct.h:ACCTªºµ²ºc
+: include/struct.h:ACCTçš„çµæ§‹
 
-  char lasthost[30];            /* ¤W¦¸µn¤J¨Ó·½ */
-  char email[60];               /* ¥Ø«eµn°Oªº¹q¤l«H½c */
-+ int gemsize_n;                /* ­Ó¤HºëµØ°Ï½g¼Æ¤W­­ */
-+ int gemsize_k;                /* ­Ó¤HºëµØ°Ï®e¶q¤W­­ */
+  char lasthost[30];            /* ä¸Šæ¬¡ç™»å…¥ä¾†æº */
+  char email[60];               /* ç›®å‰ç™»è¨˜çš„é›»å­ä¿¡ç®± */
++ int gemsize_n;                /* å€‹äººç²¾è¯å€ç¯‡æ•¸ä¸Šé™ */
++ int gemsize_k;                /* å€‹äººç²¾è¯å€å®¹é‡ä¸Šé™ */
 }
 
 --
-[1;31m|[33m Origin [31m| [;37;45m ¹ü¤Æ®v¤j¥Íª«¨t §u­·¡E²·¤ë¡EÀº¤Ñ±^ [35;47m micro.bio.ncue.edu.tw [m
+[1;31m|[33m Origin [31m| [;37;45m å½°åŒ–å¸«å¤§ç”Ÿç‰©ç³» åŸé¢¨?çœºæœˆ?æ“å¤©å´— [35;47m micro.bio.ncue.edu.tw [m
 [1;31m|[35m Author [31m| [36m218-163-206-115.HINET-IP.hinet.net[m

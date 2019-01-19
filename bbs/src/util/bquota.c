@@ -20,11 +20,11 @@
 #define	LOG_FILE	"run/bquota.log"
 
 
-#define	MAX_SIZE	20000	/* ¶W¹L 20k bytes ´N§R°£ */
+#define	MAX_SIZE	20000	/* è¶…é 20k bytes å°±åˆªé™¤ */
 
 
-/* itoc.011002.µù¸Ñ: XXXX_DUE ¦b config.h ¤¤©w¸q */
-/* itoc.011002: ¦³¥²­n§â´»°²ªº bquota ©µªø®É¶¡¶Ü¡H */
+/* itoc.011002.è¨»è§£: XXXX_DUE åœ¨ config.h ä¸­å®šç¾© */
+/* itoc.011002: æœ‰å¿…è¦æŠŠæš‘å‡çš„ bquota å»¶é•·æ™‚é–“å—ï¼Ÿ */
 
 static time_t file_due;
 static time_t mail_due;
@@ -319,7 +319,7 @@ main(argc, argv)
   else
   {
     flog = fopen(LOG_FILE, "w");
-    argc = 'a' + (start / 86400) % 26;	/* ¨C¹j 26 ¤Ñ bquota ¤@¦¸ */
+    argc = 'a' + (start / 86400) % 26;	/* æ¯éš” 26 å¤© bquota ä¸€æ¬¡ */
   }
 
   /* visit the second hierarchy */
@@ -363,14 +363,14 @@ main(argc, argv)
   closedir(dirp);
 
   time(&end);
-  fprintf(flog, "# ¶}©l®É¶¡¡G%s\n", Btime(&start));
-  fprintf(flog, "# µ²§ô®É¶¡¡G%s\n", Btime(&end));
+  fprintf(flog, "# é–‹å§‹æ™‚é–“ï¼š%s\n", Btime(&start));
+  fprintf(flog, "# çµæŸæ™‚é–“ï¼š%s\n", Btime(&end));
   end -= start;
   start = end % 60;
   end /= 60;
-  fprintf(flog, "# Á`­p¯Ó®É¡G%d:%d:%d\n", end / 60, end % 60, start);
-  fprintf(flog, "# µù¥U¤H¼Æ¡G%d\n", visit);
-  fprintf(flog, "# ²M°£ÀÉ®×¡G%d\n", bonus);
+  fprintf(flog, "# ç¸½è¨ˆè€—æ™‚ï¼š%d:%d:%d\n", end / 60, end % 60, start);
+  fprintf(flog, "# è¨»å†Šäººæ•¸ï¼š%d\n", visit);
+  fprintf(flog, "# æ¸…é™¤æª”æ¡ˆï¼š%d\n", bonus);
   fclose(flog);
   exit(0);
 }

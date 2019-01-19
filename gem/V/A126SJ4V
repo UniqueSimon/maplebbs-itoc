@@ -1,30 +1,30 @@
-�o�H�H: itoc.bbs@cpu.tfcis.org (�֤߰ʤO) �ݪO: plan
-��  �D: �s�峹�q��
-�o�H��: �ʤO�֤� (2006/05/20 Sat 06:58:29)                Updated: 2006/05/23
+發信人: itoc.bbs@cpu.tfcis.org (核心動力) 看板: plan
+標  題: 新文章通知
+發信站: 動力核心 (2006/05/20 Sat 06:58:29)                Updated: 2006/05/23
 
-�� �ޭz�mguessi.bbs@bbs.wretch.cc�n���ʨ��G
-> ���W�ϥΪ̴��X�@�ӭn�D [�s�峹�q��]
+※ 引述《guessi.bbs@bbs.wretch.cc》之銘言：
+> 站上使用者提出一個要求 [新文章通知]
 > ------------------------------
-> �Y����ϳ]�w����Щұi�K���峹
-> �h�жK��ɱN�峹copy�ܢϪ��H�c
+> 若今日Ａ設定抓取Ｂ所張貼的文章
+> 則Ｂ貼文時將文章copy至Ａ的信箱
 > ------------------------------
 
-  �Ϧp�G�n�ݢЩұi�K���峹
-  ���N�n�бN�ϳ]�i�L���s�峹�q���W��
+  Ａ如果要看Ｂ所張貼的文章
+  那就要Ｂ將Ａ設進他的新文章通知名單
 
-  �ܩ�Эn��򪾹D�ϷQ�ݥL���峹
-  �N�s�Ϫ����g�H�h���дN�o�F
+  至於Ｂ要怎麼知道Ａ想看他的文章
+  就叫Ａ直接寫信去給Ｂ就得了
 
-: �w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w
+: ────────────────────────────────────
 
-  �]�w�W�檺����
+  設定名單的部分
 
-  �������S�O�W�梵���i���W��
+  直接拿特別名單６當可抓文名單
 
 : pal.c:pal_list()
 
--   switch (ch = vget(1, 0, "... (1~5)�S�O�W�� (Q)���� ...))
-+   switch (ch = vget(1, 0, "... (1~6)�S�O�W�� (Q)���� ...))
+-   switch (ch = vget(1, 0, "... (1~5)特別名單 (Q)取消 ...))
++   switch (ch = vget(1, 0, "... (1~6)特別名單 (Q)取消 ...))
 
   ...
   ...
@@ -38,8 +38,8 @@
 
 : pal.c:pal_cite()
 
--   "(1-5)�S�O�W��"
-+   "(1-6)�S�O�W��"
+-   "(1-5)特別名單"
++   "(1-6)特別名單"
 
   ...
   ...
@@ -53,9 +53,9 @@
 + for (n = 1; n <= 6; n++)
   {
     move(n + MENU_XPOS - 1, MENU_YPOS - 1);
-    prints("(\033[1;36m%d\033[m) �s�զW��.%d", n, n);
+    prints("(\033[1;36m%d\033[m) 群組名單.%d", n, n);
 +   if (n == 6)
-+     outs(" �s�峹�q���W��");
++     outs(" 新文章通知名單");
   }
 
   ...
@@ -64,9 +64,9 @@
 - if (n <= 0 || n > 5)
 + if (n <= 0 || n > 6)
 
-: �w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w
+: ────────────────────────────────────
 
-  �ڵo���峹�ɡA�q���s�峹�q�����\�W��W�����H
+  我發表文章時，通知新文章通知允許名單上面的人
 
 : post.c:do_post()
 
@@ -74,7 +74,7 @@
   btime_update(currbno);
 + list6_notice(&hdr);
 
-: post.c:list6_notice() �s�W���禡�b do_post() �W��
+: post.c:list6_notice() 新增此函式在 do_post() 上面
 
 static void
 list6_notice(hdr)
@@ -86,7 +86,7 @@ list6_notice(hdr)
   PAL pal;
   BRD *brd;
 
-  /* �ΦW��B���êO ���q�� */
+  /* 匿名文、隱藏板 不通知 */
   if (curredit & EDIT_ANONYMOUS)
     return;
   brd = bshm->bcache + currbno;
@@ -97,22 +97,22 @@ list6_notice(hdr)
   if (fp = fopen(fpath, "w"))
   {
     fprintf(fp, "%s %s (%s)\n", str_author1, cuser.userid, cuser.username);
-    fprintf(fp, "���D: �s�峹�q��\n�ɶ�: %s\n\n", Now());
+    fprintf(fp, "標題: 新文章通知\n時間: %s\n\n", Now());
 
-    /* �峹���e */
-    fprintf(fp, "�z�n�A�ڦb [%s] �O�o���F�@�g�s�峹\n", currboard);
-    fprintf(fp, "�峹���D�O %s\n", hdr->title);
-    fprintf(fp, "�n�h�ݳ�I\n");
+    /* 文章內容 */
+    fprintf(fp, "您好，我在 [%s] 板發表了一篇新文章\n", currboard);
+    fprintf(fp, "文章標題是 %s\n", hdr->title);
+    fprintf(fp, "要去看喔！\n");
     fclose(fp);
 
-    /* �ݷs�峹�q���W�榳���ǤH�A�@�@�H�H�q�� */
+    /* 看新文章通知名單有哪些人，一一寄信通知 */
     usr_fpath(flist, cuser.userid, FN_LIST".6");
     if ((fd = open(flist, O_RDONLY)) >= 0)
     {
       while (read(fd, &pal, sizeof(PAL)) == sizeof(PAL))
       {
         if (!(pal.ftype & PAL_BAD))
-          mail_him(fpath, pal.userid, "�s�峹�q��", 0);
+          mail_him(fpath, pal.userid, "新文章通知", 0);
       }
       close(fd);
     }
@@ -122,5 +122,5 @@ list6_notice(hdr)
 }
 
 --
-[1;36m=[37m[[36m��[37m:[33m�[37mݢ�[m���[1;33m�[37m:[36m�� [31mOrigin[37m ]|[[m  [31m�[1mʤ[;31;40mO�[1m֤[;31;40m� [1mcpu.tfcis.org  [37m]|[�[33mݣ��[m�[1;36m��[37m:][36m=[m
-[1;36m=[m[[1;36m��[37m:[33m�[30mݢ�[m���[1;33m�[37m:[36m�� [31mAuthor[m ]|[[1m itoc.Dorm11.NCTU.edu.tw  [m]|[�[1;33m�[30m�[37m��[30m�[36m��[37m:[m][1;36m=[m
+[1;36m=[37m[[36m﹎[37m:[33m?[37m摃?[m◣?[1;33m?[37m:[36m﹎ [31mOrigin[37m ]|[[m  [31m?[1m吨[;31;40mO?[1m痐[;31;40m?[1mcpu.tfcis.org  [37m]|[?[33m搟說[m?[1;36m﹎[37m:][36m=[m
+[1;36m=[m[[1;36m﹊[37m:[33m?[30m摃?[m╱?[1;33m?[37m:[36m﹊ [31mAuthor[m ]|[[1m itoc.Dorm11.NCTU.edu.tw  [m]|[?[1;33m?[30m?[37m插[30m?[36m﹊[37m:[m][1;36m=[m

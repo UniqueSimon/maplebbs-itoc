@@ -1,12 +1,12 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: °İ¤@­Ó¥\¯à¡K¤£ª¾¹D¸Ó«ç»ò¼g¡K
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/03/18 Thu 10:56:34)                Updated: 2004/11/13
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: å•ä¸€å€‹åŠŸèƒ½â€¦ä¸çŸ¥é“è©²æ€éº¼å¯«â€¦
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/03/18 Thu 10:56:34)                Updated: 2004/11/13
 
-¡° ¤Ş­z¡mEfen.bbs@bbs.med.ncku.edu.tw (^^)¡n¤§»Ê¨¥¡G
+â€» å¼•è¿°ã€ŠEfen.bbs@bbs.med.ncku.edu.tw (^^)ã€‹ä¹‹éŠ˜è¨€ï¼š
 > 140.116.250.3
-> ¸Ó¯¸¦b¥D¿ï³æ«öctrl+k
-> ¥i¥H¦Û¦æÆ[½à°ÊºA¬İªOªºµe­±¡A
-> ¥i¥H¤@±i¤@±iªº¬İ
+> è©²ç«™åœ¨ä¸»é¸å–®æŒ‰ctrl+k
+> å¯ä»¥è‡ªè¡Œè§€è³å‹•æ…‹çœ‹æ¿çš„ç•«é¢ï¼Œ
+> å¯ä»¥ä¸€å¼µä¸€å¼µçš„çœ‹
 
 : cache.c:film_out()
 
@@ -16,7 +16,7 @@
 
   ...
 
-  if (tag >= FILM_MOVIE)        /* °ÊºA¬İªO */
+  if (tag >= FILM_MOVIE)        /* å‹•æ…‹çœ‹æ¿ */
     tag += time(0) % (fmax - FILM_MOVIE);
 + else (tag < 0)
 + {
@@ -37,8 +37,8 @@
 +     goto every_key;
 
 --
-  ¥h note ªOºëµØ°Ï¬İ¤£´N¦n¤F
+  å» note æ¿ç²¾è¯å€çœ‹ä¸å°±å¥½äº†
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

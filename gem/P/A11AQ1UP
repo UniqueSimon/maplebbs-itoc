@@ -1,36 +1,36 @@
-§@ªÌ: itoc (:MM:) ¬ÝªO: itoc
-¼ÐÃD: [¥\¯à] ­pºâ¬ÝªOÂsÄý¤H®ð/®É¶¡
-®É¶¡: Sun May  4 21:38:08 2003                          Updated: 2005/06/13
+ä½œè€…: itoc (:MM:) çœ‹æ¿: itoc
+æ¨™é¡Œ: [åŠŸèƒ½] è¨ˆç®—çœ‹æ¿ç€è¦½äººæ°£/æ™‚é–“
+æ™‚é–“: Sun May  4 21:38:08 2003                          Updated: 2005/06/13
 
-  ­pºâ¬ÝªOÂsÄý¤H®ð/®É¶¡
+  è¨ˆç®—çœ‹æ¿ç€è¦½äººæ°£/æ™‚é–“
 
-  ³o¤èªk¤£¼g¦^ .BRD¡A©Ò¥H¦b­«¶} bbsd ¥H«á·|ÅÜ¦^¹s
-  ©Ò¥H²Ö¿nªº³¡¤À¥u¯à±q­«¶}¥H«áºâ°_
+  é€™æ–¹æ³•ä¸å¯«å›ž .BRDï¼Œæ‰€ä»¥åœ¨é‡é–‹ bbsd ä»¥å¾Œæœƒè®Šå›žé›¶
+  æ‰€ä»¥ç´¯ç©çš„éƒ¨åˆ†åªèƒ½å¾žé‡é–‹ä»¥å¾Œç®—èµ·
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-: struct.h:BCACHE ¥[¤JÄæ¦ì
+: struct.h:BCACHE åŠ å…¥æ¬„ä½
 
-  int mantime[MAXBOARD];           /* ¦UªO¥Ø«e¥¿¦³¦h¤Ö¤H¦b¾\Åª */
-+ time_t lastvisit[MAXBOARD];      /* ¦UªO³Ì«á¤@¦¸ÂsÄý */
-+ time_t totalvisit[MAXBOARD];     /* ¦UªO±q¤W¦¸­«¶}¥H¨Ó²Ö­pÂsÄý®É¶¡ */
+  int mantime[MAXBOARD];           /* å„æ¿ç›®å‰æ­£æœ‰å¤šå°‘äººåœ¨é–±è®€ */
++ time_t lastvisit[MAXBOARD];      /* å„æ¿æœ€å¾Œä¸€æ¬¡ç€è¦½ */
++ time_t totalvisit[MAXBOARD];     /* å„æ¿å¾žä¸Šæ¬¡é‡é–‹ä»¥ä¾†ç´¯è¨ˆç€è¦½æ™‚é–“ */
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  Ãö©ó lastvisit ªº³¡¤À
+  é—œæ–¼ lastvisit çš„éƒ¨åˆ†
 
 : board.c:XoPost()
 
     if (currbno >= 0)
-      bshm->mantime[currbno]--;         /* °h¥X¤W¤@­ÓªO */
-    bshm->mantime[bno]++;               /* ¶i¤J·sªºªO */
+      bshm->mantime[currbno]--;         /* é€€å‡ºä¸Šä¸€å€‹æ¿ */
+    bshm->mantime[bno]++;               /* é€²å…¥æ–°çš„æ¿ */
 +   bshm->lastvisit[bno] = time(NULL);
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  Ãö©ó totalvisit ªº³¡¤À
+  é—œæ–¼ totalvisit çš„éƒ¨åˆ†
 
-: ©Ò¦³¦³¥Î¨ì xover(XZ_POST); xover(XZ_POST); ªº³£­n§ï
+: æ‰€æœ‰æœ‰ç”¨åˆ° xover(XZ_POST); xover(XZ_POST); çš„éƒ½è¦æ”¹
 
 : board.c:brd_force()
 
@@ -38,7 +38,7 @@
 #endif
     {
 +     time_t now;
-      vmsg("¦³·s¤½§i¡I½Ð¥ý¾\\Åª§¹·s¤½§i«á¦AÂ÷¶}");
+      vmsg("æœ‰æ–°å…¬å‘Šï¼è«‹å…ˆé–±\è®€å®Œæ–°å…¬å‘Šå¾Œå†é›¢é–‹");
       XoPost(bno);
 +     time(&now);
       xover(XZ_POST);
@@ -46,10 +46,10 @@
 
 : board.c:class_browse()
 
-  else                  /* ¶i¤J¬ÝªO */
+  else                  /* é€²å…¥çœ‹æ¿ */
   {
 +   time_t now;
-    if (XoPost(chn))    /* µLªk¾\Åª¸ÓªO */
+    if (XoPost(chn))    /* ç„¡æ³•é–±è®€è©²æ¿ */
       return XO_FOOT;
 +   time(&now);
     xover(XZ_POST);
@@ -116,28 +116,28 @@
   xover(XZ_POST);
 + bshm->totalvisit[bno] += time(0) - now;
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-: Åã¥Üªº³¡¤À
-: ¦A¨Ó´N¬OÅã¥Üªº³¡¤À¡AÀH«K­n¦b­þ¸ÌÅã¥Ü
-: ¨Ò¦p¥i¥H¦b post.c:post_head() ©Î board.c:class_item() ¨q¥X¨Ó
+: é¡¯ç¤ºçš„éƒ¨åˆ†
+: å†ä¾†å°±æ˜¯é¡¯ç¤ºçš„éƒ¨åˆ†ï¼Œéš¨ä¾¿è¦åœ¨å“ªè£¡é¡¯ç¤º
+: ä¾‹å¦‚å¯ä»¥åœ¨ post.c:post_head() æˆ– board.c:class_item() ç§€å‡ºä¾†
 
 + int bno;
 + bno = brd_bno(currboard);
 
-  ¥Î prints §â¥H¤U¦L¥X¨Ó (ª©­±¦Û¦æ°t¸m)
+  ç”¨ prints æŠŠä»¥ä¸‹å°å‡ºä¾† (ç‰ˆé¢è‡ªè¡Œé…ç½®)
 
-  "%s", Btime(&(bshm->lastvisit[bno]))   // ³Ì«á¤@¦¸ÂsÄý¤é´Á
-  "%d", bshm->totalvisit[bno]            // ²Ö­pÂsÄý®É¶¡ (¬í)
+  "%s", Btime(&(bshm->lastvisit[bno]))   // æœ€å¾Œä¸€æ¬¡ç€è¦½æ—¥æœŸ
+  "%d", bshm->totalvisit[bno]            // ç´¯è¨ˆç€è¦½æ™‚é–“ (ç§’)
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  1. ¦pªG¦³¤H¥Î switch ±q¬ÝªO¥Ò¸õ¥h¬ÝªO¤Aªº¸Ü
-     (1) ¬ÝªO¤A·|¦³°O¿ý³Ì«áÂsÄý®É¶¡¡A¤]·|­pºâ¤H¦¸
-     (2) ¦ý¬O²Ö¿n®É¶¡·|¥[¦b¬ÝªO¥Ò
+  1. å¦‚æžœæœ‰äººç”¨ switch å¾žçœ‹æ¿ç”²è·³åŽ»çœ‹æ¿ä¹™çš„è©±
+     (1) çœ‹æ¿ä¹™æœƒæœ‰è¨˜éŒ„æœ€å¾Œç€è¦½æ™‚é–“ï¼Œä¹Ÿæœƒè¨ˆç®—äººæ¬¡
+     (2) ä½†æ˜¯ç´¯ç©æ™‚é–“æœƒåŠ åœ¨çœ‹æ¿ç”²
 
-  2. §ï§¹ patch ­n²M shm¡A­«¶} bbsd
+  2. æ”¹å®Œ patch è¦æ¸… shmï¼Œé‡é–‹ bbsd
 
 --
-    [1;32m¢~¢w Origin ¢wùß [0;36m°[1mÊ[0;36m¤[1mO[0;36m®[1mÖ[0;36m¤[1mß [1;31m processor.tfcis.org [32m ¡ã £e£f£g ¢w¢t[m
-    [1;32m¢|¢w Modify ¢wùî [37;46mSun, 04 May 2003 21:51:59 +0800 (CST)    [m
+    [1;32mâ•­â”€ Origin â”€â•— [0;36m?[1m?[0;36m?[1mO[0;36m?[1m?[0;36m?[1m?[1;31m processor.tfcis.org [32m ï½ž ÎºÎ»Î¼ â”€â”¤[m
+    [1;32mâ””â”€ Modify â”€â•› [37;46mSun, 04 May 2003 21:51:59 +0800 (CST)    [m

@@ -1,14 +1,14 @@
-§@ªÌ: itoc.bbs@processor.tfcis.org
-¼ĞÃD: Re: [°İÃD]¦p¦ó§ïµù¥U«á¥i¥H§ï¯u¹ê©m¦W©O
-®É¶¡: Thu Apr 17 21:43:28 2003                          Updated: 2004/04/06
+ä½œè€…: itoc.bbs@processor.tfcis.org
+æ¨™é¡Œ: Re: [å•é¡Œ]å¦‚ä½•æ”¹è¨»å†Šå¾Œå¯ä»¥æ”¹çœŸå¯¦å§“åå‘¢
+æ™‚é–“: Thu Apr 17 21:43:28 2003                          Updated: 2004/04/06
 
-¡° ¤Ş­z¡mcwk7195.bbs@AT2.twbbs.org (³Í)¡n¤§»Ê¨¥¡G
-> ¦p¦ó§ïµù¥U«á¥i¥H§ï¯u¹ê©m¦W©O
+â€» å¼•è¿°ã€Šcwk7195.bbs@AT2.twbbs.org (å‡±)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å¦‚ä½•æ”¹è¨»å†Šå¾Œå¯ä»¥æ”¹çœŸå¯¦å§“åå‘¢
 
 : bbsd.c:acct_apply()
 
-- /* itoc.010317: ´£¥Ü user ¥H«á±N¤£¯à§ï©m¦W */
-- vmsg("ª`·N¡G½Ğ¿é¤J¯u¹ê©m¦W¡A¥»¯¸¤£´£¨Ñ­×§ï©m¦Wªº¥\\¯à");
+- /* itoc.010317: æç¤º user ä»¥å¾Œå°‡ä¸èƒ½æ”¹å§“å */
+- vmsg("æ³¨æ„ï¼šè«‹è¼¸å…¥çœŸå¯¦å§“åï¼Œæœ¬ç«™ä¸æä¾›ä¿®æ”¹å§“åçš„åŠŸ\èƒ½");
 
 : acct.c:acct_setup()
 
@@ -16,19 +16,19 @@
 + str = x.realname;
 + do
 + {
-+   vget(i, 0, "¯u¹ê©m¦W¡G", str, RNLEN + 1, GCARRY);
++   vget(i, 0, "çœŸå¯¦å§“åï¼š", str, RNLEN + 1, GCARRY);
 + } while (strlen(str) < 4);
 
   if (adm)
   {
--   /* itoc.010317: ¤£Åı user §ï©m¦W */
+-   /* itoc.010317: ä¸è®“ user æ”¹å§“å */
 -   i++;
 -   str = x.realname;
 -   do
 -   {
--     vget(i, 0, "¯u¹ê©m¦W¡G", str, RNLEN + 1, GCARRY);
+-     vget(i, 0, "çœŸå¯¦å§“åï¼š", str, RNLEN + 1, GCARRY);
 -   } while (strlen(str) < 4);
 
 --
-    [1;32m¢~¢w Origin ¢wùß [0;36m°[1mÊ[0;36m¤[1mO[0;36m®[1mÖ[0;36m¤[1mß [1;31m processor.tfcis.org [32m ¡ã £e£f£g ¢w¢t[m
-    [1;32m¢u   Author   ùë [33;44mitoc.dorm-gd2.nctu.edu.tw                [m
+    [1;32mâ•­â”€ Origin â”€â•— [0;36m?[1m?[0;36m?[1mO[0;36m?[1m?[0;36m?[1m?[1;31m processor.tfcis.org [32m ï½ ÎºÎ»Î¼ â”€â”¤[m
+    [1;32mâ”œ   Author   â•¡ [33;44mitoc.dorm-gd2.nctu.edu.tw                [m

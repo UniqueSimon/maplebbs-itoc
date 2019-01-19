@@ -1,11 +1,11 @@
-§@ªÌ: itoc (League) ¬İªO: plan
-¼ĞÃD: [­×¥¿] ¨Ï¥ÎªÌ¦W³æ«ö r ¸õ¥h«H½c
-®É¶¡: 2004/02/18 Wed 09:28:46                           Updated: 2004/02/18
+ä½œè€…: itoc (League) çœ‹æ¿: plan
+æ¨™é¡Œ: [ä¿®æ­£] ä½¿ç”¨è€…åå–®æŒ‰ r è·³å»ä¿¡ç®±
+æ™‚é–“: 2004/02/18 Wed 09:28:46                           Updated: 2004/02/18
 
-  ¦b¨Ï¥ÎªÌ¦W³æ«ö r ¶i¤J«H½c
-  (¦]¬° r ¬O«O¯dÁä¡A©Ò¥H¦b xover.c ­n¯S§O³B²z)
+  åœ¨ä½¿ç”¨è€…åå–®æŒ‰ r é€²å…¥ä¿¡ç®±
+  (å› ç‚º r æ˜¯ä¿ç•™éµï¼Œæ‰€ä»¥åœ¨ xover.c è¦ç‰¹åˆ¥è™•ç†)
 
-: ulist.c:ulist_mbox() ·s¼W¦b ulist_help() «e­±
+: ulist.c:ulist_mbox() æ–°å¢åœ¨ ulist_help() å‰é¢
 
 static int
 ulist_mbox(xo)
@@ -29,4 +29,4 @@ ulist_mbox(xo)
       }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

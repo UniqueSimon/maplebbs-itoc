@@ -1,10 +1,10 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (¢Û¢é¢ø¢ô¢í¡Ğ¢ñ¢ü¢÷¢ë) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¯¸ÄÖ²Î­p¡C
-µo«H¯¸: ¤¤¿³¸ê¬ì (2004/01/31 Sat 13:54:15)                Updated: 2005/06/11
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (ï¼­ï½ï½ï½Œï½…ï¼ï½‰ï½”ï½ï½ƒ) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] ç«™é½¡çµ±è¨ˆã€‚
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (2004/01/31 Sat 13:54:15)                Updated: 2005/06/11
 
-  ²Î­p¥ş¯¸ªº±b¸¹±q«Ø¥ß¨ì²{¦bªº®É¶¡¡A¨Ã¥B±Æ§Ç¦L¥X¡I
+  çµ±è¨ˆå…¨ç«™çš„å¸³è™Ÿå¾å»ºç«‹åˆ°ç¾åœ¨çš„æ™‚é–“ï¼Œä¸¦ä¸”æ’åºå°å‡ºï¼
 
-  ¿é¥Xµ²ªG¥i¥H¦b¢Ğ¢Ğ¢á¯¸¤ºªººëµØ°Ï«Ø¥ß¸ê®Æ -topage ¨Ó¾\Åª¡C
+  è¼¸å‡ºçµæœå¯ä»¥åœ¨ï¼¢ï¼¢ï¼³ç«™å…§çš„ç²¾è¯å€å»ºç«‹è³‡æ–™ -topage ä¾†é–±è®€ã€‚
 
 : src/util/topusr.c
 
@@ -46,11 +46,11 @@ static DATA toplogins[TOPNUM], topposts[TOPNUM], ...;
   ...
 
   qsort(toplogins, TOPNUM, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_TOPLOGIN, "¤W¯¸¦¸¼Æ±Æ¦æº]", &toplogins);
+  write_data(OUTFILE_TOPLOGIN, "ä¸Šç«™æ¬¡æ•¸æ’è¡Œæ¦œ", &toplogins);
 
 + qsort(topage, TOPNUM, sizeof(DATA), sort_compare);
-+ write_data(OUTFILE_TOPAGE, "µù¥U¸ê¾ú¦Ñ¤Hº]", &topage);
++ write_data(OUTFILE_TOPAGE, "è¨»å†Šè³‡æ­·è€äººæ¦œ", &topage);
 
 --
- [1m[42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m csNCHU.twbbs.org [m
- [1m[44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mqazq [30m±q [35m218-170-141-39.HINET-IP.hinet.net [30mµoªí[m
+ [1m[42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m csNCHU.twbbs.org [m
+ [1m[44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mqazq [30må¾ [35m218-170-141-39.HINET-IP.hinet.net [30mç™¼è¡¨[m

@@ -1,23 +1,23 @@
-�o�H�H: itoc.bbs@bbs.wretch.cc (�ڰڰڰ�~) �ݪO: plan
-��  �D: Re: [���D]�K����H�����D
-�o�H��: �L�W�p�� (2005/09/10 Sat 00:29:19)                Updated: 2005/09/10
+發信人: itoc.bbs@bbs.wretch.cc (啊啊啊啊~) 看板: plan
+標  題: Re: [問題]密文轉信有問題
+發信站: 無名小站 (2005/09/10 Sat 00:29:19)                Updated: 2005/09/10
 
-�� �ޭz�mallen501pc.bbs@bbs.sa.ncyu.edu.tw (����n���ۤv������!)�n���ʨ��G
-> ���O���٬O�|�ܦ��K��i�H��H,�O���^��?
-> �ڳo�䪺���Opost���峹��,��ʫ��U^y�[�K��...
+※ 引述《allen501pc.bbs@bbs.sa.ncyu.edu.tw (五虎要走自己的風格!)》之銘言：
+> 但是我還是會變成密文可以轉信,是怎麼回事?
+> 我這邊的站是post完文章後,手動按下^y加密的...
 
-  �]��post���峹��A�H�N�w�g�T�w�n��X�h�F
-  ���ɤ�ʫ��U^y�O���|�T��X�h�F
+  因為post完文章後，信就已經確定要轉出去了
+  此時手動按下^y是不會禁轉出去了
 
-  post���峹��^x�x�s�ɡA�� (X)Refuse�[�K�s�� �� [L]ocal�s��������
-  �N���|��X�h�F
+  post完文章後^x儲存時，選 (X)Refuse加密存檔 或 [L]ocal存為站內檔
+  就不會轉出去了
 
-  �p�G�A�Ʊ� post �峹��A ^y ���峹�ण��X�h
-  ����o�˧�
+  如果你希望 post 文章後再 ^y 的文章能不轉出去
+  那麼這樣改
 
 : bbslink.c:deal_sover()
 
-  if (bntp->chrono > 0)         /* �s�H */
+  if (bntp->chrono > 0)         /* 新信 */
   {
 +   int fd;
 +   char folder[64];
@@ -46,11 +46,11 @@
   }
 
 
-  ���O ^y ���ʧ@�٬O�n�֡A�n���M�Y ctrontab �w�� bbslink �w��X�h
-  ���]�Ӥ��ΤF
+  但是 ^y 的動作還是要快，要不然若 ctrontab 定時 bbslink 已轉出去
+  那也來不及了
 --
-[1;30;40m�ҧL�̤����������δc���G���D�̤��B�g�l�~�h�Q���ΧL�h�Q�k�L�̤��������D�g�l[m
-[1;30m�������o�w[37m[30m�ӥΤ���H���W�ӦӤ����Ӭ����̬O�ֱ��H�Ҽֱ��H�̫h���i�o�ө�ѤU
-[m[1;30m�o�N�Ʃ|�����Ʃ|�k���N�x�~���W�N�x�~�k���H��§�B�����H�����H�s�d�_���ԳӥH[m
-[1;30m��§�B���D�`[37m�L�W[30m�����p�ѤU����ګJ���Y��u���U���N�ۻ��Ѧa�ۦX�H�����S����[m
-[1;30m���O�Ӧۧ��l��W�W��J���ҥ�N�����i�H���p [37mitoc.Dorm11.NCTU.edu.tw[30m��[m
+[1;30;40m夫兵者不祥之器物或惡之故有道者不處君子居則貴左用兵則貴右兵者不祥之器非君子[m
+[1;30m之器不得已[37m[30m而用之恬淡為上勝而不美而美之者是樂殺人夫樂殺人者則不可得志於天下
+[m[1;30m矣吉事尚左凶事尚右偏將軍居左上將軍居右言以喪禮處之殺人之眾以哀悲泣之戰勝以[m
+[1;30m喪禮處之道常[37m無名[30m樸雖小天下莫能臣侯王若能守之萬物將自賓天地相合以降甘露民莫[m
+[1;30m之令而自均始制有名名亦既有夫亦將知止知止可以不殆 [37mitoc.Dorm11.NCTU.edu.tw[30m海[m

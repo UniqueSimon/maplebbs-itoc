@@ -1,29 +1,29 @@
-µo«H¤H: weiyu.bbs@weiyu.twbbs.org (Andy) ¬İªO: itoc
-¼Ğ  ÃD: Re: ½Ğ°İ¤@¤UÃö©ó°ê®w¨t²Î
-µo«H¯¸: ¤ıªÌ¤§®a (2005/03/31 Thu 08:00:00)                Updated: 2005/03/31
+ç™¼ä¿¡äºº: weiyu.bbs@weiyu.twbbs.org (Andy) çœ‹æ¿: itoc
+æ¨™  é¡Œ: Re: è«‹å•ä¸€ä¸‹é—œæ–¼åœ‹åº«ç³»çµ±
+ç™¼ä¿¡ç«™: ç‹è€…ä¹‹å®¶ (2005/03/31 Thu 08:00:00)                Updated: 2005/03/31
 
-¡° ¤Ş­z¡mjal.bbs@bbs.jal.idv.tw (¤p¥Ê§b¡ã)¡n¤§»Ê¨¥¡G
-> §â¨Ï¥ÎªÌÃz±¼¦h¥X¨Óªº¿ú¡A¸òÂIºq or ª±¹CÀ¸¤§Ãş©Ò¦©ªº¿ú
-> ·Q­Ó¿ìªk¦s¨ì¤@­Ó¦a¤è¥h¡C
-> µM«á´N·|¦³­Ó°ê®w¥X²{¤F...
-> ³Ì«á·í°ê®w = ¹s ªº®É­Ô..ª±¹CÀ¸Ä¹¤F¤]·|¨S¿úµ¹...:p
+â€» å¼•è¿°ã€Šjal.bbs@bbs.jal.idv.tw (å°ç“œå‘†ï½)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æŠŠä½¿ç”¨è€…çˆ†æ‰å¤šå‡ºä¾†çš„éŒ¢ï¼Œè·Ÿé»æ­Œ or ç©éŠæˆ²ä¹‹é¡æ‰€æ‰£çš„éŒ¢
+> æƒ³å€‹è¾¦æ³•å­˜åˆ°ä¸€å€‹åœ°æ–¹å»ã€‚
+> ç„¶å¾Œå°±æœƒæœ‰å€‹åœ‹åº«å‡ºç¾äº†...
+> æœ€å¾Œç•¶åœ‹åº« = é›¶ çš„æ™‚å€™..ç©éŠæˆ²è´äº†ä¹Ÿæœƒæ²’éŒ¢çµ¦...:p
 
-: acct.c:addmoney() ©M addgold() ´«¦¨¥H¤U
+: acct.c:addmoney() å’Œ addgold() æ›æˆä»¥ä¸‹
 
 /*
-    µ{¦¡°²³]¡G
-        record 0 ¦s©ñ»È¹ô
-        record 1 ¦s©ñª÷¹ô
-    ¦@¥ÎÀÉ®×¡Grun/treasury
-    ­è¶}©l°ê®wªº¿ú³]¬°
+    ç¨‹å¼å‡è¨­ï¼š
+        record 0 å­˜æ”¾éŠ€å¹£
+        record 1 å­˜æ”¾é‡‘å¹£
+    å…±ç”¨æª”æ¡ˆï¼šrun/treasury
+    å‰›é–‹å§‹åœ‹åº«çš„éŒ¢è¨­ç‚º
     INITIAL_MONEY
-    °ê®wªºª÷¹ô¤@¶}©l¦³
+    åœ‹åº«çš„é‡‘å¹£ä¸€é–‹å§‹æœ‰
     INITIAL_GOLD
 
-    §âaddmoney©Maddgold¨â­Ó´«¦¨¤U­±¨º¼Ë
-    ¤£¹L«e´£¬O ¦©¿ú¤]­n¥Î¨ìaddmoney¤~¦³®Ä:p
-    ¤£¥u¬O·¸¦ì ¦pªG¦©¿ú¤]¥Î³o­Ó¨ç¼Æªº¸Ü
-    ¤]·|¦s¨ì°ê®w§a:p (¨S¸Õ¹L)
+    æŠŠaddmoneyå’Œaddgoldå…©å€‹æ›æˆä¸‹é¢é‚£æ¨£
+    ä¸éå‰ææ˜¯ æ‰£éŒ¢ä¹Ÿè¦ç”¨åˆ°addmoneyæ‰æœ‰æ•ˆ:p
+    ä¸åªæ˜¯æº¢ä½ å¦‚æœæ‰£éŒ¢ä¹Ÿç”¨é€™å€‹å‡½æ•¸çš„è©±
+    ä¹Ÿæœƒå­˜åˆ°åœ‹åº«å§:p (æ²’è©¦é)
  */
 
 
@@ -48,18 +48,18 @@ addmoney(addend)
     cuser.money += addend;
     rec_put(FN_TREASURY, &treasury, sizeof(int), 0, NULL);
   }
-  else if (addend < (INT_MAX - cuser.money))      /* Á×§K·¸¦ì */
+  else if (addend < (INT_MAX - cuser.money))      /* é¿å…æº¢ä½ */
   {
     if (treasury < addend)
     {
-      vmsg("°ê®w¨S»È¹ô¤F¡A¨S¿ìªk¤ä¥I±z");
+      vmsg("åœ‹åº«æ²’éŠ€å¹£äº†ï¼Œæ²’è¾¦æ³•æ”¯ä»˜æ‚¨");
       return;
     }
     cuser.money += addend;
   }
   else
   {
-    /* ±N·¸¥Xªº³¡¤À¦s¤J°ê®w */
+    /* å°‡æº¢å‡ºçš„éƒ¨åˆ†å­˜å…¥åœ‹åº« */
     overflow = INT_MAX - cuser.money;
     overflow = addend - overflow;
     treasury += overflow;
@@ -85,18 +85,18 @@ addgold(addend)
     cuser.money += addend;
     rec_put(FN_TREASURY, &treasury, sizeof(int), 1, NULL);
   }
-  else if (addend < (INT_MAX - cuser.gold))       /* Á×§K·¸¦ì */
+  else if (addend < (INT_MAX - cuser.gold))       /* é¿å…æº¢ä½ */
   {
     if (treasury < addend)
     {
-      vmsg("°ê®w¨Sª÷¹ô¤F¡A¨S¿ìªk¤ä¥I±z");
+      vmsg("åœ‹åº«æ²’é‡‘å¹£äº†ï¼Œæ²’è¾¦æ³•æ”¯ä»˜æ‚¨");
       return;
     }
     cuser.gold += addend;
   }
   else
   {
-    /* ±N·¸¥Xªº³¡¤À¦s¤J°ê®w */
+    /* å°‡æº¢å‡ºçš„éƒ¨åˆ†å­˜å…¥åœ‹åº« */
     overflow = INT_MAX - cuser.gold;
     overflow = addend - overflow;
     treasury += overflow;
@@ -105,7 +105,7 @@ addgold(addend)
   }
 }
 
-: bank.c:x_bank() ¦b»È¦æªº¦a¤èÅã¥Ü°ê®wÁÙ¦³¦h¤Ö¿ú
+: bank.c:x_bank() åœ¨éŠ€è¡Œçš„åœ°æ–¹é¡¯ç¤ºåœ‹åº«é‚„æœ‰å¤šå°‘éŒ¢
 
 int
 x_bank()
@@ -115,23 +115,23 @@ x_bank()
 
   ...
 
-    "  ùüùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùı\033[m");
+    "  â•°â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•¯\033[m");
 
-+ outs("\n°ê®wÁÙ¦³");
++ outs("\nåœ‹åº«é‚„æœ‰");
 + if (rec_get("run/treasury_money", &treasury, sizeof(int), 0))
-+   prints(" %d »È", treasury);
++   prints(" %d éŠ€", treasury);
 + if (rec_get("run/treasury_gold", &treasury, sizeof(int), 0))
-+   prints(" %d ª÷", treasury);
++   prints(" %d é‡‘", treasury);
 
-  vget(11, 0, "½Ğ¿é¤J±z»İ­nªºªA°È¡G", ans, 3, DOECHO);
+  vget(11, 0, "è«‹è¼¸å…¥æ‚¨éœ€è¦çš„æœå‹™ï¼š", ans, 3, DOECHO);
 
-
---
-                        [1m¥Í¢c©[mR[1m¢d¦³¢b¤F¢d­W¢gµh[m
-                        [30;43m¦ó¤£§â²´·úªº¾l¥ú¯dµ¹§O¤H[m
-                            [1;34m§A·|¬İ[32m¨ì§ó¦h[m
 
 --
-[1;34m¢~¢w¢w¢w¢w¢¡ ùá [35mweiyu.twbbs.org [34mùá [30m¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸[m
-[1;34m¢x[31m¤ı[32mªÌ[33m¤§[34m®a¢x ùá[36m weiyu  [33m¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸[m
-[1;34m¢¢¢w¢w¢w¢w¢£ ùá [37mµoªí©ó [36mweiyu.mshome.net  [30m¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸¡¸[m
+                        [1mç”Ÿâ–‚?[mR[1mâ–ƒæœ‰â–äº†â–ƒè‹¦â–†ç—›[m
+                        [30;43mä½•ä¸æŠŠçœ¼ç›çš„é¤˜å…‰ç•™çµ¦åˆ¥äºº[m
+                            [1;34mä½ æœƒçœ‹[32måˆ°æ›´å¤š[m
+
+--
+[1;34mâ•­â”€â”€â”€â”€â•® â•¬ [35mweiyu.twbbs.org [34mâ•¬ [30mâ˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†[m
+[1;34mâ”‚[31mç‹[32mè€…[33mä¹‹[34må®¶â”‚ â•¬[36m weiyu  [33mâ˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†[m
+[1;34mâ•°â”€â”€â”€â”€â•¯ â•¬ [37mç™¼è¡¨æ–¼ [36mweiyu.mshome.net  [30mâ˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†â˜†[m

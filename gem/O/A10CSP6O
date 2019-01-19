@@ -1,19 +1,19 @@
-µo«H¤H: hialan.bbs@processor.tfcis.org (hialan) ¬İªO: plan
-¼Ğ  ÃD: yahoo ½u¤W¦r¨å
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/02/16 Mon 03:09:02)                Updated: 2004/02/16
+ç™¼ä¿¡äºº: hialan.bbs@processor.tfcis.org (hialan) çœ‹æ¿: plan
+æ¨™  é¡Œ: yahoo ç·šä¸Šå­—å…¸
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/02/16 Mon 03:09:02)                Updated: 2004/02/16
 
-¤§«e chwaian ´£¨Ñ¤F¦n´X­Ó..
+ä¹‹å‰ chwaian æä¾›äº†å¥½å¹¾å€‹..
 
-§Ú§â­ì¥ı dreye.c §ï¤@§ïÅı¥L¤ä´© Yahoo ªº½u¤W¦r¨å
+æˆ‘æŠŠåŸå…ˆ dreye.c æ”¹ä¸€æ”¹è®“ä»–æ”¯æ´ Yahoo çš„ç·šä¸Šå­—å…¸
 
-°Ñ¦Ò¯¸:
-telnet://at.twbbs.org --> ¦UºØªA°È -> ¨|¼Ö¤¤¤ß -> ©_¼¯¦r¨å
+åƒè€ƒç«™:
+telnet://at.twbbs.org --> å„ç¨®æœå‹™ -> è‚²æ¨‚ä¸­å¿ƒ -> å¥‡æ‘©å­—å…¸
 
 
 /*-------------------------------------------------------*/
 /* dict.c        (YZU WindTopBBS Ver 3.02 )              */
 /*-------------------------------------------------------*/
-/* target : Yahoo ½u¤W¦r¨å                               */
+/* target : Yahoo ç·šä¸Šå­—å…¸                               */
 /* create : 01/07/09                                     */
 /* update :   /  /                                       */
 /* author : statue.bbs@bbs.yzu.edu.tw                    */
@@ -22,13 +22,13 @@ telnet://at.twbbs.org --> ¦UºØªA°È -> ¨|¼Ö¤¤¤ß -> ©_¼¯¦r¨å
 
 #if 0
 
-  ´¶³q
+  æ™®é€š
   http://tw.dictionary.yahoo.com/word/hello
 
-  ¤ù»y
+  ç‰‡èª
   http://tw.dictionary.yahoo.com/word/hello?t=i
 
-  ¦P¸q¦r/¤Ï¸q¦r
+  åŒç¾©å­—/åç¾©å­—
   http://tw.dictionary.yahoo.com/word/hello?t=s
 
 #endif
@@ -48,7 +48,7 @@ telnet://at.twbbs.org --> ¦UºØªA°È -> ¨|¼Ö¤¤¤ß -> ©_¼¯¦r¨å
 
 static void
 url_encode(dst, src)        /* URL encoding */
-  uschar *dst;              /* Thor.990331: ­n src ªº¤T­¿ªÅ¶¡ */
+  uschar *dst;              /* Thor.990331: è¦ src çš„ä¸‰å€ç©ºé–“ */
   uschar *src;
 {
   for (; *src; src++)
@@ -78,7 +78,7 @@ write_file(sockfd, fp)
   int cc, i;
   char *xhead, *xtail;
   int show, start_show;
-  int space;                /* ¦b html ¤¤¡A³sÄòªº space ¥u·|ºâ¤@¦¸ */
+  int space;                /* åœ¨ html ä¸­ï¼Œé€£çºŒçš„ space åªæœƒç®—ä¸€æ¬¡ */
 
   char *start_str[] =
   {
@@ -95,7 +95,7 @@ write_file(sockfd, fp)
     NULL
   };
 
-  char *newline_str[] =         /* ¨ú¥N´«¦æ¦r¤¸ªº²Å¸¹ */
+  char *newline_str[] =         /* å–ä»£æ›è¡Œå­—å…ƒçš„ç¬¦è™Ÿ */
   {
     "<br>",
     "</td>",
@@ -177,12 +177,12 @@ write_file(sockfd, fp)
 
     if (!str_ncmp(xhead, "<li>", 4))
     {
-      fputs("  £»", fp);
+      fputs("  Ë™", fp);
       xhead += 4;
       space = 0;
     }
 
-    /* ¼ĞÅÒ²¤¹L */
+    /* æ¨™ç±¤ç•¥é */
 
     cc = *xhead;
     switch(cc)
@@ -223,12 +223,12 @@ http_conn(server, s)
 
   if ((sockfd = dns_open(server, HTTP_PORT)) < 0)
   {
-    vmsg("µLªk»P¦øªA¾¹¨ú±o³sµ²¡A¬d¸ß¥¢±Ñ");
+    vmsg("ç„¡æ³•èˆ‡ä¼ºæœå™¨å–å¾—é€£çµï¼ŒæŸ¥è©¢å¤±æ•—");
     return 0;
   }
   else
   {
-    mouts(22, 0, "¥¿¦b³s±µ¦øªA¾¹¡A½Ğµy«á(«ö¥ô·NÁäÂ÷¶}).............");
+    mouts(22, 0, "æ­£åœ¨é€£æ¥ä¼ºæœå™¨ï¼Œè«‹ç¨å¾Œ(æŒ‰ä»»æ„éµé›¢é–‹).............");
     refresh();
   }
   write(sockfd, s, strlen(s));
@@ -242,7 +242,7 @@ http_conn(server, s)
 
   if (str)
     *str = '\0';
-  fprintf(fp, "¸Ó­¶³sµ²: http://%s%s\n\n", server, s + 4);
+  fprintf(fp, "è©²é é€£çµ: http://%s%s\n\n", server, s + 4);
 
   write_file(sockfd, fp);
   fclose(fp);
@@ -285,15 +285,15 @@ main_dreye()
   {
     clear();
     move(0, 23);
-    outs("\033[1;37;44m¡· Yahoo! ½u¤W¦r¨å v0.1 ¡·\033[m");
+    outs("\033[1;37;44mâ— Yahoo! ç·šä¸Šå­—å…¸ v0.1 â—\033[m");
     move(3, 0);
-    outs("¦¹¦r¨å¨Ó·½¬° Yahoo! ½u¤W¦r¨å¡C\n");
+    outs("æ­¤å­—å…¸ä¾†æºç‚º Yahoo! ç·šä¸Šå­—å…¸ã€‚\n");
     prints("WWW: %s\n", REF);
     outs("author: statue.bbs@bbs.yzu.edu.tw\n");
-    if (!vget(8, 0, "¬d¸ß¦r·J¡G", word, 30, DOECHO))
+    if (!vget(8, 0, "æŸ¥è©¢å­—å½™ï¼š", word, 30, DOECHO))
       break;
 
-    if (vget(9, 0, "1)·N¸q 2)¤ù»y 3)¦P¸q¦r/¤Ï¸q¦r Q)Â÷¶} [1] ", ans, 3, LCECHO) == 'q')
+    if (vget(9, 0, "1)æ„ç¾© 2)ç‰‡èª 3)åŒç¾©å­—/åç¾©å­— Q)é›¢é–‹ [1] ", ans, 3, LCECHO) == 'q')
       break;
 
     yahoo_dict(word, ans[0]);
@@ -304,5 +304,5 @@ main_dreye()
 #endif  /* HAVE_NETTOOL */
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mhialan [30m±q [35m61-229-111-30.HINET-IP.hinet.net [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mhialan [30må¾ [35m61-229-111-30.HINET-IP.hinet.net [30mç™¼è¡¨[m

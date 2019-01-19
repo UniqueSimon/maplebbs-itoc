@@ -1,11 +1,11 @@
-§@ªÌ: itoc (League) ¯¸¤º: plan
-¼ĞÃD: [¥\¯à] Æ[¬İ¤å³¹Äİ©Ê
-®É¶¡: 2004/01/12 Mon 12:51:36                           Updated: 2004/01/12
+ä½œè€…: itoc (League) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] è§€çœ‹æ–‡ç« å±¬æ€§
+æ™‚é–“: 2004/01/12 Mon 12:51:36                           Updated: 2004/01/12
 
-  ¤å³¹¦Cªí«ö ^S ¬İ¤å³¹Äİ©Ê
-  ©MºëµØ°Ï«ö S ¤@¼Ë
+  æ–‡ç« åˆ—è¡¨æŒ‰ ^S çœ‹æ–‡ç« å±¬æ€§
+  å’Œç²¾è¯å€æŒ‰ S ä¸€æ¨£
 
-: post.c:post_state() ·s¼W¦¹¨ç¦¡©ó post_help() «e­±
+: post.c:post_state() æ–°å¢æ­¤å‡½å¼æ–¼ post_help() å‰é¢
 
 static int
 post_state(xo)
@@ -46,4 +46,4 @@ post_state(xo)
 
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

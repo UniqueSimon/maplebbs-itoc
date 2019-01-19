@@ -1,16 +1,16 @@
-µo«H¤H: DarkKiller.bbs@Deer.twbbs.org (±ª°Ê) ¬İªO: plan
-¼Ğ  ÃD: maple3-itoc subversion ªA°È
-µo«H¯¸: ¤p³À³À BBS (2004/12/31 Fri 17:40:52)
+ç™¼ä¿¡äºº: DarkKiller.bbs@Deer.twbbs.org (æ‚¸å‹•) çœ‹æ¿: plan
+æ¨™  é¡Œ: maple3-itoc subversion æœå‹™
+ç™¼ä¿¡ç«™: å°é¹¿é¹¿ BBS (2004/12/31 Fri 17:40:52)
 
 https://gslin.org/svn/maple3-itoc/
 
-³o¬O§Ú¦Û¤v§Ëªº¡A¤£¬O itoc ¦b maintain ªº¡C³o¬O¨Ï¥Î itoc ¨C¹j¤@¬q®É¶¡
-·|¦b http://processor.tfcis.org/~itoc/ ©ñªºª©¥» commit ¶i¥hªº¡C
+é€™æ˜¯æˆ‘è‡ªå·±å¼„çš„ï¼Œä¸æ˜¯ itoc åœ¨ maintain çš„ã€‚é€™æ˜¯ä½¿ç”¨ itoc æ¯éš”ä¸€æ®µæ™‚é–“
+æœƒåœ¨ http://processor.tfcis.org/~itoc/ æ”¾çš„ç‰ˆæœ¬ commit é€²å»çš„ã€‚
 
-https ªº³¡¤À¬O USERTRUST sign ªº certificate¡C
+https çš„éƒ¨åˆ†æ˜¯ USERTRUST sign çš„ certificateã€‚
 
-°£¤F¥i¥Hª½±µ¦b½u¤W¬İ¥Ø«eªº source code¡A±z¥i¥H¨Ï¥Î¤U¦C«ü¥O¨ú±o³Ì²{¦b
-ªº source code¡G
+é™¤äº†å¯ä»¥ç›´æ¥åœ¨ç·šä¸Šçœ‹ç›®å‰çš„ source codeï¼Œæ‚¨å¯ä»¥ä½¿ç”¨ä¸‹åˆ—æŒ‡ä»¤å–å¾—æœ€ç¾åœ¨
+çš„ source codeï¼š
 
 svn checkout https://gslin.org/svn/maple3-itoc/
 
@@ -18,52 +18,52 @@ svn checkout https://gslin.org/svn/maple3-itoc/
                                                 Resistance is futile.
                                          <gslin@ccreader.nctu.edu.tw>
 --
-¡° Origin: ¨¸´c¤p³À³À <Deer.twbbs.org> ¡» From: deer.math.nctu.edu.tw
+â€» Origin: é‚ªæƒ¡å°é¹¿é¹¿ <Deer.twbbs.org> â—† From: deer.math.nctu.edu.tw
 
 > -------------------------------------------------------------------------- <
 
-µo«H¤H: chwaian.bbs@cpu.tfcis.org (µL¨¥) ¬İªO: plan
-¼Ğ  ÃD: Re: maple3-itoc subversion ªA°È
-µo«H¯¸: °Ê¤O®Ö¤ß (2005/01/13 Thu 15:38:58)
+ç™¼ä¿¡äºº: chwaian.bbs@cpu.tfcis.org (ç„¡è¨€) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: maple3-itoc subversion æœå‹™
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2005/01/13 Thu 15:38:58)
 
-¡° ¤Ş­z¡mDarkKiller.bbs@Deer.twbbs.org (±ª°Ê)¡n¤§»Ê¨¥¡G
-> ¡° ¤Ş­z¡mFish.bbs@fishocean.twbbs.org (³½²Â³½Äø§b§b³½)¡n¤§»Ê¨¥¡G
-> >     §Ú¦³ÂIÂIºÃ°İ­C....
-> >     ¨º³o¼Ë¬O¤£¬O¯¸¥x¤£¯à°µ¥ô¦óªº patch ?
-> §A¥i¥H¦Û¤v¬[¤@­Ó resposity¡AµM«á¥Î svn merge (À³¸Ó¬O§a) °µ¡A¹J¨ì
-> conflict ªº¦a¤è¦A¤â°Ê§ï´N¥i¥H¤F...
+â€» å¼•è¿°ã€ŠDarkKiller.bbs@Deer.twbbs.org (æ‚¸å‹•)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> â€» å¼•è¿°ã€ŠFish.bbs@fishocean.twbbs.org (é­šç¬¨é­šè ¢å‘†å‘†é­š)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> >     æˆ‘æœ‰é»é»ç–‘å•è€¶....
+> >     é‚£é€™æ¨£æ˜¯ä¸æ˜¯ç«™å°ä¸èƒ½åšä»»ä½•çš„ patch ?
+> ä½ å¯ä»¥è‡ªå·±æ¶ä¸€å€‹ resposityï¼Œç„¶å¾Œç”¨ svn merge (æ‡‰è©²æ˜¯å§) åšï¼Œé‡åˆ°
+> conflict çš„åœ°æ–¹å†æ‰‹å‹•æ”¹å°±å¯ä»¥äº†...
 
-¨ä¹ê¤U¸ü¤U¨Óªºcode ¤]¤£¤@©w­nª½±µ¥Î¦b¯¸¤W
+å…¶å¯¦ä¸‹è¼‰ä¸‹ä¾†çš„code ä¹Ÿä¸ä¸€å®šè¦ç›´æ¥ç”¨åœ¨ç«™ä¸Š
 
-¥Îsvn¨ÓÀËµø µ{¦¡½Xªº­×§ï¬O«D±`¤è«Kªº
+ç”¨svnä¾†æª¢è¦– ç¨‹å¼ç¢¼çš„ä¿®æ”¹æ˜¯éå¸¸æ–¹ä¾¿çš„
 
-¹³§Ú³£¬O¦bbbs¥Ø¿ı¤U
+åƒæˆ‘éƒ½æ˜¯åœ¨bbsç›®éŒ„ä¸‹
 
 svn checkout https://gslin.org/svn/maple3-itoc/src trunk
 
-³o·|¤U¸ü·sªºµ{¦¡½X¨ì trunk ªº¥Ø¿ı
+é€™æœƒä¸‹è¼‰æ–°çš„ç¨‹å¼ç¢¼åˆ° trunk çš„ç›®éŒ„
 
-¥H«á¦pªG¦³·sµ{¦¡½X§ó·s
+ä»¥å¾Œå¦‚æœæœ‰æ–°ç¨‹å¼ç¢¼æ›´æ–°
 
-¨ì trunk ªº¥Ø¿ı¤U °õ¦æ svn update
+åˆ° trunk çš„ç›®éŒ„ä¸‹ åŸ·è¡Œ svn update
 
-µM«á °²³]¤§«e§A¤U¸üªºª©¥»¬O r8 ²{¦b r9
+ç„¶å¾Œ å‡è¨­ä¹‹å‰ä½ ä¸‹è¼‰çš„ç‰ˆæœ¬æ˜¯ r8 ç¾åœ¨ r9
 
-°õ¦æ svn diff -r 8:9
+åŸ·è¡Œ svn diff -r 8:9
 
-´N¥i¥H¬İ¨ì©³°µ¤F­ş¨Ç­×§ï µM«á¦A¥Î¨ì§A¯¸¤Wªºsrc¥h
+å°±å¯ä»¥çœ‹åˆ°åº•åšäº†å“ªäº›ä¿®æ”¹ ç„¶å¾Œå†ç”¨åˆ°ä½ ç«™ä¸Šçš„srcå»
 
-³o¤ñ¥H«e­n¬İÀÉ®×­×§ï¤é´Á µM«á¦Û¤v¤@­Ó­Ódiff­n¤è«K³\¦h¤F @_@
+é€™æ¯”ä»¥å‰è¦çœ‹æª”æ¡ˆä¿®æ”¹æ—¥æœŸ ç„¶å¾Œè‡ªå·±ä¸€å€‹å€‹diffè¦æ–¹ä¾¿è¨±å¤šäº† @_@
 
-¥t¥~ svn log -v ¤]¥i¥H¬İ¨ì©³­×§ï¤F­ş¨ÇÀÉ®× ¤]ÆZ±`¥Îªº
+å¦å¤– svn log -v ä¹Ÿå¯ä»¥çœ‹åˆ°åº•ä¿®æ”¹äº†å“ªäº›æª”æ¡ˆ ä¹Ÿè »å¸¸ç”¨çš„
 
-§ó¸Ô²Óªº Subversion ¨Ï¥Î¤èªk
+æ›´è©³ç´°çš„ Subversion ä½¿ç”¨æ–¹æ³•
 
-¥i¥H¨ì©³¤Uºô§}¬İ
+å¯ä»¥åˆ°åº•ä¸‹ç¶²å€çœ‹
 
 http://freebsd.sinica.edu.tw/%7Eplasma/svnbook/book.html
 
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mchwaian [30m±q [31m218-165-120-243.dynamic.hinet.net [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mchwaian [30må¾ [31m218-165-120-243.dynamic.hinet.net [30mç™¼è¡¨[m

@@ -1,13 +1,13 @@
-�o�H�H: amaki.bbs@luna.twbbs.org (��q�p��), �ݪO: plan
-��  �D: Re: [�ק�]�i���峹�аO
-�o�H��: ��U�]�Q (Mon, 17 Mar 2003 01:29:09 +0800 (CST))  Updated: 2004/12/23
+發信人: amaki.bbs@luna.twbbs.org (哼歌小羊), 看板: plan
+標  題: Re: [修改]進階文章標記
+發信站: 月下夜想 (Mon, 17 Mar 2003 01:29:09 +0800 (CST))  Updated: 2004/12/23
 
-  �� M �аO�m�⪺ mark
-  �� m ���� mark �άO���G�ת� mark
+  按 M 標記彩色的 mark
+  按 m 取消 mark 或是高亮度的 mark
 
 : include/hdr.h
 
-  post.xmode���w�q�s�W (�n�`�N������L�X�нĬ�)
+  post.xmode的定義新增 (要注意不能跟其他旗標衝突)
 
 + #define POST_MARKED1    0x00100000
 + #define POST_MARKED2    0x00200000
@@ -24,7 +24,7 @@
   'm', post_mark,
 + 'M', post_advmark,
 
-: post.c:post_advmark() �s�W���禡�� post_mark() �᭱
+: post.c:post_advmark() 新增此函式於 post_mark() 後面
 
 static int
 post_advmark(xo)
@@ -42,13 +42,13 @@ post_advmark(xo)
   xmode = hdr->xmode;
 
 #ifdef HAVE_LABELMARK
-  if (xmode & POST_DELETE)     /* �ݬ媺�峹���� mark */
+  if (xmode & POST_DELETE)     /* 待砍的文章不能 mark */
     return XO_NONE;
 #endif
-  if (xmode & (POST_MARKED | POST_MARKEDCOLOR)) /* �w�g����L mark �F */
+  if (xmode & (POST_MARKED | POST_MARKEDCOLOR)) /* 已經有其他 mark 了 */
     return XO_NONE;
 
-  switch (vans("�� �аO�C�� 1)���� 2)��� 3)���� 4)�Ŧ� 5)���� 6)�C��G[Q] "))
+  switch (vans("◎ 標記顏色 1)紅色 2)綠色 3)黃色 4)藍色 5)紫色 6)青色：[Q] "))
   {
   case '1':
     xmode ^= POST_MARKED1;
@@ -87,11 +87,11 @@ post_advmark(xo)
 : post.c:post_mark()
 
 #ifdef HAVE_LABELMARK
-    if (xmode & POST_DELETE)     /* �ݬ媺�峹���� mark */
+    if (xmode & POST_DELETE)     /* 待砍的文章不能 mark */
       return XO_NONE;
 #endif
 
-+   /* �p�G�w�g�������C��аO�A��������Ҧ��аO */
++   /* 如果已經有任何顏色標記，那麼取消所有標記 */
 +   if (xmode & POST_MARKEDCOLOR)
 +     hdr->xmode = xmode & ~POST_MARKEDCOLOR;
 +   else
@@ -107,7 +107,7 @@ post_advmark(xo)
 + if (mode & (POST_MARKED | POST_MARKEDCOLOR))
     attr |= 'M';
 
-: post.c:post_item() �� prints("%6d%c%c", ...); �����A�@�@���G�B
+: post.c:post_item() 把 prints("%6d%c%c", ...); 換掉，一共有二處
 
 - prints("%6d%c%c", num, tag_char(hdr->chrono), post_attr(hdr));
 + prints("%6d%c\033[%sm%c\033[m",
@@ -161,10 +161,10 @@ post_advmark(xo)
 + return (hdr->xmode & (POST_MARKED | POST_MARKEDCOLOR));
 
 --
-  mark���аO�ĥΫG�⦳�Ӧn�B�O^X����峹�Y�O���Qmark�_�ӡA�h�峹��x�аO�|�ܦ�
+  mark的標記採用亮色有個好處是^X之後文章若是有被mark起來，則文章的x標記會變成
 
-  �G��A�p�G���@�g�峹^X + m(�άOM)�A�h�峹�e����x�|�ܦ����Dmark�_�Ӫ��C���!
+  亮色，如果有一篇文章^X + m(或是M)，則文章前面的x會變成版主mark起來的顏色喔!
 
-  �Ϥ��u��^X�ӵLmark�A�h��x�аO�N���|�G�άO�ܦ�A��K���D�ϧO�C
+  反之只有^X而無mark，則該x標記就不會亮或是變色，方便版主區別。
 --
   [1;33mOrigin: luna.twbbs.org[m

@@ -1,26 +1,26 @@
-§@ªÌ: itoc (­·½Õ«B¶¶¡A°ê®õ¥Á¦w) ¬ÝªO: plan
-¼ÐÃD: [¥\¯à] "--" ¥H¤UªºªF¦è¥þ³¡µLªk­×§ï
-®É¶¡: Sun Jul 27 01:26:18 2003                          Updated: 2005/06/30
+ä½œè€…: itoc (é¢¨èª¿é›¨é †ï¼Œåœ‹æ³°æ°‘å®‰) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] "--" ä»¥ä¸‹çš„æ±è¥¿å…¨éƒ¨ç„¡æ³•ä¿®æ”¹
+æ™‚é–“: Sun Jul 27 01:26:18 2003                          Updated: 2005/06/30
 
-¡° ¤Þ­z¡mxeon.bbs@xeon.tfcis.org (Xeon Chen)¡n¤§»Ê¨¥¡G
-> "--" ¥H¤UªºªF¦è¥þ³¡µLªk­×§ï
+â€» å¼•è¿°ã€Šxeon.bbs@xeon.tfcis.org (Xeon Chen)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> "--" ä»¥ä¸‹çš„æ±è¥¿å…¨éƒ¨ç„¡æ³•ä¿®æ”¹
 
-  1. ±À¤å«á¡A§@ªÌ¥i¥H­×§ï¤å³¹¡A¦ý¤£¯à­×§ï±À¤å
-  2. ¾ú¦¸­×§ïªº®É¶¡°O¿ý§¡·|«O¯d¤U¨Ó
+  1. æŽ¨æ–‡å¾Œï¼Œä½œè€…å¯ä»¥ä¿®æ”¹æ–‡ç« ï¼Œä½†ä¸èƒ½ä¿®æ”¹æŽ¨æ–‡
+  2. æ­·æ¬¡ä¿®æ”¹çš„æ™‚é–“è¨˜éŒ„å‡æœƒä¿ç•™ä¸‹ä¾†
 
 : modes.h
 
-#define EDIT_ANONYMOUS  0x10    /* °Î¦W¼Ò¦¡ */
-#define EDIT_RESTRICT   0x20    /* ¥[±K¦sÀÉ */
-+ #define EDIT_MODIFYPOST 0x40    /* ¸T¤î­×§ï -- ¥H¤Uªº¤å¦r */
+#define EDIT_ANONYMOUS  0x10    /* åŒ¿åæ¨¡å¼ */
+#define EDIT_RESTRICT   0x20    /* åŠ å¯†å­˜æª” */
++ #define EDIT_MODIFYPOST 0x40    /* ç¦æ­¢ä¿®æ”¹ -- ä»¥ä¸‹çš„æ–‡å­— */
 
 : post.c:post_edit()
 
-  /* ­ì§@ªÌ­×§ï */
+  /* åŽŸä½œè€…ä¿®æ”¹ */
   else if (!strcmp(hdr->owner, cuser.userid) && HAS_PERM(PERM_POST))
   {
 +   curredit = EDIT_MODIFYPOST;
-    if (!vedit(fpath, 0))       /* ­Y«D¨ú®ø«h¥[¤W­×§ï¸ê°T */
+    if (!vedit(fpath, 0))       /* è‹¥éžå–æ¶ˆå‰‡åŠ ä¸Šä¿®æ”¹è³‡è¨Š */
     {
       if (fp = fopen(fpath, "a"))
       {
@@ -36,7 +36,7 @@ typedef struct textline
 {
   struct textline *prev;
   struct textline *next;
-+ char startq;              /* 1: -- ¶}©l */
++ char startq;              /* 1: -- é–‹å§‹ */
   int len;
   uschar data[ANSILINELEN];
 }       textline;
@@ -46,7 +46,7 @@ typedef struct textline
   while (n--)
   {
 -   if (!(tmp = cur->next))
-+   /* itoc.030727: PGDN Â½­¶³Ì¦h²¾¨ì -- ¶}©l */
++   /* itoc.030727: PGDN ç¿»é æœ€å¤šç§»åˆ° -- é–‹å§‹ */
 +   if (!(tmp = cur->next) || cur->startq)
       break;
 
@@ -77,10 +77,10 @@ typedef struct textline
   {
     this = ve_line(this, str);
 
-+   /* itoc.030727: -- ¶}©l */
++   /* itoc.030727: -- é–‹å§‹ */
 +   if ((curredit & EDIT_MODIFYPOST) && !strcmp(str, "--"))
 +   {
-+     /* §ä³Ì«á¤@­Ó "--" */
++     /* æ‰¾æœ€å¾Œä¸€å€‹ "--" */
 +     tmp->startq = 0;
 +     tmp = this;
 +     this->startq = 1;
@@ -95,22 +95,22 @@ tbf_read()
   int fd;
   char fpath[80];
 
-+ /* itoc.030727: -- ¶}©l¥H«á«K¤£¯à¸ü¤J¼È¦sÀÉ */
++ /* itoc.030727: -- é–‹å§‹ä»¥å¾Œä¾¿ä¸èƒ½è¼‰å…¥æš«å­˜æª” */
 + if (vx_cur->startq)
 +   return;
 
-: edit.c:vedit() ªºµù¸Ñ
+: edit.c:vedit() çš„è¨»è§£
 
 /* ----------------------------------------------------- */
 /* ve_op:                                                */
-/*  0 => ¯Âºé½s¿èÀÉ®×                                    */
-/* -1 => ½s¿è¦ý¤£¯àÀx¦s¡A¥Î¦b½s¿è§@ªÌ¤£¬O¦Û¤vªº¤å³¹      */
-/*  1 => ¤Þ¤å¡B¥[Ã±¦WÀÉ¡A¨Ã¥[¤WÀÉÀY¡A¥Î¦bµoªí¤å³¹/¯¸¤º«H */
-/*  2 => ¤Þ¤å¡B¥[Ã±¦WÀÉ¡A¤£¥[¤WÀÉÀY¡A¥Î¦b±H¯¸¥~«H        */
+/*  0 => ç´”ç²¹ç·¨è¼¯æª”æ¡ˆ                                    */
+/* -1 => ç·¨è¼¯ä½†ä¸èƒ½å„²å­˜ï¼Œç”¨åœ¨ç·¨è¼¯ä½œè€…ä¸æ˜¯è‡ªå·±çš„æ–‡ç«       */
+/*  1 => å¼•æ–‡ã€åŠ ç°½åæª”ï¼Œä¸¦åŠ ä¸Šæª”é ­ï¼Œç”¨åœ¨ç™¼è¡¨æ–‡ç« /ç«™å…§ä¿¡ */
+/*  2 => å¼•æ–‡ã€åŠ ç°½åæª”ï¼Œä¸åŠ ä¸Šæª”é ­ï¼Œç”¨åœ¨å¯„ç«™å¤–ä¿¡        */
 /* ----------------------------------------------------- */
-/* ­Y ve_op ¬O 1 ©Î 2 ®É¡A¶i¤J vedit «eÁÙ±o«ü©w curredit */
-+ /* ­Y ve_op ¬O 0¡A­Y­n¸T¤î­×§ï -- ¥H¤Uªº¤å¦r¡A¶i¤J vedit */
-+ /* «eÁÙ±o«ü©w curredit ¬° EDIT_MODIFYPOST                */
+/* è‹¥ ve_op æ˜¯ 1 æˆ– 2 æ™‚ï¼Œé€²å…¥ vedit å‰é‚„å¾—æŒ‡å®š curredit */
++ /* è‹¥ ve_op æ˜¯ 0ï¼Œè‹¥è¦ç¦æ­¢ä¿®æ”¹ -- ä»¥ä¸‹çš„æ–‡å­—ï¼Œé€²å…¥ vedit */
++ /* å‰é‚„å¾—æŒ‡å®š curredit ç‚º EDIT_MODIFYPOST                */
 /* ----------------------------------------------------- */
 
 : edit.c:vedit()
@@ -119,7 +119,7 @@ tbf_read()
 
 +   if (vln->startq)
 +   {
-+     /* itoc.030727: -- ¶}©l¥H«á¡A¥u¯à«ö¥H¤U«öÁä */
++     /* itoc.030727: -- é–‹å§‹ä»¥å¾Œï¼Œåªèƒ½æŒ‰ä»¥ä¸‹æŒ‰éµ */
 +     if (cc != KEY_INS && cc != KEY_LEFT && cc != KEY_UP &&
 +       cc != Ctrl('P') && cc != KEY_PGUP && cc != Ctrl('B') &&
 +       cc != KEY_PGDN && cc != Ctrl('F') && cc != Ctrl('O') &&
@@ -141,7 +141,7 @@ tbf_read()
 -         free(tmp);
 -         tmp = vln;
 +         textline *tmp2;
-+         /* yiting: ­Y¤U¤@¦æ¬O"--"¡A«h§â¥¦±µ¨ì¥Ø«e³o¦æªº¤U­± */
++         /* yiting: è‹¥ä¸‹ä¸€è¡Œæ˜¯"--"ï¼Œå‰‡æŠŠå®ƒæŽ¥åˆ°ç›®å‰é€™è¡Œçš„ä¸‹é¢ */
 +         if ((curredit & EDIT_MODIFYPOST) && (tmp->startq))
 +         {
 +           vln->next = tmp;
@@ -163,7 +163,7 @@ tbf_read()
         cc = vln->len;
         if (cc == col)
         {
-+         /* ­Y¤U¦æ¬O --¡A¤£¯à DEL */
++         /* è‹¥ä¸‹è¡Œæ˜¯ --ï¼Œä¸èƒ½ DEL */
 +         if ((curredit & EDIT_MODIFYPOST)&&(tmp = vln->next)&&(tmp->startq))
 +           goto ve_key;
           join_up(vln);
@@ -172,4 +172,4 @@ tbf_read()
 
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

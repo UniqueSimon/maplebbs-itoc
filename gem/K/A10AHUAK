@@ -1,12 +1,12 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD] ½Ğ°İ¦p¦óÅı¨Ï¥ÎªÌ¦bµù¥U®É¿é¤J¥Í¤é¡B©Ê§O
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/05/17 Mon 18:37:38)                Updated: 2004/05/18
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] è«‹å•å¦‚ä½•è®“ä½¿ç”¨è€…åœ¨è¨»å†Šæ™‚è¼¸å…¥ç”Ÿæ—¥ã€æ€§åˆ¥
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/05/17 Mon 18:37:38)                Updated: 2004/05/18
 
-¡° ¤Ş­z¡mTOTO (£|£°£¾£|£°£½)¡n¤§»Ê¨¥¡G
-> ¥i¤£¥i¥H½Ğ°İ¤@¤U,³o¤@½gªº­×§ï¦b²{¦bªº¨t²Î¤WÀ³¸Ó«ç»ò°µ?
-> ¦]¬°§Úmakeªº®É­Ô¥X²{fpath¥¼«Å§iªº¿ù»~°T®§@@"
+â€» å¼•è¿°ã€ŠTOTO (ã„ã„ŸË‡ã„ã„ŸËŠ)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å¯ä¸å¯ä»¥è«‹å•ä¸€ä¸‹,é€™ä¸€ç¯‡çš„ä¿®æ”¹åœ¨ç¾åœ¨çš„ç³»çµ±ä¸Šæ‡‰è©²æ€éº¼åš?
+> å› ç‚ºæˆ‘makeçš„æ™‚å€™å‡ºç¾fpathæœªå®£å‘Šçš„éŒ¯èª¤è¨Šæ¯@@"
 
- ¨C¦¸¤W¯¸³£ÀË¬d¬O§_¦³¶ñ¥Í¤é¤Î©Ê§O
+ æ¯æ¬¡ä¸Šç«™éƒ½æª¢æŸ¥æ˜¯å¦æœ‰å¡«ç”Ÿæ—¥åŠæ€§åˆ¥
 
 : bbsd.c:tn_motd()
 
@@ -20,33 +20,33 @@ tn_motd()
   ...
 
 #ifdef HAVE_FORCE_BOARD
-  brd_force();  /* itoc.000319: ±j¨î¾\Åª¤½§iªO */
+  brd_force();  /* itoc.000319: å¼·åˆ¶é–±è®€å…¬å‘Šæ¿ */
 #endif
 
 + while (cuser.year < 1 || cuser.year > 99)
 + {
-+   vget(22, 0, "¥X¥Í¦~¥÷¡G", ans, 3, DOECHO);
++   vget(22, 0, "å‡ºç”Ÿå¹´ä»½ï¼š", ans, 3, DOECHO);
 +   cuser.year = (ans[0] - '0') * 10 + (ans[1] - '0');
 + }
 
 + while (cuser.month < 1 || cuser.month > 12)
 + {
-+   vget(22, 0, "¥X¥Í¤ë¥÷¡G", ans, 3, DOECHO);
++   vget(22, 0, "å‡ºç”Ÿæœˆä»½ï¼š", ans, 3, DOECHO);
 +   cuser.month = (ans[0] - '0') * 10 + (ans[1] - '0');
 + }
 
 + while (cuser.day < 1 || cuser.day > 31)
 + {
-+   vget(22, 0, "¥X¥Í¤é´Á¡G", ans, 3, DOECHO);
++   vget(22, 0, "å‡ºç”Ÿæ—¥æœŸï¼š", ans, 3, DOECHO);
 +   cuser.day = (ans[0] - '0') * 10 + (ans[1] - '0');
 + }
 
 + while (cuser.sex != 0  && cuser.sex != 1 && cuser.sex != 2)
 + {
-+   cuser.sex = vget(22, 0, "©Ê§O (0)¤¤©Ê (1)¨k©Ê (2)¤k©Ê¡G", ans, 2, DOECHO) - '0';
++   cuser.sex = vget(22, 0, "æ€§åˆ¥ (0)ä¸­æ€§ (1)ç”·æ€§ (2)å¥³æ€§ï¼š", ans, 2, DOECHO) - '0';
 + }
 }
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mpc512-12.ee.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mpc512-12.ee.nctu.edu.tw [30mç™¼è¡¨[m

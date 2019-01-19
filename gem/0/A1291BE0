@@ -1,55 +1,55 @@
-µo«H¤H: TKyo.bbs@cpu.tfcis.org (·t¶Â¶Q¤½¤l) ¬İªO: plan
-¼Ğ  ÃD: [§ó·s 2]PTT's pmore.c ¥\¯à patch for M3 more.c
-µo«H¯¸: °Ê¤O®Ö¤ß (2006/06/14 Wed 22:46:50)                Updated: 2006/06/16
+ç™¼ä¿¡äºº: TKyo.bbs@cpu.tfcis.org (æš—é»‘è²´å…¬å­) çœ‹æ¿: plan
+æ¨™  é¡Œ: [æ›´æ–° 2]PTT's pmore.c åŠŸèƒ½ patch for M3 more.c
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2006/06/14 Wed 22:46:50)                Updated: 2006/06/16
 
-[«eª©«e¨¥]
+[å‰ç‰ˆå‰è¨€]
 
-  1.³Ğ§@¥»¥\¯à«e, ¤w¸g¥ı¦æª¾·| PTT (§å½ğ½ğ¹ê·~§{) BBS ¯¸ªø in2
-    ¨ÃÀò±o¥L¤¹³\ "³Ğ·N³Ğ§@" ¦Ó«á, ¦Û¦æ¨Ì·Ó¨ä¥\¯à­±·f°t­ì¥» more.c µ{¦¡½X³Ğ§@
-    ¥B¥¼°Ñ¦Ò pmore.c ¥ô¦óµ{¦¡½X
+  1.å‰µä½œæœ¬åŠŸèƒ½å‰, å·²ç¶“å…ˆè¡ŒçŸ¥æœƒ PTT (æ‰¹è¸¢è¸¢å¯¦æ¥­åŠ) BBS ç«™é•· in2
+    ä¸¦ç²å¾—ä»–å…è¨± "å‰µæ„å‰µä½œ" è€Œå¾Œ, è‡ªè¡Œä¾ç…§å…¶åŠŸèƒ½é¢æ­é…åŸæœ¬ more.c ç¨‹å¼ç¢¼å‰µä½œ
+    ä¸”æœªåƒè€ƒ pmore.c ä»»ä½•ç¨‹å¼ç¢¼
 
-  2.³Ğ§@¥»¥\¯à«á, ¤]¤w¸gª¾·| PTT (§å½ğ½ğ¹ê·~§{) BBS pmore.c ­ì³ĞªÌ piaip
-    ¨ÃÀò±o¥L¤¹³\, ±N patch ­ì©l½X¥æ¥Ñ itoc ¤½§G
+  2.å‰µä½œæœ¬åŠŸèƒ½å¾Œ, ä¹Ÿå·²ç¶“çŸ¥æœƒ PTT (æ‰¹è¸¢è¸¢å¯¦æ¥­åŠ) BBS pmore.c åŸå‰µè€… piaip
+    ä¸¦ç²å¾—ä»–å…è¨±, å°‡ patch åŸå§‹ç¢¼äº¤ç”± itoc å…¬ä½ˆ
 
-[¥»ªO«e¨¥]
+[æœ¬æ¿å‰è¨€]
 
-  ¥»¦¸§ó·sª©¥», [1;33m§¹¥ş¨ú¥N[m¥ı«eµoªí¤§ª©¥»
+  æœ¬æ¬¡æ›´æ–°ç‰ˆæœ¬, [1;33må®Œå…¨å–ä»£[må…ˆå‰ç™¼è¡¨ä¹‹ç‰ˆæœ¬
 
-[¥\¯à­±Â²¤¶]
+[åŠŸèƒ½é¢ç°¡ä»‹]
 
-  a.«öÁä :
-                   [1;32mTab[m - ¦V¥kÂ½¾\¤@¦¸ 4 ¦C
-         [1;32mShift+Tab[m/[1;32mZ[m/[1;32mz[m - ¦V¥ªÂ½¾\¤@¦¸ 4 ¦C
-                   [1;32m.[m/[1;32m>[m - ¦V¥kÂ½¾\¤@¦¸ 1 ¦C (²Ä¤@¦¸²¾°Ê 2 ¦C)
-                   [1;32m,[m/[1;32m<[m - ¦V¥ªÂ½¾\¤@¦¸ 1 ¦C
+  a.æŒ‰éµ :
+                   [1;32mTab[m - å‘å³ç¿»é–±ä¸€æ¬¡ 4 åˆ—
+         [1;32mShift+Tab[m/[1;32mZ[m/[1;32mz[m - å‘å·¦ç¿»é–±ä¸€æ¬¡ 4 åˆ—
+                   [1;32m.[m/[1;32m>[m - å‘å³ç¿»é–±ä¸€æ¬¡ 1 åˆ— (ç¬¬ä¸€æ¬¡ç§»å‹• 2 åˆ—)
+                   [1;32m,[m/[1;32m<[m - å‘å·¦ç¿»é–±ä¸€æ¬¡ 1 åˆ—
 
-  b.²Ä¤@¦¸«ö [1;32m.[m ¦V¥kÂ½¾\®É, ¥Ñ©ó¦³ [1;37m<[m ´£¥Ü²Å¸¹ªºÃö«Y
-    ¦pªG¥u²¾°Ê 1 ¦Cªº¸Ü, ·|Åı¨Ï¥ÎªÌ·PÄ±¤£¥X¨Óµe­±¦³¦b²¾°Ê, ¦]¦¹¤~²¾°Ê 2 ¦C
+  b.ç¬¬ä¸€æ¬¡æŒ‰ [1;32m.[m å‘å³ç¿»é–±æ™‚, ç”±æ–¼æœ‰ [1;37m<[m æç¤ºç¬¦è™Ÿçš„é—œä¿‚
+    å¦‚æœåªç§»å‹• 1 åˆ—çš„è©±, æœƒè®“ä½¿ç”¨è€…æ„Ÿè¦ºä¸å‡ºä¾†ç•«é¢æœ‰åœ¨ç§»å‹•, å› æ­¤æ‰ç§»å‹• 2 åˆ—
 
-  c.PCMan/KKMan(©|¥¼¹êÅç) ¤£¤ä´© Shift+Tab «öÁä, ·|»~§P¬° Tab «öÁä
-    ½Ğ¥Î [1;32mz[m ©M [1;32mZ[m ´À¥N
+  c.PCMan/KKMan(å°šæœªå¯¦é©—) ä¸æ”¯æ´ Shift+Tab æŒ‰éµ, æœƒèª¤åˆ¤ç‚º Tab æŒ‰éµ
+    è«‹ç”¨ [1;32mz[m å’Œ [1;32mZ[m æ›¿ä»£
 
-[¥»¦¸§ó·s]
+[æœ¬æ¬¡æ›´æ–°]
 
-  1.·í "¤@¦æ¦r¼Æ > 80 ¦æ" ®É, µe­±¦A¦¸¾ã²z°ÊºA²¾°Ê¤Î¯S§OÅã¥Ü
+  1.ç•¶ "ä¸€è¡Œå­—æ•¸ > 80 è¡Œ" æ™‚, ç•«é¢å†æ¬¡æ•´ç†å‹•æ…‹ç§»å‹•åŠç‰¹åˆ¥é¡¯ç¤º
 
-    ¯S§OÅã¥Ü (Header °Ï°ì¨Ò¥~)
+    ç‰¹åˆ¥é¡¯ç¤º (Header å€åŸŸä¾‹å¤–)
 
-      '\' - ¬°¦Û°ÊÂ_¦æ²Å¸¹
-      '>' - ¤å³¹¦ì²¾«á, ªí¥Ü©|¦³¤å³¹¥¼Åã¥Ü
+      '\' - ç‚ºè‡ªå‹•æ–·è¡Œç¬¦è™Ÿ
+      '>' - æ–‡ç« ä½ç§»å¾Œ, è¡¨ç¤ºå°šæœ‰æ–‡ç« æœªé¡¯ç¤º
 
-  2.­×¥¿ :
+  2.ä¿®æ­£ :
 
-      Â^¨ú Header ¸ê°T®É, ­ì¥ı¨Ï¥Î f_map() ¤è¦¡, <== ®ö¶O¤F¤Ó¦h®É¶¡
-      ¬G§ï¬°¨Ï¥Î¤@¯ëÀÉ®× I/O ¤è¦¡, ±oª¾¬O§_¦³ Header, ¨Ã¾A®É´¡¤J¤À¹j½u
+      æ“·å– Header è³‡è¨Šæ™‚, åŸå…ˆä½¿ç”¨ f_map() æ–¹å¼, <== æµªè²»äº†å¤ªå¤šæ™‚é–“
+      æ•…æ”¹ç‚ºä½¿ç”¨ä¸€èˆ¬æª”æ¡ˆ I/O æ–¹å¼, å¾—çŸ¥æ˜¯å¦æœ‰ Header, ä¸¦é©æ™‚æ’å…¥åˆ†éš”ç·š
 
-      ¨ä¥LÃB¥~­×¥¿
+      å…¶ä»–é¡å¤–ä¿®æ­£
 
 ------------------------------------------------------------------------------
 :src/include/global.h
 
-  #define KEY_TAB   9   /* ©M Ctrl('I') ¬Û¦P */
-+ #define KEY_STAB  90  /* ©M Z ¬Û¦P */
+  #define KEY_TAB   9   /* å’Œ Ctrl('I') ç›¸åŒ */
++ #define KEY_STAB  90  /* å’Œ Z ç›¸åŒ */
 
   #define QUOTE_CHAR1   '>'
   #define QUOTE_CHAR2   ':'
@@ -58,45 +58,45 @@
 + #define QUOTE_CHAR5   '\\'
 
 
-/* ·sªO¥»¤w±N LINE_HEADER ·h²¾¦Ü global.h
-   µ¹ more.c/bhttpd.c ¨Ï¥Î */
+/* æ–°æ¿æœ¬å·²å°‡ LINE_HEADER æ¬ç§»è‡³ global.h
+   çµ¦ more.c/bhttpd.c ä½¿ç”¨ */
 
-+ #define LINE_HEADER   3   /* ÀÉÀY¦³¤T¦æ */
-+ #define STR_HEADER  {"§@ªÌ", "¼ĞÃD", "®É¶¡"}
-+ #define STR_HEADER2 {"µo«H¤H", "¼Ğ  ÃD", "µo«H¯¸"}
++ #define LINE_HEADER   3   /* æª”é ­æœ‰ä¸‰è¡Œ */
++ #define STR_HEADER  {"ä½œè€…", "æ¨™é¡Œ", "æ™‚é–“"}
++ #define STR_HEADER2 {"ç™¼ä¿¡äºº", "æ¨™  é¡Œ", "ç™¼ä¿¡ç«™"}
 
 ------------------------------------------------------------------------------
 :scr/include/theme.h
 
 - #define FOOTER_MORE \
-- COLOR1 " ÂsÄı P.%d (%d%%) " COLOR2 " (h)»¡©ú [PgUp][PgDn][0][$]²¾°Ê" \
-- " (/n)·j´M (C)¼È¦s (¡öq)µ²§ô "
+- COLOR1 " ç€è¦½ P.%d (%d%%) " COLOR2 " (h)èªªæ˜ [PgUp][PgDn][0][$]ç§»å‹•" \
+- " (/n)æœå°‹ (C)æš«å­˜ (â†q)çµæŸ "
 
 + #define FOOTER_MORE \
-+ COLOR1 " ÂsÄı P.%d (%d%%) " COLOR2 " (/n)·j´M (h)»¡©ú (¡ö/q)Â÷¶}%*s" \
-+ "ùø¦C¡G%d - %d¢x¦æ¡G%d - %dùø "
++ COLOR1 " ç€è¦½ P.%d (%d%%) " COLOR2 " (/n)æœå°‹ (h)èªªæ˜ (â†/q)é›¢é–‹%*s" \
++ "â•‘åˆ—ï¼š%d - %dâ”‚è¡Œï¼š%d - %dâ•‘ "
 
 + /* ----------------------------------------------------- */
-+ /* ¤å³¹¾\ÅªÃC¦â                                          */
++ /* æ–‡ç« é–±è®€é¡è‰²                                          */
 + /* ----------------------------------------------------- */
 
-+ #define COLOR_MORE_MASK   "\033[7m"    /* ¤ñ¹ï¥¿½T Color */
-+ #define COLOR_MORE_OFFSET "\033[1;37m" /* ¯S§OÅã¥Ü²Å¸¹ÃC¦â */
-+ #define COLOR_MORE_QUOTE  "\033[1;32m" /* ²Ä¤@¼h QUOTE ÃC¦â 1 */
-+ #define COLOR_MORE_QUOTE2 "\033[35m"   /* ²Ä¤G¼h QUOTE ÃC¦â 2 */
-+ #define COLOR_MORE_QUOTE3 "\033[32m"   /* ²Ä¤T¼h QUOTE ÃC¦â 3 */
++ #define COLOR_MORE_MASK   "\033[7m"    /* æ¯”å°æ­£ç¢º Color */
++ #define COLOR_MORE_OFFSET "\033[1;37m" /* ç‰¹åˆ¥é¡¯ç¤ºç¬¦è™Ÿé¡è‰² */
++ #define COLOR_MORE_QUOTE  "\033[1;32m" /* ç¬¬ä¸€å±¤ QUOTE é¡è‰² 1 */
++ #define COLOR_MORE_QUOTE2 "\033[35m"   /* ç¬¬äºŒå±¤ QUOTE é¡è‰² 2 */
++ #define COLOR_MORE_QUOTE3 "\033[32m"   /* ç¬¬ä¸‰å±¤ QUOTE é¡è‰² 3 */
 
 ------------------------------------------------------------------------------
 :src/maple/visio.c
 
 /*
-   ·s¼W¨â¨ç¦¡ outa() ©M outax()
+   æ–°å¢å…©å‡½å¼ outa() å’Œ outax()
 
-   outa() - ­ì¥ı³]­pµ¹¥ú´Î¤¶­±¤¤¤å¥¿½TÂ_¦æ¨Ï¥Î
-   outax() - ³]­pµ¹ more.c ±M¥Î, ¤ä´©¤¤¤å¥¿½TÂ_¦æ¤Î¯S®í Ansi Code
-             ¨Ã¦^¶Ç¸Ó¿é¥X¦h¤Ö space
+   outa() - åŸå…ˆè¨­è¨ˆçµ¦å…‰æ£’ä»‹é¢ä¸­æ–‡æ­£ç¢ºæ–·è¡Œä½¿ç”¨
+   outax() - è¨­è¨ˆçµ¦ more.c å°ˆç”¨, æ”¯æ´ä¸­æ–‡æ­£ç¢ºæ–·è¡ŒåŠç‰¹æ®Š Ansi Code
+             ä¸¦å›å‚³è©²è¼¸å‡ºå¤šå°‘ space
 
-   ¦]À³ outax(), §ó·s outx(), ·s¼W out_extend_ansi_char() µ¹¨â¨ç¦¡¦@¥Î¨ç¦¡
+   å› æ‡‰ outax(), æ›´æ–° outx(), æ–°å¢ out_extend_ansi_char() çµ¦å…©å‡½å¼å…±ç”¨å‡½å¼
 */
 
 #ifdef SHOW_USER_IN_TEXT
@@ -109,39 +109,39 @@ out_extend_ansi_char(ch)
 
   switch (ch)
   {
-    case 's':           /* **s Åã¥Ü ID */
+    case 's':           /* **s é¡¯ç¤º ID */
       sprintf(buf, "%s", cuser.userid);
       break;
 
-    case 'n':           /* **n Åã¥Ü¼ÊºÙ */
+    case 'n':           /* **n é¡¯ç¤ºæš±ç¨± */
       sprintf(buf, "%s", cuser.username);
       break;
 
-    case 'l':           /* **l Åã¥Ü¤W¯¸¦¸¼Æ */
+    case 'l':           /* **l é¡¯ç¤ºä¸Šç«™æ¬¡æ•¸ */
       sprintf(buf, "%d", cuser.numlogins);
       break;
 
-    case 'p':           /* **p Åã¥Üµo¤å¦¸¼Æ */
+    case 'p':           /* **p é¡¯ç¤ºç™¼æ–‡æ¬¡æ•¸ */
       sprintf(buf, "%d", cuser.numposts);
       break;
 
-    case 'g':           /* **g Åã¥Üª÷¹ô */
+    case 'g':           /* **g é¡¯ç¤ºé‡‘å¹£ */
       sprintf(buf, "%d", cuser.gold);
       break;
 
-    case 'm':           /* **m Åã¥Ü»È¹ô */
+    case 'm':           /* **m é¡¯ç¤ºéŠ€å¹£ */
       sprintf(buf, "%u", cuser.money);
       break;
 
-    case 't':           /* **t Åã¥Ü¤é´Á */
+    case 't':           /* **t é¡¯ç¤ºæ—¥æœŸ */
       sprintf(buf, "%s", Now());
       break;
 
-    case 'u':           /* **u Åã¥Ü½u¤W¤H¼Æ */
+    case 'u':           /* **u é¡¯ç¤ºç·šä¸Šäººæ•¸ */
       sprintf(buf, "%d", total_user);
       break;
 
-    case 'b':           /* **b Åã¥Ü¯¸¦W */
+    case 'b':           /* **b é¡¯ç¤ºç«™å */
       sprintf(buf, "%s", BBSNAME);
       break;
 
@@ -167,7 +167,7 @@ outx(str)
 
   while (ch = *str)
   {
-    /* itoc.020301: ESC + * + s µ¥±±¨î½X */
+    /* itoc.020301: ESC + * + s ç­‰æ§åˆ¶ç¢¼ */
     if (ch == KEY_ESC && str[1] == '*')
     {
       if (out_extend_ansi_char(str[2]))
@@ -188,7 +188,7 @@ outax(str, max)
 {
   uschar old_ch, ch;
   char *ptr, ret;
-  char ansi_buf[80];                          /* Âù¦â¦r½w½Ä°Ï */
+  char ansi_buf[80];                          /* é›™è‰²å­—ç·©è¡å€ */
   int len, in_ansi, in_chi, i;
 
   in_chi = in_ansi = len = ret = i = 0;
@@ -262,7 +262,7 @@ outax(str, max)
       if (in_ansi || (*ptr == KEY_ESC))
         continue;
 
-      /* ¸Ñ¨M '>' »~§P°İÃD, ¤Î ANSI Code */
+      /* è§£æ±º '>' èª¤åˆ¤å•é¡Œ, åŠ ANSI Code */
       if (*(ptr + 1) == '\0' || *(ptr + 1) == KEY_ESC)
         continue;
 
@@ -341,25 +341,25 @@ outa(str, max, end)
 + typedef struct MORELINE
 + {
 +   char data[ANSILINELEN];
-+   char auto_break_flag;     /* 0: µL´«¦æ, 1: ¦³´«¦æ */
-+   int more_offset;          /* µe­±°¾²¾­È */
++   char auto_break_flag;     /* 0: ç„¡æ›è¡Œ, 1: æœ‰æ›è¡Œ */
++   int more_offset;          /* ç•«é¢åç§»å€¼ */
 +   int b_cols;               /* bottom columns length */
 + #ifdef SLIDE_SHOW
-+   int slideshow;            /* !=0: ¼·©ñ movie ªº³t«× */
++   int slideshow;            /* !=0: æ’¥æ”¾ movie çš„é€Ÿåº¦ */
 + #endif
-+   off_t header_offset;      /* Header °Ï°ì */
++   off_t header_offset;      /* Header å€åŸŸ */
 + }        MORELINE;
 
 
 static uschar *fimage;      /* file image begin */
 static uschar *fend;        /* file image end */
-static uschar *foff;        /* ¥Ø«eÅª¨ì­ş¸Ì */
+static uschar *foff;        /* ç›®å‰è®€åˆ°å“ªè£¡ */
 + static uschar *flast;     /* last page start offset address*/
 
 ------------------------------------------------------------------------------
 :src/maple/more.c - more_slideshow()
 
-/* ¦]À³¥»¦¸§ó·s­×¥¿ */
+/* å› æ‡‰æœ¬æ¬¡æ›´æ–°ä¿®æ­£ */
 
 static int
 more_slideshow(moreline)
@@ -374,7 +374,7 @@ more_slideshow(moreline)
     if (ch == '@')
     {
       moreline->slideshow =
-        vans("½Ğ¿ï¾Ü©ñ¬Mªº³t«× 1(³ÌºC)¡ã9(³Ì§Ö)¡H¼·©ñ¤¤«ö¥ô·NÁä¥i°±¤î¼·©ñ¡G")
+        vans("è«‹é¸æ“‡æ”¾æ˜ çš„é€Ÿåº¦ 1(æœ€æ…¢)ï½9(æœ€å¿«)ï¼Ÿæ’¥æ”¾ä¸­æŒ‰ä»»æ„éµå¯åœæ­¢æ’¥æ”¾ï¼š")
         - '0';
       if (moreline->slideshow < 1 || moreline->slideshow > 9)
         moreline->slideshow = 5;
@@ -395,7 +395,7 @@ more_slideshow(moreline)
     if (select(1, (fd_set *) &ch, NULL, NULL,
       tv + moreline->slideshow - 1) > 0)
     {
-      /* ­Y¼·©ñ¤¤«ö¥ô·NÁä¡A«h°±¤î¼·©ñ */
+      /* è‹¥æ’¥æ”¾ä¸­æŒ‰ä»»æ„éµï¼Œå‰‡åœæ­¢æ’¥æ”¾ */
       moreline->slideshow = 0;
       ch = vkey();
     }
@@ -412,7 +412,7 @@ more_slideshow(moreline)
 :src/maple/more.c - more_line()
 
 /*
-   mode = 0 : ¤@¯ë¼Ò¦¡
+   mode = 0 : ä¸€èˆ¬æ¨¡å¼
    mode = 1 : Get Offset
 */
 
@@ -466,7 +466,7 @@ more_line(moreline, fsrc, mode)
             in_chi ^= 1;
         }
         else
-          ch = ' ';     /* ¦L¥X¤£¨Óªº³£´«¦¨ªÅ¥Õ */
+          ch = ' ';     /* å°å‡ºä¸ä¾†çš„éƒ½æ›æˆç©ºç™½ */
 
         len++;
       }
@@ -475,26 +475,26 @@ more_line(moreline, fsrc, mode)
     if (mode == 0)
       *buf++ = ch;
 
-    /* ­Y¤£§t±±¨î½Xªºªø«×¤w¹F b_cols ¦r¡A©Î§t±±¨î½Xªºªø«×¤w¹F ANSILINELEN-1
-       ¡A¨º»òÂ÷¶}°j°é */
+    /* è‹¥ä¸å«æ§åˆ¶ç¢¼çš„é•·åº¦å·²é” b_cols å­—ï¼Œæˆ–å«æ§åˆ¶ç¢¼çš„é•·åº¦å·²é” ANSILINELEN-1
+       ï¼Œé‚£éº¼é›¢é–‹è¿´åœˆ */
 
     if ((bytes >= ANSILINELEN - 1) ||
       (no_auto_break == 0 && (len >= moreline->b_cols)))
     {
-      /* itoc.031123: ¦pªG¬O±±¨î½X¡A§Y¨Ï¤£§t±±¨î½Xªºªø«×¤w¹F b_cols ¤F
-         ¡AÁÙ¥i¥HÄ~Äò¦Y */
+      /* itoc.031123: å¦‚æœæ˜¯æ§åˆ¶ç¢¼ï¼Œå³ä½¿ä¸å«æ§åˆ¶ç¢¼çš„é•·åº¦å·²é” b_cols äº†
+         ï¼Œé‚„å¯ä»¥ç¹¼çºŒåƒ */
       if ((in_ansi || (offset < fend && *offset == KEY_ESC)) &&
         bytes < ANSILINELEN - 1)
         continue;
 
-      /* itoc.031123: ¦AÀË¬d¤U¤@­Ó¦r¬O¤£¬O '\n'¡AÁ×§K«ê¦n¬O b_cols ©Î
-         ANSILINELEN-1 ®É¡A·|¦h¸õ¤@¦æªÅ¥Õ¦æ */
+      /* itoc.031123: å†æª¢æŸ¥ä¸‹ä¸€å€‹å­—æ˜¯ä¸æ˜¯ '\n'ï¼Œé¿å…æ°å¥½æ˜¯ b_cols æˆ–
+         ANSILINELEN-1 æ™‚ï¼Œæœƒå¤šè·³ä¸€è¡Œç©ºç™½è¡Œ */
       if (offset < fend && *offset == '\n')
       {
         offset++;
         bytes++;
       }
-      /* ¦]À³ PTT 80 ¦æÅã¥Ü (moreline->b_cols ¬° 79, ¥i§R°£¦¹§PÂ_) */
+      /* å› æ‡‰ PTT 80 è¡Œé¡¯ç¤º (moreline->b_cols ç‚º 79, å¯åˆªé™¤æ­¤åˆ¤æ–·) */
       else if (offset < fend && (*(offset + 1) == '\n' || *(offset + 1) == KEY_ESC))
         continue;
       else
@@ -531,10 +531,10 @@ more_line(moreline, fsrc, mode)
 ------------------------------------------------------------------------------
 :src/maple/more.c - outs_line()
 
-/* ­×§ï´T«×¤j, ½Ğ¾ã­Ó¨ç¦¡´«±¼ */
+/* ä¿®æ”¹å¹…åº¦å¤§, è«‹æ•´å€‹å‡½å¼æ›æ‰ */
 
 static int
-outs_line(moreline)     /* ¦L¥X¤@¯ë¤º®e */
+outs_line(moreline)     /* å°å‡ºä¸€èˆ¬å…§å®¹ */
   MORELINE *moreline;
 {
   int ch1, ch2, ch3, ansi, curr_offset, in_ansi, in_chi;
@@ -542,7 +542,7 @@ outs_line(moreline)     /* ¦L¥X¤@¯ë¤º®e */
   char buf[ANSILINELEN];
   off_t ret;
 
-  /* ¡°³B²z¤Ş¥ÎªÌ & ¤Ş¨¥ */
+  /* â€»è™•ç†å¼•ç”¨è€… & å¼•è¨€ */
 
   ptr = str = moreline->data;
 
@@ -551,25 +551,25 @@ outs_line(moreline)     /* ¦L¥X¤@¯ë¤º®e */
   ch3 = str[2];
   last_ansi_code[0] = '\0';
 
-  if ((ch1 == '\241' && ch2 == '\260') ||   /* ¡° ==> ¤Ş¨¥ªÌ */
+  if ((ch1 == '\241' && ch2 == '\260') ||   /* â€» ==> å¼•è¨€è€… */
     (ch1 == QUOTE_CHAR3 && ch2 == QUOTE_CHAR3 && ch3 == QUOTE_CHAR1))
   {
     ansi = 1;
     strcpy(last_ansi_code, COLOR_MORE_QUOTE);
     outs(last_ansi_code);
   }
-  /* ¤Ş¨¥ */
+  /* å¼•è¨€ */
   else if ((ch2 == ' ') && (ch1 == QUOTE_CHAR1 || ch1 == QUOTE_CHAR2))
   {
     ansi = 1;
     strcpy(last_ansi_code, (ch3 == QUOTE_CHAR1 || ch3 == QUOTE_CHAR2) ?
       COLOR_MORE_QUOTE2 : COLOR_MORE_QUOTE3);
-    outs(last_ansi_code);   /* ¤Ş¥Î¤@¼h/¤G¼h¤£¦PÃC¦â */
+    outs(last_ansi_code);   /* å¼•ç”¨ä¸€å±¤/äºŒå±¤ä¸åŒé¡è‰² */
   }
   else
     ansi = 0;
 
-  /* ­pºâ°¾²¾¤Î¨ú±o³Ì«á ANSI Code*/
+  /* è¨ˆç®—åç§»åŠå–å¾—æœ€å¾Œ ANSI Code*/
 
   if (moreline->more_offset)
   {
@@ -618,7 +618,7 @@ outs_line(moreline)     /* ¦L¥X¤@¯ë¤º®e */
 
   ret = ptr - str;
 
-  /* ¦L¥X¤º®e */
+  /* å°å‡ºå…§å®¹ */
 
   if (hunt[0])
   {
@@ -636,7 +636,7 @@ outs_line(moreline)     /* ¦L¥X¤@¯ë¤º®e */
          break;
       }
 
-      /* buf ªÅ¶¡¤£°÷ */
+      /* buf ç©ºé–“ä¸å¤  */
       if (buf + ANSILINELEN - 1 <= ptr2 + (ptr1 - ptr) + (len + 7))
         break;
 
@@ -696,13 +696,13 @@ outs_line(moreline)     /* ¦L¥X¤@¯ë¤º®e */
 ------------------------------------------------------------------------------
 :src/maple/more.c - outs_header()
 
-/* ­×§ï´T«×¤j, ½Ğ¾ã­Ó¨ç¦¡´«±¼ */
+/* ä¿®æ”¹å¹…åº¦å¤§, è«‹æ•´å€‹å‡½å¼æ›æ‰ */
 
 static char header1[LINE_HEADER][LEN_AUTHOR1] = STR_HEADER;
 static char header2[LINE_HEADER][LEN_AUTHOR2] = STR_HEADER2;
 
 static void
-outs_header(moreline, header_len)       /* ¦L¥XÀÉÀY */
+outs_header(moreline, header_len)       /* å°å‡ºæª”é ­ */
   MORELINE *moreline;
   int header_len;
 {
@@ -711,7 +711,7 @@ outs_header(moreline, header_len)       /* ¦L¥XÀÉÀY */
 
   buf = moreline->data;
 
-  /* ³B²zÀÉÀY */
+  /* è™•ç†æª”é ­ */
 
   for (i = 0; i < LINE_HEADER; i++)
   {
@@ -722,7 +722,7 @@ outs_header(moreline, header_len)       /* ¦L¥XÀÉÀY */
     {
       word = buf + header_len;
 
-      /* §@ªÌ/¬İªO ÀÉÀY¦³¤GÄæ¡A¯S§O³B²z */
+      /* ä½œè€…/çœ‹æ¿ æª”é ­æœ‰äºŒæ¬„ï¼Œç‰¹åˆ¥è™•ç† */
       if (i == 0 &&
         ((ptr = strstr(word, str_post1)) || (ptr = strstr(word, str_post2))))
       {
@@ -737,7 +737,7 @@ outs_header(moreline, header_len)       /* ¦L¥XÀÉÀY */
       }
       else
       {
-        /* ¨ä¥LÀÉÀY³£¥u¦³¤@Äæ */
+        /* å…¶ä»–æª”é ­éƒ½åªæœ‰ä¸€æ¬„ */
         prints(COLOR5 " %s " COLOR6 "%-*.*s\033[m",
           header1[i], d_cols + 72, d_cols + 72, word, str_ransi);
       }
@@ -746,14 +746,14 @@ outs_header(moreline, header_len)       /* ¦L¥XÀÉÀY */
     }
   }
 
-  /* ¦pªG¤£¬OÀÉÀY¡A´N·í¤@¯ë¤å¦r¦L¥X */
+  /* å¦‚æœä¸æ˜¯æª”é ­ï¼Œå°±ç•¶ä¸€èˆ¬æ–‡å­—å°å‡º */
   outs_line(buf);
 }
 
 ------------------------------------------------------------------------------
 :src/maple/more.c - outs_footer()
 
-/* ­×§ï´T«×¤j, ½Ğ¾ã­Ó¨ç¦¡´«±¼ */
+/* ä¿®æ”¹å¹…åº¦å¤§, è«‹æ•´å€‹å‡½å¼æ›æ‰ */
 
 static void
 outs_footer(moreline, lino, fsize)
@@ -781,7 +781,7 @@ outs_footer(moreline, lino, fsize)
 }
 
 ------------------------------------------------------------------------------
-/* ¾ã­Ó¨ç¦¡´«±¼, §ó°Ê´T«×¤j */
+/* æ•´å€‹å‡½å¼æ›æ‰, æ›´å‹•å¹…åº¦å¤§ */
 :src/maple/more.c - more()
 
 int
@@ -794,18 +794,18 @@ more(fpath, footer)
   struct stat st;
   char *str;
   int i;
-  int shift;            /* ÁÙ»İ­n©¹¤U²¾°Ê´X¦C */
-  int lino;             /* ¥Ø«e line number */
-  int header_len;       /* ÀÉÀYªºªø«×¡A¦P®É¤]¬O¯¸¤º/¯¸¥~«Hªº°Ï§O */
-  int key;              /* «öÁä */
-  int cmd;              /* ¤¤Â_®É©Ò«öªºÁä */
-  int fsize;            /* ÀÉ®×¤j¤p */
-  int hunt_index;       /* ·j´M¯Á¤Ş */
+  int shift;            /* é‚„éœ€è¦å¾€ä¸‹ç§»å‹•å¹¾åˆ— */
+  int lino;             /* ç›®å‰ line number */
+  int header_len;       /* æª”é ­çš„é•·åº¦ï¼ŒåŒæ™‚ä¹Ÿæ˜¯ç«™å…§/ç«™å¤–ä¿¡çš„å€åˆ¥ */
+  int key;              /* æŒ‰éµ */
+  int cmd;              /* ä¸­æ–·æ™‚æ‰€æŒ‰çš„éµ */
+  int fsize;            /* æª”æ¡ˆå¤§å° */
+  int hunt_index;       /* æœå°‹ç´¢å¼• */
   int curr_refresh;
-  /* ¨C 32 ¦C¬°¤@­Ó block¡A°O¿ı¦¹ block ªº offset */
+  /* æ¯ 32 åˆ—ç‚ºä¸€å€‹ blockï¼Œè¨˜éŒ„æ­¤ block çš„ offset */
   static off_t block[MAXBLOCK];
-  off_t header_end;     /* ÀÉÀYµ²§ô */
-  off_t header_end2;    /* ÀÉÀY¤À¹j½u */
+  off_t header_end;     /* æª”é ­çµæŸ */
+  off_t header_end2;    /* æª”é ­åˆ†éš”ç·š */
 
   if (!(fp = fopen(fpath, "r")))
     return -1;
@@ -837,15 +837,15 @@ more(fpath, footer)
     shift = strlen(str);
     foff += shift;
 
-    /* Åª¥XÀÉ®×²Ä¤@¦C¡A¨Ó§PÂ_¯¸¤º«HÁÙ¬O¯¸¥~«H */
+    /* è®€å‡ºæª”æ¡ˆç¬¬ä¸€åˆ—ï¼Œä¾†åˆ¤æ–·ç«™å…§ä¿¡é‚„æ˜¯ç«™å¤–ä¿¡ */
     if (i == 0)
     {
       header_len =
         !memcmp(str, str_author1, LEN_AUTHOR1) ? LEN_AUTHOR1 :
-        /* ¡u§@ªÌ:¡vªí¯¸¤º¤å³¹ */
+        /* ã€Œä½œè€…:ã€è¡¨ç«™å…§æ–‡ç«  */
         !memcmp(str, str_author2, LEN_AUTHOR2) ? LEN_AUTHOR2 :
-        /* ¡uµo«H¤H:¡vªíÂà«H¤å³¹ */
-        0;                              /* ¨S¦³ÀÉÀY */
+        /* ã€Œç™¼ä¿¡äºº:ã€è¡¨è½‰ä¿¡æ–‡ç«  */
+        0;                              /* æ²’æœ‰æª”é ­ */
     }
 
     if (i >= (header_len - 2))
@@ -879,13 +879,13 @@ more(fpath, footer)
 
   fclose(fp);
 
-  /* Âk¹s */
+  /* æ­¸é›¶ */
   flast = foff = fimage;
 
   lino = key = cmd = 0;
   memset(&block, 0, sizeof(off_t) * MAXBLOCK);
 
-  if (hunt[0])      /* ¦b xxxx_browse() ½Ğ¨D·j´M¦r¦ê */
+  if (hunt[0])      /* åœ¨ xxxx_browse() è«‹æ±‚æœå°‹å­—ä¸² */
   {
     str_lowest(hunt, hunt);
     shift = HUNT_MASK | HUNT_START;
@@ -900,10 +900,10 @@ more(fpath, footer)
     if (more_line(&moreline, foff, 0))
     {
       /* ------------------------------------------------- */
-      /* ¦L¥X¤@¦Cªº¤å¦r                                    */
+      /* å°å‡ºä¸€åˆ—çš„æ–‡å­—                                    */
       /* ------------------------------------------------- */
 
-      /* ­º­¶«e´X¦C¤~»İ­n³B²zÀÉÀY */
+      /* é¦–é å‰å¹¾åˆ—æ‰éœ€è¦è™•ç†æª”é ­ */
       if (foff <= fimage + header_end)
         outs_header(&moreline, header_len);
       else
@@ -921,19 +921,19 @@ more(fpath, footer)
       outc('\n');
 
       /* ------------------------------------------------- */
-      /* ¨Ì shift ¨Ó¨M©w°Ê§@                               */
+      /* ä¾ shift ä¾†æ±ºå®šå‹•ä½œ                               */
       /* ------------------------------------------------- */
 
-      /* itoc.030303.µù¸Ñ: shift ¦b¦¹ªº·N¸q
-         >0: ÁÙ»İ­n©¹¤U²¾´X¦æ
-         <0: ÁÙ»İ­n©¹¤W²¾´X¦æ
-         =0: µ²§ô³o­¶¡Aµ¥«İ¨Ï¥ÎªÌ«öÁä */
+      /* itoc.030303.è¨»è§£: shift åœ¨æ­¤çš„æ„ç¾©
+         >0: é‚„éœ€è¦å¾€ä¸‹ç§»å¹¾è¡Œ
+         <0: é‚„éœ€è¦å¾€ä¸Šç§»å¹¾è¡Œ
+         =0: çµæŸé€™é ï¼Œç­‰å¾…ä½¿ç”¨è€…æŒ‰éµ */
 
       if (curr_refresh)
         shift--;
-      else if (shift > 0)       /* ÁÙ­n¤U²¾ shift ¦C */
+      else if (shift > 0)       /* é‚„è¦ä¸‹ç§» shift åˆ— */
       {
-        /* ¥u¦³¦b­è¶i more¡A²Ä¤@¦¸¦L²Ä¤@­¶®É¤~¥i¯à lino <= b_lines */
+        /* åªæœ‰åœ¨å‰›é€² moreï¼Œç¬¬ä¸€æ¬¡å°ç¬¬ä¸€é æ™‚æ‰å¯èƒ½ lino <= b_lines */
         if (lino >= b_lines)
           scroll();
 
@@ -942,30 +942,30 @@ more(fpath, footer)
         if ((lino % 32 == 0) && ((i = lino >> 5) < MAXBLOCK))
           block[i] = foff - fimage;
 
-        if (shift & END_MASK)       /* «ö End Áä */
+        if (shift & END_MASK)       /* æŒ‰ End éµ */
         {
           if (!(shift & END_MORE_MASK))
             flast += more_line(&moreline, flast, 1);
         }
-        else if (shift & HUNT_MASK)     /* ¦r¦ê·j´M */
+        else if (shift & HUNT_MASK)     /* å­—ä¸²æœå°‹ */
         {
-          if (shift & HUNT_NEXT)    /* «ö n ·j´M¤U¤@µ§ */
+          if (shift & HUNT_NEXT)    /* æŒ‰ n æœå°‹ä¸‹ä¸€ç­† */
           {
             flast += more_line(&moreline, flast, 1);
-            /* ¤@§ä¨ì´N°±©ó¸Ó¦C */
+            /* ä¸€æ‰¾åˆ°å°±åœæ–¼è©²åˆ— */
             if (str_sub(&moreline.data[hunt_index], hunt))
               shift = 0;
           }
-          else          /* «ö / ¶}©l·j´M */
+          else          /* æŒ‰ / é–‹å§‹æœå°‹ */
           {
-            /* ­Y¦b²Ä¤G­¶¥H«á§ä¨ì¡A¤@§ä¨ì´N°±©ó¸Ó¦C¡F
-               ­Y¦b²Ä¤@­¶§ä¨ì¡A¥²¶·µ¥¨ìÅª§¹²Ä¤@­¶¤~¯à°±¤î */
+            /* è‹¥åœ¨ç¬¬äºŒé ä»¥å¾Œæ‰¾åˆ°ï¼Œä¸€æ‰¾åˆ°å°±åœæ–¼è©²åˆ—ï¼›
+               è‹¥åœ¨ç¬¬ä¸€é æ‰¾åˆ°ï¼Œå¿…é ˆç­‰åˆ°è®€å®Œç¬¬ä¸€é æ‰èƒ½åœæ­¢ */
             if (shift & HUNT_START)
             {
               if (lino > b_lines)
                 flast += more_line(&moreline, flast, 1);
 
-              /* ®³±¼ HUNT_START ¨Ã¥[¤W HUNT_FOUND */
+              /* æ‹¿æ‰ HUNT_START ä¸¦åŠ ä¸Š HUNT_FOUND */
               if (str_sub(&moreline.data[hunt_index], hunt))
                 shift ^= HUNT_START | HUNT_FOUND;
             }
@@ -982,7 +982,7 @@ more(fpath, footer)
           shift--;
         }
       }
-      else if (shift < 0)       /* ÁÙ­n¤W²¾ -shift ¦C */
+      else if (shift < 0)       /* é‚„è¦ä¸Šç§» -shift åˆ— */
       {
         shift++;
 
@@ -991,8 +991,8 @@ more(fpath, footer)
           move(b_lines, 0);
           clrtoeol();
 
-          /* ³Ñ¤U b_lines+shift ¦C¬O rscroll¡Aoffsect ¥h¥¿½T¦ì¸m¡F
-             ³o¸Ìªº i ¬OÁ`¦@­n shift ªº¦C¼Æ */
+          /* å‰©ä¸‹ b_lines+shift åˆ—æ˜¯ rscrollï¼Œoffsect å»æ­£ç¢ºä½ç½®ï¼›
+             é€™è£¡çš„ i æ˜¯ç¸½å…±è¦ shift çš„åˆ—æ•¸ */
 
           for (i += b_lines; i > 0; i--)
             more_line(&moreline, foff, 0);
@@ -1000,9 +1000,9 @@ more(fpath, footer)
       }
     }
 
-    if (foff >= fend)   /* ¤w¸gÅª§¹¥ş³¡ªºÀÉ®× */
+    if (foff >= fend)   /* å·²ç¶“è®€å®Œå…¨éƒ¨çš„æª”æ¡ˆ */
     {
-      /* ­Õ­Y¬O«ö End ²¾¨ì³Ì«á¤@­¶¡A¨º»ò°±¯d¦b 100% ¦Ó¤£µ²§ô¡F§_«h¤@«ßµ²§ô */
+      /* å€˜è‹¥æ˜¯æŒ‰ End ç§»åˆ°æœ€å¾Œä¸€é ï¼Œé‚£éº¼åœç•™åœ¨ 100% è€Œä¸çµæŸï¼›å¦å‰‡ä¸€å¾‹çµæŸ */
       //if (!(shift & END_MASK))
       //  break;
       if (!(footer))
@@ -1011,15 +1011,15 @@ more(fpath, footer)
       shift = 0;
     }
 
-    if (shift)          /* ÁÙ»İ­nÄ~ÄòÅª¸ê®Æ */
+    if (shift)          /* é‚„éœ€è¦ç¹¼çºŒè®€è³‡æ–™ */
       continue;
 
     if (curr_refresh)
       curr_refresh = 0;
 
     /* ------------------------------------------------- */
-    /* ¨ì¦¹¦L§¹©Ò»İªº shift ¦C¡A±µ¤U¨Ó¦L¥X footer ¨Ãµ¥«İ */
-    /* ¨Ï¥ÎªÌ«öÁä                                        */
+    /* åˆ°æ­¤å°å®Œæ‰€éœ€çš„ shift åˆ—ï¼Œæ¥ä¸‹ä¾†å°å‡º footer ä¸¦ç­‰å¾… */
+    /* ä½¿ç”¨è€…æŒ‰éµ                                        */
     /* ------------------------------------------------- */
 
 re_key:
@@ -1054,23 +1054,23 @@ re_key:
 
     else if (key == KEY_PGUP || key == Ctrl('B') || key == KEY_DEL)
     {
-      /* itoc.010324: ¨ì¤F³Ì¶}©l¦A¤W±²ªí¥ÜÂ÷¶}¡A
-         ¨Ã¦^¶Ç 'k' (keymap[] ©w¸q¤W¤@½g) */
+      /* itoc.010324: åˆ°äº†æœ€é–‹å§‹å†ä¸Šæ²è¡¨ç¤ºé›¢é–‹ï¼Œ
+         ä¸¦å›å‚³ 'k' (keymap[] å®šç¾©ä¸Šä¸€ç¯‡) */
 
       if (lino <= b_lines)
       {
     cmd = 'k';
     break;
       }
-      /* ³Ì¦h¥u¯à¤W±²¨ì¤@¶}©l */
+      /* æœ€å¤šåªèƒ½ä¸Šæ²åˆ°ä¸€é–‹å§‹ */
       i = PAGE_SCROLL + 1 - lino;
       shift = BMAX(-PAGE_SCROLL, i);
     }
 
     else if (key == KEY_UP)
     {
-      /* itoc.010324: ¨ì¤F³Ì¶}©l¦A¤W±²ªí¥ÜÂ÷¶}¡A
-         ¨Ã¦^¶Ç 'k' (keymap[] ©w¸q¤W¤@½g) */
+      /* itoc.010324: åˆ°äº†æœ€é–‹å§‹å†ä¸Šæ²è¡¨ç¤ºé›¢é–‹ï¼Œ
+         ä¸¦å›å‚³ 'k' (keymap[] å®šç¾©ä¸Šä¸€ç¯‡) */
       if (lino <= b_lines)
       {
         cmd = 'k';
@@ -1086,7 +1086,7 @@ re_key:
 
     else if (key == KEY_HOME || key == '0')
     {
-      if (lino <= b_lines)  /* ¤w¸g¦b³Ì¶}©l¤F */
+      if (lino <= b_lines)  /* å·²ç¶“åœ¨æœ€é–‹å§‹äº† */
     shift = 0;
       else
     shift = -b_lines;
@@ -1094,19 +1094,19 @@ re_key:
 
     else if (key == '/' || key == 'n')
     {
-      /* ¦pªG«ö n «o¥¼¿é¤J¹L·j´M¦r¦ê¡A¨º»òµø¦P«ö / */
+      /* å¦‚æœæŒ‰ n å»æœªè¼¸å…¥éæœå°‹å­—ä¸²ï¼Œé‚£éº¼è¦–åŒæŒ‰ / */
       if (key == 'n' && hunt[0])
       {
         shift = HUNT_MASK | HUNT_NEXT;
       }
       else
       {
-        if (vget(b_lines, 0, "·j´M(ÃöÁä¦r)¡G", hunt, sizeof(hunt), DOECHO))
+        if (vget(b_lines, 0, "æœå°‹(é—œéµå­—)ï¼š", hunt, sizeof(hunt), DOECHO))
         {
           str_lowest(hunt, hunt);
           shift = HUNT_MASK | HUNT_START;
         }
-        else                /* ¨ú®ø·j´M */
+        else                /* å–æ¶ˆæœå°‹ */
         {
           hunt[0] = '\0';
           foff = flast;
@@ -1118,7 +1118,7 @@ re_key:
       }
     }
 
-    else if (key == 'C')    /* Thor.980405: more ®É¥i¦s¤J¼È¦sÀÉ */
+    else if (key == 'C')    /* Thor.980405: more æ™‚å¯å­˜å…¥æš«å­˜æª” */
     {
       FILE *fp;
       if (fp = tbf_open())
@@ -1126,7 +1126,7 @@ re_key:
         f_suck(fp, fpath);
         fclose(fp);
       }
-      shift = 0;      /* ­«Ã¸ footer */
+      shift = 0;      /* é‡ç¹ª footer */
     }
     else if (key == KEY_TAB)
     {
@@ -1216,41 +1216,41 @@ re_key:
       shift = 0;
     }
 
-    else        /* ¨ä¥LÁä³£¬O¨Ï¥ÎªÌ¤¤Â_ */
+    else        /* å…¶ä»–éµéƒ½æ˜¯ä½¿ç”¨è€…ä¸­æ–· */
     {
-      /* itoc.041006: ¨Ï¥ÎªÌ¤¤Â_ªº«öÁä­n > 0 (¦Ó KEY_LEFT ¬O < 0) */
+      /* itoc.041006: ä½¿ç”¨è€…ä¸­æ–·çš„æŒ‰éµè¦ > 0 (è€Œ KEY_LEFT æ˜¯ < 0) */
       cmd = (key > 0) ? key : 'q';
       break;
     }
 
     /* ------------------------------------------------- */
-    /* ¨Ï¥ÎªÌ¤w«öÁä¡A­Y break «hÂ÷¶}°j°é¡F§_«h¨Ì·Ó shift */
-    /* ªººØÃş (¥ç§Y«öÁäªººØÃş) ¦Ó°µ¤£¦Pªº°Ê§@            */
+    /* ä½¿ç”¨è€…å·²æŒ‰éµï¼Œè‹¥ break å‰‡é›¢é–‹è¿´åœˆï¼›å¦å‰‡ä¾ç…§ shift */
+    /* çš„ç¨®é¡ (äº¦å³æŒ‰éµçš„ç¨®é¡) è€Œåšä¸åŒçš„å‹•ä½œ            */
     /* ------------------------------------------------- */
 
-    if (shift > 0)          /* ·Ç³Æ¤U²¾ shift ¦C */
+    if (shift > 0)          /* æº–å‚™ä¸‹ç§» shift åˆ— */
     {
-      if (shift < (HUNT_MASK | HUNT_START)) /* ¤@¯ë¤U²¾ */
+      if (shift < (HUNT_MASK | HUNT_START)) /* ä¸€èˆ¬ä¸‹ç§» */
       {
-        /* itoc.041114.µù¸Ñ:
-           ¥Ø¼Ğ¬O¨q¥X lino-b_lines+1+shift ~ lino+shift ¦Cªº¤º®e¡G
-           ´N¥u­n²M footer §Y¥i¡A¨ä¥Lªº´N¥æµ¹«e­±´`§Ç¦L shift ¦Cªºµ{¦¡ */
+        /* itoc.041114.è¨»è§£:
+           ç›®æ¨™æ˜¯ç§€å‡º lino-b_lines+1+shift ~ lino+shift åˆ—çš„å…§å®¹ï¼š
+           å°±åªè¦æ¸… footer å³å¯ï¼Œå…¶ä»–çš„å°±äº¤çµ¦å‰é¢å¾ªåºå° shift åˆ—çš„ç¨‹å¼ */
 
         move(b_lines, 0);
         clrtoeol();
 
         /* itoc.041116:
-            End ªº§@ªk¨ä¹ê©M¤@¯ë¤U²¾¥i¥H¬O§¹¥ş¤@¼Ëªº¡A¦ı¬O¦pªG¹J¨ì¶Wªø¤å³¹®É¡A
-            ·|³y¦¨«e­±´`§Ç¦L shift ¦Cªºµ{¦¡´N±o¤@ª½Â½¡Aª½¨ì§ä¨ì³Ì«á¤@­¶¡A³o¼Ë
-            ·|°µ¤Ó¦h outs_line() ¥Õ¤u¡A
-            ©Ò¥H¦b¦¹¯S§OÀË¬d¶Wªø¤å³¹®É¡A´N¥ı¥h§ä³Ì«á¤@­¶©Ò¦b */
+            End çš„ä½œæ³•å…¶å¯¦å’Œä¸€èˆ¬ä¸‹ç§»å¯ä»¥æ˜¯å®Œå…¨ä¸€æ¨£çš„ï¼Œä½†æ˜¯å¦‚æœé‡åˆ°è¶…é•·æ–‡ç« æ™‚ï¼Œ
+            æœƒé€ æˆå‰é¢å¾ªåºå° shift åˆ—çš„ç¨‹å¼å°±å¾—ä¸€ç›´ç¿»ï¼Œç›´åˆ°æ‰¾åˆ°æœ€å¾Œä¸€é ï¼Œé€™æ¨£
+            æœƒåšå¤ªå¤š outs_line() ç™½å·¥ï¼Œ
+            æ‰€ä»¥åœ¨æ­¤ç‰¹åˆ¥æª¢æŸ¥è¶…é•·æ–‡ç« æ™‚ï¼Œå°±å…ˆå»æ‰¾æœ€å¾Œä¸€é æ‰€åœ¨ */
 
-        /* ÁÙ¦³¤@°ï¨SÅª¹L¡A¤~¯S§O³B²z */
+        /* é‚„æœ‰ä¸€å †æ²’è®€éï¼Œæ‰ç‰¹åˆ¥è™•ç† */
         if ((shift & END_MASK) && (fsize - (foff - fimage) >= MORE_BUFSIZE))
         {
           int totallino = lino;
 
-          /* ¥ıÅª¨ì³Ì«á¤@¦C¬İ¬İ¥ş³¡¦³´X¦C */
+          /* å…ˆè®€åˆ°æœ€å¾Œä¸€åˆ—çœ‹çœ‹å…¨éƒ¨æœ‰å¹¾åˆ— */
           while (more_line(&moreline, foff, 0))
           {
             totallino++;
@@ -1258,7 +1258,7 @@ re_key:
               block[i] = foff - fimage;
           }
 
-          /* ¥ı¦ì²¾¨ì¤W¤@­Ó block ªº§Àºİ */
+          /* å…ˆä½ç§»åˆ°ä¸Šä¸€å€‹ block çš„å°¾ç«¯ */
           i = (totallino - b_lines) >> 5;
           if (i >= MAXBLOCK)
             i = MAXBLOCK - 1;
@@ -1266,7 +1266,7 @@ re_key:
           flast = foff = fimage + block[i];
           i = i << 5;
 
-          /* ¦A±q¤W¤@­Ó block ªº§Àºİ¦ì²¾¨ì totallino-b_lines+1 ¦C */
+          /* å†å¾ä¸Šä¸€å€‹ block çš„å°¾ç«¯ä½ç§»åˆ° totallino-b_lines+1 åˆ— */
           for (i = totallino - b_lines - i; i > 0; i--)
             more_line(&moreline, foff, 0);
 
@@ -1277,33 +1277,33 @@ re_key:
       }
       else
       {
-        /* '/' ±qÀY¶}©l·j´M */
+        /* '/' å¾é ­é–‹å§‹æœå°‹ */
         lino = 0;
         flast = foff = fimage;
         clear();
       }
     }
-    else if (shift < 0)         /* ·Ç³Æ¤W²¾ -shift ¦C */
+    else if (shift < 0)         /* æº–å‚™ä¸Šç§» -shift åˆ— */
     {
-      if (shift > -b_lines) /* ¤W±²¼Æ¦C */
+      if (shift > -b_lines) /* ä¸Šæ²æ•¸åˆ— */
       {
         lino += shift;
 
-        /* itoc.041114.µù¸Ñ: ¥Ø¼Ğ¬O¨q¥X lino-b_lines+1 ~ lino ¦Cªº¤º®e¡G
-          1. ¥ı±qÀY¦ì²¾¨ì lino-b_lines+1 ¦C
-          2. ¨ä¤¤¦³ b_lines+shift ¦C¬O¤£ÅÜªº¤º®e¡A¥Î rscroll ¹F¦¨
-          3. ¦b«e­±ªº outs_line() ªº¦a¤è¦L¥X -shift ¦C
-          4. ³Ì«á¦A¦ì²¾­è¤~ rscroll ªº¦C¼Æ
+        /* itoc.041114.è¨»è§£: ç›®æ¨™æ˜¯ç§€å‡º lino-b_lines+1 ~ lino åˆ—çš„å…§å®¹ï¼š
+          1. å…ˆå¾é ­ä½ç§»åˆ° lino-b_lines+1 åˆ—
+          2. å…¶ä¸­æœ‰ b_lines+shift åˆ—æ˜¯ä¸è®Šçš„å…§å®¹ï¼Œç”¨ rscroll é”æˆ
+          3. åœ¨å‰é¢çš„ outs_line() çš„åœ°æ–¹å°å‡º -shift åˆ—
+          4. æœ€å¾Œå†ä½ç§»å‰›æ‰ rscroll çš„åˆ—æ•¸
         */
 
-        /* ¥ı¦ì²¾¨ì¤W¤@­Ó block ªº§Àºİ */
+        /* å…ˆä½ç§»åˆ°ä¸Šä¸€å€‹ block çš„å°¾ç«¯ */
         i = (lino - b_lines) >> 5;
         if (i >= MAXBLOCK)
           i = MAXBLOCK - 1;
         foff = fimage + block[i];
         i = i << 5;
 
-        /* ¦A±q¤W¤@­Ó block ªº§Àºİ¦ì²¾¨ì lino-b_lines+1 ¦C */
+        /* å†å¾ä¸Šä¸€å€‹ block çš„å°¾ç«¯ä½ç§»åˆ° lino-b_lines+1 åˆ— */
         for (i = lino - b_lines - i; i > 0; i--)
           more_line(&moreline, foff, 0);
 
@@ -1319,8 +1319,8 @@ re_key:
       }
       else          /* Home */
       {
-        /* itoc.041226.µù¸Ñ: ¥Ø¼Ğ¬O¨q¥X 1 ~ b_lines ¦Cªº¤º®e¡G
-           §@ªk´N¬O¥ş³¡³£Âk¹s¡A±qÀY¦A¦L b_lines ¦C§Y¥i */
+        /* itoc.041226.è¨»è§£: ç›®æ¨™æ˜¯ç§€å‡º 1 ~ b_lines åˆ—çš„å…§å®¹ï¼š
+           ä½œæ³•å°±æ˜¯å…¨éƒ¨éƒ½æ­¸é›¶ï¼Œå¾é ­å†å° b_lines åˆ—å³å¯ */
 
         clear();
 
@@ -1329,36 +1329,36 @@ re_key:
         shift = b_lines;
       }
     }
-    else                /* ­«Ã¸ footer ¨Ã re-key */
+    else                /* é‡ç¹ª footer ä¸¦ re-key */
     {
       move(b_lines, 0);
       clrtoeol();
       goto re_key;
     }
-  } /* °j°éªºµ²§ô */
+  } /* è¿´åœˆçš„çµæŸ */
 
   /* --------------------------------------------------- */
-  /* ÀÉ®×¤w¸g¨q§¹ (cmd = 0) ©Î ¨Ï¥ÎªÌ¤¤Â_ (cmd != 0)     */
+  /* æª”æ¡ˆå·²ç¶“ç§€å®Œ (cmd = 0) æˆ– ä½¿ç”¨è€…ä¸­æ–· (cmd != 0)     */
   /* --------------------------------------------------- */
 
   free(fimage);
 
-  if (!cmd) /* ÀÉ®×¥¿±`¨q§¹¡A­n³B²z footer */
+  if (!cmd) /* æª”æ¡ˆæ­£å¸¸ç§€å®Œï¼Œè¦è™•ç† footer */
   {
-    if (footer)     /* ¦³ footer */
+    if (footer)     /* æœ‰ footer */
     {
       if (footer != (char *) -1)
         outf(footer);
       else
         outs(str_ransi);
     }
-    else        /* ¨S¦³ footer ­n vmsg() */
+    else        /* æ²’æœ‰ footer è¦ vmsg() */
     {
-      /* lkchu.981201: ¥ı²M¤@¦¸¥H§K­«Å|Åã¥Ü */
+      /* lkchu.981201: å…ˆæ¸…ä¸€æ¬¡ä»¥å…é‡ç–Šé¡¯ç¤º */
       move(b_lines, 0);
       clrtoeol();
 
-      if (vmsg(NULL) == 'C') /* Thor.990204: ¯S§Oª`·N­Y¦^¶Ç 'C' ªí¥Ü¼È¦sÀÉ */
+      if (vmsg(NULL) == 'C') /* Thor.990204: ç‰¹åˆ¥æ³¨æ„è‹¥å›å‚³ 'C' è¡¨ç¤ºæš«å­˜æª” */
       {
         FILE *fp;
 
@@ -1370,16 +1370,16 @@ re_key:
       }
     }
   }
-  else      /* ¨Ï¥ÎªÌ¤¤Â_¡Aª½±µÂ÷¶} */
+  else      /* ä½¿ç”¨è€…ä¸­æ–·ï¼Œç›´æ¥é›¢é–‹ */
     outs(str_ransi);
 
   hunt[0] = '\0';
 
-  /* Thor.990204: Åıkey¥i¦^¶Ç¦Ümore¥~ */
+  /* Thor.990204: è®“keyå¯å›å‚³è‡³moreå¤– */
   return cmd;
 }
 ------------------------------------------------------------------------------
 
 --
-[1;36m=[37m[[36m¡É[37m:[33m¡[37mİ¢¨[m¢©¡[1;33mİ[37m:[36m¡É [31mOrigin[37m ]|[[m  [0;31m°[1mÊ[1m¤[0;31mO[0;31m®[1mÖ[1m¤[0;31mß [1mcpu.tfcis.org  [37m]|[¡[33mİ£»¡[mİ[1;36m¡É[37m:][36m=[m
-[1;36m=[0m[[1;36m¡Ç[37m:[33m¡[30mİ¢ª[m¢¬¡[1;33mİ[37m:[36m¡Ç [31mAuthor[m ]|[[1m     cszone.twbbs.org     [m]|[¡[1;33mİ[30m¡[37m´¡[30mİ[36m¡Ç[37m:[m][1;36m=[m
+[1;36m=[37m[[36mï¹[37m:[33m?[37mæ‘ƒ?[mâ—£?[1;33m?[37m:[36mï¹ [31mOrigin[37m ]|[[m  [0;31m?[1m?[1m?[0;31mO[0;31m?[1m?[1m?[0;31m?[1mcpu.tfcis.org  [37m]|[?[33mæŸèªª[m?[1;36mï¹[37m:][36m=[m
+[1;36m=[0m[[1;36mï¹Š[37m:[33m?[30mæ‘ƒ?[mâ•±?[1;33m?[37m:[36mï¹Š [31mAuthor[m ]|[[1m     cszone.twbbs.org     [m]|[?[1;33m?[30m?[37mæ’[30m?[36mï¹Š[37m:[m][1;36m=[m

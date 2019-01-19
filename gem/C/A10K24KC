@@ -1,27 +1,27 @@
-§@ªÌ: itoc (©_©Çªº¼ÊºÙ) ¬İªO: plan
-¼ĞÃD: [¥\¯à] Åã¥Ü«H½c¨Ï¥ÎªÅ¶¡
-®É¶¡: 2004/09/10 Fri 10:32:16                           Updated: 2005/04/20
+ä½œè€…: itoc (å¥‡æ€ªçš„æš±ç¨±) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] é¡¯ç¤ºä¿¡ç®±ä½¿ç”¨ç©ºé–“
+æ™‚é–“: 2004/09/10 Fri 10:32:16                           Updated: 2005/04/20
 
-¡° ¤Ş­z¡mallean.bbs@micro.bio.ncue.edu.tw (allean)¡n¤§»Ê¨¥¡G
->      ¥i§_¦b¤W­±ªº¼ĞÃD,·s¼W¨Ï¥ÎªÌ«H½c¨Ï¥Î¶qªº¸ê°T©O ?
+â€» å¼•è¿°ã€Šallean.bbs@micro.bio.ncue.edu.tw (allean)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>      å¯å¦åœ¨ä¸Šé¢çš„æ¨™é¡Œ,æ–°å¢ä½¿ç”¨è€…ä¿¡ç®±ä½¿ç”¨é‡çš„è³‡è¨Šå‘¢ ?
 
-: theme.h §R°£ [s]¡B[x]¡B[X] ¨Ã¼W¥[ %s
+: theme.h åˆªé™¤ [s]ã€[x]ã€[X] ä¸¦å¢åŠ  %s
 
-- #define NECKER_MBOX "[¡ö]Â÷¶} ... [s]±H«H [x]Âà¿ı [X]Âà¹F [h]»¡©ú\n" \
-+ #define NECKER_MBOX "[¡ö]Â÷¶} ... [h]»¡©ú (%d ½g¡B%d KB)\n" \
+- #define NECKER_MBOX "[â†]é›¢é–‹ ... [s]å¯„ä¿¡ [x]è½‰éŒ„ [X]è½‰é” [h]èªªæ˜\n" \
++ #define NECKER_MBOX "[â†]é›¢é–‹ ... [h]èªªæ˜ (%d ç¯‡ã€%d KB)\n" \
 
 : mail.c:mbox_head()
 
-+ static int MboxKB;       /* ¨Ï¥Î®e¶q */
++ static int MboxKB;       /* ä½¿ç”¨å®¹é‡ */
 
 static int
 mbox_head(xo)
   XO *xo;
 {
-  if (HAS_STATUS(STATUS_BIFF))  /* ¤@¶i¤J«H½c´N®³±¼ STATUS_BIFF */
+  if (HAS_STATUS(STATUS_BIFF))  /* ä¸€é€²å…¥ä¿¡ç®±å°±æ‹¿æ‰ STATUS_BIFF */
     cutmp->status ^= STATUS_BIFF;
 
-  vs_head("¶l¥ó¿ï³æ", str_site);
+  vs_head("éƒµä»¶é¸å–®", str_site);
 - prints(NECKER_MBOX, d_cols, "");
 + prints(NECKER_MBOX, xo->max, MboxKB, d_cols, "");
   return mbox_body(xo);
@@ -34,11 +34,11 @@ mbox_init(xo)
   XO *xo;
 {
   xo_load(xo, sizeof(HDR));
-+ MboxKB = mbox_totalsize(xo->dir) >> 10;       /* ´«¦¨ KB */
++ MboxKB = mbox_totalsize(xo->dir) >> 10;       /* æ›æˆ KB */
   return mbox_head(xo);
 }
 
-: mail.c:mbox_totalsize() ·s¼W©ó mbox_init() ¤§«e
+: mail.c:mbox_totalsize() æ–°å¢æ–¼ mbox_init() ä¹‹å‰
 
 static int
 mbox_totalsize(folder)
@@ -80,13 +80,13 @@ mbox_totalsize(folder)
 
 ------------------------------------
 
-  ¦pªG¦³°µ [¥\¯à] mail.c ­­¨î­Ó¤H«H½c®e¶q
-  ¨º»ò±µµÛÁÙ¥i¥H³o¼Ë§ï¡A§â¤W­­Åã¥Ü¥X¨Ó
+  å¦‚æœæœ‰åš [åŠŸèƒ½] mail.c é™åˆ¶å€‹äººä¿¡ç®±å®¹é‡
+  é‚£éº¼æ¥è‘—é‚„å¯ä»¥é€™æ¨£æ”¹ï¼ŒæŠŠä¸Šé™é¡¯ç¤ºå‡ºä¾†
 
-: theme.h §R°£«ü¥O»¡©ú
+: theme.h åˆªé™¤æŒ‡ä»¤èªªæ˜
 
-- #define NECKER_MBOX "[¡ö]Â÷¶} ... [h]»¡©ú (%d ½g¡B%d KB)\n" \
-+ #define NECKER_MBOX "[h]»¡©ú (%d/%d ½g¡B%d/%d KB)\n" \
+- #define NECKER_MBOX "[â†]é›¢é–‹ ... [h]èªªæ˜ (%d ç¯‡ã€%d KB)\n" \
++ #define NECKER_MBOX "[h]èªªæ˜ (%d/%d ç¯‡ã€%d/%d KB)\n" \
 
 : mail.c:mbox_head()
 
@@ -102,4 +102,4 @@ mbox_totalsize(folder)
 +   d_cols, "");
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mpc512-2.EE.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mpc512-2.EE.NCTU.edu.tw[37m ç™¼è¡¨[m

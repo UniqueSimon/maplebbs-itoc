@@ -1,19 +1,19 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: [°İ] Ãö©óguest
-®É¶¡: 2004/03/01 Mon 00:37:50                           Updated: 2004/02/29
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: [å•] é—œæ–¼guest
+æ™‚é–“: 2004/03/01 Mon 00:37:50                           Updated: 2004/02/29
 
-¡° ¤Ş­z¡mcentric (centric)¡n¤§»Ê¨¥¡G
-> ¡° ¤Ş­z¡mchance.bbs@chance.twbbs.org (°j­·¦B¶­)¡n¤§»Ê¨¥¡G
-> > ­n«ç»ò¼Ë¤~¯à©Ş±¼ guest, Åı³o­Ó¯¸¨S¦³guest,¤]¤£¯àµù¥Uguest©O?
-> °®¯Ü³]©w¸T¤î¤W¯¸´N¦n¤F©ã..
+â€» å¼•è¿°ã€Šcentric (centric)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> â€» å¼•è¿°ã€Šchance.bbs@chance.twbbs.org (è¿´é¢¨å†°é›)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> > è¦æ€éº¼æ¨£æ‰èƒ½æ‹”æ‰ guest, è®“é€™å€‹ç«™æ²’æœ‰guest,ä¹Ÿä¸èƒ½è¨»å†Šguestå‘¢?
+> ä¹¾è„†è¨­å®šç¦æ­¢ä¸Šç«™å°±å¥½äº†æŠ¼..
 
 : bbsd.c:login_user()
 
   move(b_lines, 0);
-- outs("   ¡° °ÑÆ[±b¸¹¡G\033[1;32m" STR_GUEST "\033[m"
--   "  ¥Ó½Ğ·s±b¸¹¡G\033[1;31m" STR_NEW "\033[m");
-+ outs("   ¡° ¥»¯¸¤£¶}©ñ \033[1;32m" STR_GUEST "\033[m °ÑÆ["
-+   "  ¥Ó½Ğ·s±b¸¹¡G\033[1;31m" STR_NEW "\033[m");
+- outs("   â€» åƒè§€å¸³è™Ÿï¼š\033[1;32m" STR_GUEST "\033[m"
+-   "  ç”³è«‹æ–°å¸³è™Ÿï¼š\033[1;31m" STR_NEW "\033[m");
++ outs("   â€» æœ¬ç«™ä¸é–‹æ”¾ \033[1;32m" STR_GUEST "\033[m åƒè§€"
++   "  ç”³è«‹æ–°å¸³è™Ÿï¼š\033[1;31m" STR_NEW "\033[m");
 
   ...
   ...
@@ -26,14 +26,14 @@
 -       continue;
 -     }
 -     logattempt(' ', content);
--     cuser.userlevel = 0; /* Thor.981207: ©È¤H¶Ãª±, ±j¨î¼g¦^cuser.userlevel */
+-     cuser.userlevel = 0; /* Thor.981207: æ€•äººäº‚ç©, å¼·åˆ¶å¯«å›cuser.userlevel */
 
 -     cuser.ufo = UFO_DEFAULT_GUEST;
--     break;    /* Thor.980917: µù¸Ñ: cuser ok! */
-+     vmsg("©êºp¡A¥»¯¸¤£¶}©ñ " STR_GUEST " °ÑÆ[");
+-     break;    /* Thor.980917: è¨»è§£: cuser ok! */
++     vmsg("æŠ±æ­‰ï¼Œæœ¬ç«™ä¸é–‹æ”¾ " STR_GUEST " åƒè§€");
 +     continue;
     }
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

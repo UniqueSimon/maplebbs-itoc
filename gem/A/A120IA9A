@@ -1,23 +1,23 @@
-�o�H�H: guessi.bbs@bbs.wretch.cc (�S) �ݪO: itoc
-��  �D: Re: �аݷs���U���b��?
-�o�H��: �L�W�p�� (2006/03/04 Sat 00:49:28)                Updated: 2006/03/04
+發信人: guessi.bbs@bbs.wretch.cc (沒) 看板: itoc
+標  題: Re: 請問新註冊的帳號?
+發信站: 無名小站 (2006/03/04 Sat 00:49:28)                Updated: 2006/03/04
 
-�� �ޭz�mronaldun (Ronald)�n���ʨ��G
-> �аݷs���U���b���|�brecord��log�O���O����?
-> �Y��, ���аݬO����{���έp��?
+※ 引述《ronaldun (Ronald)》之銘言：
+> 請問新註冊的帳號會在record或log板有記錄嗎?
+> 若有, 那請問是那支程式統計的?
 
 : src/util/account.c
 
 +   system("cat run/usies | grep APPLY > run/apply.log");
-+   sprintf(title, "%s�C����U�ϥΪ̰O��", date);
++   sprintf(title, "%s每日註冊使用者記錄", date);
 +   keeplog("run/apply.log", BN_SECURITY, title, 2);
 
-    sprintf(title, "%s�峹�g�Ʋέp", date);
+    sprintf(title, "%s文章篇數統計", date);
     keeplog(FN_RUN_POST_LOG, BN_SECURITY, title, 2);
 
 --
-[1;30m�ҧL�̤����������δc���G���D�̤��B�g�l�~�h�Q���ΧL�h�Q�k�L�̤��������D�g�l[m
-[1;30m�������o�w�ӥΤ���H���W�ӦӤ����Ӭ����̬O�ֱ��H�Ҽֱ��H�̫h���i�o�ө�ѤU[m
-[1;30m�o�N�Ʃ|�����Ʃ|�k���N�x�~���W�N�x�~�k���H��§�B�����H�����H�s�d�_���ԳӥH[m
-[1;30m��§�B���D�`[37m�L�W[30m�����p�ѤU����ګJ���Y��u���U���N�ۻ��Ѧa�ۦX�H�����S����[m
-[1;30m���O�Ӧۧ��l��W�W��J���ҥ�N�����i�H���pĴ�D��[37mbbs.ee.ndhu.edu.tw[30m��[m
+[1;30m夫兵者不祥之器物或惡之故有道者不處君子居則貴左用兵則貴右兵者不祥之器非君子[m
+[1;30m之器不得已而用之恬淡為上勝而不美而美之者是樂殺人夫樂殺人者則不可得志於天下[m
+[1;30m矣吉事尚左凶事尚右偏將軍居左上將軍居右言以喪禮處之殺人之眾以哀悲泣之戰勝以[m
+[1;30m喪禮處之道常[37m無名[30m樸雖小天下莫能臣侯王若能守之萬物將自賓天地相合以降甘露民莫[m
+[1;30m之令而自均始制有名名亦既有夫亦將知止知止可以不殆譬道之[37mbbs.ee.ndhu.edu.tw[30m海[m

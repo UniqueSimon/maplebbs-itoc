@@ -1,12 +1,12 @@
-§@ªÌ: itoc (¯}¸Ñ¶´Åé¤~¬O¤ý¹D¡I) ¬ÝªO: plan
-¼ÐÃD: [¥\¯à] §Úªº³Ì·R±j¨î¥[¤J¬ÝªO
-®É¶¡: 2004/04/16 Fri 14:29:54                           Updated: 2005/07/21
+ä½œè€…: itoc (ç ´è§£éŸŒé«”æ‰æ˜¯çŽ‹é“ï¼) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] æˆ‘çš„æœ€æ„›å¼·åˆ¶åŠ å…¥çœ‹æ¿
+æ™‚é–“: 2004/04/16 Fri 14:29:54                           Updated: 2005/07/21
 
-  §Úªº³Ì·R±j¨î¥[¤J¯¸ªø«ü©wªº¬ÝªO¦b¸m³»
+  æˆ‘çš„æœ€æ„›å¼·åˆ¶åŠ å…¥ç«™é•·æŒ‡å®šçš„çœ‹æ¿åœ¨ç½®é ‚
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  ¥ý§â¤¶­±§ï¦¨¦³¸m³»ªº¥\¯à
+  å…ˆæŠŠä»‹é¢æ”¹æˆæœ‰ç½®é ‚çš„åŠŸèƒ½
 
 : modes.h
 
@@ -47,9 +47,9 @@ xo_cursor(ch, pagemax, num, pageno, pos, redraw)
 + xo_top = 0;
   switch (ch)
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  ¨M©wÅý­þ¨Ç¬ÝªO¸m³»
+  æ±ºå®šè®“å“ªäº›çœ‹æ¿ç½®é ‚
 
 : xover.c:xo_load()
 
@@ -62,13 +62,13 @@ xo_cursor(ch, pagemax, num, pageno, pos, redraw)
 +   {
 +     MF mf;
 
-+     /* ²Ä¤@­ÓªO¬O sysop ªO */
++     /* ç¬¬ä¸€å€‹æ¿æ˜¯ sysop æ¿ */
 +     mf.mftype = MF_BOARD;
 +     strcpy(mf.xname, "sysop");
 +     memcpy(xo_pool + xo_top * recsiz, &mf, recsiz);
 +     xo_top++;
 
-+     /* ¦pªG¬OªO¥D¡A²Ä¤G­ÓªO¬O bm ªO */
++     /* å¦‚æžœæ˜¯æ¿ä¸»ï¼Œç¬¬äºŒå€‹æ¿æ˜¯ bm æ¿ */
 +     if (HAS_PERM(PERM_BM))
 +     {
 +       mf.mftype = MF_BOARD;
@@ -81,11 +81,11 @@ xo_cursor(ch, pagemax, num, pageno, pos, redraw)
     fstat(fd, &st);
     max = st.st_size / recsiz;
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  ¨ä¥L¤p²Ó¸`
+  å…¶ä»–å°ç´°ç¯€
 
-: favor.c:mf_move()  ¸m³»ªº¬ÝªO¤£¯à³Q²¾°Ê
+: favor.c:mf_move()  ç½®é ‚çš„çœ‹æ¿ä¸èƒ½è¢«ç§»å‹•
 
   MF *mf;
   char *dir, buf[40];
@@ -98,4 +98,4 @@ xo_cursor(ch, pagemax, num, pageno, pos, redraw)
   mf = (MF *) xo_pool + (pos - xo->top);
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mpc512-2.EE.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mpc512-2.EE.NCTU.edu.tw[37m ç™¼è¡¨[m

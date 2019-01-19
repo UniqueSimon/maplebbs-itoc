@@ -1,12 +1,12 @@
-µo«H¤H: amaki.bbs@luna.twbbs.org (¤ÈÄ±¦Ï) ¬ÝªO: plan
-¼Ð  ÃD: Re: [­×§ï]§â.USR©ñ¤Jshm¸Ì
-µo«H¯¸: ¤ë¤U©]·Q (2003/12/17 Wed 02:43:23)                Updated: 2005/03/18
+ç™¼ä¿¡äºº: amaki.bbs@luna.twbbs.org (åˆè¦ºç¾Š) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [ä¿®æ”¹]æŠŠ.USRæ”¾å…¥shmè£¡
+ç™¼ä¿¡ç«™: æœˆä¸‹å¤œæƒ³ (2003/12/17 Wed 02:43:23)                Updated: 2005/03/18
 
-¡° ¤Þ­z¡mamaki (¤ÈÄ±¦Ï)¡n¤§»Ê¨¥¡G
->   2. Â²¤Æ¾ã²zusernoªº¤u§@¡AÅÜ¦¨¥u»Ý­n¼g¤@¤äÂ²³æªºutility§Y¥i§¹¤u(À³¸Ó«Ü¦n¼g¡A
->      ´N¬O¶}±ÒshmµM«á¶}©l³v¤@§â.USRªº¦ì¸m¶ñ¤J.ACCT¸Ì¡A¥u¦³¤£¥¿½Tªº¤~­n§ï)¡C
+â€» å¼•è¿°ã€Šamaki (åˆè¦ºç¾Š)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>   2. ç°¡åŒ–æ•´ç†usernoçš„å·¥ä½œï¼Œè®Šæˆåªéœ€è¦å¯«ä¸€æ”¯ç°¡å–®çš„utilityå³å¯å®Œå·¥(æ‡‰è©²å¾ˆå¥½å¯«ï¼Œ
+>      å°±æ˜¯é–‹å•Ÿshmç„¶å¾Œé–‹å§‹é€ä¸€æŠŠ.USRçš„ä½ç½®å¡«å…¥.ACCTè£¡ï¼Œåªæœ‰ä¸æ­£ç¢ºçš„æ‰è¦æ”¹)ã€‚
 
-  ©ñ¦bcrontab¸Ì©w´Á¶]¡A¤£­n¨C¤Ñ¶]¡A³o«Ü¾ÞµwºÐªº-_-;;;
+  æ”¾åœ¨crontabè£¡å®šæœŸè·‘ï¼Œä¸è¦æ¯å¤©è·‘ï¼Œé€™å¾ˆæ“ç¡¬ç¢Ÿçš„-_-;;;
 
 /*-------------------------------------------------------*/
 /* util/checkUSERNO.c   ( NTHU CS MapleBBS Ver 3.00 )    */
@@ -33,10 +33,10 @@ main()
 
   schema_shm = shm_new(SCHESHM_KEY, sizeof(SCACHE));
 
-  fd = open(FN_SCHEMA, O_RDONLY, 0600);  /* amaki.ÁÙ¨S¦³.USR¨º·Ç³Æ­Ë¯¸¤F */
+  fd = open(FN_SCHEMA, O_RDONLY, 0600);  /* amaki.é‚„æ²’æœ‰.USRé‚£æº–å‚™å€’ç«™äº† */
   fstat(fd, &st);
 
-  /* amaki. °²³]¦³300­Ó©t¨àID¥B¨S¦³¥ô¦óªÅ¶¡¥i¥Î */
+  /* amaki. å‡è¨­æœ‰300å€‹å­¤å…’IDä¸”æ²’æœ‰ä»»ä½•ç©ºé–“å¯ç”¨ */
   count = st.st_size + sizeof(SCHEMA) * 300;
   seek_set = sch = (SCHEMA *) malloc(count);
   read(fd, sch, count);
@@ -73,7 +73,7 @@ main()
       read(fd, &cuser, sizeof(cuser));
       sch_set = sch + cuser.userno - 1;
       if (strncmp(sch_set->userid, cuser.userid, strlen(cuser.userid))
-      {                 /* amaki.©t¨àID */
+      {                 /* amaki.å­¤å…’ID */
         dirty = 1;
         do
         {

@@ -1,17 +1,17 @@
-µo«H¤H: cyanofox.bbs@bbs.cs.nchu.edu.tw (§Ú¬O¦n¤H¤@±Úªº:() ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¥[±K¤å³¹¥i¨£¦W³æ
-µo«H¯¸: ¤¤¿³¸ê¬ì (2004/03/19 Fri 00:49:19)                Updated: 2006/05/09
+ç™¼ä¿¡äºº: cyanofox.bbs@bbs.cs.nchu.edu.tw (æˆ‘æ˜¯å¥½äººä¸€æ—çš„:() çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] åŠ å¯†æ–‡ç« å¯è¦‹åå–®
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (2004/03/19 Fri 00:49:19)                Updated: 2006/05/09
 
-¸g¹L¦h¦¸¸òamaki¤j¤j¸ß°İ°Q±Ğ«á¡A§Ú§âºëµØ°Ï¨º½g [¥\¯à] post.c ¥[±K¤å³¹¥i¨£¦W³æ
-µ¹µy°µ­×¥¿¡A¨Ï¤§¥i¥H¾A¥Î©ó·sª©ªºitoc¤jºûÅ@ªºMaple
-©³¤U¬O§Ú¯¸¤W(cmumed.twbbs.org)ªºpatch
-µ¹¤j®a°Ñ¦Ò¡A¤]Åwªï«ü±Ğ ^^"
+ç¶“éå¤šæ¬¡è·Ÿamakiå¤§å¤§è©¢å•è¨æ•™å¾Œï¼Œæˆ‘æŠŠç²¾è¯å€é‚£ç¯‡ [åŠŸèƒ½] post.c åŠ å¯†æ–‡ç« å¯è¦‹åå–®
+çµ¦ç¨åšä¿®æ­£ï¼Œä½¿ä¹‹å¯ä»¥é©ç”¨æ–¼æ–°ç‰ˆçš„itocå¤§ç¶­è­·çš„Maple
+åº•ä¸‹æ˜¯æˆ‘ç«™ä¸Š(cmumed.twbbs.org)çš„patch
+çµ¦å¤§å®¶åƒè€ƒï¼Œä¹Ÿæ­¡è¿æŒ‡æ•™ ^^"
 -----------------------------------------------------------------------------
 
-  ²Ä¤@¦¸^y®É·|¸ß°İ¡A²Ä¤G¦¸^y®É·|¸ß°İ¬O§_­n¸Ñ°£¥[±K¡A
-  ¸Ñ°£«á·|¬å±¼©Ò¦³¥i¨£¦W³æ¡C
+  ç¬¬ä¸€æ¬¡^yæ™‚æœƒè©¢å•ï¼Œç¬¬äºŒæ¬¡^yæ™‚æœƒè©¢å•æ˜¯å¦è¦è§£é™¤åŠ å¯†ï¼Œ
+  è§£é™¤å¾Œæœƒç æ‰æ‰€æœ‰å¯è¦‹åå–®ã€‚
 
-  ¥[±K«á¡A¤é«á­Y¬O¦³»İ­n¦A¥[¤J·sªº¥i¨£¦W³æ¡A½Ğ«ö¤jOÁä¡C
+  åŠ å¯†å¾Œï¼Œæ—¥å¾Œè‹¥æ˜¯æœ‰éœ€è¦å†åŠ å…¥æ–°çš„å¯è¦‹åå–®ï¼Œè«‹æŒ‰å¤§Oéµã€‚
 
 : src/maple/maple.p
 
@@ -23,8 +23,8 @@
 
 /* post.c */
 int cmpchrono(HDR *hdr);
-+ void RefusePal_kill(char *board, HDR *hdr);   /* redfox:¥[±K¤å³¹¥i¨£¦W³æ */
-+ int RefusePal_belong(char *board, HDR *hdr);  /* redfox:¥[±K¤å³¹¥i¨£¦W³æ */
++ void RefusePal_kill(char *board, HDR *hdr);   /* redfox:åŠ å¯†æ–‡ç« å¯è¦‹åå–® */
++ int RefusePal_belong(char *board, HDR *hdr);  /* redfox:åŠ å¯†æ–‡ç« å¯è¦‹åå–® */
 void cancel_post(HDR *hdr);
 
 : pal.c
@@ -33,7 +33,7 @@ void cancel_post(HDR *hdr);
 + int
 belong_pal(pool, max, userno)
 
-: post.c ·s¼W¤U­±¨ç¦¡¡A©ñ¦bcmpchrono()«á­±
+: post.c æ–°å¢ä¸‹é¢å‡½å¼ï¼Œæ”¾åœ¨cmpchrono()å¾Œé¢
 
 static void
 RefusePal_fpath(fpath, board, mode, hdr)
@@ -48,7 +48,7 @@ RefusePal_fpath(fpath, board, mode, hdr)
 
 
 void
-RefusePal_kill(board, hdr)   /* amaki.030322: ¥Î¨Ó¬å¦W³æ¤pÀÉ */
+RefusePal_kill(board, hdr)   /* amaki.030322: ç”¨ä¾†ç åå–®å°æª” */
   char *board;
   HDR *hdr;
 {
@@ -61,7 +61,7 @@ RefusePal_kill(board, hdr)   /* amaki.030322: ¥Î¨Ó¬å¦W³æ¤pÀÉ */
 }
 
 
-int          /* 1:¦b¥i¨£¦W³æ¤W 0:¤£¦b¥i¨£¦W³æ¤W */
+int          /* 1:åœ¨å¯è¦‹åå–®ä¸Š 0:ä¸åœ¨å¯è¦‹åå–®ä¸Š */
 RefusePal_belong(board, hdr)
   char *board;
   HDR *hdr;
@@ -138,7 +138,7 @@ XoBM_Refuse_pal(xo)
   return XO_INIT;
 }
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 : post.c:post_cb[]
 
@@ -150,7 +150,7 @@ XoBM_Refuse_pal(xo)
   {
 +   if (hdr->xmode & POST_RESTRICT)
 +   {
-+     if (vans("¸Ñ°£¤å³¹«O±K·|§R°£¥ş³¡¥i¨£¦W³æ¡A±z½T©w¶Ü(Y/N)¡H[N] ") != 'y')
++     if (vans("è§£é™¤æ–‡ç« ä¿å¯†æœƒåˆªé™¤å…¨éƒ¨å¯è¦‹åå–®ï¼Œæ‚¨ç¢ºå®šå—(Y/N)ï¼Ÿ[N] ") != 'y')
 +     {
 +       move(3 + cur, 7);
 +       outc(post_attr(hdr));
@@ -170,9 +170,9 @@ XoBM_Refuse_pal(xo)
 +   if (hdr->xmode & POST_RESTRICT)
 +     return XoBM_Refuse_pal(xo);
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  ÀË¬d¬O§_¬O§@ªÌ¡BªO¥Dªº³¡¤À§ï¥Î RefusePal_belong()
+  æª¢æŸ¥æ˜¯å¦æ˜¯ä½œè€…ã€æ¿ä¸»çš„éƒ¨åˆ†æ”¹ç”¨ RefusePal_belong()
 
 : post.c:post_reply()
 
@@ -216,9 +216,9 @@ XoBM_Refuse_pal(xo)
 +   if ((head->xmode & POST_RESTRICT) && !RefusePal_belong(currboard, hdr))
       continue;
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  §R°£ÀÉ®×®É­n¶¶«K§R°£¥i¨£¦W³æ
+  åˆªé™¤æª”æ¡ˆæ™‚è¦é †ä¾¿åˆªé™¤å¯è¦‹åå–®
 
 : post.c:post_delabel()
 
@@ -244,7 +244,7 @@ XoBM_Refuse_pal(xo)
 +     if (xmode & POST_RESTRICT)
 +       RefusePal_kill(currboard, hdr);
 
-: util/expire.c: ¦bexpire()«e·s¼W³o¤ä¨ç¦¡
+: util/expire.c: åœ¨expire()å‰æ–°å¢é€™æ”¯å‡½å¼
 
 static void
 RefusePal_fpath(fpath, board, mode, hdr)
@@ -278,5 +278,5 @@ RefusePal_fpath(fpath, board, mode, hdr)
 
 
 --
- [1m[42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m csNCHU.twbbs.org [m
- [1m[44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mcyanofox [30m±q [35m218-170-28-125.HINET-IP.hinet.net [30mµoªí[m
+ [1m[42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m csNCHU.twbbs.org [m
+ [1m[44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mcyanofox [30må¾ [35m218-170-28-125.HINET-IP.hinet.net [30mç™¼è¡¨[m

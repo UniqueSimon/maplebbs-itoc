@@ -1,62 +1,62 @@
-�o�H�H: itoc.bbs@processor.tfcis.org (�֤߰ʤO) �ݪO: plan
-��  �D: �p����Y�\��ҹ������禡
-�o�H��: �ʤO�֤� (2004/10/09 Sat 21:53:46)
+發信人: itoc.bbs@processor.tfcis.org (核心動力) 看板: plan
+標  題: 如何找到某功能所對應的函式
+發信站: 動力核心 (2004/10/09 Sat 21:53:46)
 
-�� �ޭz�mcomfan (���L  �ˤ�)�n���ʨ��G
-> �аݸ�rpg�����t�C���������{���ɮ׬O���ǩO???????
-> ���n�N��  �]���ܷQ���D���ǵ{���ɮ׬O�Mrpg������  �ҥH�N�b�o�̵o�ݤF
+※ 引述《comfan (難過  傷心)》之銘言：
+> 請問跟rpg角色扮演遊戲有關的程式檔案是哪些呢???????
+> 不好意思  因為很想知道哪些程式檔案是和rpg有關的  所以就在這裡發問了
 
-  �n���Y�\��ҹ������禡�A�o�n�a�\�O�A��²�檺�ޥ����G
+  要找到某功能所對應的函式，這要靠功力，最簡單的技巧有：
 
-  ��. grep �j�k
+  Ａ. grep 大法
 
-    �d�ҡG�Q�o���o���峹���禡����
+    範例：想得知發表文章的函式為何
 
-    �w���o���峹�����ɷ|���u�o�O�z���� 99 �g�峹�A�o 123 �ȡC�v�r��
-    % grep "�o�O�z��" ~/src/*/*.c
-    �i�H���b post.c�A�s�� post.c �ɡA�j�M�u�o�O�z���ġv�A�N�i�H���o�q
+    已知發表文章完成時會有「這是您的第 99 篇文章，得 123 銀。」字樣
+    % grep "這是您的" ~/src/*/*.c
+    可以找到在 post.c，編輯 post.c 時，搜尋「這是您的第」，就可以找到這段
 
-    mode = BMIN(wordsnum, spendtime) / 10;    /* �C�Q�r/�� �@�� */
-    prints("�o�O�z���� %d �g�峹�A�o %d �ȡC", ++cuser.numposts, mode);
+    mode = BMIN(wordsnum, spendtime) / 10;    /* 每十字/秒 一元 */
+    prints("這是您的第 %d 篇文章，得 %d 銀。", ++cuser.numposts, mode);
     addmoney(mode);
 
-  ��. ����d *_cb[]
+  Ｂ. 按鍵查 *_cb[]
 
-    �d�ҡG�Q�o���ϥΪ̦W�����y���禡����
+    範例：想得知使用者名單丟水球的函式為何
 
-    �w�� (1) �ϥΪ̦W��{���O�b ulist.c  (�o�i�H�q��ذϨ��v�������D)
-                                         (�Ϊ̤w���ϥΪ̦W�榳�u�ƦC�覡�v�r��
-                                          �� grep �j�k�]�i���O ulist.c)
-         (2) �b�ϥΪ̦W�����y�����O�O w
+    已知 (1) 使用者名單程式是在 ulist.c  (這可以從精華區卷宗分類知道)
+                                         (或者已知使用者名單有「排列方式」字樣
+                                          用 grep 大法也可找到是 ulist.c)
+         (2) 在使用者名單丟水球的指令是 w
 
-    �s�� ulist.c�A�j�M�u_cb[]�v�A�i�H��� ulist_cb[]
-    �̭��� 'w' �N�O������ ulist_write
-    �� ulist.c:ulist_write() �N�O�ϥΪ̦W�����y���禡
+    編輯 ulist.c，搜尋「_cb[]」，可以找到 ulist_cb[]
+    裡面的 'w' 就是對應者 ulist_write
+    而 ulist.c:ulist_write() 就是使用者名單丟水球的函式
 
-  ��. �� help
+  Ｃ. 看 help
 
-    �d�ҡG�Q�o���B�ͦW��R���B�ͪ��禡����
+    範例：想得知朋友名單刪除朋友的函式為何
 
-    �b�B�ͦW�椺�� h�A���R���B�ͳo�g help�A�i�h�@��
+    在朋友名單內按 h，找到刪除朋友這篇 help，進去一看
 
-    �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-    �x��  ��x ��      �� �x  ��                                        �z  �x
-    �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-    �xd     �xpal_delete  �x�R���B��                                        �x
-    �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+    ┌───┬──────┬────────────────────────┐
+    │按  鍵│ 函      式 │  敘                                        述  │
+    ├───┼──────┼────────────────────────┤
+    │d     │pal_delete  │刪除朋友                                        │
+    └───┴──────┴────────────────────────┘
 
-    �M��� grep �j�k�j�M�upal_delete�v�A�Y�i�o��
-    pal.c:pal_delete() �N�O�B�ͦW��R���B�ͪ��禡
+    然後用 grep 大法搜尋「pal_delete」，即可得知
+    pal.c:pal_delete() 就是朋友名單刪除朋友的函式
 
-  ��. �d��ذ�
+  Ｄ. 查精華區
 
-    ��ذϦ��\�h�d�ҡA��@��]�\��
+    精華區有許多範例，找一找也許有
 
-  ��. �b�ݪO�W��
+  Ｅ. 在看板上問
 
-    �p�G�٤����D�A�N�ݤH�a
+    如果還不知道，就問人吧
 
 
 --
- [1;41m�~[44m�q[m Or[1mig[30min[m: [43m Maple-itoc���ʤO�֤� [35;47m processor.tfcis.org [m
- [1;42m�q[45m�}[m A[1mut[30mho[mr: [1;31mitoc [30m�q [36mitoc.Dorm11.NCTU.edu.tw [30m�o��[m
+ [1;41m╭[44m┼[m Or[1mig[30min[m: [43m Maple-itoc˙動力核心 [35;47m processor.tfcis.org [m
+ [1;42m┼[45m┘[m A[1mut[30mho[mr: [1;31mitoc [30m從 [36mitoc.Dorm11.NCTU.edu.tw [30m發表[m

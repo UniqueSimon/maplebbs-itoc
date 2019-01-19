@@ -1,13 +1,13 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¯¸¤º: itoc
-¼ĞÃD: ¤W¯¸®É­Y¿é¤J¤£¦s¦b±b¸¹¡A«hÅã¥Ü¿ù»~
-®É¶¡: 2005/01/07 Fri 10:24:31                           Updated: 2005/01/07
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) ç«™å…§: itoc
+æ¨™é¡Œ: ä¸Šç«™æ™‚è‹¥è¼¸å…¥ä¸å­˜åœ¨å¸³è™Ÿï¼Œå‰‡é¡¯ç¤ºéŒ¯èª¤
+æ™‚é–“: 2005/01/07 Fri 10:24:31                           Updated: 2005/01/07
 
-  ­ì¥»¤W¯¸®É­Y¿é¤J¤£¦s¦b±b¸¹¡A­nµ¥¨ì¿é¤J±K½X«á¤~·|´£¥Ü¿ù»~
-  §ï¦¨¦b¿é¤J§¹¤£¦s¦bªº±b¸¹«á´N´£¥Ü¿ù»~
+  åŸæœ¬ä¸Šç«™æ™‚è‹¥è¼¸å…¥ä¸å­˜åœ¨å¸³è™Ÿï¼Œè¦ç­‰åˆ°è¼¸å…¥å¯†ç¢¼å¾Œæ‰æœƒæç¤ºéŒ¯èª¤
+  æ”¹æˆåœ¨è¼¸å…¥å®Œä¸å­˜åœ¨çš„å¸³è™Ÿå¾Œå°±æç¤ºéŒ¯èª¤
 
 : bbsd.c:login_user()
 
-    else if (str_cmp(uid, STR_GUEST))   /* ¤@¯ë¨Ï¥ÎªÌ */
+    else if (str_cmp(uid, STR_GUEST))   /* ä¸€èˆ¬ä½¿ç”¨è€… */
     {
 +     usr_fpath(fpath, uid, fn_acct);
 +     if (!dashf(fpath))
@@ -16,9 +16,9 @@
 +       continue;
 +     }
 
-      if (!vget(b_lines - 2, 40, "[±zªº±K½X] ", passbuf, PSWDLEN + 1, NOECHO))
-        continue;       /* ¤£¥´±K½X«h¨ú®øµn¤J */
+      if (!vget(b_lines - 2, 40, "[æ‚¨çš„å¯†ç¢¼] ", passbuf, PSWDLEN + 1, NOECHO))
+        continue;       /* ä¸æ‰“å¯†ç¢¼å‰‡å–æ¶ˆç™»å…¥ */
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

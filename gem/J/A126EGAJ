@@ -1,6 +1,6 @@
-�o�H�H: guessi.bbs@bbs.wretch.cc (�S) �ݪO: plan
-��  �D: [�ץ�] �����e���B�z
-�o�H��: �L�W�p�� (2006/05/11 Thu 16:24:18)                Updated: 2006/05/14
+發信人: guessi.bbs@bbs.wretch.cc (沒) 看板: plan
+標  題: [修正] 離站畫面處理
+發信站: 無名小站 (2006/05/11 Thu 16:24:18)                Updated: 2006/05/14
 
 [32m:/src/maple/menu.c:goodbye()[m
 
@@ -8,27 +8,27 @@
 ..
 
 #ifdef LOG_BMW
-  bmw_log();            /* lkchu.981201: ���y�O���B�z */
+  bmw_log();            /* lkchu.981201: 水球記錄處理 */
 #endif
 
-  if (!(cuser.ufo & UFO_MOTD))   /* itoc.000407: �����e���@��²�� */
+  if (!(cuser.ufo & UFO_MOTD))   /* itoc.000407: 離站畫面一併簡化 */
   {
    clear();
-    prints("�˷R�� \033[32m%s(%s)\033[m�A�O�ѤF�A�ץ��{�i %s �j\n"
-      "�H�U�O�z�b���������U��ơG\n",
+    prints("親愛的 \033[32m%s(%s)\033[m，別忘了再度光臨【 %s 】\n"
+      "以下是您在站內的註冊資料：\n",
       cuser.userid, cuser.username, str_site);
     acct_show(&cuser, 0);
     vmsg(NULL);
   }
 
   u_exit("EXIT ");
-[1;33m+[m clear();      /* guessi.060404: ���}�e���M���e���A�קK�ݯd�ӤH��� */
+[1;33m+[m clear();      /* guessi.060404: 離開前先清掉畫面，避免殘留個人資料 */
 [1;33m+[m refresh();
-  exit(0); /* ���y�O���B�ӤH������ �@�ֲM�� �קK�e���ݯd :) */
+  exit(0); /* 水球記錄、個人資料顯示 一併清掉 避免畫面殘留 :) */
 
 --
-[1;30;40m�ҧL�̤����������δc���G���D�̤��B�g�l�~�h�Q���ΧL�h�Q�k�L�̤��������D�g�l[m
-[1;30m�������o�w[37m[30m�ӥΤ���H���W�ӦӤ����Ӭ����̬O�ֱ��H�Ҽֱ��H�̫h���i�o�ө�ѤU
-[m[1;30m�o�N�Ʃ|�����Ʃ|�k���N�x�~���W�N�x�~�k���H��§�B�����H�����H�s�d�_���ԳӥH[m
-[1;30m��§�B���D�`[37m�L�W[30m�����p�ѤU����ګJ���Y��u���U���N�ۻ��Ѧa�ۦX�H�����S����[m
-[1;30m���O�Ӧۧ��l��W�W��J���ҥ�N�����[37m61-231-196-164.dynamic.hinet.net[30m��[m
+[1;30;40m夫兵者不祥之器物或惡之故有道者不處君子居則貴左用兵則貴右兵者不祥之器非君子[m
+[1;30m之器不得已[37m[30m而用之恬淡為上勝而不美而美之者是樂殺人夫樂殺人者則不可得志於天下
+[m[1;30m矣吉事尚左凶事尚右偏將軍居左上將軍居右言以喪禮處之殺人之眾以哀悲泣之戰勝以[m
+[1;30m喪禮處之道常[37m無名[30m樸雖小天下莫能臣侯王若能守之萬物將自賓天地相合以降甘露民莫[m
+[1;30m之令而自均始制有名名亦既有夫亦將知止知止[37m61-231-196-164.dynamic.hinet.net[30m海[m

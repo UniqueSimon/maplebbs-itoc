@@ -1,21 +1,21 @@
-�o�H�H: weiyu.bbs@wretch.twbbs.org (�Ʊ�ڥi�H����) �ݪO: plan
-��  �D: Re: �q���`��
-�o�H��: �L�W�p�� (2004/08/13 Fri 08:46:14)                Updated: 2004/08/16
+發信人: weiyu.bbs@wretch.twbbs.org (希望我可以做到) 看板: plan
+標  題: Re: 歌單總管
+發信站: 無名小站 (2004/08/13 Fri 08:46:14)                Updated: 2004/08/16
 
-�� �ޭz�mimd (�N����)�n���ʨ��G
-> �]�����W�{�b�����F�@��note�O�O�D
-> �i�O�]���L�u���O�D���v��
-> �ҥH�b�h���峹�Y����
-> �|�d�U�@�����
-> �ҥH�Q�ݤ@�U
-> �i�H��note�O�O�D�b�ק�峹�ɤ��n�d�U�����O
-> ���^��@��O�N��_���`
+※ 引述《imd (摸索中)》之銘言：
+> 因為站上現在指派了一個note板板主
+> 可是因為他只有板主之權限
+> 所以在去除文章頭尾時
+> 會留下一行紀錄
+> 所以想問一下
+> 可以讓note板板主在修改文章時不要留下紀錄呢
+> 但回到一般板就恢復正常
 
 : post.c post_edit()
 
   hdr_fpath(fpath, xo->dir, hdr);
 
-- if (HAS_PERM(PERM_ALLBOARD))          /* �����ק� */
+- if (HAS_PERM(PERM_ALLBOARD))          /* 站長修改 */
 + if (HAS_PERM(PERM_ALLBOARD) ||
 +     ((bbstate & STAT_POST) &&
 +      !strcmp(currboard, BN_CAMERA) &&
@@ -23,16 +23,16 @@
   {
 #ifdef HAVE_REFUSEMARK
 
-�����D�o�˥i���i�H...
+不知道這樣可不可以...
 
 --
-[1;34m���ڭ̷Q�n���w�@�ӤH���ɭԡA�O�@�ظձ��A[0m
-    [1;34m���ڭ̶}�l���w�@�ӤH���ɭԡA�O�������H���A[0m
-        [1;34m���ڭ̷Q�n�֦��@�ӤH���ɭԡA�O�t���غت��h�ê��C[0m
-    [1;32m���R�@�ӤH����n�A�٬O�֦��@�ӤH����n�H[0m
+[1;34m當我們想要喜歡一個人的時候，是一種試探，[0m
+    [1;34m當我們開始喜歡一個人的時候，是完全的信任，[0m
+        [1;34m當我們想要擁有一個人的時候，是含有種種的懷疑的。[0m
+    [1;32m那愛一個人比較好，還是擁有一個人比較好？[0m
 --
-[1;30;40m�ҧL�̤����������δc���G���D�̤��B�g�l�~�h�Q���ΧL�h�Q�k�L�̤��������D�g�l[m
-[1;30m�������o�w[37mBBS telnet://wretch.twbbs.org  �}�ӤH�O  �W�� ���γs�p[30m�o�ө�ѤU
-[m[1;30m�o�N�Ʃ|�����Ʃ|�k���N�x�~���W�N�x�~�k���H��§�B�����H�����H�s�d�_���ԳӥH[m
-[1;30m��§�B���D�`[37m�L�W[30m�����p�ѤU����ګJ���Y��u���U���N�ۻ��Ѧa�ۦX�H�����S����[m
-[1;30m���O�Ӧۧ��l��W�W��J���ҥ�N����� [37m218-171-73-16.dynamic.hinet.net[30m��[m
+[1;30;40m夫兵者不祥之器物或惡之故有道者不處君子居則貴左用兵則貴右兵者不祥之器非君子[m
+[1;30m之器不得已[37mBBS telnet://wretch.twbbs.org  開個人板  超快 不用連署[30m得志於天下
+[m[1;30m矣吉事尚左凶事尚右偏將軍居左上將軍居右言以喪禮處之殺人之眾以哀悲泣之戰勝以[m
+[1;30m喪禮處之道常[37m無名[30m樸雖小天下莫能臣侯王若能守之萬物將自賓天地相合以降甘露民莫[m
+[1;30m之令而自均始制有名名亦既有夫亦將知止知止 [37m218-171-73-16.dynamic.hinet.net[30m海[m

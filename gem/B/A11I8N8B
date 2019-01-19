@@ -1,38 +1,38 @@
-µo«H¤H: tsaikd.bbs@bbs.tsaikd.org (¤d¤H±Ù) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD] Ãö©ó­º­¶
-µo«H¯¸: ¦a¤U´cÅ]«° (2005/09/11 Sun 12:39:12)
+ç™¼ä¿¡äºº: tsaikd.bbs@bbs.tsaikd.org (åƒäººæ–¬) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] é—œæ–¼é¦–é 
+ç™¼ä¿¡ç«™: åœ°ä¸‹æƒ¡é­”åŸ (2005/09/11 Sun 12:39:12)
 
-¡° ¤Ş­z¡mFish.bbs@cpu.tfcis.org (³½²Â³½Äø§b§b³½)¡n¤§»Ê¨¥¡G
->     ¦]¬°¦³°õ¦æ bhttpd
->     ©Ò¥H²{¦b¾÷¾¹ªº­º­¶¬O bhttpd ªº­º­¶
->     ¨º§Ú¦pªG§Æ±æ¤@¶i¤J¾÷¾¹ªº­º­¶¬O¨ä¥L­º­¶
->     ¦ì§}­n¬O http://MyAddress/bbs ¤~¶i¤J bhttpd ªº­º­¶
+â€» å¼•è¿°ã€ŠFish.bbs@cpu.tfcis.org (é­šç¬¨é­šè ¢å‘†å‘†é­š)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>     å› ç‚ºæœ‰åŸ·è¡Œ bhttpd
+>     æ‰€ä»¥ç¾åœ¨æ©Ÿå™¨çš„é¦–é æ˜¯ bhttpd çš„é¦–é 
+>     é‚£æˆ‘å¦‚æœå¸Œæœ›ä¸€é€²å…¥æ©Ÿå™¨çš„é¦–é æ˜¯å…¶ä»–é¦–é 
+>     ä½å€è¦æ˜¯ http://MyAddress/bbs æ‰é€²å…¥ bhttpd çš„é¦–é 
 
-  ­º¥ı¡A±N bhttpd §ï port
+  é¦–å…ˆï¼Œå°‡ bhttpd æ”¹ port
 
 : config.h
 
 - #define BHTTP_PORT      80
 + #define BHTTP_PORT      8000
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  ­Y¬O FreeBSD¡A«h³o¼Ë°µ
+  è‹¥æ˜¯ FreeBSDï¼Œå‰‡é€™æ¨£åš
 
-: /etc/service ¥[¤J
+: /etc/service åŠ å…¥
 
 bhttp           8000/tcp    www www-http         #Web BBS
 bhttp           8000/udp    www www-http         #Web BBS
 
-: /etc/inetd.conf ¥[¤J
+: /etc/inetd.conf åŠ å…¥
 
 bhttp   stream  tcp     wait    bbs     /home/bbs/bin/bhttpd    bhttpd -i
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  ­Y¬O Linux¡A«h³o¼Ë°µ
+  è‹¥æ˜¯ Linuxï¼Œå‰‡é€™æ¨£åš
 
-: /etc/xinetd.d/http §ï¦^ apache ªº
+: /etc/xinetd.d/http æ”¹å› apache çš„
 
 service http
 {
@@ -46,7 +46,7 @@ service http
         log_on_sucess   -= HOST PID
 }
 
-: /etc/xinetd.d/bhttp ·s¼W¦¹ÀÉ®×
+: /etc/xinetd.d/bhttp æ–°å¢æ­¤æª”æ¡ˆ
 
 service bhttp
 {
@@ -60,9 +60,9 @@ service bhttp
         server_args     = -i
 }
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  ±µµÛ apache ¥Î vhost¡A¥[¤J³o­Ó³]©w
+  æ¥è‘— apache ç”¨ vhostï¼ŒåŠ å…¥é€™å€‹è¨­å®š
 
 <VirtualHost bbs.tsaikd.org:80>
     DocumentRoot "/var/www/localhost/htdocs"
@@ -70,19 +70,19 @@ service bhttp
     Redirect "/" "http://bbs.tsaikd.org:8000/"
 </VirtualHost>
 
-¶i¨ì http://bbs.tsaikd.org/ ´N·|Âà¦¨ http://bbs.tsaikd.org:8000/
+é€²åˆ° http://bbs.tsaikd.org/ å°±æœƒè½‰æˆ http://bbs.tsaikd.org:8000/
 
-Redirect ´N¬OÂà§}ªº°Ê§@
+Redirect å°±æ˜¯è½‰å€çš„å‹•ä½œ
 
-¬ÛÃöªº³]©w§ä google ·|¤ñ¸û¸Ô²Ó...^_^
-
---
- [7;30;41m¤d        ¤H         ±Ù    KD !![m [1;31m¦a¤U´cÅ]«° [32mtelnet://bbs.tsaikd.org[m
- [1;37;44mK[m [1;37;44mD[melete         ±ş±ş±ş [31m±ş¨ì§A²æ¿Ç¤l "©ñ§¾" !![m
- i    ~~ [1;31m¡´[m     [1;5;33m¢e¢d¢c¢b[m       ¡s¡·    ¡s¡·    ¡s¡· §Ö°k°Ú!!
- l    ~~ ¢«¡Ã¡Ã                  ¢«¡t    ¢«¡t    ¢«¡t
- o   ~ ¡ş¡ı                  ..¡t¡r....¡t¡r....¡t¡r[m
+ç›¸é—œçš„è¨­å®šæ‰¾ google æœƒæ¯”è¼ƒè©³ç´°...^_^
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m ¦¨¤j¸ê°T£»¦a¤U´cÅ]«° [36;47m bbs.tsaikd.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mtsaikd [30m±q [31m140.116.103.204 [30mµoªí[m
+ [7;30;41måƒ        äºº         æ–¬    KD !![m [1;31måœ°ä¸‹æƒ¡é­”åŸ [32mtelnet://bbs.tsaikd.org[m
+ [1;37;44mK[m [1;37;44mD[melete         æ®ºæ®ºæ®º [31mæ®ºåˆ°ä½ è„«è¤²å­ "æ”¾å±" !![m
+ i    ~~ [1;31mâ—[m     [1;5;33mâ–„â–ƒâ–‚â–[m       ï¸¿â—    ï¸¿â—    ï¸¿â— å¿«é€ƒå•Š!!
+ l    ~~ â—¤ï¿£ï¿£                  â—¤ï¹€    â—¤ï¹€    â—¤ï¹€
+ o   ~ ï¼âˆ£                  ..ï¹€ã€‰....ï¹€ã€‰....ï¹€ã€‰[m
+
+--
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m æˆå¤§è³‡è¨ŠË™åœ°ä¸‹æƒ¡é­”åŸ [36;47m bbs.tsaikd.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mtsaikd [30må¾ [31m140.116.103.204 [30mç™¼è¡¨[m

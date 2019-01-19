@@ -1,35 +1,35 @@
-µo«H¤H: whatup.bbs@segaa.com.tw (¦¿·¬º®¤õ¹ï·T¯v) ¬İªO: plan
-¼Ğ  ÃD: [blog] Lyceum system plugin: POP3 Authentication
-µo«H¯¸: ©¯¹B¯ó¤§ÅÊ (2006/05/10 Wed 11:48:43)              Updated: 2006/05/10
+ç™¼ä¿¡äºº: whatup.bbs@segaa.com.tw (æ±Ÿæ¥“æ¼ç«å°æ„çœ ) çœ‹æ¿: plan
+æ¨™  é¡Œ: [blog] Lyceum system plugin: POP3 Authentication
+ç™¼ä¿¡ç«™: å¹¸é‹è‰ä¹‹æˆ€ (2006/05/10 Wed 11:48:43)              Updated: 2006/05/10
 
-    ¡@¡@«e¨¥¡G
-    ¡@¡@¨ä¹ê³o­Ó¬O³]­pµ¹ BBS ¥Îªº¡A¤§«e©ñ¥Xªº lifetype + pop3 »{
-    ÃÒ¡A¤]¬O¬° BBS ³]­pªº¡C²{¦b¦³«Ü¦hªº¯¸¥x±j½Õ¾ã¦X¡A¦Ó³o­Ó plug
-    in ´N¬O±j½ÕÅı BBS ©M Blog §@¾ã¦X¡C§Q¥Î BBS ªº pop3 ¨Ó§@µn¤J
-    ªº»{ÃÒ¡A¨Ã¥B¦Û°Ê²£¥Í·sªº blog site¡C
-
-
-    ¡@¡@»İ¨D¡G
-
-        [*] ¦w¸Ë lyceum ¡C
-        [*] ¦w¸Ë PEAR¡@¡A¦]¬°§Q¥Î¨ì¥Lªº packages ¡C
+    ã€€ã€€å‰è¨€ï¼š
+    ã€€ã€€å…¶å¯¦é€™å€‹æ˜¯è¨­è¨ˆçµ¦ BBS ç”¨çš„ï¼Œä¹‹å‰æ”¾å‡ºçš„ lifetype + pop3 èª
+    è­‰ï¼Œä¹Ÿæ˜¯ç‚º BBS è¨­è¨ˆçš„ã€‚ç¾åœ¨æœ‰å¾ˆå¤šçš„ç«™å°å¼·èª¿æ•´åˆï¼Œè€Œé€™å€‹ plug
+    in å°±æ˜¯å¼·èª¿è®“ BBS å’Œ Blog ä½œæ•´åˆã€‚åˆ©ç”¨ BBS çš„ pop3 ä¾†ä½œç™»å…¥
+    çš„èªè­‰ï¼Œä¸¦ä¸”è‡ªå‹•ç”¢ç”Ÿæ–°çš„ blog siteã€‚
 
 
+    ã€€ã€€éœ€æ±‚ï¼š
 
-    ¡@¡@¦w¸Ë¡G
-    ¡@¡@±N POP3_Authentication.tar.gz ¤U¸ü«á¡A¦A¸ÑÀ£ÁY¦Ü wp-cont
-    ent/systemplugin ¤U¡A¨Ã¥B­×§ï¸Ì­±ªº $host ©M $port §Y¥i°¨¤W
-    ¨Ï¥Î¡C¨ä¤¤ªº $type §A¥i¥H°Ñ¦Ò NET_POP3 ªº source code ¡A¥L¬O
-    ¤ä´©¨ä¥Lªº pop3 server ©Ò³]­pªº¡C°O±o¨ì lyceum system ¸Ì¥h±Ò
-    ¥Î³o­Ó plugin ¡C
+        [*] å®‰è£ lyceum ã€‚
+        [*] å®‰è£ PEARã€€ï¼Œå› ç‚ºåˆ©ç”¨åˆ°ä»–çš„ packages ã€‚
 
 
-    ¡@¡@ª`·N¨Æ¶µ¡G
-    ¡@¡@Admin ¬O¤£¨ü BBS ¸Ì±b¸¹­­¨îªº¡A½Ğ¥Î¦w¸Ë®É©Ò³]©wªº±K½Xµn
-    ¤J¡C
+
+    ã€€ã€€å®‰è£ï¼š
+    ã€€ã€€å°‡ POP3_Authentication.tar.gz ä¸‹è¼‰å¾Œï¼Œå†è§£å£“ç¸®è‡³ wp-cont
+    ent/systemplugin ä¸‹ï¼Œä¸¦ä¸”ä¿®æ”¹è£¡é¢çš„ $host å’Œ $port å³å¯é¦¬ä¸Š
+    ä½¿ç”¨ã€‚å…¶ä¸­çš„ $type ä½ å¯ä»¥åƒè€ƒ NET_POP3 çš„ source code ï¼Œä»–æ˜¯
+    æ”¯æ´å…¶ä»–çš„ pop3 server æ‰€è¨­è¨ˆçš„ã€‚è¨˜å¾—åˆ° lyceum system è£¡å»å•Ÿ
+    ç”¨é€™å€‹ plugin ã€‚
 
 
-    ¡@¡@¦pªG¦³¥ô¦ó°İÃD¡A½Ğ¯d¨¥¡AÁÂÁÂ¡I
+    ã€€ã€€æ³¨æ„äº‹é …ï¼š
+    ã€€ã€€Admin æ˜¯ä¸å— BBS è£¡å¸³è™Ÿé™åˆ¶çš„ï¼Œè«‹ç”¨å®‰è£æ™‚æ‰€è¨­å®šçš„å¯†ç¢¼ç™»
+    å…¥ã€‚
+
+
+    ã€€ã€€å¦‚æœæœ‰ä»»ä½•å•é¡Œï¼Œè«‹ç•™è¨€ï¼Œè¬è¬ï¼
 
 
   ref:
@@ -38,5 +38,5 @@
   [*] http://pear.php.net
   [*] http://www.twkang.net/~whatup/php/POP3_Authentication.tar.gz
 ---
-­ì¤å¦b¡G
+åŸæ–‡åœ¨ï¼š
     http://0rz.net/881kB

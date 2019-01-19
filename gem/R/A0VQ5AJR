@@ -1,21 +1,21 @@
-µo«H¤H: BioStar.bbs@micro.bio.ncue.edu.tw (¼ê´ò¤p¶³³¶) ¬İªO: plan
-¼Ğ  ÃD: [¤å¥ó] ¡]¤­¤ÀÄÁ²Ö¿n¡^µn¤J»Pµn¥X¤H¼Æ MRTG ¹Ïªí
-µo«H¯¸: Àº¤Ñ±^ (Sat, 01 Nov 2003 01:41:28 +0800 (CST))    Updated: 2003/11/01
+ç™¼ä¿¡äºº: BioStar.bbs@micro.bio.ncue.edu.tw (æ¾æ¹–å°é›²é›€) çœ‹æ¿: plan
+æ¨™  é¡Œ: [æ–‡ä»¶] ï¼ˆäº”åˆ†é˜ç´¯ç©ï¼‰ç™»å…¥èˆ‡ç™»å‡ºäººæ•¸ MRTG åœ–è¡¨
+ç™¼ä¿¡ç«™: æ“å¤©å´— (Sat, 01 Nov 2003 01:41:28 +0800 (CST))    Updated: 2003/11/01
 
-¦pªG§Ë¤@­ÓÀÉ®×°O¿ıµn¤Jªº§Ç¸¹...  ¨C¤@¦¸¦³¨Ï¥ÎªÌµn¤J´N²Ö¥[¤W¥h...
-¦pªG§Ú·Qª¾¹D²{¦b A ®É¶¡¨ì B ®É¶¡¤¤¦³¦h¤Ö¦¸µn¤J I ......
-¨º´N¬Oµn¤Jªº§Ç¸¹ªº®t¶Z¡G I = SB - SA ......
-A ®É¶¡¨ì B ®É¶¡½u¤W¤H¼Æ®t¶Z D = LB - LA ......
-½u¤W¤H¼Æ®t¶Zµ¥¤Jµn¤J¦¸¼Æ I ´î±¼µn¥X¦¸¼Æ O¡G L = I - O ......
-O = I - L ......  ¦³ÂI½ÆÂø......
-¤U­±µ{¦¡½X¦pªG¦³¤£«ê·í...  ÁÙ½Ğ¦U¦ì«e½ú¤£§[«ü¥¿...
+å¦‚æœå¼„ä¸€å€‹æª”æ¡ˆè¨˜éŒ„ç™»å…¥çš„åºè™Ÿ...  æ¯ä¸€æ¬¡æœ‰ä½¿ç”¨è€…ç™»å…¥å°±ç´¯åŠ ä¸Šå»...
+å¦‚æœæˆ‘æƒ³çŸ¥é“ç¾åœ¨ A æ™‚é–“åˆ° B æ™‚é–“ä¸­æœ‰å¤šå°‘æ¬¡ç™»å…¥ I ......
+é‚£å°±æ˜¯ç™»å…¥çš„åºè™Ÿçš„å·®è·ï¼š I = SB - SA ......
+A æ™‚é–“åˆ° B æ™‚é–“ç·šä¸Šäººæ•¸å·®è· D = LB - LA ......
+ç·šä¸Šäººæ•¸å·®è·ç­‰å…¥ç™»å…¥æ¬¡æ•¸ I æ¸›æ‰ç™»å‡ºæ¬¡æ•¸ Oï¼š L = I - O ......
+O = I - L ......  æœ‰é»è¤‡é›œ......
+ä¸‹é¢ç¨‹å¼ç¢¼å¦‚æœæœ‰ä¸æ°ç•¶...  é‚„è«‹å„ä½å‰è¼©ä¸åæŒ‡æ­£...
 
-: include/struct.h:·s¼W LOGNUM µ²ºc
+: include/struct.h:æ–°å¢ LOGNUM çµæ§‹
 
 typedef struct
 {
-  int online;                   /* ½u¤W¤H¼Æ */
-  int log_serial;               /* µn¤J§Ç¸¹ */
+  int online;                   /* ç·šä¸Šäººæ•¸ */
+  int log_serial;               /* ç™»å…¥åºè™Ÿ */
 } LOGNUM;
 
 
@@ -26,7 +26,7 @@ typedef struct
 [1;32;40m+ #define FN_LOGNUM       ".LOGNUM"[m
 
 
-: util/showLOGNUM.c:·s¼W³o­ÓÀÉ®×
+: util/showLOGNUM.c:æ–°å¢é€™å€‹æª”æ¡ˆ
 
 #include "bbs.h"
 
@@ -75,7 +75,7 @@ main()
 }
 
 
- ¥ı¶]¤@¦¸ showLOGNUM ¥H¥Í¦¨ .LOGNUM ÀÉ®×......
+ å…ˆè·‘ä¸€æ¬¡ showLOGNUM ä»¥ç”Ÿæˆ .LOGNUM æª”æ¡ˆ......
 
 
 : maple/bbsd.c:utmp_setup()
@@ -88,7 +88,7 @@ main()
 : maple/bbsd.c:utmp_setup()
 
   if (!utmp_new(&utmp))
-    login_abort("\n±z­è­è¿ïªº¦ì¤l¤w¸g³Q¤H±¶¨¬¥ıµn¤F¡A½Ğ¤U¦¸¦A¨Ó§a");
+    login_abort("\næ‚¨å‰›å‰›é¸çš„ä½å­å·²ç¶“è¢«äººæ·è¶³å…ˆç™»äº†ï¼Œè«‹ä¸‹æ¬¡å†ä¾†å§");
 
 [1;32;40m+ rec_get(FN_LOGNUM, &lognum, sizeof(LOGNUM), 0);[m
 [1;32;40m+ lognum.online = ushm->count;[m
@@ -96,28 +96,28 @@ main()
 [1;32;40m+ rec_put(FN_LOGNUM, &lognum, sizeof(LOGNUM), 0, NULL);[m
 
 
-mrtg »P apache ­n¥ı¦w¸Ë¦n......
-½s¿è¤@­Ó mrtg ªº cfg ÀÉ®×...  ¤º®e¦p¤U...
+mrtg èˆ‡ apache è¦å…ˆå®‰è£å¥½......
+ç·¨è¼¯ä¸€å€‹ mrtg çš„ cfg æª”æ¡ˆ...  å…§å®¹å¦‚ä¸‹...
 
 Target[BBS]: `/usr/home/bbs/bin/showLOGNUM`
-MaxBytes[BBS]: 2500                                 # ³q±`¥Î MAXACTIVE
-Title[BBS]: BBS µn¤J»Pµn¥X MRTG ¹Ï¡]³Ìªñ¤­¤ÀÄÁ¤º¡^
-PageTop[BBS]: BBS µn¤J»Pµn¥X MRTG ¹Ï¡]³Ìªñ¤­¤ÀÄÁ¤º¡^
+MaxBytes[BBS]: 2500                                 # é€šå¸¸ç”¨ MAXACTIVE
+Title[BBS]: BBS ç™»å…¥èˆ‡ç™»å‡º MRTG åœ–ï¼ˆæœ€è¿‘äº”åˆ†é˜å…§ï¼‰
+PageTop[BBS]: BBS ç™»å…¥èˆ‡ç™»å‡º MRTG åœ–ï¼ˆæœ€è¿‘äº”åˆ†é˜å…§ï¼‰
 Options[BBS]: gauge, growright
 YLegend[BBS]: BBS OnLine
-ShortLegend[BBS]: ¤H
-WorkDir: /usr/home/mrtg/www/lognum                  # ¦Û­q...
-LegendO[BBS]: µn¥X¤H¼Æ
-LegendI[BBS]: µn¤J¤H¼Æ
+ShortLegend[BBS]: äºº
+WorkDir: /usr/home/mrtg/www/lognum                  # è‡ªè¨‚...
+LegendO[BBS]: ç™»å‡ºäººæ•¸
+LegendI[BBS]: ç™»å…¥äººæ•¸
 Language: big5
 
-¼g¤J¨t²Î crontab ¤¤......  ¤º®eµø±¡ªp¦Ó©w......
+å¯«å…¥ç³»çµ± crontab ä¸­......  å…§å®¹è¦–æƒ…æ³è€Œå®š......
 */5 * * * * root /usr/local/bin/mrtg /usr/local/etc/mrtg/mrtg_bbslog.cfg
 
-½d¨Ò¡G
+ç¯„ä¾‹ï¼š
 http://bbs.bio.ncue.edu.tw/mrtg/lognum/bbs.html
 
 
 --
- [1;41m¢z[44m¢q[m Or[1mig[30min[m: [41m ¹ü¤Æ®v¤j¥Íª«¨t£»§u­·¡E²·¤ë¡EÀº¤Ñ±^ [32;47m micro.bio.ncue.edu.tw [m
- [1;42m¢q[45m¢}[m A[1mut[30mho[mr: [1;33mBioStar [30m±q [35m163.23.212.18 [30mµoªí[m
+ [1;41mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [41m å½°åŒ–å¸«å¤§ç”Ÿç‰©ç³»Ë™åŸé¢¨?çœºæœˆ?æ“å¤©å´— [32;47m micro.bio.ncue.edu.tw [m
+ [1;42mâ”¼[45mâ”˜[m A[1mut[30mho[mr: [1;33mBioStar [30må¾ [35m163.23.212.18 [30mç™¼è¡¨[m

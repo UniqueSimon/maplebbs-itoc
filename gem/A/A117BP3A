@@ -1,10 +1,10 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¯¸¤º: itoc
-¼ĞÃD: Re: ­­¨î¤£­­¦¸¼Æ³sÄò±À¤åªº°İÃD?
-®É¶¡: 2005/04/07 Thu 14:45:59                           Updated: 2005/09/14
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) ç«™å…§: itoc
+æ¨™é¡Œ: Re: é™åˆ¶ä¸é™æ¬¡æ•¸é€£çºŒæ¨æ–‡çš„å•é¡Œ?
+æ™‚é–“: 2005/04/07 Thu 14:45:59                           Updated: 2005/09/14
 
-> ¡÷ blest ±À¡Gptt ¨ººØ30¬í±À¤å¥Î¡÷ªº­n«ç»ò¼gªü¡I
+> â†’ blest æ¨ï¼šptt é‚£ç¨®30ç§’æ¨æ–‡ç”¨â†’çš„è¦æ€éº¼å¯«é˜¿ï¼
 
-  ¦b¤@©w®É¶¡¤º±À¤åÅÜ ¡÷ ¦Ó¥B¤À¼Æ¤£¥[´î
+  åœ¨ä¸€å®šæ™‚é–“å…§æ¨æ–‡è®Š â†’ è€Œä¸”åˆ†æ•¸ä¸åŠ æ¸›
 
 : post.c:post_score()
 
@@ -12,14 +12,14 @@ static int
 post_score(xo)
   XO *xo;
 {
-+ static time_t next = 0;   /* ¤U¦¸¥iµû¤À®É¶¡ */
++ static time_t next = 0;   /* ä¸‹æ¬¡å¯è©•åˆ†æ™‚é–“ */
 
   ...
 
 + if (next < time(NULL))
 + {
 +   next = 1;
-    switch (ans = vans("¡· µû¤À 1)±À¤å 2)³è±ó 3)¦Û©w±À 4)¦Û©w©A¡H[Q] "))
+    switch (ans = vans("â— è©•åˆ† 1)æ¨æ–‡ 2)å”¾æ£„ 3)è‡ªå®šæ¨ 4)è‡ªå®šå‘¸ï¼Ÿ[Q] "))
     {
     ...
     ...
@@ -30,11 +30,11 @@ post_score(xo)
 + else
 + {
 +   next = 0;
-+   verb = "3m¡÷";
++   verb = "3mâ†’";
 + }
 
 
-  if (!vget(b_lines, 0, "½Ğ¿é¤J²z¥Ñ¡G", reason, 50, DOECHO))
+  if (!vget(b_lines, 0, "è«‹è¼¸å…¥ç†ç”±ï¼š", reason, 50, DOECHO))
     return XO_FOOT;
 
   ...
@@ -42,19 +42,19 @@ post_score(xo)
   curraddscore = 0;
 + if (next)
 + {
-    if ((ans - '0') & 0x01)       /* ¥[¤À */
+    if ((ans - '0') & 0x01)       /* åŠ åˆ† */
     {
       if (hdr->score < 35)
         curraddscore = 1;
     }
-    else                          /* ¦©¤À */
+    else                          /* æ‰£åˆ† */
     {
       if (hdr->score > -35)
         curraddscore = -1;
     }
 + }
 
-+ next = time(NULL) + 180;  /* ¨C 180 ¬í¤è¥iµû¤À¤@¦¸ */
++ next = time(NULL) + 180;  /* æ¯ 180 ç§’æ–¹å¯è©•åˆ†ä¸€æ¬¡ */
 
   if (curraddscore)
   {
@@ -65,5 +65,5 @@ post_score(xo)
   }
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

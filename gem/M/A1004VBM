@@ -1,25 +1,25 @@
-�o�H�H: itoc.bbs@wretch.csie.nctu.edu.tw (itoc) �ݪO: plan
-��  �D: Re: [���D] �n��������ݪO�۰ʰŵ�����?
-�o�H��: �L�W�p�� (2004/01/12 Mon 12:24:59)                Updated: 2004/01/12
+發信人: itoc.bbs@wretch.csie.nctu.edu.tw (itoc) 看板: plan
+標  題: Re: [問題] 要怎麼把熱門看板自動剪裁播放?
+發信站: 無名小站 (2004/01/12 Mon 12:24:59)                Updated: 2004/01/12
 
-�� �ޭz�mBlackJoker.bbs@processor.tfcis.org (�³ǧJ)�n���ʨ��G
-> ���L�W�p�����ˤl
-> �ڤw�g�[�˦n�F�����ݪO�Ʀ�O
-> �Q�⥦�۰ʰŵ���10�檺���ʬݪO
+※ 引述《BlackJoker.bbs@processor.tfcis.org (黑傑克)》之銘言：
+> 像無名小站那樣子
+> 我已經加裝好了熱門看板排行板
+> 想把它自動剪裁成10行的活動看板
 
 : camera.c:main()
 
-  [1;44m// �ݧA�n�[�J���ǡA�N��������|�[�i�h [m
-+ mirror("gem/@/@-day", 1);         /* ����Q�j�������D */
-+ mirror("gem/@/@-topmoney", 1);    /* �ȹ��I�Ϋʯ��] */
-+ mirror("gem/@/@-topbrd", 1);      /* �����ݪO�Ʀ�] */
+  [1;44m// 看你要加入哪些，就直接把路徑加進去 [m
++ mirror("gem/@/@-day", 1);         /* 本日十大熱門話題 */
++ mirror("gem/@/@-topmoney", 1);    /* 銀幣富翁封神榜 */
++ mirror("gem/@/@-topbrd", 1);      /* 熱門看板排行榜 */
 
   sprintf(fpath, "gem/brd/%s/@/@note", BN_CAMERA);
   do_gem(BN_CAMERA, fpath);
 
 --
-[1;30m�ҧL�̤����������δc���G���D�̤��B�g�l�~�h�Q���ΧL�h�Q�k�L�̤��������D�g�l[m
-[1;30m�������o�w[37mBBS telnet://wretch.twbbs.org  �}�ӤH�O  �W�� ���γs�p[30m�o�ө�ѤU[m
-[1;30m�o�N�Ʃ|�����Ʃ|�k���N�x�~���W�N�x�~�k���H��§�B�����H�����H�s�d�_���ԳӥH[m
-[1;30m��§�B���D�`[37m�L�W[30m�����p�ѤU����ګJ���Y��u���U���N�ۻ��Ѧa�ۦX�H�����S����[m
-[1;30m���O�Ӧۧ��l��W�W��J���ҥ�N�����i�H���p [37mitoc.Dorm11.NCTU.edu.tw[30m��[m
+[1;30m夫兵者不祥之器物或惡之故有道者不處君子居則貴左用兵則貴右兵者不祥之器非君子[m
+[1;30m之器不得已[37mBBS telnet://wretch.twbbs.org  開個人板  超快 不用連署[30m得志於天下[m
+[1;30m矣吉事尚左凶事尚右偏將軍居左上將軍居右言以喪禮處之殺人之眾以哀悲泣之戰勝以[m
+[1;30m喪禮處之道常[37m無名[30m樸雖小天下莫能臣侯王若能守之萬物將自賓天地相合以降甘露民莫[m
+[1;30m之令而自均始制有名名亦既有夫亦將知止知止可以不殆 [37mitoc.Dorm11.NCTU.edu.tw[30m海[m

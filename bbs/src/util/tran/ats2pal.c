@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/transpal.c                   			 */
 /*-------------------------------------------------------*/
-/* target : SOB ¦Ü Maple 3.02 (¬İªO)¦n¤Í¦W³æÂà´«         */
+/* target : SOB è‡³ Maple 3.02 (çœ‹æ¿)å¥½å‹åå–®è½‰æ›         */
 /* create : 01/09/08                     		 */
 /* update :   /  /                   			 */
 /* author : itoc.bbs@bbs.ee.nctu.edu.tw          	 */
@@ -12,12 +12,12 @@
 
 #if 0
 
-   1. ³]©w OLD_BBSHOME (sob config.h)
-   2. ­×§ï struct FRIEND ©M transfer_pal() transfer_brdpal()
-   3. Âà´«(¬İªO)¦n¤Í¦W³æ¤§«e¡A±z¥²¶·¥ıÂà´«§¹¬İªO¤Î¨Ï¥ÎªÌ¡C
+   1. è¨­å®š OLD_BBSHOME (sob config.h)
+   2. ä¿®æ”¹ struct FRIEND å’Œ transfer_pal() transfer_brdpal()
+   3. è½‰æ›(çœ‹æ¿)å¥½å‹åå–®ä¹‹å‰ï¼Œæ‚¨å¿…é ˆå…ˆè½‰æ›å®Œçœ‹æ¿åŠä½¿ç”¨è€…ã€‚
 
-   ps. ¨Ï¥Î«e½Ğ¥ı¦æ³Æ¥÷¡Ause on ur own risk. µ{¦¡©å¦H½Ğ¥]²[ :p
-   ps. ·PÁÂ lkchu ªº Maple 3.02 for FreeBSD
+   ps. ä½¿ç”¨å‰è«‹å…ˆè¡Œå‚™ä»½ï¼Œuse on ur own risk. ç¨‹å¼æ‹™åŠ£è«‹åŒ…æ¶µ :p
+   ps. æ„Ÿè¬ lkchu çš„ Maple 3.02 for FreeBSD
 
 #endif
 
@@ -66,19 +66,19 @@ transfer_pal(userid)
   char fpath[64], buf[64], friend_userid[80];
   PAL pal;
 
-  usr_fpath(fpath, userid, FN_PAL);         			/* ·sªº¦n¤Í¦W³æ */
+  usr_fpath(fpath, userid, FN_PAL);         			/* æ–°çš„å¥½å‹åå–® */
 
-  /* sob ªº usr ¥Ø¿ı¦³¤À¤j¤p¼g¡A©Ò¥H­n¥ı¨ú±o¤j¤p¼g */
+  /* sob çš„ usr ç›®éŒ„æœ‰åˆ†å¤§å°å¯«ï¼Œæ‰€ä»¥è¦å…ˆå–å¾—å¤§å°å¯« */
   usr_fpath(buf, userid, FN_ACCT);
   if ((fd = open(buf, O_RDONLY)) >= 0)
   {
     read(fd, &acct, sizeof(ACCT));
     close(fd);
   }
-  sprintf(buf, OLD_BBSHOME"/home/%s/overrides", acct.userid);	/* ÂÂªº¦n¤Í¦W³æ */
+  sprintf(buf, OLD_BBSHOME"/home/%s/overrides", acct.userid);	/* èˆŠçš„å¥½å‹åå–® */
 
   if (dashf(fpath))
-    unlink(fpath);      /* ²M±¼­««Ø */
+    unlink(fpath);      /* æ¸…æ‰é‡å»º */
 
   if (!(fp = fopen(buf, "r")))
     return;
@@ -109,11 +109,11 @@ transfer_brdpal(userid)
   char fpath[64], buf[64], friend_userid[80];
   PAL pal;
 
-  brd_fpath(fpath, userid, FN_PAL);				/* ·sªº¬İªO¦n¤Í¦W³æ */
-  sprintf(buf, OLD_BBSHOME"/boards/%s/permlist", userid);	/* ÂÂªº¬İªO¦n¤Í¦W³æ */
+  brd_fpath(fpath, userid, FN_PAL);				/* æ–°çš„çœ‹æ¿å¥½å‹åå–® */
+  sprintf(buf, OLD_BBSHOME"/boards/%s/permlist", userid);	/* èˆŠçš„çœ‹æ¿å¥½å‹åå–® */
 
   if (dashf(fpath))
-    unlink(fpath);              /* ²M±¼­««Ø */
+    unlink(fpath);              /* æ¸…æ‰é‡å»º */
 
   if (!(fp = fopen(buf, "r")))
     return;
@@ -145,8 +145,8 @@ main()
 
   chdir(BBSHOME);
 
-  printf("\n\n[¦n¤Í¦W³æ]\n\n");
-  /* Âà´«¨Ï¥ÎªÌ¦n¤Í¦W³æ */
+  printf("\n\n[å¥½å‹åå–®]\n\n");
+  /* è½‰æ›ä½¿ç”¨è€…å¥½å‹åå–® */
   for (c = 'a'; c <= 'z'; c++)
   {
     sprintf(buf, "usr/%c", c);
@@ -165,8 +165,8 @@ main()
     closedir(dirp);    
   }
 
-  printf("\n\n[ªO¤Í¦W³æ]\n\n");
-  /* Âà´«¬İªO¦n¤Í¦W³æ */
+  printf("\n\n[æ¿å‹åå–®]\n\n");
+  /* è½‰æ›çœ‹æ¿å¥½å‹åå–® */
   if (!(dirp = opendir("brd")))
     return 0;
 

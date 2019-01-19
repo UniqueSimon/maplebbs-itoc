@@ -1,8 +1,8 @@
-µo«H¤H: truck66.bbs@bbs2.ba.ccu.edu.tw (¦Ò¸Õ¡H¨S¦b©Èªºªü) ¬ÝªO: plan
-¼Ð  ÃD: ·Q¼W¥[ª÷»ÈÂà¶×ªº±H«H³qª¾
-µo«H¯¸: »Å¤Ú·s¯¸ (2004/01/06 Tue 22:28:11)                Updated: 2004/10/28
+ç™¼ä¿¡äºº: truck66.bbs@bbs2.ba.ccu.edu.tw (è€ƒè©¦ï¼Ÿæ²’åœ¨æ€•çš„é˜¿) çœ‹æ¿: plan
+æ¨™  é¡Œ: æƒ³å¢žåŠ é‡‘éŠ€è½‰åŒ¯çš„å¯„ä¿¡é€šçŸ¥
+ç™¼ä¿¡ç«™: é…·å·´æ–°ç«™ (2004/01/06 Tue 22:28:11)                Updated: 2004/10/28
 
-    ®¦¡A§Ú¥H¶×´Úµ{¦¡½X·í§@ÂÅ¥»¡A§ï¤F«H¥ó¤ºªº°T®§
+    æ©ï¼Œæˆ‘ä»¥åŒ¯æ¬¾ç¨‹å¼ç¢¼ç•¶ä½œè—æœ¬ï¼Œæ”¹äº†ä¿¡ä»¶å…§çš„è¨Šæ¯
 
 : so/bank.c:x_exchange()
 
@@ -23,10 +23,10 @@
 ...
 ...
 
-    sprintf(buf, "§A¨­¤W¦³ª÷¹ô %d ¤¸,»È¹ô %d ¤¸", cuser.gold, cuser.money);
+    sprintf(buf, "ä½ èº«ä¸Šæœ‰é‡‘å¹£ %d å…ƒ,éŠ€å¹£ %d å…ƒ", cuser.gold, cuser.money);
     vmsg(buf);
 
-+   if (vans("±z¬O§_­n¯d¤U¶×§I°O¿ý(Y/N)¡H[Y] ") != 'n')
++   if (vans("æ‚¨æ˜¯å¦è¦ç•™ä¸‹åŒ¯å…Œè¨˜éŒ„(Y/N)ï¼Ÿ[Y] ") != 'n')
 +   {
 +     char folder[64], fpath[64];
 +     HDR hdr;
@@ -35,22 +35,22 @@
 +     usr_fpath(folder, cuser.userid, fn_dir);
 +     if (fp = fdopen(hdr_stamp(folder, 0, &hdr, fpath), "w"))
 +     {
-+       fprintf(fp, "%s %s (%s)\n¼ÐÃD: ª÷»È¶×§I³qª¾\n®É¶¡: %s\n\n",
++       fprintf(fp, "%s %s (%s)\næ¨™é¡Œ: é‡‘éŠ€åŒ¯å…Œé€šçŸ¥\næ™‚é–“: %s\n\n",
 +         str_author1, cuser.userid, cuser.username, Now());
 
-+       fprintf(fp, "\n±z­ì¥»¨­¤W¦³ª÷¹ô %12d ¤¸¡A»È¹ô %12d ¤¸",
++       fprintf(fp, "\næ‚¨åŽŸæœ¬èº«ä¸Šæœ‰é‡‘å¹£ %12d å…ƒï¼ŒéŠ€å¹£ %12d å…ƒ",
 +         origold, orimoney);
 
 +       if (i)
-+         fprintf(fp, "\n\n±z®³¤F %d ª÷´« %d »È", dollar, dollar * GOLD2MONEY);
++         fprintf(fp, "\n\næ‚¨æ‹¿äº† %d é‡‘æ› %d éŠ€", dollar, dollar * GOLD2MONEY);
 +       else
-+         fprintf(fp, "\n\n±z®³¤F %d »È´« %d ª÷", dollar, dollar / MONEY2GOLD);
++         fprintf(fp, "\n\næ‚¨æ‹¿äº† %d éŠ€æ› %d é‡‘", dollar, dollar / MONEY2GOLD);
 
-+       fprintf(fp, "\n\n±z²{¦b¨­¤W¦³ª÷¹ô %12d ¤¸¡A»È¹ô %12d ¤¸",
++       fprintf(fp, "\n\næ‚¨ç¾åœ¨èº«ä¸Šæœ‰é‡‘å¹£ %12d å…ƒï¼ŒéŠ€å¹£ %12d å…ƒ",
 +         cuser.gold, cuser.money);
 +       fclose(fp);
 
-+       strcpy(hdr.title, "ª÷»È¶×§I³qª¾");
++       strcpy(hdr.title, "é‡‘éŠ€åŒ¯å…Œé€šçŸ¥");
 +       strcpy(hdr.owner, cuser.userid);
 +       rec_add(folder, &hdr, sizeof(HDR));
 +     }
@@ -58,23 +58,23 @@
   }
   else
   {
-    vmsg("¨ú®ø¥æ©ö");
+    vmsg("å–æ¶ˆäº¤æ˜“");
 
   }
   else
   {
-    vmsg("¨ú®ø¥æ©ö");
+    vmsg("å–æ¶ˆäº¤æ˜“");
 
 --
 
-   ½Äªü¡ã¡ã[1;30m¥d¨®[37m¯S§ð¶¤[m¡ã¡ã      [1;33m¡³     [30m¢d¢e¢f¢g¢g¢h¢h¢i¢«[m      ¹Í[1;30m¹Í[m¡ã
-                             [1;33m¡Ã[34m¢i[33m>  [30m¢¨¢i¢i¢i¢i¢i¢i¢i¢«[m        §A¶W[1;30m³t[m¤F¡ã
-     ¨S¦b[1;30m©È[mªº°Õ¡ã¡ã            [1;33m/| [30m¢¨¢i¢i¢i¢i¢i¢i¢i¢«[m          [1;30m§Ö[m°±¨®¡ã¡ã
-                      [30m   [m  ¢¨¢i¢i[47m [1;30m¢[40mi¢i¢i¢i¢i¢i¢i¢«[m   =====
-       ½Ä[1;30m½Ä[m½Ä¡ã¡ã   [30m   [m ¢¨¢i¢i¢i[1;30;47m¢¨[40m¢i¢i¢i¢i¢i¢i¢«[m   =====
-                     ¢¨¢[43mi¢« ¢[mi[1;30;47m¢¨[40m¢i¢i¢[43mi¢«  ¢i[40m¢«[m   =====
-                         [30;43m¢©¢¨[40m¢e¢e¢e¢e¢[43m© ¢¨[40m¢«[m
+   è¡é˜¿ï½žï½ž[1;30må¡è»Š[37mç‰¹æ”»éšŠ[mï½žï½ž      [1;33mâ—‹     [30mâ–ƒâ–„â–…â–†â–†â–‡â–‡â–ˆâ—¤[m      å—¶[1;30må—¶[mï½ž
+                             [1;33mï¿£[34mâ–ˆ[33m>  [30mâ—¢â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ—¤[m        ä½ è¶…[1;30mé€Ÿ[mäº†ï½ž
+     æ²’åœ¨[1;30mæ€•[mçš„å•¦ï½žï½ž            [1;33m/| [30mâ—¢â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ—¤[m          [1;30må¿«[måœè»Šï½žï½ž
+                      [30m   [m  â—¢â–ˆâ–ˆ[47m [1;30m?[40miâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ—¤[m   =====
+       è¡[1;30mè¡[mè¡ï½žï½ž   [30m   [m â—¢â–ˆâ–ˆâ–ˆ[1;30;47mâ—¢[40mâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ—¤[m   =====
+                     â—¢?[43miâ—¤ ?[mi[1;30;47mâ—¢[40mâ–ˆâ–ˆ?[43miâ—¤  â–ˆ[40mâ—¤[m   =====
+                         [30;43mâ—£â—¢[40mâ–„â–„â–„â–„?[43m?â—¢[40mâ—¤[m
 --
-[1;35m¢¨[45m [40m¢©¢¨[45m [40m¢©¢© ¢¨ ¢¨[45m [40m¢© ¢¨[45m [40m¢© [37mOrigin: ¤¤¥¿¤j¾Ç £» ¥øºÞ»Å¤Ú¯¸ bbs2.ba.ccu.edu.tw[0m
-[1;35m¢iùâ ¢iùâ ¢i ¢i ¢i [45mù[40mâ ¢i ¢i [30mAuthor: truck66      ±q       140.123.224.94 µoªí
-[1;37;45m¢ª ¢«¢ª ¢«¢ª ¢« ¢ª ¢« ¢« ¢ª[34m   . [37mo     ¡C  [0;37;45m.¡O    . O   [1;35m  .  ¡E     [37m ¡O¡C[1;37mo  [0;34;45m [1;36m [m
+[1;35mâ—¢[45m [40mâ—£â—¢[45m [40mâ—£â—£ â—¢ â—¢[45m [40mâ—£ â—¢[45m [40mâ—£ [37mOrigin: ä¸­æ­£å¤§å­¸ Ë™ ä¼ç®¡é…·å·´ç«™ bbs2.ba.ccu.edu.tw[0m
+[1;35mâ–ˆâ•£ â–ˆâ•£ â–ˆ â–ˆ â–ˆ [45m?[40m?â–ˆ â–ˆ [30mAuthor: truck66      å¾ž       140.123.224.94 ç™¼è¡¨
+[1;37;45mâ—¥ â—¤â—¥ â—¤â—¥ â—¤ â—¥ â—¤ â—¤ â—¥[34m   . [37mo     ã€‚  [0;37;45m.ï¹’    . O   [1;35m  .  ?     [37m ï¹’ã€‚[1;37mo  [0;34;45m [1;36m [m

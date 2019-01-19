@@ -1,8 +1,8 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (£i·R±¡±s¦u£i) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] »È¦æ¤ä²¼¡Ğ¥i½u¤W¶×¿ú¡C
-µo«H¯¸: ¤¤¿³¸ê¬ì (Tue, 19 Aug 2003 18:00:29 +0800 (CST))  Updated: 2005/03/20
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (Î¾æ„›æƒ…å¾¡å®ˆÎ¾) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] éŠ€è¡Œæ”¯ç¥¨ï¼å¯ç·šä¸ŠåŒ¯éŒ¢ã€‚
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (Tue, 19 Aug 2003 18:00:29 +0800 (CST))  Updated: 2005/03/20
 
-    ¥u­n¦³·sªº¤ä²¼¶i¨Ó¡A·|¹³¦³«H¥ó¤@¼Ëªº¦b¥D¿ï³æ³qª¾¡C
+    åªè¦æœ‰æ–°çš„æ”¯ç¥¨é€²ä¾†ï¼Œæœƒåƒæœ‰ä¿¡ä»¶ä¸€æ¨£çš„åœ¨ä¸»é¸å–®é€šçŸ¥ã€‚
 
 : menu.c:vs_head()
 
@@ -18,27 +18,27 @@
 
   if (HAS_STATUS(STATUS_BIFF))
   {
-    mid = "\033[5;41m ¶l®t¨Ó«ö¹a¤F \033[m";
+    mid = "\033[5;41m éƒµå·®ä¾†æŒ‰éˆ´äº† \033[m";
     spc = 14;
   }
 + else if (dashf(fcheck))
 + {
-+   mid = "\033[5;43m ±z¦³·s¤ä²¼³á \033[m";
++   mid = "\033[5;43m æ‚¨æœ‰æ–°æ”¯ç¥¨å–” \033[m";
 +   spc = 14;
 + }
   else
   {
     if ((spc = strlen(mid)) > len)
 
-: bank.c:x_give() ¤£¯àÂàµ¹ guest¡A¥H§K guest ªºµe­±¤@ª½°{
+: bank.c:x_give() ä¸èƒ½è½‰çµ¦ guestï¼Œä»¥å… guest çš„ç•«é¢ä¸€ç›´é–ƒ
 
-- if (!vget(13, 0, "±z­n§â¿úÂàµ¹½Ö©O¡H", userid, IDLEN + 1, DOECHO))
-+ if (!vget(13, 0, "±z­n§â¿úÂàµ¹½Ö©O¡H", userid, IDLEN + 1, DOECHO) ||
+- if (!vget(13, 0, "æ‚¨è¦æŠŠéŒ¢è½‰çµ¦èª°å‘¢ï¼Ÿ", userid, IDLEN + 1, DOECHO))
++ if (!vget(13, 0, "æ‚¨è¦æŠŠéŒ¢è½‰çµ¦èª°å‘¢ï¼Ÿ", userid, IDLEN + 1, DOECHO) ||
 +   !str_cmp(userid, STR_GUEST))
 
 --
-  ³o·|¦Y I/O
+  é€™æœƒåƒ I/O
 
 --
- [1;42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m bbs.cs.nchu.edu.tw [m
- [1;44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mqazq [30m±q [35m61-216-251-115.HINET-IP.hinet.net [30mµoªí[m
+ [1;42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m bbs.cs.nchu.edu.tw [m
+ [1;44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mqazq [30må¾ [35m61-216-251-115.HINET-IP.hinet.net [30mç™¼è¡¨[m

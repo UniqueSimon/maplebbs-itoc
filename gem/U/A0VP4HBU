@@ -1,10 +1,10 @@
-�@��: itoc (Wesley�O�˴��W) �ݪO: plan
-���D: [�ץ�] �峹Ū��@�b�ɫ� [ ] ��Ū���ӽg�A�h�O�g
-�ɶ�: Sun Oct 19 16:03:42 2003                          Updated: 2004/11/14
+作者: itoc (Wesley是瓦斯狸) 看板: plan
+標題: [修正] 文章讀到一半時按 [ ] 先讀完該篇再去別篇
+時間: Sun Oct 19 16:03:42 2003                          Updated: 2004/11/14
 
-  �b�\Ū�W�L�@�����峹�AŪ��@�b���ɭԫ� [ ]
-  �쥻�|��������g���\Ū�A���h�W/�U�@�g�P�D�D��
-  �令���W/�U�@���쥻�g������A�A�D�D���\Ū
+  在閱讀超過一頁的文章，讀到一半的時候按 [ ]
+  原本會直接停止本篇的閱讀，跳去上/下一篇同主題的
+  改成先上/下一頁到本篇結束後，再主題式閱讀
 
 : more.c:more()
 
@@ -27,4 +27,4 @@
       }
 
 --
-[1;37m�� ���峹�� [33mitoc[37m �q [32mitoc.Dorm11.NCTU.edu.tw[37m �o��[m
+[1;37m□ 本文章由 [33mitoc[37m 從 [32mitoc.Dorm11.NCTU.edu.tw[37m 發表[m

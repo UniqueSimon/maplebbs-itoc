@@ -1,43 +1,43 @@
-µo«H¤H: peterkim.bbs@processor.tfcis.org (¡Ã¡¾¡Ã||..§Ú¬O¤Ñ ¬İªO: plan
-¼Ğ  ÃD: Re: [¶¢²á] TFCIS.personal.itoc ªººëµØ°Ï
-µo«H¯¸: XEON (Thu, 27 Mar 2003 08:26:31 +0800 (CST))
+ç™¼ä¿¡äºº: peterkim.bbs@processor.tfcis.org (ï¿£â–½ï¿£||..æˆ‘æ˜¯å¤© çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [é–’èŠ] TFCIS.personal.itoc çš„ç²¾è¯å€
+ç™¼ä¿¡ç«™: XEON (Thu, 27 Mar 2003 08:26:31 +0800 (CST))
 
-  §Ú­Ìªº®É°Ï¬O CST¡A¦pªG³]©w¿ùªº¸Ü date ¸òÀÉ®×«Ø¥ßªº®É¶¡¬İ°_¨Ó´N·|«Ü©Ç¡C
+  æˆ‘å€‘çš„æ™‚å€æ˜¯ CSTï¼Œå¦‚æœè¨­å®šéŒ¯çš„è©± date è·Ÿæª”æ¡ˆå»ºç«‹çš„æ™‚é–“çœ‹èµ·ä¾†å°±æœƒå¾ˆæ€ªã€‚
 
-  ¨Ï¥Î tzsetup ¨Ó­×§ï¡G
+  ä½¿ç”¨ tzsetup ä¾†ä¿®æ”¹ï¼š
 
-    ­º¥ı¦w¸Ëµ{¦¡·|°İ¡A±zªº CMOS ®É¶¡¬O§_¬O®æªL«Âªv®É¶¡(UTC)¡A §Ú­Ìªº CMOS
-    ³q±`³£¬O³]¬°·í¦aªº®É¶¡¡A©Ò¥H½Ğ¿ï ¡yNO¡z¡C ±µ¤U¨Ó­n¿ï®É°Ï¡A§Ú­Ì¿ï¡y5Asia¡z¡B
-    ¡y43 Taiwan¡z¡C ©Î¬Oª½±µ¥H root ¨Ï¥Î¥H¤Uªº«ü¥O¡C
+    é¦–å…ˆå®‰è£ç¨‹å¼æœƒå•ï¼Œæ‚¨çš„ CMOS æ™‚é–“æ˜¯å¦æ˜¯æ ¼æ—å¨æ²»æ™‚é–“(UTC)ï¼Œ æˆ‘å€‘çš„ CMOS
+    é€šå¸¸éƒ½æ˜¯è¨­ç‚ºç•¶åœ°çš„æ™‚é–“ï¼Œæ‰€ä»¥è«‹é¸ ã€NOã€ã€‚ æ¥ä¸‹ä¾†è¦é¸æ™‚å€ï¼Œæˆ‘å€‘é¸ã€5Asiaã€ã€
+    ã€43 Taiwanã€ã€‚ æˆ–æ˜¯ç›´æ¥ä»¥ root ä½¿ç”¨ä»¥ä¸‹çš„æŒ‡ä»¤ã€‚
 
     tzsetup /usr/share/zoneinfo/Asia/Taipei
 
 
-  ¥t¥~¤]¥i¥H§Q¥Î ntpdate ¨Ó»Pºô¸ô®É¶¡¨ó©w (NTP) ¦øªA¾¹¹ï®É¡C
+  å¦å¤–ä¹Ÿå¯ä»¥åˆ©ç”¨ ntpdate ä¾†èˆ‡ç¶²è·¯æ™‚é–“å”å®š (NTP) ä¼ºæœå™¨å°æ™‚ã€‚
 
     ntpdate tick.stdtime.gov.tw
 
-  ¨ä¥L¹ï®É¦øªA¾¹ÁÙ¦³
+  å…¶ä»–å°æ™‚ä¼ºæœå™¨é‚„æœ‰
 
-    ®É¶¡»PÀW²v°ê®a¼Ğ·Ç¹êÅç«Ç
+    æ™‚é–“èˆ‡é »ç‡åœ‹å®¶æ¨™æº–å¯¦é©—å®¤
     time.stdtime.gov.tw
     clock.stdtime.gov.tw
     tick.stdtime.gov.tw
     tock.stdtime.gov.tw
     watch.stdtime.gov.tw
 
-    ¬ü°êUSNO
+    ç¾åœ‹USNO
     tick.usno.navy.mil
     tock.usno.navy.mil
 
-    ¬ü°êNIST
+    ç¾åœ‹NIST
     time.nist.gov
     time-a.nist.gov
 
-    ´N·|¦Û°Ê§ó¥¿®É¶¡¡A¥i¥H©ñ¦b crontab ¶]¡C
+    å°±æœƒè‡ªå‹•æ›´æ­£æ™‚é–“ï¼Œå¯ä»¥æ”¾åœ¨ crontab è·‘ã€‚
 
-    ½Ğ°Ñ¦Ò http://www.stdtime.gov.tw/
+    è«‹åƒè€ƒ http://www.stdtime.gov.tw/
 
 --
-    [1;32m¢~¢w Origin ¢wùß [0;36m°[1mÊ[0;36m¤[1mO[0;36m®[1mÖ[0;36m¤[1mß [1;31m processor.tfcis.org [32m ¡ã £e£f£g ¢w¢t[m
-    [1;32m¢u   Author   ùë [33;44m163.25.118.33                            [m
+    [1;32mâ•­â”€ Origin â”€â•— [0;36m?[1m?[0;36m?[1mO[0;36m?[1m?[0;36m?[1m?[1;31m processor.tfcis.org [32m ï½ ÎºÎ»Î¼ â”€â”¤[m
+    [1;32mâ”œ   Author   â•¡ [33;44m163.25.118.33                            [m

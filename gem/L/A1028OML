@@ -1,50 +1,50 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Windows ª©¥»§ï patch Ãö©ó DSO ªº³¡¤À
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/01/03 Sat 12:37:29)
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Windows ç‰ˆæœ¬æ”¹ patch é—œæ–¼ DSO çš„éƒ¨åˆ†
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/01/03 Sat 12:37:29)
 
-  ¤@¯ë¦Ó¨¥¡ACygwin ª©¥»¤U­nª`·N DSO ªº³¡¤À
+  ä¸€èˆ¬è€Œè¨€ï¼ŒCygwin ç‰ˆæœ¬ä¸‹è¦æ³¨æ„ DSO çš„éƒ¨åˆ†
 
-  ¦pªG patch ¸Ì­±¼gªº¬O
+  å¦‚æœ patch è£¡é¢å¯«çš„æ˜¯
 
-  (1) so/Makefile ©Î game/Makefile ¥[¤J filename.so
-   => ¨º»ò§AÀ³¸Ó¦b maple/Makefile ¥[¤J
-      ../so/filename.c¡B../so/filename.o ©Î
-      ../game/filename.c¡B../game/filename.o
+  (1) so/Makefile æˆ– game/Makefile åŠ å…¥ filename.so
+   => é‚£éº¼ä½ æ‡‰è©²åœ¨ maple/Makefile åŠ å…¥
+      ../so/filename.cã€../so/filename.o æˆ–
+      ../game/filename.cã€../game/filename.o
 
-  (2) menu.c ·s¼W¿ï¶µ (¦³¤Ş¸¹ ""¡B«_¸¹ .so:¡B­t¸¹ - ªº¤~­n§ï)
+  (2) menu.c æ–°å¢é¸é … (æœ‰å¼•è™Ÿ ""ã€å†’è™Ÿ .so:ã€è² è™Ÿ - çš„æ‰è¦æ”¹)
       [1;33m"bin/[mfilename[1;33m.so:[mfuction[1;33m"[m, PERM_OOXX, [1;33m-[m M_ABCD,
-      "English    ¡ñ ¤¤¤å¦WºÙ ¡ğ",
-   => ¨º»ò§AÀ³¸Ó¦b menu.c ·s¼W¿ï¶µ (®³±¼ bin/filename.so: ¤Î "" ¤Î -)
+      "English    â™‚ ä¸­æ–‡åç¨± â™€",
+   => é‚£éº¼ä½ æ‡‰è©²åœ¨ menu.c æ–°å¢é¸é … (æ‹¿æ‰ bin/filename.so: åŠ "" åŠ -)
       function, PERM_OOXX, M_ABCD,
-      "English    ¡ñ ¤¤¤å¦WºÙ ¡ğ",
-      ¨Ã¦b maple.p ¥[¤J¤@¦æ
+      "English    â™‚ ä¸­æ–‡åç¨± â™€",
+      ä¸¦åœ¨ maple.p åŠ å…¥ä¸€è¡Œ
       int function(void);
 
   (3) DL_func("bin/filename.so:function", argument);
-   => ¨º»ò§AÀ³¸Ó§â³o¦æ§ï¦¨
+   => é‚£éº¼ä½ æ‡‰è©²æŠŠé€™è¡Œæ”¹æˆ
       function(argument);
-      ¨Ã¦b maple.p ¥[¤J¤@¦æ
+      ä¸¦åœ¨ maple.p åŠ å…¥ä¸€è¡Œ
       int function();
 
   (4) DL_func("bin/filename.so:function");
-   => ¨º»ò§AÀ³¸Ó§â³o¦æ§ï¦¨
+   => é‚£éº¼ä½ æ‡‰è©²æŠŠé€™è¡Œæ”¹æˆ
       function();
-      ¨Ã¦b maple.p ¥[¤J¤@¦æ
+      ä¸¦åœ¨ maple.p åŠ å…¥ä¸€è¡Œ
       int function();
 
   (5) void *p = DL_get("bin/filename.so:function");
       if (p)    *(p)();
-      ¨º»ò§AÀ³¸Ó§â³o´X¦æ§ï¦¨
+      é‚£éº¼ä½ æ‡‰è©²æŠŠé€™å¹¾è¡Œæ”¹æˆ
       function();
-      ¨Ã¦b maple.p ¥[¤J¤@¦æ
+      ä¸¦åœ¨ maple.p åŠ å…¥ä¸€è¡Œ
       int function();
 
   (6) 'x' | XO_DL, (void *) "bin/filename.so:function",
-      ¨º»ò§AÀ³¸Ó§â³o¦æ§ï¦¨
+      é‚£éº¼ä½ æ‡‰è©²æŠŠé€™è¡Œæ”¹æˆ
       'x', function,
-      ¨Ã¦b maple.p ¥[¤J¤@¦æ
+      ä¸¦åœ¨ maple.p åŠ å…¥ä¸€è¡Œ
       int function(XO *xo);
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

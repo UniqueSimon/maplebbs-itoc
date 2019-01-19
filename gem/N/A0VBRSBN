@@ -1,9 +1,9 @@
-§@ªÌ: itoc (¾C¹C¦b¤@«×ªÅ¶¡) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¨Ã¦C¥DÃD
-®É¶¡: Sun May 11 14:36:05 2003                          Updated: 2003/05/11
+ä½œè€…: itoc (é¨éŠåœ¨ä¸€åº¦ç©ºé–“) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] ä¸¦åˆ—ä¸»é¡Œ
+æ™‚é–“: Sun May 11 14:36:05 2003                          Updated: 2003/05/11
 
-  ©Ò¿×¨Ã¦C¥DÃD´N¬O±N¤å³¹¨Ì¼ĞÃD±Æ§Ç
-  «ö K ¶i¤J¨Ã¦C¥DÃD¡A¦b¸Ì­±¥i¥H¥Î QA|? ¨Ó·j´M
+  æ‰€è¬‚ä¸¦åˆ—ä¸»é¡Œå°±æ˜¯å°‡æ–‡ç« ä¾æ¨™é¡Œæ’åº
+  æŒ‰ K é€²å…¥ä¸¦åˆ—ä¸»é¡Œï¼Œåœ¨è£¡é¢å¯ä»¥ç”¨ QA|? ä¾†æœå°‹
 
 : post.c
 
@@ -12,12 +12,12 @@ static int post_head();
 
 : post.c:post_cb[]
 
-+  'K', do_thread,              /* itoc.030511: ¨Ã¦C¥DÃD¼Ò¦¡ */
++  'K', do_thread,              /* itoc.030511: ä¸¦åˆ—ä¸»é¡Œæ¨¡å¼ */
 
-: post.c ³Ì«á­±¥[¤J¥H¤U³o¾ã¬q
+: post.c æœ€å¾Œé¢åŠ å…¥ä»¥ä¸‹é€™æ•´æ®µ
 
 /*-------------------------------------------------------*/
-/* ¨Ã¦C¥DÃD                                              */
+/* ä¸¦åˆ—ä¸»é¡Œ                                              */
 /*-------------------------------------------------------*/
 
 
@@ -32,7 +32,7 @@ thread_cmp(a, b)
   titleA = str_ttl(a->title);
   titleB = str_ttl(b->title);
 
-  /* ¼ĞÃD/®É¶¡¥æ¤e¤ñ¹ï */
+  /* æ¨™é¡Œ/æ™‚é–“äº¤å‰æ¯”å° */
   k = strcmp(titleA, titleB);
   return k ? k : (a->chrono - b->chrono);
 }
@@ -53,17 +53,17 @@ thread_main()
 
   brd_fpath(fpath, currboard, ".THREAD");
 
-  if (stat(fpath, &st2) != -1)  /* ¤w¦³ .THREAD ÀÉ */
+  if (stat(fpath, &st2) != -1)  /* å·²æœ‰ .THREAD æª” */
   {
     if (st2.st_mtime >= st1.st_mtime)
     {
-      /* ­Y¤w¦³ .THREAD ¥B¬O¥Ñ³Ì·sªº .DIR °µ¥X¨Óªº¡A¨º»ò´N¤£­«ÂĞ²£¥Í¤@­Ó */
+      /* è‹¥å·²æœ‰ .THREAD ä¸”æ˜¯ç”±æœ€æ–°çš„ .DIR åšå‡ºä¾†çš„ï¼Œé‚£éº¼å°±ä¸é‡è¦†ç”¢ç”Ÿä¸€å€‹ */
       return st2.st_size / sizeof(HDR);
     }
-    unlink(fpath);  /* ¬å±¼ÂÂªº¡A­«·s²£¥Í */
+    unlink(fpath);  /* ç æ‰èˆŠçš„ï¼Œé‡æ–°ç”¢ç”Ÿ */
   }
 
-  /* ²£¥Í .THREAD ÀÉ */
+  /* ç”¢ç”Ÿ .THREAD æª” */
   if ((fd = open(folder, O_RDONLY)) >= 0)
   {
     size = st1.st_size;
@@ -107,27 +107,27 @@ do_thread(xo)
   char fpath[64];
   XO *xt;
 
-  outz("¡¹ ¨t²Î³B²z¼ĞÃD¤¤¡A½Ğµy­Ô \033[5m...\033[m");
+  outz("â˜… ç³»çµ±è™•ç†æ¨™é¡Œä¸­ï¼Œè«‹ç¨å€™ \033[5m...\033[m");
   refresh();
 
   if ((max = thread_main()) <= 0)
   {
-    vmsg("µo¥Í¤£©ú¿ù»~¡A½Ğ³ø§i¯¸ªø");
+    vmsg("ç™¼ç”Ÿä¸æ˜éŒ¯èª¤ï¼Œè«‹å ±å‘Šç«™é•·");
     return XO_FOOT;
   }
 
   brd_fpath(fpath, currboard, ".THREAD");
   xz[XZ_POST - XO_ZONE].xo = xt = xo_new(fpath);
-  xz[XZ_POST - XO_ZONE].cb = thread_cb;   /* ­­¨î¦b thread ¸Ì­±¥i¥H¥Îªº«ü¥O */
+  xz[XZ_POST - XO_ZONE].cb = thread_cb;   /* é™åˆ¶åœ¨ thread è£¡é¢å¯ä»¥ç”¨çš„æŒ‡ä»¤ */
   xo->pos = 0;
   xo->key = XZ_POST;
   xover(XZ_POST);
   free(xt);
 
-  xz[XZ_POST - XO_ZONE].cb = post_cb;     /* «ì´_­ì¥»¥i¥H¥Îªº«ü¥O */
+  xz[XZ_POST - XO_ZONE].cb = post_cb;     /* æ¢å¾©åŸæœ¬å¯ä»¥ç”¨çš„æŒ‡ä»¤ */
 
   return post_load(xo);
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

@@ -1,30 +1,30 @@
-§@ªÌ: itoc (¼g¤£§¹¤F ^^) ¬ÝªO: plan
-¼ÐÃD: [¥\¯à] ½s¿è¤å³¹®É·j´M¦r¦ê
-®É¶¡: Sat Aug 23 20:59:41 2003                          Updated: 2003/08/23
+ä½œè€…: itoc (å¯«ä¸å®Œäº† ^^) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] ç·¨è¼¯æ–‡ç« æ™‚æœå°‹å­—ä¸²
+æ™‚é–“: Sat Aug 23 20:59:41 2003                          Updated: 2003/08/23
 
-¡° ¤Þ­z¡mcpd.bbs@pitch.twbbs.org (Seasons)¡n¤§»Ê¨¥¡G
-> ´N¬O¦b½s¿è¤å³¹ªº®É­Ô...¤£ª¾¹Dmaple¦³¨S¦³´M§ä¦r¦êªº¥\¯à©O¡H
-> ¹³joe¤@¼Ë¡A«ö ^kf ©Î Esc + s ´N¯à´M§ä¦r¦ê...
-> ¹³¤@½g¤å³¹«Üªøªº®É­Ô¡A´N¥i¥H«öE¨Ó½s¿è·j´M­n§äªº¦r¦ê...
+â€» å¼•è¿°ã€Šcpd.bbs@pitch.twbbs.org (Seasons)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å°±æ˜¯åœ¨ç·¨è¼¯æ–‡ç« çš„æ™‚å€™...ä¸çŸ¥é“mapleæœ‰æ²’æœ‰å°‹æ‰¾å­—ä¸²çš„åŠŸèƒ½å‘¢ï¼Ÿ
+> åƒjoeä¸€æ¨£ï¼ŒæŒ‰ ^kf æˆ– Esc + s å°±èƒ½å°‹æ‰¾å­—ä¸²...
+> åƒä¸€ç¯‡æ–‡ç« å¾ˆé•·çš„æ™‚å€™ï¼Œå°±å¯ä»¥æŒ‰Eä¾†ç·¨è¼¯æœå°‹è¦æ‰¾çš„å­—ä¸²...
 
-  ¥Ñ©ó edit ®Éªº«öÁä Ctrl+? ³£¦³¥\¯à¦û¥h¤F
-  ©Ò¥H­n¥ý§ì¥X¤@­Ó«öÁä¡A¦b¦¹¥H Ctrl('B') °µ¨Ò¤l
-  §A¤]¥i¥H¦Û¤v¿ï§OªºÁä
+  ç”±æ–¼ edit æ™‚çš„æŒ‰éµ Ctrl+? éƒ½æœ‰åŠŸèƒ½ä½”åŽ»äº†
+  æ‰€ä»¥è¦å…ˆæŠ“å‡ºä¸€å€‹æŒ‰éµï¼Œåœ¨æ­¤ä»¥ Ctrl('B') åšä¾‹å­
+  ä½ ä¹Ÿå¯ä»¥è‡ªå·±é¸åˆ¥çš„éµ
 
-: edit.c:vedit() ¥Ñ©ó Ctrl('B') ¥i¥H¥Î KEY_PGUP ¨ú¥N
-:                ©Ò¥H§â Ctrl('B') ÄÀ©ñ¥X¨Óµ¹§Oªº¥\¯à¥Î
+: edit.c:vedit() ç”±æ–¼ Ctrl('B') å¯ä»¥ç”¨ KEY_PGUP å–ä»£
+:                æ‰€ä»¥æŠŠ Ctrl('B') é‡‹æ”¾å‡ºä¾†çµ¦åˆ¥çš„åŠŸèƒ½ç”¨
 
-int             /* -1:¨ú®ø½s¿è 0:§¹¦¨½s¿è */
+int             /* -1:å–æ¶ˆç·¨è¼¯ 0:å®Œæˆç·¨è¼¯ */
 vedit(fpath, ve_op)
   char *fpath;
-  int ve_op; /* 0:¯Âºé½s¿èÀÉ®×  -1:½s¿è¦ý¤£¯àÀx¦s  1:quote/header  2:quote */
+  int ve_op; /* 0:ç´”ç²¹ç·¨è¼¯æª”æ¡ˆ  -1:ç·¨è¼¯ä½†ä¸èƒ½å„²å­˜  1:quote/header  2:quote */
 {
   textline *vln, *tmp;
   int cc, col, mode, margin, pos;
 + char hunt[32];
 
   /* --------------------------------------------------- */
-  /* ªì©l³]©w¡G¸ü¤JÀÉ®×¡B¤Þ¥Î¤å³¹¡B³]©w½s¿è¼Ò¦¡          */
+  /* åˆå§‹è¨­å®šï¼šè¼‰å…¥æª”æ¡ˆã€å¼•ç”¨æ–‡ç« ã€è¨­å®šç·¨è¼¯æ¨¡å¼          */
   /* --------------------------------------------------- */
 
 + hunt[0] = '\0';
@@ -44,11 +44,11 @@ vedit(fpath, ve_op)
 
 +     case Ctrl('B'):
 +
-+       if (vget(b_lines, 0, "·j´M¡G", hunt, sizeof(hunt), GCARRY))
++       if (vget(b_lines, 0, "æœå°‹ï¼š", hunt, sizeof(hunt), GCARRY))
 +       {
 +         if (!ve_search(hunt))
 +         {
-+           vmsg("§ä¤£¨ì±z·Q·j´Mªº¦r¦ê");
++           vmsg("æ‰¾ä¸åˆ°æ‚¨æƒ³æœå°‹çš„å­—ä¸²");
 +           ve_mode = mode | VE_FOOTER;
 +         }
 +       }
@@ -59,7 +59,7 @@ vedit(fpath, ve_op)
         goto ve_key;
       }
 
-: edit.c:ve_search() ·s¼W¦¹¨ç¦¡©ó ve_goto() «á­±
+: edit.c:ve_search() æ–°å¢žæ­¤å‡½å¼æ–¼ ve_goto() å¾Œé¢
 
 static inline int
 ve_search(hunt)
@@ -72,7 +72,7 @@ ve_search(hunt)
   len = strlen(hunt);
   find = 0;
 
-  for (cur = vx_cur; cur; cur = cur->next)   /* ©¹¤U·j´M */
+  for (cur = vx_cur; cur; cur = cur->next)   /* å¾€ä¸‹æœå°‹ */
   {
     str = cur->data + (cur == vx_cur ? ve_col + 1: 0);
     pend = str + cur->len - len + 1;
@@ -113,4 +113,4 @@ find_hunt:
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

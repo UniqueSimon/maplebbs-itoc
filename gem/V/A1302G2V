@@ -1,13 +1,13 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G802) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¤å³¹¥i¥HÅı©Ò¦³¤H½s¿è
-®É¶¡: 2007/03/21 Wed 22:23:43                           Updated: 2007/04/26
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š802) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] æ–‡ç« å¯ä»¥è®“æ‰€æœ‰äººç·¨è¼¯
+æ™‚é–“: 2007/03/21 Wed 22:23:43                           Updated: 2007/04/26
 
-¡° ¤Ş­z¡mpokky (·R§A)¡n¤§»Ê¨¥¡G
->   ¥i¬O§Ú·Q°İ§A¦³¨S¦³BBS ¥\¯à¥i¥H¹³ºû°ò¦Ê¬ì¨º¼Ë
->   ´N¬O¤å³¹¥i¥HÅı©Ò¦³ªº¨Ï¥ÎªÌ§ï¨Ó§ï¥h
->   ¤ñ¦p»¡¤£¬O±`¦³¥s¤j®arepost­n¤£­n¥h®a»E¤§Ãşªº
->   ¦pªG»¡¥i¥H¤@½g¤å³¹Åı©Ò¦³¬İ¨ìªº¤H³£¶i¥h½s¿è
->   ³o¼Ëª©­±´N·|¬İ°_¨Ó°®²b«Ü¦h¡ã
+â€» å¼•è¿°ã€Špokky (æ„›ä½ )ã€‹ä¹‹éŠ˜è¨€ï¼š
+>   å¯æ˜¯æˆ‘æƒ³å•ä½ æœ‰æ²’æœ‰BBS åŠŸèƒ½å¯ä»¥åƒç¶­åŸºç™¾ç§‘é‚£æ¨£
+>   å°±æ˜¯æ–‡ç« å¯ä»¥è®“æ‰€æœ‰çš„ä½¿ç”¨è€…æ”¹ä¾†æ”¹å»
+>   æ¯”å¦‚èªªä¸æ˜¯å¸¸æœ‰å«å¤§å®¶repostè¦ä¸è¦å»å®¶èšä¹‹é¡çš„
+>   å¦‚æœèªªå¯ä»¥ä¸€ç¯‡æ–‡ç« è®“æ‰€æœ‰çœ‹åˆ°çš„äººéƒ½é€²å»ç·¨è¼¯
+>   é€™æ¨£ç‰ˆé¢å°±æœƒçœ‹èµ·ä¾†ä¹¾æ·¨å¾ˆå¤šï½
 
 : struct.h
 
@@ -34,7 +34,7 @@
 
   hdr_fpath(fpath, xo->dir, hdr);
 
-  if (HAS_PERM(PERM_ALLBOARD))                  /* ¯¸ªø­×§ï */
+  if (HAS_PERM(PERM_ALLBOARD))                  /* ç«™é•·ä¿®æ”¹ */
   {
 -#ifdef HAVE_REFUSEMARK
 -   if (!chkrestrict(hdr))
@@ -46,7 +46,7 @@
 + else if (cuser.userlevel && (!strcmp(hdr->owner, cuser.userid) ||
 +   (hdr->xmode & POST_WIKI)))
 
-: post.c:post_wiki() ·s¼W¦b post_mark() «á­±
+: post.c:post_wiki() æ–°å¢åœ¨ post_mark() å¾Œé¢
 
 static int
 post_wiki(xo)
@@ -55,7 +55,7 @@ post_wiki(xo)
   HDR *hdr;
   int pos, cur, xmode;
 
-  if (!cuser.userlevel) /* itoc.020114: guest ¤£¯à¹ï¨ä¥L guest ªº¤å³¹ºû°ò */
+  if (!cuser.userlevel) /* itoc.020114: guest ä¸èƒ½å°å…¶ä»– guest çš„æ–‡ç« ç¶­åŸº */
     return XO_NONE;
 
   pos = xo->pos;
@@ -67,7 +67,7 @@ post_wiki(xo)
     xmode = hdr->xmode;
 
 #ifdef HAVE_LABELMARK
-    if (xmode & POST_DELETE)    /* «İ¬åªº¤å³¹¤£¯à wiki */
+    if (xmode & POST_DELETE)    /* å¾…ç çš„æ–‡ç« ä¸èƒ½ wiki */
       return XO_NONE;
 #endif
 
@@ -87,10 +87,10 @@ post_wiki(xo)
 
   'h', post_help
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  ³Q½s¿è¹L´N°O¿ı°_¨Ó (³o¸Ì¿ï¾Ü°O¿ı¦b¡uºëµØ°Ï²§°Ê¡v)
-  ³o¼Ë´N¥i¥Hª¾¹D­ş½g¤å³¹³Q wiki && ³Q½Ö wiki
+  è¢«ç·¨è¼¯éå°±è¨˜éŒ„èµ·ä¾† (é€™è£¡é¸æ“‡è¨˜éŒ„åœ¨ã€Œç²¾è¯å€ç•°å‹•ã€)
+  é€™æ¨£å°±å¯ä»¥çŸ¥é“å“ªç¯‡æ–‡ç« è¢« wiki && è¢«èª° wiki
 
 : gem.c:gem_log()
 
@@ -113,7 +113,7 @@ void brd2gem(BRD *brd, HDR *gem);
 
 + if (hdr->xmode & POST_WIKI)
 + {
-+   /* bluesway.070323: ­Éfpath ¨Ó¦sºëµØ°Ï¸ô®| */
++   /* bluesway.070323: å€Ÿfpath ä¾†å­˜ç²¾è¯å€è·¯å¾‘ */
 +   gec_fpath(fpath, currboard, fn_dir);
 +   gem_log(fpath, "Wiki", hdr);
 + }
@@ -121,4 +121,4 @@ void brd2gem(BRD *brd, HDR *gem);
   post_head(xo);
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32m218-168-180-20.dynamic.hinet.net[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32m218-168-180-20.dynamic.hinet.net[37m ç™¼è¡¨[m

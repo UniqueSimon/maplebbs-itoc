@@ -1,94 +1,94 @@
-NoCeM-innbbsd-patch (¥H¤UÂ²ºÙ ncm-innbbsd)
+NoCeM-innbbsd-patch (ä»¥ä¸‹ç°¡ç¨± ncm-innbbsd)
 CHANGES
 
 ver 0.80
-1-9-04	¤ä´© GPG
-	(·PÁÂ AlanSung)
+1-9-04	æ”¯æ´ GPG
+	(æ„Ÿè¬ AlanSung)
 
 ver 0.71
-5-23-01	¸É¤W¤@¨Ç¿ù»~°T®§, ­×¥¿ NCMparse()
+5-23-01	è£œä¸Šä¸€äº›éŒ¯èª¤è¨Šæ¯, ä¿®æ­£ NCMparse()
 
 ver 0.70
-5-11-01	­×¥¿ NCMparse ªº "END NCM BODY" ³¡¤À
-	(·PÁÂ lcr.bbs@server.old-castle.org)
+5-11-01	ä¿®æ­£ NCMparse çš„ "END NCM BODY" éƒ¨åˆ†
+	(æ„Ÿè¬ lcr.bbs@server.old-castle.org)
 
 ver 0.69
-11-5-00	­×¥¿ NCMparse() ¦w¥ş©Ê°İÃD
-	(·PÁÂ DarkKiller.bbs@abpe.org)
+11-5-00	ä¿®æ­£ NCMparse() å®‰å…¨æ€§å•é¡Œ
+	(æ„Ÿè¬ DarkKiller.bbs@abpe.org)
 
 ver 0.68
-11-4-00	­×¥¿ NCMparse() ¦w¥ş©Ê°İÃD
-	(·PÁÂ DarkKiller.bbs@abpe.org)
+11-4-00	ä¿®æ­£ NCMparse() å®‰å…¨æ€§å•é¡Œ
+	(æ„Ÿè¬ DarkKiller.bbs@abpe.org)
 
 ver 0.67
-11-3-00	­×¥¿ NCMparse() ¦w¥ş©Ê°İÃD
-	(·PÁÂ DarkKiller.bbs@abpe.org)
-	¹w³]§ï¦^¨Ï¥Î PGP ÅçÃÒ, ¤£¥Î PGP ªÌ½Ğ¦Û¦æ #undef PGP5
-	(·PÁÂ Amis.bbs@bbs.ee.nthu.edu.tw)
+11-3-00	ä¿®æ­£ NCMparse() å®‰å…¨æ€§å•é¡Œ
+	(æ„Ÿè¬ DarkKiller.bbs@abpe.org)
+	é è¨­æ”¹å›ä½¿ç”¨ PGP é©—è­‰, ä¸ç”¨ PGP è€…è«‹è‡ªè¡Œ #undef PGP5
+	(æ„Ÿè¬ Amis.bbs@bbs.ee.nthu.edu.tw)
 
 ver 0.66
-5-19-00	¥Î stdarg.h ¨ú¥N varargs.h, ­×¥¿ SOLARIS ªº va_start() °İÃD
-	(·PÁÂ edwardc@concorde.upma.net)
+5-19-00	ç”¨ stdarg.h å–ä»£ varargs.h, ä¿®æ­£ SOLARIS çš„ va_start() å•é¡Œ
+	(æ„Ÿè¬ edwardc@concorde.upma.net)
 
 ver 0.65
-4-26-00	¥[¤J search_issuer_type() , ¤À§O±µ¦¬¦P¤@ issuer ¤£¦P type ªº notice
-	¼W¥[ MAXSPAMMID ¨ì 10000
-	·s¼W LINELEN, ³]©w¬° 512
-	¹w³]§ï¬°¤£¨Ï¥Î PGP ÅçÃÒ.
-	NCMregister() §¹¦¨¶¥¬q©Ê²Î­p¥ô°È, ¤£·Q¥[¤J²Î­p, ©ÎªÌ³s¦Ü TANet ³t«×
-	¤£§Öªº¯¸¥x, ¥i¦b nocem.h ³]©w #define DONT_REGISTER ¤£¦C¤J²Î­p
+4-26-00	åŠ å…¥ search_issuer_type() , åˆ†åˆ¥æ¥æ”¶åŒä¸€ issuer ä¸åŒ type çš„ notice
+	å¢åŠ  MAXSPAMMID åˆ° 10000
+	æ–°å¢ LINELEN, è¨­å®šç‚º 512
+	é è¨­æ”¹ç‚ºä¸ä½¿ç”¨ PGP é©—è­‰.
+	NCMregister() å®Œæˆéšæ®µæ€§çµ±è¨ˆä»»å‹™, ä¸æƒ³åŠ å…¥çµ±è¨ˆ, æˆ–è€…é€£è‡³ TANet é€Ÿåº¦
+	ä¸å¿«çš„ç«™å°, å¯åœ¨ nocem.h è¨­å®š #define DONT_REGISTER ä¸åˆ—å…¥çµ±è¨ˆ
 
 ver 0.63
-2-13-00 ¥[¤J¹ï M3-innbbsd ªº patch
-        (·PÁÂ mat.bbs@fall.twbbs.org)
-        M3 ªº BODY ¤w±N \r ³B²z±¼, ©Ò¥H­ì¥ı§ì¦æ§Àªº \r ±N·|§ì¤£¨ì
-        §ó¥¿ v0.6 ¤å¥ó INSTALL.nocem 4.b ¿ù»~ªº¦a¤è
-        * ¹ï¨Ï¥Î v0.6 ¦ÓµLªk¹B§@ªº M3 ¯¸ªø­Ì­Pºp *
+2-13-00 åŠ å…¥å° M3-innbbsd çš„ patch
+        (æ„Ÿè¬ mat.bbs@fall.twbbs.org)
+        M3 çš„ BODY å·²å°‡ \r è™•ç†æ‰, æ‰€ä»¥åŸå…ˆæŠ“è¡Œå°¾çš„ \r å°‡æœƒæŠ“ä¸åˆ°
+        æ›´æ­£ v0.6 æ–‡ä»¶ INSTALL.nocem 4.b éŒ¯èª¤çš„åœ°æ–¹
+        * å°ä½¿ç”¨ v0.6 è€Œç„¡æ³•é‹ä½œçš„ M3 ç«™é•·å€‘è‡´æ­‰ *
 
 ver 0.62
-1-24-00 ¥[¤J tcpcommand() ªº Solaris patch
-        (·PÁÂ edwardc.bbs@drogon.seed.net.tw)
-        ¥[¤J PGP5 ªº #define ¥H¤Î #if .. #endif, ¥i¿ï¾ÜÃö³¬ PGP5 ÅçÃÒ
+1-24-00 åŠ å…¥ tcpcommand() çš„ Solaris patch
+        (æ„Ÿè¬ edwardc.bbs@drogon.seed.net.tw)
+        åŠ å…¥ PGP5 çš„ #define ä»¥åŠ #if .. #endif, å¯é¸æ“‡é—œé–‰ PGP5 é©—è­‰
 
 ver 0.6
-1-17-00 ­«·s¾ã²z¤@¤U NCMregister(), §ï¥Î gethostname()
-        §K±o¦³ bbsadm ³s Makefile ªº ADMINUSER ³£Ãi±o§ï
-        ¥[¤J¹ï Maple3 ªº¦w¸Ë»¡©ú
+1-17-00 é‡æ–°æ•´ç†ä¸€ä¸‹ NCMregister(), æ”¹ç”¨ gethostname()
+        å…å¾—æœ‰ bbsadm é€£ Makefile çš„ ADMINUSER éƒ½æ‡¶å¾—æ”¹
+        åŠ å…¥å° Maple3 çš„å®‰è£èªªæ˜
 
 ver 0.51
-5-21-99 ·s¼W NCMregister(), ¬ö¿ı NoCeM-innbbsd ¨Ï¥Î±¡§Î.
+5-21-99 æ–°å¢ NCMregister(), ç´€éŒ„ NoCeM-innbbsd ä½¿ç”¨æƒ…å½¢.
 
 ver 0.5
-3-6-99  §ó·s¤å¥ó
-3-5-99  ±N strcasestr() ´«¦¨ strstr().
-3-4-99  de ±¼¤@­Ó«ÜÄY­«ªº bug: SPAMMID ¤£­­¨î°}¦C¤j¤pªº¸Ü±N·|¶W¥Î,
-        »\±¼¨ä¥LÅÜ¼Æ.. ³y¦¨ innbbsd ±¾±¼.
-        (¯S§O¹³¬O¦Y¨ì nocem@newsgate.nctu.edu.tw ¤@½g notice ªº Count ¤C¦Ê¦h)
-        ¾ã²zµ{¦¡½X, Beta release..
+3-6-99  æ›´æ–°æ–‡ä»¶
+3-5-99  å°‡ strcasestr() æ›æˆ strstr().
+3-4-99  de æ‰ä¸€å€‹å¾ˆåš´é‡çš„ bug: SPAMMID ä¸é™åˆ¶é™£åˆ—å¤§å°çš„è©±å°‡æœƒè¶…ç”¨,
+        è“‹æ‰å…¶ä»–è®Šæ•¸.. é€ æˆ innbbsd æ›æ‰.
+        (ç‰¹åˆ¥åƒæ˜¯åƒåˆ° nocem@newsgate.nctu.edu.tw ä¸€ç¯‡ notice çš„ Count ä¸ƒç™¾å¤š)
+        æ•´ç†ç¨‹å¼ç¢¼, Beta release..
 
 ver 0.43
-3-3-99  ­×§ï receive_nocem(), µo²{¤£¬O notice §Y§ï receive_article()
+3-3-99  ä¿®æ”¹ receive_nocem(), ç™¼ç¾ä¸æ˜¯ notice å³æ”¹ receive_article()
 
 ver 0.42
-3-2-99  ­×§ï cancel_article_front(), ¤¹³\ Issuer ¬å«H, ¨Ã°t¦X­×¥¿»¡©ú¤å¥ó
+3-2-99  ä¿®æ”¹ cancel_article_front(), å…è¨± Issuer ç ä¿¡, ä¸¦é…åˆä¿®æ­£èªªæ˜æ–‡ä»¶
 
 ver 0.41
-3-2-99  ­×§ï NCMverify();
+3-2-99  ä¿®æ”¹ NCMverify();
 
 ver 0.4
-3-1-99  ²Ó³¡¾ã¦X, ÅÜ¼Æ³B²z, §ï¥Î NCMfunction() ²Î¤@®æ¦¡´£°ªµ{¦¡¥iÅª©Ê
+3-1-99  ç´°éƒ¨æ•´åˆ, è®Šæ•¸è™•ç†, æ”¹ç”¨ NCMfunction() çµ±ä¸€æ ¼å¼æé«˜ç¨‹å¼å¯è®€æ€§
 
 ver 0.3
-2-28-99 ·s¼W PGP verify ¤§Ã±¦WÀË¬d
-        ·s¼W NCMupdate ¦Û°Ê§ó·s³]©wÀÉ
-        §ï¥Ñ search_group ¨Ó¤ñ¹ï¤å³¹, ´î¤Ö DBfetch ªº¦¸¼Æ, ¤j´T´£°ª®Ä¯à.
+2-28-99 æ–°å¢ PGP verify ä¹‹ç°½åæª¢æŸ¥
+        æ–°å¢ NCMupdate è‡ªå‹•æ›´æ–°è¨­å®šæª”
+        æ”¹ç”± search_group ä¾†æ¯”å°æ–‡ç« , æ¸›å°‘ DBfetch çš„æ¬¡æ•¸, å¤§å¹…æé«˜æ•ˆèƒ½.
 
 ver 0.2
-2-27-99 ·s¼W ncmperm.bbs ¤§ Issuer Åv­­±±¨î
+2-27-99 æ–°å¢ ncmperm.bbs ä¹‹ Issuer æ¬Šé™æ§åˆ¶
 
 ver 0.1
-2-26-99 ½s¼g ncm-innbbsd ¥Dµ{¦¡
-        ¤ÀªR NCM 0.9 ¤§ NCM HEADERS
-        ¤ÀªR NCM ¤§ NCM BODY
-        ¤ÀªR NCM 0.93 ¤§ NCM HEADERS
-2-25-99 °Ñ¦Ò ncmspool-0.92.3b ¤Î c-nocem-3.2 ¨M©w ncm-innbbsd ¤§¹B§@¤è¦¡
+2-26-99 ç·¨å¯« ncm-innbbsd ä¸»ç¨‹å¼
+        åˆ†æ NCM 0.9 ä¹‹ NCM HEADERS
+        åˆ†æ NCM ä¹‹ NCM BODY
+        åˆ†æ NCM 0.93 ä¹‹ NCM HEADERS
+2-25-99 åƒè€ƒ ncmspool-0.92.3b åŠ c-nocem-3.2 æ±ºå®š ncm-innbbsd ä¹‹é‹ä½œæ–¹å¼

@@ -1,18 +1,18 @@
-�@��: itoc (Internet Explorer)
-���D: <����> ��� -- �|�������i�зǪ����\��
-�ɶ�: Wed Mar 26 21:15:18 2003
+作者: itoc (Internet Explorer)
+標題: <說明> 文件 -- 尚未收錄進標準版的功能
+時間: Wed Mar 26 21:15:18 2003
 
-  ���ؿ��U�����O�@��|�����i�зǪ����s�\�� patch�A
-  ���O�ү�����\�ϥΡA���I�ۭt�A�Цۦ����
+  此目錄下的文件是一件尚未收進標準版的新功能 patch，
+  不保證能夠成功使用，風險自負，請自行嘗試
 
-  + �W�[�Ӧ�
-  - �R���Ӧ�
-  ! �o�榳�ܰʡA�ۦ��X�ܰʪ��a���
+  + 增加該行
+  - 刪除該行
+  ! 這行有變動，自行找出變動的地方改
 
-  �o�̪����D�n�O�b Un*x �U�}�o���A
-  ���ǨõL�k�����M�ζi Windows ������
+  這裡的文件主要是在 Un*x 下開發的，
+  有些並無法直接套用進 Windows 的版本
 
-  ���t�C���C�g�峹�����O�� Last Updated ���ɶ�
+  本系列中每篇文章都有記錄 Last Updated 的時間
 
 --
-[1;37m�� ���峹�� [33mitoc[37m �q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m �o��[m
+[1;37m□ 本文章由 [33mitoc[37m 從 [32mitoc.Dorm-GD2.NCTU.edu.tw[37m 發表[m

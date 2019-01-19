@@ -1,6 +1,6 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (£i·R±¡±s¦u£i) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¼öªù¬İªO±Æ¦æº](2)¡Ğtopbrd.c
-µo«H¯¸: ¤¤¿³¸ê¬ì (Mon, 14 Jul 2003 17:08:54 +0800 (CST))  Updated: 2007/05/13
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (Î¾æ„›æƒ…å¾¡å®ˆÎ¾) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] ç†±é–€çœ‹æ¿æ’è¡Œæ¦œ(2)ï¼topbrd.c
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (Mon, 14 Jul 2003 17:08:54 +0800 (CST))  Updated: 2007/05/13
 
 : util/Makefile
 
@@ -10,12 +10,12 @@ EXE = .......
 
 : util/topbrd.c
 
-    ·s¼W¾ã¤äµ{¦¡¡A°Ñ¦Ò topgem.c §ïªº¡C
+    æ–°å¢æ•´æ”¯ç¨‹å¼ï¼Œåƒè€ƒ topgem.c æ”¹çš„ã€‚
 
 /*-------------------------------------------------------*/
 /* topbrd.c ( NTHU CS MapleBBS Ver 3.10 )                */
 /*-------------------------------------------------------*/
-/* target : ¼öªù¬İªO±Æ¦æº]                               */
+/* target : ç†±é–€çœ‹æ¿æ’è¡Œæ¦œ                               */
 /* create : 03/07/03                                     */
 /* update : 03/07/03                                     */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -31,7 +31,7 @@ EXE = .......
 #define TOPBRD      "gem/@/@-topbrd"
 
 /*-------------------------------------------------------*/
-/* BRD shm ³¡¤À¶·»P cache.c ¬Û®e                         */
+/* BRD shm éƒ¨åˆ†é ˆèˆ‡ cache.c ç›¸å®¹                         */
 /*-------------------------------------------------------*/
 
 
@@ -41,12 +41,12 @@ static BCACHE *bshm;
 static void
 init_bshm()
 {
-  /* itoc.030727: ¦b¶}±Ò bbsd ¤§«e¡AÀ³¸Ó´N­n°õ¦æ¹L account¡A
-     ©Ò¥H bshm À³¸Ó¤w³]©w¦n */
+  /* itoc.030727: åœ¨é–‹å•Ÿ bbsd ä¹‹å‰ï¼Œæ‡‰è©²å°±è¦åŸ·è¡Œé accountï¼Œ
+     æ‰€ä»¥ bshm æ‡‰è©²å·²è¨­å®šå¥½ */
 
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-  if (bshm->uptime <= 0)        /* bshm ¥¼³]©w§¹¦¨ */
+  if (bshm->uptime <= 0)        /* bshm æœªè¨­å®šå®Œæˆ */
     exit(0);
 }
 
@@ -70,8 +70,8 @@ brd_get(brdname)
 
 typedef struct
 {
-  int times;            /* ¶i¤J¬İªO¾\Åª¦¸¼Æ */
-  char brdname[BNLEN + 1];  /* ªO¦W */
+  int times;            /* é€²å…¥çœ‹æ¿é–±è®€æ¬¡æ•¸ */
+  char brdname[BNLEN + 1];  /* æ¿å */
 }   BRDDATA;
 
 
@@ -79,7 +79,7 @@ static int
 int_cmp(a, b)
   BRDDATA *a, *b;
 {
-  return (b->times - a->times); /* ¥Ñ¤j±Æ¨ì¤p */
+  return (b->times - a->times); /* ç”±å¤§æ’åˆ°å° */
 }
 
 
@@ -112,12 +112,12 @@ main()
 
   fp = fopen(TOPBRD, "w");
 
-  [1;44m// ¤U­±¬OÅã¥Üµe­±¡A¥i¥H¦Û¤vµe....¬İ°_¨Ó©MµL¦W¤p¯¸ªº¦³ÂI¹³...(°k...:P)[m
+  [1;44m// ä¸‹é¢æ˜¯é¡¯ç¤ºç•«é¢ï¼Œå¯ä»¥è‡ªå·±ç•«....çœ‹èµ·ä¾†å’Œç„¡åå°ç«™çš„æœ‰é»åƒ...(é€ƒ...:P)[m
 
   time(&now);
   ptime = localtime(&now);
-  fprintf(fp, "        ¢t\033[1;41m        ¼öªù¬İªO±Æ¦æº]        \033[m¢u"
-    "        \033[33m²Î­p¤é´Á: \033[36m%d ¤ë %d ¤é\033[m\n\n",
+  fprintf(fp, "        â”¤\033[1;41m        ç†±é–€çœ‹æ¿æ’è¡Œæ¦œ        \033[mâ”œ"
+    "        \033[33mçµ±è¨ˆæ—¥æœŸ: \033[36m%d æœˆ %d æ—¥\033[m\n\n",
     ptime->tm_mon + 1, ptime->tm_mday);
 
   m = 1;
@@ -126,16 +126,16 @@ main()
     if (board[i].times == 0)
       break;
 
-    if (!(bhdr = brd_get(board[i].brdname)))   /* ¦¹ªO¤w§ï¦W©Î³Q¬å */
+    if (!(bhdr = brd_get(board[i].brdname)))   /* æ­¤æ¿å·²æ”¹åæˆ–è¢«ç  */
       continue;
 
-    /* ¸õ¹L¤£¦C¤J±Æ¦æº]ªº¬İªO */
+    /* è·³éä¸åˆ—å…¥æ’è¡Œæ¦œçš„çœ‹æ¿ */
     /* (BASIC + ... + VALID) < (VALID << 1) */
     if ((bhdr->readlevel | bhdr->postlevel) >= (PERM_VALID << 1))
       continue;
 
-    fprintf(fp, "\033[1;31m%4d. \033[33m¬İªO: \033[32m%-13s  "
-      "\033[1;3%dm%5.5s\033[m %-34.33s  \033[1;35m¤H¦¸ \033[36m%-3d\033[m\n",
+    fprintf(fp, "\033[1;31m%4d. \033[33mçœ‹æ¿: \033[32m%-13s  "
+      "\033[1;3%dm%5.5s\033[m %-34.33s  \033[1;35mäººæ¬¡ \033[36m%-3d\033[m\n",
       m, board[i].brdname, bhdr->class[3] & 7, bhdr->class,
       bhdr->title, board[i].times);
 
@@ -145,12 +145,12 @@ main()
   fclose(fp);
 }
 
-: crontab -e ·s¼W
+: crontab -e æ–°å¢
 
 36 3 * * * bin/topbrd > /dev/null 2>&1
 
-    //¤@©w­n¥ı¹L¤È©]12ÂI¤~¯à¶]­ò¡I¦]¬°­nÅı account ¶]¥X usies-sort
+    //ä¸€å®šè¦å…ˆéåˆå¤œ12é»æ‰èƒ½è·‘å”·ï¼å› ç‚ºè¦è®“ account è·‘å‡º usies-sort
 
 --
-[1;31m|[33m Origin [31m| [0;45m ¤¤¿³¸ê¬ì ¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [35;47m bbs.cs.nchu.edu.tw [m
+[1;31m|[33m Origin [31m| [0;45m ä¸­èˆˆè³‡ç§‘ ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [35;47m bbs.cs.nchu.edu.tw [m
 [1;31m|[35m Author [31m| [36m61-216-136-210.HINET-IP.hinet.net[m

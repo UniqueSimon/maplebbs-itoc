@@ -1,12 +1,12 @@
-�@��: itoc (cygreadline4.dll) �ݪO: plan
-���D: [�\��] ���u����
-�ɶ�: 2004/05/11 Tue 19:03:58                           Updated: 2004/05/11
+作者: itoc (cygreadline4.dll) 看板: plan
+標題: [功能] 美工站長
+時間: 2004/05/11 Tue 19:03:58                           Updated: 2004/05/11
 
-�� �ޭz�mfar (��...)�n���ʨ��G
->     �N�O�ͯ����]���u�����o��¾��,�N�O�u��s��etc/�U���ɮ�..
->     �ڭn�p�����v�����@��ϥΪ̪��v������"�U�صe��"�̪��ɮשO?
+※ 引述《far (遠...)》之銘言：
+>     就是敝站有設美工站長這種職位,就是只能編輯etc/下的檔案..
+>     我要如何更改權限讓一般使用者的權限能更改"各種畫面"裡的檔案呢?
 
-: perm.h  �H�K��@�ӪŪ����A�Ҧp PERM_9�A�令 PERM_ART
+: perm.h  隨便選一個空的欄位，例如 PERM_9，改成 PERM_ART
 
 - #define PERM_9          0x00000100
 + #define PERM_ART        0x00000100
@@ -20,33 +20,33 @@
   ...
   ...
 
-- "�O�d",                       /* PERM_9 */
-+ "���u�`��",                   /* PERM_ART */
+- "保留",                       /* PERM_9 */
++ "美工總管",                   /* PERM_ART */
 
-: menu.c �H�K��@�ӿ��[�J�ﶵ
+: menu.c 隨便找一個選單加入選項
 
 + "bin/admutil.so:a_artfile", PERM_ART | PERM_SYSOP, - M_SYSTEM,
-+ "Art        �m ���u�޲z �n",
++ "Art        《 美工管理 》",
 
-: admutil.c:a_artfile() �s�W�o�禡�� a_regmerge() �᭱
+: admutil.c:a_artfile() 新增這函式於 a_regmerge() 後面
 
-  desc[] �� path[] �����ǬO�������A�i�H�ۤv���A�̦h 18 ���ɮ�
-  �ɮ׸��|�i�H�O���N�A�q�`�O gem/@/@* �� etc/*
-  �p�G 18 �Ӥ����A����N�A�[�@�� a_artfile2()�A�å[�J menu.c ���ﶵ
+  desc[] 及 path[] 的順序是對應的，可以自己換，最多 18 個檔案
+  檔案路徑可以是任意，通常是 gem/@/@* 及 etc/*
+  如果 18 個不夠，那麼就再加一個 a_artfile2()，並加入 menu.c 的選項
 
 int
 a_artfile()
 {
   static char *desc[] =
   {
-    "�}�Y�e��(��)",
-    "�}�Y�e��(��)",
-    "�}�Y�e��(��)",
-    "�w��e��",
-    "�A���e��",
-    "�ͤ���Ѫ��W���e��",
-    "�峹�o������",
-    "�ֳz�w��e��",
+    "開頭畫面(０)",
+    "開頭畫面(１)",
+    "開頭畫面(２)",
+    "歡迎畫面",
+    "再見畫面",
+    "生日當天的上站畫面",
+    "文章發表綱領",
+    "樂透歡迎畫面",
     NULL
   };
 
@@ -67,4 +67,4 @@ a_artfile()
 }
 
 --
-[1;37m�� ���峹�� [33mitoc[37m �q [32mitoc.Dorm11.NCTU.edu.tw[37m �o��[m
+[1;37m□ 本文章由 [33mitoc[37m 從 [32mitoc.Dorm11.NCTU.edu.tw[37m 發表[m

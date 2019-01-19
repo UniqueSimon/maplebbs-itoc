@@ -1,19 +1,19 @@
-µo«H¤H: amaki.bbs@luna.twbbs.org (¤ÈÄ±¦Ï) ¬İªO: plan
-¼Ğ  ÃD: [­×§ï]¶i¤J¦W³æ®É°µusernoÀË¬d
-µo«H¯¸: ¤ë¤U©]·Q (2003/12/15 Mon 22:04:19)                Updated: 2004/05/11
+ç™¼ä¿¡äºº: amaki.bbs@luna.twbbs.org (åˆè¦ºç¾Š) çœ‹æ¿: plan
+æ¨™  é¡Œ: [ä¿®æ”¹]é€²å…¥åå–®æ™‚åšusernoæª¢æŸ¥
+ç™¼ä¿¡ç«™: æœˆä¸‹å¤œæƒ³ (2003/12/15 Mon 22:04:19)                Updated: 2004/05/11
 
-  ¦pªG§A¦³°µ§â.USR©ñ¤Jshm³o½g­×§ï¡A¨º»òpal_body()´N¥i¥H¶¶«K°µÀË¬duserno¦Ó¥B¤£
+  å¦‚æœä½ æœ‰åšæŠŠ.USRæ”¾å…¥shmé€™ç¯‡ä¿®æ”¹ï¼Œé‚£éº¼pal_body()å°±å¯ä»¥é †ä¾¿åšæª¢æŸ¥usernoè€Œä¸”ä¸
 
-  »İÅªµwºĞ¡A§K±o§â.ACCT¾ŞÃz¡C
+  éœ€è®€ç¡¬ç¢Ÿï¼Œå…å¾—æŠŠ.ACCTæ“çˆ†ã€‚
 
 : pal.c
 
-  «e­±¥[¤@¤U
+  å‰é¢åŠ ä¸€ä¸‹
 
 extern XZ xz[];
 +extern SCACHE *schema_shm;
 
-  §ïpal_body()
+  æ”¹pal_body()
 
 static int
 pal_body(xo)
@@ -33,9 +33,9 @@ pal_body(xo)
 +   if (str_ncmp(schema->userid, pal->userid, strlen(pal->userid)))
 +   {
 +     rec_del(xo->dir, sizeof(PAL), num, NULL, NULL);
-+     sprintf(buf, "±zªº¦W³æ¸Ì%s(No.%d)³o­ÓID¤w¸gÅÜ§ó¹L©Î¬O³Q¬å±¼", pal->userid, pal->userno);
++     sprintf(buf, "æ‚¨çš„åå–®è£¡%s(No.%d)é€™å€‹IDå·²ç¶“è®Šæ›´éæˆ–æ˜¯è¢«ç æ‰", pal->userid, pal->userno);
 +     vmsg(buf);
-+     return XO_LOAD; /* amaki. ­«·sÅª¤@¦¸ÀÉ®×¡A¦]¬°xpool¤w¸g¤£¹ï */
++     return XO_LOAD; /* amaki. é‡æ–°è®€ä¸€æ¬¡æª”æ¡ˆï¼Œå› ç‚ºxpoolå·²ç¶“ä¸å° */
 +   }
 +   else
       pal_item(++num, pal++);

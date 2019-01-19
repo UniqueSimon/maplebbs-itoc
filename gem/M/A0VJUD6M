@@ -1,14 +1,14 @@
-§@ªÌ: itoc (¤£¤Óµo®i¹êÅç«Ç) ¬ÝªO: plan
-¼ÐÃD: [¥\¯à] µL²áªº NPC
-®É¶¡: Tue Sep  3 11:54:28 2002                          Updated: 2006/01/07
+ä½œè€…: itoc (ä¸å¤ªç™¼å±•å¯¦é©—å®¤) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] ç„¡èŠçš„ NPC
+æ™‚é–“: Tue Sep  3 11:54:28 2002                          Updated: 2006/01/07
 
-  ¥á¤ô²yµ¹ userlevel=0 (¤]´N¬O guest) ªº NPC (non-player-char.)
-  NPC ·|¦^¤ô²yµ¹§A
+  ä¸Ÿæ°´çƒçµ¦ userlevel=0 (ä¹Ÿå°±æ˜¯ guest) çš„ NPC (non-player-char.)
+  NPC æœƒå›žæ°´çƒçµ¦ä½ 
 
-  ¦pªG¥á NPC ³o ID ¤ô²y
-  °Ý "½Ð°Ý¦p¦ó¶}ªO"  NPC ·|µª "¶}ªO½Ð¦Ü [newboard] ªO post"
-  °Ý "½Ð°Ý¯¸ªø¬O½Ö"  NPC ·|µª "¥»¯¸ªº¯¸ªø¬O sysop"
-  ¦pªG¸ò NPC ÀH«K¥á¤ô²y¡ANPC ¤]·|¦^§A¸Ü
+  å¦‚æžœä¸Ÿ NPC é€™ ID æ°´çƒ
+  å• "è«‹å•å¦‚ä½•é–‹æ¿"  NPC æœƒç­” "é–‹æ¿è«‹è‡³ [newboard] æ¿ post"
+  å• "è«‹å•ç«™é•·æ˜¯èª°"  NPC æœƒç­” "æœ¬ç«™çš„ç«™é•·æ˜¯ sysop"
+  å¦‚æžœè·Ÿ NPC éš¨ä¾¿ä¸Ÿæ°´çƒï¼ŒNPC ä¹Ÿæœƒå›žä½ è©±
 
 : bmw.c:bmw_rqst()
 
@@ -25,8 +25,8 @@
 
       bmw_lslot[locus++] = *mptr;       /* structure copy */
 
-+     /* ·í NPC ¦¬¨ì§O¤H¥á¨Óªº¤ô²y®É¡A¦Û°Ê¦^¸Ü */
-+     if (!strcmp(cuser.userid, "NPC"))  /* NPC ªº ID ¬O "NPC" */
++     /* ç•¶ NPC æ”¶åˆ°åˆ¥äººä¸Ÿä¾†çš„æ°´çƒæ™‚ï¼Œè‡ªå‹•å›žè©± */
++     if (!strcmp(cuser.userid, "NPC"))  /* NPC çš„ ID æ˜¯ "NPC" */
 +     {
 +       if (mptr->caller)
 +       {
@@ -55,14 +55,14 @@
 +     }
     } while (++i < j);
 
-: bmw.c:bmw_npcAI() ·s¼W©ó bmw_edit() «e­±
+: bmw.c:bmw_npcAI() æ–°å¢žæ–¼ bmw_edit() å‰é¢
 
 static void
-bmw_npcAI(msg)      /* Non-Player-Char ªº¤H¤u´¼¼z */
-  char *msg;        /* bmw.msg ªø«×¬O 69 */
+bmw_npcAI(msg)      /* Non-Player-Char çš„äººå·¥æ™ºæ…§ */
+  char *msg;        /* bmw.msg é•·åº¦æ˜¯ 69 */
 {
-  /* input msg ¬O¨Ï¥ÎªÌ©Ò¿é¤J­nµ¹ guest ªº¤ô²y */
-  /* output ¤]¥Î msg¡A¬O NPC ¦^µ¹ cuser.userid ªº¤ô²y */
+  /* input msg æ˜¯ä½¿ç”¨è€…æ‰€è¼¸å…¥è¦çµ¦ guest çš„æ°´çƒ */
+  /* output ä¹Ÿç”¨ msgï¼Œæ˜¯ NPC å›žçµ¦ cuser.userid çš„æ°´çƒ */
 
   int find;
   FILE *fp;
@@ -71,7 +71,7 @@ bmw_npcAI(msg)      /* Non-Player-Char ªº¤H¤u´¼¼z */
   find = 0;
   if (fp = fopen("etc/npc", "r"))
   {
-    while (fgets(rule, 80, fp) && fgets(ans, 80, fp))  /* ¤@¦¸ fget ¤G¦æ */
+    while (fgets(rule, 80, fp) && fgets(ans, 80, fp))  /* ä¸€æ¬¡ fget äºŒè¡Œ */
     {
       if (str = strchr(rule, '\n'))
         *str = '\0';
@@ -88,25 +88,25 @@ bmw_npcAI(msg)      /* Non-Player-Char ªº¤H¤u´¼¼z */
     fclose(fp);
   }
 
-  if (!find)        /* ¦pªG rule ¸Ì­±¨S¦³¡A´NÀH«K¦^µª */
-    strcpy(msg, "Á¿¤Ó¤pÁn¤F¡A§ÚÅ¥¤£¨ì");
+  if (!find)        /* å¦‚æžœ rule è£¡é¢æ²’æœ‰ï¼Œå°±éš¨ä¾¿å›žç­” */
+    strcpy(msg, "è¬›å¤ªå°è²äº†ï¼Œæˆ‘è½ä¸åˆ°");
 }
 
-: etc/npc ·s¼W³o­ÓÀÉ®×¡G©_¼Æ¦æ¬O³W«h¡A°¸¼Æ¦æ¬O­n¦^µªªº¸Ü¡A½d¨Ò¦p¤U¡G
-: ¦pªG­n§ï NPC ªº AI¡A´N§ï etc/npc §Y¥i
+: etc/npc æ–°å¢žé€™å€‹æª”æ¡ˆï¼šå¥‡æ•¸è¡Œæ˜¯è¦å‰‡ï¼Œå¶æ•¸è¡Œæ˜¯è¦å›žç­”çš„è©±ï¼Œç¯„ä¾‹å¦‚ä¸‹ï¼š
+: å¦‚æžœè¦æ”¹ NPC çš„ AIï¼Œå°±æ”¹ etc/npc å³å¯
 
-> ---------- ½d¨Ò±q¤U¤@¦æ¶}©l¡A¤£¥]¬A¥»¦æ ---------- <
-¦­¦w
-¤£¦­¤F°Ú¡A§Ú¨C¤Ñ³£ºÎ¨ì¤¤¤Èªº»¡
-¤Ñ®ð
-¤µ¤Ñ¤Ñ®ð¥i¦nªº«Ü©O¡ã
-¬°¤°»ò
-§A³o»òÁo©ú³£¤£ª¾¹D¤F¡A§Ú«ç»ò¥i¯à·|ª¾¹D
-¶}ªO
-¶}ªO½Ð¦Ü [newboard] ªO post
-¯¸ªø
-¥»¯¸ªº¯¸ªø¬O sysop
-> ---------- ½d¨Ò¨ì¤W¤@¦æµ²§ô¡A¤£¥]¬A¥»¦æ ---------- <
+> ---------- ç¯„ä¾‹å¾žä¸‹ä¸€è¡Œé–‹å§‹ï¼Œä¸åŒ…æ‹¬æœ¬è¡Œ ---------- <
+æ—©å®‰
+ä¸æ—©äº†å•Šï¼Œæˆ‘æ¯å¤©éƒ½ç¡åˆ°ä¸­åˆçš„èªª
+å¤©æ°£
+ä»Šå¤©å¤©æ°£å¯å¥½çš„å¾ˆå‘¢ï½ž
+ç‚ºä»€éº¼
+ä½ é€™éº¼è°æ˜Žéƒ½ä¸çŸ¥é“äº†ï¼Œæˆ‘æ€Žéº¼å¯èƒ½æœƒçŸ¥é“
+é–‹æ¿
+é–‹æ¿è«‹è‡³ [newboard] æ¿ post
+ç«™é•·
+æœ¬ç«™çš„ç«™é•·æ˜¯ sysop
+> ---------- ç¯„ä¾‹åˆ°ä¸Šä¸€è¡ŒçµæŸï¼Œä¸åŒ…æ‹¬æœ¬è¡Œ ---------- <
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mpc512-5.EE.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mpc512-5.EE.NCTU.edu.tw[37m ç™¼è¡¨[m

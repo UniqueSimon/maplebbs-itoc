@@ -1,36 +1,36 @@
-§@ªÌ: itoc (¬@±Ï¤@­ÓÆF»î) ¯¸¤º: plan
-¼ĞÃD: [¥\¯à] bbsd.c ¥Ó½Ğ new id ¥H«á´N°¨¤Wµù¥U
-®É¶¡: Sat Jul 20 01:27:39 2002                          Updated: 2005/10/31
+ä½œè€…: itoc (æ‹¯æ•‘ä¸€å€‹éˆé­‚) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] bbsd.c ç”³è«‹ new id ä»¥å¾Œå°±é¦¬ä¸Šè¨»å†Š
+æ™‚é–“: Sat Jul 20 01:27:39 2002                          Updated: 2005/10/31
 
-¡° ¤Ş­z¡mmac.bbs@kulu.twbbs.org (­·¤§§¯ºë)¡n¤§»Ê¨¥¡G
->     §Ú·QÅı¨Ï¥ÎªÌ  ¦bnew±b¸¹®É
->     ¶ñ§¹°ò¥»¸ê®Æ«á  ´N°¨¤W¨Ï¥Îe-mailµù¥U
+â€» å¼•è¿°ã€Šmac.bbs@kulu.twbbs.org (é¢¨ä¹‹å¦–ç²¾)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>     æˆ‘æƒ³è®“ä½¿ç”¨è€…  åœ¨newå¸³è™Ÿæ™‚
+>     å¡«å®ŒåŸºæœ¬è³‡æ–™å¾Œ  å°±é¦¬ä¸Šä½¿ç”¨e-mailè¨»å†Š
 
-: bbsd.c:tn_reg() ·s¼W³o¨ç¦¡©ó tn_motd() «e­±
+: bbsd.c:tn_reg() æ–°å¢é€™å‡½å¼æ–¼ tn_motd() å‰é¢
 
 static void
 tn_reg()
 {
-  if (vans("¬O§_°¨¤W E-mail »{ÃÒ(Y/N)¡H[Y] ") != 'n')
+  if (vans("æ˜¯å¦é¦¬ä¸Š E-mail èªè­‰(Y/N)ï¼Ÿ[Y] ") != 'n')
     u_addr();
-  else if (vans("¬O§_°¨¤W¶ñ¼gµù¥U³æ(Y/N)¡H[Y] ") != 'n')
+  else if (vans("æ˜¯å¦é¦¬ä¸Šå¡«å¯«è¨»å†Šå–®(Y/N)ï¼Ÿ[Y] ") != 'n')
     u_register();
   else
-    vmsg("­nµù¥U¤~·|¦³§¹¾ãÅv­­³á");
+    vmsg("è¦è¨»å†Šæ‰æœƒæœ‰å®Œæ•´æ¬Šé™å–”");
 }
 
 : bbsd.c:tn_motd()
 
 #ifdef HAVE_FORCE_BOARD
-  brd_force();  /* itoc.000319: ±j¨î¾\Åª¤½§iªO */
+  brd_force();  /* itoc.000319: å¼·åˆ¶é–±è®€å…¬å‘Šæ¿ */
 #endif
 
-+ if (cuser.numlogins == 1)     /* itoc.020719: ·sµù¥Uªº¨Ï¥ÎªÌ°¨¤Wµù¥U */
++ if (cuser.numlogins == 1)     /* itoc.020719: æ–°è¨»å†Šçš„ä½¿ç”¨è€…é¦¬ä¸Šè¨»å†Š */
 + {
 +   tn_reg();
-+   cuser.numlogins++;      /* itoc.030217: ¥H§K¤W¯¸¥¼¹F¤@¤ÀÄÁ¡A¤£­p¦¸¼Æ */
++   cuser.numlogins++;      /* itoc.030217: ä»¥å…ä¸Šç«™æœªé”ä¸€åˆ†é˜ï¼Œä¸è¨ˆæ¬¡æ•¸ */
 + }
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

@@ -1,24 +1,24 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (:MM:), ¬ÝªO: plan
-¼Ð  ÃD: Re: [°ÝÃD] ¨Ï¥ÎªÌ­×§ï¦Û¤vªº¤å³¹¤£¯à§ï¼ÐÃD
-µo«H¯¸: XEON (Thu Dec 26 12:01:54 2002)                   Updated: 2005/10/07
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (:MM:), çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] ä½¿ç”¨è€…ä¿®æ”¹è‡ªå·±çš„æ–‡ç« ä¸èƒ½æ”¹æ¨™é¡Œ
+ç™¼ä¿¡ç«™: XEON (Thu Dec 26 12:01:54 2002)                   Updated: 2005/10/07
 
-¡° ¤Þ­z¡mchonsi.bbs@WithHeart.twbbs.org (¦B¶ô¤¤ªº¯P¤õ - ¦BµK)¡n¤§»Ê¨¥¡G
-> ·í¨Ï¥ÎªÌ­×§ï¦Û¤vªº¤å³¹ªº®É­Ô...
-> Ctrl+x ·|Åã¥Ü¥X
-> [S]¦sÀÉ (A)©ñ±ó (T)§ï¼ÐÃD (E)Ä~Äò (R/W/D)Åª¼g§R¼È¦sÀÉ¡H
-> ¦¹®É¿ï¾Ü T «o¤£¯à­×§ï¼ÐÃD...
-> ¥u¯à°÷¦b¤å³¹¦Cªí«ö¤U T ­×§ï...
+â€» å¼•è¿°ã€Šchonsi.bbs@WithHeart.twbbs.org (å†°å¡Šä¸­çš„çƒˆç« - å†°ç„°)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> ç•¶ä½¿ç”¨è€…ä¿®æ”¹è‡ªå·±çš„æ–‡ç« çš„æ™‚å€™...
+> Ctrl+x æœƒé¡¯ç¤ºå‡º
+> [S]å­˜æª” (A)æ”¾æ£„ (T)æ”¹æ¨™é¡Œ (E)ç¹¼çºŒ (R/W/D)è®€å¯«åˆªæš«å­˜æª”ï¼Ÿ
+> æ­¤æ™‚é¸æ“‡ T å»ä¸èƒ½ä¿®æ”¹æ¨™é¡Œ...
+> åªèƒ½å¤ åœ¨æ–‡ç« åˆ—è¡¨æŒ‰ä¸‹ T ä¿®æ”¹...
 
-  ¦pªG·Q§ïªº¸Ü..À³¸Ó¬O³o¼Ë¤l
+  å¦‚æžœæƒ³æ”¹çš„è©±..æ‡‰è©²æ˜¯é€™æ¨£å­
 
 : edit.c:ve_filer()
 
   case 't':
--   if (ve_op > 0)              /* itoc.010301: ¤£¯àÀx¦s */
-+   if (ve_op >= 0)             /* itoc.010301: ¤£¯àÀx¦s */
+-   if (ve_op > 0)              /* itoc.010301: ä¸èƒ½å„²å­˜ */
++   if (ve_op >= 0)             /* itoc.010301: ä¸èƒ½å„²å­˜ */
     {
       strcpy(buf, ve_title);
-      if (!vget(b_lines, 0, "¼ÐÃD¡G", ve_title, TTLEN + 1, GCARRY))
+      if (!vget(b_lines, 0, "æ¨™é¡Œï¼š", ve_title, TTLEN + 1, GCARRY))
         strcpy(ve_title, buf);
     }
     return VE_FOOTER;
@@ -31,17 +31,17 @@
   ...
   ...
 
-+ if (strcmp(ve_title, hdr->title))     /* §ó°Ê¤F¼ÐÃD */
++ if (strcmp(ve_title, hdr->title))     /* æ›´å‹•äº†æ¨™é¡Œ */
 + {
 +   strcpy(hdr->title, ve_title);
 +   currchrono = hdr->chrono;
 +   rec_put(xo->dir, hdr, sizeof(HDR), xo->key == XZ_XPOST ?
 +     hdr->xid : xo->pos, cmpchrono);
-+   return XO_INIT;   /* itoc.021226: XZ_POST ©M XZ_XPOST ¦@¥Î post_edit() */
++   return XO_INIT;   /* itoc.021226: XZ_POST å’Œ XZ_XPOST å…±ç”¨ post_edit() */
 + }
 
   /* return post_head(xo); */
-  return XO_HEAD;     /* itoc.021226: XZ_POST ©M XZ_XPOST ¦@¥Î post_edit() */
+  return XO_HEAD;     /* itoc.021226: XZ_POST å’Œ XZ_XPOST å…±ç”¨ post_edit() */
 }
 
 : mail.c:mbox_edit()
@@ -53,7 +53,7 @@
 + {
 +   strcpy(ve_title, hdr->title);
     vedit(fpath, 0);
-+   if (strcmp(ve_title, hdr->title))     /* §ó°Ê¤F¼ÐÃD */
++   if (strcmp(ve_title, hdr->title))     /* æ›´å‹•äº†æ¨™é¡Œ */
 +   {
 +     strcpy(hdr->title, ve_title);
 +     currchrono = hdr->chrono;
@@ -63,7 +63,7 @@
 +   }
 + }
   else
-    vedit(fpath, -1);   /* ¥u¯à½s¿è¤£¥iÀx¦s */
+    vedit(fpath, -1);   /* åªèƒ½ç·¨è¼¯ä¸å¯å„²å­˜ */
 
   return mbox_head(xo);
 }
@@ -79,8 +79,8 @@
 +   strcpy(ve_title, hdr->title);
     if (vedit(fpath, 0) >= 0)
 +   {
-      gem_log(xo->dir, "­×§ï", hdr);
-+     if (strcmp(ve_title, hdr->title))     /* §ó°Ê¤F¼ÐÃD */
+      gem_log(xo->dir, "ä¿®æ”¹", hdr);
++     if (strcmp(ve_title, hdr->title))     /* æ›´å‹•äº†æ¨™é¡Œ */
 +     {
 +       strcpy(hdr->title, ve_title);
 +       rec_put(xo->dir, hdr, sizeof(HDR), xo->pos, NULL);
@@ -90,5 +90,5 @@
   }
 
 --
-    [1;36m¢~¢w¢w Origin ¢¡ [37m°Ê¤O®Ö¤ß [33;45m processor.tfcis.org [36;40m ¡ã £\£]£^ ¢w¢w¢q[m
-    [1;36m¢q     Author ¢£ [32mitoc.Dorm-GD2.NCTU.edu.tw[m
+    [1;36mâ•­â”€â”€ Origin â•® [37må‹•åŠ›æ ¸å¿ƒ [33;45m processor.tfcis.org [36;40m ï½ž Î±Î²Î³ â”€â”€â”¼[m
+    [1;36mâ”¼     Author â•¯ [32mitoc.Dorm-GD2.NCTU.edu.tw[m

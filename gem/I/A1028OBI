@@ -1,25 +1,25 @@
-§@ªÌ: itoc (¤Ó¶§ªá¨à~) ¬ÝªO: plan
-¼ÐÃD: [°ÝÃD] XO_* ªº·N«ä
-®É¶¡: Wed Dec 18 13:52:03 2002
+ä½œè€…: itoc (å¤ªé™½èŠ±å…’~) çœ‹æ¿: plan
+æ¨™é¡Œ: [å•é¡Œ] XO_* çš„æ„æ€
+æ™‚é–“: Wed Dec 18 13:52:03 2002
 
-¡° ¤Þ­z¡mu891809@oz.nthu.edu.tw (lala)¡n¤§»Ê¨¥¡G
-> ¤£À´ XO_INIT¡BXO_LOAD¡B¡K ¨º¨Ç¬O¤°»ò·N«ä
-> ¤°»ò®É­Ô­n return ¤°»ò
+â€» å¼•è¿°ã€Šu891809@oz.nthu.edu.tw (lala)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> ä¸æ‡‚ XO_INITã€XO_LOADã€â€¦ é‚£äº›æ˜¯ä»€éº¼æ„æ€
+> ä»€éº¼æ™‚å€™è¦ return ä»€éº¼
 
-  return XO_NONE;  none      ¤°»ò¤]¤£°µ
-  return XO_INIT;  initial   ­«·s¸ü¤J¸ê®Æ¡A¨Ã­«Ã¸ 0~b_lines ¦C
-  return XO_LOAD;  load      ­«·s¸ü¤J¸ê®Æ¡A¨Ã­«Ã¸ 3~b_lines ¦C
-  return XO_HEAD;  head      ­«Ã¸ 0~b_lines ¦C
-  return XO_NECK;  neck      ­«Ã¸ 1~b_lines ¦C
-  return XO_BODY;  body      ­«Ã¸ 3~b_lines ¦C
-  return XO_FOOT;  foot      ­«Ã¸ b_lines ¦C
-  return XO_LAST;  last      ¦^¨ì¤W¤@­Ó XO  (¥Ø«e¨S¥Î¨ì)
-  return XO_QUIT;  quit      Â÷¶}
+  return XO_NONE;  none      ä»€éº¼ä¹Ÿä¸åš
+  return XO_INIT;  initial   é‡æ–°è¼‰å…¥è³‡æ–™ï¼Œä¸¦é‡ç¹ª 0~b_lines åˆ—
+  return XO_LOAD;  load      é‡æ–°è¼‰å…¥è³‡æ–™ï¼Œä¸¦é‡ç¹ª 3~b_lines åˆ—
+  return XO_HEAD;  head      é‡ç¹ª 0~b_lines åˆ—
+  return XO_NECK;  neck      é‡ç¹ª 1~b_lines åˆ—
+  return XO_BODY;  body      é‡ç¹ª 3~b_lines åˆ—
+  return XO_FOOT;  foot      é‡ç¹ª b_lines åˆ—
+  return XO_LAST;  last      å›žåˆ°ä¸Šä¸€å€‹ XO  (ç›®å‰æ²’ç”¨åˆ°)
+  return XO_QUIT;  quit      é›¢é–‹
 
-  return XO_MOVE + 5;  move  ´å¼Ð²¾°Ê¨ì 5 ªº¦ì¸m
-         XO_WRAP       wrap  ±²°Ê («ö¡ô¨ì²Ä¤@µ§®É¬O§_­nÂ½¥h³Ì«á¤@­¶
-                                   «ö¡õ¨ì³Ì«á¤@µ§®É¬O§_­nÂ½¥h²Ä¤@­¶)
-  xo->pos = XO_TAIL;   tail  §â´å¼Ð©ñ¦b³Ì«á¤@µ§¸ê®Æ
+  return XO_MOVE + 5;  move  æ¸¸æ¨™ç§»å‹•åˆ° 5 çš„ä½ç½®
+         XO_WRAP       wrap  æ²å‹• (æŒ‰â†‘åˆ°ç¬¬ä¸€ç­†æ™‚æ˜¯å¦è¦ç¿»åŽ»æœ€å¾Œä¸€é 
+                                   æŒ‰â†“åˆ°æœ€å¾Œä¸€ç­†æ™‚æ˜¯å¦è¦ç¿»åŽ»ç¬¬ä¸€é )
+  xo->pos = XO_TAIL;   tail  æŠŠæ¸¸æ¨™æ”¾åœ¨æœ€å¾Œä¸€ç­†è³‡æ–™
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

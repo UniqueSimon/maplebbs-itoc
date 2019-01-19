@@ -1,10 +1,10 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: Ãö©ó§ë²¼¨t²Î...
-®É¶¡: 2003/12/31 Wed 02:46:02                           Updated: 2005/04/12
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: é—œæ–¼æŠ•ç¥¨ç³»çµ±...
+æ™‚é–“: 2003/12/31 Wed 02:46:02                           Updated: 2005/04/12
 
-¡° ¤Ş­z¡mdavidliu.bbs@bbs.sjsmit.edu.tw (David)¡n¤§»Ê¨¥¡G
-> ½Ğ°İ¤@¤UMapleBBS itocª©©Ò´£¨Ñªº§ë²¼¨t²Î¬O§_·|±N
-> ¦P¤@E-Mail»{ÃÒ¦ı¤£¦PIDªº¨Ï¥ÎªÌµø¬°¦P¤@¤H¦Ó¤£±o­«½Æ§ë²¼?
+â€» å¼•è¿°ã€Šdavidliu.bbs@bbs.sjsmit.edu.tw (David)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> è«‹å•ä¸€ä¸‹MapleBBS itocç‰ˆæ‰€æä¾›çš„æŠ•ç¥¨ç³»çµ±æ˜¯å¦æœƒå°‡
+> åŒä¸€E-Mailèªè­‰ä½†ä¸åŒIDçš„ä½¿ç”¨è€…è¦–ç‚ºåŒä¸€äººè€Œä¸å¾—é‡è¤‡æŠ•ç¥¨?
 
 : strcut.h:VLOG
 
@@ -12,13 +12,13 @@ typedef struct
 {
   char userid[IDLEN + 1];
 + char email[60];
-  char numvotes;                /* §ë´X±i */
+  char numvotes;                /* æŠ•å¹¾å¼µ */
   usint choice;
 }      VLOG;
 
 : vote.c:vote_join()
 
-  /* ¥[¤J°O¿ıÀÉ */
+  /* åŠ å…¥è¨˜éŒ„æª” */
   memset(&vlog, 0, sizeof(VLOG));
   strcpy(vlog.userid, cuser.userid);
 + strcpy(vlog.email, cuser.email);
@@ -36,5 +36,5 @@ typedef struct
       }
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

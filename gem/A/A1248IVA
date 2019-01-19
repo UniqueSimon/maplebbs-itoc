@@ -1,49 +1,49 @@
-�o�H�H: ForceFire.bbs@bbs.math.cycu.edu.tw (�ɤO����) �ݪO: plan
-��  �D: [�\��] �۰������h�ӬݪO
-�o�H��: �ƾǤ��a (2005/09/02 Fri 22:16:20)                Updated: 2005/09/02
+發信人: ForceFire.bbs@bbs.math.cycu.edu.tw (暴力火光) 看板: plan
+標  題: [功能] 自動轉錄到多個看板
+發信站: 數學之家 (2005/09/02 Fri 22:16:20)                Updated: 2005/09/02
 
-�]���ͨt�t�Ƿ|�ɱ`���i�@�ǪF��A�n����@�綠�i���Z�O�a�O
-��b�O�i�k�ҥH�ˤF�o��:p
+因為敝系系學會時常公告一些東西，要轉錄一堆公告給班板家板
+實在是懶惰所以弄了這個:p
 
-�i�H�ܦ��@�ӫ���A�άO�������b������\��̭��A�N�h�@�ӿﶵ�M��I�s�L�N�n�F�C
+可以變成一個按鍵，或是直接做在轉錄的功能裡面，就多一個選項然後呼叫他就好了。
 
 
-�ϥΤ�k�O�����s�ϥΪ̦b�峹���e�[�W�L�n������ݪO�W��
+使用方法是直接叫使用者在文章內容加上他要轉錄的看板名單
 
-�H <�ݪO�W��}�l> �����}�l��
-�H <�ݪO�W�浲��> ����������
-�����O�ݪO�C���A�@�ӬݪO�@��
+以 <看板名單開始> 做為開始行
+以 <看板名單結束> 做為結束行
+中間是看板列表，一個看板一行
 
-���O�o�˪��F�贡�J�b���e��
+像是這樣的東西插入在內容中
 
-<�ݪO�W��}�l>
+<看板名單開始>
 sysop
 junk
 deleted
 0announce
-<�ݪO�W�浲��>
+<看板名單結束>
 
-�M��H�᯸�ȥu�n�ܻ��P�����@����N�i�H�d�w�C
-�W�����ǲŸ��i�H�ۭq�A�N�g�b�{���̭��C
+然後以後站務只要很輕鬆的按一個鍵就可以搞定。
+上面那些符號可以自訂，就寫在程式裡面。
 
-�]���i���Φ�C�A�ҥH�N�ΤG���}�C�ѨM�A�A�]�i�H���̦ܳh�i�H����ݪO�W���C
+因為懶的用串列，所以就用二維陣列解決，你也可以改變最多可以轉錄看板上限。
 
-�̫�]����b�O�i���Q����A�ҥH�N�������b post_cross() �̭��F
-�y�L��@�U���ǡA�[�X��{���N ok �F
+最後因為實在是懶的想按鍵，所以就直接做在 post_cross() 裡面了
+稍微改一下順序，加幾行程式就 ok 了
 ============================================================================
 
-: �N�o�q�[�b post.c:post_cross() �e��
+: 將這段加在 post.c:post_cross() 前面
 
 /*-------------------------------------------------------*/
-/* target : �N�峹�����ۭq���ݪO�C����                 */
+/* target : 將文章轉錄到自訂的看板列表中                 */
 /* create : 2005/09/02                                   */
 /* author : hialan.bbs@bbs.math.cycu.edu.tw              */
 /*-------------------------------------------------------*/
 
-#define MAX_CROSSBOARD 100      /* �̦h�������ݪO�� */
+#define MAX_CROSSBOARD 100      /* 最多能夠轉錄看板數 */
 
-#define STR_CROSSLISTSTART      "<�ݪO�W��}�l>"
-#define STR_CROSSLISTEND        "<�ݪO�W�浲��>"
+#define STR_CROSSLISTSTART      "<看板名單開始>"
+#define STR_CROSSLISTEND        "<看板名單結束>"
 
 static int
 cross_loadlist(char *fpath, char boardlist[MAX_CROSSBOARD][BNLEN + 1])
@@ -55,7 +55,7 @@ cross_loadlist(char *fpath, char boardlist[MAX_CROSSBOARD][BNLEN + 1])
 
   if (!(fp = fopen(fpath, "r")))
   {
-    vmsg("�L�k�}���ɮסI");
+    vmsg("無法開啟檔案！");
     return 0;
   }
 
@@ -80,13 +80,13 @@ cross_loadlist(char *fpath, char boardlist[MAX_CROSSBOARD][BNLEN + 1])
 
     if ((bno = brd_bno(brdname)) < 0)
     {
-      sprintf(buf, "%s �ݪO���s�b�I", brdname);
+      sprintf(buf, "%s 看板不存在！", brdname);
       vmsg(buf);
     }
     else
     {
       brd = bshm->bcache + bno;
-      strcpy(brdname, brd->brdname);       /* ���ܤj�p�g */
+      strcpy(brdname, brd->brdname);       /* 改變大小寫 */
       num++;
     }
   }
@@ -112,13 +112,13 @@ cross_announce(xo)
 
   if (!(num = cross_loadlist(fpath, boardlist)))
   {
-    vmsg("�W��榡����άO�S���W��I");
+    vmsg("名單格式不對或是沒有名單！");
     return XO_FOOT;
   }
 
   clear();
-  prints("���D�G%s\n", hdr->title);
-  outs("�N��ܤU�C�ݪO\n");
+  prints("標題：%s\n", hdr->title);
+  outs("將轉至下列看板\n");
 
   for (i = 0; i < num && i < (b_lines - 4) * b_cols / (BNLEN + 1); i++)
   {
@@ -133,12 +133,12 @@ cross_announce(xo)
     {
       brd_fpath(xfolder, boardlist[i], fn_dir);
 
-      /* itoc.030325: ���������� copy �Y�i */
+      /* itoc.030325: 原文轉錄直接 copy 即可 */
       hdr_stamp(xfolder, HDR_COPY | 'A', &xpost, fpath);
 
       strcpy(xpost.owner, hdr->owner);
       strcpy(xpost.nick, hdr->nick);
-      strcpy(xpost.date, hdr->date);    /* �������O�d���� */
+      strcpy(xpost.date, hdr->date);    /* 原文轉載保留原日期 */
       strcpy(xpost.title, hdr->title);
 
       rec_bot(xfolder, &xpost, sizeof(HDR));
@@ -152,24 +152,24 @@ cross_announce(xo)
 
 : post.c:post_cross()
 
-  tag = AskTag("���");
+  tag = AskTag("轉錄");
   if (tag < 0)
     return XO_FOOT;
 
   dir = xo->dir;
 
 - if (!ask_board(xboard, BRD_W_BIT, "\n\n"
--   "\033[1;33m�ЬD��A�����ݪO�A��������W�L�T�O�C\033[m\n\n") ||
+-   "\033[1;33m請挑選適當的看板，切勿轉錄超過三板。\033[m\n\n") ||
 -   (*dir == 'b' && !strcmp(xboard, currboard)))
--   /* �H�c�B��ذϤ��i�H�����currboard */
+-   /* 信箱、精華區中可以轉錄至currboard */
 -   return XO_HEAD;
 
   hdr = tag ? &xhdr : (HDR *) xo_pool + (xo->pos - xo->top);
 
-  /* ��@������ۤv�峹�ɡA�i�H��ܡu�������v */
+  /* 原作者轉錄自己文章時，可以選擇「原文轉載」 */
 - method = (HAS_PERM(PERM_ALLBOARD) ||
 -   (!tag && !strcmp(hdr->owner, cuser.userid))) &&
--   (vget(2, 0, "(1)������ (2)����峹�H[1] ", buf, 3, DOECHO) != '2') ?
+-   (vget(2, 0, "(1)原文轉載 (2)轉錄文章？[1] ", buf, 3, DOECHO) != '2') ?
 -   0 : 1;
 
 + if (!HAS_PERM(PERM_ALLBOARD) && (tag || strcmp(hdr->owner, cuser.userid)))
@@ -177,8 +177,8 @@ cross_announce(xo)
 + else
 + {
 +   vget(1, 0, HAS_PERM(PERM_ALLBOARD) ?
-+     "(1)������ (2)����峹 (3)CrossPost���i�H[Q] " :
-+     "(1)������ (2)����峹�H[Q] ", buf, 3, DOECHO);
++     "(1)原文轉載 (2)轉錄文章 (3)CrossPost公告？[Q] " :
++     "(1)原文轉載 (2)轉錄文章？[Q] ", buf, 3, DOECHO);
 +
 +   method = (buf[0] == '1') ? 0 :
 +            (buf[0] == '2') ? 1 :
@@ -192,14 +192,14 @@ cross_announce(xo)
 + }
 
 + if (!ask_board(xboard, BRD_W_BIT, "\n\n"
-+   "\033[1;33m�ЬD��A�����ݪO�A��������W�L�T�O�C\033[m\n\n") ||
++   "\033[1;33m請挑選適當的看板，切勿轉錄超過三板。\033[m\n\n") ||
 +   (*dir == 'b' && !strcmp(xboard, currboard)))
-+   /* �H�c�B��ذϤ��i�H�����currboard */
++   /* 信箱、精華區中可以轉錄至currboard */
 +   return XO_HEAD;
 
-  if (!tag)     /* lkchu.981201: �������N���n�@�@�߰� */
+  if (!tag)     /* lkchu.981201: 整批轉錄就不要一一詢問 */
 
 --
- [1;43m�~[46m�q[m Origin: [41m ����j�ǣ��ƾǤ��a [32;47m bbs.math.cycu.edu.tw [m
- [1;44m�q[41m��[m Author: [1;33mForceFire [30m�q [35m203-67-154-247.adsl.dynamic.seed.net.tw[30m �o��[m
+ [1;43m╭[46m┼[m Origin: [41m 中原大學˙數學之家 [32;47m bbs.math.cycu.edu.tw [m
+ [1;44m┼[41m╯[m Author: [1;33mForceFire [30m從 [35m203-67-154-247.adsl.dynamic.seed.net.tw[30m 發表[m
 --

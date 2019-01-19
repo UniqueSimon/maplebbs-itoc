@@ -1,10 +1,10 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: [°İÃD]Tagger©ñ¨ìbmw
-®É¶¡: 2004/03/04 Thu 12:49:59                           Updated: 2004/03/05
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: [å•é¡Œ]Taggeræ”¾åˆ°bmw
+æ™‚é–“: 2004/03/04 Thu 12:49:59                           Updated: 2004/03/05
 
-  °e¼s¼½µ¹³Q tag ªº³o¨Ç¤H
+  é€å»£æ’­çµ¦è¢« tag çš„é€™äº›äºº
 
-: bmw.c:bmw_broadcast() ·s¼W¦¹¨ç¦¡©ó bmw_help() «e­±
+: bmw.c:bmw_broadcast() æ–°å¢æ­¤å‡½å¼æ–¼ bmw_help() å‰é¢
 
 static int
 bmw_broadcast(xo)
@@ -15,18 +15,18 @@ bmw_broadcast(xo)
   BMW *bmw, xbmw, benz;
   UTMP *up;
 
-  tag = AskTag("¯S©w¹ï¶H¼s¼½");
+  tag = AskTag("ç‰¹å®šå°è±¡å»£æ’­");
 
   if (tag < 0)
     return XO_FOOT;
 
   benz.caller = NULL;
-  bmw_edit(NULL, "¡¹¼s¼½¡G", &benz);
+  bmw_edit(NULL, "â˜…å»£æ’­ï¼š", &benz);
 
-  if (!benz.caller)      /* bmw_edit() ¤¤¦^µª No ¤£°e¥X¼s¼½ */
+  if (!benz.caller)      /* bmw_edit() ä¸­å›ç­” No ä¸é€å‡ºå»£æ’­ */
     return XO_FOOT;
 
-  /* itoc.000213: ¥[ "> " ¬°¤F»P¤@¯ë¤ô²y°Ï¤À */
+  /* itoc.000213: åŠ  "> " ç‚ºäº†èˆ‡ä¸€èˆ¬æ°´çƒå€åˆ† */
   sprintf(benz.userid, "%s> ", cuser.userid);
 
   bmw = tag ? &xbmw : (BMW *) xo_pool + xo->pos - xo->top;
@@ -38,8 +38,8 @@ bmw_broadcast(xo)
     if (tag)
       EnumTag(bmw, dir, locus, sizeof(BMW));
 
-    /* itoc.010304: Åı¶Ç°Tªº bmw ¤]¥i¥H¦^ */
-    /* §Ú°e¤ô²yµ¹§O¤H¡A¦^µ¹¦¬°TªÌ¡F§O¤H°e¤ô²yµ¹§Ú¡A¦^µ¹°e°TªÌ */
+    /* itoc.010304: è®“å‚³è¨Šçš„ bmw ä¹Ÿå¯ä»¥å› */
+    /* æˆ‘é€æ°´çƒçµ¦åˆ¥äººï¼Œå›çµ¦æ”¶è¨Šè€…ï¼›åˆ¥äººé€æ°´çƒçµ¦æˆ‘ï¼Œå›çµ¦é€è¨Šè€… */
     userno = (bmw->sender == cuser.userno) ? bmw->recver : bmw->sender;
     if (!userno)
       continue;
@@ -69,5 +69,5 @@ bmw_broadcast(xo)
   'h', bmw_help
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;45m¢¢[42m¢¡[m [1mMo[30mdi[mfy: [1;36m2004/03/04 Thu 12:50:44[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;45mâ•°[42mâ•®[m [1mMo[30mdi[mfy: [1;36m2004/03/04 Thu 12:50:44[m

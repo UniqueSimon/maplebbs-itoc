@@ -1,16 +1,16 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: ½Ğ°İ¦p¦óÅı"¶i¯¸µe­±"¶Ã¼Æ¶]¥X"°ÊºA¬İª©"?
-®É¶¡: 2004/03/11 Thu 14:14:19                           Updated: 2006/02/13
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: è«‹å•å¦‚ä½•è®“"é€²ç«™ç•«é¢"äº‚æ•¸è·‘å‡º"å‹•æ…‹çœ‹ç‰ˆ"?
+æ™‚é–“: 2004/03/11 Thu 14:14:19                           Updated: 2006/02/13
 
-¡° ¤Ş­z¡mleira.bbs@wretch.twbbs.org (kkk)¡n¤§»Ê¨¥¡G
->   ·QÅı¶i¯¸µe­±ÀH¾÷¶]¥X°ÊºA¬İª©ªº¹Ï
->   ¦Ó¤£¥u¬O©T©w´X­ÓÀÉ®×
+â€» å¼•è¿°ã€Šleira.bbs@wretch.twbbs.org (kkk)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>   æƒ³è®“é€²ç«™ç•«é¢éš¨æ©Ÿè·‘å‡ºå‹•æ…‹çœ‹ç‰ˆçš„åœ–
+>   è€Œä¸åªæ˜¯å›ºå®šå¹¾å€‹æª”æ¡ˆ
 
 : bbsd.c:tn_main()
 
-- film_out((ap_start % 3) + FILM_OPENING0, 3);  /* ¶Ã¼ÆÅã¥Ü¶}ÀYµe­± */
+- film_out((ap_start % 3) + FILM_OPENING0, 3);  /* äº‚æ•¸é¡¯ç¤ºé–‹é ­ç•«é¢ */
 + film_out(FILM_MOVIE, 3);
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mpc512-2.ee.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mpc512-2.ee.nctu.edu.tw [30mç™¼è¡¨[m

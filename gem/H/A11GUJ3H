@@ -1,16 +1,16 @@
-�@��: itoc (�֤߰ʤO) �ݪO: itoc
-���D: Re: [���D] �s�p�t��
-�ɶ�: 2005/08/27 Sat 01:06:42                           Updated: 2005/08/28
+作者: itoc (核心動力) 看板: itoc
+標題: Re: [問題] 連署系統
+時間: 2005/08/27 Sat 01:06:42                           Updated: 2005/08/28
 
-�� �ޭz�mid9455.bbs@csc241.twbbs.org (...~"~)�n���ʨ��G
-> �p�G���ڷQ��s�p�t�Χ令
-> �إ߭�Boardaffairs�ݪO  �Y�i�b�̭��s�p
-> �Ӥ��O��XYZ���i�hJoin�s�p �����ӳ��¤p�̤@��
+※ 引述《id9455.bbs@csc241.twbbs.org (...~"~)》之銘言：
+> 如果說我想把連署系統改成
+> 建立個Boardaffairs看板  即可在裡面連署
+> 而不是由XYZ選單進去Join連署 像未來最舊小棧一樣
 
 : global.h
 
-#define BN_UNANONYMOUS  "UnAnonymous"   /* �ΦW�O���峹�|�ƻs�@���b�o�� */
-+#define BN_NEWBOARD    "newboard"      [1;44m// �O�W�۩w [m
+#define BN_UNANONYMOUS  "UnAnonymous"   /* 匿名板的文章會複製一份在這裡 */
++#define BN_NEWBOARD    "newboard"      [1;44m// 板名自定 [m
 
 : post.c:post_switch()
 
@@ -39,9 +39,9 @@
 +   return;
 + }
 
-> �w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w <
+> ──────────────────────────────────── <
 
-> �åB�u�n���H�ӽгs�p  �ݪO�e���N�|�h�ӲŸ�
+> 並且只要有人申請連署  看板前面就會多個符號
 
 : board.c:btime_refresh()
 
@@ -54,7 +54,7 @@
 +     strcpy(folder, "run/newbrd/"FN_DIR);
 +     fd = rec_num(folder, sizeof(NBRD));
 +
-+     /* �ݳ̫�@�g�O�_�w�g�}�O */
++     /* 看最後一篇是否已經開板 */
 +     if (fd > 0 && !rec_get(folder, &nbrd, sizeof(NBRD), fd - 1) &&
 +       !(nbrd.mode & NBRD_FINISH) && (nbrd.mode & NBRD_NEWBOARD))
 +       brd->blast = 0x1000;
@@ -64,16 +64,16 @@
 
 : board.c:class_item()
 
-  /* �B�z �wŪ/��Ū */
+  /* 處理 已讀/未讀 */
 + if (!strcmp(brd->brdname, BN_NEWBOARD))
 + {
-+   /* �ݳ̫�@�g�O�_�w�g�}�O�ӨM�w�wŪ/��Ū  */
++   /* 看最後一篇是否已經開板來決定已讀/未讀  */
 +   str1 = (brd->blast & 0x1000) ? ICON_UNREAD_BRD : ICON_READ_BRD;
 + }
 + else
 + {
 #ifdef ENHANCED_VISIT
-    /* itoc.010407: ��γ̫�@�g�wŪ/��Ū�ӧP�_ */
+    /* itoc.010407: 改用最後一篇已讀/未讀來判斷 */
     brh_get(brd->bstamp, bno);
     str1 = brh_unread(brd->blast) ? ICON_UNREAD_BRD : ICON_READ_BRD;
 #else
@@ -115,5 +115,5 @@
 + btime_update(brd_bno(BN_NEWBOARD));
 
 --
-[1;36m=[37m[[36m��[37m:[33m�[37mݢ�[m���[1;33m�[37m:[36m�� [31mOrigin[37m ]|[[m  [31m�[1mʤ[;31;40mO�[1m֤[;31;40m� [1mcpu.tfcis.org  [37m]|[�[33mݣ��[m�[1;36m��[37m:][36m=[m
-[1;36m=[m[[1;36m��[37m:[33m�[30mݢ�[m���[1;33m�[37m:[36m�� [31mAuthor[m ]|[[1m itoc.Dorm11.NCTU.edu.tw  [m]|[�[1;33m�[30m�[37m��[30m�[36m��[37m:[m][1;36m=[m
+[1;36m=[37m[[36m﹎[37m:[33m?[37m摃?[m◣?[1;33m?[37m:[36m﹎ [31mOrigin[37m ]|[[m  [31m?[1m吨[;31;40mO?[1m痐[;31;40m?[1mcpu.tfcis.org  [37m]|[?[33m搟說[m?[1;36m﹎[37m:][36m=[m
+[1;36m=[m[[1;36m﹊[37m:[33m?[30m摃?[m╱?[1;33m?[37m:[36m﹊ [31mAuthor[m ]|[[1m itoc.Dorm11.NCTU.edu.tw  [m]|[?[1;33m?[30m?[37m插[30m?[36m﹊[37m:[m][1;36m=[m

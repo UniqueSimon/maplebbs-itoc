@@ -1,28 +1,28 @@
-µo«H¤H: TKyo.bbs@cpu.tfcis.org (·t¶Â¶Q¤½¤l) ¬İªO: plan
-¼Ğ  ÃD: Re: [¥\¯à] dict.c Yahoo! ½u¤W¦r¨å
-µo«H¯¸: °Ê¤O®Ö¤ß (2006/03/13 Mon 13:42:16)                Updated: 2006/03/13
+ç™¼ä¿¡äºº: TKyo.bbs@cpu.tfcis.org (æš—é»‘è²´å…¬å­) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [åŠŸèƒ½] dict.c Yahoo! ç·šä¸Šå­—å…¸
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2006/03/13 Mon 13:42:16)                Updated: 2006/03/13
 
-¡° ¤Ş­z¡mlzch.bbs@lzch.twbbs.org (³á­C)¡n¤§»Ê¨¥¡G
-> linux §ï Makefile ªº¤èªk¥i¯à¤£¤Ó¤@¼Ë...
-> code ¼gªº¤£¬O«Ü¦n¡AÁ`¤§¤èªk¬O¥Î iconv() §â yahoo ¦r¨åªº½s½XÂà¦¨ big5
-> ¦³¿³½ìªº¦A¦Û¤v§ï§a :)
-> ÁÙ¬O¦³ bug ªº.. ¥u¬O§Ú¤£¤Óª¾¹D¬O¬°¤°»ò?? (¤£·|§ï°Õ...)
+â€» å¼•è¿°ã€Šlzch.bbs@lzch.twbbs.org (å–”è€¶)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> linux æ”¹ Makefile çš„æ–¹æ³•å¯èƒ½ä¸å¤ªä¸€æ¨£...
+> code å¯«çš„ä¸æ˜¯å¾ˆå¥½ï¼Œç¸½ä¹‹æ–¹æ³•æ˜¯ç”¨ iconv() æŠŠ yahoo å­—å…¸çš„ç·¨ç¢¼è½‰æˆ big5
+> æœ‰èˆˆè¶£çš„å†è‡ªå·±æ”¹å§ :)
+> é‚„æ˜¯æœ‰ bug çš„.. åªæ˜¯æˆ‘ä¸å¤ªçŸ¥é“æ˜¯ç‚ºä»€éº¼?? (ä¸æœƒæ”¹å•¦...)
 > http://xcin.linux.org.tw/i18n/pc2000/p4/node2.html
 > http://netlab.cse.yzu.edu.tw/~statue/freebsd/zh-tut/converter.html#ICONV
 > http://opensvn.csie.org/pttbbs/tags/stable.rc/docs/FAQ
 
-§Úªº¤èªk¤ñ¸û¤£¤@¼Ë
+æˆ‘çš„æ–¹æ³•æ¯”è¼ƒä¸ä¸€æ¨£
 
-§Ú¬O¥Î zh-autoconvert ³o­Ó®M¥óªº autob5 ¤u¨ãÂà´« :)
+æˆ‘æ˜¯ç”¨ zh-autoconvert é€™å€‹å¥—ä»¶çš„ autob5 å·¥å…·è½‰æ› :)
 
 : src/game/Makefile
 
 SO = ......  tetris.so [1;33mdict.so[m
 
-: src/game/dict.c ·s¼W¦¹µ{¦¡
+: src/game/dict.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
-/* target : Yahoo ½u¤W¦r¨å                               */
+/* target : Yahoo ç·šä¸Šå­—å…¸                               */
 /* create : 01/07/09                                     */
 /* update : 06/01/16                                     */
 /* author : statue.bbs@bbs.yzu.edu.tw                    */
@@ -31,13 +31,13 @@ SO = ......  tetris.so [1;33mdict.so[m
 
 #if 0
 
-  ´¶³q
+  æ™®é€š
   http://tw.dictionary.yahoo.com/search?ei=big5&p=hello
 
-  ¦P¸q¦r/¤Ï¸q¦r
+  åŒç¾©å­—/åç¾©å­—
   http://tw.dictionary.yahoo.com/search?ei=big5&p=hello&type=t
 
-  ÅÜ¤Æ§Î
+  è®ŠåŒ–å½¢
   http://tw.dictionary.yahoo.com/search?ei=big5&p=hello&type=v
 
 #endif
@@ -54,11 +54,11 @@ SO = ......  tetris.so [1;33mdict.so[m
 #define CGI_yahoo       "/search?ei=big5&p="
 #define CGI_yahoo2      "&type="
 #define REF             "http://tw.dictionary.yahoo.com/"
-#define Dict_Name       "Yahoo! ½u¤W¦r¨å"
+#define Dict_Name       "Yahoo! ç·šä¸Šå­—å…¸"
 
 static void
 url_encode(dst, src)        /* URL encoding */
-  uschar *dst;       /* Thor.990331: ­n src ªº¤T­¿ªÅ¶¡ */
+  uschar *dst;       /* Thor.990331: è¦ src çš„ä¸‰å€ç©ºé–“ */
   uschar *src;
 {
   for (; *src; src++)
@@ -90,7 +90,7 @@ write_file(type, sockfd, fp, ftmp)
   int cc, i, j, fsize;
   char *xhead, *fimage;
   int show, start_show;
-  int space;                /* ¦b html ¤¤¡A³sÄòªº space ¥u·|ºâ¤@¦¸ */
+  int space;                /* åœ¨ html ä¸­ï¼Œé€£çºŒçš„ space åªæœƒç®—ä¸€æ¬¡ */
 
   char *start_str[] =
   {
@@ -109,7 +109,7 @@ write_file(type, sockfd, fp, ftmp)
     NULL
   };
 
-  char *newline_str[] =      /* ¨ú¥N´«¦æ¦r¤¸ªº²Å¸¹ */
+  char *newline_str[] =      /* å–ä»£æ›è¡Œå­—å…ƒçš„ç¬¦è™Ÿ */
   {
     "<br>",
     "</div>",
@@ -117,12 +117,12 @@ write_file(type, sockfd, fp, ftmp)
     NULL
   };
 
-  char *other_str[] =        /* ¨ä¥L¦r¤¸²Å¸¹ */
+  char *other_str[] =        /* å…¶ä»–å­—å…ƒç¬¦è™Ÿ */
   {
     "A", "&nbsp;", " ",
-    "d", "<li><div class=pexplain>", "\033[m\n  \033[1;33m£»\033[32m",
-    "d", "<li>\n<div class=pexplain>", "\033[m\n  \033[1;33m£»\033[32m",
-    "d", "<li>", "\033[m\n  \033[1;33m£»\033[32m",
+    "d", "<li><div class=pexplain>", "\033[m\n  \033[1;33mË™\033[32m",
+    "d", "<li>\n<div class=pexplain>", "\033[m\n  \033[1;33mË™\033[32m",
+    "d", "<li>", "\033[m\n  \033[1;33mË™\033[32m",
     "d", "<div class=pexplain>", "\033[m\n    ",
     "d", "<div class=pcixin>", "\033[1;31m",
     "d", "<span id=dropdownid>", "\033[m      \033[1;37m",
@@ -154,7 +154,7 @@ write_file(type, sockfd, fp, ftmp)
   if (fimage == (char *) -1)
   {
     fclose(fp);
-    vmsg("¥Ø«eµLªk¶}±Ò Yahoo ½u¤W¦r¨å¼È¦sÀÉ");
+    vmsg("ç›®å‰ç„¡æ³•é–‹å•Ÿ Yahoo ç·šä¸Šå­—å…¸æš«å­˜æª”");
     return -1;
   }
 
@@ -224,7 +224,7 @@ write_file(type, sockfd, fp, ftmp)
       }
     }
 
-    /* ¼ĞÅÒ²¤¹L */
+    /* æ¨™ç±¤ç•¥é */
 
     cc = *xhead;
     switch(cc)
@@ -272,12 +272,12 @@ http_conn(server, word, type, s)
 
   if ((sockfd = dns_open(server, HTTP_PORT)) < 0)
   {
-    vmsg("µLªk»P¦øªA¾¹¨ú±o³sµ²¡A¬d¸ß¥¢±Ñ");
+    vmsg("ç„¡æ³•èˆ‡ä¼ºæœå™¨å–å¾—é€£çµï¼ŒæŸ¥è©¢å¤±æ•—");
     return 0;
   }
   else
   {
-    mouts(22, 0, "¥¿¦b³s±µ¦øªA¾¹¡A½Ğµy«á(«ö¥ô·NÁäÂ÷¶}).............");
+    mouts(22, 0, "æ­£åœ¨é€£æ¥ä¼ºæœå™¨ï¼Œè«‹ç¨å¾Œ(æŒ‰ä»»æ„éµé›¢é–‹).............");
     refresh();
   }
   write(sockfd, s, strlen(s));
@@ -294,14 +294,14 @@ http_conn(server, word, type, s)
 
   fprintf(fp, "%-24s\033[1;37;44m  " Dict_Name "  \033[m\n%s\n",
     "", msg_seperator);
-  fprintf(fp, "¸Ó­¶³sµ²¡Ghttp://%s%s\n\n", server, s + 4);
+  fprintf(fp, "è©²é é€£çµï¼šhttp://%s%s\n\n", server, s + 4);
   fprintf(fp, "%s", word);
 
-  outz("Â^¨ú¸ê®Æ¤¤¡A½Ğµy«á...");
+  outz("æ“·å–è³‡æ–™ä¸­ï¼Œè«‹ç¨å¾Œ...");
   refresh();
 
   if (write_file(type, sockfd, fp, ftmp) >= 0)
-    fprintf(fp, "\n\n%s\n%-26s\033[1;36;40mYahoo! \033[37m½u¤W¦r¨å\033[m\n",
+    fprintf(fp, "\n\n%s\n%-26s\033[1;36;40mYahoo! \033[37mç·šä¸Šå­—å…¸\033[m\n",
       msg_seperator, "");
 
   fclose(fp);
@@ -337,23 +337,23 @@ main_yahoo()
 {
   char word[30];
   char *menu[] = {"DD",
-      "D  ÄÀ¸q",
-      "T  ¦P¸q¦r/¤Ï¸q¦r",
-      "V  ÅÜ¤Æ§Î", NULL};
+      "D  é‡‹ç¾©",
+      "T  åŒç¾©å­—/åç¾©å­—",
+      "V  è®ŠåŒ–å½¢", NULL};
 
   while (1)
   {
     clear();
     move(0, 25);
-    outs("\033[1;37;44m¡· " Dict_Name " ¡·\033[m");
+    outs("\033[1;37;44mâ— " Dict_Name " â—\033[m");
     move(3, 0);
-    outs("¦¹¦r¨å¨Ó·½¬° " Dict_Name "¡C\n\n");
-    outs("ºô§}¡G" REF);
+    outs("æ­¤å­—å…¸ä¾†æºç‚º " Dict_Name "ã€‚\n\n");
+    outs("ç¶²å€ï¼š" REF);
 
-    if (!vget(8, 0, "¬d¸ß¦r·J¡G", word, 30, DOECHO))
+    if (!vget(8, 0, "æŸ¥è©¢å­—å½™ï¼š", word, 30, DOECHO))
       break;
 
-    yahoo_dict(word, pans(-1, -1, "¬d¸ß¿ï¶µ", menu));
+    yahoo_dict(word, pans(-1, -1, "æŸ¥è©¢é¸é …", menu));
   }
 
   return 0;
@@ -362,5 +362,5 @@ main_yahoo()
 
 
 --
-[1;36m=[37m[[36m¡É[37m:[33m¡[37mİ¢¨[m¢©¡[1;33mİ[37m:[36m¡É [31mOrigin[37m ]|[[m  [0;31m°[1mÊ[1m¤[0;31mO[0;31m®[1mÖ[1m¤[0;31mß [1mcpu.tfcis.org  [37m]|[¡[33mİ£»¡[mİ[1;36m¡É[37m:][36m=[m
-[1;36m=[0m[[1;36m¡Ç[37m:[33m¡[30mİ¢ª[m¢¬¡[1;33mİ[37m:[36m¡Ç [31mAuthor[m ]|[[1m     cszone.twbbs.org     [m]|[¡[1;33mİ[30m¡[37m´¡[30mİ[36m¡Ç[37m:[m][1;36m=[m
+[1;36m=[37m[[36mï¹[37m:[33m?[37mæ‘ƒ?[mâ—£?[1;33m?[37m:[36mï¹ [31mOrigin[37m ]|[[m  [0;31m?[1m?[1m?[0;31mO[0;31m?[1m?[1m?[0;31m?[1mcpu.tfcis.org  [37m]|[?[33mæŸèªª[m?[1;36mï¹[37m:][36m=[m
+[1;36m=[0m[[1;36mï¹Š[37m:[33m?[30mæ‘ƒ?[mâ•±?[1;33m?[37m:[36mï¹Š [31mAuthor[m ]|[[1m     cszone.twbbs.org     [m]|[?[1;33m?[30m?[37mæ’[30m?[36mï¹Š[37m:[m][1;36m=[m

@@ -1,25 +1,25 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD] ¦p¦ó¦Û­q¬İªO¦Cªíªº¤ÀÃş±Æ§Ç¡H
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/03/13 Sat 03:00:55)                Updated: 2004/03/13
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] å¦‚ä½•è‡ªè¨‚çœ‹æ¿åˆ—è¡¨çš„åˆ†é¡æ’åºï¼Ÿ
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/03/13 Sat 03:00:55)                Updated: 2004/03/13
 
-¡° ¤Ş­z¡mbooloo (booloo)¡n¤§»Ê¨¥¡G
-> ¦p¦ó¦Û­q¬İªO¦Cªíªº¤ÀÃş±Æ§Ç¡H
->    355 £¾zechs        ­Ó¤H ¡¸ Just Face The Music!               zechs
->   1083 £¾TF9019       ¯Z¯Å ¡¹ ¥x«n¤@¤¤¢¸¢¯¯Å¢°¢¸¯Z               phantom/Jeff
-> ·Q­n¦Û­q±Æ§Ç¡AÅı¬İªO¦Cªí¸Ì¡A"¯Z¯Å" ªº¤ÀÃş¦b "­Ó¤H" «e­±¡A­n«ç»ò°µ©O¡H
+â€» å¼•è¿°ã€Šbooloo (booloo)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å¦‚ä½•è‡ªè¨‚çœ‹æ¿åˆ—è¡¨çš„åˆ†é¡æ’åºï¼Ÿ
+>    355 Ë‡zechs        å€‹äºº â˜† Just Face The Music!               zechs
+>   1083 Ë‡TF9019       ç­ç´š â˜… å°å—ä¸€ä¸­ï¼™ï¼ç´šï¼‘ï¼™ç­               phantom/Jeff
+> æƒ³è¦è‡ªè¨‚æ’åºï¼Œè®“çœ‹æ¿åˆ—è¡¨è£¡ï¼Œ"ç­ç´š" çš„åˆ†é¡åœ¨ "å€‹äºº" å‰é¢ï¼Œè¦æ€éº¼åšå‘¢ï¼Ÿ
 
-: account.c:sequence_match() ·s¼W¦b brdtitle_cmp() «e­±
+: account.c:sequence_match() æ–°å¢åœ¨ brdtitle_cmp() å‰é¢
 
-static int              /* >0:¶Ç¦^¶¶§Ç  0:§ä¤£¨ì¹ïÀ³¦r¦ê */
+static int              /* >0:å‚³å›é †åº  0:æ‰¾ä¸åˆ°å°æ‡‰å­—ä¸² */
 sequence_match(class)
   char *class;
 {
   int i;
-  char *seq[] =         /* «ü©wÀu¥ı¶¶§Ç¤ÀÃş */
+  char *seq[] =         /* æŒ‡å®šå„ªå…ˆé †åºåˆ†é¡ */
   {
-    [1;44m// ¦Û©wÀu¥ı¶¶§Ç¡A±Æ«e­±ªº¤ñ¸ûÀu¥ı [m
-    "¯¸°È", "¾Ç®Õ", "ªÀ¹Î", "­Ó¤H", "®T¼Ö", "¹q¸£",
-    NULL            /* ³Ì«á¤@¶µ©ñ NULL */
+    [1;44m// è‡ªå®šå„ªå…ˆé †åºï¼Œæ’å‰é¢çš„æ¯”è¼ƒå„ªå…ˆ [m
+    "ç«™å‹™", "å­¸æ ¡", "ç¤¾åœ˜", "å€‹äºº", "å¨›æ¨‚", "é›»è…¦",
+    NULL            /* æœ€å¾Œä¸€é …æ”¾ NULL */
   };
 
   for (i = 0; seq[i]; i++)
@@ -31,10 +31,10 @@ sequence_match(class)
   return 0;
 }
 
-: account.c:brdtitle_cmp() §ï¦¨³o¼Ë
+: account.c:brdtitle_cmp() æ”¹æˆé€™æ¨£
 
 static int
-brdtitle_cmp(i, j)              /* itoc.010413: ¨Ì¬İªO¤¤¤å±Ô­z±Æ§Ç */
+brdtitle_cmp(i, j)              /* itoc.010413: ä¾çœ‹æ¿ä¸­æ–‡æ•˜è¿°æ’åº */
   short *i, *j;
 {
   int iSeq, jSeq;
@@ -44,28 +44,28 @@ brdtitle_cmp(i, j)              /* itoc.010413: ¨Ì¬İªO¤¤¤å±Ô­z±Æ§Ç */
 
   if (!iSeq && !jSeq)
   {
-    /* ³£¤£¬O¡u«ü©wÀu¥ı¶¶§Ç¤ÀÃş¡v´N¤ÀÃş/ªO¦W¥æ¤e¤ñ¹ï */
+    /* éƒ½ä¸æ˜¯ã€ŒæŒ‡å®šå„ªå…ˆé †åºåˆ†é¡ã€å°±åˆ†é¡/æ¿åäº¤å‰æ¯”å° */
     iSeq = strcmp(bhead[*i].class, bhead[*j].class);
     return iSeq ? iSeq : str_cmp(bhead[*i].brdname, bhead[*j].brdname);
   }
   else if (!iSeq)
   {
-    /* «D¡u«ü©wÀu¥ı¶¶§Ç¤ÀÃş¡v±Æ§Ç¤@©w¦b«á */
+    /* éã€ŒæŒ‡å®šå„ªå…ˆé †åºåˆ†é¡ã€æ’åºä¸€å®šåœ¨å¾Œ */
     return 1;
   }
   else if (!jSeq)
   {
-    /* ¬O¡u«ü©wÀu¥ı¶¶§Ç¤ÀÃş¡v±Æ§Ç¤@©w¦b«e */
+    /* æ˜¯ã€ŒæŒ‡å®šå„ªå…ˆé †åºåˆ†é¡ã€æ’åºä¸€å®šåœ¨å‰ */
     return -1;
   }
   else
   {
-    /* ³£¬O¡u«ü©wÀu¥ı¶¶§Ç¤ÀÃş¡v¡A¥ı¤ñ¹ï¶¶§Ç¡A¦A¤ñ¹ïªO¦W */
+    /* éƒ½æ˜¯ã€ŒæŒ‡å®šå„ªå…ˆé †åºåˆ†é¡ã€ï¼Œå…ˆæ¯”å°é †åºï¼Œå†æ¯”å°æ¿å */
     return iSeq != jSeq ? iSeq - jSeq :
       str_cmp(bhead[*i].brdname, bhead[*j].brdname);
   }
 }
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;45m¢¢[42m¢¡[m [1mMo[30mdi[mfy: [1;36m2004/03/13 Sat 03:00:55[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;45mâ•°[42mâ•®[m [1mMo[30mdi[mfy: [1;36m2004/03/13 Sat 03:00:55[m

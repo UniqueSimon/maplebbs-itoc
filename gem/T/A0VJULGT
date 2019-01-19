@@ -1,21 +1,21 @@
-§@ªÌ: itoc (AsPSQwel) ¯¸¤º: plan
-¼ÐÃD: [­×¥¿] talk.c ¥u¦³¯¸ªø¯àµµÁô
-®É¶¡: Wed Feb 12 23:57:44 2003                          Updated: 2003/02/12
+ä½œè€…: itoc (AsPSQwel) ç«™å…§: plan
+æ¨™é¡Œ: [ä¿®æ­£] talk.c åªæœ‰ç«™é•·èƒ½ç´«éš±
+æ™‚é–“: Wed Feb 12 23:57:44 2003                          Updated: 2003/02/12
 
-¡° ¤Þ­z¡mangel@usermail.twbbs.org (§c¡K)¡n¤§»Ê¨¥¡G
-> §Ú·Q½Ð°Ý¯à¤£¯à³]¦¨¥u¦³¯¸ªø¯àµµÁô§r?
-> ¨ä¥L¯¸°È¥u¦³¤@¯ëÁô¨­
+â€» å¼•è¿°ã€Šangel@usermail.twbbs.org (å‘ƒâ€¦)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æˆ‘æƒ³è«‹å•èƒ½ä¸èƒ½è¨­æˆåªæœ‰ç«™é•·èƒ½ç´«éš±å‘€?
+> å…¶ä»–ç«™å‹™åªæœ‰ä¸€èˆ¬éš±èº«
 
-  §ï
+  æ”¹
   acct.c:u_setup()
   ulist.c:ulist_supercloak()
   talk.c:t_cloak()
 
-  ¸Ì­±©Ò¦³ªº PERM_ALLADMIN ¬° PERM_SYSOP
+  è£¡é¢æ‰€æœ‰çš„ PERM_ALLADMIN ç‚º PERM_SYSOP
 
 --
-  ³o¼Ë§ï (acct.c:u_setup) ¤]·|ÅÜ¦¨
-  ¥u¦³ PERM_SYSOP ¯à¥Î acl¡A¨ä¥L¯¸°È¤£¯à
+  é€™æ¨£æ”¹ (acct.c:u_setup) ä¹Ÿæœƒè®Šæˆ
+  åªæœ‰ PERM_SYSOP èƒ½ç”¨ aclï¼Œå…¶ä»–ç«™å‹™ä¸èƒ½
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

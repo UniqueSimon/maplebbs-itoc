@@ -1,19 +1,19 @@
-╣o╚H╓H: qazq.bbs@bbs.cs.nchu.edu.tw (ёi╥R╠║╠s╕uёi) ╛щ╙O: plan
-╪п  цD: [╔\╞Ю] ╪Ж╙Ы╛щ╙O╠ф╕Ф╨](1)║пusies-sort.c
-╣o╚H╞╦: ╓╓©Ё╦Й╛Л (Mon, 14 Jul 2003 16:56:46 +0800 (CST))  Updated: 2004/01/14
+Г≥╪Д©║Д╨╨: qazq.bbs@bbs.cs.nchu.edu.tw (н╬Ф└⌡Ф┐┘Е╬║Е╝┬н╬) Г°▀Ф²©: plan
+Ф╗≥  И║▄: [Е┼÷Х┐╫] Г├╠И√─Г°▀Ф²©Ф▌▓Х║▄Ф╕°(1)О╪█usies-sort.c
+Г≥╪Д©║Г╚≥: Д╦╜Х┬┬ХЁ┤Г╖▒ (Mon, 14 Jul 2003 16:56:46 +0800 (CST))  Updated: 2004/01/14
 
-    ╖Q╔н╜Л╔╩╢N╕Ё╙╨╣{╕║╗с╤]....ющ╔н╗t╡н╦Й╥╫ :p
+    Е┬╘Г■╗Е▌÷Ф°╛Е╟╠Ф°┴Г └Г╗▀Е╪▐Д╬├Х╥▒....Ф©╚Г■╗ГЁ╩Г╣╠ХЁ┤Ф╨░ :p
 
 : util/usies-sort.c
 
 - #include <stdio.h>
 + #include "bbs.h"
 
-[1;32m![m #define NUM_BADBOARD    [1;32m2000[m    /* ╖C╘С [1;32m2000[m ╓H╕╦╙╨╙O╕C╓J╖C╗о╔н╡v */
+[1;32m![m #define NUM_BADBOARD    [1;32m2000[m    /* Д╫▌Ф√╪ [1;32m2000[m Д╨╨Ф╛║Г └Ф²©Е┬≈Е┘╔Д╫▌Д╫©Г■╗Г▌┤ */
 
-            //╕h╓ж╕ш╓vЁ]╖a....2000юЁ╦с╚э╟В╓F....^_^
+            //Е╓ Е╟▒Х┤╙Е╥╠Х╗╜Е░╖....2000Ф┤┴Х╘╡Е╬┬Е╓═Д╨├....^_^
 
-[1;33m+ #define BRD_TIMES (BBSHOME "/run/brd_times.log")[m/*qazq:╔[╓J╛щ╙O╬\е╙╕╦╪ф╛Ж©Щ*/
+[1;33m+ #define BRD_TIMES (BBSHOME "/run/brd_times.log")[m/*qazq:Е┼═Е┘╔Г°▀Ф²©И√╠Х╝─Ф╛║Ф∙╦Г╢─И▄└*/
 
 
 static void
@@ -33,9 +33,9 @@ usies_sort(fpath)
   ......
   ......
 
-    else            /* ╥s╔X╡{╙╨╙O */
+    else            /* Ф√╟Е┤╨Г▐╬Г └Ф²© */
     {
-      if (num < NUM_BADBOARD)       /* ╡н╜p╚e╓@╜с╙O╗о╔н╢X╕╦ */
+      if (num < NUM_BADBOARD)       /* Г╣╠Х╗┬Е┴█Д╦─Е─▀Ф²©Д╫©Г■╗Е╧╬Ф╛║ */
       {
         printf("%-15s%d\n", brdname, num);
 [1;33m+       fprintf(ftimes, "%-15s%d\n", brdname, num);[m
@@ -48,5 +48,5 @@ usies_sort(fpath)
 }
 
 --
-[1;31m|[33m Origin [31m| [0;45m ╓╓©Ё╦Й╛Л ╓╓©Ё╦Й╛Л ╒М╦Й©W╗q [35;47m bbs.cs.nchu.edu.tw [m
+[1;31m|[33m Origin [31m| [0;45m Д╦╜Х┬┬ХЁ┤Г╖▒ Д╦╜Х┬┬ХЁ┤Г╖▒ О╫┘ХЁ┤Г█╗Г╖─ [35;47m bbs.cs.nchu.edu.tw [m
 [1;31m|[35m Author [31m| [36m61-216-136-210.HINET-IP.hinet.net[m

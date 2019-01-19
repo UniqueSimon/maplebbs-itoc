@@ -1,8 +1,8 @@
-�o�H�H: guessi.bbs@bbs.wretch.cc (�S) �ݪO: plan
-��  �D: [�ץ�] �]�w�ݪO�O����]
-�o�H��: �L�W�p�� (2006/07/18 Tue 22:37:30)                Updated: 2006/07/18
+發信人: guessi.bbs@bbs.wretch.cc (沒) 看板: plan
+標  題: [修正] 設定看板記錄原因
+發信站: 無名小站 (2006/07/18 Tue 22:37:30)                Updated: 2006/07/18
 
-[32m:/src/maple/acct.c:brd_edit()  �]�w�ݪO�ݼg�U��][m
+[32m:/src/maple/acct.c:brd_edit()  設定看板需寫下原因[m
 
 +  char reason[64], rbuf[128];
 
@@ -18,12 +18,12 @@
     else
     {
       bname = bhdr->brdname;
-      if (*bname)  /* itoc.000512: �P�ɬ尣�P�@�ӬݪO�|�y����ذϡB�ݪO���� */
+      if (*bname)  /* itoc.000512: 同時砍除同一個看板會造成精華區、看板全毀 */
       {
-+       if (vget(b_lines, 0, "�R����]�G", reason, 50, DOECHO))
++       if (vget(b_lines, 0, "刪除原因：", reason, 50, DOECHO))
 +       {
-+         sprintf(rbuf, "�R��[%s]�ݪO ��]: %s", bname, reason);
-+         alog("�R���ݪO", rbuf); /* �R���ݪO������] 060718 guessi */
++         sprintf(rbuf, "刪除[%s]看板 原因: %s", bname, reason);
++         alog("刪除看板", rbuf); /* 刪除看板紀錄原因 060718 guessi */
 +       }
 
         gem_fpath(src, bname, NULL);
@@ -36,12 +36,12 @@
   case 'e':
 
     move(9, 0);
-    outs("������ [Return] ���ק�Ӷ��]�w");
+    outs("直接按 [Return] 不修改該項設定");
 
-+   if (vget(b_lines, 0, "�]�w��]�G", reason, 50, DOECHO))
++   if (vget(b_lines, 0, "設定原因：", reason, 50, DOECHO))
 +   {
-+     sprintf(rbuf, "����[%s]�ݪO ��]: %s", bhdr->brdname, reason);
-+     alog("�ݪO����", rbuf); /* ���ʬݪO������] 060718 guessi */
++     sprintf(rbuf, "異動[%s]看板 原因: %s", bhdr->brdname, reason);
++     alog("看板異動", rbuf); /* 異動看板紀錄原因 060718 guessi */
 +   }
 
     if (!brd_set(&newbh, 11))
@@ -51,8 +51,8 @@
 
 
 --
-[1;30;40m�ҧL�̤����������δc���G���D�̤��B�g�l�~�h�Q���ΧL�h�Q�k�L�̤��������D�g�l[m
-[1;30m�������o�w[37m[30m�ӥΤ���H���W�ӦӤ����Ӭ����̬O�ֱ��H�Ҽֱ��H�̫h���i�o�ө�ѤU
-[m[1;30m�o�N�Ʃ|�����Ʃ|�k���N�x�~���W�N�x�~�k���H��§�B�����H�����H�s�d�_���ԳӥH[m
-[1;30m��§�B���D�`[37m�L�W[30m�����p�ѤU����ګJ���Y��u���U���N�ۻ��Ѧa�ۦX�H�����S����[m
-[1;30m���O�Ӧۧ��l��W�W��J���ҥ�N�����i�H[37m134-208-1-231.ee.ndhu.edu.tw[30m��[m
+[1;30;40m夫兵者不祥之器物或惡之故有道者不處君子居則貴左用兵則貴右兵者不祥之器非君子[m
+[1;30m之器不得已[37m[30m而用之恬淡為上勝而不美而美之者是樂殺人夫樂殺人者則不可得志於天下
+[m[1;30m矣吉事尚左凶事尚右偏將軍居左上將軍居右言以喪禮處之殺人之眾以哀悲泣之戰勝以[m
+[1;30m喪禮處之道常[37m無名[30m樸雖小天下莫能臣侯王若能守之萬物將自賓天地相合以降甘露民莫[m
+[1;30m之令而自均始制有名名亦既有夫亦將知止知止可以[37m134-208-1-231.ee.ndhu.edu.tw[30m海[m

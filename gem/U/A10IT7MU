@@ -1,39 +1,39 @@
-�@��: itoc (�֤߰ʤO) �ݪO: itoc
-���D: [���] �_��Q�媺�b��
-�ɶ�: 2004/06/27 Sun 17:37:18
+作者: itoc (核心動力) 看板: itoc
+標題: [文件] 復原被砍的帳號
+時間: 2004/06/27 Sun 17:37:18
 
-  * �������W�����ϥΪ̡A�|�Q reaper �R���A�Q�R�� ID ����Ʒ|���� usr/@/ �U
+  * 長期未上站的使用者，會被 reaper 刪除，被刪除 ID 的資料會移到 usr/@/ 下
 
-  * �p�G�Q��L�������A�Ч� reaper.c ��
+  * 如果想改過期期限，請改 reaper.c 的
 
-    #define DAY_NEWUSR      7       /* �n�J���W�L�T�����ϥΪ̫O�d 7 �� */
-    #define DAY_FORFUN      90      /* �����������{�Ҫ��ϥΪ̫O�d 90 �� */
-    #define DAY_OCCUPY      120     /* �w���������{�Ҫ��ϥΪ̫O�d 120 �� */
+    #define DAY_NEWUSR      7       /* 登入不超過三次的使用者保留 7 天 */
+    #define DAY_FORFUN      90      /* 未完成身分認證的使用者保留 90 天 */
+    #define DAY_OCCUPY      120     /* 已完成身分認證的使用者保留 120 天 */
 
-    #define VAC_NEWUSR      7       /* �n�J���W�L�T�����ϥΪ̫O�d 7 �� */
-    #define VAC_FORFUN      180     /* �����������{�Ҫ��ϥΪ̫O�d 180 �� */
-    #define VAC_OCCUPY      180     /* �w���������{�Ҫ��ϥΪ̫O�d 180 �� */
+    #define VAC_NEWUSR      7       /* 登入不超過三次的使用者保留 7 天 */
+    #define VAC_FORFUN      180     /* 未完成身分認證的使用者保留 180 天 */
+    #define VAC_OCCUPY      180     /* 已完成身分認證的使用者保留 180 天 */
 
-  * �p�G�Q�R���@�ө|���L���� ID
+  * 如果想刪除一個尚未過期的 ID
 
-    �D����(0)Admin��(U)ser �ק�� ID ���v���A�[�J N �i �M���b��
-    �b�U���] reaper �ɡA�L�N�|�Q�t�ΧR��
+    主選單→(0)Admin→(U)ser 修改該 ID 的權限，加入 N █ 清除帳號
+    在下次跑 reaper 時，他就會被系統刪除
 
-  * �p�G�Q�Ϧ^�w�Q�R���� ID
+  * 如果想救回已被刪除的 ID
 
-    1. �s�L�ӽзs�b���A�s�b���� ID �n�M�Q�R���� ID �ۦP (�j�p�g�i�H���P)
-    2. �s�� ID ���u
-    3. �����q �D����(0)Admin��(U)ser �ݥL�s�b�����u�Τ�s���v
-    4. �b�u�@���W����
+    1. 叫他申請新帳號，新帳號的 ID 要和被刪除的 ID 相同 (大小寫可以不同)
+    2. 叫該 ID 離線
+    3. 站長從 主選單→(0)Admin→(U)ser 看他新帳號的「用戶編號」
+    4. 在工作站上執行
        % rm -rf ~/usr/_/userid
        % mv ~/usr/@/userid ~/usr/_/
-       �䤤 _ �O�� ID ���Ĥ@�Ӧr���ܤp�g�Auserid �O�� ID �ܤp�g
-    6. �����q �D����(0)Admin��(U)ser ��L���u�Τ�s���v�A
-       �令�B�J 3. ���ҰO�������ӼƦr
+       其中 _ 是該 ID 的第一個字母變小寫，userid 是該 ID 變小寫
+    6. 站長從 主選單→(0)Admin→(U)ser 改他的「用戶編號」，
+       改成步驟 3. 中所記錄的那個數字
 
-    �o�˴N�Ϧ^�� ID �F�A���O�ѩ� userno �w�ܧ�A�ҥH�]�L���n�͡B�W���q����
-    ��L�H�o���s�]�w�n�͡B�W���q��
+    這樣就救回該 ID 了，但是由於 userno 已變更，所以設他為好友、上站通知的
+    其他人得重新設定好友、上站通知
 
 --
- [1;41m�~[44m�q[m Or[1mig[30min[m: [43m Maple-itoc���ʤO�֤� [35;47m processor.tfcis.org [m
- [1;42m�q[45m�}[m A[1mut[30mho[mr: [1;31mitoc [30m�q [36mpc512-2.ee.nctu.edu.tw [30m�o��[m
+ [1;41m╭[44m┼[m Or[1mig[30min[m: [43m Maple-itoc˙動力核心 [35;47m processor.tfcis.org [m
+ [1;42m┼[45m┘[m A[1mut[30mho[mr: [1;31mitoc [30m從 [36mpc512-2.ee.nctu.edu.tw [30m發表[m

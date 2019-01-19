@@ -1,16 +1,16 @@
-§@ªÌ: itoc (¯}¸Ñ¶´Åé¤~¬O¤ı¹D¡I) ¬İªO: plan
-¼ĞÃD: [¥\¯à] Admin ¿ï³æ¼W¥[ NewBoard ¿ï¶µ
-®É¶¡: 2004/04/15 Thu 17:18:02                           Updated: 2004/04/14
+ä½œè€…: itoc (ç ´è§£éŸŒé«”æ‰æ˜¯ç‹é“ï¼) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] Admin é¸å–®å¢åŠ  NewBoard é¸é …
+æ™‚é–“: 2004/04/15 Thu 17:18:02                           Updated: 2004/04/14
 
-  ¶}·sªOªº¥\¯à¤w¸g§ï¦¨¦b ¬İªO¦Cªí/¤ÀÃş¸s²Õ ¤¤«ö ^P ¤F
-  ¦ı¬O¦pªGÁÙ¬O§Æ±æ¦³­ì¥»¨º¼Ë³]­pªº¸Ü...
+  é–‹æ–°æ¿çš„åŠŸèƒ½å·²ç¶“æ”¹æˆåœ¨ çœ‹æ¿åˆ—è¡¨/åˆ†é¡ç¾¤çµ„ ä¸­æŒ‰ ^P äº†
+  ä½†æ˜¯å¦‚æœé‚„æ˜¯å¸Œæœ›æœ‰åŸæœ¬é‚£æ¨£è¨­è¨ˆçš„è©±...
 
 : menu.c:menu_admin[]
 
 + "bin/admutil.so:a_newbrd", PERM_ALLBOARD, - M_SYSTEM,
-+ "NewBoard   ¢« ¶}ÅP·sªO ¢¨",
++ "NewBoard   â—¤ é–‹é—¢æ–°æ¿ â—¢",
 
-: admutil.c:a_newbrd() ·s¼W¦b a_editbrd() ¤U­±
+: admutil.c:a_newbrd() æ–°å¢åœ¨ a_editbrd() ä¸‹é¢
 
 int
 a_newbrd()
@@ -19,15 +19,15 @@ a_newbrd()
 
   memset(&newboard, 0, sizeof(BRD));
 
-  /* itoc.010211: ·s¬İªO¹w³] postlevel = PERM_POST; battr = ¤£Âà«H */
+  /* itoc.010211: æ–°çœ‹æ¿é è¨­ postlevel = PERM_POST; battr = ä¸è½‰ä¿¡ */
   newboard.postlevel = PERM_POST;
   newboard.battr = BRD_NOTRAN;
 
   if (brd_new(&newboard) >= 0)
-    vmsg("·sªO¦¨¥ß¡A°OµÛ¥[¤J¤ÀÃş¸s²Õ");
+    vmsg("æ–°æ¿æˆç«‹ï¼Œè¨˜è‘—åŠ å…¥åˆ†é¡ç¾¤çµ„");
 
   return 0;
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mpc512-2.EE.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mpc512-2.EE.NCTU.edu.tw[37m ç™¼è¡¨[m

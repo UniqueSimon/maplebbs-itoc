@@ -1,10 +1,10 @@
-�o�H�H: guessi.bbs@bbs.wretch.cc (�S) �ݪO: plan
-��  �D: [�ץ�] ��ذ�@log��������
-�o�H��: �L�W�p�� (2006/07/18 Tue 02:54:29)                Updated: 2007/05/09
+發信人: guessi.bbs@bbs.wretch.cc (沒) 看板: plan
+標  題: [修正] 精華區@log紀錄全部
+發信站: 無名小站 (2006/07/18 Tue 02:54:29)                Updated: 2007/05/09
 
-��������u�����̪�20���ק���
+原先版本只紀錄最近20筆修改資料
 
-�אּ�������� �ƪ��Цۦ�վ� :p
+改為全部紀錄 排版請自行調整 :p
 
 : /src/maple/gem.c:gem_edit()
 
@@ -17,29 +17,29 @@
   if (fp2 = fopen(fpath2, "r"))
   {
     char buf[STRLEN];
--   int i = 6;              /* �q�ĤG�g�}�l */
+-   int i = 6;              /* 從第二篇開始 */
 -   int j;
 
     while (fgets(buf, STRLEN, fp2))
     {
-+     fprintf(fp1, "%s", buf); /* �榡�Цۦ�ץ� */
++     fprintf(fp1, "%s", buf); /* 格式請自行修正 */
 
--     if (++i > 63)         /* �u�O�d�̷s 20 ������ */
+-     if (++i > 63)         /* 只保留最新 20 筆異動 */
 -       break;
 
 -     j = i % 3;
--     if (j == 1)           /* �Ĥ@�� */
+-     if (j == 1)           /* 第一行 */
 -       fprintf(fp1, "<%02d> %s", i / 3, buf + 5);
--     else if (j == 2)      /* �ĤG�� */
+-     else if (j == 2)      /* 第二行 */
 -       fprintf(fp1, "%s\n", buf);
--                           /* �ĤT��O�Ŧ� */
+-                           /* 第三行是空行 */
     }
     fclose(fp2);
   }
 
 --
-[1;30;40m�ҧL�̤����������δc���G���D�̤��B�g�l�~�h�Q���ΧL�h�Q�k�L�̤��������D�g�l[m
-[1;30m�������o�w[37m[30m�ӥΤ���H���W�ӦӤ����Ӭ����̬O�ֱ��H�Ҽֱ��H�̫h���i�o�ө�ѤU
-[m[1;30m�o�N�Ʃ|�����Ʃ|�k���N�x�~���W�N�x�~�k���H��§�B�����H�����H�s�d�_���ԳӥH[m
-[1;30m��§�B���D�`[37m�L�W[30m�����p�ѤU����ګJ���Y��u���U���N�ۻ��Ѧa�ۦX�H�����S����[m
-[1;30m���O�Ӧۧ��l��W�W��J���ҥ�N�����[37m61-231-195-157.dynamic.hinet.net[30m��[m
+[1;30;40m夫兵者不祥之器物或惡之故有道者不處君子居則貴左用兵則貴右兵者不祥之器非君子[m
+[1;30m之器不得已[37m[30m而用之恬淡為上勝而不美而美之者是樂殺人夫樂殺人者則不可得志於天下
+[m[1;30m矣吉事尚左凶事尚右偏將軍居左上將軍居右言以喪禮處之殺人之眾以哀悲泣之戰勝以[m
+[1;30m喪禮處之道常[37m無名[30m樸雖小天下莫能臣侯王若能守之萬物將自賓天地相合以降甘露民莫[m
+[1;30m之令而自均始制有名名亦既有夫亦將知止知止[37m61-231-195-157.dynamic.hinet.net[30m海[m

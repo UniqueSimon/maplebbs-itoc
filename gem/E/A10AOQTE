@@ -1,26 +1,26 @@
-§@ªÌ: itoc (cygreadline4.dll) ¯¸¤º: plan
-¼ĞÃD: [¥\¯à] ¥æ¤j®Õ¶é¬¡°Ê¤½§i
-®É¶¡: 2004/05/20 Thu 16:23:55                           Updated: 2004/08/17
+ä½œè€…: itoc (cygreadline4.dll) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] äº¤å¤§æ ¡åœ’æ´»å‹•å…¬å‘Š
+æ™‚é–“: 2004/05/20 Thu 16:23:55                           Updated: 2004/08/17
 
-  ¥æ¤j®Õ¶é¬¡°Ê¤½§i http://info.nctu.edu.tw/news/
-  ¦Û°ÊÂà¶K¨ì BBS ¤Wªº [NCTU_news] ªO
-  (·íµM¡A­n¥ı¶}³o­ÓªO¡F¦pªG·Q´«ªO¦W¡Aµ{¦¡¸Ì­±¤]­n§ï)
+  äº¤å¤§æ ¡åœ’æ´»å‹•å…¬å‘Š http://info.nctu.edu.tw/news/
+  è‡ªå‹•è½‰è²¼åˆ° BBS ä¸Šçš„ [NCTU_news] æ¿
+  (ç•¶ç„¶ï¼Œè¦å…ˆé–‹é€™å€‹æ¿ï¼›å¦‚æœæƒ³æ›æ¿åï¼Œç¨‹å¼è£¡é¢ä¹Ÿè¦æ”¹)
 
-: crontab -e ¥[¤J³o¤G¦æ
+: crontab -e åŠ å…¥é€™äºŒè¡Œ
 
-# ¨C¤Ñ§ì¤G¦¸¥æ¤j®Õ¶é¤½§i
+# æ¯å¤©æŠ“äºŒæ¬¡äº¤å¤§æ ¡åœ’å…¬å‘Š
 20 10,14 * * * * bin/NCTUnews > /dev/null 2>&1
 
 : src/util/Makefile
 
 EXE =   ... [1;33mNCTUnews[m
 
-: src/util/NCTUnews.c ·s¼W¦¹µ{¦¡
+: src/util/NCTUnews.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* util/NCTUnews.c       ( NTHU CS MapleBBS Ver 3.10 )   */
 /*-------------------------------------------------------*/
-/* target : ¥æ¤j®Õ¶é¬¡°Ê¤½§i                             */
+/* target : äº¤å¤§æ ¡åœ’æ´»å‹•å…¬å‘Š                             */
 /* create : 04/05/20                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -30,11 +30,11 @@ EXE =   ... [1;33mNCTUnews[m
 #include "bbs.h"
 
 
-#define LYNX_PATH       "/usr/local/bin/lynx --source"  /* lynx ªºµ´¹ï¸ô®| */
+#define LYNX_PATH       "/usr/local/bin/lynx --source"  /* lynx çš„çµ•å°è·¯å¾‘ */
 
 
 /*-------------------------------------------------------*/
-/* BRD shm ³¡¤À¶·»P cache.c ¬Û®e                         */
+/* BRD shm éƒ¨åˆ†é ˆèˆ‡ cache.c ç›¸å®¹                         */
 /*-------------------------------------------------------*/
 
 
@@ -43,12 +43,12 @@ static BCACHE *bshm;
 static void
 init_bshm()
 {
-  /* itoc.030727: ¦b¶}±Ò bbsd ¤§«e¡AÀ³¸Ó´N­n°õ¦æ¹L account¡A
-     ©Ò¥H bshm À³¸Ó¤w³]©w¦n */
+  /* itoc.030727: åœ¨é–‹å•Ÿ bbsd ä¹‹å‰ï¼Œæ‡‰è©²å°±è¦åŸ·è¡Œé accountï¼Œ
+     æ‰€ä»¥ bshm æ‡‰è©²å·²è¨­å®šå¥½ */
 
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-  if (bshm->uptime <= 0)        /* bshm ¥¼³]©w§¹¦¨ */
+  if (bshm->uptime <= 0)        /* bshm æœªè¨­å®šå®Œæˆ */
     exit(0);
 }
 
@@ -73,19 +73,19 @@ update_btime(brdname)
 
 
 /*-------------------------------------------------------*/
-/* µo¤å¨ì¬İªO                                            */
+/* ç™¼æ–‡åˆ°çœ‹æ¿                                            */
 /*-------------------------------------------------------*/
 
 
-static char *Brdname = "NCTU_news";     /* ±ı post ªº¬İªO */
-static char *Userid = "¥æ¤j®Õ¶é¤½§i";   /* §@ªÌ */
-static char *Username = "Áp¦XªA°È¤¤¤ß"; /* ¼ÊºÙ */
+static char *Brdname = "NCTU_news";     /* æ¬² post çš„çœ‹æ¿ */
+static char *Userid = "äº¤å¤§æ ¡åœ’å…¬å‘Š";   /* ä½œè€… */
+static char *Username = "è¯åˆæœå‹™ä¸­å¿ƒ"; /* æš±ç¨± */
 
 
 static void
-new_post(fpath, title)           /* µo¤å¨ì¬İªO */
-  char *fpath;          /* ÀÉ®×¸ô®| */
-  char *title;          /* ¤å³¹¼ĞÃD */
+new_post(fpath, title)           /* ç™¼æ–‡åˆ°çœ‹æ¿ */
+  char *fpath;          /* æª”æ¡ˆè·¯å¾‘ */
+  char *title;          /* æ–‡ç« æ¨™é¡Œ */
 {
   HDR hdr;
   char folder[64];
@@ -102,12 +102,12 @@ new_post(fpath, title)           /* µo¤å¨ì¬İªO */
 
 
 /*-------------------------------------------------------*/
-/* §ìºô­¶                                                */
+/* æŠ“ç¶²é                                                 */
 /*-------------------------------------------------------*/
 
 
-static int wlen;    /* ¥»¦æ¦³¦h¤Ö¦r */
-static int slen;    /* ¥»¦æ¦³¦h¤Ö¥b«¬¦r */
+static int wlen;    /* æœ¬è¡Œæœ‰å¤šå°‘å­— */
+static int slen;    /* æœ¬è¡Œæœ‰å¤šå°‘åŠå‹å­— */
 
 
 static void
@@ -115,8 +115,8 @@ foutc(ch, fp)
   int ch;
   FILE *fp;
 {
-  static int in_tag = 0;    /* 1: ¦b <tag> ¤¤ */
-  static int in_chi = 0;    /* 1: «e¤@½X¬O¤¤¤å¦r */
+  static int in_tag = 0;    /* 1: åœ¨ <tag> ä¸­ */
+  static int in_chi = 0;    /* 1: å‰ä¸€ç¢¼æ˜¯ä¸­æ–‡å­— */
 
   if (ch == '<')
   {
@@ -124,25 +124,25 @@ foutc(ch, fp)
     return;
   }
 
-  /* ¸õ¹L \t */
+  /* è·³é \t */
   if (ch == '\t')
     return;
 
   if (!in_tag)
   {
-    if (in_chi)         /* «e¤@­Óchar¬O¤¤¤å¦rªº²Ä¤@½X */
+    if (in_chi)         /* å‰ä¸€å€‹charæ˜¯ä¸­æ–‡å­—çš„ç¬¬ä¸€ç¢¼ */
       in_chi = 0;
-    else if (ch & 0x80)     /* «e¤@­Óchar¤£¬O¤¤¤å¦rªº²Ä¤@½X¡A */
-      in_chi = 1;           /* ÀË¬d³ochar¬O§_¬°¤¤¤å¦rªº²Ä¤@½X */
-    else            /* ¦pªG³£¤£¬O¡Aªí¥Ü³ochar¬O¥b«¬¦r */
+    else if (ch & 0x80)     /* å‰ä¸€å€‹charä¸æ˜¯ä¸­æ–‡å­—çš„ç¬¬ä¸€ç¢¼ï¼Œ */
+      in_chi = 1;           /* æª¢æŸ¥é€™charæ˜¯å¦ç‚ºä¸­æ–‡å­—çš„ç¬¬ä¸€ç¢¼ */
+    else            /* å¦‚æœéƒ½ä¸æ˜¯ï¼Œè¡¨ç¤ºé€™charæ˜¯åŠå‹å­— */
       slen++;
 
-    if (wlen >= 60 - slen % 2)  /* ¤@¦æ³Ì¦h 60 ¦r¡A­Y¦³©_¼Æ­Ó¥b«¬¦r¡A*/
-    {                           /* ¸Ó¦æ¥u¦L 59 ¦r */
-      fputs("\n    ", fp);  /* ¨C¦æ«e­±³£ªÅ¥|®æ */
+    if (wlen >= 60 - slen % 2)  /* ä¸€è¡Œæœ€å¤š 60 å­—ï¼Œè‹¥æœ‰å¥‡æ•¸å€‹åŠå‹å­—ï¼Œ*/
+    {                           /* è©²è¡Œåªå° 59 å­— */
+      fputs("\n    ", fp);  /* æ¯è¡Œå‰é¢éƒ½ç©ºå››æ ¼ */
       wlen = 0;
       /* slen = 0; */
-      slen = !in_chi;       /* ­Y·sªº³o¦æ²Ä¤@­Óchar¬O¥b«¬¦r¡Aslen=1 */
+      slen = !in_chi;       /* è‹¥æ–°çš„é€™è¡Œç¬¬ä¸€å€‹charæ˜¯åŠå‹å­—ï¼Œslen=1 */
     }
 
     fputc(ch, fp);
@@ -165,7 +165,7 @@ fouts(str, fp)
 
   wlen = 0;
   slen = 0;
-  fputs("\n    ", fp);      /* ¨C¦æ«e­±³£ªÅ¥|®æ */
+  fputs("\n    ", fp);      /* æ¯è¡Œå‰é¢éƒ½ç©ºå››æ ¼ */
 
   while (ch = *str)
   {
@@ -182,7 +182,7 @@ strip_title(str, title)
   int ch, len = 0;
   uschar *dst;
 
-  /* ¥h±¼ str ¤¤ªº \t ¤Î³Ì«áªº <tag>¡A¦s¦b title */
+  /* å»æ‰ str ä¸­çš„ \t åŠæœ€å¾Œçš„ <tag>ï¼Œå­˜åœ¨ title */
 
   dst = title;
   while (ch = *str++)
@@ -202,31 +202,31 @@ strip_title(str, title)
 
 
 static void
-html_download(actno)          /* ¤U¸ü¤å³¹¨ÃÂà´«¬°¤å¦rÀÉ */
+html_download(actno)          /* ä¸‹è¼‰æ–‡ç« ä¸¦è½‰æ›ç‚ºæ–‡å­—æª” */
   int actno;
 {
   char link[128], title[TTLEN + 1];
-  char buf[2048];       /* °²³]¤å³¹¨C¬q¤£·|¶W¹L 2048 ¦r */
+  char buf[2048];       /* å‡è¨­æ–‡ç« æ¯æ®µä¸æœƒè¶…é 2048 å­— */
   char *fsrc = "tmp/NCTUnews.src";
   char *fdst = "tmp/NCTUnews.dst";
   FILE *fpr, *fpw;
   int mode;
   char *ptr;
 
-  /* ¤U¸ü¤å³¹ */
+  /* ä¸‹è¼‰æ–‡ç«  */
   sprintf(link, "http://info.nctu.edu.tw/news/show_news.php?act_no=%d", actno);
   sprintf(buf, LYNX_PATH " %s > %s", link, fsrc);
   system(buf);
 
-  /* Âà´«¬°¤å¦rÀÉ */
+  /* è½‰æ›ç‚ºæ–‡å­—æª” */
   if (fpr = fopen(fsrc, "r"))
   {
     if (fpw = fopen(fdst, "w"))
     {
-      /* ¶}ÀY¥[¤WÀÉÀY */
+      /* é–‹é ­åŠ ä¸Šæª”é ­ */
       while (fgets(buf, sizeof(buf), fpr))
       {
-        /* <font size="2"> ªº¤U¤@¦æ´N¬O¼ĞÃD */
+        /* <font size="2"> çš„ä¸‹ä¸€è¡Œå°±æ˜¯æ¨™é¡Œ */
         if (strstr(buf, "<font size=\"2\">"))
         {
           if (fgets(buf, sizeof(buf), fpr))
@@ -235,14 +235,14 @@ html_download(actno)          /* ¤U¸ü¤å³¹¨ÃÂà´«¬°¤å¦rÀÉ */
 
             fprintf(fpw, "%s %s (%s) %s %s\n",
               STR_AUTHOR1, Userid, Username, STR_POST2, Brdname);
-            fprintf(fpw, "¼ĞÃD: %s\n®É¶¡: %s\n\n", title, Now());
+            fprintf(fpw, "æ¨™é¡Œ: %s\næ™‚é–“: %s\n\n", title, Now());
           }
           break;
         }
       }
 
-      /* ¤º®e */
-      mode = 0;    /* 0:¥¼¶}©l  1:¦L¨ì¤@¥b  2:µ²§ô */
+      /* å…§å®¹ */
+      mode = 0;    /* 0:æœªé–‹å§‹  1:å°åˆ°ä¸€åŠ  2:çµæŸ */
       while (fgets(buf, sizeof(buf), fpr))
       {
         if (ptr = strstr(buf, "<hr>"))
@@ -250,7 +250,7 @@ html_download(actno)          /* ¤U¸ü¤å³¹¨ÃÂà´«¬°¤å¦rÀÉ */
           *ptr = '\0';
           mode++;
 
-          if (mode == 1)  /* ²Ä¤@¦¸¥X²{ <hr> µL¤º¤å */
+          if (mode == 1)  /* ç¬¬ä¸€æ¬¡å‡ºç¾ <hr> ç„¡å…§æ–‡ */
             continue;
         }
 
@@ -262,11 +262,11 @@ html_download(actno)          /* ¤U¸ü¤å³¹¨ÃÂà´«¬°¤å¦rÀÉ */
         }
       }
 
-      /* µ²§À¥[¤W¨Ó·½ */
-      fprintf(fpw, "\n--\nNCTU! ¥æ³q¤j¾Ç®Õ¶é¬¡°Ê¤½§i\n%s\n", link);
+      /* çµå°¾åŠ ä¸Šä¾†æº */
+      fprintf(fpw, "\n--\nNCTU! äº¤é€šå¤§å­¸æ ¡åœ’æ´»å‹•å…¬å‘Š\n%s\n", link);
       fclose(fpw);
 
-      if (title[0])     /* ­YµL¼ĞÃD¡A¤]³\¬O³Q§R°£¤F */
+      if (title[0])     /* è‹¥ç„¡æ¨™é¡Œï¼Œä¹Ÿè¨±æ˜¯è¢«åˆªé™¤äº† */
         new_post(fdst, title);
       unlink(fdst);
     }
@@ -276,7 +276,7 @@ html_download(actno)          /* ¤U¸ü¤å³¹¨ÃÂà´«¬°¤å¦rÀÉ */
 
 
 /*-------------------------------------------------------*/
-/* ¥Dµ{¦¡                                                */
+/* ä¸»ç¨‹å¼                                                */
 /*-------------------------------------------------------*/
 
 
@@ -284,7 +284,7 @@ static int
 urhigh_query()
 {
   char *ftmp = "tmp/NCTUnews.tmp";
-  char buf[512];       /* °²³]¨C¦æ¤£·|¶W¹L 512 ¦r */
+  char buf[512];       /* å‡è¨­æ¯è¡Œä¸æœƒè¶…é 512 å­— */
   char *ptr;
   FILE *fp;
   int high;
@@ -320,7 +320,7 @@ main()
 
   chdir(BBSHOME);
 
-  /* ¬İ¦Û¤v§ì¨ì²Ä´X½g¤F */
+  /* çœ‹è‡ªå·±æŠ“åˆ°ç¬¬å¹¾ç¯‡äº† */
   myhigh = 0;
   if (fp = fopen("run/NCTUnews", "r"))
   {
@@ -331,22 +331,22 @@ main()
       myhigh = urhigh;
   }
 
-  /* ¬İÁp¦XªA°È¤¤¤ß³Ì·sªº¦³´X½g */
+  /* çœ‹è¯åˆæœå‹™ä¸­å¿ƒæœ€æ–°çš„æœ‰å¹¾ç¯‡ */
   urhigh = urhigh_query();
 
-  if (!myhigh)           /* ¦pªG¦Û¤v¨S¦³½g¼Æ­p¼Æ¾¹¡A¨º´N§ì³Ì«á¤T½g */
+  if (!myhigh)           /* å¦‚æœè‡ªå·±æ²’æœ‰ç¯‡æ•¸è¨ˆæ•¸å™¨ï¼Œé‚£å°±æŠ“æœ€å¾Œä¸‰ç¯‡ */
     myhigh = urhigh - 3;
 
-  if (myhigh >= urhigh)  /* ¨S¦³·s¤½§i */
+  if (myhigh >= urhigh)  /* æ²’æœ‰æ–°å…¬å‘Š */
     return 0;
 
   init_bshm();
 
-  /* ¥h§ì·sªº¤½§i */
+  /* å»æŠ“æ–°çš„å…¬å‘Š */
   for (myhigh++; myhigh <= urhigh; myhigh++)
     html_download(myhigh);
 
-  /* §ó·s¦Û¤vªº½g¼Æ­p¼Æ¾¹ */
+  /* æ›´æ–°è‡ªå·±çš„ç¯‡æ•¸è¨ˆæ•¸å™¨ */
   if (fp = fopen("run/NCTUnews", "w"))
   {
     fprintf(fp, "%d", urhigh);
@@ -357,4 +357,4 @@ main()
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mpc512-2.EE.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mpc512-2.EE.NCTU.edu.tw[37m ç™¼è¡¨[m

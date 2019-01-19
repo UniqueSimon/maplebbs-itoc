@@ -1,32 +1,32 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (¡¯§Ú­n¬õ³z¥bÃä¤Ñ¡¯) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¸õ¨ì¤å³¹¨Ó·½¬İªO¡C
-µo«H¯¸: ¤¤¿³¸ê¬ì (2004/11/19 Fri 17:14:30)                Updated: 2004/11/19
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (ï¼Šæˆ‘è¦ç´…é€åŠé‚Šå¤©ï¼Š) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] è·³åˆ°æ–‡ç« ä¾†æºçœ‹æ¿ã€‚
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (2004/11/19 Fri 17:14:30)                Updated: 2004/11/19
 
-    All_Post ¬O¦s©ñ¯¸¤º¥ş³¡¬İªOªº¤å³¹¡C
+    All_Post æ˜¯å­˜æ”¾ç«™å…§å…¨éƒ¨çœ‹æ¿çš„æ–‡ç« ã€‚
 
-    ©¹©¹¦³¤H¦b All_Post ªO¬İ¨ì¤å³¹¡A·Q­n¨ì­ì¥»ªºªO¬İ¨ä¥Lªº©Î¬O±À¤å...
+    å¾€å¾€æœ‰äººåœ¨ All_Post æ¿çœ‹åˆ°æ–‡ç« ï¼Œæƒ³è¦åˆ°åŸæœ¬çš„æ¿çœ‹å…¶ä»–çš„æˆ–æ˜¯æ¨æ–‡...
 
-    ÁÙ­n«Ü³Â·Ğªº§ä¨ì¨º­ÓªOµM«á¶i¤J....^^|||
+    é‚„è¦å¾ˆéº»ç…©çš„æ‰¾åˆ°é‚£å€‹æ¿ç„¶å¾Œé€²å…¥....^^|||
 
-    ©Ò¥H´N¼g¤F³o­Ó¥\¯à¡A§Æ±æ¤j®aÀ°¦£¬İ¬İ¦³¤°»ò bug ....^^a
+    æ‰€ä»¥å°±å¯«äº†é€™å€‹åŠŸèƒ½ï¼Œå¸Œæœ›å¤§å®¶å¹«å¿™çœ‹çœ‹æœ‰ä»€éº¼ bug ....^^a
 
-    ©Î¬O­ş¸Ì¥i¥H­×§ï¡B³Ì¨Î¤Æªº....ÁÂÁÂ¤j®aÅo¡I^^
+    æˆ–æ˜¯å“ªè£¡å¯ä»¥ä¿®æ”¹ã€æœ€ä½³åŒ–çš„....è¬è¬å¤§å®¶å›‰ï¼^^
 
 ==============================================================================
 
-: src/post.c:post_jump()    ·s¼W¾ã¤ä¨ç¦¡¦b post_browse() ¤W­±
+: src/post.c:post_jump()    æ–°å¢æ•´æ”¯å‡½å¼åœ¨ post_browse() ä¸Šé¢
 
 static int
-post_jump(xo)       /* qazq.041119: ¸õ¨ì¤å³¹¨Ó·½¬İªO */
+post_jump(xo)       /* qazq.041119: è·³åˆ°æ–‡ç« ä¾†æºçœ‹æ¿ */
   XO *xo;
 {
   int tmpbno, bno;
   char *brdname, fpath[64], *ptr, buf[ANSILINELEN];
   HDR *hdr;
   FILE *fp;
-  static int p_jump = 0;  /* ¶i¤J´X¼h */
+  static int p_jump = 0;  /* é€²å…¥å¹¾å±¤ */
 
-  /* ³Ì¦h jump ¤@¼h */
+  /* æœ€å¤š jump ä¸€å±¤ */
   if (p_jump >= 1)
     return XO_NONE;
 
@@ -39,20 +39,20 @@ post_jump(xo)       /* qazq.041119: ¸õ¨ì¤å³¹¨Ó·½¬İªO */
     ptr = fgets(buf, sizeof(buf), fp);
     fclose(fp);
 
-    /* ¶}©l§ì¥X¬İªO¦WºÙ */
+    /* é–‹å§‹æŠ“å‡ºçœ‹æ¿åç¨± */
     if (ptr &&
       ((ptr = strstr(buf, str_post1)) || (ptr = strstr(buf, str_post2))) &&
       ptr[5] == ' ' && ptr[6])
     {
-      brdname = ptr + 6;        /* ©w¦ì¨ì¬İªO¦WºÙªº¦ì¸m */
+      brdname = ptr + 6;        /* å®šä½åˆ°çœ‹æ¿åç¨±çš„ä½ç½® */
       if (ptr = strchr(brdname, '\n'))
         *ptr = '\0';
       bno = brd_bno(brdname);
-      if (bno >= 0 && bno != currbno)    /* ¬İªO¦s¦b && ­n¸õ¨ì§Oªº¬İªO */
+      if (bno >= 0 && bno != currbno)    /* çœ‹æ¿å­˜åœ¨ && è¦è·³åˆ°åˆ¥çš„çœ‹æ¿ */
       {
-        tmpbno = currbno; /* ¬ö¿ı¤W¤@­Ó¬İªO */
+        tmpbno = currbno; /* ç´€éŒ„ä¸Šä¸€å€‹çœ‹æ¿ */
 
-        if (!XoPost(bno))      /* ¥i¥H¶i¤J¤~ xover() */
+        if (!XoPost(bno))      /* å¯ä»¥é€²å…¥æ‰ xover() */
         {
           p_jump++;
           xover(XZ_POST);
@@ -61,7 +61,7 @@ post_jump(xo)       /* qazq.041119: ¸õ¨ì¤å³¹¨Ó·½¬İªO */
 #endif
           p_jump--;
 
-          XoPost(tmpbno);        /* ¸õ¦^­ì¨Óªº¬İªO */
+          XoPost(tmpbno);        /* è·³å›åŸä¾†çš„çœ‹æ¿ */
           return XZ_POST;
         }
       }
@@ -72,11 +72,11 @@ post_jump(xo)       /* qazq.041119: ¸õ¨ì¤å³¹¨Ó·½¬İªO */
 
 : post.c:post_cb[]
 
-+ 'J', post_jump,     /* qazq.041119: ¬İªO¸õÅD(¥D­nµ¹All_PostªO¥Î) */
++ 'J', post_jump,     /* qazq.041119: çœ‹æ¿è·³èº(ä¸»è¦çµ¦All_Postæ¿ç”¨) */
 
 : post.c:post_browse()
 
-+   case 'J':       /* qazq.041119: ¸õ¤å³¹¨ì¨Ó·½¬İªO */
++   case 'J':       /* qazq.041119: è·³æ–‡ç« åˆ°ä¾†æºçœ‹æ¿ */
 +     post_jump(xo);
 +     break;
 
@@ -85,5 +85,5 @@ post_jump(xo)       /* qazq.041119: ¸õ¨ì¤å³¹¨Ó·½¬İªO */
       break;
 
 --
- [1m[42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m csNCHU.twbbs.org [m
- [1m[44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mqazq [30m±q [35m218-163-149-207.dynamic.hinet.net [30mµoªí[m
+ [1m[42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m csNCHU.twbbs.org [m
+ [1m[44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mqazq [30må¾ [35m218-163-149-207.dynamic.hinet.net [30mç™¼è¡¨[m

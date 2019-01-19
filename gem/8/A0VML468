@@ -1,31 +1,31 @@
-µo«H¤H: amaki.bbs@luna.twbbs.org (©Û³êªü¬Yªº¦Ï) ¬ÝªO: plan
-¼Ð  ÃD: Re: [¥\¯à]¥þ²y·j´M
-µo«H¯¸: ¤ë¤U©]·Q (Fri, 19 Sep 2003 04:19:51 +0800 (CST))  Updated: 2003/09/19
+ç™¼ä¿¡äºº: amaki.bbs@luna.twbbs.org (æ‹›å–šé˜¿æŸçš„ç¾Š) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [åŠŸèƒ½]å…¨çƒæœå°‹
+ç™¼ä¿¡ç«™: æœˆä¸‹å¤œæƒ³ (Fri, 19 Sep 2003 04:19:51 +0800 (CST))  Updated: 2003/09/19
 
-  ¶W¾A¦X¤ô²y¤ýªº¥\¯à¡A¦pªG§A¬°¤F¦b¤@°ï¤ô²y¸Ì§ä¹q¸Ü­W´o¡B¦pªG§A¬°¤F¦b¤@°ï¤ô²y¸Ì
+  è¶…é©åˆæ°´çƒçŽ‹çš„åŠŸèƒ½ï¼Œå¦‚æžœä½ ç‚ºäº†åœ¨ä¸€å †æ°´çƒè£¡æ‰¾é›»è©±è‹¦æƒ±ã€å¦‚æžœä½ ç‚ºäº†åœ¨ä¸€å †æ°´çƒè£¡
 
-  §ä¬Y­ÓÃöÁä¦r­W´o¡A¦b¤ô²y¦Cªí¤U¡A«ö f Áä¡A±N·|¦Û°Ê§ä¥X
+  æ‰¾æŸå€‹é—œéµå­—è‹¦æƒ±ï¼Œåœ¨æ°´çƒåˆ—è¡¨ä¸‹ï¼ŒæŒ‰ f éµï¼Œå°‡æœƒè‡ªå‹•æ‰¾å‡º
 
-  §t¦³¸Ó¯S©wÃöÁä¦rªº©Ò¦³¤ô²y¡A³sid¤]¤@¨Ö§ä¡C
+  å«æœ‰è©²ç‰¹å®šé—œéµå­—çš„æ‰€æœ‰æ°´çƒï¼Œé€£idä¹Ÿä¸€ä½µæ‰¾ã€‚
 
-  §¹¾ãª©ªº¤ô²y·j´M¥\¯à¡Abmw_item()³¡¤À¬O»á¦Y¸ê·½ªºªF¦è¡A¤£¤@©w­n´«¡A¦pªG¯¸°÷¤p
+  å®Œæ•´ç‰ˆçš„æ°´çƒæœå°‹åŠŸèƒ½ï¼Œbmw_item()éƒ¨åˆ†æ˜¯é —åƒè³‡æºçš„æ±è¥¿ï¼Œä¸ä¸€å®šè¦æ›ï¼Œå¦‚æžœç«™å¤ å°
 
-  ¾÷¾¹°÷Power¡A¨º´N´«§a!
+  æ©Ÿå™¨å¤ Powerï¼Œé‚£å°±æ›å§!
 
 
 : bmw.c
 
-  bmw_item()´«¦¨¤U­±¨º°¦¡A­nÅý¤ô²y¸ÌªºÃöÁä¦rÅÜ¦âªºbmw_item()´N¬O³o¼Ë¡C
+  bmw_item()æ›æˆä¸‹é¢é‚£éš»ï¼Œè¦è®“æ°´çƒè£¡çš„é—œéµå­—è®Šè‰²çš„bmw_item()å°±æ˜¯é€™æ¨£ã€‚
 
-  ¦pªG©È¤é«áºûÅ@§xÃø(«ü¼Ð­¸¨Ó­¸¥hªº¤T¤Ñ«á§Ú¤@©w·|§Ñ°O§Ú¦Û¤v¦b¼g¤°»ò¡A©Ò¥H³oÂI
+  å¦‚æžœæ€•æ—¥å¾Œç¶­è­·å›°é›£(æŒ‡æ¨™é£›ä¾†é£›åŽ»çš„ä¸‰å¤©å¾Œæˆ‘ä¸€å®šæœƒå¿˜è¨˜æˆ‘è‡ªå·±åœ¨å¯«ä»€éº¼ï¼Œæ‰€ä»¥é€™é»ž
 
-  ¯¸ªø¦Û¤v­n¦³³Æ®×¥H¨¾¸U¤@)¡A´N§âÂÂªºbmw_item()¥Î#if 0¥]°_¨Ó¡A¯dµÛ¤é«á¥Î¡C
+  ç«™é•·è‡ªå·±è¦æœ‰å‚™æ¡ˆä»¥é˜²è¬ä¸€)ï¼Œå°±æŠŠèˆŠçš„bmw_item()ç”¨#if 0åŒ…èµ·ä¾†ï¼Œç•™è‘—æ—¥å¾Œç”¨ã€‚
 
 
 + static char out_hunt[32], out_lunt[32];
 
 static void
-bmw_item(num, bmw)    /* amaki.030915: ¨ã³ÆÅÜ¦â¥\¯àªºbmw_item */
+bmw_item(num, bmw)    /* amaki.030915: å…·å‚™è®Šè‰²åŠŸèƒ½çš„bmw_item */
   int num;
   BMW *bmw;
 {
@@ -37,17 +37,17 @@ bmw_item(num, bmw)    /* amaki.030915: ¨ã³ÆÅÜ¦â¥\¯àªºbmw_item */
   msg_len = strlen(bmw->msg);
   hunt_len = strlen(out_hunt);
 
-  if (bmw->sender == cuser.userno)      /* °e¥Xªº¤ô²y */
+  if (bmw->sender == cuser.userno)      /* é€å‡ºçš„æ°´çƒ */
   {
     if (*out_hunt == '\0')
       prints("%6d %-13s%-53.53s\033[33m%02d:%02d\033[m\n",
         num, bmw->userid, bmw->msg, ptime->tm_hour, ptime->tm_min);
     else
     {
-      /* amaki.030915: ¥ý¦Lid */
+      /* amaki.030915: å…ˆå°id */
       prints("%6d %-13s", num, bmw->userid);
 
-      /* amaki.030915: ¦A¦L¤ô²y¤º®e */
+      /* amaki.030915: å†å°æ°´çƒå…§å®¹ */
       if (str = str_str(bmw->msg, out_lunt))
       {
         prints("%.*s\033[7m%.*s\033[m",
@@ -92,7 +92,7 @@ bmw_item(num, bmw)    /* amaki.030915: ¨ã³ÆÅÜ¦â¥\¯àªºbmw_item */
           bmw->msg, ptime->tm_hour, ptime->tm_min);
     }
   }
-  else                                  /* ¦¬¨ìªº¤ô²y */
+  else                                  /* æ”¶åˆ°çš„æ°´çƒ */
   {
     if (*out_hunt == '\0')
     {
@@ -101,10 +101,10 @@ bmw_item(num, bmw)    /* amaki.030915: ¨ã³ÆÅÜ¦â¥\¯àªºbmw_item */
     }
     else
     {
-      /* amaki.030915: ¥ý¦Lid */
+      /* amaki.030915: å…ˆå°id */
       prints("%6d \033[1;33m%-13s\033[37;46m", num, bmw->userid);
 
-      /* amaki.030915: ¦A¦L¤ô²y¤º®e */
+      /* amaki.030915: å†å°æ°´çƒå…§å®¹ */
       if (str = str_str(bmw->msg, out_lunt))
       {
         prints("%.*s\033[7m%.*s\033[7m",
@@ -152,12 +152,12 @@ bmw_item(num, bmw)    /* amaki.030915: ¨ã³ÆÅÜ¦â¥\¯àªºbmw_item */
 }
 
 
-  ¦bbmw_load()«á·s¼W¤U³o¤@°¦¨ç¦¡¡C
+  åœ¨bmw_load()å¾Œæ–°å¢žä¸‹é€™ä¸€éš»å‡½å¼ã€‚
 
 
 extern KeyFunc bmw_cb[];
 
-/* amaki.030915: ´£¨Ñ¥þ"²y"·j´M:p */
+/* amaki.030915: æä¾›å…¨"çƒ"æœå°‹:p */
 
 + static int bmw_time;
 
@@ -175,20 +175,20 @@ bmw_hunt(xo)
 
   if ((fd = open(xo->dir, O_RDONLY, 0600)) < 0)
   {
-    zmsg("µLªk¶}±Ò¤ô²yÀÉ®×");
+    zmsg("ç„¡æ³•é–‹å•Ÿæ°´çƒæª”æ¡ˆ");
     return XO_FOOT;
   }
 
-  if (dashf(fpath)) /* amaki.030915: §R°£ÂÂªº */
+  if (dashf(fpath)) /* amaki.030915: åˆªé™¤èˆŠçš„ */
     unlink(fpath);
 
   if ((fb = open(fpath, O_RDWR | O_CREAT, 0600)) < 0)
   {
-    zmsg("µLªk¶}±Ò¤ô²yÀÉ®×");
+    zmsg("ç„¡æ³•é–‹å•Ÿæ°´çƒæª”æ¡ˆ");
     return XO_FOOT;
   }
 
-  if (!vget(b_lines, 0, "¤ô²yÃöÁä¦r·j´M¡G", out_hunt, sizeof(out_hunt), DOECHO))
+  if (!vget(b_lines, 0, "æ°´çƒé—œéµå­—æœå°‹ï¼š", out_hunt, sizeof(out_hunt), DOECHO))
     return XO_FOOT;
 
   str_lower(out_lunt, out_hunt);
@@ -217,11 +217,11 @@ bmw_hunt(xo)
   xz[XZ_BMW - XO_ZONE].cb = bmw_cb;
 
 
- /* amaki.030915: ¦A¶}¤@¦¸ÀÉ¡A§O·MÄø¨ì§â¤W¤@­Ófd¯d¨ì³o¸Ì¥Î¡A¨Ï¥Î³o¥\¯àªºuser */
- /* ¤@¦h·|ÅýµwºÐµ¥«Ý³B²zªº°ïÅ|«Ü§ÖÃz±¼ */
+ /* amaki.030915: å†é–‹ä¸€æ¬¡æª”ï¼Œåˆ¥æ„šè ¢åˆ°æŠŠä¸Šä¸€å€‹fdç•™åˆ°é€™è£¡ç”¨ï¼Œä½¿ç”¨é€™åŠŸèƒ½çš„user */
+ /* ä¸€å¤šæœƒè®“ç¡¬ç¢Ÿç­‰å¾…è™•ç†çš„å †ç–Šå¾ˆå¿«çˆ†æŽ‰ */
   if ((fd = open(xo->dir, O_RDONLY, 0600)) < 0)
   {
-    zmsg("µLªk¶}±Ò¤ô²yÀÉ®×");
+    zmsg("ç„¡æ³•é–‹å•Ÿæ°´çƒæª”æ¡ˆ");
     return XO_FOOT;
   }
   i = 0;
@@ -233,8 +233,8 @@ bmw_hunt(xo)
       xo->pos = i;
       break;
     }
-  /* amaki.030915: ³o¦³¥i¯àµo¥Í¶Ü¡HÃø¹D¤ô²y¶]¨ì¥t¤@­Ó¦t©z¥h¤F¡H«D¤]¡A¸U¤@¤À */
-  /* ¨­¬å¤ô²y¡A´N¦³¥i¯à§ä¤£¨ì¡A¬°¸`¬Ù®Ä²v¦­¦­¸õ¥X¨Ó */
+  /* amaki.030915: é€™æœ‰å¯èƒ½ç™¼ç”Ÿå—Žï¼Ÿé›£é“æ°´çƒè·‘åˆ°å¦ä¸€å€‹å®‡å®™åŽ»äº†ï¼Ÿéžä¹Ÿï¼Œè¬ä¸€åˆ† */
+  /* èº«ç æ°´çƒï¼Œå°±æœ‰å¯èƒ½æ‰¾ä¸åˆ°ï¼Œç‚ºç¯€çœæ•ˆçŽ‡æ—©æ—©è·³å‡ºä¾† */
     else if (bmw.btime > bmw_time)
       break;
 
@@ -251,16 +251,16 @@ bmw_hunt(xo)
 }
 
 
-  §ïbmw_query()
+  æ”¹bmw_query()
 
   bmw = (BMW *) xo_pool + (xo->pos - xo->top);
-  /* amaki.030915: ¬ö¿ý¤U¤ô²yªº®É¶¡¡A¾ã¼Æ¡A¸òhdr->xid¦³¬Û¦P¥\¥Î¡A´Nºâ¦³¨â */
-  /* Áû¦P®É¥X²{ªº¤ô²y¤]µL§«¡A¸õ¥X¨Ó®ÉÁö¤£¤¤¥ç¤£»·¨o */
+  /* amaki.030915: ç´€éŒ„ä¸‹æ°´çƒçš„æ™‚é–“ï¼Œæ•´æ•¸ï¼Œè·Ÿhdr->xidæœ‰ç›¸åŒåŠŸç”¨ï¼Œå°±ç®—æœ‰å…© */
+  /* é¡†åŒæ™‚å‡ºç¾çš„æ°´çƒä¹Ÿç„¡å¦¨ï¼Œè·³å‡ºä¾†æ™‚é›–ä¸ä¸­äº¦ä¸é çŸ£ */
 + bmw_time = bmw->btime;
   move(1, 0);
 
 
-  §ïbmw_cb[]
+  æ”¹bmw_cb[]
 
   'D', bmw_rangedel,
 + 'f', bmw_hunt,
@@ -277,7 +277,7 @@ bmw_hunt(xo)
 + if (dashf(fpath))
 +   unlink(fpath);
 
-  /* ¼g¦^ .ACCT */
+  /* å¯«å›ž .ACCT */
 
 --
   [1;33mOrigin: luna.twbbs.org[m

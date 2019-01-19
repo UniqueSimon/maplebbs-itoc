@@ -1,26 +1,26 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ¬İª©Á`ºŞ«Ø¥ß·s¬İª©ªº®É­Ô¥ß§Y³]©w¬İª©¤å³¹¤W­­???
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/12/03 Fri 01:10:34)                Updated: 2004/12/03
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: çœ‹ç‰ˆç¸½ç®¡å»ºç«‹æ–°çœ‹ç‰ˆçš„æ™‚å€™ç«‹å³è¨­å®šçœ‹ç‰ˆæ–‡ç« ä¸Šé™???
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/12/03 Fri 01:10:34)                Updated: 2004/12/03
 
-¡° ¤Ş­z¡mcomfan (Ãø¹L  ¶Ë¤ß)¡n¤§»Ê¨¥¡G
-> ½Ğ°İ¬O§_¥i¥HÅı¬İª©Á`ºŞ¶}ª©ªº®É­Ô´N¶¶«K³]©w·s¦¨¥ßªº¬İª©¤å³¹Á`¼Æ¤W­­???
+â€» å¼•è¿°ã€Šcomfan (é›£é  å‚·å¿ƒ)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> è«‹å•æ˜¯å¦å¯ä»¥è®“çœ‹ç‰ˆç¸½ç®¡é–‹ç‰ˆçš„æ™‚å€™å°±é †ä¾¿è¨­å®šæ–°æˆç«‹çš„çœ‹ç‰ˆæ–‡ç« ç¸½æ•¸ä¸Šé™???
 
 : acct.c:brd_new()
 
   brh_save();
   board_main();
 
-+ if (vans("¬O§_³]©w¬İªO¤å³¹¤W­­(Y/N)¡H[N] ") == 'y')
++ if (vans("æ˜¯å¦è¨­å®šçœ‹æ¿æ–‡ç« ä¸Šé™(Y/N)ï¼Ÿ[N] ") == 'y')
 + {
-+   int days = 365, max = 3000, min = 150;      /* ¹w³]­È */
++   int days = 365, max = 3000, min = 150;      /* é è¨­å€¼ */
 +
-+   if (vget(b_lines, 0, "«O¯d¤Ñ¼Æ¡G", fpath, 6, DOECHO) &&
++   if (vget(b_lines, 0, "ä¿ç•™å¤©æ•¸ï¼š", fpath, 6, DOECHO) &&
 +     (bno = atoi(fpath)) > 0)
 +     days = bno;
-+   if (vget(b_lines, 0, "³Ì¤j½g¼Æ¡G", fpath, 6, DOECHO) &&
++   if (vget(b_lines, 0, "æœ€å¤§ç¯‡æ•¸ï¼š", fpath, 6, DOECHO) &&
 +     (bno = atoi(fpath)) > 0)
 +     max = bno;
-+   if (vget(b_lines, 0, "³Ì¤p½g¼Æ¡G", fpath, 6, DOECHO) &&
++   if (vget(b_lines, 0, "æœ€å°ç¯‡æ•¸ï¼š", fpath, 6, DOECHO) &&
 +     (bno = atoi(fpath)) > 0)
 +     min = bno;
 +
@@ -31,8 +31,8 @@
   return 0;
 }
 
-  ¤@¯ë¬İªO¨Ì expire.c ªº¹w³]­È¤£´N¦n¤F¡A¦ó¥²¦A¥t¥~³]©w©O
+  ä¸€èˆ¬çœ‹æ¿ä¾ expire.c çš„é è¨­å€¼ä¸å°±å¥½äº†ï¼Œä½•å¿…å†å¦å¤–è¨­å®šå‘¢
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;45m¢c[42m¢i[m [1mMo[30mdi[mfy: [1;35m2004/12/03 Fri 01:13:07[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;45mâ–‚[42mâ–ˆ[m [1mMo[30mdi[mfy: [1;35m2004/12/03 Fri 01:13:07[m

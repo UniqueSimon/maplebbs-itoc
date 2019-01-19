@@ -1,22 +1,22 @@
-µo«H¤H: amaki.bbs@luna.twbbs.org (¥©§J¤O¦Ï) ¬ÝªO: plan
-¼Ð  ÃD: [¥\¯à]¬ÝªO¦Cªí/¤ÀÃþ¦Cªí§Y®É¨Ì¬ÝªO¤H®ð±Æ§Ç
-µo«H¯¸: ¤ë¤U©]·Q (2003/12/31 Wed 12:45:13)                Updated: 2006/02/23
+ç™¼ä¿¡äºº: amaki.bbs@luna.twbbs.org (å·§å…‹åŠ›ç¾Š) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]çœ‹æ¿åˆ—è¡¨/åˆ†é¡žåˆ—è¡¨å³æ™‚ä¾çœ‹æ¿äººæ°£æŽ’åº
+ç™¼ä¿¡ç«™: æœˆä¸‹å¤œæƒ³ (2003/12/31 Wed 12:45:13)                Updated: 2006/02/23
 
-¡° ¤Þ­z¡mEfen.bbs@backwind.g1.dorm.ncku.edu.tw (,,,,,,)¡n¤§»Ê¨¥¡G
-> pttªº§Y®É¼öªù¬Ýª©¦³¿ìªk§Ë¶Ü¡H
+â€» å¼•è¿°ã€ŠEfen.bbs@backwind.g1.dorm.ncku.edu.tw (,,,,,,)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> pttçš„å³æ™‚ç†±é–€çœ‹ç‰ˆæœ‰è¾¦æ³•å¼„å—Žï¼Ÿ
 
-  ­n§ï³o­Ó§A­n¦³°µ¬ÝªO¤H®ðªºµ{¦¡¡C
+  è¦æ”¹é€™å€‹ä½ è¦æœ‰åšçœ‹æ¿äººæ°£çš„ç¨‹å¼ã€‚
 
-  µM«á«Ø¤@­Ó¤ÀÃþ¥s HOT¡A¸Ì­±ÀH«K©ñ¤J¤@­Ó¬ÝªO (¦]¬°¨S¦³¬ÝªOªº¤ÀÃþ¤£·|¥X²{)
+  ç„¶å¾Œå»ºä¸€å€‹åˆ†é¡žå« HOTï¼Œè£¡é¢éš¨ä¾¿æ”¾å…¥ä¸€å€‹çœ‹æ¿ (å› ç‚ºæ²’æœ‰çœ‹æ¿çš„åˆ†é¡žä¸æœƒå‡ºç¾)
 
-: board.c:mantime_cmp() ¦bclass_load()«e¥[¤W³o¤ä¨ç¦¡
+: board.c:mantime_cmp() åœ¨class_load()å‰åŠ ä¸Šé€™æ”¯å‡½å¼
 
 static int
 mantime_cmp(a, b)
   short *a;
   short *b;
 {
-  /* ¥Ñ¦h±Æ¨ì¤Ö */
+  /* ç”±å¤šæŽ’åˆ°å°‘ */
   return bshm->mantime[*b] - bshm->mantime[*a];
 }
 
@@ -38,16 +38,16 @@ class_load(xo)
   do
   {
     chn = *chead++;
-    if (chn >= 0)       /* ¤@¯ë¬ÝªO */
+    if (chn >= 0)       /* ä¸€èˆ¬çœ‹æ¿ */
     {
       val = bits[chn];
       if (!(val & BRD_L_BIT) || (val & zap) || !(brd[chn].brdname[0]))
         continue;
 
-      [1;44m// 10³o­ÓÁ{¬É­È¦Û©w [m
+      [1;44m// 10é€™å€‹è‡¨ç•Œå€¼è‡ªå®š [m
 +     if (class_hot)
 +     {
-+       if (bshm->mantime[chn] < 10) /* ¥u¦C¥X¤H®ð¶W¹L 10 ªº¬ÝªO */
++       if (bshm->mantime[chn] < 10) /* åªåˆ—å‡ºäººæ°£è¶…éŽ 10 çš„çœ‹æ¿ */
 +         continue;
 +       bnum++;
 +     }
@@ -71,7 +71,7 @@ class_load(xo)
 
   chp = (short *) xo->xyz + xo->pos;
   chn = *chp;
-  if (chn < 0)          /* ¶i¤J¤ÀÃþ */
+  if (chn < 0)          /* é€²å…¥åˆ†é¡ž */
   {
 +   short *chx;
 +   char *img, *str;
@@ -80,7 +80,7 @@ class_load(xo)
 +   chx = (short *) img + (CH_END - chn);
 +   str = img + *chx;
 
-    [1;44m// "HOT/" ¦WºÙ¥i¦Û©w¡A­Y§ï¦W¤]­n¶¶«K§ï«á­±ªºªø«× 4 [m
+    [1;44m// "HOT/" åç¨±å¯è‡ªå®šï¼Œè‹¥æ”¹åä¹Ÿè¦é †ä¾¿æ”¹å¾Œé¢çš„é•·åº¦ 4 [m
 +   if (!strncmp(str, "HOT/", 4))
 +   {
 +     class_hot = 1;
@@ -91,7 +91,7 @@ class_load(xo)
       return XO_NONE;
 
 +   if (class_hot)
-+     class_hot = 0;      /* Â÷¶} HOT Class ¦A²M°£ class_hot ¼Ð°O */
++     class_hot = 0;      /* é›¢é–‹ HOT Class å†æ¸…é™¤ class_hot æ¨™è¨˜ */
   }
 
 --

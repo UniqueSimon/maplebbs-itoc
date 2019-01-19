@@ -1,34 +1,34 @@
-µo«H¤H: amaki.bbs@luna.twbbs.org (¦Ï¥¤¨ÑÀ³°Ó) ¬ÝªO: plan
-¼Ð  ÃD: ¾m³¾ª©ªº¨Ï¥ÎªÌ¦W³æ
-µo«H¯¸: ¤ë¤U©]·Q (Wed, 07 May 2003 00:47:03 +0800 (CST))  Updated: 2003/02/19
+ç™¼ä¿¡äºº: amaki.bbs@luna.twbbs.org (ç¾Šå¥¶ä¾›æ‡‰å•†) çœ‹æ¿: plan
+æ¨™  é¡Œ: é§é³¥ç‰ˆçš„ä½¿ç”¨è€…åå–®
+ç™¼ä¿¡ç«™: æœˆä¸‹å¤œæƒ³ (Wed, 07 May 2003 00:47:03 +0800 (CST))  Updated: 2003/02/19
 
-  ¾m³¾ª©ªº¨Ï¥ÎªÌ¦W³æ
+  é§é³¥ç‰ˆçš„ä½¿ç”¨è€…åå–®
 
-  ÅýÃa¤H®ø¥¢¡A¾m³¾¥\¯à(¦]¬°¦³¤H¤ÏÀ³¤£·Q¬Ý¨ìXXX¥O¤H·P¨ì¹½´cªºID)
+  è®“å£žäººæ¶ˆå¤±ï¼Œé§é³¥åŠŸèƒ½(å› ç‚ºæœ‰äººåæ‡‰ä¸æƒ³çœ‹åˆ°XXXä»¤äººæ„Ÿåˆ°åŽ­æƒ¡çš„ID)
 
-: ufo.h  // ½Ð¨Ì¦Û¤vªº ufo.h ½Õ¾ã
+: ufo.h  // è«‹ä¾è‡ªå·±çš„ ufo.h èª¿æ•´
 
-#define UFO_KIMONEWS    BFLAG(18)       /* itoc.020130: ¤W¯¸¬Ý Kimo News */
-+ #define UFO_BADPAL    BFLAG(19)       /* Ãa¤H®ø¥¢ */
+#define UFO_KIMONEWS    BFLAG(18)       /* itoc.020130: ä¸Šç«™çœ‹ Kimo News */
++ #define UFO_BADPAL    BFLAG(19)       /* å£žäººæ¶ˆå¤± */
 
   ...
 
-- #define NUMUFOS_USER    19      /* ¤@¯ë¨Ï¥ÎªÌ ¥i¥H¥Î«e 19 ­Ó ufo */
-+ #define NUMUFOS_USER    20      /* ¤@¯ë¨Ï¥ÎªÌ ¥i¥H¥Î«e 20 ­Ó ufo */
+- #define NUMUFOS_USER    19      /* ä¸€èˆ¬ä½¿ç”¨è€… å¯ä»¥ç”¨å‰ 19 å€‹ ufo */
++ #define NUMUFOS_USER    20      /* ä¸€èˆ¬ä½¿ç”¨è€… å¯ä»¥ç”¨å‰ 20 å€‹ ufo */
 
 - #define STR_UFO         "-mpsnemPBQFANbwtSHK-----CHA"
 + #define STR_UFO         "-mpsnemPBQFANbwtSHKc----CHA"
 
   ...
 
-  "¤W¯¸ÂsÄý©_¼¯·s»D(ÂsÄý/¤£Åª)",        /* UFO_KIMONEWS */
+  "ä¸Šç«™ç€è¦½å¥‡æ‘©æ–°èž(ç€è¦½/ä¸è®€)",        /* UFO_KIMONEWS */
 
-- "«O¯d",
-+ "Ãa¤H®ø¥¢        (®ø¥¢/¥X²{)",        /* UFO_BADPAL */
+- "ä¿ç•™",
++ "å£žäººæ¶ˆå¤±        (æ¶ˆå¤±/å‡ºç¾)",        /* UFO_BADPAL */
 
 : bmw.c:can_see()
 
-int                     /* 1:¥i¬Ý¨£ 0:¤£¥i¬Ý¨£ */
+int                     /* 1:å¯çœ‹è¦‹ 0:ä¸å¯çœ‹è¦‹ */
 can_see(my, up)
   UTMP *my;
   UTMP *up;
@@ -40,6 +40,6 @@ can_see(my, up)
 
 
 --
-  ¦³user¤ÏÀ³³o¼Ë·PÄ±¦n¹³§âxxx½ð¥X¯¸¥h......(·N¥~ªº¤ß²z¸ÉÀv®ÄªG)
+  æœ‰useråæ‡‰é€™æ¨£æ„Ÿè¦ºå¥½åƒæŠŠxxxè¸¢å‡ºç«™åŽ»......(æ„å¤–çš„å¿ƒç†è£œå„Ÿæ•ˆæžœ)
 --
   [1;33mOrigin: luna.twbbs.org[m

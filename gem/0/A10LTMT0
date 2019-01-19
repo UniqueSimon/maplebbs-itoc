@@ -1,24 +1,24 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬ÝªO: plan
-¼Ð  ÃD: Re: 20041002 ªºª©¥» (¨Ï¥ÎªÌ¦W³æ)
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/10/03 Sun 00:20:41)                Updated: 2004/10/03
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: 20041002 çš„ç‰ˆæœ¬ (ä½¿ç”¨è€…åå–®)
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/10/03 Sun 00:20:41)                Updated: 2004/10/03
 
-¡° ¤Þ­z¡mitoc (®Ö¤ß°Ê¤O)¡n¤§»Ê¨¥¡G
->   ¬°¤Fµ{¦¡¤è«K¡A§ï¤F¥H¤U feature¡G
->   7. ¡uÃa¤H¡v·|±Æ§Ç¦b³Ì«á
+â€» å¼•è¿°ã€Šitoc (æ ¸å¿ƒå‹•åŠ›)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>   ç‚ºäº†ç¨‹å¼æ–¹ä¾¿ï¼Œæ”¹äº†ä»¥ä¸‹ featureï¼š
+>   7. ã€Œå£žäººã€æœƒæŽ’åºåœ¨æœ€å¾Œ
 
-  ±N Ãa¤H©M¤@¯ë¨Ï¥ÎªÌ ²VÂø¦b¤@°_±Æ§Ç
+  å°‡ å£žäººå’Œä¸€èˆ¬ä½¿ç”¨è€… æ··é›œåœ¨ä¸€èµ·æŽ’åº
 
 : ulist.c:ulist_cmp_userid()
 : ulist.c:ulist_cmp_host()
 : ulist.c:ulist_cmp_mode()
 
 - int k = ulist_ftype[(*i) - ushm->uslot] - ulist_ftype[(*j) - ushm->uslot];
-+ /* Ãa¤H ¤Î ¤@¯ë¨Ï¥ÎªÌ ¤£¤À¶}±Æ§Ç */
++ /* å£žäºº åŠ ä¸€èˆ¬ä½¿ç”¨è€… ä¸åˆ†é–‹æŽ’åº */
 + int ftypeI = ulist_ftype[(*i) - ushm->uslot];
 + int ftypeJ = ulist_ftype[(*j) - ushm->uslot];
 + int k = ((ftypeI|ftypeJ) == (FTYPE_NORMAL|FTYPE_MYBAD)) ? 0 : ftypeI-ftypeJ;
   return k ? k : ... ;
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m Maple-itoc£»°Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
- [1;42m¢q[45m¢}[m A[1mut[30mho[mr: [1;31mitoc [30m±q [36mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
+ [1;42mâ”¼[45mâ”˜[m A[1mut[30mho[mr: [1;31mitoc [30må¾ž [36mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

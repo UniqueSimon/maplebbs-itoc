@@ -1,14 +1,14 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (£i·R±¡±s¦u£i) ¬ÝªO: plan
-¼Ð  ÃD: [¥\¯à] ¾ã¦æ¥ú´Î(3)¡Ðtalk.c ¨Ï¥ÎªÌ¦W³æ
-µo«H¯¸: ¤¤¿³¸ê¬ì (Mon, 14 Jul 2003 16:27:29 +0800 (CST))  Updated: 2005/10/05
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (Î¾æ„›æƒ…å¾¡å®ˆÎ¾) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] æ•´è¡Œå…‰æ£’(3)ï¼talk.c ä½¿ç”¨è€…åå–®
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (Mon, 14 Jul 2003 16:27:29 +0800 (CST))  Updated: 2005/10/05
 
-: ulist.c:ulist_item_bar()  ¥[¦b ulist_item() «á­±
+: ulist.c:ulist_item_bar()  åŠ åœ¨ ulist_item() å¾Œé¢
 
 #ifdef HAVE_LIGHTBAR
 static void
 ulist_item_bar(xo, mode)
   XO *xo;
-  int mode;     /* 1:¤W¥ú´Î  0:¥h¥ú´Î */
+  int mode;     /* 1:ä¸Šå…‰æ£’  0:åŽ»å…‰æ£’ */
 {
   time_t diff, ftype;
   int userno, ufo;
@@ -19,19 +19,19 @@ ulist_item_bar(xo, mode)
 
   if (!(userno = up->userno))
   {
-    outs("      < ¦¹¦ìºô¤Í¥¿¥©Â÷¶} >\n");
+    outs("      < æ­¤ä½ç¶²å‹æ­£å·§é›¢é–‹ >\n");
     return;
   }
 
-  /* itoc.011022: ­Y¥Í¤é·í¤Ñ¤W¯¸¡A­É¥Î idle Äæ¦ì¨Ó©ñ¹Ø¬P */
+  /* itoc.011022: è‹¥ç”Ÿæ—¥ç•¶å¤©ä¸Šç«™ï¼Œå€Ÿç”¨ idle æ¬„ä½ä¾†æ”¾å£½æ˜Ÿ */
   if (up->status & STATUS_BIRTHDAY)
   {
-    strcpy(buf, "\033[1;31m¹Ø¬P\033[m");
+    strcpy(buf, "\033[1;31må£½æ˜Ÿ\033[m");
   }
   else
   {
 #ifdef DETAIL_IDLETIME
-    if ((diff = time(NULL) - up->idle_time) >= 60)   /* ¶W¹L 60 ¬í¤~ºâ¶¢¸m */
+    if ((diff = time(NULL) - up->idle_time) >= 60)   /* è¶…éŽ 60 ç§’æ‰ç®—é–’ç½® */
       sprintf(buf, "%3d'%02d", diff / 60, diff % 60);
 #else
     if (diff = up->idle_time)
@@ -43,12 +43,12 @@ ulist_item_bar(xo, mode)
 
   ufo = up->ufo;
 
-  /*         pager ª¬ºA                       */
-  /*  #¡G¤£±µ¨ü¥ô¦ó¤H©I¥s¡A¤]¤£±µ¨ü¥ô¦ó¤H¼s¼½ */
-  /*  *¡G¥u±µ¨ü¦n¤Í©I¥s¡A¥B¥u±µ¨ü¦n¤Í¼s¼½     */
-  /*  !¡G¥u±µ¨ü¦n¤Í©I¥s¡A¦ý¤£±µ¨ü¥ô¦ó¤H¼s¼½   */
-  /*  -¡G±µ¨ü¥ô¦ó¤H©I¥s¡A¦ý¤£±µ¨ü¥ô¦ó¤H¼s¼½   */
-  /*   ¡G³£¨S¦³´N¬O¨S¦³­­¨î°Õ                 */
+  /*         pager ç‹€æ…‹                       */
+  /*  #ï¼šä¸æŽ¥å—ä»»ä½•äººå‘¼å«ï¼Œä¹Ÿä¸æŽ¥å—ä»»ä½•äººå»£æ’­ */
+  /*  *ï¼šåªæŽ¥å—å¥½å‹å‘¼å«ï¼Œä¸”åªæŽ¥å—å¥½å‹å»£æ’­     */
+  /*  !ï¼šåªæŽ¥å—å¥½å‹å‘¼å«ï¼Œä½†ä¸æŽ¥å—ä»»ä½•äººå»£æ’­   */
+  /*  -ï¼šæŽ¥å—ä»»ä½•äººå‘¼å«ï¼Œä½†ä¸æŽ¥å—ä»»ä½•äººå»£æ’­   */
+  /*   ï¼šéƒ½æ²’æœ‰å°±æ˜¯æ²’æœ‰é™åˆ¶å•¦                 */
   if (ufo & UFO_QUIET)
   {
     pager = '#';
@@ -121,5 +121,5 @@ static KeyFunc ulist_cb[] =
 #endif
 
 --
-[1;31m|[33m Origin [31m| [0;45m ¤¤¿³¸ê¬ì ¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [35;47m bbs.cs.nchu.edu.tw [m
+[1;31m|[33m Origin [31m| [0;45m ä¸­èˆˆè³‡ç§‘ ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [35;47m bbs.cs.nchu.edu.tw [m
 [1;31m|[35m Author [31m| [36m61-216-136-210.HINET-IP.hinet.net[m

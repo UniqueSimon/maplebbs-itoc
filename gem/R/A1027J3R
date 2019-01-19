@@ -1,27 +1,27 @@
-µo«H¤H: Filitov.bbs@bbs.twcat.edu.tw (¤@ÂI¥­Ãh) ¬İªO: plan
-¼Ğ  ÃD: Re: Ãö©ó¥D¿ï³æ...
-µo«H¯¸: «n¤k°|BBS (2004/02/06 Fri 22:34:59)               Updated: 2005/03/05
+ç™¼ä¿¡äºº: Filitov.bbs@bbs.twcat.edu.tw (ä¸€é»å¹³æ‡·) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: é—œæ–¼ä¸»é¸å–®...
+ç™¼ä¿¡ç«™: å—å¥³é™¢BBS (2004/02/06 Fri 22:34:59)               Updated: 2005/03/05
 
-¡° ¤Ş­z¡mdavidliu (David)¡n¤§»Ê¨¥¡G
-> ½Ğ°İ¤@¤UWindTop BBS¦b¥D¿ï³æ³£¦³¤@­Ó(I)nfo¡i ®Õ¤º¤½§i°Ï ¡jªº¥\¯à¡A
-> ¸Ó¥\¯à¥i¥H³sµ²¦Ü¯¸¤W¬Y­Ó¬İªO¡A³sµ²ªº¬İªO¦p¦³·s¤å³¹®ÉÁÙ·|Åı¥D¿ï³æ
-> (I)nfo¡i ®Õ¤º¤½§i°Ï ¡jÅÜ¦¨(I)nfo¡i  ¦³·s¤½§i! ¡j¡A¤£ª¾¹D¦p¦óÅı
-> Maple BBS itocª©¤]¯à¥[¤J¦¹¥\¯à?
+â€» å¼•è¿°ã€Šdavidliu (David)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> è«‹å•ä¸€ä¸‹WindTop BBSåœ¨ä¸»é¸å–®éƒ½æœ‰ä¸€å€‹(I)nfoã€ æ ¡å…§å…¬å‘Šå€ ã€‘çš„åŠŸèƒ½ï¼Œ
+> è©²åŠŸèƒ½å¯ä»¥é€£çµè‡³ç«™ä¸ŠæŸå€‹çœ‹æ¿ï¼Œé€£çµçš„çœ‹æ¿å¦‚æœ‰æ–°æ–‡ç« æ™‚é‚„æœƒè®“ä¸»é¸å–®
+> (I)nfoã€ æ ¡å…§å…¬å‘Šå€ ã€‘è®Šæˆ(I)nfoã€  æœ‰æ–°å…¬å‘Š! ã€‘ï¼Œä¸çŸ¥é“å¦‚ä½•è®“
+> Maple BBS itocç‰ˆä¹Ÿèƒ½åŠ å…¥æ­¤åŠŸèƒ½?
 
-¥é WT §ïªk....
+ä»¿ WT æ”¹æ³•....
 
-  [SomeBoard] ¦WºÙ¦Û©w¡A¤S [SomeBoard] ¥²¶·¤£¥i Zap (¤~·|Àx¦s¾\Åª°O¿ı)
+  [SomeBoard] åç¨±è‡ªå®šï¼Œåˆ [SomeBoard] å¿…é ˆä¸å¯ Zap (æ‰æœƒå„²å­˜é–±è®€è¨˜éŒ„)
 
 : global.h
 
-#define BN_ANNOUNCE     "0announce"     /* ¤½§i¬İªO¡A±j­¢¾\Åª */
-+ #define BN_INFO       "SomeBoard"     /* ®Õ¤º¤½§i°Ï */
+#define BN_ANNOUNCE     "0announce"     /* å…¬å‘Šçœ‹æ¿ï¼Œå¼·è¿«é–±è®€ */
++ #define BN_INFO       "SomeBoard"     /* æ ¡å…§å…¬å‘Šå€ */
 
 : maple.p
 
 + int check_unread_by_name(char *bname);
 
-: board.c: check_unread_by_name() ·s¼W¦¹¨ç¦¡©ó brd_force() ¤U­±
+: board.c: check_unread_by_name() æ–°å¢æ­¤å‡½å¼æ–¼ brd_force() ä¸‹é¢
 
 int
 check_unread_by_name(bname)
@@ -40,10 +40,10 @@ check_unread_by_name(bname)
 #endif
 }
 
-: menu.c ±N¤U­±³o¬q¥[¦b menu_main[] «e­±
+: menu.c å°‡ä¸‹é¢é€™æ®µåŠ åœ¨ menu_main[] å‰é¢
 
-#define INFO_EMPTY  "Info    ¡i ®Õ¤º¤½§i°Ï ¡j"
-#define INFO_HAVE   "Info    ¡i ¦³·s¤½§i¡I ¡j"
+#define INFO_EMPTY  "Info    ã€ æ ¡å…§å…¬å‘Šå€ ã€‘"
+#define INFO_HAVE   "Info    ã€ æœ‰æ–°å…¬å‘Šï¼ ã€‘"
 
 static int
 Information()
@@ -63,7 +63,7 @@ Information()
   return XEASY;
 }
 
-: menu.c:check_unread() ·s¼W¦b menu() «e­±
+: menu.c:check_unread() æ–°å¢åœ¨ menu() å‰é¢
 
 static char *
 check_unread(desc)
@@ -104,6 +104,6 @@ check_unread(desc)
    ....
 
 --
-[1;37mùİùŞùûùİ  ùûùİùùùûùİùùùûùİùŞùû[m  [1;32mOrigin:[35m [37m¥x«n¤k¤l§Ş³N¾Ç°|[m [1;31m<bbs.twcat.edu.tw>[m
-[41m  [1;31mùø  ùøùøùøùø    ùàùùùâ  ùø[;41m  [40m  [1;36mAuthor: [35mFilitov [36mFrom: [35m¯¸°È¸s[m
-[1;33m  [37mùä  ùüùäùåùü¢¤ùıùã  ùı  ùä [m  [1;33m ùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùı[m
+[1;37mâ•”â•¦â•®â•”  â•®â•”â•â•®â•”â•â•®â•”â•¦â•®[m  [1;32mOrigin:[35m [37må°å—å¥³å­æŠ€è¡“å­¸é™¢[m [1;31m<bbs.twcat.edu.tw>[m
+[41m  [1;31mâ•‘  â•‘â•‘â•‘â•‘    â• â•â•£  â•‘[;41m  [40m  [1;36mAuthor: [35mFilitov [36mFrom: [35mç«™å‹™ç¾¤[m
+[1;33m  [37mâ•©  â•°â•©â•â•°â•â•¯â•š  â•¯  â•© [m  [1;33m â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•¯[m

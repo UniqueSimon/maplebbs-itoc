@@ -1,11 +1,11 @@
-µo«H¤H: amaki.bbs@luna.twbbs.org (¤ÈÄ±¦Ï) ¬İªO: plan
-¼Ğ  ÃD: Re: [M3 for Win]Ãö©ó¦n¤Í¦W³æ
-µo«H¯¸: ¤ë¤U©]·Q (2003/12/19 Fri 01:35:47)                Updated: 2004/10/07
+ç™¼ä¿¡äºº: amaki.bbs@luna.twbbs.org (åˆè¦ºç¾Š) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [M3 for Win]é—œæ–¼å¥½å‹åå–®
+ç™¼ä¿¡ç«™: æœˆä¸‹å¤œæƒ³ (2003/12/19 Fri 01:35:47)                Updated: 2004/10/07
 
-¡° ¤Ş­z¡mlitleaf@mail.educities.edu.tw (litleaf)¡n¤§»Ê¨¥¡G
-> ¥t¥~¡A¦pªG§Ú¤£·Q­n¥Î­ì¥»ªº³]©w
-> ¦³¤@°ï (  »P§Ú¬°¤Í¡B§ÚªºªB¤Í¡B¤¬¬°¦n¤Í  )
-> §Ú¥u·Q­n³æ¯Âªº¦n¤Í´N¦n¤F
+â€» å¼•è¿°ã€Šlitleaf@mail.educities.edu.tw (litleaf)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å¦å¤–ï¼Œå¦‚æœæˆ‘ä¸æƒ³è¦ç”¨åŸæœ¬çš„è¨­å®š
+> æœ‰ä¸€å † (  èˆ‡æˆ‘ç‚ºå‹ã€æˆ‘çš„æœ‹å‹ã€äº’ç‚ºå¥½å‹  )
+> æˆ‘åªæƒ³è¦å–®ç´”çš„å¥½å‹å°±å¥½äº†
 
 : ulist.c
 
@@ -18,8 +18,8 @@
 
   ...
 
-static int mygood_num;          /* ¹ï¤è³]§Ú¬°¦n¤Í */
-- static int ogood_num;           /* §Ú³]¹ï¤è¬°¦n¤Í */
+static int mygood_num;          /* å°æ–¹è¨­æˆ‘ç‚ºå¥½å‹ */
+- static int ogood_num;           /* æˆ‘è¨­å°æ–¹ç‚ºå¥½å‹ */
 
 : ulist.c:ulist_init()
 
@@ -36,11 +36,11 @@ static int mygood_num;          /* ¹ï¤è³]§Ú¬°¦n¤Í */
 
 : ulist.c:ulist_neck()
 
-  prints("  ±Æ¦C¤è¦¡¡G[\033[1m%s/%s\033[m] ¯¸¤W¤H¼Æ¡G%d "
--   COLOR_MYGOOD " §Úªº¦n¤Í¡G%d " COLOR_OGOOD " »P§Ú¬°¤Í¡G%d\033[m",
-+   COLOR_MYGOOD " §Úªº¦n¤Í¡G%d ",
+  prints("  æ’åˆ—æ–¹å¼ï¼š[\033[1m%s/%s\033[m] ç«™ä¸Šäººæ•¸ï¼š%d "
+-   COLOR_MYGOOD " æˆ‘çš„å¥½å‹ï¼š%d " COLOR_OGOOD " èˆ‡æˆ‘ç‚ºå‹ï¼š%d\033[m",
++   COLOR_MYGOOD " æˆ‘çš„å¥½å‹ï¼š%d ",
     msg_pickup_way[pickup_way],
-    cuser.ufo & UFO_PAL ? "¦n¤Í" : "¥ş³¡",
+    cuser.ufo & UFO_PAL ? "å¥½å‹" : "å…¨éƒ¨",
 -   total_user, mygood_num, ogood_num);
 +   total_user, mygood_num);
 
@@ -54,11 +54,11 @@ static int mygood_num;          /* ¹ï¤è³]§Ú¬°¦n¤Í */
 
 : include/theme.h
 
-- #define COLOR_OGOOD     "\033[1;33m"  /* »P§Ú¬°¤Í */
+- #define COLOR_OGOOD     "\033[1;33m"  /* èˆ‡æˆ‘ç‚ºå‹ */
 
-- #define COLOR_BOTHGOOD  "\033[1;37m"    /* ¤¬³]¦n¤Í */
+- #define COLOR_BOTHGOOD  "\033[1;37m"    /* äº’è¨­å¥½å‹ */
 
 --
-  ¦Û¤v¥H«e­èª±Maple®Éªºµ§°O®³¨Ó¶K¤W¡C
+  è‡ªå·±ä»¥å‰å‰›ç©Mapleæ™‚çš„ç­†è¨˜æ‹¿ä¾†è²¼ä¸Šã€‚
 --
   [1;33mOrigin: luna.twbbs.org[m

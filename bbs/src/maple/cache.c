@@ -164,7 +164,7 @@ utmp_new(up)
     }
   } while (++uentp < utail);
 
-  /* Thor:§i¶Duser¦³¤Hµn¥ı¤@¨B¤F */
+  /* Thor:å‘Šè¨´useræœ‰äººç™»å…ˆä¸€æ­¥äº† */
 
 #ifdef	HAVE_SEM
   sem_lock(BSEM_LEAVE);
@@ -213,7 +213,7 @@ utmp_find(userno)
 
 
 UTMP *
-utmp_get(userno, userid)	/* itoc.010306: ÀË¬d¨Ï¥ÎªÌ¬O§_¦b¯¸¤W */
+utmp_get(userno, userid)	/* itoc.010306: æª¢æŸ¥ä½¿ç”¨è€…æ˜¯å¦åœ¨ç«™ä¸Š */
   int userno;
   char *userid;
 {
@@ -223,8 +223,8 @@ utmp_get(userno, userid)	/* itoc.010306: ÀË¬d¨Ï¥ÎªÌ¬O§_¦b¯¸¤W */
   int seesupercloak;
 #endif
 
-  /* itoc.020718.µù¸Ñ: ¥Ñ©ó¦P¤@­¶ªº¦P¼Ë§@ªÌªº¾÷²v¹ê¦b¤Ó°ª¡A¦Ò¼{¬O§_°O¤U¬d¸ßµ²ªG¡A
-     µM«á¥ı¬d¥ı«eªº°O¿ı¡A­Y§ä¤£¨ì¦A¥h¨Ï¥ÎªÌ¦W³æ§ä */
+  /* itoc.020718.è¨»è§£: ç”±æ–¼åŒä¸€é çš„åŒæ¨£ä½œè€…çš„æ©Ÿç‡å¯¦åœ¨å¤ªé«˜ï¼Œè€ƒæ…®æ˜¯å¦è¨˜ä¸‹æŸ¥è©¢çµæœï¼Œ
+     ç„¶å¾Œå…ˆæŸ¥å…ˆå‰çš„è¨˜éŒ„ï¼Œè‹¥æ‰¾ä¸åˆ°å†å»ä½¿ç”¨è€…åå–®æ‰¾ */
 
   seecloak = HAS_PERM(PERM_SEECLOAK);
 #ifdef HAVE_SUPERCLOAK
@@ -234,19 +234,19 @@ utmp_get(userno, userid)	/* itoc.010306: ÀË¬d¨Ï¥ÎªÌ¬O§_¦b¯¸¤W */
   uceil = (void *) uentp + ushm->offset;
   do
   {
-    if (uentp->pid && 		/* ¤w¸gÂ÷¯¸ªº¤£ÀË¬d */
+    if (uentp->pid && 		/* å·²ç¶“é›¢ç«™çš„ä¸æª¢æŸ¥ */
       ((userno && uentp->userno == userno) || (userid && !strcmp(userid, uentp->userid))))
     {
-      if (!seecloak && (uentp->ufo & UFO_CLOAK))	/* Áô§Î¬İ¤£¨£ */
+      if (!seecloak && (uentp->ufo & UFO_CLOAK))	/* éš±å½¢çœ‹ä¸è¦‹ */
 	continue;
 
 #ifdef HAVE_SUPERCLOAK
-      if (!seesupercloak && (uentp->ufo & UFO_SUPERCLOAK))	/* µµÁô¬İ¤£¨£ */
+      if (!seesupercloak && (uentp->ufo & UFO_SUPERCLOAK))	/* ç´«éš±çœ‹ä¸è¦‹ */
 	continue;
 #endif
 
 #ifdef HAVE_BADPAL
-      if (!seecloak && is_obad(uentp))		/* ³Q³]Ãa¤H¡A³s§O­Ó multi-login ¤]¬İ¤£¨£ */
+      if (!seecloak && is_obad(uentp))		/* è¢«è¨­å£äººï¼Œé€£åˆ¥å€‹ multi-login ä¹Ÿçœ‹ä¸è¦‹ */
 	break;
 #endif
 
@@ -259,17 +259,17 @@ utmp_get(userno, userid)	/* itoc.010306: ÀË¬d¨Ï¥ÎªÌ¬O§_¦b¯¸¤W */
 
 
 UTMP *
-utmp_seek(hdr)		/* itoc.010306: ÀË¬d¨Ï¥ÎªÌ¬O§_¦b¯¸¤W */
+utmp_seek(hdr)		/* itoc.010306: æª¢æŸ¥ä½¿ç”¨è€…æ˜¯å¦åœ¨ç«™ä¸Š */
   HDR *hdr;
 {
-  if (hdr->xmode & POST_INCOME)	/* POST_INCOME ©M MAIL_INCOME ¬O¬Û¦Pªº */
+  if (hdr->xmode & POST_INCOME)	/* POST_INCOME å’Œ MAIL_INCOME æ˜¯ç›¸åŒçš„ */
     return NULL;
   return utmp_get(0, hdr->owner);
 }
 
 
 void  
-utmp_admset(userno, status)	/* itoc.010811: °ÊºA³]©w½u¤W¨Ï¥ÎªÌ */
+utmp_admset(userno, status)	/* itoc.010811: å‹•æ…‹è¨­å®šç·šä¸Šä½¿ç”¨è€… */
   int userno;
   usint status;
 {
@@ -281,11 +281,11 @@ utmp_admset(userno, status)	/* itoc.010811: °ÊºA³]©w½u¤W¨Ï¥ÎªÌ */
   do
   {
     if (uentp->userno == userno)
-      uentp->status |= status;	/* ¥[¤W¸ê®Æ³QÅÜ°Ê¹LªººX¼Ğ */
+      uentp->status |= status;	/* åŠ ä¸Šè³‡æ–™è¢«è®Šå‹•éçš„æ——æ¨™ */
 
-    /* itoc.041211: ·í§Ú§â¹ï¤è·s¼W/²¾°£/ÅÜ°ÊªB¤Í®É¡A
-       °£¤F­nÀ°¥L¥[¤W STATUS_PALDIRTY (¥ç§Y¥s¥L­«·s§PÂ_¥L¦Û¤vªº ulist_ftype[¥ş³¡])¡A
-       ÁÙ­n§â§Ú ulist_userno[¹ï¤è] ÅÜ¦¨ 0 (¥ç§Y¥s§Ú¦Û¤v§ó·s ulist_ftype[¹ï¤è]) */
+    /* itoc.041211: ç•¶æˆ‘æŠŠå°æ–¹æ–°å¢/ç§»é™¤/è®Šå‹•æœ‹å‹æ™‚ï¼Œ
+       é™¤äº†è¦å¹«ä»–åŠ ä¸Š STATUS_PALDIRTY (äº¦å³å«ä»–é‡æ–°åˆ¤æ–·ä»–è‡ªå·±çš„ ulist_ftype[å…¨éƒ¨])ï¼Œ
+       é‚„è¦æŠŠæˆ‘ ulist_userno[å°æ–¹] è®Šæˆ 0 (äº¦å³å«æˆ‘è‡ªå·±æ›´æ–° ulist_ftype[å°æ–¹]) */
     if (status == STATUS_PALDIRTY)
       ulist_userno[uentp - ushm->uslot] = 0;
   } while (++uentp <= uceil);
@@ -310,7 +310,7 @@ utmp_count(userno, show)
       count++;
       if (show)
       {
-	prints("(%d) ¥Ø«eª¬ºA¬°: %-17.16s(¨Ó¦Û %s)\n",
+	prints("(%d) ç›®å‰ç‹€æ…‹ç‚º: %-17.16s(ä¾†è‡ª %s)\n",
 	  count, bmode(uentp, 0), uentp->from);
       }
     }
@@ -322,7 +322,7 @@ utmp_count(userno, show)
 UTMP *
 utmp_search(userno, order)
   int userno;
-  int order;			/* ²Ä´X­Ó */
+  int order;			/* ç¬¬å¹¾å€‹ */
 {
   UTMP *uentp, *uceil;
 
@@ -373,23 +373,23 @@ bshm_init()
 {
   int i;
 
-  /* itoc.030727: ¦b¶}±Ò bbsd ¤§«e¡AÀ³¸Ó´N­n°õ¦æ¹L account¡A
-     ©Ò¥H bshm À³¸Ó¤w³]©w¦n */
+  /* itoc.030727: åœ¨é–‹å•Ÿ bbsd ä¹‹å‰ï¼Œæ‡‰è©²å°±è¦åŸ·è¡Œé accountï¼Œ
+     æ‰€ä»¥ bshm æ‡‰è©²å·²è¨­å®šå¥½ */
 
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
   i = 0;
-  while (bshm->uptime <= 0)	/* bshm ¥¼³]©w§¹¦¨¡A¤]³\¬O¥¼¶] account¡A¤]³\¬O¯¸ªø¥¿¦n¦b¶}ªO */
+  while (bshm->uptime <= 0)	/* bshm æœªè¨­å®šå®Œæˆï¼Œä¹Ÿè¨±æ˜¯æœªè·‘ accountï¼Œä¹Ÿè¨±æ˜¯ç«™é•·æ­£å¥½åœ¨é–‹æ¿ */
   {
     sleep(5);
-    if (++i >= 6)		/* ­Y 30 ¬í¥H«áÁÙ¨S¦n¡AÂ_½uÂ÷¶} */
+    if (++i >= 6)		/* è‹¥ 30 ç§’ä»¥å¾Œé‚„æ²’å¥½ï¼Œæ–·ç·šé›¢é–‹ */
       abort_bbs();
   }
 }
 
 
 void
-bshm_reload()		/* ¶}ªO¥H«á¡A­«·s¸ü¤J bshm */
+bshm_reload()		/* é–‹æ¿ä»¥å¾Œï¼Œé‡æ–°è¼‰å…¥ bshm */
 {
   time_t *uptime;
   int fd;
@@ -399,11 +399,11 @@ bshm_reload()		/* ¶}ªO¥H«á¡A­«·s¸ü¤J bshm */
 
   while (*uptime <= 0)
   {
-    /* ¨ä¥L¯¸ªø¤]­è¦n¦b¶}ªO¡Aµ¥«İ 30 ¬í */
+    /* å…¶ä»–ç«™é•·ä¹Ÿå‰›å¥½åœ¨é–‹æ¿ï¼Œç­‰å¾… 30 ç§’ */
     sleep(30);
   }
 
-  *uptime = -1;		/* ¶}©l³]©w */
+  *uptime = -1;		/* é–‹å§‹è¨­å®š */
 
   if ((fd = open(FN_BRD, O_RDONLY)) >= 0)
   {
@@ -411,12 +411,12 @@ bshm_reload()		/* ¶}ªO¥H«á¡A­«·s¸ü¤J bshm */
     close(fd);
   }
 
-  /* µ¥©Ò¦³ boards ¸ê®Æ§ó·s«á¦A³]©w uptime */
+  /* ç­‰æ‰€æœ‰ boards è³‡æ–™æ›´æ–°å¾Œå†è¨­å®š uptime */
   time(uptime);
 
-  /* itoc.040314: ªO¥D§ó§ï¬İªO±Ô­z©Î¬O¯¸ªø§ó§ï¬İªO®É¤~·|§â bpost/blast ¼g¶i .BRD ¤¤
-     ©Ò¥H .BRD ¸Ìªº bpost/blast ¥¼¥²¬O¹ïªº¡A­n­«·s initial¡C
-     initial ªº¤èªk¬O±N btime ³]¦¨ -1¡AÅı class_item() ¥h§ó·s */
+  /* itoc.040314: æ¿ä¸»æ›´æ”¹çœ‹æ¿æ•˜è¿°æˆ–æ˜¯ç«™é•·æ›´æ”¹çœ‹æ¿æ™‚æ‰æœƒæŠŠ bpost/blast å¯«é€² .BRD ä¸­
+     æ‰€ä»¥ .BRD è£¡çš„ bpost/blast æœªå¿…æ˜¯å°çš„ï¼Œè¦é‡æ–° initialã€‚
+     initial çš„æ–¹æ³•æ˜¯å°‡ btime è¨­æˆ -1ï¼Œè®“ class_item() å»æ›´æ–° */
   head = bshm->bcache;
   tail = head + bshm->number;
   do
@@ -466,14 +466,14 @@ brd_bno(bname)
 
   bcache = bshm->bcache;
 
-  /* ¥ı¦bÂÂ¬İªO binary serach */
+  /* å…ˆåœ¨èˆŠçœ‹æ¿ binary serach */
 
   /* str_ncpy(xbrd.brdname, bname, sizeof(xbrd.brdname)); */
-  str_lower(xbrd.brdname, bname);	/* ª½±µ´«¤p¼g¡A³o¼Ë¦b brdname_cmp() ®É·|§Ö¤@¨Ç */
+  str_lower(xbrd.brdname, bname);	/* ç›´æ¥æ›å°å¯«ï¼Œé€™æ¨£åœ¨ brdname_cmp() æ™‚æœƒå¿«ä¸€äº› */
   if (bend = bsearch(&xbrd, bcache, bshm->numberOld, sizeof(BRD), brdname_cmp))
     return bend - bcache;
 
-  /* ­Y§ä¤£¨ì¡A¦A¥h·s¬İªO sequential search */
+  /* è‹¥æ‰¾ä¸åˆ°ï¼Œå†å»æ–°çœ‹æ¿ sequential search */
 
   brdp = bcache + bshm->numberOld;
   bend = bcache + bshm->number;
@@ -506,18 +506,18 @@ fshm_init()
 
 
 /* ----------------------------------------------------- */
-/* itoc.020822.µù¸Ñ:					 */
+/* itoc.020822.è¨»è§£:					 */
 /* ----------------------------------------------------- */
-/* ²Ä 0 ¡ã FILM_MOVIE-1 ±i¬O¨t²Îµe­±¤Î»¡©úµe­±		 */
-/* ²Ä FILM_MOVIE ¡ã fmax-1 ±i¬O°ÊºA¬İªO			 */
+/* ç¬¬ 0 ï½ FILM_MOVIE-1 å¼µæ˜¯ç³»çµ±ç•«é¢åŠèªªæ˜ç•«é¢		 */
+/* ç¬¬ FILM_MOVIE ï½ fmax-1 å¼µæ˜¯å‹•æ…‹çœ‹æ¿			 */
 /* ----------------------------------------------------- */
 /* tag:							 */
-/* < FILM_MOVIE  ¡÷ ¼½©ñ¸Ó±iµe­±			 */
-/* >= FILM_MOVIE ¡÷ ¶Ã¼Æ¼½©ñ FILM_MOVIE~fmax-1 ¨ä¤¤¤@±i	 */
+/* < FILM_MOVIE  â†’ æ’­æ”¾è©²å¼µç•«é¢			 */
+/* >= FILM_MOVIE â†’ äº‚æ•¸æ’­æ”¾ FILM_MOVIE~fmax-1 å…¶ä¸­ä¸€å¼µ	 */
 /* ----------------------------------------------------- */
 /* row:							 */
-/* >=0 ¡÷ ¨t²Îµe­±¡A±q (row, 0) ¶}©l¦L			 */
-/* <0  ¡÷ »¡©úµe­±¡A±q (0, 0) ¶}©l¦L¡A³Ì«á·| vmsg(NULL)	 */
+/* >=0 â†’ ç³»çµ±ç•«é¢ï¼Œå¾ (row, 0) é–‹å§‹å°			 */
+/* <0  â†’ èªªæ˜ç•«é¢ï¼Œå¾ (0, 0) é–‹å§‹å°ï¼Œæœ€å¾Œæœƒ vmsg(NULL)	 */
 /* ----------------------------------------------------- */
 
 
@@ -532,10 +532,10 @@ film_out(tag, row)
   len = 0;
   shot = fshm->shot;
 
-  while (!(fmax = *shot))	/* util/camera.c ¥¿¦b´«¤ù */
+  while (!(fmax = *shot))	/* util/camera.c æ­£åœ¨æ›ç‰‡ */
   {
     sleep(5);
-    if (++len >= 6)		/* ­Y 30 ¬í¥H«áÁÙ¨S´«¦n¤ù¡A¥i¯à¬O¨S¶] camera¡Aª½±µÂ÷¶} */
+    if (++len >= 6)		/* è‹¥ 30 ç§’ä»¥å¾Œé‚„æ²’æ›å¥½ç‰‡ï¼Œå¯èƒ½æ˜¯æ²’è·‘ cameraï¼Œç›´æ¥é›¢é–‹ */
       return;
   }
 
@@ -544,7 +544,7 @@ film_out(tag, row)
   else
     move(row, 0);
 
-  if (tag >= FILM_MOVIE)	/* °ÊºA¬İªO */
+  if (tag >= FILM_MOVIE)	/* å‹•æ…‹çœ‹æ¿ */
     tag += time(0) % (fmax - FILM_MOVIE);
 
   film = fshm->film;
@@ -566,7 +566,7 @@ film_out(tag, row)
   memcpy(buf, film, len);
   buf[len] = '\0';
 
-  if (d_cols)	/* waynesan.040831: ¨Ì¼e¿Ã¹õ¸m¤¤ */
+  if (d_cols)	/* waynesan.040831: ä¾å¯¬è¢å¹•ç½®ä¸­ */
   {
     char *ptr;
     for (film = buf; *film;)

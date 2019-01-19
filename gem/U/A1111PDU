@@ -1,31 +1,31 @@
-µo«H¤H: TKyo.bbs@cpu.tfcis.org (·t¶Â¶Q¤½¤l) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD]¤å³¹Ãş§O
-µo«H¯¸: °Ê¤O®Ö¤ß (2005/01/25 Tue 16:54:09)                Updated: 2006/04/17
+ç™¼ä¿¡äºº: TKyo.bbs@cpu.tfcis.org (æš—é»‘è²´å…¬å­) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ]æ–‡ç« é¡åˆ¥
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2005/01/25 Tue 16:54:09)                Updated: 2006/04/17
 
-¡° ¤Ş­z¡mwim888.bbs@wim888.twbbs.org (888)¡n¤§»Ê¨¥¡G
-> ¦bPOST¤å³¹®É·|¥ı°İ­n¤£­n¥[¤W¤å³¹Ãş§O
-> ¥Ø«e¬O­n´N¥ş¯¸³£¥Î­n¤£µM´N¬O³£¤£¥Î
-> ¯à¤£¯à§ï¦¨Åı¨C­Óª©¤À¶}¥h¨M©w
-> ¨C­Óª©¥i¥H³]©w¦Û¤vªº¤å³¹¦³­ş¨ÇÃş§O
+â€» å¼•è¿°ã€Šwim888.bbs@wim888.twbbs.org (888)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> åœ¨POSTæ–‡ç« æ™‚æœƒå…ˆå•è¦ä¸è¦åŠ ä¸Šæ–‡ç« é¡åˆ¥
+> ç›®å‰æ˜¯è¦å°±å…¨ç«™éƒ½ç”¨è¦ä¸ç„¶å°±æ˜¯éƒ½ä¸ç”¨
+> èƒ½ä¸èƒ½æ”¹æˆè®“æ¯å€‹ç‰ˆåˆ†é–‹å»æ±ºå®š
+> æ¯å€‹ç‰ˆå¯ä»¥è¨­å®šè‡ªå·±çš„æ–‡ç« æœ‰å“ªäº›é¡åˆ¥
 
-¨ş, ­è¦n§Ú¯¸¤W¦³³o¥\¯à, ¼g¦n¤@­ÓÂ§«ô¦h¤F, ´N Post ¥X¨Óµ¹¤j®a°Ñ¦Ò§a :)
+å‘µ, å‰›å¥½æˆ‘ç«™ä¸Šæœ‰é€™åŠŸèƒ½, å¯«å¥½ä¸€å€‹ç¦®æ‹œå¤šäº†, å°± Post å‡ºä¾†çµ¦å¤§å®¶åƒè€ƒå§ :)
 
 ------------------------------------------------------------------------------
-: src/include/modes.h : °²³] XO_ZONE ³Ì«á¬°ºëµØ°Ï, »İ¸ò xz[] ¦P¨B
+: src/include/modes.h : å‡è¨­ XO_ZONE æœ€å¾Œç‚ºç²¾è¯å€, éœ€è·Ÿ xz[] åŒæ­¥
 
-  #define XZ_GEM          (XO_ZONE + 13)          /* ºëµØ°Ï */
-+ #define XZ_PREFIX       (XO_ZONE + 14)          /* ¤å³¹Ãş§O©w¸qÀÉ */
+  #define XZ_GEM          (XO_ZONE + 13)          /* ç²¾è¯å€ */
++ #define XZ_PREFIX       (XO_ZONE + 14)          /* æ–‡ç« é¡åˆ¥å®šç¾©æª” */
 
-: src/include/battr.h : °²³]¬İªOÄİ©Ê³Ì«á¬O BRD_NOSCORE
+: src/include/battr.h : å‡è¨­çœ‹æ¿å±¬æ€§æœ€å¾Œæ˜¯ BRD_NOSCORE
 
-  #define BRD_NOSCORE   0x40    /* ¤£µû¤À¬İªO */
-+ #define BRD_PREFIX    0x80    /* ¨Ï¥Î¤å³¹Ãş§O */
+  #define BRD_NOSCORE   0x40    /* ä¸è©•åˆ†çœ‹æ¿ */
++ #define BRD_PREFIX    0x80    /* ä½¿ç”¨æ–‡ç« é¡åˆ¥ */
 
 - #define NUMBATTRS 7
 + #define NUMBATTRS 8
 
-- #define STR_BATTR "zTcsvA%"         /* itoc: ·s¼WºX¼Ğªº®É­Ô§O§Ñ¤F§ï³o¸Ì°Ú */
-+ #define STR_BATTR "zTcsvA%p"        /* itoc: ·s¼WºX¼Ğªº®É­Ô§O§Ñ¤F§ï³o¸Ì°Ú */
+- #define STR_BATTR "zTcsvA%"         /* itoc: æ–°å¢æ——æ¨™çš„æ™‚å€™åˆ¥å¿˜äº†æ”¹é€™è£¡å•Š */
++ #define STR_BATTR "zTcsvA%p"        /* itoc: æ–°å¢æ——æ¨™çš„æ™‚å€™åˆ¥å¿˜äº†æ”¹é€™è£¡å•Š */
 
 #ifdef _ADMIN_C_
   static char *battr_tbl[NUMBATTRS] =
@@ -33,28 +33,28 @@
     .
     .
     .
-  "¤£µû¤À¬İªO",         /* BRD_NOSCORE */
-+ "¨Ï¥Î¤å³¹Ãş§O"        /* BRD_PREFIX */
+  "ä¸è©•åˆ†çœ‹æ¿",         /* BRD_NOSCORE */
++ "ä½¿ç”¨æ–‡ç« é¡åˆ¥"        /* BRD_PREFIX */
 };
 #endif
 
-: src/include/struct.h : ¾A·í¦ì¸m¥[¤J
+: src/include/struct.h : é©ç•¶ä½ç½®åŠ å…¥
 
-+ #define FN_PREFIX       "prefix.dat"            /* ¤å³¹Ãş§O©w¸qÀÉ */
++ #define FN_PREFIX       "prefix.dat"            /* æ–‡ç« é¡åˆ¥å®šç¾©æª” */
 + typedef struct
 + {
-+   time_t stamp;                 /* ½s¸¹ */
-+   usint xmode;                  /* ¤å³¹Ãş§O¼Ò¦¡ */
-+   char title[11];               /* ¤å³¹Ãş§O¼ĞÃD */
++   time_t stamp;                 /* ç·¨è™Ÿ */
++   usint xmode;                  /* æ–‡ç« é¡åˆ¥æ¨¡å¼ */
++   char title[11];               /* æ–‡ç« é¡åˆ¥æ¨™é¡Œ */
 + }       PREFIX;
 
-: src/include/theme.h : ¾A·í¦ì¸m¥[¤J
+: src/include/theme.h : é©ç•¶ä½ç½®åŠ å…¥
 
-#define NECKER_PREFIX  "[¡ö]Â÷¶} [T]­×§ïÃş§O [E]­×§ï [m]²¾°Ê [t]¼ĞÅÒ [d/D]§R°£ [^D]¼ĞÅÒ§R°£ [h]»¡©ú\n" \
-COLOR3 "  ½s¸¹   ¤å³¹Ãş§O    Äİ©Ê%*s                                                     \033[m"
+#define NECKER_PREFIX  "[â†]é›¢é–‹ [T]ä¿®æ”¹é¡åˆ¥ [E]ä¿®æ”¹ [m]ç§»å‹• [t]æ¨™ç±¤ [d/D]åˆªé™¤ [^D]æ¨™ç±¤åˆªé™¤ [h]èªªæ˜\n" \
+COLOR3 "  ç·¨è™Ÿ   æ–‡ç« é¡åˆ¥    å±¬æ€§%*s                                                     \033[m"
 
 #define FEETER_PREFIX   \
-COLOR1 " Ãş§OºŞ²z " COLOR2 " (ENTER)¤Á´«Äİ©Ê (a)·s¼W (E)­×§ï (¡ô/¡õ)¤W¤U (PgUp/PgDn)¤W¤U­¶      "
+COLOR1 " é¡åˆ¥ç®¡ç† " COLOR2 " (ENTER)åˆ‡æ›å±¬æ€§ (a)æ–°å¢ (E)ä¿®æ”¹ (â†‘/â†“)ä¸Šä¸‹ (PgUp/PgDn)ä¸Šä¸‹é       "
 
 : src/maple/xover.c : xz[]
 
@@ -69,7 +69,7 @@ COLOR1 " Ãş§OºŞ²z " COLOR2 " (ENTER)¤Á´«Äİ©Ê (a)·s¼W (E)­×§ï (¡ô/¡õ)¤W¤U (PgUp/P
     .
     .
     .
-+   "Prefix  ½s¿è¤å³¹Ãş§O"
++   "Prefix  ç·¨è¼¯æ–‡ç« é¡åˆ¥"
      NULL
   };
 
@@ -99,7 +99,7 @@ COLOR1 " Ãş§OºŞ²z " COLOR2 " (ENTER)¤Á´«Äİ©Ê (a)·s¼W (E)­×§ï (¡ô/¡õ)¤W¤U (PgUp/P
 
 : src/maple/post.c
 
-/* ¾A·í¦ì¸m¥[¤J¤@ function post_prefix() */
+/* é©ç•¶ä½ç½®åŠ å…¥ä¸€ function post_prefix() */
 
 static char *
 post_prefix()
@@ -128,7 +128,7 @@ post_prefix()
           if (!(rec_get(fpath, &prefix, sizeof(PREFIX), i)))
           {
             if (prefix.xmode && (!(bbstate & STAT_BOARD)))
-              strcpy(buf[j], "#  ªO¥D±s¥Î");
+              strcpy(buf[j], "#  æ¿ä¸»å¾¡ç”¨");
             else
               sprintf(buf[j], "%d  %s", (j + 1), prefix.title);
 
@@ -141,10 +141,10 @@ post_prefix()
           }
         }
 
-        menu[j] = "Q  ¨ú®ø";
+        menu[j] = "Q  å–æ¶ˆ";
         menu[j + 1] = NULL;
 
-        sprintf(buf_title, "¿ï¾Ü¤å³¹Ãş§O  (¡ö) ´«­¶ùø%cùø", page + '1');
+        sprintf(buf_title, "é¸æ“‡æ–‡ç« é¡åˆ¥  (â†) æ›é â•‘%câ•‘", page + '1');
         ch = pans(-1, -1, buf_title, menu);
         if (ch == 'q')
           break;
@@ -155,7 +155,7 @@ post_prefix()
             page = 0;
         }
         else if (ch == '#')
-          vmsg("µLªk¨Ï¥Î¦¹¤å³¹Ãş§O\n¦]¬°±z¤£¬O¸ÓªOªO¥D¡A½Ğ­«·s¿ï¾Ü¤å³¹Ãş§O¡I");
+          vmsg("ç„¡æ³•ä½¿ç”¨æ­¤æ–‡ç« é¡åˆ¥\nå› ç‚ºæ‚¨ä¸æ˜¯è©²æ¿æ¿ä¸»ï¼Œè«‹é‡æ–°é¸æ“‡æ–‡ç« é¡åˆ¥ï¼");
         else
           return buf[ch - '1'] + 3;
       }
@@ -166,7 +166,7 @@ post_prefix()
 
 : src/maple/post.c : do_post()
 
-  prints("µoªí¤å³¹©ó¡i %s ¡j¬İªO", currboard);
+  prints("ç™¼è¡¨æ–‡ç« æ–¼ã€ %s ã€‘çœ‹æ¿", currboard);
 
 #ifdef POST_PREFIX
   .
@@ -178,12 +178,12 @@ post_prefix()
 #endif
     return XO_HEAD;
 
-: src/so/prefix.c ·s¼W³o°¦µ{¦¡
+: src/so/prefix.c æ–°å¢é€™éš»ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* prefix.c         ( NTHU CS MapleBBS Ver 3.10 )        */
 /*-------------------------------------------------------*/
-/* target : Post Refix ºŞ²z¤¶­±µ{¦¡                      */
+/* target : Post Refix ç®¡ç†ä»‹é¢ç¨‹å¼                      */
 /* author : kyo.bbs@cszone.org                           */
 /* create : 05/01/17                                     */
 /* update :   /  /                                       */
@@ -208,8 +208,8 @@ prefix_edit(prefix, echo)
 {
   char buf_command[3] = {0};
   char *menu[] = {buf_command,
-      "1  ¤@¯ë¨Ï¥ÎªÌ",
-      "2  ªO¥D±M¥Î", NULL};
+      "1  ä¸€èˆ¬ä½¿ç”¨è€…",
+      "2  æ¿ä¸»å°ˆç”¨", NULL};
 
   strcpy(buf_command, "11");
 
@@ -219,7 +219,7 @@ prefix_edit(prefix, echo)
       strcpy(buf_command, "22");
   }
 
-  switch(pans(-1, -1, "Ãş§O¨Ï¥ÎÅv­­", menu))
+  switch(pans(-1, -1, "é¡åˆ¥ä½¿ç”¨æ¬Šé™", menu))
   {
     case '1':
       prefix->xmode = 0;
@@ -229,7 +229,7 @@ prefix_edit(prefix, echo)
       break;
   }
 
-  if (!(vget(b_lines, 0, "¤å³¹Ãş§O¡G", prefix->title, 11, echo)))
+  if (!(vget(b_lines, 0, "æ–‡ç« é¡åˆ¥ï¼š", prefix->title, 11, echo)))
     return 0;
 
   return 1;
@@ -272,7 +272,7 @@ prefix_change(xo)
   {
     if (memcmp(prefix, &old_prefix, sizeof(PREFIX)))
     {
-      if (vans("½T©w­n­×§ï¶Ü¡H[N] ") == 'y')
+      if (vans("ç¢ºå®šè¦ä¿®æ”¹å—ï¼Ÿ[N] ") == 'y')
       {
         char fpath[64];
 
@@ -299,7 +299,7 @@ prefix_title(xo)
 
   old_prefix = *prefix;
 
-  if (vget(b_lines, 0, "¤å³¹Ãş§O¡G", prefix->title, 11, GCARRY))
+  if (vget(b_lines, 0, "æ–‡ç« é¡åˆ¥ï¼š", prefix->title, 11, GCARRY))
   {
     if (memcmp(prefix, &old_prefix, sizeof(PREFIX)))
     {
@@ -360,7 +360,7 @@ prefix_item(num, prefix)
     num, tag_char(prefix->stamp),
     prefix->title,
     (prefix->xmode & PREFIX_MANAGER) ? C_PREFIX_MANAGER : C_PREFIX_USER,
-    (prefix->xmode & PREFIX_MANAGER) ? "ªO¥D±M¥Î" : "¤@¯ë¨Ï¥ÎªÌ");
+    (prefix->xmode & PREFIX_MANAGER) ? "æ¿ä¸»å°ˆç”¨" : "ä¸€èˆ¬ä½¿ç”¨è€…");
 }
 
 static int
@@ -395,7 +395,7 @@ prefix_body(xo)
   max = xo->max;
   if (max <= 0)
   {
-    if (vans("·s¼W¤å³¹Ãş§O¸ê®Æ¡H[N] ") == 'y')
+    if (vans("æ–°å¢æ–‡ç« é¡åˆ¥è³‡æ–™ï¼Ÿ[N] ") == 'y')
       return prefix_add(xo);
 
     return XO_QUIT;
@@ -414,14 +414,14 @@ prefix_body(xo)
   } while (num < max);
   clrtobot();
 
-  return XO_FOOT;       /* itoc.010403: §â b_lines ¶ñ¤W feeter */
+  return XO_FOOT;       /* itoc.010403: æŠŠ b_lines å¡«ä¸Š feeter */
 }
 
 static int
 prefix_head(xo)
   XO *xo;
 {
-  vs_head("Ãş§OºŞ²z", str_site);
+  vs_head("é¡åˆ¥ç®¡ç†", str_site);
   prints(NECKER_PREFIX, d_cols, "");
 
   return prefix_body(xo);
@@ -460,7 +460,7 @@ prefix_tag(xo)
     prefix_item(++pos, prefix);
   }
 
-  return xo->pos + 1 + XO_MOVE; /* lkchu.981201: ¸õ¦Ü¤U¤@¶µ */
+  return xo->pos + 1 + XO_MOVE; /* lkchu.981201: è·³è‡³ä¸‹ä¸€é … */
 }
 
 
@@ -476,7 +476,7 @@ prefix_move(xo)
   cur = pos - xo->top;
   prefix = (PREFIX *) xo_pool + cur;
 
-  sprintf(buf, "½Ğ¿é¤J²Ä %d ¿ï¶µªº·s¦ì¸m¡G", pos + 1);
+  sprintf(buf, "è«‹è¼¸å…¥ç¬¬ %d é¸é …çš„æ–°ä½ç½®ï¼š", pos + 1);
   if (vget(b_lines, 0, buf, ans, 5, DOECHO))
   {
     i = atoi(ans) - 1;
@@ -550,5 +550,5 @@ XoPrefix(xo)
 ------------------------------------------------------------------------------
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mTKyo [30m±q [31mcszone.twbbs.org [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mTKyo [30må¾ [31mcszone.twbbs.org [30mç™¼è¡¨[m

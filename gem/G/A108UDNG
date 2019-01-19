@@ -1,37 +1,37 @@
-§@ªÌ: itoc (¯}¸Ñ¶´Åé¤~¬O¤ı¹D¡I) ¬İªO: plan
-¼ĞÃD: [¥\¯à] Âà«H server ¥iµn¤J
-®É¶¡: 2004/04/28 Wed 12:44:39                           Updated: 2004/10/23
+ä½œè€…: itoc (ç ´è§£éŸŒé«”æ‰æ˜¯ç‹é“ï¼) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] è½‰ä¿¡ server å¯ç™»å…¥
+æ™‚é–“: 2004/04/28 Wed 12:44:39                           Updated: 2004/10/23
 
-  Âà«H server ¥iµn¤J±b¸¹/±K½X
+  è½‰ä¿¡ server å¯ç™»å…¥å¸³è™Ÿ/å¯†ç¢¼
 
-: struct.h ¥[¤JÄæ¦ì
+: struct.h åŠ å…¥æ¬„ä½
 
 typedef struct
 {
-  char name[13];        /* ¸Ó¯¸ªº short-name */
-  char host[83];        /* ¸Ó¯¸ªº host */
-  int port;             /* ¸Ó¯¸ªº port */
-  usint xmode;          /* ¸Ó¯¸ªº xmode */
-- char blank[20];       /* «O¯d */
-+ char AuthinfoUser[10];/* µn¤J±b¸¹ */
-+ char AuthinfoPass[10];/* µn¤J±K½X */
-  FILE *feedfp;         /* bbslink.c ¨Ï¥Î */
+  char name[13];        /* è©²ç«™çš„ short-name */
+  char host[83];        /* è©²ç«™çš„ host */
+  int port;             /* è©²ç«™çš„ port */
+  usint xmode;          /* è©²ç«™çš„ xmode */
+- char blank[20];       /* ä¿ç•™ */
++ char AuthinfoUser[10];/* ç™»å…¥å¸³è™Ÿ */
++ char AuthinfoPass[10];/* ç™»å…¥å¯†ç¢¼ */
+  FILE *feedfp;         /* bbslink.c ä½¿ç”¨ */
 } nodelist_t;
 
 : innbbs.c:nl_add()
 
     case '2':
       nl.xmode |= INN_USEPOST;
-      vget(b_lines, 0, "Port¡G[119] ", ans, 6, DOECHO);
+      vget(b_lines, 0, "Portï¼š[119] ", ans, 6, DOECHO);
       if ((port = atoi(ans)) <= 0)
         port = 119;
-      if (vans("³Q¦¹¯¸¥xÁı«H¶Ü(Y/N)¡H[N] ") == 'y')
+      if (vans("è¢«æ­¤ç«™å°é¤µä¿¡å—(Y/N)ï¼Ÿ[N] ") == 'y')
         nl.xmode |= INN_FEEDED;
-+     if (vans("¦¹ server ¬O§_»İ­nµn¤J(Y/N)¡H[N] ") == 'y')
++     if (vans("æ­¤ server æ˜¯å¦éœ€è¦ç™»å…¥(Y/N)ï¼Ÿ[N] ") == 'y')
 +     {
-+       if (!vget(b_lines, 0, "½Ğ¿é¤Jµn¤J±b¸¹¡G", nl.AuthinfoUser,
++       if (!vget(b_lines, 0, "è«‹è¼¸å…¥ç™»å…¥å¸³è™Ÿï¼š", nl.AuthinfoUser,
 +             sizeof(nl.AuthinfoUser), DOECHO) ||
-+           !vget(b_lines, 0, "½Ğ¿é¤Jµn¤J±K½X¡G", nl.AuthinfoPass,
++           !vget(b_lines, 0, "è«‹è¼¸å…¥ç™»å…¥å¯†ç¢¼ï¼š", nl.AuthinfoPass,
 +             sizeof(nl.AuthinfoPass), DOECHO))
 +         return 0;
 +     }
@@ -42,19 +42,19 @@ typedef struct
   if (node->xmode & INN_USEPOST)
   {
 -   tcpcommand("MODE READER");
--   if (NNRPbuffer[0] != '2')   /* 200 201 202 ³£¯à¨ú«H */
+-   if (NNRPbuffer[0] != '2')   /* 200 201 202 éƒ½èƒ½å–ä¿¡ */
 -   {
--     bbslog("<bbslink> :Err: ¦øªA¾¹©Úµ´³s½u¡G%s %d\n", host, port);
--     DEBUG(("¢¢<open_connect> ¦øªA¾¹©Úµ´³s½u\n"));
+-     bbslog("<bbslink> :Err: ä¼ºæœå™¨æ‹’çµ•é€£ç·šï¼š%s %d\n", host, port);
+-     DEBUG(("â•°<open_connect> ä¼ºæœå™¨æ‹’çµ•é€£ç·š\n"));
 -     return 0;
 -   }
-+   /* Leeym.030706: »İ­n±b¸¹/±K½Xªº server */
++   /* Leeym.030706: éœ€è¦å¸³è™Ÿ/å¯†ç¢¼çš„ server */
 +   if (tcpcommand("MODE READER") == NNTP_AUTH_NEEDED_VAL)
 +   {
 +     if (!node->AuthinfoUser[0] || !node->AuthinfoPass[0])
 +     {
-+       bbslog("<bbslink> :Err: ¦øªA¾¹©Úµ´³s½u¡G%s %d\n", host, port);
-+       DEBUG(("¢¢<open_connect> ¦øªA¾¹©Úµ´³s½u\n"));
++       bbslog("<bbslink> :Err: ä¼ºæœå™¨æ‹’çµ•é€£ç·šï¼š%s %d\n", host, port);
++       DEBUG(("â•°<open_connect> ä¼ºæœå™¨æ‹’çµ•é€£ç·š\n"));
 +       return 0;
 +     }
 +     else
@@ -66,4 +66,4 @@ typedef struct
   }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mpc512-2.EE.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mpc512-2.EE.NCTU.edu.tw[37m ç™¼è¡¨[m

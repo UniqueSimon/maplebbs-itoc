@@ -1,37 +1,37 @@
-�o�H�H: itoc.bbs@processor.tfcis.org (�֤߰ʤO) �ݪO: plan
-��  �D: Re: ���ˤH
-�o�H��: �ʤO�֤� (2004/03/30 Tue 00:42:13)                Updated: 2004/03/30
+發信人: itoc.bbs@processor.tfcis.org (核心動力) 看板: plan
+標  題: Re: 推薦人
+發信站: 動力核心 (2004/03/30 Tue 00:42:13)                Updated: 2004/03/30
 
-�� �ޭz�maling0306.bbs@fhbb.twbbs.org.tw (�B������������)�n���ʨ��G
-> �s�ϥΪ�new �b����
-> �񧹩Ҧ���ƫ�
-> �|�X�{�@�Ӹ߰ݵ��� "�п�J���˧A�ӳo�̪��HID"
-> ��J�Q���ˤHid�� �|�۰�PO�b�@�ӪO�W
+※ 引述《aling0306.bbs@fhbb.twbbs.org.tw (ｙｅｎｎｉｎｇ～)》之銘言：
+> 新使用者new 帳號時
+> 填完所有資料後
+> 會出現一個詢問視窗 "請輸入推薦你來這裡的人ID"
+> 輸入被推薦人id後 會自動PO在一個板上
 
-  ���U�ɶ�g���ФH
-  �o�\��� HAVE_GUARANTOR ��g�Y�i�G
-  a) �����ˬd�O�H�K�X������
-  b) �s�W�N log �O���b�S�w�ݪO
+  註冊時填寫介紹人
+  這功能用 HAVE_GUARANTOR 改寫即可：
+  a) 拿掉檢查保人密碼的部分
+  b) 新增將 log 記錄在特定看板
 
 : config.h
 
 #ifdef LOGINASNEW
-- #undef  HAVE_GUARANTOR          /* itoc.000319: �ĥΫO�ҤH��� */
-+ #define HAVE_GUARANTOR          /* itoc.000319: �ĥΫO�ҤH��� */
+- #undef  HAVE_GUARANTOR          /* itoc.000319: 採用保證人制度 */
++ #define HAVE_GUARANTOR          /* itoc.000319: 採用保證人制度 */
 #endif
 
 : bbsd.c:login_user()
 
-      vget(b_lines - 2, 0, "   [�z���O�H] ", uid, IDLEN + 1, DOECHO);
+      vget(b_lines - 2, 0, "   [您的保人] ", uid, IDLEN + 1, DOECHO);
       if (!*uid || (acct_load(&cuser, uid) < 0))
       {
-        vmsg("��p�A�S�����ФH���o�[�J����");
+        vmsg("抱歉，沒有介紹人不得加入本站");
       }
 -     else if (!HAS_PERM(PERM_GUARANTOR))
 -     {
--       vmsg("��p�A�z����������O�H�����ФH");
+-       vmsg("抱歉，您不夠資格擔任別人的介紹人");
 -     }
--     else if (!vget(b_lines - 2, 40, "[�O�H�K�X] ",
+-     else if (!vget(b_lines - 2, 40, "[保人密碼] ",
 -       passbuf, PSWDLEN + 1, NOECHO))
 -     {
 -       continue;
@@ -54,7 +54,7 @@
   ...
   ...
 
-          sprintf(buf, "%s �� %s ���Ц��H(%s)�[�J����\n",
+          sprintf(buf, "%s 於 %s 介紹此人(%s)加入本站\n",
             parentid, Btime(&now), cuser.userid);
           usr_fpath(fpath, cuser.userid, "guarantor");
           if (fp = fopen(fpath, "a"))
@@ -62,16 +62,16 @@
             fputs(buf, fp);
             fclose(fp);
           }
-+         brd_fpath(folder, "sysop", fn_dir);       [1;44m // �ݪO�۩w [m
++         brd_fpath(folder, "sysop", fn_dir);       [1;44m // 看板自定 [m
 +         hdr_stamp(folder, HDR_COPY | 'A', &hdr, fpath);
 +         strcpy(hdr.owner, parentid);
-+         strcpy(hdr.nick, "���ФH");
-+         sprintf(hdr.title, %s ���� %s �[�J����, parentid, cuser.userid);
++         strcpy(hdr.nick, "介紹人");
++         sprintf(hdr.title, %s 介紹 %s 加入本站, parentid, cuser.userid);
 +         rec_add(folder, &hdr, sizeof(HDR));
-          sprintf(buf, "%s �� %s �Q���H(%s)���Х[�J����\n",
+          sprintf(buf, "%s 於 %s 被此人(%s)介紹加入本站\n",
             cuser.userid, Btime(&now), parentid);
 
 
 --
- [1;43m�~[46m�q[m Or[1mig[30min[m: [41m Maple-itoc���ʤO�֤� [32;47m processor.tfcis.org [m
- [1;44m�q[41m��[m A[1mut[30mho[mr: [1;33mitoc [30m�q [35mitoc.dorm11.nctu.edu.tw [30m�o��[m
+ [1;43m╭[46m┼[m Or[1mig[30min[m: [41m Maple-itoc˙動力核心 [32;47m processor.tfcis.org [m
+ [1;44m┼[41m╯[m A[1mut[30mho[mr: [1;33mitoc [30m從 [35mitoc.dorm11.nctu.edu.tw [30m發表[m

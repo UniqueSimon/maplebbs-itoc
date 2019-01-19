@@ -1,43 +1,43 @@
-�@��: itoc (�\��о�) ����: SYSOP
-���D: �إ߷s�ݪO
-�ɶ�: Sat Jan  1 00:00:00 2000
+作者: itoc (功能教學) 站內: SYSOP
+標題: 建立新看板
+時間: Sat Jan  1 00:00:00 2000
 
-                        [1;42m �� �إ߷s�ݪO �� [m
+                        [1;42m □ 建立新看板 □ [m
 
-    �����b�ݪO�C���άO�����s�դ��A�� [1;31mCtrl+P[m �i�H�s�W�ݪO�A�s�}���ݪO�N�|��
-    ���Q�t�Υ[�J�ثe�Ҧb�����s�աC�Y�O�b�ݪO�C���s�W�ݪO�A���ɸӪO�N���|�[
-    �J����s�աC
+    站長在看板列表或是分類群組中，按 [1;31mCtrl+P[m 可以新增看板，新開的看板將會直
+    接被系統加入目前所在分類群組。若是在看板列表新增看板，此時該板將不會加
+    入任何群組。
 
-    �z
-    �x �i �إ߷s�O �j
-    �x
-    �x �п�J�ݪO�W�١Gsysop
-    �x �ݪO�����G����
-    �x �ݪO�D�D�G�� ���i����  ���ڳ���
-    �x �O�D�W��GSYSOP
-    �x �\Ū�v��(Y/N)�H[N]
-    �x �o���v��(Y/N)�H[N]
-    �x �]�w�ݩ�(Y/N)�H[N]
-    �|
+    ┌
+    │ 【 建立新板 】
+    │
+    │ 請輸入看板名稱：sysop
+    │ 看板分類：站務
+    │ 看板主題：☆ 報告站長  給我報報
+    │ 板主名單：SYSOP
+    │ 閱讀權限(Y/N)？[N]
+    │ 發表權限(Y/N)？[N]
+    │ 設定屬性(Y/N)？[N]
+    └
 
-    �� �ݪO�W�١GBoard ID�A�i�H�O�^��r��[a-zA-Z]�B�Ʀr[0-9]�B[._-]
-                 ���r�����զX�A�|�Ҩӻ� [win95] �O�X�k���ݪO�W�١C
+    ■ 看板名稱：Board ID，可以是英文字母[a-zA-Z]、數字[0-9]、[._-]
+                 等字元的組合，舉例來說 [win95] 是合法的看板名稱。
 
-    �� �ݪO�����G�ݪO�������C
+    ■ 看板分類：看板的分類。
 
-    �� �ݪO�D�D�G�y�z�ݪO������D�D�C
+    ■ 看板主題：描述看板的中文主題。
 
-    �� �O�D�W��GBoard Manager ID List�A�O�D�i�H���\�h�H�H�W�A���O List
-                 ���`���צ�����C
-                 �O�D���Ǥ��A�Ĥ@�H�����O�D�A��l���ƪO�D�C���ƪO�D���v
-                 ���O�����ۦP���A���F���O�D�i�H�]�w�ƪO�D�H�~�C
+    ■ 板主名單：Board Manager ID List，板主可以有許多人以上，但是 List
+                 的總長度有限制。
+                 板主順序中，第一人為正板主，其餘為副板主。正副板主的權
+                 限是完全相同的，除了正板主可以設定副板主以外。
 
-    �� �ݪO�v���G���F��ܤ��}/���K/�n�ͪO�H�~�A�٥i�H�ۦ�W���ݪO�v���C
+    ■ 看板權限：除了選擇公開/秘密/好友板以外，還可以自行規劃看板權限。
 
-    �� �ݪO�ݩʡG�i�H�̷ӦU�ݪO���ݭn�A�ӧ@�ݩʪ��]�w�C
+    ■ 看板屬性：可以依照各看板的需要，而作屬性的設定。
 
 
-    �}�]���s�O�H��A�����ٱo�N�ӬݪO�[�J�����A�o�ˤ~�|�X�{�b���հQ�װϤ��C
+    開設完新板以後，站長還得將該看板加入分類，這樣才會出現在分組討論區中。
 
 --
-[1;37m�� ���峹�Ӧ� [33;44m ��j�q�l [0;1;37m �� [32mEE.NCTU.edu.tw[37m �ҵo��[m
+[1;37m□ 本文章來自 [33;44m 交大電子 [0;1;37m 由 [32mEE.NCTU.edu.tw[37m 所發表[m

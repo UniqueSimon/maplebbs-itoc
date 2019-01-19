@@ -1,20 +1,20 @@
-§@ªÌ: itoc (League) ¯¸¤º: plan
-¼ĞÃD: [¥\¯à] ¦bÂà«H¥X¥hªº¦ì§}¥[¤W NO-SPAM
-®É¶¡: 2004/03/12 Fri 11:13:34                           Updated: 2004/04/25
+ä½œè€…: itoc (League) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] åœ¨è½‰ä¿¡å‡ºå»çš„ä½å€åŠ ä¸Š NO-SPAM
+æ™‚é–“: 2004/03/12 Fri 11:13:34                           Updated: 2004/04/25
 
-  Âà«H¥X¥hªº¤å³¹¡AÀÉÀY·|§e²{
+  è½‰ä¿¡å‡ºå»çš„æ–‡ç« ï¼Œæª”é ­æœƒå‘ˆç¾
 
-µo«H¤H: userid.bbs@bbs.xxx.edu.tw (¼ÊºÙ) ¬İªO: brdname
-¼Ğ  ÃD: ³o¬O¼ĞÃD
-µo«H¯¸: §Úªº¯¸¥x (2004/03/11 Thu 01:02:03)
+ç™¼ä¿¡äºº: userid.bbs@bbs.xxx.edu.tw (æš±ç¨±) çœ‹æ¿: brdname
+æ¨™  é¡Œ: é€™æ˜¯æ¨™é¡Œ
+ç™¼ä¿¡ç«™: æˆ‘çš„ç«™å° (2004/03/11 Thu 01:02:03)
 
-  §Æ±æ§ï¦¨
+  å¸Œæœ›æ”¹æˆ
 
-µo«H¤H: userid.bbs@[1;33mNO.[mbbs.xxx.edu.tw[1;33m.SPAM[m (¼ÊºÙ) ¬İªO: brdname
-¼Ğ  ÃD: ³o¬O¼ĞÃD
-µo«H¯¸: §Úªº¯¸¥x (2004/03/11 Thu 01:02:03)
+ç™¼ä¿¡äºº: userid.bbs@[1;33mNO.[mbbs.xxx.edu.tw[1;33m.SPAM[m (æš±ç¨±) çœ‹æ¿: brdname
+æ¨™  é¡Œ: é€™æ˜¯æ¨™é¡Œ
+ç™¼ä¿¡ç«™: æˆ‘çš„ç«™å° (2004/03/11 Thu 01:02:03)
 
-  ¨Ó´î¤Ö¼s§i«H
+  ä¾†æ¸›å°‘å»£å‘Šä¿¡
 
 : bbslink.c:process_article()
 
@@ -23,7 +23,7 @@
   sprintf(MSGID, "%s$%s@" MYHOSTNAME, filename, board);
 
 
-  ¤£¹L³o¼Ë­n cancel ¤wµo¥X¥hªº¤å³¹·|¥¢±Ñ
+  ä¸éé€™æ¨£è¦ cancel å·²ç™¼å‡ºå»çš„æ–‡ç« æœƒå¤±æ•—
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

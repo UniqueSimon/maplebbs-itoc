@@ -1,39 +1,39 @@
 #!/bin/sh
 # minute hour monthday month weekday command
 
-# ¨C¤p®É¹ï¨ä¥L BBS ¤Î news server Âà«H¤­¦¸
+# æ¯å°æ™‚å°å…¶ä»– BBS åŠ news server è½‰ä¿¡äº”æ¬¡
 10,22,34,46,58 * * * * innd/bbslink > /dev/null 2>&1
 
-# ¨C¤p®É§@¤@¦¸¸ÜÃD²Î­p
+# æ¯å°æ™‚ä½œä¸€æ¬¡è©±é¡Œçµ±è¨ˆ
 20 * * * * bin/poststat > /dev/null 2>&1
 
-# ¨C¤p®É§@¤@¦¸¾ú¥v­y¸ñ
+# æ¯å°æ™‚ä½œä¸€æ¬¡æ­·å²è»Œè·¡
 25 * * * * bin/counter > /dev/null 2>&1
 
-# ¨C¤p®É§@¤@¦¸¤H¦¸²Î­p¤Î¶}²¼ account (account­n¦b¨C¤p®É 1-5 ¤À¶])
+# æ¯å°æ™‚ä½œä¸€æ¬¡äººæ¬¡çµ±è¨ˆåŠé–‹ç¥¨ account (accountè¦åœ¨æ¯å°æ™‚ 1-5 åˆ†è·‘)
 1 * * * * bin/account > /dev/null 2>&1
 
-# ¨C¤p®É§ó·s¤@¦¸°ÊºA¬ÝªO(¦]¬°¦³ÂIºq¨ì°ÊºA¬ÝªO¡A©Ò¥HÀW²v°ª¤@¨Ç)
+# æ¯å°æ™‚æ›´æ–°ä¸€æ¬¡å‹•æ…‹çœ‹æ¿(å› ç‚ºæœ‰é»žæ­Œåˆ°å‹•æ…‹çœ‹æ¿ï¼Œæ‰€ä»¥é »çŽ‡é«˜ä¸€äº›)
 2 * * * * bin/camera > /dev/null 2>&1
 
-# ¨C¤Ñ°µ¤@¦¸±Æ¦æº]²Î­p
+# æ¯å¤©åšä¸€æ¬¡æŽ’è¡Œæ¦œçµ±è¨ˆ
 28 3 * * * bin/topgem > /dev/null 2>&1
 30 3 * * * bin/topsong > /dev/null 2>&1
 32 3 * * * bin/topusr > /dev/null 2>&1
 
-# ¨C¤Ñ®Ú¾Ú expire.conf ¹ï¬ÝªO¤å³¹§@ expire
+# æ¯å¤©æ ¹æ“š expire.conf å°çœ‹æ¿æ–‡ç« ä½œ expire
 29 3 * * * bin/expire > /dev/null 2>&1
 
-# ¨C¤Ñ¹ïºëµØ°Ï§@¯Á¤ÞÀÉ¡A¤è«K¨Ï¥ÎªÌ·j´M
+# æ¯å¤©å°ç²¾è¯å€ä½œç´¢å¼•æª”ï¼Œæ–¹ä¾¿ä½¿ç”¨è€…æœå°‹
 40 3 * * * bin/gem-index > /dev/null 2>&1
 
-# ¨C¤Ñ²M²z­Ó¤H«H½c
+# æ¯å¤©æ¸…ç†å€‹äººä¿¡ç®±
 0 4 * * * bin/bquota > /dev/null 2>&1
 
-# ¨C¬P´Á²M²z¤[¥¼¤W¯¸¨Ï¥ÎªÌ¡A²M¥Xªº user ·|³Q·h¦Ü usr/@ ¥Ø¿ý¤U¡A½Ð¦Û¦æ¦A§R°£
+# æ¯æ˜ŸæœŸæ¸…ç†ä¹…æœªä¸Šç«™ä½¿ç”¨è€…ï¼Œæ¸…å‡ºçš„ user æœƒè¢«æ¬è‡³ usr/@ ç›®éŒ„ä¸‹ï¼Œè«‹è‡ªè¡Œå†åˆªé™¤
 50 3 * * 3 bin/reaper > /dev/null 2>&1
 
-# bbs ³Æ¥÷¡A¬°­°§C load¡A¨C¶g¥|¤Ñ¤À´²³Æ¥÷¤£¦Pªº¥Ø¿ý
+# bbs å‚™ä»½ï¼Œç‚ºé™ä½Ž loadï¼Œæ¯é€±å››å¤©åˆ†æ•£å‚™ä»½ä¸åŒçš„ç›®éŒ„
 4 3 * * 2  bin/backupbrd > /dev/null 2>&1
 4 3 * * 3  bin/backupgem > /dev/null 2>&1
 4 3 * * 4  bin/backupusr > /dev/null 2>&1

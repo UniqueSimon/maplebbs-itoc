@@ -1,11 +1,11 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ½Ğ°İ­×§ï¤å³¹/«H¥óÀÉÀY
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/02/26 Thu 23:38:50)                Updated: 2006/02/23
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: è«‹å•ä¿®æ”¹æ–‡ç« /ä¿¡ä»¶æª”é ­
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/02/26 Thu 23:38:50)                Updated: 2006/02/23
 
-¡° ¤Ş­z¡mAwing (¤s©Y¦Ï)¡n¤§»Ê¨¥¡G
-> ¬°¤F¾AÀ³ÂÂ¯¸¨Ï¥ÎªÌ²ßºD,
-> §Ú§âÀÉÀY¦h¥[¤W¤F¤@ºb,
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â€» å¼•è¿°ã€ŠAwing (å±±å¡ç¾Š)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> ç‚ºäº†é©æ‡‰èˆŠç«™ä½¿ç”¨è€…ç¿’æ…£,
+> æˆ‘æŠŠæª”é ­å¤šåŠ ä¸Šäº†ä¸€æ§“,
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 : more.c:more()
 
@@ -20,12 +20,12 @@ more(fpath, footer)
   ...
   ...
 
-    if (!*buf)  /* ²Ä¤@¦¸ "\n\n" ¬OÀÉÀYªºµ²§À */
+    if (!*buf)  /* ç¬¬ä¸€æ¬¡ "\n\n" æ˜¯æª”é ­çš„çµå°¾ */
       break;
   }
   headend = foff;
 
-+ if (header_len && footer)     /* ¤@¯ë¤å³¹¡A¦bÀÉÀY»P¥»¤å¤§¶¡¥[¤J¤À¹j½u */
++ if (header_len && footer)     /* ä¸€èˆ¬æ–‡ç« ï¼Œåœ¨æª”é ­èˆ‡æœ¬æ–‡ä¹‹é–“åŠ å…¥åˆ†éš”ç·š */
 + {
 +   lino = strlen(MSG_SEPERATE);
 +
@@ -47,9 +47,9 @@ more(fpath, footer)
 +   headend = fimage + shift;
 + }
 
-  /* Âk¹s */
+  /* æ­¸é›¶ */
   foff = fimage;
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* credit.c	( NTHU CS MapleBBS Ver 3.10 )		 */
 /*-------------------------------------------------------*/
-/* target : °O±b¥»¡A°O¿ý¥Í¬¡¤¤ªº¦¬¤J¤ä¥X		 */
+/* target : è¨˜å¸³æœ¬ï¼Œè¨˜éŒ„ç”Ÿæ´»ä¸­çš„æ”¶å…¥æ”¯å‡º		 */
 /* create : 99/12/18                                     */
 /* update : 02/01/26					 */
 /* author : wildcat@wd.twbbs.org			 */
@@ -14,40 +14,40 @@
 #ifdef HAVE_CREDIT
 
 /* ----------------------------------------------------- */
-/* credit.c ¤¤¹B¥Îªº¸ê®Æµ²ºc                             */
+/* credit.c ä¸­é‹ç”¨çš„è³‡æ–™çµæ§‹                             */
 /* ----------------------------------------------------- */
 
 typedef struct
 {
-  int year;			/* ¦~ */
-  char month;			/* ¤ë */
-  char day;			/* ¤é */
+  int year;			/* å¹´ */
+  char month;			/* æœˆ */
+  char day;			/* æ—¥ */
 
-  char flag;			/* ¤ä¥X/¦¬¤J */
-  int money;			/* ª÷ÃB */
-  char useway;			/* Ãþ§O(­¹¦ç¦í¦æ¨|¼Ö) */
-  char desc[112];		/* »¡©ú */		/* ³o¤Óªø¤F¡A«O¯dµ¹¨ä¥LÄæ¦ì¨Ï¥Î */
+  char flag;			/* æ”¯å‡º/æ”¶å…¥ */
+  int money;			/* é‡‘é¡ */
+  char useway;			/* é¡žåˆ¥(é£Ÿè¡£ä½è¡Œè‚²æ¨‚) */
+  char desc[112];		/* èªªæ˜Ž */		/* é€™å¤ªé•·äº†ï¼Œä¿ç•™çµ¦å…¶ä»–æ¬„ä½ä½¿ç”¨ */
 }      CREDIT;
 
 
-#define CREDIT_OUT	0x1	/* ¤ä¥X */
-#define CREDIT_IN	0x2	/* ¦¬¤J */
+#define CREDIT_OUT	0x1	/* æ”¯å‡º */
+#define CREDIT_IN	0x2	/* æ”¶å…¥ */
 
-#define CREDIT_OTHER	0	/* ¨ä¥L */
-#define CREDIT_EAT	1	/* ­¹ */
-#define CREDIT_WEAR	2	/* ¦ç */
-#define CREDIT_LIVE	3	/* ¦í */
-#define CREDIT_MOVE	4	/* ¦æ */
-#define CREDIT_EDU	5	/* ¨| */
-#define CREDIT_PLAY	6	/* ¼Ö */
+#define CREDIT_OTHER	0	/* å…¶ä»– */
+#define CREDIT_EAT	1	/* é£Ÿ */
+#define CREDIT_WEAR	2	/* è¡£ */
+#define CREDIT_LIVE	3	/* ä½ */
+#define CREDIT_MOVE	4	/* è¡Œ */
+#define CREDIT_EDU	5	/* è‚² */
+#define CREDIT_PLAY	6	/* æ¨‚ */
 
-static char fpath[64];		/* FN_CREDIT ÀÉ®×¸ô®| */
+static char fpath[64];		/* FN_CREDIT æª”æ¡ˆè·¯å¾‘ */
 
 
 static void
 credit_head()
 {
-  vs_head("°O±b¤â¥¾", str_site);
+  vs_head("è¨˜å¸³æ‰‹æœ­", str_site);
   prints(NECKER_CREDIT, d_cols, "");
 }
 
@@ -57,11 +57,11 @@ credit_body(page)
   int page;
 {
   CREDIT credit;
-  char *way[] = {"¨ä¥L", "[­¹]", "[¦ç]", "[¦í]", "[¦æ]", "[¨|]", "[¼Ö]"};
+  char *way[] = {"å…¶ä»–", "[é£Ÿ]", "[è¡£]", "[ä½]", "[è¡Œ]", "[è‚²]", "[æ¨‚]"};
   int fd;
 
   move(1, 65);
-  prints("²Ä %2d ­¶", page + 1);
+  prints("ç¬¬ %2d é ", page + 1);
 
   move(3, 0);
   clrtobot();
@@ -70,7 +70,7 @@ credit_body(page)
   {
     int pos, n;
 
-    pos = page * XO_TALL;	/* ¤@­¶¦³ XO_TALL µ§ */
+    pos = page * XO_TALL;	/* ä¸€é æœ‰ XO_TALL ç­† */
     n = XO_TALL;
 
     while (n)
@@ -82,7 +82,7 @@ credit_body(page)
 	pos++;
 	prints("%6d %04d/%02d/%02d %s %8d %4s %.*s\n", 
 	  pos, credit.year, credit.month, credit.day, 
-	  credit.flag == CREDIT_OUT ? "\033[1;32m¤ä¥X\033[m" : "\033[1;31m¦¬¤J\033[m",
+	  credit.flag == CREDIT_OUT ? "\033[1;32mæ”¯å‡º\033[m" : "\033[1;31mæ”¶å…¥\033[m",
 	  credit.money, 
 	  credit.flag == CREDIT_OUT ? way[credit.useway] : "    ",
 	  d_cols + 46, credit.desc);
@@ -109,34 +109,34 @@ credit_add()
 
   memset(&credit, 0, sizeof(CREDIT));
 
-  if (vget(5, 0, "¦¬¤ä (1)¦¬¤J (2)¤ä¥X [2] ", buf, 3, DOECHO) == '1')
+  if (vget(5, 0, "æ”¶æ”¯ (1)æ”¶å…¥ (2)æ”¯å‡º [2] ", buf, 3, DOECHO) == '1')
     credit.flag = CREDIT_IN;
   else
     credit.flag = CREDIT_OUT;
     
-  vget(6, 0, "®É¶¡ (¦~¥÷) ", buf, 5, DOECHO);
+  vget(6, 0, "æ™‚é–“ (å¹´ä»½) ", buf, 5, DOECHO);
   credit.year = atoi(buf);
 
-  vget(7, 0, "®É¶¡ (¤ë¥÷) ", buf, 3, DOECHO);
+  vget(7, 0, "æ™‚é–“ (æœˆä»½) ", buf, 3, DOECHO);
   credit.month = atoi(buf);
 
-  vget(8, 0, "®É¶¡ (¤é´Á) ", buf, 3, DOECHO);
+  vget(8, 0, "æ™‚é–“ (æ—¥æœŸ) ", buf, 3, DOECHO);
   credit.day = atoi(buf);
 
-  vget(9, 0, "ª÷¿ú (¤¸) ", buf, 9, DOECHO);
+  vget(9, 0, "é‡‘éŒ¢ (å…ƒ) ", buf, 9, DOECHO);
   credit.money = atoi(buf);
 
-  if (credit.flag == CREDIT_OUT)	/* ¤ä¥X¤~¦³°O¿ý¥Î³~ */
+  if (credit.flag == CREDIT_OUT)	/* æ”¯å‡ºæ‰æœ‰è¨˜éŒ„ç”¨é€” */
   {
     int useway;
 
-    useway = vget(10, 0, "¥Î³~ 0)¨ä¥L 1)­¹ 2)¦ç 3)¦í 4)¦æ 5)¨| 6)¼Ö [0] ", buf, 3, DOECHO) - '0';
+    useway = vget(10, 0, "ç”¨é€” 0)å…¶ä»– 1)é£Ÿ 2)è¡£ 3)ä½ 4)è¡Œ 5)è‚² 6)æ¨‚ [0] ", buf, 3, DOECHO) - '0';
     if (useway > 6 || useway < 0)
       useway = 0;
     credit.useway = useway;
   }
 
-  vget(11, 0, "»¡©ú¡G", credit.desc, 51, DOECHO);
+  vget(11, 0, "èªªæ˜Žï¼š", credit.desc, 51, DOECHO);
 
   rec_add(fpath, &credit, sizeof(CREDIT));
   return 1;
@@ -149,12 +149,12 @@ credit_delete()
   int pos;
   char buf[4];
 
-  vget(b_lines, 0, "­n§R°£²Ä´Xµ§¸ê®Æ¡G", buf, 4, DOECHO);
+  vget(b_lines, 0, "è¦åˆªé™¤ç¬¬å¹¾ç­†è³‡æ–™ï¼š", buf, 4, DOECHO);
   pos = atoi(buf);
   
   if (rec_num(fpath, sizeof(CREDIT)) < pos)
   {
-    vmsg("±z·d¿ùÅo¡A¨S¦³³oµ§¸ê®Æ");
+    vmsg("æ‚¨æžéŒ¯å›‰ï¼Œæ²’æœ‰é€™ç­†è³‡æ–™");
     return 0;
   }
 
@@ -179,7 +179,7 @@ credit_count()
     mgets(-1);
     while (credit = mread(fd, sizeof(CREDIT)))
     {
-      if (credit->flag == CREDIT_OUT)	/* ¤ä¥X¤~¦³°O¿ý¥Î³~ */
+      if (credit->flag == CREDIT_OUT)	/* æ”¯å‡ºæ‰æœ‰è¨˜éŒ„ç”¨é€” */
 	way[credit->useway] += credit->money;
       else
         moneyin += credit->money;
@@ -194,19 +194,19 @@ credit_count()
     clrtobot();
 
     move(7, 0);
-    prints("      \033[1;31mÁ`¦¬¤J  %12d ¤¸\033[m\n", moneyin);
-    prints("      \033[1;32mÁ`¤ä¥X  %12d ¤¸\033[m\n\n", moneyout);
+    prints("      \033[1;31mç¸½æ”¶å…¥  %12d å…ƒ\033[m\n", moneyin);
+    prints("      \033[1;32mç¸½æ”¯å‡º  %12d å…ƒ\033[m\n\n", moneyout);
 
-    prints("ªá¦b  \033[1;36m [­¹]   %12d ¤¸    \033[32m [¦ç]   %12d ¤¸\033[m\n", way[CREDIT_EAT], way[CREDIT_WEAR]);
-    prints("      \033[1;31m [¦í]   %12d ¤¸    \033[33m [¦æ]   %12d ¤¸\033[m\n", way[CREDIT_LIVE], way[CREDIT_MOVE]);
-    prints("      \033[1;35m [¨|]   %12d ¤¸    \033[37m [¼Ö]   %12d ¤¸\033[m\n", way[CREDIT_EDU], way[CREDIT_PLAY]);
-    prints("      \033[1;34m ¨ä¥L   %12d ¤¸\033[m", way[CREDIT_OTHER]);
+    prints("èŠ±åœ¨  \033[1;36m [é£Ÿ]   %12d å…ƒ    \033[32m [è¡£]   %12d å…ƒ\033[m\n", way[CREDIT_EAT], way[CREDIT_WEAR]);
+    prints("      \033[1;31m [ä½]   %12d å…ƒ    \033[33m [è¡Œ]   %12d å…ƒ\033[m\n", way[CREDIT_LIVE], way[CREDIT_MOVE]);
+    prints("      \033[1;35m [è‚²]   %12d å…ƒ    \033[37m [æ¨‚]   %12d å…ƒ\033[m\n", way[CREDIT_EDU], way[CREDIT_PLAY]);
+    prints("      \033[1;34m å…¶ä»–   %12d å…ƒ\033[m", way[CREDIT_OTHER]);
 
     vmsg(NULL);
     return 1;
   }
 
-  vmsg("±z¨S¦³°O±b°O¿ý");
+  vmsg("æ‚¨æ²’æœ‰è¨˜å¸³è¨˜éŒ„");
   return 0;
 }
 
@@ -228,10 +228,10 @@ main_credit()
     if (redraw)
       credit_body(page);
 
-    switch (vans("°O±b¤â¥¾ C)´«­¶ 1)·s¼W 2)§R°£ 3)¥þ§R 4)Á`­p Q)Â÷¶} [Q] "))
+    switch (vans("è¨˜å¸³æ‰‹æœ­ C)æ›é  1)æ–°å¢ž 2)åˆªé™¤ 3)å…¨åˆª 4)ç¸½è¨ˆ Q)é›¢é–‹ [Q] "))
     {
     case 'c':
-      vget(b_lines, 0, "¸õ¨ì²Ä´X­¶¡G", buf, 3, DOECHO);
+      vget(b_lines, 0, "è·³åˆ°ç¬¬å¹¾é ï¼š", buf, 3, DOECHO);
       redraw = atoi(buf) - 1;
       
       if (page != redraw && redraw >= 0 && 

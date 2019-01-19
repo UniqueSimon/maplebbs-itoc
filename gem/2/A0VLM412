@@ -1,14 +1,14 @@
-§@ªÌ: itoc (¡Ô-1 ¤p©óµ¥©ó¤ß¦º) ¬İªO: plan
-¼ĞÃD: [¥\¯à] bhttpd.c ²Ö¿n³X°İ¤H¦¸
-®É¶¡: Sun Sep  7 19:00:12 2003                          Updated: 2005/05/19
+ä½œè€…: itoc (âˆš-1 å°æ–¼ç­‰æ–¼å¿ƒæ­») çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] bhttpd.c ç´¯ç©è¨ªå•äººæ¬¡
+æ™‚é–“: Sun Sep  7 19:00:12 2003                          Updated: 2005/05/19
 
-  À³Æ[²³­n¨D¡A¼g¤@­Ó«ÜÂ²³æªº(¤]ÆZ²Âªº)²Ö¿n³X°İ¤H¦¸
+  æ‡‰è§€çœ¾è¦æ±‚ï¼Œå¯«ä¸€å€‹å¾ˆç°¡å–®çš„(ä¹Ÿè »ç¬¨çš„)ç´¯ç©è¨ªå•äººæ¬¡
 
 : bhttpd.c:main()
 
-    if (!(ptr = cb->key))               /* ¨ä¾l¿ù»~ªº³£¨q¥X­º­¶ */
+    if (!(ptr = cb->key))               /* å…¶é¤˜éŒ¯èª¤çš„éƒ½ç§€å‡ºé¦–é  */
     {
-+     rec_add("run/bhttp.counter", arg, 1);     /* ¶i­º­¶¤~ºâ²Ö¿n³X°İ¤H¦¸ */
++     rec_add("run/bhttp.counter", arg, 1);     /* é€²é¦–é æ‰ç®—ç´¯ç©è¨ªå•äººæ¬¡ */
       html_mainpage();
       break;
     }
@@ -18,14 +18,14 @@
   printf("<br>\r\n"
     "<table cellspacing=0 cellpadding=1 border=0 width=80%%>\r\n"
     "<tr>\r\n"
--   "  <td width=100%% ...%s%sÅwªï¥úÁ{</td>\r\n"
-+   "  <td width=100%% ...%s%s±z¬O²Ä%d¦ì¥úÁ{¥»¯¸ªº¨Ï¥ÎªÌ</td>\r\n"
+-   "  <td width=100%% ...%s%sæ­¡è¿å…‰è‡¨</td>\r\n"
++   "  <td width=100%% ...%s%sæ‚¨æ˜¯ç¬¬%dä½å…‰è‡¨æœ¬ç«™çš„ä½¿ç”¨è€…</td>\r\n"
     "</tr>\r\n"
     "</table>\r\n"
     "<br>\r\n",
     logined ? cuser.userid : "",
--   logined ? "¡A" : "");
-+   logined ? "¡A" : "", rec_num("run/bhttp.counter", 1));
+-   logined ? "ï¼Œ" : "");
++   logined ? "ï¼Œ" : "", rec_num("run/bhttp.counter", 1));
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

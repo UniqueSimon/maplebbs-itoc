@@ -1,16 +1,16 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: [°İÃD]menu¸ü¤JªºÅv­­
-®É¶¡: 2004/05/18 Tue 02:11:40                           Updated: 2005/04/05
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: [å•é¡Œ]menuè¼‰å…¥çš„æ¬Šé™
+æ™‚é–“: 2004/05/18 Tue 02:11:40                           Updated: 2005/04/05
 
-¡° ¤Ş­z¡mchwaian (µL¨¥)¡n¤§»Ê¨¥¡G
+â€» å¼•è¿°ã€Šchwaian (ç„¡è¨€)ã€‹ä¹‹éŠ˜è¨€ï¼š
 > #ifdef HAVE_REGKEY_CHECK
 >   u_verify, PERM_BASIC, M_UFILES,
->   "Verify     ¡m ¶ñ»{ÃÒ½X ¡n",
+>   "Verify     ã€Š å¡«èªè­‰ç¢¼ ã€‹",
 > #endif
-> ¹³³o¤@ºØªº
-> ¦pªG­n§ï¦¨ !(PERM_POST) ¤~·|¥X²{¿ï³æ
-> Åı !(PERM_XXXX) ¥i¥H work
-> menu()­n«ç»ò­×¥¿¤ñ¸û¦n?
+> åƒé€™ä¸€ç¨®çš„
+> å¦‚æœè¦æ”¹æˆ !(PERM_POST) æ‰æœƒå‡ºç¾é¸å–®
+> è®“ !(PERM_XXXX) å¯ä»¥ work
+> menu()è¦æ€éº¼ä¿®æ­£æ¯”è¼ƒå¥½?
 
 : menu.c
 
@@ -21,35 +21,35 @@
 
 +       if (cc & PERM_INVERSE)
 +       {
-+         if (cc & level || !level)  /* ¨S¦³¸ÓÅv­­¤~¨q¥X¡Aguest ¤£¨q¥X */
++         if (cc & level || !level)  /* æ²’æœ‰è©²æ¬Šé™æ‰ç§€å‡ºï¼Œguest ä¸ç§€å‡º */
 +           continue;
 +       }
 +       else
 +       {
-          if (cc && !(cc & level))   /* ¦³¸ÓÅv­­¤~¨q¥X */
+          if (cc && !(cc & level))   /* æœ‰è©²æ¬Šé™æ‰ç§€å‡º */
             continue;
 +       }
 
 : menu.c:menu_user[]
-: ¤w¦³ PERM_XXXX Åv­­´N¤£¸ü¤Jªº¿ï¶µ¡A¨äÅv­­§ï¬° PERM_INVERSE | PERM_XXXX
+: å·²æœ‰ PERM_XXXX æ¬Šé™å°±ä¸è¼‰å…¥çš„é¸é …ï¼Œå…¶æ¬Šé™æ”¹ç‚º PERM_INVERSE | PERM_XXXX
 
 #ifdef HAVE_REGISTER_FORM
 - u_register, PERM_BASIC, M_UFILES,
 + u_register, PERM_INVERSE | PERM_VALID, M_UFILES,
-  "Register   ¡m ¶ñµù¥U³æ ¡n",
+  "Register   ã€Š å¡«è¨»å†Šå–® ã€‹",
 #endif
 
 #ifdef HAVE_REGKEY_CHECK
 - u_verify, PERM_BASIC, M_UFILES,
 + u_verify, PERM_INVERSE | PERM_VALID, M_UFILES,
-  "Verify     ¡m ¶ñ»{ÃÒ½X ¡n",
+  "Verify     ã€Š å¡«èªè­‰ç¢¼ ã€‹",
 #endif
 
 - u_deny, PERM_BASIC, M_XMODE,
 + u_deny, PERM_BASIC | PERM_VALID, M_XMODE,
-  "Perm       ¡m «ì´_Åv­­ ¡n",
+  "Perm       ã€Š æ¢å¾©æ¬Šé™ ã€‹",
 
-: user.c:u_register()  ³o­Ó¨ç¦¡´N¤£»İ­nÀË¬dÅv­­
+: user.c:u_register()  é€™å€‹å‡½å¼å°±ä¸éœ€è¦æª¢æŸ¥æ¬Šé™
 
 -#ifdef JUSTIFY_PERIODICAL
 - if (HAS_PERM(PERM_VALID) &&
@@ -58,15 +58,15 @@
 - if (HAS_PERM(PERM_VALID))
 -#endif
 - {
--   zmsg("±zªº¨­¤À½T»{¤w¸g§¹¦¨¡A¤£»İ¶ñ¼g¥Ó½Ğªí");
+-   zmsg("æ‚¨çš„èº«åˆ†ç¢ºèªå·²ç¶“å®Œæˆï¼Œä¸éœ€å¡«å¯«ç”³è«‹è¡¨");
 -   return XEASY;
 - }
 
-: user.c:u_verify()  ³o­Ó¨ç¦¡´N¤£»İ­nÀË¬dÅv­­
+: user.c:u_verify()  é€™å€‹å‡½å¼å°±ä¸éœ€è¦æª¢æŸ¥æ¬Šé™
 
 - if (HAS_PERM(PERM_VALID))
 - {
--   zmsg("±zªº¨­¤À½T»{¤w¸g§¹¦¨¡A¤£»İ¶ñ¼g»{ÃÒ½X");
+-   zmsg("æ‚¨çš„èº«åˆ†ç¢ºèªå·²ç¶“å®Œæˆï¼Œä¸éœ€å¡«å¯«èªè­‰ç¢¼");
 - }
 - else
 - {
@@ -75,11 +75,11 @@
 
   return XEASY;
 
-: user.c:u_deny()  ³o­Ó¨ç¦¡´N¤£»İ­nÀË¬dÅv­­
+: user.c:u_deny()  é€™å€‹å‡½å¼å°±ä¸éœ€è¦æª¢æŸ¥æ¬Šé™
 
 - if (!HAS_PERM(PERM_ALLDENY))
 - {
--   zmsg("±z¨S³Q°±Åv¡A¤£»İ´_Åv");
+-   zmsg("æ‚¨æ²’è¢«åœæ¬Šï¼Œä¸éœ€å¾©æ¬Š");
 - }
 - else
 - {
@@ -89,5 +89,5 @@
   return XEASY;
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;45m¢¢[42m¢¡[m [1mMo[30mdi[mfy: [1;36m2004/05/18 Tue 02:17:15[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;45mâ•°[42mâ•®[m [1mMo[30mdi[mfy: [1;36m2004/05/18 Tue 02:17:15[m

@@ -1,13 +1,13 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (£i·R±¡±s¦u£i) ¬İªO: itoc
-¼Ğ  ÃD: [¥\¯à] talk.c ¨Ï¥ÎªÌ¿ï³æª½±µÂê©w»È¹õ¡®Áô§Î
-µo«H¯¸: ¤¤¿³¸ê¬ì (Sat, 19 Jul 2003 18:40:07 +0800 (CST))  Updated: 2003/08/17
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (Î¾æ„›æƒ…å¾¡å®ˆÎ¾) çœ‹æ¿: itoc
+æ¨™  é¡Œ: [åŠŸèƒ½] talk.c ä½¿ç”¨è€…é¸å–®ç›´æ¥é–å®šéŠ€å¹•ï¼†éš±å½¢
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (Sat, 19 Jul 2003 18:40:07 +0800 (CST))  Updated: 2003/08/17
 
-    ¨Ï¥ÎªÌ¦b¨Ï¥ÎªÌ¿ï³æ«ö 'i' ¥i¥HÁô§Î¡]¦pªG¨S¦³Åv­­ªº¸Ü¡A­n¿ú¡^
+    ä½¿ç”¨è€…åœ¨ä½¿ç”¨è€…é¸å–®æŒ‰ 'i' å¯ä»¥éš±å½¢ï¼ˆå¦‚æœæ²’æœ‰æ¬Šé™çš„è©±ï¼Œè¦éŒ¢ï¼‰
 
 : ulist.c:ulist_cloak()
 
 static int
-ulist_cloak(xo)         /* itoc.010908: §Ö³tÁô¨­ */
+ulist_cloak(xo)         /* itoc.010908: å¿«é€Ÿéš±èº« */
   XO *xo;
 {
 + if (!cuser.userlevel)
@@ -21,7 +21,7 @@ ulist_cloak(xo)         /* itoc.010908: §Ö³tÁô¨­ */
   }
 + else
 + {
-+   DL_func("bin/bank.so:b_invis"); /* qazq.030719: ¨Ï¥ÎªÌ¿ï³æ§Ö³tÁô¨­ */
++   DL_func("bin/bank.so:b_invis"); /* qazq.030719: ä½¿ç”¨è€…é¸å–®å¿«é€Ÿéš±èº« */
 + }
 
 - return XO_NONE;
@@ -29,5 +29,5 @@ ulist_cloak(xo)         /* itoc.010908: §Ö³tÁô¨­ */
 }
 
 --
-[1;31m|[33m Origin [31m| [0;45m ¤¤¿³¸ê¬ì ¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [35;47m bbs.cs.nchu.edu.tw [m
+[1;31m|[33m Origin [31m| [0;45m ä¸­èˆˆè³‡ç§‘ ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [35;47m bbs.cs.nchu.edu.tw [m
 [1;31m|[35m Author [31m| [36m61-216-139-67.HINET-IP.hinet.net[m

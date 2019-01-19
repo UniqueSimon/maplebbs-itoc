@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/cola.h						 */
 /*-------------------------------------------------------*/
-/* target : Cola ¦Ü Maple 3.02 Âà´«			 */
+/* target : Cola è‡³ Maple 3.02 è½‰æ›			 */
 /* create : 03/02/11                                     */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -10,12 +10,12 @@
 
 #if 0
 
-  0. ½Ğ¥ı©ó Cola §â©Ò¦³¬İªO­^¤å¦W¦r§ï¦b 12 ¦r¥H¤º¡C
+  0. è«‹å…ˆæ–¼ Cola æŠŠæ‰€æœ‰çœ‹æ¿è‹±æ–‡åå­—æ”¹åœ¨ 12 å­—ä»¥å…§ã€‚
 
-  1. ¥²¶·¦b brd Âà§¹¤~¥i¥HÂà´« gem
-  2. «ØÄ³Âà´«¶¶§Ç¬° usr -> brd -> gem -> post
+  1. å¿…é ˆåœ¨ brd è½‰å®Œæ‰å¯ä»¥è½‰æ› gem
+  2. å»ºè­°è½‰æ›é †åºç‚º usr -> brd -> gem -> post
 
-  3. ³]©w COLABBS_HOME¡BCOLABBS_BOARDS¡BCOLABBS_MAN¡BFN_BOARD
+  3. è¨­å®š COLABBS_HOMEã€COLABBS_BOARDSã€COLABBS_MANã€FN_BOARD
 
 #endif
 
@@ -23,17 +23,17 @@
 #include "bbs.h"
 
 
-#define	COLABBS_HOME	"/tmp/home"		/* ÂÂªº Cola BBS ªº¨Ï¥ÎªÌ¥Ø¿ı */
-#define COLABBS_BOARDS	"/tmp/boards"		/* ÂÂªº Cola BBS ªº¬İªO¥Ø¿ı */
-#define COLABBS_MAN	"/tmp/man"		/* ÂÂªº Cola BBS ªººëµØ°Ï¥Ø¿ı */
-#define FN_BOARD	"/tmp/.boards"		/* ÂÂªº Cola BBS ªº .boards */
+#define	COLABBS_HOME	"/tmp/home"		/* èˆŠçš„ Cola BBS çš„ä½¿ç”¨è€…ç›®éŒ„ */
+#define COLABBS_BOARDS	"/tmp/boards"		/* èˆŠçš„ Cola BBS çš„çœ‹æ¿ç›®éŒ„ */
+#define COLABBS_MAN	"/tmp/man"		/* èˆŠçš„ Cola BBS çš„ç²¾è¯å€ç›®éŒ„ */
+#define FN_BOARD	"/tmp/.boards"		/* èˆŠçš„ Cola BBS çš„ .boards */
 
 
 /* ----------------------------------------------------- */
 /* old .PASSWDS struct : 512 bytes                       */
 /* ----------------------------------------------------- */
 
-/* itoc.030211: ¥uÂà´« userid ©M passwd */
+/* itoc.030211: åªè½‰æ› userid å’Œ passwd */
 typedef struct
 {
   char userid[13];
@@ -65,7 +65,7 @@ typedef struct
 /* old BOARDS struct : 512 bytes                         */
 /* ----------------------------------------------------- */
 
-/* itoc.030211: ¥uÂà´« brdname ©M title */
+/* itoc.030211: åªè½‰æ› brdname å’Œ title */
 typedef struct
 {
   char brdname[13];

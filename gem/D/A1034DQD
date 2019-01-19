@@ -1,14 +1,14 @@
-�@��: itoc (�Ӷ����~) ����: plan
-���D: [���] showSTRUCT ����k
-�ɶ�: Sat Dec 21 02:14:54 2002                          Updated: 2006/03/15
+作者: itoc (太陽花兒~) 站內: plan
+標題: [文件] showSTRUCT 的方法
+時間: Sat Dec 21 02:14:54 2002                          Updated: 2006/03/15
 
-  �վ\�ϥΪ̵��U��
+  調閱使用者註冊單
 
 : src/util/Makefile
 
 EXE =   ... [1;33mshowRFORM[m
 
-: src/util/showRFORM.c �s�W���{��
+: src/util/showRFORM.c 新增此程式
 
 /*-------------------------------------------------------*/
 /* util/showRFORM.c     ( NTHU CS MapleBBS Ver 3.10 )    */
@@ -28,14 +28,14 @@ static void
 showRFORM(r)
   RFORM *r;
 {
-  printf("�Τ�s���G%d\n", r->userno);
-  printf("����ɶ��G%s\n", Btime(&r->rtime));
-  printf("�ӽХN���G%s\n", r->userid);
-  printf("�A�ȳ��G%s\n", r->career);
-  printf("�ثe���}�G%s\n", r->address);
-  printf("�s���q�ܡG%s\n", r->phone);
-  printf("�f�֯����G%s\n", r->agent);
-  printf("�h��z�ѡG%s\n", r->reply);
+  printf("用戶編號：%d\n", r->userno);
+  printf("填表時間：%s\n", Btime(&r->rtime));
+  printf("申請代號：%s\n", r->userid);
+  printf("服務單位：%s\n", r->career);
+  printf("目前住址：%s\n", r->address);
+  printf("連絡電話：%s\n", r->phone);
+  printf("審核站長：%s\n", r->agent);
+  printf("退件理由：%s\n", r->reply);
   printf(MSG_SEPERATOR "\n");
 }
 
@@ -71,10 +71,10 @@ main(argc, argv)
 }
 
 
-  �o�[�c�M showBRD.c �O�����@�˪�
-  �Ҧ��� record �]�A PAL/ALOHA/BRD/ACCT/VCH/MF/... ���i�H�p�k�w�s�g�@���{��
-  �N�u�n�� 1.���| 2.STRUCT 3.showSTRUCT()
-  �T�ӳ����Y�i
+  這架構和 showBRD.c 是完全一樣的
+  所有的 record 包括 PAL/ALOHA/BRD/ACCT/VCH/MF/... 都可以如法泡製寫一隻程式
+  就只要改 1.路徑 2.STRUCT 3.showSTRUCT()
+  三個部分即可
 
 --
-[1;37m�� ���峹�� [33mitoc[37m �q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m �o��[m
+[1;37m□ 本文章由 [33mitoc[37m 從 [32mitoc.Dorm-GD2.NCTU.edu.tw[37m 發表[m

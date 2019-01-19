@@ -1,50 +1,50 @@
-µo«H¤H: guessi.bbs@cpu.tfcis.org (¨S) ¬İªO: plan
-¼Ğ  ÃD: [­×§ï] ±À¤å¥¼Åª(¤èªk¤G) §ï¬°³ß¦n³]©w
-µo«H¯¸: °Ê¤O®Ö¤ß (2006/08/26 Sat 18:39:35)                Updated: 2007/04/26
+ç™¼ä¿¡äºº: guessi.bbs@cpu.tfcis.org (æ²’) çœ‹æ¿: plan
+æ¨™  é¡Œ: [ä¿®æ”¹] æ¨æ–‡æœªè®€(æ–¹æ³•äºŒ) æ”¹ç‚ºå–œå¥½è¨­å®š
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2006/08/26 Sat 18:39:35)                Updated: 2007/04/26
 
-¸Ñ¨M¤F!!  [1;30m(¨S°Êstruct)[m
-
-
-³]©w§¹²¦«á©Ò±oµ²ªG
-
-­Y³ß¦n³]©w¬°[¶}±Ò] (¦¹¬°¹w³]­È)
-
-±i¶K¤å³¹: ¬İªO¦CªíÅã¥Ü¥¼Åª( §Y«UºÙºñÂI) ¦P®É¤å³¹¦CªíÅã¥Ü[+]
-µûÅ²¤å³¹: ¤å³¹¦CªíÅã¥Ü¥¼Åª(«e¤è[+]°O¸¹) [1;30m¬İªO¦Cªí¤£¨ü¼vÅT[m
-­×§ï¤å³¹: ¤å³¹¦CªíÅã¥Ü¥¼Åª(«e¤è[+]°O¸¹) [1;30m¬İªO¦Cªí¤£¨ü¼vÅT[m
-
-"ºñÂI¥u¦³¦b·s¤å³¹¥X²{®É¤~Åã¥Ü"
-
-­Y³ß¦n³]©w¬°[Ãö³¬]
-
-"ºñÂI¥u¦³¦b·s¤å³¹¥X²{®É¤~Åã¥Ü"
-"¤å³¹«e­±¼Ğ°O[+] ¥u¦³·s¤å³¹¤~Åã¥Ü"  ¨ä¾l¤£¨ü¼vÅT
+è§£æ±ºäº†!!  [1;30m(æ²’å‹•struct)[m
 
 
+è¨­å®šå®Œç•¢å¾Œæ‰€å¾—çµæœ
+
+è‹¥å–œå¥½è¨­å®šç‚º[é–‹å•Ÿ] (æ­¤ç‚ºé è¨­å€¼)
+
+å¼µè²¼æ–‡ç« : çœ‹æ¿åˆ—è¡¨é¡¯ç¤ºæœªè®€( å³ä¿—ç¨±ç¶ é») åŒæ™‚æ–‡ç« åˆ—è¡¨é¡¯ç¤º[+]
+è©•é‘‘æ–‡ç« : æ–‡ç« åˆ—è¡¨é¡¯ç¤ºæœªè®€(å‰æ–¹[+]è¨˜è™Ÿ) [1;30mçœ‹æ¿åˆ—è¡¨ä¸å—å½±éŸ¿[m
+ä¿®æ”¹æ–‡ç« : æ–‡ç« åˆ—è¡¨é¡¯ç¤ºæœªè®€(å‰æ–¹[+]è¨˜è™Ÿ) [1;30mçœ‹æ¿åˆ—è¡¨ä¸å—å½±éŸ¿[m
+
+"ç¶ é»åªæœ‰åœ¨æ–°æ–‡ç« å‡ºç¾æ™‚æ‰é¡¯ç¤º"
+
+è‹¥å–œå¥½è¨­å®šç‚º[é—œé–‰]
+
+"ç¶ é»åªæœ‰åœ¨æ–°æ–‡ç« å‡ºç¾æ™‚æ‰é¡¯ç¤º"
+"æ–‡ç« å‰é¢æ¨™è¨˜[+] åªæœ‰æ–°æ–‡ç« æ‰é¡¯ç¤º"  å…¶é¤˜ä¸å—å½±éŸ¿
 
 
-§@ªk: [1;37m¥ı°µºëµØ°Ï¡y³Qµû¤À¹Lªº¤å³¹ÅÜ¥¼Åª (¤èªk¤G)¡z[m ¦A¨Ì¤U­±­×§ï
+
+
+ä½œæ³•: [1;37må…ˆåšç²¾è¯å€ã€è¢«è©•åˆ†éçš„æ–‡ç« è®Šæœªè®€ (æ–¹æ³•äºŒ)ã€[m å†ä¾ä¸‹é¢ä¿®æ”¹
 
 
 [32m:/src/include/ufo.h[m
 
 - #define UFO_NOUSE20     BFLAG(20)
-+ #define UFO_READMD      BFLAG(20)   /* ¤å³¹¥¼Åª§PÂ_ */
++ #define UFO_READMD      BFLAG(20)   /* æ–‡ç« æœªè®€åˆ¤æ–· */
 
-- #define NUMUFOS_USER    20      /* ¤@¯ë¨Ï¥ÎªÌ ¥i¥H¥Î«e 20 ­Ó ufo */
-+ #define NUMUFOS_USER    21      /* ¤@¯ë¨Ï¥ÎªÌ ¥i¥H¥Î«e 21 ­Ó ufo */
+- #define NUMUFOS_USER    20      /* ä¸€èˆ¬ä½¿ç”¨è€… å¯ä»¥ç”¨å‰ 20 å€‹ ufo */
++ #define NUMUFOS_USER    21      /* ä¸€èˆ¬ä½¿ç”¨è€… å¯ä»¥ç”¨å‰ 21 å€‹ ufo */
 
 - #define STR_UFO         "-mpsnemPBQFANbwtSHZJ----CHA"
 + #define STR_UFO         "-mpsnemPBQFANbwtSHZJr---CHA"
 
 
-- "«O¯d",
-+ "¤å³¹¥¼Åª§PÂ_    (Ãö³¬/¶}±Ò)",   /* UFO_READMD */
+- "ä¿ç•™",
++ "æ–‡ç« æœªè®€åˆ¤æ–·    (é—œé–‰/é–‹å•Ÿ)",   /* UFO_READMD */
 
 
 [32m:/src/maple/post.c:post_attr()[m
 
-+ if (cuser.ufo & UFO_READMD)  /* ³ß¦n³]©w: ±À¤å¥¼Åª */
++ if (cuser.ufo & UFO_READMD)  /* å–œå¥½è¨­å®š: æ¨æ–‡æœªè®€ */
 +   attr = fhdr->chrono;
 + else
 +   attr = BMAX(fhdr->chrono, fhdr->stamp);
@@ -62,37 +62,37 @@
 [32m:/src/maple/post.c:post_edit()[m
 [32m:/src/maple/post.c:post_score()[m
 
-- btime_update(chrrbno);  /* btime¤£§ó·s ¨Ï¨ä¤£Åã¥ÜºñÂI */
+- btime_update(chrrbno);  /* btimeä¸æ›´æ–° ä½¿å…¶ä¸é¡¯ç¤ºç¶ é» */
 
 
 [32m:/src/maple/post.c:post_history()[m
 
 - chrono = BMAX(hdr->chrono, hdr->stamp);
 
-+ check_stamp:                  /* ³]©wÀË¬dÂI */
++ check_stamp:                  /* è¨­å®šæª¢æŸ¥é» */
 
-+ if (brh_unread(hdr->chrono))  /* ¥ıÀË¬dhdr->chrono ¬O§_¦bbrh */
++ if (brh_unread(hdr->chrono))  /* å…ˆæª¢æŸ¥hdr->chrono æ˜¯å¦åœ¨brh */
 +   chrono = hdr->chrono;
-+ else                          /* ­Y¤w¸g¦bbrh«hÀË¬dstamp      */
++ else                          /* è‹¥å·²ç¶“åœ¨brhå‰‡æª¢æŸ¥stamp      */
 +   chrono = BMAX(hdr->chrono, hdr->stamp);
 
-  if (!brh_unread(chrono))      /* ¦pªG¤w¦b brh ¤¤¡A´NµL»İ°Ê§@ */
+  if (!brh_unread(chrono))      /* å¦‚æœå·²åœ¨ brh ä¸­ï¼Œå°±ç„¡éœ€å‹•ä½œ */
     return;
 
 ..
 ..
 
-    if (next < chrono)      /* ¨S¦³¤W¤@½g */
+    if (next < chrono)      /* æ²’æœ‰ä¸Šä¸€ç¯‡ */
       next = chrono;
     brh_add(prev, chrono, next);
   }
 
-+ chrono = BMAX(hdr->chrono, hdr->stamp); /* ­Y¦³stamp      */
-+ if (brh_unread(chrono)) /* ÀË¬dBMAX()¬O§_¦bbrh ­YµL«hªğ¦^ */
++ chrono = BMAX(hdr->chrono, hdr->stamp); /* è‹¥æœ‰stamp      */
++ if (brh_unread(chrono)) /* æª¢æŸ¥BMAX()æ˜¯å¦åœ¨brh è‹¥ç„¡å‰‡è¿”å› */
 +   goto check_stamp;
 
 }
 
 --
-[1;36m=[37m[[36m¡É[37m:[33m¡[37mİ¢¨[m¢©¡[1;33mİ[37m:[36m¡É [31mOrigin[37m ]|[[m  [0;31m°[1mÊ[1m¤[0;31mO[0;31m®[1mÖ[1m¤[0;31mß [1mcpu.tfcis.org  [37m]|[¡[33mİ£»¡[mİ[1;36m¡É[37m:][36m=[m
-[1;36m=[0m[[1;36m¡Ç[37m:[33m¡[30mİ¢ª[m¢¬¡[1;33mİ[37m:[36m¡Ç [31mAuthor[m ]|[[1m61-231-209-201.dynamic.hin[m]|[¡[1;33mİ[30m¡[37m´¡[30mİ[36m¡Ç[37m:[m][1;36m=[m
+[1;36m=[37m[[36mï¹[37m:[33m?[37mæ‘ƒ?[mâ—£?[1;33m?[37m:[36mï¹ [31mOrigin[37m ]|[[m  [0;31m?[1m?[1m?[0;31mO[0;31m?[1m?[1m?[0;31m?[1mcpu.tfcis.org  [37m]|[?[33mæŸèªª[m?[1;36mï¹[37m:][36m=[m
+[1;36m=[0m[[1;36mï¹Š[37m:[33m?[30mæ‘ƒ?[mâ•±?[1;33m?[37m:[36mï¹Š [31mAuthor[m ]|[[1m61-231-209-201.dynamic.hin[m]|[?[1;33m?[30m?[37mæ’[30m?[36mï¹Š[37m:[m][1;36m=[m

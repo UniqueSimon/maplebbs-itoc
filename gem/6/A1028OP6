@@ -1,27 +1,27 @@
-�@��: itoc (�񥨤H�n�ȡH) �ݪO: itoc
-���D: Re: [���][WindTop]�s���P�y�B�լd��
-�ɶ�: Mon Jul 21 19:07:24 2003
+作者: itoc (綠巨人好客？) 看板: itoc
+標題: Re: [轉錄][WindTop]新浪星座運勢查詢
+時間: Mon Jul 21 19:07:24 2003
 
-    �q�ݪO/��ذϫ��� code ����k
+    從看板/精華區拷貝 code 的方法
 
-    �b�ݪO/��ذϤ��ݨ�Q�n���s�\��ɡA�̭��|���uxxxx.c �s�W���{���v�A
-  �M�� xxxx.c �����e�����S��S���A�o�ɭn�p��q�ݪO/��ذϤ��ֳt�a��
-  �{���ƻs�X�өO�H
+    在看板/精華區中看到想要的新功能時，裡面會說「xxxx.c 新增此程式」，
+  然而 xxxx.c 的內容往往又臭又長，這時要如何從看板/精華區中快速地把
+  程式複製出來呢？
 
-  1. �H����@���D guest �� ID �n�J BBS (�o�̥H SYSOP ����)
-  2. �b�峹�C��/��ذϤ��A�ӽg�s�W�\�઺�峹�e���� C
-  3. �п�ܼȦs��(1-5)�G[7m1 [m
-  4. �Ȧs�ɤw����� (A)���[ (W)�мg (Q)�����H[A] [7mw  [m
-  5. �p���K�i�H�N�o�g�峹���e��Ӽg�J�Ȧs��
+  1. 以任何一隻非 guest 的 ID 登入 BBS (這裡以 SYSOP 為例)
+  2. 在文章列表/精華區中，該篇新增功能的文章前面按 C
+  3. 請選擇暫存檔(1-5)：[7m1 [m
+  4. 暫存檔已有資料 (A)附加 (W)覆寫 (Q)取消？[A] [7mw  [m
+  5. 如此便可以將這篇文章內容整個寫入暫存檔
 
-  6. �H bbs �����n�J�u�@��
-  7. ���� cp ~/usr/s/sysop/buf.1 xxxx.c
-  8. �s�� xxxx.c
-  9. �⤣�n���X��R���A���e���X�檺�@��/���D/�ɶ��A�̫�X�檺�ӷ��A���R��
+  6. 以 bbs 身分登入工作站
+  7. 執行 cp ~/usr/s/sysop/buf.1 xxxx.c
+  8. 編輯 xxxx.c
+  9. 把不要的幾行刪除，像前面幾行的作者/標題/時間，最後幾行的來源，都刪除
 
-    �o�˰��F�i�H�ֳt���� code�A�٥i�H�קK���ǵ{���]���W�L BBS �C��r��
- �W���y�����~�����D�C
+    這樣除了可以快速拷貝 code，還可以避免有些程式因為超過 BBS 每行字數
+ 上限造成錯誤的問題。
 
 --
-[1;31m|[33m Origin [31m| [;37;45m MapleBBS-itoc �ʤO�֤� [35;47m processor.tfcis.org [m
+[1;31m|[33m Origin [31m| [;37;45m MapleBBS-itoc 動力核心 [35;47m processor.tfcis.org [m
 [1;31m|[35m Author [31m| [36mitoc.dorm11.nctu.edu.tw[m

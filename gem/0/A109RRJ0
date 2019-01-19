@@ -1,13 +1,13 @@
-µo«H¤H: wens.bbs@processor.tfcis.org (¡@) ¬İªO: plan
-¼Ğ  ÃD: Re: [­×¥¿] ¦b BBS ¤W³]©wÂà«H
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/05/01 Sat 20:58:40)                Updated: 2004/10/23
+ç™¼ä¿¡äºº: wens.bbs@processor.tfcis.org (ã€€) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [ä¿®æ­£] åœ¨ BBS ä¸Šè¨­å®šè½‰ä¿¡
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/05/01 Sat 20:58:40)                Updated: 2004/10/23
 
-¤µ¤Ñ´ú¸Õ¹L¤F  ¥i¥H¥Î
-TIMEOUTªº³æ¦ì¬O¬í
-­YTIMEOUT¬í«á¥¼¯à³s½u ´N³s½u¥¢±Ñ
-³o¤ñµ¥®Ö¤ßtimeout­n¨Óªº§Ö
+ä»Šå¤©æ¸¬è©¦éäº†  å¯ä»¥ç”¨
+TIMEOUTçš„å–®ä½æ˜¯ç§’
+è‹¥TIMEOUTç§’å¾Œæœªèƒ½é€£ç·š å°±é€£ç·šå¤±æ•—
+é€™æ¯”ç­‰æ ¸å¿ƒtimeoutè¦ä¾†çš„å¿«
 
-: bbslink.c ·s¼W³o¤@¬q©ó inetclient() «e­±
+: bbslink.c æ–°å¢é€™ä¸€æ®µæ–¼ inetclient() å‰é¢
 
 #include <setjmp.h>
 
@@ -33,7 +33,7 @@ abort_timeout(sig)
 +   signal(SIGALRM, SIG_DFL);
 +   return -1;
 + }
-+ alarm(10);        /* 10 ¬í«á timeout */
++ alarm(10);        /* 10 ç§’å¾Œ timeout */
 
   /* Connect the socket to the server */
   if (connect(fd, (struct sockaddr *) & sin, sizeof(sin)) < 0)
@@ -48,5 +48,5 @@ abort_timeout(sig)
   return fd;
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mwens [30m±q [35m220-134-246-97.hinet-ip.hinet.net [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mwens [30må¾ [35m220-134-246-97.hinet-ip.hinet.net [30mç™¼è¡¨[m

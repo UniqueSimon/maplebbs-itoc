@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/collect_uno.c	( NTHU CS MapleBBS Ver 3.10 )	 */
 /*-------------------------------------------------------*/
-/* target : ¦¬¶°¥þ¯¸©Ò¦³¤Hªº userno			 */
+/* target : æ”¶é›†å…¨ç«™æ‰€æœ‰äººçš„ userno			 */
 /* create : 04/10/16					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */

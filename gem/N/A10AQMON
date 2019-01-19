@@ -1,38 +1,38 @@
-§@ªÌ: itoc (cygreadline4.dll) ¯¸¤º: plan
-¼ĞÃD: [¥\¯à] Áp¦Òº]³æ¬d¸ß
-®É¶¡: 2004/05/21 Fri 09:16:41                           Updated: 2005/08/09
+ä½œè€…: itoc (cygreadline4.dll) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] è¯è€ƒæ¦œå–®æŸ¥è©¢
+æ™‚é–“: 2004/05/21 Fri 09:16:41                           Updated: 2005/08/09
 
 : etc/jcee
 
-  §ì http://cpu.twbbs.org/~itoc/download/jcee/jcee.tgz ¸ÑÀ£ÁY¦b etc/ ¤U
-  ¤]´N¬O­n¦³ etc/jcee/##.txt¡A## ¬O¥Á°ê¦~
+  æŠ“ http://cpu.twbbs.org/~itoc/download/jcee/jcee.tgz è§£å£“ç¸®åœ¨ etc/ ä¸‹
+  ä¹Ÿå°±æ˜¯è¦æœ‰ etc/jcee/##.txtï¼Œ## æ˜¯æ°‘åœ‹å¹´
 
-: menu.c ¦b¾A·íªº¿ï³æ¥[¤W
+: menu.c åœ¨é©ç•¶çš„é¸å–®åŠ ä¸Š
 
 + "bin/jcee.so:main_jcee", 0, - M_XMODE,
-+ "JCEE       ¡ñ Áp¦Ò¬dº] ¡ğ",
++ "JCEE       â™‚ è¯è€ƒæŸ¥æ¦œ â™€",
 
 : game/Makefile
 
 SO =    ... [1;33mjcee.so[m
 
-: game/jcee.c ·s¼W¦¹µ{¦¡
+: game/jcee.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* jcee.c       ( NTU FPG BBS Ver 2.00 )                 */
 /*-------------------------------------------------------*/
-/* target : Áp¦Òº]³æ¬d¸ß                                 */
+/* target : è¯è€ƒæ¦œå–®æŸ¥è©¢                                 */
 /* create : 98/08/08                                     */
 /* update : 01/08/21                                     */
-/* author : §d²Ğ­l                                       */
+/* author : å³ç´¹è¡                                       */
 /* modify : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
 /*-------------------------------------------------------*/
 
 
 #if 0
 
- ¸ê®Æ¨Ó·½
- http://www.csie.nctu.edu.tw/service/jcee/¾ú¦~
+ è³‡æ–™ä¾†æº
+ http://www.csie.nctu.edu.tw/service/jcee/æ­·å¹´
 
 #endif
 
@@ -40,7 +40,7 @@ SO =    ... [1;33mjcee.so[m
 #include "bbs.h"
 
 
-#define END_YEAR   94      /* ³Ì«á¤@¦~ªºº]³æ¬O¥Á°ê 94 ¦~ */
+#define END_YEAR   94      /* æœ€å¾Œä¸€å¹´çš„æ¦œå–®æ˜¯æ°‘åœ‹ 94 å¹´ */
 
 
 static int
@@ -54,16 +54,16 @@ ueequery_item(count, i, examnum, ptr, now)
   {
     move(1, 0);
     clrtoeol();
-    outs("\033[1;33m¥»­¶¬d¸ß¤wº¡¡A´«­¶¬d¸ß½Ğ«ö¥ô·NÁä¡Aµ²§ô¬d¸ß½Ğ«ö Q\033[m");
+    outs("\033[1;33mæœ¬é æŸ¥è©¢å·²æ»¿ï¼Œæ›é æŸ¥è©¢è«‹æŒ‰ä»»æ„éµï¼ŒçµæŸæŸ¥è©¢è«‹æŒ‰ Q\033[m");
 
     if (vkey() == 'q')
       return 0;
 
     i = 0;
-    vs_bar("Áp¦Òº]³æ¬d¸ß");
+    vs_bar("è¯è€ƒæ¦œå–®æŸ¥è©¢");
     move(2, 0);
-    outs(COLOR2 " ­ã¦ÒÃÒ   ©m  ¦W    ¿ı ¨ú ¤j ¾Ç         "
-      "¿ı ¨ú ¬ì ¨t                           \033[m");
+    outs(COLOR2 " å‡†è€ƒè­‰   å§“  å    éŒ„ å– å¤§ å­¸         "
+      "éŒ„ å– ç§‘ ç³»                           \033[m");
   }
 
   move(3 + i, 0);
@@ -82,8 +82,8 @@ ueequery_item(count, i, examnum, ptr, now)
 
   move(b_lines, 0);
   clrtoeol();
-  prints(COLOR1 " º]³æ¬d¸ß " COLOR2 " ¥Ø«e¦@¬d¸ß¨ì %4d µ§¸ê®Æ¡C"
-    "¥»¸ê®Æ¶È¨Ñ°Ñ¦Ò¡A¿ı¨úµ²ªG¥HÁp©Û·|¤½¥¬¬°·Ç \033[m", count);
+  prints(COLOR1 " æ¦œå–®æŸ¥è©¢ " COLOR2 " ç›®å‰å…±æŸ¥è©¢åˆ° %4d ç­†è³‡æ–™ã€‚"
+    "æœ¬è³‡æ–™åƒ…ä¾›åƒè€ƒï¼ŒéŒ„å–çµæœä»¥è¯æ‹›æœƒå…¬å¸ƒç‚ºæº– \033[m", count);
 
   return i + 1;
 }
@@ -96,12 +96,12 @@ ueequery_foot(count)
   if (count == 0)
   {
     move(4, 0);
-    outs("¨S¦³¬d¸ß¨ì¥ô¦ó¸ê®Æ");
+    outs("æ²’æœ‰æŸ¥è©¢åˆ°ä»»ä½•è³‡æ–™");
   }
   move(b_lines, 0);
   clrtoeol();
-  prints(COLOR1 " º]³æ¬d¸ß " COLOR2 " ¥Ø«e¦@¬d¸ß¨ì %4d µ§¸ê®Æ¡C"
-    "¬d¸ßµ²§ô¡A«ö¥ô·NÁäÂ÷¶}                   \033[m", count);
+  prints(COLOR1 " æ¦œå–®æŸ¥è©¢ " COLOR2 " ç›®å‰å…±æŸ¥è©¢åˆ° %4d ç­†è³‡æ–™ã€‚"
+    "æŸ¥è©¢çµæŸï¼ŒæŒ‰ä»»æ„éµé›¢é–‹                   \033[m", count);
   vkey();
 }
 
@@ -113,15 +113,15 @@ x_ueequery()
   int i, count, year, examnum;
   FILE *fp;
 
-  vs_bar("Áp¦Òº]³æ¬d¸ß");
+  vs_bar("è¯è€ƒæ¦œå–®æŸ¥è©¢");
 
-  outs("\nª`·N¨Æ¶µ\n"
-    "1. §¹¾ã­ã¦ÒÃÒ¸¹½X¤Î³¡¥÷©m¦W¨â¶µ¦Ü¤Ö»İ¶ñ¼g¤@¶µ¤~¯à°÷¬d¸ß\n"
-    "2. ­Y©m¦W¥u¦³¨â¦r¡A½Ğ©ó¨â¦r¤¤¶¡¥[¥ş§ÎªÅ¥Õ\n"
-    "3. 83-86 ¦~»İ­n¤»¦ì­ã¦ÒÃÒ¸¹½X¡A87-90 ¦~»İ­n¤C¦ì­ã¦ÒÃÒ¸¹½X\n"
-    "4. 91¦~°_»İ­n¤K¦ì­ã¦ÒÃÒ¸¹½X\n");
+  outs("\næ³¨æ„äº‹é …\n"
+    "1. å®Œæ•´å‡†è€ƒè­‰è™Ÿç¢¼åŠéƒ¨ä»½å§“åå…©é …è‡³å°‘éœ€å¡«å¯«ä¸€é …æ‰èƒ½å¤ æŸ¥è©¢\n"
+    "2. è‹¥å§“ååªæœ‰å…©å­—ï¼Œè«‹æ–¼å…©å­—ä¸­é–“åŠ å…¨å½¢ç©ºç™½\n"
+    "3. 83-86 å¹´éœ€è¦å…­ä½å‡†è€ƒè­‰è™Ÿç¢¼ï¼Œ87-90 å¹´éœ€è¦ä¸ƒä½å‡†è€ƒè­‰è™Ÿç¢¼\n"
+    "4. 91å¹´èµ·éœ€è¦å…«ä½å‡†è€ƒè­‰è™Ÿç¢¼\n");
 
-  sprintf(buf, "½Ğ¿é¤JÁp¦Ò¦~«×(83 ~ %d)¡H[%d] ", END_YEAR, END_YEAR);
+  sprintf(buf, "è«‹è¼¸å…¥è¯è€ƒå¹´åº¦(83 ~ %d)ï¼Ÿ[%d] ", END_YEAR, END_YEAR);
 
   if (!vget(9, 0, buf, query, 3, DOECHO))
   {
@@ -141,17 +141,17 @@ x_ueequery()
   else
     examnum = 8;
 
-  if (vget(11, 0, "½Ğ¿é¤J§¹¾ã­ã¦ÒÃÒ¸¹½X¡G", query, examnum + 1, DOECHO))
+  if (vget(11, 0, "è«‹è¼¸å…¥å®Œæ•´å‡†è€ƒè­‰è™Ÿç¢¼ï¼š", query, examnum + 1, DOECHO))
   {
     if (strlen(query) != examnum)
     {
-      vmsg("¤£¥¿½Tªº§¹¾ã­ã¦ÒÃÒ¸¹½X");
+      vmsg("ä¸æ­£ç¢ºçš„å®Œæ•´å‡†è€ƒè­‰è™Ÿç¢¼");
       return 0;
     }
   }
-  else if (!vget(13, 0, "½Ğ¿é¤J³¡¥÷©m¦W¡G", query, 10, DOECHO))
+  else if (!vget(13, 0, "è«‹è¼¸å…¥éƒ¨ä»½å§“åï¼š", query, 10, DOECHO))
   {
-    vmsg("½Ğ©ó­ã¦ÒÃÒ¸¹½X©ó©m¦W¤GÄæ¤¤¾Ü¤@¶ñ¼g");
+    vmsg("è«‹æ–¼å‡†è€ƒè­‰è™Ÿç¢¼æ–¼å§“åäºŒæ¬„ä¸­æ“‡ä¸€å¡«å¯«");
     return 0;
   }
 
@@ -162,17 +162,17 @@ x_ueequery()
     int j;
     char *pquery;
 
-    count = 0;  /* ºâ¥ş³¡¦³´X­Ó */
-    i = 0;      /* ºâ¥»­¶ªº²Ä´X­Ó */
+    count = 0;  /* ç®—å…¨éƒ¨æœ‰å¹¾å€‹ */
+    i = 0;      /* ç®—æœ¬é çš„ç¬¬å¹¾å€‹ */
 
-    vs_bar("Áp¦Òº]³æ¬d¸ß");
-    prints("¬d¸ß¡m%s¡n¤¤....\n", query);
-    outs(COLOR2 " ­ã¦ÒÃÒ   ©m  ¦W    ¿ı ¨ú ¤j ¾Ç         "
-      "¿ı ¨ú ¬ì ¨t                           \033[m");
+    vs_bar("è¯è€ƒæ¦œå–®æŸ¥è©¢");
+    prints("æŸ¥è©¢ã€Š%sã€‹ä¸­....\n", query);
+    outs(COLOR2 " å‡†è€ƒè­‰   å§“  å    éŒ„ å– å¤§ å­¸         "
+      "éŒ„ å– ç§‘ ç³»                           \033[m");
 
     while (fgets(buf, 256, fp))
     {
-      if (buf[0] == ' ')        /* ³o¼Ë´N¬O¬ì¨tªº¶}ÀY */
+      if (buf[0] == ' ')        /* é€™æ¨£å°±æ˜¯ç§‘ç³»çš„é–‹é ­ */
       {
         ptr = strtok(buf + 5, " ");
         strcpy(now, ptr);
@@ -188,9 +188,9 @@ x_ueequery()
         if (pquery = strstr(ptr, query))
           j = (pquery - ptr) + examnum + 1;
         else
-          j = 2;               /* ªí¥Ü¥¼§ä¨ì */
+          j = 2;               /* è¡¨ç¤ºæœªæ‰¾åˆ° */
 
-        if (j == (pquery - ptr) + examnum + 1 || j % 2)/* ³B²z¤¤¤å¦rªº°İÃD */
+        if (j == (pquery - ptr) + examnum + 1 || j % 2)/* è™•ç†ä¸­æ–‡å­—çš„å•é¡Œ */
         {
           count++;
           if (!(i = ueequery_item(count, i, examnum, ptr, now)))
@@ -218,13 +218,13 @@ x_ueequery2()
   int school, dept;
   FILE *fp;
 
-  vs_bar("Áp¦Òº]³æ¬d¸ß");
+  vs_bar("è¯è€ƒæ¦œå–®æŸ¥è©¢");
 
-  outs("\nª`·N¨Æ¶µ\n"
-    "1. ¤j¾Ç¤Î¬ì¨t¨â¶µ¦Ü¤Ö»İ¶ñ¼g¤@¶µ¤~¯à°÷¬d¸ß\n"
-    "2. ¿é¤J³¡¤À¦r¦ê§Y¥i\n");
+  outs("\næ³¨æ„äº‹é …\n"
+    "1. å¤§å­¸åŠç§‘ç³»å…©é …è‡³å°‘éœ€å¡«å¯«ä¸€é …æ‰èƒ½å¤ æŸ¥è©¢\n"
+    "2. è¼¸å…¥éƒ¨åˆ†å­—ä¸²å³å¯\n");
 
-  sprintf(buf, "½Ğ¿é¤JÁp¦Ò¦~«×(83 ~ %d)¡H[%d] ", END_YEAR, END_YEAR);
+  sprintf(buf, "è«‹è¼¸å…¥è¯è€ƒå¹´åº¦(83 ~ %d)ï¼Ÿ[%d] ", END_YEAR, END_YEAR);
 
   if (!vget(9, 0, buf, query, 3, DOECHO))
   {
@@ -244,8 +244,8 @@ x_ueequery2()
   else
     examnum = 8;
 
-  vget(11, 0, "½Ğ¿é¤J¬d¸ß¤j¾Ç¡G", query, 20, DOECHO);
-  vget(13, 0, "½Ğ¿é¤J¬d¸ß¬ì¨t¡G", query2, 20, DOECHO);
+  vget(11, 0, "è«‹è¼¸å…¥æŸ¥è©¢å¤§å­¸ï¼š", query, 20, DOECHO);
+  vget(13, 0, "è«‹è¼¸å…¥æŸ¥è©¢ç§‘ç³»ï¼š", query2, 20, DOECHO);
 
   if (!*query && !*query2)
     return 0;
@@ -254,28 +254,28 @@ x_ueequery2()
 
   if (fp = fopen(buf, "r"))
   {
-    count = 0;  /* ºâ¥ş³¡¦³´X­Ó */
-    i = 0;      /* ºâ¥»­¶ªº²Ä´X­Ó */
+    count = 0;  /* ç®—å…¨éƒ¨æœ‰å¹¾å€‹ */
+    i = 0;      /* ç®—æœ¬é çš„ç¬¬å¹¾å€‹ */
 
-    vs_bar("Áp¦Òº]³æ¬d¸ß");
-    prints("¬d¸ß¡m%s%s¡n¤¤....\n", query, query2);
-    outs(COLOR2 " ­ã¦ÒÃÒ   ©m  ¦W    ¿ı ¨ú ¤j ¾Ç         "
-      "¿ı ¨ú ¬ì ¨t                           \033[m");
+    vs_bar("è¯è€ƒæ¦œå–®æŸ¥è©¢");
+    prints("æŸ¥è©¢ã€Š%s%sã€‹ä¸­....\n", query, query2);
+    outs(COLOR2 " å‡†è€ƒè­‰   å§“  å    éŒ„ å– å¤§ å­¸         "
+      "éŒ„ å– ç§‘ ç³»                           \033[m");
 
     while (fgets(buf, 256, fp))
     {
-      if (buf[0] == ' ')         /* ³o¼Ë´N¬O¬ì¨tªº¶}ÀY */
+      if (buf[0] == ' ')         /* é€™æ¨£å°±æ˜¯ç§‘ç³»çš„é–‹é ­ */
       {
         ptr = strtok(buf + 5, " ");
         strcpy(now, ptr);
 
-        if (!*query || strstr(now, query))      /* §ä¨ì¾Ç®Õ */
+        if (!*query || strstr(now, query))      /* æ‰¾åˆ°å­¸æ ¡ */
           school = 1;
         else
           school = 0;
 
         ptr = strtok(NULL, " ");
-        if (!*query2 || strstr(ptr, query2))    /* §ä¨ì¬ì¨t */
+        if (!*query2 || strstr(ptr, query2))    /* æ‰¾åˆ°ç§‘ç³» */
           dept = 1;
         else
           dept = 0;
@@ -288,7 +288,7 @@ x_ueequery2()
 
       do
       {
-        if (school && dept && strlen(ptr) >= 6)/* ³B²z¤¤¤å¦rªº°İÃD */
+        if (school && dept && strlen(ptr) >= 6)/* è™•ç†ä¸­æ–‡å­—çš„å•é¡Œ */
         {
           count++;
           if (!(i = ueequery_item(count, i, examnum, ptr, now)))
@@ -314,7 +314,7 @@ main_jcee()
 {
   int ch;
 
-  ch = vans("Áp¦Òº]³æ¬d¸ß¡A½Ğ¿ï¾Ü 1)ª÷º]¬d¸ß 2)¬ì¨t¿ı¨ú¦W³æ [Q]Â÷¶} ");
+  ch = vans("è¯è€ƒæ¦œå–®æŸ¥è©¢ï¼Œè«‹é¸æ“‡ 1)é‡‘æ¦œæŸ¥è©¢ 2)ç§‘ç³»éŒ„å–åå–® [Q]é›¢é–‹ ");
   if (ch == '1')
     x_ueequery();
   else if (ch == '2')
@@ -326,4 +326,4 @@ main_jcee()
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

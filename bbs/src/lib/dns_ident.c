@@ -29,10 +29,10 @@
 #define ANY_PORT	0	/* Any old port will do */
 
 
-#define	RFC931_TIMEOUT		/* Thor.991215: ¬O§_´£¨Ñ timeout */
+#define	RFC931_TIMEOUT		/* Thor.991215: æ˜¯å¦æä¾› timeout */
 
 #ifdef RFC931_TIMEOUT
-static const int timeout = 6;	/* ­Y 6 ¬í«á³s½u¥¼§¹¦¨¡A«h©ñ±ó */
+static const int timeout = 6;	/* è‹¥ 6 ç§’å¾Œé€£ç·šæœªå®Œæˆï¼Œå‰‡æ”¾æ£„ */
 
 static void 
 pseudo_handler()	/* Thor.991215: for timeout */
@@ -42,12 +42,12 @@ pseudo_handler()	/* Thor.991215: for timeout */
 #endif
 
 
-/* Thor.990325: ¬°¤FÅý¤Ï¬d®É¯à½T©w¬d¥X¡A¨Ó¦Û­þ­Óinterface´N±q¨º³s¦^¡A¥H¨¾¤Ï¬d¤£¨ì */
+/* Thor.990325: ç‚ºäº†è®“åæŸ¥æ™‚èƒ½ç¢ºå®šæŸ¥å‡ºï¼Œä¾†è‡ªå“ªå€‹interfaceå°±å¾žé‚£é€£å›žï¼Œä»¥é˜²åæŸ¥ä¸åˆ° */
 
 void
 dns_ident(sock, from, rhost, ruser)
-  int sock;  /* Thor.990330: ­t¼Æ«O¯dµ¹, ¥ÎgetsockµLªk§ì¥X¥¿½Tportªº®É­Ô.
-                             ¥Nªí Port, ¤£¹L¤£¤Ó¥i¯à¥Î¨ì */
+  int sock;  /* Thor.990330: è² æ•¸ä¿ç•™çµ¦, ç”¨getsockç„¡æ³•æŠ“å‡ºæ­£ç¢ºportçš„æ™‚å€™.
+                             ä»£è¡¨ Port, ä¸éŽä¸å¤ªå¯èƒ½ç”¨åˆ° */
   struct sockaddr_in *from;
   char *rhost;
   char *ruser;
@@ -69,7 +69,7 @@ dns_ident(sock, from, rhost, ruser)
   /* get remote host name */
 
   if (dns_name((char *) &from->sin_addr, rhost))
-    return;			/* °²³]¨S¦³ FQDN ´N¨S¦³¶] identd */
+    return;			/* å‡è¨­æ²’æœ‰ FQDN å°±æ²’æœ‰è·‘ identd */
 
   /*
    * Use one unbuffered stdio stream for writing to and for reading from the
@@ -80,8 +80,8 @@ dns_ident(sock, from, rhost, ruser)
    * resources that support random-access operations, but not with sockets.
    */
 
-  /* Thor.990325: ¬°¤FÅý¤Ï¬d®É¯à½T©w¬d¥X¡A¨Ó¦Û­þ­Óinterface´N±q¨º³s¦^¡A¥H¨¾¤Ï¬d¤£¨ì  */
-  /* Thor.990330: ­t¼Æ«O¯dµ¹¡A¥ÎgetsockµLªk§ì¥X¥¿½Tportªº®É­Ô¡A¤£¤Ó¥i¯à */
+  /* Thor.990325: ç‚ºäº†è®“åæŸ¥æ™‚èƒ½ç¢ºå®šæŸ¥å‡ºï¼Œä¾†è‡ªå“ªå€‹interfaceå°±å¾žé‚£é€£å›žï¼Œä»¥é˜²åæŸ¥ä¸åˆ°  */
+  /* Thor.990330: è² æ•¸ä¿ç•™çµ¦ï¼Œç”¨getsockç„¡æ³•æŠ“å‡ºæ­£ç¢ºportçš„æ™‚å€™ï¼Œä¸å¤ªå¯èƒ½ */
   if (sock >= 0)
   {
     s = sizeof(our_sin);
@@ -89,7 +89,7 @@ dns_ident(sock, from, rhost, ruser)
     if (getsockname(sock, (struct sockaddr *) &our_sin, &s) < 0)
       return;
 
-    /* Thor.990325: ¬°¤FÅý¤Ï¬d®É¯à½T©w¬d¥X¡A¨Ó¦Û­þ­Óinterface´N±q¨º³s¦^ */
+    /* Thor.990325: ç‚ºäº†è®“åæŸ¥æ™‚èƒ½ç¢ºå®šæŸ¥å‡ºï¼Œä¾†è‡ªå“ªå€‹interfaceå°±å¾žé‚£é€£å›ž */
     our_pt = ntohs(our_sin.sin_port);
     our_sin.sin_port = htons(ANY_PORT);
   }
@@ -123,7 +123,7 @@ dns_ident(sock, from, rhost, ruser)
   rmt_pt = ntohs(rmt_sin.sin_port);
   rmt_sin.sin_port = htons(RFC931_PORT);
 
-  /* Thor.990325: ¬°¤FÅý¤Ï¬d®É¯à½T©w¬d¥X¡A¨Ó¦Û­þ­Óinterface´N±q¨º³s¦^ */
+  /* Thor.990325: ç‚ºäº†è®“åæŸ¥æ™‚èƒ½ç¢ºå®šæŸ¥å‡ºï¼Œä¾†è‡ªå“ªå€‹interfaceå°±å¾žé‚£é€£å›ž */
   if ((sock < 0 || !bind(s, (struct sockaddr *) & our_sin, sizeof(our_sin)))
     && !connect(s, (struct sockaddr *) & rmt_sin, sizeof(rmt_sin)))
   {

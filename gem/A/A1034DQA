@@ -1,17 +1,17 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (£i·R±¡±s¦u£i) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¥ş¯¸¯u¹ê©m¦W±Æ§Ç¦L¥X
-µo«H¯¸: ¤¤¿³¸ê¬ì (Tue, 12 Aug 2003 01:12:30 +0800 (CST))  Updated: 2003/12/29
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (Î¾æ„›æƒ…å¾¡å®ˆÎ¾) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] å…¨ç«™çœŸå¯¦å§“åæ’åºå°å‡º
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (Tue, 12 Aug 2003 01:12:30 +0800 (CST))  Updated: 2003/12/29
 
-    §O¤H©M§Ú´£¨ìªº¥\¯à¡A¼g¤F¤@¤U³ºµM¦¨¥\¤F....¨ş¨ş¡ã
+    åˆ¥äººå’Œæˆ‘æåˆ°çš„åŠŸèƒ½ï¼Œå¯«äº†ä¸€ä¸‹ç«Ÿç„¶æˆåŠŸäº†....å‘µå‘µï½
 
-    ¤£¹L¦L¥X¯u¹ê©m¦W....¶â¶â....
+    ä¸éå°å‡ºçœŸå¯¦å§“å....å—¯å—¯....
 
 
-    ÀÉ®×·|²£¥Í¦b ~/gem/@/@-realname
+    æª”æ¡ˆæœƒç”¢ç”Ÿåœ¨ ~/gem/@/@-realname
 
-    ¥i¥H¦b¯¸¤W³]¸ê®Æª½±µ¾\Åª....°O±o­nÂê¤å³¹­ò¡I
+    å¯ä»¥åœ¨ç«™ä¸Šè¨­è³‡æ–™ç›´æ¥é–±è®€....è¨˜å¾—è¦é–æ–‡ç« å”·ï¼
 
-    ²¦³º¯u¹ê©m¦W¤£¯à¥~ÅS§a....
+    ç•¢ç«ŸçœŸå¯¦å§“åä¸èƒ½å¤–éœ²å§....
 
 ==============================================================================
 
@@ -19,13 +19,13 @@
 
 EXE =   ... [1;33mshowRealname[m
 
-: src/util/showRealname.c   ·s¼W¾ã¤äµ{¦¡
+: src/util/showRealname.c   æ–°å¢æ•´æ”¯ç¨‹å¼
 
 
 /*-------------------------------------------------------*/
 /* util/showRealname.c  ( NTHU CS MapleBBS Ver 3.00 )    */
 /*-------------------------------------------------------*/
-/* target : ¥ş¯¸¯u¹ê©m¦W±Æ§Ç¦L¥X                         */
+/* target : å…¨ç«™çœŸå¯¦å§“åæ’åºå°å‡º                         */
 /* create : 03/08/11                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw (util/topusr.c) */
@@ -45,7 +45,7 @@ typedef struct
 }      DATA;
 
 
-static int i = 0;  /* ¬ö¿ı¦³´X­Ó USER */
+static int i = 0;  /* ç´€éŒ„æœ‰å¹¾å€‹ USER */
 
 static DATA *name;
 
@@ -78,16 +78,16 @@ write_data(fpath, title, data)
     return;
 
   j = 12 - (strlen(title) >> 1);
-  sprintf(buf, " \033[1;33m¡³ ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¡÷"
+  sprintf(buf, " \033[1;33mâ—‹ â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â†’"
                " \033[41m%%%ds%%s%%%ds\033[40m "
-               "¡ö¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w ¡³\033[m\n\n", j, j);
-                                //¬°¤F¤j®a¦b¢ê¢ê¢û¾\Åª¤è«K¡A§Ú§âprintÂ_¦æ¤F
+               "â†â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ â—‹\033[m\n\n", j, j);
+                                //ç‚ºäº†å¤§å®¶åœ¨ï½‚ï½‚ï½“é–±è®€æ–¹ä¾¿ï¼Œæˆ‘æŠŠprintæ–·è¡Œäº†
 
   fprintf(fp, buf, "", title, "");
 
   for (j = 0; j < i; j++)
   {
-    fprintf(fp, "[%3d] %-13s¡G%-9s - %s\n", j + 1,
+    fprintf(fp, "[%3d] %-13sï¼š%-9s - %s\n", j + 1,
       data[j].userid, data[j].realname, data[j].email);
   }
 
@@ -108,19 +108,19 @@ topusr(cuser)
 }
 
 /*-------------------------------------------------------*/
-/* ¥Dµ{¦¡                                                */
+/* ä¸»ç¨‹å¼                                                */
 /*-------------------------------------------------------*/
 
 
 int
 main()
 {
-  int numuser;          /* Á`¦@¦³´X­Óµù¥U±b¸¹ */
+  int numuser;          /* ç¸½å…±æœ‰å¹¾å€‹è¨»å†Šå¸³è™Ÿ */
   char c;
 
   chdir(BBSHOME);
   numuser = rec_num(FN_SCHEMA, sizeof(SCHEMA)) + 100;
-                                              /* ¥[ 100 ¥H§K­è¦n¦³¤Hµù¥U */
+                                              /* åŠ  100 ä»¥å…å‰›å¥½æœ‰äººè¨»å†Š */
   name = (DATA *) malloc(sizeof(DATA) * numuser);
   memset(name, 0, sizeof(DATA) * numuser);
 
@@ -160,12 +160,12 @@ main()
   }
 
   qsort(name, numuser, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_REALNAME, "¯u¹ê©m¦W±Æ¦æº]", name);
+  write_data(OUTFILE_REALNAME, "çœŸå¯¦å§“åæ’è¡Œæ¦œ", name);
   free(name);
 
   return 0;
 }
 
 --
- [1m[42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m bbs.cs.nchu.edu.tw [m
- [1m[44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mqazq [30m±q [35m61-216-137-194.HINET-IP.hinet.net [30mµoªí[m
+ [1m[42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m bbs.cs.nchu.edu.tw [m
+ [1m[44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mqazq [30må¾ [35m61-216-137-194.HINET-IP.hinet.net [30mç™¼è¡¨[m

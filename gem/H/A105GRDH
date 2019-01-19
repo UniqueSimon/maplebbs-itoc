@@ -1,9 +1,9 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ­è¸ÕµÛ±N¬İªO«ü¦V¨ìµ{¦¡®É¡A¦³ÂI¤p°İÃD
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/03/17 Wed 22:45:01)                Updated: 2004/03/17
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: å‰›è©¦è‘—å°‡çœ‹æ¿æŒ‡å‘åˆ°ç¨‹å¼æ™‚ï¼Œæœ‰é»å°å•é¡Œ
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/03/17 Wed 22:45:01)                Updated: 2004/03/17
 
-  ¶i¤J newboard ªO (¥]¬A±q Class/Board/Select/Favor ¶i¤J)
-  ´Nª½±µ¶i¤J³s¸p¾÷
+  é€²å…¥ newboard æ¿ (åŒ…æ‹¬å¾ Class/Board/Select/Favor é€²å…¥)
+  å°±ç›´æ¥é€²å…¥é€£ç½²æ©Ÿ
 
 : xover.c:xover()
 
@@ -26,5 +26,5 @@ xover(cmd)
     while (cmd != XO_NONE)
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;45m¢¢[42m¢¡[m [1mMo[30mdi[mfy: [1;36m2004/03/17 Wed 22:45:01[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;45mâ•°[42mâ•®[m [1mMo[30mdi[mfy: [1;36m2004/03/17 Wed 22:45:01[m

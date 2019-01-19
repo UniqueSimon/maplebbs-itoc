@@ -1,8 +1,8 @@
-§@ªÌ: itoc (¯uªº«Ü¥i·R°Ú :D) ¯¸¤º: plan
-¼ĞÃD: [¤å¥ó] Âà´«µ{¦¡ªºµ²ºc
-®É¶¡: Tue Aug 13 00:37:37 2002
+ä½œè€…: itoc (çœŸçš„å¾ˆå¯æ„›å•Š :D) ç«™å…§: plan
+æ¨™é¡Œ: [æ–‡ä»¶] è½‰æ›ç¨‹å¼çš„çµæ§‹
+æ™‚é–“: Tue Aug 13 00:37:37 2002
 
-  Âà´«µ{¦¡ªºµ²ºc´N¬O³o»òÂ²³æ
+  è½‰æ›ç¨‹å¼çš„çµæ§‹å°±æ˜¯é€™éº¼ç°¡å–®
 
 #include "bbs.h"
 
@@ -18,12 +18,12 @@ int main()
   num = 0;
   while (!rec_get("old-file", &old, sizeof(OLD), num))
   {
-    new.xxx = old.xxx;              /* ¦pªG xxx Äæ¦ì¬O int */
-    strcpy(new.yyy, old.yyy);       /* ¦pªG yyy Äæ¦ì¬O char[] */
+    new.xxx = old.xxx;              /* å¦‚æœ xxx æ¬„ä½æ˜¯ int */
+    strcpy(new.yyy, old.yyy);       /* å¦‚æœ yyy æ¬„ä½æ˜¯ char[] */
     rec_add("new-file", &new, sizeof(NEW));
     num++;
   }
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

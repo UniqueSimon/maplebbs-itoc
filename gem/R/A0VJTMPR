@@ -1,17 +1,17 @@
-µo«H¤H: itoc.bbs@xeon.tfcis.org (¬Ý¤FÃD¥Ø´Nª¾¹D¸Ó©ñ±ó) ¬ÝªO: plan
-¼Ð  ÃD: Re: ´X­Ó°ÝÃD
-µo«H¯¸: °Ê¤O®Ö¤ß (Sun, 17 Aug 2003 09:13:21 +0800 (CST))  Updated: 2003/08/17
+ç™¼ä¿¡äºº: itoc.bbs@xeon.tfcis.org (çœ‹äº†é¡Œç›®å°±çŸ¥é“è©²æ”¾æ£„) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: å¹¾å€‹å•é¡Œ
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (Sun, 17 Aug 2003 09:13:21 +0800 (CST))  Updated: 2003/08/17
 
-¡° ¤Þ­z¡mgokui (gokui)¡n¤§»Ê¨¥¡G
-> ¦pªG¯¸¤WªºÁôª©¤£¦h¡A
-> ·Q­n§âÁôª©¥æ¥Ñ¯¸ªø¦Û¤vºÞ²z
-> ¬ÝªOÁ`ºÞ¤]¤£¬Ý¤£¨ì­Ó¸ÜÀ³¸Ó­n«ç»ò§ï¤~¦n
+â€» å¼•è¿°ã€Šgokui (gokui)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å¦‚æžœç«™ä¸Šçš„éš±ç‰ˆä¸å¤šï¼Œ
+> æƒ³è¦æŠŠéš±ç‰ˆäº¤ç”±ç«™é•·è‡ªå·±ç®¡ç†
+> çœ‹æ¿ç¸½ç®¡ä¹Ÿä¸çœ‹ä¸åˆ°å€‹è©±æ‡‰è©²è¦æ€Žéº¼æ”¹æ‰å¥½
 
-  ¥u¦³ PERM_SYSOP ¥i¥H¬Ý¨ìÁôªO
+  åªæœ‰ PERM_SYSOP å¯ä»¥çœ‹åˆ°éš±æ¿
 
 : board.c:Ben_Perm()
 
-  /* itoc.030515: ¬ÝªOÁ`ºÞ­«·s§PÂ_ */
+  /* itoc.030515: çœ‹æ¿ç¸½ç®¡é‡æ–°åˆ¤æ–· */
   else if (ulevel & PERM_ALLBOARD)
 + {
 +   if (ulevel & PERM_SYSOP)
@@ -23,5 +23,5 @@
 + }
 
 --
-[1;36m=[37m[[36m¡É[37m:[33m¡[37mÝ¢¨[m¢©¡[1;33mÝ[37m:[36m¡É [31mOrigin[37m ]|[[m     [31m°[1mÊ¤[0;31mO®[1mÖ¤[0;31mß [1mprocessor.tfcis.org    [37m]|[¡[33mÝ£»¡[mÝ[1;36m¡É[37m:][36m=[m
-[1;36m=[m[[1;36m¡Ç[37m:[33m¡[30mÝ¢ª[m¢¬¡[1;33mÝ[37m:[36m¡Ç [31mAuthor[m ]|[ [1m    itoc.dorm11.nctu.edu.tw         [m]|[¡[1;33mÝ[30m¡[37m´¡[30mÝ[36m¡Ç[37m:[m][1;36m=[m
+[1;36m=[37m[[36mï¹Ž[37m:[33m?[37mæ‘ƒ?[mâ—£?[1;33m?[37m:[36mï¹Ž [31mOrigin[37m ]|[[m     [31m?[1må¨[0;31mO?[1mç—[0;31m?[1mprocessor.tfcis.org    [37m]|[?[33mæŸèªª[m?[1;36mï¹Ž[37m:][36m=[m
+[1;36m=[m[[1;36mï¹Š[37m:[33m?[30mæ‘ƒ?[mâ•±?[1;33m?[37m:[36mï¹Š [31mAuthor[m ]|[ [1m    itoc.dorm11.nctu.edu.tw         [m]|[?[1;33m?[30m?[37mæ’[30m?[36mï¹Š[37m:[m][1;36m=[m

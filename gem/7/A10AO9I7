@@ -1,10 +1,10 @@
-µo«H¤H: waynesan.bbs@csc241.tcssh.tc.edu.tw («z«Yªüªê) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] admutil.c ½u¤W­«±Ò¥Àbbsd
-µo«H¯¸: local (2004/05/20 Thu 10:26:09)                   Updated: 2004/05/20
+ç™¼ä¿¡äºº: waynesan.bbs@csc241.tcssh.tc.edu.tw (å“‡ä¿‚é˜¿è™) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] admutil.c ç·šä¸Šé‡å•Ÿæ¯bbsd
+ç™¼ä¿¡ç«™: local (2004/05/20 Thu 10:26:09)                   Updated: 2004/05/20
 
 : global.h
 
-+ #define FN_RUN_FILE   "run/bbs.run"   /* waynesan.040520:½u¤W­«±Òbbsd */
++ #define FN_RUN_FILE   "run/bbs.run"   /* waynesan.040520:ç·šä¸Šé‡å•Ÿbbsd */
 
 #define FN_RUN_USIES    "run/usies"     /* BBS log */
 
@@ -13,7 +13,7 @@
     sprintf(data, "%d\t%s\t%d\tinetd -i\n", getpid(), buf, port);
     f_cat(PID_FILE, data);
 
-+   sprintf(data, "%d\n", getpid());  /* waynesan.040520:½u¤W­«±Òbbsd */
++   sprintf(data, "%d\n", getpid());  /* waynesan.040520:ç·šä¸Šé‡å•Ÿbbsd */
 +   f_cat(FN_RUN_FILE, data);
 
     return;
@@ -26,32 +26,32 @@
   sprintf(data, "%d\t%s\t%d\n", getpid(), buf, port);
   f_cat(PID_FILE, data);
 
-+ sprintf(data, "%d\n", getpid());  /* waynesan.040520:½u¤W­«±Òbbsd */
++ sprintf(data, "%d\n", getpid());  /* waynesan.040520:ç·šä¸Šé‡å•Ÿbbsd */
 + f_cat(RUN_FILE, data);
 }
 
 : menu.c:menu_admin[]
 
   "bin/admutil.so:a_resetsys", PERM_ALLADMIN, - M_SYSTEM,
-  "BBSreset   ¢« ­«¸m¨t²Î ¢¨",
+  "BBSreset   â—¤ é‡ç½®ç³»çµ± â—¢",
 
 + "bin/admutil.so:a_rebbsd", PERM_SYSOP, - M_SYSTEM,
-+ "Rebbsd     ¢« ­«±Òbbsd ¢¨",
++ "Rebbsd     â—¤ é‡å•Ÿbbsd â—¢",
 
   menu_main, PERM_MENU + Ctrl('A'), M_AMENU,
-  "¨t²ÎºûÅ@"
+  "ç³»çµ±ç¶­è­·"
 };
 
-: admutil.c:a_rebbsd() ·s¼W¦¹¨ç¦¡¦b a_resetsys() «á­±
+: admutil.c:a_rebbsd() æ–°å¢æ­¤å‡½å¼åœ¨ a_resetsys() å¾Œé¢
 
 /* ----------------------------------------------------- */
-/* waynesan.040519½u¤W­«±Òbbsd                           */
+/* waynesan.040519ç·šä¸Šé‡å•Ÿbbsd                           */
 /* ----------------------------------------------------- */
 
 int
 a_rebbsd()
 {
-  if (vans("½T©w­n­«±Òbbsd(Y/N)¡H[N] ") == 'y')
+  if (vans("ç¢ºå®šè¦é‡å•Ÿbbsd(Y/N)ï¼Ÿ[N] ") == 'y')
   {
     FILE *fp;
     char buf[20], tmp[10];
@@ -64,17 +64,17 @@ a_rebbsd()
 
       sprintf(buf, "kill %s", tmp);
       system(buf);
-      system("bin/bbsd");         /* standalone ¤~»İ­n³o¦æ */
-      vmsg("bbsd¤w­«±Ò");
+      system("bin/bbsd");         /* standalone æ‰éœ€è¦é€™è¡Œ */
+      vmsg("bbsdå·²é‡å•Ÿ");
     }
   }
   return XEASY;
 }
 
 --
-    [1;31m¡Z¡Z[m
-  [1;31m¡ş  [37m¡ş[34m¢v¢v¢@  [31m°g[34m¤Û[37m°ê«×[31m Charming [34mShadow [37mCountry[m
-[1;31m¢y  [37m¡ş[31m  [37m¡ş¢@  [34m¢j[33m¤J¹Ò¦ì§} csc241.twbbs.org[m
-[1;31m¢y  [37m¢@¡ş[31m  [37m¡ş  [34m¢j[32m¦ì§}¥N½X 203.71.212.241[m
-[1;31m  ¢@¡Z¡Z[37m¡ş[31m  [34m¡ş  [36m¨Ó·½¥À°ê 203.71.212.124[m
-[1;31m  [4m¡ş    [34m¢v¢v¢@[;1;31m  µoªí®É¶¡ 2004/05/20 Thu 10:04:04[m
+    [1;31m??[m
+  [1;31mï¼  [37mï¼[34mâ–”â–”ï¼¼  [31mè¿·[34må¹»[37måœ‹åº¦[31m Charming [34mShadow [37mCountry[m
+[1;31mâ–•  [37mï¼[31m  [37mï¼ï¼¼  [34mâ–[33må…¥å¢ƒä½å€ csc241.twbbs.org[m
+[1;31mâ–•  [37mï¼¼ï¼[31m  [37mï¼  [34mâ–[32mä½å€ä»£ç¢¼ 203.71.212.241[m
+[1;31m  ï¼¼??[37mï¼[31m  [34mï¼  [36mä¾†æºæ¯åœ‹ 203.71.212.124[m
+[1;31m  [4mï¼    [34mâ–”â–”ï¼¼[;1;31m  ç™¼è¡¨æ™‚é–“ 2004/05/20 Thu 10:04:04[m

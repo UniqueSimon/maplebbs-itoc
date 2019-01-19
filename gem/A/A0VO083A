@@ -1,26 +1,26 @@
-§@ªÌ: itoc (i ma 11:20) ¬İªO: plan
-¼ĞÃD: [¥\¯à] µn¤J®Éªºtime out
-®É¶¡: Sun Oct  5 21:44:48 2003                          Updated: 2003/10/05
+ä½œè€…: itoc (i ma 11:20) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] ç™»å…¥æ™‚çš„time out
+æ™‚é–“: Sun Oct  5 21:44:48 2003                          Updated: 2003/10/05
 
-¡° ¤Ş­z¡mwood.bbs@bbs.cs.nthu.edu.tw¡n¤§»Ê¨¥¡G
->     §Ú·Q½Ğ°İ¤@¤U¡A­n¦p¦ó¼W¥["µn¤J®Éªºtime out"ªº³o­Ó¥\¯à©O¡H
->     ´N¬O¨Ï¥ÎªÌ¹L¤[¥¼µn¤J¡A¨t²Î·|µ¹¤©Â_½u¡C
+â€» å¼•è¿°ã€Šwood.bbs@bbs.cs.nthu.edu.twã€‹ä¹‹éŠ˜è¨€ï¼š
+>     æˆ‘æƒ³è«‹å•ä¸€ä¸‹ï¼Œè¦å¦‚ä½•å¢åŠ "ç™»å…¥æ™‚çš„time out"çš„é€™å€‹åŠŸèƒ½å‘¢ï¼Ÿ
+>     å°±æ˜¯ä½¿ç”¨è€…éä¹…æœªç™»å…¥ï¼Œç³»çµ±æœƒçµ¦äºˆæ–·ç·šã€‚
 
 : visio.c:igetch()
 
           cc = vio_to.tv_sec;
-          if (cc < 60)          /* paging timeout : ¨C 60 ¬í§ó·s¤@¦¸ idle */
+          if (cc < 60)          /* paging timeout : æ¯ 60 ç§’æ›´æ–°ä¸€æ¬¡ idle */
             return I_TIMEOUT;
 
           idle += cc / 60;
           vio_to.tv_sec = cc + 60;
 
-+         if (idle >= 3 && !cutmp)  /* µn¤J®É idle ¶W¹L 3 ¤ÀÄÁ´NÂ_½u */
++         if (idle >= 3 && !cutmp)  /* ç™»å…¥æ™‚ idle è¶…é 3 åˆ†é˜å°±æ–·ç·š */
 +         {
-+           outz("µn¤J¹O®É¡A½Ğ­«·s¤W¯¸");
++           outz("ç™»å…¥é€¾æ™‚ï¼Œè«‹é‡æ–°ä¸Šç«™");
 +           refresh();
 +           abort_bbs();
 +         }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

@@ -1,17 +1,17 @@
-µo«H¤H: chwaian.bbs@cpu.tfcis.org (µL¨¥) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à]³Q³]Ãa¤H¤£­ã±H«Hµ¹¹ï¤è
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/12/19 Sun 00:33:49)                Updated: 2005/01/02
+ç™¼ä¿¡äºº: chwaian.bbs@cpu.tfcis.org (ç„¡è¨€) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]è¢«è¨­å£äººä¸å‡†å¯„ä¿¡çµ¦å°æ–¹
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/12/19 Sun 00:33:49)                Updated: 2005/01/02
 
-«ÜÀk³¾ªº¤@­Ó¥\¯à
+å¾ˆé´•é³¥çš„ä¸€å€‹åŠŸèƒ½
 
-¥u­n¹ï¤è´«­ÓID©Î¬O±q¥~¯¸±H«H¨Ó ´N¨S¥Î¤F :P
+åªè¦å°æ–¹æ›å€‹IDæˆ–æ˜¯å¾å¤–ç«™å¯„ä¿¡ä¾† å°±æ²’ç”¨äº† :P
 
-¥i¥H°t¦X¸T¤î¦¬¯¸¥~«H ¨Óµy·L¸É¨¬
+å¯ä»¥é…åˆç¦æ­¢æ”¶ç«™å¤–ä¿¡ ä¾†ç¨å¾®è£œè¶³
 
 : ufo.h
 
 #define UFO_JUMPBRD     BFLAG(19)
-+ #define UFO_DENYBADMAIL   BFLAG(20)   /* ©Ú¦¬Ãa¤H¨Ó«H */
++ #define UFO_DENYBADMAIL   BFLAG(20)   /* æ‹’æ”¶å£äººä¾†ä¿¡ */
 
   ...
 
@@ -24,18 +24,18 @@
   ...
 
 #ifdef AUTO_JUMPBRD
-  "¸õ¥h¥¼Åª¬İªO    (¸õ¥h/¤£¸õ)",        /* UFO_JUMPBRD */
+  "è·³å»æœªè®€çœ‹æ¿    (è·³å»/ä¸è·³)",        /* UFO_JUMPBRD */
 #else
-  "«O¯d",
+  "ä¿ç•™",
 #endif
 
-- "«O¯d",
-+ "©Ú¦¬Ãa¤H¨Ó«H",       /* UFO_DENYBADMAIL */
+- "ä¿ç•™",
++ "æ‹’æ”¶å£äººä¾†ä¿¡",       /* UFO_DENYBADMAIL */
 
-: pal.c ·s¼W©³¤U³o°¦µ{¦¡
+: pal.c æ–°å¢åº•ä¸‹é€™éš»ç¨‹å¼
 
 int
-pal_findbad(userid)   /* §ä¬O§_³Q¹ï¤è³]¬°Ãa¤H */
+pal_findbad(userid)   /* æ‰¾æ˜¯å¦è¢«å°æ–¹è¨­ç‚ºå£äºº */
   char *userid;
 {
   ACCT acct;
@@ -44,7 +44,7 @@ pal_findbad(userid)   /* §ä¬O§_³Q¹ï¤è³]¬°Ãa¤H */
   int fd;
   int rc = 0;
 
-  /* ­Y¹ï¤è¾×Ãa¤Hªº«H¡A¤~ÀË¬d */
+  /* è‹¥å°æ–¹æ“‹å£äººçš„ä¿¡ï¼Œæ‰æª¢æŸ¥ */
   if (acct_load(&acct, userid) >= 0 && (acct.ufo & UFO_DENYBADMAIL))
   {
     usr_fpath(fpath, userid, fn_pal);
@@ -56,7 +56,7 @@ pal_findbad(userid)   /* §ä¬O§_³Q¹ï¤è³]¬°Ãa¤H */
         if ((cuser.userno == bad.userno) && (bad.ftype & PAL_BAD))
         {
           rc = 1;
-          vmsg("§A³Q¹ï¤è³]¬°Ãa¤H¤£¯à±H«Hµ¹¹ï¤è!");
+          vmsg("ä½ è¢«å°æ–¹è¨­ç‚ºå£äººä¸èƒ½å¯„ä¿¡çµ¦å°æ–¹!");
           break;
         }
       }
@@ -73,7 +73,7 @@ int t_list(void);
 
 : mail.c mail_him()
 
-  if ((userno = acct_userno(rcpt)) > 0)         /* ¦¬¥ó¤H¦³¥i¯à¤£¦s¦b */
+  if ((userno = acct_userno(rcpt)) > 0)         /* æ”¶ä»¶äººæœ‰å¯èƒ½ä¸å­˜åœ¨ */
   {
 +   if (pal_findbad(rcpt))
 +     return -1;
@@ -92,5 +92,5 @@ int t_list(void);
   }
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mchwaian [30m±q [31m218-171-104-58.dynamic.hinet.net [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mchwaian [30må¾ [31m218-171-104-58.dynamic.hinet.net [30mç™¼è¡¨[m

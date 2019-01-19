@@ -1,21 +1,21 @@
-§@ªÌ: itoc (cygreadline4.dll) ¯¸¤º: plan
-¼ÐÃD: [¥\¯à] QKMJ ³Â±N
-®É¶¡: 2004/05/21 Fri 08:53:06                           Updated: 2004/05/21
+ä½œè€…: itoc (cygreadline4.dll) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] QKMJ éº»å°‡
+æ™‚é–“: 2004/05/21 Fri 08:53:06                           Updated: 2004/05/21
 
 : menu.c:menu_net[]
 
 + "bin/xyz.so:x_qkmj", PERM_INTERNET, - M_GAME,
-+ "QKMJ       ¡ñ °êºé³Â±N ¡ð",
++ "QKMJ       â™‚ åœ‹ç²¹éº»å°‡ â™€",
 
 : etc/game/qkmj
 
-  ¥h ftp://ftp.csie.nctu.edu.tw/pub/CSIE/qkmj/ §ì qkmj ªº°õ¦æÀÉ
-  ­n§ì¾A·íªº OS ª©¥»
+  åŽ» ftp://ftp.csie.nctu.edu.tw/pub/CSIE/qkmj/ æŠ“ qkmj çš„åŸ·è¡Œæª”
+  è¦æŠ“é©ç•¶çš„ OS ç‰ˆæœ¬
 
-: xyz.c ¥[¤W³o¤@¾ã¬q
+: xyz.c åŠ ä¸Šé€™ä¸€æ•´æ®µ
 
 /* ----------------------------------------------------- */
-/* QKMJ ºô¸ô³Â±N                                         */
+/* QKMJ ç¶²è·¯éº»å°‡                                         */
 /* ----------------------------------------------------- */
 /* author : visor.bbs@bbs.yzu.edu.tw                     */
 /*-------------------------------------------------------*/
@@ -23,19 +23,19 @@
 #define QKMJ_SERVER     "140.113.209.32 7001"
 
 
-/* itoc.010825: ¨ä¥Lªºª©¥»½Ð¦Ü ftp://ftp.csie.nctu.edu.tw/pub/CSIE/qkmj/
-   §ì¨ú¡A©ñ¦b etc/game/¡A¨Ã§ó¦W¬° qkmj (ª`·N­n chmod ¥i°õ¦æ) */
+/* itoc.010825: å…¶ä»–çš„ç‰ˆæœ¬è«‹è‡³ ftp://ftp.csie.nctu.edu.tw/pub/CSIE/qkmj/
+   æŠ“å–ï¼Œæ”¾åœ¨ etc/game/ï¼Œä¸¦æ›´åç‚º qkmj (æ³¨æ„è¦ chmod å¯åŸ·è¡Œ) */
 
 #if defined(LINUX)
 #define QKMJ_EXECUTE    "etc/game/qkmj95p5-linux"
 #elif defined(BSD44)
 #define QKMJ_EXECUTE    "etc/game/qkmj95p5-freebsd"
 #else
-#define QKMJ_EXECUTE    "etc/game/qkmj"    /* ½Ð¦Û¦æ§ì¾A·íª©¥»ªº°õ¦æÀÉ */
+#define QKMJ_EXECUTE    "etc/game/qkmj"    /* è«‹è‡ªè¡ŒæŠ“é©ç•¶ç‰ˆæœ¬çš„åŸ·è¡Œæª” */
 #endif
 
 int
-x_qkmj()                /* itoc.010825: QKMJ -- ³s½u¥´³Â±N */
+x_qkmj()                /* itoc.010825: QKMJ -- é€£ç·šæ‰“éº»å°‡ */
 {
   int size, fd, nfds;
   char buf[256];
@@ -43,12 +43,12 @@ x_qkmj()                /* itoc.010825: QKMJ -- ³s½u¥´³Â±N */
   fd_set rd;
   struct timeval to;
 
-  /* itoc.010825.µù¸Ñ: qkmj ¦³­Ó°ÝÃD¬O­n«ö ^C µ²§ô¡A¥i¬O popen() ¸Ì­±¤£¯à¥Î
-     ^C¡A¥u¦n¥Î "/quit"¡A¦ý¬O¤@¶i¤J qkmj ¿é¤J ID ®ÉµLªk¥H ^C ©Î "/quit"
-     Â÷¶}¡A¥u¦nµù¥U¤@­Ó ID ¨Óª±¡A¦A "/quit" Â÷¶}
-     ©Ò¥H¦b¤@¶}©lªº®É­Ô´N½T©wª±®a¯uªº­n°õ¦æ QKMJ ³s½u¡A³s¥h qkmj server  */
+  /* itoc.010825.è¨»è§£: qkmj æœ‰å€‹å•é¡Œæ˜¯è¦æŒ‰ ^C çµæŸï¼Œå¯æ˜¯ popen() è£¡é¢ä¸èƒ½ç”¨
+     ^Cï¼Œåªå¥½ç”¨ "/quit"ï¼Œä½†æ˜¯ä¸€é€²å…¥ qkmj è¼¸å…¥ ID æ™‚ç„¡æ³•ä»¥ ^C æˆ– "/quit"
+     é›¢é–‹ï¼Œåªå¥½è¨»å†Šä¸€å€‹ ID ä¾†çŽ©ï¼Œå† "/quit" é›¢é–‹
+     æ‰€ä»¥åœ¨ä¸€é–‹å§‹çš„æ™‚å€™å°±ç¢ºå®šçŽ©å®¶çœŸçš„è¦åŸ·è¡Œ QKMJ é€£ç·šï¼Œé€£åŽ» qkmj server  */
 
-  if (vans("¬O§_³s½u¶}¥´³Â±N(Y/N)¡H[N] ") != 'y')
+  if (vans("æ˜¯å¦é€£ç·šé–‹æ‰“éº»å°‡(Y/N)ï¼Ÿ[N] ") != 'y')
     return XEASY;
 
   more("etc/game/qkmj.welcome", NULL);
@@ -56,7 +56,7 @@ x_qkmj()                /* itoc.010825: QKMJ -- ³s½u¥´³Â±N */
   if (fp = popen("env HOME=" BBSHOME " TERM=vt100 "
     QKMJ_EXECUTE " " QKMJ_SERVER, "r+"))
   {
-    cutmp->status |= STATUS_REJECT;   /* ª±³Â±N®É¤£¦¬¤ô²y */
+    cutmp->status |= STATUS_REJECT;   /* çŽ©éº»å°‡æ™‚ä¸æ”¶æ°´çƒ */
     fd = fileno(fp);
 
     while(1)
@@ -93,77 +93,77 @@ x_qkmj()                /* itoc.010825: QKMJ -- ³s½u¥´³Â±N */
     pclose(fp);
     cutmp->status ^= STATUS_REJECT;
   }
-  return 0;           /* ­n redraw screen */
+  return 0;           /* è¦ redraw screen */
 }
 
-: etc/game/qmkj.welcome ·s¼W³oÀÉ®×
+: etc/game/qmkj.welcome æ–°å¢žé€™æª”æ¡ˆ
 
-¢~ùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùù¢¡
-ùø                                                                          ùø
-ùø ¡¹ Â÷¶}¹CÀ¸                                                              ùø
-ùø                                                                          ùø
-ùø   ±zµLªk¥H CTRL-C Â÷¶}¡A½Ð¸Õ¸Õ "[1;33m/quit[m"¡C                                 ùø
-ùø                                                                          ùø
-ùø ¡¹ ­n¦p¦ó¶}©l¥´µP¡H                                                      ùø
-ùø                                                                          ùø
-ùø   ¦b QKMJ ¤¤¡A¤@©w­n´ê¨¬¥|¤H¤@®à¤~¯à¶}©l¥´µP¡C±z­n´ê¨¬¤@®à¡A¦³¨âºØ¤è¦¡¡G ùø
-ùø                                                                          ùø
-ùø   ¤@¡B¥[¤J©|¥¼´êº¡¥|¤Hªº®à                                               ùø
-ùø         ±z¥i¥H¥´ "/free" ¬d¬Ý¥Ø«eºô¸ô¤W¦³­þ¨Ç¤W¥¼´êº¡¥|¤Hªº®à¡A§ä¨ì¥H«á  ùø
-ùø       ´N¥i¥´ "/join <®àªø¦WºÙ>" ¨Ó¥[¤J¦¹®à¡C                             ùø
-ùø                                                                          ùø
-ùø   ¤G¡B¦Û¤v¶}®àµ¥§O¤H¥[¤J                                                 ùø
-ùø         ¦pªG±z§ä¤£¨ì©|¥¼´êº¡¥|¤Hªº®à¡A¤]¥i¥H¥´ "/serv" ¦Û¤v¶}¤@®àµ¥§O¤H  ùø
-ùø       ¥[¤J¡A¦¹®É±z´N¬O®àªø¡A¾Ö¦³±N¦¹®àªº¨Ï¥ÎªÌ½ð¥X¥hªºÅv¤O¡C             ùø
-ùø         ¦b¶}®à®É¡A±z¥i¥H¥Î "/note <¤½§i¤º®e>" ¨Ó³]©w³o®àªº¤½§i¡AÅý§O¤H   ùø
-ùø       ª¾¹D³o®àªº¤@¨Ç³W©w¡C                                               ùø
-ùø         ·í±z¦Û¤v¶}®à¤§«á¡A´N­@¤ßªºµ¥«Ý§O¤Hªº¥[¤J. ¦pªG¥Ø«e¤W½uªº¤H¼Æ¦³   ùø
-ùø       ´X¤Q­Ó¤Hªº¸Ü¡A³q±`«Ü§Ö´N¯à´êº¡¤@®à¡C                               ùø
-ùø                                                                          ùø
-ùø   ·í¤@®àªº¤H¼Æ´êº¡¥|¤H¤§«á¡Aµe­±´N·|¦Û°ÊÅÜ¦¨¥´µP¼Ò¦¡¡C¦b³o­Ó¼Ò¦¡¤U¡A±z   ùø
-ùø   ¥i¥H¥Î <TAB> Áä¨Ó¤Á´«­n¥´µP©Î©M§O¤H¥æ½Í¡C½ü¨ì±z¥´µP®É¡A±z¥i¥H¥Î¤è¦VÁä  ùø
-ùø   ¿ï¾Ü¦Û¤v©Ò·Q¥´ªºµP¡A¦A«ö <Space> ©Î <Enter> ¥´¥X¥h¡A©ÎªÌ±z¤]¥i¥H«ö¤U   ùø
-ùø   ¨º±iµPªº¥N¸¹¡A´Nª½±µ¥´¥X¥h¡C                                           ùø
-ùø                                                                          ùø
-ùø ¡¹ µe­±»¡©ú                                                              ùø
-ùø                                                                          ùø
-ùø   ·í±z¶i¤J¥´µPµe­±®É¡A±z·|¬Ý¨ìµe­±¤¤¥¡¬O¨C­Ó¤HªºµP¡A¤U­±¬O¥æ½Íµøµ¡¡Cµe   ùø
-ùø   ­±ªº¥k¤W¨¤¦³¥|­Ó¤pÄæ¦ì¡A¬O¥Ø«e°é­·¡Bªù­·¡B³s²ø¼Æ¤Î¥Ø«eÂ÷®ü©³ÁÙ³Ñ´X±i   ùø
-ùø   µP¡C¥kÃä¤¤¶¡©Òªí¥Üªº¬O¨C­Ó¤H¦ì¸m¡B¥N¸¹¥H¤Î¥L¥Ø«e©Ò¾Ö¦³ªºª÷ÃB¡C¦b²ø®a   ùø
-ùø   ªº¦W¦r¥kÃä·|¦³¤@­Ó¤Ï¥Õªº "²ø"¡A¥Nªí¥L¥Ø«e¬O²ø®a¡C                      ùø
-ùø                                                                          ùø
-ùø   µe­±¥k¤U¨¤©ÒÅã¥Üªº¬O¥|®aªº¬ÛÃö¦ì¸m¡A±z¥i¥H©M¤W­±ªº¦ì¸m¡B¥N¸¹¤ñ¹ï¡A¨Ó   ùø
-ùø   §ä¥X½Ö§¤¦b­þ¤@Ãä¡C¦b¨C®aªº®ÇÃäÁÙ¦³Åã¥Ü¼Æ¦r¡A¥Nªí¨C­Ó¤H¥´µP©Òªáªº®É¶¡¡C ùø
-ùø   ³o­Ó®É¶¡¬O½ü¨ì±z¥´µPªº®É­Ô¤~¶}©l­pºâ¡C³o¼Ë¤j®a¦b¤@°_¥´ªº®É­Ô¡A´Nª¾¹D   ùø
-ùø   ½Ö¥´±o§Ö¡A½Ö¥´±oºC¤F¡C                                                 ùø
-ùø                                                                          ùø
-ùø   ¥k¤U¨¤¬°¨C¤H¥´µP³t«×¡A¹J¨ì¶Ã½X®É½Ð¤Á´«¦Ü¥t¤@µe­±¦A¤Á¦^¨Ó               ùø
-ùø                                                                          ùø
-ùø ¡¹ «ü¥O»¡©ú                                                              ùø
-ùø                                                                          ùø
-ùø   «ü¥O¦Cªí½Ð¶i QKMJ «á¥´ "[1;33m/help[m" ¬d¬Ý                                    ùø
-ùø                                                                          ùø
-ùø   ¥ª¥kÁä©Î ',' & '.'      ¿ïµP                                           ùø
-ùø   <TAB>                   ¤Á´«¹ï¸Ü©Î¥´µP                                 ùø
-ùø   Ctrl-U                  ²M°£¹ï¸Ü½w½Ä°Ï                                 ùø
-ùø   Ctrl-C                  Â÷¶}                                           ùø
-ùø   Ctrl-L                  ­«Ã¸¿Ã¹õ  (¹J¨ìµe­±¶Ã±¼®É¨Ï¥Î)                 ùø
-ùø   ¤W¤UÁä©Î Ctrl-P,Ctrl-N  ´M§ä¥H«e¥Î¹Lªº©R¥O                             ùø
-ùø   Ctrl-A                  ¸õ¨ì¤@¦æ³Ì«eºÝ                                 ùø
-ùø   Ctrl-E                  ¸õ¨ì¤@¦æ³Ì¥½ºÝ                                 ùø
-ùø                                                                          ùø
-ùø ¡¹ µù¥U·s±b¸¹                                                            ùø
-ùø                                                                          ùø
-ùø   ·í±z¶i¥h QKMJ ¤§«á¡A­º¥ý¿é¤J±zªº¦WºÙ [ID]¡C³o®É­Ô¨t²Î·|ÀË¬d±zªº¦WºÙ¬O  ùø
-ùø   §_¦b¸ê®Æ®w¤¤¡C¦pªG§ä¤£¨ì¡A´N·|»{¬°±z¬O·sªº¨Ï¥ÎªÌ¡A­n±z¿é¤J©Ò·Q­nªº±K   ùø
-ùø   ½X¡C³o¼Ë´Nºâ§¹¦¨µù¥U¤F¡C                                               ùø
-ùø                                                                          ùø
-ùø   ¦pªG±z¬O²Ä¤@¦¸¤W QKMJ¡A¨t²Î´N°Ý±z±K½X¡A¨ºªí¥Ü³o­Ó±b¸¹¤w¸g¦³¤H¥Î¤F¡A½Ð  ùø
-ùø   ´«¤@­Ó¦WºÙ¡C                                                           ùø
-ùø                                                                          ùø
-¢¢ùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùùù¢£
+â•­â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•®
+â•‘                                                                          â•‘
+â•‘ â˜… é›¢é–‹éŠæˆ²                                                              â•‘
+â•‘                                                                          â•‘
+â•‘   æ‚¨ç„¡æ³•ä»¥ CTRL-C é›¢é–‹ï¼Œè«‹è©¦è©¦ "[1;33m/quit[m"ã€‚                                 â•‘
+â•‘                                                                          â•‘
+â•‘ â˜… è¦å¦‚ä½•é–‹å§‹æ‰“ç‰Œï¼Ÿ                                                      â•‘
+â•‘                                                                          â•‘
+â•‘   åœ¨ QKMJ ä¸­ï¼Œä¸€å®šè¦æ¹Šè¶³å››äººä¸€æ¡Œæ‰èƒ½é–‹å§‹æ‰“ç‰Œã€‚æ‚¨è¦æ¹Šè¶³ä¸€æ¡Œï¼Œæœ‰å…©ç¨®æ–¹å¼ï¼š â•‘
+â•‘                                                                          â•‘
+â•‘   ä¸€ã€åŠ å…¥å°šæœªæ¹Šæ»¿å››äººçš„æ¡Œ                                               â•‘
+â•‘         æ‚¨å¯ä»¥æ‰“ "/free" æŸ¥çœ‹ç›®å‰ç¶²è·¯ä¸Šæœ‰å“ªäº›ä¸Šæœªæ¹Šæ»¿å››äººçš„æ¡Œï¼Œæ‰¾åˆ°ä»¥å¾Œ  â•‘
+â•‘       å°±å¯æ‰“ "/join <æ¡Œé•·åç¨±>" ä¾†åŠ å…¥æ­¤æ¡Œã€‚                             â•‘
+â•‘                                                                          â•‘
+â•‘   äºŒã€è‡ªå·±é–‹æ¡Œç­‰åˆ¥äººåŠ å…¥                                                 â•‘
+â•‘         å¦‚æžœæ‚¨æ‰¾ä¸åˆ°å°šæœªæ¹Šæ»¿å››äººçš„æ¡Œï¼Œä¹Ÿå¯ä»¥æ‰“ "/serv" è‡ªå·±é–‹ä¸€æ¡Œç­‰åˆ¥äºº  â•‘
+â•‘       åŠ å…¥ï¼Œæ­¤æ™‚æ‚¨å°±æ˜¯æ¡Œé•·ï¼Œæ“æœ‰å°‡æ­¤æ¡Œçš„ä½¿ç”¨è€…è¸¢å‡ºåŽ»çš„æ¬ŠåŠ›ã€‚             â•‘
+â•‘         åœ¨é–‹æ¡Œæ™‚ï¼Œæ‚¨å¯ä»¥ç”¨ "/note <å…¬å‘Šå…§å®¹>" ä¾†è¨­å®šé€™æ¡Œçš„å…¬å‘Šï¼Œè®“åˆ¥äºº   â•‘
+â•‘       çŸ¥é“é€™æ¡Œçš„ä¸€äº›è¦å®šã€‚                                               â•‘
+â•‘         ç•¶æ‚¨è‡ªå·±é–‹æ¡Œä¹‹å¾Œï¼Œå°±è€å¿ƒçš„ç­‰å¾…åˆ¥äººçš„åŠ å…¥. å¦‚æžœç›®å‰ä¸Šç·šçš„äººæ•¸æœ‰   â•‘
+â•‘       å¹¾åå€‹äººçš„è©±ï¼Œé€šå¸¸å¾ˆå¿«å°±èƒ½æ¹Šæ»¿ä¸€æ¡Œã€‚                               â•‘
+â•‘                                                                          â•‘
+â•‘   ç•¶ä¸€æ¡Œçš„äººæ•¸æ¹Šæ»¿å››äººä¹‹å¾Œï¼Œç•«é¢å°±æœƒè‡ªå‹•è®Šæˆæ‰“ç‰Œæ¨¡å¼ã€‚åœ¨é€™å€‹æ¨¡å¼ä¸‹ï¼Œæ‚¨   â•‘
+â•‘   å¯ä»¥ç”¨ <TAB> éµä¾†åˆ‡æ›è¦æ‰“ç‰Œæˆ–å’Œåˆ¥äººäº¤è«‡ã€‚è¼ªåˆ°æ‚¨æ‰“ç‰Œæ™‚ï¼Œæ‚¨å¯ä»¥ç”¨æ–¹å‘éµ  â•‘
+â•‘   é¸æ“‡è‡ªå·±æ‰€æƒ³æ‰“çš„ç‰Œï¼Œå†æŒ‰ <Space> æˆ– <Enter> æ‰“å‡ºåŽ»ï¼Œæˆ–è€…æ‚¨ä¹Ÿå¯ä»¥æŒ‰ä¸‹   â•‘
+â•‘   é‚£å¼µç‰Œçš„ä»£è™Ÿï¼Œå°±ç›´æŽ¥æ‰“å‡ºåŽ»ã€‚                                           â•‘
+â•‘                                                                          â•‘
+â•‘ â˜… ç•«é¢èªªæ˜Ž                                                              â•‘
+â•‘                                                                          â•‘
+â•‘   ç•¶æ‚¨é€²å…¥æ‰“ç‰Œç•«é¢æ™‚ï¼Œæ‚¨æœƒçœ‹åˆ°ç•«é¢ä¸­å¤®æ˜¯æ¯å€‹äººçš„ç‰Œï¼Œä¸‹é¢æ˜¯äº¤è«‡è¦–çª—ã€‚ç•«   â•‘
+â•‘   é¢çš„å³ä¸Šè§’æœ‰å››å€‹å°æ¬„ä½ï¼Œæ˜¯ç›®å‰åœˆé¢¨ã€é–€é¢¨ã€é€£èŽŠæ•¸åŠç›®å‰é›¢æµ·åº•é‚„å‰©å¹¾å¼µ   â•‘
+â•‘   ç‰Œã€‚å³é‚Šä¸­é–“æ‰€è¡¨ç¤ºçš„æ˜¯æ¯å€‹äººä½ç½®ã€ä»£è™Ÿä»¥åŠä»–ç›®å‰æ‰€æ“æœ‰çš„é‡‘é¡ã€‚åœ¨èŽŠå®¶   â•‘
+â•‘   çš„åå­—å³é‚Šæœƒæœ‰ä¸€å€‹åç™½çš„ "èŽŠ"ï¼Œä»£è¡¨ä»–ç›®å‰æ˜¯èŽŠå®¶ã€‚                      â•‘
+â•‘                                                                          â•‘
+â•‘   ç•«é¢å³ä¸‹è§’æ‰€é¡¯ç¤ºçš„æ˜¯å››å®¶çš„ç›¸é—œä½ç½®ï¼Œæ‚¨å¯ä»¥å’Œä¸Šé¢çš„ä½ç½®ã€ä»£è™Ÿæ¯”å°ï¼Œä¾†   â•‘
+â•‘   æ‰¾å‡ºèª°ååœ¨å“ªä¸€é‚Šã€‚åœ¨æ¯å®¶çš„æ—é‚Šé‚„æœ‰é¡¯ç¤ºæ•¸å­—ï¼Œä»£è¡¨æ¯å€‹äººæ‰“ç‰Œæ‰€èŠ±çš„æ™‚é–“ã€‚ â•‘
+â•‘   é€™å€‹æ™‚é–“æ˜¯è¼ªåˆ°æ‚¨æ‰“ç‰Œçš„æ™‚å€™æ‰é–‹å§‹è¨ˆç®—ã€‚é€™æ¨£å¤§å®¶åœ¨ä¸€èµ·æ‰“çš„æ™‚å€™ï¼Œå°±çŸ¥é“   â•‘
+â•‘   èª°æ‰“å¾—å¿«ï¼Œèª°æ‰“å¾—æ…¢äº†ã€‚                                                 â•‘
+â•‘                                                                          â•‘
+â•‘   å³ä¸‹è§’ç‚ºæ¯äººæ‰“ç‰Œé€Ÿåº¦ï¼Œé‡åˆ°äº‚ç¢¼æ™‚è«‹åˆ‡æ›è‡³å¦ä¸€ç•«é¢å†åˆ‡å›žä¾†               â•‘
+â•‘                                                                          â•‘
+â•‘ â˜… æŒ‡ä»¤èªªæ˜Ž                                                              â•‘
+â•‘                                                                          â•‘
+â•‘   æŒ‡ä»¤åˆ—è¡¨è«‹é€² QKMJ å¾Œæ‰“ "[1;33m/help[m" æŸ¥çœ‹                                    â•‘
+â•‘                                                                          â•‘
+â•‘   å·¦å³éµæˆ– ',' & '.'      é¸ç‰Œ                                           â•‘
+â•‘   <TAB>                   åˆ‡æ›å°è©±æˆ–æ‰“ç‰Œ                                 â•‘
+â•‘   Ctrl-U                  æ¸…é™¤å°è©±ç·©è¡å€                                 â•‘
+â•‘   Ctrl-C                  é›¢é–‹                                           â•‘
+â•‘   Ctrl-L                  é‡ç¹ªèž¢å¹•  (é‡åˆ°ç•«é¢äº‚æŽ‰æ™‚ä½¿ç”¨)                 â•‘
+â•‘   ä¸Šä¸‹éµæˆ– Ctrl-P,Ctrl-N  å°‹æ‰¾ä»¥å‰ç”¨éŽçš„å‘½ä»¤                             â•‘
+â•‘   Ctrl-A                  è·³åˆ°ä¸€è¡Œæœ€å‰ç«¯                                 â•‘
+â•‘   Ctrl-E                  è·³åˆ°ä¸€è¡Œæœ€æœ«ç«¯                                 â•‘
+â•‘                                                                          â•‘
+â•‘ â˜… è¨»å†Šæ–°å¸³è™Ÿ                                                            â•‘
+â•‘                                                                          â•‘
+â•‘   ç•¶æ‚¨é€²åŽ» QKMJ ä¹‹å¾Œï¼Œé¦–å…ˆè¼¸å…¥æ‚¨çš„åç¨± [ID]ã€‚é€™æ™‚å€™ç³»çµ±æœƒæª¢æŸ¥æ‚¨çš„åç¨±æ˜¯  â•‘
+â•‘   å¦åœ¨è³‡æ–™åº«ä¸­ã€‚å¦‚æžœæ‰¾ä¸åˆ°ï¼Œå°±æœƒèªç‚ºæ‚¨æ˜¯æ–°çš„ä½¿ç”¨è€…ï¼Œè¦æ‚¨è¼¸å…¥æ‰€æƒ³è¦çš„å¯†   â•‘
+â•‘   ç¢¼ã€‚é€™æ¨£å°±ç®—å®Œæˆè¨»å†Šäº†ã€‚                                               â•‘
+â•‘                                                                          â•‘
+â•‘   å¦‚æžœæ‚¨æ˜¯ç¬¬ä¸€æ¬¡ä¸Š QKMJï¼Œç³»çµ±å°±å•æ‚¨å¯†ç¢¼ï¼Œé‚£è¡¨ç¤ºé€™å€‹å¸³è™Ÿå·²ç¶“æœ‰äººç”¨äº†ï¼Œè«‹  â•‘
+â•‘   æ›ä¸€å€‹åç¨±ã€‚                                                           â•‘
+â•‘                                                                          â•‘
+â•°â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•¯
 
 
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

@@ -1,51 +1,51 @@
-�o�H�H: tsaikd.bbs@tsaikd.twbbs.org (�d�H��) �ݪO: plan
-��  �D: Re: [�{��] script �ֳt���� ITOC BBS �������P�B��s
-�o�H��: �a�U�c�]�� (2005/06/08 Wed 18:44:34)
+發信人: tsaikd.bbs@tsaikd.twbbs.org (千人斬) 看板: plan
+標  題: Re: [程式] script 快速的跟 ITOC BBS 的公版同步更新
+發信站: 地下惡魔城 (2005/06/08 Wed 18:44:34)
 
 #!/bin/bash
 # ========================================================================
-# �{���ت��G
-#     �� BBS Code �޲z�̥i�H�۰ʨ��o ITOC BBS �̷s�������{���X�κ�ذ�
-#     �åB�ֳt�X�ַs�ª���
+# 程式目的：
+#     讓 BBS Code 管理者可以自動取得 ITOC BBS 最新公版的程式碼及精華區
+#     並且快速合併新舊版本
 #
-# �ϥλ����G
-#     01. �Х��N�� script ���v����אּ�i����G
+# 使用說明：
+#     01. 請先將本 script 的權限更改為可執行：
 #           chmod 700 itoc_bbs.sh
-#     02. SOURCE_DIR �Цb�]�w�Ϥ��]�w
-#         ��U�Ӫ��{���X�N�|��b "SOURCE_DIR"/bbs_XXXXXX (XXXXXX ���������)
-#         ��U�Ӫ���ذϱN�|��b "SOURCE_DIR"/gem_XXXXXX (XXXXXX ���������)
-#     03. �b�X�ֵ{���X���e
-#         �Х��T�w "SOURCE_DIR" ������ӥH�W�� ITOC BBS �� sources
-#         �@�ӬO�s���A�@�ӬO�ª�
-#         �� script �u�|�ˬd�̷s����� sources code
-#         �ӥB���ƻݩ�b "SOURCE_DIR"/bbs_XXXXXXXX ( XXXXXXXX ��������� )
-#         ( ��ĳ�Υ��{�����ɮסA�H�T�w�榡�ۮe )
-#     04. �Щw���M�z "SOURCE_DIR" �H�K���Τj�q�w�ЪŶ�
-#         �u�n�d�̷s����� sources code �Ψ�ؿ��N���F
+#     02. SOURCE_DIR 請在設定區中設定
+#         抓下來的程式碼將會放在 "SOURCE_DIR"/bbs_XXXXXX (XXXXXX 為版本日期)
+#         抓下來的精華區將會放在 "SOURCE_DIR"/gem_XXXXXX (XXXXXX 為版本日期)
+#     03. 在合併程式碼之前
+#         請先確定 "SOURCE_DIR" 中有兩個以上的 ITOC BBS 的 sources
+#         一個是新的，一個是舊的
+#         本 script 只會檢查最新的兩個 sources code
+#         而且其資料需放在 "SOURCE_DIR"/bbs_XXXXXXXX ( XXXXXXXX 為版本日期 )
+#         ( 建議用本程式抓檔案，以確定格式相容 )
+#     04. 請定期清理 "SOURCE_DIR" 以免佔用大量硬碟空間
+#         只要留最新的兩個 sources code 及其目錄就夠了
 # ========================================================================
-# ���v�ŧi�G
-#     ���{�����K�O�n��
-#     �w��H����Φ����G
-#     �ФŰ��ӷ~�欰
-# �g�@���ҡG
+# 版權宣告：
+#     本程式為免費軟體
+#     歡迎以任何形式散佈
+#     請勿做商業行為
+# 寫作環境：
 #     Gentoo Linux
 #     Kernel 2.6.11-gentoo-r8
-# ���Φ^���G
+# 臭蟲回報：
 #     tsaikd <tsaikd@gmail.com>
-# ���v�����G
-#     2005/06/01 tsaikd         �������X
-#     2005/06/07 tsaikd		�ק���o�ɮצC���覡
-#                               ���ˬd�O�_�ݭn�U��
-#     2005/06/07 tsaikd         �ץ��@�ǳy���Ŧr�ꪺ bug
-#     2005/06/08 tsaikd		�s�W���n�{���ۧ��˴�����
-#     2005/06/10 tsaikd         �W�[�@�ǤH�ʤƪ�����A����G�ק�s
-#     2005/08/04 tsaikd		�N get �� merge ��� script �X��
-#     2005/08/05 tsaikd		�ק��ˬd�Ѽƪ�����
-#     2005/08/21 tsaikd		�s�W�ɮ׮ɤ���� cp ���~
-#     2005/09/22 tsaikd		�ѨM sym link �|���ͪ����D
-#     2005/10/18 tsaikd		�ק�@�ǲ»y�k
+# 歷史紀錄：
+#     2005/06/01 tsaikd         首次釋出
+#     2005/06/07 tsaikd		修改取得檔案列的方式
+#                               並檢查是否需要下載
+#     2005/06/07 tsaikd         修正一些造成空字串的 bug
+#     2005/06/08 tsaikd		新增必要程式自我檢測機制
+#     2005/06/10 tsaikd         增加一些人性化的控制，防止二度更新
+#     2005/08/04 tsaikd		將 get 跟 merge 兩個 script 合併
+#     2005/08/05 tsaikd		修改檢查參數的機制
+#     2005/08/21 tsaikd		新增檔案時不顯示 cp 錯誤
+#     2005/09/22 tsaikd		解決 sym link 會產生的問題
+#     2005/10/18 tsaikd		修改一些笨語法
 # ========================================================================
-#                               �{���ۧ��˴�
+#                               程式自我檢測
 # ========================================================================
 PROGRAM_LIST="awk basename cat clear cp cut date df diff grep head ls lynx mv patch rm tail tar tr wget"
 for i in $PROGRAM_LIST ; do
@@ -55,9 +55,9 @@ for i in $PROGRAM_LIST ; do
   fi
 done
 # ========================================================================
-#                                  �]�w��
+#                                  設定區
 # ========================================================================
-ITOC_WEB_SITE="http://processor.tfcis.org/~itoc/" # ITOC ������
+ITOC_WEB_SITE="http://processor.tfcis.org/~itoc/" # ITOC 的網站
 SOURCE_DIR="/home/bbs/tmp"
 
 START_LINE="vvvvvvvvvvvvvvvvvvvvv==== start ====vvvvvvvvvvvvvvvvvvvvvvvvv"
@@ -67,7 +67,7 @@ START_LINE="vvvvvvvvvvvvvvvvvvvvv==== start ====vvvvvvvvvvvvvvvvvvvvvvvvv"
 HOME="$(cd;pwd)"
 TIME='$(date "+%F %T")'
 # ========================================================================
-#                                 �{���}�l
+#                                 程式開始
 # ========================================================================
 
 function echoerr () { [ -w "/dev/stderr" ] && echo "$*" > /dev/stderr || echo "$*" ; }
@@ -289,17 +289,17 @@ while [ -n "$ARGV" ] ; do unset PARA_KEY
 done
 
 # ========================================================================
-#                                 �{������
+#                                 程式結束
 # ========================================================================
 
 
 --
- [7;30;41m�d        �H         ��    KD !![m [1;31m�a�U�c�]�� [32mtelnet://bbs.tsaikd.twbbs.org[m
- [1;37;44mK[m [1;37;44mD[melete         ������ [31m����A��Ǥl "��" !![m
- i    ~~ [1;31m��[m     [1;5;33m�e�d�c�b[m       �s��    �s��    �s�� �ְk��!!
- l    ~~ ���á�                  ���t    ���t    ���t
- o   ~ ����                  ..�t�r....�t�r....�t�r[m
+ [7;30;41m千        人         斬    KD !![m [1;31m地下惡魔城 [32mtelnet://bbs.tsaikd.twbbs.org[m
+ [1;37;44mK[m [1;37;44mD[melete         殺殺殺 [31m殺到你脫褲子 "放屁" !![m
+ i    ~~ [1;31m●[m     [1;5;33m▄▃▂▁[m       ︿◎    ︿◎    ︿◎ 快逃啊!!
+ l    ~~ ◤￣￣                  ◤﹀    ◤﹀    ◤﹀
+ o   ~ ／∣                  ..﹀〉....﹀〉....﹀〉[m
 
 --
- [1;43m��[46m��[m Or[1mig[30min[m: [41m ���j��T���a�U�c�]�� [36;47m tsaikd.twbbs.org [m
- [1;44m��[41m��[m A[1mut[30mho[mr: [1;33mtsaikd [30m�q [31mtsaikd.v1.dorm.ncku.edu.tw [30m�o��[m
+ [1;43m◤[46m◥[m Or[1mig[30min[m: [41m 成大資訊˙地下惡魔城 [36;47m tsaikd.twbbs.org [m
+ [1;44m◣[41m◢[m A[1mut[30mho[mr: [1;33mtsaikd [30m從 [31mtsaikd.v1.dorm.ncku.edu.tw [30m發表[m

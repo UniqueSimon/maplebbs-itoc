@@ -1,9 +1,9 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G802) ¬ÝªO: plan
-¼ÐÃD: [¥\¯à] ¦¬«H¦^±ø
-®É¶¡: 2006/04/09 Sun 03:38:14                           Updated: 2006/04/10
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š802) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] æ”¶ä¿¡å›žæ¢
+æ™‚é–“: 2006/04/09 Sun 03:38:14                           Updated: 2006/04/10
 
-¡° ¤Þ­z¡meddieoboe (EDDIE)¡n¤§»Ê¨¥¡G
-> bbsmail¬O§_¯à¼g¥X¹³¬Ooutlook¨ººØ¦¬«H¦^±ø
+â€» å¼•è¿°ã€Šeddieoboe (EDDIE)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> bbsmailæ˜¯å¦èƒ½å¯«å‡ºåƒæ˜¯outlooké‚£ç¨®æ”¶ä¿¡å›žæ¢
 
 : hdr.h
 
@@ -15,11 +15,11 @@
 #define FN_ETC_EXPIRE   "etc/expire.conf"
 + #define FN_ETC_RECEIPT   "etc/receipt"
 
-: etc/receipt ·s¼W¦¹ÀÉ®×
+: etc/receipt æ–°å¢žæ­¤æª”æ¡ˆ
 
-  §Ú¤w¸g¦¬¨ì³o«Ê«H¤F
+  æˆ‘å·²ç¶“æ”¶åˆ°é€™å°ä¿¡äº†
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
 : bbsmail.c:mail2bbs()
 
@@ -51,7 +51,7 @@
 + if (notification)
 +   hdr.xmode |= MAIL_DSN;
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
 : bmtad.c:struct Agent
 
@@ -83,17 +83,17 @@
 + if (ap->notification)
 +   hdr.xmode |= MAIL_DSN;
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
 : mail.c:mbox_browse()
 
     if (nmode == 0 && !(xmode & MAIL_READ))
     {
 +     if (xmode & MAIL_DSN &&
-+       vans("¹ï¤è­n¨DÅª¨ú¦^±ø¡A­n¦^¶Ü(Y/N)¡H[Y] ") != 'n')
++       vans("å°æ–¹è¦æ±‚è®€å–å›žæ¢ï¼Œè¦å›žå—Ž(Y/N)ï¼Ÿ[Y] ") != 'n')
 +     {
 +       char title[80];
-+       sprintf(title, "Åª¨ú: %.64s", str_ttl(hdr->title));
++       sprintf(title, "è®€å–: %.64s", str_ttl(hdr->title));
 +       bsmtp(FN_ETC_RECEIPT, title, hdr->owner, 0);
 +     }
       hdr->xmode = xmode | MAIL_READ;
@@ -101,7 +101,7 @@
     }
 
 --
-  ÀH«K¼g¼gªº¡A¨S¸Õ¹L :p
+  éš¨ä¾¿å¯«å¯«çš„ï¼Œæ²’è©¦éŽ :p
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

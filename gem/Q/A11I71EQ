@@ -1,28 +1,28 @@
-�o�H�H: hialan.bbs@bbs.math.cycu.edu.tw (�L���ӻ{�u) �ݪO: plan
-��  �D: [�\��] BBS �оǨt��
-�o�H��: �ƾǤ��a (2005/09/11 Sun 03:43:30)                Updated: 2005/09/12
+發信人: hialan.bbs@bbs.math.cycu.edu.tw (過的太認真) 看板: plan
+標  題: [功能] BBS 教學系統
+發信站: 數學之家 (2005/09/11 Sun 03:43:30)                Updated: 2005/09/12
 
-�]���ڭ̨t�W���\�h�H���|�ϥ� BBS
-�ҥH�ڥ���b�ϥΪ̵��U������A�ХL�̾\Ū BBS ²�檺�ާ@����
+因為我們系上有許多人不會使用 BBS
+所以我打算在使用者註冊完之後，請他們閱讀 BBS 簡單的操作說明
 
-���O�p�G�ϥκ�ذϪ��Ҧ��Ӽg���A�N�������]�ϥΪ̤w�g�|�ϥκ�ذ�
-�ҥH�ڼg�F�@�ӪF��A��²�� BBS �p��ϥΡC
+但是如果使用精華區的模式來寫文件，就必須假設使用者已經會使用精華區
+所以我寫了一個東西，來簡介 BBS 如何使用。
 
-�]���g���覡���I�ɤO�A�ҥH�Q����ڧ������[�c���G�b�o��
-�Ʊ榳�ۦP�x�Z�άO����n�갵�覡���H������I�N��
+因為寫的方式有點暴力，所以想先把我完成的架構公佈在這裡
+希望有相同困擾或是有更好實做方式的人能夠給點意見
 
-�����{�b�n�ק鷺�e��b�O�ӳ·ФF�A�ӧڳ̧Ʊ檺�O���e�M�{�����}
-�ӤS�Ʊ�u�n�@�Ӥ��N�i�H�F���A�N�O�o�� @@"
+畢竟現在要修改內容實在是太麻煩了，而我最希望的是內容和程式分開
+而又希望只要一個文件就可以達成，就是這樣 @@"
 
-�{�b����ڤw�g�g�n���F��K�W�ӡA���M�Ʊ榳�ݨ쪺�H������ǷN���A�P��
+現在先把我已經寫好的東西貼上來，當然希望有看到的人能夠給些意見，感恩
 ====================================================================
 
-/* bbsteach.c BBS �оǨt��! */
+/* bbsteach.c BBS 教學系統! */
 
 #include "bbs.h"
 
 #define FEETER_TEACH    \
-COLOR1 "  BBS �о�  " COLOR2 " �����`�w�g�����A�Ы����N���ܳ��`       \033[m
+COLOR1 "  BBS 教學  " COLOR2 " 本章節已經結束，請按任意鍵選擇章節       \033[m
 "
 
 #define TEACH_MSGTOP    2
@@ -40,20 +40,20 @@ bbsteach_msg(int line, char *msg)
 
     if(line < TEACH_MSGTOP && line > 0)
     {
-        /*�b�ثe����ܰT��*/
+        /*在目前行顯示訊息*/
         mycurrline = TEACH_MSGTOP;
     }
     else if(line == MODE_CLEAR)
     {
-        /*�M�ŵe��*/
+        /*清空畫面*/
         clear();
-        outs("\033[0;1;46m�i BBS �оǨt�� �j\033[m");
+        outs("\033[0;1;46m【 BBS 教學系統 】\033[m");
         mycurrline = TEACH_MSGTOP;
         line = MODE_NOWAIT;
     }
     else if(line == MODE_WAIT || line == MODE_NOWAIT)
     {
-        /*�U�@��*/
+        /*下一行*/
         if(++mycurrline > TEACH_MSGBOT)
             return bbsteach_msg(MODE_CLEAR, msg);
     }
@@ -96,7 +96,7 @@ bbsteach_key(int key, char *msg)
 
     move(b_lines, 0);
     clrtoeol();
-    prints(COLOR1 " �� �п�J %-60.60s\033[m", msg);
+    prints(COLOR1 " ★ 請輸入 %-60.60s\033[m", msg);
 
     while((cmd = vkey()) != key)
     {
@@ -108,19 +108,19 @@ bbsteach_key(int key, char *msg)
         if(islower(key))
         {
             if(tolower(cmd) == key && isupper(cmd))
-                sprintf(buf, "�ڳ�! �A��J��j�g�� %c �F�A�ӧڻݭn���O�p�g�� %c�A�Ъ`�N�A
-���S���}�Ҥj�g�O!", cmd, key);
+                sprintf(buf, "歐喔! 你輸入到大寫的 %c 了，而我需要的是小寫的 %c，請注意你
+有沒有開啟大寫燈!", cmd, key);
         }
         else if(isupper(key))
         {
             if(toupper(cmd) == key && islower(cmd))
-                sprintf(buf, "�ڳ�! �A��J��p�g�� %c �F�A�ӧڻݭn���O�j�g�� %c�A�Ъ`�N�A
-���S���}�Ҥj�g�O!", cmd, key);
+                sprintf(buf, "歐喔! 你輸入到小寫的 %c 了，而我需要的是大寫的 %c，請注意你
+有沒有開啟大寫燈!", cmd, key);
         }
 
         if(str >= 0x81 && str < 0xFE)
         {
-            sprintf(buf, "�ڳ�! �A��J���O�����Ÿ��A�п�J�b���� %c ��!", key);
+            sprintf(buf, "歐喔! 你輸入的是全型符號，請輸入半型的 %c 喔!", key);
         }
 
         if(buf[0] != '\0')
@@ -149,126 +149,126 @@ int bbsteach()
         switch(playing)
         {
         case 0:
-            bbsteach_msg(MODE_CLEAR, "�w��ϥ� BBS �оǨt��");
+            bbsteach_msg(MODE_CLEAR, "歡迎使用 BBS 教學系統");
             nextmsg(0);
-            nextmsg("���t�η|���� BBS �򥻨ϥΪ��覡");
-            nextmsg("�D�n���ѵ��٨S�ϥιL BBS ���ϥΪ̡C");
-            nextmsg("\033[1;33;41m  �j�P��ĳ�٨S�l�ιL BBS �\\Ū�����C  \033[m");
-            nextmsg("�p�G���t�Φb�z�n�J�ɦ۰ʥX�{�A���ܱz�|���q�L�{�ҡC");
+            nextmsg("本系統會介紹 BBS 基本使用的方式");
+            nextmsg("主要提供給還沒使用過 BBS 的使用者。");
+            nextmsg("\033[1;33;41m  強烈建議還沒始用過 BBS 閱\讀本文件。  \033[m");
+            nextmsg("如果本系統在您登入時自動出現，表示您尚未通過認證。");
             nextmsg(0);
-            nextmsg("�A�i�H�b�H�U�a����o�ӱоǺ��F�G");
-            nowaitmsg("(\033[1;36mX\033[m)yz       �i �S���۫ݩ� �j");
-            nowaitmsg("    (\033[1;36mO\033[m)ther      �i ���C���K �j");
-            nowaitmsg("        (\033[1;36mB\033[m)BSTeach   �i �оǺ��F �j");
+            nextmsg("你可以在以下地方找到這個教學精靈：");
+            nowaitmsg("(\033[1;36mX\033[m)yz       【 特殊招待所 】");
+            nowaitmsg("    (\033[1;36mO\033[m)ther      【 雜七雜八 】");
+            nowaitmsg("        (\033[1;36mB\033[m)BSTeach   【 教學精靈 】");
             nextmsg(0);
-            nextmsg("�p�G�z�Q�n���}���t�ΡA�Цb�y���J '0' ����!");
+            nextmsg("如果您想要離開本系統，請在稍後輸入 '0' 結束!");
 
             break;
         case 1:
-            bbsteach_msg(MODE_CLEAR, "BBS �s���覡²��");
+            bbsteach_msg(MODE_CLEAR, "BBS 瀏覽方式簡介");
             nextmsg(0);
-            nextmsg("�n�s�� BBS �A�u�n�ϥ���L����V��Y�i");
-            nextmsg("���� (��) �q�`�N�����}�A���k (��) �q�`�N���i�J�ξ\\Ū");
-            nextmsg("���M�A�A�]�i�H�ϥέ^��r���Ӱ��S�w�\\�઺�Ʊ��C");
-            nextmsg("���n�`�N�j�p�g�^��r���O���@�˪��A���O 'A' �M 'a' �N�|���ͤ��P�����G�C");
-            nextmsg("�ҥH�ЯS�O�`�N�A���j�g�O(��L�k��T�ӿO��������)�O�_�w�g�}�ҡC");
+            nextmsg("要瀏覽 BBS ，只要使用鍵盤的方向鍵即可");
+            nextmsg("往左 (←) 通常代表離開，往右 (→) 通常代表進入或閱\讀");
+            nextmsg("當然，你也可以使用英文字母來做特定功\能的事情。");
+            nextmsg("但要注意大小寫英文字母是不一樣的，像是 'A' 和 'a' 就會產生不同的結果。");
+            nextmsg("所以請特別注意你的大寫燈(鍵盤右邊三個燈中間那個)是否已經開啟。");
             nextmsg(0);
-            nextmsg("�����ɭԧA�i��|�����D���������i�H�ΡA�o�ɭԧA�i�H�ݬݵe���̤U��άO�e���W��C");
+            nextmsg("有的時候你可能會不知道有什麼按鍵可以用，這時候你可以看看畫面最下方或是畫面上方。");
             nextmsg(FEETER_TEACH);
-            nextmsg("�L�|��ܦb�ثe���p�U�̱`�Ϊ�������O�C���O�e�������A�`����C�X�Ҧ����O�C");
-            nextmsg("�o�ɭԧڭ̴N�i�H�� �p�g 'h' �Ӭݬ��ݩ󦹵e��������");
+            nextmsg("他會顯示在目前情況下最常用的按鍵指令。但是畫面有限，總不能列出所有指令。");
+            nextmsg("這時候我們就可以按 小寫 'h' 來看看屬於此畫面的說明");
             nextmsg(0);
-            nextmsg("���U�ӧڭ̱N���г̥��ݨ쪺�ؿ����C");
+            nextmsg("接下來我們將介紹最先看到的目錄選單。");
 
             break;
 
         case 2:
-            bbsteach_msg(MODE_CLEAR, "�ؿ����");
+            bbsteach_msg(MODE_CLEAR, "目錄選單");
             nextmsg(0);
-            nextmsg("�b�z�i�J BBS ����A�|�ݨ�p�U�����G");
-            nowaitmsg("(\033[1;36mA\033[m)nnounce  �i ��ؤ��G�� �j");
-            nowaitmsg("(\033[1;36mB\033[m)oards    �i �G�i�Q�װ� �j");
-            nowaitmsg("(\033[1;36mC\033[m)lass     �i ���հQ�׶� �j");
-            nowaitmsg("(\033[1;36mF\033[m)avorite  �i �ڪ��̷R�s �j");
-            nowaitmsg("(\033[1;36mM\033[m)ail      �i �H����ò� �j");
-            nowaitmsg("(\033[1;36mT\033[m)alk      �i �𶢲�Ѧa �j");
-            nowaitmsg("(\033[1;36mU\033[m)ser      �i �ӤH�u��{ �j");
-            nowaitmsg("(\033[1;36mX\033[m)yz       �i �S���۫ݩ� �j");
-            nowaitmsg("(\033[1;36mG\033[m)oodbye   �i �U���A�|�a �j");
+            nextmsg("在您進入 BBS 之後，會看到如下的選單：");
+            nowaitmsg("(\033[1;36mA\033[m)nnounce  【 精華公佈欄 】");
+            nowaitmsg("(\033[1;36mB\033[m)oards    【 佈告討論區 】");
+            nowaitmsg("(\033[1;36mC\033[m)lass     【 分組討論集 】");
+            nowaitmsg("(\033[1;36mF\033[m)avorite  【 我的最愛群 】");
+            nowaitmsg("(\033[1;36mM\033[m)ail      【 信件典藏盒 】");
+            nowaitmsg("(\033[1;36mT\033[m)alk      【 休閒聊天地 】");
+            nowaitmsg("(\033[1;36mU\033[m)ser      【 個人工具坊 】");
+            nowaitmsg("(\033[1;36mX\033[m)yz       【 特殊招待所 】");
+            nowaitmsg("(\033[1;36mG\033[m)oodbye   【 下次再會吧 】");
             nextmsg(0);
-            nextmsg("�A�i�H���ʿ�����(�N�O�Ŧ⪺����)��A�Q�n�i�J���a��");
-            nextmsg("�Ҧp: [\033[1;44m(C)lass     �i ���հQ�׶� �j\033[m]");
-            nextmsg("�M��ϥ� (��) �i�J�A (��) ���}");
+            nextmsg("你可以移動選單光棒(就是藍色的那個)到你想要進入的地方");
+            nextmsg("例如: [\033[1;44m(C)lass     【 分組討論集 】\033[m]");
+            nextmsg("然後使用 (→) 進入， (←) 離開");
             nextmsg(0);
-            nextmsg("�o�̭����ܦh�F��A�X�G�Ҧ����Ѫ��\\�ೣ�|��b�W��");
-            nextmsg("�b�����o�Ӻ��F����A�z�i�H��B�ݬݡA�o�� BBS �̭��쩳������\\��C");
+            nextmsg("這裡面有很多東西，幾乎所有提供的功\能都會放在上面");
+            nextmsg("在結束這個精靈之後，您可以到處看看，這個 BBS 裡面到底有什麼功\能。");
 
             break;
 
         case 3:
-            bbsteach_msg(MODE_CLEAR, "��ܬݪO");
+            bbsteach_msg(MODE_CLEAR, "選擇看板");
             nextmsg(0);
-            nextmsg("�b BBS ���\\�h�Q�׸s�աA�Ӥ@�ӰQ�׸s�էڭ̥s���ݪO�C");
-            nextmsg("���F���ڭ̧�֧��ڭ̷Q�n���ݪO�A�q�`���|�N�ݪO�����C");
+            nextmsg("在 BBS 有許\多討論群組，而一個討論群組我們叫做看板。");
+            nextmsg("為了讓我們更快找到我們想要的看板，通常都會將看板分類。");
             nextmsg(0);
-            nextmsg("���ۧڭ̥ܽd�p���� sysop �ݪO�C");
-            nextmsg("�����A�b�D�ؿ���ܡi ���հQ�׶� �j");
+            nextmsg("接著我們示範如何找到 sysop 看板。");
+            nextmsg("首先，在主目錄選擇【 分組討論集 】");
             nextmsg(0);
-            nextmsg("[\033[1;44m(C)lass     �i ���հQ�׶� �j\033[m]");
+            nextmsg("[\033[1;44m(C)lass     【 分組討論集 】\033[m]");
             nextmsg(0);
-            nextmsg("�M����(�N '>' �Ÿ�����e���A�άO�Υ��ο�ܥL)");
+            nextmsg("然後選擇(將 '>' 符號移到前面，或是用光棒選擇他)");
             nextmsg(0);
-            nextmsg("     1 \033[1;36m��BBS/\033[m                 [ ���Ⱥ޲z ] BBS �����ưȰQ�װ�");
+            nextmsg("     1 \033[1;36m□BBS/\033[m                 [ 站務管理 ] BBS 相關事務討論區");
             nextmsg(0);
-            nextmsg("�M��ϥ� (��) �άO ENTER �i�J�o�Ӥ����C���ۿ�ܡG");
+            nextmsg("然後使用 (→) 或是 ENTER 進入這個分類。接著選擇：");
             nextmsg(0);
-            nextmsg("  1176   sysop        \033[1;30m����\033[m �� ���i�����I�ƾǤ��a�ۭt��~~       1 SYSOP");
+            nextmsg("  1176   sysop        \033[1;30m站務\033[m ◇ 報告站長！數學之家欺負我~~       1 SYSOP");
             nextmsg(0);
-            nextmsg("�p���@�ӡA�A�N�i�J sysop �ݪO�F�C");
+            nextmsg("如此一來，你就進入 sysop 看板了。");
             nextmsg(0);
-            nextmsg("���ۧڭ̱N�ЧA�p��\\Ū�P�o���峹�C");
+            nextmsg("接著我們將教你如何閱\讀與發表文章。");
 
             break;
 
         case 4:
-            bbsteach_msg(MODE_CLEAR, "�\\Ū�P�o���峹");
+            bbsteach_msg(MODE_CLEAR, "閱\讀與發表文章");
             nextmsg(0);
-            nextmsg("�\\Ū�峹�N�p�P��ܬݪO�@�ˡA�N '>' ����Q�n�\\Ū���峹�e���C");
-            nextmsg("(��)�i�J�A��(��)(��)�άO �ť��� �\\Ū�峹�A�� (��) ���}�C");
+            nextmsg("閱\讀文章就如同選擇看板一樣，將 '>' 移到想要閱\讀的文章前面。");
+            nextmsg("(→)進入，按(↑)(↓)或是 空白鍵 閱\讀文章，按 (←) 離開。");
             nextmsg(0);
-            nextmsg("�{�b�ڭ̨ӵo���峹�C");
-            nextmsg("�b�ݪO�C�������� 'Ctrl' �A�� 'p'�C");
-            nextmsg("(�o�زզX����ڭ̳q�`���ܦ� Ctrl+P) �N�i�H�o���峹");
-            nowaitmsg("�{�b�N�ЧA�� Ctrl+P �a!");
+            nextmsg("現在我們來發表文章。");
+            nextmsg("在看板列表中按著 'Ctrl' 再按 'p'。");
+            nextmsg("(這種組合按鍵我們通常表示成 Ctrl+P) 就可以發表文章");
+            nowaitmsg("現在就請你按 Ctrl+P 吧!");
 
             bbsteach_key(Ctrl('P'), "Ctrl+P");
-            nextmsg("�ܦn�A�ثe�A�w�g�i�J�o���峹���Ҧ��F�A���۽ЧA��J���D:");
+            nextmsg("很好，目前你已經進入發表文章的模式了，接著請你輸入標題:");
 
-            vget(b_lines, 0, "���D: ", buf, 60, DOECHO);
+            vget(b_lines, 0, "標題: ", buf, 60, DOECHO);
 
-            move(b_lines, 0);   /*�n���|�����D -_-*/
+            move(b_lines, 0);   /*好像會有問題 -_-*/
             clrtoeol();
 
             nextmsg(0);
             nextmsg(buf);
             nextmsg(0);
-            nextmsg("�{�b�ڭ̭n�s��峹�A�A�i�H�b�̭��ϥΤ�V�䱱���СA�ݬݭn�b���̿�J�C");
-            nextmsg("�b�̫e���p�G�O '~' �Ÿ��A���ܨ��@��ثe�S���F��C�A�N�L�k���ʨ쨺�Ӧ�m�C");
-            nextmsg("�A�g���峹�H��p�G�Q�n�s�����}�A�ШϥΫ��� Ctrl+X�C");
-            nextmsg("�M���ܦs�� (��J�p�g 's') �M��� ENTER �Y�i�C");
-            nowaitmsg("�{�b���ի���A�п�J Ctrl+X");
+            nextmsg("現在我們要編輯文章，你可以在裡面使用方向鍵控制游標，看看要在哪裡輸入。");
+            nextmsg("在最前面如果是 '~' 符號，表示那一行目前沒有東西。你將無法移動到那個位置。");
+            nextmsg("再寫完文章以後如果想要存檔離開，請使用按鍵 Ctrl+X。");
+            nextmsg("然後選擇存檔 (輸入小寫 's') 然後按 ENTER 即可。");
+            nowaitmsg("現在測試按鍵，請輸入 Ctrl+X");
 
             bbsteach_key(Ctrl('X'), "Ctrl+X");
 
-            nextmsg("�{�b�ڭ̱N�s��峹�A�аO�o�ϥ� Ctrl+X �o��峹�����}�C");
+            nextmsg("現在我們將編輯文章，請記得使用 Ctrl+X 發摽文章或離開。");
 
             sprintf(buf, "tmp/bbsteach_post");
             vedit(buf, 0);
 
             unlink(buf);
 
-            bbsteach_msg(MODE_CLEAR, "�ܦn�A�A�{�b�w�g�|�o���峹�F!");
-            nextmsg("���ۡA�ڭ̱N�ЧA�p��^���峹�C");
+            bbsteach_msg(MODE_CLEAR, "很好，你現在已經會發表文章了!");
+            nextmsg("接著，我們將教你如何回應文章。");
 
             break;
 
@@ -277,26 +277,26 @@ int bbsteach()
             struct tm *ptime;
             time_t now;
 
-            bbsteach_msg(MODE_CLEAR, "�^�Ф峹�P���ˤ峹");
+            bbsteach_msg(MODE_CLEAR, "回覆文章與推薦文章");
             nextmsg(0);
-            nextmsg("�q�`�ݨ�@�g�峹�A�p�G�A���N���Q�n�o���A�ӫ���O?");
-            nextmsg("�o�ɭԧڭ̥i�H�ϥΤp�g 'y' �Ӧ^���峹�C");
-            nowaitmsg("�{�b�N���ڭ̨ӽm�ߤ@�U�p��^�_�峹�a! �Ы��p�g 'y'");
+            nextmsg("通常看到一篇文章，如果你有意見想要發表，該怎麼辦呢?");
+            nextmsg("這時候我們可以使用小寫 'y' 來回應文章。");
+            nowaitmsg("現在就讓我們來練習一下如何回復文章吧! 請按小寫 'y'");
 
-            bbsteach_key('y', "�p�g 'y'");
+            bbsteach_key('y', "小寫 'y'");
 
-            nextmsg("�ܦn�A�{�b�w�g�i�J�^�Ф峹�����A�F�C");
-            nextmsg("�M��t�η|�ݧA�n�^�Ш�ݪO�A�٬O�@�̫H�c�C�q�`����ܬݪO�C");
+            nextmsg("很好，現在已經進入回覆文章的狀態了。");
+            nextmsg("然後系統會問你要回覆到看板，還是作者信箱。通常都選擇看板。");
 
-            vget(b_lines, 0, "�� �^���� (F)�ݪO (M)�@�̫H�c (B)�G�̬ҬO (Q)�����H[F] ", buf, 3, LCECHO);
+            vget(b_lines, 0, "▲ 回應至 (F)看板 (M)作者信箱 (B)二者皆是 (Q)取消？[F] ", buf, 3, LCECHO);
             move(b_lines, 0);
             clrtoeol();
 
             nextmsg(0);
-            nextmsg("�M��t�η|�ЧA�ק���D�C");
+            nextmsg("然後系統會請你修改標題。");
 
-            strcpy(buf, "�o�O��媺���D�C");
-            vget(b_lines, 0, "���D�G", buf, 60, GCARRY);
+            strcpy(buf, "這是原文的標題。");
+            vget(b_lines, 0, "標題：", buf, 60, GCARRY);
             move(b_lines, 0);
             clrtoeol();
 
@@ -304,63 +304,63 @@ int bbsteach()
             nextmsg(buf);
             nextmsg(0);
 
-            nextmsg("���۷|�߰ݬO�_�n�ޥέ��C");
-            nextmsg("�䤤����S�����O�ޥΥ���A�L�|�s���D�ɶ��������ܦ��ޤ�C");
-            nextmsg("�٦��@�ӥs�����K����A�L���|�ק�峹������a��C");
-            nowaitmsg("�{�b�N���ڭ̨ӸոլݡC");
+            nextmsg("接著會詢問是否要引用原文。");
+            nextmsg("其中比較特殊的是引用全文，他會連標題時間等等都變成引文。");
+            nextmsg("還有一個叫做重貼全文，他不會修改文章的任何地方。");
+            nowaitmsg("現在就讓我們來試試看。");
 
-            vget(b_lines, 0, "�O�_�ޥέ�� Y)�ޥ� N)���ޥ� A)�ޥΥ��� R)���K���� 1-9)�ޥμh�ơH[Y] ", buf, 3, LCECHO);
+            vget(b_lines, 0, "是否引用原文 Y)引用 N)不引用 A)引用全文 R)重貼全文 1-9)引用層數？[Y] ", buf, 3, LCECHO);
             move(b_lines, 0);
             clrtoeol();
 
-            nextmsg("���۴N�O�s��峹�A�Ӹ`�о\\Ū�W�@�ӳ��`�C");
+            nextmsg("接著就是編輯文章，細節請閱\讀上一個章節。");
 
-            bbsteach_msg(MODE_CLEAR, "���ˤ峹");
+            bbsteach_msg(MODE_CLEAR, "推薦文章");
             nextmsg(0);
-            nextmsg("�٦��t�~�@�ئ^�Ъ�����N�O���ˤ峹�C");
-            nextmsg("�p�G�A��o�g�峹�u���@�I�I�p�N���A���O�u���@�y�ܦӤw�A�٨S���j��ݭn�^�媺�a�B�C");
-            nextmsg("�o�ӮɭԴN�i�H�ϥα��ˤ峹�C");
+            nextmsg("還有另外一種回覆的機制就是推薦文章。");
+            nextmsg("如果你對這篇文章只有一點點小意見，像是只有一句話而已，還沒有大到需要回文的地步。");
+            nextmsg("這個時候就可以使用推薦文章。");
             nextmsg(0);
-            nextmsg("���ˤ峹�u�ݭn�b�峹�e����J '%' �Ÿ��A�M��N�z�ѥ��W�Y�i�C");
-            nowaitmsg("�{�b�N���ڭ̨ӹ�ߤ@�U�G");
+            nextmsg("推薦文章只需要在文章前面輸入 '%' 符號，然後將理由打上即可。");
+            nowaitmsg("現在就讓我們來實習一下：");
 
-            bbsteach_key('%', "�b�� %");
+            bbsteach_key('%', "半型 %");
 
-            vget(b_lines, 0, "�� ���� 1)����H[1]", buf, 3, LCECHO);
+            vget(b_lines, 0, "◎ 評分 1)推文？[1]", buf, 3, LCECHO);
             move(b_lines, 0);
             clrtoeol();
 
-            strcpy(buf, "�o�̬O���ˤ��e!!");
-            vget(b_lines, 0, "�п�J�z�ѡG", buf, 60, GCARRY);
+            strcpy(buf, "這裡是推薦內容!!");
+            vget(b_lines, 0, "請輸入理由：", buf, 60, GCARRY);
             move(b_lines, 0);
             clrtoeol();
 
             nextmsg(buf);
             nextmsg(0);
-            nextmsg("�M��|�b�峹�U���[�J�H�U���G�G");
+            nextmsg("然後會在文章下面加入以下結果：");
             nextmsg(0);
 
             time(&now);
             ptime = localtime(&now);
-            sprintf(buf2, "�� \033[36m%s \033[1;31m��\033[m�G%-*s%02d/%02d/%02d\n",
+            sprintf(buf2, "→ \033[36m%s \033[1;31m推\033[m：%-*s%02d/%02d/%02d\n",
                 cuser.userid, 62 - strlen(cuser.userid), buf,
                 ptime->tm_year % 100, ptime->tm_mon + 1, ptime->tm_mday);
 
             nextmsg(buf2);
             nextmsg(0);
 
-            nextmsg("�p���N��������F!");
+            nextmsg("如此就完成推文了!");
 
             break;
         }
 
         default:
-            bbsteach_msg(MODE_CLEAR, "���оǤw�g�����C");
+            bbsteach_msg(MODE_CLEAR, "本教學已經完畢。");
             nextmsg(0);
-            nextmsg("���§A�@�߬ݧ��o���оǤ��C");
-            nextmsg("�p�G�٦�������D�Ъ����b sysop �ݪO���o��");
-            nextmsg("���ߪ����ȱN�|�i�D�A�ѨM���覡�C");
-            nextmsg("���z���Ӵr�֨ϥ� BBS ���g��C");
+            nextmsg("謝謝你耐心看完這份教學文件。");
+            nextmsg("如果還有任何問題請直接在 sysop 看板中發問");
+            nextmsg("熱心的站務將會告訴你解決的方式。");
+            nextmsg("祝您有個愉快使用 BBS 的經驗。");
 
             playing = -1;
             return 0;
@@ -374,21 +374,21 @@ int bbsteach()
 
         while(1)
         {
-                bbsteach_msg(MODE_CLEAR, "��ܳ��`");
+                bbsteach_msg(MODE_CLEAR, "選擇章節");
                 nextmsg(0);
-                nowaitmsg("�Ъ����� ENTER �ݤU�@�ӳ��`�A�ο�ܷQ�n�\\Ū�����`�G");
+                nowaitmsg("請直接按 ENTER 看下一個章節，或選擇想要閱\讀的章節：");
                 nowaitmsg(0);
-                nowaitmsg("1) �s���覡²��");
-                nowaitmsg("2) �ؿ����");
-                nowaitmsg("3) ��ܬݪO");
-                nowaitmsg("4) �\\Ū�P�o���峹");
-                nowaitmsg("5) �^�Ф峹�P���ˤ峹");
+                nowaitmsg("1) 瀏覽方式簡介");
+                nowaitmsg("2) 目錄選單");
+                nowaitmsg("3) 選擇看板");
+                nowaitmsg("4) 閱\讀與發表文章");
+                nowaitmsg("5) 回覆文章與推薦文章");
                 nowaitmsg(0);
-                nowaitmsg("0) ���}");
+                nowaitmsg("0) 離開");
 
                 move(b_lines, 0);
                 clrtoeol();
-                printf("�п�J�Q�n�\\Ū���D�D, ����J=%d: ", ++playing);
+                printf("請輸入想要閱\讀的主題, 不輸入=%d: ", ++playing);
                 if((cmd = tolower(vkey())) && ((cmd >= '0' && cmd <= '9') || cmd == 'q' || cmd == '\n' ))
                 {
                     if(cmd == 'q' || cmd == '0')
@@ -408,14 +408,14 @@ int bbsteach()
 
 
 --
-[m[1;30m�@[;30;40m�[31;41me[40m�[33;44me�[31;41me[34;44m�[36;46me�e [44m [34;43m�[33me[31;40m�[30me   [1;30m                   http://www.moztw.org/firefox/[m
-[1;30m�@ [41m [;31;41m�e  [44m�[46me[36m�e �[44me[41m�[31;43me[41m [40m   [30;45m�[35me[30m�e�[35me[30;40m�[45me[40m�e�e�e�e�e�[35me[30;45m�[35;40me[30m�e�e�e�e�e�e[m
-[1;30m�@[41m     [;31;41m�[43me[44m [46m [44m [34;46m�[44me[46m�[44me[43m   [40m  [30m�[35;45me[30;40m�e[35m�[30me�[35me[30m�[35me[30m�[35me�[30me[35m�e[30m�e[35m�[45me[40m�[30me�[35me�e[30m�e[35m�e  �e[m
-[30m�i[31m�i�i�i[34m�i[36;46m�[34me[40m�i�i�i[33;41m�[30;40me�i[45m �e[35m�[30;40me[45m�[35me[40m�@[45m [40m�@[45m [40m�e[45m [40m�@[45m [40m�@[45m [31;40m�@ [35;45m�[30;40me�[45me[35;40m�e[30;45m�[40me[m
-[1;30m�@[41m       [;34;41m�e�[44me [33m�[43me[31m�[33me [40m  [30m�[35;45me[40m �@�@[45m [30;40m�e[35;45m�[30;40me�[35;45me[40m�@�[30me [45m [31;40m�@[45m [40m�@ [35;45m�[30;40me�[35me[30;45m�e[35;40m�[30me
-[m[1;30m�@[;30;40m�[31;41me     [40m�e�e[41m  [43m�[41me[43m [40m   [30;45m�e�[40me�e[45m�e�e�e[40m�e[45m�e[40m�e[45m�e�[40me�[45me�e[40m�e[45m�e[40m�e[45m�e[m  [m[1;30m��FongChen��[m
+[m[1;30m　[;30;40m?[31;41me[40m?[33;44me?[31;41me[34;44m?[36;46me▄ [44m [34;43m?[33me[31;40m?[30me   [1;30m                   http://www.moztw.org/firefox/[m
+[1;30m　 [41m [;31;41m▄  [44m?[46me[36m▄ ?[44me[41m?[31;43me[41m [40m   [30;45m?[35me[30m▄?[35me[30;40m?[45me[40m▄▄▄▄▄?[35me[30;45m?[35;40me[30m▄▄▄▄▄▄[m
+[1;30m　[41m     [;31;41m?[43me[44m [46m [44m [34;46m?[44me[46m?[44me[43m   [40m  [30m?[35;45me[30;40m▄[35m?[30me?[35me[30m?[35me[30m?[35me?[30me[35m▄[30m▄[35m?[45me[40m?[30me?[35me▄[30m▄[35m▄  ▄[m
+[30m█[31m███[34m█[36;46m?[34me[40m███[33;41m?[30;40me█[45m ▄[35m?[30;40me[45m?[35me[40m　[45m [40m　[45m [40m▄[45m [40m　[45m [40m　[45m [31;40m　 [35;45m?[30;40me?[45me[35;40m▄[30;45m?[40me[m
+[1;30m　[41m       [;34;41m▄?[44me [33m?[43me[31m?[33me [40m  [30m?[35;45me[40m 　　[45m [30;40m▄[35;45m?[30;40me?[35;45me[40m　?[30me [45m [31;40m　[45m [40m　 [35;45m?[30;40me?[35me[30;45m▄[35;40m?[30me
+[m[1;30m　[;30;40m?[31;41me     [40m▄▄[41m  [43m?[41me[43m [40m   [30;45m▄?[40me▄[45m▄▄▄[40m▄[45m▄[40m▄[45m▄?[40me?[45me▄[40m▄[45m▄[40m▄[45m▄[m  [m[1;30m◎FongChen◎[m
 
 --
- [1;43m�~[46m�q[m Origin: [41m ����j�ǣ��ƾǤ��a [32;47m bbs.math.cycu.edu.tw [m
- [1;44m�q[41m��[m Author: [1;33mhialan [30m�q [35m203-67-154-247.adsl.dynamic.seed.net.tw[30m �o��[m
+ [1;43m╭[46m┼[m Origin: [41m 中原大學˙數學之家 [32;47m bbs.math.cycu.edu.tw [m
+ [1;44m┼[41m╯[m Author: [1;33mhialan [30m從 [35m203-67-154-247.adsl.dynamic.seed.net.tw[30m 發表[m
 --

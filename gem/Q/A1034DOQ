@@ -1,28 +1,28 @@
-µo«H¤H: Efen.bbs@bbs.med.ncku.edu.tw (^^) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à]¯î¼o¬İªO²Î­p¡]¿é¥X¦b²Î­p¸ê®Æ¤¤¡^
-µo«H¯¸: °j­·¨¦ (2004/02/17 Tue 20:13:27)                  Updated: 2005/05/25
+ç™¼ä¿¡äºº: Efen.bbs@bbs.med.ncku.edu.tw (^^) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]è’å»¢çœ‹æ¿çµ±è¨ˆï¼ˆè¼¸å‡ºåœ¨çµ±è¨ˆè³‡æ–™ä¸­ï¼‰
+ç™¼ä¿¡ç«™: è¿´é¢¨è°· (2004/02/17 Tue 20:13:27)                  Updated: 2005/05/25
 
-§ï¼g¦Û¥¼½sºëµØ°Ïªºµ{¦¡¡A
-¦p¤U¡A
-ÀÉ¦W¦Û¨ú¡A°O±o¦bMakefile¸Ì¥[¡A§Ú¬O¥Îbrdir.c¡]´N¬OºëµØ°Ï¸Ì¨º½gªº­ìÀÉ¦W¡^
+æ”¹å¯«è‡ªæœªç·¨ç²¾è¯å€çš„ç¨‹å¼ï¼Œ
+å¦‚ä¸‹ï¼Œ
+æª”åè‡ªå–ï¼Œè¨˜å¾—åœ¨Makefileè£¡åŠ ï¼Œæˆ‘æ˜¯ç”¨brdir.cï¼ˆå°±æ˜¯ç²¾è¯å€è£¡é‚£ç¯‡çš„åŸæª”åï¼‰
 
-¦bºëµØ¤½§GÄæ¸Ì¡A·s¼W@-brd_empty¬°µL¤å³¹¬İªO²Î­p
-                    @-brd_overdue¬°µL·s¤å³¹¤Ñ¼Æ²Î­p
+åœ¨ç²¾è¯å…¬ä½ˆæ¬„è£¡ï¼Œæ–°å¢@-brd_emptyç‚ºç„¡æ–‡ç« çœ‹æ¿çµ±è¨ˆ
+                    @-brd_overdueç‚ºç„¡æ–°æ–‡ç« å¤©æ•¸çµ±è¨ˆ
 
-µM«á¦bcrontab ¸Ì¥[¤J
+ç„¶å¾Œåœ¨crontab è£¡åŠ å…¥
 33 3 * * * bin/topbrd > /dev/null 2>&1
-¨C¤Ñ¶]¤@¦¸¡C
+æ¯å¤©è·‘ä¸€æ¬¡ã€‚
 
 : src/util/Makefile
 
 EXE =   ... [1;33mtopbrd[m
 
-: src/util/topbrd.c ·s¼W¦¹µ{¦¡
+: src/util/topbrd.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* util/topbrd.c        ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ­pºâ¬İªOµL·s¤å³¹¤Ñ¼Æ                         */
+/* target : è¨ˆç®—çœ‹æ¿ç„¡æ–°æ–‡ç« å¤©æ•¸                         */
 /* create : 04/02/07                                     */
 /* update :   /  /                                       */
 /* author : Efen.bbs@bbs.med.ncku.edu.tw                 */
@@ -35,8 +35,8 @@ EXE =   ... [1;33mtopbrd[m
 #define OUTFILE_BRDOVERDUE      "gem/@/@-brd_overdue"
 
 
-static char nostat[MAXBOARD][BNLEN + 1]; /* ¤£¦C¤J±Æ¦æº]ªº¬İªO */
-static int nostat_num;                   /* nostat_num+1: ´X­ÓªO¤£¦C¤J²Î­p */
+static char nostat[MAXBOARD][BNLEN + 1]; /* ä¸åˆ—å…¥æ’è¡Œæ¦œçš„çœ‹æ¿ */
+static int nostat_num;                   /* nostat_num+1: å¹¾å€‹æ¿ä¸åˆ—å…¥çµ±è¨ˆ */
 static time_t now;
 
 
@@ -64,7 +64,7 @@ collect_nostat()
 }
 
 
-static int      /* 1:¥»ªO¤£¦C¤J²Î­p */
+static int      /* 1:æœ¬æ¿ä¸åˆ—å…¥çµ±è¨ˆ */
 is_nostat(brdname)
   char *brdname;
 {
@@ -108,8 +108,8 @@ whoisbm(brdname)
 
 typedef struct
 {
-  int day;                      /* ´X¤Ñ¨S¾ã²zºëµØ°Ï */
-  char brdname[BNLEN + 1];      /* ªO¦W */
+  int day;                      /* å¹¾å¤©æ²’æ•´ç†ç²¾è¯å€ */
+  char brdname[BNLEN + 1];      /* æ¿å */
 }       BRDDATA;
 
 
@@ -117,7 +117,7 @@ static int
 int_cmp(a, b)
   BRDDATA *a, *b;
 {
-  return (b->day - a->day);     /* ¥Ñ¤j±Æ¨ì¤p */
+  return (b->day - a->day);     /* ç”±å¤§æ’åˆ°å° */
 }
 
 
@@ -138,7 +138,7 @@ main()
   if (!(fp = fopen(FN_BRD, "r")))
   return -1;
 
-  collect_nostat();     /* itoc.020127: ¦¬¶°¤£¦C¤J±Æ¦æº]ªº¬İªO */
+  collect_nostat();     /* itoc.020127: æ”¶é›†ä¸åˆ—å…¥æ’è¡Œæ¦œçš„çœ‹æ¿ */
 
   time(&now);
   ptime = localtime(&now);
@@ -147,7 +147,7 @@ main()
   while (fread(&brd, sizeof(BRD), 1, fp) == 1)
   {
     brdname = brd.brdname;
-    if (!*brdname)      /* ¦¹ªO¤w³Q§R°£ */
+    if (!*brdname)      /* æ­¤æ¿å·²è¢«åˆªé™¤ */
       continue;
 
     if (is_nostat(brdname))
@@ -160,7 +160,7 @@ main()
     if ((fd = open(folder, O_RDONLY)) >= 0 && !fstat(fd, &st))
     {
       fsize = st.st_size;
-      while ((fsize -= sizeof(HDR)) >= 0)   /* §ä³Ì«á¤@½g¤£¬O¸m©³¤åªº®É¶¡ */
+      while ((fsize -= sizeof(HDR)) >= 0)   /* æ‰¾æœ€å¾Œä¸€ç¯‡ä¸æ˜¯ç½®åº•æ–‡çš„æ™‚é–“ */
       {
         lseek(fd, fsize, SEEK_SET);
         read(fd, &hdr, sizeof(HDR));
@@ -182,17 +182,17 @@ main()
   fpo = fopen(OUTFILE_BRDOVERDUE, "w");
 
   fprintf(fpe,
-    "         \033[1;34m-----\033[37m=====\033[41m ¬İªOµL¤å³¹¤§¬İªO "
-    "(¦Ü %d ¤ë %d ¤é¤î) \033[;1;37m=====\033[34m-----\033[m\n"
-    "           \033[1;42m ¦W¦¸ \033[44m   ¬İªO¦WºÙ   \033[42m      "
-    "µL¤å³¹¬İªO     \033[44mªO   ¥D    \033[m\n",
+    "         \033[1;34m-----\033[37m=====\033[41m çœ‹æ¿ç„¡æ–‡ç« ä¹‹çœ‹æ¿ "
+    "(è‡³ %d æœˆ %d æ—¥æ­¢) \033[;1;37m=====\033[34m-----\033[m\n"
+    "           \033[1;42m åæ¬¡ \033[44m   çœ‹æ¿åç¨±   \033[42m      "
+    "ç„¡æ–‡ç« çœ‹æ¿     \033[44mæ¿   ä¸»    \033[m\n",
     ptime->tm_mon + 1, ptime->tm_mday);
 
   fprintf(fpo,
-    "        \033[1;34m-----\033[37m=====\033[41m ¬İªOµL·s¤å³¹¤Ñ¼Æ¤§¬İªO "
-    "(¦Ü %d ¤ë %d ¤é¤î) \033[;1;37m=====\033[34m-----\033[m\n"
-    "              \033[1;42m ¦W¦¸ \033[44m    ¬İªO¦WºÙ    \033[42m "
-    "¬İªOµL·s¤å³¹ \033[44m   ªO ¥D    \033[m\n",
+    "        \033[1;34m-----\033[37m=====\033[41m çœ‹æ¿ç„¡æ–°æ–‡ç« å¤©æ•¸ä¹‹çœ‹æ¿ "
+    "(è‡³ %d æœˆ %d æ—¥æ­¢) \033[;1;37m=====\033[34m-----\033[m\n"
+    "              \033[1;42m åæ¬¡ \033[44m    çœ‹æ¿åç¨±    \033[42m "
+    "çœ‹æ¿ç„¡æ–°æ–‡ç«  \033[44m   æ¿ ä¸»    \033[m\n",
     ptime->tm_mon + 1, ptime->tm_mday);
 
   m = 1;
@@ -203,12 +203,12 @@ main()
     if (board[i].day < 0)
     {
       fprintf(fpe, "            %3d   %12s     %s      %-20.20s\n",
-        m, board[i].brdname, "¬İªOµL¤å³¹", whoisbm(board[i].brdname));
+        m, board[i].brdname, "çœ‹æ¿ç„¡æ–‡ç« ", whoisbm(board[i].brdname));
       m++;
     }
     else
     {
-      if (board[i].day > 10)  //¥u²Î­p¶W¹L¤Q¤ÑµL¤å³¹¤§¬İªO
+      if (board[i].day > 10)  //åªçµ±è¨ˆè¶…éåå¤©ç„¡æ–‡ç« ä¹‹çœ‹æ¿
       {
         fprintf(fpo, "                %s%3d    %12s        %4d"
           "       %-20.20s\033[m\n",
@@ -226,5 +226,5 @@ main()
 }
 
 --
-[0m[1;31;44m ¡y¢~¢£[33m¦¨¤jÂå¾Ç[31m¢~¢£ [32m¢ª[35m¢¨      [37m¡Ë  ¡¸ [35m¢[32mi[33m¢[36mi [32mbbs.med.ncku.edu.tw [36m¢[33mi[32m¢[35mi [37m¡¸  ¡Ê     [0m
-[0m[1;31;42m ¢~¢£[33m°j ­· ¨¦[31m¢~¢£¡z [31m¢«[34m¢© [37m¡÷From¡G[36mbackwind.g1.dorm.ncku.edu.tw               [37m¡ö[0m
+[0m[1;31;44m ã€â•­â•¯[33mæˆå¤§é†«å­¸[31mâ•­â•¯ [32mâ—¥[35mâ—¢      [37mï¹Œ  â˜† [35m?[32mi[33m?[36mi [32mbbs.med.ncku.edu.tw [36m?[33mi[32m?[35mi [37mâ˜†  ï¹‹     [0m
+[0m[1;31;42m â•­â•¯[33mè¿´ é¢¨ è°·[31mâ•­â•¯ã€ [31mâ—¤[34mâ—£ [37mâ†’Fromï¼š[36mbackwind.g1.dorm.ncku.edu.tw               [37mâ†[0m

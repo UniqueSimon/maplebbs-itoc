@@ -1,30 +1,30 @@
-µo«H¤H: chwaian.bbs@cpu.tfcis.org (µL¨¥) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à]§ì¨ú©_¼¯¹q¼v
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/11/03 Wed 00:19:17)                Updated: 2006/03/08
+ç™¼ä¿¡äºº: chwaian.bbs@cpu.tfcis.org (ç„¡è¨€) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]æŠ“å–å¥‡æ‘©é›»å½±
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/11/03 Wed 00:19:17)                Updated: 2006/03/08
 
-®³itoc¼gªºNCTUnews.c(³o°¦µ{¦¡¯u¦n¥Î@_@)§ïªº
+æ‹¿itocå¯«çš„NCTUnews.c(é€™éš»ç¨‹å¼çœŸå¥½ç”¨@_@)æ”¹çš„
 
-·|§ì http://tw.movie.yahoo.com/movie_comming.html ªº¤å³¹
-
-
-ÁÙ­n¶} Kimo_Movies ªO
+æœƒæŠ“ http://tw.movie.yahoo.com/movie_comming.html çš„æ–‡ç« 
 
 
-: crontab -e ¥[¤J³o¤G¦æ
+é‚„è¦é–‹ Kimo_Movies æ¿
 
-# ©_¼¯¹q¼v¨C¤Ñ§ì¨â¦¸
+
+: crontab -e åŠ å…¥é€™äºŒè¡Œ
+
+# å¥‡æ‘©é›»å½±æ¯å¤©æŠ“å…©æ¬¡
 5 10,20 * * * bin/Kimomovie > /dev/null 2>&1
 
 : src/util/Makefile
 
 EXE =   ... [1;33mKimomovie[m
 
-: src/util/Kimomovie.c ·s¼W¦¹µ{¦¡
+: src/util/Kimomovie.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* util/Kimomovie.c     ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ©_¼¯¹q¼v                                     */
+/* target : å¥‡æ‘©é›»å½±                                     */
 /* create : 04/05/20                                     */
 /* update :   /  /                                       */
 /* author : chwaian.bbs@cpu.tfcis.org                    */
@@ -34,11 +34,11 @@ EXE =   ... [1;33mKimomovie[m
 #include "bbs.h"
 
 
-#define LYNX_PATH       "/usr/local/bin/lynx --source"  /* lynx ªºµ´¹ï¸ô®| */
+#define LYNX_PATH       "/usr/local/bin/lynx --source"  /* lynx çš„çµ•å°è·¯å¾‘ */
 
 
 /*-------------------------------------------------------*/
-/* BRD shm ³¡¤À¶·»P cache.c ¬Û®e                         */
+/* BRD shm éƒ¨åˆ†é ˆèˆ‡ cache.c ç›¸å®¹                         */
 /*-------------------------------------------------------*/
 
 
@@ -47,12 +47,12 @@ static BCACHE *bshm;
 static void
 init_bshm()
 {
-  /* itoc.030727: ¦b¶}±Ò bbsd ¤§«e¡AÀ³¸Ó´N­n°õ¦æ¹L account¡A
-     ©Ò¥H bshm À³¸Ó¤w³]©w¦n */
+  /* itoc.030727: åœ¨é–‹å•Ÿ bbsd ä¹‹å‰ï¼Œæ‡‰è©²å°±è¦åŸ·è¡Œé accountï¼Œ
+     æ‰€ä»¥ bshm æ‡‰è©²å·²è¨­å®šå¥½ */
 
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-  if (bshm->uptime <= 0)        /* bshm ¥¼³]©w§¹¦¨ */
+  if (bshm->uptime <= 0)        /* bshm æœªè¨­å®šå®Œæˆ */
     exit(0);
 }
 
@@ -77,19 +77,19 @@ update_btime(brdname)
 
 
 /*-------------------------------------------------------*/
-/* µo¤å¨ì¬İªO                                            */
+/* ç™¼æ–‡åˆ°çœ‹æ¿                                            */
 /*-------------------------------------------------------*/
 
 
-static char *Brdname = "Kimo_Movies";     /* ±ı post ªº¬İªO */
-static char *Userid = "©_¼¯¹q¼v";   /* §@ªÌ */
-static char *Username = "³Ì·s¹q¼v"; /* ¼ÊºÙ */
+static char *Brdname = "Kimo_Movies";     /* æ¬² post çš„çœ‹æ¿ */
+static char *Userid = "å¥‡æ‘©é›»å½±";   /* ä½œè€… */
+static char *Username = "æœ€æ–°é›»å½±"; /* æš±ç¨± */
 
 
 static void
-new_post(fpath, title)           /* µo¤å¨ì¬İªO */
-  char *fpath;          /* ÀÉ®×¸ô®| */
-  char *title;          /* ¤å³¹¼ĞÃD */
+new_post(fpath, title)           /* ç™¼æ–‡åˆ°çœ‹æ¿ */
+  char *fpath;          /* æª”æ¡ˆè·¯å¾‘ */
+  char *title;          /* æ–‡ç« æ¨™é¡Œ */
 {
   HDR hdr;
   char folder[64];
@@ -106,12 +106,12 @@ new_post(fpath, title)           /* µo¤å¨ì¬İªO */
 
 
 /*-------------------------------------------------------*/
-/* §ìºô­¶                                                */
+/* æŠ“ç¶²é                                                 */
 /*-------------------------------------------------------*/
 
 
-static int wlen;    /* ¥»¦æ¦³¦h¤Ö¦r */
-static int slen;    /* ¥»¦æ¦³¦h¤Ö¥b«¬¦r */
+static int wlen;    /* æœ¬è¡Œæœ‰å¤šå°‘å­— */
+static int slen;    /* æœ¬è¡Œæœ‰å¤šå°‘åŠå‹å­— */
 
 
 static void
@@ -119,8 +119,8 @@ foutc(ch, fp)
   int ch;
   FILE *fp;
 {
-  static int in_tag = 0;    /* 1: ¦b <tag> ¤¤ */
-  static int in_chi = 0;    /* 1: «e¤@½X¬O¤¤¤å¦r */
+  static int in_tag = 0;    /* 1: åœ¨ <tag> ä¸­ */
+  static int in_chi = 0;    /* 1: å‰ä¸€ç¢¼æ˜¯ä¸­æ–‡å­— */
 
   if (ch == '<')
   {
@@ -128,25 +128,25 @@ foutc(ch, fp)
     return;
   }
 
-  /* ¸õ¹L \t */
+  /* è·³é \t */
   if (ch == '\t')
     return;
 
   if (!in_tag)
   {
-    if (in_chi)             /* «e¤@­Óchar¬O¤¤¤å¦rªº²Ä¤@½X */
+    if (in_chi)             /* å‰ä¸€å€‹charæ˜¯ä¸­æ–‡å­—çš„ç¬¬ä¸€ç¢¼ */
       in_chi = 0;
-    else if (ch & 0x80)     /* «e¤@­Óchar¤£¬O¤¤¤å¦rªº²Ä¤@½X¡AÀË¬d³ochar¬O§_¬°¤¤¤å¦rªº²Ä¤@½X */
+    else if (ch & 0x80)     /* å‰ä¸€å€‹charä¸æ˜¯ä¸­æ–‡å­—çš„ç¬¬ä¸€ç¢¼ï¼Œæª¢æŸ¥é€™charæ˜¯å¦ç‚ºä¸­æ–‡å­—çš„ç¬¬ä¸€ç¢¼ */
       in_chi = 1;
-    else                    /* ¦pªG³£¤£¬O¡Aªí¥Ü³ochar¬O¥b«¬¦r */
+    else                    /* å¦‚æœéƒ½ä¸æ˜¯ï¼Œè¡¨ç¤ºé€™charæ˜¯åŠå‹å­— */
       slen++;
 
-    if (wlen >= 60 - slen % 2)  /* ¤@¦æ³Ì¦h 60 ¦r¡A­Y¦³©_¼Æ­Ó¥b«¬¦r¡A¸Ó¦æ¥u¦L 59 ¦r */
+    if (wlen >= 60 - slen % 2)  /* ä¸€è¡Œæœ€å¤š 60 å­—ï¼Œè‹¥æœ‰å¥‡æ•¸å€‹åŠå‹å­—ï¼Œè©²è¡Œåªå° 59 å­— */
     {
-      fputs("\n    ", fp);  /* ¨C¦æ«e­±³£ªÅ¥|®æ */
+      fputs("\n    ", fp);  /* æ¯è¡Œå‰é¢éƒ½ç©ºå››æ ¼ */
       wlen = 0;
       /* slen = 0; */
-      slen = !in_chi;       /* ­Y·sªº³o¦æ²Ä¤@­Óchar¬O¥b«¬¦r¡Aslen=1 */
+      slen = !in_chi;       /* è‹¥æ–°çš„é€™è¡Œç¬¬ä¸€å€‹charæ˜¯åŠå‹å­—ï¼Œslen=1 */
     }
 
     fputc(ch, fp);
@@ -169,7 +169,7 @@ fouts(str, fp)
 
   wlen = 0;
   slen = 0;
-  fputs("\n    ", fp);      /* ¨C¦æ«e­±³£ªÅ¥|®æ */
+  fputs("\n    ", fp);      /* æ¯è¡Œå‰é¢éƒ½ç©ºå››æ ¼ */
 
   while (ch = *str)
   {
@@ -186,7 +186,7 @@ strip_title(str, title)
   int ch, len = 0;
   uschar *dst;
 
-  /* ¥h±¼ str ¤¤ªº \t ¤Î³Ì«áªº <tag>¡A¦s¦b title */
+  /* å»æ‰ str ä¸­çš„ \t åŠæœ€å¾Œçš„ <tag>ï¼Œå­˜åœ¨ title */
 
   dst = title;
   while (ch = *str++)
@@ -206,36 +206,36 @@ strip_title(str, title)
 
 
 static void
-html_download(actno)          /* ¤U¸ü¤å³¹¨ÃÂà´«¬°¤å¦rÀÉ */
+html_download(actno)          /* ä¸‹è¼‰æ–‡ç« ä¸¦è½‰æ›ç‚ºæ–‡å­—æª” */
   int actno;
 {
   char link[128], title[TTLEN + 1], title2[TTLEN + 1];
-  char buf[2048];       /* °²³]¤å³¹¨C¬q¤£·|¶W¹L 2048 ¦r */
+  char buf[2048];       /* å‡è¨­æ–‡ç« æ¯æ®µä¸æœƒè¶…é 2048 å­— */
   char *fsrc = "tmp/Kimomovie.src";
   char *fdst = "tmp/Kimomovie.dst";
   FILE *fpr, *fpw;
   int mode;
   char *ptr;
-  int right;            /* ¤£¦s¦bªººô§}¸õ¹L */
+  int right;            /* ä¸å­˜åœ¨çš„ç¶²å€è·³é */
 
 
   right = 0;
 
-  /* ¤U¸ü¤å³¹ */
+  /* ä¸‹è¼‰æ–‡ç«  */
   sprintf(link, "http://tw.movie.yahoo.com/mstory.html?t=movie&id=%d", actno);
   sprintf(buf, LYNX_PATH " '%s' > %s", link, fsrc);
   system(buf);
 
-  /* Âà´«¬°¤å¦rÀÉ */
+  /* è½‰æ›ç‚ºæ–‡å­—æª” */
   if (fpr = fopen(fsrc, "r"))
   {
     if (fpw = fopen(fdst, "w"))
     {
-      /* ¶}ÀY¥[¤WÀÉÀY */
+      /* é–‹é ­åŠ ä¸Šæª”é ­ */
 
       while (fgets(buf, sizeof(buf), fpr))
       {
-        /* film_people.gif ªº¤U¤@¦æ´N¬O¼ĞÃD */
+        /* film_people.gif çš„ä¸‹ä¸€è¡Œå°±æ˜¯æ¨™é¡Œ */
         if (strstr(buf, "film_people.gif"))
         {
           fgets(buf, sizeof(buf), fpr);
@@ -252,7 +252,7 @@ html_download(actno)          /* ¤U¸ü¤å³¹¨ÃÂà´«¬°¤å¦rÀÉ */
 
             fprintf(fpw, "%s %s (%s) %s %s\n",
               STR_AUTHOR1, Userid, Username, STR_POST2, Brdname);
-            fprintf(fpw, "¼ĞÃD: %s\n®É¶¡: %s\n\n", title, Now());
+            fprintf(fpw, "æ¨™é¡Œ: %s\næ™‚é–“: %s\n\n", title, Now());
             right = 1;
           }
           break;
@@ -262,60 +262,60 @@ html_download(actno)          /* ¤U¸ü¤å³¹¨ÃÂà´«¬°¤å¦rÀÉ */
 
       while (fgets(buf, sizeof(buf), fpr))
       {
-        if (strstr(buf, "Ãş¡@¡@«¬¡G"))
+        if (strstr(buf, "é¡ã€€ã€€å‹ï¼š"))
         {
           fgets(buf, sizeof(buf), fpr);
           fgets(buf, sizeof(buf), fpr);
           strip_title(buf, title2);
-          fprintf(fpw, "\nÃş¡@¡@«¬¡G%s\n", title2);
+          fprintf(fpw, "\né¡ã€€ã€€å‹ï¼š%s\n", title2);
         }
-        else if (strstr(buf, "¤ù¡@¡@ªø¡G"))
+        else if (strstr(buf, "ç‰‡ã€€ã€€é•·ï¼š"))
         {
           fgets(buf, sizeof(buf), fpr);
           fgets(buf, sizeof(buf), fpr);
           strip_title(buf, title2);
-          fprintf(fpw, "\n¤ù¡@¡@ªø¡G%s\n", title2);
+          fprintf(fpw, "\nç‰‡ã€€ã€€é•·ï¼š%s\n", title2);
         }
-        else if (strstr(buf, "¤À¡@¡@¯Å¡G"))
+        else if (strstr(buf, "åˆ†ã€€ã€€ç´šï¼š"))
         {
           fgets(buf, sizeof(buf), fpr);
           fgets(buf, sizeof(buf), fpr);
           strip_title(buf, title2);
-          fprintf(fpw, "\n¤À¡@¡@¯Å¡G%s\n", title2);
+          fprintf(fpw, "\nåˆ†ã€€ã€€ç´šï¼š%s\n", title2);
         }
-        else if (strstr(buf, "¾É¡@¡@ºt¡G"))
+        else if (strstr(buf, "å°ã€€ã€€æ¼”ï¼š"))
         {
           fgets(buf, sizeof(buf), fpr);
           fgets(buf, sizeof(buf), fpr);
           strip_title(buf, title2);
-          fprintf(fpw, "\n¾É¡@¡@ºt¡G%s\n", title2);
+          fprintf(fpw, "\nå°ã€€ã€€æ¼”ï¼š%s\n", title2);
         }
-        else if (strstr(buf, "ºt¡@¡@­û¡G"))
+        else if (strstr(buf, "æ¼”ã€€ã€€å“¡ï¼š"))
         {
           fgets(buf, sizeof(buf), fpr);
           fgets(buf, sizeof(buf), fpr);
           strip_title(buf, title2);
-          fprintf(fpw, "\nºt¡@¡@­û¡G%s\n", title2);
+          fprintf(fpw, "\næ¼”ã€€ã€€å“¡ï¼š%s\n", title2);
         }
-        else if (strstr(buf, "µo¦æ¤½¥q¡G"))
+        else if (strstr(buf, "ç™¼è¡Œå…¬å¸ï¼š"))
         {
           fgets(buf, sizeof(buf), fpr);
           fgets(buf, sizeof(buf), fpr);
           strip_title(buf, title2);
-          fprintf(fpw, "\nµo¦æ¤½¥q¡G%s\n", title2);
+          fprintf(fpw, "\nç™¼è¡Œå…¬å¸ï¼š%s\n", title2);
         }
-        else if (strstr(buf, "¤W¬M¤é´Á¡G"))
+        else if (strstr(buf, "ä¸Šæ˜ æ—¥æœŸï¼š"))
         {
           fgets(buf, sizeof(buf), fpr);
           fgets(buf, sizeof(buf), fpr);
           strip_title(buf, title2);
-          fprintf(fpw, "\n¤W¬M¤é´Á¡G%s\n", title2);
-          fprintf(fpw, "\n¼@±¡Â²¤¶¡G\n");
+          fprintf(fpw, "\nä¸Šæ˜ æ—¥æœŸï¼š%s\n", title2);
+          fprintf(fpw, "\nåŠ‡æƒ…ç°¡ä»‹ï¼š\n");
           break;
         }
       }
 
-      mode = 0;    /* 0:¥¼¶}©l  1:¦L¨ì¤@¥b  2:µ²§ô */
+      mode = 0;    /* 0:æœªé–‹å§‹  1:å°åˆ°ä¸€åŠ  2:çµæŸ */
 
       while (fgets(buf, sizeof(buf), fpr))
       {
@@ -324,7 +324,7 @@ html_download(actno)          /* ¤U¸ü¤å³¹¨ÃÂà´«¬°¤å¦rÀÉ */
           *ptr = '\0';
           mode++;
         }
-        else if (strstr(buf, "<!--¼v¤ù¤º®e¤¶²Ğ¶}©l-->"))
+        else if (strstr(buf, "<!--å½±ç‰‡å…§å®¹ä»‹ç´¹é–‹å§‹-->"))
         {
           mode++;
         }
@@ -339,8 +339,8 @@ html_download(actno)          /* ¤U¸ü¤å³¹¨ÃÂà´«¬°¤å¦rÀÉ */
       }
 
 
-      /* µ²§À¥[¤W¨Ó·½ */
-      fprintf(fpw, "\n--\nYahoo!©_¼¯¹q¼v\n%s\n", link);
+      /* çµå°¾åŠ ä¸Šä¾†æº */
+      fprintf(fpw, "\n--\nYahoo!å¥‡æ‘©é›»å½±\n%s\n", link);
       fclose(fpw);
       fclose(fpr);
 
@@ -354,7 +354,7 @@ html_download(actno)          /* ¤U¸ü¤å³¹¨ÃÂà´«¬°¤å¦rÀÉ */
 
 
 /*-------------------------------------------------------*/
-/* ¥Dµ{¦¡                                                */
+/* ä¸»ç¨‹å¼                                                */
 /*-------------------------------------------------------*/
 
 
@@ -362,7 +362,7 @@ static int
 urhigh_query()
 {
   char *ftmp = "tmp/Kimomovie.tmp";
-  char buf[512];       /* °²³]¨C¦æ¤£·|¶W¹L 512 ¦r */
+  char buf[512];       /* å‡è¨­æ¯è¡Œä¸æœƒè¶…é 512 å­— */
   char *ptr;
   FILE *fp;
   int high;
@@ -403,7 +403,7 @@ main()
 
   chdir(BBSHOME);
 
-  /* ¬İ¦Û¤v§ì¨ì²Ä´X½g¤F */
+  /* çœ‹è‡ªå·±æŠ“åˆ°ç¬¬å¹¾ç¯‡äº† */
   myhigh = 0;
   if (fp = fopen("run/Kimomovie", "r"))
   {
@@ -414,22 +414,22 @@ main()
       myhigh = urhigh;
   }
 
-  /* ¬İ©_¼¯¹q¼v³Ì·sªº¦³´X½g */
+  /* çœ‹å¥‡æ‘©é›»å½±æœ€æ–°çš„æœ‰å¹¾ç¯‡ */
   urhigh = urhigh_query();
 
-  if (!myhigh)           /* ¦pªG¦Û¤v¨S¦³½g¼Æ­p¼Æ¾¹¡A¨º´N§ì³Ì«á¤T½g */
+  if (!myhigh)           /* å¦‚æœè‡ªå·±æ²’æœ‰ç¯‡æ•¸è¨ˆæ•¸å™¨ï¼Œé‚£å°±æŠ“æœ€å¾Œä¸‰ç¯‡ */
     myhigh = urhigh - 3;
 
-  if (myhigh >= urhigh)  /* ¨S¦³·s¤å³¹ */
+  if (myhigh >= urhigh)  /* æ²’æœ‰æ–°æ–‡ç«  */
     return 0;
 
   init_bshm();
 
-  /* ¥h§ì·sªº¤å³¹ */
+  /* å»æŠ“æ–°çš„æ–‡ç«  */
   for (myhigh++; myhigh <= urhigh; myhigh++)
     html_download(myhigh);
 
-  /* §ó·s¦Û¤vªº½g¼Æ­p¼Æ¾¹ */
+  /* æ›´æ–°è‡ªå·±çš„ç¯‡æ•¸è¨ˆæ•¸å™¨ */
   if (fp = fopen("run/Kimomovie", "w"))
   {
     fprintf(fp, "%d", urhigh);
@@ -442,5 +442,5 @@ main()
 
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mchwaian [30m±q [31m61-216-216-43.dynamic.hinet.net [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mchwaian [30må¾ [31m61-216-216-43.dynamic.hinet.net [30mç™¼è¡¨[m

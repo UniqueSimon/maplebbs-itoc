@@ -1,11 +1,11 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ¦p¦ó·s¼W¤½§i«¬¬İªO..
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/05/26 Wed 09:24:54)                Updated: 2004/05/26
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: å¦‚ä½•æ–°å¢å…¬å‘Šå‹çœ‹æ¿..
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/05/26 Wed 09:24:54)                Updated: 2004/05/26
 
-¡° ¤Ş­z¡mUizmp (¶Â³Tªk®v)¡n¤§»Ê¨¥¡G
-> Ãş¦ü0Announceª©ªº¥\¯à
-> ³Ì¦n¥i¥H³]©wµ¹¦³ or ¨S¦³¤@ºØÅv­­ªº¤H¤@©w­n¬İªº..
-> ex. ÅıÅıª©¥D±j­¢¥h¬İbmª©ªº·s¤å³¹¤§Ãşªº
+â€» å¼•è¿°ã€ŠUizmp (é»‘è¢æ³•å¸«)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> é¡ä¼¼0Announceç‰ˆçš„åŠŸèƒ½
+> æœ€å¥½å¯ä»¥è¨­å®šçµ¦æœ‰ or æ²’æœ‰ä¸€ç¨®æ¬Šé™çš„äººä¸€å®šè¦çœ‹çš„..
+> ex. è®“è®“ç‰ˆä¸»å¼·è¿«å»çœ‹bmç‰ˆçš„æ–°æ–‡ç« ä¹‹é¡çš„
 
 : bbsd.c:tn_motd()
 
@@ -19,20 +19,20 @@
 void brd_force(void);
 + void brd_force2(void);
 
-: board.c:brd_force2() ·s¼W¦b brd_force() ¤U­±
+: board.c:brd_force2() æ–°å¢åœ¨ brd_force() ä¸‹é¢
 
 #ifdef HAVE_FORCE_BOARD
 void
 brd_force2()
 {
-  if (HAS_PERM(PERM_BM))        [1;44m// ­­¨î±ø¥ó¦Û©w [m
+  if (HAS_PERM(PERM_BM))        [1;44m// é™åˆ¶æ¢ä»¶è‡ªå®š [m
   {
     int bno;
     BRD *brd;
 
-    bno = brd_bno("bm");        [1;44m// ¬İªO¦Û©w [m
+    bno = brd_bno("bm");        [1;44m// çœ‹æ¿è‡ªå®š [m
     brd = bshm->bcache + bno;
-    if (brd->btime <= 0)        /* ©|¥¼§ó·s brd->blast ´N¤£±j¨î¾\Åª¤½§iªO */
+    if (brd->btime <= 0)        /* å°šæœªæ›´æ–° brd->blast å°±ä¸å¼·åˆ¶é–±è®€å…¬å‘Šæ¿ */
       return;
 
     brh_get(brd->bstamp, bno);
@@ -43,7 +43,7 @@ brd_force2()
     if (brd->blast > brd_visit[bno])
 #endif
     {
-      vmsg("¦³·s¤½§i¡I½Ğ¥ı¾\\Åª§¹·s¤½§i«á¦AÂ÷¶}");
+      vmsg("æœ‰æ–°å…¬å‘Šï¼è«‹å…ˆé–±\è®€å®Œæ–°å…¬å‘Šå¾Œå†é›¢é–‹");
       XoPost(bno);
       xover(XZ_POST);
 
@@ -57,5 +57,5 @@ brd_force2()
 
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;45m¢¢[42m¢¡[m [1mMo[30mdi[mfy: [1;36m2004/05/26 Wed 09:24:54[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;45mâ•°[42mâ•®[m [1mMo[30mdi[mfy: [1;36m2004/05/26 Wed 09:24:54[m

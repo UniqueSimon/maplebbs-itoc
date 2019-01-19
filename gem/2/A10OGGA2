@@ -1,25 +1,25 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (¡¯§Ú­n°µªº§ó¦n¡¯) ¬İªO: itoc
-¼Ğ  ÃD: Re: ¤pd¬å¤å
-µo«H¯¸: ¤¤¿³¸ê¬ì (2004/10/23 Sat 22:30:09)                Updated: 2004/10/24
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (ï¼Šæˆ‘è¦åšçš„æ›´å¥½ï¼Š) çœ‹æ¿: itoc
+æ¨™  é¡Œ: Re: å°dç æ–‡
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (2004/10/23 Sat 22:30:09)                Updated: 2004/10/24
 
-¡° ¤Ş­z¡mcsd.bbs@bbs.wretch.cc (¦ÌÂÎ)¡n¤§»Ê¨¥¡G
-> ·Q°İ¤@¤U»¡
-> ¥Ø«eªO¥D(¯¸ªø)¨Ï¥Î¤p d¬å¨Ï¥ÎªÌ¤å³¹
-> ¬O¤£¬O¤£·|´î¨Ï¥ÎªÌ¤å³¹¼Æ©O
-> ¦]¬°³Ìªñ´ú¸Õ¤F¤@¤U
-> ¦n¹³¥Î¤p d¬å
-> ¨Ï¥ÎªÌ¤å³¹¼ÆÁÙ¬O¤£·|´î¤Ö
-> ¥t¥~¦pªG­n§ï
-> À³¸Ó­n«ç»ò­×§ï©O
+â€» å¼•è¿°ã€Šcsd.bbs@bbs.wretch.cc (ç±³èŸ²)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æƒ³å•ä¸€ä¸‹èªª
+> ç›®å‰æ¿ä¸»(ç«™é•·)ä½¿ç”¨å° dç ä½¿ç”¨è€…æ–‡ç« 
+> æ˜¯ä¸æ˜¯ä¸æœƒæ¸›ä½¿ç”¨è€…æ–‡ç« æ•¸å‘¢
+> å› ç‚ºæœ€è¿‘æ¸¬è©¦äº†ä¸€ä¸‹
+> å¥½åƒç”¨å° dç 
+> ä½¿ç”¨è€…æ–‡ç« æ•¸é‚„æ˜¯ä¸æœƒæ¸›å°‘
+> å¦å¤–å¦‚æœè¦æ”¹
+> æ‡‰è©²è¦æ€éº¼ä¿®æ”¹å‘¢
 
-  ¥u­­ªO¥D¤p d ¬å¤å¡A¤~·|¦©¨Ï¥ÎªÌ¤å³¹¼Æ
+  åªé™æ¿ä¸»å° d ç æ–‡ï¼Œæ‰æœƒæ‰£ä½¿ç”¨è€…æ–‡ç« æ•¸
 
 : src/include/struct.h UTMP
 
 struct UTMP
 {
   ...
-+ int numposts;     /* µo¤å¦¸¼Æ */
++ int numposts;     /* ç™¼æ–‡æ¬¡æ•¸ */
 }
 
 : bbsd.c:utmp_setup()
@@ -40,7 +40,7 @@ struct UTMP
       if (!by_BM && !(currbattr & BRD_NOCOUNT))
       {
         ...
-        sprintf(buf, "%s¡A±zªº¤å³¹´î¬° %d ½g", MSG_DEL_OK, cuser.numposts);
+        sprintf(buf, "%sï¼Œæ‚¨çš„æ–‡ç« æ¸›ç‚º %d ç¯‡", MSG_DEL_OK, cuser.numposts);
         vmsg(buf);
       }
 +     else if (by_BM && !(currbattr & BRD_NOCOUNT) &&
@@ -56,10 +56,10 @@ struct UTMP
 +       {
 +         if (uentp->userno == userno)
 +         {
-+           /* ¦b½u¤W¡A¼g¤J utmp-> */
++           /* åœ¨ç·šä¸Šï¼Œå¯«å…¥ utmp-> */
 +           uentp->numposts--;
 +           online = 1;
-+           sprintf(buf, "§R°£§¹²¦¡I%s ¤å³¹½g¼Æ´î¬° %d ½g¡C",
++           sprintf(buf, "åˆªé™¤å®Œç•¢ï¼%s æ–‡ç« ç¯‡æ•¸æ¸›ç‚º %d ç¯‡ã€‚",
 +             uentp->userid, uentp->numposts);
 +         }
 +       } while (++uentp <= uceil);
@@ -68,7 +68,7 @@ struct UTMP
 +       {
 +         vmsg(buf);
 +       }
-+       else        /* ¤£¦b½u¤W¡A¼g¤J .ACCT */
++       else        /* ä¸åœ¨ç·šä¸Šï¼Œå¯«å…¥ .ACCT */
 +       {
 +         ACCT acct;
 +
@@ -76,7 +76,7 @@ struct UTMP
 +         {
 +           acct.numposts--;
 +           acct_save(&acct);
-+           sprintf(buf, "§R°£§¹²¦¡I%s ¤å³¹½g¼Æ´î¬° %d ½g¡C",
++           sprintf(buf, "åˆªé™¤å®Œç•¢ï¼%s æ–‡ç« ç¯‡æ•¸æ¸›ç‚º %d ç¯‡ã€‚",
 +             acct.userid, acct.numposts);
 +           vmsg(buf);
 +         }
@@ -85,7 +85,7 @@ struct UTMP
 
 ==============================================================================
 
-  ±µ¤U¨Ó§â cuser.numposts ©M cutmp->numposts ³s°Ê
+  æ¥ä¸‹ä¾†æŠŠ cuser.numposts å’Œ cutmp->numposts é€£å‹•
 
 : bbsd.c:u_exit()
 
@@ -95,7 +95,7 @@ struct UTMP
 
 : post.c:do_post()
 
-      prints("³o¬O±zªº²Ä %d ½g¤å³¹¡A±o %d »È¡C", ++cuser.numposts, mode);
+      prints("é€™æ˜¯æ‚¨çš„ç¬¬ %d ç¯‡æ–‡ç« ï¼Œå¾— %d éŠ€ã€‚", ++cuser.numposts, mode);
 +     cutmp->numposts++;
 
 : post.c:post_cross()
@@ -113,14 +113,14 @@ struct UTMP
 
 ==============================================================================
 
-    §ï¤F UTMP ­nÃö¯¸¡B²M shm¡B¶}¯¸¡C
+    æ”¹äº† UTMP è¦é—œç«™ã€æ¸… shmã€é–‹ç«™ã€‚
 
-    ©Î¬Oª½±µ­«·s¶}¾÷ :p
+    æˆ–æ˜¯ç›´æ¥é‡æ–°é–‹æ©Ÿ :p
 
-    ¦P¼Ëªº¤]¥i¥H§R¤å³¹ªº®É­Ô¦©¥Lªº¿ú¡I
+    åŒæ¨£çš„ä¹Ÿå¯ä»¥åˆªæ–‡ç« çš„æ™‚å€™æ‰£ä»–çš„éŒ¢ï¼
 
-    ¤]¬O§â money ©ñ¨ì UTMP ¸Ì­±¡C
+    ä¹Ÿæ˜¯æŠŠ money æ”¾åˆ° UTMP è£¡é¢ã€‚
 
 --
- [1;42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m csNCHU.twbbs.org [m
- [1;44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mqazq [30m±q [35m218-163-144-217.dynamic.hinet.net [30mµoªí[m
+ [1;42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m csNCHU.twbbs.org [m
+ [1;44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mqazq [30må¾ [35m218-163-144-217.dynamic.hinet.net [30mç™¼è¡¨[m

@@ -1,21 +1,21 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (:MM:) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] °ÊºA³]©w¨Ï¥ÎªÌªº¬İª©Åv­­
-µo«H¯¸: XEON (Sat, 07 Jun 2003 10:24:00 +0800 (CST))      Updated: 2004/12/06
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (:MM:) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] å‹•æ…‹è¨­å®šä½¿ç”¨è€…çš„çœ‹ç‰ˆæ¬Šé™
+ç™¼ä¿¡ç«™: XEON (Sat, 07 Jun 2003 10:24:00 +0800 (CST))      Updated: 2004/12/06
 
-¡° ¤Ş­z¡mamaki (²H¾¥)¡n¤§»Ê¨¥¡G
->   ªO¥D¤@³]©w¦n¦W³æ¡A«K¥ß¨è¹ï¦W³æ¤¤©Ò¦³id¶i¦æ°ÊºAªº¾\ÅªÅv­­ÅÜ§ó¡A§Ú¬O¤£¬O¸Ó¦b
->   UCACHE©Î¬OUTMP¥[·sªºÄæ¦ì¡H
+â€» å¼•è¿°ã€Šamaki (æ·¡å¢¨)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>   æ¿ä¸»ä¸€è¨­å®šå¥½åå–®ï¼Œä¾¿ç«‹åˆ»å°åå–®ä¸­æ‰€æœ‰idé€²è¡Œå‹•æ…‹çš„é–±è®€æ¬Šé™è®Šæ›´ï¼Œæˆ‘æ˜¯ä¸æ˜¯è©²åœ¨
+>   UCACHEæˆ–æ˜¯UTMPåŠ æ–°çš„æ¬„ä½ï¼Ÿ
 
-  ¦¹½g­×§ï¥i»P¬İªOÃa¤H¦X¨Ö¨Ï¥Î
+  æ­¤ç¯‡ä¿®æ”¹å¯èˆ‡çœ‹æ¿å£äººåˆä½µä½¿ç”¨
 
-¡° ¤@¡B­º¥ı§R°£­ì¥»ªº brd_bits «Å§i
+â€» ä¸€ã€é¦–å…ˆåˆªé™¤åŸæœ¬çš„ brd_bits å®£å‘Š
 
 : board.c
 
 - char brd_bits[MAXBOARD];
 
 #ifndef ENHANCED_VISIT
-time_t brd_visit[MAXBOARD];             /* ³ÌªñÂsÄı®É¶¡ */
+time_t brd_visit[MAXBOARD];             /* æœ€è¿‘ç€è¦½æ™‚é–“ */
 #endif
 
 : cache.c favor.c gem.c post.c visio.c vote.c
@@ -23,40 +23,40 @@ time_t brd_visit[MAXBOARD];             /* ³ÌªñÂsÄı®É¶¡ */
 - extern char brd_bits[];
 
 
-¡° ¤G¡B§â brd_bits ©ñ¶i UTMP
+â€» äºŒã€æŠŠ brd_bits æ”¾é€² UTMP
 
 : struct.h:struct UTMP
 
-  int pal_max;                  /* ¦³´X­Ó¦n¤Í */
-  int pal_spool[PAL_MAX];       /* ©Ò¦³¦n¤Íªº userno */
-+ short brd_bits[MAXBOARD];     /* ¬İªO¾\ÅªÅv­­ */
+  int pal_max;                  /* æœ‰å¹¾å€‹å¥½å‹ */
+  int pal_spool[PAL_MAX];       /* æ‰€æœ‰å¥½å‹çš„ userno */
++ short brd_bits[MAXBOARD];     /* çœ‹æ¿é–±è®€æ¬Šé™ */
 
 : board.c cache.c favor.c gem.c post.c visio.c vote.c
 
-  ©Ò¦³ brd_bits ¨ú¥N¦¨ cutmp->brd_bits
+  æ‰€æœ‰ brd_bits å–ä»£æˆ cutmp->brd_bits
 
 
-¡° ¤T¡B·s¼W­Ó STATUS_BRD_BIT¡BBRD_D_BIT
+â€» ä¸‰ã€æ–°å¢å€‹ STATUS_BRD_BITã€BRD_D_BIT
 
 : ufo.h
 
-+ #define STATUS_BRD_BIT  BFLAG(7)        /* ³QÅÜ§ó¹L¬İªOÅv­­ */
++ #define STATUS_BRD_BIT  BFLAG(7)        /* è¢«è®Šæ›´éçœ‹æ¿æ¬Šé™ */
 
-  §A¤£¤@©w¥Î7¡A¥u­n¤p©ó32ªº¼Æ¦r¥B¸ò¨ä¥LºX¼Ğ¨S¦³­«½Æ§Y¥i¡C
+  ä½ ä¸ä¸€å®šç”¨7ï¼Œåªè¦å°æ–¼32çš„æ•¸å­—ä¸”è·Ÿå…¶ä»–æ——æ¨™æ²’æœ‰é‡è¤‡å³å¯ã€‚
 
 : modes.h
 
-#define BRD_Z_BIT       0x80    /* .BRH zap ±¼¤F */
+#define BRD_Z_BIT       0x80    /* .BRH zap æ‰äº† */
 + #define BRD_D_BIT     0x100   /* dirty */
 
 
-¡° ¥|¡B·s¼W §ï©Ò¦³½u¤W¨Ï¥ÎªÌ brd_bits ªº¨ç¦¡
+â€» å››ã€æ–°å¢ æ”¹æ‰€æœ‰ç·šä¸Šä½¿ç”¨è€… brd_bits çš„å‡½å¼
 
 : maple.p
 
 + void utmp_brdset(int bno);
 
-: board.c ·s¼W¨ç¦¡ utmp_brdset() ©ó Ben_Perm() «á­±
+: board.c æ–°å¢å‡½å¼ utmp_brdset() æ–¼ Ben_Perm() å¾Œé¢
 
 void
 utmp_brdset(bno)
@@ -69,13 +69,13 @@ utmp_brdset(bno)
 
   do
   {
-    uentp->status |= STATUS_BRD_BIT;        /* §i¶D¹ï¤è­n­«·s§PÂ_ brd_bits */
-    uentp->brd_bits[bno] |= BRD_D_BIT;      /* ­n­«·s§PÂ_ªº¬O bno ³o­ÓªO */
+    uentp->status |= STATUS_BRD_BIT;        /* å‘Šè¨´å°æ–¹è¦é‡æ–°åˆ¤æ–· brd_bits */
+    uentp->brd_bits[bno] |= BRD_D_BIT;      /* è¦é‡æ–°åˆ¤æ–·çš„æ˜¯ bno é€™å€‹æ¿ */
   } while (++uentp <= uceil);
 }
 
 
-¡° ¤­¡B·íªO¥DÅÜ°Ê¬İªO¦n¤Í®É¡A´N­nÅÜ°Ê©Ò¦³½u¤W¨Ï¥ÎªÌªº brd_bits
+â€» äº”ã€ç•¶æ¿ä¸»è®Šå‹•çœ‹æ¿å¥½å‹æ™‚ï¼Œå°±è¦è®Šå‹•æ‰€æœ‰ç·šä¸Šä½¿ç”¨è€…çš„ brd_bits
 
 : manage.c:XoBM()
 
@@ -85,7 +85,7 @@ utmp_brdset(bno)
     return XO_INIT;
 
 
-¡° ¤»¡B·í¯¸ªø/ªO¥DÅÜ°Ê¬İªOÅv­­®É¡A´N­nÅÜ°Ê©Ò¦³½u¤W¨Ï¥ÎªÌªº brd_bits
+â€» å…­ã€ç•¶ç«™é•·/æ¿ä¸»è®Šå‹•çœ‹æ¿æ¬Šé™æ™‚ï¼Œå°±è¦è®Šå‹•æ‰€æœ‰ç·šä¸Šä½¿ç”¨è€…çš„ brd_bits
 
 : manage.c:post_brdlevel()
 
@@ -96,7 +96,7 @@ utmp_brdset(bno)
 +   utmp_brdset(currbno);
   }
 
-: acct.c:m_newbrd() ¤Î newbrd.c:nbrd_newbrd()
+: acct.c:m_newbrd() åŠ newbrd.c:nbrd_newbrd()
 
   brh_save();
   board_main();                 /* reload brd_bits[] */
@@ -109,9 +109,9 @@ utmp_brdset(bno)
 +       utmp_brdset(bno);
 
 
-¡° ¤C¡B·í§Úµo²{§Ú¦Û¤vªº status ¦³ STATUS_BRD_BIT ®É¡A§ÚÀ³¸Ó­n­«·s¸ü¤J¬İªO
+â€» ä¸ƒã€ç•¶æˆ‘ç™¼ç¾æˆ‘è‡ªå·±çš„ status æœ‰ STATUS_BRD_BIT æ™‚ï¼Œæˆ‘æ‡‰è©²è¦é‡æ–°è¼‰å…¥çœ‹æ¿
 
-: §ï board.c:class_head()
+: æ”¹ board.c:class_head()
 
 static int
 class_head(xo)
@@ -127,7 +127,7 @@ class_head(xo)
 +   do
 +   {
 +     bit_temp = cutmp->brd_bits[n];
-+     if (bit_temp & BRD_D_BIT)   /* ¥u§ó·s¦³ dirty ªº¡A­ì¥»ªº V,H,Z ­n«O¯d */
++     if (bit_temp & BRD_D_BIT)   /* åªæ›´æ–°æœ‰ dirty çš„ï¼ŒåŸæœ¬çš„ V,H,Z è¦ä¿ç•™ */
 +       cutmp->brd_bits[n] = Ben_Perm(n, cuser.userlevel) |
 +         (bit_temp & (BRD_V_BIT | BRD_H_BIT | BRD_Z_BIT));
 +   } while (++n < max);
@@ -135,12 +135,12 @@ class_head(xo)
 +   cutmp->status ^= STATUS_BRD_BIT;
 +   class_load(xo);
 + }
-  vs_head("¬İªO¦Cªí", str_site);
+  vs_head("çœ‹æ¿åˆ—è¡¨", str_site);
   return class_neck(xo);
 }
 
 
-¡° ¤K¡B­ì¥»¥i¨£ªº¬İªO¥i¯à¬ğµMÅÜ¦¨¤£¥i¨£¡A©Ò¥H©I¥s XoPost() ªº¦a¤è­n§ï
+â€» å…«ã€åŸæœ¬å¯è¦‹çš„çœ‹æ¿å¯èƒ½çªç„¶è®Šæˆä¸å¯è¦‹ï¼Œæ‰€ä»¥å‘¼å« XoPost() çš„åœ°æ–¹è¦æ”¹
 
 : menu.c:menu()
 
@@ -148,7 +148,7 @@ class_head(xo)
         {
           utmp_mode(M_BOARD);
 -         XoPost(currbno);
-+         if (XoPost(currbno) < 0)    /* ¶Ç¦^-1 ¥Nªí µL¾\ÅªÅv­­ */
++         if (XoPost(currbno) < 0)    /* å‚³å›-1 ä»£è¡¨ ç„¡é–±è®€æ¬Šé™ */
           {
             xover(XZ_POST);
 #ifndef ENHANCED_VISIT
@@ -160,7 +160,7 @@ class_head(xo)
 : xover.c:every_Z()
 
   case 'b':
-    if (xz[XZ_POST - XO_ZONE].xo) /* ­Y¤w¿ï©w¬İªO¡A¶i¤J¬İªO¡A§_«h¨ì¬İªO¦Cªí */
+    if (xz[XZ_POST - XO_ZONE].xo) /* è‹¥å·²é¸å®šçœ‹æ¿ï¼Œé€²å…¥çœ‹æ¿ï¼Œå¦å‰‡åˆ°çœ‹æ¿åˆ—è¡¨ */
     {
 -     XoPost(currbno);
 +     if (XoPost(currbno) < 0)
@@ -170,8 +170,8 @@ class_head(xo)
     }
 
 --
-  §ï struct UTMP ­n²M shm¡A­«¶} bbsd
+  æ”¹ struct UTMP è¦æ¸… shmï¼Œé‡é–‹ bbsd
 
 --
-    [1;32m¢~¢w Origin ¢wùß [0;36m°[1mÊ[0;36m¤[1mO[0;36m®[1mÖ[0;36m¤[1mß [1;31m processor.tfcis.org [32m ¡ã £e£f£g ¢w¢t[m
-    [1;32m¢u   Author   ùë [33;44mitoc.Dorm-GD2.NCTU.edu.tw                [m
+    [1;32mâ•­â”€ Origin â”€â•— [0;36m?[1m?[0;36m?[1mO[0;36m?[1m?[0;36m?[1m?[1;31m processor.tfcis.org [32m ï½ ÎºÎ»Î¼ â”€â”¤[m
+    [1;32mâ”œ   Author   â•¡ [33;44mitoc.Dorm-GD2.NCTU.edu.tw                [m

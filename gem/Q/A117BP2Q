@@ -1,11 +1,11 @@
-µo«H¤H: catch.bbs@bbs.ee.nuk.edu.tw (damn apache) ¬İªO: itoc
-¼Ğ  ÃD: Re: [¥\¯à] ¤å³¹µû¤À¥\¯à (¶§¬Kª©)
-µo«H¯¸: °ª¤j¹q¾÷ (Mon, 26 May 2003 07:23:01 +0800 (CST))  Updated: 2005/01/09
+ç™¼ä¿¡äºº: catch.bbs@bbs.ee.nuk.edu.tw (damn apache) çœ‹æ¿: itoc
+æ¨™  é¡Œ: Re: [åŠŸèƒ½] æ–‡ç« è©•åˆ†åŠŸèƒ½ (é™½æ˜¥ç‰ˆ)
+ç™¼ä¿¡ç«™: é«˜å¤§é›»æ©Ÿ (Mon, 26 May 2003 07:23:01 +0800 (CST))  Updated: 2005/01/09
 
-¡° ¤Ş­z¡mKayin.bbs@cavemen.twbbs.org (»{ÃÑ§Úªº§Ö³]¦n¤Í)¡n¤§»Ê¨¥¡G
-> ¦]¬°±À¤å¦¸¼Æ¤£­­
-> ©Ò¥H«ØÄ³¥i¥H¥[¤W­­¨î®É¶¡
-> ¨Ò¦p»¡30¬í¤º¤£¯à±À²Ä¤G½g¤å³¹³o¼Ë
+â€» å¼•è¿°ã€ŠKayin.bbs@cavemen.twbbs.org (èªè­˜æˆ‘çš„å¿«è¨­å¥½å‹)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å› ç‚ºæ¨æ–‡æ¬¡æ•¸ä¸é™
+> æ‰€ä»¥å»ºè­°å¯ä»¥åŠ ä¸Šé™åˆ¶æ™‚é–“
+> ä¾‹å¦‚èªª30ç§’å…§ä¸èƒ½æ¨ç¬¬äºŒç¯‡æ–‡ç« é€™æ¨£
 
 : post.c:post_score()
 
@@ -13,23 +13,23 @@ static int
 post_score(xo)
   XO *xo;
 {
-+ static time_t next = 0;   /* ¤U¦¸¥iµû¤À®É¶¡ */
++ static time_t next = 0;   /* ä¸‹æ¬¡å¯è©•åˆ†æ™‚é–“ */
 
   ...
 
-  if (!(bbstate & STAT_POST))   /* µû¤Àµø¦Pµoªí¤å³¹ */
+  if (!(bbstate & STAT_POST))   /* è©•åˆ†è¦–åŒç™¼è¡¨æ–‡ç«  */
     return XO_NONE;
 
 + if ((ans = next - time(NULL)) > 0)
 + {
-+   sprintf(fpath, "ÁÙ¦³ %d ¬í¤~¯àµû¤À³á", ans);
++   sprintf(fpath, "é‚„æœ‰ %d ç§’æ‰èƒ½è©•åˆ†å–”", ans);
 +   vmsg(fpath);
 +   return XO_FOOT;
 + }
 
   ...
 
-+ next = time(NULL) + 180;  /* ¨C 180 ¬í¤è¥iµû¤À¤@¦¸ */
++ next = time(NULL) + 180;  /* æ¯ 180 ç§’æ–¹å¯è©•åˆ†ä¸€æ¬¡ */
 
   if (curraddscore)
   {
@@ -40,8 +40,8 @@ post_score(xo)
   }
 
 --
-  ¦P¤@­Ó¤Hªº multi-login ªº¥t¤@°¦¡AÁÙ¬O¨S¦³ 180 ¬íªº­­¨î
+  åŒä¸€å€‹äººçš„ multi-login çš„å¦ä¸€éš»ï¼Œé‚„æ˜¯æ²’æœ‰ 180 ç§’çš„é™åˆ¶
 
 --
-    [1;32m¢~¢w Origin ¢wùß [;36;40m¥[1mm[;36;40m¾[1m´[;36;40m¾[1mÇ[;36;40m¶[1mé [31m bbs.ee.nuk.edu.tw [32m ¡ã £e£f£g ¢w¢t[m
-    [1;32m¢u   Author   ùë [33;44msw59-119-154.adsl.seed.net.tw          [m
+    [1;32mâ•­â”€ Origin â”€â•— [;36;40m?[1mm[;36;40m?[1m?[;36;40m?[1m?[;36;40m?[1m?[31m bbs.ee.nuk.edu.tw [32m ï½ ÎºÎ»Î¼ â”€â”¤[m
+    [1;32mâ”œ   Author   â•¡ [33;44msw59-119-154.adsl.seed.net.tw          [m

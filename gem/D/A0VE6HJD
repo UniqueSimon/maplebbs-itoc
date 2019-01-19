@@ -1,18 +1,18 @@
-µo«H¤H: amaki.bbs@luna.twbbs.org (¥P¯ó¤p¦Ï) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à]¶i¶¥ª©¥D¥\¯à
-µo«H¯¸: ¤ë¤U©]·Q (Fri, 18 Apr 2003 11:27:23 +0800 (CST))  Updated: 2005/05/19
+ç™¼ä¿¡äºº: amaki.bbs@luna.twbbs.org (ä»™è‰å°ç¾Š) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]é€²éšç‰ˆä¸»åŠŸèƒ½
+ç™¼ä¿¡ç«™: æœˆä¸‹å¤œæƒ³ (Fri, 18 Apr 2003 11:27:23 +0800 (CST))  Updated: 2005/05/19
 
-  WD¦³¶i¶¥ªO¥D¥\¯à¡AM3·íµM¤]¥i¥H¦³¡C
+  WDæœ‰é€²éšæ¿ä¸»åŠŸèƒ½ï¼ŒM3ç•¶ç„¶ä¹Ÿå¯ä»¥æœ‰ã€‚
 
 > config.h
 
-#define HAVE_ADVANCE_BMPERM     /* amaki.030418: ¶i¶¥ªO¥D¥\¯à */
+#define HAVE_ADVANCE_BMPERM     /* amaki.030418: é€²éšæ¿ä¸»åŠŸèƒ½ */
 
 > post.c
 
-  §âitoc¤§«e¼gªºpost_prefix§Û¤U¨Ó¥Î¡C
+  æŠŠitocä¹‹å‰å¯«çš„post_prefixæŠ„ä¸‹ä¾†ç”¨ã€‚
 
-  ©ñ¦bdo_post«e§Y¥i¡C
+  æ”¾åœ¨do_postå‰å³å¯ã€‚
 
 #ifdef HAVE_ADVANCE_BMPERM
 static int
@@ -29,7 +29,7 @@ post_prefix(xo)
 
   if (dashf(fpath))
   {
-    switch (vans("1)§R°£Ãş§O 2)³]©w·sªºÃş§O¡H[Q] "))
+    switch (vans("1)åˆªé™¤é¡åˆ¥ 2)è¨­å®šæ–°çš„é¡åˆ¥ï¼Ÿ[Q] "))
     {
     case '1':
       if (vans(msg_sure_ny) == 'y')
@@ -37,7 +37,7 @@ post_prefix(xo)
       break;
 
     case '2':
-      if (vget(b_lines, 0, "Ãş§O¡G", buf, 60, DOECHO) && (vans(msg_sure_ny) == 'y'))
+      if (vget(b_lines, 0, "é¡åˆ¥ï¼š", buf, 60, DOECHO) && (vans(msg_sure_ny) == 'y'))
       {
         if (fp = fopen(fpath, "w"))
         {
@@ -48,7 +48,7 @@ post_prefix(xo)
       break;
     }
   }
-  else if (vget(b_lines, 0, "Ãş§O¡G", buf, 60, DOECHO) && vans(msg_sure_ny) == 'y')
+  else if (vget(b_lines, 0, "é¡åˆ¥ï¼š", buf, 60, DOECHO) && vans(msg_sure_ny) == 'y')
   {
     if (fp = fopen(fpath, "w"))
     {
@@ -61,15 +61,15 @@ post_prefix(xo)
 }
 #endif /* HAVE_ADVANCE_BMPERM */
 
-  [33m­×§ïdo_post[m
+  [33mä¿®æ”¹do_post[m
 
-[1;32m![m#ifdef HAVE_ADVANCE_BMPERM /* ¤p¤ß­×§ï¤U­±³o¤@¬q¡A¦Û¤v¤ñ¹ï¤p¤ß§ï */
+[1;32m![m#ifdef HAVE_ADVANCE_BMPERM /* å°å¿ƒä¿®æ”¹ä¸‹é¢é€™ä¸€æ®µï¼Œè‡ªå·±æ¯”å°å°å¿ƒæ”¹ */
   if (title)
   {
     rcpt = NULL;
   }
-  else          /* itoc.020113: ·s¤å³¹¿ï¾Ü¼ĞÃD¤ÀÃş */
-                /* amaki.030418: ªO¥D¤£³]¼ĞÃD´Nª½±µpost¡A¤£Åã¥Ü¹w³]¼ĞÃD */
+  else          /* itoc.020113: æ–°æ–‡ç« é¸æ“‡æ¨™é¡Œåˆ†é¡ */
+                /* amaki.030418: æ¿ä¸»ä¸è¨­æ¨™é¡Œå°±ç›´æ¥postï¼Œä¸é¡¯ç¤ºé è¨­æ¨™é¡Œ */
   {
 #define NUM_PREFIX 6
 
@@ -80,7 +80,7 @@ post_prefix(xo)
     if (fp = fopen(fpath, "r"))
     {
       move(21, 0);
-      outs("Ãş§O¡G");
+      outs("é¡åˆ¥ï¼š");
       for (mode = 0; mode < NUM_PREFIX; mode++)
       {
         if (fscanf(fp, "%s", fpath) != 1)
@@ -91,17 +91,17 @@ post_prefix(xo)
 
       fclose(fp);
 
-      mode = vget(20, 0, "½Ğ¿ï¾Ü¤å³¹Ãş§O¡]«ö Enter ¸õ¹L¡^¡G", fpath, 3, DOECHO) - '1';
-      if (mode >= 0 && mode < NUM_PREFIX)               /* ¿é¤J¼Æ¦r¿ï¶µ */
+      mode = vget(20, 0, "è«‹é¸æ“‡æ–‡ç« é¡åˆ¥ï¼ˆæŒ‰ Enter è·³éï¼‰ï¼š", fpath, 3, DOECHO) - '1';
+      if (mode >= 0 && mode < NUM_PREFIX)               /* è¼¸å…¥æ•¸å­—é¸é … */
         rcpt = prefix[mode];
-      else                                      /* ªÅ¥Õ¸õ¹L */
+      else                                      /* ç©ºç™½è·³é */
         rcpt = NULL;
     }
 
 
-  [33m¦b­ì¨Óªºpost_brdtitle«e­±·s¼W¤@¤ä¨ç¦¡[m
+  [33måœ¨åŸä¾†çš„post_brdtitleå‰é¢æ–°å¢ä¸€æ”¯å‡½å¼[m
 
-#ifdef HAVE_ADVANCE_BMPERM /* amaki.030418: §Û¤@¤ä·sªº§a¡A³o¼Ë¤~¤£·|¥Î#ifdefÁàÁàªº */
+#ifdef HAVE_ADVANCE_BMPERM /* amaki.030418: æŠ„ä¸€æ”¯æ–°çš„å§ï¼Œé€™æ¨£æ‰ä¸æœƒç”¨#ifdefé†œé†œçš„ */
 static int
 post_brdtitle(xo)
   XO *xo;
@@ -116,28 +116,28 @@ post_brdtitle(xo)
   oldbrd = bshm->bcache + bno;
   memcpy(&newbrd, oldbrd, sizeof(BRD));
 
-  switch (vans("¡·­×§ï¬İªO¸ê®Æ 1)­×§ïªO¦W/¥DÃD 2)¬İªOÄİ©Ê 3)¤å³¹¼ĞÃD¡H[Q] "))
+  switch (vans("â—ä¿®æ”¹çœ‹æ¿è³‡æ–™ 1)ä¿®æ”¹æ¿å/ä¸»é¡Œ 2)çœ‹æ¿å±¬æ€§ 3)æ–‡ç« æ¨™é¡Œï¼Ÿ[Q] "))
   {
   case '1':
-    vget(b_lines, 0, "¬İªO¦WºÙ¡G", newbrd.title + BCLEN, BTLEN + 1 - BCLEN, GCARRY);
-    vget(b_lines, 0, "¬İªO¥DÃD¡G", newbrd.title, BCLEN, GCARRY);
+    vget(b_lines, 0, "çœ‹æ¿åç¨±ï¼š", newbrd.title + BCLEN, BTLEN + 1 - BCLEN, GCARRY);
+    vget(b_lines, 0, "çœ‹æ¿ä¸»é¡Œï¼š", newbrd.title, BCLEN, GCARRY);
     break;
 
   case '2':
-    switch (vans("±z·Q³]©wªº¬İªOÃş«¬¡H A)¤½¶} B)¯µ±K C)¦n¤Í¡H[Q] "))
+    switch (vans("æ‚¨æƒ³è¨­å®šçš„çœ‹æ¿é¡å‹ï¼Ÿ A)å…¬é–‹ B)ç§˜å¯† C)å¥½å‹ï¼Ÿ[Q] "))
     {
     case 'a':
       newbrd.readlevel = 0;
-      newbrd.postlevel = PERM_POST;         /* ¤@¯ë¬İªOµoªíÅv­­¬° PERM_POST */
+      newbrd.postlevel = PERM_POST;         /* ä¸€èˆ¬çœ‹æ¿ç™¼è¡¨æ¬Šé™ç‚º PERM_POST */
       break;
 
     case 'b':
-      newbrd.readlevel = PERM_SYSOP;        /* ¯µ±K¬İªO */
+      newbrd.readlevel = PERM_SYSOP;        /* ç§˜å¯†çœ‹æ¿ */
       newbrd.postlevel = 0;
       break;
 
     case 'c':
-      newbrd.readlevel = PERM_BOARD;        /* ¦n¤Í¬İªO */
+      newbrd.readlevel = PERM_BOARD;        /* å¥½å‹çœ‹æ¿ */
       newbrd.postlevel = 0;
       break;
     }
@@ -154,7 +154,7 @@ post_brdtitle(xo)
     {
       memcpy(oldbrd, &newbrd, sizeof(BRD));
       rec_put(FN_BRD, &newbrd, sizeof(BRD), bno, NULL);
-      return XO_HEAD; /* itoc.011125: ­n­«Ã¸¤¤¤åªO¦W */
+      return XO_HEAD; /* itoc.011125: è¦é‡ç¹ªä¸­æ–‡æ¿å */
     }
   }
 
@@ -163,15 +163,15 @@ post_brdtitle(xo)
 
 #else
 
-  ³Ì«á¦bÂÂªºpost_brdtitle§À¤Ú¥[¤@­Ó#endif´NOK¡C
+  æœ€å¾Œåœ¨èˆŠçš„post_brdtitleå°¾å·´åŠ ä¸€å€‹#endifå°±OKã€‚
 
 > acct.c
 
 
-  [33m¦bbrd_title«e·s¼W¤@¤ä¨ç¦¡[m
+  [33måœ¨brd_titleå‰æ–°å¢ä¸€æ”¯å‡½å¼[m
 
 #ifdef HAVE_ADVANCE_BMPERM
-/* amaki.030418: §â­ì¨Óªºbrd_title¥[¶i¤@°ï#ifdefÁàÃz¤F¡A°®¯Ü§Û¤@¤ä·sªº¤ñ¸û¬üÆ[:) */
+/* amaki.030418: æŠŠåŸä¾†çš„brd_titleåŠ é€²ä¸€å †#ifdefé†œçˆ†äº†ï¼Œä¹¾è„†æŠ„ä¸€æ”¯æ–°çš„æ¯”è¼ƒç¾è§€:) */
 void
 brd_title(bno)
   int bno;
@@ -187,31 +187,31 @@ brd_title(bno)
 
   if (blist[0] > ' ' && is_bm(blist))
   {
-    switch (vans("¡·­×§ï¬İªO¸ê®Æ 1)­×§ïªO¦W 2)­×§ïÃş§O 3)¬İªOÄİ©Ê¡H[Q] "))
+    switch (vans("â—ä¿®æ”¹çœ‹æ¿è³‡æ–™ 1)ä¿®æ”¹æ¿å 2)ä¿®æ”¹é¡åˆ¥ 3)çœ‹æ¿å±¬æ€§ï¼Ÿ[Q] "))
     {
     case '1':
-      vget(1, 0, "¬İªO¦WºÙ¡G", newbh.title + BCLEN , BTLEN + 1 - BCLEN, GCARRY);
+      vget(1, 0, "çœ‹æ¿åç¨±ï¼š", newbh.title + BCLEN , BTLEN + 1 - BCLEN, GCARRY);
       break;
 
     case '2':
-      vget(1, 0, "¬İªO¥DÃD¡G", newbh.title, BCLEN, GCARRY);
+      vget(1, 0, "çœ‹æ¿ä¸»é¡Œï¼š", newbh.title, BCLEN, GCARRY);
       break;
 
     case '3':
-      switch (vans("±z·Q³]©wªº¬İªOÃş«¬ A)¤½¶} B)¯µ±K C)¦n¤Í¡H[Q] "))
+      switch (vans("æ‚¨æƒ³è¨­å®šçš„çœ‹æ¿é¡å‹ A)å…¬é–‹ B)ç§˜å¯† C)å¥½å‹ï¼Ÿ[Q] "))
       {
       case 'a':
         newbh.readlevel = 0;
-        newbh.postlevel = PERM_POST;         /* ¤@¯ë¬İªOµoªíÅv­­¬° PERM_POST */
+        newbh.postlevel = PERM_POST;         /* ä¸€èˆ¬çœ‹æ¿ç™¼è¡¨æ¬Šé™ç‚º PERM_POST */
         break;
 
       case 'b':
-        newbh.readlevel = PERM_SYSOP;        /* ¯µ±K¬İªO */
+        newbh.readlevel = PERM_SYSOP;        /* ç§˜å¯†çœ‹æ¿ */
         newbh.postlevel = 0;
         break;
 
       case 'c':
-        newbh.readlevel = PERM_BOARD;        /* ¦n¤Í¬İªO */
+        newbh.readlevel = PERM_BOARD;        /* å¥½å‹çœ‹æ¿ */
         newbh.postlevel = 0;
         break;
       }
@@ -230,9 +230,9 @@ brd_title(bno)
 }
 #else
 
-  ³Ì«á¦bÂÂªºbrd_title§À¤Ú¥[¤@­Ó#endif´NOK¡C
+  æœ€å¾Œåœ¨èˆŠçš„brd_titleå°¾å·´åŠ ä¸€å€‹#endifå°±OKã€‚
 
-  [33m­×§ïbrd_edit[m
+  [33mä¿®æ”¹brd_edit[m
 
 void
 brd_edit(bno)
@@ -241,14 +241,14 @@ brd_edit(bno)
   BRD *bhdr, newbh;
   char buf[80], data[3];
 
-  vs_bar("¬İªO³]©w");
+  vs_bar("çœ‹æ¿è¨­å®š");
 
-  ......(²¤)
+  ......(ç•¥)
 
-  case 'e':  /* ¤U­±ªº³¡¤À½Ğ¥J²Ó¤ñ¹ï­×§ï */
+  case 'e':  /* ä¸‹é¢çš„éƒ¨åˆ†è«‹ä»”ç´°æ¯”å°ä¿®æ”¹ */
 
     move(9, 0);
-    outs("ª½±µ«ö [Return] ¤£­×§ï¸Ó¶µ³]©w");
+    outs("ç›´æ¥æŒ‰ [Return] ä¸ä¿®æ”¹è©²é …è¨­å®š");
 
     if (!m_setbrd(&newbh))
     {
@@ -257,12 +257,12 @@ brd_edit(bno)
         if (strcmp(bhdr->brdname, newbh.brdname))
         {
           char src[80], dst[80];
-          /* Thor.980806: ¯S§Oª`·N¦pªG board¤£¦b¦P¤@partitionùØªº¸Ü·|¦³°İÃD */
+          /* Thor.980806: ç‰¹åˆ¥æ³¨æ„å¦‚æœ boardä¸åœ¨åŒä¸€partitionè£çš„è©±æœƒæœ‰å•é¡Œ */
           sprintf(src, "gem/brd/%s", bhdr->brdname);
           sprintf(dst, "gem/brd/%s", newbh.brdname);
           rename(src, dst);
           rename(src + 4, dst + 4);
-          vmsg("±z§ó§ï¤FªO¦W¡A½Ğ°È¥²¥hAnnounceªºClass¤ÀÃş¸Ì¥[¤J·s¬İªO¡I");
+          vmsg("æ‚¨æ›´æ”¹äº†æ¿åï¼Œè«‹å‹™å¿…å»Announceçš„Classåˆ†é¡è£¡åŠ å…¥æ–°çœ‹æ¿ï¼");
         }
         if (memcmp(&newbh, bhdr, sizeof(newbh)))
         {
@@ -271,17 +271,17 @@ brd_edit(bno)
         }
       }
     }
-    vmsg("³]©w§¹²¦");
+    vmsg("è¨­å®šå®Œç•¢");
     break;
   }
 }
 
 
 --
-  Ä±±o§â¬İªO¥DÃDÅıªO¥D§ï¤£³ßÅwªº¸Ü¡A¤]¥i¥H±qswitch¸Ì®³±¼¡C
+  è¦ºå¾—æŠŠçœ‹æ¿ä¸»é¡Œè®“æ¿ä¸»æ”¹ä¸å–œæ­¡çš„è©±ï¼Œä¹Ÿå¯ä»¥å¾switchè£¡æ‹¿æ‰ã€‚
 
-  ³Ì¦nÁÙ¬O¤£­nÅıªO¥D¦³ÅÜ§ó¬İªOÄİ©ÊªºÅv­­¡Aµ¹³o¼ËªºÅv­­À³¸Óºâ¬O®t¤£¦h·¥­­¤F¡C
+  æœ€å¥½é‚„æ˜¯ä¸è¦è®“æ¿ä¸»æœ‰è®Šæ›´çœ‹æ¿å±¬æ€§çš„æ¬Šé™ï¼Œçµ¦é€™æ¨£çš„æ¬Šé™æ‡‰è©²ç®—æ˜¯å·®ä¸å¤šæ¥µé™äº†ã€‚
 --
-  ªá«Nªº¥\¯à¯u¬O®ö¶O¨t²Î¸ê·½ªº¸o´c®Ú·½-_-;;;
+  èŠ±ä¿çš„åŠŸèƒ½çœŸæ˜¯æµªè²»ç³»çµ±è³‡æºçš„ç½ªæƒ¡æ ¹æº-_-;;;
 --
   [1;33mOrigin: luna.twbbs.org[m

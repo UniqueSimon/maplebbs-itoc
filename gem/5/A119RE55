@@ -1,25 +1,25 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: Maple_itoc
-¼Ğ  ÃD: Re: Âà´«¥­¥xªº°İÃD
-µo«H¯¸: °Ê¤O®Ö¤ß (04/02/04 00:31:45 Fri)
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: Maple_itoc
+æ¨™  é¡Œ: Re: è½‰æ›å¹³å°çš„å•é¡Œ
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (04/02/04 00:31:45 Fri)
 
-¡° ¤Ş­z¡mBlackJoker (ÂP­ù)¡n¤§»Ê¨¥¡G
-> ­ìwinª©¥»ªºMaple BBS ­n§ï¬[¦blinux
-> ½Ğ°İ­ìgem usr brd src µ¥  ¸ê®Æ ­n¦p¦ó©ñ¨ìlinux©O
+â€» å¼•è¿°ã€ŠBlackJoker (åš•å“©)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> åŸwinç‰ˆæœ¬çš„Maple BBS è¦æ”¹æ¶åœ¨linux
+> è«‹å•åŸgem usr brd src ç­‰  è³‡æ–™ è¦å¦‚ä½•æ”¾åˆ°linuxå‘¢
 
-  0. ¥H¤U³£¬O¥H¨Ï¥ÎªÌ±b¸¹ bbs ªº¨­¤À°õ¦æ
+  0. ä»¥ä¸‹éƒ½æ˜¯ä»¥ä½¿ç”¨è€…å¸³è™Ÿ bbs çš„èº«åˆ†åŸ·è¡Œ
 
-  1. ©ó Cygwin °õ¦æ
+  1. æ–¼ Cygwin åŸ·è¡Œ
 
     % cd /home
     % tar cfz /tmp/bbs.tgz bbs
 
-  2. ¤W¶Ç bbs.tgz ¨ì FreeBSD/Linux
-     (°²³]©ñ¦b /tmp/bbs.tgz)
+  2. ä¸Šå‚³ bbs.tgz åˆ° FreeBSD/Linux
+     (å‡è¨­æ”¾åœ¨ /tmp/bbs.tgz)
 
-  3. ¦b FreeBSD/Linux ¤W§ì MapleBBS-3.10-DATE-PACK.tgz
-     (°²³]©ñ¦b /tmp/MapleBBS-3.10-PACK-SRC.tgz)
+  3. åœ¨ FreeBSD/Linux ä¸ŠæŠ“ MapleBBS-3.10-DATE-PACK.tgz
+     (å‡è¨­æ”¾åœ¨ /tmp/MapleBBS-3.10-PACK-SRC.tgz)
 
-  4. ©ó FreeBSD/Linux °õ¦æ
+  4. æ–¼ FreeBSD/Linux åŸ·è¡Œ
 
     % cd /tmp
     % tar xfz /tmp/MapleBBS-3.10-DATE-SRC.tgz
@@ -35,8 +35,8 @@
     % make clean linux install
 
 --
-  ¤Ï¥¿­ì«h´N¬O¡usrc/ ´«¥t¤@ª©¥»ªº¡A¨ä¥LªF¦è«h³£¤£ÅÜ¡v
+  åæ­£åŸå‰‡å°±æ˜¯ã€Œsrc/ æ›å¦ä¸€ç‰ˆæœ¬çš„ï¼Œå…¶ä»–æ±è¥¿å‰‡éƒ½ä¸è®Šã€
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

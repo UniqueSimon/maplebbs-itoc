@@ -1,35 +1,35 @@
-�@��: itoc (�\��о�) ����: SYSOP
-���D: ��ذϽs��
-�ɶ�: Sat Jan  1 00:00:00 2000
+作者: itoc (功能教學) 站內: SYSOP
+標題: 精華區編選
+時間: Sat Jan  1 00:00:00 2000
 
-                        [1;42m �� ��ذϽs�� �� [m
+                        [1;42m □ 精華區編選 □ [m
 
-# �i�J�@�ӪŪ���Ƨ��|�X�{
-  (A)�s�W��� (P)�K�� (G)����\�� [N]�L�Ҩƨ�
-# �άO�i�J�@�Ӹ�Ƨ��A�� [1;31m^P[m
+# 進入一個空的資料夾會出現
+  (A)新增資料 (P)貼複 (G)海錨功能 [N]無所事事
+# 或是進入一個資料夾，按 [1;31m^P[m
 
-  % �� A ����|�X�{ (�۷���b���ɫ� [1;31m^P + A[m)
+  % 按 A 之後會出現 (相當於在平時按 [1;31m^P + A[m)
 
-  �s�W (A)�峹 (B)�ݪO (C)���� (D)��� (F)���v (G)���� (P)�K�� (Q)���� (����)
-  �s�W (A)�峹 (F)���v (G)���� (P)�K�� (Q)����                         (�O�D)
+  新增 (A)文章 (B)看板 (C)分類 (D)資料 (F)卷宗 (G)絲路 (P)貼複 (Q)取消 (站長)
+  新增 (A)文章 (F)卷宗 (G)絲路 (P)貼複 (Q)取消                         (板主)
 
-    A)rticle �s�W�@�g�峹 (�ݭn�ۤv��)
-    B)oard   �s�W�@�ӬݪO (�i�h��N�|�ݨ�ӪO����ذ�)
-    C)lass   �s�W�@�Ӥ���
-    D)ata    �s�W�@�g�峹�A�P A ���P�B�b��ݥ����D�ɦW
-    F)older  �s�W�@�Ӹ�Ƨ�
-    G)opher  �s�W�@�� Gopher ���|
-    P)aste   �K�W (�ݦb�O�B���� Copy ���ʧ@)(�۷��� ^V �����O)
-    Q)uit    ���}
+    A)rticle 新增一篇文章 (需要自己打)
+    B)oard   新增一個看板 (進去後就會看到該板的精華區)
+    C)lass   新增一個分類
+    D)ata    新增一篇文章，與 A 不同處在於需先知道檔名
+    F)older  新增一個資料夾
+    G)opher  新增一個 Gopher 路徑
+    P)aste   貼上 (需在別處先有 Copy 的動作)(相當於 ^V 的指令)
+    Q)uit    離開
 
-  % �� G ����|�X�{ (�۷���b���ɫ� [1;31m^G[m)
+  % 按 G 之後會出現 (相當於在平時按 [1;31m^G[m)
 
-  ��ذ� A)�w�� D)���� J)�N�� Q)����
+  精華區 A)定錨 D)拔錨 J)就位 Q)取消
 
-    A)nchor  ��w�@�����Ƨ��A�b�ݪO�� g ���峹���|�����Ǩӳo�����Ƨ�
-    D)elete  ������w���e�ҿ�w�����Ƨ�
-    J)ump    �i�J�ҿ�w�����Ƨ�
-    Q)uit    ���}
+    A)nchor  選定一個錨資料夾，在看板按 g 的文章都會直接傳來這個錨資料夾
+    D)elete  取消選定之前所選定的錨資料夾
+    J)ump    進入所選定的錨資料夾
+    Q)uit    離開
 
 --
-[1;37m�� ���峹�Ӧ� [33;44m ��j�q�l [0;1;37m �� [32mEE.NCTU.edu.tw[37m �ҵo��[m
+[1;37m□ 本文章來自 [33;44m 交大電子 [0;1;37m 由 [32mEE.NCTU.edu.tw[37m 所發表[m

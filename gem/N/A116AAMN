@@ -1,8 +1,8 @@
-µo«H¤H: binbin.bbs@cpu.tfcis.org (»æ°®) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] §Úªº³Ì·R±Æ§Ç
-µo«H¯¸: °Ê¤O®Ö¤ß (2005/04/19 Tue 14:48:24)                Updated: 2006/04/10
+ç™¼ä¿¡äºº: binbin.bbs@cpu.tfcis.org (é¤…ä¹¾) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] æˆ‘çš„æœ€æ„›æ’åº
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2005/04/19 Tue 14:48:24)                Updated: 2006/04/10
 
-> favor.c : ¼W¥[¤U­±¨â­Ó¨ç¦¡
+> favor.c : å¢åŠ ä¸‹é¢å…©å€‹å‡½å¼
 
 static int
 mf_cmp(a, b)
@@ -15,17 +15,17 @@ mf_cmp(a, b)
   ma = a->mftype;
   mb = b->mftype;
 
-  /* ¨Ì§Ç¬O ¨÷©v¡B¬İªO¡BºëµØ°Ï±¶®|¡B¤À¹j½u */
+  /* ä¾åºæ˜¯ å·å®—ã€çœ‹æ¿ã€ç²¾è¯å€æ·å¾‘ã€åˆ†éš”ç·š */
   na = ma & MF_FOLDER ? 1 : ma & MF_BOARD ? 2 : ma & MF_GEM ? 3 : 4;
   nb = mb & MF_FOLDER ? 1 : mb & MF_BOARD ? 2 : mb & MF_GEM ? 3 : 4;
 
   if (ma = na - nb)
     return ma;
 
-  if (nb == 1)              /* ¨÷©v */
+  if (nb == 1)              /* å·å®— */
     return str_cmp(a->xname, b->xname);
 
-  if (nb == 2 || nb == 3)   /* ¬İªO¡BºëµØ°Ï±¶®| */
+  if (nb == 2 || nb == 3)   /* çœ‹æ¿ã€ç²¾è¯å€æ·å¾‘ */
   {
     na = brd_bno(a->xname);
     nb = brd_bno(b->xname);
@@ -49,7 +49,7 @@ mf_cmp(a, b)
     return str_cmp(a->xname, b->xname);
   }
 
-  return 0;   /* ¤À¹j½u */
+  return 0;   /* åˆ†éš”ç·š */
 }
 
 static int
@@ -61,7 +61,7 @@ mf_sort(xo)
 
   if (time(&now) - last < 10)
   {
-    vmsg("¨C¤Q¬íÄÁ¥u¯à¤Á´«¤@¦¸");
+    vmsg("æ¯åç§’é˜åªèƒ½åˆ‡æ›ä¸€æ¬¡");
     return XO_FOOT;
   }
   last = now;
@@ -70,7 +70,7 @@ mf_sort(xo)
   return mf_load(xo);
 }
 
-> favor.c : mf_cb[] ¥[¤J«öÁä 'S'
+> favor.c : mf_cb[] åŠ å…¥æŒ‰éµ 'S'
 
 static KeyFunc mf_cb[] =
 {
@@ -84,8 +84,8 @@ static KeyFunc mf_cb[] =
 
 > theme.h
 
-#define NECKER_MF «á­±¥[¤J "... [S]±Æ§Ç ..."
+#define NECKER_MF å¾Œé¢åŠ å…¥ "... [S]æ’åº ..."
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mbinbin [30m±q [31m211-74-86-40.adsl.dynamic.seed.net.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mbinbin [30må¾ [31m211-74-86-40.adsl.dynamic.seed.net.tw [30mç™¼è¡¨[m

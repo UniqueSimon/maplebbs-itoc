@@ -1,14 +1,14 @@
-�o�H�H: BioStar.bbs@micro.bio.ncue.edu.tw (���p����) �ݪO: plan
-��  �D: Re: [���] ��ذϪ��g�ƤW���M�e�q�W��
-�o�H��: ���ѱ^ (Tue, 08 Jul 2003 23:53:02 +0800 (CST))    Updated: 2005/10/07
+發信人: BioStar.bbs@micro.bio.ncue.edu.tw (澎湖小雲雀) 看板: plan
+標  題: Re: [文件] 精華區的篇數上限和容量上限
+發信站: 擎天崗 (Tue, 08 Jul 2003 23:53:02 +0800 (CST))    Updated: 2005/10/07
 
-  (6) ��ܺ�ذϨϥζq
+  (6) 顯示精華區使用量
 
-    �p�G��i�D�O�D�P�ϥΪ̺�ذϥΤF�h��......
-    �� gem_checksize() ���F�ˬd��ذϬO�_�L�j...  �ٯ�^���ˬd�쪺�j�p...
-    ���L�̯��H�ɪ`�N...  ���n�b����ı�����δN�W�L�W��...
+    如果能告訴板主與使用者精華區用了多少......
+    讓 gem_checksize() 除了檢查精華區是否過大...  還能回報檢查到的大小...
+    讓他們能隨時注意...  不要在不知覺的情形就超過上限...
 
-: maple/gem.c:gem_totalsize() �s�W�� gem_help() ���e
+: maple/gem.c:gem_totalsize() 新增於 gem_help() 之前
 
 static int
 gem_totalsize(xo)
@@ -23,14 +23,14 @@ gem_totalsize(xo)
   if (!(xo->key & GEM_W_BIT))
     return XO_NONE;
 
-  if (*xo->dir == 'g' && *(xo->dir + 4) == 'b')     /* �ݪO��ذ� */
+  if (*xo->dir == 'g' && *(xo->dir + 4) == 'b')     /* 看板精華區 */
   {
     strcpy(fpath, xo->dir);
     if (!(str = strchr(fpath + 8, '/')))
       return XO_NONE;
     strcpy(str + 1, fn_dir);
   }
-  else if (*xo->dir == 'u')                         /* �ӤH��ذ� */
+  else if (*xo->dir == 'u')                         /* 個人精華區 */
   {
     usr_fpath(fpath, cuser.userid, "gem/" FN_DIR);
   }
@@ -43,13 +43,13 @@ gem_totalsize(xo)
     total_n = st.st_size;
   else
     total_n = 0;
-  if (!total_n)     /* .DIR �}�ҥ��ѩ� size=0 ���ܨS����ذ� */
+  if (!total_n)     /* .DIR 開啟失敗或 size=0 表示沒有精華區 */
     return 0;
   total_k = 0;
   ptr = (char *) strchr(fpath, '.');
 
-  /* �ݪO��ذϤ� (A)nnounce �n�ˬd 32 �Ӥl�ؿ��A
-     �ӤH��ذϥu���ˬd 1 �Ӥl�ؿ� */
+  /* 看板精華區及 (A)nnounce 要檢查 32 個子目錄，
+     個人精華區只需檢查 1 個子目錄 */
   for (i = (*xo->dir == 'g') ? 31 : 0; i >= 0; i--)
   {
     *ptr = radix32[i];
@@ -78,7 +78,7 @@ gem_totalsize(xo)
     closedir(dirp);
   }
 
-  sprintf(fpath, "��ذ��ɮ׼ơG%d�A�`�j�p�G%dKB",
+  sprintf(fpath, "精華區檔案數：%d，總大小：%dKB",
     total_n / sizeof(HDR), total_k >> 10);
   vmsg(fpath);
 
@@ -87,25 +87,25 @@ gem_totalsize(xo)
 
 : maple/gem.c:gem_cb[]
 
-+ 's', gem_totalsize,     /* ����ۭq */
++ 's', gem_totalsize,     /* 按鍵自訂 */
 
   'h', gem_help
 
 =======================================================
 
-�έp�����G�M�i�J�@�~�t�Τ��� du �έp�����G���P......
-�q�` du �έp���G���j......
+統計的結果和進入作業系統中用 du 統計的結果不同......
+通常 du 統計結果較大......
 
-��]�p�U :
+原因如下 :
 
-1) �O�o�屼��ذϪ��F���...  �ɮרå��u��屼...
-   �n���u�� unlink �Ӥw...  �ܦ�"�ɮ��B��"......
-   �u���� gem-check �~�|�u���M��......
+1) 記得砍掉精華區的東西時...  檔案並未真實砍掉...
+   好像只有 unlink 而已...  變成"滄海拾遺"......
+   只有用 gem-check 才會真的清掉......
 
-2) F �}�Y���ɮץu�C�J�ɮ׼ƥزέp......
-   A �}�Y���ɮץu�C�J�`�j�p���p��......
-   du �O�έp�Ҧ��ɮ�...  ���G�N�|����j...
+2) F 開頭的檔案只列入檔案數目統計......
+   A 開頭的檔案只列入總大小的計算......
+   du 是統計所有檔案...  結果就會比較大...
 
 --
-[1;31m|[33m Origin [31m| [0;45m ���Ʈv�j�ͪ��t �u���E����E���ѱ^ [35;47m micro.bio.ncue.edu.tw [m
+[1;31m|[33m Origin [31m| [0;45m 彰化師大生物系 吟風?眺月?擎天崗 [35;47m micro.bio.ncue.edu.tw [m
 [1;31m|[35m Author [31m| [36m211-20-172-91.HINET-IP.hinet.net[m

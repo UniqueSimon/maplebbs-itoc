@@ -1,47 +1,47 @@
-�o�H�H: sby.bbs@bbs.csie.mcu.edu.tw (������ı�N�ѫG�F), �ݪO: installbbs
-��  �D: [���] IPv6 BBS -- �� IPv4 �P IPv6 �@�s --
-�o�H��: �ʶǤj�Ǹ�u���� (Fri May 30 01:11:17 2003)       Updated: 2003/05/30
+發信人: sby.bbs@bbs.csie.mcu.edu.tw (不知不覺就天亮了), 看板: installbbs
+標  題: [文件] IPv6 BBS -- 讓 IPv4 與 IPv6 共存 --
+發信站: 銘傳大學資工神話 (Fri May 30 01:11:17 2003)       Updated: 2003/05/30
 
-[�e��]
+[前言]
 
-    �p�̤@�ɿ��_�� BBS �令 IPv6 �ۮe, ���դF�X��...�j�P�W���ӨS������D...
+    小弟一時興起把 BBS 改成 IPv6 相容, 測試了幾天...大致上應該沒什麼問題...
 
-    �ѩ󤧫e�n���S�ݹL�������峹, �N���m��@�U, �j�a�����쪺�ܥi�H�ѦҬݬ�,
+    由於之前好像沒看過類似的文章, 就來獻醜一下, 大家有興趣的話可以參考看看,
 
-    ���e�p���ð��w��ӫH���� :)
+    內容如有疑問歡迎來信指正 :)
 
 
                                            Bor-Yeh Shen (sby@cs.mcu.edu.tw)
 
 
-[���� OS ���䴩]
+[關於 OS 的支援]
 
-    �n�� BBS �P�ɴ��� IPv4 �M IPv6, OS �@�w�n���䴩�~��, �ȱo�������O,
+    要讓 BBS 同時提供 IPv4 和 IPv6, OS 一定要有支援才行, 值得高興的是,
 
-    �{�b�\�h OS �������� IPv4/IPv6 dual stack (Linux, BSD, Windows, ...)
+    現在許多 OS 都有提供 IPv4/IPv6 dual stack (Linux, BSD, Windows, ...)
 
-    �u�O�ݦ��S�� enable �_��, ����o�譱�����e�����W���\�h���i�H�Ѧ�,
+    只是看有沒有 enable 起來, 關於這方面的內容網路上有許多文件可以參考,
 
-    �N���b���g���Q�׽d�򤧤�.
+    就不在本篇的討論範圍之內.
 
 
-[socket ��}���c���ഫ]
+[socket 位址結構的轉換]
 
-    �Ĥ@�B�ݭn�N�Ҧ� IPv4 socket address �ഫ�� IPv6,
+    第一步需要將所有 IPv4 socket address 轉換成 IPv6,
 
-    (������� IPv4 Address �|�����X�����D, �]�� IPv6 �b�]�p�ɴN���Ҷq��,
+    (不必擔心 IPv4 Address 會有不合的問題, 因為 IPv6 在設計時就有考量到,
 
-    �t�η|�ۤv�N IPv4 Address mapped �� IPv6 Address)
+    系統會自己將 IPv4 Address mapped 到 IPv6 Address)
 
     ex:
-        sockaddr_in �令 sockaddr_in6, xxx.sin_len �令 xxx.sin6_len, ...etc.
+        sockaddr_in 改成 sockaddr_in6, xxx.sin_len 改成 xxx.sin6_len, ...etc.
 
-    ���M, �p�G�z�� BBS ���b�� release ����, ���F�קK�ϥΪ��t�Τ��䴩 IPv6,
+    當然, 如果您的 BBS 有在做 release 的話, 為了避免使用的系統不支援 IPv6,
 
-    #ifdef ... #else ... #endif ���ӬO�K���F�� :)
+    #ifdef ... #else ... #endif 應該是免不了的 :)
 
 
-    �H�U�O IPv4 �M IPv6 socket address �����c, �������ഫ�N�n:
+    以下是 IPv4 和 IPv6 socket address 的結構, 對應著轉換就好:
 
 /* IPv4 socket address structure */
 
@@ -66,49 +66,49 @@ struct sockaddr_in6 {
 };
 
 
-[Address Family ���ܧ�]
+[Address Family 的變更]
 
-    �� AF_INET �令 AF_INET6
-
-
-[Protocal Family ���ܧ�]
-
-    �� PF_INET �令 PF_INET6
+    由 AF_INET 改成 AF_INET6
 
 
-[IP ���ϸѳ���]
+[Protocal Family 的變更]
 
-    �b�� IPv6 ���ഫ��, �q�`�|��ĳ�� getaddrinfo(), getnameinfo() ���N
-
-    �즳�� gethostbyname(), gethostbyaddr() ���I�s, �o��Ө禡�|��
-
-    �Ҧ��P IPv4 & IPv6 ��w�������ʧ@���ð_��, �p���@�ӧڭ̤��ݭn�b�G
-
-    �{�b�ϥΪ��쩳�O IPv4 or IPv6, �{���]�|�ܱo��²��@��,
-
-    �ԲӪ��Ϊk�i�H�Ѧ� man page, �̭��g���Z�M���� :)
-
-    (��e����_��, �o���O��ʤ���j������)
+    由 PF_INET 改成 PF_INET6
 
 
-[�䥦]
+[IP 正反解部分]
 
-�]�� IPv6 �r����׳̪��O INET6_ADDRSTRLEN (46),
+    在做 IPv6 的轉換時, 通常會建議用 getaddrinfo(), getnameinfo() 取代
 
-�ҥH BBS �����W���ӷ����a��i��ݭn�n��@�U
+    原有的 gethostbyname(), gethostbyaddr() 等呼叫, 這兩個函式會把
 
-(�p�G���������ܤ]�\�n��ʭ즳�����c)
+    所有與 IPv4 & IPv6 協定相關的動作隱藏起來, 如此一來我們不需要在乎
 
-�䥦���ӴN�S����ݭn�諸�a��F....(�ܤ֧ڲ{�b���Pı�O�p��:p)
+    現在使用的到底是 IPv4 or IPv6, 程式也會變得較簡潔一些,
 
-hmm....�j�P�W�O�o��....�٦����D���a��i�H�A�@�_�ӰQ�׬ݬ� :)
+    詳細的用法可以參考 man page, 裡面寫的蠻清楚的 :)
+
+    (跟前面比起來, 這邊算是更動比較大的部分)
 
 
---
-�t�~, ���ܥثe�� IPv6 Address �O 3ffe:3600:1e::2bf
+[其它]
 
-�]�w��j�a�Ӱ��[���[....^^
+因為 IPv6 字串長度最長是 INET6_ADDRSTRLEN (46),
+
+所以 BBS 紀錄上站來源的地方可能需要要改一下
+
+(如果不夠長的話也許要更動原有的結構)
+
+其它應該就沒什麼需要改的地方了....(至少我現在的感覺是如此:p)
+
+hmm....大致上是這樣....還有問題的地方可以再一起來討論看看 :)
+
 
 --
-[1;36m�� Origin: [33m�ʶǸ�u���ܯ� [37m<bbs.csie.mcu.edu.tw>
-[1;36m�� From  : [32m3ffe:3600:1e::2af[m
+另外, 神話目前的 IPv6 Address 是 3ffe:3600:1e::2bf
+
+也歡迎大家來參觀參觀....^^
+
+--
+[1;36m※ Origin: [33m銘傳資工神話站 [37m<bbs.csie.mcu.edu.tw>
+[1;36m※ From  : [32m3ffe:3600:1e::2af[m

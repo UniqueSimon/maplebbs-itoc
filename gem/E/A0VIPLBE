@@ -1,10 +1,10 @@
-§@ªÌ: itoc (­·½Õ«B¶¶¡A°ê®õ¥Á¦w) ¬İªO: plan
-¼ĞÃD: [¥\¯à] µøµ¡«¬ªº Y/N
-®É¶¡: Sun Aug  3 17:25:15 2003                          Updated: 2003/08/02
+ä½œè€…: itoc (é¢¨èª¿é›¨é †ï¼Œåœ‹æ³°æ°‘å®‰) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] è¦–çª—å‹çš„ Y/N
+æ™‚é–“: Sun Aug  3 17:25:15 2003                          Updated: 2003/08/02
 
-  §â vans() ¤¤ Y/N ªº°İÃD´«¦¨µøµ¡«¬ªº
+  æŠŠ vans() ä¸­ Y/N çš„å•é¡Œæ›æˆè¦–çª—å‹çš„
 
-: visio.c:vans()   §ï¦¨³o¼Ë
+: visio.c:vans()   æ”¹æˆé€™æ¨£
 
 int
 vans(prompt)
@@ -16,7 +16,7 @@ vans(prompt)
   int len;
   char buf[80], *str, *menu[4];
 
-  /* itoc.010812.µù¸Ñ: ·|¦Û°Ê´«¦¨¤p¼gªº */
+  /* itoc.010812.è¨»è§£: æœƒè‡ªå‹•æ›æˆå°å¯«çš„ */
 
   if (str = (char *) strrchr(prompt, '['))
   {
@@ -28,10 +28,10 @@ vans(prompt)
       *str = '\0';
       str[2] = str[1];
       menu[0] = str + 1;
-      menu[1] = "Yes  ¬O";
-      menu[2] = "No   §_";
+      menu[1] = "Yes  æ˜¯";
+      menu[2] = "No   å¦";
       menu[3] = NULL;
-      return pans((b_lines-4) >> 1, 20, len > 32 ? "½T»{(Y/N)¡H" : buf, menu);
+      return pans((b_lines-4) >> 1, 20, len > 32 ? "ç¢ºèª(Y/N)ï¼Ÿ" : buf, menu);
     }
   }
 #endif
@@ -39,11 +39,11 @@ vans(prompt)
   return vget(b_lines, 0, prompt, ans, sizeof(ans), LCECHO);
 }
 
-: ¦³¨Ç Y/N ªº°İÃD¤£¾A¦X§ï¬°µøµ¡«¬ªº¡A¨Ò¦p acct_setup()
-: ¨º»ò´N§â (Y/N) §ï¬° (y/n)
+: æœ‰äº› Y/N çš„å•é¡Œä¸é©åˆæ”¹ç‚ºè¦–çª—å‹çš„ï¼Œä¾‹å¦‚ acct_setup()
+: é‚£éº¼å°±æŠŠ (Y/N) æ”¹ç‚º (y/n)
 
--   if (vans("­×§ï¸ê®Æ(Y/N)¡H[N] ") != 'y')
-+   if (vans("­×§ï¸ê®Æ(y/n)¡H[N] ") != 'y')
+-   if (vans("ä¿®æ”¹è³‡æ–™(Y/N)ï¼Ÿ[N] ") != 'y')
++   if (vans("ä¿®æ”¹è³‡æ–™(y/n)ï¼Ÿ[N] ") != 'y')
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

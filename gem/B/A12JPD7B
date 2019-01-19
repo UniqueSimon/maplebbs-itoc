@@ -1,16 +1,16 @@
-µo«H¤H: starlition.bbs@bbs.ycsh.tp.edu.tw (­n¤W¬K¥ú½Ğ¥ı»{Ã ¬İªO: plan
-¼Ğ  ÃD: Re: µwºĞÃz¤F~~«ç»ò¿ì
-µo«H¯¸: ¥Ã¬K«¢«¢ (2006/10/23 Mon 01:01:22)                Updated: 2006/10/23
+ç™¼ä¿¡äºº: starlition.bbs@bbs.ycsh.tp.edu.tw (è¦ä¸Šæ˜¥å…‰è«‹å…ˆèª?çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: ç¡¬ç¢Ÿçˆ†äº†~~æ€éº¼è¾¦
+ç™¼ä¿¡ç«™: æ°¸æ˜¥å“ˆå“ˆ (2006/10/23 Mon 01:01:22)                Updated: 2006/10/23
 
-¡° ¤Ş­z¡mandy71.bbs@micro.bio.ncue.edu.tw (§Æ±æ¨C¤Ñ³£¯à§ó·R¤pp)¡n¤§»Ê¨¥¡G
-> Ä±±o³Æ¤ÀªºÀÉ®×¦³ÂI¦h~~­n¦p¦ó³]©wÅı¯»¤[¤§«eªº³Æ¥÷¦Û°Ê§R°£?
-> ³Â·Ğ¤j¤j¸Ñµª...ÁÂÁÂ
+â€» å¼•è¿°ã€Šandy71.bbs@micro.bio.ncue.edu.tw (å¸Œæœ›æ¯å¤©éƒ½èƒ½æ›´æ„›å°p)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> è¦ºå¾—å‚™åˆ†çš„æª”æ¡ˆæœ‰é»å¤š~~è¦å¦‚ä½•è¨­å®šè®“ç²‰ä¹…ä¹‹å‰çš„å‚™ä»½è‡ªå‹•åˆªé™¤?
+> éº»ç…©å¤§å¤§è§£ç­”...è¬è¬
 
-«Ø¥ß¤@­Óshell script
+å»ºç«‹ä¸€å€‹shell script
 
 % joe /home/bbs/bin/rmbak.sh
 
-¤º®e¦p¤U
+å…§å®¹å¦‚ä¸‹
 
 #!/bin/sh
 DELDATE=`date -v-[1;33;40m30[md +%y%m%d`
@@ -19,19 +19,19 @@ rm -rf /home/bbs/bak/gem${DELDATE}/
 rm -rf /home/bbs/bak/usr${DELDATE}/
 rm -rf /home/bbs/bak/oth${DELDATE}/
 
-¤¤¶¡ªº30§ï¦¨§A­n«O¯d¦h¤Ö¤Ñ
+ä¸­é–“çš„30æ”¹æˆä½ è¦ä¿ç•™å¤šå°‘å¤©
 
-µM«á¥Îcrontab ¨C¤Ñ¥h¶]....
+ç„¶å¾Œç”¨crontab æ¯å¤©å»è·‘....
 
 --
-[1;37m¡° Site:[m [1;33m¥Ã ¬K «¢ «¢[m [1;37m<bbs.ycsh.tp.edu.tw>[m
-[1;31m¡» From:[m [1;36m140.128.194.72[m (140.128.194.72)
+[1;37mâ€» Site:[m [1;33mæ°¸ æ˜¥ å“ˆ å“ˆ[m [1;37m<bbs.ycsh.tp.edu.tw>[m
+[1;31mâ—† From:[m [1;36m140.128.194.72[m (140.128.194.72)
 
-µo«H¤H: appleboy.bbs@bbs.ee.ndhu.edu.tw (°ª¶¯¹D©ú¬f¼İ) ¬İªO: plan
-¼Ğ  ÃD: Re: µwºĞÃz¤F~~«ç»ò¿ì
-µo«H¯¸: «á¤s¬P«° (2006/10/23 Mon 13:39:33)
+ç™¼ä¿¡äºº: appleboy.bbs@bbs.ee.ndhu.edu.tw (é«˜é›„é“æ˜æŸæ¯…) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: ç¡¬ç¢Ÿçˆ†äº†~~æ€éº¼è¾¦
+ç™¼ä¿¡ç«™: å¾Œå±±æ˜ŸåŸ (2006/10/23 Mon 13:39:33)
 
-#«O¯d14¤Ñªº³Æ¥÷
+#ä¿ç•™14å¤©çš„å‚™ä»½
 
 RETENTION_PERIOD=14
 
@@ -41,4 +41,4 @@ find /home/bbs/bak/ -type d -mtime +$RETENTION_PERIOD -exec rm -rf '{}' \;
                                          Wu-boy Blog http://blog.wu-boy.com
                                             <appleboy@alumni.ee.ccu.edu.tw>
 --
-[1;36m¡° Origin: «á¤s¬P«° <bbs.ee.ndhu.edu.tw> ¡» From: dns.ee.ndhu.edu.tw[m
+[1;36mâ€» Origin: å¾Œå±±æ˜ŸåŸ <bbs.ee.ndhu.edu.tw> â—† From: dns.ee.ndhu.edu.tw[m

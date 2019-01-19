@@ -1,25 +1,25 @@
-§@ªÌ: itoc (­·½Õ«B¶¶¡A°ê®õ¥Á¦w) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¼W¥[Äæ¦ì»¡©ú
-®É¶¡: Sun Aug 17 16:08:35 2003                          Updated: 2005/05/19
+ä½œè€…: itoc (é¢¨èª¿é›¨é †ï¼Œåœ‹æ³°æ°‘å®‰) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] å¢åŠ æ¬„ä½èªªæ˜
+æ™‚é–“: Sun Aug 17 16:08:35 2003                          Updated: 2005/05/19
 
-  ­Y¦³ÅÜ°Ê struct BRD ³£»İ­nÂà´« .BRD
-  Âà´«ªº¤è¦¡¦p¤U¡G
+  è‹¥æœ‰è®Šå‹• struct BRD éƒ½éœ€è¦è½‰æ› .BRD
+  è½‰æ›çš„æ–¹å¼å¦‚ä¸‹ï¼š
 
-  1. Ãö¯¸ (Ãö bbsd ¤Î²M shm)
+  1. é—œç«™ (é—œ bbsd åŠæ¸… shm)
 
-  2. ³Æ¥÷ .BRD
+  2. å‚™ä»½ .BRD
 
-  3. ±N src/include/struct.h:struct BRD ·Ó§Û¥h
+  3. å°‡ src/include/struct.h:struct BRD ç…§æŠ„å»
      src/util/tran/transbrd.c:struct OLD
 
-  4. ·Ó patch ¸Ì­±©Ò¼gªº¡A¹ïµ{¦¡°µ­×§ï
+  4. ç…§ patch è£¡é¢æ‰€å¯«çš„ï¼Œå°ç¨‹å¼åšä¿®æ”¹
 
-  5. ±N²§°Ê¹L«áªº src/include/struct.h:struct BRD ·Ó§Û¥h
+  5. å°‡ç•°å‹•éå¾Œçš„ src/include/struct.h:struct BRD ç…§æŠ„å»
      src/util/tran/transbrd.c:struct NEW
 
-  6. ­«·s½sÄ¶µ{¦¡¡A¨Ã°õ¦æ bin/transbrd
+  6. é‡æ–°ç·¨è­¯ç¨‹å¼ï¼Œä¸¦åŸ·è¡Œ bin/transbrd
 
-  7. ¶}¯¸ (­«·s¶}¾÷)
+  7. é–‹ç«™ (é‡æ–°é–‹æ©Ÿ)
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

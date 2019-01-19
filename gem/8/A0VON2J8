@@ -1,78 +1,78 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (¤Ö°µ¡B¤Ö·Q¡B¦h©ñ¶}) ¬ÝªO: plan
-¼Ð  ÃD: [¥\¯à] ¨Ï¥ÎªÌ¦Û©w²ßºD¡Ð¤W¯¸¦Û°ÊÁÊ¶RÁô¨­Åv¡C
-µo«H¯¸: ¤¤¿³¸ê¬ì (Tue, 14 Oct 2003 00:21:14 +0800 (CST))  Updated: 2005/11/23
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (å°‘åšã€å°‘æƒ³ã€å¤šæ”¾é–‹) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] ä½¿ç”¨è€…è‡ªå®šç¿’æ…£ï¼ä¸Šç«™è‡ªå‹•è³¼è²·éš±èº«æ¬Šã€‚
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (Tue, 14 Oct 2003 00:21:14 +0800 (CST))  Updated: 2005/11/23
 
-    ¥Ø«eªºµ{¦¡¼gªk¡A¤Z¬OÁÊ¶R¼È®ÉÁô¨­Åvªº¤H¡A¤U¯¸¦A¤W¯¸Áô¨­ÅvÁÙ¦b¡C
+    ç›®å‰çš„ç¨‹å¼å¯«æ³•ï¼Œå‡¡æ˜¯è³¼è²·æš«æ™‚éš±èº«æ¬Šçš„äººï¼Œä¸‹ç«™å†ä¸Šç«™éš±èº«æ¬Šé‚„åœ¨ã€‚
 
-    °£«D¨Ï¥ÎªÌ¿ï¾Ü¤F²{¨­¡A¤£µM´X¥Gµ¥©ó¾Ö¦³¥Ã¤[Áô¨­¡C
+    é™¤éžä½¿ç”¨è€…é¸æ“‡äº†ç¾èº«ï¼Œä¸ç„¶å¹¾ä¹Žç­‰æ–¼æ“æœ‰æ°¸ä¹…éš±èº«ã€‚
 
-    ³o¼Ë¨C¦¸¤W¯¸¦Û°ÊÁÊ¶RÁô¨­Åv´N¨S¦³·N¸q¤F¡C
+    é€™æ¨£æ¯æ¬¡ä¸Šç«™è‡ªå‹•è³¼è²·éš±èº«æ¬Šå°±æ²’æœ‰æ„ç¾©äº†ã€‚
 
-    ©Ò¥H¥ý¹ïµ{¦¡­×§ï¤@¤U¡AÅý¨S¦³¥Ã¤[Áô¨­Åv¡]PERM_CLOAK¡^ªº¤H...
+    æ‰€ä»¥å…ˆå°ç¨‹å¼ä¿®æ”¹ä¸€ä¸‹ï¼Œè®“æ²’æœ‰æ°¸ä¹…éš±èº«æ¬Šï¼ˆPERM_CLOAKï¼‰çš„äºº...
 
-    ¤W¯¸«á®³±¼¼È®ÉÁô¨­Åv¡]UFO_CLOAK¡^¡C
+    ä¸Šç«™å¾Œæ‹¿æŽ‰æš«æ™‚éš±èº«æ¬Šï¼ˆUFO_CLOAKï¼‰ã€‚
 
-    µM«á§PÂ_¬O§_¦³¤W¯¸¦Û°ÊÁÊ¶RÁô¨­Åvªº³ß¦n³]©w¡C
+    ç„¶å¾Œåˆ¤æ–·æ˜¯å¦æœ‰ä¸Šç«™è‡ªå‹•è³¼è²·éš±èº«æ¬Šçš„å–œå¥½è¨­å®šã€‚
 
-    ¦pªG¦³¦A§â¼È®ÉÁô¨­Åv¥[¦^¥h¡A[1;35;4m¨Ã¥B¦©°£ÁÊ¶R¼È®ÉÁô¨­Åvªº¿ú¡I[m
+    å¦‚æžœæœ‰å†æŠŠæš«æ™‚éš±èº«æ¬ŠåŠ å›žåŽ»ï¼Œ[1;35;4mä¸¦ä¸”æ‰£é™¤è³¼è²·æš«æ™‚éš±èº«æ¬Šçš„éŒ¢ï¼[m
 
 ==============================================================================
 
 : src/include/ufo.h
 
-[1;33m+ #define UFO_LOGINCLOAK  BFLAG(19)   /* ¤W¯¸ª½±µÁô¨­ */[m
+[1;33m+ #define UFO_LOGINCLOAK  BFLAG(19)   /* ä¸Šç«™ç›´æŽ¥éš±èº« */[m
 
 
-[1;32m![m #define NUMUFOS_USER    [1;32m20[m  /* ¤@¯ë¨Ï¥ÎªÌ ¥i¥H¥Î«e [1;32m20[m ­Ó ufo */
+[1;32m![m #define NUMUFOS_USER    [1;32m20[m  /* ä¸€èˆ¬ä½¿ç”¨è€… å¯ä»¥ç”¨å‰ [1;32m20[m å€‹ ufo */
 
 [1;32m![m #define STR_UFO     "-mpsnemPBQFANbwtSHK[1;32mc[m----CHA"
 
 
 #ifdef HAVE_NETTOOL
-  "¤W¯¸ÂsÄý·s»D    (ÂsÄý/¤£­n)",    /* UFO_KIMONEWS */
+  "ä¸Šç«™ç€è¦½æ–°èž    (ç€è¦½/ä¸è¦)",    /* UFO_KIMONEWS */
 #else
-  "«O¯d",
+  "ä¿ç•™",
 #endif
 
-[1;33m+ "Áô¨­¤W¯¸        (Áô¨­/²{¨­)",    /* UFO_LOGINCLOAK */
-[1;31m- "«O¯d",[m
+[1;33m+ "éš±èº«ä¸Šç«™        (éš±èº«/ç¾èº«)",    /* UFO_LOGINCLOAK */
+[1;31m- "ä¿ç•™",[m
 
 
 
 
-        [2003/09/28] bbsd.c §ï¼g tn_login()¡C
+        [2003/09/28] bbsd.c æ”¹å¯« tn_login()ã€‚
 
-: src/maple/bbsd.c:tn_login()   030928 ¤§«eªº¡A­n§ï tn_login()
+: src/maple/bbsd.c:tn_login()   030928 ä¹‹å‰çš„ï¼Œè¦æ”¹ tn_login()
 
-: src/maple/bbsd.c:login_user() 030928 ¤§«áªº¡A­n§ï login_user()
+: src/maple/bbsd.c:login_user() 030928 ä¹‹å¾Œçš„ï¼Œè¦æ”¹ login_user()
 
 
 #endif  /* SYSOP_SU */
       {
         /* SYSOP gets all permission bits */
-        /* itoc.010902: DENY perm ±Æ¥~ */
+        /* itoc.010902: DENY perm æŽ’å¤– */
         cuser.userlevel = ~0 ^ (PERM_DENYMAIL | PERM_DENYTALK | PERM_DENYCHAT |
 PERM_DENYPOST);
       }
     }
 
 +   if (!(HAS_PERM(PERM_ALLADMIN)) && !(HAS_PERM(PERM_CLOAK)))
-+     cuser.ufo &= ~UFO_CLOAK;   //®³±¼¨S¦³¥Ã¤[Áô¨­Åvªº¼È®ÉÁô¨­
++     cuser.ufo &= ~UFO_CLOAK;   //æ‹¿æŽ‰æ²’æœ‰æ°¸ä¹…éš±èº«æ¬Šçš„æš«æ™‚éš±èº«
 
 +   if (!HAS_PERM(PERM_CLOAK) && cuser.ufo & UFO_LOGINCLOAK)
-+   {                                           /* qazq.031010: Áô¨­¤W¯¸ */
++   {                                           /* qazq.031010: éš±èº«ä¸Šç«™ */
 +     if (cuser.gold >= 10)
 +     {
-+       cuser.gold -= 10;      //³o¸Ì¦©ªº¿ú­n©M bank.c:b_invis() ¦©ªº¤@¼Ë¡C
++       cuser.gold -= 10;      //é€™è£¡æ‰£çš„éŒ¢è¦å’Œ bank.c:b_invis() æ‰£çš„ä¸€æ¨£ã€‚
 +       cuser.ufo |= UFO_CLOAK;
 +     }
 +     else
 +     {
-+       vmsg("±zªº¿ú¤£°÷ÁÊ¶R¼È®ÉÁô¨­¡A¨t²Î¦Û°Ê¨ú®ø¤W¯¸Áô¨­ªº²ßºD");
++       vmsg("æ‚¨çš„éŒ¢ä¸å¤ è³¼è²·æš«æ™‚éš±èº«ï¼Œç³»çµ±è‡ªå‹•å–æ¶ˆä¸Šç«™éš±èº«çš„ç¿’æ…£");
 +       cuser.ufo &= ~UFO_LOGINCLOAK;
 +     }
-+   }       // µù¸Ñ¦n¹³¦³»¡¦b¬Y­Ó®É¬q¤§«e¤£¯à¦³ vmsg() ©M more()
-            // ¤£¹L¤£ª¾¹D·|µo¥Í¤°»ò¨Æ±¡¡C
++   }       // è¨»è§£å¥½åƒæœ‰èªªåœ¨æŸå€‹æ™‚æ®µä¹‹å‰ä¸èƒ½æœ‰ vmsg() å’Œ more()
+            // ä¸éŽä¸çŸ¥é“æœƒç™¼ç”Ÿä»€éº¼äº‹æƒ…ã€‚
 
     if (cuser.ufo & UFO_ACL)
     {
@@ -80,45 +80,45 @@ PERM_DENYPOST);
 
 
 --
- [1m[42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m csNCHU.twbbs.org [m
- [1m[44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mqazq [30m±q [35m61-216-136-36.HINET-IP.hinet.net [30mµoªí[m
+ [1m[42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m csNCHU.twbbs.org [m
+ [1m[44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mqazq [30må¾ž [35m61-216-136-36.HINET-IP.hinet.net [30mç™¼è¡¨[m
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-µo«H¤H: guessi.bbs@bbs.wretch.cc (¨S) ¬ÝªO: plan
-¼Ð  ÃD: [¥\¯à] ¦Û©wufo - ¤W¯¸¸ß°Ý¬O§_ÁÊ¶R¼È®ÉÁô¨­Åv
-µo«H¯¸: µL¦W¤p¯¸ (2005/11/21 Mon 20:11:58)
+ç™¼ä¿¡äºº: guessi.bbs@bbs.wretch.cc (æ²’) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] è‡ªå®šufo - ä¸Šç«™è©¢å•æ˜¯å¦è³¼è²·æš«æ™‚éš±èº«æ¬Š
+ç™¼ä¿¡ç«™: ç„¡åå°ç«™ (2005/11/21 Mon 20:11:58)
 
- ¡º [¥\¯à] bbsd.c ¨Ï¥ÎªÌ¦Û©w²ßºD¡Ð¤W¯¸¦Û°ÊÁÊ¶RÁô¨­Åv
+ â—‡ [åŠŸèƒ½] bbsd.c ä½¿ç”¨è€…è‡ªå®šç¿’æ…£ï¼ä¸Šç«™è‡ªå‹•è³¼è²·éš±èº«æ¬Š
 
-    ¡ô­×§ï¦¹½g¤º®e §ï¬°Y/N½T»{
+    â†‘ä¿®æ”¹æ­¤ç¯‡å…§å®¹ æ”¹ç‚ºY/Nç¢ºèª
 
 : src/include/ufo.h
 
-+ #define UFO_LOGINCLOAK  BFLAG(19)   /* ¤W¯¸ª½±µÁô¨­ */
++ #define UFO_LOGINCLOAK  BFLAG(19)   /* ä¸Šç«™ç›´æŽ¥éš±èº« */
 
 ! #define STR_UFO     "-mpsnemPBQFANbwtSHKc----CHA"
 
-+ "Áô¨­¤W¯¸        (Áô¨­/²{¨­)",    /* UFO_LOGINCLOAK */
-- "«O¯d",
++ "éš±èº«ä¸Šç«™        (éš±èº«/ç¾èº«)",    /* UFO_LOGINCLOAK */
+- "ä¿ç•™",
 
 : bbsd.c:login_user()
 
 + if (!(HAS_PERM(PERM_ALLADMIN)) && !(HAS_PERM(PERM_CLOAK)))
-+      cuser.ufo &= ~UFO_CLOAK;             //®³±¼¨S¦³¥Ã¤[Áô¨­Åvªº¼È®ÉÁô¨­
++      cuser.ufo &= ~UFO_CLOAK;             //æ‹¿æŽ‰æ²’æœ‰æ°¸ä¹…éš±èº«æ¬Šçš„æš«æ™‚éš±èº«
 +
 + if (!(HAS_PERM(PERM_CLOAK)) && cuser.ufo & UFO_LOGINCLOAK)
-+ {                                         // qazq.031010: Áô¨­¤W¯¸
-+    if (vans("¬O§_ªá 1ª÷Áô¨­¤W¯¸ Y/N[N] ") == 'y')
++ {                                         // qazq.031010: éš±èº«ä¸Šç«™
++    if (vans("æ˜¯å¦èŠ± 1é‡‘éš±èº«ä¸Šç«™ Y/N[N] ") == 'y')
 +    {
-+      if (cuser.gold >= 1)  //¦©ªº¿ú­n©M bank.c:b_invis() ¤@¼Ë
++      if (cuser.gold >= 1)  //æ‰£çš„éŒ¢è¦å’Œ bank.c:b_invis() ä¸€æ¨£
 +      {
 +      cuser.gold -= 1;
 +      cuser.ufo ^= UFO_CLOAK;
 +      }
 +      else
 +      {
-+      vmsg("§Aªº¿úÁÙ¤£°÷ÁÊ¶RÁô¨­­ò¡I");
++      vmsg("ä½ çš„éŒ¢é‚„ä¸å¤ è³¼è²·éš±èº«å”·ï¼");
 +      cuser.ufo &= ~UFO_LOGINCLOAK;
 +      }
 +    }
@@ -130,8 +130,8 @@ PERM_DENYPOST);
 
 
 --
-[1;30;40m¤Ò§LªÌ¤£²»¤§¾¹ª«©Î´c¤§¬G¦³¹DªÌ¤£³B§g¤l©~«h¶Q¥ª¥Î§L«h¶Q¥k§LªÌ¤£²»¤§¾¹«D§g¤l[m
-[1;30m¤§¾¹¤£±o¤w[37m[30m¦Ó¥Î¤§«ï²H¬°¤W³Ó¦Ó¤£¬ü¦Ó¬ü¤§ªÌ¬O¼Ö±þ¤H¤Ò¼Ö±þ¤HªÌ«h¤£¥i±o§Ó©ó¤Ñ¤U
-[m[1;30m¨o¦N¨Æ©|¥ª¤¿¨Æ©|¥k°¾±N­x©~¥ª¤W±N­x©~¥k¨¥¥H³àÂ§³B¤§±þ¤H¤§²³¥H«s´dª_¤§¾Ô³Ó¥H[m
-[1;30m³àÂ§³B¤§¹D±`[37mµL¦W[30m¾ëÁö¤p¤Ñ¤U²ö¯à¦Ú«J¤ý­Y¯à¦u¤§¸Uª«±N¦Û»«¤Ñ¦a¬Û¦X¥H­°¥ÌÅS¥Á²ö[m
-[1;30m¤§¥O¦Ó¦Û§¡©l¨î¦³¦W¦W¥ç¬J¦³¤Ò¥ç±Nª¾¤îª¾¤î [37m61-231-197-55.dynamic.hinet.net[30m®ü[m
+[1;30;40må¤«å…µè€…ä¸ç¥¥ä¹‹å™¨ç‰©æˆ–æƒ¡ä¹‹æ•…æœ‰é“è€…ä¸è™•å›å­å±…å‰‡è²´å·¦ç”¨å…µå‰‡è²´å³å…µè€…ä¸ç¥¥ä¹‹å™¨éžå›å­[m
+[1;30mä¹‹å™¨ä¸å¾—å·²[37m[30mè€Œç”¨ä¹‹æ¬æ·¡ç‚ºä¸Šå‹è€Œä¸ç¾Žè€Œç¾Žä¹‹è€…æ˜¯æ¨‚æ®ºäººå¤«æ¨‚æ®ºäººè€…å‰‡ä¸å¯å¾—å¿—æ–¼å¤©ä¸‹
+[m[1;30mçŸ£å‰äº‹å°šå·¦å‡¶äº‹å°šå³åå°‡è»å±…å·¦ä¸Šå°‡è»å±…å³è¨€ä»¥å–ªç¦®è™•ä¹‹æ®ºäººä¹‹çœ¾ä»¥å“€æ‚²æ³£ä¹‹æˆ°å‹ä»¥[m
+[1;30må–ªç¦®è™•ä¹‹é“å¸¸[37mç„¡å[30mæ¨¸é›–å°å¤©ä¸‹èŽ«èƒ½è‡£ä¾¯çŽ‹è‹¥èƒ½å®ˆä¹‹è¬ç‰©å°‡è‡ªè³“å¤©åœ°ç›¸åˆä»¥é™ç”˜éœ²æ°‘èŽ«[m
+[1;30mä¹‹ä»¤è€Œè‡ªå‡å§‹åˆ¶æœ‰ååäº¦æ—¢æœ‰å¤«äº¦å°‡çŸ¥æ­¢çŸ¥æ­¢ [37m61-231-197-55.dynamic.hinet.net[30mæµ·[m

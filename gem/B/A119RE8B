@@ -1,57 +1,57 @@
-µo«H¤H: vyvian.bbs@bbs.ee.ncnu.edu.tw (¦n¤s¦n¤ô¯d¤l®]) ¬İªO: plan
-¼Ğ  ÃD: ¦Û°Ê§ó·s­ì©lÀÉ
-µo«H¯¸: º[¤j¹q¾÷º}¯B¹q¤l (2004/03/16 Tue 20:42:14)
+ç™¼ä¿¡äºº: vyvian.bbs@bbs.ee.ncnu.edu.tw (å¥½å±±å¥½æ°´ç•™å­å­«) çœ‹æ¿: plan
+æ¨™  é¡Œ: è‡ªå‹•æ›´æ–°åŸå§‹æª”
+ç™¼ä¿¡ç«™: æš¨å¤§é›»æ©Ÿæ¼‚æµ®é›»å­ (2004/03/16 Tue 20:42:14)
 
-§Ú¼g¤F¤@°¦script¥i¥H¨Ó¦Û°ÊÀË¬d¤Î§ó·s~/src©³¤UªºÀÉ®×¡C
+æˆ‘å¯«äº†ä¸€éš»scriptå¯ä»¥ä¾†è‡ªå‹•æª¢æŸ¥åŠæ›´æ–°~/srcåº•ä¸‹çš„æª”æ¡ˆã€‚
 
-¸Ô²Óªº¥Îªk½Ğ°Ñ¦Ò¥»µ{¦¡¶}ÀYªº»¡©ú¡A¾A¦X¤Ö¶q¦Û¤vpatchªº¯¸¡C
+è©³ç´°çš„ç”¨æ³•è«‹åƒè€ƒæœ¬ç¨‹å¼é–‹é ­çš„èªªæ˜ï¼Œé©åˆå°‘é‡è‡ªå·±patchçš„ç«™ã€‚
 
-¤À¨Éµ¹¦U¦ì¨¯­Wªº¯¸ªø¡C
+åˆ†äº«çµ¦å„ä½è¾›è‹¦çš„ç«™é•·ã€‚
 
-¤U¸üÂI¡G
+ä¸‹è¼‰é»ï¼š
 
 http://studentweb.ncnu.edu.tw/92323540/bash/fullupgrade.sh
 
 
 #!/bin/bash
-#       ¥»µ{¦¡´£¨ÑBBS­ì©lÀÉ°µ¥ş­±©Ê¦Û°Ê¤Æ§ó·sªº¤u§@
+#       æœ¬ç¨‹å¼æä¾›BBSåŸå§‹æª”åšå…¨é¢æ€§è‡ªå‹•åŒ–æ›´æ–°çš„å·¥ä½œ
 #
-# ¥»µ{¦¡¶}µoÀô¹Ò¡GLinux + bash 2.05b
+# æœ¬ç¨‹å¼é–‹ç™¼ç’°å¢ƒï¼šLinux + bash 2.05b
 #
-# **µ{¦¡­ì²z¦p¤U¡G
+# **ç¨‹å¼åŸç†å¦‚ä¸‹ï¼š
 #
-#   1. ¥uÀË¬d¨º¨Ç¤â°Êpatch¹LªºÀÉ®×©M³Ì·sª©¥»ªºÀÉ®×¬O§_¦³¤£¦P¡A¦pªG¤£¦Pªº
-#      ¸Ü«h´£¥XÄµ§i¡C
-#   2. ¨Ã¥BÅıºŞ²zªÌ¿ï¾Ü­×¥¿ªº¤è¦¡¡A¥i¥H¥Î·sª©ªº©ÎªÌ¥ÎÂÂª©ªºÀÉ®×¡C
-#   3. ¦pªG·sª©ªºÀÉ®×¨Ã¨S¦³°Ê¹L§A¦Û¤vpatch¹Lªº¨º¨ÇÀÉ®×¡A«h§â©Ò¦³ÂÂªº­ì©l
-#      ½X´«¦¨³Ì·sª©¡C
-#   4. ¦b§â§A¤â°Êpatch¹LªºÀÉ®×ÂĞ»\¦^¥h¡A­«·scompiler¡C
+#   1. åªæª¢æŸ¥é‚£äº›æ‰‹å‹•patchéçš„æª”æ¡ˆå’Œæœ€æ–°ç‰ˆæœ¬çš„æª”æ¡ˆæ˜¯å¦æœ‰ä¸åŒï¼Œå¦‚æœä¸åŒçš„
+#      è©±å‰‡æå‡ºè­¦å‘Šã€‚
+#   2. ä¸¦ä¸”è®“ç®¡ç†è€…é¸æ“‡ä¿®æ­£çš„æ–¹å¼ï¼Œå¯ä»¥ç”¨æ–°ç‰ˆçš„æˆ–è€…ç”¨èˆŠç‰ˆçš„æª”æ¡ˆã€‚
+#   3. å¦‚æœæ–°ç‰ˆçš„æª”æ¡ˆä¸¦æ²’æœ‰å‹•éä½ è‡ªå·±patchéçš„é‚£äº›æª”æ¡ˆï¼Œå‰‡æŠŠæ‰€æœ‰èˆŠçš„åŸå§‹
+#      ç¢¼æ›æˆæœ€æ–°ç‰ˆã€‚
+#   4. åœ¨æŠŠä½ æ‰‹å‹•patchéçš„æª”æ¡ˆè¦†è“‹å›å»ï¼Œé‡æ–°compilerã€‚
 #
-# **¨Ï¥Î¤èªk¦p¤U:
+# **ä½¿ç”¨æ–¹æ³•å¦‚ä¸‹:
 #
-#   1. ¦pªG¬O²Ä¤@¦¸¨Ï¥Î¡A§â©Ò¦³´¿¸g¤â°Êpatch¹Lªº­ì©l½Xcopy¨ì ~/manage/patch
-#      ³o­Ó¸ê®Æ§¨
-#   2. ÀÉ®×¦b°µ¥ô¦ópatch¤§«e¡A¥ı±N­ì©lÀÉ¥ıcopy¨ì~manage/src¸Ì­±
-#       (¦P¤@­ÓÀÉ®×¥u¦³¦b°µ²Ä¤@¦¸patch®É¤~»İ­n°µ³o­Ó°Ê§@¡C)
+#   1. å¦‚æœæ˜¯ç¬¬ä¸€æ¬¡ä½¿ç”¨ï¼ŒæŠŠæ‰€æœ‰æ›¾ç¶“æ‰‹å‹•patchéçš„åŸå§‹ç¢¼copyåˆ° ~/manage/patch
+#      é€™å€‹è³‡æ–™å¤¾
+#   2. æª”æ¡ˆåœ¨åšä»»ä½•patchä¹‹å‰ï¼Œå…ˆå°‡åŸå§‹æª”å…ˆcopyåˆ°~manage/srcè£¡é¢
+#       (åŒä¸€å€‹æª”æ¡ˆåªæœ‰åœ¨åšç¬¬ä¸€æ¬¡patchæ™‚æ‰éœ€è¦åšé€™å€‹å‹•ä½œã€‚)
 #
-#   3. ±Npatch¤§«áªºÀÉ®×copy¨ì~/manage/patch¸Ì­±
-#       (¤W­±³o¨â­Ó°Ê§@«D±`­«­n¡A§_«hµLªk§PÂ_¨º¨ÇÀÉ®×³Q§A¦Û¤v­×§ï¹L¡C)
-#       (½Ğ¤£­n²¾°£¤U¸ü¦^¨ÓªºÀ£ÁYÀÉ¡A¥H°µ¬°ª©¥»§PÂ_¤§¥Î¡C)
-#   4. «Ø¥ß¤@­Ó·s¥Ø¿ı¡AEx: /home/bbs/manage
-#   5. ±N¥»µ{¦¡©ñ¦b©Ò«Ø¥ßªº¥Ø¿ı¤º
-#   6. °õ¦æ /home/bbs/manage/fullupgrade.sh
-#   7. ½Ğ½T»{±zªº¨t²Î¦³¸Ëbash, sed, awk, lynx
+#   3. å°‡patchä¹‹å¾Œçš„æª”æ¡ˆcopyåˆ°~/manage/patchè£¡é¢
+#       (ä¸Šé¢é€™å…©å€‹å‹•ä½œéå¸¸é‡è¦ï¼Œå¦å‰‡ç„¡æ³•åˆ¤æ–·é‚£äº›æª”æ¡ˆè¢«ä½ è‡ªå·±ä¿®æ”¹éã€‚)
+#       (è«‹ä¸è¦ç§»é™¤ä¸‹è¼‰å›ä¾†çš„å£“ç¸®æª”ï¼Œä»¥åšç‚ºç‰ˆæœ¬åˆ¤æ–·ä¹‹ç”¨ã€‚)
+#   4. å»ºç«‹ä¸€å€‹æ–°ç›®éŒ„ï¼ŒEx: /home/bbs/manage
+#   5. å°‡æœ¬ç¨‹å¼æ”¾åœ¨æ‰€å»ºç«‹çš„ç›®éŒ„å…§
+#   6. åŸ·è¡Œ /home/bbs/manage/fullupgrade.sh
+#   7. è«‹ç¢ºèªæ‚¨çš„ç³»çµ±æœ‰è£bash, sed, awk, lynx
 #
-# ¹ï¥»µ{¦¡¦³¥ô¦ó°İÃD¡AÅwªïmailµ¹§Ú   s2323540@ncnu.edu.tw
+# å°æœ¬ç¨‹å¼æœ‰ä»»ä½•å•é¡Œï¼Œæ­¡è¿mailçµ¦æˆ‘   s2323540@ncnu.edu.tw
 #
-basedir=/home/bbs/manage    #³]©w¤u§@¥Ø¿ı¡A¤]¬O¥»µ{¦¡Â\©ñªº¦ì¸m¡C
+basedir=/home/bbs/manage    #è¨­å®šå·¥ä½œç›®éŒ„ï¼Œä¹Ÿæ˜¯æœ¬ç¨‹å¼æ“ºæ”¾çš„ä½ç½®ã€‚
 #
 prog='bash tar gzip sed awk lynx'
 for exim in $prog
 do
     which $exim > /dev/null 2>&1
     if [ "$?" != "0" ]; then
-        echo "±zªº¨t²Î¨S¦³¦w¸Ë$exim¡A½Ğ±N$exim¦w¸Ë¨ì¨t²Î¤W¡C"
+        echo "æ‚¨çš„ç³»çµ±æ²’æœ‰å®‰è£$eximï¼Œè«‹å°‡$eximå®‰è£åˆ°ç³»çµ±ä¸Šã€‚"
         exit
     fi
 done
@@ -70,7 +70,7 @@ if [ -f "$oldfile" ]; then
     tmp1=${filename%-*}
     newfiledate=${tmp1##*-}
     if [ "$oldfiledate" == "$newfiledate" ]; then
-        echo "¥Ø«eªº­ì©lÀÉ¬O³Ì·sª©¥»¡C"
+        echo "ç›®å‰çš„åŸå§‹æª”æ˜¯æœ€æ–°ç‰ˆæœ¬ã€‚"
         echo "It's already up to date."
     else
         rm $basedir/$oldfile
@@ -105,30 +105,30 @@ do
     chksum2=`md5sum "$path"|awk '{print $1}'`
     if [ "$chksum1" == "" ]||[ "$chksum2" == "" ]; then
         echo "$file does not exit !!"
-        echo "$file ¦b·sª©¥»¤¤¤w¸g¤£¦s¦b¤F¡A±z¥i¥H±q¨t²Î¤¤²¾°£"
-        echo -n "¬O§_­n²¾°£$file \(yes/no\)?"
+        echo "$file åœ¨æ–°ç‰ˆæœ¬ä¸­å·²ç¶“ä¸å­˜åœ¨äº†ï¼Œæ‚¨å¯ä»¥å¾ç³»çµ±ä¸­ç§»é™¤"
+        echo -n "æ˜¯å¦è¦ç§»é™¤$file \(yes/no\)?"
         read answer
         while [ ! "$answer" == "yes" ]&&[ ! "$answer" == "no" ]
         do
-            echo -n "½Ğ¦^µªyes ©Î no:"
+            echo -n "è«‹å›ç­”yes æˆ– no:"
             read answer
         done
         if [ "$answer" == "yes" ]; then
             rm -f "$basedir/src/$file"
             rm -f "$basedir/patch/$file"
         else
-            echo "$file©|¥¼²¾°£"
+            echo "$fileå°šæœªç§»é™¤"
             echo " "
             flag=1
         fi
     else
         if [ ! "$chksum1" == "$chksum2" ]; then
             echo "$file is different !!"
-            echo "$file ³o­ÓÀÉ®×±z´¿¸gpatch¹L¡A¦Ó·sªºª©¥»¤]­×§ï¹L³o­ÓÀÉ®×¡C"
-            echo "½Ğ°Ñ¾\filechange¡A¸Ì­±·|Åã¥Ü­ì¥»ªºÀÉ®×©M·sª©ÀÉ®×ªº¤£¦P³B"
-            echo "½Ğ®Ú¾Úfilechange¸Ì­±ªº¸ê°T°µ¾A·íªºpatch"
-            echo "­Y±z©|¥¼¬İ¹Lfilechange¡A¤U­±ªº°İÃD½Ğ³£¦^µªq)²¤¹L"
-            echo -n '½Ğ¿ï¾Ü 1)¥Î·sªºÀÉ®× 2)¥Î¦Û¤vpatchªºÀÉ®× q)²¤¹L [q]¡H'
+            echo "$file é€™å€‹æª”æ¡ˆæ‚¨æ›¾ç¶“patchéï¼Œè€Œæ–°çš„ç‰ˆæœ¬ä¹Ÿä¿®æ”¹éé€™å€‹æª”æ¡ˆã€‚"
+            echo "è«‹åƒé–±filechangeï¼Œè£¡é¢æœƒé¡¯ç¤ºåŸæœ¬çš„æª”æ¡ˆå’Œæ–°ç‰ˆæª”æ¡ˆçš„ä¸åŒè™•"
+            echo "è«‹æ ¹æ“šfilechangeè£¡é¢çš„è³‡è¨Šåšé©ç•¶çš„patch"
+            echo "è‹¥æ‚¨å°šæœªçœ‹éfilechangeï¼Œä¸‹é¢çš„å•é¡Œè«‹éƒ½å›ç­”q)ç•¥é"
+            echo -n 'è«‹é¸æ“‡ 1)ç”¨æ–°çš„æª”æ¡ˆ 2)ç”¨è‡ªå·±patchçš„æª”æ¡ˆ q)ç•¥é [q]ï¼Ÿ'
             read answer1
         case $answer1 in
         1 )
@@ -153,18 +153,18 @@ do
     fi
 done
 if [ "$flag" == "1" ]; then
-    echo "patch¹Lªº­ì©lÀÉ¦³°µ¹L­×§ï"
-    echo "±z¥i¥H¿ï¾Ü¥Î·sª©ªºµ{¦¡¡A¦A¤â°Ê¥[¤Wpatch¡C"
-    echo "©ÎªÌ¥Î­ì¥»patch¹LªºÀÉ®×¦A¤â°Ê¥[¤W·sª©ªº¥\¯à¡C"
-    echo "½Ğ°Ñ¦Òfilechangeªº¤º®e¡A­×¥¿¤§«á¦A­«·s¶]¤@¦¸¥»µ{¦¡"
+    echo "patchéçš„åŸå§‹æª”æœ‰åšéä¿®æ”¹"
+    echo "æ‚¨å¯ä»¥é¸æ“‡ç”¨æ–°ç‰ˆçš„ç¨‹å¼ï¼Œå†æ‰‹å‹•åŠ ä¸Špatchã€‚"
+    echo "æˆ–è€…ç”¨åŸæœ¬patchéçš„æª”æ¡ˆå†æ‰‹å‹•åŠ ä¸Šæ–°ç‰ˆçš„åŠŸèƒ½ã€‚"
+    echo "è«‹åƒè€ƒfilechangeçš„å…§å®¹ï¼Œä¿®æ­£ä¹‹å¾Œå†é‡æ–°è·‘ä¸€æ¬¡æœ¬ç¨‹å¼"
 else
-    echo "©Ò¦³ªºÀË¬d³£¤w¸g§¹¦¨¡A±z¤w¸g¥i¥H¶i¦æ¤É¯Åªº°Ê§@....."
-    echo "¥H¤U·|§â­ì©lÀÉ³Æ¥÷¨ì/home/bbs/bak¸Ì­±¡A¨Ã´À´«¦¨·sªºÀÉ®×"
-    echo -n '±z¬O§_­n¶i¦æ¤É¯Åªº°Ê§@(yes/no)?'
+    echo "æ‰€æœ‰çš„æª¢æŸ¥éƒ½å·²ç¶“å®Œæˆï¼Œæ‚¨å·²ç¶“å¯ä»¥é€²è¡Œå‡ç´šçš„å‹•ä½œ....."
+    echo "ä»¥ä¸‹æœƒæŠŠåŸå§‹æª”å‚™ä»½åˆ°/home/bbs/bakè£¡é¢ï¼Œä¸¦æ›¿æ›æˆæ–°çš„æª”æ¡ˆ"
+    echo -n 'æ‚¨æ˜¯å¦è¦é€²è¡Œå‡ç´šçš„å‹•ä½œ(yes/no)?'
     read check
     while [ ! "$check" == "yes" ]&&[ ! "$check" == "no" ]
     do
-        echo -n "½Ğ¦^µªyes ©Î no:"
+        echo -n "è«‹å›ç­”yes æˆ– no:"
         read check
     done
     if [ "$check" == "no" ]; then
@@ -198,12 +198,12 @@ else
             fi
         fi
     done
-    echo "~/src¸Ì­±ªºÀÉ®×¤w§ó·s¡A¦pªG±z¨S¦³­n¶i¦æ¥ô¦ópatch¡A¥i¥ß¨è­«·scompiler"
-    echo -n '±z¬O§_­n°¨¤W­«·scompiler?(yes/no)'
+    echo "~/srcè£¡é¢çš„æª”æ¡ˆå·²æ›´æ–°ï¼Œå¦‚æœæ‚¨æ²’æœ‰è¦é€²è¡Œä»»ä½•patchï¼Œå¯ç«‹åˆ»é‡æ–°compiler"
+    echo -n 'æ‚¨æ˜¯å¦è¦é¦¬ä¸Šé‡æ–°compiler?(yes/no)'
     read answer3
     while [ ! "$answer3" == "yes" ]&&[ ! "$answer3" == "no" ]
     do
-        echo -n "½Ğ¦^µªyes ©Î no:"
+        echo -n "è«‹å›ç­”yes æˆ– no:"
         read answer3
     done
     if [ "$answer3" == "yes" ]; then
@@ -212,54 +212,54 @@ else
         echo " "
         echo " "
         echo "Full upgrated Successful. Plesae reboot your BBS."
-        echo "¤É¯Å§¹¦¨¡A½Ğ±N¥D¾÷­«·s¶}¾÷¡C"
+        echo "å‡ç´šå®Œæˆï¼Œè«‹å°‡ä¸»æ©Ÿé‡æ–°é–‹æ©Ÿã€‚"
     else
-        echo "patch§¹¤§«á¥i­«·s°õ¦æ¥»µ{¦¡¨Ó­«·scompiler"
+        echo "patchå®Œä¹‹å¾Œå¯é‡æ–°åŸ·è¡Œæœ¬ç¨‹å¼ä¾†é‡æ–°compiler"
     fi
 fi
 
-: ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w :
+: â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ :
 
-md5sum¬O¬°¤FÀË¬dÀÉ®×¬O§_³Q§ó°Ê¹L¡A
+md5sumæ˜¯ç‚ºäº†æª¢æŸ¥æª”æ¡ˆæ˜¯å¦è¢«æ›´å‹•éï¼Œ
 
-¦pªG§Aªº¯¸§¹¥ş¨S¦³¦Û¤v¤â°Ê­×§ï¹Lcodeªº¸Ü¡A·Qª½±µ§¹¥ş¥Î·sª©ªºcode
+å¦‚æœä½ çš„ç«™å®Œå…¨æ²’æœ‰è‡ªå·±æ‰‹å‹•ä¿®æ”¹écodeçš„è©±ï¼Œæƒ³ç›´æ¥å®Œå…¨ç”¨æ–°ç‰ˆçš„code
 
-¥i¥H¥Î¤U­±³o¤äµ{¦¡¡A³o¬OºëµØ°Ï¨º°¦ªºÂ²³æª©(¤£°µ¤â°ÊpatchªºÀË¬d)
+å¯ä»¥ç”¨ä¸‹é¢é€™æ”¯ç¨‹å¼ï¼Œé€™æ˜¯ç²¾è¯å€é‚£éš»çš„ç°¡å–®ç‰ˆ(ä¸åšæ‰‹å‹•patchçš„æª¢æŸ¥)
 
 http://bbs.ee.ncnu.edu.tw/download/update.sh
 
-¤£¹L§Aªºconfig.hÀ³¸Ó­n¦Û¤v³Æ¥÷°_¨Ó¡AµM«á¦A©ñ¦^­ì¥»ªº¥Ø¿ı¥h½sÄ¶¡C
+ä¸éä½ çš„config.hæ‡‰è©²è¦è‡ªå·±å‚™ä»½èµ·ä¾†ï¼Œç„¶å¾Œå†æ”¾å›åŸæœ¬çš„ç›®éŒ„å»ç·¨è­¯ã€‚
 
 #!/bin/bash
-#       ¥»µ{¦¡´£¨ÑBBS­ì©lÀÉ°µ¥ş­±©Ê¦Û°Ê¤Æ§ó·sªº¤u§@
-#¥»µ{¦¡¶}µoÀô¹Ò¡GLinux + bash 2.05b
-#¥»µ{¦¡³Ìªñ§ó·s¤é´Á 2004/9/24
+#       æœ¬ç¨‹å¼æä¾›BBSåŸå§‹æª”åšå…¨é¢æ€§è‡ªå‹•åŒ–æ›´æ–°çš„å·¥ä½œ
+#æœ¬ç¨‹å¼é–‹ç™¼ç’°å¢ƒï¼šLinux + bash 2.05b
+#æœ¬ç¨‹å¼æœ€è¿‘æ›´æ–°æ—¥æœŸ 2004/9/24
 #
-# **¨Ï¥Î¤èªk¦p¤U:
+# **ä½¿ç”¨æ–¹æ³•å¦‚ä¸‹:
 #
-#   1. «Ø¥ß¤@­Ó·s¥Ø¿ı¡AEx: /home/bbs/manage
-#   2. ±N¥»µ{¦¡©ñ¦b©Ò«Ø¥ßªº¥Ø¿ı¤º
-#   3. °õ¦æ /home/bbs/manage/update.sh
-#   4. ½Ğ½T»{±zªº¨t²Î¦³¸Ëbash, sed, awk, lynx
-#   5. ¸U¤@§ó·s§¹¤§«ácopmile¥X°İÃD¡A·Q´«¦^­ì¥»ªºµ{¦¡¡A½Ğ°õ¦æ
+#   1. å»ºç«‹ä¸€å€‹æ–°ç›®éŒ„ï¼ŒEx: /home/bbs/manage
+#   2. å°‡æœ¬ç¨‹å¼æ”¾åœ¨æ‰€å»ºç«‹çš„ç›®éŒ„å…§
+#   3. åŸ·è¡Œ /home/bbs/manage/update.sh
+#   4. è«‹ç¢ºèªæ‚¨çš„ç³»çµ±æœ‰è£bash, sed, awk, lynx
+#   5. è¬ä¸€æ›´æ–°å®Œä¹‹å¾Œcopmileå‡ºå•é¡Œï¼Œæƒ³æ›å›åŸæœ¬çš„ç¨‹å¼ï¼Œè«‹åŸ·è¡Œ
 #      /home/bbs/manage/update.sh rescue
-basedir=/home/bbs/manage    #³]©w¤u§@¥Ø¿ı¡A¤]¬O¥»µ{¦¡Â\©ñªº¦ì¸m¡C
+basedir=/home/bbs/manage    #è¨­å®šå·¥ä½œç›®éŒ„ï¼Œä¹Ÿæ˜¯æœ¬ç¨‹å¼æ“ºæ”¾çš„ä½ç½®ã€‚
 #---------------------------------
-#¹ï¥»µ{¦¡¦³¥ô¦ó°İÃD¡AÅwªïmailµ¹§Ú   s2323540@ncnu.edu.tw
+#å°æœ¬ç¨‹å¼æœ‰ä»»ä½•å•é¡Œï¼Œæ­¡è¿mailçµ¦æˆ‘   s2323540@ncnu.edu.tw
 funcrese () {
     rm -rf ~/src
     tar zxvf ~/bak/src.tar.gz -C ~
     if [ "$?" != "0" ]; then
-        echo "¤w¸g´«¦^­ì¥»ªºµ{¦¡¤F"
-        echo "¦pªG±zªº~/bin¸Ì­±ªºÀÉ®×³Q§ï±¼ªº¸Ü¡A½Ğ­«·scompile"
+        echo "å·²ç¶“æ›å›åŸæœ¬çš„ç¨‹å¼äº†"
+        echo "å¦‚æœæ‚¨çš„~/binè£¡é¢çš„æª”æ¡ˆè¢«æ”¹æ‰çš„è©±ï¼Œè«‹é‡æ–°compile"
     fi
 }
 if [ "$1" == "rescue" ]; then
-    echo -n '±z¬O§_­n´«¦^­ì¥»ªºµ{¦¡(yes/no)?'
+    echo -n 'æ‚¨æ˜¯å¦è¦æ›å›åŸæœ¬çš„ç¨‹å¼(yes/no)?'
     read ans
     while [ ! "$ans" == "yes" ]&&[ ! "$ans" == "no" ]
     do
-        echo -n "½Ğ¦^µªyes ©Î no:"
+        echo -n "è«‹å›ç­”yes æˆ– no:"
         read ans
     done
     if [ "$ans" == "yes" ]; then
@@ -272,7 +272,7 @@ for exim in $prog
 do
     which $exim > /dev/null 2>&1
     if [ "$?" != "0" ]; then
-        echo "±zªº¨t²Î¨S¦³¦w¸Ë$exim¡A½Ğ±N$exim¦w¸Ë¨ì¨t²Î¤W¡C"
+        echo "æ‚¨çš„ç³»çµ±æ²’æœ‰å®‰è£$eximï¼Œè«‹å°‡$eximå®‰è£åˆ°ç³»çµ±ä¸Šã€‚"
         exit
     fi
 done
@@ -292,7 +292,7 @@ if [ -f "$oldfile" ]; then
     tmp1=${filename%-*}
     newfiledate=${tmp1##*-}
     if [ "$oldfiledate" == "$newfiledate" ]; then
-        echo "¥Ø«eªº­ì©lÀÉ¬O³Ì·sª©¥»¡C"
+        echo "ç›®å‰çš„åŸå§‹æª”æ˜¯æœ€æ–°ç‰ˆæœ¬ã€‚"
         echo "It's already up to date."
         rm -rf $basedir/filechange
     else
@@ -322,13 +322,13 @@ else
         exit
     fi
 fi
-    echo "©Ò¦³ªºÀË¬d³£¤w¸g§¹¦¨¡A±z¤w¸g¥i¥H¶i¦æ¤É¯Åªº°Ê§@....."
-    echo "¥H¤U·|§â­ì©lÀÉ³Æ¥÷¨ì/home/bbs/bak¸Ì­±¡A¨Ã´À´«¦¨·sªºÀÉ®×"
-    echo -n '±z¬O§_­n¶i¦æ¤É¯Åªº°Ê§@(yes/no)?'
+    echo "æ‰€æœ‰çš„æª¢æŸ¥éƒ½å·²ç¶“å®Œæˆï¼Œæ‚¨å·²ç¶“å¯ä»¥é€²è¡Œå‡ç´šçš„å‹•ä½œ....."
+    echo "ä»¥ä¸‹æœƒæŠŠåŸå§‹æª”å‚™ä»½åˆ°/home/bbs/bakè£¡é¢ï¼Œä¸¦æ›¿æ›æˆæ–°çš„æª”æ¡ˆ"
+    echo -n 'æ‚¨æ˜¯å¦è¦é€²è¡Œå‡ç´šçš„å‹•ä½œ(yes/no)?'
     read check
     while [ ! "$check" == "yes" ]&&[ ! "$check" == "no" ]
     do
-        echo -n "½Ğ¦^µªyes ©Î no:"
+        echo -n "è«‹å›ç­”yes æˆ– no:"
         read check
     done
     if [ "$check" == "no" ]; then
@@ -348,13 +348,13 @@ fi
         echo "Error !! Can't not copy newfile to ~/src"
         exit
     fi
-    echo "~/src¸Ì­±ªºÀÉ®×³£¤w¸g§ó·s¡A¦pªG±z¨S¦³­n¶i¦æ¥ô¦ópatch¡A¥i¥ß¨è­«·scompile
+    echo "~/srcè£¡é¢çš„æª”æ¡ˆéƒ½å·²ç¶“æ›´æ–°ï¼Œå¦‚æœæ‚¨æ²’æœ‰è¦é€²è¡Œä»»ä½•patchï¼Œå¯ç«‹åˆ»é‡æ–°compile
 r"
-    echo -n '±z¬O§_­n°¨¤W­«·scompiler?(yes/no)'
+    echo -n 'æ‚¨æ˜¯å¦è¦é¦¬ä¸Šé‡æ–°compiler?(yes/no)'
     read answer3
     while [ ! "$answer3" == "yes" ]&&[ ! "$answer3" == "no" ]
     do
-        echo -n "½Ğ¦^µªyes ©Î no:"
+        echo -n "è«‹å›ç­”yes æˆ– no:"
         read answer3
     done
     if [ "$answer3" == "yes" ]; then
@@ -364,16 +364,16 @@ r"
             echo " "
             echo " "
             echo "Full upgrated Successful. Plesae reboot your BBS."
-            echo "¤É¯Å§¹¦¨¡A½Ğ±N¥D¾÷­«·s¶}¾÷¡C"
+            echo "å‡ç´šå®Œæˆï¼Œè«‹å°‡ä¸»æ©Ÿé‡æ–°é–‹æ©Ÿã€‚"
         else
-            echo "µ{¦¡½sÄ¶¥¢±Ñ¡A­Y­n§ï¦^ÂÂµ{¦¡¡A½Ğ°õ¦æ¤U¦C³o¤@¦æ"
+            echo "ç¨‹å¼ç·¨è­¯å¤±æ•—ï¼Œè‹¥è¦æ”¹å›èˆŠç¨‹å¼ï¼Œè«‹åŸ·è¡Œä¸‹åˆ—é€™ä¸€è¡Œ"
             echo "/home/bbs/manage/fullupgrade.sh rescue"
         fi
     else
-        echo "patch§¹¤§«á¥i­«·s°õ¦æ¥»µ{¦¡¨Ó­«·scompiler"
+        echo "patchå®Œä¹‹å¾Œå¯é‡æ–°åŸ·è¡Œæœ¬ç¨‹å¼ä¾†é‡æ–°compiler"
     fi
 
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m º[¤j¹q¾÷£»º}¯B¹q¤l [35;47m bbs.ee.ncnu.edu.tw [m
- [1;42m¢q[45m¢}[m A[1mut[30mho[mr: [1;31mvyvian [30m±q [36mip169.puli24.ncnu.edu.tw [30mµoªí[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m æš¨å¤§é›»æ©ŸË™æ¼‚æµ®é›»å­ [35;47m bbs.ee.ncnu.edu.tw [m
+ [1;42mâ”¼[45mâ”˜[m A[1mut[30mho[mr: [1;31mvyvian [30må¾ [36mip169.puli24.ncnu.edu.tw [30mç™¼è¡¨[m

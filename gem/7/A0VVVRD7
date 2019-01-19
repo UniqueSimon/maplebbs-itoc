@@ -1,19 +1,19 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬ÝªO: itoc
-¼ÐÃD: Re: ¯à¤£¯à¹³¨g¯X¦~¤Ö¤@¼Ë
-®É¶¡: 2004/01/10 Sat 19:35:07                           Updated: 2004/10/08
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: èƒ½ä¸èƒ½åƒç‹‚ç‹·å¹´å°‘ä¸€æ¨£
+æ™‚é–“: 2004/01/10 Sat 19:35:07                           Updated: 2004/10/08
 
-¡° ¤Þ­z¡myenning.bbs@bbs.seehere.org (£B¢í¢ö¢ö¢ñ¢ö¢ï¡ã)¡n¤§»Ê¨¥¡G
-> ´N¬O¦¬¤åªº®É­Ô  ¼ÐÃD·|¥[¤W§@ªÌID
+â€» å¼•è¿°ã€Šyenning.bbs@bbs.seehere.org (ï½™ï½…ï½Žï½Žï½‰ï½Žï½‡ï½ž)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å°±æ˜¯æ”¶æ–‡çš„æ™‚å€™  æ¨™é¡ŒæœƒåŠ ä¸Šä½œè€…ID
 
-  ¾A¥Î paste/gather
+  é©ç”¨ paste/gather
 
-  ps. ¦pªG¬O±qºëµØ°Ï c/p ¨ì§OªººëµØ°Ï
-      ¥Ñ©óºëµØ°Ï¤å³¹ªº§@ªÌ·|³Q§ï¬°ªO¥D
-      ©Ò¥Hªþ¥[ªº§@ªÌ·|¬OªO¥D
+  ps. å¦‚æžœæ˜¯å¾žç²¾è¯å€ c/p åˆ°åˆ¥çš„ç²¾è¯å€
+      ç”±æ–¼ç²¾è¯å€æ–‡ç« çš„ä½œè€…æœƒè¢«æ”¹ç‚ºæ¿ä¸»
+      æ‰€ä»¥é™„åŠ çš„ä½œè€…æœƒæ˜¯æ¿ä¸»
 
 : gem.c:gem_do_paste()
 
-+ static int attach_author;     /* 1: ¼ÐÃDªþ¥[§@ªÌ */
++ static int attach_author;     /* 1: æ¨™é¡Œé™„åŠ ä½œè€… */
 
 static void
 gem_do_paste(srcDir, dstDir, hdr, pos)
@@ -30,30 +30,30 @@ gem_do_paste(srcDir, dstDir, hdr, pos)
 : gem.c:gem_paste()
 
   dir = xo->dir;
-+ attach_author = (vans("¬O§_ªþ¥[­ì§@ªÌ¢×¢Ò©ó¼ÐÃD(Y/N)¡H[N] ") == 'y');
++ attach_author = (vans("æ˜¯å¦é™„åŠ åŽŸä½œè€…ï¼©ï¼¤æ–¼æ¨™é¡Œ(Y/N)ï¼Ÿ[N] ") == 'y');
 
-  switch (ans = vans("¦s©ñ¦ì¸m A)¥[¨ì³Ì«á .... E)ªþ¥[ÀÉ®× Q)Â÷¶} [A] "))
+  switch (ans = vans("å­˜æ”¾ä½ç½® A)åŠ åˆ°æœ€å¾Œ .... E)é™„åŠ æª”æ¡ˆ Q)é›¢é–‹ [A] "))
 
 : gem.c:gem_gather()
 
     case '2':
-+     attach_author = (vans("¬O§_ªþ¥[­ì§@ªÌ¢×¢Ò©ó¼ÐÃD(Y/N)¡H[N] ") == 'y');
++     attach_author = (vans("æ˜¯å¦é™„åŠ åŽŸä½œè€…ï¼©ï¼¤æ–¼æ¨™é¡Œ(Y/N)ï¼Ÿ[N] ") == 'y');
       break;
 
   ...
   ...
 
-      else      /* ¤À§O«ØÀÉ */
+      else      /* åˆ†åˆ¥å»ºæª” */
       {
         hdr_stamp(folder, HDR_COPY | 'A', &ghdr, fpath);
-        strcpy(ghdr.owner, cuser.userid);       /* ¦¬¿ý¥ÎªO¥D id */
+        strcpy(ghdr.owner, cuser.userid);       /* æ”¶éŒ„ç”¨æ¿ä¸» id */
 +       if (attach_author)
 +         sprintf(ghdr.title, "%-51.51s %.18s", hdr->title, hdr->owner);
 +       else
           strcpy(ghdr.title, hdr->title);
-        ghdr.xmode = 0;                         /* xmode ¬O¤å³¹ */
+        ghdr.xmode = 0;                         /* xmode æ˜¯æ–‡ç«  */
 
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ž [35mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

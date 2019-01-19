@@ -1,17 +1,17 @@
-§@ªÌ: Dopin (ats.twbbs.org) ¬İªO: WD_QUESTION
-¼ĞÃD: Re: [°İÃD] ¤@³¡¾÷¾¹¤W¬[¨â­Ó bbs
-®É¶¡: Fri Jun  6 17:24:06 2003                          Updated: 2003/06/06
+ä½œè€…: Dopin (ats.twbbs.org) çœ‹æ¿: WD_QUESTION
+æ¨™é¡Œ: Re: [å•é¡Œ] ä¸€éƒ¨æ©Ÿå™¨ä¸Šæ¶å…©å€‹ bbs
+æ™‚é–“: Fri Jun  6 17:24:06 2003                          Updated: 2003/06/06
 
-¡° ¤Ş­z¡mdinos.bbs@wdbbs.net (¬y®öº~)¡n¤§»Ê¨¥¡G
-: °²³]§Ú¦³ a.a.a.a ©M b.b.b.b ¨â­Ó¤£¦Pªº ip
-: ¨º¯à¤£¯à¦b¦P¤@³¡¾÷¾¹¤W¬[ Abbs & BBBS¡H
-: telnet a.a.a.a 23 ®É¶i¤J ABBS
-: telnet b.b.b.b 23 ®É¶i¤J BBBS
-: ³Â·Ğ«üÂI¤@¤U~~~
+â€» å¼•è¿°ã€Šdinos.bbs@wdbbs.net (æµæµªæ¼¢)ã€‹ä¹‹éŠ˜è¨€ï¼š
+: å‡è¨­æˆ‘æœ‰ a.a.a.a å’Œ b.b.b.b å…©å€‹ä¸åŒçš„ ip
+: é‚£èƒ½ä¸èƒ½åœ¨åŒä¸€éƒ¨æ©Ÿå™¨ä¸Šæ¶ Abbs & BBBSï¼Ÿ
+: telnet a.a.a.a 23 æ™‚é€²å…¥ ABBS
+: telnet b.b.b.b 23 æ™‚é€²å…¥ BBBS
+: éº»ç…©æŒ‡é»ä¸€ä¸‹~~~
 
-´£¥Ü 1. °ò¥»¤W§Q¥Î struct sockaddr_in
-´£¥Ü 2. ·|¥Î¨ì getsockname
-´£¥Ü 3. ·|¥Î¨ì inet_ntoa()
+æç¤º 1. åŸºæœ¬ä¸Šåˆ©ç”¨ struct sockaddr_in
+æç¤º 2. æœƒç”¨åˆ° getsockname
+æç¤º 3. æœƒç”¨åˆ° inet_ntoa()
 
 --
-[1;36m¡°Post by [37mDopin         [36mfrom [33m210.68.39.15            [m
+[1;36mâ€»Post by [37mDopin         [36mfrom [33m210.68.39.15            [m

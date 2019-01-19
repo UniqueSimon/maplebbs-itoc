@@ -1,11 +1,11 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD] ½Ğ°İ¦p¦ó¦h¤@²Õclass(Ãş¦üWindTop±M·~°Q½×°Ï)
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/06/27 Sun 10:59:29)                Updated: 2004/06/27
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] è«‹å•å¦‚ä½•å¤šä¸€çµ„class(é¡ä¼¼WindTopå°ˆæ¥­è¨è«–å€)
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/06/27 Sun 10:59:29)                Updated: 2004/06/27
 
-¡° ¤Ş­z¡mLandRover (¤j¦a­^»¨)¡n¤§»Ê¨¥¡G
-> §ï¬°itoc¥H«á¡@§Æ±æ¤´¯à¦b¥D¿ï³æ°µ¤@­Ó¡u±M·~°Q½×°Ï¡v
+â€» å¼•è¿°ã€ŠLandRover (å¤§åœ°è‹±è±ª)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æ”¹ç‚ºitocä»¥å¾Œã€€å¸Œæœ›ä»èƒ½åœ¨ä¸»é¸å–®åšä¸€å€‹ã€Œå°ˆæ¥­è¨è«–å€ã€
 
-  ¦b (A)nnounce ¸Ì­±¶}­Ó¤ÀÃş¥s PROF §Y¥i
+  åœ¨ (A)nnounce è£¡é¢é–‹å€‹åˆ†é¡å« PROF å³å¯
 
 : struct.h
 
@@ -48,7 +48,7 @@ class_image()
 
 static char *class_img = NULL;
 static XO board_xo;
-+ static int class_prof;        /* ¦b 1:Profession 0:Class ¸Ì­± */
++ static int class_prof;        /* åœ¨ 1:Profession 0:Class è£¡é¢ */
 
 : board.c:board_main()
 
@@ -61,7 +61,7 @@ static XO board_xo;
 : board.c:class_namemode()
 
 static int
-class_namemode(xo)              /* itoc.010413: ¬İªO¨Ì·Ó¦r¥À/¤ÀÃş±Æ¦C */
+class_namemode(xo)              /* itoc.010413: çœ‹æ¿ä¾ç…§å­—æ¯/åˆ†é¡æ’åˆ— */
   XO *xo;
 {
   static time_t last = 0;
@@ -83,16 +83,16 @@ Class()
 +   board_main();
 + }
   /* XoClass(CH_END - 1); */
-  /* Thor.980804: ¨¾¤î ¥¼¥Î account ³y¥X class.img ©Î¨S¦³ class ªº±¡ªp */
+  /* Thor.980804: é˜²æ­¢ æœªç”¨ account é€ å‡º class.img æˆ–æ²’æœ‰ class çš„æƒ…æ³ */
   if (!class_img || !XoClass(CH_END - 1))
   {
-    vmsg("¥¼©w¸q¤À²Õ°Q½×°Ï");
+    vmsg("æœªå®šç¾©åˆ†çµ„è¨è«–å€");
     return XEASY;
   }
   return 0;
 }
 
-: board.c:Profession() ·s¼W¦¹¨ç¦¡¦b Class() «á­±
+: board.c:Profession() æ–°å¢æ­¤å‡½å¼åœ¨ Class() å¾Œé¢
 
 int
 Profession()
@@ -105,10 +105,10 @@ Profession()
     board_main();
   }
   /* XoClass(CH_END - 1); */
-  /* Thor.980804: ¨¾¤î ¥¼¥Î account ³y¥X class.img ©Î¨S¦³ class ªº±¡ªp */
+  /* Thor.980804: é˜²æ­¢ æœªç”¨ account é€ å‡º class.img æˆ–æ²’æœ‰ class çš„æƒ…æ³ */
   if (!class_img || !XoClass(CH_END - 1))
   {
-    vmsg("¥¼©w¸q¤À²Õ°Q½×°Ï");
+    vmsg("æœªå®šç¾©åˆ†çµ„è¨è«–å€");
     return XEASY;
   }
   return 0;
@@ -122,12 +122,12 @@ int Class(void);
 : menu.c:menu_main[]
 
   Class, 0, M_BOARD,
-  "Class     £p ¤À²Õ°Q½×¶° £p",
+  "Class     Ï† åˆ†çµ„è¨è«–é›† Ï†",
 
 + Profession, 0, M_BOARD,
-+ "Profession£p ±M·~°Q½×¶° £p",
++ "ProfessionÏ† å°ˆæ¥­è¨è«–é›† Ï†",
 
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m Maple-itoc£»°Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
- [1;42m¢q[45m¢}[m A[1mut[30mho[mr: [1;31mitoc [30m±q [36mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
+ [1;42mâ”¼[45mâ”˜[m A[1mut[30mho[mr: [1;31mitoc [30må¾ [36mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

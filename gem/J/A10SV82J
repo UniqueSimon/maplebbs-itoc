@@ -1,12 +1,12 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ½Ğ°İ«ç»ò§â¤å³¹¦Û°Ê¦¬¶i­Ó¤HºëµØ°Ï¡H
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/12/27 Mon 12:14:10)                Updated: 2004/12/27
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: è«‹å•æ€éº¼æŠŠæ–‡ç« è‡ªå‹•æ”¶é€²å€‹äººç²¾è¯å€ï¼Ÿ
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/12/27 Mon 12:14:10)                Updated: 2004/12/27
 
-¡° ¤Ş­z¡mrainphiz (¡@)¡n¤§»Ê¨¥¡G
->     ·Q§â¯¸¤W¨Ï¥ÎªÌpo¤å³¹«á¡A³£¯à¦Û°Ê¦¬¶i­Ó¤HºëµØ°Ï¸ÌÀY
->     ex.µoªí¤å³¹¡B¦^ÂĞ¤å³¹....(µwºĞ¤Ó¤j¤Fooo)
+â€» å¼•è¿°ã€Šrainphiz (ã€€)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>     æƒ³æŠŠç«™ä¸Šä½¿ç”¨è€…poæ–‡ç« å¾Œï¼Œéƒ½èƒ½è‡ªå‹•æ”¶é€²å€‹äººç²¾è¯å€è£¡é ­
+>     ex.ç™¼è¡¨æ–‡ç« ã€å›è¦†æ–‡ç« ....(ç¡¬ç¢Ÿå¤ªå¤§äº†ooo)
 
-: post.c:do_mygem() ¥[¦b do_post() «e­±
+: post.c:do_mygem() åŠ åœ¨ do_post() å‰é¢
 
 static void
 do_mygem(fpath)
@@ -32,5 +32,5 @@ do_mygem(fpath)
 + do_mygem(fpath);
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

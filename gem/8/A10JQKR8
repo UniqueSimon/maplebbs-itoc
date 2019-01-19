@@ -1,24 +1,24 @@
-§@ªÌ: itoc (test) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¤å³¹µû¤À¥\¯à
-®É¶¡: Sun Aug 18 14:45:05 2002                          Updated: 2006/05/04
+ä½œè€…: itoc (test) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] æ–‡ç« è©•åˆ†åŠŸèƒ½
+æ™‚é–“: Sun Aug 18 14:45:05 2002                          Updated: 2006/05/04
 
-  ±N±À¤å§ï¦¨¨Ï¥ÎªÌ¤£¥i¥H¹ï¦P¤@½g¤å³¹­«ÂĞµû¤À
+  å°‡æ¨æ–‡æ”¹æˆä½¿ç”¨è€…ä¸å¯ä»¥å°åŒä¸€ç¯‡æ–‡ç« é‡è¦†è©•åˆ†
 
-  brd/note/T/A123456T ¬O¤å³¹ÀÉ¦W
-  brd/note/T/G123456T ¬O³o½g¤å³¹¹ïÀ³ªºµû¤À°O¿ı
+  brd/note/T/A123456T æ˜¯æ–‡ç« æª”å
+  brd/note/T/G123456T æ˜¯é€™ç¯‡æ–‡ç« å°æ‡‰çš„è©•åˆ†è¨˜éŒ„
 
-: maple.p ¥[¤J³o¦æ
+: maple.p åŠ å…¥é€™è¡Œ
 
 /* post.c */
 void plog_unlink(char *fpath);
 
 
-: post.c ·s¼W¨ç¦¡ plog_seek() plog_unlink() struct PLOG ¦b post_score() ¤§«e
+: post.c æ–°å¢å‡½å¼ plog_seek() plog_unlink() struct PLOG åœ¨ post_score() ä¹‹å‰
 
 
 #ifdef HAVE_SCORE
 /* ----------------------------------------------------- */
-/* ¤å³¹µû¤À¥\¯à                                          */
+/* æ–‡ç« è©•åˆ†åŠŸèƒ½                                          */
 /* ----------------------------------------------------- */
 
 
@@ -30,30 +30,30 @@ typedef struct
 }       PLOG;
 
 
-static int               /* 0:¨S¦³µû¤ñ¹L 1:¦³µû¤ñ¹L */
+static int               /* 0:æ²’æœ‰è©•æ¯”é 1:æœ‰è©•æ¯”é */
 plog_seek(folder, hdr, logpath)
   char *folder;
   HDR *hdr;
-  char *logpath;           /* ¦^¶Ç°O¿ıÀÉ¸ô®| */
+  char *logpath;           /* å›å‚³è¨˜éŒ„æª”è·¯å¾‘ */
 {
   PLOG old;
   int fd;
   int rc = 0;
   char *str;
 
-  /* °O¿ıÀÉ¸ô®| */
+  /* è¨˜éŒ„æª”è·¯å¾‘ */
   hdr_fpath(logpath, folder, hdr);
   str = strrchr(logpath, '/') + 1;
   *str = 'G';
 
-  if (HAS_PERM(PERM_ALLADMIN))  /* ¯¸°È¥iµL­­µû¤À */
+  if (HAS_PERM(PERM_ALLADMIN))  /* ç«™å‹™å¯ç„¡é™è©•åˆ† */
     return 0;
 
   if ((fd = open(logpath, O_RDONLY)) >= 0)
   {
     while (read(fd, &old, sizeof(PLOG)) == sizeof(PLOG))
     {
-      /* ¦P¤@ ID©Î«H½c©Î¨Ó·½ ¤£¯à§ë¤G¦¸²¼ */
+      /* åŒä¸€ IDæˆ–ä¿¡ç®±æˆ–ä¾†æº ä¸èƒ½æŠ•äºŒæ¬¡ç¥¨ */
       if (!strcmp(old.userid, cuser.userid) ||
         !str_cmp(old.email, cuser.email) ||
         !str_cmp(old.fromhost, fromhost))
@@ -77,11 +77,11 @@ plog_unlink(fpath)
   if (str = strrchr(fpath, '/'))
   {
     str++;
-    if (*str != 'A')    /* ­n¬O article ¤~·|¦³ log */
+    if (*str != 'A')    /* è¦æ˜¯ article æ‰æœƒæœ‰ log */
       return;
     *str = 'G';
     unlink(fpath);
-    *str = 'A';         /* ´_­ì¦^¨Ó¡A¥H§K§ï¨ì fpath */
+    *str = 'A';         /* å¾©åŸå›ä¾†ï¼Œä»¥å…æ”¹åˆ° fpath */
   }
 }
 #endif      /* HAVE_SCORE */
@@ -107,7 +107,7 @@ plog_unlink(fpath)
   hdr = (HDR *) xo_pool + cur;
 
 + if (!HAS_PERM(PERM_ALLBOARD) &&
-+   plog_seek(xo->dir, hdr, logpath))    /* ¤w³Qµû¤ñ¹L */
++   plog_seek(xo->dir, hdr, logpath))    /* å·²è¢«è©•æ¯”é */
 +   return XO_NONE;
 
   ...
@@ -121,12 +121,12 @@ plog_unlink(fpath)
     time(&now);
     ptime = localtime(&now);
 
-    fprintf(fp, "¡÷ \033[36m%s \033[3%s\033[m¡G%-*s%02d/%02d/%02d\n",
+    fprintf(fp, "â†’ \033[36m%s \033[3%s\033[mï¼š%-*s%02d/%02d/%02d\n",
       userid, verb, maxlen, reason,
       ptime->tm_year % 100, ptime->tm_mon + 1, ptime->tm_mday);
     fclose(fp);
 
-+   /* ¥[¤Jµû¤ñ°O¿ı */
++   /* åŠ å…¥è©•æ¯”è¨˜éŒ„ */
 +   memset(&log, 0, sizeof(PLOG));
 +   strcpy(log.userid, cuser.userid);
 +   strcpy(log.email, cuser.email);
@@ -134,12 +134,12 @@ plog_unlink(fpath)
 +   rec_add(logpath, &log, sizeof(PLOG));
   }
 
-: ·í¤å³¹¹L´Áªº®É­Ô¡A­n¶¶«K§R°£µû¤ñ°O¿ı¡A§ï expire.c
+: ç•¶æ–‡ç« éæœŸçš„æ™‚å€™ï¼Œè¦é †ä¾¿åˆªé™¤è©•æ¯”è¨˜éŒ„ï¼Œæ”¹ expire.c
 
 : expire.c:plog_unlink()
 
-  §â¥ı«eªº post.c:plog_unlink() ¤]§Û¤@¥÷¶i expire.c
-  §Û¦b expire() ¤§«e
+  æŠŠå…ˆå‰çš„ post.c:plog_unlink() ä¹ŸæŠ„ä¸€ä»½é€² expire.c
+  æŠ„åœ¨ expire() ä¹‹å‰
 
 : expire.c:expire()
 
@@ -178,7 +178,7 @@ plog_unlink(fpath)
           continue;
 
 
-: ·í¤å³¹³Q§R°£ªº®É­Ô¡A­n¶¶«K§R°£µû¤ñ°O¿ı¡A§ï post.c ©M xover.c
+: ç•¶æ–‡ç« è¢«åˆªé™¤çš„æ™‚å€™ï¼Œè¦é †ä¾¿åˆªé™¤è©•æ¯”è¨˜éŒ„ï¼Œæ”¹ post.c å’Œ xover.c
 
 : post.c:move_post()
 
@@ -200,7 +200,7 @@ plog_unlink(fpath)
 
         else
         {
-          /* ­Y¬°¬İªO´N³s½u¬å«H */
+          /* è‹¥ç‚ºçœ‹æ¿å°±é€£ç·šç ä¿¡ */
 
           cancel_post(hdr);
           hdr_fpath(fold, fpath, hdr);
@@ -209,4 +209,4 @@ plog_unlink(fpath)
         }
 
 --
-[1;32m¡¼ Origin: [33m°Ê¤O®Ö¤ß [37mxeon.tfcis.org  [31m¡¼ From: [36mitoc.Dorm-GD2.NCTU.edu.tw[m
+[1;32mâ–¡ Origin: [33må‹•åŠ›æ ¸å¿ƒ [37mxeon.tfcis.org  [31mâ–¡ From: [36mitoc.Dorm-GD2.NCTU.edu.tw[m

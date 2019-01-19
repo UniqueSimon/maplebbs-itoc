@@ -1,8 +1,8 @@
-µo«H¤H: LHD.bbs@YoMin.twbbs.org (§Ú¬Oµ{³]¼o§÷) ¬ÝªO: plan
-¼Ð  ÃD: Re: [°ÝÃD] °Î¦WªOªº¤å³¹µû¤À
-µo«H¯¸: ¹C¥Á¤§®a (Wed, 04 Jun 2003 15:13:32 +0800 (CST))  Updated: 2004/09/07
+ç™¼ä¿¡äºº: LHD.bbs@YoMin.twbbs.org (æˆ‘æ˜¯ç¨‹è¨­å»¢æ) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] åŒ¿åæ¿çš„æ–‡ç« è©•åˆ†
+ç™¼ä¿¡ç«™: éŠæ°‘ä¹‹å®¶ (Wed, 04 Jun 2003 15:13:32 +0800 (CST))  Updated: 2004/09/07
 
-  ­Y°Î¦W±À¤å¡A¨º»ò°O¿ý±À¤åªº¤º®e
+  è‹¥åŒ¿åæŽ¨æ–‡ï¼Œé‚£éº¼è¨˜éŒ„æŽ¨æ–‡çš„å…§å®¹
 
 : post.c:post_score()
 
@@ -19,7 +19,7 @@
     return XO_LOAD;
   }
 
-: post.c:log_anonyscore() ·s¼W³o¨ç¦¡©ó post_score() ¤§«e
+: post.c:log_anonyscore() æ–°å¢žé€™å‡½å¼æ–¼ post_score() ä¹‹å‰
 
 #ifdef HAVE_ANONYMOUS
 static void
@@ -28,14 +28,14 @@ log_anonyscore(fname, say)
 {
   char buf[512];
 
-  /* Thor.990113: ¥[¤W fromhost ¤ñ¸û¸ÔºÉ */
-  sprintf(buf, "%s %-13s(%s)\n%-13s %s ²z¥Ñ:%s\n",
+  /* Thor.990113: åŠ ä¸Š fromhost æ¯”è¼ƒè©³ç›¡ */
+  sprintf(buf, "%s %-13s(%s)\n%-13s %s ç†ç”±:%s\n",
     Now(), cuser.userid, fromhost, currboard, fname, say);
   f_cat(FN_RUN_ANONYMOUS, buf);
 }
 #endif
 
 --
-[m¢d¢e¢f¢g¢h¢f¢e¢d¢c¢b                [33m¢©  ¢¨      ¢i¢©¢¨¢i ¡´  [1;30mYoMin.twbbs.org[m
-[30;47m¢h¢f¢e¢c¢b¡Å¢d¢f¢g[0;35m   ©~µL©w©Òªº¶³   [33m¢ª¢i¢« ¢«¢ª ¢i¢ª¢«¢i ¡¶ ¢i¢h¢© [m¥æ¤j¸ê¬ì
-[1;34mÄÆ¦Û [31mlocalhost                        [0;33m¢i   ¢©¢¨ ¢i    ¢i ¢i ¢i  ¢i  [0;1m¹C¥Á¤§®a[m
+[mâ–ƒâ–„â–…â–†â–‡â–…â–„â–ƒâ–‚â–                [33mâ—£  â—¢      â–ˆâ—£â—¢â–ˆ â—  [1;30mYoMin.twbbs.org[m
+[30;47mâ–‡â–…â–„â–‚â–?â–ƒâ–…â–†[0;35m   å±…ç„¡å®šæ‰€çš„é›²   [33mâ—¥â–ˆâ—¤ â—¤â—¥ â–ˆâ—¥â—¤â–ˆ â–² â–ˆâ–‡â—£ [mäº¤å¤§è³‡ç§‘
+[1;34mé£„è‡ª [31mlocalhost                        [0;33mâ–ˆ   â—£â—¢ â–ˆ    â–ˆ â–ˆ â–ˆ  â–ˆ  [0;1méŠæ°‘ä¹‹å®¶[m

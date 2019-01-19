@@ -1,20 +1,20 @@
-µo«H¤H: amaki.bbs@luna.twbbs.org (¥©§J¤O¦Ï) ¬ÝªO: plan
-¼Ð  ÃD: [¥\¯à]¬ÝªOºëµØ°Ï±Æ¦æº]
-µo«H¯¸: ¤ë¤U©]·Q (2004/01/02 Fri 22:58:57)                Updated: 2004/01/02
+ç™¼ä¿¡äºº: amaki.bbs@luna.twbbs.org (å·§å…‹åŠ›ç¾Š) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]çœ‹æ¿ç²¾è¯å€æŽ’è¡Œæ¦œ
+ç™¼ä¿¡ç«™: æœˆä¸‹å¤œæƒ³ (2004/01/02 Fri 22:58:57)                Updated: 2004/01/02
 
-  Å¥»¡¤£¤Ö¯¸¥x¦³³oªF¦è¡A¼g¼g·í·s¦~Â§ª«§a¡C
+  è½èªªä¸å°‘ç«™å°æœ‰é€™æ±è¥¿ï¼Œå¯«å¯«ç•¶æ–°å¹´ç¦®ç‰©å§ã€‚
 
-  ¯¸ªø¥ý¦bAnnounce¸Ì·s¼W¸ê®Æ¡AÀÉ¦W¬°@-topgem
+  ç«™é•·å…ˆåœ¨Announceè£¡æ–°å¢žè³‡æ–™ï¼Œæª”åç‚º@-topgem
 
-  util/¤U·s¼W³o¤ätopgemsize.c
+  util/ä¸‹æ–°å¢žé€™æ”¯topgemsize.c
 
-  crontab -e³]­Ó©w´Á¶]ªº®É¶¡´N¥i¥H¤F¡C
+  crontab -eè¨­å€‹å®šæœŸè·‘çš„æ™‚é–“å°±å¯ä»¥äº†ã€‚
 
-  ¥t¥~³o¤äµ{¦¡¸Ì¦³­Ónode()¡A¸Ì­±ªº4094¸ò1024­Ó§O¬O§ÚªºµwºÐªì©l¤Æ®Éªºblock¸ò
+  å¦å¤–é€™æ”¯ç¨‹å¼è£¡æœ‰å€‹node()ï¼Œè£¡é¢çš„4094è·Ÿ1024å€‹åˆ¥æ˜¯æˆ‘çš„ç¡¬ç¢Ÿåˆå§‹åŒ–æ™‚çš„blockè·Ÿ
 
-  fragment¤j¤p¡A³o¥u¯àºâ¥X¤ñ¸û±µªñªºinode¼Æ(¤@­Óinode¦û¥h128 bytes)¡A¦pªG§Aªº
+  fragmentå¤§å°ï¼Œé€™åªèƒ½ç®—å‡ºæ¯”è¼ƒæŽ¥è¿‘çš„inodeæ•¸(ä¸€å€‹inodeä½”åŽ»128 bytes)ï¼Œå¦‚æžœä½ çš„
 
-  ¤ñ¨Ò¤£¬O4096 / 1024½Ð½Õ¾ã¦¨¦Û¤vµwºÐªº°Ñ¼Æ¡C
+  æ¯”ä¾‹ä¸æ˜¯4096 / 1024è«‹èª¿æ•´æˆè‡ªå·±ç¡¬ç¢Ÿçš„åƒæ•¸ã€‚
 
 : src/util/Makefile
 
@@ -25,7 +25,7 @@ EXE =   ... [1;33mtopgemsize[m
 /*-------------------------------------------------------*/
 /* util/topgemsize.c    ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ¬ÝªOºëµØ°Ï°Ï±Æ¦æº]                           */
+/* target : çœ‹æ¿ç²¾è¯å€å€æŽ’è¡Œæ¦œ                           */
 /* create : 04/01/02                                     */
 /* author : amaki.bbs@luna.twbbs.org                     */
 /*-------------------------------------------------------*/
@@ -175,12 +175,12 @@ gem_record(date)
   if (!(fp = fopen(TOPGEM, "w")))
     return;
 
-  sprintf(msg, "%d¤ë%d¤é¬ÝªOºëµØ°Ï±Æ¦æ", date->mon, date->mday);
+  sprintf(msg, "%dæœˆ%dæ—¥çœ‹æ¿ç²¾è¯å€æŽ’è¡Œ", date->mon, date->mday);
 
   fprintf(fp, "\033[1;35;47m%*s%*s",
     41 + strlen(msg) / 2, msg, 41 - strlen(msg) / 2, "\033[m\n");
- fprintf(fp, "\033[1;37;45m¡i±Æ  ¦W¡j  ¡i¬Ý    ªO¡j  ¡iÀÉ®×¼Æ¡j  ¡i¥Ø¿ý¼Æ¡j"
-   "  ¡iÁ`ºëµØ°Ï¤j¤p(bytes)¡j     \033[m\n");
+ fprintf(fp, "\033[1;37;45mã€æŽ’  åã€‘  ã€çœ‹    æ¿ã€‘  ã€æª”æ¡ˆæ•¸ã€‘  ã€ç›®éŒ„æ•¸ã€‘"
+   "  ã€ç¸½ç²¾è¯å€å¤§å°(bytes)ã€‘     \033[m\n");
 
   do
   {
@@ -188,7 +188,7 @@ gem_record(date)
     bgem_set = bgem + i;
     brd = bshm->bcache + bgem_set->bno;
     sprintf(dbuf, "%d.", i + 1);
-    sprintf(anony, "%c%s", brd->brdname[0], "¡³¡³¡³¡³");
+    sprintf(anony, "%c%s", brd->brdname[0], "â—‹â—‹â—‹â—‹");
 
     if (i < 5)
     {
@@ -261,7 +261,7 @@ main()
   {
     brd = bshm->bcache + i;
     gem_set = bgem + i;
-    /* amaki.030730: ¶}±Ò¬ÝªO¥Ø¿ý¤Uªºbdata */
+    /* amaki.030730: é–‹å•Ÿçœ‹æ¿ç›®éŒ„ä¸‹çš„bdata */
     if (*brd->brdname)
     {
       gem_set->bno = i;

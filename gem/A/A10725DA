@@ -1,31 +1,31 @@
-§@ªÌ: itoc (League) ¬İªO: plan
-¼ĞÃD: [­×¥¿] §K³s¸pªº¬İªO¥Ó½Ğ
-®É¶¡: 2004/03/16 Tue 23:56:53                           Updated: 2005/05/19
+ä½œè€…: itoc (League) çœ‹æ¿: plan
+æ¨™é¡Œ: [ä¿®æ­£] å…é€£ç½²çš„çœ‹æ¿ç”³è«‹
+æ™‚é–“: 2004/03/16 Tue 23:56:53                           Updated: 2005/05/19
 
-¡° ¤Ş­z¡myenning.bbs@bbs.seehere.org (yenning)¡n¤§»Ê¨¥¡G
-> ¬O¤£¬O¯à¥Î¦¨¹³itoc.twbbs.orgªº¬İªO³s¸p¤@¼Ë?
+â€» å¼•è¿°ã€Šyenning.bbs@bbs.seehere.org (yenning)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æ˜¯ä¸æ˜¯èƒ½ç”¨æˆåƒitoc.twbbs.orgçš„çœ‹æ¿é€£ç½²ä¸€æ¨£?
 
-  1. ©Ş±¼ newbrd.c ªº©Ò¦³³s¸p¥\¯à¡A^P ¥u³Ñ¤U¥Ó½Ğ¬İªO
-  2. §K³s¸pªº¬İªO¥Ó½Ğ
-  3. ©|¥¼¶}ªOªºÅã¥Ü '+'¡A¤w¶}ªO§¹²¦Åã¥Ü ' '
-     ­Y¬O VIP ªº¥Ó½Ğ¡A¦b©|¥¼¶}ªO«e·|Åã¥Ü '*'
-  4. ¥Ó½Ğ¬İªO®É§Y¶ñ¤J©Ò¦³¸ê°T¡A¯¸ªø«ö o ´Nª½±µ¶}ªO§¹¦¨
-  5. ¦pªG°µ¤FºëµØ°Ïªº patch¡A¨º»òÁÙª½±µ¥[¤J Class
-  6. help ¨S¦³§ï¡A·Q¼gªº¤H¦A¦Û¤v¼g :p
+  1. æ‹”æ‰ newbrd.c çš„æ‰€æœ‰é€£ç½²åŠŸèƒ½ï¼Œ^P åªå‰©ä¸‹ç”³è«‹çœ‹æ¿
+  2. å…é€£ç½²çš„çœ‹æ¿ç”³è«‹
+  3. å°šæœªé–‹æ¿çš„é¡¯ç¤º '+'ï¼Œå·²é–‹æ¿å®Œç•¢é¡¯ç¤º ' '
+     è‹¥æ˜¯ VIP çš„ç”³è«‹ï¼Œåœ¨å°šæœªé–‹æ¿å‰æœƒé¡¯ç¤º '*'
+  4. ç”³è«‹çœ‹æ¿æ™‚å³å¡«å…¥æ‰€æœ‰è³‡è¨Šï¼Œç«™é•·æŒ‰ o å°±ç›´æ¥é–‹æ¿å®Œæˆ
+  5. å¦‚æœåšäº†ç²¾è¯å€çš„ patchï¼Œé‚£éº¼é‚„ç›´æ¥åŠ å…¥ Class
+  6. help æ²’æœ‰æ”¹ï¼Œæƒ³å¯«çš„äººå†è‡ªå·±å¯« :p
 
 : theme.h
 
-  NECKER_COSIGN¡BFOOTER_COSIGN¡BFEETER_COSIGN
-  ³o¤T­Ó¦Û¤v§ï¤@¤U¡A¤£§ï¤]¨S®t
+  NECKER_COSIGNã€FOOTER_COSIGNã€FEETER_COSIGN
+  é€™ä¸‰å€‹è‡ªå·±æ”¹ä¸€ä¸‹ï¼Œä¸æ”¹ä¹Ÿæ²’å·®
 
-  «ü¥O´N¥u³Ñ¤U (r)Åª¨ú (^P)¥Ó½Ğ (d)§R°£ (o)¶}ªO (E)½s¿è (^Q/^O)¬d¸ß
+  æŒ‡ä»¤å°±åªå‰©ä¸‹ (r)è®€å– (^P)ç”³è«‹ (d)åˆªé™¤ (o)é–‹æ¿ (E)ç·¨è¼¯ (^Q/^O)æŸ¥è©¢
 
-: struct.h  HAVE_COSIGN ³o¤@¬q§ï¦¨³o¼Ë
+: struct.h  HAVE_COSIGN é€™ä¸€æ®µæ”¹æˆé€™æ¨£
 
 #ifdef HAVE_COSIGN
 
 /* ----------------------------------------------------- */
-/* newbrd.c ¤¤¹B¥Îªº¸ê®Æµ²ºc                             */
+/* newbrd.c ä¸­é‹ç”¨çš„è³‡æ–™çµæ§‹                             */
 /* ----------------------------------------------------- */
 
 typedef struct NewBoardHeader
@@ -43,24 +43,24 @@ typedef struct NewBoardHeader
 }       NBRD;
 
 
-#define NBRD_FINISH     0x01    /* ¤wµ²®× */
-#define NBRD_VIPAPPLY   0x02    /* VIP ªº¥Ó½Ğ */
+#define NBRD_FINISH     0x01    /* å·²çµæ¡ˆ */
+#define NBRD_VIPAPPLY   0x02    /* VIP çš„ç”³è«‹ */
 
 #endif  /* HAVE_COSIGN */
 
-: newbrd.c ´«¦¨¥H¤U
+: newbrd.c æ›æˆä»¥ä¸‹
 : ----------------------------------------------------
-  ª`·N is_vip_apply() ªº³¡¤À­n¦Û¤v§ï¼g¡A·íµM§A¤]¥i¥Hª½±µ return 0¡A´N¨S¦³ VIP
-       nbrd_add() ¸Ì­±ªº¤ÀÃş¨Ì¦U¯¸¦Û©w
+  æ³¨æ„ is_vip_apply() çš„éƒ¨åˆ†è¦è‡ªå·±æ”¹å¯«ï¼Œç•¶ç„¶ä½ ä¹Ÿå¯ä»¥ç›´æ¥ return 0ï¼Œå°±æ²’æœ‰ VIP
+       nbrd_add() è£¡é¢çš„åˆ†é¡ä¾å„ç«™è‡ªå®š
   ----------------------------------------------------
-  ¦pªGÁÙ§Æ±æ¦Û°Ê¥[¤J Class ¤ÀÃş¡A¨º»ò°Ñ¦ÒºëµØ°Ï³o½g
-  [¥\¯à] newbrd.c ³s¸p¶}ªO«á¦Û°Ê¥[¤J Class
+  å¦‚æœé‚„å¸Œæœ›è‡ªå‹•åŠ å…¥ Class åˆ†é¡ï¼Œé‚£éº¼åƒè€ƒç²¾è¯å€é€™ç¯‡
+  [åŠŸèƒ½] newbrd.c é€£ç½²é–‹æ¿å¾Œè‡ªå‹•åŠ å…¥ Class
 : ----------------------------------------------------
 
 /*-------------------------------------------------------*/
 /* newbrd.c   ( YZU_CSE WindTop BBS )                    */
 /*-------------------------------------------------------*/
-/* target : ³s¸p¥\¯à                                     */
+/* target : é€£ç½²åŠŸèƒ½                                     */
 /* create : 00/01/02                                     */
 /* update : 02/04/29                                     */
 /*-------------------------------------------------------*/
@@ -76,7 +76,7 @@ typedef struct NewBoardHeader
 
 extern XZ xz[];
 extern char xo_pool[];
-extern BCACHE *bshm;                /* itoc.010805: ¶}·sªO¥Î */
+extern BCACHE *bshm;                /* itoc.010805: é–‹æ–°æ¿ç”¨ */
 
 static int nbrd_add();
 static int nbrd_body();
@@ -166,10 +166,10 @@ static char
 nbrd_attr(nbrd)
   NBRD *nbrd;
 {
-  /*         ¤w¶}ªO§¹¦¨¥Î ' '
-     ¥¼¶}ªOªº¤@¯ë¤H¥Ó½Ğ¥Î '+'
-     ¥¼¶}ªOªº¢ä¢×¢Ş¥Ó½Ğ¥Î '+' (¤@¯ë¨Ï¥ÎªÌ¬İ¨ì)
-     ¥¼¶}ªOªº¢ä¢×¢Ş¥Ó½Ğ¥Î '*' (¥u¦³¯¸ªø¥i¨£)
+  /*         å·²é–‹æ¿å®Œæˆç”¨ ' '
+     æœªé–‹æ¿çš„ä¸€èˆ¬äººç”³è«‹ç”¨ '+'
+     æœªé–‹æ¿çš„ï¼¶ï¼©ï¼°ç”³è«‹ç”¨ '+' (ä¸€èˆ¬ä½¿ç”¨è€…çœ‹åˆ°)
+     æœªé–‹æ¿çš„ï¼¶ï¼©ï¼°ç”³è«‹ç”¨ '*' (åªæœ‰ç«™é•·å¯è¦‹)
    */
   usint mode;
 
@@ -200,7 +200,7 @@ nbrd_body(xo)
   max = xo->max;
   if (max <= 0)
   {
-    if (vans("­n·s¼W³s¸p¶µ¥Ø¶Ü(Y/N)¡H[N] ") == 'y')
+    if (vans("è¦æ–°å¢é€£ç½²é …ç›®å—(Y/N)ï¼Ÿ[N] ") == 'y')
       return nbrd_add(xo);
     return XO_QUIT;
   }
@@ -220,7 +220,7 @@ nbrd_body(xo)
   clrtobot();
 
   /* return XO_NONE; */
-  return XO_FOOT;        /* itoc.010403: §â b_lines ¶ñ¤W feeter */
+  return XO_FOOT;        /* itoc.010403: æŠŠ b_lines å¡«ä¸Š feeter */
 }
 
 
@@ -228,23 +228,23 @@ static int
 nbrd_head(xo)
   XO *xo;
 {
-  vs_head("¥Ó½Ğ¬İªO", str_site);
+  vs_head("ç”³è«‹çœ‹æ¿", str_site);
   outs(NECKER_COSIGN);
   return nbrd_body(xo);
 }
 
 
 static int
-is_vip_apply()                /* ¬O¤£¬O VIP ªº¥Ó½Ğ */
+is_vip_apply()                /* æ˜¯ä¸æ˜¯ VIP çš„ç”³è«‹ */
 {
   char *str, email[80];
 
-  [1;44m// ¥H¤U³o¤@¬q­n¥Ñ¦U¯¸¦Û©w [m
+  [1;44m// ä»¥ä¸‹é€™ä¸€æ®µè¦ç”±å„ç«™è‡ªå®š [m
   if (HAS_PERM(PERM_VALID))
   {
     str_lower(email, cuser.email);
 
-    /* ÀË¬d .ee##(g)@nctu.edu.tw */
+    /* æª¢æŸ¥ .ee##(g)@nctu.edu.tw */
     if (str = (char *) strchr(email, '.'))
     {
       if (*(str + 1) == 'e' && *(str + 2) == 'e' &&
@@ -254,7 +254,7 @@ is_vip_apply()                /* ¬O¤£¬O VIP ªº¥Ó½Ğ */
       }
     }
 
-    /* ÀË¬d u##11###@cc.nctu.edu.tw */
+    /* æª¢æŸ¥ u##11###@cc.nctu.edu.tw */
     if (strlen(email) == 23)
     {
       if (email[0] == 'u' && email[3] == '1' && email[4] == '1' &&
@@ -264,7 +264,7 @@ is_vip_apply()                /* ¬O¤£¬O VIP ªº¥Ó½Ğ */
       }
     }
   }
-  [1;44m// ¥H¤W³o¤@¬q­n¥Ñ¦U¯¸¦Û©w[m
+  [1;44m// ä»¥ä¸Šé€™ä¸€æ®µè¦ç”±å„ç«™è‡ªå®š[m
 
   return 0;
 }
@@ -288,67 +288,67 @@ nbrd_add(xo)
   brdname = nbrd.brdname;
   title = nbrd.title;
 
-  if (!vget(b_lines, 0, "­^¤åªO¦W¡G", brdname, BNLEN + 1, DOECHO))
+  if (!vget(b_lines, 0, "è‹±æ–‡æ¿åï¼š", brdname, BNLEN + 1, DOECHO))
     return XO_FOOT;
 
   if (brd_bno(brdname) >= 0)
   {
-    vmsg("¤w¦³¦¹ªO");
+    vmsg("å·²æœ‰æ­¤æ¿");
     return XO_FOOT;
   }
 
-  if (!valid_brdname(brdname))        /* itoc.020726: ÀË¬dªO¦W¬O§_¦Xªk */
+  if (!valid_brdname(brdname))        /* itoc.020726: æª¢æŸ¥æ¿åæ˜¯å¦åˆæ³• */
   {
-    vmsg("ªO¦W¤£¦Xªk");
+    vmsg("æ¿åä¸åˆæ³•");
     return XO_FOOT;
   }
 
-  [1;44m// ¥H¤U³o¤@¬q­n¥Ñ¦U¯¸¦Û©w [m
-  switch (vans("¬İªO¤ÀÃş¡G1)­Ó¤H 2)¹ìªO 3)¯ZªO 4)ÄÒ¦Ğ 5)Àç¶¤ 6)¨ä¥L [Q] "))
+  [1;44m// ä»¥ä¸‹é€™ä¸€æ®µè¦ç”±å„ç«™è‡ªå®š [m
+  switch (vans("çœ‹æ¿åˆ†é¡ï¼š1)å€‹äºº 2)å¯¢æ¿ 3)ç­æ¿ 4)é»¨ç¾½ 5)ç‡ŸéšŠ 6)å…¶ä»– [Q] "))
   {
   case '1':
-    plevel = "­Ó¤H";
+    plevel = "å€‹äºº";
     break;
   case '2':
-    plevel = "¹ìªO";
+    plevel = "å¯¢æ¿";
     break;
   case '3':
-    plevel = "¯ZªO";
+    plevel = "ç­æ¿";
     break;
   case '4':
-    plevel = "ÄÒ¦Ğ";
+    plevel = "é»¨ç¾½";
     break;
   case '5':
-    plevel = "Àç¶¤";
+    plevel = "ç‡ŸéšŠ";
     break;
   case '6':
-    plevel = "¡H¡H";    /* Åı¯¸ªø¦Û¤v¤â°Ê§ï */
-    vmsg("½Ğ©ó¸É¥R¨Æ¶µ¤¤µù©ú±z­nªº¬İªO¤ÀÃş");
+    plevel = "ï¼Ÿï¼Ÿ";    /* è®“ç«™é•·è‡ªå·±æ‰‹å‹•æ”¹ */
+    vmsg("è«‹æ–¼è£œå……äº‹é …ä¸­è¨»æ˜æ‚¨è¦çš„çœ‹æ¿åˆ†é¡");
     break;
   default:
     return XO_FOOT;
   }
-  [1;44m// ¥H¤W³o¤@¬q­n¥Ñ¦U¯¸¦Û©w [m
+  [1;44m// ä»¥ä¸Šé€™ä¸€æ®µè¦ç”±å„ç«™è‡ªå®š [m
 
   strcpy(nbrd.class, plevel);
 
-  readlevel = vans("¬İªOÄİ©Ê¡G1)¤½¶} 2)¯µ±K 3)¦n¤Í [Q] ") - '0';
+  readlevel = vans("çœ‹æ¿å±¬æ€§ï¼š1)å…¬é–‹ 2)ç§˜å¯† 3)å¥½å‹ [Q] ") - '0';
   switch (readlevel)
   {
   case 1:
-    plevel = "¤½¶}";
+    plevel = "å…¬é–‹";
     break;
   case 2:
-    plevel = "¯µ±K";
+    plevel = "ç§˜å¯†";
     break;
   case 3:
-    plevel = "¦n¤Í";
+    plevel = "å¥½å‹";
     break;
   default:
     return XO_FOOT;
   }
 
-  if (!vget(b_lines, 0, "¬İªO¥DÃD¡G", title, BTLEN + 1, DOECHO))
+  if (!vget(b_lines, 0, "çœ‹æ¿ä¸»é¡Œï¼š", title, BTLEN + 1, DOECHO))
     return XO_FOOT;
 
   dir = xo->dir;
@@ -356,8 +356,8 @@ nbrd_add(xo)
     return nbrd_head(xo);
   close(fd);
 
-  vmsg("ÁÙ¦³­n¸É¥R¤°»ò¶Ü¡H[¨Ò¦pÂà«H¡B½Ô´A¯¸ªøªº¸Ü...:p]");
-  sprintf(path, "tmp/%s.nbrd", cuser.userid);        /* ³s¸p­ì¦]ªº¼È¦sÀÉ®× */
+  vmsg("é‚„æœ‰è¦è£œå……ä»€éº¼å—ï¼Ÿ[ä¾‹å¦‚è½‰ä¿¡ã€è«‚åªšç«™é•·çš„è©±...:p]");
+  sprintf(path, "tmp/%s.nbrd", cuser.userid);        /* é€£ç½²åŸå› çš„æš«å­˜æª”æ¡ˆ */
   fd = vedit(path, 0);
   if (fd)
   {
@@ -372,26 +372,26 @@ nbrd_add(xo)
   rec_add(dir, &nbrd, sizeof(NBRD));
 
   fp = fopen(fpath, "a+");
-  fprintf(fp, "§@ªÌ: %s (%s) ¯¸¤º: ¬İªO¥Ó½Ğ\n", cuser.userid, cuser.username);
-  fprintf(fp, "¼ĞÃD: [¬İªO¥Ó½Ğ] %s\n", brdname);
-  fprintf(fp, "®É¶¡: %s\n\n", Now());
-  fprintf(fp, "­^¤åªO¦W¡G%s\n", brdname);
-  fprintf(fp, "¬İªO¤ÀÃş¡G%s\n", nbrd.class);
-  fprintf(fp, "¬İªO¥DÃD¡G%s\n", title);
-  fprintf(fp, "ªO¥D¦WºÙ¡G%s\n", nbrd.owner);
-  fprintf(fp, "¬İªOÄİ©Ê¡G%s\n\n\n", plevel);
+  fprintf(fp, "ä½œè€…: %s (%s) ç«™å…§: çœ‹æ¿ç”³è«‹\n", cuser.userid, cuser.username);
+  fprintf(fp, "æ¨™é¡Œ: [çœ‹æ¿ç”³è«‹] %s\n", brdname);
+  fprintf(fp, "æ™‚é–“: %s\n\n", Now());
+  fprintf(fp, "è‹±æ–‡æ¿åï¼š%s\n", brdname);
+  fprintf(fp, "çœ‹æ¿åˆ†é¡ï¼š%s\n", nbrd.class);
+  fprintf(fp, "çœ‹æ¿ä¸»é¡Œï¼š%s\n", title);
+  fprintf(fp, "æ¿ä¸»åç¨±ï¼š%s\n", nbrd.owner);
+  fprintf(fp, "çœ‹æ¿å±¬æ€§ï¼š%s\n\n\n", plevel);
   f_suck(fp, path);
   unlink(path);
-  fprintf(fp, "\n--\n¡¼ ¥»¤å³¹¥Ñ %s ±q %s ¥Ó½Ğ\n", cuser.userid, fromhost);
+  fprintf(fp, "\n--\nâ–¡ æœ¬æ–‡ç« ç”± %s å¾ %s ç”³è«‹\n", cuser.userid, fromhost);
   fclose(fp);
 
-  vmsg("½Ğµ¥«İ¯¸ªø¶}ªO");
+  vmsg("è«‹ç­‰å¾…ç«™é•·é–‹æ¿");
   return nbrd_init(xo);
 }
 
 
-static int                        /* 1:¶}ªO¦¨¥\ */
-nbrd_newbrd(nbrd)                /* ¶}·sª© */
+static int                        /* 1:é–‹æ¿æˆåŠŸ */
+nbrd_newbrd(nbrd)                /* é–‹æ–°ç‰ˆ */
   NBRD *nbrd;
 {
   BRD newboard;
@@ -399,18 +399,18 @@ nbrd_newbrd(nbrd)                /* ¶}·sª© */
 
   memset(&newboard, 0, sizeof(BRD));
 
-  /* itoc.010805: ·s¬İªO¹w³] battr = ¤£Âà«H; ¬İªOªO¥D¬°´£°_³s¸pªÌ */
+  /* itoc.010805: æ–°çœ‹æ¿é è¨­ battr = ä¸è½‰ä¿¡; çœ‹æ¿æ¿ä¸»ç‚ºæèµ·é€£ç½²è€… */
   switch (nbrd->readlevel)
   {
-  case 2:       /* ¯µ±K */
+  case 2:       /* ç§˜å¯† */
     newboard.readlevel = PERM_SYSOP;
     newboard.battr = BRD_NOTRAN | BRD_NOSTAT | BRD_NOVOTE;
     break;
-  case 3:       /* ¦n¤Í */
+  case 3:       /* å¥½å‹ */
     newboard.readlevel = PERM_BOARD;
     newboard.battr = BRD_NOTRAN | BRD_NOSTAT | BRD_NOVOTE;
     break;
-  default:      /* ¤½¶} */
+  default:      /* å…¬é–‹ */
     newboard.postlevel = PERM_POST;
     newboard.battr = BRD_NOTRAN;
     break;
@@ -426,7 +426,7 @@ nbrd_newbrd(nbrd)                /* ¶}·sª© */
   if (brd_new(&newboard) < 0)
     return 0;
 
-  vmsg("·sªO¦¨¥ß¡A°OµÛ¥[¤J¤ÀÃş¸s²Õ");
+  vmsg("æ–°æ¿æˆç«‹ï¼Œè¨˜è‘—åŠ å…¥åˆ†é¡ç¾¤çµ„");
   return 1;
 
 }
@@ -443,23 +443,23 @@ nbrd_open(xo)
 
   nbrd = (NBRD *) xo_pool + (xo->pos - xo->top);
 
-  /* itoc.030519: Á×§K­«ÂĞ¶}ªO */
+  /* itoc.030519: é¿å…é‡è¦†é–‹æ¿ */
   if (brd_bno(nbrd->brdname) >= 0)
   {
     nbrd->mode = NBRD_FINISH;
     currchrono = nbrd->btime;
     rec_put(xo->dir, nbrd, sizeof(NBRD), xo->pos, cmpbtime);
-    vmsg("¤w¦³¦¹ªO");
+    vmsg("å·²æœ‰æ­¤æ¿");
     return nbrd_init(xo);
   }
 
   if (nbrd->mode & NBRD_FINISH)
   {
-    vmsg("¤w§¹¦¨¶}ªO");
+    vmsg("å·²å®Œæˆé–‹æ¿");
   }
   else
   {
-    if (vans("½Ğ½T©w¶}±Ò¬İªO(Y/N)¡H[N] ") == 'y')
+    if (vans("è«‹ç¢ºå®šé–‹å•Ÿçœ‹æ¿(Y/N)ï¼Ÿ[N] ") == 'y')
     {
       if (nbrd_newbrd(nbrd))
       {
@@ -482,7 +482,7 @@ nbrd_browse(xo)
   NBRD *nbrd;
   char fpath[80];
 
-  /* itoc.010304: ¬°¤FÅı¾\Åª¨ì¤@¥b¤]¥i¥H¥[¤J³s¸p¡A¦Ò¼{ more ¶Ç¦^­È */
+  /* itoc.010304: ç‚ºäº†è®“é–±è®€åˆ°ä¸€åŠä¹Ÿå¯ä»¥åŠ å…¥é€£ç½²ï¼Œè€ƒæ…® more å‚³å›å€¼ */
   for (;;)
   {
     nbrd = (NBRD *) xo_pool + (xo->pos - xo->top);
@@ -668,4 +668,4 @@ XoNewBoard()
 
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

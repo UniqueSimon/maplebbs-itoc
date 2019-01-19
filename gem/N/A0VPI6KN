@@ -1,14 +1,14 @@
-µo«H¤H: itoc.bbs@xeon.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: Âê¤åCtrl+y
-µo«H¯¸: °Ê¤O®Ö¤ß (Fri, 24 Oct 2003 18:36:01 +0800 (CST))  Updated: 2007/04/26
+ç™¼ä¿¡äºº: itoc.bbs@xeon.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: é–æ–‡Ctrl+y
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (Fri, 24 Oct 2003 18:36:01 +0800 (CST))  Updated: 2007/04/26
 
-¡° ¤Ş­z¡muserjoe.bbs@bittern.csie.nctu.edu.tw (¬õÀs)¡n¤§»Ê¨¥¡G
-> Âê¤å¦b¤å³¹¼ĞÃD§ï¦¨"¤å³¹¤w³Q¯¸°È¤H­ûÂê¦í"
+â€» å¼•è¿°ã€Šuserjoe.bbs@bittern.csie.nctu.edu.tw (ç´…é¾)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> é–æ–‡åœ¨æ–‡ç« æ¨™é¡Œæ”¹æˆ"æ–‡ç« å·²è¢«ç«™å‹™äººå“¡é–ä½"
 
-: post.c:hdr_outs() ¤£Åã¥Ü§@ªÌ
+: post.c:hdr_outs() ä¸é¡¯ç¤ºä½œè€…
 
   /* --------------------------------------------------- */
-  /* ¦L¥X§@ªÌ                                            */
+  /* å°å‡ºä½œè€…                                            */
   /* --------------------------------------------------- */
 
 #ifdef CHECK_ONLINE
@@ -18,22 +18,22 @@
 
 +#ifdef HAVE_REFUSEMARK
 + if (!chkrestrict(hdr))
-+   mark = "§@ªÌ¥[±K";
++   mark = "ä½œè€…åŠ å¯†";
 + else
 +#endif
     mark = hdr->owner;
   len = IDLEN + 1;
 
-: post.c:hdr_outs() ¤£Åã¥Ü¼ĞÃD
+: post.c:hdr_outs() ä¸é¡¯ç¤ºæ¨™é¡Œ
 
   /* --------------------------------------------------- */
-  /* ¦L¥X¼ĞÃDªººØÃş                                      */
+  /* å°å‡ºæ¨™é¡Œçš„ç¨®é¡                                      */
   /* --------------------------------------------------- */
 
 +#ifdef HAVE_REFUSEMARK
 + if (!chkrestrict(hdr))
 + {
-+   title = "¤å³¹¤w³Q¯¸°È¤H­ûÂê¦í";
++   title = "æ–‡ç« å·²è¢«ç«™å‹™äººå“¡é–ä½";
 +   ch = 1;
 + }
 + else
@@ -45,9 +45,9 @@
       ch += 2;
 + }
 
-: cache.c:utmp_seek() ±K¤å§@ªÌ¤£Åã¥Ü¦b½u¤W
+: cache.c:utmp_seek() å¯†æ–‡ä½œè€…ä¸é¡¯ç¤ºåœ¨ç·šä¸Š
 
-  if (hdr->xmode & POST_INCOME) /* POST_INCOME ©M MAIL_INCOME ¬O¬Û¦Pªº */
+  if (hdr->xmode & POST_INCOME) /* POST_INCOME å’Œ MAIL_INCOME æ˜¯ç›¸åŒçš„ */
     return NULL;
 +#ifdef HAVE_REFUSEMARK
 + if (!chkrestrict(hdr))
@@ -55,7 +55,7 @@
 +#endif
   return utmp_get(hdr->owner);
 
-: xover.c:xo_uquery() ¤£¯à ^Q ¬d¸ß±K¤å§@ªÌ
+: xover.c:xo_uquery() ä¸èƒ½ ^Q æŸ¥è©¢å¯†æ–‡ä½œè€…
 
   hdr = (HDR *) xo_pool + (xo->pos - xo->top);
 +#ifdef HAVE_REFUSEMARK
@@ -75,22 +75,22 @@
 
 + #ifdef HAVE_REFUSEMARK
 +     fprintf(fpw, "%s</td>\n</tr>\n",
-+       (hdr.xmode & POST_RESTRICT) ? "<¸ê®Æ«O±K>" : str_html(hdr.title, 50));
++       (hdr.xmode & POST_RESTRICT) ? "<è³‡æ–™ä¿å¯†>" : str_html(hdr.title, 50));
 + #else
       fprintf(fpw, "%s</td>\n</tr>\n", str_html(hdr.title, 50));
 + #endif
 
-: post.c:post_cross() ¥[±K¤å³¹¤£±oÂà¿ı
+: post.c:post_cross() åŠ å¯†æ–‡ç« ä¸å¾—è½‰éŒ„
 
     hdr = tag ? &xhdr : (HDR *) xo_pool + (xo->pos - xo->top);
-      /* lkchu.981201: ¾ã§åÂà¿ı */
+      /* lkchu.981201: æ•´æ‰¹è½‰éŒ„ */
 
 +   if ((!tag) && (hdr->xmode & POST_RESTRICT))
 +   {
-+     vmsg("¥[±K¤å³¹¤£±oÂà¿ı");
++     vmsg("åŠ å¯†æ–‡ç« ä¸å¾—è½‰éŒ„");
 +     return XO_HEAD;
 +   }
 
 --
- [1;43m¢z[44m¢q[m Or[1mig[30min[m: [44m ¥x«n¤@¤¤£»°Ê¤O®Ö¤ß [31;47m processor.tfcis.org [m
- [1;41m¢|[42m¢}[m A[1mut[30mho[mr: [1;36mitoc [30m±q [35mpc512-2.ee.nctu.edu.tw [30mµoªí[m
+ [1;43mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [44m å°å—ä¸€ä¸­Ë™å‹•åŠ›æ ¸å¿ƒ [31;47m processor.tfcis.org [m
+ [1;41mâ””[42mâ”˜[m A[1mut[30mho[mr: [1;36mitoc [30må¾ [35mpc512-2.ee.nctu.edu.tw [30mç™¼è¡¨[m

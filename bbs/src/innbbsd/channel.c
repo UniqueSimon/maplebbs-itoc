@@ -31,9 +31,9 @@ typedef struct
 {
   char *name;
   char *usage;
-  int minargc;		/* argc ³Ì¤Ö´X­Ó */
-  int maxargc;		/* argc ³Ì¦h´X­Ó */
-  int mode;		/* 0:­ncommand-mode¤~¯à¶]  1:­ndata-mode¤~¯à¶]  2:¨S¦³­­¨î */
+  int minargc;		/* argc æœ€å°‘å¹¾å€‹ */
+  int maxargc;		/* argc æœ€å¤šå¹¾å€‹ */
+  int mode;		/* 0:è¦command-modeæ‰èƒ½è·‘  1:è¦data-modeæ‰èƒ½è·‘  2:æ²’æœ‰é™åˆ¶ */
   int errorcode;
   int normalcode;
   void (*main) ();
@@ -72,10 +72,10 @@ typedef struct
 }	ClientType;
 
 
-#if 0	/* itoc.030109.µù¸Ñ: my_recv ªº¬yµ{ */
-            ¢z¡÷ receive_article() ¡÷ bbspost_add()
-  my_recv() ¢u¡÷ receive_nocem()   ¡÷ °e¥h nocem.c ³B²z
-            ¢|¡÷ cancel_article()  ¡÷ bbspost_cancel()
+#if 0	/* itoc.030109.è¨»è§£: my_recv çš„æµç¨‹ */
+            â”Œâ†’ receive_article() â†’ bbspost_add()
+  my_recv() â”œâ†’ receive_nocem()   â†’ é€å» nocem.c è™•ç†
+            â””â†’ cancel_article()  â†’ bbspost_cancel()
 #endif
 
 
@@ -98,7 +98,7 @@ my_recv(client)
     {
       if (!str_ncmp(ptr, "cancel ", 7))
       {
-	/* itoc.030127: cancel ¥¢±ÑÁÙ¬O­nÄ~Äò¦¬¨ä¥L«Ê«H */
+	/* itoc.030127: cancel å¤±æ•—é‚„æ˜¯è¦ç¹¼çºŒæ”¶å…¶ä»–å°ä¿¡ */
 	/* rel = cancel_article(ptr + 7); */
 	cancel_article(ptr + 7);
       }
@@ -118,11 +118,11 @@ my_recv(client)
     else
       fprintf(fout, "235\r\n");
   }
-  else if (rel == 0)		/* PATH¥]¬A¦Û¤v */
+  else if (rel == 0)		/* PATHåŒ…æ‹¬è‡ªå·± */
   {
     fprintf(fout, "235\r\n");
   }
-  else /* if (rel < 0) */	/* ÀÉÀYÄæ¦ì¤£§¹¾ã */
+  else /* if (rel < 0) */	/* æª”é ­æ¬„ä½ä¸å®Œæ•´ */
   {
     fputs("437\r\n", fout);
   }
@@ -213,7 +213,7 @@ dokill(s)
 }
 
 
-static int				/* -1:¥¢±Ñ */
+static int				/* -1:å¤±æ•— */
 initinetserver()
 {
   struct sockaddr_in sin;	/* Internet endpoint address */
@@ -224,7 +224,7 @@ initinetserver()
   fd = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
   if (fd < 0)
   {
-    printf("inet socket ¶}±Ò¥¢±Ñ\n");
+    printf("inet socket é–‹å•Ÿå¤±æ•—\n");
     return -1;
   }
 
@@ -234,7 +234,7 @@ initinetserver()
 
   if (bind(fd, (struct sockaddr *) &sin, sizeof(sin)) < 0)
   {
-    printf("innbbsd ¤w¥Ñ inetd ±Ò°Ê¤F¡AµL»İ¦A¤â°Ê°õ¦æ\n");
+    printf("innbbsd å·²ç”± inetd å•Ÿå‹•äº†ï¼Œç„¡éœ€å†æ‰‹å‹•åŸ·è¡Œ\n");
     return -1;
   }
   listen(fd, 10);
@@ -400,7 +400,7 @@ channelreader(client)
 	else
 	{
 	  /* strip the trailing space */
-	  /* Thor.990110: ¤£¬å ªÅ¦æ\n ªº space, for multi-line merge */
+	  /* Thor.990110: ä¸ç  ç©ºè¡Œ\n çš„ space, for multi-line merge */
 	  /* while (used == ' ' || used == '\t') */
 	  while (dest[-1] != '\n' && (used == ' ' || used == '\t'))
 	    used = *--dest;
@@ -444,17 +444,17 @@ channelreader(client)
     
     if (dp)
     {
-      if ((argv->argc < dp->minargc) || (argv->argc > dp->maxargc))		/* ÀË¬d argc ¬O§_º¡¨¬­n¨D */
+      if ((argv->argc < dp->minargc) || (argv->argc > dp->maxargc))		/* æª¢æŸ¥ argc æ˜¯å¦æ»¿è¶³è¦æ±‚ */
       {
 	fprintf(out, "%d Usage: %s\r\n", dp->errorcode, dp->usage);
 	fflush(out);
       }
-      else if ((dp->mode == 0 || dp->mode == 1) && (client->mode != dp->mode))	/* ÀË¬d data/command mode ¬O§_º¡¨¬­n¨D */
+      else if ((dp->mode == 0 || dp->mode == 1) && (client->mode != dp->mode))	/* æª¢æŸ¥ data/command mode æ˜¯å¦æ»¿è¶³è¦æ±‚ */
       {
 	fprintf(out, "%d %s error\r\n", dp->errorcode, dp->name);
 	fflush(out);
       }
-      else		/* ³q¹L¥H¤W¤T¹DÀË¬d */
+      else		/* é€šéä»¥ä¸Šä¸‰é“æª¢æŸ¥ */
       {
 	void (*Main) ();
 
@@ -469,7 +469,7 @@ channelreader(client)
     }
   }
 
-  /* Thor.980825: gc patch: ¦pªG¤w¸g°õ¦æ¹L CMDquit, ¤U­±ªº°Ê§@³£¤£¥Î°µ¤F(client destroied) :) */
+  /* Thor.980825: gc patch: å¦‚æœå·²ç¶“åŸ·è¡Œé CMDquit, ä¸‹é¢çš„å‹•ä½œéƒ½ä¸ç”¨åšäº†(client destroied) :) */
   /* if (client->mode == 0) */
   if (client->mode == 0 && client->in.data != NULL)
   {
@@ -557,11 +557,11 @@ CMDstat(client)
   FILE *out = argv->out;
   char *data = argv->argv[1];
 
-  if (data[0] != '<')		/* ¥u¤ä´© <msgid> ¬d¸ß */
+  if (data[0] != '<')		/* åªæ”¯æ´ <msgid> æŸ¥è©¢ */
   {
     fprintf(out, "%d We does NOT support article number stating\r\n", p->errorcode);
   }
-  else				/* ¬d¸ß¬O§_¤w¸g¦¬¨ì <msgid> */
+  else				/* æŸ¥è©¢æ˜¯å¦å·²ç¶“æ”¶åˆ° <msgid> */
   {
     if (HISfetch(data, NULL, NULL))
       fprintf(out, "%d 0 %s article received\r\n", p->normalcode, data);
@@ -600,11 +600,11 @@ static daemoncmd_t cmds[] =
 
 
 /* ----------------------------------------------------- */
-/* ¥Dµ{¦¡						 */
+/* ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
-static char *	/* ¶Ç¦^¬O¥Ñ­ş¤@­Ó¯¸¥xÁı«H¶i¨Óªº */
+static char *	/* å‚³å›æ˜¯ç”±å“ªä¸€å€‹ç«™å°é¤µä¿¡é€²ä¾†çš„ */
 search_nodelist_byhost(hostname)
   char *hostname;
 {
@@ -613,8 +613,8 @@ search_nodelist_byhost(hostname)
   char client[128];
   int i;
 
-  /* itoc.021216: §â NODELIST ³£´«¦¨ host¡A³o¼Ëªº¸Ü¡A
-     ¦pªG nodelist.bbs ¸Ì­±¶ñªº¤£¬O¥¿¸Ñ¡A¹ï¤èÁÙ¬O¥i¥H access */
+  /* itoc.021216: æŠŠ NODELIST éƒ½æ›æˆ hostï¼Œé€™æ¨£çš„è©±ï¼Œ
+     å¦‚æœ nodelist.bbs è£¡é¢å¡«çš„ä¸æ˜¯æ­£è§£ï¼Œå°æ–¹é‚„æ˜¯å¯ä»¥ access */
 
   for (i = 0; i < NLCOUNT; i++)
   {
@@ -632,7 +632,7 @@ search_nodelist_byhost(hostname)
 
 
 static time_t
-filetime(fpath)		/* ¶Ç¦^ fpath ªºÀÉ®×®É¶¡ */
+filetime(fpath)		/* å‚³å› fpath çš„æª”æ¡ˆæ™‚é–“ */
   char *fpath;
 {
   struct stat st;
@@ -662,7 +662,7 @@ inndchannel()
   /* initial server					 */
   /* --------------------------------------------------- */
 
-  if (inetdstart)	/* inetd ±Ò°Ê */
+  if (inetdstart)	/* inetd å•Ÿå‹• */
   {
     sock = 0;
   }
@@ -713,7 +713,7 @@ inndchannel()
       uptime1 += 86400;
     }
 
-    /* ­YÀÉ®×¤ñ uptime2 ÁÙ·sªº¸Ü¡A¨º»ò­«·s¸ü¤J */
+    /* è‹¥æª”æ¡ˆæ¯” uptime2 é‚„æ–°çš„è©±ï¼Œé‚£éº¼é‡æ–°è¼‰å…¥ */
     if (filetime("innd/nodelist.bbs") > uptime2 ||
       filetime("innd/newsfeeds.bbs") > uptime2 ||
 #ifdef _NoCeM_
@@ -733,15 +733,15 @@ inndchannel()
     if (select(FD_SETSIZE, &orfd, NULL, NULL, &to) <= 0)
       continue;
 
-    /* ¦³¤H¨Ó³X°İ¤F */
+    /* æœ‰äººä¾†è¨ªå•äº† */
 
-    if (FD_ISSET(sock, &orfd))		/* ­è¤W¯¸ */
+    if (FD_ISSET(sock, &orfd))		/* å‰›ä¸Šç«™ */
     {
       if ((fd = tryaccept(sock)) < 0)
 	continue;
 
-      /* ÀË¬d¦³¨S¦³¦b nodelist.bbs ¸Ì­± */
-      i = sizeof(sin);		/* ­É¥Î i */
+      /* æª¢æŸ¥æœ‰æ²’æœ‰åœ¨ nodelist.bbs è£¡é¢ */
+      i = sizeof(sin);		/* å€Ÿç”¨ i */
       if (getpeername(fd, (struct sockaddr *) &sin, &i) < 0)
       {
 	close(fd);
@@ -752,14 +752,14 @@ inndchannel()
       {
 	char buf[256];
 
-	bbslog("<channel> :Warn: %s ¸Õ¹Ï³s±µ¥»¯¸¡A¦ı¨ä¤£¦b nodelist.bbs ¦W³æ¤¤\n", hostname);
-	sprintf(buf, "502 ±z¤£¦b¥»¯¸ªº nodelist.bbs ¦W³æ¤¤ (%s).\r\n", hostname);
+	bbslog("<channel> :Warn: %s è©¦åœ–é€£æ¥æœ¬ç«™ï¼Œä½†å…¶ä¸åœ¨ nodelist.bbs åå–®ä¸­\n", hostname);
+	sprintf(buf, "502 æ‚¨ä¸åœ¨æœ¬ç«™çš„ nodelist.bbs åå–®ä¸­ (%s).\r\n", hostname);
 	write(fd, buf, strlen(buf));
 	close(fd);
 	continue;
       }
 
-      /* §ä¤@­ÓªÅªº ClientType */
+      /* æ‰¾ä¸€å€‹ç©ºçš„ ClientType */
       for (i = 0; i < MAXCLIENT; i++)
       {
 	clientp = Channel + i;
@@ -768,7 +768,7 @@ inndchannel()
       }
       if (i == MAXCLIENT)
       {
-	static char *msg_no_desc = "502 ¥Ø«e³s½u¤H¼Æ¹L¦h¡A½Ğµy«á¦A¸Õ\r\n";
+	static char *msg_no_desc = "502 ç›®å‰é€£ç·šäººæ•¸éå¤šï¼Œè«‹ç¨å¾Œå†è©¦\r\n";
 
 	write(fd, msg_no_desc, sizeof(msg_no_desc));
 	close(fd);
@@ -781,7 +781,7 @@ inndchannel()
       fflush(clientp->Argv.out);
     }
 
-    /* °õ¦æ©Ò¦³ ClientType ªº½Ğ¨D¡A¨Ã²M±¼¨S¦b¥Îªº ClientType */
+    /* åŸ·è¡Œæ‰€æœ‰ ClientType çš„è«‹æ±‚ï¼Œä¸¦æ¸…æ‰æ²’åœ¨ç”¨çš„ ClientType */
     for (i = 0; i < MAXCLIENT; i++)
     {
       clientp = Channel + i;
@@ -839,7 +839,7 @@ usage(argv)
   char *argv;
 {
   printf("Usage: %s [options]\n", argv);
-  printf("       -i        ¥H inetd wait option ±Ò°Ê\n");
+  printf("       -i        ä»¥ inetd wait option å•Ÿå‹•\n");
 }
 
 
@@ -864,7 +864,7 @@ main(argc, argv)
       c = sizeof(sin);
       if (getsockname(0, (struct sockaddr *) &sin, &c) < 0)
       {
-	printf("±z¤£¬O±q inetd ±Ò°Ê¡AµL»İ¨Ï¥Î -i\n");
+	printf("æ‚¨ä¸æ˜¯å¾ inetd å•Ÿå‹•ï¼Œç„¡éœ€ä½¿ç”¨ -i\n");
 	exit(0);
       }
       inetdstart = 1;

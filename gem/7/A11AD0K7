@@ -1,23 +1,23 @@
-§@ªÌ: chwaian (µL¨¥) ¬ÝªO: itoc
-¼ÐÃD: Re: ·Q½Ð°Ý¦³°µ½ä½Lªº¯¸ªø
-®É¶¡: 2004/08/23 Mon 20:20:27                           Updated: 2005/06/08
+ä½œè€…: chwaian (ç„¡è¨€) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: æƒ³è«‹å•æœ‰åšè³­ç›¤çš„ç«™é•·
+æ™‚é–“: 2004/08/23 Mon 20:20:27                           Updated: 2005/06/08
 
 : crontab -e
-: ½Ð±N¤U­±¥[¤J crontab ªº±Æµ{
+: è«‹å°‡ä¸‹é¢åŠ å…¥ crontab çš„æŽ’ç¨‹
 
-# ¨C¤Ñ 6:30 ºÆ¨g½ä½L¶}½L
+# æ¯å¤© 6:30 ç˜‹ç‹‚è³­ç›¤é–‹ç›¤
 30 6 * * * bin/bet_open > /dev/null 2>&1
 
 : src/util/Makefile
 
 EXE =   ... [1;33mbet_open[m
 
-: src/util/ ©³¤U¼W¥[bet_open.c³o°¦µ{¦¡
+: src/util/ åº•ä¸‹å¢žåŠ bet_open.cé€™éš»ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* util/bet_open.c  ( NTHU CS MapleBBS Ver 3.00 )        */
 /*-------------------------------------------------------*/
-/* target : ½ä½L¶}½Lµ{¦¡                                 */
+/* target : è³­ç›¤é–‹ç›¤ç¨‹å¼                                 */
 /* create :   /  /                                       */
 /* update :   /  /                                       */
 /*-------------------------------------------------------*/
@@ -25,8 +25,8 @@ EXE =   ... [1;33mbet_open[m
 
 #include "bbs.h"
 
-#define TAX       1             /* ¨t²Î©âµ|¦Ê¤À¤§´X */
-#define CMMTN     5             /* ¶}½LªÌ©âµ|¦Ê¤À¤§´X */
+#define TAX       1             /* ç³»çµ±æŠ½ç¨…ç™¾åˆ†ä¹‹å¹¾ */
+#define CMMTN     5             /* é–‹ç›¤è€…æŠ½ç¨…ç™¾åˆ†ä¹‹å¹¾ */
 #define maxboard  40
 
 
@@ -41,7 +41,7 @@ add_money(userid, money)
   memset(&paycheck, 0, sizeof(PAYCHECK));
   time(&paycheck.tissue);
   paycheck.gold = money;
-  strcpy(paycheck.reason, "[ºÆ¨g½ä½L] ¤¤¼ú");
+  strcpy(paycheck.reason, "[ç˜‹ç‹‚è³­ç›¤] ä¸­çŽ");
 
   usr_fpath(fpath, userid, FN_PAYCHECK);
   rec_add(fpath, &paycheck, sizeof(PAYCHECK));
@@ -49,10 +49,10 @@ add_money(userid, money)
 
 
 static void
-mail_to_him(userid, money, owner)     /* itoc.011115: ±HÀÉ®×µ¹ userid */
-  char *userid;                 /* ¦¬¥ó¤H */
+mail_to_him(userid, money, owner)     /* itoc.011115: å¯„æª”æ¡ˆçµ¦ userid */
+  char *userid;                 /* æ”¶ä»¶äºº */
   int money;
-  int owner;                    /* 1:¶}§½ªÌ 0:¤@¯ëª±®a */
+  int owner;                    /* 1:é–‹å±€è€… 0:ä¸€èˆ¬çŽ©å®¶ */
 {
   char folder[64], fpath[64];
   FILE *fp;
@@ -61,21 +61,21 @@ mail_to_him(userid, money, owner)     /* itoc.011115: ±HÀÉ®×µ¹ userid */
   sprintf(fpath, "tmp/bet.%d", userid);
   if (fp = fopen(fpath, "w"))
   {
-    /* ¤å³¹ÀÉÀY */
+    /* æ–‡ç« æª”é ­ */
     fprintf(fp, "%s %s (%s)\n", STR_AUTHOR1, STR_SYSOP, SYSOPNICK);
-    fprintf(fp, "¼ÐÃD: ½ä½Lµo¿ú\n®É¶¡: %s\n\n", Now());
+    fprintf(fp, "æ¨™é¡Œ: è³­ç›¤ç™¼éŒ¢\næ™‚é–“: %s\n\n", Now());
 
-    /* ¤å³¹¤º®e */
+    /* æ–‡ç« å…§å®¹ */
     if (owner)
-      fprintf(fp, "Á|¿ì½ä½L¡A©âÀY%d ¤¸\n", money);
+      fprintf(fp, "èˆ‰è¾¦è³­ç›¤ï¼ŒæŠ½é ­%d å…ƒ\n", money);
     else
-      fprintf(fp, "®¥³ß±z°Ñ¥[½ä½L¡AÄ¹±o %d ¤¸\n", money);
+      fprintf(fp, "æ­å–œæ‚¨åƒåŠ è³­ç›¤ï¼Œè´å¾— %d å…ƒ\n", money);
     fclose(fp);
 
     usr_fpath(folder, userid, FN_DIR);
     hdr_stamp(folder, HDR_LINK, &hdr, fpath);
     strcpy(hdr.owner, STR_SYSOP);
-    strcpy(hdr.title, "½ä½Lµo¿ú");
+    strcpy(hdr.title, "è³­ç›¤ç™¼éŒ¢");
     rec_add(folder, &hdr, sizeof(HDR));
 
     unlink(fpath);
@@ -131,7 +131,7 @@ keeplog(fnlog, board, title, mode)
   int fd;
   FILE *fp;
 
-  if (!dashf(fnlog))                /* Kudo.010804: ÀÉ®×¬OªÅªº´N¤£ keeplog */
+  if (!dashf(fnlog))                /* Kudo.010804: æª”æ¡ˆæ˜¯ç©ºçš„å°±ä¸ keeplog */
     return;
 
   if (!board)
@@ -146,12 +146,12 @@ keeplog(fnlog, board, title, mode)
   {
     close(fd);
     /* rename(fnlog, fpath); */
-    f_mv(fnlog, fpath);                /* Thor.990409: ¥i¸ópartition */
+    f_mv(fnlog, fpath);                /* Thor.990409: å¯è·¨partition */
   }
   else
   {
     fp = fdopen(fd, "w");
-    fprintf(fp, "§@ªÌ: %s (%s)\n¼ÐÃD: %s\n®É¶¡: %s\n\n",
+    fprintf(fp, "ä½œè€…: %s (%s)\næ¨™é¡Œ: %s\næ™‚é–“: %s\n\n",
       STR_SYSOP, SYSOPNICK, title, Btime(&hdr.chrono));
     f_suck(fp, fnlog);
     fclose(fp);
@@ -169,7 +169,7 @@ keeplog(fnlog, board, title, mode)
 
 
 static void
-init_bet(no)                        /* §ó·s²Äno½Lªº¸ê®Æ */
+init_bet(no)                        /* æ›´æ–°ç¬¬noç›¤çš„è³‡æ–™ */
   int no;
 {
   FILE *inf, *fs;
@@ -210,7 +210,7 @@ main()
   chdir(BBSHOME);
 
   inf = fopen("etc/game/bet/bet.lock", "w");
-  fprintf(inf, "\n¥»ÀÉ®×¦s¦b¬°¨t²Îµo¿ú®É¶¡, µLªkÀ£ª`.\n");
+  fprintf(inf, "\næœ¬æª”æ¡ˆå­˜åœ¨ç‚ºç³»çµ±ç™¼éŒ¢æ™‚é–“, ç„¡æ³•å£“æ³¨.\n");
   fclose(inf);
 
   init_bshm();
@@ -225,7 +225,7 @@ main()
       fclose(inf);
 
       logfile = fopen("etc/game/bet/bet.log", "w");
-      fprintf(logfile, "\033[44;1m¡i²Ä %d ­Ó¶}§½©v¦®¡j\033[m\n", now);
+      fprintf(logfile, "\033[44;1mã€ç¬¬ %d å€‹é–‹å±€å®—æ—¨ã€‘\033[m\n", now);
 
       sprintf(buf, "etc/game/bet/bet.scr%d", now);
 
@@ -251,8 +251,8 @@ main()
 
       i = strlen(dscrpt) - 1;
       dscrpt[i] = 0;
-      fprintf(logfile, "\n\033[44;1m½s¸¹      ¶}§½ªÌ   ³æ»ù  "
-        "¶µ¥Ø±Ô­z              \033[m\n");
+      fprintf(logfile, "\n\033[44;1mç·¨è™Ÿ      é–‹å±€è€…   å–®åƒ¹  "
+        "é …ç›®æ•˜è¿°              \033[m\n");
       fprintf(logfile, "\033[32;1m %2d %12s   %5d  %-30s\033[m\n\n",
         now, dd, betmoney, dscrpt);
 
@@ -278,7 +278,7 @@ main()
 
       haha = (float)all / ch[ans - 1];
 
-      fprintf(logfile, "\n\n[¶}¼úµ²ªG]¡G%d\n\n®¥³ß¤U¦C¨Ï¥ÎªÌ!\n", ans);
+      fprintf(logfile, "\n\n[é–‹çŽçµæžœ]ï¼š%d\n\næ­å–œä¸‹åˆ—ä½¿ç”¨è€…!\n", ans);
 
       sprintf(buf, "etc/game/bet/bet.cho%d.%d", now, ans);
 
@@ -288,7 +288,7 @@ main()
         {
           money = b * betmoney * haha * (100 - TAX - CMMTN) / 100;
 
-          fprintf(logfile, "\033[%d;1m %12s Ä¹±o %10d\033[m\n",
+          fprintf(logfile, "\033[%d;1m %12s è´å¾— %10d\033[m\n",
             2 + 31, id, money);
 
           add_money(id, money);
@@ -303,9 +303,9 @@ main()
       money = all * betmoney * (CMMTN) / 100;
       add_money(dd, money);
       mail_to_him(dd, money, 1);
-      fprintf(logfile, "\n\n[¶}§½ªÌ] \033[33;1m%s\033[m ©â¦¨ (%d%%) "
+      fprintf(logfile, "\n\n[é–‹å±€è€…] \033[33;1m%s\033[m æŠ½æˆ (%d%%) "
         "==> \033[32;1m%d\033[m\n", dd, CMMTN, money);
-      fprintf(logfile, "[¨t²Î©â¦¨] (%d%%) ==> \033[32;1m%d\033[m\n\n\n\n",
+      fprintf(logfile, "[ç³»çµ±æŠ½æˆ] (%d%%) ==> \033[32;1m%d\033[m\n\n\n\n",
         TAX, money / 5);
 
       sprintf(fpath, "etc/game/bet/bet.cho%d", now);
@@ -319,7 +319,7 @@ main()
 
       init_bet(now);
 
-      sprintf(buf, "½L¸¹[%d] %s", now, dscrpt);
+      sprintf(buf, "ç›¤è™Ÿ[%d] %s", now, dscrpt);
       keeplog("etc/game/bet/bet.log", BN_BET, buf, 2);
 
     }
@@ -330,5 +330,5 @@ main()
 }
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m Maple-itoc£»°Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
- [1;42m¢q[45m¢}[m A[1mut[30mho[mr: [1;31mchwaian [30m±q [36m218-171-119-168.dynamic.hinet.net [30mµoªí[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
+ [1;42mâ”¼[45mâ”˜[m A[1mut[30mho[mr: [1;31mchwaian [30må¾ž [36m218-171-119-168.dynamic.hinet.net [30mç™¼è¡¨[m

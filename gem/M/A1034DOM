@@ -1,11 +1,11 @@
-╣o╚H╓H: BioStar.bbs@micro.bio.ncue.edu.tw (╪Й╢Р╓p╤ЁЁ╤) ╛щ╙O: plan
-╪п  цD: Re: ╫п╟щ╡ж©n╓W╞╦╝и╪ф
-╣o╚H╞╦: ю╨╓я╠^ (Sat, 01 Nov 2003 00:47:56 +0800 (CST))    Updated: 2005/04/29
+Г≥╪Д©║Д╨╨: BioStar.bbs@micro.bio.ncue.edu.tw (Ф╬▌Ф╧√Е╟▐И⌡╡И⌡─) Г°▀Ф²©: plan
+Ф╗≥  И║▄: Re: Х╚▀Е∙▐Г╢╞Г╘█Д╦┼Г╚≥Ф≥┌Ф∙╦
+Г≥╪Д©║Г╚≥: Ф⌠▌Е╓╘Е╢≈ (Sat, 01 Nov 2003 00:47:56 +0800 (CST))    Updated: 2005/04/29
 
-  ╔╡╤╥╟╣╨К╣ь╟оЁo╫g
-  [╔\╞Ю] acct.c struct.h bbsd.c ╡ж©n╓W╞╦╝и╪ф
+  Е©┘И═┬Е│ Г╡╬Х▐╞Е█─И─≥Г╞┤
+  [Е┼÷Х┐╫] acct.c struct.h bbsd.c Г╢╞Г╘█Д╦┼Г╚≥Ф≥┌Ф∙╦
 
-  ©И╔X╣╡╙G╔i╔H╕b╒п╒п╒А╞╦╓╨╙╨╨К╣ь╟о╚ь╔ъ╦Й╝ф -topstaytime ╗с╬\е╙║C
+  Х╪╦Е┤╨Г╣░Ф·°Е▐╞Д╩╔Е°╗О╪╒О╪╒О╪ЁГ╚≥Е┘╖Г └Г╡╬Х▐╞Е█─Е╩╨Г╚▀ХЁ┤Ф√≥ -topstaytime Д╬├И√╠Х╝─Ц─┌
 
 : src/util/topusr.c
 
@@ -39,11 +39,11 @@ static DATA toplogins[TOPNUM], topposts[TOPNUM], ...;
 : src/util/topusr.c:main()
 
   qsort(toplogins, TOPNUM, sizeof(DATA), sort_compare);
-  write_data(OUTFILE_TOPLOGIN, "╓W╞╦╕╦╪ф╠ф╕Ф╨]", &toplogins);
+  write_data(OUTFILE_TOPLOGIN, "Д╦┼Г╚≥Ф╛║Ф∙╦Ф▌▓Х║▄Ф╕°", &toplogins);
 
 + qsort(topstaytime, TOPNUM, sizeof(DATA), sort_compare);
-+ write_data(OUTFILE_TOPSTAYTIME, "╠╬╞╦╞dей╓юда╨]", &topstaytime);
++ write_data(OUTFILE_TOPSTAYTIME, "Ф▌⌡Г╚≥Г∙≥Ф┬─Е┬├И░≤Ф╕°", &topstaytime);
 
 --
- [1;41m╒z[44m╒q[m Or[1mig[30min[m: [41m ╧Э╓ф╝v╓j╔м╙╚╗tё╩╖u╜╥║E╡╥╓К║Eю╨╓я╠^ [32;47m micro.bio.ncue.edu.tw [m
- [1;42m╒q[45m╒}[m A[1mut[30mho[mr: [1;33mBioStar [30m╠q [35m163.23.212.18 [30m╣o╙М[m
+ [1;41mБ■▄[44mБ■╪[m Or[1mig[30min[m: [41m Е╫╟Е▄√Е╦╚Е╓╖Г■÷Г┴╘ГЁ╩к≥Е░÷И╒╗?Г°╨Ф°┬?Ф⌠▌Е╓╘Е╢≈ [32;47m micro.bio.ncue.edu.tw [m
+ [1;42mБ■╪[45mБ■≤[m A[1mut[30mho[mr: [1;33mBioStar [30mЕ╬· [35m163.23.212.18 [30mГ≥╪Х║╗[m

@@ -1,8 +1,8 @@
-µo´H§H: SnowWolf.bbs@xeon.tfcis.org (¿R©]) ¨›™O: plan
-º–  √D: [§Â•Û] πÔπÔº÷
-µo´HØ∏: ∞ §OÆ÷§ﬂ (Wed, 27 Aug 2003 13:17:56 +0800 (CST))  Updated: 2004/10/28
+Áôº‰ø°‰∫∫: SnowWolf.bbs@xeon.tfcis.org (ÈùúÂ§ú) ÁúãÊùø: plan
+Ê®ô  È°å: [Êñá‰ª∂] Â∞çÂ∞çÊ®Ç
+Áôº‰ø°Á´ô: ÂãïÂäõÊ†∏ÂøÉ (Wed, 27 Aug 2003 13:17:56 +0800 (CST))  Updated: 2004/10/28
 
-  ßÔ≥oΩg´eΩ–ΩT©wßA∞µ§F∫Îµÿ∞œ≥oΩg...
+  ÊîπÈÄôÁØáÂâçË´ãÁ¢∫ÂÆö‰Ω†ÂÅö‰∫ÜÁ≤æËèØÂçÄÈÄôÁØá...
 
 [1;32m~/src/include/global.h[m
 
@@ -10,30 +10,30 @@
 + #define FN_RUN_TICKET_USER     "run/ticket.user"
 + #define FN_RUN_TICKET_RECORD   "run/ticket.record"
 
-[1;32m~/src/maple/menu.c,æA∑ÌøÔ≥Ê•[§J[m
+[1;32m~/src/maple/menu.c,ÈÅ©Áï∂ÈÅ∏ÂñÆÂä†ÂÖ•[m
 
 + "bin/ticket.so:main_ticket", 0, - M_GAME,
-+ "9Ticket    °Ò πÔπÔº÷º÷ °",
++ "9Ticket    ‚ôÇ Â∞çÂ∞çÊ®ÇÊ®Ç ‚ôÄ",
 
 > ------------------------------------------------------------------------ <
 
-[1;32m∑sºW~/etc/game/buyticket[m
+[1;32mÊñ∞Â¢û~/etc/game/buyticket[m
 
 
-    ª°©˙§∫Æe¶€§v•¥ :p
+    Ë™™ÊòéÂÖßÂÆπËá™Â∑±Êâì :p
 
 > ------------------------------------------------------------------------ <
 
-[1;32m≠◊ßÔ~/src/game/Makefile[m
+[1;32m‰øÆÊîπ~/src/game/Makefile[m
 
 SO =    ..... [1;33mticket.so[m
 
-[1;32m∑sºW~/src/game/ticket.c[m
+[1;32mÊñ∞Â¢û~/src/game/ticket.c[m
 
 /*-------------------------------------------------------*/
 /* ticket.c     ( NTHU CS MapleBBS Ver 3.10 )            */
 /*-------------------------------------------------------*/
-/* target : πÔπÔº÷                                       */
+/* target : Â∞çÂ∞çÊ®Ç                                       */
 /* create :   /  /                                       */
 /* update : 03/08/27                                     */
 /* author : Ptt.bbs@ptt.twbbs.org                        */
@@ -46,13 +46,13 @@ SO =    ..... [1;33mticket.so[m
 
 static char betname[8][9] =
 {
-  "Øh≠¬≥•øﬂ", "®S§O´ß´ß", "πCªÓ§p≠∑", "≈]§O§pπ⁄",
-  "∂‘æƒ§j≥Ω", "ΩX¿Y™¸≠€", "§@∞Ôø¬√∆", "ºT≠˘©B¬P"
+  "Áñ≤ÂÄ¶ÈáéË≤ì", "Ê≤íÂäõÂí©Âí©", "ÈÅäÈ≠ÇÂ∞èÈ¢®", "È≠îÂäõÂ∞èÂ§¢",
+  "Âã§Â•ÆÂ§ßÈ≠ö", "Á¢ºÈ†≠ÈòøÂÄ´", "‰∏ÄÂ†ÜËûûËüª", "Âò∞Âì©ÂíïÂöï"
 };
 
 
 /*-------------------------------------------------------*/
-/* ø√πı±±®Ó                                              */
+/* Ëû¢ÂπïÊéßÂà∂                                              */
 /*-------------------------------------------------------*/
 
 
@@ -72,8 +72,8 @@ clrfromto(x, y)
 }
 
 
-static int                      /* 1: ¿…Æ◊¶b  0: ¿…Æ◊§£¶b */
-show_file(fpath, ln, lines)     /* ±q≤ƒ ln ¶C∂}©l¶L¿…Æ◊ lines ¶Ê */
+static int                      /* 1: Ê™îÊ°àÂú®  0: Ê™îÊ°à‰∏çÂú® */
+show_file(fpath, ln, lines)     /* ÂæûÁ¨¨ ln ÂàóÈñãÂßãÂç∞Ê™îÊ°à lines Ë°å */
   char *fpath;
   int ln, lines;
 {
@@ -114,7 +114,7 @@ show_bet()
   }
   prints("\033[1;33m1.%-8s:%-9d2.%-8s:%-9d3.%-8s:%-9d4.%-8s:%-9d\033[m\n"
     "\033[1;33m5.%-8s:%-9d6.%-8s:%-9d7.%-8s:%-9d8.%-8s:%-9d\033[m\n"
-    "\033[1;37;44m §U™`©“¶≥™˜√B: \033[33m%d00\033[37m ª»\033[m",
+    "\033[1;37;44m ‰∏ãÊ≥®ÊâÄÊúâÈáëÈ°ç: \033[33m%d00\033[37m ÈäÄ\033[m",
     betname[0], ticket[0], betname[1], ticket[1],
     betname[2], ticket[2], betname[3], ticket[3],
     betname[4], ticket[4], betname[5], ticket[5],
@@ -126,18 +126,18 @@ static void
 show_ticket_data()
 {
   clear();
-  vs_bar("πÔπÔº÷Ω‰ΩL");
+  vs_bar("Â∞çÂ∞çÊ®ÇË≥≠Áõ§");
 
   move(2, 0);
-  outs("\033[1;32m´e¥X¶∏∂}º˙µ≤™G\033[m");
+  outs("\033[1;32mÂâçÂπæÊ¨°ÈñãÁçéÁµêÊûú\033[m");
   show_file(FN_RUN_TICKET, 3, 8);
 
   move(14, 0);
-  outs("\033[1;36m•ÿ´e§U™`™¨™p\033[m\n");
+  outs("\033[1;36mÁõÆÂâç‰∏ãÊ≥®ÁãÄÊ≥Å\033[m\n");
   show_bet();
   move(19, 0);
-  prints("\033[1;46m±z®≠§W¶≥°G %-10d §∏\033[m\n", cuser.money);
-  prints("Ω–øÔæ‹≠n¡ ∂R™∫∫ÿ√˛(1~8)[Q:¬˜∂}]");
+  prints("\033[1;46mÊÇ®Ë∫´‰∏äÊúâÔºö %-10d ÂÖÉ\033[m\n", cuser.money);
+  prints("Ë´ãÈÅ∏ÊìáË¶ÅË≥ºË≤∑ÁöÑÁ®ÆÈ°û(1~8)[Q:Èõ¢Èñã]");
 }
 
 
@@ -202,7 +202,7 @@ ch_buyitem(money, picture, item)
 {
   int num = 0;
   char buf[5];
-  vget(b_lines - 1, 0, "≠n∂R¶h§÷•˜©O:", buf, 4, LCECHO);
+  vget(b_lines - 1, 0, "Ë¶ÅË≤∑Â§öÂ∞ë‰ªΩÂë¢:", buf, 4, LCECHO);
   num = atoi(buf);
   if (num < 0)
     num = 0;
@@ -215,7 +215,7 @@ ch_buyitem(money, picture, item)
   }
   else
   {
-    vmsg("≤{™˜§£∞˜°I");
+    vmsg("ÁèæÈáë‰∏çÂ§†ÔºÅ");
   }
 }
 
@@ -266,21 +266,21 @@ query_ticket()
   }
   else
   {
-    vmsg("¬d•x§p©j°G®√®S¶≥•Ù¶Û§@≠”§H(•]¨A±z)©„™`");
+    vmsg("Ê´ÉÂè∞Â∞èÂßêÔºö‰∏¶Ê≤íÊúâ‰ªª‰Ωï‰∏ÄÂÄã‰∫∫(ÂåÖÊã¨ÊÇ®)ÊäºÊ≥®");
     return;
   }
   if (!i)
   {
-    vmsg("¬d•x§p©j°G©Í∫p°A±z®√®S¶≥©„•Ù¶Û§@∂µ°I");
+    vmsg("Ê´ÉÂè∞Â∞èÂßêÔºöÊä±Ê≠âÔºåÊÇ®‰∏¶Ê≤íÊúâÊäº‰ªª‰Ωï‰∏ÄÈ†ÖÔºÅ");
     return;
   }
 
   clear();
-  outs("\033[1;33m¬d•x§p©jµπ±z§@±i≤M≥Ê°G\033[\n");
-  prints("\033[1;32mπÔπÔº÷Ω‰ΩL°G\033[35m%s \033[32m§U™`§@ƒ˝™Ì\033[m\n\n", cuser.userid);
+  outs("\033[1;33mÊ´ÉÂè∞Â∞èÂßêÁµ¶ÊÇ®‰∏ÄÂºµÊ∏ÖÂñÆÔºö\033[\n");
+  prints("\033[1;32mÂ∞çÂ∞çÊ®ÇË≥≠Áõ§Ôºö\033[35m%s \033[32m‰∏ãÊ≥®‰∏ÄË¶ΩË°®\033[m\n\n", cuser.userid);
   for (i = 0; i < 8; i++)
   {
-    prints("\033[1;3%dm±z(%s) ©„§F [%d. %-4s]°G%d ±i\033[m\n",
+    prints("\033[1;3%dmÊÇ®(%s) Êäº‰∫Ü [%d. %-4s]Ôºö%d Âºµ\033[m\n",
       i + 1 <= 7 ? i + 1 : i - 6,
       cuser.userid, i + 1, betname[i],
       tickets[i]);
@@ -289,7 +289,7 @@ query_ticket()
 }
 
 
-/* Chukuang ßÔºg°A•i•H∞ı¶Ê§U™`ªP¨d∏ﬂ */
+/* Chukuang ÊîπÂØ´ÔºåÂèØ‰ª•Âü∑Ë°å‰∏ãÊ≥®ËàáÊü•Ë©¢ */
 int
 main_ticket()
 {
@@ -299,29 +299,29 @@ main_ticket()
     return XEASY;
   }
 
-  vs_bar("πÔπÔº÷Ω‰ΩL");
+  vs_bar("Â∞çÂ∞çÊ®ÇË≥≠Áõ§");
 
   move(3, 0);
   outs(
-    "\033[1;32m≥W´h:\033[m 1.•i¡ ∂R§K∫ÿ§£¶P√˛´¨™∫±m≤º°C®C±i≠n™·100§∏°C\n"
-    "      2.®C§Q§G§pÆ…∂}º˙§@¶∏(0:30 12:30)°C\n"
-    "      3.∂}º˙Æ…∑|©‚•X§@∫ÿ±m≤º, ¶≥¡ ∂R∏”±m≤º™Ã, ´h•i®Ã¡ ∂R™∫±iº∆ß°§¿¡`Ω‰™˜°C\n"
-    "      4.®Cµßº˙™˜•—®t≤Œ©‚®˙5%§ßµ|™˜°C\n\n");
+    "\033[1;32mË¶èÂâá:\033[m 1.ÂèØË≥ºË≤∑ÂÖ´Á®Æ‰∏çÂêåÈ°ûÂûãÁöÑÂΩ©Á•®„ÄÇÊØèÂºµË¶ÅËä±100ÂÖÉ„ÄÇ\n"
+    "      2.ÊØèÂçÅ‰∫åÂ∞èÊôÇÈñãÁçé‰∏ÄÊ¨°(0:30 12:30)„ÄÇ\n"
+    "      3.ÈñãÁçéÊôÇÊúÉÊäΩÂá∫‰∏ÄÁ®ÆÂΩ©Á•®, ÊúâË≥ºË≤∑Ë©≤ÂΩ©Á•®ËÄÖ, ÂâáÂèØ‰æùË≥ºË≤∑ÁöÑÂºµÊï∏ÂùáÂàÜÁ∏ΩË≥≠Èáë„ÄÇ\n"
+    "      4.ÊØèÁ≠ÜÁçéÈáëÁî±Á≥ªÁµ±ÊäΩÂèñ5%‰πãÁ®ÖÈáë„ÄÇ\n\n");
 
   move(9, 10);
-  outs("[1] \033[1;41m πÔπÔº÷Ω‰ΩLßÎ™` \033[m");
+  outs("[1] \033[1;41m Â∞çÂ∞çÊ®ÇË≥≠Áõ§ÊäïÊ≥® \033[m");
   move(10, 14);
-  outs("\033[1;31m¢w¢w¢w¢w¢w¢w¢w¢w\033[m");
+  outs("\033[1;31m‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ\033[m");
   move(11, 10);
-  outs("[2] \033[1;44m ¨d∏ﬂ©“§U™`∏ÍÆ∆ \033[m");
+  outs("[2] \033[1;44m Êü•Ë©¢ÊâÄ‰∏ãÊ≥®Ë≥áÊñô \033[m");
   move(12, 14);
-  outs("\033[1;34m¢w¢w¢w¢w¢w¢w¢w¢w\033[m");
+  outs("\033[1;34m‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ\033[m");
   move(13, 10);
-  outs("[0] \033[1;42m ¬˜∂}πÔπÔº÷Ω‰ΩL \033[m");
+  outs("[0] \033[1;42m Èõ¢ÈñãÂ∞çÂ∞çÊ®ÇË≥≠Áõ§ \033[m");
   move(14, 14);
-  outs("\033[1;32m¢w¢w¢w¢w¢w¢w¢w¢w\033[m");
+  outs("\033[1;32m‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ\033[m");
 
-  switch (vans("Ω–øÈ§J±z™∫øÔæ‹°G"))
+  switch (vans("Ë´ãËº∏ÂÖ•ÊÇ®ÁöÑÈÅ∏ÊìáÔºö"))
   {
   case '1':
     ticket_main();
@@ -337,16 +337,16 @@ main_ticket()
 > ------------------------------------------------------------------------ <
 
 
-[1;32m≠◊ßÔ~/src/util/Makefile[m
+[1;32m‰øÆÊîπ~/src/util/Makefile[m
 
 EXE =    ..... [1;33mticket_open[m
 
-[1;32m∑sºW~/src/util/ticket_open.c[m
+[1;32mÊñ∞Â¢û~/src/util/ticket_open.c[m
 
 /*-------------------------------------------------------*/
 /* ticket.c     ( NTHU CS MapleBBS Ver 3.10 )            */
 /*-------------------------------------------------------*/
-/* target : πÔπÔº÷∂}º˙                                   */
+/* target : Â∞çÂ∞çÊ®ÇÈñãÁçé                                   */
 /* create :   /  /                                       */
 /* update : 03/08/27                                     */
 /* author : Ptt.bbs@ptt.twbbs.org                        */
@@ -355,10 +355,10 @@ EXE =    ..... [1;33mticket_open[m
 
 #include "bbs.h"
 
-#define MAX_DES     8          /* ≥Ã§j´OØdº˙º∆ */
+#define MAX_DES     8          /* ÊúÄÂ§ß‰øùÁïôÁçéÊï∏ */
 
 
-/* JCWang:µoø˙®Á¶° */
+/* JCWang:ÁôºÈå¢ÂáΩÂºè */
 stativ void
 add_money(userid, kind, money)
   char *userid;
@@ -371,7 +371,7 @@ add_money(userid, kind, money)
   memset(&paycheck, 0, sizoef(PAYCHECK));
   time(&paycheck.tissue);
   paycheck.money = money;
-  strcpy(paycheck.reason, "πÔπÔº÷º˙™˜");
+  strcpy(paycheck.reason, "Â∞çÂ∞çÊ®ÇÁçéÈáë");
 
   usr_fpath(fpath, userid, FN_PAYCHECK);
   rec_add(fpath, &paycheck, sizeof(PAYCHECK));
@@ -379,10 +379,10 @@ add_money(userid, kind, money)
 
 
 static void
-mail_to_him(fpath, userid, title, xmode)     /* itoc.011115: ±H¿…Æ◊µπ userid */
-  char *fpath;                  /* ¿…Æ◊∏ÙÆ| */
-  char *userid;                 /* ¶¨•Û§H */
-  char *title;                  /* ∂l•Ûº–√D */
+mail_to_him(fpath, userid, title, xmode)     /* itoc.011115: ÂØÑÊ™îÊ°àÁµ¶ userid */
+  char *fpath;                  /* Ê™îÊ°àË∑ØÂæë */
+  char *userid;                 /* Êî∂‰ª∂‰∫∫ */
+  char *title;                  /* ÈÉµ‰ª∂Ê®ôÈ°å */
   usint xmode;
 {
   HDR hdr;
@@ -410,9 +410,9 @@ mail_to_him(userid, num, name, givemoney)
   usr_fpath(fpath, userid, "ticket");
   if (fp = fopen(fpath, "w"))
   {
-    fprintf(fp, "%s §§§F %d ±i [%s] ±o %d §∏\n", userid, num, name, givemoney);
+    fprintf(fp, "%s ‰∏≠‰∫Ü %d Âºµ [%s] Âæó %d ÂÖÉ\n", userid, num, name, givemoney);
     fclose(fp);
-    mail_to_him(fpath, userid, "[πÔπÔº÷] Ω‰ΩL∂}º˙≥q™æ", 0);
+    mail_to_him(fpath, userid, "[Â∞çÂ∞çÊ®Ç] Ë≥≠Áõ§ÈñãÁçéÈÄöÁü•", 0);
     unlink(fpath);
   }
 }
@@ -427,8 +427,8 @@ main()
   char des[MAX_DES][200] = {"", "", "", ""};
   static char betname[8][9] =
   {
-    "Øh≠¬≥•øﬂ","®S§O´ß´ß","πCªÓ§p≠∑","≈]§O§pπ⁄",
-    "∂‘æƒ§j≥Ω","ΩX¿Y™¸≠€","§@∞Ôø¬√∆","ºT≠˘©B¬P"
+    "Áñ≤ÂÄ¶ÈáéË≤ì","Ê≤íÂäõÂí©Âí©","ÈÅäÈ≠ÇÂ∞èÈ¢®","È≠îÂäõÂ∞èÂ§¢",
+    "Âã§Â•ÆÂ§ßÈ≠ö","Á¢ºÈ†≠ÈòøÂÄ´","‰∏ÄÂ†ÜËûûËüª","Âò∞Âì©ÂíïÂöï"
   };
 
   chdir(BBSHOME);
@@ -472,15 +472,15 @@ main()
     {
       fprintf(fp, des[n]);
     }
-    fprintf(fp, "%14.14s Ω‰ΩL∂}•X:%s ¡`™˜√B:%d00 §∏ "
-      "º˙™˜/±i:%d §∏ æ˜≤v:%1.2f\n",
+    fprintf(fp, "%14.14s Ë≥≠Áõ§ÈñãÂá∫:%s Á∏ΩÈáëÈ°ç:%d00 ÂÖÉ "
+      "ÁçéÈáë/Âºµ:%d ÂÖÉ Ê©üÁéá:%1.2f\n",
       Btime(&now), betname[bet], total, money,
       (float)ticket[bet] / total);
     fclose(fp);
   }
 
   if (ticket[bet] &&
-    (fp = fopen(FN_RUN_TICKET_USER ".tmp", "r")))  /* ¶≥§H©„§§ */
+    (fp = fopen(FN_RUN_TICKET_USER ".tmp", "r")))  /* Êúâ‰∫∫Êäº‰∏≠ */
   {
     int mybet, num;
     char userid[20];
@@ -489,7 +489,7 @@ main()
     {
       if (mybet == bet)
       {
-        printf("%s §§§F %d ±i [%s] ±o %d §∏\n",
+        printf("%s ‰∏≠‰∫Ü %d Âºµ [%s] Âæó %d ÂÖÉ\n",
           userid, num, betname[mybet], money * num);
         add_money(userid, 4, money * num);
         mail_to_him(userid, num, betname[mybet], money * num);
@@ -500,11 +500,11 @@ main()
   unlink(FN_RUN_TICKET_USER ".tmp");
 }
 
-[1;32m≥Ã´·ßOß—§F©Ò§J•i∑R™∫crontab§§:P[m
+[1;32mÊúÄÂæåÂà•Âøò‰∫ÜÊîæÂÖ•ÂèØÊÑõÁöÑcrontab‰∏≠:P[m
 
-# πÔπÔº÷∂}º˙
+# Â∞çÂ∞çÊ®ÇÈñãÁçé
 30 0 * * * bin/openticket > /dev/null 2>&1
 
 --
-[1;36m=[37m[[36m°…[37m:[33m°[37m›¢®[m¢©°[1;33m›[37m:[36m°… [31mOrigin[37m ]|[[m     [31m∞[1m §[0;31mOÆ[1m÷§[0;31mﬂ [1mprocessor.tfcis.org    [37m]|[°[33m›£ª°[m›[1;36m°…[37m:][36m=[m
-[1;36m=[m[[1;36m°«[37m:[33m°[30m›¢™[m¢¨°[1;33m›[37m:[36m°« [31mAuthor[m ]|[ [1m    bbs.kuas.edu.tw                 [m]|[°[1;33m›[30m°[37m¥°[30m›[36m°«[37m:[m][1;36m=[m
+[1;36m=[37m[[36mÔπé[37m:[33m?[37mÊëÉ?[m‚ó£?[1;33m?[37m:[36mÔπé [31mOrigin[37m ]|[[m     [31m?[1mÂê®[0;31mO?[1mÁóê[0;31m?[1mprocessor.tfcis.org    [37m]|[?[33mÊêüË™™[m?[1;36mÔπé[37m:][36m=[m
+[1;36m=[m[[1;36mÔπä[37m:[33m?[30mÊëÉ?[m‚ï±?[1;33m?[37m:[36mÔπä [31mAuthor[m ]|[ [1m    bbs.kuas.edu.tw                 [m]|[?[1;33m?[30m?[37mÊèí[30m?[36mÔπä[37m:[m][1;36m=[m

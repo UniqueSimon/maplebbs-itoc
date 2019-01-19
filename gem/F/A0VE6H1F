@@ -1,15 +1,15 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (:MM:) ¬İªO: plan
-¼Ğ  ÃD: Re: ¹ïsmth¶K¹Ï¾÷¨îªº¬ã¨s¡]¤@¡^---·§­z
-µo«H¯¸: XEON (Sat, 31 May 2003 23:04:37 +0800 (CST))      Updated: 2004/08/27
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (:MM:) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: å°smthè²¼åœ–æ©Ÿåˆ¶çš„ç ”ç©¶ï¼ˆä¸€ï¼‰---æ¦‚è¿°
+ç™¼ä¿¡ç«™: XEON (Sat, 31 May 2003 23:04:37 +0800 (CST))      Updated: 2004/08/27
 
-  ¨Ì§Ç¸õ©¹ ¬İªO/ºëµØ°Ï/¨Ï¥ÎªÌ¦W³æ
+  ä¾åºè·³å¾€ çœ‹æ¿/ç²¾è¯å€/ä½¿ç”¨è€…åå–®
 
-  ¦b¬İªO¤¤«ö TAB ¤Á´«¨ìºëµØ°Ï
-  ¦bºëµØ°Ï¤¤«ö TAB ¤Á´«¨ì¨Ï¥ÎªÌ¦W³æ
-  ¦b¨Ï¥ÎªÌ¦W³æ¤¤«ö TAB ¤Á´«¨ì¬İªO
+  åœ¨çœ‹æ¿ä¸­æŒ‰ TAB åˆ‡æ›åˆ°ç²¾è¯å€
+  åœ¨ç²¾è¯å€ä¸­æŒ‰ TAB åˆ‡æ›åˆ°ä½¿ç”¨è€…åå–®
+  åœ¨ä½¿ç”¨è€…åå–®ä¸­æŒ‰ TAB åˆ‡æ›åˆ°çœ‹æ¿
 
-  ¦pªG¥[¤F³o­Ó¥\¯à
-  ¨º»ò´« theme-NECK ³oª©¥»ªº theme.h ·|¤ñ¸ûª½Ä±¤@ÂI
+  å¦‚æœåŠ äº†é€™å€‹åŠŸèƒ½
+  é‚£éº¼æ› theme-NECK é€™ç‰ˆæœ¬çš„ theme.h æœƒæ¯”è¼ƒç›´è¦ºä¸€é»
 
 : xover.c:xover()
 
@@ -30,7 +30,7 @@
     else
 #endif
 
-: xover.c:every_TAB() ·s¼W©ó every_U() «á­±
+: xover.c:every_TAB() æ–°å¢æ–¼ every_U() å¾Œé¢
 
 static int
 every_TAB(zone)
@@ -39,20 +39,20 @@ every_TAB(zone)
   int cmd;
   char fpath[64];
 
-  /* ¤w¸g¦b every_Z ¤¤ªº¸Ü´N¤£¯à¸õ */
+  /* å·²ç¶“åœ¨ every_Z ä¸­çš„è©±å°±ä¸èƒ½è·³ */
   if (z_status)
     return XO_NONE;
 
-  /* ¨Ì§Ç¸õ©¹ ¬İªO/ºëµØ°Ï/¨Ï¥ÎªÌ¦W³æ */
+  /* ä¾åºè·³å¾€ çœ‹æ¿/ç²¾è¯å€/ä½¿ç”¨è€…åå–® */
 
   switch (zone)
   {
   case XZ_POST:
     gem_fpath(fpath, currboard, fn_dir);
     if (rec_num(fpath, sizeof(HDR)) > 0)
-      cmd = 'z';            /* ©I¥s post_gem() */
+      cmd = 'z';            /* å‘¼å« post_gem() */
     else
-      cmd = XZ_ULIST;       /* ­YºëµØ°Ï¬OªÅªº¡A¶i¨Ï¥ÎªÌ¦W³æ */
+      cmd = XZ_ULIST;       /* è‹¥ç²¾è¯å€æ˜¯ç©ºçš„ï¼Œé€²ä½¿ç”¨è€…åå–® */
     break;
 
   case XZ_GEM:
@@ -60,7 +60,7 @@ every_TAB(zone)
     break;
 
   case XZ_ULIST:
-    if (xz[XZ_POST - XO_ZONE].xo)       /* ­Y¤w¿ï©w¬İªO¡A¶i¤J¬İªO¡A§_«h¤£°Ê */
+    if (xz[XZ_POST - XO_ZONE].xo)       /* è‹¥å·²é¸å®šçœ‹æ¿ï¼Œé€²å…¥çœ‹æ¿ï¼Œå¦å‰‡ä¸å‹• */
     {
       cmd = brd_bno(currboard);
       XoPost(cmd);
@@ -79,8 +79,8 @@ every_TAB(zone)
 : mail.c:mbox_cb[]
 
 - KEY_TAB, mbox_sysop,
-+ 'i', mbox_sysop,      // «öÁä´«¦¨§Oªº
++ 'i', mbox_sysop,      // æŒ‰éµæ›æˆåˆ¥çš„
 
 --
-    [1;32m¢~¢w Origin ¢wùß [0;36m°[1mÊ[0;36m¤[1mO[0;36m®[1mÖ[0;36m¤[1mß [1;31m processor.tfcis.org [32m ¡ã £e£f£g ¢w¢t[m
-    [1;32m¢u   Author   ùë [33;44mitoc.dorm-gd2.nctu.edu.tw                [m
+    [1;32mâ•­â”€ Origin â”€â•— [0;36m?[1m?[0;36m?[1mO[0;36m?[1m?[0;36m?[1m?[1;31m processor.tfcis.org [32m ï½ ÎºÎ»Î¼ â”€â”¤[m
+    [1;32mâ”œ   Author   â•¡ [33;44mitoc.dorm-gd2.nctu.edu.tw                [m

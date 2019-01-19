@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* calendar.c	( NTHU CS MapleBBS Ver 3.10 )		 */
 /*-------------------------------------------------------*/
-/* target : ¸U¦~¾ä					 */
+/* target : è¬å¹´æ›†					 */
 /* create : 02/08/31					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -88,11 +88,11 @@ static int empty[MAXDAYS] =
 
 static char *month_names[12] = 
 {
-  "¤@¤ë", "¤G¤ë", "¤T¤ë", "¥|¤ë", "¤­¤ë", "¤»¤ë",
-  "¤C¤ë", "¤K¤ë", "¤E¤ë", "¤Q¤ë", "¤Q¤@¤ë", "¤Q¤G¤ë"
+  "ä¸€æœˆ", "äºŒæœˆ", "ä¸‰æœˆ", "å››æœˆ", "äº”æœˆ", "å…­æœˆ",
+  "ä¸ƒæœˆ", "å…«æœˆ", "ä¹æœˆ", "åæœˆ", "åä¸€æœˆ", "åäºŒæœˆ"
 };
 
-static char *day_headings = "¤é ¤@ ¤G ¤T ¥| ¤­ ¤»";
+static char *day_headings = "æ—¥ ä¸€ äºŒ ä¸‰ å›› äº” å…­";
 
 /* leap year -- account for gregorian reformation in 1752 */
 #define	leap_year(yr)			((yr) <= 1752 ? !((yr) % 4) : (!((yr) % 4) && ((yr) % 100)) || !((yr) % 400))
@@ -215,9 +215,9 @@ monthly(year, month)
   day_array(month, year, days);
   len = snprintf(buf, sizeof(buf), "%s %d", month_names[month - 1], year);
 
-  vs_bar("¸U¦~¤ë¾ä");
+  vs_bar("è¬å¹´æœˆæ›†");
   move(2, 5);
-  outs("­Y¥¼¿é¤J¤ë¥÷¥i¬d¸ß¦~¾ä");
+  outs("è‹¥æœªè¼¸å…¥æœˆä»½å¯æŸ¥è©¢å¹´æ›†");
   move(4, 6);
   prints("\033[1;35m%*s%s", (WEEK_LEN - len) / 2, "", buf);
   move(6, 6);
@@ -227,18 +227,18 @@ monthly(year, month)
   {
     for (col = 0, p = buf; col < 7; col++)
     {
-      if (col == 0)		/* ¬P´Á¤é */
+      if (col == 0)		/* æ˜ŸæœŸæ—¥ */
       {
 	move(7 + row, 6);
 	strcpy(p, "\033[1;31m");
 	p += 7;
       }
-      else if (col == 1)	/* ¬P´Á¤@¡ã¤­ */
+      else if (col == 1)	/* æ˜ŸæœŸä¸€ï½äº” */
       {
 	strcpy(p, "\033[37m");
 	p += 5;
       }
-      else if (col == 6)	/* ¬P´Á¤» */
+      else if (col == 6)	/* æ˜ŸæœŸå…­ */
       {
 	strcpy(p, "\033[32m");
 	p += 5;
@@ -277,7 +277,7 @@ yearly(fpath, year)
   char *p, buf[80];
   FILE *fp;
 
-  /* ¦~¾ä·|¶W¹L¤@­¶¡A¥Î more() ªº */
+  /* å¹´æ›†æœƒè¶…éä¸€é ï¼Œç”¨ more() çš„ */
 
   if (fp = fopen(fpath, "w"))
   {
@@ -333,18 +333,18 @@ main_calendar()
 
   for (;;)
   {
-    if (month)		/* ¤ë¾ä */
+    if (month)		/* æœˆæ›† */
       monthly(year, month);
-    else		/* ¦~¾ä */
+    else		/* å¹´æ›† */
       yearly(fpath, year);
 
-    if (!vget(b_lines, 0, "½Ğ¿é¤J­n¬d¸ßªº¦~¥÷¡G", ans, 5, DOECHO))
+    if (!vget(b_lines, 0, "è«‹è¼¸å…¥è¦æŸ¥è©¢çš„å¹´ä»½ï¼š", ans, 5, DOECHO))
       return 0;
     year = atoi(ans);
     if (year < 1 || year > 9999)
       return 0;
 
-    if (!vget(b_lines, 0, "½Ğ¿é¤J­n¬d¸ßªº¤ë¥÷¡G", ans, 3, DOECHO))
+    if (!vget(b_lines, 0, "è«‹è¼¸å…¥è¦æŸ¥è©¢çš„æœˆä»½ï¼š", ans, 3, DOECHO))
     {
       month = 0;
     }

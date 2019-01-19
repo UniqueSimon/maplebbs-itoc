@@ -1,17 +1,17 @@
-µo«H¤H: itoc.bbs@xeon.tfcis.org (®Ö¤ß°Ê¤O) ¬ÝªO: plan
-¼Ð  ÃD: Re: [°ÝÃD] Âo±¼ascii
-µo«H¯¸: °Ê¤O®Ö¤ß (Wed, 19 Nov 2003 09:36:42 +0800 (CST))  Updated: 2003/11/19
+ç™¼ä¿¡äºº: itoc.bbs@xeon.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] æ¿¾æŽ‰ascii
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (Wed, 19 Nov 2003 09:36:42 +0800 (CST))  Updated: 2003/11/19
 
-¡° ¤Þ­z¡mcpd.bbs@pitch.twbbs.org (Seasons)¡n¤§»Ê¨¥¡G
-> ¹³kkcity¤@¼Ë¡AÂà±H®É¥i¥H¿ï¾Ü...
-> ¬O§_­n«O¯d ANSI ±m¦â±±¨î½X¡H(Yes/No) [;47m   [m
-> Ä±±o¦n¹³º¡¤£¿ùªº¡AÀ³¸Ó«ç»ò°µ¦n©O¡H
+â€» å¼•è¿°ã€Šcpd.bbs@pitch.twbbs.org (Seasons)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> åƒkkcityä¸€æ¨£ï¼Œè½‰å¯„æ™‚å¯ä»¥é¸æ“‡...
+> æ˜¯å¦è¦ä¿ç•™ ANSI å½©è‰²æŽ§åˆ¶ç¢¼ï¼Ÿ(Yes/No) [;47m   [m
+> è¦ºå¾—å¥½åƒæ»¿ä¸éŒ¯çš„ï¼Œæ‡‰è©²æ€Žéº¼åšå¥½å‘¢ï¼Ÿ
 
 : struct.h
 
-#define MQ_JUSTIFY      0x01    /* ¨­¤À»{ÃÒ«H¨ç */
-#define MQ_ATTACH       0x02    /* ¦³ attachment ªº«H¨ç */
-+ #define MQ_NOANSI       0x04    /* strip ±¼ ANSI ªº«H¥ó */
+#define MQ_JUSTIFY      0x01    /* èº«åˆ†èªè­‰ä¿¡å‡½ */
+#define MQ_ATTACH       0x02    /* æœ‰ attachment çš„ä¿¡å‡½ */
++ #define MQ_NOANSI       0x04    /* strip æŽ‰ ANSI çš„ä¿¡ä»¶ */
 
 : xover.c:xo_forward()
 
@@ -19,7 +19,7 @@
   char fpath[128], folder[80], *dir, *title, *userid;
   HDR *hdr, xhdr;
   int tag, locus, userno, cc, xmode;
-  int method;           /* Âà±H¨ì 0:¯¸¥~ >0:¦Û¤v <0:¨ä¥L¯¸¤º¨Ï¥ÎªÌ */
+  int method;           /* è½‰å¯„åˆ° 0:ç«™å¤– >0:è‡ªå·± <0:å…¶ä»–ç«™å…§ä½¿ç”¨è€… */
 + int mq;
 
   ...
@@ -31,13 +31,13 @@
       return XO_FOOT;
 
     method = 0;
-+   mq = (vans("¬O§_«O¯d ANSI ±m¦â±±¨î½X(Y/N)¡H[Y] ") == 'n') ? MQ_NOANSI : 0;
++   mq = (vans("æ˜¯å¦ä¿ç•™ ANSI å½©è‰²æŽ§åˆ¶ç¢¼(Y/N)ï¼Ÿ[Y] ") == 'n') ? MQ_NOANSI : 0;
   }
 
   ...
   ...
 
-      else                      /* Âà±H¯¸¥~ */
+      else                      /* è½‰å¯„ç«™å¤– */
       {
 -       if ((cc = bsmtp(fpath, title, rcpt, 0)) < 0)
 +       if ((cc = bsmtp(fpath, title, rcpt, mq)) < 0)
@@ -77,5 +77,5 @@
     }
 
 --
- [1;43m¢z[44m¢q[m Or[1mig[30min[m: [44m Maple-itoc£»°Ê¤O®Ö¤ß [31;47m processor.tfcis.org [m
- [1;41m¢|[42m¢}[m A[1mut[30mho[mr: [1;36mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [44m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [31;47m processor.tfcis.org [m
+ [1;41mâ””[42mâ”˜[m A[1mut[30mho[mr: [1;36mitoc [30må¾ž [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

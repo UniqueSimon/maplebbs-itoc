@@ -1,10 +1,10 @@
-§@ªÌ: itoc (League) ¯¸¤º: plan
-¼ÐÃD: [¥\¯à] ¶}±Ò bbs ªº¤Ï¬d (dns_ident)
-®É¶¡: 2004/01/10 Sat 13:58:12                           Updated: 2007/01/14
+ä½œè€…: itoc (League) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] é–‹å•Ÿ bbs çš„åæŸ¥ (dns_ident)
+æ™‚é–“: 2004/01/10 Sat 13:58:12                           Updated: 2007/01/14
 
-  ³o¨ä¹ê¬O­ì¥»¦³ªº¥\¯à¡A¥u¬O³Q§Ú®³±¼¤F
-  ¦pªG·Q¥[¦^¨Óªº¸Ü¡A´N³o¼Ë§ï
-  (µù: ¦pªG¨Ï¥ÎªÌ¶}±Ò¨¾¤õÀðªº¸Ü¡A¨º»ò¥L¦bµn¤J®É±N·|ÅÜ±o«ÜºC)
+  é€™å…¶å¯¦æ˜¯åŽŸæœ¬æœ‰çš„åŠŸèƒ½ï¼Œåªæ˜¯è¢«æˆ‘æ‹¿æŽ‰äº†
+  å¦‚æžœæƒ³åŠ å›žä¾†çš„è©±ï¼Œå°±é€™æ¨£æ”¹
+  (è¨»: å¦‚æžœä½¿ç”¨è€…é–‹å•Ÿé˜²ç«ç‰†çš„è©±ï¼Œé‚£éº¼ä»–åœ¨ç™»å…¥æ™‚å°‡æœƒè®Šå¾—å¾ˆæ…¢)
 
 : global.h
 
@@ -22,9 +22,9 @@ VAR char fromhost[48];          /* from FQDN */
     term_init();
     tn_main();
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  ¦h¤F¤@­Ó¼s°ìÅÜ¼Æ rusername¡A¦b log ªº®É­Ô¥i¥H®³¥X¨Ó¥Î¡A¨Ò¦p¡G
+  å¤šäº†ä¸€å€‹å»£åŸŸè®Šæ•¸ rusernameï¼Œåœ¨ log çš„æ™‚å€™å¯ä»¥æ‹¿å‡ºä¾†ç”¨ï¼Œä¾‹å¦‚ï¼š
 
 : bbsd.c:tn_login()
 
@@ -39,21 +39,21 @@ VAR char fromhost[48];          /* from FQDN */
 +   Now(), cuser.userid, rusername, fromhost, currboard, fname, ve_title);
 
 : bbsd.c:login_user()
-: §ï¦¨³o¼Ë¥H«á¡Aacl ªº®æ¦¡´N¦h¤F
+: æ”¹æˆé€™æ¨£ä»¥å¾Œï¼Œacl çš„æ ¼å¼å°±å¤šäº†
 : rusername@fromhost
 
         if (cuser.ufo & UFO_ACL)
         {
           usr_fpath(fpath, cuser.userid, FN_ACL);
 +         str_lower(rusername, rusername);
-          str_lower(fromhost, fromhost);            /* lkchu.981201: ´«¤p¼g */
+          str_lower(fromhost, fromhost);            /* lkchu.981201: æ›å°å¯« */
 -         if (!acl_has(fpath, "", fromhost))
 +         if (!acl_has(fpath, rusername, fromhost))
-          {  /* Thor.980728: ª`·N aclÀÉ, ©M rusername, fromhost ­n¥þ³¡¤p¼g */
+          {  /* Thor.980728: æ³¨æ„ aclæª”, å’Œ rusername, fromhost è¦å…¨éƒ¨å°å¯« */
             logattempt('-', content);
-            login_abort("\n±zªº¤W¯¸¦aÂI¤£¤Ó¹ï«l¡A½Ð®Ö¹ï [¤W¯¸¦aÂI³]©wÀÉ]");
+            login_abort("\næ‚¨çš„ä¸Šç«™åœ°é»žä¸å¤ªå°å‹ï¼Œè«‹æ ¸å° [ä¸Šç«™åœ°é»žè¨­å®šæª”]");
           }
         }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

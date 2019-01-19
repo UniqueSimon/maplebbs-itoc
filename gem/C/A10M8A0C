@@ -1,13 +1,13 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: [°İÃD]Tagger©ñ¨ìbmw
-®É¶¡: 2004/03/04 Thu 14:50:26                           Updated: 2005/06/12
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: [å•é¡Œ]Taggeræ”¾åˆ°bmw
+æ™‚é–“: 2004/03/04 Thu 14:50:26                           Updated: 2005/06/12
 
-  °e¼s¼½µ¹³Q tag ªº³o¨Ç¤H
+  é€å»£æ’­çµ¦è¢« tag çš„é€™äº›äºº
 
-  ¥²¶·¥ı·s¼W³o¥\¯à
-  ¡utag ©ñ¶i¨Ï¥ÎªÌ¦W³æ¡v
+  å¿…é ˆå…ˆæ–°å¢é€™åŠŸèƒ½
+  ã€Œtag æ”¾é€²ä½¿ç”¨è€…åå–®ã€
 
-: ulist.c:ulist_widecast() ·s¼W¦¹¨ç¦¡¦b ulist_broadcast() «á­±
+: ulist.c:ulist_widecast() æ–°å¢æ­¤å‡½å¼åœ¨ ulist_broadcast() å¾Œé¢
 
 static int
 ulist_widecast(xo)
@@ -21,21 +21,21 @@ ulist_widecast(xo)
   if (!HAS_PERM(PERM_PAGE))
     return XO_NONE;
 
-  tag = AskTag("¯S©w¹ï¶H¼s¼½");
+  tag = AskTag("ç‰¹å®šå°è±¡å»£æ’­");
 
   if (tag < 0)
     return XO_FOOT;
 
-  if (!tag)     /* ¦n¤Í¼s¼½©Î¯¸ªø¥ş¯¸¼s¼½ */
+  if (!tag)     /* å¥½å‹å»£æ’­æˆ–ç«™é•·å…¨ç«™å»£æ’­ */
     return ulist_broadcast(xo);
 
   benz.caller = NULL;
-  bmw_edit(NULL, "¡¹¼s¼½¡G", &benz);
+  bmw_edit(NULL, "â˜…å»£æ’­ï¼š", &benz);
 
-  if (!benz.caller)      /* bmw_edit() ¤¤¦^µª No ¤£°e¥X¼s¼½ */
+  if (!benz.caller)      /* bmw_edit() ä¸­å›ç­” No ä¸é€å‡ºå»£æ’­ */
     return XO_FOOT;
 
-  /* itoc.000213: ¥[ "> " ¬°¤F»P¤@¯ë¤ô²y°Ï¤À */
+  /* itoc.000213: åŠ  "> " ç‚ºäº†èˆ‡ä¸€èˆ¬æ°´çƒå€åˆ† */
   sprintf(benz.userid, "%s> ", cuser.userid);
 
   locus = 0;
@@ -44,7 +44,7 @@ ulist_widecast(xo)
   {
     pos = TagList[locus].recno;
     up = ulist_pool[pos];
-    if (up->pid != TagList[locus].chrono)     /* ¸Ó¦ì¤l´«¤H¤F */
+    if (up->pid != TagList[locus].chrono)     /* è©²ä½å­æ›äººäº† */
       continue;
 
 #ifdef HAVE_NOBROAD
@@ -68,5 +68,5 @@ ulist_widecast(xo)
 + 'B', ulist_widecast,
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mpc512-2.ee.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mpc512-2.ee.nctu.edu.tw [30mç™¼è¡¨[m

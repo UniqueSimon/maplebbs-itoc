@@ -1,24 +1,24 @@
-µo«H¤H: Titan.bbs@KH.twbbs.org (©ú¤Ñ¨£) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] bbs»PCoppermine Photo Gallery±b¸¹¦P¨B
-µo«H¯¸: ´ä³£©]¥¼¯v (2004/05/01 Sat 15:17:32)              Updated: 2004/10/31
+ç™¼ä¿¡äºº: Titan.bbs@KH.twbbs.org (æ˜å¤©è¦‹) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] bbsèˆ‡Coppermine Photo Galleryå¸³è™ŸåŒæ­¥
+ç™¼ä¿¡ç«™: æ¸¯éƒ½å¤œæœªçœ  (2004/05/01 Sat 15:17:32)              Updated: 2004/10/31
 
-    ­n°µ³o½g¤§«e¡A¥²¶·¶}±Òbbsªºpop3d¡A°µ±K½X½T»{¥Î
-    «ØÄ³­n°µ³o­Óªº¤H¦Ü¤Ö¬İ±oÀ´PHP»yªk¸òSQL¡A¤£µM·|°İÃD«Ü¦h
-    ­n°µ¤§«e«ØÄ³¥ı[33;1m³Æ¥÷¸ê®Æ®w[m
+    è¦åšé€™ç¯‡ä¹‹å‰ï¼Œå¿…é ˆé–‹å•Ÿbbsçš„pop3dï¼Œåšå¯†ç¢¼ç¢ºèªç”¨
+    å»ºè­°è¦åšé€™å€‹çš„äººè‡³å°‘çœ‹å¾—æ‡‚PHPèªæ³•è·ŸSQLï¼Œä¸ç„¶æœƒå•é¡Œå¾ˆå¤š
+    è¦åšä¹‹å‰å»ºè­°å…ˆ[33;1må‚™ä»½è³‡æ–™åº«[m
 
-    ­ì²z¤j­P¬O³o¼Ë¡A±qpop3d¥h½T»{±b¸¹±K½X¬O§_¥¿½T
-    ¦pªG¥¿½Tªº¸Ü´Nµn¤J¡A¦ı¬O¦]¬°cpg·|¦b¤§«áªº°Ê§@¤¤¥h½T»{±K½X
-    ©Ò¥H¦b·s¼W±b¸¹®É±K½X¨ºÄæÁÙ¬O­nÀH«K¶ë­ÓªF¦è¡A¶ë¤°»ò´NµL©Ò¿×
+    åŸç†å¤§è‡´æ˜¯é€™æ¨£ï¼Œå¾pop3då»ç¢ºèªå¸³è™Ÿå¯†ç¢¼æ˜¯å¦æ­£ç¢º
+    å¦‚æœæ­£ç¢ºçš„è©±å°±ç™»å…¥ï¼Œä½†æ˜¯å› ç‚ºcpgæœƒåœ¨ä¹‹å¾Œçš„å‹•ä½œä¸­å»ç¢ºèªå¯†ç¢¼
+    æ‰€ä»¥åœ¨æ–°å¢å¸³è™Ÿæ™‚å¯†ç¢¼é‚£æ¬„é‚„æ˜¯è¦éš¨ä¾¿å¡å€‹æ±è¥¿ï¼Œå¡ä»€éº¼å°±ç„¡æ‰€è¬‚
 
-    ¦pªGµn¤J¤§«á¡Aµo²{cpgªº¸ê®Æ®w¨S³o­Ó¤H¡A´N¦Û°Ê·s¼W³o­Ó±b¸¹
-    ¤]´N¬O»¡¡A¦pªG¨Sµn¹L¬ÛÃ¯ªº¤H¡A´N¤£·|¦³¥Lªº±b¸¹¦b¸ê®Æ®w¤¤
+    å¦‚æœç™»å…¥ä¹‹å¾Œï¼Œç™¼ç¾cpgçš„è³‡æ–™åº«æ²’é€™å€‹äººï¼Œå°±è‡ªå‹•æ–°å¢é€™å€‹å¸³è™Ÿ
+    ä¹Ÿå°±æ˜¯èªªï¼Œå¦‚æœæ²’ç™»éç›¸ç°¿çš„äººï¼Œå°±ä¸æœƒæœ‰ä»–çš„å¸³è™Ÿåœ¨è³‡æ–™åº«ä¸­
 
-    §Ú¤£¬OPHP°ª¤â¡A¬İ§ÚªºÅÜ¼Æ¤£²nªº´N¦Û¤v¨ú§a¡ASQL«ü¥O½Ğ¦Û¤v±µ°_¨Ó
-    §Ú¥u¬O¸ÕµÛ§â¥\¯à§@¥X¨Ó¡A¦pªG¦³bug©Î¬OÁÙ¥i¥H§ó¦nªº¦a¤è¡A½Ğ«ü±Ğ
+    æˆ‘ä¸æ˜¯PHPé«˜æ‰‹ï¼Œçœ‹æˆ‘çš„è®Šæ•¸ä¸çˆ½çš„å°±è‡ªå·±å–å§ï¼ŒSQLæŒ‡ä»¤è«‹è‡ªå·±æ¥èµ·ä¾†
+    æˆ‘åªæ˜¯è©¦è‘—æŠŠåŠŸèƒ½ä½œå‡ºä¾†ï¼Œå¦‚æœæœ‰bugæˆ–æ˜¯é‚„å¯ä»¥æ›´å¥½çš„åœ°æ–¹ï¼Œè«‹æŒ‡æ•™
 
 : login.php
 
-¦b$cookie_warning = '';³o¥y«á­±¥[¤W³o¬q
+åœ¨$cookie_warning = '';é€™å¥å¾Œé¢åŠ ä¸Šé€™æ®µ
 
 - if (isset($HTTP_POST_VARS['submitted'])) {
 -     $results = db_query("SELECT user_id, user_name, user_password FROM
@@ -26,7 +26,7 @@
 - ['username']) . "' AND BINARY user_password = '" . addslashes($HTTP_POST_VARS
 - ['password']) . "' AND user_active = 'YES'");
 
-function is_ok($string)  //rocet´£¨Ñ
+function is_ok($string)  //rocetæä¾›
 {
   $flag = trim(preg_replace("/(^[+-])((.+))/", "\\1", $string));
   if ($flag == "+")
@@ -35,10 +35,10 @@ function is_ok($string)  //rocet´£¨Ñ
     return false;
 }
 
-$socket = 0;  // socket ¶}±Ò§¹¦¨
-$user = 0;    // user ÀË¬d³q¹L
-$pass = 0;    // pass ÀË¬d³q¹L
-$ok = 0;      // socket/user/pass ³£¥¿½T
+$socket = 0;  // socket é–‹å•Ÿå®Œæˆ
+$user = 0;    // user æª¢æŸ¥é€šé
+$pass = 0;    // pass æª¢æŸ¥é€šé
+$ok = 0;      // socket/user/pass éƒ½æ­£ç¢º
 
 if (isset($HTTP_POST_VARS['submitted']))
 {
@@ -102,7 +102,7 @@ if (isset($HTTP_POST_VARS['submitted']))
     BINARY user_password = '" . addslashes($HTTP_POST_VARS['password']) . "'
     AND user_active = 'YES'");
 
-¤W­±³o¬q¥[§¹¤§«á¡A§ï³o­Ó¦a¤è
+ä¸Šé¢é€™æ®µåŠ å®Œä¹‹å¾Œï¼Œæ”¹é€™å€‹åœ°æ–¹
 
 - if (mysql_num_rows($results)) {
 + if (mysql_num_rows($results) && $ok == "1") {
@@ -110,24 +110,24 @@ if (isset($HTTP_POST_VARS['submitted']))
 
 : profile.php
 
-¬JµM±b¸¹¦P¨B¡A¨º´N¤£»İ­n­×§ï±K½Xªº¿ï¶µ¤F
+æ—¢ç„¶å¸³è™ŸåŒæ­¥ï¼Œé‚£å°±ä¸éœ€è¦ä¿®æ”¹å¯†ç¢¼çš„é¸é …äº†
 
-§ä¨ì³o¤@¦æ¡A¬ù240¦æ¥ª¥k
+æ‰¾åˆ°é€™ä¸€è¡Œï¼Œç´„240è¡Œå·¦å³
 
 <input type="submit" name="change_pass"
           value="{$lang_register_php['change_pass']}" class="button">
 
-ª½±µ§R°£¡A©Î¬Oµù¸Ñ°_¨Ó¡A¦p¡G
+ç›´æ¥åˆªé™¤ï¼Œæˆ–æ˜¯è¨»è§£èµ·ä¾†ï¼Œå¦‚ï¼š
 
 <!-- <input type="submit" name="change_pass" value="{$lan
           value="{$lang_register_php['change_pass']}" class="button"> -->
 
 
-    ³o¼Ë°µ§¹¤§«á¡A²z½×¤W´N¥i¥H±b¸¹¸ò±K½X¦P¨B¡A¦pªG¨S¦³¥Î¹L¬ÛÃ¯ªº±b¸¹
-    ²Ä¤@¦¸µn¤J¬ÛÃ¯®É·|¦Û°Ê¼W¥[±b¸¹¡A§Ú¥u¦³¦b§Ú¯¸¤W¸Õ¹L¡A¨S°µ¹L¨ä¥L´ú¸Õ
+    é€™æ¨£åšå®Œä¹‹å¾Œï¼Œç†è«–ä¸Šå°±å¯ä»¥å¸³è™Ÿè·Ÿå¯†ç¢¼åŒæ­¥ï¼Œå¦‚æœæ²’æœ‰ç”¨éç›¸ç°¿çš„å¸³è™Ÿ
+    ç¬¬ä¸€æ¬¡ç™»å…¥ç›¸ç°¿æ™‚æœƒè‡ªå‹•å¢åŠ å¸³è™Ÿï¼Œæˆ‘åªæœ‰åœ¨æˆ‘ç«™ä¸Šè©¦éï¼Œæ²’åšéå…¶ä»–æ¸¬è©¦
 
 
 --
-[1;37m¢~¢w[1;37m¢w°ª¶¯ £i Kaohsiung ¢w¢w¢w¢w¢w¢¡A[mu[1;37mth[mo[1;30mr¡G[37mTitan[m
-[1;37m¢x[44;30m°ª¶¯[37m¡E[30m´ä³£©]¥¼¯v [;33;44m£p [33;1mKH[0;44m.twbbs.org[0;1;37m¢xF[mr[1;37mom  [30m¡G[m218-34-82-31.cm.dynamic.apol.c[m
-[1;37m¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢tT[mi[1mme[30m  ¡G2004/05/01 Sat 15:17:32[m
+[1;37mâ•­â”€[1;37mâ”€é«˜é›„ Î¾ Kaohsiung â”€â”€â”€â”€â”€â•®A[mu[1;37mth[mo[1;30mrï¼š[37mTitan[m
+[1;37mâ”‚[44;30mé«˜é›„[37m?[30mæ¸¯éƒ½å¤œæœªçœ  [;33;44mÏ† [33;1mKH[0;44m.twbbs.org[0;1;37mâ”‚F[mr[1;37mom  [30mï¼š[m218-34-82-31.cm.dynamic.apol.c[m
+[1;37mâ”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤T[mi[1mme[30m  ï¼š2004/05/01 Sat 15:17:32[m

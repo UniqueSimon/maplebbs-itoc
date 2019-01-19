@@ -1,6 +1,6 @@
-§@ªÌ: DarkKiller (±ª°Ê) ¬İªO: Daily
-¼ĞÃD: Re: [docs] postfix ¦b anti-spam ¤Wªº³]©w (UCE Controls)
-®É¶¡: Wed Aug 29 17:39:50 2001
+ä½œè€…: DarkKiller (æ‚¸å‹•) çœ‹æ¿: Daily
+æ¨™é¡Œ: Re: [docs] postfix åœ¨ anti-spam ä¸Šçš„è¨­å®š (UCE Controls)
+æ™‚é–“: Wed Aug 29 17:39:50 2001
 
 * LICENSE
 
@@ -11,53 +11,53 @@
 
   Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
 
-* «e¨¥¡B°Ñ¦Ò¤åÄm
+* å‰è¨€ã€åƒè€ƒæ–‡ç»
 
-  postfix ªº¥\¯àªº½T¶W¥G·íªì§Úªº·Q¹³¡A¦Ó¥B source ¤]«Ü®e©öÀ´¡A§Ú§â«Ü¦h
-  ¥»¨Ó¬O¥Î sendmail ªº server ³£´«¦¨ postfix¡C
+  postfix çš„åŠŸèƒ½çš„ç¢ºè¶…ä¹ç•¶åˆæˆ‘çš„æƒ³åƒï¼Œè€Œä¸” source ä¹Ÿå¾ˆå®¹æ˜“æ‡‚ï¼Œæˆ‘æŠŠå¾ˆå¤š
+  æœ¬ä¾†æ˜¯ç”¨ sendmail çš„ server éƒ½æ›æˆ postfixã€‚
 
-  ³o½g¤å³¹¤£¬Oµ¹­è¸I postfix ªº¤H¬İªº¡A§AÀ³¸Ó­n¹ï postfix ¦³¨Ç³\¤F¸Ñ¡A
-  ¥t¥~¡A§Ú·|´£¨ì¤@¨Ç regular expression ªºªF¦è¡A§A¥i¥H man re_format
-  ¬İ¨ì¬ÛÃöªº¤¶²Ğ (§Úª¾¹D§A¤£³ßÅw¬İ­^¤å¡A¦ı¬O³o¥÷ manpage ¼gªº«Ü¦n)¡C
+  é€™ç¯‡æ–‡ç« ä¸æ˜¯çµ¦å‰›ç¢° postfix çš„äººçœ‹çš„ï¼Œä½ æ‡‰è©²è¦å° postfix æœ‰äº›è¨±äº†è§£ï¼Œ
+  å¦å¤–ï¼Œæˆ‘æœƒæåˆ°ä¸€äº› regular expression çš„æ±è¥¿ï¼Œä½ å¯ä»¥ man re_format
+  çœ‹åˆ°ç›¸é—œçš„ä»‹ç´¹ (æˆ‘çŸ¥é“ä½ ä¸å–œæ­¡çœ‹è‹±æ–‡ï¼Œä½†æ˜¯é€™ä»½ manpage å¯«çš„å¾ˆå¥½)ã€‚
 
-  ¥t¥~¡ASMTP «ü¥Oªº¤¶²Ğ§A¤]­n·|¤@¨Ç¡A§Ú­Ì¦b¤¶²Ğ anti-UCE (¤U­±·|´£¨ì)
-  ªº®É­Ô¦³«Ü¤j¤@³¡¤À¬O¸ò³oÂI¦³Ãö¡C
+  å¦å¤–ï¼ŒSMTP æŒ‡ä»¤çš„ä»‹ç´¹ä½ ä¹Ÿè¦æœƒä¸€äº›ï¼Œæˆ‘å€‘åœ¨ä»‹ç´¹ anti-UCE (ä¸‹é¢æœƒæåˆ°)
+  çš„æ™‚å€™æœ‰å¾ˆå¤§ä¸€éƒ¨åˆ†æ˜¯è·Ÿé€™é»æœ‰é—œã€‚
 
-  §Ú¤£·|¤¶²Ğ©Ò¦³ªº¥\¯à¡A§¹¾ãªº¥\¯àÁÙ¬O­n½Ğ§A°Ñ¦Ò­ì¤åªº¤åÄm¸ê®Æ¡G
+  æˆ‘ä¸æœƒä»‹ç´¹æ‰€æœ‰çš„åŠŸèƒ½ï¼Œå®Œæ•´çš„åŠŸèƒ½é‚„æ˜¯è¦è«‹ä½ åƒè€ƒåŸæ–‡çš„æ–‡ç»è³‡æ–™ï¼š
 
-  http://d2.nctu.edu.tw/postfix/ (postfix ¥æ¤j web mirror site)
+  http://d2.nctu.edu.tw/postfix/ (postfix äº¤å¤§ web mirror site)
   /usr/local/etc/postfix/sample-smtpd.cf
 
-  ¦pªG§A¦³¥ô¦ó«ØÄ³¡A±z¥i¥H mail µ¹§Ú¡A©Î¬O¦b¬İªO¤W°Q½×¡AÁÂÁÂ¡C
+  å¦‚æœä½ æœ‰ä»»ä½•å»ºè­°ï¼Œæ‚¨å¯ä»¥ mail çµ¦æˆ‘ï¼Œæˆ–æ˜¯åœ¨çœ‹æ¿ä¸Šè¨è«–ï¼Œè¬è¬ã€‚
 
 * UCE ?
 
-  UCE ¬O Unsolicited Commercial Email ªºÁY¼g¡AÂ²³æªº»¡¡A¨ä¹ê´N¬O¼s§i«H¡C
+  UCE æ˜¯ Unsolicited Commercial Email çš„ç¸®å¯«ï¼Œç°¡å–®çš„èªªï¼Œå…¶å¯¦å°±æ˜¯å»£å‘Šä¿¡ã€‚
 
-  ¤U­±Á¿¨ìªº³]©w¡A³£¬O¦b /usr/local/etc/postfix/main.cf ¸Ì­±¡C
+  ä¸‹é¢è¬›åˆ°çš„è¨­å®šï¼Œéƒ½æ˜¯åœ¨ /usr/local/etc/postfix/main.cf è£¡é¢ã€‚
 
-* anti-UCE ªº¾÷¨î -- smtpd_client_restrictions
+* anti-UCE çš„æ©Ÿåˆ¶ -- smtpd_client_restrictions
 
-  ¦³¤£¤Öªº¼s§i«H¬O±q¨S¦³¤Ï¸Ñªº IP ³s½u¹L¨Ó¡A¹ï©ó³oÃş request¡A§Ú­Ì¥i¥H¥Î
-  reject_unknown_client ³o­Ó°Ñ¼Æ©Úµ´¥Lªº request¡C
+  æœ‰ä¸å°‘çš„å»£å‘Šä¿¡æ˜¯å¾æ²’æœ‰åè§£çš„ IP é€£ç·šéä¾†ï¼Œå°æ–¼é€™é¡ requestï¼Œæˆ‘å€‘å¯ä»¥ç”¨
+  reject_unknown_client é€™å€‹åƒæ•¸æ‹’çµ•ä»–çš„ requestã€‚
 
   [1msmtpd_client_restrictions = reject_unknown_client[m
 
-  ©ÎªÌ¡A§Ú­Ì¥i¥H­n¨D postfix ³z¹L¤@­Ó¦Û¤v³]ªº³]©wÀÉ¥h³]©w¶Â¥Õ¦W³æ¡G
+  æˆ–è€…ï¼Œæˆ‘å€‘å¯ä»¥è¦æ±‚ postfix é€éä¸€å€‹è‡ªå·±è¨­çš„è¨­å®šæª”å»è¨­å®šé»‘ç™½åå–®ï¼š
 
-  [36m# ¤Óªø¤F¡A½Ğ±µ¦¨¤@¦æ[m
+  [36m# å¤ªé•·äº†ï¼Œè«‹æ¥æˆä¸€è¡Œ[m
   [1msmtpd_client_restrictions = check_client_access regexp:/usr/local/etc/[m
   [1mpostfix/client-access[m
 
-  ¨ä¤¤ªº regexp ¬O«ü¨Ï¥Î regular expression¡C³o­Ó client-access ªºÀÉ®×¤º
-  ®e¡Aªøªº¹³¬O³o­Ó¼Ë¤l¡G
+  å…¶ä¸­çš„ regexp æ˜¯æŒ‡ä½¿ç”¨ regular expressionã€‚é€™å€‹ client-access çš„æª”æ¡ˆå…§
+  å®¹ï¼Œé•·çš„åƒæ˜¯é€™å€‹æ¨£å­ï¼š
 
-  [36m# µù¸Ñ¥Î '#' ¶}ÀY[m
+  [36m# è¨»è§£ç”¨ '#' é–‹é ­[m
   [36m#[m
-  [36m# ¥Î '/' §â regular expression ¥]°_¨Ó[m
+  [36m# ç”¨ '/' æŠŠ regular expression åŒ…èµ·ä¾†[m
   [36m#[m
-  [36m# OK ªí¥Ü¤¹³\³o­Ó request¡A¤£¦A¹ï smtpd_client_restrictions «á­±©Ò¦Cªº[m
-  [36m# ±ø¥ó°µÀË¬d¤F¡C[m
+  [36m# OK è¡¨ç¤ºå…è¨±é€™å€‹ requestï¼Œä¸å†å° smtpd_client_restrictions å¾Œé¢æ‰€åˆ—çš„[m
+  [36m# æ¢ä»¶åšæª¢æŸ¥äº†ã€‚[m
   /\.edu\.tw$/          OK
   /\.edu$/              OK
   /\.com\.tw$/          OK
@@ -70,57 +70,57 @@
   /\.cc$/               OK
   /\.tw$/               OK
   [36m#[m
-  [36m# REJECT ªí¥Ü¤£¦Y³o«Ê«H (¨ä¹ê¤]³£ÁÙ¨S¬İ¨ì«H¥ó)[m
+  [36m# REJECT è¡¨ç¤ºä¸åƒé€™å°ä¿¡ (å…¶å¯¦ä¹Ÿéƒ½é‚„æ²’çœ‹åˆ°ä¿¡ä»¶)[m
   /kimo\.com\.tw$/      REJECT
   [36m#[m
-  [36m# °£¤F REJECT¡A§Ú­Ì¤]¥i¥H¦Û¤v­q²z¥Ñ¡A¥u­n¬O [45]xx [text] §Y¥i¡G[m
+  [36m# é™¤äº† REJECTï¼Œæˆ‘å€‘ä¹Ÿå¯ä»¥è‡ªå·±è¨‚ç†ç”±ï¼Œåªè¦æ˜¯ [45]xx [text] å³å¯ï¼š[m
   /\.hinet\.net$/       554 I don't want to receive ANY mail from hinet
   [36m#[m
-  [36m# ¦pªG³£¤£²Å¦X¤W­±¦C¥X¨Óªº¡A´NÄ~ÄòÀË¬d§a¡C[m
+  [36m# å¦‚æœéƒ½ä¸ç¬¦åˆä¸Šé¢åˆ—å‡ºä¾†çš„ï¼Œå°±ç¹¼çºŒæª¢æŸ¥å§ã€‚[m
 
-  ¥t¥~¡Apostfix ¤ä´© DNSBL ªº¾÷¨î¡AÃö©ó¤°»ò¬O DNSBL¡A½Ğ¦Û¦æ©óºô­¶¤W·j´M
+  å¦å¤–ï¼Œpostfix æ”¯æ´ DNSBL çš„æ©Ÿåˆ¶ï¼Œé—œæ–¼ä»€éº¼æ˜¯ DNSBLï¼Œè«‹è‡ªè¡Œæ–¼ç¶²é ä¸Šæœå°‹
 
-  §Ú­Ì¥i¥H³]©w maps_rbl_domains¡G
+  æˆ‘å€‘å¯ä»¥è¨­å®š maps_rbl_domainsï¼š
 
-  [36m# ¤Óªø¤F¡A½Ğ±µ¦¨¤@¦æ[m
+  [36m# å¤ªé•·äº†ï¼Œè«‹æ¥æˆä¸€è¡Œ[m
   [1mmaps_rbl_domains = orbs.dorkslayers.com orbz.gst-group.co.uk relays.os[m
   [1mirusoft.com[m
 
-  ºî¦X¥H¤W©Ò»¡ªº¡A§Ú­Ì¤]¥i¥H³o¼Ë³]¡G
+  ç¶œåˆä»¥ä¸Šæ‰€èªªçš„ï¼Œæˆ‘å€‘ä¹Ÿå¯ä»¥é€™æ¨£è¨­ï¼š
 
-  [36m# ³o¥Nªí§Ú­Ì¥ı©Úµ´¨S¦³¤Ï¸Ñªº¾÷¾¹¡AµM«á¦A©Úµ´¦b maps_rbl_domains ¸Ì­±ªº[m
-  [36m# IP¡AµM«á¦AÀË¬d client-access ¸Ì­±ªº³]©w¡C[m
+  [36m# é€™ä»£è¡¨æˆ‘å€‘å…ˆæ‹’çµ•æ²’æœ‰åè§£çš„æ©Ÿå™¨ï¼Œç„¶å¾Œå†æ‹’çµ•åœ¨ maps_rbl_domains è£¡é¢çš„[m
+  [36m# IPï¼Œç„¶å¾Œå†æª¢æŸ¥ client-access è£¡é¢çš„è¨­å®šã€‚[m
   [36m#[m
-  [36m# ¤Óªø¤F¡A½Ğ±µ¦¨¤@¦æ[m
+  [36m# å¤ªé•·äº†ï¼Œè«‹æ¥æˆä¸€è¡Œ[m
   [1msmtpd_client_restrictions = reject_unknown_client, reject_maps_rbl, ch
   [1meck_client_access, regexp:/usr/local/etc/postfix/client-access[m
 
-* anti-UCE ªº¾÷¨î -- smtpd_sender_restrictions
+* anti-UCE çš„æ©Ÿåˆ¶ -- smtpd_sender_restrictions
 
-  ²z½×¤W¡Amail from ¦b¦³§Ş¥©ªº¶Ã¶ñªº±¡ªp¤U¡A§AµLªkª¾¹D¥Lªº¯u¹ê©Ê¡A©Ò¥H³]
-  ³o­Ó¤]¨S¦³¤°»ò¥Î¡C¤£¹L¡A¥xÆWªº spammers ¹ï©ó°e spam ªº§Ş¥©¦ü¥GÁÙ¬O°±¯d
-  ¦b Sendmail 8.8.x without patch ªº¶¥¬q¡A©Ò¥H³]¤@¤U·|¦³«Ü¤jªº¥Î³B :p
+  ç†è«–ä¸Šï¼Œmail from åœ¨æœ‰æŠ€å·§çš„äº‚å¡«çš„æƒ…æ³ä¸‹ï¼Œä½ ç„¡æ³•çŸ¥é“ä»–çš„çœŸå¯¦æ€§ï¼Œæ‰€ä»¥è¨­
+  é€™å€‹ä¹Ÿæ²’æœ‰ä»€éº¼ç”¨ã€‚ä¸éï¼Œå°ç£çš„ spammers å°æ–¼é€ spam çš„æŠ€å·§ä¼¼ä¹é‚„æ˜¯åœç•™
+  åœ¨ Sendmail 8.8.x without patch çš„éšæ®µï¼Œæ‰€ä»¥è¨­ä¸€ä¸‹æœƒæœ‰å¾ˆå¤§çš„ç”¨è™• :p
 
-  ¤U­±ªº³]©w·|§â mail from °e¹L¨Óªº E-mail address «á­±ªº domain ®³¥X¨Ó
-  ¬d¸ß¡A¦pªG¤£¦s¦b A RR ©Î¬O MX RR¡A¨º»ò´N reject ±¼¡C
+  ä¸‹é¢çš„è¨­å®šæœƒæŠŠ mail from é€éä¾†çš„ E-mail address å¾Œé¢çš„ domain æ‹¿å‡ºä¾†
+  æŸ¥è©¢ï¼Œå¦‚æœä¸å­˜åœ¨ A RR æˆ–æ˜¯ MX RRï¼Œé‚£éº¼å°± reject æ‰ã€‚
 
   [1msmtpd_sender_restrictions = reject_unknown_sender_domain[m
 
-* anti-UCE ªº¾÷¨î -- smtpd_recipient_restrictions
+* anti-UCE çš„æ©Ÿåˆ¶ -- smtpd_recipient_restrictions
 
-  [36m# rcpt to ³]­­[m
+  [36m# rcpt to è¨­é™[m
   smtpd_recipient_restrictions =
 
-* anti-UCE ªº¾÷¨î -- header_checks
+* anti-UCE çš„æ©Ÿåˆ¶ -- header_checks
 
-  [36m# header ªºÀË¬d[m
+  [36m# header çš„æª¢æŸ¥[m
   header_checks =
 
-* ¥ş³¡³]©w¦n¥H«á¡A­«·s¸ü¤J postfix
+* å…¨éƒ¨è¨­å®šå¥½ä»¥å¾Œï¼Œé‡æ–°è¼‰å…¥ postfix
 
   postfix reload
 
 --
                                     Gea-Suan Lin <gslin@informath.net>
 --
-¡° Origin: ¤p³À³À <Deer.abpe.org> ¡» From: infomath.math.nctu.edu.tw
+â€» Origin: å°é¹¿é¹¿ <Deer.abpe.org> â—† From: infomath.math.nctu.edu.tw

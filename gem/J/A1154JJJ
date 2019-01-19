@@ -1,18 +1,18 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G802) ¯¸¤º: plan
-¼ĞÃD: [¥\¯à] §R°£¹L¤[¨S¦³·s¤å³¹ªº¬İªO
-®É¶¡: 2005/04/05 Tue 16:13:03                           Updated: 2005/12/28
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š802) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] åˆªé™¤éä¹…æ²’æœ‰æ–°æ–‡ç« çš„çœ‹æ¿
+æ™‚é–“: 2005/04/05 Tue 16:13:03                           Updated: 2005/12/28
 
-¡° ¤Ş­z¡mdrewlin.bbs@bbs.seehere.org (eternity.)¡n¤§»Ê¨¥¡G
-> §Æ±æ¨t²Î¯à°÷¦Û°Ê§R°£¤T­Ó¤ë¥H¤W¨S¦³·s¤å³¹ªº¬İªO
+â€» å¼•è¿°ã€Šdrewlin.bbs@bbs.seehere.org (eternity.)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å¸Œæœ›ç³»çµ±èƒ½å¤ è‡ªå‹•åˆªé™¤ä¸‰å€‹æœˆä»¥ä¸Šæ²’æœ‰æ–°æ–‡ç« çš„çœ‹æ¿
 
 : global.h
 
-#define FN_RUN_PAL      "run/pal.log"   /* ªB¤Í¶W¹L¤W­­°O¿ı */
-+ #define FN_RUN_EXPIREBRD "run/expirebrd" /* ¨t²Î¬å°£¬İªO°O¿ı */
+#define FN_RUN_PAL      "run/pal.log"   /* æœ‹å‹è¶…éä¸Šé™è¨˜éŒ„ */
++ #define FN_RUN_EXPIREBRD "run/expirebrd" /* ç³»çµ±ç é™¤çœ‹æ¿è¨˜éŒ„ */
 
 : battr.h
 
-+ #define BRD_NOEXPIRE  0x80    /* ¤£·|³Q¨t²Î¬å°£ */
++ #define BRD_NOEXPIRE  0x80    /* ä¸æœƒè¢«ç³»çµ±ç é™¤ */
 
 - #define NUMBATTRS   7
 + #define NUMBATTRS   8
@@ -20,32 +20,32 @@
 - #define STR_BATTR   "zTcsvA%"
 + #define STR_BATTR   "zTcsvA%e"
 
-   "¤£µû¤À¬İªO",         /* BRD_NOSCORE */
-+  "¤£³Q¨t²Î¬å°£¬İªO",   /* BRD_NOEXPIRE */
+   "ä¸è©•åˆ†çœ‹æ¿",         /* BRD_NOSCORE */
++  "ä¸è¢«ç³»çµ±ç é™¤çœ‹æ¿",   /* BRD_NOEXPIRE */
 
 : account.c:main()
 
-    sprintf(title, "%s±H«H°O¿ı", date);
+    sprintf(title, "%så¯„ä¿¡è¨˜éŒ„", date);
     keeplog(FN_RUN_MAIL_LOG, BN_SECURITY, title, 2);
 
-+   sprintf(title, "%s¨t²Î¬å°£¬İªO°O¿ı", date);
++   sprintf(title, "%sç³»çµ±ç é™¤çœ‹æ¿è¨˜éŒ„", date);
 +   keeplog(FN_RUN_EXPIREBRD, BN_SECURITY, title, 2);
 
 
-: crontab -e ¥[¤J
+: crontab -e åŠ å…¥
 
 4 4 4 * * bin/expireboard > /dev/null 2>&1
 
-: src/util/Makefile ¥[¤J expireboard
+: src/util/Makefile åŠ å…¥ expireboard
 
 EXE =   ... [1;33mexpireboard[m
 
-: src/util/expireboard.c ·s¼Wµ{¦¡¦p¤U
+: src/util/expireboard.c æ–°å¢ç¨‹å¼å¦‚ä¸‹
 
 /*-------------------------------------------------------*/
 /* util/expireboard.c   ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ¬å°£¹L¤[¨S¦³·s¤å³¹ªº¬İªO                     */
+/* target : ç é™¤éä¹…æ²’æœ‰æ–°æ–‡ç« çš„çœ‹æ¿                     */
 /* create : 05/04/05                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -54,13 +54,13 @@ EXE =   ... [1;33mexpireboard[m
 
 #include "bbs.h"
 
-#define THRESHOLD_TIME      (40 * 86400) /* ¬å°£¶W¹L 40 ¤Ñ¨S¤å³¹ªº¬İªO */
-#define THRESHOLD_NOTE_TIME (30 * 86400) /* ¬åªO«e 30 ¤Ñ³qª¾ªO¥D */
-[1;44m// crontab ¸Ì expireboard ªº°õ¦æ¶g´Á­n¸ò THRESHOLD_NOTE_TIME ¦P¨B [m
+#define THRESHOLD_TIME      (40 * 86400) /* ç é™¤è¶…é 40 å¤©æ²’æ–‡ç« çš„çœ‹æ¿ */
+#define THRESHOLD_NOTE_TIME (30 * 86400) /* ç æ¿å‰ 30 å¤©é€šçŸ¥æ¿ä¸» */
+[1;44m// crontab è£¡ expireboard çš„åŸ·è¡Œé€±æœŸè¦è·Ÿ THRESHOLD_NOTE_TIME åŒæ­¥ [m
 
 
 /*-------------------------------------------------------*/
-/* ³qª¾«H                                                */
+/* é€šçŸ¥ä¿¡                                                */
 /*-------------------------------------------------------*/
 
 
@@ -72,20 +72,20 @@ mail_to_him(userid, brdname)
   char folder[64];
 
   usr_fpath(folder, userid, NULL);
-  if (!dashd(folder))    /* Á×§K¸Ó ID ¤£¦s¦b */
+  if (!dashd(folder))    /* é¿å…è©² ID ä¸å­˜åœ¨ */
     return;
 
   usr_fpath(folder, userid, FN_DIR);
   hdr_stamp(folder, HDR_LINK, &hdr, "etc/expirebrd_note");
   strcpy(hdr.owner, STR_SYSOP);
   strcpy(hdr.nickname, SYSOPNICK);
-  sprintf(hdr.title, "[%s] ªO§Y±N³Q¬å°£", brdname);
+  sprintf(hdr.title, "[%s] æ¿å³å°‡è¢«ç é™¤", brdname);
   rec_add(folder, &hdr, sizeof(HDR));
 }
 
 
 static void
-note_expire(brd)    /* §ä¥XªO¥D */
+note_expire(brd)    /* æ‰¾å‡ºæ¿ä¸» */
   BRD *brd;
 {
   char *ptr, *str, buf[BMLEN + 1];
@@ -100,21 +100,21 @@ note_expire(brd)    /* §ä¥XªO¥D */
     *ptr = '\0';
     mail_to_him(str, brd->brdname);
     len = strlen(str);
-    alllen += (len + 1);    /* ªO¥DID + '/' */
+    alllen += (len + 1);    /* æ¿ä¸»ID + '/' */
     str = buf + alllen;
   }
-  mail_to_him(str, brd->brdname);         /* ³Ì«á¤@µ§¸ê®Æ¥t¥~³B²z */
+  mail_to_him(str, brd->brdname);         /* æœ€å¾Œä¸€ç­†è³‡æ–™å¦å¤–è™•ç† */
 }
 
 
 /*-------------------------------------------------------*/
-/* ¥Dµ{¦¡                                                */
+/* ä¸»ç¨‹å¼                                                */
 /*-------------------------------------------------------*/
 
 
 static time_t now;
-static time_t delta;      /* ³Ì«á¤@½g¤å³¹¶Z¥Ø«e´X¬í */
-static int page;          /* ¦³´X½g¤å³¹ */
+static time_t delta;      /* æœ€å¾Œä¸€ç¯‡æ–‡ç« è·ç›®å‰å¹¾ç§’ */
+static int page;          /* æœ‰å¹¾ç¯‡æ–‡ç«  */
 
 
 static void
@@ -133,7 +133,7 @@ expire(brd)
     fsize = st.st_size;
     page = fsize / sizeof(HDR);
 
-    if (page <= 0)  /* ¨S¦³¤å³¹«h¬İ¶}ªO®É¶¡ */
+    if (page <= 0)  /* æ²’æœ‰æ–‡ç« å‰‡çœ‹é–‹æ¿æ™‚é–“ */
     {
       delta = brd->bstamp;
     }
@@ -155,12 +155,12 @@ static BCACHE *bshm;
 static void
 init_bshm()
 {
-  /* itoc.030727: ¦b¶}±Ò bbsd ¤§«e¡AÀ³¸Ó´N­n°õ¦æ¹L account¡A
-     ©Ò¥H bshm À³¸Ó¤w³]©w¦n */
+  /* itoc.030727: åœ¨é–‹å•Ÿ bbsd ä¹‹å‰ï¼Œæ‡‰è©²å°±è¦åŸ·è¡Œé accountï¼Œ
+     æ‰€ä»¥ bshm æ‡‰è©²å·²è¨­å®šå¥½ */
 
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-  if (bshm->uptime <= 0)        /* bshm ¥¼³]©w§¹¦¨ */
+  if (bshm->uptime <= 0)        /* bshm æœªè¨­å®šå®Œæˆ */
     exit(0);
 }
 
@@ -181,7 +181,7 @@ main()
   time(&now);
   init_bshm();
 
-  fprintf(fp, "¤U¦C¬İªO¤w©ó %s ³Q¨t²Î¬å°£¡G\n\n", Btime(&now));
+  fprintf(fp, "ä¸‹åˆ—çœ‹æ¿å·²æ–¼ %s è¢«ç³»çµ±ç é™¤ï¼š\n\n", Btime(&now));
 
   pos = 0;
   while (!rec_get(FN_BRD, &brd, sizeof(BRD), pos))
@@ -218,21 +218,21 @@ main()
   return 0;
 }
 
-: etc/expirebrd_note ·s¼W¦¹ÀÉ®×¡A¤º®e¦p¤U
+: etc/expirebrd_note æ–°å¢æ­¤æª”æ¡ˆï¼Œå…§å®¹å¦‚ä¸‹
 
-§@ªÌ: SYSOP (¯¸ªø) ¯¸¤º: [¨t²Î¤½§i]
-¼ĞÃD: ¬åªO³qª¾
-®É¶¡: ´N¬O²{¦b
+ä½œè€…: SYSOP (ç«™é•·) ç«™å…§: [ç³»çµ±å…¬å‘Š]
+æ¨™é¡Œ: ç æ¿é€šçŸ¥
+æ™‚é–“: å°±æ˜¯ç¾åœ¨
 
- ±z¦n¡G
+ æ‚¨å¥½ï¼š
 
-     ¥Ñ©ó¦¹ªO¨Ï¥Î²v¹L§C¡A©Ò¥H¦¹ªO§Y±N³Q¨t²Î¦Û°Ê¬å°£¡A­Y±z¤£§Æ±æ¬İªO
- ³Q¬å°£¡A½Ğ©w´Á©ó¬İªO¤Wµoªí¤å³¹¡C
-
---
-                                          ¯¸°ÈºŞ²z­û ¢á¢ç¢á¢İ¢Ş
-
-
+     ç”±æ–¼æ­¤æ¿ä½¿ç”¨ç‡éä½ï¼Œæ‰€ä»¥æ­¤æ¿å³å°‡è¢«ç³»çµ±è‡ªå‹•ç é™¤ï¼Œè‹¥æ‚¨ä¸å¸Œæœ›çœ‹æ¿
+ è¢«ç é™¤ï¼Œè«‹å®šæœŸæ–¼çœ‹æ¿ä¸Šç™¼è¡¨æ–‡ç« ã€‚
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mthree.Dorm11.NCTU.edu.tw[37m µoªí[m
+                                          ç«™å‹™ç®¡ç†å“¡ ï¼³ï¼¹ï¼³ï¼¯ï¼°
+
+
+
+--
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mthree.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

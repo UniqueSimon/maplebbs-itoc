@@ -1,11 +1,11 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: «ç»ò¦bmenu¸ÌÀYªº¯¸¦W®Ç¥[¤H¼Æ§r¡H
-®É¶¡: 2004/11/11 Thu 19:33:55                           Updated: 2004/11/11
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: æ€éº¼åœ¨menuè£¡é ­çš„ç«™åæ—åŠ äººæ•¸å‘€ï¼Ÿ
+æ™‚é–“: 2004/11/11 Thu 19:33:55                           Updated: 2004/11/11
 
-¡° ¤Ş­z¡mEfen.bbs@bbs.med.ncku.edu.tw (·Ğ¦º¤Hªº½Ã¥Í©Ò..)¡n¤§»Ê¨¥¡G
-> ±`¬İ¨ì¦³¨Ç¯¸¥Dµe­±ªºtitle³¡¤À·|¥X²{
-> [1;33;41m                       °j ­· ¨¦[½u¤W 40 ¤H]                                [m
-> ®ÇÃäªº¤H¼Æ­n«ç»ò¥[§r¡H
+â€» å¼•è¿°ã€ŠEfen.bbs@bbs.med.ncku.edu.tw (ç…©æ­»äººçš„è¡›ç”Ÿæ‰€..)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å¸¸çœ‹åˆ°æœ‰äº›ç«™ä¸»ç•«é¢çš„titleéƒ¨åˆ†æœƒå‡ºç¾
+> [1;33;41m                       è¿´ é¢¨ è°·[ç·šä¸Š 40 äºº]                                [m
+> æ—é‚Šçš„äººæ•¸è¦æ€éº¼åŠ å‘€ï¼Ÿ
 
 : menu.c:vs_head()
 
@@ -16,15 +16,15 @@
   ...
   ...
 
-  else          /* menu() ¤¤¤~¥Î vs_head(title, NULL); ¿ï³æ¤¤µL»İ clear() */
+  else          /* menu() ä¸­æ‰ç”¨ vs_head(title, NULL); é¸å–®ä¸­ç„¡éœ€ clear() */
   {
     move(0, 0);
     clrtoeol();
 -   mid = str_site;
 +   mid = midbuf;
-+   sprintf(mid, "%s [½u¤W %d ¤H]", str_site, total_user);
++   sprintf(mid, "%s [ç·šä¸Š %d äºº]", str_site, total_user);
   }
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

@@ -1,38 +1,38 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬ÝªO: plan
-¼Ð  ÃD: Re: m°_¨Óªº¤å³¹¸Ó«ç»ò¬å?
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/05/24 Mon 17:49:28)                Updated: 2004/05/24
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: mèµ·ä¾†çš„æ–‡ç« è©²æ€Žéº¼ç ?
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/05/24 Mon 17:49:28)                Updated: 2004/05/24
 
-¡° ¤Þ­z¡mleira.bbs@wretch.twbbs.org (¦V¥¼¨Ó·q¤@ªM°s)¡n¤§»Ê¨¥¡G
->   ½Ð°Ý¦pªG¤å³¹m°_¨Ó
->   ­Y¤£­n¦Am¤@¦¸¨ú®ø´Nª½±µ¬å
->   §@±o¨ì¶Ü?
+â€» å¼•è¿°ã€Šleira.bbs@wretch.twbbs.org (å‘æœªä¾†æ•¬ä¸€æ¯é…’)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>   è«‹å•å¦‚æžœæ–‡ç« mèµ·ä¾†
+>   è‹¥ä¸è¦å†mä¸€æ¬¡å–æ¶ˆå°±ç›´æŽ¥ç 
+>   ä½œå¾—åˆ°å—Ž?
 
-: post.c:post_label()   ^N ªº³¡¤À
+: post.c:post_label()   ^N çš„éƒ¨åˆ†
 
--   if (xmode & (POST_MARKED | POST_RESTRICT))/* mark ©Î ¥[±Kªº¤å³¹¤£¯à«Ý¬å */
-+   if (xmode & POST_RESTRICT) /* ¥[±Kªº¤å³¹¤£¯à«Ý¬å */
+-   if (xmode & (POST_MARKED | POST_RESTRICT))/* mark æˆ– åŠ å¯†çš„æ–‡ç« ä¸èƒ½å¾…ç  */
++   if (xmode & POST_RESTRICT) /* åŠ å¯†çš„æ–‡ç« ä¸èƒ½å¾…ç  */
       return XO_NONE;
 
-: post.c:post_delete()  d ªº³¡¤À
+: post.c:post_delete()  d çš„éƒ¨åˆ†
 
 - if (hdr->xmode & POST_MARKED)
 -   return XO_NONE;
 
-: post.c:chkpost()      D ¤Î ^D ªº³¡¤À
+: post.c:chkpost()      D åŠ ^D çš„éƒ¨åˆ†
 
-  ¦¹¨ç¦¡§R°£
+  æ­¤å‡½å¼åˆªé™¤
 
-: post.c:vfypost()      ^D ªº³¡¤À
+: post.c:vfypost()      ^D çš„éƒ¨åˆ†
 
 - return (Tagger(hdr->chrono, pos, TAG_NIN) || chkpost(hdr));
 + return (Tagger(hdr->chrono, pos, TAG_NIN));
 
-: post.c:post_rangedel()  D ªº³¡¤À
+: post.c:post_rangedel()  D çš„éƒ¨åˆ†
 
 - return xo_rangedel(xo, sizeof(HDR), chkpost, delpost);
 + return xo_rangedel(xo, sizeof(HDR), NULL, delpost);
 
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mpc512-12.ee.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ž [35mpc512-12.ee.nctu.edu.tw [30mç™¼è¡¨[m

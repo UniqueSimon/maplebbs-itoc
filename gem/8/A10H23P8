@@ -1,19 +1,19 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ¥D¿ï³æªººÃ°İ
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/08/05 Thu 00:00:56)                Updated: 2005/05/17
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: ä¸»é¸å–®çš„ç–‘å•
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/08/05 Thu 00:00:56)                Updated: 2005/05/17
 
-¡° ¤Ş­z¡mimd.bbs@wretch.twbbs.org (ºN¯Á¤¤)¡n¤§»Ê¨¥¡G
-> ¦]¬°¶}¤F¤@¨Ç¦³Ãö·s¥ÍªºªO
-> ©Ò¥H·Q»¡¥i¤£¥i¥H±N³o¨Çª©¶°¤¤©ó¤@­Ó¸s²Õ
-> µM«á©ñ¦b¥D¿ï³æ¤U­±
-> ¤è«K·s¥Í¬d¾\©O
+â€» å¼•è¿°ã€Šimd.bbs@wretch.twbbs.org (æ‘¸ç´¢ä¸­)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å› ç‚ºé–‹äº†ä¸€äº›æœ‰é—œæ–°ç”Ÿçš„æ¿
+> æ‰€ä»¥æƒ³èªªå¯ä¸å¯ä»¥å°‡é€™äº›ç‰ˆé›†ä¸­æ–¼ä¸€å€‹ç¾¤çµ„
+> ç„¶å¾Œæ”¾åœ¨ä¸»é¸å–®ä¸‹é¢
+> æ–¹ä¾¿æ–°ç”ŸæŸ¥é–±å‘¢
 
 : maple.p
 
 int Class(void);
 + int Class2(void);
 
-: board.c:Class2() ·s¼W¦¹¨ç¦¡¦b Class() «á­±
+: board.c:Class2() æ–°å¢æ­¤å‡½å¼åœ¨ Class() å¾Œé¢
 
 int
 Class2()
@@ -21,10 +21,10 @@ Class2()
   int chn, min_chn;
   short *chx;
   char *img;
-  const char *name = "ABCDEFG/";  [1;44m // ¤ÀÃş¸s²Õ¦WºÙ¦Û©w [m
+  const char *name = "ABCDEFG/";  [1;44m // åˆ†é¡ç¾¤çµ„åç¨±è‡ªå®š [m
 
-  [1;44m // ¤]¥i¥H§â¤U­±³o¦æ®³±¼¡A¦ı­Y¸Ó¤ÀÃş³Q zap ¥ú¥ú´N·|¶i¤£¥h [m
-  class_flag |= BFO_YANK;   /* ®³±¼ yank¡AÁ×§K§â©Ò¦³ªO³£ zap «á¶i¤£¥h */
+  [1;44m // ä¹Ÿå¯ä»¥æŠŠä¸‹é¢é€™è¡Œæ‹¿æ‰ï¼Œä½†è‹¥è©²åˆ†é¡è¢« zap å…‰å…‰å°±æœƒé€²ä¸å» [m
+  class_flag |= BFO_YANK;   /* æ‹¿æ‰ yankï¼Œé¿å…æŠŠæ‰€æœ‰æ¿éƒ½ zap å¾Œé€²ä¸å» */
 
   min_chn = bshm->min_chn;
   img = class_img;
@@ -39,16 +39,16 @@ Class2()
     }
   }
 
-  vmsg("µL¦¹¤ÀÃş¸s²Õ");
+  vmsg("ç„¡æ­¤åˆ†é¡ç¾¤çµ„");
   return XEASY;
 }
 
-: menu.c ¾A·í¿ï³æ¥[¤J
+: menu.c é©ç•¶é¸å–®åŠ å…¥
 
 + Class2, 0, M_BOARD,
-+ "GoodClass   £p ¦W¦rÀH«K¨ú £p",
++ "GoodClass   Ï† åå­—éš¨ä¾¿å– Ï†",
 
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m Maple-itoc£»°Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
- [1;42m¢q[45m¢}[m A[1mut[30mho[mr: [1;31mitoc [30m±q [36mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
+ [1;42mâ”¼[45mâ”˜[m A[1mut[30mho[mr: [1;31mitoc [30må¾ [36mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

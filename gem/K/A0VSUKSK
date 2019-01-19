@@ -1,11 +1,11 @@
-§@ªÌ: itoc (League) ¯¸¤º: plan
-¼ĞÃD: [¥\¯à] ¨t²Î­t¸ü
-®É¶¡: 2003/12/04 Thu 23:32:03                           Updated: 2003/12/04
+ä½œè€…: itoc (League) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] ç³»çµ±è² è¼‰
+æ™‚é–“: 2003/12/04 Thu 23:32:03                           Updated: 2003/12/04
 
-  ¬Y¨Ç§@·~¨t²Î¥i¯à¨S¦³ getloadavg() ªº¥\¯à
-  ¨º»ò´N¤£¯à¨Ï¥Î
+  æŸäº›ä½œæ¥­ç³»çµ±å¯èƒ½æ²’æœ‰ getloadavg() çš„åŠŸèƒ½
+  é‚£éº¼å°±ä¸èƒ½ä½¿ç”¨
 
-: admutil.c:a_sysload() ·s¼W¦b a_resetsys() «e­±
+: admutil.c:a_sysload() æ–°å¢åœ¨ a_resetsys() å‰é¢
 
 int
 a_sysload()
@@ -15,8 +15,8 @@ a_sysload()
   double load[3];
   getloadavg(load, 3);
 
-  /* ³o¤T­Ó¼Æ­È¤À§Oªí¥Ü¹L¥h 1, 5, 15 ¤ÀÄÁªº­t¸ü */
-  sprintf(buf, "¨t²Î­t¸ü %.2f %.2f %.2f", load[0], load[1], load[2]);
+  /* é€™ä¸‰å€‹æ•¸å€¼åˆ†åˆ¥è¡¨ç¤ºéå» 1, 5, 15 åˆ†é˜çš„è² è¼‰ */
+  sprintf(buf, "ç³»çµ±è² è¼‰ %.2f %.2f %.2f", load[0], load[1], load[2]);
   vmsg(buf);
   return XEASY;
 }
@@ -24,7 +24,7 @@ a_sysload()
 : menu.c:menu_admin[]
 
 + "bin/admutil.so:a_sysload", PERM_ALLADMIN, - M_SYSTEM,
-+ "Load       ¢« ¨t²Î­t¸ü ¢¨",
++ "Load       â—¤ ç³»çµ±è² è¼‰ â—¢",
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

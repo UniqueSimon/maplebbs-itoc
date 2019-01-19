@@ -1,11 +1,11 @@
-µo«H¤H: itoc.bbs@xeon.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: Ãö©óªO¥D
-µo«H¯¸: °Ê¤O®Ö¤ß (2003/12/16 Tue 11:02:43)                Updated: 2004/03/17
+ç™¼ä¿¡äºº: itoc.bbs@xeon.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: é—œæ–¼æ¿ä¸»
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2003/12/16 Tue 11:02:43)                Updated: 2004/03/17
 
-¡° ¤Ş­z¡mjoue (¤p¤l)¡n¤§»Ê¨¥¡G
-> ¥i¥H³]¦h­Ó¤Ï°Î¦Wª©¶Ü?
+â€» å¼•è¿°ã€Šjoue (å°å­)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å¯ä»¥è¨­å¤šå€‹ååŒ¿åç‰ˆå—?
 
-  ¥i¥H¡A¤£¦Pªº°Î¦WªO©ñ¦b¤£¦Pªº¤Ï°Î¦WªO
+  å¯ä»¥ï¼Œä¸åŒçš„åŒ¿åæ¿æ”¾åœ¨ä¸åŒçš„ååŒ¿åæ¿
 
 : config.h
 
@@ -22,12 +22,12 @@ do_unanonymous(fpath)
   char folder[64];
 + char *brdname;
 
-  [1;44m// ¤U¦C¤½¦¡¦U¯¸¦Û©w[m
-+ if (!strcmp(currboard, "Fuck"))       /* Fuck ªº¤Ï°Î¦WªO¬O UnFuck */
+  [1;44m// ä¸‹åˆ—å…¬å¼å„ç«™è‡ªå®š[m
++ if (!strcmp(currboard, "Fuck"))       /* Fuck çš„ååŒ¿åæ¿æ˜¯ UnFuck */
 +   brdname = "UnFuck";
-+ else if (!strcmp(currboard, "Sex"))   /* Sex ªº¤Ï°Î¦WªO¬O UnSex */
++ else if (!strcmp(currboard, "Sex"))   /* Sex çš„ååŒ¿åæ¿æ˜¯ UnSex */
 +   brdname = "UnSex";
-+ else                                  /* ¨ä¥L°Î¦WªO«h¬O³£¥á¨ì UnAnonymous */
++ else                                  /* å…¶ä»–åŒ¿åæ¿å‰‡æ˜¯éƒ½ä¸Ÿåˆ° UnAnonymous */
 +   brdname = BN_UNANONYMOUS;
 
 - brd_fpath(folder, BN_UNANONYMOUS, fn_dir);
@@ -44,12 +44,12 @@ do_unanonymous(fpath)
 + btime_update(brd_bno(brdname));
 }
 
-  ·s¶}¯µ±KªO UnFuck¡BUnSex¡BUnAnonymous
+  æ–°é–‹ç§˜å¯†æ¿ UnFuckã€UnSexã€UnAnonymous
 
-  ¦pªGÁÙ·QÅıªO¥D¬İ¨ì¤Ï°Î¦Wªº¤º®e
-  ´N§â Fuck ªO¥D¥[¤J UnFuck ªO¤Í¦W³æ
-    §â Sex  ªO¥D¥[¤J UnSex  ªO¤Í¦W³æ
+  å¦‚æœé‚„æƒ³è®“æ¿ä¸»çœ‹åˆ°ååŒ¿åçš„å…§å®¹
+  å°±æŠŠ Fuck æ¿ä¸»åŠ å…¥ UnFuck æ¿å‹åå–®
+    æŠŠ Sex  æ¿ä¸»åŠ å…¥ UnSex  æ¿å‹åå–®
 
 --
- [1;43m¢z[44m¢q[m Or[1mig[30min[m: [44m Maple-itoc£»°Ê¤O®Ö¤ß [31;47m processor.tfcis.org [m
- [1;41m¢|[42m¢}[m A[1mut[30mho[mr: [1;36mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [44m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [31;47m processor.tfcis.org [m
+ [1;41mâ””[42mâ”˜[m A[1mut[30mho[mr: [1;36mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

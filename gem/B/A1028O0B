@@ -1,43 +1,43 @@
-�o�H�H: BioStar.bbs@micro.bio.ncue.edu.tw (���p����) �ݪO: plan
-��  �D: Re: [���D] ���W�[�U�h�٦��l��檺�ﶵ
-�o�H��: ���ѱ^ (Tue, 22 Jul 2003 11:52:52 +0800 (CST))    Updated: 2004/02/07
+發信人: BioStar.bbs@micro.bio.ncue.edu.tw (澎湖小雲雀) 看板: plan
+標  題: Re: [問題] 怎麼增加下層還有子選單的選項
+發信站: 擎天崗 (Tue, 22 Jul 2003 11:52:52 +0800 (CST))    Updated: 2004/02/07
 
-�� �ޭz�mBioStar (���p����)�n���ʨ��G
-> ���O�p�G�p�̬O�n�W�[�U�h�٦��l��檺�ﶵ...
-> �Ҧp�ۭq�@��"�P�y��R"���ﶵ...
-> �i�h��S�O�@�Ӧ��n�X�ӿﶵ���l���...
+※ 引述《BioStar (澎湖小雲雀)》之銘言：
+> 但是如果小弟是要增加下層還有子選單的選項...
+> 例如自訂一個"星座算命"的選項...
+> 進去後又是一個有好幾個選項的子選單...
 
-�۰ݦ۵�...  �ש�⮩�X�ӤF...
+自問自答...  終於領悟出來了...
 
-�ק� maple/menu.c ...
+修改 maple/menu.c ...
 
-�s�W�{���X......
+新增程式碼......
 
-/* �榡 : static MENU �l���^��W��[] = */
+/* 格式 : static MENU 子選單英文名稱[] = */
 static MENU menu_astro[] =
 {
   "bin/sinastar.so:main_sinastar", 0, - M_XMODE,
-  "NStar      �� �P�y�B�� ��",
+  "NStar      ★ 星座運勢 ★",
 
   "bin/horoscope.so:x_astro", PERM_BASIC, - M_XMODE,
-  "Astro      �� �ڪ��P�y ��",
+  "Astro      ★ 我的星座 ★",
 
   "bin/horoscope.so:x_pair", PERM_BASIC, - M_XMODE,
-  "Pair       �� �k�k�t�� ��",
+  "Pair       ★ 男女配對 ★",
 
-/* �榡 : �W�h���^��W��, PERM_MENU + '�l���w�]�ﶵ��', M_XMENU, */
+/* 格式 : 上層選單英文名稱, PERM_MENU + '子選單預設選項鍵', M_XMENU, */
   menu_tool, PERM_MENU + 'N', M_XMENU,
-/* �榡 : "�l��椤��W��" */
-  "�P�y���y"
+/* 格式 : "子選單中文名稱" */
+  "星座物語"
 };
 
-�A���W�h���]�w�{���X(���ҬO menu_tool[])���[�J�o�Ӥl���......
+再到其上層選單設定程式碼(本例是 menu_tool[])中加入這個子選單......
 
-/* �榡 : �l���^��W��, �i�H�ϥΪ��v��, M_XMENU, */
+/* 格式 : 子選單英文名稱, 可以使用的權限, M_XMENU, */
   menu_astro, 0, M_XMENU,
-/* �榡 : "�l���ԭz", */ /* �l���ԭz������r���N�����ӿﶵ�ֳt�� */
-  "Astro      �i �P�y���y �j",
+/* 格式 : "子選單敘述", */ /* 子選單敘述的首位字元將成為該選項快速鍵 */
+  "Astro      【 星座物語 】",
 
 --
-[1;31m|[33m Origin [31m| [0;42m ���Ʈv�j�ͪ��t �u���E����E���ѱ^ [32;47m micro.bio.ncue.edu.tw [m
+[1;31m|[33m Origin [31m| [0;42m 彰化師大生物系 吟風?眺月?擎天崗 [32;47m micro.bio.ncue.edu.tw [m
 [1;31m|[35m Author [31m| [36m218-163-213-178.HINET-IP.hinet.net[m

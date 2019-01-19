@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/cola2post.c	( NTHU CS MapleBBS Ver 3.10 )	 */
 /*-------------------------------------------------------*/
-/* target : Cola ¦Ü Maple 3.02 ¬İªO¤å³¹®æ¦¡Âà´«		 */
+/* target : Cola è‡³ Maple 3.02 çœ‹æ¿æ–‡ç« æ ¼å¼è½‰æ›		 */
 /* create : 03/02/21					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -13,24 +13,24 @@
 
 #if 0
 
-  ¥H¤U³o­Ó¬O ColaBBS ¤å³¹ÀÉ®×ªº½d¨Ò
+  ä»¥ä¸‹é€™å€‹æ˜¯ ColaBBS æ–‡ç« æª”æ¡ˆçš„ç¯„ä¾‹
 
-*[m*[47;34m §@ªÌ *[44;37m userid (¼ÊºÙ)                                 *[47;34m «H°Ï *[44;37m SYSOP               *[m\n\r
-*[47;34m ¼ĞÃD *[44;37m Re: °Õ°Õ°Õ°Õ°Õ°Õ                                               *[m\n\r
-*[47;34m ®É¶¡ *[44;37m Fri Mar 15 11:33:20 2002                                       *[m\n\r
-*[36m¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w*[m\n\r
+*[m*[47;34m ä½œè€… *[44;37m userid (æš±ç¨±)                                 *[47;34m ä¿¡å€ *[44;37m SYSOP               *[m\n\r
+*[47;34m æ¨™é¡Œ *[44;37m Re: å•¦å•¦å•¦å•¦å•¦å•¦                                               *[m\n\r
+*[47;34m æ™‚é–“ *[44;37m Fri Mar 15 11:33:20 2002                                       *[m\n\r
+*[36mâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*[m\n\r
 \n\r
-¤å³¹¤º®e²Ä¤@¦æ\n\r
-¤å³¹¤º®e²Ä¤G¦æ\n\r
+æ–‡ç« å…§å®¹ç¬¬ä¸€è¡Œ\n\r
+æ–‡ç« å…§å®¹ç¬¬äºŒè¡Œ\n\r
 
-  ­n§ï¦¨³o¼Ë
+  è¦æ”¹æˆé€™æ¨£
 
-§@ªÌ: userid (¼ÊºÙ) ¯¸¤º: SYSOP\n
-¼ĞÃD: Re: °Õ°Õ°Õ°Õ°Õ°Õ\n
-®É¶¡: Fri Mar 15 11:33:20 2002\n
+ä½œè€…: userid (æš±ç¨±) ç«™å…§: SYSOP\n
+æ¨™é¡Œ: Re: å•¦å•¦å•¦å•¦å•¦å•¦\n
+æ™‚é–“: Fri Mar 15 11:33:20 2002\n
 \n
-¤å³¹¤º®e²Ä¤@¦æ\n
-¤å³¹¤º®e²Ä¤G¦æ\n
+æ–‡ç« å…§å®¹ç¬¬ä¸€è¡Œ\n
+æ–‡ç« å…§å®¹ç¬¬äºŒè¡Œ\n
 
 #endif
 
@@ -59,29 +59,29 @@ reaper(fpath)
     if (ptr = strchr(src, '\n'))
       *ptr = '\0';
 
-    if (i < 4)	/* «e¥|¦æÀÉÀY */
+    if (i < 4)	/* å‰å››è¡Œæª”é ­ */
     {
       i++;
 
-      if (*src == '\033')	/* ¦¹¬°ÀÉÀY */
+      if (*src == '\033')	/* æ­¤ç‚ºæª”é ­ */
       {
-        str_ansi(dst, src, sizeof(dst));	/* ¥h±¼ ANSI */
+        str_ansi(dst, src, sizeof(dst));	/* å»æ‰ ANSI */
 
-	if (i <= 3 && dst[0] == ' ' && dst[5] == ' ')	/* §@ªÌ: */
+	if (i <= 3 && dst[0] == ' ' && dst[5] == ' ')	/* ä½œè€…: */
 	{
 	  dst[5] = ':';
-	  fprintf(fpw, "%.78s\n", dst + 1);	/* ¥h°£²Ä¤@®æªÅ¥Õ */
+	  fprintf(fpw, "%.78s\n", dst + 1);	/* å»é™¤ç¬¬ä¸€æ ¼ç©ºç™½ */
 	  continue;
 	}
-	else if (i == 4 && !strncmp(dst, "¢w¢w¢w¢w", 8))
+	else if (i == 4 && !strncmp(dst, "â”€â”€â”€â”€", 8))
 	{
-	  /* ¤À¹j½u¤£­n¤F */
+	  /* åˆ†éš”ç·šä¸è¦äº† */
 	  continue;
 	}
       }
     }
 
-    fprintf(fpw, "%s\n", src);	/* ¤º®e·Ó§Û */
+    fprintf(fpw, "%s\n", src);	/* å…§å®¹ç…§æŠ„ */
   }
 
   fclose(fpr);
@@ -100,7 +100,7 @@ expireBrd(brdname)
   char folder[64], fpath[64];
   HDR hdr;
 
-  printf("Âà´« %s ¬İªO\n", brdname);
+  printf("è½‰æ› %s çœ‹æ¿\n", brdname);
 
   brd_fpath(folder, brdname, FN_DIR);
 
@@ -126,7 +126,7 @@ expireGem(brdname)
   struct dirent *de;
   DIR *dirp;
 
-  printf("Âà´« %s ºëµØ°Ï\n", brdname);
+  printf("è½‰æ› %s ç²¾è¯å€\n", brdname);
 
   for (i = 0; i < 32; i++)
   {
@@ -159,7 +159,7 @@ expireUsr(userid)
   char folder[64], fpath[64];
   HDR hdr;
 
-  printf("Âà´« %s «H¥ó\n", userid);
+  printf("è½‰æ› %s ä¿¡ä»¶\n", userid);
 
   usr_fpath(folder, userid, FN_DIR);
 
@@ -186,7 +186,7 @@ main()
 
   chdir(BBSHOME);
 
-  /* Âà´«¬İªO/ºëµØ°Ï¤å³¹ */
+  /* è½‰æ›çœ‹æ¿/ç²¾è¯å€æ–‡ç«  */
 
   if ((fd = open(FN_BRD, O_RDONLY)) >= 0)
   {
@@ -199,7 +199,7 @@ main()
     close(fd);
   }
 
-  /* Âà´«¨Ï¥ÎªÌ«H¥ó */
+  /* è½‰æ›ä½¿ç”¨è€…ä¿¡ä»¶ */
 
   for (c = 'a'; c <= 'z'; c++)
   {

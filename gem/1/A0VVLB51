@@ -1,15 +1,15 @@
-§@ªÌ: itoc (League) ¬İªO: plan
-¼ĞÃD: [¥\¯à] µ{¦¡³B²z FAQ
-®É¶¡: 2004/01/06 Tue 20:38:20                           Updated: 2005/05/19
+ä½œè€…: itoc (League) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] ç¨‹å¼è™•ç† FAQ
+æ™‚é–“: 2004/01/06 Tue 20:38:20                           Updated: 2005/05/19
 
-  Åıµ{¦¡¥h³B²z FAQ
+  è®“ç¨‹å¼å»è™•ç† FAQ
 
-: menu.c:menu_user[] ·s¼W¿ï¶µ
+: menu.c:menu_user[] æ–°å¢é¸é …
 
   faq, 0, M_XMODE,
-  "0FAQ       ¡m §Ú¦³°İÃD ¡n",
+  "0FAQ       ã€Š æˆ‘æœ‰å•é¡Œ ã€‹",
 
-: menu.c:faq() ¥[¦b goodbye() ¤U­±
+: menu.c:faq() åŠ åœ¨ goodbye() ä¸‹é¢
 
 static int
 faq()
@@ -18,17 +18,17 @@ faq()
   char *menu[] =
   {
     "QQ",
-    "Quit  °İÃD°İ§¹¤F",
-    "1     ¬İªO¤£¨£¤F",
-    "2     ¤£¯àµoªí¤å³¹",
-    "3     ¤£¯à¨Ï¥ÎÃ±¦WÀÉ",
-    "0     ¨ä¥L",
+    "Quit  å•é¡Œå•å®Œäº†",
+    "1     çœ‹æ¿ä¸è¦‹äº†",
+    "2     ä¸èƒ½ç™¼è¡¨æ–‡ç« ",
+    "3     ä¸èƒ½ä½¿ç”¨ç°½åæª”",
+    "0     å…¶ä»–",
     NULL
   };
 
   while (1)
   {
-    rc = pans(3, 20, "±`¨£°İÃD", menu);
+    rc = pans(3, 20, "å¸¸è¦‹å•é¡Œ", menu);
 
     if (rc == '1')
     {
@@ -44,40 +44,40 @@ faq()
         brd_bits[bno] &= ~BRD_Z_BIT;
         brh_save();
         board_main();
-        vmsg("³B²z§¹¦¨");
+        vmsg("è™•ç†å®Œæˆ");
       }
     }
     else if (rc == '2')
     {
       if (HAS_PERM(PERM_DENYPOST))
-        vmsg("±z¤w¸g³Q°±Åv¤F");
+        vmsg("æ‚¨å·²ç¶“è¢«åœæ¬Šäº†");
       else if (!HAS_PERM(PERM_VALID))
-        vmsg("±z©|¥¼³q¹L»{ÃÒ³á");
+        vmsg("æ‚¨å°šæœªé€šéèªè­‰å–”");
 #ifdef NEWUSER_LIMIT
       else if (!HAS_PERM(PERM_POST))
       {
         if (ap_start - time(NULL) >= 3 * 86400)
-          vmsg("½Ğ­«·s¤W¯¸¡A´N¥i¥H¤F");
+          vmsg("è«‹é‡æ–°ä¸Šç«™ï¼Œå°±å¯ä»¥äº†");
         else
-          vmsg("·s¤â¤W¸ô¡A¨£²ß¤T¤Ñ¡A±z¥²¶·¦bµù¥Uº¡¤T¤Ñ¥H«á¤~¯àµoªí¤å³¹");
+          vmsg("æ–°æ‰‹ä¸Šè·¯ï¼Œè¦‹ç¿’ä¸‰å¤©ï¼Œæ‚¨å¿…é ˆåœ¨è¨»å†Šæ»¿ä¸‰å¤©ä»¥å¾Œæ‰èƒ½ç™¼è¡¨æ–‡ç« ");
       }
 #endif
       else
       {
-        vmsg("±z©ú©ú´N¥i¥Hµoªí¤å³¹°Ú¡ã");
+        vmsg("æ‚¨æ˜æ˜å°±å¯ä»¥ç™¼è¡¨æ–‡ç« å•Šï½");
       }
     }
     else if (rc == '3')
     {
       cuser.ufo &= ~UFO_NOSIGN;
       cutmp->ufo = cuser.ufo;
-      vmsg("³B²z§¹¦¨");
+      vmsg("è™•ç†å®Œæˆ");
     }
     else if (rc == '0')
     {
       int bno;
 
-      vmsg("­Y¦³¨ä¥LºÃÃøÂø¯g¡A½Ğ¦b sysop ªO«ö Ctrl+P ¼g¤å³¹°İ¯¸ªø");
+      vmsg("è‹¥æœ‰å…¶ä»–ç–‘é›£é›œç—‡ï¼Œè«‹åœ¨ sysop æ¿æŒ‰ Ctrl+P å¯«æ–‡ç« å•ç«™é•·");
       bno = brd_bno("sysop");
       XoPost(bno);
       xover(XZ_POST);
@@ -94,4 +94,4 @@ faq()
 
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

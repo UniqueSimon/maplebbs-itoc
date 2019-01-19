@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/cola2brd.c  ( NTHU CS MapleBBS Ver 3.10 )	 */
 /*-------------------------------------------------------*/
-/* target : Cola ¦Ü Maple 3.02 ¬İªOÂà´«			 */
+/* target : Cola è‡³ Maple 3.02 çœ‹æ¿è½‰æ›			 */
 /* create : 03/02/11					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -17,7 +17,7 @@ trans_hdr_chrono(filename)
 {
   char time_str[11];
 
-  /* M.1087654321.A ©Î M.987654321.A */
+  /* M.1087654321.A æˆ– M.987654321.A */
   str_ncpy(time_str, filename + 2, filename[2] == '1' ? 11 : 10);
 
   return (time_t) atoi(time_str);
@@ -69,7 +69,7 @@ trans_hdr_stamp(folder, t, hdr, fpath)
 
 
 /* ----------------------------------------------------- */
-/* Âà´«¥Dµ{¦¡                                            */
+/* è½‰æ›ä¸»ç¨‹å¼                                            */
 /* ----------------------------------------------------- */
 
 
@@ -86,39 +86,39 @@ transbrd(bh)
   HDR hdr;
   time_t chrono;
 
-  printf("Âà´« %s ¬İªO\n", bh->brdname);
+  printf("è½‰æ› %s çœ‹æ¿\n", bh->brdname);
 
   brd_fpath(buf, bh->brdname, NULL);
   if (dashd(buf))
   {
-    printf("%s ¤w¸g¦³¦¹¬İªO\n", bh->brdname);
+    printf("%s å·²ç¶“æœ‰æ­¤çœ‹æ¿\n", bh->brdname);
     return;
   }
 
   if (!stamp)
     time(&stamp);
 
-  /* Âà´« .BRD */
+  /* è½‰æ› .BRD */
 
   memset(&newboard, 0, sizeof(newboard));
   str_ncpy(newboard.brdname, bh->brdname, sizeof(newboard.brdname));
   str_ncpy(newboard.class, bh->title + 2, sizeof(newboard.class));
   str_ncpy(newboard.title, bh->title + 12, sizeof(newboard.title));
-  /* newboard.BM[0] = '\0'; */				/* ªO¥D¤£Âà´« */
+  /* newboard.BM[0] = '\0'; */				/* æ¿ä¸»ä¸è½‰æ› */
   newboard.bstamp = stamp++;
   newboard.battr = BRD_NOTRAN;
   newboard.readlevel = 0;
   newboard.postlevel = PERM_POST;
 
-  rec_add(FN_BRD, &newboard, sizeof(newboard));		/* §O§Ñ¤F¥Î brd2gem.c ¨ÓÂà´« Class */
+  rec_add(FN_BRD, &newboard, sizeof(newboard));		/* åˆ¥å¿˜äº†ç”¨ brd2gem.c ä¾†è½‰æ› Class */
 
-  /* ¶}·s¥Ø¿ı */
+  /* é–‹æ–°ç›®éŒ„ */
 
   sprintf(fpath, "gem/brd/%s", newboard.brdname);
   mak_dirs(fpath);
   mak_dirs(fpath + 4);
 
-  /* Âà´«¶iªOµe­± */
+  /* è½‰æ›é€²æ¿ç•«é¢ */
 
   sprintf(buf, COLABBS_BOARDS "/%s/.Welcome", bh->brdname);
   
@@ -128,10 +128,10 @@ transbrd(bh)
     f_cp(buf, fpath, O_TRUNC);
   }
 
-  /* Âà´«¤å³¹ */
+  /* è½‰æ›æ–‡ç«  */
 
-  sprintf(index, COLABBS_BOARDS "/%s/.DIR", bh->brdname);	/* ÂÂªº .DIR */
-  brd_fpath(folder, newboard.brdname, ".DIR");			/* ·sªº .DIR */
+  sprintf(index, COLABBS_BOARDS "/%s/.DIR", bh->brdname);	/* èˆŠçš„ .DIR */
+  brd_fpath(folder, newboard.brdname, ".DIR");			/* æ–°çš„ .DIR */
 
   if ((fd = open(index, O_RDONLY)) >= 0)
   {
@@ -139,9 +139,9 @@ transbrd(bh)
     {
       sprintf(buf, COLABBS_BOARDS "/%s/%s", bh->brdname, fh.filename);
 
-      if (dashf(buf))	/* ¤å³¹ÀÉ®×¦b¤~°µÂà´« */
+      if (dashf(buf))	/* æ–‡ç« æª”æ¡ˆåœ¨æ‰åšè½‰æ› */
       {
-	/* Âà´«¤å³¹ .DIR */
+	/* è½‰æ›æ–‡ç«  .DIR */
 	memset(&hdr, 0, sizeof(HDR));
 	chrono = trans_hdr_chrono(fh.filename);
 	trans_hdr_stamp(folder, chrono, &hdr, fpath);
@@ -150,7 +150,7 @@ transbrd(bh)
 	hdr.xmode = 0;
 	rec_add(folder, &hdr, sizeof(HDR));
 
-	/* «ş¨©ÀÉ®× */
+	/* æ‹·è²æª”æ¡ˆ */
 	f_cp(buf, fpath, O_TRUNC);
       }
     }
@@ -167,8 +167,8 @@ main(argc, argv)
   int fd;
   boardheader bh;
 
-  /* argc == 1 Âà¥ş³¡ªO */
-  /* argc == 2 Âà¬Y¯S©wªO */
+  /* argc == 1 è½‰å…¨éƒ¨æ¿ */
+  /* argc == 2 è½‰æŸç‰¹å®šæ¿ */
 
   if (argc > 2)
   {
@@ -193,7 +193,7 @@ main(argc, argv)
   {
     while (read(fd, &bh, sizeof(bh)) == sizeof(bh))
     {
-      bh.brdname[BNLEN] = '\0';	/* itoc.030211: Cola ªº¬İªO¦W¥i¯à¶W¹L BNLEN */
+      bh.brdname[BNLEN] = '\0';	/* itoc.030211: Cola çš„çœ‹æ¿åå¯èƒ½è¶…é BNLEN */
 
       if (argc == 1)
       {

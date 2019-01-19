@@ -1,13 +1,13 @@
-§@ªÌ: itoc (League) ¯¸¤º: plan
-¼ĞÃD: [­×¥¿] ¦^¤ô²yªº¦ì¸m§ï¦^­Ë¼Æ²Ä¤G¦æ
-®É¶¡: 2004/03/12 Fri 10:02:16                           Updated: 2004/03/12
+ä½œè€…: itoc (League) ç«™å…§: plan
+æ¨™é¡Œ: [ä¿®æ­£] å›æ°´çƒçš„ä½ç½®æ”¹å›å€’æ•¸ç¬¬äºŒè¡Œ
+æ™‚é–“: 2004/03/12 Fri 10:02:16                           Updated: 2004/03/12
 
-¡° ¤Ş­z¡mjal.bbs@bbs3.au.edu.tw (¯¸¤Wªº¤u¤Í§Ì§Ì)¡n¤§»Ê¨¥¡G
-> ¦]¬°¯¸¤Wuser²ßºD¦^°T®§¦b¤U¤è¦C¡A©Ò¥H·Q§ï¦^¨ì¤U­±¡A
+â€» å¼•è¿°ã€Šjal.bbs@bbs3.au.edu.tw (ç«™ä¸Šçš„å·¥å‹å¼Ÿå¼Ÿ)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å› ç‚ºç«™ä¸Šuserç¿’æ…£å›è¨Šæ¯åœ¨ä¸‹æ–¹åˆ—ï¼Œæ‰€ä»¥æƒ³æ”¹å›åˆ°ä¸‹é¢ï¼Œ
 
-  §â¦^¤ô²y±q (0, 0) §ï¦^ (b_lines - 1, 0)¡A­n§ïªº³¡¤À¦³
-  1) vget(line, col, ...) ¤¤ªº line
-  2) ¥Ñ©ó save_foot() ¥u·|¦³¤G¦æ¨ü¨ìÅÜ°Ê¡A©Ò¥H¤£»İ slp[3]¡A¥u»İ slp[2]
+  æŠŠå›æ°´çƒå¾ (0, 0) æ”¹å› (b_lines - 1, 0)ï¼Œè¦æ”¹çš„éƒ¨åˆ†æœ‰
+  1) vget(line, col, ...) ä¸­çš„ line
+  2) ç”±æ–¼ save_foot() åªæœƒæœ‰äºŒè¡Œå—åˆ°è®Šå‹•ï¼Œæ‰€ä»¥ä¸éœ€ slp[3]ï¼Œåªéœ€ slp[2]
 
 : bmw.c:bmw_edit()
 
@@ -47,8 +47,8 @@ save_foot(slp)
   screenline *slp;
 {
   int i;
-- int lines[3] = {0, b_lines - 1, b_lines};     /* Àx¦s³o¤T¦æ */
-+ int lines[2] = {b_lines - 1, b_lines};        /* Àx¦s³o¤G¦æ */
+- int lines[3] = {0, b_lines - 1, b_lines};     /* å„²å­˜é€™ä¸‰è¡Œ */
++ int lines[2] = {b_lines - 1, b_lines};        /* å„²å­˜é€™äºŒè¡Œ */
 
 - for (i = 0; i < 3; i++)
 + for (i = 0; i < 2; i++)
@@ -56,7 +56,7 @@ save_foot(slp)
     move(lines[i], 0);
     memcpy(slp + i, cur_slp, sizeof(screenline));
     slp[i].smod = 0;
-    slp[i].emod = ANSILINELEN;/* Thor.990125:¤£½×³Ì«á¤@¦¸§ï¨ì­ş, ¥ş³¡­nÃ¸¤W */
+    slp[i].emod = ANSILINELEN;/* Thor.990125:ä¸è«–æœ€å¾Œä¸€æ¬¡æ”¹åˆ°å“ª, å…¨éƒ¨è¦ç¹ªä¸Š */
     slp[i].oldlen = ANSILINELEN;
     slp[i].mode |= SL_MODIFIED;
   }
@@ -69,8 +69,8 @@ restore_foot(slp)
   screenline *slp;
 {
   int i;
-- int lines[3] = {0, b_lines - 1, b_lines};     /* «ì´_³o¤T¦æ */
-+ int lines[2] = {b_lines - 1, b_lines};        /* «ì´_³o¤G¦æ */
+- int lines[3] = {0, b_lines - 1, b_lines};     /* æ¢å¾©é€™ä¸‰è¡Œ */
++ int lines[2] = {b_lines - 1, b_lines};        /* æ¢å¾©é€™äºŒè¡Œ */
 
 - for (i = 0; i < 3; i++)
 + for (i = 0; i < 2; i++)
@@ -79,8 +79,8 @@ restore_foot(slp)
     memcpy(cur_slp, slp + i, sizeof(screenline));
   }
 
-  refresh(); /* Thor.981222: ¬°¨¾¾ãscreen­«Ã¸, ±Ä¥Î refresh */
+  refresh(); /* Thor.981222: ç‚ºé˜²æ•´screené‡ç¹ª, æ¡ç”¨ refresh */
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

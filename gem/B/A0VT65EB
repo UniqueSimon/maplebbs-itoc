@@ -1,13 +1,13 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: ¬ö¿ı--Æ[¬İ¸Ó¬İªO--ªº¤é´Á©MID
-®É¶¡: Sun Dec  7 19:53:38 2003                          Updated: 2005/07/09
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: ç´€éŒ„--è§€çœ‹è©²çœ‹æ¿--çš„æ—¥æœŸå’ŒID
+æ™‚é–“: Sun Dec  7 19:53:38 2003                          Updated: 2005/07/09
 
-¡° ¤Ş­z¡mhessionhsiao.bbs@bala.mis.ccu.edu.tw (¼y¯¬ ¥­ÀRªº¤é¤l)¡n¤§»Ê¨¥¡G
-> ´N¬Oª©¥D¥H¤WªºÅv­­ªº¤H
-> ¥i¥HÆ[¬İ
-> ¶i¥X¸Ó¬İª©ªº id©M¤é´Áµ¥¬ö¿ı
+â€» å¼•è¿°ã€Šhessionhsiao.bbs@bala.mis.ccu.edu.tw (æ…¶ç¥ å¹³éœçš„æ—¥å­)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å°±æ˜¯ç‰ˆä¸»ä»¥ä¸Šçš„æ¬Šé™çš„äºº
+> å¯ä»¥è§€çœ‹
+> é€²å‡ºè©²çœ‹ç‰ˆçš„ idå’Œæ—¥æœŸç­‰ç´€éŒ„
 
-: board.c:brd_usies() ·s¼W¦¹¨ç¦¡¦b XoPost() «e­±
+: board.c:brd_usies() æ–°å¢æ­¤å‡½å¼åœ¨ XoPost() å‰é¢
 
 static void
 brd_usies()
@@ -29,7 +29,7 @@ brd_usies()
   return 0;
 }
 
-: manage.c:post_usies() ·s¼W¨ç¦¡©ó post_manage() «e­±
+: manage.c:post_usies() æ–°å¢å‡½å¼æ–¼ post_manage() å‰é¢
 
 static int
 post_usies(xo)
@@ -39,7 +39,7 @@ post_usies(xo)
 
   brd_fpath(fpath, currboard, "usies");
   if (more(fpath, (char *) -1) >= 0 &&
-    vans("½Ğ°İ¬O§_§R°£³o¨Ç¬İªO¾\Åª°O¿ı(Y/N)¡H[N] ") == 'y')
+    vans("è«‹å•æ˜¯å¦åˆªé™¤é€™äº›çœ‹æ¿é–±è®€è¨˜éŒ„(Y/N)ï¼Ÿ[N] ") == 'y')
     unlink(fpath);
 
   return XO_HEAD;
@@ -47,14 +47,14 @@ post_usies(xo)
 
 : manage.c:post_manage()
 
-    "Manager ¼W´î°ÆªO¥D",
-+   "Usies   Æ[¹î¬İªO¾\\Åª°O¿ı",
+    "Manager å¢æ¸›å‰¯æ¿ä¸»",
++   "Usies   è§€å¯Ÿçœ‹æ¿é–±\è®€è¨˜éŒ„",
 
   ...
   ...
 
-- char *menu = "¡· ªO¥D¿ï³æ (B)¥DÃD (W)¶iªO (M)°ÆªO"
-+ char *menu = "¡· ªO¥D¿ï³æ (B)¥DÃD (W)¶iªO (M)°ÆªO (U)°O¿ı"
+- char *menu = "â— æ¿ä¸»é¸å–® (B)ä¸»é¡Œ (W)é€²æ¿ (M)å‰¯æ¿"
++ char *menu = "â— æ¿ä¸»é¸å–® (B)ä¸»é¡Œ (W)é€²æ¿ (M)å‰¯æ¿ (U)è¨˜éŒ„"
 
   ...
   ...
@@ -80,7 +80,7 @@ post_usies(xo)
 +     time(&now);
 +     ptime = localtime(&now);
 
-+     if (ptime->tm_wday == 0)      /* ¨C¶g¤@¬å usies */
++     if (ptime->tm_wday == 0)      /* æ¯é€±ä¸€ç  usies */
 +     {
 +       sprintf(buf, "%s/%s", bname, "usies");
 +       unlink(buf);
@@ -88,5 +88,5 @@ post_usies(xo)
 +   }
 
 --
- [1;43m¢z[44m¢q[m Or[1mig[30min[m: [44m Maple-itoc£»°Ê¤O®Ö¤ß [31;47m processor.tfcis.org [m
- [1;41m¢|[42m¢}[m A[1mut[30mho[mr: [1;36mitoc [30m±q [35m140.113.191.153 [30mµoªí[m
+ [1;43mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [44m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [31;47m processor.tfcis.org [m
+ [1;41mâ””[42mâ”˜[m A[1mut[30mho[mr: [1;36mitoc [30må¾ [35m140.113.191.153 [30mç™¼è¡¨[m

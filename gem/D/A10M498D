@@ -1,37 +1,37 @@
-µo«H¤H: tsaikd.bbs@bbs.cs.nchu.edu.tw (¤d¤H±Ù) ¬İªO: plan
-¼Ğ  ÃD: [­×¥¿] window.c pans() pmsg() ¦Û°Ê½Õ¾ã¼e«×¨Ã¥i¤ä´©¦h¦æ°T®§
-µo«H¯¸: ¤¤¿³¸ê¬ì (2004/10/05 Tue 11:20:03)                Updated: 2004/12/30
+ç™¼ä¿¡äºº: tsaikd.bbs@bbs.cs.nchu.edu.tw (åƒäººæ–¬) çœ‹æ¿: plan
+æ¨™  é¡Œ: [ä¿®æ­£] window.c pans() pmsg() è‡ªå‹•èª¿æ•´å¯¬åº¦ä¸¦å¯æ”¯æ´å¤šè¡Œè¨Šæ¯
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (2004/10/05 Tue 11:20:03)                Updated: 2004/12/30
 
-¾ã¦Xitoc¤j¤j [1;32m[­×¥¿] window.c pans() ¦Û°Ê½Õ¾ã¼e«×[m
-¤Î¤p§Ì¤§«eªº [1;32m[¥\¯à] window.c pmsg ¤Î pans ¥i¤ä´©¦h¦æ°T®§[m
+æ•´åˆitocå¤§å¤§ [1;32m[ä¿®æ­£] window.c pans() è‡ªå‹•èª¿æ•´å¯¬åº¦[m
+åŠå°å¼Ÿä¹‹å‰çš„ [1;32m[åŠŸèƒ½] window.c pmsg åŠ pans å¯æ”¯æ´å¤šè¡Œè¨Šæ¯[m
 
-¨Ï pans() ªº title
-¤Î pmsg() ªº msg
-¥i¥H¥Î '\n' ªº¤è¦¡¨ÓÂ_¦æ¡A¦Ó¤£·|³y¦¨µe­±¿ù¶Ã
+ä½¿ pans() çš„ title
+åŠ pmsg() çš„ msg
+å¯ä»¥ç”¨ '\n' çš„æ–¹å¼ä¾†æ–·è¡Œï¼Œè€Œä¸æœƒé€ æˆç•«é¢éŒ¯äº‚
 
 : maple/window.c
 
-+ #define COLOR_POPMENU_HEADER  "\033[1;37;44m" /* ¿ï³æ¼ĞÃDÃC¦â */
-+ #define COLOR_POPMENU_BODY    "\033[32;40m"   /* ¿ï³æ¤º¤åÃC¦â */
++ #define COLOR_POPMENU_HEADER  "\033[1;37;44m" /* é¸å–®æ¨™é¡Œé¡è‰² */
++ #define COLOR_POPMENU_BODY    "\033[32;40m"   /* é¸å–®å…§æ–‡é¡è‰² */
 
 static screenline slt[t_lines];
 static int x_roll;
-+ static int desc_maxlen;           /* ³Ìªø¿ï¶µªºªø«× */
++ static int desc_maxlen;           /* æœ€é•·é¸é …çš„é•·åº¦ */
 
 
 : maple/window.c : pans()
 
-int             /* ¶Ç¦^¤p¼g¦r¥À©Î¼Æ¦r */
+int             /* å‚³å›å°å¯«å­—æ¯æˆ–æ•¸å­— */
 pans(x, y, title, desc)
-  int x, y;             /* -1: ¦Û°Ê§ä¥Xµe­±¤¤¤ß¨Ó©ñ menu */
+  int x, y;             /* -1: è‡ªå‹•æ‰¾å‡ºç•«é¢ä¸­å¿ƒä¾†æ”¾ menu */
   char *title;
   char *desc[];
 {
   int cur, old_cur, max, ch;
   char hotkey;
 
-+ /* §ä¥X title ¤Î desc ¤¤³Ìªøªºªø«× */
-+ char buf[512];        /* tsaikd.041005: title ¥i¯à¦³¦n´X¦æ */
++ /* æ‰¾å‡º title åŠ desc ä¸­æœ€é•·çš„é•·åº¦ */
++ char buf[512];        /* tsaikd.041005: title å¯èƒ½æœ‰å¥½å¹¾è¡Œ */
 + char *tmp;
 +
 + strcpy(buf, title);
@@ -43,24 +43,24 @@ pans(x, y, title, desc)
 +   if (desc_maxlen < strlen(desc[ch]))
 +     desc_maxlen = strlen(desc[ch]);
 + }
-+ desc_maxlen += (desc_maxlen % 2) + 2;       /* ÅÜ¦¨°¸¼Æ */
++ desc_maxlen += (desc_maxlen % 2) + 2;       /* è®Šæˆå¶æ•¸ */
 
   x_roll = vs_save(slt);
 
   hotkey = desc[0][0];
 
-+ /* tsaikd.041007: ¦Û°Ê§ä¦ì¸m */
++ /* tsaikd.041007: è‡ªå‹•æ‰¾ä½ç½® */
 + if (x < 0)
 +   x = (b_lines - 4 - ch) / 2;
 + if (y < 0)
 +   y = (b_cols - 12 - desc_maxlen) / 2;
 
-  /* µe¥X¾ã­Ó¿ï³æ */
+  /* ç•«å‡ºæ•´å€‹é¸å–® */
   max = draw_menu(x, y, title, desc, hotkey, &cur);
 ...
 ...
 
-    if (old_cur != cur)         /* ´å¼ĞÅÜ°Ê¦ì¸m¤~»İ­n­«Ã¸ */
+    if (old_cur != cur)         /* æ¸¸æ¨™è®Šå‹•ä½ç½®æ‰éœ€è¦é‡ç¹ª */
     {
 +     int i, shift;
 +     shift = 0;
@@ -74,28 +74,28 @@ pans(x, y, title, desc)
 -     draw_item(x + old_cur, y, desc[old_cur], hotkey, 0);
 -     draw_item(x + cur, y, desc[cur], hotkey, 1);
       old_cur = cur;
-      /* Á×§K¦b°»´ú¥ª¥kÁä¥ş§Î¤U¡A«ö¥ªÁä·|¸õÂ÷¤G¼h¿ï³æªº°İÃD */
+      /* é¿å…åœ¨åµæ¸¬å·¦å³éµå…¨å½¢ä¸‹ï¼ŒæŒ‰å·¦éµæœƒè·³é›¢äºŒå±¤é¸å–®çš„å•é¡Œ */
       move(b_lines, 0);
     }
 
 
-: maple/window.c : ­«¼g draw_menu()
+: maple/window.c : é‡å¯« draw_menu()
 
-static int      /* ¦^¶ÇÁ`¦@¦³´X­Ó¿ï¶µ */
+static int      /* å›å‚³ç¸½å…±æœ‰å¹¾å€‹é¸é … */
 draw_menu(x, y, title, desc, hotkey, cur)
   int x, y;
   char *title;
   char *desc[];
   char hotkey;
-  int *cur;     /* ¦^¶Ç¹w³]­È©Ò¦b¦ì¸m */
+  int *cur;     /* å›å‚³é è¨­å€¼æ‰€åœ¨ä½ç½® */
 {
   int i, meet;
   char buf[128];
 
-  /* tsaikd.041005: title ³Ì¤j¥i¥H©ñ¤­¦æ¡A³Ì«á¤@­Ó¥²»İ¬O NULL */
+  /* tsaikd.041005: title æœ€å¤§å¯ä»¥æ”¾äº”è¡Œï¼Œæœ€å¾Œä¸€å€‹å¿…éœ€æ˜¯ NULL */
   char *ptitle[5 + 1], buf_title[512];
 
-  /* tsaikd.041005: §â title ¤À¦æ */
+  /* tsaikd.041005: æŠŠ title åˆ†è¡Œ */
   strcpy(buf_title, title);
   ptitle[0] = strtok(buf_title, "\n");
   for (i = 0; i < 5; i++)
@@ -103,35 +103,35 @@ draw_menu(x, y, title, desc, hotkey, cur)
     if (!(ptitle[i] = strtok(NULL, "\n")))
       break;
   }
-  ptitle[i] = NULL;     /* tsaikd.041005: ³Ì«á¤@­Ó¥²»İ¬O NULL */
+  ptitle[i] = NULL;     /* tsaikd.041005: æœ€å¾Œä¸€å€‹å¿…éœ€æ˜¯ NULL */
 
-  /* tsaikd.041005: µe¥X¤WÃä½u */
-  strcpy(buf, " ¢~");
+  /* tsaikd.041005: ç•«å‡ºä¸Šé‚Šç·š */
+  strcpy(buf, " â•­");
   for (i = -6; i < desc_maxlen; i += 2)
-    strcat(buf, "¢w");
-  strcat(buf, "¢¡ ");
+    strcat(buf, "â”€");
+  strcat(buf, "â•® ");
   draw_line(x++, y, buf);
 
-  /* tsaikd.041005: ¦L¥X title */
+  /* tsaikd.041005: å°å‡º title */
   for (i = 0; ptitle[i]; i++)
   {
-    /* tsaikd.041005: ­É¥Î meet */
+    /* tsaikd.041005: å€Ÿç”¨ meet */
     meet = ptitle[1] ? desc_maxlen : 
       strlen(ptitle[i]) + (strlen(ptitle[i]) % 2);
-    sprintf(buf, " ¢x" COLOR_POPMENU_HEADER "  %*s%-*s   \033[m¢x ",
+    sprintf(buf, " â”‚" COLOR_POPMENU_HEADER "  %*s%-*s   \033[mâ”‚ ",
       (desc_maxlen-meet) >> 1 + 1, " ",
       (desc_maxlen+meet) >> 1, ptitle[i]);
     draw_line(x++, y, buf);
   }
 
-  /* tsaikd.041005: µe¥X title »P¿ï¶µªº¤À¹j½u */
-  strcpy(buf, " ¢u");
+  /* tsaikd.041005: ç•«å‡º title èˆ‡é¸é …çš„åˆ†éš”ç·š */
+  strcpy(buf, " â”œ");
   for (i = -6; i < desc_maxlen; i += 2)
-    strcat(buf, "¢w");
-  strcat(buf, "¢t ");
+    strcat(buf, "â”€");
+  strcat(buf, "â”¤ ");
   draw_line(x++, y, buf);
 
-  /* tsaikd.041005: ¦L¥X¿ï¶µ */
+  /* tsaikd.041005: å°å‡ºé¸é … */
   for (i = 1; desc[i]; i++)
   {
     meet = (desc[i][0] == hotkey);
@@ -141,14 +141,14 @@ draw_menu(x, y, title, desc, hotkey, cur)
   }
   meet = i;
 
-  /* tsaikd.041005: µe¥X¤UÃä½u */
-  strcpy(buf, " ¢¢");
+  /* tsaikd.041005: ç•«å‡ºä¸‹é‚Šç·š */
+  strcpy(buf, " â•°");
   for (i = -6; i < desc_maxlen; i += 2)
-    strcat(buf, "¢w");
-  strcat(buf, "¢£ ");
+    strcat(buf, "â”€");
+  strcat(buf, "â•¯ ");
   draw_line(x, y, buf);
 
-  /* Á×§K¦b°»´ú¥ª¥kÁä¥ş§Î¤U¡A«ö¥ªÁä·|¸õÂ÷¤G¼h¿ï³æªº°İÃD */
+  /* é¿å…åœ¨åµæ¸¬å·¦å³éµå…¨å½¢ä¸‹ï¼ŒæŒ‰å·¦éµæœƒè·³é›¢äºŒå±¤é¸å–®çš„å•é¡Œ */
   move(b_lines, 0);
 
   return meet - 1;
@@ -156,12 +156,12 @@ draw_menu(x, y, title, desc, hotkey, cur)
 
 : maple/window.c : draw_item()
 
--  sprintf(buf, " ¢x%s%c %c%c%c%-25s  \033[m¢x ",
+-  sprintf(buf, " â”‚%s%c %c%c%c%-25s  \033[mâ”‚ ",
 -    mode ? COLOR4 : "\033[30;47m", mode ? '>' : ' ',
 -    (hotkey == *desc) ? '[' : '(', *desc,
 -    (hotkey == *desc) ? ']' : ')', desc + 1);
-+  sprintf(buf, " ¢x%s%s %c%c%c%-*s  \033[m¢x ",
-+    mode ? COLOR4 : COLOR_POPMENU_BODY, mode ? "¡÷" : "  ",
++  sprintf(buf, " â”‚%s%s %c%c%c%-*s  \033[mâ”‚ ",
++    mode ? COLOR4 : COLOR_POPMENU_BODY, mode ? "â†’" : "  ",
 +    (hotkey == *desc) ? '[' : '(', *desc,
 +    (hotkey == *desc) ? ']' : ')', desc_maxlen - 1, desc + 1);
 
@@ -170,12 +170,12 @@ draw_menu(x, y, title, desc, hotkey, cur)
 
 int
 pmsg(msg)
-  char *msg;            /* ¤£¥i¬° NULL */
+  char *msg;            /* ä¸å¯ç‚º NULL */
 {
   int len, x, y, i;
 - char buf[80];
 + char buf[512];
-+ char *pbuf;   /* tsaikd.041005: ¦³¤À¦æ®É§ä¥X³Ìªøªº¤@¦æ */
++ char *pbuf;   /* tsaikd.041005: æœ‰åˆ†è¡Œæ™‚æ‰¾å‡ºæœ€é•·çš„ä¸€è¡Œ */
 
   x_roll = vs_save(slt);
 
@@ -186,44 +186,44 @@ pmsg(msg)
 + for (i = 1; (pbuf = strtok(NULL, "\n")); i++)
 +   len = len < strlen(pbuf) ? strlen(pbuf) : len;
 
-  if (len < 16)         /* ¨ú msg title ¨ä¤¤¸ûªøªÌ¬° len */
+  if (len < 16)         /* å– msg title å…¶ä¸­è¼ƒé•·è€…ç‚º len */
     len = 16;
-  if (len % 2)          /* ÅÜ¦¨°¸¼Æ */
+  if (len % 2)          /* è®Šæˆå¶æ•¸ */
     len++;
 
-- x = (b_lines - 4) >> 1;       /* ¸m¤¤ */
-+ x = (b_lines - i - 4) >> 1;      /* ¸m¤¤ */
+- x = (b_lines - 4) >> 1;       /* ç½®ä¸­ */
++ x = (b_lines - i - 4) >> 1;      /* ç½®ä¸­ */
   y = (b_cols - 8 - len) >> 1;
 
 ...
 ...
 
-  strcpy(buf, "¢u");
+  strcpy(buf, "â”œ");
   for (i = -4; i < len; i += 2)
-    strcat(buf, "¢w");
-  strcat(buf, "¢t");
+    strcat(buf, "â”€");
+  strcat(buf, "â”¤");
   draw_line(x++, y, buf);
 
-- sprintf(buf, "¢x\033[30;47m  %-*s  \033[m¢x", len, msg);
+- sprintf(buf, "â”‚\033[30;47m  %-*s  \033[mâ”‚", len, msg);
 - draw_line(x++, y, buf);
 
-+ while (1)        /* tsaikd.041005: §â msg ¨Ì·Ó \n ¤À¦æ¦L¥X */
++ while (1)        /* tsaikd.041005: æŠŠ msg ä¾ç…§ \n åˆ†è¡Œå°å‡º */
 + {
-+   sprintf(buf, "¢x\033[30;47m  %-*s", len, msg);
++   sprintf(buf, "â”‚\033[30;47m  %-*s", len, msg);
 +   strtok(buf, "\n");
-+   sprintf(buf, "%-*s  \033[m¢x", len + 12, buf);
++   sprintf(buf, "%-*s  \033[mâ”‚", len + 12, buf);
 +   draw_line(x++, y, buf);
 +   if (!(msg = strstr(msg, "\n")))
 +     break;
 +   msg++;
 + }
 
-  strcpy(buf, "¢¢");
+  strcpy(buf, "â•°");
 
 
-: ¦pªG¦³°µ
-: [¥\¯à] visio.c µøµ¡«¬ªº Y/N
-: ¨º»òÁÙ­n±N visio.c : vans() §ï¦¨³o¼Ë
+: å¦‚æœæœ‰åš
+: [åŠŸèƒ½] visio.c è¦–çª—å‹çš„ Y/N
+: é‚£éº¼é‚„è¦å°‡ visio.c : vans() æ”¹æˆé€™æ¨£
 
 int
 vans(prompt)
@@ -245,11 +245,11 @@ vans(prompt)
 +      *str = '\0';
 +      str[2] = str[1];
 +      menu[0] = str + 1;
-+      menu[1] = "Yes  ¬O";
-+      menu[2] = "No   §_";
++      menu[1] = "Yes  æ˜¯";
++      menu[2] = "No   å¦";
 +      menu[3] = NULL;
 +
-+      /* tsaikd.041005 §ä¥X prompt ¤¤³Ìªøªºªø«× */
++      /* tsaikd.041005 æ‰¾å‡º prompt ä¸­æœ€é•·çš„é•·åº¦ */
 +      len = strlen(strtok(buf, "\n"));
 +      while (str = strtok(NULL, "\n"))
 +        len = (len > strlen(str)) ? len : strlen(str);
@@ -260,10 +260,10 @@ vans(prompt)
 +    }
 +  }
 +#endif
-  /* itoc.010812.µù¸Ñ: ·|¦Û°Ê´«¦¨¤p¼gªº */
+  /* itoc.010812.è¨»è§£: æœƒè‡ªå‹•æ›æˆå°å¯«çš„ */
   return vget(b_lines, 0, prompt, ans, sizeof(ans), LCECHO);
 }
 
 --
- [1m[42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m csNCHU.twbbs.org [m
- [1m[44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mtsaikd [30m±q [35m140.116.104.202 [30mµoªí[m
+ [1m[42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m csNCHU.twbbs.org [m
+ [1m[44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mtsaikd [30må¾ [35m140.116.104.202 [30mç™¼è¡¨[m

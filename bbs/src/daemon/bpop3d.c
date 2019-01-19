@@ -40,8 +40,8 @@
 
 
 #define	SNDBUFSIZ	(256 * 14)
-#define	SNDLINSIZ	256 /* Thor.990522: µù¸Ñ: °e¥X¨C¦æ³Ìªø */
-#define	RCVBUFSIZ	128 /* Thor.990522: µù¸Ñ: ¦¬¨ì¨C¦æ³Ìªø */
+#define	SNDLINSIZ	256 /* Thor.990522: è¨»è§£: é€å‡ºæ¯è¡Œæœ€é•· */
+#define	RCVBUFSIZ	128 /* Thor.990522: è¨»è§£: æ”¶åˆ°æ¯è¡Œæœ€é•· */
 
 
 /* ----------------------------------------------------- */
@@ -71,15 +71,15 @@ typedef struct
 
   int xid;			/* reserved */
 
-  char xname[24];		/* ÀÉ®×¦WºÙ */
-  int pmode;			/* Thor.990522: ¬O§_§R«H µ¥ */
-  int psize;			/* Thor.990522: ¥»«H¶Ç°eÁ`¤j¤p */
+  char xname[24];		/* æª”æ¡ˆåç¨± */
+  int pmode;			/* Thor.990522: æ˜¯å¦åˆªä¿¡ ç­‰ */
+  int psize;			/* Thor.990522: æœ¬ä¿¡å‚³é€ç¸½å¤§å° */
 
-  char owner[80];		/* §@ªÌ (E-mail address) */
-  char nick[50];		/* ¼ÊºÙ */
+  char owner[80];		/* ä½œè€… (E-mail address) */
+  char nick[50];		/* æš±ç¨± */
 
   char date[9];			/* [96/12/01] */
-  char title[TTLEN + 1];	/* ¥DÃD */
+  char title[TTLEN + 1];	/* ä¸»é¡Œ */
 }      POPH;
 
 
@@ -102,24 +102,24 @@ typedef struct Client
 #ifdef DEBUG
   int debug;
 #endif
-  int pcount;			/* Thor.990522: «H¥ó¼Æ */
-  int pbytes;			/* Thor.990522: Á`¤j¤p */
-  POPH *cache;			/* Thor.990522: ¦s .DIR */
+  int pcount;			/* Thor.990522: ä¿¡ä»¶æ•¸ */
+  int pbytes;			/* Thor.990522: ç¸½å¤§å° */
+  POPH *cache;			/* Thor.990522: å­˜ .DIR */
 
   char userid[IDLEN + 1];
   char passwd[PASSLEN + 1];
-  char home[IDLEN + 4];		/* Thor.990122: 4­Ó¦r¤¸¤¤, 2­Ó¬O'/', 1­Ó¬O­^¤å¦r 1­Ó¬O'\0' */
+  char home[IDLEN + 4];		/* Thor.990122: 4å€‹å­—å…ƒä¸­, 2å€‹æ˜¯'/', 1å€‹æ˜¯è‹±æ–‡å­— 1å€‹æ˜¯'\0' */
 
   char pool[SNDBUFSIZ];		/* output pool */
-  int locus;			/* Thor.990522: output pool ¤º¥i°edata¤§¶q */
+  int locus;			/* Thor.990522: output pool å…§å¯é€dataä¹‹é‡ */
 
   char *body;			/* mail body */
-  char *bptr;			/* Thor.990522: body pointer, ¤w°e¦h¤Ö */
+  char *bptr;			/* Thor.990522: body pointer, å·²é€å¤šå°‘ */
 
-  int lcur;			/* Thor.990522: ¥Ø«e°e¦Ü­þ¦æ */
-  int lmax;			/* Thor.990522: ³Ì¤j¦æ¼Æ */
+  int lcur;			/* Thor.990522: ç›®å‰é€è‡³å“ªè¡Œ */
+  int lmax;			/* Thor.990522: æœ€å¤§è¡Œæ•¸ */
 
-  int xbytes;			/* Thor.990522: ¶Ç°eÁ`¶q */
+  int xbytes;			/* Thor.990522: å‚³é€ç¸½é‡ */
 }      Client;
 
 
@@ -128,17 +128,17 @@ typedef struct Client
 /* ----------------------------------------------------- */
 
 
-#define	CS_FREE		0x00	/* Thor.990522: ¥Ø«e¥¼¥Î */
-#define	CS_READ		0x01	/* Thor.990522: µ¥«Ýuser¿é¤J */
-#define	CS_INDEX	0x02	/* Thor.990522: «H½c±ø¦C */
-#define	CS_UIDL		0x03	/* Thor.990522: uniq id±ø¦C */
-#define	CS_FILE		0x04	/* Thor.990522: «H¥ó¶Ç°e¤¤ */
-#define	CS_WRITE	0x05	/* Thor.990522: ¶Ç°e¤¤ */
-#define	CS_FLUSH	0x06	/* Thor.990522: ³Ì²×¤@¦¸¶Ç°e */
+#define	CS_FREE		0x00	/* Thor.990522: ç›®å‰æœªç”¨ */
+#define	CS_READ		0x01	/* Thor.990522: ç­‰å¾…userè¼¸å…¥ */
+#define	CS_INDEX	0x02	/* Thor.990522: ä¿¡ç®±æ¢åˆ— */
+#define	CS_UIDL		0x03	/* Thor.990522: uniq idæ¢åˆ— */
+#define	CS_FILE		0x04	/* Thor.990522: ä¿¡ä»¶å‚³é€ä¸­ */
+#define	CS_WRITE	0x05	/* Thor.990522: å‚³é€ä¸­ */
+#define	CS_FLUSH	0x06	/* Thor.990522: æœ€çµ‚ä¸€æ¬¡å‚³é€ */
 
 
 #define	CM_LOGIN	1
-#define	CM_DIRTY	2	/* ¦³§R°£«H¥ó */
+#define	CM_DIRTY	2	/* æœ‰åˆªé™¤ä¿¡ä»¶ */
 
 
 /* ----------------------------------------------------- */
@@ -257,7 +257,7 @@ mbox_open(cn)
   POPH *hdr;
 
   cn->pcount = cn->pbytes = 0;
-  /* Thor.990522: cache, body µ¥, ¤w¦b accept®Éinitial */
+  /* Thor.990522: cache, body ç­‰, å·²åœ¨ acceptæ™‚initial */
 
   sprintf(fpath, "%s"FN_DIR, cn->home);
   fd = open(fpath, O_RDONLY);
@@ -322,7 +322,7 @@ static void
 mbox_read(cn, phdr, lmax)
   Client *cn;
   POPH *phdr;
-  int lmax;	/* Thor.990522: ¤¹³\¤§Á`¦æ¼Æ */
+  int lmax;	/* Thor.990522: å…è¨±ä¹‹ç¸½è¡Œæ•¸ */
 {
   char *pool, *head, *body, buf[80];
   /* struct tm *mytm; */
@@ -354,7 +354,7 @@ mbox_read(cn, phdr, lmax)
 
   if (body = cn->body)
   {
-    /* Thor.990522: ¦³°õ¦æªº¾÷·|¶Ü? */
+    /* Thor.990522: æœ‰åŸ·è¡Œçš„æ©Ÿæœƒå—Ž? */
     free(body);
   }
   body = NULL;
@@ -546,7 +546,7 @@ static void
 mbox_file(cn)
   Client *cn;
 {
-  int lcur, lmax, ch, cx, cc; /* Thor.990522: ±±¨î³æ¦æ³Ì¤j¶Ç°e¶q, Char Count */
+  int lcur, lmax, ch, cx, cc; /* Thor.990522: æŽ§åˆ¶å–®è¡Œæœ€å¤§å‚³é€é‡, Char Count */
   char *bptr, *pool, *head, *tail;
 
   /* send out a text file in MIME mode */
@@ -559,7 +559,7 @@ mbox_file(cn)
 
   pool = cn->pool;
   head = pool + cn->locus;
-  tail = pool + SNDBUFSIZ - SNDLINSIZ - 4 - 3; /* Thor.991129: µ²§Àªº.\r\n 3¦r */
+  tail = pool + SNDBUFSIZ - SNDLINSIZ - 4 - 3; /* Thor.991129: çµå°¾çš„.\r\n 3å­— */
 
   lcur = cn->lcur;
   lmax = cn->lmax;
@@ -567,7 +567,7 @@ mbox_file(cn)
 
   while (ch = *bptr)
   {
-    /* Thor.990522: ±±¨î³æ¦æ³Ì¤j¶Ç°e¶q, Char Count. ¼g±oÁà¤FÂI, ·|¶]´N¦n:p */
+    /* Thor.990522: æŽ§åˆ¶å–®è¡Œæœ€å¤§å‚³é€é‡, Char Count. å¯«å¾—é†œäº†é»ž, æœƒè·‘å°±å¥½:p */
     if (cc++ >= SNDLINSIZ)
       ch = '\n';
     else
@@ -578,7 +578,7 @@ mbox_file(cn)
 
     if (ch == '\n')
     {
-      cc = 0; /* Thor.990522: ±±¨î³æ¦æ³Ì¤j¶Ç°e¶q, Char Count */
+      cc = 0; /* Thor.990522: æŽ§åˆ¶å–®è¡Œæœ€å¤§å‚³é€é‡, Char Count */
 
       *head++ = '\r';
       *head++ = '\n';
@@ -608,14 +608,14 @@ mbox_file(cn)
 
 #if 1
   /* Thor.981206: Odysseus patch:
- §@ªÌ  Odysseus.bbs@bbs.cs.nccu.edu.tw (¥Ñ°ø¤J»üÃø~~),      ¬ÝªO  plan
- ¼ÐÃD  Re: bpop3d?
- ®É¶¡  ¬F¤j¿ßªÅ¦æÀ] (Thu Oct 15 01:19:56 1998)
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
-¡° ¤Þ­z¡mdreamer.bbs@Rouge.Dorm10.NCTU.edu.tw (¸H¤ß«÷¹Ï)¡n¤§»Ê¨¥¡G
-:         ¦ý¬O¹ê»Ú¥Î Netscape Messager ¥h¸Õ¸Õ¬Ý,
-:         ±o¨ìÁ`¦@«H¥ó¼Æ¥Ø¤§«á,
-:         ·í­n¥h retreive ²Ä¤@«Ê«H´N·í¦í¤F....-_-
+ ä½œè€…  Odysseus.bbs@bbs.cs.nccu.edu.tw (ç”±å¥¢å…¥å„‰é›£~~),      çœ‹æ¿  plan
+ æ¨™é¡Œ  Re: bpop3d?
+ æ™‚é–“  æ”¿å¤§è²“ç©ºè¡Œé¤¨ (Thu Oct 15 01:19:56 1998)
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+â€» å¼•è¿°ã€Šdreamer.bbs@Rouge.Dorm10.NCTU.edu.tw (ç¢Žå¿ƒæ‹¼åœ–)ã€‹ä¹‹éŠ˜è¨€ï¼š
+:         ä½†æ˜¯å¯¦éš›ç”¨ Netscape Messager åŽ»è©¦è©¦çœ‹,
+:         å¾—åˆ°ç¸½å…±ä¿¡ä»¶æ•¸ç›®ä¹‹å¾Œ,
+:         ç•¶è¦åŽ» retreive ç¬¬ä¸€å°ä¿¡å°±ç•¶ä½äº†....-_-
 :         ps. Solaris 2.5.1, Maple 3.02 
   */
   *head++ = '\r';
@@ -641,9 +641,9 @@ mbox_file(cn)
 
 
 static void cmd_xxxx();
-static void client_flush(); /* Thor.991221: µù¸Ñ: ¤£¥Î¦bmsg¥[ \r\n, µ{¦¡·|¥[ */
+static void client_flush(); /* Thor.991221: è¨»è§£: ä¸ç”¨åœ¨msgåŠ  \r\n, ç¨‹å¼æœƒåŠ  */
 
-/* Thor.991221: µù¸Ñ: ­n¦bmsg¥[ \r\n, µ{¦¡¤£¥[ */
+/* Thor.991221: è¨»è§£: è¦åœ¨msgåŠ  \r\n, ç¨‹å¼ä¸åŠ  */
 #define CMD_MSG(cn, msg)	\
   cn->state = CS_WRITE; memcpy(cn->pool, msg, cn->locus = sizeof(msg) - 1);
 
@@ -751,11 +751,11 @@ cmd_user(cn)
   }
 
   /* Thor.981122: chc@gaisnews.iis.sinica.edu.tw patch: 
-     ¥i¯àµo¥Íªº°ÝÃD:
-     ·í connect ¨ì bpop3d ®É, ¦pªG¿é¤J userid ¤Óªø, ´N·|³y¦¨ overflow, 
-     ª¬ªp»´®É·| disconnect, ÄY­«®É·|¨Ï bpop3d segmentation fault. 
-     ¦³¤ß¤H¤h¥i¯à·|¥H¦¹¯}Ãa¨t²Îªº¦w¥þ©Ê. */
-  /* Thor.990122: check §¹ *.bbs ¦A¬Ý idlen */
+     å¯èƒ½ç™¼ç”Ÿçš„å•é¡Œ:
+     ç•¶ connect åˆ° bpop3d æ™‚, å¦‚æžœè¼¸å…¥ userid å¤ªé•·, å°±æœƒé€ æˆ overflow, 
+     ç‹€æ³è¼•æ™‚æœƒ disconnect, åš´é‡æ™‚æœƒä½¿ bpop3d segmentation fault. 
+     æœ‰å¿ƒäººå£«å¯èƒ½æœƒä»¥æ­¤ç ´å£žç³»çµ±çš„å®‰å…¨æ€§. */
+  /* Thor.990122: check å®Œ *.bbs å†çœ‹ idlen */
   if (strlen(userid) > IDLEN)
   {
     client_flush(cn, msg_no_user);
@@ -763,7 +763,7 @@ cmd_user(cn)
   }
 
 #ifdef DEBUG
-  if (!strcmp(userid, STR_SYSOP))	/* ¥u¦³ sysop ¨ú«H¤~ debug */
+  if (!strcmp(userid, STR_SYSOP))	/* åªæœ‰ sysop å–ä¿¡æ‰ debug */
   {
     cn->debug = 1;
   }
@@ -817,7 +817,7 @@ cmd_password(cn)
   MYDOG;
   if (!*passwd)
   {
-    CMD_MSG(cn, "-ERR need USER command\r\n"); /* Thor.991221: ¥[¤W \r\n */
+    CMD_MSG(cn, "-ERR need USER command\r\n"); /* Thor.991221: åŠ ä¸Š \r\n */
     return;
   }
 
@@ -832,7 +832,7 @@ cmd_password(cn)
   }
 
   MYDOG;
-  /* Thor.990214: ²Î¤@¥Î dao library */
+  /* Thor.990214: çµ±ä¸€ç”¨ dao library */
   /* if (!checkpasswd(passwd, cmd)) */
   if (chkpasswd(passwd, cmd))
   {
@@ -840,7 +840,7 @@ cmd_password(cn)
 
   MYDOG;
     *passwd = '\0';
-    CMD_MSG(cn, "-ERR password incorrect\r\n"); /* Thor.991221: ¥[¤W \r\n */
+    CMD_MSG(cn, "-ERR password incorrect\r\n"); /* Thor.991221: åŠ ä¸Š \r\n */
     return;
   }
 
@@ -1144,7 +1144,7 @@ client_flush(cn, msg)
   head = pool = cn->pool;
 
 
-#if 0	/* itoc.010606: ¦pªG client ¬O¥H´«¦æ¦r¤¸¨Ó§P§O°T®§µ²§ôªº¸Ü¡A´N·|¥d¦º¤F */
+#if 0	/* itoc.010606: å¦‚æžœ client æ˜¯ä»¥æ›è¡Œå­—å…ƒä¾†åˆ¤åˆ¥è¨Šæ¯çµæŸçš„è©±ï¼Œå°±æœƒå¡æ­»äº† */
   while (*head++ = *msg++)
     ; 
 #endif
@@ -1274,7 +1274,7 @@ client_serve(cn)
   {
     char buf[80];
 
-    /* Thor.990222: ©È str§ä¤£¨ìcmd®É ¬° NULL */
+    /* Thor.990222: æ€• stræ‰¾ä¸åˆ°cmdæ™‚ ç‚º NULL */
     /* sprintf(buf, "%s-", str); */
     sprintf(buf, "%s-", cmd);
     logit(buf, cn->userid); 
@@ -1557,9 +1557,9 @@ main_signals()
 {
   struct sigaction act;
 
-  /* sigblock(sigmask(SIGPIPE)); */ /* Thor.981206: ²Î¤@ POSIX ¼Ð·Ç¥Îªk  */
+  /* sigblock(sigmask(SIGPIPE)); */ /* Thor.981206: çµ±ä¸€ POSIX æ¨™æº–ç”¨æ³•  */
 
-  /* act.sa_mask = 0; */ /* Thor.981105: ¼Ð·Ç¥Îªk */
+  /* act.sa_mask = 0; */ /* Thor.981105: æ¨™æº–ç”¨æ³• */
   sigemptyset(&act.sa_mask);      
   act.sa_flags = 0;
 
@@ -1578,8 +1578,8 @@ main_signals()
   sigaction(SIGPROF, &act, NULL);
 #endif
 
-  /* Thor.981206: lkchu patch: ²Î¤@ POSIX ¼Ð·Ç¥Îªk  */
-  /* ¦b¦¹­É¥Î sigset_t act.sa_mask */
+  /* Thor.981206: lkchu patch: çµ±ä¸€ POSIX æ¨™æº–ç”¨æ³•  */
+  /* åœ¨æ­¤å€Ÿç”¨ sigset_t act.sa_mask */
   sigaddset(&act.sa_mask, SIGPIPE);
   sigprocmask(SIG_BLOCK, &act.sa_mask, NULL);
 
@@ -1801,7 +1801,7 @@ main(argc, argv)
 
     if (FD_ISSET(0, &rset))
     {
-      /* Thor.990222: ¬d¥X¹ï¤è ip */
+      /* Thor.990222: æŸ¥å‡ºå°æ–¹ ip */
       int len;
       struct sockaddr_in csin;
       len = sizeof csin;
@@ -1809,7 +1809,7 @@ main(argc, argv)
       for (;;)
       {
 	/* csock = accept(0, NULL, NULL); */
-        /* Thor.990222: ¬d¥X¹ï¤è ip */
+        /* Thor.990222: æŸ¥å‡ºå°æ–¹ ip */
 	csock = accept(0, (struct sockaddr *)&csin, &len);
  
 	if (csock > 0)
@@ -1842,7 +1842,7 @@ main(argc, argv)
       /* variable initialization */
 
       /* sprintf(cn->pool, "[%d]", ++main_sno); */
-      /* Thor.990222: ¬d¥X¹ï¤è ip */
+      /* Thor.990222: æŸ¥å‡ºå°æ–¹ ip */
       sprintf(cn->pool, "[%d] ip:%08x", ++main_sno, csin.sin_addr.s_addr);
       logit("CONN", cn->pool);
 

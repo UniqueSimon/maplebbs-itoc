@@ -1,11 +1,11 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD]Ãö©óCross-Post
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/05/10 Mon 18:21:15)                Updated: 2005/04/28
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ]é—œæ–¼Cross-Post
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/05/10 Mon 18:21:15)                Updated: 2005/04/28
 
-¡° ¤Ş­z¡mpoit.bbs@bbs.kh.usc.edu.tw (©I~~~~)¡n¤§»Ê¨¥¡G
-> ¨º¦pªG¨Ï¥ÎªÌ¬O¤@­Ó¤@­Óª©
-> ºCºCªºpo¤å³¹
-> ¨t²Î·|¤£·|¤]·|¶i¦æCross-Post°»´ú©O
+â€» å¼•è¿°ã€Špoit.bbs@bbs.kh.usc.edu.tw (å‘¼~~~~)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> é‚£å¦‚æœä½¿ç”¨è€…æ˜¯ä¸€å€‹ä¸€å€‹ç‰ˆ
+> æ…¢æ…¢çš„poæ–‡ç« 
+> ç³»çµ±æœƒä¸æœƒä¹Ÿæœƒé€²è¡ŒCross-Poståµæ¸¬å‘¢
 
 : post.c:do_post()
 
@@ -25,17 +25,17 @@
 +#endif
 
 : config.h
-: ¤§©Ò¥H­n±q 3 §ï¦¨ 4 ªº­ì¦]¬OÂà¿ı®É·|¥X²{Äµ»y
-: ¡u½Ğ¬D¿ï¾A·íªº¬İªO¡A¤Á¤ÅÂà¿ı¶W¹L¤TªO¡v
-: user Ä±±o³oÀ³¸Ó¬O ­ìpost*1+Âà¿ı*3¡A©Ò¥H¦³ 4 ½gªºÃB«×
+: ä¹‹æ‰€ä»¥è¦å¾ 3 æ”¹æˆ 4 çš„åŸå› æ˜¯è½‰éŒ„æ™‚æœƒå‡ºç¾è­¦èª
+: ã€Œè«‹æŒ‘é¸é©ç•¶çš„çœ‹æ¿ï¼Œåˆ‡å‹¿è½‰éŒ„è¶…éä¸‰æ¿ã€
+: user è¦ºå¾—é€™æ‡‰è©²æ˜¯ åŸpost*1+è½‰éŒ„*3ï¼Œæ‰€ä»¥æœ‰ 4 ç¯‡çš„é¡åº¦
 
-- #define MAX_CROSS_POST          3       /* cross post ³Ì¤j¼Æ¶q(½g) */
-+ #define MAX_CROSS_POST          4       /* cross post ³Ì¤j¼Æ¶q(½g) */
-
---
-  À³¸Ó­n§âÀË¬dª½±µ¼g¦b edit.c:words_check() ¸Ì­±
-  ª½±µ®³°O¾ĞÅéÀ³¸Óªº¨Ó¥Î¡A³o¼Ë¤~¥i¥H¤Ö¶}¤@¦¸ÀÉ®×
+- #define MAX_CROSS_POST          3       /* cross post æœ€å¤§æ•¸é‡(ç¯‡) */
++ #define MAX_CROSS_POST          4       /* cross post æœ€å¤§æ•¸é‡(ç¯‡) */
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+  æ‡‰è©²è¦æŠŠæª¢æŸ¥ç›´æ¥å¯«åœ¨ edit.c:words_check() è£¡é¢
+  ç›´æ¥æ‹¿è¨˜æ†¶é«”æ‡‰è©²çš„ä¾†ç”¨ï¼Œé€™æ¨£æ‰å¯ä»¥å°‘é–‹ä¸€æ¬¡æª”æ¡ˆ
+
+--
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

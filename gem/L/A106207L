@@ -1,15 +1,15 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD]¦p¦óÅıÂà«Hª©¤]¯à¾×html¤å³¹
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/03/24 Wed 11:08:29)                Updated: 2004/06/07
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ]å¦‚ä½•è®“è½‰ä¿¡ç‰ˆä¹Ÿèƒ½æ“‹htmlæ–‡ç« 
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/03/24 Wed 11:08:29)                Updated: 2004/06/07
 
-¡° ¤Ş­z¡mckjjc (jc)¡n¤§»Ê¨¥¡G
-> ¤w¸g¦³§Ë¤FºëµØ°Ïªº¦Û­q¾×«H¡A¤]¦¨¥\¾×¤U¤£¤Ö¼s§i¶l¥ó
-> ¤£¹L³Ìªñ³s½uªO¤W¤S¶]¥X«Ü¦hhtmlªº¤å³¹
-> ¤£ª¾¹D­n«ç»ò§ï¦¨¯àÅıÂà«H¤]¹³bmtad¤@¼Ë¾×¤Uhtmlªº¶l¥ó
+â€» å¼•è¿°ã€Šckjjc (jc)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å·²ç¶“æœ‰å¼„äº†ç²¾è¯å€çš„è‡ªè¨‚æ“‹ä¿¡ï¼Œä¹ŸæˆåŠŸæ“‹ä¸‹ä¸å°‘å»£å‘Šéƒµä»¶
+> ä¸éæœ€è¿‘é€£ç·šæ¿ä¸Šåˆè·‘å‡ºå¾ˆå¤šhtmlçš„æ–‡ç« 
+> ä¸çŸ¥é“è¦æ€éº¼æ”¹æˆèƒ½è®“è½‰ä¿¡ä¹Ÿåƒbmtadä¸€æ¨£æ“‹ä¸‹htmlçš„éƒµä»¶
 
 : inntobbs.c
 
-enum HeaderValue        /* ©Ò¦³¦³¥Î¨ìªº header */
+enum HeaderValue        /* æ‰€æœ‰æœ‰ç”¨åˆ°çš„ header */
 {
   ...
   CONTROL_H,
@@ -46,18 +46,18 @@ extern char *BODY;
 
 : inntobbs.c:readlines();
 
-  /* ³o¨Ç¬O¥²³ÆªºÀÉÀYÄæ¦ì¡A¥u¦³ CONTROL ¥i¥H¬O NULL */
+  /* é€™äº›æ˜¯å¿…å‚™çš„æª”é ­æ¬„ä½ï¼Œåªæœ‰ CONTROL å¯ä»¥æ˜¯ NULL */
   if (!SUBJECT || !FROM || !SITE || !DATE || !PATH || !GROUP || !MSGID || !BODY)
     return -1;
 
 + if (CONTENTTYPE && !strstr(CONTENTTYPE, "text/plain"))
-+   return 0;    /* ÄF¹ï¤è§Ú¤w¸g¦¬¹L¦¹«H¤F */
++   return 0;    /* é¨™å°æ–¹æˆ‘å·²ç¶“æ”¶éæ­¤ä¿¡äº† */
 
 --
-  ·d¤£¦n¨º¨Ç¦³ <HTML> </HTML> ªº³£¬O text/plain¡A¨º»ò³o©Û´N¨S¥Î¤F
+  æä¸å¥½é‚£äº›æœ‰ <HTML> </HTML> çš„éƒ½æ˜¯ text/plainï¼Œé‚£éº¼é€™æ‹›å°±æ²’ç”¨äº†
 
-  ³s½uªOªº html ¦n¹³¤£¦h
+  é€£ç·šæ¿çš„ html å¥½åƒä¸å¤š
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

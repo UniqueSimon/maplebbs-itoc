@@ -1,10 +1,10 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD]Ãö©ó¯d¨¥ª©
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/11/16 Tue 17:19:21)                Updated: 2005/04/12
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ]é—œæ–¼ç•™è¨€ç‰ˆ
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/11/16 Tue 17:19:21)                Updated: 2005/04/12
 
-¡° ¤Ş­z¡mimd.bbs@bbs.wretch.cc (ºN¯Á¤¤)¡n¤§»Ê¨¥¡G
-> ¦³¿ìªk­­¨î¨Ï¥ÎªÌ¦b¦h¤[®É¶¡¤º(¨Ò¦p¥b¤p®É©Î¤@¤p®É)
-> µLªk¦b¯d¨¥ª©¯d¨¥©O
+â€» å¼•è¿°ã€Šimd.bbs@bbs.wretch.cc (æ‘¸ç´¢ä¸­)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æœ‰è¾¦æ³•é™åˆ¶ä½¿ç”¨è€…åœ¨å¤šä¹…æ™‚é–“å…§(ä¾‹å¦‚åŠå°æ™‚æˆ–ä¸€å°æ™‚)
+> ç„¡æ³•åœ¨ç•™è¨€ç‰ˆç•™è¨€å‘¢
 
 : menu.c:pad_draw()
 
@@ -15,9 +15,9 @@
 + usr_fpath(fpath, cuser.userid, "pad_draw");
 + if (!stat(fpath, &st))
 + {
-+   if (st.st_mtime > time(0) - 30 * 60)   /* 30 ¤ÀÄÁ¤~¯à¯d¨¥¤@¦¸ */
++   if (st.st_mtime > time(0) - 30 * 60)   /* 30 åˆ†é˜æ‰èƒ½ç•™è¨€ä¸€æ¬¡ */
 +   {
-+     vmsg("¨C¤T¤Q¤ÀÄÁ¥u¯à¯d¨¥¤@¦¸");
++     vmsg("æ¯ä¸‰ååˆ†é˜åªèƒ½ç•™è¨€ä¸€æ¬¡");
 +     return XEASY;
 +   }
 + }
@@ -35,5 +35,5 @@
 + }
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mpc512-2.EE.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mpc512-2.EE.NCTU.edu.tw [30mç™¼è¡¨[m

@@ -1,15 +1,15 @@
-µo«H¤H: ccpz.bbs@processor.tfcis.org (ccpz), ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¥ú´Î¦â±mÅÜ´«
-µo«H¯¸: XEON (Sun Dec 15 13:57:54 2002)                   Updated: 2005/04/12
+ç™¼ä¿¡äºº: ccpz.bbs@processor.tfcis.org (ccpz), çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] å…‰æ£’è‰²å½©è®Šæ›
+ç™¼ä¿¡ç«™: XEON (Sun Dec 15 13:57:54 2002)                   Updated: 2005/04/12
 
-: menu.c:menu() ¦@­n§ï¤G³B
+: menu.c:menu() å…±è¦æ”¹äºŒè™•
 
       mptr = table[cc];
       str = mptr->desc;
 -     prints(COLOR4 "> (%c)%s \033[m", *str, str + 1);
 +     prints("\033[1;4%dm> (%c)%s \033[m", (time(0) % 6) + 1, *str, str + 1);
-+     /* 0:¶Â¦â(¨S®ÄªG) 7:¦Ç¦â(§â¦r»\±¼)³£¤£­n */
++     /* 0:é»‘è‰²(æ²’æ•ˆæœ) 7:ç°è‰²(æŠŠå­—è“‹æ‰)éƒ½ä¸è¦ */
 
 --
-    [1;36m¢~¢w¢w Origin ¢¡ [37m°Ê¤O®Ö¤ß [33;45m processor.tfcis.org [36;40m ¡ã £\£]£^ ¢w¢w¢q[m
-    [1;36m¢q     Author ¢£ [32m61-217-86-15.HINET-IP.hinet.net[m
+    [1;36mâ•­â”€â”€ Origin â•® [37må‹•åŠ›æ ¸å¿ƒ [33;45m processor.tfcis.org [36;40m ï½ Î±Î²Î³ â”€â”€â”¼[m
+    [1;36mâ”¼     Author â•¯ [32m61-217-86-15.HINET-IP.hinet.net[m

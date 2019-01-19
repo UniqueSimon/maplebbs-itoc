@@ -1,9 +1,9 @@
-§@ªÌ: itoc (cygreadline4.dll) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¦h­«Âà«H
-®É¶¡: 2004/04/29 Thu 16:27:21                           Updated: 2005/04/24
+ä½œè€…: itoc (cygreadline4.dll) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] å¤šé‡è½‰ä¿¡
+æ™‚é–“: 2004/04/29 Thu 16:27:21                           Updated: 2005/04/24
 
-  ¦h­«Âà«H¡A³]©w¤èªk¦p¤U
-  ¨ä¤¤ bbsroute1 ©M bbsroute2 ¥i¥H¬O¬Û¦P©Î¤£¦P¯¸¥x
+  å¤šé‡è½‰ä¿¡ï¼Œè¨­å®šæ–¹æ³•å¦‚ä¸‹
+  å…¶ä¸­ bbsroute1 å’Œ bbsroute2 å¯ä»¥æ˜¯ç›¸åŒæˆ–ä¸åŒç«™å°
 
   1) Example: tw.bbs.campus.nctu + nctu.talk -> [nctu]
               tw.bbs.campus.nctu + nctu.talk <- [nctu]
@@ -29,12 +29,12 @@
      bbsroute     tw.bbs.literal.book               -> book1         big5
      bbsroute     tw.bbs.literal.book              <-  book2         big5
 
-  ¨ä¾lÃş¦ü¡A¤Ï¥¿´N¬O¦b newsfeeds.bbs ¸Ì¼g«Ü¦h¦æ
+  å…¶é¤˜é¡ä¼¼ï¼Œåæ­£å°±æ˜¯åœ¨ newsfeeds.bbs è£¡å¯«å¾ˆå¤šè¡Œ
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  ¦]¬°¬İªOÄİ©Êªº BRD_NOTRAN ·|¹ï©Ò¦³ newsgroup °µ§ïÅÜ
-  ©Ò¥H­n·s¼W¤@­Ó¤£Âà¥XªºÄİ©Ê¡A¹ï³æ¤@ newsgroup °µ±±¨î
+  å› ç‚ºçœ‹æ¿å±¬æ€§çš„ BRD_NOTRAN æœƒå°æ‰€æœ‰ newsgroup åšæ”¹è®Š
+  æ‰€ä»¥è¦æ–°å¢ä¸€å€‹ä¸è½‰å‡ºçš„å±¬æ€§ï¼Œå°å–®ä¸€ newsgroup åšæ§åˆ¶
 
 : struct.h
 
@@ -51,20 +51,20 @@
 : innbbs.c:nf_query()
 
     brd = bshm->bcache + rc;
--   outgo = brd->battr & BRD_NOTRAN ? "\033[1;33m¤£Âà¥X\033[m"  : "Âà¥X";
+-   outgo = brd->battr & BRD_NOTRAN ? "\033[1;33mä¸è½‰å‡º\033[m"  : "è½‰å‡º";
 +   outgo = brd->battr & BRD_NOTRAN || nf->xmode & INN_NOOUTGO ?
-+     "\033[1;33m¤£Âà¥X\033[m"  : "Âà¥X";
-    income = nf->xmode & INN_NOINCOME ? "¥B\033[1;33m¤£Âà¶i\033[m" : "¥BÂà¶i";
++     "\033[1;33mä¸è½‰å‡º\033[m"  : "è½‰å‡º";
+    income = nf->xmode & INN_NOINCOME ? "ä¸”\033[1;33mä¸è½‰é€²\033[m" : "ä¸”è½‰é€²";
 
 : innbbs.c:nf_add()
 
-    nf.xmode = (vans("¬O§_Âà¶i(Y/N)¡H[Y] ") == 'n') ? INN_NOINCOME : 0;
-+   nf.xmode |= (vans("¬O§_Âà¥X(Y/N)¡H[Y] ") == 'n') ? INN_NOOUTGO : 0;
+    nf.xmode = (vans("æ˜¯å¦è½‰é€²(Y/N)ï¼Ÿ[Y] ") == 'n') ? INN_NOINCOME : 0;
++   nf.xmode |= (vans("æ˜¯å¦è½‰å‡º(Y/N)ï¼Ÿ[Y] ") == 'n') ? INN_NOOUTGO : 0;
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  ®³±¼ NEWSFEEDS2
-  NEWSFEEDS ¤]¤£»İ­n±Æ§Ç
+  æ‹¿æ‰ NEWSFEEDS2
+  NEWSFEEDS ä¹Ÿä¸éœ€è¦æ’åº
 
 : bbslib.h
 
@@ -106,7 +106,7 @@ readnffile()
   ...
 
 
-- /* ¥t¥~·Ç³Æ¤G¥÷¬Û¦Pªº¸ê°T¡A¦ı¬O±Æ§Ç¤èªk¤£¦P */
+- /* å¦å¤–æº–å‚™äºŒä»½ç›¸åŒçš„è³‡è¨Šï¼Œä½†æ˜¯æ’åºæ–¹æ³•ä¸åŒ */
 - NEWSFEEDS_B = !NEWSFEEDS_B ? (newsfeeds_t *) malloc(size) :
 -   (newsfeeds_t *) realloc(NEWSFEEDS_B, size);
 - memcpy(NEWSFEEDS_B, NEWSFEEDS, size);
@@ -116,23 +116,23 @@ readnffile()
   NFCOUNT = size / sizeof(newsfeeds_t);
 - if (NFCOUNT > 1)
 - {
--   /* NEWSFEEDS[] ¤£ÅÜ°Ê¡A¹w³]¨Ì¯¸¥x¦WºÙ±Æ§Ç */
+-   /* NEWSFEEDS[] ä¸è®Šå‹•ï¼Œé è¨­ä¾ç«™å°åç¨±æ’åº */
 
--   /* ±N NEWSFEEDS_B[] ¨Ì board ±Æ§Ç¡A¨º»ò¦b search_newsfeeds_byboard() ... */
+-   /* å°‡ NEWSFEEDS_B[] ä¾ board æ’åºï¼Œé‚£éº¼åœ¨ search_newsfeeds_byboard() ... */
 -   qsort(NEWSFEEDS_B, NFCOUNT, sizeof(newsfeeds_t), nf_byboardcmp);
 
--   /* ±N NEWSFEEDS_G[] ¨Ì group ±Æ§Ç¡A¨º»ò¦b search_newsfeeds_bygroup() ... */
+-   /* å°‡ NEWSFEEDS_G[] ä¾ group æ’åºï¼Œé‚£éº¼åœ¨ search_newsfeeds_bygroup() ... */
 -   qsort(NEWSFEEDS_G, NFCOUNT, sizeof(newsfeeds_t), nf_bygroupcmp);
 - }
 
   return 0;
 }
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  ¤¹³\¤@­Ó newsgroup Âà¶i«Ü¦hªO
+  å…è¨±ä¸€å€‹ newsgroup è½‰é€²å¾ˆå¤šæ¿
 
-: rec_article.c:search_newsfeeds_bygroup() §ï¦¨³o¼Ë
+: rec_article.c:search_newsfeeds_bygroup() æ”¹æˆé€™æ¨£
 
 #ifndef _NoCeM_
 static
@@ -140,7 +140,7 @@ static
 newsfeeds_t *
 search_newsfeeds_bygroup(newsgroup, pos)
   char *newsgroup;
-  int *pos;         /* ±q²Ä pos µ§¶}©l©¹¤U§ä */
+  int *pos;         /* å¾ç¬¬ pos ç­†é–‹å§‹å¾€ä¸‹æ‰¾ */
 {
   newsfeeds_t *find;
   int i;
@@ -170,12 +170,12 @@ readNCMbody(line)
   ...
 
 - if (search_newsfeeds_bygroup(group))
-+ if (search_newsfeeds_bygroup(group, &pos))  /* nocem ¥u·|²MÂà¤Jªº²Ä¤@­ÓªO */
++ if (search_newsfeeds_bygroup(group, &pos))  /* nocem åªæœƒæ¸…è½‰å…¥çš„ç¬¬ä¸€å€‹æ¿ */
     strcpy(SPAMMID[num_spammid++], SPAMMID_NOW);
 
 : rec_article.c:receive_article()
-: ¦¹³B¦³­Ó°²³]¬O·í newsfeeds.bbs ­n¨D¦P¤@­Ó newsgroup ­nÂà¶i¦h­ÓªO®É
-: ³o¨ÇªO³£¬O¥Î¦P¼Ëªº charset
+: æ­¤è™•æœ‰å€‹å‡è¨­æ˜¯ç•¶ newsfeeds.bbs è¦æ±‚åŒä¸€å€‹ newsgroup è¦è½‰é€²å¤šå€‹æ¿æ™‚
+: é€™äº›æ¿éƒ½æ˜¯ç”¨åŒæ¨£çš„ charset
 
   newsfeeds_t *nf;
   char myaddr[128], mynick[128], mysubject[128], myfrom[128], mydate[80];
@@ -192,7 +192,7 @@ readNCMbody(line)
 +   pos = 0;
 +   while (nf = search_newsfeeds_bygroup(group, &pos))
 +   {
-      if (firstboard)     /* opus: ²Ä¤@­ÓªO¤~»İ­n³B²z */
+      if (firstboard)     /* opus: ç¬¬ä¸€å€‹æ¿æ‰éœ€è¦è™•ç† */
       {
         ...
         ...
@@ -211,11 +211,11 @@ readNCMbody(line)
 +   }           /* while nf1,nf2,... */
   }             /* for board1,board2,... */
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  ¤¹³\¤@­ÓªOÂà¥X«Ü¦h newsgroup
+  å…è¨±ä¸€å€‹æ¿è½‰å‡ºå¾ˆå¤š newsgroup
 
-: bbslink.c:search_newsfeeds_byboard() §ï¦¨³o¼Ë
+: bbslink.c:search_newsfeeds_byboard() æ”¹æˆé€™æ¨£
 
 static newsfeeds_t *
 search_newsfeeds_byboard(board, pos)
@@ -252,8 +252,8 @@ search_newsfeeds_byboard(board, pos)
 
 - if (!(nf = search_newsfeeds_byboard(board)))
 - {
--   bbslog("<bbslink> :Warn: %s ¦¹ªO¤£¦b newsfeeds.bbs ¤¤\n", board);
--   DEBUG(("¢w¡÷:Warn: %s ¦¹ªO¤£¦b newsfeeds.bbs ¤¤\n", board));
+-   bbslog("<bbslink> :Warn: %s æ­¤æ¿ä¸åœ¨ newsfeeds.bbs ä¸­\n", board);
+-   DEBUG(("â”€â†’:Warn: %s æ­¤æ¿ä¸åœ¨ newsfeeds.bbs ä¸­\n", board));
 -   return;
 - }
 
@@ -271,14 +271,14 @@ search_newsfeeds_byboard(board, pos)
     ...
 
 -     sprintf(sover.msgid, "%s$%s@" MYHOSTNAME, filename, board);
-+     /* ¤£¦Pªº newsgroup ­n¦³¤£¦Pªº msgid */
++     /* ä¸åŒçš„ newsgroup è¦æœ‰ä¸åŒçš„ msgid */
 +     sprintf(sover.msgid, "%d%s$%s@" MYHOSTNAME, pos, filename, board);
 
       ...
       ...
 
 -     sprintf(buf, "%s$%s@" MYHOSTNAME, filename, board);
-+     /* ¤£¦Pªº newsgroup ­n¦³¤£¦Pªº msgid */
++     /* ä¸åŒçš„ newsgroup è¦æœ‰ä¸åŒçš„ msgid */
 +     sprintf(buf, "%d%s$%s@" MYHOSTNAME, pos, filename, board);
 
     ...
@@ -289,4 +289,4 @@ search_newsfeeds_byboard(board, pos)
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mpc512-2.EE.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mpc512-2.EE.NCTU.edu.tw[37m ç™¼è¡¨[m

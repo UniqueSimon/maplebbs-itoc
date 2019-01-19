@@ -1,19 +1,19 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: [½Ğ°İ] Ãö©óAll_Postªº¤å³¹Åª¨ú...
-®É¶¡: 2004/06/18 Fri 19:55:40                           Updated: 2005/10/30
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: [è«‹å•] é—œæ–¼All_Postçš„æ–‡ç« è®€å–...
+æ™‚é–“: 2004/06/18 Fri 19:55:40                           Updated: 2005/10/30
 
-¡° ¤Ş­z¡mDaniel.bbs@pctAngel.twbbs.org (§Ú·Rpct)¡n¤§»Ê¨¥¡G
-> ­n¦p¦ó°µ¤~¯àÅı¨Ï¥ÎªÌ¤£ºŞ¦bAll_Post©Î¨ä¥Lª©¥u­nÅª¨ú¦P¤@½g¤å³¹¡A
-> «h¸Ó½g¤å³¹¦bAll_Postª©Åã¥Ü¤wÅª¹L¡A¦Ó¨ä¥Lª©¤W¸Ó½g¤å³¹¤]¬O¤wÅªª¬ºA¡H
+â€» å¼•è¿°ã€ŠDaniel.bbs@pctAngel.twbbs.org (æˆ‘æ„›pct)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> è¦å¦‚ä½•åšæ‰èƒ½è®“ä½¿ç”¨è€…ä¸ç®¡åœ¨All_Postæˆ–å…¶ä»–ç‰ˆåªè¦è®€å–åŒä¸€ç¯‡æ–‡ç« ï¼Œ
+> å‰‡è©²ç¯‡æ–‡ç« åœ¨All_Postç‰ˆé¡¯ç¤ºå·²è®€éï¼Œè€Œå…¶ä»–ç‰ˆä¸Šè©²ç¯‡æ–‡ç« ä¹Ÿæ˜¯å·²è®€ç‹€æ…‹ï¼Ÿ
 
-  ­º¥ı­n°µºëµØ°Ï³o½g
-  [¥\¯à] post.c ©Ò¦³ªº post ³£·|¥X²{¦b All_Post ªO
+  é¦–å…ˆè¦åšç²¾è¯å€é€™ç¯‡
+  [åŠŸèƒ½] post.c æ‰€æœ‰çš„ post éƒ½æœƒå‡ºç¾åœ¨ All_Post æ¿
 
-  [All_Post] ¤å³¹ªº hdr.xid ¬° ­ì¬İªO ¤å³¹ªº hdr.chrono
+  [All_Post] æ–‡ç« çš„ hdr.xid ç‚º åŸçœ‹æ¿ æ–‡ç« çš„ hdr.chrono
 
 : post.c:do_post()
 
-  /* qazq.031025: ¤½¶}ªO¤~°µ all_post */
+  /* qazq.031025: å…¬é–‹æ¿æ‰åš all_post */
   brd = bshm->bcache + currbno;
   if ((brd->readlevel | brd->postlevel) < (PERM_VALID << 1))
 -   do_allpost(fpath, rcpt, nick, mode);
@@ -32,12 +32,12 @@ static void
 {
   HDR hdr;
   char folder[64];
-  char *brdname = "All_Post";       // ªO¦W¦Û©w
+  char *brdname = "All_Post";       // æ¿åè‡ªå®š
 
   brd_fpath(folder, brdname, fn_dir);
   hdr_stamp(folder, HDR_LINK | 'A', &hdr, fpath);
 
-  hdr.xmode = mode & ~POST_OUTGO;  /* ®³±¼ POST_OUTGO */
+  hdr.xmode = mode & ~POST_OUTGO;  /* æ‹¿æ‰ POST_OUTGO */
 + hdr.xid = chrono;
   strcpy(hdr.owner, owner);
   strcpy(hdr.nick, nick);
@@ -48,7 +48,7 @@ static void
   btime_update(brd_bno(brdname));
 }
 
-: post.c ·s¼W³o¤@¬q¦b post_browse() «e­±
+: post.c æ–°å¢é€™ä¸€æ®µåœ¨ post_browse() å‰é¢
 
 static int
 find_board(fpath)
@@ -85,7 +85,7 @@ allpost_history(xo, hdr)
   char folder[64], fpath[64];
   HDR old;
 
-  if (strcmp(currboard, "All_Post"))/* ¦b¤@¯ëªOÅª§¹¡A¤]¥h All_Post ¼Ğ¥Ü¤wÅª */
+  if (strcmp(currboard, "All_Post"))/* åœ¨ä¸€èˆ¬æ¿è®€å®Œï¼Œä¹Ÿå» All_Post æ¨™ç¤ºå·²è®€ */
   {
     brd_fpath(folder, "All_Post", fn_dir);
     if ((fd = open(folder, O_RDONLY)) >= 0)
@@ -108,7 +108,7 @@ allpost_history(xo, hdr)
               bno = hdr->chrono;
               brh_add(bno - 1, bno, bno + 1);
 
-              /* «ì´_­ì¨Ó¬İªO */
+              /* æ¢å¾©åŸä¾†çœ‹æ¿ */
               brd = bshm->bcache + currbno;
               brh_get(brd->bstamp, currbno);
               break;
@@ -119,7 +119,7 @@ allpost_history(xo, hdr)
       close(fd);
     }
   }
-  else                              /* ¦b All_Post Åª§¹¡A¤]¥h§OªO¼Ğ¥Ü¤wÅª */
+  else                              /* åœ¨ All_Post è®€å®Œï¼Œä¹Ÿå»åˆ¥æ¿æ¨™ç¤ºå·²è®€ */
   {
     hdr_fpath(fpath, xo->dir, hdr);
     if ((bno = find_board(fpath)) >= 0)
@@ -129,7 +129,7 @@ allpost_history(xo, hdr)
       bno = hdr->xid;
       brh_add(bno - 1, bno, bno + 1);
 
-      /* «ì´_­ì¨Ó¬İªO */
+      /* æ¢å¾©åŸä¾†çœ‹æ¿ */
       brd = bshm->bcache + currbno;
       brh_get(brd->bstamp, currbno);
     }
@@ -142,12 +142,12 @@ allpost_history(xo, hdr)
 +   allpost_history(xo, hdr);
     strcpy(currtitle, str_ttl(hdr->title));
 
-  ³o¥u­­§ï§¹ code ¤~¤W¯¸¨Ï¥ÎªÌ©Ò·s¼Wªº¤å³¹
-  ¤§«eªº¤å³¹¤£ work
+  é€™åªé™æ”¹å®Œ code æ‰ä¸Šç«™ä½¿ç”¨è€…æ‰€æ–°å¢çš„æ–‡ç« 
+  ä¹‹å‰çš„æ–‡ç« ä¸ work
 
 --
-  ¨S¸Õ¹L
+  æ²’è©¦é
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m Maple-itoc£»°Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
- [1;43m¢¢[46mùñ[m [1mMo[30mdi[mfy: [1;35m2004/06/18 Fri 20:38:09[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
+ [1;43mâ•°[46mâ•–[m [1mMo[30mdi[mfy: [1;35m2004/06/18 Fri 20:38:09[m

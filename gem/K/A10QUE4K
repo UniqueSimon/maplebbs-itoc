@@ -1,8 +1,8 @@
-µo«H¤H: shakalaca.bbs@bittern.csie.nctu.edu.tw.bbs@aurora. ¬İªO: plan
-¼Ğ  ÃD: [doc] bbs + gallery
-µo«H¯¸: aurora (2004/03/08 Mon 19:07:12)                  Updated: 2004/04/28
+ç™¼ä¿¡äºº: shakalaca.bbs@bittern.csie.nctu.edu.tw.bbs@aurora. çœ‹æ¿: plan
+æ¨™  é¡Œ: [doc] bbs + gallery
+ç™¼ä¿¡ç«™: aurora (2004/03/08 Mon 19:07:12)                  Updated: 2004/04/28
 
-: so/Makefile ­Y¬O FreeBSD ³o¼Ë§ï
+: so/Makefile è‹¥æ˜¯ FreeBSD é€™æ¨£æ”¹
 
 SO =    .... [1;33mgallery.so[m
 
@@ -12,7 +12,7 @@ SO =    .... [1;33mgallery.so[m
 .c.o:   ;  $(CC) $(CFLAGS) -c $*.c
 .o.so:  ;  ld -s -G $*.o -o $*.so -L../lib -ldao [1;33m-lmd[m
 
-: so/Makefile ­Y¬O Linux ³o¼Ë§ï
+: so/Makefile è‹¥æ˜¯ Linux é€™æ¨£æ”¹
 
 SO =    .... [1;33mgallery.so[m
 
@@ -22,12 +22,12 @@ SUFFIXES: .c .o .so
 c.o:    ;  $(CC) $(CFLAGS) -c $*.c
 o.so:   ;  ld -s -G $*.o -o $*.so -L../lib -ldao [1;33m-lssl[m
 
-: menu.c ¾A·íªº¿ï³æ¥[¤J
+: menu.c é©ç•¶çš„é¸å–®åŠ å…¥
 
   "bin/gallery.so:create_account", 0, - M_XMODE,
-  "Gallery    ¡ñ ·s¼W¬ÛÃ¯ ¡ğ",
+  "Gallery    â™‚ æ–°å¢ç›¸ç°¿ â™€",
 
-: so/gallery.c ·s¼W¦¹µ{¦¡
+: so/gallery.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* gallery.c    ( NTHU CS MapleBBS Ver 2.36 )            */
@@ -60,7 +60,7 @@ typedef struct
 /* ------------------------------------------------------------------ */
 
 static void
-f_add(fpath, msg)   /* ¥é f_cat()¡A°ßÅv­­§ï¬° 0664 */
+f_add(fpath, msg)   /* ä»¿ f_cat()ï¼Œå”¯æ¬Šé™æ”¹ç‚º 0664 */
   char *fpath;
   char *msg;
 {
@@ -75,7 +75,7 @@ f_add(fpath, msg)   /* ¥é f_cat()¡A°ßÅv­­§ï¬° 0664 */
 
 
 static void
-f_join(from, to)    /* ®ÄªGÃş¦ü f_suck()¡A°ßÅv­­§ï¬° 0664 */
+f_join(from, to)    /* æ•ˆæœé¡ä¼¼ f_suck()ï¼Œå”¯æ¬Šé™æ”¹ç‚º 0664 */
   char *from, *to;
 {
   int in, out, len;
@@ -98,7 +98,7 @@ f_join(from, to)    /* ®ÄªGÃş¦ü f_suck()¡A°ßÅv­­§ï¬° 0664 */
 /* ------------------------------------------------------------------ */
 
 
-static int      /* 1:¦¨¥\ 0:¥¢±Ñ */
+static int      /* 1:æˆåŠŸ 0:å¤±æ•— */
 create_file(u, hash)
   GalleryUser u;
   char *hash;
@@ -107,7 +107,7 @@ create_file(u, hash)
 
   sprintf(fpath, "%s/.users/%s", ALBUM_PATH, hash);
 
-  if (!dashf(fpath))     /* ­nÀË¬d hash ¬O¤£¬O¦³­«ÂĞ */
+  if (!dashf(fpath))     /* è¦æª¢æŸ¥ hash æ˜¯ä¸æ˜¯æœ‰é‡è¦† */
   {
     sprintf(input, "O:12:\"gallery_user\":13:{s:8:\"username\";%s;"
       "s:8:\"fullname\";%s;s:8:\"password\";%s;s:5:\"email\";%s;s:7:\"isAdmin\";b:0;"
@@ -126,7 +126,7 @@ create_file(u, hash)
 }
 
 
-static int      /* 1:¦¨¥\ 0:¥¢±Ñ */
+static int      /* 1:æˆåŠŸ 0:å¤±æ•— */
 create_album(u, hash)
   GalleryUser u;
   char *hash;
@@ -140,7 +140,7 @@ create_album(u, hash)
   {
     if (mkdir(fpath, 0775) == -1)
     {
-      /* ­n§â­è¤~²£¥Íªº hashfile §R°£ */
+      /* è¦æŠŠå‰›æ‰ç”¢ç”Ÿçš„ hashfile åˆªé™¤ */
       sprintf(fpath, "%s/.users/%s", ALBUM_PATH, hash);
       unlink(fpath);
       return 0;
@@ -153,7 +153,7 @@ create_album(u, hash)
 
     sprintf(file, "%s/album.dat", fpath);
 
-    sprintf(buf2, "%s ªº¬ÛÃ¯", cuser.userid);
+    sprintf(buf2, "%s çš„ç›¸ç°¿", cuser.userid);
     sprintf(buf, "O:5:\"album\":5:{s:6:\"fields\";a:57:{s:5:\"title\";s:%d:\"%s\";",
       strlen(buf2), buf2);
     f_add(file, buf);
@@ -205,7 +205,7 @@ gen_salt(password)
 #include <md5.h>
 
 static char *
-gen_salt(password)        /* ¿é¤J­ì©l±K½X¡A¿é¥X¥[±K±K½X */
+gen_salt(password)        /* è¼¸å…¥åŸå§‹å¯†ç¢¼ï¼Œè¼¸å‡ºåŠ å¯†å¯†ç¢¼ */
   char *password;
 {
   int i, ch;
@@ -255,7 +255,7 @@ create_account()
 
   if (dashd(buf))
   {
-    vmsg("±z¤w¸g¥Ó½Ğ¹L¬ÛÃ¯¤F¡I");
+    vmsg("æ‚¨å·²ç¶“ç”³è«‹éç›¸ç°¿äº†ï¼");
     return XEASY;
   }
 
@@ -267,25 +267,25 @@ create_account()
 
   for (;;)
   {
-    vget(b_lines, 0, "½Ğ³]©w±K½X¡G", buf, PSWDLEN + 1, NOECHO);
+    vget(b_lines, 0, "è«‹è¨­å®šå¯†ç¢¼ï¼š", buf, PSWDLEN + 1, NOECHO);
     if ((strlen(buf) < 3) || !strcmp(buf, cuser.userid))
     {
-      vmsg("±K½X¤ÓÂ²³æ¡A©ö¾D¤J«I¡A¦Ü¤Ö­n 4 ­Ó¦r¡A½Ğ­«·s¿é¤J");
+      vmsg("å¯†ç¢¼å¤ªç°¡å–®ï¼Œæ˜“é­å…¥ä¾µï¼Œè‡³å°‘è¦ 4 å€‹å­—ï¼Œè«‹é‡æ–°è¼¸å…¥");
       continue;
     }
 
-    vget(b_lines, 0, "½ĞÀË¬d±K½X¡G", buf + PSWDLEN + 2, PSWDLEN + 1, NOECHO);
+    vget(b_lines, 0, "è«‹æª¢æŸ¥å¯†ç¢¼ï¼š", buf + PSWDLEN + 2, PSWDLEN + 1, NOECHO);
     if (!strcmp(buf, buf + PSWDLEN + 2))
       break;
 
-    vmsg("±K½X¿é¤J¿ù»~, ½Ğ­«·s¿é¤J±K½X");
+    vmsg("å¯†ç¢¼è¼¸å…¥éŒ¯èª¤, è«‹é‡æ–°è¼¸å…¥å¯†ç¢¼");
   }
 
   srand(now + cuser.userno);
   ptr = gen_salt(buf);
   sprintf(gu.password, "s:%d:\"%s\"", strlen(ptr), ptr);
 
-  /* ½T«O¦P¤@®É¶¡¤£¦P¤H«Øªº hash ¤£¦P */
+  /* ç¢ºä¿åŒä¸€æ™‚é–“ä¸åŒäººå»ºçš„ hash ä¸åŒ */
   sprintf(buf, "%ld_%ld", now, rand());
   sprintf(gu.uid, "s:%d:\"%s\"", strlen(buf), buf);
 
@@ -294,17 +294,17 @@ create_account()
   if (!create_file(gu, buf))
   {
     gallery_log("ERROR CREATING USER PROFILE");
-    vmsg("¿ù»~¡GµLªk«Ø¥ß¸ê®ÆÀÉ¡A½Ğ³qª¾¯¸ªø¡I");
+    vmsg("éŒ¯èª¤ï¼šç„¡æ³•å»ºç«‹è³‡æ–™æª”ï¼Œè«‹é€šçŸ¥ç«™é•·ï¼");
   }
   else if (!create_album(gu, buf))
   {
     gallery_log("ERROR CREATING DIRECTORY");
-    vmsg("¿ù»~¡GµLªk«Ø¥ß¬ÛÃ¯¡A½Ğ³qª¾¯¸ªø¡I");
+    vmsg("éŒ¯èª¤ï¼šç„¡æ³•å»ºç«‹ç›¸ç°¿ï¼Œè«‹é€šçŸ¥ç«™é•·ï¼");
   }
   else
   {
     gallery_log("CREATE ALBUM");
-    vmsg("¤w«Ø¥ß¸ê®Æ :)");
+    vmsg("å·²å»ºç«‹è³‡æ–™ :)");
   }
 
   return XEASY;
@@ -312,44 +312,44 @@ create_account()
 
 
 
-µ{¦¡»¡©ú¡G
+ç¨‹å¼èªªæ˜ï¼š
 
-* ¥ı¸Ë gallery §a¡AFreeBSD ¥i¥H¥Î ports : /usr/ports/www/gallery
-  ¤£µM´N¥h http://gallery.sf.net §ì¡C
+* å…ˆè£ gallery å§ï¼ŒFreeBSD å¯ä»¥ç”¨ ports : /usr/ports/www/gallery
+  ä¸ç„¶å°±å» http://gallery.sf.net æŠ“ã€‚
 
-* FreeBSD ¤w¸g¹w³]¸Ë md5 ¤F¡A¦pªG¨ä¥L¨t²Î¨S¦³¸Ë MD5 ªº¸Ü¡A½Ğ¦Û¦æ¦w¸Ë¡C
+* FreeBSD å·²ç¶“é è¨­è£ md5 äº†ï¼Œå¦‚æœå…¶ä»–ç³»çµ±æ²’æœ‰è£ MD5 çš„è©±ï¼Œè«‹è‡ªè¡Œå®‰è£ã€‚
 
-* ¥h§ì ftp://php.twbbs.org/pub/bbs/gallery/etc ¸Ì­±ªºªF¦è¡A©ñ¨ì BBS ®a¥Ø¿ı
-  ¤Uªº etc/gallery ¸Ì­±¡C³o¬O album.dat ªº¤º®e¡Aª½±µ®³¨Ó¥ÎµM«á´«¤W¦Û­qªºÄæ
-  ¦ì¡Agallery ·|«ÜÁo©úªº§â¸Ó¸ê®Æ§¨·í§@¬O¬ÛÃ¯¡C
+* å»æŠ“ ftp://php.twbbs.org/pub/bbs/gallery/etc è£¡é¢çš„æ±è¥¿ï¼Œæ”¾åˆ° BBS å®¶ç›®éŒ„
+  ä¸‹çš„ etc/gallery è£¡é¢ã€‚é€™æ˜¯ album.dat çš„å…§å®¹ï¼Œç›´æ¥æ‹¿ä¾†ç”¨ç„¶å¾Œæ›ä¸Šè‡ªè¨‚çš„æ¬„
+  ä½ï¼Œgallery æœƒå¾ˆè°æ˜çš„æŠŠè©²è³‡æ–™å¤¾ç•¶ä½œæ˜¯ç›¸ç°¿ã€‚
 
-  ·íµM³oÃä¥i¥H§@«Ü¦hÅÜ¤Æ¡A¦b album.dat.head ªº³Ì«á´X­ÓÄæ¦ì¦³¤@­Ó¬O
+  ç•¶ç„¶é€™é‚Šå¯ä»¥ä½œå¾ˆå¤šè®ŠåŒ–ï¼Œåœ¨ album.dat.head çš„æœ€å¾Œå¹¾å€‹æ¬„ä½æœ‰ä¸€å€‹æ˜¯
 
     s:15:"parentAlbumName";i:0;
 
-  «üªº¬O¸Ó¥Ø¿ıªº¤÷¥Ø¿ı¬°¦ó¡A¦pªG·Q§â bbs ¨Ï¥ÎªÌ¥Ó½Ğªº¥Ø¿ı³£©ñ¨ì¬Y­Ó
-  ¸ê®Æ§¨¤U­±ªº¸Ü (¤ñ¦p bbs)¡A¥ı¥Î gallery «Ø¥ß bbs ¬ÛÃ¯¡AµM«á­×§ï
-  album.dat.head¡A§â¤W­±¨º¨Ç¦r¦ê§ï¬°
+  æŒ‡çš„æ˜¯è©²ç›®éŒ„çš„çˆ¶ç›®éŒ„ç‚ºä½•ï¼Œå¦‚æœæƒ³æŠŠ bbs ä½¿ç”¨è€…ç”³è«‹çš„ç›®éŒ„éƒ½æ”¾åˆ°æŸå€‹
+  è³‡æ–™å¤¾ä¸‹é¢çš„è©± (æ¯”å¦‚ bbs)ï¼Œå…ˆç”¨ gallery å»ºç«‹ bbs ç›¸ç°¿ï¼Œç„¶å¾Œä¿®æ”¹
+  album.dat.headï¼ŒæŠŠä¸Šé¢é‚£äº›å­—ä¸²æ”¹ç‚º
 
     s:15:"parentAlbumName";s:3:"bbs";
 
-  "bbs" «e­±ªº 3 ´N¬O«ü "bbs" ³o­Ó¦r¦êªºªø«×¡A¨Ì¦¹Ãş±À¥i¥H´«¦¨
-  §A·Q­nªº¸ê®Æ§¨¦WºÙ¡C
+  "bbs" å‰é¢çš„ 3 å°±æ˜¯æŒ‡ "bbs" é€™å€‹å­—ä¸²çš„é•·åº¦ï¼Œä¾æ­¤é¡æ¨å¯ä»¥æ›æˆ
+  ä½ æƒ³è¦çš„è³‡æ–™å¤¾åç¨±ã€‚
 
-* ­n§â³o¤G­Ó¥Ø¿ıªºÅv­­
+* è¦æŠŠé€™äºŒå€‹ç›®éŒ„çš„æ¬Šé™
   /home/data/www/albums
   /home/data/www/albums/.users
-  Åı bbs ¨­¤À¥i¥H¼g¤J¡C
+  è®“ bbs èº«åˆ†å¯ä»¥å¯«å…¥ã€‚
 
-* ³o¼Ë¤lÀ³¸Ó´N¦æ¤F :D
+* é€™æ¨£å­æ‡‰è©²å°±è¡Œäº† :D
 
-  ¦pªG¦³°İÃDÅwªï´£¥X :)
+  å¦‚æœæœ‰å•é¡Œæ­¡è¿æå‡º :)
 
-  µ{¦¡¥Ø«e¤£½T©w¬O§_¬° bug free¡A¦pªG¦]¬°¨Ï¥Î³o¤äµ{¦¡³y¦¨ CPU ¿N±¼¡A
-  ¸ê®Æ®ø¥¢¡A°O¾ĞÅé¤£¨£¡A³Q¤H¤J«I¡A¤kªB¤Í¶]±¼©Î¬OªÑ¥«®M¨c¡A¥»¤H¤£­t³d¡C :pp
+  ç¨‹å¼ç›®å‰ä¸ç¢ºå®šæ˜¯å¦ç‚º bug freeï¼Œå¦‚æœå› ç‚ºä½¿ç”¨é€™æ”¯ç¨‹å¼é€ æˆ CPU ç‡’æ‰ï¼Œ
+  è³‡æ–™æ¶ˆå¤±ï¼Œè¨˜æ†¶é«”ä¸è¦‹ï¼Œè¢«äººå…¥ä¾µï¼Œå¥³æœ‹å‹è·‘æ‰æˆ–æ˜¯è‚¡å¸‚å¥—ç‰¢ï¼Œæœ¬äººä¸è² è²¬ã€‚ :pp
 
 --
-                                                      §ÚªºÃ±¦WÀÉ¥u¦³¤Q­Ó¦r.
+                                                      æˆ‘çš„ç°½åæª”åªæœ‰åå€‹å­—.
 --
- [1;37m  ^..^    [33m¡¹ [1;36m< ½Ş ÀY ¬ö ¤½ ¶é - php.twbbs.org (140.113.208.200) >[m
+ [1;37m  ^..^    [33mâ˜… [1;36m< è±¬ é ­ ç´€ å…¬ åœ’ - php.twbbs.org (140.113.208.200) >[m
  [1;37m-w @@ w-- [1;34m                         < bittern.csie.nctu.edu.tw >[m

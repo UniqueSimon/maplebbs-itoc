@@ -1,31 +1,31 @@
-�@��: lkchu (�S������), �ݪO: src
-���D: M3 ���n�ͤW���P�t�Ψ�M���t��
-�ɶ�: Fri Dec 11 03:44:19 1998
+作者: lkchu (沒有答案), 看板: src
+標題: M3 的好友上站與系統協尋之差異
+時間: Fri Dec 11 03:44:19 1998
 
-    ���H���������o���N��, �o�X�ѭ�n�b��ӧ�g�n�ͤW��, ���N
-    ���K���@���n�F.
+    有人提說不懂這玩意兒, 這幾天剛好在整個改寫好友上站, 那就
+    順便提一提好了.
 
-    ������ԣ���t�Ψ�M�o�N�N, ť���O�ݨ� bbs.cis.nctu ���]�p
-    �Ӧ����F�P, ���t�Ψ�M�X�G�N����n�ͤW��, ���O�Ҽ{�W��
-    �q���ҭn���諸 overhead, �ҥH�G�N�令�n�ϥΪ̦ۤv�h�]�w
-    �֤W���n�q��, �åB�u�������W������, �U���A�W���N�n�A���s
-    �]�w, �o�˳]�p���D�z, �N�O�n���ϥΪ̰��D���n�_�h���|�C��
-    ���]�h�]�w�t�Ψ�M, �i�ӭ��C�t�Ωҭn�t�᪺�W���q��������.
+    先說為啥有系統協尋這咚咚, 聽說是看到 bbs.cis.nctu 的設計
+    而有的靈感, 其實系統協尋幾乎就等於好友上站, 但是考慮上站
+    通知所要面對的 overhead, 所以故意改成要使用者自己去設定
+    誰上站要通知, 並且只有當次上站有效, 下次再上站就要再重新
+    設定, 這樣設計的道理, 就是要讓使用者除非必要否則不會每次
+    都跑去設定系統協尋, 進而降低系統所要負擔的上站通知的次數.
 
-    �n�ͤW���b�� M3 �{�����Y�O�S����, ���\��O�ѧ̦ۤv�[�i�h
-    ��, ��������k�ܪ�ı, �N�O�W���ɨt�Φ۰����ϥΪ̳]�w�t��
-    ��M, �p���Ӥw, �ҥΪ��{���]���u�O���t�Ψ�M�����i�}�}
-    �F, �o�� implement �覡���X�ӯ��I, �Y�n�ͦb�z�W�������s��
-    �W���@���H�W, �u���Ĥ@���|�q����(�]�i�H�����u�I:), �t�~
-    �N�O�C���W���t�γ��n�۰����ϥΪ̳]�w�@���t�Ψ�M, ��O�Z
-    �S���Ĳv.
+    好友上站在原 M3 程式裡頭是沒有的, 此功能是由弟自己加進去
+    的, 原先的做法很直覺, 就是上站時系統自動幫使用者設定系統
+    協尋, 如此而已, 所用的程式也都只是把原系統協尋部份展開罷
+    了, 這種 implement 方式有幾個缺點, 若好友在您上站期間連續
+    上站一次以上, 只有第一次會通知到(也可以當成優點:), 另外
+    就是每次上站系統都要自動幫使用者設定一次系統協尋, 算是蠻
+    沒有效率.
 
-    ��ѫe, �Q�Φn�ͦW�椣�`��ʪ��S��, ���s��g�F�n�ͤW���q
-    ��, �i�H���e���峹�ҭz, ��t�Ψ�M�P�n�ͤW���W�߶}�F.
+    兩天前, 利用好友名單不常更動的特性, 重新改寫了好友上站通
+    知, 可以見前面文章所述, 把系統協尋與好友上站獨立開了.
 
 --
-                                                    ��j��u ���G�_
+                                                    交大資工 朱亮愷
                                              E-Mail: <lkchu@dragon2.net>
 --
-[1;31m�� Origin: [32m�N �� �~ [37m<Rouge.Dorm10.NCTU.edu.tw>[m
-[1;31m�� From: [36mrouge.dragon2.net[m
+[1;31m※ Origin: [32m冷 馨 居 [37m<Rouge.Dorm10.NCTU.edu.tw>[m
+[1;31m◆ From: [36mrouge.dragon2.net[m

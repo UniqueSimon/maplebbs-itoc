@@ -1,17 +1,17 @@
-µo«H¤H: simple.bbs@bbs.wfc.edu.tw (¾i§L¤d¤é ¥Î¦b¤@®É) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à]¼Ö³z±m-¤j¼Ö³z(­×§ïª©)
-µo«H¯¸: ¥d¥¬©_¿Õ (2004/10/27 Wed 00:39:26)                Updated: 2006/01/24
+ç™¼ä¿¡äºº: simple.bbs@bbs.wfc.edu.tw (é¤Šå…µåƒæ—¥ ç”¨åœ¨ä¸€æ™‚) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]æ¨‚é€å½©-å¤§æ¨‚é€(ä¿®æ”¹ç‰ˆ)
+ç™¼ä¿¡ç«™: å¡å¸ƒå¥‡è«¾ (2004/10/27 Wed 00:39:26)                Updated: 2006/01/24
 
 : src/so/Makefile
 
 SO =    ... [1;33mlottery.so[m
 
-: so/lottery.c ·s¼W¦¹µ{¦¡
+: so/lottery.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* lottery.c    ( YZU WindTopBBS Ver 3.00 )              */
 /*-------------------------------------------------------*/
-/* target : ±m¨é¹CÀ¸                                     */
+/* target : å½©åˆ¸éŠæˆ²                                     */
 /* create : 02/01/12                                     */
 /* update : 03/05/26                                     */
 /* author : verit.bbs@bbs.yzu.edu.tw                     */
@@ -23,12 +23,12 @@ SO =    ... [1;33mlottery.so[m
 #include "bbs.h"
 
 
-static int choose_num[6];       /* ©Ò¿ïªº¤»­Ó¸¹½X */
-static int choose_count;        /* ¤w¸g¿ï¤F´X­Ó¸¹½X */
+static int choose_num[6];       /* æ‰€é¸çš„å…­å€‹è™Ÿç¢¼ */
+static int choose_count;        /* å·²ç¶“é¸äº†å¹¾å€‹è™Ÿç¢¼ */
 
 
 /*-------------------------------------------------------*/
-/* µe­±­«Ã¸                                              */
+/* ç•«é¢é‡ç¹ª                                              */
 /*-------------------------------------------------------*/
 
 
@@ -39,7 +39,7 @@ lottery_screen(fpath)
   FILE *fp;
   char buf[ANSILINELEN];
 
-  vs_bar("¼Ö³z±m¨é¹CÀ¸");
+  vs_bar("æ¨‚é€å½©åˆ¸éŠæˆ²");
 
   if (fp = fopen(fpath, "r"))
   {
@@ -51,7 +51,7 @@ lottery_screen(fpath)
 
 
 /*-------------------------------------------------------*/
-/* ±N¿ï¾Üªº¼Ö³z¸¹½X±H¨ì¦Û¤v«H½c                          */
+/* å°‡é¸æ“‡çš„æ¨‚é€è™Ÿç¢¼å¯„åˆ°è‡ªå·±ä¿¡ç®±                          */
 /*-------------------------------------------------------*/
 
 
@@ -67,20 +67,20 @@ lottery_mail_one()
   if (fp = fopen(fpath, "w"))
   {
     fprintf(fp, "%s\n", Now());
-    fprintf(fp, "±z©ÒÁÊ¶Rªº¼Ö³z¸¹½X¬°¡G");
+    fprintf(fp, "æ‚¨æ‰€è³¼è²·çš„æ¨‚é€è™Ÿç¢¼ç‚ºï¼š");
     for (i = 0; i < 6; i++)
       fprintf(fp, "%d ", choose_num[i]);
     fprintf(fp, "\n");
     fclose(fp);
 
-    mail_self(fpath, cuser.userid, "[³Æ §Ñ ¿ı] ±m¨é¬ö¿ı", MAIL_READ);
+    mail_self(fpath, cuser.userid, "[å‚™ å¿˜ éŒ„] å½©åˆ¸ç´€éŒ„", MAIL_READ);
     unlink(fpath);
   }
 }
 
 
 /*-------------------------------------------------------*/
-/* ¼Ö³z¨t²Î¬ö¿ı                                          */
+/* æ¨‚é€ç³»çµ±ç´€éŒ„                                          */
 /*-------------------------------------------------------*/
 
 
@@ -111,14 +111,14 @@ lottery_log()
 
 
 /*-------------------------------------------------------*/
-/* µe±±¨î´å¼Ğ                                            */
+/* ç•«æ§åˆ¶æ¸¸æ¨™                                            */
 /*-------------------------------------------------------*/
 
 
 static void
 draw_cursor(x, y, mode)
   int x, y;
-  int mode;                     /* 1:¿ï¨ú 0:¨ú®ø¿ï¨ú */
+  int mode;                     /* 1:é¸å– 0:å–æ¶ˆé¸å– */
 {
   move(2 * x - 1, 4 + y * 8);
   outc(mode == 1 ? '[' : ' ');
@@ -128,7 +128,7 @@ draw_cursor(x, y, mode)
 
 
 /*-------------------------------------------------------*/
-/* µe¼Ö³z±m¨é¤Uª`µe­±                                    */
+/* ç•«æ¨‚é€å½©åˆ¸ä¸‹æ³¨ç•«é¢                                    */
 /*-------------------------------------------------------*/
 
 
@@ -137,33 +137,33 @@ draw_numbers()
 {
   int i, x, index;
 
-  vs_bar("¼Ö³z±m¨é¤Uª`");
+  vs_bar("æ¨‚é€å½©åˆ¸ä¸‹æ³¨");
 
   x = 4;
   index = 1;
 
   move(x++, 1);
-  outs("¢~¢w¢w¢w¢s¢w¢w¢w¢s¢w¢w¢w¢s¢w¢w¢w¢s¢w¢w¢w¢s¢w¢w¢w¢s¢w¢w¢w¢¡"
-    "¡@¡@¡@¢~¢w¢w¢w¢¡ ");
+  outs("â•­â”€â”€â”€â”¬â”€â”€â”€â”¬â”€â”€â”€â”¬â”€â”€â”€â”¬â”€â”€â”€â”¬â”€â”€â”€â”¬â”€â”€â”€â•®"
+    "ã€€ã€€ã€€â•­â”€â”€â”€â•® ");
   for (i = 0; i < 7; i++, index += 7)
   {
     move(x++, 1);
-    prints("¢x  %02d  ¢x  %02d  ¢x  %02d  ¢x"
-      "  %02d  ¢x  %02d  ¢x  %02d  ¢x  %02d  ¢x      ¢x      ¢x",
+    prints("â”‚  %02d  â”‚  %02d  â”‚  %02d  â”‚"
+      "  %02d  â”‚  %02d  â”‚  %02d  â”‚  %02d  â”‚      â”‚      â”‚",
       index, index + 1, index + 2,
       index + 3, index + 4, index + 5, index + 6);
     move(x++, 1);
     if (i < 6)
-      outs("¢u¢w¢w¢w¢q¢w¢w¢w¢q¢w¢w¢w¢q¢w¢w¢w¢q¢w¢w¢w¢q¢w¢w¢w¢q¢w¢w¢w¢t"
-        "¡@¡@¡@¢u¢w¢w¢w¢t");
+      outs("â”œâ”€â”€â”€â”¼â”€â”€â”€â”¼â”€â”€â”€â”¼â”€â”€â”€â”¼â”€â”€â”€â”¼â”€â”€â”€â”¼â”€â”€â”€â”¤"
+        "ã€€ã€€ã€€â”œâ”€â”€â”€â”¤");
   }
-  outs("¢¢¢w¢w¢w¢r¢w¢w¢w¢r¢w¢w¢w¢r¢w¢w¢w¢r¢w¢w¢w¢r¢w¢w¢w¢r¢w¢w¢w¢£"
-    "¡@¡@¡@¢¢¢w¢w¢w¢£");
+  outs("â•°â”€â”€â”€â”´â”€â”€â”€â”´â”€â”€â”€â”´â”€â”€â”€â”´â”€â”€â”€â”´â”€â”€â”€â”´â”€â”€â”€â•¯"
+    "ã€€ã€€ã€€â•°â”€â”€â”€â•¯");
 }
 
 
 /*-------------------------------------------------------*/
-/* µe¥X¨Ï¥ÎªÌ¿ï¾Üªº¼Ö³z¸¹½X                              */
+/* ç•«å‡ºä½¿ç”¨è€…é¸æ“‡çš„æ¨‚é€è™Ÿç¢¼                              */
 /*-------------------------------------------------------*/
 
 
@@ -186,16 +186,16 @@ draw_choose()
 
 
 /*-------------------------------------------------------*/
-/* ¿ï¨ú¼Ö³z¸¹½X                                          */
+/* é¸å–æ¨‚é€è™Ÿç¢¼                                          */
 /*-------------------------------------------------------*/
 
 
-static int                      /* 1:¤w¿ï§¹¤»­Ó¸¹½X */
+static int                      /* 1:å·²é¸å®Œå…­å€‹è™Ÿç¢¼ */
 do_choose(num)
-  int num;                      /* ©Ò¿ï¨úªº¸¹½X */
+  int num;                      /* æ‰€é¸å–çš„è™Ÿç¢¼ */
 {
   int i;
-  int choose_flag;              /* -1:¿ï¨ú >=0:¨ú®ø¿ï¨ú */
+  int choose_flag;              /* -1:é¸å– >=0:å–æ¶ˆé¸å– */
 
   choose_flag = -1;
 
@@ -208,18 +208,18 @@ do_choose(num)
     }
   }
 
-  if (choose_flag >= 0)         /* ¨ú®ø */
+  if (choose_flag >= 0)         /* å–æ¶ˆ */
   {
     choose_count--;
     for (i = choose_flag; i < choose_count; i++)
       choose_num[i] = choose_num[i + 1];
     draw_choose();
   }
-  else                          /* ¿ï¨ú */
+  else                          /* é¸å– */
   {
     if (choose_count == 6)
     {
-      vmsg("±z¤w¸g¿ï¤F¤»­Ó¸¹½X");
+      vmsg("æ‚¨å·²ç¶“é¸äº†å…­å€‹è™Ÿç¢¼");
       return 1;
     }
     else
@@ -234,7 +234,7 @@ do_choose(num)
 
 
 /*-------------------------------------------------------*/
-/* ¼Ö³z¤Uª`¸¹½X¿ï¾Ü                                      */
+/* æ¨‚é€ä¸‹æ³¨è™Ÿç¢¼é¸æ“‡                                      */
 /*-------------------------------------------------------*/
 
 
@@ -243,7 +243,7 @@ random_choose()
 {
   int i, j;
 
-  /* ³y¥X¤»­Ó¤£¦Pªº¼Æ¦r */
+  /* é€ å‡ºå…­å€‹ä¸åŒçš„æ•¸å­— */
   for (i = 0; i < 6; i++)
   {
     choose_num[i] = rnd(49) + 1;
@@ -266,27 +266,27 @@ lottery_buy_one()
 
   if (cuser.money < 1000)
   {
-    vmsg("±zªº»È¹ô¤£°÷ÁÊ¶R±m¨é");
+    vmsg("æ‚¨çš„éŠ€å¹£ä¸å¤ è³¼è²·å½©åˆ¸");
     return;
   }
 
-  if (vans("¨C±i±m¨é»ù®æ¬° 1000 »È¹ô¡A¬O§_­nÁÊ¶R©O(Y/N)¡H[Y] ") == 'n')
+  if (vans("æ¯å¼µå½©åˆ¸åƒ¹æ ¼ç‚º 1000 éŠ€å¹£ï¼Œæ˜¯å¦è¦è³¼è²·å‘¢(Y/N)ï¼Ÿ[Y] ") == 'n')
     return;
 
   draw_numbers();
 
-  if (vans("¬O§_­n¹q¸£¿ï¸¹(Y/N)¡H[N] ") == 'y')
+  if (vans("æ˜¯å¦è¦é›»è…¦é¸è™Ÿ(Y/N)ï¼Ÿ[N] ") == 'y')
   {
     random_choose();
 
-#if 1  /* ¯Âºé¥u¬O¬°¤F¨q¥X¿ï¸¹µ²ªG¡A­n¤£µM¤£»İ­n³o¬q */
+#if 1  /* ç´”ç²¹åªæ˜¯ç‚ºäº†ç§€å‡ºé¸è™Ÿçµæœï¼Œè¦ä¸ç„¶ä¸éœ€è¦é€™æ®µ */
     choose_count = 0;
     for (ch = 0; ch < 6; ch++)
       do_choose(choose_num[ch]);
-    vmsg("¹q¸£¿ï¸¹µ²ªG");
+    vmsg("é›»è…¦é¸è™Ÿçµæœ");
 #endif
   }
-  else     /* ¤â°Ê¿ï¸¹ */
+  else     /* æ‰‹å‹•é¸è™Ÿ */
   {
     choose_count = 0;
     memset(choose_num, 0, sizeof(choose_num));
@@ -295,7 +295,7 @@ lottery_buy_one()
 
     while (1)
     {
-      outz("¡¹ ¾Ş§@»¡©ú (¤è¦V)²¾°Ê (Enter)¿ï¨ú/¨ú®ø (q)Â÷¶}");
+      outz("â˜… æ“ä½œèªªæ˜ (æ–¹å‘)ç§»å‹• (Enter)é¸å–/å–æ¶ˆ (q)é›¢é–‹");
 
       for (;;)
       {
@@ -328,7 +328,7 @@ lottery_buy_one()
 
   end_choose:
 
-      if (vans("¬O§_­n½T©w³o¤»­Ó¸¹½X(Y/N)¡H[N] ") == 'y')
+      if (vans("æ˜¯å¦è¦ç¢ºå®šé€™å…­å€‹è™Ÿç¢¼(Y/N)ï¼Ÿ[N] ") == 'y')
         break;
     }
   }
@@ -336,7 +336,7 @@ lottery_buy_one()
   cuser.money -= 1000;
   lottery_log();
 
-  if (vans("¬O§_­n«O¯d±m¨é(Y/N)¡H[Y] ") != 'n')
+  if (vans("æ˜¯å¦è¦ä¿ç•™å½©åˆ¸(Y/N)ï¼Ÿ[Y] ") != 'n')
     lottery_mail_one();
 }
 
@@ -350,28 +350,28 @@ lottery_buy_some()
 
   if (cuser.money < 1000)
   {
-    vmsg("±zªº»È¹ô¤£°÷ÁÊ¶R±m¨é");
+    vmsg("æ‚¨çš„éŠ€å¹£ä¸å¤ è³¼è²·å½©åˆ¸");
     return;
   }
 
-  vget(b_lines, 0, "½Ğ¿é¤J±ı¶R±i¼Æ¡G", fpath, 5, DOECHO);
+  vget(b_lines, 0, "è«‹è¼¸å…¥æ¬²è²·å¼µæ•¸ï¼š", fpath, 5, DOECHO);
   if ((num = atoi(fpath)) <= 0)
     return;
 
   if (cuser.money < num * 1000)
   {
-    vmsg("±zªº»È¹ô¤£°÷ÁÊ¶R±m¨é");
+    vmsg("æ‚¨çš„éŠ€å¹£ä¸å¤ è³¼è²·å½©åˆ¸");
     return;
   }
 
   fp = NULL;
-  if (vans("¬O§_­n«O¯d±m¨é(Y/N)¡H[Y] ") != 'n')
+  if (vans("æ˜¯å¦è¦ä¿ç•™å½©åˆ¸(Y/N)ï¼Ÿ[Y] ") != 'n')
   {
     sprintf(fpath, "tmp/%s.lottery", cuser.userid);
     if (fp  = fopen(fpath, "w"))
     {
       fprintf(fp, "%s\n", Now());
-      fprintf(fp, "±z©ÒÁÊ¶Rªº¼Ö³z¸¹½X¬°¡G");
+      fprintf(fp, "æ‚¨æ‰€è³¼è²·çš„æ¨‚é€è™Ÿç¢¼ç‚ºï¼š");
     }
   }
 
@@ -391,7 +391,7 @@ lottery_buy_some()
   if (fp)
   {
     fclose(fp);
-    mail_self(fpath, cuser.userid, "[³Æ §Ñ ¿ı] ±m¨é¬ö¿ı", MAIL_READ);
+    mail_self(fpath, cuser.userid, "[å‚™ å¿˜ éŒ„] å½©åˆ¸ç´€éŒ„", MAIL_READ);
     unlink(fpath);
   }
 
@@ -400,7 +400,7 @@ lottery_buy_some()
 
 
 /*-------------------------------------------------------*/
-/* ¥Dµ{¦¡                                                */
+/* ä¸»ç¨‹å¼                                                */
 /*-------------------------------------------------------*/
 
 
@@ -421,12 +421,12 @@ main_lottery()
   {
     lottery_screen("etc/game/lottery.main");
 
-    /* Åã¥Ü²Ö¿n¼úª÷ */
+    /* é¡¯ç¤ºç´¯ç©çé‡‘ */
     money = 0;
     rec_get(LAST_KEEP_MONEY, &money, sizeof(money), 0);
     money += rec_num(FN_RUN_LOTTERY, sizeof(BUY_LOTTERY)) * 1000;
     move(20, 10);
-    prints("¥Ø«e²Ö¿n¼úª÷¦³ %.0f ¤¸", money);
+    prints("ç›®å‰ç´¯ç©çé‡‘æœ‰ %.0f å…ƒ", money);
 
     switch (vkey())
     {
@@ -450,5 +450,5 @@ main_lottery()
 }
 
 --
-[m[1;32m¡° Origin: [33m§d»ñ§Ş³N¾Ç°|¹qºâ¤¤¤ß ¥d¥¬©_¿Õ [37m<bbs.wfc.edu.tw>[m
-[1;31m¡» From: [36mbbs.wfc.edu.tw[m
+[m[1;32mâ€» Origin: [33må³é³³æŠ€è¡“å­¸é™¢é›»ç®—ä¸­å¿ƒ å¡å¸ƒå¥‡è«¾ [37m<bbs.wfc.edu.tw>[m
+[1;31mâ—† From: [36mbbs.wfc.edu.tw[m

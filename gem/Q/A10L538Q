@@ -1,17 +1,17 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD]Repostªº­ì©l¤º®e¤£ºâ¨ìwordsnum
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/09/23 Thu 13:49:46)                Updated: 2004/09/23
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ]Repostçš„åŸå§‹å…§å®¹ä¸ç®—åˆ°wordsnum
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/09/23 Thu 13:49:46)                Updated: 2004/09/23
 
-¡° ¤Ş­z¡mchwaian (µL¨¥)¡n¤§»Ê¨¥¡G
-> ¨Ï¥ÎªÌ¥i¥H¤@ª½repost¥i¥H°k¹L¦³°µ°»´ú½Æ»s¶K¤WªºÀË¬d
-> ¦Ó¤j¶qÁÈ¨úª÷¹ô
-> ¬O¦³·Q¹L¦b
-> ve_quote¸Ì¦pªG¬O¿ï¾Ü­«¶K¥ş¤å
-> ¬O§_¥i¥t¤@­Ówords_checkºâ¥Xwordsnum2
-> ¦b³Ì«áwords_check¤§«á¦A¦©±¼ ¨Ã¥BÁ×§K¦©¨ì¤p©ó¹sªºª¬ªp
-> ¤£ª¾¹D¬O§_¦³¤H¦³§ó¦n·Qªkªº ½Ğ«ü±Ğ
+â€» å¼•è¿°ã€Šchwaian (ç„¡è¨€)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> ä½¿ç”¨è€…å¯ä»¥ä¸€ç›´repostå¯ä»¥é€ƒéæœ‰åšåµæ¸¬è¤‡è£½è²¼ä¸Šçš„æª¢æŸ¥
+> è€Œå¤§é‡è³ºå–é‡‘å¹£
+> æ˜¯æœ‰æƒ³éåœ¨
+> ve_quoteè£¡å¦‚æœæ˜¯é¸æ“‡é‡è²¼å…¨æ–‡
+> æ˜¯å¦å¯å¦ä¸€å€‹words_checkç®—å‡ºwordsnum2
+> åœ¨æœ€å¾Œwords_checkä¹‹å¾Œå†æ‰£æ‰ ä¸¦ä¸”é¿å…æ‰£åˆ°å°æ–¼é›¶çš„ç‹€æ³
+> ä¸çŸ¥é“æ˜¯å¦æœ‰äººæœ‰æ›´å¥½æƒ³æ³•çš„ è«‹æŒ‡æ•™
 
-  µo¤å½Z¶O¥Ñ minimun{key-in¦¸¼Æ¡B¤å³¹¦r¼Æ¡B¯Ó¶O®É¶¡} ¨Ó¨M©w
+  ç™¼æ–‡ç¨¿è²»ç”± minimun{key-inæ¬¡æ•¸ã€æ–‡ç« å­—æ•¸ã€è€—è²»æ™‚é–“} ä¾†æ±ºå®š
 
 : edit.c
 
@@ -44,18 +44,18 @@ extern int wordsnum;
 
 -   if (currbattr & BRD_NOCOUNT || wordsnum < 30)
 +   if (currbattr & BRD_NOCOUNT || (BMIN(wordsnum, keysnum)) < 30)
-    {                           /* itoc.010408: ¥H¦¹´î¤ÖÄé¤ô²{¶H */
-      outs("¤å³¹¤£¦C¤J¬ö¿ı¡A·q½Ğ¥]²[¡C");
+    {                           /* itoc.010408: ä»¥æ­¤æ¸›å°‘çŒæ°´ç¾è±¡ */
+      outs("æ–‡ç« ä¸åˆ—å…¥ç´€éŒ„ï¼Œæ•¬è«‹åŒ…æ¶µã€‚");
     }
     else
     {
--     mode = BMIN(wordsnum, spendtime) / 10;    /* ¨C¤Q¦r/¬í ¤@¤¸ */
+-     mode = BMIN(wordsnum, spendtime) / 10;    /* æ¯åå­—/ç§’ ä¸€å…ƒ */
 +     mode = BMIN(wordsnum, spendtime);
 +     mode = BMIN(mode, keysnum);
-+     mode /= 10;                               /* ¨C¤Q ¦r/¬í/Áä ¤@¤¸ */
-      prints("³o¬O±zªº²Ä %d ½g¤å³¹¡A±o %d »È¡C", ++cuser.numposts, mode);
++     mode /= 10;                               /* æ¯å å­—/ç§’/éµ ä¸€å…ƒ */
+      prints("é€™æ˜¯æ‚¨çš„ç¬¬ %d ç¯‡æ–‡ç« ï¼Œå¾— %d éŠ€ã€‚", ++cuser.numposts, mode);
 
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m Maple-itoc£»°Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
- [1;42m¢q[45m¢}[m A[1mut[30mho[mr: [1;31mitoc [30m±q [36mpc512-12.ee.nctu.edu.tw [30mµoªí[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
+ [1;42mâ”¼[45mâ”˜[m A[1mut[30mho[mr: [1;31mitoc [30må¾ [36mpc512-12.ee.nctu.edu.tw [30mç™¼è¡¨[m

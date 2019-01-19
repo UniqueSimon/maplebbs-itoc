@@ -1,25 +1,25 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬ÝªO: plan
-¼Ð  ÃD: [¥\¯à] ¦b BBS ¯¸¤W­×§ï©Ò¦³ÀÉ®×
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/10/14 Thu 19:41:31)                Updated: 2004/10/14
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] åœ¨ BBS ç«™ä¸Šä¿®æ”¹æ‰€æœ‰æª”æ¡ˆ
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/10/14 Thu 19:41:31)                Updated: 2004/10/14
 
-¡° ¤Þ­z¡mrainphiz (¡@)¡n¤§»Ê¨¥¡G
->     ´N¬O¦bºëµØ°Ï¤º¶}¤@­ÓÁôÂÃ¥Ø¿ý¡A
->     ¾Ö¦³¯¸ªøÅv­­ªº¥i¥HÆ[¬Ý»P­×§ï¡A¤£¥Î¦A¤W¤u§@¯¸¥h
->     ¦³ÂIÃþ¦üWD¥[link¨ì bbs ¥Ø¿ý¤U¥ô¤@ÀÉ®×ªº¤è¦¡~
+â€» å¼•è¿°ã€Šrainphiz (ã€€)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>     å°±æ˜¯åœ¨ç²¾è¯å€å…§é–‹ä¸€å€‹éš±è—ç›®éŒ„ï¼Œ
+>     æ“æœ‰ç«™é•·æ¬Šé™çš„å¯ä»¥è§€çœ‹èˆ‡ä¿®æ”¹ï¼Œä¸ç”¨å†ä¸Šå·¥ä½œç«™åŽ»
+>     æœ‰é»žé¡žä¼¼WDåŠ linkåˆ° bbs ç›®éŒ„ä¸‹ä»»ä¸€æª”æ¡ˆçš„æ–¹å¼~
 
-  ºëµØ°Ï ^P ·s¼W (D)¸ê®Æ
+  ç²¾è¯å€ ^P æ–°å¢ž (D)è³‡æ–™
 
-  ¼ÐÃD¡Gsrc/maple/bbsd.c
-  ÀÉ¦W¡Gnotepad
+  æ¨™é¡Œï¼šsrc/maple/bbsd.c
+  æª”åï¼šnotepad
 
-  ¦b¸Ó¸ê®Æ¤W«ö K §Y¥i½s¿è ~/src/maple/bbsd.c
+  åœ¨è©²è³‡æ–™ä¸ŠæŒ‰ K å³å¯ç·¨è¼¯ ~/src/maple/bbsd.c
 
 : gem.c:gem_cb[]
 
 + 'K', gem_notepad,
   'h', gem_help
 
-: gem.c:gem_notepad() ¥[¦b gem_help() «e­±
+: gem.c:gem_notepad() åŠ åœ¨ gem_help() å‰é¢
 
 static int
 gem_notepad(xo)
@@ -48,10 +48,10 @@ gem_notepad(xo)
 +   if (!strcmp(hdr->xname, "@notepad"))
 +       strcpy(fpath, hdr->title);
 
-    /* Thor.990204: ¬°¦Ò¼{more ¶Ç¦^­È */
+    /* Thor.990204: ç‚ºè€ƒæ…®more å‚³å›žå€¼ */
     if ((xmode = more(fpath, FOOTER_GEM)) < 0)
       break;
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m Maple-itoc£»°Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
- [1;42m¢q[45m¢}[m A[1mut[30mho[mr: [1;31mitoc [30m±q [36mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
+ [1;42mâ”¼[45mâ”˜[m A[1mut[30mho[mr: [1;31mitoc [30må¾ž [36mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

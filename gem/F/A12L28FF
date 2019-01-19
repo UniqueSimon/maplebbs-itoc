@@ -1,16 +1,16 @@
-�o�H�H: guessi.bbs@bbs.wretch.cc (�S) �ݪO: plan
-��  �D: [�ץ�] �峹���i All_Post �ݪO
-�o�H��: �L�W�p�� (2006/11/07 Tue 20:42:57)                Updated: 2006/11/07
+發信人: guessi.bbs@bbs.wretch.cc (沒) 看板: plan
+標  題: [修正] 文章不進 All_Post 看板
+發信站: 無名小站 (2006/11/07 Tue 20:42:57)                Updated: 2006/11/07
 
-�� �ޭz�mid9455.bbs@csc241.twbbs.org (= =)�n���ʨ��G
-> ���аݤ@�U  �p�G���ڷQ�n�令
-> �b�]�w�ݩʪ��ɭ�  ����]�w���n���n���o�ӪO���峹�i All_Post�O����
-> �S�ӫ�򰵩O  ���±z :)
+※ 引述《id9455.bbs@csc241.twbbs.org (= =)》之銘言：
+> 那請問一下  如果說我想要改成
+> 在設定屬性的時候  能夠設定說要不要讓這個板的文章進 All_Post板的話
+> 又該怎麼做呢  謝謝您 :)
 
 [32m:/src/include/battr.h[m
 
-#define BRD_ANONYMOUS   0x20    /* �ΦW�ݪO */
-+ #define BRD_NOALLPOST 0x40    /* ����All_Post */
+#define BRD_ANONYMOUS   0x20    /* 匿名看板 */
++ #define BRD_NOALLPOST 0x40    /* 不做All_Post */
 
   ...
   ...
@@ -23,13 +23,13 @@
 
 [32m:/src/include/battr.h:battr_tbl[][m
 
-  "�ΦW�ݪO",                   /* BRD_ANONYMOUS */
-+ "���i All_Post �ݪO"          /* BRD_NOALLPOST */
+  "匿名看板",                   /* BRD_ANONYMOUS */
++ "不進 All_Post 看板"          /* BRD_NOALLPOST */
 
 
 [32m:/src/so/manage.c[m
 
-��H�U�o�q�[�b post_battr_noscore() �᭱
+把以下這段加在 post_battr_noscore() 後面
 
 static int
 post_battr_noallpost(xo)
@@ -40,7 +40,7 @@ post_battr_noallpost(xo)
   oldbrd = bshm->bcache + currbno;
   memcpy(&newbrd, oldbrd, sizeof(BRD));
 
-  switch (vans("�o���峹 1)�iAll_Post 2)���iAll_Post [Q] "))
+  switch (vans("發表文章 1)進All_Post 2)不進All_Post [Q] "))
   {
   case '1':
     newbrd.battr &= ~BRD_NOALLPOST;
@@ -64,15 +64,15 @@ post_battr_noallpost(xo)
 [32m:src/so/manage.c:post_manage()[m
 
 #  ifdef HAVE_SCORE
-    "Score   �]�w�i�_����",
+    "Score   設定可否評分",
 #  endif
-+   "AllPost All_Post�]�w",
++   "AllPost All_Post設定",
 
   ...
   ...
 
 #  ifdef HAVE_SCORE
-    " (S)����"
+    " (S)評分"
 #  endif
 +   " (A)AlPo"
 
@@ -111,8 +111,8 @@ post_battr_noallpost(xo)
 +   do_allpost(fpath, rcpt, nick, mode);
 
 --
-[1;30;40m�ҧL�̤����������δc���G���D�̤��B�g�l�~�h�Q���ΧL�h�Q�k�L�̤��������D�g�l[m
-[1;30m�������o�w[37m[30m�ӥΤ���H���W�ӦӤ����Ӭ����̬O�ֱ��H�Ҽֱ��H�̫h���i�o�ө�ѤU
-[m[1;30m�o�N�Ʃ|�����Ʃ|�k���N�x�~���W�N�x�~�k���H��§�B�����H�����H�s�d�_���ԳӥH[m
-[1;30m��§�B���D�`[37m�L�W[30m�����p�ѤU����ګJ���Y��u���U���N�ۻ��Ѧa�ۦX�H�����S����[m
-[1;30m���O�Ӧۧ��l��W�W��J���ҥ�N�����i�H��[37m134-208-34-179.ndhu.edu.tw[30m��[m
+[1;30;40m夫兵者不祥之器物或惡之故有道者不處君子居則貴左用兵則貴右兵者不祥之器非君子[m
+[1;30m之器不得已[37m[30m而用之恬淡為上勝而不美而美之者是樂殺人夫樂殺人者則不可得志於天下
+[m[1;30m矣吉事尚左凶事尚右偏將軍居左上將軍居右言以喪禮處之殺人之眾以哀悲泣之戰勝以[m
+[1;30m喪禮處之道常[37m無名[30m樸雖小天下莫能臣侯王若能守之萬物將自賓天地相合以降甘露民莫[m
+[1;30m之令而自均始制有名名亦既有夫亦將知止知止可以不[37m134-208-34-179.ndhu.edu.tw[30m海[m

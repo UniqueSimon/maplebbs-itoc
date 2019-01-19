@@ -1,10 +1,10 @@
-§@ªÌ: itoc (­·½Õ«B¶¶¡A°ê®õ¥Á¦w) ¬ÝªO: plan
-¼ÐÃD: [¥\¯à] ¬Ý¨£Áô§Î¦W³æ
-®É¶¡: Thu Jul 10 08:49:28 2003                          Updated: 2004/10/02
+ä½œè€…: itoc (é¢¨èª¿é›¨é †ï¼Œåœ‹æ³°æ°‘å®‰) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] çœ‹è¦‹éš±å½¢åå–®
+æ™‚é–“: Thu Jul 10 08:49:28 2003                          Updated: 2004/10/02
 
-  ­n¥ý°µ "pal.c ³Â¦NÃþ«¬" ³o½g patch
+  è¦å…ˆåš "pal.c éº»å‰é¡žåž‹" é€™ç¯‡ patch
 
-  ¬Ý¨£Áô§Î¦W³æ¡G·í§Ú¤@¯ëÁô§Î®É¡A³Â¦NÁÙ¬O¥i¥H¬Ý¨ì§Ú
+  çœ‹è¦‹éš±å½¢åå–®ï¼šç•¶æˆ‘ä¸€èˆ¬éš±å½¢æ™‚ï¼Œéº»å‰é‚„æ˜¯å¯ä»¥çœ‹åˆ°æˆ‘
 
 : maple.p
 
@@ -16,10 +16,10 @@ int is_ogood(UTMP *up);
 int is_obad(UTMP *up);
 int is_bgood(int bno);
 
-: pal.c:is_mymate() ¥[¦b is_mygood() «e­±
+: pal.c:is_mymate() åŠ åœ¨ is_mygood() å‰é¢
 
 int
-is_mymate(userno)                /*  1: §Ú³]¹ï¤è¬°³Â¦N */
+is_mymate(userno)                /*  1: æˆ‘è¨­å°æ–¹ç‚ºéº»å‰ */
   int userno;
 {
   return belong_pal(pal_pool, pal_max, userno | MATE_MASK);
@@ -30,10 +30,10 @@ is_mymate(userno)                /*  1: §Ú³]¹ï¤è¬°³Â¦N */
 - return belong_pal(pal_pool, pal_max, userno);
 + return belong_pal(pal_pool, pal_max, userno) || is_mymate(userno);
 
-: pal.c:is_omate() ¥[¦b is_ogood() «e­±
+: pal.c:is_omate() åŠ åœ¨ is_ogood() å‰é¢
 
 int
-is_omate(up)                     /*  1: ¹ï¤è³]§Ú¬°³Â¦N */
+is_omate(up)                     /*  1: å°æ–¹è¨­æˆ‘ç‚ºéº»å‰ */
   UTMP *up;
 {
   return belong_pal(up->pal_spool, up->pal_max, cuser.userno | MATE_MASK);
@@ -46,19 +46,19 @@ is_omate(up)                     /*  1: ¹ï¤è³]§Ú¬°³Â¦N */
 
 : bmw.c:can_see()
 
-int                     /* 1:¥i¬Ý¨£ 0:¤£¥i¬Ý¨£ */
+int                     /* 1:å¯çœ‹è¦‹ 0:ä¸å¯çœ‹è¦‹ */
 can_see(my, up)
   UTMP *my;
   UTMP *up;
 {
   usint mylevel, myufo, urufo;
 
-+ if (my == cutmp)      /* ÀË¬d§Ú¬O¤£¬O¹ï¤èªº³Â¦N */
++ if (my == cutmp)      /* æª¢æŸ¥æˆ‘æ˜¯ä¸æ˜¯å°æ–¹çš„éº»å‰ */
 + {
 +   if (is_omate(up))
 +     return 1;
 + }
-+ else                  /* ÀË¬d¹ï¤è¬O¤£¬O§Úªº³Â¦N */
++ else                  /* æª¢æŸ¥å°æ–¹æ˜¯ä¸æ˜¯æˆ‘çš„éº»å‰ */
 + {
 +   if (is_mymate(my->userno))
 +     return 1;
@@ -68,7 +68,7 @@ can_see(my, up)
 
   else
   {
-    /* itoc.020321: ¹ï¤è­YÁô§Î¶Ç§Ú¤ô²y¡A§Ú¤]¥i¥H³Q°Ê¦^ */
+    /* itoc.020321: å°æ–¹è‹¥éš±å½¢å‚³æˆ‘æ°´çƒï¼Œæˆ‘ä¹Ÿå¯ä»¥è¢«å‹•å›ž */
     BMW *bmw;
 
     for (ufo = bmw_locus - 1; ufo >= 0; ufo--)
@@ -83,4 +83,4 @@ can_see(my, up)
   }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

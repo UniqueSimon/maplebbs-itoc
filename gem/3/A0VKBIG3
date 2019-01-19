@@ -1,10 +1,10 @@
-µo«H¤H: drewlin.bbs@bbs.ksitrc.net (¶¯¤¤¸ê¬ã93ªÀªø), ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à]¦b¶i¯¸µe­±¥[¤W load ­È
-µo«H¯¸: ¸ê¬ãª¿³£ (Sun Feb  9 17:45:44 2003)               Updated: 2004/03/14
+ç™¼ä¿¡äºº: drewlin.bbs@bbs.ksitrc.net (é›„ä¸­è³‡ç ”93ç¤¾é•·), çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]åœ¨é€²ç«™ç•«é¢åŠ ä¸Š load å€¼
+ç™¼ä¿¡ç«™: è³‡ç ”çŸ½éƒ½ (Sun Feb  9 17:45:44 2003)               Updated: 2004/03/14
 
-ÁöµM³oªF¦è¦³ÂIµL²á@@
-¤£¹L¦³®É­ÔÁÙÆZ¦³°Ñ¦Ò»ù­Èªº:p
-°Ñ¦Ò windtopªº
+é›–ç„¶é€™æ±è¥¿æœ‰é»ç„¡èŠ@@
+ä¸éæœ‰æ™‚å€™é‚„è »æœ‰åƒè€ƒåƒ¹å€¼çš„:p
+åƒè€ƒ windtopçš„
 
 : bbsd.c:tn_main()
 
@@ -17,27 +17,27 @@ tn_main()
 
 #ifdef HAVE_LOGIN_DENIED
   if (acl_has(BBS_ACLFILE, "", fromhost))
-    login_abort("\n¶Q¾÷¾¹©ó¤£³Q±Í¯¸±µ¨ü");
+    login_abort("\nè²´æ©Ÿå™¨æ–¼ä¸è¢«æ•ç«™æ¥å—");
 #endif
 
 + getloadavg(load, 3);
 
-- prints(MYHOSTNAME " ¡ó " SCHOOLNAME " ¡ó " MYIPADDR "\n"
--   "Åwªï¥úÁ{¡i\033[1;33;46m %s \033[m¡j¥Ø«e½u¤W¤H¼Æ [%d] ¤H",
+- prints(MYHOSTNAME " âŠ™ " SCHOOLNAME " âŠ™ " MYIPADDR "\n"
+-   "æ­¡è¿å…‰è‡¨ã€\033[1;33;46m %s \033[mã€‘ç›®å‰ç·šä¸Šäººæ•¸ [%d] äºº",
 -   str_site, ushm->count);
-+ prints(MYHOSTNAME " ¡ó " SCHOOLNAME " ¡ó " MYIPADDR "\n"
-+   "Åwªï¥úÁ{¡i\033[1;33;46m %s \033[m¡j¥Ø«e½u¤W¤H¼Æ [%d] ¤H¡A"
-+   "¨t²Î­t¸ü %.2f %.2f %.2f [%s]",
++ prints(MYHOSTNAME " âŠ™ " SCHOOLNAME " âŠ™ " MYIPADDR "\n"
++   "æ­¡è¿å…‰è‡¨ã€\033[1;33;46m %s \033[mã€‘ç›®å‰ç·šä¸Šäººæ•¸ [%d] äººï¼Œ"
++   "ç³»çµ±è² è¼‰ %.2f %.2f %.2f [%s]",
 +   str_site, ushm->count, load[0], load[1], load[2],
-+   load[0] > 7 ? "¹L°ª" : load[0] > 3 ? "°¾°ª" : "¥¿±`");
++   load[0] > 7 ? "éé«˜" : load[0] > 3 ? "åé«˜" : "æ­£å¸¸");
 
 
 ps...
-"¨t²Î­t¸ü %.2f %.2f %.2f [%s]" ³o¤@¦æ´N¬Oshow¥X¨t²Î­t¸üªº¦a¤è
-¥i¥H¦Û¤v´«¨ì¨ä¥L¦a¤è ¥u¬O­nª`·N³Ì«á¤@¦æªº¶¶§Ç
-(str_site¬O¯¸¦W,ushm->count¬O¯¸¤W¤H¼Æ,³Ì«á¤@­Ó¬O¨Ì·Ó¨t²Î­t¸ü­È§@¬°§PÂ_ªºªF¦è)
-¥Î 7 ©M 3 ¥h§@¬°§PÂ_­È ¥i¥H¦Û¤v­×§ï:p
+"ç³»çµ±è² è¼‰ %.2f %.2f %.2f [%s]" é€™ä¸€è¡Œå°±æ˜¯showå‡ºç³»çµ±è² è¼‰çš„åœ°æ–¹
+å¯ä»¥è‡ªå·±æ›åˆ°å…¶ä»–åœ°æ–¹ åªæ˜¯è¦æ³¨æ„æœ€å¾Œä¸€è¡Œçš„é †åº
+(str_siteæ˜¯ç«™å,ushm->countæ˜¯ç«™ä¸Šäººæ•¸,æœ€å¾Œä¸€å€‹æ˜¯ä¾ç…§ç³»çµ±è² è¼‰å€¼ä½œç‚ºåˆ¤æ–·çš„æ±è¥¿)
+ç”¨ 7 å’Œ 3 å»ä½œç‚ºåˆ¤æ–·å€¼ å¯ä»¥è‡ªå·±ä¿®æ”¹:p
 
 --
-    [1;32m¢~¢w Origin ¢wùß [0;36m¸[1mê[0;36m¬[1mã[0;36mª[1m¿[0;36m³[1m£ [1;31m bbs.ksitrc.net [32m ¡ã £e£f£g ¢w¢t[m
-    [1;32m¢u   Author   ùë [33;44m61-222-227-131.HINET-IP.hinet.net   [m
+    [1;32mâ•­â”€ Origin â”€â•— [0;36m?[1m?[0;36m?[1m?[0;36m?[1m?[0;36m?[1m?[1;31m bbs.ksitrc.net [32m ï½ ÎºÎ»Î¼ â”€â”¤[m
+    [1;32mâ”œ   Author   â•¡ [33;44m61-222-227-131.HINET-IP.hinet.net   [m

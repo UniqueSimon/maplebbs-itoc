@@ -1,66 +1,66 @@
-§@ªÌ: itoc (Internet Explorer) ¬ÝªO: plan
-¼ÐÃD: [¤å¥ó] rec_*() ªº·N«ä
-®É¶¡: Fri Mar 14 10:24:22 2003
+ä½œè€…: itoc (Internet Explorer) çœ‹æ¿: plan
+æ¨™é¡Œ: [æ–‡ä»¶] rec_*() çš„æ„æ€
+æ™‚é–“: Fri Mar 14 10:24:22 2003
 
-  fpath:   ¯Á¤Þªº¸ô®| (file path)
-  data:    ¸ê®Æ
-  size:    ¸ê®Æªº¤j¤p (³æ¦ì: bytes)
-  fchk:    ½Æ¬dªº¨ç¦¡ (check function)
-  fref:    §ó·sªº¨ç¦¡ (refresh function)
-  fsync:   ¦P¨Bªº¨ç¦¡ (synchronize function)
-  pos:     ²Ä´Xµ§¦ì¸m (position)
-  num:     ¼Æ¶q (number)
+  fpath:   ç´¢å¼•çš„è·¯å¾‘ (file path)
+  data:    è³‡æ–™
+  size:    è³‡æ–™çš„å¤§å° (å–®ä½: bytes)
+  fchk:    è¤‡æŸ¥çš„å‡½å¼ (check function)
+  fref:    æ›´æ–°çš„å‡½å¼ (refresh function)
+  fsync:   åŒæ­¥çš„å‡½å¼ (synchronize function)
+  pos:     ç¬¬å¹¾ç­†ä½ç½® (position)
+  num:     æ•¸é‡ (number)
 
 : rec_add.c  (Record Add)
 
-  [»yªk] rec_add(fpath, data, size)
-  [»¡©ú] §â data ³oµ§¸ê®Æ¡Aªþ¥[¦b fpath ³Ì«á
+  [èªžæ³•] rec_add(fpath, data, size)
+  [èªªæ˜Ž] æŠŠ data é€™ç­†è³‡æ–™ï¼Œé™„åŠ åœ¨ fpath æœ€å¾Œ
 
-  [½d¨Ò] pal_add()
+  [ç¯„ä¾‹] pal_add()
 
     PAL pal;
 
-    /* »s³y¤@­Ó PAL */
+    /* è£½é€ ä¸€å€‹ PAL */
     memset(&pal, 0, sizeof(PAL));
-    vget(b_lines, 0, "¤Í½Ë¡G", pal.ship, sizeof(pal.ship), DOECHO);
-    pal.ftype = vans("Ãa¤H(Y/N)¡H[N] ") == 'y' ? PAL_BAD : 0;
+    vget(b_lines, 0, "å‹èª¼ï¼š", pal.ship, sizeof(pal.ship), DOECHO);
+    pal.ftype = vans("å£žäºº(Y/N)ï¼Ÿ[N] ") == 'y' ? PAL_BAD : 0;
     strcpy(pal.userid, acct.userid);
     pal.userno = userno;
 
-    /* ±N PAL ¼g¤J */
+    /* å°‡ PAL å¯«å…¥ */
     rec_add(xo->dir, &pal, sizeof(PAL));
 
 
 : rec_bot.c  (Record Bottom)
 
-  [»yªk] rec_bot(fpath, data, size)
-  [»¡©ú] §â data ³oµ§¸ê®Æ¡Aªþ¥[¦b fpath ²Ä¤@µ§¸m©³¤åªº«e­±
+  [èªžæ³•] rec_bot(fpath, data, size)
+  [èªªæ˜Ž] æŠŠ data é€™ç­†è³‡æ–™ï¼Œé™„åŠ åœ¨ fpath ç¬¬ä¸€ç­†ç½®åº•æ–‡çš„å‰é¢
 
-  [½d¨Ò] do_unanonymous()
+  [ç¯„ä¾‹] do_unanonymous()
 
     HDR hdr;
 
-    /* »s³y¤@­Ó HDR */
+    /* è£½é€ ä¸€å€‹ HDR */
     hdr_stamp(folder, HDR_LINK | 'A', &hdr, fpath);
     strcpy(hdr.owner, cuser.userid);
     strcpy(hdr.title, ve_title);
 
-    /* ±N HDR ¼g¤J */
+    /* å°‡ HDR å¯«å…¥ */
     rec_bot(folder, &hdr, sizeof(HDR));
 
 
 : rec_del.c  (Record Delete)
 
-  [»yªk] rec_del(fpath, size, pos, fchk)
-  [»¡©ú] §â fpath ªº²Ä pos µ§¸ê®Æ§R°£
-         ¬°Á×§K§R¿ù¸ê®Æ¡A§R°£«e­n°µ fchk ½T»{
+  [èªžæ³•] rec_del(fpath, size, pos, fchk)
+  [èªªæ˜Ž] æŠŠ fpath çš„ç¬¬ pos ç­†è³‡æ–™åˆªé™¤
+         ç‚ºé¿å…åˆªéŒ¯è³‡æ–™ï¼Œåˆªé™¤å‰è¦åš fchk ç¢ºèª
 
-  [½d¨Ò] pal_delete()
+  [ç¯„ä¾‹] pal_delete()
 
-    /* µL±ø¥ó±N´å¼Ð©Ò¦b³oµ§¸ê®Æ§R°£ */
+    /* ç„¡æ¢ä»¶å°‡æ¸¸æ¨™æ‰€åœ¨é€™ç­†è³‡æ–™åˆªé™¤ */
     rec_del(xo->dir, sizeof(PAL), xo->pos, NULL);
 
-  [½d¨Ò] post_delete()
+  [ç¯„ä¾‹] post_delete()
 
     static int currchrono;
 
@@ -75,8 +75,8 @@
     post_delete(xo)
       XO *xo;
     {
-      /* ±N´å¼Ð©Ò¦b³oµ§¸ê®Æ§R°£¡A¦ý§R°£«e­n°µ chrono ªº compare
-         ­Y¬Û¦P¤~§R°£¡A¥H§K»~¬å */
+      /* å°‡æ¸¸æ¨™æ‰€åœ¨é€™ç­†è³‡æ–™åˆªé™¤ï¼Œä½†åˆªé™¤å‰è¦åš chrono çš„ compare
+         è‹¥ç›¸åŒæ‰åˆªé™¤ï¼Œä»¥å…èª¤ç  */
       currchrono = hdr->chrono;
       rec_del(xo->dir, sizeof(HDR), xo->pos, cmpchrono);
     }
@@ -84,17 +84,17 @@
 
 : rec_get.c  (Record Get)
 
-  [»yªk] rec_get(fpath, data, size, pos)
-  [»¡©ú] §â fpath ªº²Ä pos µ§¸ê®Æ¨ú¥X©ñ¨ì data
+  [èªžæ³•] rec_get(fpath, data, size, pos)
+  [èªªæ˜Ž] æŠŠ fpath çš„ç¬¬ pos ç­†è³‡æ–™å–å‡ºæ”¾åˆ° data
 
-  [½d¨Ò] pal_loadpal()
+  [ç¯„ä¾‹] pal_loadpal()
 
     PAL pal;
 
-    /* ±q¦n¤Í¦W³æ¤¤¨ú¤¤²Ä i µ§¸ê®Æ */
+    /* å¾žå¥½å‹åå–®ä¸­å–ä¸­ç¬¬ i ç­†è³‡æ–™ */
     if (rec_get(fpath, &pal, sizeof(PAL), i) >= 0)
     {
-      /* ¦pªG³oµ§¸ê®Æ¤£¬OÃa¤H¡A´N¥[¤JªO¤Í¦W³æ */
+      /* å¦‚æžœé€™ç­†è³‡æ–™ä¸æ˜¯å£žäººï¼Œå°±åŠ å…¥æ¿å‹åå–® */
       if (!(pal.ftype & PAL_BAD))
         rec_add(dir, &pal, sizeof(PAL));
     }
@@ -102,81 +102,81 @@
 
 : rec_ins.c  (Record Insert)
 
-  [»yªk] rec_ins(fpath, data, size, pos, num)
-  [»¡©ú] §â data ³o num µ§¸ê®Æ¡A´¡¤J¦b fpath ªº²Ä pos µ§¦ì¸m
+  [èªžæ³•] rec_ins(fpath, data, size, pos, num)
+  [èªªæ˜Ž] æŠŠ data é€™ num ç­†è³‡æ–™ï¼Œæ’å…¥åœ¨ fpath çš„ç¬¬ pos ç­†ä½ç½®
 
-  [½d¨Ò] gem_add()
+  [ç¯„ä¾‹] gem_add()
 
     HDR ghdr;
 
-    /* »s³y¤@­Ó HDR */
+    /* è£½é€ ä¸€å€‹ HDR */
     ...
     ...
 
-    /* ¸ß°Ý­n´¡¤Jªº¦ì¸m */
-    ans = vans("¦s©ñ¦ì¸m A)¥[¨ì³Ì«á I/N)´¡¤J¥Ø«e¦ì¸m Q)Â÷¶} [A] ");
+    /* è©¢å•è¦æ’å…¥çš„ä½ç½® */
+    ans = vans("å­˜æ”¾ä½ç½® A)åŠ åˆ°æœ€å¾Œ I/N)æ’å…¥ç›®å‰ä½ç½® Q)é›¢é–‹ [A] ");
 
-    if (ans == 'i')         /* ­Y¿ï Insert «h´¡¤J¥Ø«e¦ì¸m */
+    if (ans == 'i')         /* è‹¥é¸ Insert å‰‡æ’å…¥ç›®å‰ä½ç½® */
       rec_ins(xo->dir, &ghdr, sizeof(HDR), xo->pos, 1);
-    else if (ans == 'n')    /* ­Y¿ï Next «h´¡¤J¤U¤@µ§¦ì¸m */
+    else if (ans == 'n')    /* è‹¥é¸ Next å‰‡æ’å…¥ä¸‹ä¸€ç­†ä½ç½® */
       rec_ins(xo->dir, &ghdr, sizeof(HDR), xo->pos + 1, 1);
-    else                    /* ¤Ï¤§¡A«hªþ¥[¦b³Ì«á */
+    else                    /* åä¹‹ï¼Œå‰‡é™„åŠ åœ¨æœ€å¾Œ */
       rec_add(xo->dir, &ghdr, sizeof(HDR));
 
 
 : rec_num.c  (Record Number)
 
-  [»yªk] rec_num(fpath, size)
-  [»¡©ú] ¦^¶Ç fpath Á`¦@¦³´Xµ§¸ê®Æ
+  [èªžæ³•] rec_num(fpath, size)
+  [èªªæ˜Ž] å›žå‚³ fpath ç¸½å…±æœ‰å¹¾ç­†è³‡æ–™
 
-  [½d¨Ò] acct_show()
+  [ç¯„ä¾‹] acct_show()
 
     usr_fpath(buf, uid, fn_dir);
-    prints("  ­Ó¤H«H¥ó¡G%d «Ê", rec_num(buf, sizeof(HDR)));
+    prints("  å€‹äººä¿¡ä»¶ï¼š%d å°", rec_num(buf, sizeof(HDR)));
 
 
 : rec_put.c  (Record Put/Update)
 
-  [»yªk] rec_put(fpath, data, size, pos, fchk)
-  [»¡©ú] ¥H data ¥h§ó·s fpath ªº²Ä pos µ§¸ê®Æ
-         ¬°Á×§K§ó·s¿ù¸ê®Æ¡A§ó·s«e­n°µ fchk ½T»{
+  [èªžæ³•] rec_put(fpath, data, size, pos, fchk)
+  [èªªæ˜Ž] ä»¥ data åŽ»æ›´æ–° fpath çš„ç¬¬ pos ç­†è³‡æ–™
+         ç‚ºé¿å…æ›´æ–°éŒ¯è³‡æ–™ï¼Œæ›´æ–°å‰è¦åš fchk ç¢ºèª
 
-  [½d¨Ò] pal_change()
+  [ç¯„ä¾‹] pal_change()
 
     PAL *pal;
 
-    /* ­«·s½s¿è´å¼Ð©Ò¦b³oµ§¦n¤Í¤Í½Ë */
+    /* é‡æ–°ç·¨è¼¯æ¸¸æ¨™æ‰€åœ¨é€™ç­†å¥½å‹å‹èª¼ */
     pal = (PAL *) xo_pool + cur;
-    vget(b_lines, 0, "¤Í½Ë¡G", pal->ship, sizeof(pal->ship), GCARRY);
-    pal->ftype = vans("Ãa¤H(Y/N)¡H[N] ") == 'y' ? PAL_BAD : 0;
+    vget(b_lines, 0, "å‹èª¼ï¼š", pal->ship, sizeof(pal->ship), GCARRY);
+    pal->ftype = vans("å£žäºº(Y/N)ï¼Ÿ[N] ") == 'y' ? PAL_BAD : 0;
 
-    /* µL±ø¥ó§ó·s³oµ§¸ê®Æ */
+    /* ç„¡æ¢ä»¶æ›´æ–°é€™ç­†è³‡æ–™ */
     rec_put(xo->dir, pal, sizeof(PAL), pos, NULL);
 
-  [½d¨Ò] post_mark()
+  [ç¯„ä¾‹] post_mark()
 
     HDR *hdr;
 
-    /* ¥[¤W/¥h°£ mark */
+    /* åŠ ä¸Š/åŽ»é™¤ mark */
     hdr = (HDR *) xo_pool + xo->pos - xo->top;
     hdr->xmode ^= POST_MARKED;
 
-    /* ±N´å¼Ð©Ò¦b³oµ§¸ê®Æ§ó·s¡A¦ý§ó·s«e­n°µ chrono ªº compare
-       ­Y¬Û¦P¤~§ó·s¡A¥H§K§ó·s¿ù½g */
+    /* å°‡æ¸¸æ¨™æ‰€åœ¨é€™ç­†è³‡æ–™æ›´æ–°ï¼Œä½†æ›´æ–°å‰è¦åš chrono çš„ compare
+       è‹¥ç›¸åŒæ‰æ›´æ–°ï¼Œä»¥å…æ›´æ–°éŒ¯ç¯‡ */
     currchrono = hdr->chrono;
     rec_put(xo->dir, hdr, sizeof(HDR), xo->pos, cmpchrono);
 
 
 : rec_ref.c  (Record Refresh/Update)
 
-  [»yªk] rec_ref(fpath, data, size, pos, fchk, fref)
-  [»¡©ú] ¥H data ¥h§ó·s fpath ªº²Ä pos µ§¸ê®Æ
-         ¬°Á×§K§ó·s¿ù¸ê®Æ¡A§ó·s«e­n°µ fchk ½T»{
-         §ó·s®É°µªº°Ê§@¬O fref
-  [³Æµù] ³o¬O¤@­ÓÃþ¦ü rec_put() ªº¨ç¦¡¡A®t§O¦b©ó¦h¤F­Ó fref
-         ¥i¥H®³µwºÐ¤¤ªº¯Á¤ÞÀÉª½±µ¨Ó§ï¡AÁ×§K XO ©M .DIR ¤£¦P¨Bªº°ÝÃD
+  [èªžæ³•] rec_ref(fpath, data, size, pos, fchk, fref)
+  [èªªæ˜Ž] ä»¥ data åŽ»æ›´æ–° fpath çš„ç¬¬ pos ç­†è³‡æ–™
+         ç‚ºé¿å…æ›´æ–°éŒ¯è³‡æ–™ï¼Œæ›´æ–°å‰è¦åš fchk ç¢ºèª
+         æ›´æ–°æ™‚åšçš„å‹•ä½œæ˜¯ fref
+  [å‚™è¨»] é€™æ˜¯ä¸€å€‹é¡žä¼¼ rec_put() çš„å‡½å¼ï¼Œå·®åˆ¥åœ¨æ–¼å¤šäº†å€‹ fref
+         å¯ä»¥æ‹¿ç¡¬ç¢Ÿä¸­çš„ç´¢å¼•æª”ç›´æŽ¥ä¾†æ”¹ï¼Œé¿å… XO å’Œ .DIR ä¸åŒæ­¥çš„å•é¡Œ
 
-  [½d¨Ò] post_score()
+  [ç¯„ä¾‹] post_score()
 
     static int curraddscore;
 
@@ -184,7 +184,7 @@
     addscore(hdd, ram)
       HDR *hdd, *ram;
     {
-      /* ª½±µ§â .DIR ¤¤ªº score §ó·s¡A¤£ºÞ XO ¸Ì­±ªº score ¬O°O¿ý¦h¤Ö */
+      /* ç›´æŽ¥æŠŠ .DIR ä¸­çš„ score æ›´æ–°ï¼Œä¸ç®¡ XO è£¡é¢çš„ score æ˜¯è¨˜éŒ„å¤šå°‘ */
       hdd->score += curraddscore;
     }
 
@@ -194,10 +194,10 @@
     {
       HDR *hdr;
       ...
-      ans = vans("¥[´î¤À 1)±À¤å 2)³è±ó Q)¨ú®ø¡H[Q] ");
-      if (ans == '1')       /* ¥[¤À */
+      ans = vans("åŠ æ¸›åˆ† 1)æŽ¨æ–‡ 2)å”¾æ£„ Q)å–æ¶ˆï¼Ÿ[Q] ");
+      if (ans == '1')       /* åŠ åˆ† */
         curraddscore = 1;
-      else if (ans == '2')  /* ¦©¤À */
+      else if (ans == '2')  /* æ‰£åˆ† */
         curraddscore = -1;
 
       currchrono = hdr->chrono;
@@ -208,16 +208,16 @@
 
 : rec_sync.c (Record Synchronize)
 
-  [»yªk] rec_sync(fpath, size, fsync, fchk)
-  [»¡©ú] §â fpath ³o­Ó¯Á¤ÞÀÉ¦P¨B¨Ã±Æ§Ç
+  [èªžæ³•] rec_sync(fpath, size, fsync, fchk)
+  [èªªæ˜Ž] æŠŠ fpath é€™å€‹ç´¢å¼•æª”åŒæ­¥ä¸¦æŽ’åº
 
-  [½d¨Ò] pal_sync()
+  [ç¯„ä¾‹] pal_sync()
 
     static int
     cmppal(a, b)
       PAL *a, *b;
     {
-      /* ¨Ì userid ±Æ§Ç */
+      /* ä¾ userid æŽ’åº */
       return str_cmp(a->userid, b->userid);
     }
 
@@ -225,7 +225,7 @@
     chkpal(pal)
       PAL *pal;
     {
-      /* ÀË¬d¦n¤Í¦W³æ¤¤¨Cµ§¸ê®Æ¡A­Y userno ¿ù»~¡A§R°£¸Óµ§¸ê®Æ */
+      /* æª¢æŸ¥å¥½å‹åå–®ä¸­æ¯ç­†è³‡æ–™ï¼Œè‹¥ userno éŒ¯èª¤ï¼Œåˆªé™¤è©²ç­†è³‡æ–™ */
       int userno = pal->userno;
       return (userno > 0 && userno == acct_userno(pal->userid));
     }
@@ -233,7 +233,7 @@
     void
     pal_sync()
     {
-      /* ÀË¬d¦n¤Í¦W³æ¤¤¨Cµ§¸ê®Æ¬O§_ userno ¥¿½T¡A¨Ã¨Ì userid ±Æ§Ç */
+      /* æª¢æŸ¥å¥½å‹åå–®ä¸­æ¯ç­†è³‡æ–™æ˜¯å¦ userno æ­£ç¢ºï¼Œä¸¦ä¾ userid æŽ’åº */
       usr_fpath(fpath, cuser.userid, fn_pal);
       rec_sync(fpath, sizeof(PAL), cmppal, chkpal);
     }
@@ -241,40 +241,40 @@
 
 : rec_mov.c  (Record Move)
 
-  rec_mov.c ¥Ø«e³£¨S¥Î¨ì
+  rec_mov.c ç›®å‰éƒ½æ²’ç”¨åˆ°
 
 
 > ---------------------------------------------------------- <
 
-  ¦Ü©ó­n¥Î HDR hdr; PAL pal; ...
-  ÁÙ¬O¥Î HDR *hdr; PAL *pal; ... «ü¼Ð
+  è‡³æ–¼è¦ç”¨ HDR hdr; PAL pal; ...
+  é‚„æ˜¯ç”¨ HDR *hdr; PAL *pal; ... æŒ‡æ¨™
 
 
-: ¦pªG­n·s¼W/ªþ¥[¤@µ§¸ê®Æ¡A´N¬O¥Î HDR hdr;
+: å¦‚æžœè¦æ–°å¢ž/é™„åŠ ä¸€ç­†è³‡æ–™ï¼Œå°±æ˜¯ç”¨ HDR hdr;
 
   HDR hdr;
 
-  /* »s³y¤@­Ó HDR */
+  /* è£½é€ ä¸€å€‹ HDR */
   hdr.chrono = time(0);
   strcpy(hdr.owner, cuser.userid);
 
-  /* ¼g¦^µwºÐ */
+  /* å¯«å›žç¡¬ç¢Ÿ */
   rec_add(folder, &hdr, sizeof(HDR));
 
 
-: ¦pªG­n§ó·s¤@µ§¸ê®Æ¡A´N¬O¥Î HDR *hdr;
+: å¦‚æžœè¦æ›´æ–°ä¸€ç­†è³‡æ–™ï¼Œå°±æ˜¯ç”¨ HDR *hdr;
 
   HDR *hdr;
 
-  /* ±q XO ¤¤¨ú¥X¥Ø«e´å¼Ð©Ò¦b³oµ§¸ê®Æªº­È */
+  /* å¾ž XO ä¸­å–å‡ºç›®å‰æ¸¸æ¨™æ‰€åœ¨é€™ç­†è³‡æ–™çš„å€¼ */
   hdr = (HDR *) xo_pool + xo->pos - xo->top;
 
-  /* §ó·s³oµ§¸ê®Æ */
+  /* æ›´æ–°é€™ç­†è³‡æ–™ */
   hdr->xmode ^= POST_MARKED;
 
-  /* ¼g¦^µwºÐ */
+  /* å¯«å›žç¡¬ç¢Ÿ */
   currchrono = hdr->chrono;
   rec_put(xo->dir, hdr, sizeof(HDR), xo->pos, cmpchrono);
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

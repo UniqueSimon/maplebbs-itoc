@@ -1,19 +1,19 @@
-§@ªÌ: itoc (cygreadline4.dll) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¯¸ªø°O¿ı -- ¬åªO
-®É¶¡: 2004/05/12 Wed 18:24:20                           Updated: 2005/04/29
+ä½œè€…: itoc (cygreadline4.dll) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] ç«™é•·è¨˜éŒ„ -- ç æ¿
+æ™‚é–“: 2004/05/12 Wed 18:24:20                           Updated: 2005/04/29
 
 : maple.p
 
 + void add_post(char *brdname, char *fpath, char *title);
 int do_reply(XO *xo, HDR *hdr);
 
-: post.c ·s¼W¥H¤U¨ç¦¡¦b do_post() «e­±
+: post.c æ–°å¢ä»¥ä¸‹å‡½å¼åœ¨ do_post() å‰é¢
 
 void
-add_post(brdname, fpath, title)           /* µo¤å¨ì¬İªO */
-  char *brdname;        /* ±ı post ªº¬İªO */
-  char *fpath;          /* ÀÉ®×¸ô®| */
-  char *title;          /* ¤å³¹¼ĞÃD */
+add_post(brdname, fpath, title)           /* ç™¼æ–‡åˆ°çœ‹æ¿ */
+  char *brdname;        /* æ¬² post çš„çœ‹æ¿ */
+  char *fpath;          /* æª”æ¡ˆè·¯å¾‘ */
+  char *title;          /* æ–‡ç« æ¨™é¡Œ */
 {
   HDR hdr;
   char folder[64];
@@ -29,4 +29,4 @@ add_post(brdname, fpath, title)           /* µo¤å¨ì¬İªO */
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mpc512-2.EE.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mpc512-2.EE.NCTU.edu.tw[37m ç™¼è¡¨[m

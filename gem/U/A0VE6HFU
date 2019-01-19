@@ -1,17 +1,17 @@
-µo«H¤H: amaki.bbs@luna.twbbs.org (¥P¯ó¤p¦Ï) ¬İªO: plan
-¼Ğ  ÃD: Re: [¾ã²z]ºëµØ°Ï¥i¨£¦W³æ
-µo«H¯¸: ¤ë¤U©]·Q (Sun, 13 Apr 2003 06:10:16 +0800 (CST)   Updated: 2005/10/07
+ç™¼ä¿¡äºº: amaki.bbs@luna.twbbs.org (ä»™è‰å°ç¾Š) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [æ•´ç†]ç²¾è¯å€å¯è¦‹åå–®
+ç™¼ä¿¡ç«™: æœˆä¸‹å¤œæƒ³ (Sun, 13 Apr 2003 06:10:16 +0800 (CST)   Updated: 2005/10/07
 
-  ¾ã²z¤F³o¬q®É¶¡½Ñ¦h°ª¤â»Pitocªº­×§ï¡A§â§¹¾ãª©©ñ¤W¨Ó¡C
+  æ•´ç†äº†é€™æ®µæ™‚é–“è«¸å¤šé«˜æ‰‹èˆ‡itocçš„ä¿®æ”¹ï¼ŒæŠŠå®Œæ•´ç‰ˆæ”¾ä¸Šä¾†ã€‚
 
-  ³o¸Ì¹w³]ªº¥i¨£¦W³æÀÉ®×¬O©ñ¦b gem/brd/ªO¦W/gempal_DIR/ ¤U¡C
+  é€™è£¡é è¨­çš„å¯è¦‹åå–®æª”æ¡ˆæ˜¯æ”¾åœ¨ gem/brd/æ¿å/gempal_DIR/ ä¸‹ã€‚
 
-  ºëµØ°Ï¥i¨£¦W³æ:
+  ç²¾è¯å€å¯è¦‹åå–®:
 
-  ²Ä¤@¦¸«ö¤po®É·|¸ß°İ¡A²Ä¤G¦¸«ö¤po®É·|¸ß°İ¬O§_­n¸Ñ°£¥[±K¡A¸Ñ°£«á·|
-  ¬å±¼©Ò¦³¥i¨£¦W³æ¡C
+  ç¬¬ä¸€æ¬¡æŒ‰å°oæ™‚æœƒè©¢å•ï¼Œç¬¬äºŒæ¬¡æŒ‰å°oæ™‚æœƒè©¢å•æ˜¯å¦è¦è§£é™¤åŠ å¯†ï¼Œè§£é™¤å¾Œæœƒ
+  ç æ‰æ‰€æœ‰å¯è¦‹åå–®ã€‚
 
-  ¥[±K«á¡A¤é«á­Y¬O¦³»İ­n¦A¥[¤J·sªº¥i¨£¦W³æ¡A½Ğ«ö¤jOÁä¡C
+  åŠ å¯†å¾Œï¼Œæ—¥å¾Œè‹¥æ˜¯æœ‰éœ€è¦å†åŠ å…¥æ–°çš„å¯è¦‹åå–®ï¼Œè«‹æŒ‰å¤§Oéµã€‚
 
 : src/lib/dao.p
 
@@ -27,7 +27,7 @@ void usr_fpath(char *fpath, char *user, char *fname);
 + void
 mak_fpath(str, key, name)
 
-: gem.c  ·s¼W¤»¤ä¨ç¦¡¡A§Û¦bgem_item()«e­±¡C
+: gem.c  æ–°å¢å…­æ”¯å‡½å¼ï¼ŒæŠ„åœ¨gem_item()å‰é¢ã€‚
 
 #ifdef HAVE_GEMPAL
 static void
@@ -65,7 +65,7 @@ gembrdname_get(brdname, dir)
 
 
 static void
-kill_gempal(board, hdr)   /* amaki.030322: ¥Î¨Ó¬å¦W³æ¤pÀÉ */
+kill_gempal(board, hdr)   /* amaki.030322: ç”¨ä¾†ç åå–®å°æª” */
   char *board;
   HDR *hdr;
 {
@@ -167,7 +167,7 @@ bm_image_gempal(hdr, board)
           up++;
         } while (--c);
 
-        if (count > 1)          /* Thor: ¦h±Æ§Ç¦³¯q¨­Åé°·±d... */
+        if (count > 1)          /* Thor: å¤šæ’åºæœ‰ç›Šèº«é«”å¥åº·... */
           qsort(pal, count, sizeof(int), int_cmp);
 
         gempal_fpath(fpath, board, 'G', hdr);
@@ -177,7 +177,7 @@ bm_image_gempal(hdr, board)
           close(count);
         }
       }
-      else  /* Thor.980811: lkchu patch: »P friend ¦P¨B */
+      else  /* Thor.980811: lkchu patch: èˆ‡ friend åŒæ­¥ */
       {
         kill_gempal(board, hdr);
       }
@@ -204,7 +204,7 @@ XoBM_gempal(xo)
   if (!(xo->key & GEM_M_BIT) || !(hdr = gem_check(xo, NULL, 0)))
     return XO_NONE;
 
-  /* itoc.030323: ­Ó¤HºëµØ°Ï¤£»İ¥i¨£¦W³æ */
+  /* itoc.030323: å€‹äººç²¾è¯å€ä¸éœ€å¯è¦‹åå–® */
   if (!(hdr->xmode & GEM_RESTRICT) || *xo->dir == 'u')
     return XO_NONE;
 
@@ -214,11 +214,11 @@ XoBM_gempal(xo)
     mkdir(fpath, 0755);
 
   gempal_fpath(fpath, xboard, 'C', hdr);
-  /* itoc.010412: t_pal() §ï¦¨¨C¦¸°h¥X¦n¤Í¦W³æ´N free¡A¦Ó¤£¦b
-     talk_main() ¤¤¡A©Ò¥H­n­«³] pal_cb */
+  /* itoc.010412: t_pal() æ”¹æˆæ¯æ¬¡é€€å‡ºå¥½å‹åå–®å°± freeï¼Œè€Œä¸åœ¨
+     talk_main() ä¸­ï¼Œæ‰€ä»¥è¦é‡è¨­ pal_cb */
   xz[XZ_PAL - XO_ZONE].xo = xt = xo_new(fpath);
   xz[XZ_PAL - XO_ZONE].cb = pal_cb;
-  xover(XZ_PAL);              /* Thor: ¶ixover«e, pal_xo ¤@©w­n ready */
+  xover(XZ_PAL);              /* Thor: é€²xoverå‰, pal_xo ä¸€å®šè¦ ready */
 
   /* build userno image to speed up, maybe upgreade to shm */
 
@@ -231,7 +231,7 @@ XoBM_gempal(xo)
 #endif   /* GEM_PAL */
 
 
-: gem.c:gem_item()  ­×§ïgem_item()
+: gem.c:gem_item()  ä¿®æ”¹gem_item()
 
 static void
 - gem_item(num, hdr, level)
@@ -248,12 +248,12 @@ static void
 + gembrdname_get(xboard, xo->dir);
 +#endif
 
-  /* ¡·¡¸¡¹¡º¡»¡¼¡½¡¾¡¿ : A1B7 ... */
+  /* â—â˜†â˜…â—‡â—†â–¡â– â–½â–¼ : A1B7 ... */
 
   xmode = hdr->xmode;
   gtype = (char) 0xba;
 
-  ......(²¤)
+  ......(ç•¥)
 
   gtype = gem_way;
 
@@ -263,9 +263,9 @@ static void
 +#else
   if ((xmode & GEM_RESTRICT) && !(level & GEM_M_BIT))
 +#endif
-    outs(MSG_DATA_CLOAK);             /* itoc.000319: ­­¨î¯Å¤å³¹«O±K */
+    outs(MSG_DATA_CLOAK);             /* itoc.000319: é™åˆ¶ç´šæ–‡ç« ä¿å¯† */
 
-: gem.c ©Ò¦³¥Î¨ì gem_item() ªº¦a¤è³£­n§ï
+: gem.c æ‰€æœ‰ç”¨åˆ° gem_item() çš„åœ°æ–¹éƒ½è¦æ”¹
 
  :: gem_body
   do
@@ -284,7 +284,7 @@ static void
 -   gem_item(num, hdr, xo->key);
 +   gem_item(xo, num, hdr, xo->key);
 
-: gem.c:gem_check()  ­×§ïgem_check
+: gem.c:gem_check()  ä¿®æ”¹gem_check
 
   HDR *hdr;
   int gtype;
@@ -308,7 +308,7 @@ static void
   if ((op & GEM_PLAIN) && (gtype & GEM_FOLDER))
     return NULL;
 
-: gem.c:gem_refuse()  ­×§ïgem_refuse
+: gem.c:gem_refuse()  ä¿®æ”¹gem_refuse
 
 static int
 gem_refuse(xo)
@@ -322,7 +322,7 @@ gem_refuse(xo)
 +#ifdef HAVE_GEMPAL
 +   if (hdr->xmode & GEM_RESTRICT)
 +   {
-+     if (vans("±z½T©w­n¸Ñ°£¤å³¹«O±K¶Ü¡H¥i¨£¦W³æ±N·|¥ş³¡¬å°£³á¡I[N] ") == 'y')
++     if (vans("æ‚¨ç¢ºå®šè¦è§£é™¤æ–‡ç« ä¿å¯†å—ï¼Ÿå¯è¦‹åå–®å°‡æœƒå…¨éƒ¨ç é™¤å–”ï¼[N] ") == 'y')
 +     {
 +       char xboard[BNLEN + 1];
 +
@@ -343,7 +343,7 @@ gem_refuse(xo)
     rec_put(xo->dir, hdr, sizeof(HDR), num, NULL);
 
 +#ifdef HAVE_GEMPAL
-+   if (*xo->dir == 'g')   /* amaki.030411: «D¬İªOºëµØ°Ï¤£³]¥i¨£¦W³æ */
++   if (*xo->dir == 'g')   /* amaki.030411: éçœ‹æ¿ç²¾è¯å€ä¸è¨­å¯è¦‹åå–® */
 +     return XoBM_gempal(xo);
 +#endif
 
@@ -356,7 +356,7 @@ gem_refuse(xo)
 }
 
 
-: gem.c:delgem() ­×§ïdelgem
+: gem.c:delgem() ä¿®æ”¹delgem
 
     if (hdr->xname[0] != '@')
     {
@@ -376,14 +376,14 @@ gem_refuse(xo)
 +#endif
 }
 
-: gem.c:gem_cb[]  ­×§ïgem_cb
+: gem.c:gem_cb[]  ä¿®æ”¹gem_cb
 
 +#ifdef HAVE_GEMPAL
 +  'O', XoBM_gempal,
 +#endif
 
 
-: pal.c:pal_body()  ­×§ïpal_body
+: pal.c:pal_body()  ä¿®æ”¹pal_body
 
 +extern BCACHE *bshm;
 
@@ -411,25 +411,25 @@ pal_body(xo)
 +     brd = bshm->bcache + brd_bno(currboard);
 +     if ((brd->readlevel == PERM_SYSOP) || (brd->readlevel == PERM_BOARD))
 +     {
-+       if (vans("­n³]¬İªO¥i¨£¦W³æ¶Ü(Y/N)¡H[N] ") == 'y')
++       if (vans("è¦è¨­çœ‹æ¿å¯è¦‹åå–®å—(Y/N)ï¼Ÿ[N] ") == 'y')
 +         return pal_add(xo);
 +     }
 +#ifdef HAVE_BUCKET
 +     else
 +     {
-+       if (vans("­n³]¬İªO¤ô±í¦W³æ¶Ü(Y/N)¡H[N] ") == 'y')
++       if (vans("è¦è¨­çœ‹æ¿æ°´æ¡¶åå–®å—(Y/N)ï¼Ÿ[N] ") == 'y')
 +         return pal_add(xo);
 +     }
 +#endif
 +   }
 +   else if (*dir == 'g')
 +   {
-+     if (vans("­n³]ºëµØ°Ï¥i¨£¦W³æ¶Ü(Y/N)¡H[N] ") == 'y')
++     if (vans("è¦è¨­ç²¾è¯å€å¯è¦‹åå–®å—(Y/N)ï¼Ÿ[N] ") == 'y')
 +       return pal_add(xo);
 +   }
 +   else
 +#endif
-      if (vans("­n¥æ·sªB¤Í¶Ü(Y/N)¡H[N] ") == 'y')
+      if (vans("è¦äº¤æ–°æœ‹å‹å—(Y/N)ï¼Ÿ[N] ") == 'y')
         return pal_add(xo);
     return XO_QUIT;
   }

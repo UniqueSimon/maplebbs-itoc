@@ -1,36 +1,36 @@
-�o�H�H: itoc.bbs@xeon.tfcis.org (�֤߰ʤO) �ݪO: plan
-��  �D: ���]��Ʀ^�h�H��p��\Ū
-�o�H��: �ʤO�֤� (2003/12/20 Sat 22:58:41)
+發信人: itoc.bbs@xeon.tfcis.org (核心動力) 看板: plan
+標  題: 打包資料回去以後如何閱讀
+發信站: 動力核心 (2003/12/20 Sat 22:58:41)
 
-  �D��� �� Mail �� Zip
+  主選單 → Mail → Zip
 
-  ���]��Ʒ|����@�ʫH
+  打包資料會收到一封信
 
-  ����[�ɮ׬O *.tgz (�i�� WinRAR ���n������Y�A�Υ�h Unix �� tar �����Y)
+  其附加檔案是 *.tgz (可用 WinRAR 等軟體解壓縮，或丟去 Unix 用 tar 解壓縮)
 
-  WinZip / WinRar ���n��i�H�����Y�A�����Y�H��A�ɮ׬O�¤�r�ɡA�A�i�H�K�K
+  WinZip / WinRar 等軟體可以解壓縮，解壓縮以後，檔案是純文字檔，你可以……
 
-  1. �ΰO�ƥ��}�ҡA���O����X�|�ݤ���A�B�S���_��
+  1. 用記事本開啟，但是控制碼會看不到，且沒有斷行
 
-  2. �� Wordpad �� Word �}�ҡA���O����X�|�ݤ���
+  2. 用 Wordpad 或 Word 開啟，但是控制碼會看不到
 
-  3. �� WinCV �o�M�n��Ӷ}�ҡA�i�H�ݨ�m�ⱱ��X
+  3. 裝 WinCV 這套軟體來開啟，可以看到彩色控制碼
      http://cview.com.tw/
 
-  4. �H PCMan �o�M�s�u�n��Ӷ}�� (ANSI�s����}������)�A�i�H�ݨ�m�ⱱ��X
+  4. 以 PCMan 這套連線軟體來開啟 (ANSI編輯→開啟舊檔)，可以看到彩色控制碼
      http://pcman.ptt.cc/
 
-  5. �ΤU���o�ӳn�鰵�� Windows Help �榡
-     �U���^�h�H��A��������Y�H��A�̭����� html �о���
+  5. 用下面這個軟體做成 Windows Help 格式
+     下載回去以後，執行解壓縮以後，裡面有個 html 教學檔
      http://processor.tfcis.org/maple2chm.exe
 
-  6. �ۤv�b Windows �U�[�@�ӯ�
+  6. 自己在 Windows 下架一個站
      http://processor.tfcis.org/
-     �� MapleBBS-3.10-20yymmdd-MSWin.exe �o�{��
-     ��������Y��A�i�ѦҸ̭��� 0readme.txt �[��
-     �M��A��A���]�^�h����Ʃ��ۤv�[�����̭�
-     �Y�i telnet �s�u��ۤv�q���\Ū
+     抓 MapleBBS-3.10-20yymmdd-MSWin.exe 這程式
+     執行解壓縮後，可參考裡面的 0readme.txt 架站
+     然後再把你打包回去的資料放到自己架的站裡面
+     即可 telnet 連線到自己電腦閱讀
 
 --
- [1;43m�z[44m�q[m Or[1mig[30min[m: [44m Maple-itoc���ʤO�֤� [31;47m processor.tfcis.org [m
- [1;41m�|[42m�}[m A[1mut[30mho[mr: [1;36mitoc [30m�q [35mitoc.Dorm11.NCTU.edu.tw [30m�o��[m
+ [1;43m┌[44m┼[m Or[1mig[30min[m: [44m Maple-itoc˙動力核心 [31;47m processor.tfcis.org [m
+ [1;41m└[42m┘[m A[1mut[30mho[mr: [1;36mitoc [30m從 [35mitoc.Dorm11.NCTU.edu.tw [30m發表[m

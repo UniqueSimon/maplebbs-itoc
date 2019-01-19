@@ -1,27 +1,27 @@
-§@ªÌ: itoc (­·½Õ«B¶¶¡A°ê®õ¥Á¦w) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¼W¥[Äæ¦ì»¡©ú
-®É¶¡: Sun Aug 17 16:08:35 2003                          Updated: 2007/04/12
+ä½œè€…: itoc (é¢¨èª¿é›¨é †ï¼Œåœ‹æ³°æ°‘å®‰) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] å¢åŠ æ¬„ä½èªªæ˜
+æ™‚é–“: Sun Aug 17 16:08:35 2003                          Updated: 2007/04/12
 
-  ­Y¦³ÅÜ°Ê struct ACCT ³£»İ­nÂà´« .ACCT
-  Âà´«ªº¤è¦¡¦p¤U¡G
+  è‹¥æœ‰è®Šå‹• struct ACCT éƒ½éœ€è¦è½‰æ› .ACCT
+  è½‰æ›çš„æ–¹å¼å¦‚ä¸‹ï¼š
 
-  1. Ãö¯¸ (°õ¦æ src/sh/killbbs.sh)
-          (­Y¬O Cygwin «h¬O°õ¦æ killbbs.bat)
+  1. é—œç«™ (åŸ·è¡Œ src/sh/killbbs.sh)
+          (è‹¥æ˜¯ Cygwin å‰‡æ˜¯åŸ·è¡Œ killbbs.bat)
 
-  2. °õ¦æ bin/backupacct ¨Ó³Æ¥÷¥ş¯¸ªº .ACCT  (­Y¦³«H¤ß¤£·|¥X¿ù¡A¦¹¨BÆJ¥i¸õ¹L)
+  2. åŸ·è¡Œ bin/backupacct ä¾†å‚™ä»½å…¨ç«™çš„ .ACCT  (è‹¥æœ‰ä¿¡å¿ƒä¸æœƒå‡ºéŒ¯ï¼Œæ­¤æ­¥é©Ÿå¯è·³é)
 
-  3. ±N src/include/struct.h:struct ACCT ·Ó§Û¥h
+  3. å°‡ src/include/struct.h:struct ACCT ç…§æŠ„å»
      src/util/tran/transacct.c:struct OLD
 
-  4. ·Ó patch ¸Ì­±©Ò¼gªº¡A¹ïµ{¦¡°µ­×§ï
-     ¨Ã¦b src/include/struct.h:struct ACCT ¥[·sÄæ¦ì
+  4. ç…§ patch è£¡é¢æ‰€å¯«çš„ï¼Œå°ç¨‹å¼åšä¿®æ”¹
+     ä¸¦åœ¨ src/include/struct.h:struct ACCT åŠ æ–°æ¬„ä½
 
-  5. ±N²§°Ê¹L«áªº src/include/struct.h:struct ACCT ·Ó§Û¥h
+  5. å°‡ç•°å‹•éå¾Œçš„ src/include/struct.h:struct ACCT ç…§æŠ„å»
      src/util/tran/transacct.c:struct NEW
 
-  6. ­«·s½sÄ¶µ{¦¡¡A¨Ã°õ¦æ bin/transacct
+  6. é‡æ–°ç·¨è­¯ç¨‹å¼ï¼Œä¸¦åŸ·è¡Œ bin/transacct
 
-  7. ¶}¯¸ (­«·s¶}¾÷)
+  7. é–‹ç«™ (é‡æ–°é–‹æ©Ÿ)
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

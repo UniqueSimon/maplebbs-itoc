@@ -1,15 +1,15 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ½Ğ°İÃö©ó¶®ªê¡I©_¼¯ªº·s»D¥\¯à
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/02/12 Thu 12:45:28)                Updated: 2006/08/12
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: è«‹å•é—œæ–¼é›…è™ï¼å¥‡æ‘©çš„æ–°èåŠŸèƒ½
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/02/12 Thu 12:45:28)                Updated: 2006/08/12
 
-¡° ¤Ş­z¡msegaa.bbs@segaa.com.tw (¥[¯Zing)¡n¤§»Ê¨¥¡G
->    ¦pªG»¡­n¹³µL¦W¤@¼Ëª½±µ§âkimo·s»D¦Û°ÊÂà¨ì¬İªO¤W
->    ¨C­Ó¤ÀÃş¦U¶}¤@­Óª©¡A¨C¤Ñ¦Û°Ê°õ¦æ¥h§ì·s»D«áª½±µpost¨ìªO¤W
+â€» å¼•è¿°ã€Šsegaa.bbs@segaa.com.tw (åŠ ç­ing)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>    å¦‚æœèªªè¦åƒç„¡åä¸€æ¨£ç›´æ¥æŠŠkimoæ–°èè‡ªå‹•è½‰åˆ°çœ‹æ¿ä¸Š
+>    æ¯å€‹åˆ†é¡å„é–‹ä¸€å€‹ç‰ˆï¼Œæ¯å¤©è‡ªå‹•åŸ·è¡Œå»æŠ“æ–°èå¾Œç›´æ¥poståˆ°æ¿ä¸Š
 
-  ¦b ~/run/kimo ¤U¶} 12 ­Ó¥Ø¿ı¡A¤À§O¬O
+  åœ¨ ~/run/kimo ä¸‹é–‹ 12 å€‹ç›®éŒ„ï¼Œåˆ†åˆ¥æ˜¯
   A/ B/ C/ D/ E/ F/ G/ H/ I/ J/ K/ L/
 
-  ¥ç§Y¦b¤u§@¯¸¤W°õ¦æ¥H¤U«ü¥O
+  äº¦å³åœ¨å·¥ä½œç«™ä¸ŠåŸ·è¡Œä»¥ä¸‹æŒ‡ä»¤
   % mkdir ~/run/kimo
   % mkdir ~/run/kimo/A ~/run/kimo/B ~/run/kimo/C ~/run/kimo/D
   % mkdir ~/run/kimo/E ~/run/kimo/F ~/run/kimo/G ~/run/kimo/H
@@ -19,34 +19,34 @@
 
 EXE =   .... [1;33menews-open[m
 
-: crontab -e ·s¼W¦¹¤G¦æ
+: crontab -e æ–°å¢æ­¤äºŒè¡Œ
 
-# ¨C¤Ñ 10:30AM 4:30PM §ì©_¼¯·s»D
+# æ¯å¤© 10:30AM 4:30PM æŠ“å¥‡æ‘©æ–°è
 30 10,16 * * * bin/enews-open
 
-: struct.h ·s¼W¤U­±³o¬q
+: struct.h æ–°å¢ä¸‹é¢é€™æ®µ
 
 /* ----------------------------------------------------- */
-/* enews-open.c ¤¤¹B¥Îªº¸ê®Æµ²ºc : 256 bytes             */
+/* enews-open.c ä¸­é‹ç”¨çš„è³‡æ–™çµæ§‹ : 256 bytes             */
 /* ----------------------------------------------------- */
 
 
 typedef struct
 {
-  time_t chrono;                /* ½s¸¹ */
-  char kind;                    /* ºØÃş */
-  char xname[50];               /* ÀÉ®×¦WºÙ */
+  time_t chrono;                /* ç·¨è™Ÿ */
+  char kind;                    /* ç¨®é¡ */
+  char xname[50];               /* æª”æ¡ˆåç¨± */
 
-  char link[128];               /* ³sµ²¸ô®| */
-  char title[TTLEN + 1];        /* ¤å³¹¼ĞÃD */
+  char link[128];               /* é€£çµè·¯å¾‘ */
+  char title[TTLEN + 1];        /* æ–‡ç« æ¨™é¡Œ */
 } ENEWS;
 
-: util/enews-open.c ·s¼W¦¹µ{¦¡
+: util/enews-open.c æ–°å¢æ­¤ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* util/enews-open.c    ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ©_¼¯·s»D§ó·s                                 */
+/* target : å¥‡æ‘©æ–°èæ›´æ–°                                 */
 /* create : 02/01/29                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -55,21 +55,21 @@ typedef struct
 
 #if 0
 
- ¥»©_¼¯·s»D§ó·sµ{¦¡»İ­n°t¦X contab ¥h§ì¸ê®Æ¡Acrontab ¦p¤U¡G
+ æœ¬å¥‡æ‘©æ–°èæ›´æ–°ç¨‹å¼éœ€è¦é…åˆ contab å»æŠ“è³‡æ–™ï¼Œcrontab å¦‚ä¸‹ï¼š
 
-# ¨C¤Ñ 10:30AM 4:30PM §ì©_¼¯·s»D
+# æ¯å¤© 10:30AM 4:30PM æŠ“å¥‡æ‘©æ–°è
 30 10,16 * * * bin/enews-open
 
- ­n¨Ï¥Î enews-open.c ¥²¶·¸Ë¦³ lynx¡Aª`·N lynx ªº¸ô®|­n©Mµ{¦¡§k¦X¡C
- ¦pªG¥D¾÷»İ³z¹L proxy ¤~¯à³s¥~ªº¸Ü¡A¨º»ò­n­×§ï lynx.cfg ªº http_proxy ³]©w­È¡C
+ è¦ä½¿ç”¨ enews-open.c å¿…é ˆè£æœ‰ lynxï¼Œæ³¨æ„ lynx çš„è·¯å¾‘è¦å’Œç¨‹å¼å»åˆã€‚
+ å¦‚æœä¸»æ©Ÿéœ€é€é proxy æ‰èƒ½é€£å¤–çš„è©±ï¼Œé‚£éº¼è¦ä¿®æ”¹ lynx.cfg çš„ http_proxy è¨­å®šå€¼ã€‚
 
- ²Ä¤@¦¸°õ¦æ¥»µ{¦¡¥H«e¡A¥²¶·¥ı¤â°Ê¥Î lynx µn¤J tw.yahoo.com
+ ç¬¬ä¸€æ¬¡åŸ·è¡Œæœ¬ç¨‹å¼ä»¥å‰ï¼Œå¿…é ˆå…ˆæ‰‹å‹•ç”¨ lynx ç™»å…¥ tw.yahoo.com
 
- ­n¨Ï¥Î enews-open.c ¥²¶·¸Ë¦³ iconv¡Aª`·N iconv ªº¸ô®|­n©Mµ{¦¡§k¦X¡C
+ è¦ä½¿ç”¨ enews-open.c å¿…é ˆè£æœ‰ iconvï¼Œæ³¨æ„ iconv çš„è·¯å¾‘è¦å’Œç¨‹å¼å»åˆã€‚
 
- ¤å³¹ÀÉ®×©ñ¦b run/kimo/
+ æ–‡ç« æª”æ¡ˆæ”¾åœ¨ run/kimo/
 
- ¸ê®Æ¨Ó·½¡GYahoo! ©_¼¯·s»D http://tw.news.yahoo.com/
+ è³‡æ–™ä¾†æºï¼šYahoo! å¥‡æ‘©æ–°è http://tw.news.yahoo.com/
 
 #endif
 
@@ -77,7 +77,7 @@ typedef struct
 #include "bbs.h"
 
 
-#define LYNX_PATH       "/usr/local/bin/lynx --source"  /* lynx ªºµ´¹ï¸ô®| */
+#define LYNX_PATH       "/usr/local/bin/lynx --source"  /* lynx çš„çµ•å°è·¯å¾‘ */
 #define ICONV_PATH      "/usr/local/bin/iconv -c -f utf-8 -t cp950"
 
 
@@ -86,13 +86,13 @@ typedef struct
 
 
 /*-------------------------------------------------------*/
-/* ¤ÀªR html                                             */
+/* åˆ†æ html                                             */
 /*-------------------------------------------------------*/
 
 
-static int wlen;    /* ¥»¦æ¦³¦h¤Ö¦r */
-static int slen;    /* ¥»¦æ¦³¦h¤Ö¥b§Î¦r */
-static char source[64]; /* ¥»½g·s»Dªº¨Ó·½ */
+static int wlen;    /* æœ¬è¡Œæœ‰å¤šå°‘å­— */
+static int slen;    /* æœ¬è¡Œæœ‰å¤šå°‘åŠå½¢å­— */
+static char source[64]; /* æœ¬ç¯‡æ–°èçš„ä¾†æº */
 
 
 static void
@@ -100,8 +100,8 @@ foutc(ch, fp)
   int ch;
   FILE *fp;
 {
-  static int in_tag = 0;    /* 1: ¦b <tag> ¤¤ */
-  static int in_chi = 0;    /* 1: «e¤@½X¬O¤¤¤å¦r */
+  static int in_tag = 0;    /* 1: åœ¨ <tag> ä¸­ */
+  static int in_chi = 0;    /* 1: å‰ä¸€ç¢¼æ˜¯ä¸­æ–‡å­— */
 
   if (ch == '<')
   {
@@ -111,17 +111,17 @@ foutc(ch, fp)
 
   if (!in_tag)
   {
-    if (in_chi || ch & 0x80)    /* «e¤@­Óchar©Î³ochar¬O¤¤¤å¦rªº²Ä¤@½X */
+    if (in_chi || ch & 0x80)    /* å‰ä¸€å€‹charæˆ–é€™charæ˜¯ä¸­æ–‡å­—çš„ç¬¬ä¸€ç¢¼ */
       in_chi ^= 1;
-    else            /* ¦pªG³£¤£¬O¡Aªí¥Ü³ochar¬O¥b§Î¦r */
+    else            /* å¦‚æœéƒ½ä¸æ˜¯ï¼Œè¡¨ç¤ºé€™charæ˜¯åŠå½¢å­— */
       slen++;
 
-    if (wlen >= 60 - slen % 2)  /* ¤@¦æ³Ì¦h 60 ¦r¡A­Y¦³©_¼Æ­Ó¥b§Î¦r¡A¸Ó¦æ¥u¦L 59 ¦r */
+    if (wlen >= 60 - slen % 2)  /* ä¸€è¡Œæœ€å¤š 60 å­—ï¼Œè‹¥æœ‰å¥‡æ•¸å€‹åŠå½¢å­—ï¼Œè©²è¡Œåªå° 59 å­— */
     {
-      fputs("\n    ", fp);  /* ¨C¦æ«e­±³£ªÅ¥|®æ */
+      fputs("\n    ", fp);  /* æ¯è¡Œå‰é¢éƒ½ç©ºå››æ ¼ */
       wlen = 0;
       /* slen = 0; */
-      slen = !in_chi;       /* ­Y·sªº³o¦æ²Ä¤@­Óchar¬O¥b§Î¦r¡Aslen=1 */
+      slen = !in_chi;       /* è‹¥æ–°çš„é€™è¡Œç¬¬ä¸€å€‹charæ˜¯åŠå½¢å­—ï¼Œslen=1 */
     }
 
     fputc(ch, fp);
@@ -144,7 +144,7 @@ fouts(str, fp)
 
   wlen = 0;
   slen = 0;
-  fputs("\n    ", fp);      /* ¨C¦æ«e­±³£ªÅ¥|®æ */
+  fputs("\n    ", fp);      /* æ¯è¡Œå‰é¢éƒ½ç©ºå››æ ¼ */
 
   while (ch = *str)
   {
@@ -155,37 +155,37 @@ fouts(str, fp)
 
 
 static void
-html_download(enews)        /* ¤U¸ü¤å³¹¨ÃÂà´«¬°¤å¦rÀÉ */
+html_download(enews)        /* ä¸‹è¼‰æ–‡ç« ä¸¦è½‰æ›ç‚ºæ–‡å­—æª” */
   ENEWS *enews;
 {
   char *strS, *strE, *strL;
-  char buf[2048];   /* °²³]¤å³¹¨C¬q¤£·|¶W¹L 2048 ¦r */
+  char buf[2048];   /* å‡è¨­æ–‡ç« æ¯æ®µä¸æœƒè¶…é 2048 å­— */
   FILE *fpr, *fpw;
   int article_begin;
 
-  /* ¤U¸ü¤å³¹ */
+  /* ä¸‹è¼‰æ–‡ç«  */
   sprintf(buf, LYNX_PATH " %s | " ICONV_PATH " > " NEWS_FILE, enews->link);
   system(buf);
 
-  /* Âà´«¬°¤å¦rÀÉ */
+  /* è½‰æ›ç‚ºæ–‡å­—æª” */
   if (fpr = fopen(NEWS_FILE, "r"))
   {
     sprintf(buf, "run/kimo/%c/%s", enews->kind, enews->xname);
     if (fpw = fopen(buf, "w"))
     {
-      /* ¶}ÀY¥[¤W¼ĞÃD */
+      /* é–‹é ­åŠ ä¸Šæ¨™é¡Œ */
       fprintf(fpw, "%s %s (%s) %s %s\n",
-        STR_AUTHOR1, STR_SYSOP, SYSOPNICK, STR_POST2, "©_¼¯·s»D");
-      fprintf(fpw, "¼ĞÃD: %s\n®É¶¡: %s\n", enews->title, Now());
+        STR_AUTHOR1, STR_SYSOP, SYSOPNICK, STR_POST2, "å¥‡æ‘©æ–°è");
+      fprintf(fpw, "æ¨™é¡Œ: %s\næ™‚é–“: %s\n", enews->title, Now());
 
-      /* ¥[¤W·s»D¨Ó·½ */
-      fprintf(fpw, "\n    ¨Ó·½¡G%s\n", source);
+      /* åŠ ä¸Šæ–°èä¾†æº */
+      fprintf(fpw, "\n    ä¾†æºï¼š%s\n", source);
 
       /* html -> text */
       article_begin = 0;
       while (fgets(buf, sizeof(buf), fpr))
       {
-        if (!article_begin)     /* ¤å³¹¶}©l */
+        if (!article_begin)     /* æ–‡ç« é–‹å§‹ */
         {
           if (strstr(buf, "<!--(begin) inc-article_content.jake -->"))
             article_begin = 1;
@@ -193,12 +193,12 @@ html_download(enews)        /* ¤U¸ü¤å³¹¨ÃÂà´«¬°¤å¦rÀÉ */
         }
         else
         {
-          /* ¤å³¹µ²§ô */
+          /* æ–‡ç« çµæŸ */
           if (strstr(buf, "<!--(end) inc-article_content.jake -->"))
             break;
 
           strS = buf;
-          /* ¥»¤å³¡¤À */
+          /* æœ¬æ–‡éƒ¨åˆ† */
           while ((strS = strstr(strS, "<p>")) && (strE = strstr(strS, "</p>")))
           {
             *strE = '\n';
@@ -211,28 +211,28 @@ html_download(enews)        /* ¤U¸ü¤å³¹¨ÃÂà´«¬°¤å¦rÀÉ */
               fouts(strS, fpw);
               strS = strL + 6;
             }
-            if ((strS != strE) && !strstr(strS, "<article_image>")) /* ¸õ¹L¹Ï¤ùµù¸Ñ */
+            if ((strS != strE) && !strstr(strS, "<article_image>")) /* è·³éåœ–ç‰‡è¨»è§£ */
               fouts(strS, fpw);
             strS = strE + 4;
           }
         }
       }
 
-      /* µ²§À¥[¤W³sµ² */
-      fprintf(fpw, "\n--\nYahoo!©_¼¯·s»D\n%s\n", enews->link);
+      /* çµå°¾åŠ ä¸Šé€£çµ */
+      fprintf(fpw, "\n--\nYahoo!å¥‡æ‘©æ–°è\n%s\n", enews->link);
       fclose(fpw);
     }
 
     fclose(fpr);
-    unlink(NEWS_FILE);  /* ²M°£¼È¦sÀÉ */
+    unlink(NEWS_FILE);  /* æ¸…é™¤æš«å­˜æª” */
   }
 }
 
 
 static void
-xml_fetch(fpath, kind)  /* ±N³oÀÉ®×¤¤¦³®Äªº³sµ²§ä¥X¨Ó */
+xml_fetch(fpath, kind)  /* å°‡é€™æª”æ¡ˆä¸­æœ‰æ•ˆçš„é€£çµæ‰¾å‡ºä¾† */
   char *fpath;
-  char kind;        /* ºØÃş */
+  char kind;        /* ç¨®é¡ */
 {
   static int chrono = 0;
   FILE *fp;
@@ -245,12 +245,12 @@ xml_fetch(fpath, kind)  /* ±N³oÀÉ®×¤¤¦³®Äªº³sµ²§ä¥X¨Ó */
     return;
 
   sprintf(folder, "run/kimo/%c/.ENEWS", kind);
-  unlink(folder);   /* ­««Ø¤@­Ó·sªº */
+  unlink(folder);   /* é‡å»ºä¸€å€‹æ–°çš„ */
 
 #if 0
-  ³B²z XML ®æ¦¡¦p¤U¡G
+  è™•ç† XML æ ¼å¼å¦‚ä¸‹ï¼š
 <item>
-<title>Âù¤H·Æ¦B¹Ü»È ³Ğ¤j³°¥v¤W·s°ª (Áp¦X·s»Dºô)</title>
+<title>é›™äººæ»‘å†°å¥ªéŠ€ å‰µå¤§é™¸å²ä¸Šæ–°é«˜ (è¯åˆæ–°èç¶²)</title>
 <link>http://tw.rd.yahoo.com/referurl/news/rss/spo/*http://tw.news.yahoo.com/060214/15/2uqj5.html</link>
 </item>
 #endif
@@ -261,10 +261,10 @@ xml_fetch(fpath, kind)  /* ±N³oÀÉ®×¤¤¦³®Äªº³sµ²§ä¥X¨Ó */
   {
     if (strstr(buf, "<item>"))
     {
-      /* ¥[¤J record */
+      /* åŠ å…¥ record */
 
       memset(&enews, 0, sizeof(ENEWS));
-      enews.chrono = ++chrono;      /* ¨C½g¤å³¹¤@­Ó½s¸¹ */
+      enews.chrono = ++chrono;      /* æ¯ç¯‡æ–‡ç« ä¸€å€‹ç·¨è™Ÿ */
       enews.kind = kind;
       sprintf(enews.xname, "A%06d%c", chrono, kind);
       fgets(buf, 1024, fp); /* <title> */
@@ -288,7 +288,7 @@ xml_fetch(fpath, kind)  /* ±N³oÀÉ®×¤¤¦³®Äªº³sµ²§ä¥X¨Ó */
 
 
 /*-------------------------------------------------------*/
-/* ¥Dµ{¦¡                                                */
+/* ä¸»ç¨‹å¼                                                */
 /*-------------------------------------------------------*/
 
 
@@ -307,7 +307,7 @@ main()
 
   chdir(BBSHOME);
 
-  /* §ì RSS ¨Ã¤ÀªR¤§ */
+  /* æŠ“ RSS ä¸¦åˆ†æä¹‹ */
 
   for (kind = 'A'; kind <= 'M'; kind++)
   {
@@ -315,12 +315,12 @@ main()
       ICONV_PATH " > " INDEX_FILE, class[kind - 'A']);
     system(cmd);
     xml_fetch(INDEX_FILE, kind);
-    unlink(INDEX_FILE);     /* ²M°£¼È¦sÀÉ */
+    unlink(INDEX_FILE);     /* æ¸…é™¤æš«å­˜æª” */
   }
 
   return 0;
 }
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mpc512-2.ee.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mpc512-2.ee.nctu.edu.tw [30mç™¼è¡¨[m

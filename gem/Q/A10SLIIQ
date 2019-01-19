@@ -1,31 +1,31 @@
-�o�H�H: itoc.bbs@cpu.tfcis.org (�֤߰ʤO) �ݪO: plan
-��  �D: Re: [���D] �Τ�k�G�m���ɡA�p�󪽱� Post ���m����......
-�o�H��: �ʤO�֤� (2004/12/23 Thu 20:18:36)                Updated: 2006/02/10
+發信人: itoc.bbs@cpu.tfcis.org (核心動力) 看板: plan
+標  題: Re: [問題] 用方法二置底時，如何直接 Post 成置底文......
+發信站: 動力核心 (2004/12/23 Thu 20:18:36)                Updated: 2006/02/10
 
-�� �ޭz�mBioStar.bbs@micro.bio.ncue.edu.tw (���p����)�n���ʨ��G
-> �����D�Τ�k�G�]�]�N�O�ثe�зǪ��ҥΪ���k�^�A
-> �i���i�H������ Post �X�@�g�@��峹�~��h�m���A
-> �ӯ���b�s�觹����A���� save ���m���峹�H
+※ 引述《BioStar.bbs@micro.bio.ncue.edu.tw (澎湖小雲雀)》之銘言：
+> 不知道用方法二（也就是目前標準版所用的方法），
+> 可不可以不必先 Post 出一篇一般文章才能去置底，
+> 而能夠在編輯完成後，直接 save 成置底文章？
 
 : modes.h
 
-#define EDIT_RESTRICT   0x20    /* �[�K�s�� */
-+ #define EDIT_BOTTOM   0x40    /* �m���s�� */
+#define EDIT_RESTRICT   0x20    /* 加密存檔 */
++ #define EDIT_BOTTOM   0x40    /* 置底存檔 */
 
 : edit.c:ve_filer()
 
-  �e���� menu2~4 �[�@�ӿﶵ "Bottom   �m���s��",
-  �e���� msg2~4  �[�@�ӿﶵ (B)�m��
+  前面的 menu2~4 加一個選項 "Bottom   置底存檔",
+  前面的 msg2~4  加一個選項 (B)置底
   ...
 
 
 + case 'b':
 +  if (ve_op < 0)
 +    return VE_FOOTER;
-+  if ((bbsmode == M_POST) && (bbstate & STAT_BOARD))   /* �O�D�o�� */
++  if ((bbsmode == M_POST) && (bbstate & STAT_BOARD))   /* 板主發文 */
 +    curredit |= EDIT_BOTTOM;
 +  else if (HAS_PERM(PERM_INTERNET) && !(currbattr & BRD_NOTRAN))
-+    curredit |= EDIT_OUTGO;                            /* �_�h���� save */
++    curredit |= EDIT_OUTGO;                            /* 否則視為 save */
 +  break;
 
   case 'r':
@@ -45,5 +45,5 @@
 
 
 --
- [1;43m��[46m��[m Or[1mig[30min[m: [41m Maple-itoc���ʤO�֤� [36;47m cpu.tfcis.org [m
- [1;44m��[41m��[m A[1mut[30mho[mr: [1;33mitoc [30m�q [31mitoc.Dorm11.NCTU.edu.tw [30m�o��[m
+ [1;43m◤[46m◥[m Or[1mig[30min[m: [41m Maple-itoc˙動力核心 [36;47m cpu.tfcis.org [m
+ [1;44m◣[41m◢[m A[1mut[30mho[mr: [1;33mitoc [30m從 [31mitoc.Dorm11.NCTU.edu.tw [30m發表[m

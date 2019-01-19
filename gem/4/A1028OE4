@@ -1,52 +1,52 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (:MM:), ¬İªO: plan
-¼Ğ  ÃD: Re: [­×¥¿] cache.c fshm
-µo«H¯¸: XEON (Sat Jan 18 02:27:33 2003)
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (:MM:), çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [ä¿®æ­£] cache.c fshm
+ç™¼ä¿¡ç«™: XEON (Sat Jan 18 02:27:33 2003)
 
-  C »y¨¥¤¤¤@¯ëªºÅÜ¼Æ¨äÀx¦sÃş§O (¥]§t storage class¡Bscope¡Blifetime)
-  ¤j·§¥i¤À¬°¥H¤U¤CºØ¡G
+  C èªè¨€ä¸­ä¸€èˆ¬çš„è®Šæ•¸å…¶å„²å­˜é¡åˆ¥ (åŒ…å« storage classã€scopeã€lifetime)
+  å¤§æ¦‚å¯åˆ†ç‚ºä»¥ä¸‹ä¸ƒç¨®ï¼š
 
-(1)§½³¡ÅÜ¼Æ(Local Variable)
+(1)å±€éƒ¨è®Šæ•¸(Local Variable)
 
-  ¨Ò¦p post.c:outgo_post() ªº char *fpath;
-  ´N¬O¤@¯ë³Ì±`¥Îªº¨ººØ¡A¥u¯à¦b³o¨ç¦¡¸Ì­±¥Î¡A¥B¥Î§¹´N¬~±¼¤F
+  ä¾‹å¦‚ post.c:outgo_post() çš„ char *fpath;
+  å°±æ˜¯ä¸€èˆ¬æœ€å¸¸ç”¨çš„é‚£ç¨®ï¼Œåªèƒ½åœ¨é€™å‡½å¼è£¡é¢ç”¨ï¼Œä¸”ç”¨å®Œå°±æ´—æ‰äº†
 
-(2)§½³¡ÀRºAÅÜ¼Æ(Local Static Variable)
+(2)å±€éƒ¨éœæ…‹è®Šæ•¸(Local Static Variable)
 
-  ¨Ò¦p talk.c:pal_ship() ªº static PALSHIP palship[PAL_MAX];
-  ­È·|¤@ª½¦s¦b¤£³Q¬~±¼¡A¦ı¬O¥u¦³ pal_ship() ¸Ì­±¯à¥Î
+  ä¾‹å¦‚ talk.c:pal_ship() çš„ static PALSHIP palship[PAL_MAX];
+  å€¼æœƒä¸€ç›´å­˜åœ¨ä¸è¢«æ´—æ‰ï¼Œä½†æ˜¯åªæœ‰ pal_ship() è£¡é¢èƒ½ç”¨
 
-(3)¥ş°ìÅÜ¼Æ(Global Variable)
+(3)å…¨åŸŸè®Šæ•¸(Global Variable)
 
-  ¨Ò¦p board.c ªº char brd_bits[MAXBOARD];
-  ¦b¾ã­Ó board.c ¸Ì­±ªº©Ò¦³¨ç¦¡³£¥i¥H¥Î
-  ­È·|¤@ª½¦s¦b¤£³Q¬~±¼
+  ä¾‹å¦‚ board.c çš„ char brd_bits[MAXBOARD];
+  åœ¨æ•´å€‹ board.c è£¡é¢çš„æ‰€æœ‰å‡½å¼éƒ½å¯ä»¥ç”¨
+  å€¼æœƒä¸€ç›´å­˜åœ¨ä¸è¢«æ´—æ‰
 
-(4)¥ş°ìÀRºAÅÜ¼Æ(Global Static Variable)
+(4)å…¨åŸŸéœæ…‹è®Šæ•¸(Global Static Variable)
 
-  ¨Ò¦p board.c ªº static char *class_img;
-  ¦b¾ã­Ó board.c ¸Ì­±ªº©Ò¦³¨ç¦¡³£¥i¥H¥Î
-  ¦ı¬O¥u­­¨î¦b board.c ¸Ì­±¤~¯à¥Î
-  ­È·|¤@ª½¦s¦b¤£³Q¬~±¼
+  ä¾‹å¦‚ board.c çš„ static char *class_img;
+  åœ¨æ•´å€‹ board.c è£¡é¢çš„æ‰€æœ‰å‡½å¼éƒ½å¯ä»¥ç”¨
+  ä½†æ˜¯åªé™åˆ¶åœ¨ board.c è£¡é¢æ‰èƒ½ç”¨
+  å€¼æœƒä¸€ç›´å­˜åœ¨ä¸è¢«æ´—æ‰
 
-(5)ÀÉ¥~©w¸q¥ş°ìÅÜ¼Æ(Extern Global Variable)
+(5)æª”å¤–å®šç¾©å…¨åŸŸè®Šæ•¸(Extern Global Variable)
 
-  ¨Ò¦p favor.c ªº extern char brd_bits[];
-  ¥i¥H§â­ì¥»¦b board.c ¸Ì­±ªº brd_bits[] ª½±µ®³¹L¨Ó¥Î
-  ¦b¾ã­Ó favor.c ³£¥i¥H¥Î
-  ­È·|¤@ª½¦s¦b¤£³Q¬~±¼
+  ä¾‹å¦‚ favor.c çš„ extern char brd_bits[];
+  å¯ä»¥æŠŠåŸæœ¬åœ¨ board.c è£¡é¢çš„ brd_bits[] ç›´æ¥æ‹¿éä¾†ç”¨
+  åœ¨æ•´å€‹ favor.c éƒ½å¯ä»¥ç”¨
+  å€¼æœƒä¸€ç›´å­˜åœ¨ä¸è¢«æ´—æ‰
 
-(6)ÀÉ¥~©w¸q§½³¡ÅÜ¼Æ(Extern Local Variable)
+(6)æª”å¤–å®šç¾©å±€éƒ¨è®Šæ•¸(Extern Local Variable)
 
-  ¨Ò¦p visio.c:vget_match() ªº extern char brd_bits[];
-  ¥i¥H§â­ì¥»¦b board.c ¸Ì­±ªº brd_bits[] ª½±µ®³¹L¨Ó¥Î
-  ¦ı¬O¥u¦³¦b vget_match() ¸Ì­±¯à¥Î
-  ­È·|¤@ª½¦s¦b¤£³Q¬~±¼
+  ä¾‹å¦‚ visio.c:vget_match() çš„ extern char brd_bits[];
+  å¯ä»¥æŠŠåŸæœ¬åœ¨ board.c è£¡é¢çš„ brd_bits[] ç›´æ¥æ‹¿éä¾†ç”¨
+  ä½†æ˜¯åªæœ‰åœ¨ vget_match() è£¡é¢èƒ½ç”¨
+  å€¼æœƒä¸€ç›´å­˜åœ¨ä¸è¢«æ´—æ‰
 
-(7)¼È¦s¾¹ÅÜ¼Æ(Register Variable)
+(7)æš«å­˜å™¨è®Šæ•¸(Register Variable)
 
-  ¨Ò¦p talk.c:ulist_cmp_pal() ªº register int k;
-  ¥u¯à¦b³o¨ç¦¡¸Ì­±¥Î¡A¥B¥Î§¹´N¬~±¼¤F
+  ä¾‹å¦‚ talk.c:ulist_cmp_pal() çš„ register int k;
+  åªèƒ½åœ¨é€™å‡½å¼è£¡é¢ç”¨ï¼Œä¸”ç”¨å®Œå°±æ´—æ‰äº†
 
 --
-    [1;32m¢~¢w¢w Origin ¢¡ [33;45m °Ê¤O®Ö¤ß [37m processor.tfcis.org [32;40m ¡ã £_£`£a ¢w¢w¢q[m
-    [1;32m¢q     Author ¢£ [36mitoc.Dorm-GD2.NCTU.edu.tw[m
+    [1;32mâ•­â”€â”€ Origin â•® [33;45m å‹•åŠ›æ ¸å¿ƒ [37m processor.tfcis.org [32;40m ï½ Î´ÎµÎ¶ â”€â”€â”¼[m
+    [1;32mâ”¼     Author â•¯ [36mitoc.Dorm-GD2.NCTU.edu.tw[m

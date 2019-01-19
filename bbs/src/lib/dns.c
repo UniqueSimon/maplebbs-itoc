@@ -16,7 +16,7 @@ dns_init()
   res_init();
   /* _res.retrans = 5; */		/* DNS query timeout */
   _res.retry = 2;
-  /* _res.options |= RES_USEVC; */	/* Thor.001228: ¥ı¤£¥Î TCP, ©È¥d¦í */ 
+  /* _res.options |= RES_USEVC; */	/* Thor.001228: å…ˆä¸ç”¨ TCP, æ€•å¡ä½ */ 
 }
 
 

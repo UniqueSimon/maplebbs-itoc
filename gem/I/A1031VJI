@@ -1,11 +1,11 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬ÝªO: plan
-¼Ð  ÃD: Re: ¶Ã¼ÆÅã¥Ü¯¸¤W¨Ï¥ÎªÌ
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/02/17 Tue 01:11:08)                Updated: 2004/02/17
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: äº‚æ•¸é¡¯ç¤ºç«™ä¸Šä½¿ç”¨è€…
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/02/17 Tue 01:11:08)                Updated: 2004/02/17
 
-¡° ¤Þ­z¡mJianmin.bbs@whshs.cs.nccu.edu.tw (Jianmin)¡n¤§»Ê¨¥¡G
-> ¦pªG»¡­n¥Î¶Ã¼Æ¨ú¥X¯¸¤W(µù¥U)¨Ï¥ÎªÌÅã¥Ü
+â€» å¼•è¿°ã€ŠJianmin.bbs@whshs.cs.nccu.edu.tw (Jianmin)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å¦‚æžœèªªè¦ç”¨äº‚æ•¸å–å‡ºç«™ä¸Š(è¨»å†Š)ä½¿ç”¨è€…é¡¯ç¤º
 
-: acct.c:random_choose_userid() ·s¼W¦¹¨ç¦¡
+: acct.c:random_choose_userid() æ–°å¢žæ­¤å‡½å¼
 
 static ACCT *
 random_choose_userid()
@@ -20,22 +20,22 @@ random_choose_userid()
   while (1)
   {
     rec_get(FN_SCHEMA, &schema, sizeof(SCHEMA), rand() % num);
-    str_ncpy(userid, schema.userid, IDLEN + 1); /* schema.userid ¤£¥]¬A '\0' */
+    str_ncpy(userid, schema.userid, IDLEN + 1); /* schema.userid ä¸åŒ…æ‹¬ '\0' */
 
     if (acct_load(&acct, userid) >= 0)
       return &acct;
   }
 }
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
   ACCT *acct;
 
   acct = random_choose_userid();
 
-  // ª©­±¦Û©w
-  prints("%s ¤W¯¸ %d ¦¸", acct->userid, acct->numlogins);
+  // ç‰ˆé¢è‡ªå®š
+  prints("%s ä¸Šç«™ %d æ¬¡", acct->userid, acct->numlogins);
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ž [35mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

@@ -1,15 +1,15 @@
-µo«H¤H: itoc.bbs@wretch.twbbs.org (Midlife Crisis) ¬ÝªO: plan
-¼Ð  ÃD: login«á¤~¥i¶ibbs
-µo«H¯¸: µL¦W¤p¯¸ (2004/01/30 Fri 10:38:16)                Updated: 2004/01/30
+ç™¼ä¿¡äºº: itoc.bbs@wretch.twbbs.org (Midlife Crisis) çœ‹æ¿: plan
+æ¨™  é¡Œ: loginå¾Œæ‰å¯é€²bbs
+ç™¼ä¿¡ç«™: ç„¡åå°ç«™ (2004/01/30 Fri 10:38:16)                Updated: 2004/01/30
 
-¡° ¤Þ­z¡mcoe (¨¸Å]¡D¶ÂÆN)¡n¤§»Ê¨¥¡G
-> §Úªºbbs ·Q»¡¤£­n¤@¶i¨Ó´N ¨ì  bbs
-> ·Q­n»¡   ¥H¤U³o¼Ë
+â€» å¼•è¿°ã€Šcoe (é‚ªé­”ï¼Žé»‘é·¹)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æˆ‘çš„bbs æƒ³èªªä¸è¦ä¸€é€²ä¾†å°± åˆ°  bbs
+> æƒ³è¦èªª   ä»¥ä¸‹é€™æ¨£
 > telnet pingtung.ath.cx
 > login: xxxx
 > password: yyyy
->   ¥H¤W³o¼Ë
-> xxxx/yyyy ¬O§Ú¦Û¤v³]ªº¶i¯¸±K½X      ¿é¤J¥¿½T¤~¯à¶i¤J¯u¥¿ªº  bbs
+>   ä»¥ä¸Šé€™æ¨£
+> xxxx/yyyy æ˜¯æˆ‘è‡ªå·±è¨­çš„é€²ç«™å¯†ç¢¼      è¼¸å…¥æ­£ç¢ºæ‰èƒ½é€²å…¥çœŸæ­£çš„  bbs
 
 : bbsd.c:tn_main()
 
@@ -22,14 +22,14 @@ tn_main()
 
 + if (!vget(3, 0, "login: ", buf1, sizeof(buf1), DOECHO) ||
 +   !vget(4, 0, "password: ", buf2, sizeof(buf2), NOECHO) ||
-+   strcmp(buf1, "xxxx") ||             [1;44m // xxxx ¬O login ±b¸¹¡A¦Û©w [m
-+   strcmp(buf2, "yyyy"))               [1;44m // yyyy ¬O login ±K½X¡A¦Û©w [m
-+   login_abort("\n¦A¨£ ...");
++   strcmp(buf1, "xxxx") ||             [1;44m // xxxx æ˜¯ login å¸³è™Ÿï¼Œè‡ªå®š [m
++   strcmp(buf2, "yyyy"))               [1;44m // yyyy æ˜¯ login å¯†ç¢¼ï¼Œè‡ªå®š [m
++   login_abort("\nå†è¦‹ ...");
 + clear();
 
 --
-[1;30;40m¤Ò§LªÌ¤£²»¤§¾¹ª«©Î´c¤§¬G¦³¹DªÌ¤£³B§g¤l©~«h¶Q¥ª¥Î§L«h¶Q¥k§LªÌ¤£²»¤§¾¹«D§g¤l[m
-[1;30m¤§¾¹¤£±o¤w[37mBLOG http://wretch.twbbs.org/blog ¦w¦è±Ð½m §Ú·Q¼g¤é°O ¶ã¶ã[30m©ó¤Ñ¤U[m
-[1;30m¨o¦N¨Æ©|¥ª¤¿¨Æ©|¥k°¾±N­x©~¥ª¤W±N­x©~¥k¨¥¥H³àÂ§³B¤§±þ¤H¤§²³¥H«s´dª_¤§¾Ô³Ó¥H[m
-[1;30m³àÂ§³B¤§¹D±`[37mµL¦W[30m¾ëÁö¤p¤Ñ¤U²ö¯à¦Ú«J¤ý­Y¯à¦u¤§¸Uª«±N¦Û»«¤Ñ¦a¬Û¦X¥H­°¥ÌÅS¥Á²ö[m
-[1;30m¤§¥O¦Ó¦Û§¡©l¨î¦³¦W¦W¥ç¬J¦³¤Ò¥ç±Nª¾¤îª¾¤î¥i¥H¤£¬pÄ´¹D¤§¦b¤Ñ [37m163.26.38.125[30m®ü[m
+[1;30;40må¤«å…µè€…ä¸ç¥¥ä¹‹å™¨ç‰©æˆ–æƒ¡ä¹‹æ•…æœ‰é“è€…ä¸è™•å›å­å±…å‰‡è²´å·¦ç”¨å…µå‰‡è²´å³å…µè€…ä¸ç¥¥ä¹‹å™¨éžå›å­[m
+[1;30mä¹‹å™¨ä¸å¾—å·²[37mBLOG http://wretch.twbbs.org/blog å®‰è¥¿æ•™ç·´ æˆ‘æƒ³å¯«æ—¥è¨˜ å—šå—š[30mæ–¼å¤©ä¸‹[m
+[1;30mçŸ£å‰äº‹å°šå·¦å‡¶äº‹å°šå³åå°‡è»å±…å·¦ä¸Šå°‡è»å±…å³è¨€ä»¥å–ªç¦®è™•ä¹‹æ®ºäººä¹‹çœ¾ä»¥å“€æ‚²æ³£ä¹‹æˆ°å‹ä»¥[m
+[1;30må–ªç¦®è™•ä¹‹é“å¸¸[37mç„¡å[30mæ¨¸é›–å°å¤©ä¸‹èŽ«èƒ½è‡£ä¾¯çŽ‹è‹¥èƒ½å®ˆä¹‹è¬ç‰©å°‡è‡ªè³“å¤©åœ°ç›¸åˆä»¥é™ç”˜éœ²æ°‘èŽ«[m
+[1;30mä¹‹ä»¤è€Œè‡ªå‡å§‹åˆ¶æœ‰ååäº¦æ—¢æœ‰å¤«äº¦å°‡çŸ¥æ­¢çŸ¥æ­¢å¯ä»¥ä¸æ®†è­¬é“ä¹‹åœ¨å¤© [37m163.26.38.125[30mæµ·[m

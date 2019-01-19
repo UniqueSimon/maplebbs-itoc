@@ -1,19 +1,19 @@
-§@ªÌ: itoc (worm.twbbs.org) ¯¸¤º: plan
-¼ĞÃD: [¥\¯à] find_title.c ·j´M©Ò¦³¤å³¹¼ĞÃD
-®É¶¡: Wed Aug 28 01:27:24 2002                          Updated: 2005/05/19
+ä½œè€…: itoc (worm.twbbs.org) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] find_title.c æœå°‹æ‰€æœ‰æ–‡ç« æ¨™é¡Œ
+æ™‚é–“: Wed Aug 28 01:27:24 2002                          Updated: 2005/05/19
 
-  §â¥ş¯¸¬İªOªº¤å³¹¼ĞÃD³£·j´M¤@¹M
+  æŠŠå…¨ç«™çœ‹æ¿çš„æ–‡ç« æ¨™é¡Œéƒ½æœå°‹ä¸€é
 
-: src/util/Makefile ¥[¤J find_title
+: src/util/Makefile åŠ å…¥ find_title
 
 EXE =   ... [1;33mfind_title[m
 
-: src/util/find_title.c ·s¼Wµ{¦¡¦p¤U
+: src/util/find_title.c æ–°å¢ç¨‹å¼å¦‚ä¸‹
 
 /*-------------------------------------------------------*/
 /* util/find_title.c    ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ·j´M©Ò¦³¬İªO¥ş³¡¤å³¹¼ĞÃD                     */
+/* target : æœå°‹æ‰€æœ‰çœ‹æ¿å…¨éƒ¨æ–‡ç« æ¨™é¡Œ                     */
 /* create : 03/04/26                                     */
 /* update : 05/05/19                                     */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -34,7 +34,7 @@ do_find(brdname)
   char folder[64];
   HDR *hdr;
 
-  printf("¶}©l·j´M %s ªO\n", brdname);
+  printf("é–‹å§‹æœå°‹ %s æ¿\n", brdname);
 
   brd_fpath(folder, brdname, FN_DIR);
   if (hdr = (HDR *) f_img(folder, &fsize))
@@ -76,10 +76,10 @@ main(argc, argv)
       do_find(brd.brdname);
     num++;
   }
-  printf("§ä§¹©Ò¦³¬İªO\n");
+  printf("æ‰¾å®Œæ‰€æœ‰çœ‹æ¿\n");
 
   return 0;
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

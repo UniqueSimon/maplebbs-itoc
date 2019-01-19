@@ -1,69 +1,69 @@
-�@��: itoc (�֤߰ʤO) �ݪO: itoc
-���D: [���] NoCeM �s�D�s�վ׫H�t��
-�ɶ�: 2004/11/16 Tue 16:54:43
+作者: itoc (核心動力) 看板: itoc
+標題: [文件] NoCeM 新聞群組擋信系統
+時間: 2004/11/16 Tue 16:54:43
 
-* NoCeM �s�D�s�վ׫H�t��
+* NoCeM 新聞群組擋信系統
 
-  �Բ�²���έ�z�аѦ� ~/src/innbbsd/nocem/NOCEM�C
+  詳細簡介及原理請參考 ~/src/innbbsd/nocem/NOCEM。
 
 
-* �p��Ұ� NoCeM ����H
+* 如何啟動 NoCeM 機制？
 
-  ²��a���A���H�U�B�J�G
+  簡單地說，有以下步驟：
   + innbbsconf.h : #define _NoCeM_
-  + �]�w ncmperm.bbs
-  + ���� [tw.bbs.admin] �s�D�s��
+  + 設定 ncmperm.bbs
+  + 接收 [tw.bbs.admin] 新聞群組
 
-  ��ԲӪ����e�аѦ� ~/doc/doc/203_innbbsd1.htm�C
+  更詳細的內容請參考 ~/doc/doc/203_innbbsd1.htm。
 
 
-* �|�ӹ�ڹB�@���Ҥl
+* 舉個實際運作的例子
 
-  xyz.bbs@xx.yy.zz �b [tw.bbs.comp.unix] �o���F�T�g�s�i�峹
-  abc.bbs@aa.bb.cc �b [tw.bbs.comp.network] �o���F�@�g�s�i�峹
+  xyz.bbs@xx.yy.zz 在 [tw.bbs.comp.unix] 發表了三篇廣告文章
+  abc.bbs@aa.bb.cc 在 [tw.bbs.comp.network] 發表了一篇廣告文章
 
-  �ڪ� BBS �b 12:00 �N�o�|�g��U�ӤF�A��O�ڪ����W�h�F�|�g�s�i�峹
+  我的 BBS 在 12:00 將這四篇抓下來了，於是我的站上多了四篇廣告文章
 
-  news.math.nctu �b 12:10 �N�o�|�g���ӯ��W�A�o�{�o�|�g�O�s�i�峹�A
-  �N�|�b [tw.bbs.admin] �o���@�g�峹 (�٬� notice)�A�p�U�G
+  news.math.nctu 在 12:10 將這四篇抓到該站上，發現這四篇是廣告文章，
+  就會在 [tw.bbs.admin] 發表一篇文章 (稱為 notice)，如下：
 
   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-  ���D�G@@NCM NCTU-Math-spam NoCeM ���i�A�s�� 150 ��
-  ���e�G�j�a�n�A�o�O�� news@news.math.nctu.edu.tw �� 150 �����i�A
-        �����o�{�H�U�|�g�O�s�i�峹�A���O�O�G
-        (1) xyz.bbs@xx.yy.zz �� 11:36 �b [tw.bbs.comp.unix] �o��
-            ���D���u�u * ��*�� *�� * �A" ��'�v
-        (2) xyz.bbs@xx.yy.zz �� 11:39 �b [tw.bbs.comp.unix] �o��
-            ���D���u���ݩ��֤�(�x�k��)�C�v
-        (3) xyz.bbs@xx.yy.zz �� 11:41 �b [tw.bbs.comp.unix] �o��
-            ���D���u------- �� �k �� �� �� 1:03�v
-        (4) abc.bbs@aa.bb.cc �� 11:47 �b [tw.bbs.comp.network] �o��
-            ���D���u��{�z�H�ͪ��ڷQ�v
+  標題：@@NCM NCTU-Math-spam NoCeM 公告，編號 150 號
+  內容：大家好，這是由 news@news.math.nctu.edu.tw 的 150 號公告，
+        本站發現以下四篇是廣告文章，分別是：
+        (1) xyz.bbs@xx.yy.zz 於 11:36 在 [tw.bbs.comp.unix] 發表
+            標題為「優 * 質*美 *眉 * 服" 務'」
+        (2) xyz.bbs@xx.yy.zz 於 11:39 在 [tw.bbs.comp.unix] 發表
+            標題為「等待幸福中(徵男友)。」
+        (3) xyz.bbs@xx.yy.zz 於 11:41 在 [tw.bbs.comp.unix] 發表
+            標題為「------- 交 女 友 教 學 1:03」
+        (4) abc.bbs@aa.bb.cc 於 11:47 在 [tw.bbs.comp.network] 發表
+            標題為「實現您人生的夢想」
   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-  [��] ���嬰�F�K�󻡩��A�ҥH�~�� notice ���榡�g���o�ˡA
-       ��ڤW notice ���榡�i�H�b [tw.bbs.admin] �ݨ�C
+  [註] 本文為了便於說明，所以才把 notice 的格式寫成這樣，
+       實際上 notice 的格式可以在 [tw.bbs.admin] 看到。
 
-  �ڪ� BBS �b 12:20 ���F news.math.nctu ���峹�ɡA
-  �o�{�o�g�峹���O�@��峹�A�ӬO NoCeM ���i�A
-  �N�|�hŪ���e�A��� 12:00 �Ҧ��U�Ӫ����|�g�峹���R���C
+  我的 BBS 在 12:20 抓到了 news.math.nctu 的文章時，
+  發現這篇文章不是一般文章，而是 NoCeM 公告，
+  就會去讀內容，把我 12:00 所收下來的那四篇文章給刪除。
 
-  ����o�|�g�s�i�峹�A�N�u��b�ڪ� BBS �s�d 12:00~12:20�C
-
-
-* �O���O�ˤF NoCeM �N�i�H�S���s�i�峹�F�H
-
-  ���M���O�A�ѥH�W���B�@�Ҥl�i�H�o�{�A�s�i�峹�|�b BBS �W�s�d
-  �@�q�ɶ��A���즬�� nocem-server �� notice ���i�ɤ~�|�R���C
-
-  �������~�Afilter �]���O�U��A���Ǥ峹�H�̥i�H��{�X�O�O�s�i
-  �峹�A���O filter �{����{���X�ӡA���ɳo�g�s�i�峹�N�i�H�k
-  �L NoCeM ���l���C
+  那麼這四篇廣告文章，將只能在我的 BBS 存留 12:00~12:20。
 
 
-* ������ NoCeM filter �i�H��ܡH
+* 是不是裝了 NoCeM 就可以沒有廣告文章了？
 
-  �����������峹�|�Q�P�w���s�i�峹�A�O�ѹL�o�{���Ӧ۰ʧP�_���A
-  �ثe�`���� NoCeM filter ���G
+  當然不是，由以上的運作例子可以發現，廣告文章會在 BBS 上存留
+  一段時間，直到收到 nocem-server 的 notice 公告時才會刪除。
+
+  除此之外，filter 也不是萬能，有些文章人們可以辨認出是是廣告
+  文章，但是 filter 程式辨認不出來，此時這篇廣告文章就可以逃
+  過 NoCeM 的追殺。
+
+
+* 有哪些 NoCeM filter 可以選擇？
+
+  哪些類型的文章會被判定為廣告文章，是由過濾程式來自動判斷的，
+  目前常見的 NoCeM filter 有：
 
   issuer                       type
   ============================ ========
@@ -81,30 +81,30 @@
   nocem@spring.edu.tw          dnsbl-bl.spamcop.net
   nocem@spring.edu.tw          dnsbl-list.dsbl.org
   nocem@spring.edu.tw          dnsbl-sbl-xbl.spamhaus.org
-  (����W�[��)
+  (陸續增加中)
 
-  �ܩ�C�� issuer/type �ҨϥΪ��L�o�W�h�O����A�h�ݭn�߰ݸ�
-  issuer �~��o���C
+  至於每個 issuer/type 所使用的過濾規則是什麼，則需要詢問該
+  issuer 才能得知。
 
-  �䤤 news@news.math.nctu.edu.tw ���L�o�W�h���G(by DarkKiller)
+  其中 news@news.math.nctu.edu.tw 的過濾規則為：(by DarkKiller)
 
   * spam
-    �o�ӬO�� cleanfeed �o���{���P�_�� spam ���峹�C
+    這個是由 cleanfeed 這隻程式判斷為 spam 的文章。
 
   * hinet
-    �u�n Path �o����즳 ".hinet.net" �N�Q�{���O hinet �e�X���峹�C
+    只要 Path 這個欄位有 ".hinet.net" 就被認為是 hinet 送出的文章。
 
   * seednet
-    �u�n Path �o����즳 ".seed.net.tw" �N�Q�{���O seednet �e�X���峹�C
+    只要 Path 這個欄位有 ".seed.net.tw" 就被認為是 seednet 送出的文章。
 
   * power
-    �ŦX�U�C����䤤���@���峹�G
-    + �峹���׶W�L 1000 ��C
-    + �b tw.bbs.lang.* �H�~���Q�װϥX�{�`���C
-    + ���D�t�� ANSI code �Ψ�L�S���r���C
-    + �¦W��s�i�ӡC
-    + ��L�C
+    符合下列條件其中之一的文章：
+    + 文章長度超過 1000 行。
+    + 在 tw.bbs.lang.* 以外的討論區出現注音。
+    + 標題含有 ANSI code 或其他特殊字元。
+    + 黑名單廣告商。
+    + 其他。
 
 --
- [1;43m��[46m��[m Or[1mig[30min[m: [41m Maple-itoc���ʤO�֤� [36;47m cpu.tfcis.org [m
- [1;44m��[41m��[m A[1mut[30mho[mr: [1;33mitoc [30m�q [31mpc512-2.EE.NCTU.edu.tw [30m�o��[m
+ [1;43m◤[46m◥[m Or[1mig[30min[m: [41m Maple-itoc˙動力核心 [36;47m cpu.tfcis.org [m
+ [1;44m◣[41m◢[m A[1mut[30mho[mr: [1;33mitoc [30m從 [31mpc512-2.EE.NCTU.edu.tw [30m發表[m

@@ -1,49 +1,49 @@
-�@��: itoc (���W�H�ơG802) �ݪO: plan
-���D: [���] redir ���ϥΤ�k
-�ɶ�: 2004/11/30 Tue 01:23:11
+作者: itoc (站上人數：802) 看板: plan
+標題: [文件] redir 的使用方法
+時間: 2004/11/30 Tue 01:23:11
 
-  �� .DIR �򥢮ɡA�i�H���� redir �ӭ���
+  當 .DIR 遺失時，可以執行 redir 來重建
 
-  [�ϥΤ�k]
+  [使用方法]
 
-  �@�B�p�G�n���ت��O�ݪO .DIR
+  一、如果要重建的是看板 .DIR
 
     % cd ~/brd/brdname
     % ~/bin/redir -b
     % mv .DIR.re .DIR
 
-  �G�B�p�G���ت��O�ݪO��ذ� .DIR
+  二、如果重建的是看板精華區 .DIR
 
     % cd ~/gem/brd/brdname
     % ~/bin/redir -g
     % mv .DIR.re .DIR
 
-  �T�B�p�G���ت��O�ӤH��ذ� .DIR
+  三、如果重建的是個人精華區 .DIR
 
     % cd ~/usr/u/userid/gem
     % ~/bin/redir -g
     % mv .DIR.re .DIR
 
-  �|�B�p�G�n���ت��O�H�c .DIR
+  四、如果要重建的是信箱 .DIR
 
     % cd ~/usr/u/userid
     % ~/bin/redir -m
     % mv .DIR.re .DIR
 
 
-  [�w�����D]
+  [已知問題]
 
-    1. �p�G�峹/�H�󤺤����Y���榡���諸�ܡA����@��/�ʺ�/���D��|�X�{���D�C
-       => �o�S��k�ѨM�A�]�� redir �N�O�h��峹�������Y�ӭ��� .DIR ���C
+    1. 如果文章/信件內文檔頭的格式不對的話，那麼作者/暱稱/標題欄會出現問題。
+       => 這沒辦法解決，因為 redir 就是去抓文章內文檔頭來重建 .DIR 的。
 
-    2. ��ذϭ��ت� .DIR�A���M�[�c���T�A���O�̥~�h�����v���D�|�ܦ��u�u���B
-       ��v�A�@�̡B�ʺٳ��|�ܦ������C
-       => �o�S��k�ѨM�A�]���̥~�h�����v���D�N�u�O���b .DIR �̭��A�J�M��
-          ���N�S�ϤF�A�ҥH�o�a�O�D��ʥh����D�A
+    2. 精華區重建的 .DIR，雖然架構正確，但是最外層的卷宗標題會變成「沿海拾
+       遺」，作者、暱稱都會變成站長。
+       => 這沒辦法解決，因為最外層的卷宗標題就只記錄在 .DIR 裡面，既然遺失
+          那就沒救了，所以得靠板主手動去改標題，
 
-    3. ��ذϭ��ت� .DIR�A�|�ॢ��ذϯ��ޤκ�ذϲ��ʡC
-       => �o�S���Y�A�] gem-index �ɴN�|�۰ʫ�_���ޤF�C�Ӳ��ʷ|�b�U�@������
-          �ʮɥX�{�C
+    3. 精華區重建的 .DIR，會喪失精華區索引及精華區異動。
+       => 這沒關係，跑 gem-index 時就會自動恢復索引了。而異動會在下一次有異
+          動時出現。
 
 --
-[1;37m�� ���峹�� [33mitoc[37m �q [32mitoc.Dorm11.NCTU.edu.tw[37m �o��[m
+[1;37m□ 本文章由 [33mitoc[37m 從 [32mitoc.Dorm11.NCTU.edu.tw[37m 發表[m

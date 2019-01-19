@@ -1,20 +1,20 @@
-µo«H¤H: BioStar.bbs@micro.bio.ncue.edu.tw (¼ê´ò¤p¶³³¶) ¬İªO: plan
-¼Ğ  ÃD: Re: ½Ğ°İ²Ö¿n¤W¯¸®É¼Æ
-µo«H¯¸: Àº¤Ñ±^ (Sat, 01 Nov 2003 00:39:02 +0800 (CST))    Updated: 2005/10/29
+ç™¼ä¿¡äºº: BioStar.bbs@micro.bio.ncue.edu.tw (æ¾æ¹–å°é›²é›€) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: è«‹å•ç´¯ç©ä¸Šç«™æ™‚æ•¸
+ç™¼ä¿¡ç«™: æ“å¤©å´— (Sat, 01 Nov 2003 00:39:02 +0800 (CST))    Updated: 2005/10/29
 
-  §ï¤F ACCT Äæ¦ì­n transacct
+  æ”¹äº† ACCT æ¬„ä½è¦ transacct
 
 : struct.h: struct ACCT
 
-  time_t firstlogin;            /* ²Ä¤@¦¸¤W¯¸®É¶¡ */
-  time_t lastlogin;             /* ¤W¤@¦¸¤W¯¸®É¶¡ */
-  time_t tcheck;                /* ¤W¦¸ check «H½c/¦n¤Í¦W³æªº®É¶¡ */
-  time_t tvalid;                /* ³q¹L»{ÃÒªº®É¶¡ */
-+ time_t staytime;              /* ±¾¯¸Á`®É¶¡ */
+  time_t firstlogin;            /* ç¬¬ä¸€æ¬¡ä¸Šç«™æ™‚é–“ */
+  time_t lastlogin;             /* ä¸Šä¸€æ¬¡ä¸Šç«™æ™‚é–“ */
+  time_t tcheck;                /* ä¸Šæ¬¡ check ä¿¡ç®±/å¥½å‹åå–®çš„æ™‚é–“ */
+  time_t tvalid;                /* é€šéèªè­‰çš„æ™‚é–“ */
++ time_t staytime;              /* æ›ç«™ç¸½æ™‚é–“ */
 
 : bbsd.c:u_exit()
 
-  utmp_free();                  /* ÄÀ©ñ UTMP shm */
+  utmp_free();                  /* é‡‹æ”¾ UTMP shm */
 
 - diff = (time(&cuser.lastlogin) - ap_start) / 60;
 + diff = time(&cuser.lastlogin) - ap_start;
@@ -25,13 +25,13 @@
 
 : bbsd.c:tn_main()
 
-  tn_signals(); /* Thor.980806: ©ñ©ó tn_login«e, ¥H«K call in¤£·|³Q½ğ */
+  tn_signals(); /* Thor.980806: æ”¾æ–¼ tn_loginå‰, ä»¥ä¾¿ call inä¸æœƒè¢«è¸¢ */
   tn_login();
 
-  /* BioStar.051029: ²Ö¿n¤W¯¸®É¼ÆÀ³±qµn¤J«á¤~­pºâ¡A¦Ó¤£¬O±q³s½u«Ø¥ß®É­Ô´N
-     ¶}©l­pºâ¡AÁ×§K¨Ï¥ÎªÌ¥ı¥Î¨¾¶¢¸mªº BBS ³nÅé¶}±Ò¼Æ¤Q­Ó©|¥¼µn¤Jªº³s½u¡A
-     ¥Ñ©ó©|¥¼µn¤J©Ò¥H¤£¨ü¦P¤@ID¦P®É¤W½u­­¨î¡A¦ı¬O¨C¤@­Ó³s½uªº²Ö¿n¤W¯¸®É¼Æ
-     ´N¤w¸g¶}©l­pºâ¡AµM«á¹L¤F´X¤Ñ«á¦b³v¤@µn¤J»Pµn¥X¡A´N¦³¤j¶q²Ö¿n¤W¯¸®É¼Æ */
+  /* BioStar.051029: ç´¯ç©ä¸Šç«™æ™‚æ•¸æ‡‰å¾ç™»å…¥å¾Œæ‰è¨ˆç®—ï¼Œè€Œä¸æ˜¯å¾é€£ç·šå»ºç«‹æ™‚å€™å°±
+     é–‹å§‹è¨ˆç®—ï¼Œé¿å…ä½¿ç”¨è€…å…ˆç”¨é˜²é–’ç½®çš„ BBS è»Ÿé«”é–‹å•Ÿæ•¸åå€‹å°šæœªç™»å…¥çš„é€£ç·šï¼Œ
+     ç”±æ–¼å°šæœªç™»å…¥æ‰€ä»¥ä¸å—åŒä¸€IDåŒæ™‚ä¸Šç·šé™åˆ¶ï¼Œä½†æ˜¯æ¯ä¸€å€‹é€£ç·šçš„ç´¯ç©ä¸Šç«™æ™‚æ•¸
+     å°±å·²ç¶“é–‹å§‹è¨ˆç®—ï¼Œç„¶å¾Œéäº†å¹¾å¤©å¾Œåœ¨é€ä¸€ç™»å…¥èˆ‡ç™»å‡ºï¼Œå°±æœ‰å¤§é‡ç´¯ç©ä¸Šç«™æ™‚æ•¸ */
 + time(&ap_start);
 
   board_main();
@@ -39,11 +39,11 @@
 : acct.c:acct_show()
 
   usr_fpath(buf, uid, fn_dir);
-  prints("  \033[32m­Ó¤H«H¥ó¡G\033[37m%d «Ê\n", rec_num(buf, sizeof(HDR)));
+  prints("  \033[32må€‹äººä¿¡ä»¶ï¼š\033[37m%d å°\n", rec_num(buf, sizeof(HDR)));
 
 + diff = u->staytime / 60;
-+ prints("  \033[32m±¾¯¸®É¼Æ¡G\033[37m%d ®É %d ¤À\n", diff / 60 , diff % 60);
++ prints("  \033[32mæ›ç«™æ™‚æ•¸ï¼š\033[37m%d æ™‚ %d åˆ†\n", diff / 60 , diff % 60);
 
 --
- [1;41m¢z[44m¢q[m Or[1mig[30min[m: [41m ¹ü¤Æ®v¤j¥Íª«¨t£»§u­·¡E²·¤ë¡EÀº¤Ñ±^ [32;47m micro.bio.ncue.edu.tw [m
- [1;42m¢q[45m¢}[m A[1mut[30mho[mr: [1;33mBioStar [30m±q [35m163.23.212.18 [30mµoªí[m
+ [1;41mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [41m å½°åŒ–å¸«å¤§ç”Ÿç‰©ç³»Ë™åŸé¢¨?çœºæœˆ?æ“å¤©å´— [32;47m micro.bio.ncue.edu.tw [m
+ [1;42mâ”¼[45mâ”˜[m A[1mut[30mho[mr: [1;33mBioStar [30må¾ [35m163.23.212.18 [30mç™¼è¡¨[m

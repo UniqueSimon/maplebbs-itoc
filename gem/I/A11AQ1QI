@@ -1,86 +1,86 @@
-µo«H¤H: amaki.bbs@luna.twbbs.org (Åx¦Ï¥¤Âà°é°é) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à]¬İªO¤H®ğ¡BÂsÄı®É¶¡¡BCP±Æ¦æ»P²Î­p~1
-µo«H¯¸: ¤ë¤U©]·Q (Sat, 16 Aug 2003 10:04:49 +0800 (CST))  Updated: 2005/06/13
+ç™¼ä¿¡äºº: amaki.bbs@luna.twbbs.org (ç‘ç¾Šå¥¶è½‰åœˆåœˆ) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]çœ‹æ¿äººæ°£ã€ç€è¦½æ™‚é–“ã€CPæ’è¡Œèˆ‡çµ±è¨ˆ~1
+ç™¼ä¿¡ç«™: æœˆä¸‹å¤œæƒ³ (Sat, 16 Aug 2003 10:04:49 +0800 (CST))  Updated: 2005/06/13
 
-  ³o­Ó´»°²­Í§¹¦¨ªº¤j¤uµ{¡C
+  é€™å€‹æš‘å‡ä¿ºå®Œæˆçš„å¤§å·¥ç¨‹ã€‚
 
 
-  ¨s·¥ª©¥»ªº¬İªO¤H®ğ¡BÂsÄı®É¶¡¡BCP±Æ¦æº]¡A¤À¨C¤é¡B¨C¶g¡B¨C¤ë¡B¦~«×¤@¦@¤Q¤G¶µ
+  ç©¶æ¥µç‰ˆæœ¬çš„çœ‹æ¿äººæ°£ã€ç€è¦½æ™‚é–“ã€CPæ’è¡Œæ¦œï¼Œåˆ†æ¯æ—¥ã€æ¯é€±ã€æ¯æœˆã€å¹´åº¦ä¸€å…±åäºŒé …
 
-  ±Æ¦æ¡A¥B¦Û°ÊÃ¸»sºë¬üªºª½¤è¹Ï¡Ay¶b¨Ãªş¤Wdegree(degree·|¦Û°Ê­pºâ)¡A¨C­ÓªO¦³¤Q
+  æ’è¡Œï¼Œä¸”è‡ªå‹•ç¹ªè£½ç²¾ç¾çš„ç›´æ–¹åœ–ï¼Œyè»¸ä¸¦é™„ä¸Šdegree(degreeæœƒè‡ªå‹•è¨ˆç®—)ï¼Œæ¯å€‹æ¿æœ‰å
 
-  ¤G­Óª½¤è¹Ï¡A¨Ì·Ó¨C¤é(24Hr)¡B¥»¶g¨C¤é(¬P´Á¤@~¤é)¡A¥»¤ë¨C¤é(1~31¤é)¡B¥»¦~¨C¤ë
+  äºŒå€‹ç›´æ–¹åœ–ï¼Œä¾ç…§æ¯æ—¥(24Hr)ã€æœ¬é€±æ¯æ—¥(æ˜ŸæœŸä¸€~æ—¥)ï¼Œæœ¬æœˆæ¯æ—¥(1~31æ—¥)ã€æœ¬å¹´æ¯æœˆ
 
-  (1~12¤ë)¡A¥æ¤e·f°t¬İªO¤H®ğ¡BÂsÄı®É¶¡¡BCP±Æ¦æº]²Î­p¡C
+  (1~12æœˆ)ï¼Œäº¤å‰æ­é…çœ‹æ¿äººæ°£ã€ç€è¦½æ™‚é–“ã€CPæ’è¡Œæ¦œçµ±è¨ˆã€‚
 
-  ¬Û«HÀ³¸Ó¤£·|¦³¥ô¦ó¨ä¥LBBSª©¥»µ{¦¡¦³³oµ¥ª±·N¡C
+  ç›¸ä¿¡æ‡‰è©²ä¸æœƒæœ‰ä»»ä½•å…¶ä»–BBSç‰ˆæœ¬ç¨‹å¼æœ‰é€™ç­‰ç©æ„ã€‚
 
-  0. ¥ı°Ñ·ÓºëµØ°Ï³o½g­×§ï¡C
-     [¥\¯à] board.c ¬İªOÂsÄı®É¶¡
+  0. å…ˆåƒç…§ç²¾è¯å€é€™ç¯‡ä¿®æ”¹ã€‚
+     [åŠŸèƒ½] board.c çœ‹æ¿ç€è¦½æ™‚é–“
 
-  1. Âà´« .BRD ¤Î struct BRD¡A½Ğ¦b¸Ì­±¶ë¤K­ÓÄæ¦ì
+  1. è½‰æ› .BRD åŠ struct BRDï¼Œè«‹åœ¨è£¡é¢å¡å…«å€‹æ¬„ä½
 
-  int daymantime;               /* ¨C¤ÑÂsÄı¤H¦¸ */
-  int weekmantime;              /* ¨C¶gÂsÄı¤H¦¸ */
-  int monthmantime;             /* ¨C¤ëÂsÄı¤H¦¸ */
-  long int yearmantime;         /* ¨C¦~ÂsÄı¤H¦¸ */
+  int daymantime;               /* æ¯å¤©ç€è¦½äººæ¬¡ */
+  int weekmantime;              /* æ¯é€±ç€è¦½äººæ¬¡ */
+  int monthmantime;             /* æ¯æœˆç€è¦½äººæ¬¡ */
+  long int yearmantime;         /* æ¯å¹´ç€è¦½äººæ¬¡ */
 
-  time_t daytime;               /* ¨C¤ÑÂsÄıªºÁ`®É¶¡ */
-  time_t weektime;              /* ¨C¶gÂsÄıªºÁ`®É¶¡ */
-  int monthtime;                /* ¨C¤ëÂsÄıªºÁ`®É¶¡(¤p®É©Î¤À) */
-  int yeartime;                 /* ¨C¦~ÂsÄıªºÁ`®É¶¡(¤p®É©Î¤À) */
+  time_t daytime;               /* æ¯å¤©ç€è¦½çš„ç¸½æ™‚é–“ */
+  time_t weektime;              /* æ¯é€±ç€è¦½çš„ç¸½æ™‚é–“ */
+  int monthtime;                /* æ¯æœˆç€è¦½çš„ç¸½æ™‚é–“(å°æ™‚æˆ–åˆ†) */
+  int yeartime;                 /* æ¯å¹´ç€è¦½çš„ç¸½æ™‚é–“(å°æ™‚æˆ–åˆ†) */
 
-  ¤@¤f®ğ¼É¼W¦n´X­Óbyte
+  ä¸€å£æ°£æš´å¢å¥½å¹¾å€‹byte
 
-  2. BCACHE ¸Ì·s¼W¤G­ÓÄæ¦ì
+  2. BCACHE è£¡æ–°å¢äºŒå€‹æ¬„ä½
 
-  time_t totalvisit[MAXBOARD];     /* ¦UªO±q¤W¦¸­«¶}¥H¨Ó²Ö­pÂsÄı®É¶¡ */
+  time_t totalvisit[MAXBOARD];     /* å„æ¿å¾ä¸Šæ¬¡é‡é–‹ä»¥ä¾†ç´¯è¨ˆç€è¦½æ™‚é–“ */
 + long int hr_mantime[MAXBOARD];
 + long int hr_time[MAXBOARD];
 
-  hr_mantime[MAXBOARD]¡Bhr_time[MAXBOARD]³o¨â­ÓªF¦è¡A­pºâ·í¤é²Ö¿n¤H¦¸©Ò¥Î¡A
+  hr_mantime[MAXBOARD]ã€hr_time[MAXBOARD]é€™å…©å€‹æ±è¥¿ï¼Œè¨ˆç®—ç•¶æ—¥ç´¯ç©äººæ¬¡æ‰€ç”¨ï¼Œ
 
-  hr_time[MAXBOARD]§ïªk:
+  hr_time[MAXBOARD]æ”¹æ³•:
 
   bshm->totalvisit[bno] += time(0) - now;
-+ bshm->hr_time[bno] += time(0) - now;  /* ¦h¸É³o¤@¦æ§Y¥i */
++ bshm->hr_time[bno] += time(0) - now;  /* å¤šè£œé€™ä¸€è¡Œå³å¯ */
 
-  hr_mantime[MAXBOARD]§ïªk:
+  hr_mantime[MAXBOARD]æ”¹æ³•:
 
   bshm->mantime[bno]++;
-+ bshm->hr_mantime[bno]++; /* ¦h¸É³o¤@¦æ§Y¥i */
++ bshm->hr_mantime[bno]++; /* å¤šè£œé€™ä¸€è¡Œå³å¯ */
 
-  3. Announce¸Ì¥Î^p + d·s¼W¸ê®Æ¡AÀÉ¦W¦U¬°
+  3. Announceè£¡ç”¨^p + dæ–°å¢è³‡æ–™ï¼Œæª”åå„ç‚º
 
-    -daymantime       ¬Q¤é¬İªO¤H®ğ±Æ¦æ
-    -weekmantime      ¤W¶g¬İªO¤H®ğ±Æ¦æ
-    -moonmantime      «e¤ë¬İªO¤H®ğ±Æ¦æ
-    -yearmantime      ¦~«×¬İªO¤H®ğ±Æ¦æ
+    -daymantime       æ˜¨æ—¥çœ‹æ¿äººæ°£æ’è¡Œ
+    -weekmantime      ä¸Šé€±çœ‹æ¿äººæ°£æ’è¡Œ
+    -moonmantime      å‰æœˆçœ‹æ¿äººæ°£æ’è¡Œ
+    -yearmantime      å¹´åº¦çœ‹æ¿äººæ°£æ’è¡Œ
 
-    -daytime          ¬Q¤é¬İªO¨Ï¥Î®É¶¡±Æ¦æ
-    -weektime         ¤W¶g¬İªO¨Ï¥Î®É¶¡±Æ¦æ
-    -moontime         «e¤ë¬İªO¨Ï¥Î®É¶¡±Æ¦æ
-    -yeartime         ¦~«×¬İªO®É¥Î®É¶¡±Æ¦æ
+    -daytime          æ˜¨æ—¥çœ‹æ¿ä½¿ç”¨æ™‚é–“æ’è¡Œ
+    -weektime         ä¸Šé€±çœ‹æ¿ä½¿ç”¨æ™‚é–“æ’è¡Œ
+    -moontime         å‰æœˆçœ‹æ¿ä½¿ç”¨æ™‚é–“æ’è¡Œ
+    -yeartime         å¹´åº¦çœ‹æ¿æ™‚ç”¨æ™‚é–“æ’è¡Œ
 
-    -dcp              ¬Q¤é¬İªO¨Ï¥ÎCP±Æ¦æ
-    -wcp              ¤W¶g¬İªO¨Ï¥ÎCP±Æ¦æ
-    -mcp              «e¤ë¬İªO¨Ï¥ÎCP±Æ¦æ
-    -ycp              ¦~«×¬İªO®É¥ÎCP±Æ¦æ
+    -dcp              æ˜¨æ—¥çœ‹æ¿ä½¿ç”¨CPæ’è¡Œ
+    -wcp              ä¸Šé€±çœ‹æ¿ä½¿ç”¨CPæ’è¡Œ
+    -mcp              å‰æœˆçœ‹æ¿ä½¿ç”¨CPæ’è¡Œ
+    -ycp              å¹´åº¦çœ‹æ¿æ™‚ç”¨CPæ’è¡Œ
 
-  4. crontab -e¥[¤W
+  4. crontab -eåŠ ä¸Š
 
-    /* ¬İªO¤H®ğ¡BÂsÄı®É¶¡±Æ¦æº] */
+    /* çœ‹æ¿äººæ°£ã€ç€è¦½æ™‚é–“æ’è¡Œæ¦œ */
 
     30 0 * * * bin/topbrd > /dev/null 2>&1
     5 * * * * bin/brdcounter > /dev/null 2>&1
 
-  5. ­×§ïpost.c
+  5. ä¿®æ”¹post.c
 
-     §ïpost_cb[]
+     æ”¹post_cb[]
 
 +    'l', post_count,
 
-     ·s¼Wpost_count()
+     æ–°å¢post_count()
 
 
 static int
@@ -90,7 +90,7 @@ post_count(xo)
   char *fname, fpath[64];
   BRD *brd;
 
-  switch (vans("¡·¬İªO²Î­p¡G¥»¤é[1~3]¡B¥»¶g[4~6]¡B¥»¤ë[7~9]¡B¥»¦~[A~C]¡H"))
+  switch (vans("â—çœ‹æ¿çµ±è¨ˆï¼šæœ¬æ—¥[1~3]ã€æœ¬é€±[4~6]ã€æœ¬æœˆ[7~9]ã€æœ¬å¹´[A~C]ï¼Ÿ"))
   {
   case '1':
     fname = "hr_mantime";

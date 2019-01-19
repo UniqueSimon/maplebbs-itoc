@@ -1,11 +1,11 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G802) ¯¸¤º: plan
-¼ÐÃD: [¥\¯à] ²¾°£¹L´Á³Æ¥÷
-®É¶¡: 2006/06/22 Thu 10:16:02                           Updated: 2006/06/22
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š802) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] ç§»é™¤éŽæœŸå‚™ä»½
+æ™‚é–“: 2006/06/22 Thu 10:16:02                           Updated: 2006/06/22
 
 /*-------------------------------------------------------*/
 /* util/rmbackup.c  ( NTHU MapleBBS Ver 3.10 )           */
 /*-------------------------------------------------------*/
-/* target : ²¾°£¹L´Á³Æ¥÷                                 */
+/* target : ç§»é™¤éŽæœŸå‚™ä»½                                 */
 /* create : 06/06/22                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -13,27 +13,27 @@
 
 #if 0
 
-¥»µ{¦¡¬O®³¨Ó²¾°£ BBS ªº©w´Á³Æ¥÷¡A°õ¦æªº¤é´Á©M backup* ¤@¼Ë
+æœ¬ç¨‹å¼æ˜¯æ‹¿ä¾†ç§»é™¤ BBS çš„å®šæœŸå‚™ä»½ï¼ŒåŸ·è¡Œçš„æ—¥æœŸå’Œ backup* ä¸€æ¨£
 
-¡· ¨C¶g«ö¬P´Á´X³Æ¥÷¡G#define CASE_BACKUP_BY_WDAY
-­Y crontab ³Æ¥÷ªº³¡¤À¼g¦¨³o¼Ë
+â—Ž æ¯é€±æŒ‰æ˜ŸæœŸå¹¾å‚™ä»½ï¼š#define CASE_BACKUP_BY_WDAY
+è‹¥ crontab å‚™ä»½çš„éƒ¨åˆ†å¯«æˆé€™æ¨£
 4 3 * * 2  bin/backupbrd > /dev/null 2>&1
 4 3 * * 3  bin/backupgem > /dev/null 2>&1
 4 3 * * 4  bin/backupusr > /dev/null 2>&1
 4 3 * * 5  bin/backupoth > /dev/null 2>&1
-¨º»ò´N¦b crontab ¸Ì­±¥[³o¨Ç¨Ó§R°£³Æ¥÷
+é‚£éº¼å°±åœ¨ crontab è£¡é¢åŠ é€™äº›ä¾†åˆªé™¤å‚™ä»½
 4 3 * * 2  bin/rmbackup -b > /dev/null 2>&1
 4 3 * * 3  bin/rmbackup -g > /dev/null 2>&1
 4 3 * * 4  bin/rmbackup -u > /dev/null 2>&1
 4 3 * * 5  bin/rmbackup -o > /dev/null 2>&1
 
-¡· ¨C¤ë«ö¤é³Æ¥÷¡G#define CASE_BACKUP_BY_DAY
-­Y crontab ³Æ¥÷ªº³¡¤À¼g¦¨³o¼Ë
+â—Ž æ¯æœˆæŒ‰æ—¥å‚™ä»½ï¼š#define CASE_BACKUP_BY_DAY
+è‹¥ crontab å‚™ä»½çš„éƒ¨åˆ†å¯«æˆé€™æ¨£
 4 3 1,16 * *  bin/backupbrd > /dev/null 2>&1
 4 3 5,20 * *  bin/backupgem > /dev/null 2>&1
 4 3 9,24 * *  bin/backupusr > /dev/null 2>&1
 4 3 12,27 * *  bin/backupoth > /dev/null 2>&1
-¨º»ò´N¦b crontab ¸Ì­±¥[³o¨Ç¨Ó§R°£³Æ¥÷
+é‚£éº¼å°±åœ¨ crontab è£¡é¢åŠ é€™äº›ä¾†åˆªé™¤å‚™ä»½
 4 2 1,16 * *  bin/rmbackup -b > /dev/null 2>&1
 4 2 5,20 * *  bin/rmbackup -g > /dev/null 2>&1
 4 2 9,24 * *  bin/rmbackup -u > /dev/null 2>&1
@@ -43,12 +43,12 @@
 
 #include <time.h>
 
-#define BAKPATH         "/home/bbs/bak"     /* ³Æ¥÷ÀÉªº¸ô®|¡A§Û config.h */
+#define BAKPATH         "/home/bbs/bak"     /* å‚™ä»½æª”çš„è·¯å¾‘ï¼ŒæŠ„ config.h */
 
 
-/* ¥H¤U¤GªÌ¿ï¤@­Ó #define¡A¥t¤@­Ó #undef */
-#define CASE_BACKUP_BY_WDAY    /* ¨C¶g«ö¬P´Á´X³Æ¥÷ */
-#undef  CASE_BACKUP_BY_DAY     /* ¨C¤ë«ö¤é³Æ¥÷ */
+/* ä»¥ä¸‹äºŒè€…é¸ä¸€å€‹ #defineï¼Œå¦ä¸€å€‹ #undef */
+#define CASE_BACKUP_BY_WDAY    /* æ¯é€±æŒ‰æ˜ŸæœŸå¹¾å‚™ä»½ */
+#undef  CASE_BACKUP_BY_DAY     /* æ¯æœˆæŒ‰æ—¥å‚™ä»½ */
 
 
 int
@@ -81,7 +81,7 @@ main(argc, argv)
 
 #ifdef CASE_BACKUP_BY_WDAY
 
-  /* ²M°£¤K¶g«eªº³Æ¥÷ */
+  /* æ¸…é™¤å…«é€±å‰çš„å‚™ä»½ */
   time(&now);
   now -= 86400 * 7 * 8;
   ptime = localtime(&now);
@@ -91,7 +91,7 @@ main(argc, argv)
 
 #elif defined(CASE_BACKUP_BY_DAY)
 
-  /* ²M°£¤G­Ó¤ë«eªº³Æ¥÷ */
+  /* æ¸…é™¤äºŒå€‹æœˆå‰çš„å‚™ä»½ */
   time(&now);
   ptime = localtime(&now);
   yy = ptime->tm_year % 100;
@@ -119,4 +119,4 @@ main(argc, argv)
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mpc512-1.EE.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mpc512-1.EE.NCTU.edu.tw[37m ç™¼è¡¨[m

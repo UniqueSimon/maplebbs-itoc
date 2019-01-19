@@ -1,14 +1,14 @@
-§@ªÌ: itoc (:MM:) ¬İªO: itoc
-¼ĞÃD: Re: [°İÃD]ªO¥D¦Û­qµo¤åºõ»â
-®É¶¡: Fri Apr 18 14:51:23 2003                          Updated: 2005/05/26
+ä½œè€…: itoc (:MM:) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: [å•é¡Œ]æ¿ä¸»è‡ªè¨‚ç™¼æ–‡ç¶±é ˜
+æ™‚é–“: Fri Apr 18 14:51:23 2003                          Updated: 2005/05/26
 
-¡° ¤Ş­z¡mDinsam.bbs@whshs.cs.nccu.edu.tw («e¥@.. o.O)¡n¤§»Ê¨¥¡G
-> §Ú°Ñ¦Ò¶iªOµe­± ¼g¤F¤@­ÓªO¥D¦Û­qµo¤åºõ»â
+â€» å¼•è¿°ã€ŠDinsam.bbs@whshs.cs.nccu.edu.tw (å‰ä¸–.. o.O)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æˆ‘åƒè€ƒé€²æ¿ç•«é¢ å¯«äº†ä¸€å€‹æ¿ä¸»è‡ªè¨‚ç™¼æ–‡ç¶±é ˜
 
 : global.h
 
-#define FN_NOTE         "note"          /* ¶iªOµe­± */
-+ #define FN_POSTLAW    "postlaw"       /* µo¤åºõ»â */
+#define FN_NOTE         "note"          /* é€²æ¿ç•«é¢ */
++ #define FN_POSTLAW    "postlaw"       /* ç™¼æ–‡ç¶±é ˜ */
 
 : post.c:do_post()
 
@@ -16,23 +16,23 @@
 + if (more(fpath, (char *) -1) < 0)
     film_out(FILM_POST, 0);
 
-  prints("µoªí¤å³¹©ó¡i %s ¡j¬İªO", currboard);
+  prints("ç™¼è¡¨æ–‡ç« æ–¼ã€ %s ã€‘çœ‹æ¿", currboard);
 
-: manage.c:post_postlaw_edit() ·s¼W©ó post_memo_edit() «á­±
+: manage.c:post_postlaw_edit() æ–°å¢æ–¼ post_memo_edit() å¾Œé¢
 
 /* ----------------------------------------------------- */
-/* ªO¥D¥\¯à : ­×§ïµo¤åºõ»â                               */
+/* æ¿ä¸»åŠŸèƒ½ : ä¿®æ”¹ç™¼æ–‡ç¶±é ˜                               */
 /* ----------------------------------------------------- */
 
 
 static int
-post_postlaw_edit(xo)       /* ªO¥D¦Û©w¤å³¹µoªíºõ»â */
+post_postlaw_edit(xo)       /* æ¿ä¸»è‡ªå®šæ–‡ç« ç™¼è¡¨ç¶±é ˜ */
   XO *xo;
 {
   int mode;
   char fpath[64];
 
-  mode = vans("¤å³¹µoªíºõ»â (D)§R°£ (E)­×§ï (Q)¨ú®ø¡H[E] ");
+  mode = vans("æ–‡ç« ç™¼è¡¨ç¶±é ˜ (D)åˆªé™¤ (E)ä¿®æ”¹ (Q)å–æ¶ˆï¼Ÿ[E] ");
 
   if (mode != 'q')
   {
@@ -44,7 +44,7 @@ post_postlaw_edit(xo)       /* ªO¥D¦Û©w¤å³¹µoªíºõ»â */
       return XO_FOOT;
     }
 
-    if (vedit(fpath, 0))      /* Thor.981020: ª`·N³Qtalkªº°İÃD */
+    if (vedit(fpath, 0))      /* Thor.981020: æ³¨æ„è¢«talkçš„å•é¡Œ */
       vmsg(msg_cancel);
     return XO_HEAD;
   }
@@ -53,14 +53,14 @@ post_postlaw_edit(xo)       /* ªO¥D¦Û©w¤å³¹µoªíºõ»â */
 
 : manage.c:post_manage()
 
-    "WMemo   ½s¿è¶iªOµe­±",
-+   "PostLaw ½s¿èµo¤åºõ»â",
+    "WMemo   ç·¨è¼¯é€²æ¿ç•«é¢",
++   "PostLaw ç·¨è¼¯ç™¼æ–‡ç¶±é ˜",
 
   ...
   ...
 
-- char *menu = "¡· ªO¥D¿ï³æ (B)¥DÃD (W)¶iªO (M)°ÆªO"
-+ char *menu = "¡· ªO¥D¿ï³æ (B)¥DÃD (W)¶iªO (P)ºõ»â (M)°ÆªO"
+- char *menu = "â— æ¿ä¸»é¸å–® (B)ä¸»é¡Œ (W)é€²æ¿ (M)å‰¯æ¿"
++ char *menu = "â— æ¿ä¸»é¸å–® (B)ä¸»é¡Œ (W)é€²æ¿ (P)ç¶±é ˜ (M)å‰¯æ¿"
 
   ...
   ...
@@ -72,5 +72,5 @@ post_postlaw_edit(xo)       /* ªO¥D¦Û©w¤å³¹µoªíºõ»â */
 +   return post_postlaw_edit(xo);
 
 --
-    [1;32m¢~¢w Origin ¢wùß [0;36m°[1mÊ[0;36m¤[1mO[0;36m®[1mÖ[0;36m¤[1mß [1;31m processor.tfcis.org [32m ¡ã £e£f£g ¢w¢t[m
-    [1;32m¢u   Author   ùë [33;44mitoc.Dorm-GD2.NCTU.edu.tw                [m
+    [1;32mâ•­â”€ Origin â”€â•— [0;36m?[1m?[0;36m?[1mO[0;36m?[1m?[0;36m?[1m?[1;31m processor.tfcis.org [32m ï½ ÎºÎ»Î¼ â”€â”¤[m
+    [1;32mâ”œ   Author   â•¡ [33;44mitoc.Dorm-GD2.NCTU.edu.tw                [m

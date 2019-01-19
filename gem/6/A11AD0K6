@@ -1,17 +1,17 @@
-§@ªÌ: chwaian (µL¨¥) ¬İªO: itoc
-¼ĞÃD: Re: ·Q½Ğ°İ¦³°µ½ä½Lªº¯¸ªø
-®É¶¡: 2004/08/23 Mon 20:20:27                           Updated: 2005/06/08
+ä½œè€…: chwaian (ç„¡è¨€) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: æƒ³è«‹å•æœ‰åšè³­ç›¤çš„ç«™é•·
+æ™‚é–“: 2004/08/23 Mon 20:20:27                           Updated: 2005/06/08
 
 : src/game/Makefile
 
 SO =    .... [1;33mbet.so[m
 
-: src/game/ ©³¤U¼W¥[³o°¦µ{¦¡
+: src/game/ åº•ä¸‹å¢åŠ é€™éš»ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* so/bet.c         ( NTHU CS MapleBBS Ver 3.00 )        */
 /*-------------------------------------------------------*/
-/* target : ºÆ¨g½ä½L (­ì¦W:¤Uª`¹CÀ¸)                     */
+/* target : ç˜‹ç‹‚è³­ç›¤ (åŸå:ä¸‹æ³¨éŠæˆ²)                     */
 /* create :   /  /                                       */
 /* update :   /  /                                       */
 /* author : dsyan.bbs@Forever.twbbs.org                  */
@@ -19,13 +19,13 @@ SO =    .... [1;33mbet.so[m
 /*-------------------------------------------------------*/
 
 #if 0
-   ­ìºc·Q¤Îµ{¦¡¥Ñ dsyan ´£¨Ñ¤Î¼¶¼g..
-   «á¸g weiren §ï¼g³¡¤À¬[ºc±o¦¹µ{¦¡..
-   ¦³¥ô¦ó°İÃD©Î«ØÄ³Åwªï»P³o¨â¦ì³sµ¸.. :)
+   åŸæ§‹æƒ³åŠç¨‹å¼ç”± dsyan æä¾›åŠæ’°å¯«..
+   å¾Œç¶“ weiren æ”¹å¯«éƒ¨åˆ†æ¶æ§‹å¾—æ­¤ç¨‹å¼..
+   æœ‰ä»»ä½•å•é¡Œæˆ–å»ºè­°æ­¡è¿èˆ‡é€™å…©ä½é€£çµ¡.. :)
 
-   dsyan ¬O¤Ñªø¦a¤[(Forever.twbbs.org) ªº¯¸ªø
+   dsyan æ˜¯å¤©é•·åœ°ä¹…(Forever.twbbs.org) çš„ç«™é•·
    =>dsyan.bbs@Forever.twbbs.org
-   weiren ¬O¯îÂÕ¤Æ¹Ò (weird.twbbs.org.tw) ªº¯¸ªø
+   weiren æ˜¯è’è¬¬åŒ–å¢ƒ (weird.twbbs.org.tw) çš„ç«™é•·
    =>http://www.weiren.net/
    =>weiren@weiren.net
 #endif
@@ -34,15 +34,15 @@ SO =    .... [1;33mbet.so[m
 #include "bbs.h"
 
 #define maxboard    40
-#define newgame     5           /* ³Ì«á¶}ªº´X½L­nÅÜ¦â */
+#define newgame     5           /* æœ€å¾Œé–‹çš„å¹¾ç›¤è¦è®Šè‰² */
 #define LOCK_FILE   "etc/game/bet/bet.lock"
 
 
 static void
-add_post(brdname, fpath, title) /* µo¤å¨ì¬İªO */
-  char *brdname;                /* ±ı post ªº¬İªO */
-  char *fpath;                  /* ÀÉ®×¸ô®| */
-  char *title;                  /* ¤å³¹¼ĞÃD */
+add_post(brdname, fpath, title) /* ç™¼æ–‡åˆ°çœ‹æ¿ */
+  char *brdname;                /* æ¬² post çš„çœ‹æ¿ */
+  char *fpath;                  /* æª”æ¡ˆè·¯å¾‘ */
+  char *title;                  /* æ–‡ç« æ¨™é¡Œ */
 {
   HDR hdr;
   char folder[64];
@@ -86,19 +86,19 @@ main_bet()
 
   while (-1)
   {
-    vs_bar("ºÆ¨g½ä½L");
+    vs_bar("ç˜‹ç‹‚è³­ç›¤");
 
     if (dashf(LOCK_FILE))
     {
-      vmsg("µo¿ú®É¶¡°±¤î¤Uª`");
+      vmsg("ç™¼éŒ¢æ™‚é–“åœæ­¢ä¸‹æ³¨");
       return 0;
     }
 
     do
     {
       move(1, 0);
-      outs("\033[44;1m½s¸¹  ³æ  »ù           ¶µ    ¥Ø    ±Ô    ­z ¶} §½ ªÌ"
-        "   ©|¦³´X¤p®É  \033[m\n");
+      outs("\033[44;1mç·¨è™Ÿ  å–®  åƒ¹           é …    ç›®    æ•˜    è¿° é–‹ å±€ è€…"
+        "   å°šæœ‰å¹¾å°æ™‚  \033[m\n");
       fs = fopen("etc/game/bet/bet.list", "r");
       if (turn == 0)
         tmp = 0;
@@ -133,24 +133,24 @@ main_bet()
           if (fss = fopen(fpath, "r"))
           {
             fclose(fss);
-            prints("\033[35;1m %2d    %5d  %-40s %-12s [µ¥«İµo¿ú]\033[m\n",
+            prints("\033[35;1m %2d    %5d  %-40s %-12s [ç­‰å¾…ç™¼éŒ¢]\033[m\n",
               i + 1, t[i], buf, userid);
           }
           else if (close_time - time(0) > 0)
-            prints("\033[%d;1m %2d    %5d  %-40s %-12s %2d¤Ñ%2d¤p®É\033[m\n",
+            prints("\033[%d;1m %2d    %5d  %-40s %-12s %2då¤©%2då°æ™‚\033[m\n",
               ch_color ? 37 : 32, i + 1, t[i], buf, userid, a, b);
           else
-            prints("\033[32;1m %2d    %5d  %-40s %-12s     [«Ê½L]\033[m\n",
+            prints("\033[32;1m %2d    %5d  %-40s %-12s     [å°ç›¤]\033[m\n",
               i + 1, t[i], buf, userid);
         }
         else
-          prints("\033[31;1m %2d    -----      ©|¥¼¦³¤H¶}§½\033[m\n", i + 1);
+          prints("\033[31;1m %2d    -----      å°šæœªæœ‰äººé–‹å±€\033[m\n", i + 1);
       }
       fclose(fs);
       move(22, 0);
       clrtoeol();
-      prints("\033[1;44;37m«öÁä»¡©ú: [n]¤U¤@­¶ [p]¤W¤@­¶ [b]¤Uª`/¶}®à/¶}½L "
-        "[q]Â÷¶}  ª÷¹ô: %10d     \033[m", cuser.gold);
+      prints("\033[1;44;37mæŒ‰éµèªªæ˜: [n]ä¸‹ä¸€é  [p]ä¸Šä¸€é  [b]ä¸‹æ³¨/é–‹æ¡Œ/é–‹ç›¤ "
+        "[q]é›¢é–‹  é‡‘å¹£: %10d     \033[m", cuser.gold);
       do
       {
         ch = igetch();
@@ -164,7 +164,7 @@ main_bet()
       j = 0;
       if (ch == 'b')
       {
-        vget(22, 0, "½Ğ¿é¤J 1-40 ©Îª½±µ«ö Enter Â÷¶}¡G", cc, 3, DOECHO);
+        vget(22, 0, "è«‹è¼¸å…¥ 1-40 æˆ–ç›´æ¥æŒ‰ Enter é›¢é–‹ï¼š", cc, 3, DOECHO);
         j = atoi(cc);
       }
     } while (!j || j > maxboard || j < 1);
@@ -172,11 +172,11 @@ main_bet()
 
     if (dashf(LOCK_FILE))
     {
-      vmsg("µo¿ú®É¶¡°±¤î¤Uª`");
+      vmsg("ç™¼éŒ¢æ™‚é–“åœæ­¢ä¸‹æ³¨");
       return 0;
     }
 
-    if (t[j - 1])                /* ¤w¦³¤H¶}§½ */
+    if (t[j - 1])                /* å·²æœ‰äººé–‹å±€ */
     {
       fs = fopen("etc/game/bet/bet.list", "r");
       for (i = 0; i < j; i++)
@@ -185,24 +185,24 @@ main_bet()
         fgets(buf, 60, fs);
       }
       fclose(fs);
-      if (close_time < time(0))        /* ®É¶¡¨ì */
+      if (close_time < time(0))        /* æ™‚é–“åˆ° */
       {
         sprintf(fpath, "etc/game/bet/bet.ans%d", j);
         if (dashf(fpath))
         {
-          vmsg("µ²ªG¤w¤½§G..¼úª÷±N©ó©ú¤Ñ 6:30am µo©ñ..:)");
+          vmsg("çµæœå·²å…¬ä½ˆ..çé‡‘å°‡æ–¼æ˜å¤© 6:30am ç™¼æ”¾..:)");
         }
         else if (strcmp(userid, cuser.userid))
         {
-          sprintf(buf, "¤Uª`´Á­­¤w¨ì..µ¥«İ %s ¶}§½..", userid);
+          sprintf(buf, "ä¸‹æ³¨æœŸé™å·²åˆ°..ç­‰å¾… %s é–‹å±€..", userid);
           vmsg(buf);
         }
         else
         {
           int ch[9], all = 0;
 
-          vs_bar("ºÆ¨g½ä½L");
-          prints("\n\n\033[44;1m  ±m²¼¼Æ    ­¿²v      ±Ô  ­z"
+          vs_bar("ç˜‹ç‹‚è³­ç›¤");
+          prints("\n\n\033[44;1m  å½©ç¥¨æ•¸    å€ç‡      æ•˜  è¿°"
             "           \033[m\n\n");
           sprintf(fpath, "etc/game/bet/bet.cho%d", j);
           fs = fopen(fpath, "r");
@@ -217,15 +217,15 @@ main_bet()
               i + 1, ch[i], xx / 100, xx % 100, cho[i]);
           }
           fclose(fs);
-          sprintf(buf, "½Ğ¿é¤J³Ì«áªºµ²ªG(1-%d)©Îª½±µ«ö EnterÂ÷¶}¡G", tmp);
+          sprintf(buf, "è«‹è¼¸å…¥æœ€å¾Œçš„çµæœ(1-%d)æˆ–ç›´æ¥æŒ‰ Enteré›¢é–‹ï¼š", tmp);
           move(20, 0);
-          prints("\033[1;31mª`·N¡G¶Ã¶}½LªÌ¡A±N³B¥H°±Åv»Pª÷¿úÂk¹sªº³B¤À\033[m");
+          prints("\033[1;31mæ³¨æ„ï¼šäº‚é–‹ç›¤è€…ï¼Œå°‡è™•ä»¥åœæ¬Šèˆ‡é‡‘éŒ¢æ­¸é›¶çš„è™•åˆ†\033[m");
           vget(22, 0, buf, cc, 3, DOECHO);
           num = atoi(cc);
 
           if (dashf(LOCK_FILE))
           {
-            vmsg("µo¿ú®É¶¡°±¤î¤Uª`");
+            vmsg("ç™¼éŒ¢æ™‚é–“åœæ­¢ä¸‹æ³¨");
             return 0;
           }
           if (num <= tmp && num >= 1)
@@ -236,7 +236,7 @@ main_bet()
 
               if (dashf(LOCK_FILE))
               {
-                vmsg("µo¿ú®É¶¡°±¤î¤Uª`");
+                vmsg("ç™¼éŒ¢æ™‚é–“åœæ­¢ä¸‹æ³¨");
                 return 0;
               }
 
@@ -250,15 +250,15 @@ main_bet()
 
               if (fss = fopen(fpath, "w"))
               {
-                sprintf(title, "½L¸¹[%d] «Ê½Lµ²ªG", j);
+                sprintf(title, "ç›¤è™Ÿ[%d] å°ç›¤çµæœ", j);
 
                 fprintf(fss, "%s %s (%s) %s %s\n", STR_AUTHOR1, STR_SYSOP,
                   SYSOPNICK, STR_POST2, BN_BET);
-                fprintf(fss, "¼ĞÃD: %s\n®É¶¡: %s\n\n", title, Now());
+                fprintf(fss, "æ¨™é¡Œ: %s\næ™‚é–“: %s\n\n", title, Now());
 
-                fprintf(fss, "\n[¶}¼úµ²ªG]¡G%d\n", num);
-                fprintf(fss, "\n--\n¡° ©³¤U¬°¦¹¦¸¤Uª`ª¬ªp¡A"
-                  "©ú¤Ñ¦­¤W6:30±Nµo©ñ¼úª÷\n\n\n");
+                fprintf(fss, "\n[é–‹ççµæœ]ï¼š%d\n", num);
+                fprintf(fss, "\n--\nâ€» åº•ä¸‹ç‚ºæ­¤æ¬¡ä¸‹æ³¨ç‹€æ³ï¼Œ"
+                  "æ˜å¤©æ—©ä¸Š6:30å°‡ç™¼æ”¾çé‡‘\n\n\n");
 
                 f_suck(fss, fname);
 
@@ -280,8 +280,8 @@ main_bet()
         {
           int ch[9], all = 0, hhall = 0;
 
-          vs_bar("ºÆ¨g½ä½L");
-          prints("\n\n\033[44;1m  ±m²¼¼Æ       ­¿²v      ±Ô  ­z"
+          vs_bar("ç˜‹ç‹‚è³­ç›¤");
+          prints("\n\n\033[44;1m  å½©ç¥¨æ•¸       å€ç‡      æ•˜  è¿°"
             "           \033[m\n\n");
           sprintf(fpath, "etc/game/bet/bet.cho%d", j);
           fs = fopen(fpath, "r");
@@ -314,41 +314,41 @@ main_bet()
               i + 1, phh, ch[i], xx / 100, xx % 100, cho[i]);
           }
           fclose(fs);
-          prints("\n¥ş>%4d/%4d\n", hhall, all);
-          prints("\n¥»§½Á`½äª÷: \033[1;36m%d\033[m ³æ±i½ä²¼»ù®æ: %d",
+          prints("\nå…¨>%4d/%4d\n", hhall, all);
+          prints("\næœ¬å±€ç¸½è³­é‡‘: \033[1;36m%d\033[m å–®å¼µè³­ç¥¨åƒ¹æ ¼: %d",
             all * t[j - 1], t[j - 1]);
 
-          sprintf(buf, "½Ğ¿é¤J§Aªº¿ï¾Ü(1-%d)©Î«ö q ¸õ¥X¡G", tmp);
+          sprintf(buf, "è«‹è¼¸å…¥ä½ çš„é¸æ“‡(1-%d)æˆ–æŒ‰ q è·³å‡ºï¼š", tmp);
           vget(20, 0, buf, cc, 2, DOECHO);
           if (dashf(LOCK_FILE))
           {
-            vmsg("µo¿ú®É¶¡°±¤î¤Uª`");
+            vmsg("ç™¼éŒ¢æ™‚é–“åœæ­¢ä¸‹æ³¨");
             return 0;
           }
           if (cc[0] == 'q')
             break;
           num = cc[0] - 48;
           if (num > tmp || num < 1)
-            vmsg("¿é¤J½d³ò¦³»~!!½Ğ­«·s¿é¤J..");
+            vmsg("è¼¸å…¥ç¯„åœæœ‰èª¤!!è«‹é‡æ–°è¼¸å…¥..");
           else
           {
-            sprintf(buf, "¤@±i±m¨éª÷¹ô%d¤¸¡A§A¥Ø«e¦³ª÷¹ô%d¤¸¡A"
-              "­n¶R´X±i¡H(0-%d)",
+            sprintf(buf, "ä¸€å¼µå½©åˆ¸é‡‘å¹£%då…ƒï¼Œä½ ç›®å‰æœ‰é‡‘å¹£%då…ƒï¼Œ"
+              "è¦è²·å¹¾å¼µï¼Ÿ(0-%d)",
               t[j - 1], cuser.gold, cuser.gold / t[j - 1]);
             vget(21, 0, buf, cc, 6, DOECHO);
             if (dashf(LOCK_FILE))
             {
-              vmsg("µo¿ú®É¶¡°±¤î¤Uª`");
+              vmsg("ç™¼éŒ¢æ™‚é–“åœæ­¢ä¸‹æ³¨");
               return 0;
             }
             if (atoi(cc) > cuser.gold / t[j - 1] || !atoi(cc) ||(atoi(cc) < 1))
-              vmsg("¿é¤J½d³ò¦³»~!!¨ú®ø..");
+              vmsg("è¼¸å…¥ç¯„åœæœ‰èª¤!!å–æ¶ˆ..");
             else
             {
               int hh = 0;
               if (close_time < time(0))
               {
-                vmsg("¶W¹L®É¶¡¤F!");
+                vmsg("è¶…éæ™‚é–“äº†!");
                 return 0;
               }
               cuser.gold -= (atoi(cc) * t[j - 1]);
@@ -378,7 +378,7 @@ main_bet()
               fclose(fs);
 
               sprintf(fpath, "etc/game/bet/bet.betlog%d", j);
-              sprintf(buf, "¨Ï¥ÎªÌ%s¶R¤F%d±i%d¸¹¿ï¶µ(%s)\n",
+              sprintf(buf, "ä½¿ç”¨è€…%sè²·äº†%då¼µ%dè™Ÿé¸é …(%s)\n",
                 cuser.userid, atoi(cc), num, Now());
               f_cat(fpath, buf);
             }
@@ -386,80 +386,80 @@ main_bet()
         }
       }
     }
-    else    /* ¦Û¤v¶}§½ */
+    else    /* è‡ªå·±é–‹å±€ */
     {
       int khour, kd;
 
       more("etc/game/bet/bet.anno", NULL);
 
-      if (vans("½T©w­n¶}§½(Y/N)¡H[N] ") != 'y')
+      if (vans("ç¢ºå®šè¦é–‹å±€(Y/N)ï¼Ÿ[N] ") != 'y')
         continue;
 
       if (dashf(LOCK_FILE))
       {
-        vmsg("µo¿ú®É¶¡°±¤î¤Uª`");
+        vmsg("ç™¼éŒ¢æ™‚é–“åœæ­¢ä¸‹æ³¨");
         return 0;
       }
 
       sprintf(cc, "tmp/%s_bet.scr", cuser.userid);
-      vmsg("½Ğ«ö¥ô¤@Áä¶}©l½s¿è¦¹¦¸ [¶}§½©v¦®]");
+      vmsg("è«‹æŒ‰ä»»ä¸€éµé–‹å§‹ç·¨è¼¯æ­¤æ¬¡ [é–‹å±€å®—æ—¨]");
       if (vedit(cc, 0) < 0)
         continue;
 
-      vs_bar("ºÆ¨g½ä½L");
-      vget(2, 0, "½Ğ¶ñ°±ª`®É¶¡´X¤p®É«á(¤Q¦ì¼Æ­n¸É0¡A0½Ğ¿é¤J00¡A"
-        "1½Ğ¿é¤J01¡A¥H¦¹Ãş±À)¡G", buf, 3, DOECHO);
+      vs_bar("ç˜‹ç‹‚è³­ç›¤");
+      vget(2, 0, "è«‹å¡«åœæ³¨æ™‚é–“å¹¾å°æ™‚å¾Œ(åä½æ•¸è¦è£œ0ï¼Œ0è«‹è¼¸å…¥00ï¼Œ"
+        "1è«‹è¼¸å…¥01ï¼Œä»¥æ­¤é¡æ¨)ï¼š", buf, 3, DOECHO);
       khour = (buf[0] - '0') * 10 + (buf[1] - '0');
-      vget(3, 0, "½Ğ¶ñ°±ª`®É¶¡¤Ñ«á(¤Q¦ì¼Æ­n¸É0¡A0½Ğ¿é¤J00¡A"
-        "1½Ğ¿é¤J01¡A¥H¦¹Ãş±À)¡G", buf, 3, DOECHO);
+      vget(3, 0, "è«‹å¡«åœæ³¨æ™‚é–“å¤©å¾Œ(åä½æ•¸è¦è£œ0ï¼Œ0è«‹è¼¸å…¥00ï¼Œ"
+        "1è«‹è¼¸å…¥01ï¼Œä»¥æ­¤é¡æ¨)ï¼š", buf, 3, DOECHO);
       kd = (buf[0] - '0') * 10 + (buf[1] - '0');
       if (khour < 10 && kd == 0)
       {
-        vmsg("®É¶¡¹Lµu(³Ìµu 10 ¤p®É)");
+        vmsg("æ™‚é–“éçŸ­(æœ€çŸ­ 10 å°æ™‚)");
         continue;
       }
       if (kd > 14)
       {
-        vmsg("®É¶¡¹Lªø(³Ìªø 14 ¤Ñ)");
+        vmsg("æ™‚é–“éé•·(æœ€é•· 14 å¤©)");
         continue;
       }
       if (khour > 24)
       {
-        vmsg("®É¶¡¤£¥i¶W¹L24¤p®É");
+        vmsg("æ™‚é–“ä¸å¯è¶…é24å°æ™‚");
         continue;
       }
       if (kd < 0 || khour < 0)
       {
-        vmsg("¤Q¦ì¼Æ°O±o¸É0");
+        vmsg("åä½æ•¸è¨˜å¾—è£œ0");
         continue;
       }
       set_time = time(0) + khour * 3600 + kd * 24 * 3600;
 
-      if (!vget(4, 0, "½ĞÂ²µu±Ô­z¦¹§½¡G", cc, 41, DOECHO))
+      if (!vget(4, 0, "è«‹ç°¡çŸ­æ•˜è¿°æ­¤å±€ï¼š", cc, 41, DOECHO))
         continue;
 
       move(5, 0);
-      outs("\033[1;31m³]©w¿ï¶µ¡A½Ğª`·N©M§½¡B¤ñÁÉ¨ú®øµ¥ª¬ªp¡A"
-        "µ´¤£¥i¨S¦³µª®×¡A³]©w«á¤£¥i§ó§ï¡C\033[m");
+      outs("\033[1;31mè¨­å®šé¸é …ï¼Œè«‹æ³¨æ„å’Œå±€ã€æ¯”è³½å–æ¶ˆç­‰ç‹€æ³ï¼Œ"
+        "çµ•ä¸å¯æ²’æœ‰ç­”æ¡ˆï¼Œè¨­å®šå¾Œä¸å¯æ›´æ”¹ã€‚\033[m");
 
-      vget(6, 0, "¦@¦³´X­Ó¿ï¶µ¡H(2-9)", buf, 2, DOECHO);
+      vget(6, 0, "å…±æœ‰å¹¾å€‹é¸é …ï¼Ÿ(2-9)", buf, 2, DOECHO);
       tmp = atoi(buf);
       if (tmp < 1 || tmp > 9)
       {
-        vmsg("¿ï¶µ¼Æ¥Ø¿ù»~!!");
+        vmsg("é¸é …æ•¸ç›®éŒ¯èª¤!!");
         continue;
       }
 
-      vget(7, 0, "±m¨é¤@±i¦h¤Ö¿ú¡H(100-10000)", buf, 6, DOECHO);
+      vget(7, 0, "å½©åˆ¸ä¸€å¼µå¤šå°‘éŒ¢ï¼Ÿ(100-10000)", buf, 6, DOECHO);
       money = atoi(buf);
       if (money < 100 || money > 10000)
       {
-        vmsg("¿é¤Jª÷ÃB¿ù»~!!");
+        vmsg("è¼¸å…¥é‡‘é¡éŒ¯èª¤!!");
         continue;
       }
       if (cuser.gold < money * (10 * tmp + 5))
       {
-        sprintf(buf, "§Aªº¿ú¤£¨¬ %d ¤¸³á!!", money * (10 * tmp + 5));
+        sprintf(buf, "ä½ çš„éŒ¢ä¸è¶³ %d å…ƒå–”!!", money * (10 * tmp + 5));
         vmsg(buf);
         continue;
       }
@@ -467,7 +467,7 @@ main_bet()
       for (i = 0; i < tmp; i++)
       {
         move(8 + i, 0);
-        prints("¿ï¶µ%d¡G", i + 1);
+        prints("é¸é …%dï¼š", i + 1);
         do
         {
           vget(8 + i, 7, "", cho[i], 50, DOECHO);
@@ -476,23 +476,23 @@ main_bet()
       sprintf(buf, "etc/game/bet/bet.cho%d", j);
       if (dashf(LOCK_FILE))
       {
-        vmsg("µo¿ú®É¶¡°±¤î¤Uª`");
+        vmsg("ç™¼éŒ¢æ™‚é–“åœæ­¢ä¸‹æ³¨");
         return 0;
       }
       if (dashf(buf))
       {
         fclose(fs);
-        vmsg("¦³¤H¤ñ§A§Ö¤@¨B¤F");
+        vmsg("æœ‰äººæ¯”ä½ å¿«ä¸€æ­¥äº†");
         return 0;
       }
 
-      if (vans("½T©w¶}½L(Y/N)¡H[N] ") != 'y')
+      if (vans("ç¢ºå®šé–‹ç›¤(Y/N)ï¼Ÿ[N] ") != 'y')
       {
         sprintf(cc, "etc/game/bet/bet.scr%d", j);
         unlink(cc);
         sprintf(cc, "tmp/%s_bet.*", cuser.userid);
         unlink(cc);
-        vmsg("¶}®à¨ú®ø!!");
+        vmsg("é–‹æ¡Œå–æ¶ˆ!!");
         return 0;
       }
 
@@ -552,11 +552,11 @@ main_bet()
       f_mv(buf, fpath);
       sprintf(fpath, "tmp/%s_bet.*", cuser.userid);
       unlink(fpath);
-      vmsg("¶}®à§¹¦¨!!");
+      vmsg("é–‹æ¡Œå®Œæˆ!!");
     }
   }
 }
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m Maple-itoc£»°Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
- [1;42m¢q[45m¢}[m A[1mut[30mho[mr: [1;31mchwaian [30m±q [36m218-171-119-168.dynamic.hinet.net [30mµoªí[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
+ [1;42mâ”¼[45mâ”˜[m A[1mut[30mho[mr: [1;31mchwaian [30må¾ [36m218-171-119-168.dynamic.hinet.net [30mç™¼è¡¨[m

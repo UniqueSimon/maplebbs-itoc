@@ -1,14 +1,14 @@
-µo«H¤H: BioStar.bbs@micro.bio.ncue.edu.tw (¼ê´ò¤p¶³³¶) ¬İªO: itoc
-¼Ğ  ÃD: [¤å¥ó] ºëµØ°Ïªº½g¼Æ¤W­­©M®e¶q¤W­­
-µo«H¯¸: Àº¤Ñ±^ (Sun, 06 Jul 2003 15:21:41 +0800 (CST))    Updated: 2003/07/15
+ç™¼ä¿¡äºº: BioStar.bbs@micro.bio.ncue.edu.tw (æ¾æ¹–å°é›²é›€) çœ‹æ¿: itoc
+æ¨™  é¡Œ: [æ–‡ä»¶] ç²¾è¯å€çš„ç¯‡æ•¸ä¸Šé™å’Œå®¹é‡ä¸Šé™
+ç™¼ä¿¡ç«™: æ“å¤©å´— (Sun, 06 Jul 2003 15:21:41 +0800 (CST))    Updated: 2003/07/15
 
-  (4) ¬İªOºëµØ°Ï¤W­­³]©w
+  (4) çœ‹æ¿ç²¾è¯å€ä¸Šé™è¨­å®š
 
 : include/battr.h
 
-#define BRD_NOVOTE      0x10    /* ¤£¤½§G§ë²¼µ²ªG©ó [record] ªO */
-#define BRD_ANONYMOUS   0x20    /* °Î¦W¬İªO */
-+ #define BRD_NOGEMCHECK  0x40    /* ¤£ÀË¬dºëµØ°Ï¤j¤p */
+#define BRD_NOVOTE      0x10    /* ä¸å…¬ä½ˆæŠ•ç¥¨çµæœæ–¼ [record] æ¿ */
+#define BRD_ANONYMOUS   0x20    /* åŒ¿åçœ‹æ¿ */
++ #define BRD_NOGEMCHECK  0x40    /* ä¸æª¢æŸ¥ç²¾è¯å€å¤§å° */
 
 : include/battr.h
 
@@ -20,36 +20,36 @@
 
 : include/battr.h:battr_tbl[]
 
-- "°Î¦W¬İªO"                    /* BRD_ANONYMOUS */
-+ "°Î¦W¬İªO",                   /* BRD_ANONYMOUS */
-+ "¤£ÀË¬dºëµØ°Ï¤j¤p"            /* BRD_NOGEMCHECK *
+- "åŒ¿åçœ‹æ¿"                    /* BRD_ANONYMOUS */
++ "åŒ¿åçœ‹æ¿",                   /* BRD_ANONYMOUS */
++ "ä¸æª¢æŸ¥ç²¾è¯å€å¤§å°"            /* BRD_NOGEMCHECK *
 
 : maple/acct.c
 
 /* ----------------------------------------------------- */
-/* ¬İªOºŞ²z                                              */
+/* çœ‹æ¿ç®¡ç†                                              */
 /* ----------------------------------------------------- */
 
-+ #define DEF_GEMN        10000          /* ¬İªOºëµØ°Ï¹w³]¤W­­ 10000 ½g */
-+ #define DEF_GEMK        (1000 << 10)   /* ¬İªOºëµØ°Ï¹w³]¤W­­ 1000 KB */
++ #define DEF_GEMN        10000          /* çœ‹æ¿ç²¾è¯å€é è¨­ä¸Šé™ 10000 ç¯‡ */
++ #define DEF_GEMK        (1000 << 10)   /* çœ‹æ¿ç²¾è¯å€é è¨­ä¸Šé™ 1000 KB */
 
 : maple/acct.c:m_setbrd()
 
-  default:      /* ¹w³]¤£ÅÜ°Ê */
+  default:      /* é è¨­ä¸è®Šå‹• */
     break;
   }
 
-+ if (vget(++i, 0, "³]©wºëµØ°Ï¤W­­(Y/N)¡H[N] ", data, 3, LCECHO) == 'y')
++ if (vget(++i, 0, "è¨­å®šç²¾è¯å€ä¸Šé™(Y/N)ï¼Ÿ[N] ", data, 3, LCECHO) == 'y')
 + {
 +   sprintf(data, "%d", brd->gemsize_n);
-+   if (vget(++i, 0, "½g¼Æ¤W­­", data, 6, GCARRY))
++   if (vget(++i, 0, "ç¯‡æ•¸ä¸Šé™", data, 6, GCARRY))
 +   {
 +     int gemsize = atoi(buf);
 +     if (gemsize > 0)
 +       brd->gemsize_n = gemsize;
 +   }
 +   sprintf(data, "%d", brd->gemsize_k >> 10);
-+   if (vget(i, 16, "®e¶q¤W­­(KB)", data, 12, GCARRY))
++   if (vget(i, 16, "å®¹é‡ä¸Šé™(KB)", data, 12, GCARRY))
 +   {
 +     int gemsize = atoi(buf);
 +     if (gemsize > 0)
@@ -59,7 +59,7 @@
 
 : maple/acct.c:m_newbrd()
 
-  /* itoc.010211: ·s¬İªO¹w³] postlevel = PERM_POST; battr = ¤£Âà«H */
+  /* itoc.010211: æ–°çœ‹æ¿é è¨­ postlevel = PERM_POST; battr = ä¸è½‰ä¿¡ */
   newboard.postlevel = PERM_POST;
   newboard.battr = BRD_NOTRAN;
 + newboard.gemsize_n = DEF_GEMN;
@@ -67,11 +67,11 @@
 
 : maple/acct.c:brd_edit()
 
-  prints("¬İªO¦WºÙ¡G%s\n¬İªO»¡©ú¡G[%s] %s\nªO¥D¦W³æ¡G%s\n",
+  prints("çœ‹æ¿åç¨±ï¼š%s\nçœ‹æ¿èªªæ˜ï¼š[%s] %s\næ¿ä¸»åå–®ï¼š%s\n",
     newbh.brdname, newbh.class, newbh.title, newbh.BM);
-+ prints("ºëµØ°Ï½g¼Æ¤W­­¡G%d   ®e¶q¤W­­¡G%dKB\n",
++ prints("ç²¾è¯å€ç¯‡æ•¸ä¸Šé™ï¼š%d   å®¹é‡ä¸Šé™ï¼š%dKB\n",
 +   newbh.gemsize_n, newbh.gemsize_k >> 10);
 
 --
-[1;31m|[33m Origin [31m| [0;45m ¹ü¤Æ®v¤j¥Íª«¨t §u­·¡E²·¤ë¡EÀº¤Ñ±^ [35;47m micro.bio.ncue.edu.tw [m
+[1;31m|[33m Origin [31m| [0;45m å½°åŒ–å¸«å¤§ç”Ÿç‰©ç³» åŸé¢¨?çœºæœˆ?æ“å¤©å´— [35;47m micro.bio.ncue.edu.tw [m
 [1;31m|[35m Author [31m| [36m218-163-206-115.HINET-IP.hinet.net[m

@@ -1,17 +1,17 @@
-�o�H�H: guessi.bbs@bbs.wretch.cc (�S) �ݪO: plan
-��  �D: [�\��] �峹�O�K (�H�K�X�O�@)
-�o�H��: �L�W�p�� (2006/05/31 Wed 05:43:55)                Updated: 2006/06/01
+發信人: guessi.bbs@bbs.wretch.cc (沒) 看板: plan
+標  題: [功能] 文章保密 (以密碼保護)
+發信站: 無名小站 (2006/05/31 Wed 05:43:55)                Updated: 2006/06/01
 
-�峹�[�K �H�K�X�O�@ �ݪO�峹�[�W�|��ƱK�X
+文章加密 以密碼保護 看板文章加上四位數密碼
 
-���@�̤��~�\Ū ��������J�K�X�~��\Ū(�����]���ҥ~)
+除作者之外閱讀 均必須輸入密碼才能閱讀(站長也不例外)
 
 
 [32m:/src/include/hdr.h[m
 
-- char nick[49];                /* �ʺ� */
-+ char nick[44];                /* �ʺ� */
-+ char pass[5];                 /* �|��ƱK�X */
+- char nick[49];                /* 暱稱 */
++ char nick[44];                /* 暱稱 */
++ char pass[5];                 /* 四位數密碼 */
 
 ..
 ..
@@ -22,7 +22,7 @@
 ..
 
 -  #define POST_4          0x00000008
-+  #define POST_PASS       0x00000008      /* �[�K�峹 �B���K�X */
++  #define POST_PASS       0x00000008      /* 加密文章 且有密碼 */
 
 
 [32m:/src/maple/post.c:post_cb[][m
@@ -44,20 +44,20 @@
 +        break;
 +     if (strcmp(ckpass, hdr->pass))
 +     {
-+        vmsg("�K�X���~");
++        vmsg("密碼錯誤");
 +        break;
 +     }
 +     else
-+       vmsg("�K�X���T");
++       vmsg("密碼正確");
 +   }
 
     hdr_fpath(fpath, dir, hdr);
 
-    /* Thor.990204: ���Ҽ{more �Ǧ^�� */
+    /* Thor.990204: 為考慮more 傳回值 */
     if ((key = more(fpath, FOOTER_POST)) < 0)
       break;
 
-[32m:/src/maple/post.c �s�W�禡�b post_help()�e��[m
+[32m:/src/maple/post.c 新增函式在 post_help()前面[m
 
 static int
 post_pass(xo)
@@ -85,7 +85,7 @@ post_pass(xo)
   if (!strcmp(hdr->owner, cuser.userid))
   {
      if (vans((hdr->xmode & POST_PASS) ?
-       "�Ѱ��K�X(Y/N)�H[N] " : "�峹�[�K(Y/N)�H[N] ") == 'y')
+       "解除密碼(Y/N)？[N] " : "文章加密(Y/N)？[N] ") == 'y')
      {
        hdr->xmode ^= POST_PASS;
        if (hdr->xmode & POST_PASS)
@@ -111,12 +111,12 @@ post_pass(xo)
 [32m:/src/maple/post.c:hdr_outs()[m
 
   /* --------------------------------------------------- */
-  /* �L�X���D������                                      */
+  /* 印出標題的種類                                      */
   /* --------------------------------------------------- */
 
 + if ((hdr->xmode & POST_PASS) && strcmp(hdr->owner, cuser.userid))
 + {
-+   title = "<< �o�g�峹�ݭn�K�X >>";
++   title = "<< 這篇文章需要密碼 >>";
 +   ch = 1;
 + }
 + else
@@ -135,8 +135,8 @@ post_pass(xo)
 +   if (hdr->xmode & POST_PASS)
 +     return XO_NONE;
 
-[32m:/src/maple/post.c:post_edit()[m  [32m�@�̭ק鷺�e[m
-[32m:/src/maple/post.c:post_title()[m [32m�@�̭ק���D[m  [32m�o�̪�hdr�Чאּfhdr[m
+[32m:/src/maple/post.c:post_edit()[m  [32m作者修改內容[m
+[32m:/src/maple/post.c:post_title()[m [32m作者修改標題[m  [32m這裡的hdr請改為fhdr[m
 [32m:/src/maple/post.c:post_cross()[m
 [32m:/src/maple/post.c:post_score()[m
 [32m:/src/maple/xover.c:xo_forward()[m
@@ -145,11 +145,11 @@ post_pass(xo)
 +   return XO_NONE;
 
 
-��l�\�� d D ^D ��... �Y���ݭn�Цۦ�ɤW�P�_�� :)
+其餘功能 d D ^D 等... 若有需要請自行補上判斷式 :)
 
 --
-[1;30;40m�ҧL�̤����������δc���G���D�̤��B�g�l�~�h�Q���ΧL�h�Q�k�L�̤��������D�g�l[m
-[1;30m�������o�w[37m[30m�ӥΤ���H���W�ӦӤ����Ӭ����̬O�ֱ��H�Ҽֱ��H�̫h���i�o�ө�ѤU
-[m[1;30m�o�N�Ʃ|�����Ʃ|�k���N�x�~���W�N�x�~�k���H��§�B�����H�����H�s�d�_���ԳӥH[m
-[1;30m��§�B���D�`[37m�L�W[30m�����p�ѤU����ګJ���Y��u���U���N�ۻ��Ѧa�ۦX�H�����S����[m
-[1;30m���O�Ӧۧ��l��W�W��J���ҥ�N�����[37m61-231-195-189.dynamic.hinet.net[30m��[m
+[1;30;40m夫兵者不祥之器物或惡之故有道者不處君子居則貴左用兵則貴右兵者不祥之器非君子[m
+[1;30m之器不得已[37m[30m而用之恬淡為上勝而不美而美之者是樂殺人夫樂殺人者則不可得志於天下
+[m[1;30m矣吉事尚左凶事尚右偏將軍居左上將軍居右言以喪禮處之殺人之眾以哀悲泣之戰勝以[m
+[1;30m喪禮處之道常[37m無名[30m樸雖小天下莫能臣侯王若能守之萬物將自賓天地相合以降甘露民莫[m
+[1;30m之令而自均始制有名名亦既有夫亦將知止知止[37m61-231-195-189.dynamic.hinet.net[30m海[m

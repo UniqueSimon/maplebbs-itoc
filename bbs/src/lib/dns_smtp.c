@@ -62,7 +62,7 @@ dns_mx(domain, mxlist)
       if (!*mxlist)
 	return;
 
-      /* Thor.980820:µù¸Ñ: ±N¼Æ­Ó MX entry ¥Î : ¦ê°_¨Ó¥H«K¤@­Ó¤@­Ó¸Õ */
+      /* Thor.980820:è¨»è§£: å°‡æ•¸å€‹ MX entry ç”¨ : ä¸²èµ·ä¾†ä»¥ä¾¿ä¸€å€‹ä¸€å€‹è©¦ */
       while (*mxlist)
 	mxlist++;
       *mxlist++ = ':';
@@ -86,7 +86,7 @@ dns_smtp(host)
   char *str, *ptr, mxlist[MAX_MXLIST];
 
 #ifdef HAVE_RELAY_SERVER
-  /* ¦pªG¦³¦Û©wªº relay server¡A¥ý try ¥¦¸Õ¸Õ */
+  /* å¦‚æžœæœ‰è‡ªå®šçš„ relay serverï¼Œå…ˆ try å®ƒè©¦è©¦ */
   if ((sock = dns_open(RELAY_SERVER, 25)) >= 0)
     return sock;
 #endif
@@ -94,10 +94,10 @@ dns_smtp(host)
   dns_mx(host, str = mxlist);
   if (!*str)
   {
-    /* Thor.990716: ¦]©I¥s®É¥i¯à±Nhost¥Îip©ñ¤J¡A¬G§@¯S§O³B²z¡A
-                    ¨Ï¤£³z¹Ldns_open()±H«H */ 
+    /* Thor.990716: å› å‘¼å«æ™‚å¯èƒ½å°‡hostç”¨ipæ”¾å…¥ï¼Œæ•…ä½œç‰¹åˆ¥è™•ç†ï¼Œ
+                    ä½¿ä¸é€éŽdns_open()å¯„ä¿¡ */ 
     /* if(*host>='0' && *host<='9') return -1; */
-    /* Thor.990811: ¥Îdns_aton()¸û§¹¾ã */
+    /* Thor.990811: ç”¨dns_aton()è¼ƒå®Œæ•´ */
     if (dns_aton(host) != INADDR_NONE)
       return -1;
 
@@ -105,7 +105,7 @@ dns_smtp(host)
   }
 
   for (;;)
-  { /* Thor.980820: µù¸Ñ: ¸U¤@host®æ¦¡¬° xxx:yyy:zzz, «h¥ý¸Õ xxx,¤£¦æ¦A¸Õ yyy */
+  { /* Thor.980820: è¨»è§£: è¬ä¸€hostæ ¼å¼ç‚º xxx:yyy:zzz, å‰‡å…ˆè©¦ xxx,ä¸è¡Œå†è©¦ yyy */
     ptr = str;
     while (sock = *ptr)
     {

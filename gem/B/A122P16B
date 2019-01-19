@@ -1,27 +1,27 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G802) ¬İªO: plan
-¼ĞÃD: [¥\¯à] «H¥ó¦Û°ÊÂà±H¨ì¥~¯¸ Internet «H½c
-®É¶¡: 2006/03/31 Fri 09:23:38                           Updated: 2006/03/31
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š802) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] ä¿¡ä»¶è‡ªå‹•è½‰å¯„åˆ°å¤–ç«™ Internet ä¿¡ç®±
+æ™‚é–“: 2006/03/31 Fri 09:23:38                           Updated: 2006/03/31
 
-¡° ¤Ş­z¡mguessi.bbs@bbs.ee.ndhu.edu.tw (¨S)¡n¤§»Ê¨¥¡G
-> ·Q¼g¤@­Ó¥\¯à"¦Û°ÊÂà±H" ·í¨Ï¥ÎªÌ¦¬¨ú«H¥ó®É¦Û°ÊÂà±H¨ì¯¸¥~«H½c (Ãş¦ü©ó³Æ¥÷?)
+â€» å¼•è¿°ã€Šguessi.bbs@bbs.ee.ndhu.edu.tw (æ²’)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æƒ³å¯«ä¸€å€‹åŠŸèƒ½"è‡ªå‹•è½‰å¯„" ç•¶ä½¿ç”¨è€…æ”¶å–ä¿¡ä»¶æ™‚è‡ªå‹•è½‰å¯„åˆ°ç«™å¤–ä¿¡ç®± (é¡ä¼¼æ–¼å‚™ä»½?)
 
-  ³]©w¥~³¡«H½c
+  è¨­å®šå¤–éƒ¨ä¿¡ç®±
 
 : global.h
 
-#define FN_ACL          "acl"           /* ¤W¯¸¦aÂI³]©w */
-+ #define FN_FORWARD    "forward"       /* ¦Û°ÊÂà±H³]©w */
+#define FN_ACL          "acl"           /* ä¸Šç«™åœ°é»è¨­å®š */
++ #define FN_FORWARD    "forward"       /* è‡ªå‹•è½‰å¯„è¨­å®š */
 
-: maple.p ¥[¤@¦æ
+: maple.p åŠ ä¸€è¡Œ
 
 + int m_setforward(void);
 
-: menu.c ¾A·íªº¿ï³æ¥[¤J³o¿ï¶µ
+: menu.c é©ç•¶çš„é¸å–®åŠ å…¥é€™é¸é …
 
 + m_setforward, PERM_BASIC, M_SMAIL,
-+ "AutoForward¢u ¦Û°ÊÂà±H ¢t",
++ "AutoForwardâ”œ è‡ªå‹•è½‰å¯„ â”¤",
 
-: mail.c:m_setforward() ¦b mail_hold() «á­±·s¼W³o­Ó¨ç¦¡
+: mail.c:m_setforward() åœ¨ mail_hold() å¾Œé¢æ–°å¢é€™å€‹å‡½å¼
 
 int
 m_setforward()
@@ -40,32 +40,32 @@ m_setforward()
     ip[0] = '\0';
   }
 
-  vget(b_lines - 1, 0, "½Ğ¿é¤J«H¥ó¦Û°ÊÂà±Hªº E-mail¡G", ip, 50, GCARRY);
+  vget(b_lines - 1, 0, "è«‹è¼¸å…¥ä¿¡ä»¶è‡ªå‹•è½‰å¯„çš„ E-mailï¼š", ip, 50, GCARRY);
 
   if (ip[0] && !not_addr(ip) &&
-    vans("½T©w¶}±Ò¦Û°ÊÂà«H¥\\¯à(Y/N)¡H[N] ") == 'y')
+    vans("ç¢ºå®šé–‹å•Ÿè‡ªå‹•è½‰ä¿¡åŠŸ\èƒ½(Y/N)ï¼Ÿ[N] ") == 'y')
   {
     if (fp = fopen(fpath, "w"))
     {
       fprintf(fp, "%s", ip);
       fclose(fp);
-      vmsg("³]©w§¹¦¨");
+      vmsg("è¨­å®šå®Œæˆ");
       return XEASY;
     }
   }
 
   unlink(fpath);
-  vmsg("¨ú®ø¦Û°ÊÂà±H©ÎµL®Ä E-mail");
+  vmsg("å–æ¶ˆè‡ªå‹•è½‰å¯„æˆ–ç„¡æ•ˆ E-mail");
   return XEASY;
 }
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  Âà±H¯¸¤º¨Ó«H¦Ü¥~³¡«H½c
+  è½‰å¯„ç«™å…§ä¾†ä¿¡è‡³å¤–éƒ¨ä¿¡ç®±
 
-: mail.c:forward_mail() ¦b mail_send() «e­±·s¼W³o­Ó¨ç¦¡
+: mail.c:forward_mail() åœ¨ mail_send() å‰é¢æ–°å¢é€™å€‹å‡½å¼
 
-/* cuser.userid ±N¡u¼ĞÃD title¡BÀÉ®×¦b fpath¡vªº«H¥ó±Hµ¹ userid ªº¥~³¡«H½c */
+/* cuser.userid å°‡ã€Œæ¨™é¡Œ titleã€æª”æ¡ˆåœ¨ fpathã€çš„ä¿¡ä»¶å¯„çµ¦ userid çš„å¤–éƒ¨ä¿¡ç®± */
 static void
 forward_mail(fpath, userid, title)
   char *fpath, *userid, *title;
@@ -94,14 +94,14 @@ forward_mail(fpath, userid, title)
         rec_add(buf, &hdr, sizeof(HDR));
 +       forward_mail(fpath, userid, title);
 
-> ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w <
+> â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ <
 
-  Âà±H¯¸¥~¨Ó«H¦Ü¥~³¡«H½c
+  è½‰å¯„ç«™å¤–ä¾†ä¿¡è‡³å¤–éƒ¨ä¿¡ç®±
 
-: bmtad.c:forward_mail() ¦b bbs_mail() «e­±·s¼W³o­Ó¨ç¦¡
+: bmtad.c:forward_mail() åœ¨ bbs_mail() å‰é¢æ–°å¢é€™å€‹å‡½å¼
 
-/* hdr->owner ±N¡u¼ĞÃD hdr->title¡BÀÉ®×¦b folder ¤U hdr->xname¡v
-   ªº«H¥ó±Hµ¹ userid ªº¥~³¡«H½c */
+/* hdr->owner å°‡ã€Œæ¨™é¡Œ hdr->titleã€æª”æ¡ˆåœ¨ folder ä¸‹ hdr->xnameã€
+   çš„ä¿¡ä»¶å¯„çµ¦ userid çš„å¤–éƒ¨ä¿¡ç®± */
 
 static void
 forward_mail(hdr, folder, userid)
@@ -131,10 +131,10 @@ forward_mail(hdr, folder, userid)
   rec_add(folder, &hdr, sizeof(HDR));
 + forward_mail(&hdr, folder, userid);
 
-: bmtad.c:bbsmtp() ¦b forward_mail() «e­±·s¼W³o­Ó¨ç¦¡
+: bmtad.c:bbsmtp() åœ¨ forward_mail() å‰é¢æ–°å¢é€™å€‹å‡½å¼
 
-static int                              /* >=0:¦¨¥\ <0:¥¢±Ñ */
-bbsmtp(fpath, title, rcpt, sender)      /* ±q bsmtp() §Û¨Óªº */
+static int                              /* >=0:æˆåŠŸ <0:å¤±æ•— */
+bbsmtp(fpath, title, rcpt, sender)      /* å¾ bsmtp() æŠ„ä¾†çš„ */
   char *fpath, *title, *rcpt, *sender;
 {
   int sock;
@@ -206,18 +206,18 @@ bbsmtp(fpath, title, rcpt, sender)      /* ±q bsmtp() §Û¨Óªº */
 
     archiv32(stamp, msgid);
 
-    /* Thor.990125: ¾¨¥i¯àªº¹³ RFC 822 ¤Î sendmail ªº§@ªk, §K±o§O¤H¤£±µ:p */
+    /* Thor.990125: å„˜å¯èƒ½çš„åƒ RFC 822 åŠ sendmail çš„ä½œæ³•, å…å¾—åˆ¥äººä¸æ¥:p */
     fprintf(fw, "From: \"%s\" <%s>\r\nTo: %s\r\n",
       acct.username, from, rcpt);
-    /* itoc.030411: mail ¿é¥X RFC 2047 */
+    /* itoc.030411: mail è¼¸å‡º RFC 2047 */
     output_rfc2047_qp(fw, "Subject: ", title, MYCHARSET, "\r\n");
-    /* itoc.030323: mail ¿é¥X RFC 2045 */
+    /* itoc.030323: mail è¼¸å‡º RFC 2045 */
     fprintf(fw, "X-Sender: %s (%s)\r\n"
       "Date: %s\r\nMessage-Id: <%s@%s>\r\n"
       "Mime-Version: 1.0\r\n"
       "Content-Type: %s; charset=%s\r\n"
       "Content-Transfer-Encoding: 8bit\r\n"
-      "X-Disclaimer: [%s] ¹ï¥»«H¤º®e®¤¤£­t³d\r\n\r\n",
+      "X-Disclaimer: [%s] å°æœ¬ä¿¡å…§å®¹æ•ä¸è² è²¬\r\n\r\n",
       acct.userid, acct.username,
       Atime(&stamp), msgid, MYHOSTNAME,
       "text/plain", MYCHARSET,
@@ -250,10 +250,10 @@ bbsmtp(fpath, title, rcpt, sender)      /* ±q bsmtp() §Û¨Óªº */
     {
       time_t prichro;
 
-      buf[8] = '\0';    /* Thor.990413: buf ¥Î¤£¨ì¤F¡A­É¨Ó¥Î¥Î */
+      buf[8] = '\0';    /* Thor.990413: buf ç”¨ä¸åˆ°äº†ï¼Œå€Ÿä¾†ç”¨ç”¨ */
       prichro = chrono32(buf);
       archiv32(str_hash(msgid, prichro), buf);
-      fprintf(fw,"¡° X-Sign: %s$%s %s\r\n",
+      fprintf(fw,"â€» X-Sign: %s$%s %s\r\n",
         msgid, genpasswd(buf), Btime(&stamp));
     }
 #endif
@@ -272,7 +272,7 @@ bbsmtp(fpath, title, rcpt, sender)      /* ±q bsmtp() §Û¨Óªº */
 
 smtp_error:
 
-    /* itoc.041128.µù¸Ñ: ¤Z¬O¨«¨ì³o¸Ìªº¡Abuf ¬O¹ï¤è¦^ÂĞªº¿ù»~°T®§ */
+    /* itoc.041128.è¨»è§£: å‡¡æ˜¯èµ°åˆ°é€™è£¡çš„ï¼Œbuf æ˜¯å°æ–¹å›è¦†çš„éŒ¯èª¤è¨Šæ¯ */
     fclose(fr);
     fclose(fw);
     sprintf(from, "\t%.70s\n", buf);
@@ -280,13 +280,13 @@ smtp_error:
   }
   else
   {
-    strcpy(from, "\tSMTP ³s½u¥¢±Ñ\n");
+    strcpy(from, "\tSMTP é€£ç·šå¤±æ•—\n");
   }
 
 smtp_log:
 
   /* --------------------------------------------------- */
-  /* °O¿ı±H«H                                            */
+  /* è¨˜éŒ„å¯„ä¿¡                                            */
   /* --------------------------------------------------- */
 
   sprintf(buf, "%s %-13s%c> %s\n%s\t%s\n\t%s\n",
@@ -298,4 +298,4 @@ smtp_log:
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

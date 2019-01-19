@@ -1,11 +1,11 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD] ¦p¦ó¥[¤@¥\¯àÅv­­¡H
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/05/25 Tue 23:30:11)                Updated: 2002/05/26
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] å¦‚ä½•åŠ ä¸€åŠŸèƒ½æ¬Šé™ï¼Ÿ
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/05/25 Tue 23:30:11)                Updated: 2002/05/26
 
-¡° ¤Ş­z¡mSnowAngel.bbs@wretch.twbbs.org (ÄÆµM¦ü³·)¡n¤§»Ê¨¥¡G
->         ¦p¦ó¥[¤@¥\¯àÅv­­¡H
+â€» å¼•è¿°ã€ŠSnowAngel.bbs@wretch.twbbs.org (é£„ç„¶ä¼¼é›ª)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>         å¦‚ä½•åŠ ä¸€åŠŸèƒ½æ¬Šé™ï¼Ÿ
 
-: perm.h  ÀH«K¿ï¤@­ÓªÅªºÄæ¦ì¡A¨Ò¦p PERM_9¡A§ï¦¨ PERM_DENYRANGEDEL
+: perm.h  éš¨ä¾¿é¸ä¸€å€‹ç©ºçš„æ¬„ä½ï¼Œä¾‹å¦‚ PERM_9ï¼Œæ”¹æˆ PERM_DENYRANGEDEL
 
 - #define PERM_9            0x00000100
 + #define PERM_DENYRANGEDEL 0x00000100
@@ -13,8 +13,8 @@
   ...
   ...
 
-  ¦pªG¿ïªº¬O PERM_9¡A¨º¨Ç´N¬O§ï STR_PERM ¹ïÀ³ªº²Ä¤E­Ó
-  §â - §ï¦¨¨ä¥L¥ô·N¦r¤¸
+  å¦‚æœé¸çš„æ˜¯ PERM_9ï¼Œé‚£äº›å°±æ˜¯æ”¹ STR_PERM å°æ‡‰çš„ç¬¬ä¹å€‹
+  æŠŠ - æ”¹æˆå…¶ä»–ä»»æ„å­—å…ƒ
 
 
 - #define STR_PERM        "bctpjm#x-------@PTCM--L*B#-RACBS"
@@ -23,17 +23,17 @@
   ...
   ...
 
-  ³o­Ó¬O¦b³]©wÅv­­®É¥X²{ªº»¡©ú
+  é€™å€‹æ˜¯åœ¨è¨­å®šæ¬Šé™æ™‚å‡ºç¾çš„èªªæ˜
 
-- "«O¯d",                       /* PERM_9 */
-+ "¤£¯à¤j¢Ò",                   /* PERM_DENYRANGEDEL */
+- "ä¿ç•™",                       /* PERM_9 */
++ "ä¸èƒ½å¤§ï¼¤",                   /* PERM_DENYRANGEDEL */
 
-¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  ±µ¤U¨Ó´N¬İ§A­n®³³o­ÓÅv­­°µ¤°»ò¨Æ¤F¡A¨Ò¦p
+  æ¥ä¸‹ä¾†å°±çœ‹ä½ è¦æ‹¿é€™å€‹æ¬Šé™åšä»€éº¼äº‹äº†ï¼Œä¾‹å¦‚
 
->         ¥i¥H³]©w¬Y¨Ç¦³ªO¥DÅv­­ªºID
->         ¤£¯à¨Ï¥Î¤jDªº¥\¯à¡A½Ğ°İ­n¦p¦ó­×§ï¡H
+>         å¯ä»¥è¨­å®šæŸäº›æœ‰æ¿ä¸»æ¬Šé™çš„ID
+>         ä¸èƒ½ä½¿ç”¨å¤§Dçš„åŠŸèƒ½ï¼Œè«‹å•è¦å¦‚ä½•ä¿®æ”¹ï¼Ÿ
 
 : post.c:post_rangedel()
 
@@ -43,5 +43,5 @@
 
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/counter.c	( NTHU CS MapleBBS Ver 3.10 )	 */
 /*-------------------------------------------------------*/
-/* target : ¾ú¥v­y¸ñ					 */
+/* target : æ­·å²è»Œè·¡					 */
 /* create : 03/03/03					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -17,19 +17,19 @@
 
 typedef struct
 {
-  time_t uptime;		/* §ó·s®É¶¡ */
+  time_t uptime;		/* æ›´æ–°æ™‚é–“ */
 
-  int total_acct;		/* ¯¸¤WÁ`¦@¦³¦h¤Ö¨Ï¥ÎªÌµù¥U */
-  int online_usr;		/* ½u¤W¦P®É¦³¦h¤Ö¨Ï¥ÎªÌ */
-  int today_usr;		/* ¤µ¤éÁ`¦@¦³´X­Ó¤H¦¸¤W¯¸ */
-  int online_usr_every_hour[24];/* ¤µ¤é¦U¾ãÂI½u¤W¦³¦h¤Ö¨Ï¥ÎªÌ */
-  int total_brd;		/* ¯¸¤WÁ`¦@¦³¦h¤Ö¬ÝªO */
+  int total_acct;		/* ç«™ä¸Šç¸½å…±æœ‰å¤šå°‘ä½¿ç”¨è€…è¨»å†Š */
+  int online_usr;		/* ç·šä¸ŠåŒæ™‚æœ‰å¤šå°‘ä½¿ç”¨è€… */
+  int today_usr;		/* ä»Šæ—¥ç¸½å…±æœ‰å¹¾å€‹äººæ¬¡ä¸Šç«™ */
+  int online_usr_every_hour[24];/* ä»Šæ—¥å„æ•´é»žç·šä¸Šæœ‰å¤šå°‘ä½¿ç”¨è€… */
+  int total_brd;		/* ç«™ä¸Šç¸½å…±æœ‰å¤šå°‘çœ‹æ¿ */
 
-  char ident[12];		/* ¯d¥Õ¥HÂX¥R¥Î */
+  char ident[12];		/* ç•™ç™½ä»¥æ“´å……ç”¨ */
 }      COUNTER;
 
 
-#define break_record(new, old)	(new > old + old / 20)	/* ·í·s¬ö¿ý¶W¹LÂÂ¬ö¿ý 5% ¥H¤W®É¡A´N§ï¼g¬ö¿ý */
+#define break_record(new, old)	(new > old + old / 20)	/* ç•¶æ–°ç´€éŒ„è¶…éŽèˆŠç´€éŒ„ 5% ä»¥ä¸Šæ™‚ï¼Œå°±æ”¹å¯«ç´€éŒ„ */
 
 
 int
@@ -56,51 +56,51 @@ main()
 
   counter.uptime = time(&now);
   ptime = localtime(&now);
-  sprintf(date, "¡i%02d/%02d/%02d %02d:%02d¡j", 
+  sprintf(date, "ã€%02d/%02d/%02d %02d:%02dã€‘", 
     ptime->tm_year % 100, ptime->tm_mon + 1, ptime->tm_mday, ptime->tm_hour, ptime->tm_min);
 
 
-  /* µù¥U¤H¼Æ */
+  /* è¨»å†Šäººæ•¸ */
   num = rec_num(FN_SCHEMA, sizeof(SCHEMA));
   if (break_record(num, counter.total_acct))
   {
-    fprintf(fp, "¡¹ %s \033[31m¥»¯¸µù¥U¤H¼Æ\033[m¨g¶P¶W¹L \033[1;31m%d\033[m ¤H\n", date, num);
+    fprintf(fp, "â˜… %s \033[31mæœ¬ç«™è¨»å†Šäººæ•¸\033[mç‹‚è³€è¶…éŽ \033[1;31m%d\033[m äºº\n", date, num);
     counter.total_acct = num;
   }
 
-  /* ½u¤W¤H¼Æ */
+  /* ç·šä¸Šäººæ•¸ */
   ushm = shm_new(UTMPSHM_KEY, sizeof(UCACHE));
   num = ushm->count;
   if (break_record(num, counter.online_usr))
   {
-    fprintf(fp, "¡· %s \033[32m¦P®É½u¤W¤H¼Æ\033[m­º¦¸¹F¨ì \033[1;32m%d\033[m ¤H\n", date, num);
+    fprintf(fp, "â—Ž %s \033[32måŒæ™‚ç·šä¸Šäººæ•¸\033[mé¦–æ¬¡é”åˆ° \033[1;32m%d\033[m äºº\n", date, num);
     counter.online_usr = num;
   }
-  counter.online_usr_every_hour[ptime->tm_hour] = num;	/* ¥»¤p®Éªº½u¤W¤H¼Æ¡A´N®³³o¦¸ sample ­È */
+  counter.online_usr_every_hour[ptime->tm_hour] = num;	/* æœ¬å°æ™‚çš„ç·šä¸Šäººæ•¸ï¼Œå°±æ‹¿é€™æ¬¡ sample å€¼ */
 
-  /* ¥»¤é¤W¯¸¤H¦¸ */
-  if (ptime->tm_hour == 23)	/* ¨C¤Ñ­pºâ¤@¦¸¥»¤é¤W¯¸¤H¦¸ */
+  /* æœ¬æ—¥ä¸Šç«™äººæ¬¡ */
+  if (ptime->tm_hour == 23)	/* æ¯å¤©è¨ˆç®—ä¸€æ¬¡æœ¬æ—¥ä¸Šç«™äººæ¬¡ */
   {
     int i;
 
-    /* itoc.µù¸Ñ: ³o­Ó­È¬O¤£¥¿½Tªº¡A¦]¬°¥u¬O®³¨C­Ó¤p®É sample ªº©M¡A
-       ¦Ó¥BÁÙ°²³]¨C­Ó¤H¥­§¡¦b¯¸¤W®É¶¡¬O 60 ¤ÀÄÁ */
+    /* itoc.è¨»è§£: é€™å€‹å€¼æ˜¯ä¸æ­£ç¢ºçš„ï¼Œå› ç‚ºåªæ˜¯æ‹¿æ¯å€‹å°æ™‚ sample çš„å’Œï¼Œ
+       è€Œä¸”é‚„å‡è¨­æ¯å€‹äººå¹³å‡åœ¨ç«™ä¸Šæ™‚é–“æ˜¯ 60 åˆ†é˜ */
     num = 0;
     for (i = 0; i < 24; i++)
       num += counter.online_usr_every_hour[i];
 
     if (break_record(num, counter.today_usr))
     {
-      fprintf(fp, "¡» %s \033[33m³æ¤é¤W¯¸¤H¦¸\033[m¥¿¦¡¬ð¯} \033[1;33m%d\033[m ¤H\n", date, num);
+      fprintf(fp, "â—† %s \033[33må–®æ—¥ä¸Šç«™äººæ¬¡\033[mæ­£å¼çªç ´ \033[1;33m%d\033[m äºº\n", date, num);
       counter.today_usr = num;
     }
   }
 
-  /* ¬ÝªO­Ó¼Æ */
+  /* çœ‹æ¿å€‹æ•¸ */
   num = rec_num(FN_BRD, sizeof(BRD));
   if (break_record(num, counter.total_brd))
   {
-    fprintf(fp, "¡¸ %s \033[34m¥»¯¸¬ÝªO­Ó¼Æ\033[m«Å§G°ª¹F \033[1;34m%d\033[m ­Ó\n", date, num);
+    fprintf(fp, "â˜† %s \033[34mæœ¬ç«™çœ‹æ¿å€‹æ•¸\033[må®£ä½ˆé«˜é” \033[1;34m%d\033[m å€‹\n", date, num);
     counter.total_brd = num;
   }
 

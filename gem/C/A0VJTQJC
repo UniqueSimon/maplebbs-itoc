@@ -1,12 +1,12 @@
-§@ªÌ: Kudo (²H³J~~) ¬İªO: plan
-¼ĞÃD: [¥\¯à] expire ¼g¶i .BRD [expire.c³¡¤À]
-®É¶¡: Thu Apr 11 04:36:28 2002                          Updated: 2004/04/30
+ä½œè€…: Kudo (æ·¡è›‹~~) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] expire å¯«é€² .BRD [expire.céƒ¨åˆ†]
+æ™‚é–“: Thu Apr 11 04:36:28 2002                          Updated: 2004/04/30
 
 : expire.c
 
-- #define DEF_DAYS        365             /* ¹w³]²M°£¶W¹L 365 ¤Ñªº¤å³¹ */
-- #define DEF_MAXP        3000            /* ¹w³]²M°£¶W¹L 3000 ½gªº¤å³¹ */
-- #define DEF_MINP        150             /* ¹w³]§C©ó 150 ½gªº¬İªO¤£¬å¤å³¹ */
+- #define DEF_DAYS        365             /* é è¨­æ¸…é™¤è¶…é 365 å¤©çš„æ–‡ç«  */
+- #define DEF_MAXP        3000            /* é è¨­æ¸…é™¤è¶…é 3000 ç¯‡çš„æ–‡ç«  */
+- #define DEF_MINP        150             /* é è¨­ä½æ–¼ 150 ç¯‡çš„çœ‹æ¿ä¸ç æ–‡ç«  */
 
 : expire.c:main()
 
@@ -59,5 +59,5 @@ Chih-Kuan Chien (Kudo)
 kudo@ms21.url.com.tw
 
 --
-[1;32m¡¼ Origin: [33m²H³Jªº¤pºÛ [37mbbs.kudo.idv.tw
-[1;31m¡¼ From: [36mwww.kudo.idv.tw[m
+[1;32mâ–¡ Origin: [33mæ·¡è›‹çš„å°çª© [37mbbs.kudo.idv.tw
+[1;31mâ–¡ From: [36mwww.kudo.idv.tw[m

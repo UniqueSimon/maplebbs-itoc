@@ -1,32 +1,32 @@
 /*-------------------------------------------------------*/
 /* util/brd2gem.c	( NTHU CS MapleBBS Ver 3.10 )	 */
 /*-------------------------------------------------------*/
-/* target : ¬İªO¤ÀÃş¨ìºëµØ°Ï			         */
+/* target : çœ‹æ¿åˆ†é¡åˆ°ç²¾è¯å€			         */
 /* create : 01/09/09					 */
 /* update : 03/02/13                                     */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
 /*-------------------------------------------------------*/
-/* syntax : brd2gem ¤ÀÃş Classname			 */
+/* syntax : brd2gem åˆ†é¡ Classname			 */
 /*-------------------------------------------------------*/
 
 
 #include "bbs.h"
 
 
-#if 0	/* ¨Ï¥Î¤èªk */
+#if 0	/* ä½¿ç”¨æ–¹æ³• */
 
-  ³o­Óµ{¦¡¬O®³¨Óµ¹ bbs ª©¥»Âà´«®É¡A¦Û°Ê«Ø¥ß @Class ¥Îªº¡C
-  ©Î¬O¦b»~¬å¤ÀÃş®É¡A¤]¥i¥H®³¥X¨Ó­««Ø @Class ¥Î¡C
+  é€™å€‹ç¨‹å¼æ˜¯æ‹¿ä¾†çµ¦ bbs ç‰ˆæœ¬è½‰æ›æ™‚ï¼Œè‡ªå‹•å»ºç«‹ @Class ç”¨çš„ã€‚
+  æˆ–æ˜¯åœ¨èª¤ç åˆ†é¡æ™‚ï¼Œä¹Ÿå¯ä»¥æ‹¿å‡ºä¾†é‡å»º @Class ç”¨ã€‚
 
-  °²³]­n§â©Ò¦³¤ÀÃş¬°¡u¨t²Î¡v©M¡u¯¸¤º¡vªº¬İªO³£©ñ¦b¡uBBS¡v³o­Ó¤ÀÃş¸Ì­±¡A
-  ¥H¤Î§â©Ò¦³¤ÀÃş¬°¡u­Ó¤H¡vªº¬İªO³£©ñ¦b¡uPersonal¡v³o­Ó¤ÀÃş¸Ì­±¡C
+  å‡è¨­è¦æŠŠæ‰€æœ‰åˆ†é¡ç‚ºã€Œç³»çµ±ã€å’Œã€Œç«™å…§ã€çš„çœ‹æ¿éƒ½æ”¾åœ¨ã€ŒBBSã€é€™å€‹åˆ†é¡è£¡é¢ï¼Œ
+  ä»¥åŠæŠŠæ‰€æœ‰åˆ†é¡ç‚ºã€Œå€‹äººã€çš„çœ‹æ¿éƒ½æ”¾åœ¨ã€ŒPersonalã€é€™å€‹åˆ†é¡è£¡é¢ã€‚
   
-  1. ¤W BBS ¯¸¡A¦b (A)nnounce/Class ¸Ì­± Ctrl+P ¿ï (C)¡A«Ø¥ßÀÉ¦W¬° BBS ªº¤ÀÃş (¼ĞÃD¥ô·N)¡C
-  2. ¤W BBS ¯¸¡A¦b (A)nnounce/Class ¸Ì­± Ctrl+P ¿ï (C)¡A«Ø¥ßÀÉ¦W¬° Personal ªº¤ÀÃş (¼ĞÃD¥ô·N)¡C
-  3. ¦b¤u§@¯¸¤¤¥H bbs ¨­¤À°õ¦æ
-     % ~bbs/src/util/tran/brd2gem ¨t²Î BBS
-     % ~bbs/src/util/tran/brd2gem ¯¸¤º BBS
-     % ~bbs/src/util/tran/brd2gem ­Ó¤H Personal
+  1. ä¸Š BBS ç«™ï¼Œåœ¨ (A)nnounce/Class è£¡é¢ Ctrl+P é¸ (C)ï¼Œå»ºç«‹æª”åç‚º BBS çš„åˆ†é¡ (æ¨™é¡Œä»»æ„)ã€‚
+  2. ä¸Š BBS ç«™ï¼Œåœ¨ (A)nnounce/Class è£¡é¢ Ctrl+P é¸ (C)ï¼Œå»ºç«‹æª”åç‚º Personal çš„åˆ†é¡ (æ¨™é¡Œä»»æ„)ã€‚
+  3. åœ¨å·¥ä½œç«™ä¸­ä»¥ bbs èº«åˆ†åŸ·è¡Œ
+     % ~bbs/src/util/tran/brd2gem ç³»çµ± BBS
+     % ~bbs/src/util/tran/brd2gem ç«™å…§ BBS
+     % ~bbs/src/util/tran/brd2gem å€‹äºº Personal
 
 #endif
 
@@ -43,7 +43,7 @@ brd_2_gem(brd, gem)
   gem->xmode = GEM_BOARD | GEM_FOLDER;
 
 #ifdef HAVE_MODERATED_BOARD
-  /* ¯µ±KªO¡B¦n¤ÍªO */
+  /* ç§˜å¯†æ¿ã€å¥½å‹æ¿ */
   if (brd->readlevel == PERM_SYSOP || brd->readlevel == PERM_BOARD)
     gem->xmode |= GEM_RESTRICT;
 #endif
@@ -55,7 +55,7 @@ hdr_cmp(a, b)
   HDR *a;
   HDR *b;
 {
-  /* itoc.010413: ¤ÀÃş/ªO¦W¥æ¤e¤ñ¹ï */
+  /* itoc.010413: åˆ†é¡/æ¿åäº¤å‰æ¯”å° */
   int k = strncmp(a->title + BNLEN + 1, b->title + BNLEN + 1, BCLEN);
   return k ? k : str_cmp(a->xname, b->xname);
 }
@@ -75,13 +75,13 @@ main(argc, argv)
 
   if (argc != 3)
   {
-    printf("Usage: %s ¤ÀÃş Classname\n", argv[0]);
+    printf("Usage: %s åˆ†é¡ Classname\n", argv[0]);
     exit(-1);
   }
 
   if (strlen(argv[1]) > BCLEN || strlen(argv[2]) > BNLEN)
   {
-    printf("¡u¤ÀÃş¡v­nµu©ó %d¡AClassname ­nµu©ó %d\n", BCLEN, BNLEN);
+    printf("ã€Œåˆ†é¡ã€è¦çŸ­æ–¼ %dï¼ŒClassname è¦çŸ­æ–¼ %d\n", BCLEN, BNLEN);
     exit(-1);
   }
 

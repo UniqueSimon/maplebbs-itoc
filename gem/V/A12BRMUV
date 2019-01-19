@@ -1,12 +1,12 @@
-µo«H¤H: gaod.bbs@bbs.hychen.org (¶³²H­·²M) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD]Ãö©óchatroom
-µo«H¯¸: ¬P±¡©]»y (2006/07/18 Tue 01:35:35)                Updated: 2006/07/18
+ç™¼ä¿¡äºº: gaod.bbs@bbs.hychen.org (é›²æ·¡é¢¨æ¸…) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ]é—œæ–¼chatroom
+ç™¼ä¿¡ç«™: æ˜Ÿæƒ…å¤œèª (2006/07/18 Tue 01:35:35)                Updated: 2006/07/18
 
-¡° ¤Ş­z¡mbillyjmj.bbs@bbs.wretch.cc (ºñ¯ù¥b¿})¡n¤§»Ê¨¥¡G
-> ½Ğ°İ...
-> 1. ¦b¿Ã¹õªº¦æ¼Æº¡¤F¤§«á, ­Y§Æ±æ«á­±¿é¤Jªº¦r¬O¤@ª½¦b³Ì¤U­±­n«ç»ò§ï©O?
+â€» å¼•è¿°ã€Šbillyjmj.bbs@bbs.wretch.cc (ç¶ èŒ¶åŠç³–)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> è«‹å•...
+> 1. åœ¨è¢å¹•çš„è¡Œæ•¸æ»¿äº†ä¹‹å¾Œ, è‹¥å¸Œæœ›å¾Œé¢è¼¸å…¥çš„å­—æ˜¯ä¸€ç›´åœ¨æœ€ä¸‹é¢è¦æ€éº¼æ”¹å‘¢?
 
-: src/so/chat.c:printchatline() §ï¦¨³o¼Ë
+: src/so/chat.c:printchatline() æ”¹æˆé€™æ¨£
 
 static void
 printchatline(msg)
@@ -50,13 +50,13 @@ printchatline(msg)
 
   move(line, 0);
   clrtoeol();
-  outs("\033[0m¡÷");
+  outs("\033[0mâ†’");
   clrtoeol();
   chatline = line;
 }
 
-³o¬O§Ú³oÃäªº¼gªk
+é€™æ˜¯æˆ‘é€™é‚Šçš„å¯«æ³•
 
 --
-[1;32m¡° Origin: [33m¬P±¡©]»y [37m<bbs.hychen.org> [m
-[1;32m¡° From  : [36m125-227-8-21.dynamic.hinet.net[m
+[1;32mâ€» Origin: [33mæ˜Ÿæƒ…å¤œèª [37m<bbs.hychen.org> [m
+[1;32mâ€» From  : [36m125-227-8-21.dynamic.hinet.net[m

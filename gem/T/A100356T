@@ -1,25 +1,25 @@
-µo«H¤H: cpd.bbs@pitch.twbbs.org (always on my mind) ¬İªO: itoc
-¼Ğ  ÃD: Re: ¦p¦óÅıªO¥D¥i¥H§ó§ï¥LªO¤W¥L¤H¤å³¹ªº¼ĞÃD?
-µo«H¯¸: pitch¤p¯¸ (2004/01/12 Mon 00:14:24)               Updated: 2004/01/12
+ç™¼ä¿¡äºº: cpd.bbs@pitch.twbbs.org (always on my mind) çœ‹æ¿: itoc
+æ¨™  é¡Œ: Re: å¦‚ä½•è®“æ¿ä¸»å¯ä»¥æ›´æ”¹ä»–æ¿ä¸Šä»–äººæ–‡ç« çš„æ¨™é¡Œ?
+ç™¼ä¿¡ç«™: pitchå°ç«™ (2004/01/12 Mon 00:14:24)               Updated: 2004/01/12
 
-¡° ¤Ş­z¡mcyanofox.bbs@bbs.cs.nchu.edu.tw (§Ú¬O¦n¤H¤@±Úªº:()¡n¤§»Ê¨¥¡G
-> ªO¥D¥i¥H­×§ï¥L¤H¤å³¹ªº¤º®e
-> ¦ı¬O­n¦p¦ó¤]¯à«ö¤jT§ï¥L¤H¤å³¹¼ĞÃD©O?
+â€» å¼•è¿°ã€Šcyanofox.bbs@bbs.cs.nchu.edu.tw (æˆ‘æ˜¯å¥½äººä¸€æ—çš„:()ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æ¿ä¸»å¯ä»¥ä¿®æ”¹ä»–äººæ–‡ç« çš„å…§å®¹
+> ä½†æ˜¯è¦å¦‚ä½•ä¹Ÿèƒ½æŒ‰å¤§Tæ”¹ä»–äººæ–‡ç« æ¨™é¡Œå‘¢?
 
-: post.c : post_title()  ³o¬OªO¥D¥i¥H§ï¼ĞÃDªº³¡¤À
+: post.c : post_title()  é€™æ˜¯æ¿ä¸»å¯ä»¥æ”¹æ¨™é¡Œçš„éƒ¨åˆ†
 
 - if (strcmp(cuser.userid, mhdr.owner) && !HAS_PERM(PERM_ALLBOARD))
 + if (strcmp(cuser.userid, mhdr.owner) && !(bbstate & STAT_BOARD))
      return XO_NONE;
 
-: post.c : post_edit()  ³o¬OªO¥D¥i¥H§ï¤º®eªº³¡¤À
+: post.c : post_edit()  é€™æ˜¯æ¿ä¸»å¯ä»¥æ”¹å…§å®¹çš„éƒ¨åˆ†
 
-  /* ­ì§@ªÌ­×§ï */
+  /* åŸä½œè€…ä¿®æ”¹ */
 - else if (!strcmp(hdr->owner, cuser.userid) && HAS_PERM(PERM_POST))
 + else if ((!strcmp(hdr->owner, cuser.userid) && HAS_PERM(PERM_POST)) ||
 +   (bbstate & STAT_BOARD))
 
-: edit.c : ve_banner()  ³o¬OªO¥D¥i¥H§ï¤º®eªº³¡¤À
+: edit.c : ve_banner()  é€™æ˜¯æ¿ä¸»å¯ä»¥æ”¹å…§å®¹çš„éƒ¨åˆ†
 
   if (!modify)
   {
@@ -28,12 +28,12 @@
   }
   else
   {
-    [1;44m// ª©­±¦Û©w¡A¤Ï¥¿´N¬O¥[¤W cuser.userid ¨Ó°Ï¤À¬OªO¥DÁÙ¬O­ì§@ªÌ§ïªº */[m
+    [1;44m// ç‰ˆé¢è‡ªå®šï¼Œåæ­£å°±æ˜¯åŠ ä¸Š cuser.userid ä¾†å€åˆ†æ˜¯æ¿ä¸»é‚„æ˜¯åŸä½œè€…æ”¹çš„ */[m
 -   fprintf(fp, "...%s...\n", Now());
 +   fprintf(fp, "...%s...%s...\n", Now(), cuser.userid);
   }
 
 --
-[;1;30mOrigin¡G[32mùİùù¢¡         ¢x[30m       pitch¤p¯¸[m
-      [;1;42m  ùòùùùå¡C[37m ùá¢z¢w¢u¢w¢{  [;32;47m pitch.twbbs.org [m
-      [;1;32m  ùã    [32m¢| ùã[32m¢|¢w¢|  ¢|[m   From¡G[sw67-105-240.adsl.seed.net.tw][m
+[;1;30mOriginï¼š[32mâ•”â•â•®         â”‚[30m       pitchå°ç«™[m
+      [;1;42m  â•Ÿâ•â•ã€‚[37m â•¬â”Œâ”€â”œâ”€â”  [;32;47m pitch.twbbs.org [m
+      [;1;32m  â•š    [32mâ”” â•š[32mâ””â”€â””  â””[m   Fromï¼š[sw67-105-240.adsl.seed.net.tw][m

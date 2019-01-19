@@ -1,10 +1,10 @@
-§@ªÌ: itoc (League) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¦^¤å¦Û°Ê²¾°Ê´å¼Ğ¨ì³Ì¤U­±
-®É¶¡: 2004/01/12 Mon 10:49:08                           Updated: 2004/06/10
+ä½œè€…: itoc (League) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] å›æ–‡è‡ªå‹•ç§»å‹•æ¸¸æ¨™åˆ°æœ€ä¸‹é¢
+æ™‚é–“: 2004/01/12 Mon 10:49:08                           Updated: 2004/06/10
 
-¡° ¤Ş­z¡mqazq.bbs@bbs.cs.nchu.edu.tw (¢Û¢é¢ø¢ô¢í¡Ğ¢ñ¢ü¢÷¢ë)¡n¤§»Ê¨¥¡G
->     ¦^¤å¦Û°Ê²¾°Ê´å¼Ğ¨ì³Ì¤U­±
->     ¤£ª¾¹D­n«ç»ò¼g¤~¥i¥H°Ç¡H
+â€» å¼•è¿°ã€Šqazq.bbs@bbs.cs.nchu.edu.tw (ï¼­ï½ï½ï½Œï½…ï¼ï½‰ï½”ï½ï½ƒ)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>     å›æ–‡è‡ªå‹•ç§»å‹•æ¸¸æ¨™åˆ°æœ€ä¸‹é¢
+>     ä¸çŸ¥é“è¦æ€éº¼å¯«æ‰å¯ä»¥å‹’ï¼Ÿ
 
 : edit.c:ve_quote()
 
@@ -22,7 +22,7 @@ ve_quote(this)
 
         if (op == 'a')
         {
-          while (fgets(str, ANSILINELEN - 2, fp))       /* ¯dªÅ¶¡µ¹ "> " */
+          while (fgets(str, ANSILINELEN - 2, fp))       /* ç•™ç©ºé–“çµ¦ "> " */
 +         {
             this = ve_line(this, buf);
 +           quote_lines++;
@@ -30,7 +30,7 @@ ve_quote(this)
         }
         else
         {
-          while (fgets(str, ANSILINELEN - 2, fp))       /* ¯dªÅ¶¡µ¹ "> " */
+          while (fgets(str, ANSILINELEN - 2, fp))       /* ç•™ç©ºé–“çµ¦ "> " */
           {
             if (is_quoted(str)) /* "--\n" */
               break;
@@ -60,7 +60,7 @@ ve_quote(this)
   ...
   ...
 
-  if (ve_op > 0)        /* itoc.010301: ·s¼W ve_op = -1 ®É¤£¯àÀx¦s */
+  if (ve_op > 0)        /* itoc.010301: æ–°å¢ ve_op = -1 æ™‚ä¸èƒ½å„²å­˜ */
   {
 -   ve_quote(vln);
 +   quote_lines = ve_quote(vln);
@@ -82,7 +82,7 @@ ve_key:
     if (isprint2(cc))
 
 --
-  ·íµM¡A§A¥i¥H·s¼W­Ó UFO_XXXX ¨ÓÅı¨Ï¥ÎªÌ¿ï¾Ü­n¤£­n³o¥\¯à
+  ç•¶ç„¶ï¼Œä½ å¯ä»¥æ–°å¢å€‹ UFO_XXXX ä¾†è®“ä½¿ç”¨è€…é¸æ“‡è¦ä¸è¦é€™åŠŸèƒ½
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

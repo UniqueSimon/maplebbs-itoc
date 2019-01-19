@@ -1,24 +1,24 @@
-§@ªÌ: itoc (­·½Õ«B¶¶¡A°ê®õ¥Á¦w) ¬İªO: plan
-¼ĞÃD: [¥\¯à] ¨Ï¥ÎªÌ¦Û©w¥D¿ï³æ(2)
-®É¶¡: Wed Jul 16 22:13:30 2003                          Updated: 2003/07/17
+ä½œè€…: itoc (é¢¨èª¿é›¨é †ï¼Œåœ‹æ³°æ°‘å®‰) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] ä½¿ç”¨è€…è‡ªå®šä¸»é¸å–®(2)
+æ™‚é–“: Wed Jul 16 22:13:30 2003                          Updated: 2003/07/17
 
-  ¨Ï¥ÎªÌ¦Û©w¥D¿ï³æ(2) ½s¿è¦Û©w¥D¿ï³æ
+  ä½¿ç”¨è€…è‡ªå®šä¸»é¸å–®(2) ç·¨è¼¯è‡ªå®šä¸»é¸å–®
 
-: menu.c ¤@¶}©l
+: menu.c ä¸€é–‹å§‹
 
 extern UCACHE *ushm;
 
 + static int launch_set();
 
-: menu.c ¦b¾A·íªº¿ï³æ¥[¤J
+: menu.c åœ¨é©ç•¶çš„é¸å–®åŠ å…¥
 
 + launch_set, PERM_VALID, M_XMODE,
-+ "Menu       ¡m ¦Û©w¿ï³æ ¡n",
++ "Menu       ã€Š è‡ªå®šé¸å–® ã€‹",
 
-: menu.c ³Ì«á¥[¤J¥H¤U³o¾ã¬q
+: menu.c æœ€å¾ŒåŠ å…¥ä»¥ä¸‹é€™æ•´æ®µ
 
 /* ----------------------------------------------------- */
-/* ¨Ï¥ÎªÌ¦Û©w Quick Launch                               */
+/* ä½¿ç”¨è€…è‡ªå®š Quick Launch                               */
 /* ----------------------------------------------------- */
 
 
@@ -36,7 +36,7 @@ typedef struct
 }       LaunchFunc;
 
 
-/* ­n¥[ list ªº¦b³oÃä¥[ */
+/* è¦åŠ  list çš„åœ¨é€™é‚ŠåŠ  */
 
 
 #define LAUNCHLIST_LEN  17
@@ -44,35 +44,35 @@ typedef struct
 
 static LaunchFunc quick_cb[LAUNCHLIST_LEN + 1] =
 {
-  /* ½s¸¹¤£¥Î·Ó¶¶§Ç¡A¤]¥i¥HÀH«Kµ¹¡A¥u­n¬O¤£­«ÂĞªº¾ã¼Æ§Y¥i¡A
-     ¦ı¬O½s¸¹¤£¯àÅÜ°Ê (¦]¬°·|¦s¦b user ¥Ø¿ıªº quick ÀÉ¤¤) */
+  /* ç·¨è™Ÿä¸ç”¨ç…§é †åºï¼Œä¹Ÿå¯ä»¥éš¨ä¾¿çµ¦ï¼Œåªè¦æ˜¯ä¸é‡è¦†çš„æ•´æ•¸å³å¯ï¼Œ
+     ä½†æ˜¯ç·¨è™Ÿä¸èƒ½è®Šå‹• (å› ç‚ºæœƒå­˜åœ¨ user ç›®éŒ„çš„ quick æª”ä¸­) */
 
-  /* ½s¸¹, ¨ç¦¡,  °ÊºA,     ¿ï³æ±Ô­z */
+  /* ç·¨è™Ÿ, å‡½å¼,  å‹•æ…‹,     é¸å–®æ•˜è¿° */
 
-   1, Boards,     M_BOARD,  "Boards     ¡ö §G§i°Q½× ¡÷",
-   2, Class,      M_BOARD,  "Class      ¡ö ¤À²Õ°Q½× ¡÷",
-   3, MyFavorite, M_MF,     "Favorite   ¡ö §Úªº³Ì·R ¡÷",
-   4, Gem,        M_GEM,    "Announce   ¡ö ºëµØ¤½§G ¡÷",
+   1, Boards,     M_BOARD,  "Boards     â† ä½ˆå‘Šè¨è«– â†’",
+   2, Class,      M_BOARD,  "Class      â† åˆ†çµ„è¨è«– â†’",
+   3, MyFavorite, M_MF,     "Favorite   â† æˆ‘çš„æœ€æ„› â†’",
+   4, Gem,        M_GEM,    "Announce   â† ç²¾è¯å…¬ä½ˆ â†’",
 
- 101, XoMbox,     M_RMAIL,  "Read       ¡ö ¾\\Åª«H¥ó ¡÷",
- 102, m_send,     M_SMAIL,  "Mail       ¡ö ¯¸¤º±H«H ¡÷",
- 103, m_internet, M_SMAIL,  "Internet   ¡ö ±H¨Ì©f¨à ¡÷",
+ 101, XoMbox,     M_RMAIL,  "Read       â† é–±\è®€ä¿¡ä»¶ â†’",
+ 102, m_send,     M_SMAIL,  "Mail       â† ç«™å…§å¯„ä¿¡ â†’",
+ 103, m_internet, M_SMAIL,  "Internet   â† å¯„ä¾å¦¹å…’ â†’",
 
- 201, t_pal,      M_PAL,    "GoodFriend ¡ö ¦n¤Í³]©w ¡÷",
- 202, XoUlist,    M_LUSERS, "Users      ¡ö ¹C«È¦W³æ ¡÷",
- 203, t_query,    M_QUERY,  "Query      ¡ö ¬d¸ßºô¤Í ¡÷",
- 204, t_display,  M_BMW,    "Display    ¡ö ÂsÄı¤ô²y ¡÷",
- 205, t_bmw,      M_BMW,    "Write      ¡ö ¦^ÅU¤ô²y ¡÷",
- 206, bin/chat.so:t_chat", - M_CHAT, "Chat       ¡ö ²³¤fÅàª÷ ¡÷",
+ 201, t_pal,      M_PAL,    "GoodFriend â† å¥½å‹è¨­å®š â†’",
+ 202, XoUlist,    M_LUSERS, "Users      â† éŠå®¢åå–® â†’",
+ 203, t_query,    M_QUERY,  "Query      â† æŸ¥è©¢ç¶²å‹ â†’",
+ 204, t_display,  M_BMW,    "Display    â† ç€è¦½æ°´çƒ â†’",
+ 205, t_bmw,      M_BMW,    "Write      â† å›é¡§æ°´çƒ â†’",
+ 206, bin/chat.so:t_chat", - M_CHAT, "Chat       â† çœ¾å£é‘ é‡‘ â†’",
 
- 301, u_info,     M_XMODE,  "Info       ¡ö ­Ó¤H¸ê®Æ ¡÷",
- 302, u_setup,    M_UFILES, "Habit      ¡ö ³ß¦n¼Ò¦¡ ¡÷",
- 303, pad_view,   M_READA,  "Note       ¡ö Æ[¬İ¯d¨¥ ¡÷",
+ 301, u_info,     M_XMODE,  "Info       â† å€‹äººè³‡æ–™ â†’",
+ 302, u_setup,    M_UFILES, "Habit      â† å–œå¥½æ¨¡å¼ â†’",
+ 303, pad_view,   M_READA,  "Note       â† è§€çœ‹ç•™è¨€ â†’",
 
- 401, "bin/enews.so:main_enews", - M_XMODE, "Kimo       ¡ö ©_¼¯·s»D ¡÷",
+ 401, "bin/enews.so:main_enews", - M_XMODE, "Kimo       â† å¥‡æ‘©æ–°è â†’",
 
-  /* ³Ì«á¤@­Ó©T©w¬O 0, goodbye */
-  0, goodbye,     M_XMODE,  "Goodbye    ¡ö ¤U¦¸¦A·| ¡÷"
+  /* æœ€å¾Œä¸€å€‹å›ºå®šæ˜¯ 0, goodbye */
+  0, goodbye,     M_XMODE,  "Goodbye    â† ä¸‹æ¬¡å†æœƒ â†’"
 };
 
 
@@ -83,7 +83,7 @@ launch_set()
   char buf[80];
   LaunchFunc *cb;
 
-  /* ¬É­±°µ±o»á»¹¡A¥u¯à¤ä´©¨ì LAUNCHLIST_LEN = 20¡A·Q§ïªº¤H¦A¦Û¤v§ï :p */
+  /* ç•Œé¢åšå¾—é —éœï¼Œåªèƒ½æ”¯æ´åˆ° LAUNCHLIST_LEN = 20ï¼Œæƒ³æ”¹çš„äººå†è‡ªå·±æ”¹ :p */
 
   memset(keylist, 0, sizeof(keylist));
 
@@ -97,7 +97,7 @@ launch_set()
   }
 
   i = 0;
-  while (vget(b_lines, 0, "½Ğ¿ï¾Ü§Ö±¶¦C¿ï¶µ¡G", buf, 4, DOECHO))
+  while (vget(b_lines, 0, "è«‹é¸æ“‡å¿«æ·åˆ—é¸é …ï¼š", buf, 4, DOECHO))
   {
     num = atoi(buf) - 1;
     if (num >= 0 && num < LAUNCHLIST_LEN)
@@ -105,10 +105,10 @@ launch_set()
       cb = quick_cb + num;
       keylist[i] = cb->key;
       move(i + 2, 40);
-      prints("±¶®| %d¡G%s", i + 1, cb->desc);
+      prints("æ·å¾‘ %dï¼š%s", i + 1, cb->desc);
       if (++i >= MAX_LAUNCH - 1)
       {
-        sprintf(buf, "³Ì¦h¥u¯à¥[ %d ­Ó±¶®|¦Ó¤w", MAX_LAUNCH - 1);
+        sprintf(buf, "æœ€å¤šåªèƒ½åŠ  %d å€‹æ·å¾‘è€Œå·²", MAX_LAUNCH - 1);
         vmsg(buf);
         break;
       }
@@ -117,7 +117,7 @@ launch_set()
 
   if (i)
   {
-    /* ³Ì«á¦A¸É¤W¤@­Ó±¶®|¡Ggoodbye */
+    /* æœ€å¾Œå†è£œä¸Šä¸€å€‹æ·å¾‘ï¼šgoodbye */
     keylist[i] = (quick_cb + LAUNCHLIST_LEN)->key;
     usr_fpath(buf, cuser.userid, fn_quick);
     unlink(buf);
@@ -129,14 +129,14 @@ launch_set()
 
 
 /* ----------------------------------------------------- */
-/* ¨Ï¥Î Quick Launch Skin                                */
+/* ä½¿ç”¨ Quick Launch Skin                                */
 /* ----------------------------------------------------- */
 
 
 static MENU menu_launch[MAX_LAUNCH];
 
 
-static int                      /* ¦^¶Ç³]¤F´X­Ó quick launch */
+static int                      /* å›å‚³è¨­äº†å¹¾å€‹ quick launch */
 launch_load()
 {
   int i, key, keylist[MAX_LAUNCH];
@@ -204,7 +204,7 @@ skin()
         cx = -1;
       }
 
-      vs_head("§Ö±¶¦C", NULL);
+      vs_head("å¿«æ·åˆ—", NULL);
 
       for (mode = 0; mode <= max; mode++)
       {
@@ -229,7 +229,7 @@ skin()
       cc = (cc == 0) ? max : cc - 1;
       break;
 
-    case Ctrl('A'): /* itoc.020829: ¹w³]¿ï¶µ²Ä¤@­Ó */
+    case Ctrl('A'): /* itoc.020829: é è¨­é¸é …ç¬¬ä¸€å€‹ */
     case KEY_HOME:
       cc = 0;
       break;
@@ -292,7 +292,7 @@ skin()
       goto every_key;
 #endif
 
-    /* itoc.010911: Select everywhere¡A¤£¦A­­¨î¬O¦b M_0MENU */
+    /* itoc.010911: Select everywhereï¼Œä¸å†é™åˆ¶æ˜¯åœ¨ M_0MENU */
     case 's':
     case Ctrl('S'):
       utmp_mode(M_BOARD);
@@ -300,10 +300,10 @@ skin()
       goto every_key;
 
 #ifdef MY_FAVORITE
-    /* itoc.010911: Favorite everywhere¡A¤£¦A­­¨î¬O¦b M_0MENU */
+    /* itoc.010911: Favorite everywhereï¼Œä¸å†é™åˆ¶æ˜¯åœ¨ M_0MENU */
     case 'f':
     case Ctrl('F'):
-      if (HAS_PERM(PERM_BASIC)) /* itoc.010407: ­nÀË¬dÅv­­ */
+      if (HAS_PERM(PERM_BASIC)) /* itoc.010407: è¦æª¢æŸ¥æ¬Šé™ */
       {
         utmp_mode(M_MF);
         MyFavorite();
@@ -313,10 +313,10 @@ skin()
 
     case Ctrl('X'):
       cuser.ufo &= ~UFO_USERSKIN;
-      vmsg("­«·s¤W¯¸«á´N·|«ì´_­ì¨Óªº¤½ª©¿ï³æ");
+      vmsg("é‡æ–°ä¸Šç«™å¾Œå°±æœƒæ¢å¾©åŸä¾†çš„å…¬ç‰ˆé¸å–®");
       goto default_key;
 
-every_key:  /* ¯S®íÁä³B²zµ²§ô */
+every_key:  /* ç‰¹æ®Šéµè™•ç†çµæŸ */
       utmp_mode(M_0MENU);
       mode = MENU_DRAW | MENU_FILM;
       cmd = (menu_launch + cc)->desc[0];
@@ -345,7 +345,7 @@ default_key:
       }
     }
 
-    if (cc != cx)   /* ­Y´å¼Ğ²¾°Ê¦ì¸m */
+    if (cc != cx)   /* è‹¥æ¸¸æ¨™ç§»å‹•ä½ç½® */
     {
 #ifdef CURSOR_BAR
       if (cx >= 0)
@@ -369,7 +369,7 @@ default_key:
       prints(COLOR4 "> (%c)", *str++);
       prints("%s \033[m", str);
       cx = cc;
-#else       /* ¨S¦³ CURSOR_BAR */
+#else       /* æ²’æœ‰ CURSOR_BAR */
       if (cx >= 0)
       {
         move(MENU_XPOS + cx, MENU_YPOS);
@@ -380,7 +380,7 @@ default_key:
       cx = cc;
 #endif
     }
-    else        /* ­Y´å¼Ğªº¦ì¸m¨S¦³ÅÜ */
+    else        /* è‹¥æ¸¸æ¨™çš„ä½ç½®æ²’æœ‰è®Š */
     {
 #ifdef CURSOR_BAR
       move(MENU_XPOS + cc, MENU_YPOS);
@@ -400,4 +400,4 @@ menu_key:
 }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

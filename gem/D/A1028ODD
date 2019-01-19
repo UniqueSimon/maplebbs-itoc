@@ -1,80 +1,80 @@
-µo«H¤H: itoc.bbs@xeon.tfcis.org (test), ¬ÝªO: plan
-¼Ð  ÃD: Re: [¶¢²á] ¦n¶}¤ß³á~
-µo«H¯¸: XEON (Fri Aug  9 01:00:02 2002)
+ç™¼ä¿¡äºº: itoc.bbs@xeon.tfcis.org (test), çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [é–’èŠ] å¥½é–‹å¿ƒå–”~
+ç™¼ä¿¡ç«™: XEON (Fri Aug  9 01:00:02 2002)
 
-  ¥H­n¥[¤W feeling ¬°¨Ò¤l
+  ä»¥è¦åŠ ä¸Š feeling ç‚ºä¾‹å­
 
 : transacct.c
 
-  NEW ¥[¤W¤@­Ó·sÄæ¦ì feeling
-  OLD ¬OÂÂªº struct ACCT
+  NEW åŠ ä¸Šä¸€å€‹æ–°æ¬„ä½ feeling
+  OLD æ˜¯èˆŠçš„ struct ACCT
 
-struct NEW                      /* ­n©M·sª©µ{¦¡ struct ¤@¼Ë */
+struct NEW                      /* è¦å’Œæ–°ç‰ˆç¨‹å¼ struct ä¸€æ¨£ */
 {
   int userno;                   /* unique positive code */
 
   char userid[IDLEN + 1];       /* ID */
-  char passwd[PASSLEN];         /* ±K½X */
-  char realname[20];            /* ¯u¹ê©m¦W */
-  char username[24];            /* ¼ÊºÙ */
-+ char feeling[5];              /* ¤ß±¡ */
+  char passwd[PASSLEN];         /* å¯†ç¢¼ */
+  char realname[20];            /* çœŸå¯¦å§“å */
+  char username[24];            /* æš±ç¨± */
++ char feeling[5];              /* å¿ƒæƒ… */
 
-  usint userlevel;              /* Åv­­ */
+  usint userlevel;              /* æ¬Šé™ */
   usint ufo;                    /* habit */
-  uschar signature;             /* ¹w³]Ã±¦WÀÉ */
+  uschar signature;             /* é è¨­ç°½åæª” */
 
-  char year;                    /* ¥Í¤é(¥Á°ê¦~) */
-  char month;                   /* ¥Í¤é(¤ë) */
-  char day;                     /* ¥Í¤é(¤é) */
-  char sex;                     /* ©Ê§O */
-  int money;                    /* »È¹ô */
-  int gold;                     /* ª÷¹ô(ÂX¥R¥Î) */
+  char year;                    /* ç”Ÿæ—¥(æ°‘åœ‹å¹´) */
+  char month;                   /* ç”Ÿæ—¥(æœˆ) */
+  char day;                     /* ç”Ÿæ—¥(æ—¥) */
+  char sex;                     /* æ€§åˆ¥ */
+  int money;                    /* éŠ€å¹£ */
+  int gold;                     /* é‡‘å¹£(æ“´å……ç”¨) */
 
-  int numlogins;                /* ¤W¯¸¦¸¼Æ */
-  int numposts;                 /* µoªí¦¸¼Æ */
-  int numemails;                /* ±Hµo Inetrnet E-mail ¦¸¼Æ */
+  int numlogins;                /* ä¸Šç«™æ¬¡æ•¸ */
+  int numposts;                 /* ç™¼è¡¨æ¬¡æ•¸ */
+  int numemails;                /* å¯„ç™¼ Inetrnet E-mail æ¬¡æ•¸ */
 
-  time_t firstlogin;            /* ²Ä¤@¦¸¤W¯¸®É¶¡ */
-  time_t lastlogin;             /* ¤W¤@¦¸¤W¯¸®É¶¡ */
-  time_t tcheck;                /* ¤W¦¸ check «H½c/¦n¤Í¦W³æªº®É¶¡ */
-  time_t tvalid;                /* ³q¹L»{ÃÒªº®É¶¡ */
+  time_t firstlogin;            /* ç¬¬ä¸€æ¬¡ä¸Šç«™æ™‚é–“ */
+  time_t lastlogin;             /* ä¸Šä¸€æ¬¡ä¸Šç«™æ™‚é–“ */
+  time_t tcheck;                /* ä¸Šæ¬¡ check ä¿¡ç®±/å¥½å‹åå–®çš„æ™‚é–“ */
+  time_t tvalid;                /* é€šéŽèªè­‰çš„æ™‚é–“ */
 
-  char lasthost[30];            /* ¤W¦¸µn¤J¨Ó·½ */
-  char email[60];               /* ¥Ø«eµn°Oªº¹q¤l«H½c */
+  char lasthost[30];            /* ä¸Šæ¬¡ç™»å…¥ä¾†æº */
+  char email[60];               /* ç›®å‰ç™»è¨˜çš„é›»å­ä¿¡ç®± */
 };
 
 
-struct OLD                      /* ­n©MÂÂª©µ{¦¡ struct ¤@¼Ë */
+struct OLD                      /* è¦å’ŒèˆŠç‰ˆç¨‹å¼ struct ä¸€æ¨£ */
 {
   int userno;                   /* unique positive code */
 
   char userid[IDLEN + 1];       /* ID */
-  char passwd[PASSLEN];         /* ±K½X */
-  char realname[20];            /* ¯u¹ê©m¦W */
-  char username[24];            /* ¼ÊºÙ */
+  char passwd[PASSLEN];         /* å¯†ç¢¼ */
+  char realname[20];            /* çœŸå¯¦å§“å */
+  char username[24];            /* æš±ç¨± */
 
-  usint userlevel;              /* Åv­­ */
+  usint userlevel;              /* æ¬Šé™ */
   usint ufo;                    /* habit */
-  uschar signature;             /* ¹w³]Ã±¦WÀÉ */
+  uschar signature;             /* é è¨­ç°½åæª” */
 
-  char year;                    /* ¥Í¤é(¥Á°ê¦~) */
-  char month;                   /* ¥Í¤é(¤ë) */
-  char day;                     /* ¥Í¤é(¤é) */
-  char sex;                     /* ©Ê§O */
-  int money;                    /* »È¹ô */
-  int gold;                     /* ª÷¹ô(ÂX¥R¥Î) */
+  char year;                    /* ç”Ÿæ—¥(æ°‘åœ‹å¹´) */
+  char month;                   /* ç”Ÿæ—¥(æœˆ) */
+  char day;                     /* ç”Ÿæ—¥(æ—¥) */
+  char sex;                     /* æ€§åˆ¥ */
+  int money;                    /* éŠ€å¹£ */
+  int gold;                     /* é‡‘å¹£(æ“´å……ç”¨) */
 
-  int numlogins;                /* ¤W¯¸¦¸¼Æ */
-  int numposts;                 /* µoªí¦¸¼Æ */
-  int numemails;                /* ±Hµo Inetrnet E-mail ¦¸¼Æ */
+  int numlogins;                /* ä¸Šç«™æ¬¡æ•¸ */
+  int numposts;                 /* ç™¼è¡¨æ¬¡æ•¸ */
+  int numemails;                /* å¯„ç™¼ Inetrnet E-mail æ¬¡æ•¸ */
 
-  time_t firstlogin;            /* ²Ä¤@¦¸¤W¯¸®É¶¡ */
-  time_t lastlogin;             /* ¤W¤@¦¸¤W¯¸®É¶¡ */
-  time_t tcheck;                /* ¤W¦¸ check «H½c/¦n¤Í¦W³æªº®É¶¡ */
-  time_t tvalid;                /* ³q¹L»{ÃÒªº®É¶¡ */
+  time_t firstlogin;            /* ç¬¬ä¸€æ¬¡ä¸Šç«™æ™‚é–“ */
+  time_t lastlogin;             /* ä¸Šä¸€æ¬¡ä¸Šç«™æ™‚é–“ */
+  time_t tcheck;                /* ä¸Šæ¬¡ check ä¿¡ç®±/å¥½å‹åå–®çš„æ™‚é–“ */
+  time_t tvalid;                /* é€šéŽèªè­‰çš„æ™‚é–“ */
 
-  char lasthost[30];            /* ¤W¦¸µn¤J¨Ó·½ */
-  char email[60];               /* ¥Ø«eµn°Oªº¹q¤l«H½c */
+  char lasthost[30];            /* ä¸Šæ¬¡ç™»å…¥ä¾†æº */
+  char email[60];               /* ç›®å‰ç™»è¨˜çš„é›»å­ä¿¡ç®± */
 };
 
 : transaccct.c trans_acct()
@@ -92,13 +92,13 @@ trans_acct(old, new)
   strcpy(new->passwd, old->passwd);
   str_ncpy(new->realname, old->realname, sizeof(new->realname));
   str_ncpy(new->username, old->username, sizeof(new->username));
-+ str_ncpy(new->feeling, "§Ö¼Ö", sizeof(new->feeling));     /* µ¹ªì©l­È */
++ str_ncpy(new->feeling, "å¿«æ¨‚", sizeof(new->feeling));     /* çµ¦åˆå§‹å€¼ */
 
   new->userlevel = old->userlevel;
-  new->ufo = transfer_ufo(old->ufo);    /* itoc.010917: ufo Äæ¦ì¥¼¥²¤@¼Ë */
+  new->ufo = transfer_ufo(old->ufo);    /* itoc.010917: ufo æ¬„ä½æœªå¿…ä¸€æ¨£ */
   new->signature = old->signature;
 
-- new->year = 0;                /* µ¹ªì©l­È */
+- new->year = 0;                /* çµ¦åˆå§‹å€¼ */
 - new->month = 0;
 - new->day = 0;
 - new->sex = 0;
@@ -126,11 +126,11 @@ trans_acct(old, new)
 
 > ---------------------------------------------- <
 
-  ¦P²z¡Aµo¦æ·sªº¹ô¨î¡A¤]¬O¥Î transacct
-  struct NEW ©M struct OLD ³£¼g¦¨©M struct ACCT ¤@¼Ë
-  µM«á main() ¸Ì­±§ï³o¥y
+  åŒç†ï¼Œç™¼è¡Œæ–°çš„å¹£åˆ¶ï¼Œä¹Ÿæ˜¯ç”¨ transacct
+  struct NEW å’Œ struct OLD éƒ½å¯«æˆå’Œ struct ACCT ä¸€æ¨£
+  ç„¶å¾Œ main() è£¡é¢æ”¹é€™å¥
 
   new.money = old.money / 40000;
 
 --
-[1;32m¡¼ Origin: [33m°Ê¤O®Ö¤ß [37mxeon.tfcis.org  [31m¡¼ From: [36mitoc.Dorm-GD2.NCTU.edu.tw[m
+[1;32mâ–¡ Origin: [33må‹•åŠ›æ ¸å¿ƒ [37mxeon.tfcis.org  [31mâ–¡ From: [36mitoc.Dorm-GD2.NCTU.edu.tw[m

@@ -1,21 +1,21 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬ÝªO: plan
-¼Ð  ÃD: Re: ³s¸pª©
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/06/07 Mon 21:53:49)                Updated: 2005/08/23
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: é€£ç½²ç‰ˆ
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/06/07 Mon 21:53:49)                Updated: 2005/08/23
 
-¡° ¤Þ­z¡myhl (yhl)¡n¤§»Ê¨¥¡G
-> ³s¸pªº¤å³¹¥i¥H¦b¦¨¥\³s¸p«á
-> Âà¤@½g¨ìnewboard¥h¶Ü
+â€» å¼•è¿°ã€Šyhl (yhl)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> é€£ç½²çš„æ–‡ç« å¯ä»¥åœ¨æˆåŠŸé€£ç½²å¾Œ
+> è½‰ä¸€ç¯‡åˆ°newboardåŽ»å—Ž
 
-  ¥ý°µºëµØ°Ï³o½g
-  [¥\¯à] post.c µo¤å¨ì¬ÝªO
+  å…ˆåšç²¾è¯å€é€™ç¯‡
+  [åŠŸèƒ½] post.c ç™¼æ–‡åˆ°çœ‹æ¿
 
 : newbrd.c:nbrd_reply()
 
     currchrono = nbrd->btime;
     rec_ref(xo->dir, nbrd, sizeof(NBRD), xo->pos, cmpbtime, addreply);
 +   if (nbrd->total <= 1)
-+     add_post("newboard", fpath, "³s¸p³q¹L");
++     add_post("newboard", fpath, "é€£ç½²é€šéŽ");
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ž [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

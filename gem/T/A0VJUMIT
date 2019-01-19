@@ -1,13 +1,13 @@
-µo«H₪H: johnny.bbs@bbs.hwsh.ylc.edu.tw (²ײ¦÷­Û~~~~~), ¬Ý×O: plan
-¼׀  ֳD: [₪ו¥ף] ¦A¾ד²z~¯¸×ר¦b¨ֿ¥־×ּ¦W³ז₪₪¬Ý¯u¦W
-µo«H¯¸: ×ך·ֻ¶ַ»¡ (Wed Jul 24 00:13:14 2002)               Updated: 2004/10/02
+ח™¼ה¿¡ה÷÷: johnny.bbs@bbs.hwsh.ylc.edu.tw (ח´¯ז­»ו€«~~~~~), ח‹ז¿: plan
+ז¨™  י¡: [ז–‡ה»¶] ו†ז•´ח†~ח«™י•·ו¨ה½¿ח”¨ט€…וו–®ה¸­ח‹חו
+ח™¼ה¿¡ח«™: ט™ז÷×ו‚³ט×× (Wed Jul 24 00:13:14 2002)               Updated: 2004/10/02
 
-  ¯¸×ר¦b¨ֿ¥־×ּ¦W³ז₪₪¬Ý¯u¦W
+  ח«™י•·ו¨ה½¿ח”¨ט€…וו–®ה¸­ח‹חו
 
-: ufo.h  // ½׀¨ּ¦Û₪v×÷ ufo.h ½ױ¾ד
+: ufo.h  // ט«‹ה¾ט‡×ו·±ח„ ufo.h ט×¿ז•´
 
-+ #define UFO_REALNAME    BFLAG(23)       /* ¦n₪ֽ¥i¥H¬Ý¨£ֱפ§־ */
-#define UFO_CLOAK       BFLAG(24)       /* 1: ¶i₪Jֱפ§־ */
++ #define UFO_REALNAME    BFLAG(23)       /* ו¥½ו‹ו¯ה»¥ח‹ט¦‹י±ו½¢ */
+#define UFO_CLOAK       BFLAG(24)       /* 1: י€²ו…¥י±ו½¢ */
 
   ...
 
@@ -16,21 +16,21 @@
 
   ...
 
-- "«O¯d",
-+ "¨ֿ¥־×ּ¦W³ז¬Ý©m¦W(©m¦W/¼Ê÷Ù)",        /* UFO_REALNAME */
+- "ה¿ח•™",
++ "ה½¿ח”¨ט€…וו–®ח‹ו§“ו(ו§“ו/ז±ח¨±)",        /* UFO_REALNAME */
 
-  "ֱפ¨­³N          (ֱפ¨­/²{¨­)",        /* UFO_CLOAK */
+  "י±ט÷«ט¡“          (י±ט÷«/ח¾ט÷«)",        /* UFO_CLOAK */
 
-: struct.h:struct UTMP ₪U¼W¥[
+: struct.h:struct UTMP ה¸‹ו¢ו 
 
-+ char realname[20];            /* 02/09/01 ¯u¹ך©m¦W */
++ char realname[20];            /* 02/09/01 חו¯¦ו§“ו */
 
-: bbsd.c:utmp_setup()₪U  ¥[₪@¦ז
+: bbsd.c:utmp_setup()ה¸‹  ו ה¸€ט¡
 
   strcpy(utmp.userid, cuser.userid);
 + strcpy(utmp.realname, cuser.realname);
 
-: ulist.c:ulist_realname() ·s¼W¨ח¦¡©ף ulist_help() ₪§«e
+: ulist.c:ulist_realname() ז–°ו¢ו‡½ו¼ז–¼ ulist_help() ה¹‹ו‰
 
 static int
 ulist_realname(xo)
@@ -45,9 +45,9 @@ ulist_realname(xo)
   return XO_NONE;
 }
 
-: ulist.c:ulist_cb[] ¼W¥[ R ֱהµ¹₪ֱ´«¯u¹ך©m¦W
+: ulist.c:ulist_cb[] ו¢ו  R יµחµ¦וˆ‡ז›חו¯¦ו§“ו
 
-+ 'R', ulist_realname,          /* 02/09/01 ¯u¹ך©m¦W */
++ 'R', ulist_realname,          /* 02/09/01 חו¯¦ו§“ו */
 
 : ulist.c:ulist_body()
 
@@ -85,17 +85,17 @@ static void
 {
   ...
 
-  §ג prints(); ¸ּ­±×÷
-  up->username ´«¦¨ seerealname ? up->realname : up->username
+  ז prints(); ט£¡י¢ח„
+  up->username ז›זˆ seerealname ? up->realname : up->username
 
 --
-[0m   [35;1m¢~שששששÞשש¢¡      ¢~
-[0m   [35;1m¢¢    שר  ¢£      שר        ¢~        ¢~
-[0m   [35;1m      שר¢~שששששש¢¡שאשששששש¢¡שאשששששש¢¡שאשששששש¢¡¢¡      ¢~
-[0m  [35;1m       שרשר      שרשר      שרשר      שרשר      שרשר      שר
-[0m   [33;44;1m¢¢שששש¢£¢¢שששששש¢£¢¢      ¢£¢¢      ¢£¢¢      ¢£¢¢שששששÞ¢£
-[0m   [44m [33;1m              ¡³by  johnny¡³                       שש¢£  [0m
+[0m   [35;1mג•­ג•ג•ג•¦ג•ג•®      ג•­
+[0m   [35;1mג•°    ג•‘  ג•¯      ג•‘        ג•­        ג•­
+[0m   [35;1m      ג•‘ג•­ג•ג•ג•ג•®ג• ג•ג•ג•ג•®ג• ג•ג•ג•ג•®ג• ג•ג•ג•ג•®ג•®      ג•­
+[0m  [35;1m       ג•‘ג•‘      ג•‘ג•‘      ג•‘ג•‘      ג•‘ג•‘      ג•‘ג•‘      ג•‘
+[0m   [33;44;1mג•°ג•ג•ג•¯ג•°ג•ג•ג•ג•¯ג•°      ג•¯ג•°      ג•¯ג•°      ג•¯ג•°ג•ג•ג•¦ג•¯
+[0m   [44m [33;1m              ג—‹by  johnnyג—‹                       ג•ג•¯  [0m
 
 --
-[1;32m¡¼ Origin: [33m×ך·ֻ¶ַ»¡ [37mbbs.hwsh.ylc.edu.tw
-[31m¡¼ From: [36m61-216-185-228.HINET-IP.hinet.net[m
+[1;32mג–¡ Origin: [33mט™ז÷×ו‚³ט×× [37mbbs.hwsh.ylc.edu.tw
+[31mג–¡ From: [36m61-216-185-228.HINET-IP.hinet.net[m

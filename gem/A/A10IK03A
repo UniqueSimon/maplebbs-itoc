@@ -1,11 +1,11 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: ^w ¬d¦r¨å
-µo«H¯¸: °Ê¤O®Ö¤ß (2004/08/23 Mon 18:53:52)                Updated: 2004/09/07
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: ^w æŸ¥å­—å…¸
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2004/08/23 Mon 18:53:52)                Updated: 2004/09/07
 
-¡° ¤Ş­z¡mcentric (centric)¡n¤§»Ê¨¥¡G
->         ¦pªG·Q­n¹³µL¦W¤@¼Ë ¥ô·N¦a¤è«ö ctrl+w ´N¥i¥H¨Ï¥Î
+â€» å¼•è¿°ã€Šcentric (centric)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>         å¦‚æœæƒ³è¦åƒç„¡åä¸€æ¨£ ä»»æ„åœ°æ–¹æŒ‰ ctrl+w å°±å¯ä»¥ä½¿ç”¨
 
-: menu.c:menu()  ¿ï³æ«ö ^W ¬d¦r¨å
+: menu.c:menu()  é¸å–®æŒ‰ ^W æŸ¥å­—å…¸
 
     case Ctrl('U'):
       every_U(0);
@@ -15,7 +15,7 @@
 +     DL_func("bin/dreye.so:main_dreye");
 +     goto every_key;
 
-: xover.c:xover()  ¤¶­±«ö ^W ¬d¦r¨å
+: xover.c:xover()  ä»‹é¢æŒ‰ ^W æŸ¥å­—å…¸
 
     else if (cmd == Ctrl('U'))
     {
@@ -28,5 +28,5 @@
 +   }
 
 --
- [1;41m¢~[44m¢q[m Or[1mig[30min[m: [43m Maple-itoc£»°Ê¤O®Ö¤ß [35;47m processor.tfcis.org [m
- [1;43m¢¢[46mùñ[m [1mMo[30mdi[mfy: [1;35m2004/08/23 Mon 18:53:52[m
+ [1;41mâ•­[44mâ”¼[m Or[1mig[30min[m: [43m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [35;47m processor.tfcis.org [m
+ [1;43mâ•°[46mâ•–[m [1mMo[30mdi[mfy: [1;35m2004/08/23 Mon 18:53:52[m

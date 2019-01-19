@@ -1,12 +1,12 @@
-µo«H¤H: SnowWolf.bbs@xeon.tfcis.org (ÀR©]) ¬İªO: plan
-¼Ğ  ÃD: [¤å¥ó] BLog for itoc-maple ·s¼Wblog.pl----4
-µo«H¯¸: °Ê¤O®Ö¤ß (Sun, 07 Sep 2003 23:57:13 +0800 (CST))  Updated: 2003/09/07
+ç™¼ä¿¡äºº: SnowWolf.bbs@xeon.tfcis.org (éœå¤œ) çœ‹æ¿: plan
+æ¨™  é¡Œ: [æ–‡ä»¶] BLog for itoc-maple æ–°å¢blog.pl----4
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (Sun, 07 Sep 2003 23:57:13 +0800 (CST))  Updated: 2003/09/07
 
-[32;1m·s¼W blog.pl ©ó ~/blog/web ¤Î ~/bin/[m
-¦¹µ{¦¡¥i¦b¤U¦Cºô§}¨ú±o
+[32;1mæ–°å¢ blog.pl æ–¼ ~/blog/web åŠ ~/bin/[m
+æ­¤ç¨‹å¼å¯åœ¨ä¸‹åˆ—ç¶²å€å–å¾—
 http://bit.kuas.edu.tw/~jcwang/blog.pl
 
-------------------¥i·Rªº¤À¹j½u^^----------------------------
+------------------å¯æ„›çš„åˆ†éš”ç·š^^----------------------------
 
 #!/usr/bin/perl
 # $Id: blog.pl 1106 2003-08-17 01:09:33Z in2 $
@@ -36,8 +36,8 @@ sub main
     @emonth = ('', 'January', 'February', 'March', 'April', 'May',
            'June', 'July', 'August', 'September', 'October',
            'November', 'December');
-    @cnumber = ('¹s', '¤@', '¤G', '¤T', '¥|', '¤­', '¤»',
-        '¤C', '¤K', '¤E', '¤Q', '¤Q¤@', '¤Q¤G');
+    @cnumber = ('é›¶', 'ä¸€', 'äºŒ', 'ä¸‰', 'å››', 'äº”', 'å…­',
+        'ä¸ƒ', 'å…«', 'ä¹', 'å', 'åä¸€', 'åäºŒ');
 
     if( $brdname = param('searchboard') ){
         dodbi(sub {
@@ -119,7 +119,7 @@ sub main
 
     # loadArchives -----------------------------------------------------------
     if( $attr{"$fn.loadArchives"} =~ /^monthly/i ){
-    # §ä´M +-1 year ¤º¦³¸ê®Æªº¤ë¥÷
+    # æ‰¾å°‹ +-1 year å…§æœ‰è³‡æ–™çš„æœˆä»½
     my($c, $y1, $m1);
     for( $c = 0, ($y1, $m1) = ($y + 1, $m) ;
          $c < 48                           ;
@@ -193,7 +193,7 @@ sub main
 
     # Calendar ---------------------------------------------------------------
     if( $attr{"$fn.loadCalendar"} ){
-    # ¨S¦³¦X¾Aªº module , ¦Û¤v¼g¤@­Ó |||b
+    # æ²’æœ‰åˆé©çš„ module , è‡ªå·±å¯«ä¸€å€‹ |||b
     my($c, $week, $day, $t, $link, $newtr);
     $c = ("<table border=\"0\" cellspacing=\"4\" cellpadding=\"0\">\n".
           "<caption class=\"calendarhead\">$emonth[$m] $y</caption>\n".
@@ -274,17 +274,17 @@ sub main
     if( $name && $comment ){
         if( $attr{"$fn.loadComments"} =~ /\@/ ){
         my $sr = new Mail::Sender{smtp => 'localhost'};
-        $sr->MailMsg({from    => '·¬«°³¡¸¨®æ <blog@bbs.kuas.edu.tw>',
+        $sr->MailMsg({from    => 'æ¥“åŸéƒ¨è½æ ¼ <blog@bbs.kuas.edu.tw>',
                   to      => $attr{"$fn.loadComments"},
-                  subject => "±zªº³¡¸¨®æ¦¬¨ì $name µ¹±zªº°jÅT",
+                  subject => "æ‚¨çš„éƒ¨è½æ ¼æ”¶åˆ° $name çµ¦æ‚¨çš„è¿´éŸ¿",
                   charset => 'big5',
                   msg     =>  "
-±zªº³¡¸¨®æ http://bbs.kuas.edu.tw/blog.pl/$brdname/$ofn
-­è¤~¦¬¨ì¨Ó¦Û $name <$mail> µ¹±zªº°jÅT
+æ‚¨çš„éƒ¨è½æ ¼ http://bbs.kuas.edu.tw/blog.pl/$brdname/$ofn
+å‰›æ‰æ”¶åˆ°ä¾†è‡ª $name <$mail> çµ¦æ‚¨çš„è¿´éŸ¿
 --------------------------------------------------------------------
 $comment
 --------------------------------------------------------------------
- (³o«Ê«H¥ó¬O¥Ñµ{¦¡¦Û°Êµo¥X, ½Ğ¤£­nª½±µ¦^½Æ³o«Ê«H^^)
+ (é€™å°ä¿¡ä»¶æ˜¯ç”±ç¨‹å¼è‡ªå‹•ç™¼å‡º, è«‹ä¸è¦ç›´æ¥å›è¤‡é€™å°ä¿¡^^)
 ",
               });
         }
@@ -320,7 +320,7 @@ $comment
     });
     }
 
-    # ¥Î Template Toolkit ¿é¥X
+    # ç”¨ Template Toolkit è¼¸å‡º
     mkdir "$BLOGCACHE/$brdname";
     $tmpl = Template->new({INCLUDE_PATH => '.',
                ABSOLUTE => 0,
@@ -449,5 +449,5 @@ main();
 1;
 
 --
-[1;36m=[37m[[36m¡É[37m:[33m¡[37mİ¢¨[m¢©¡[1;33mİ[37m:[36m¡É [31mOrigin[37m ]|[[m     [31m°[1mÊ¤[0;31mO®[1mÖ¤[0;31mß [1mprocessor.tfcis.org    [37m]|[¡[33mİ£»¡[mİ[1;36m¡É[37m:][36m=[m
-[1;36m=[m[[1;36m¡Ç[37m:[33m¡[30mİ¢ª[m¢¬¡[1;33mİ[37m:[36m¡Ç [31mAuthor[m ]|[ [1m    140.127.38.223                  [m]|[¡[1;33mİ[30m¡[37m´¡[30mİ[36m¡Ç[37m:[m][1;36m=[m
+[1;36m=[37m[[36mï¹[37m:[33m?[37mæ‘ƒ?[mâ—£?[1;33m?[37m:[36mï¹ [31mOrigin[37m ]|[[m     [31m?[1må¨[0;31mO?[1mç—[0;31m?[1mprocessor.tfcis.org    [37m]|[?[33mæŸèªª[m?[1;36mï¹[37m:][36m=[m
+[1;36m=[m[[1;36mï¹Š[37m:[33m?[30mæ‘ƒ?[mâ•±?[1;33m?[37m:[36mï¹Š [31mAuthor[m ]|[ [1m    140.127.38.223                  [m]|[?[1;33m?[30m?[37mæ’[30m?[36mï¹Š[37m:[m][1;36m=[m

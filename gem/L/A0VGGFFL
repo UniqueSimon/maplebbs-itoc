@@ -1,24 +1,24 @@
-�o�H�H: amaki.bbs@luna.twbbs.org (�ϷR�Y�Q��) �ݪO: plan
-��  �D: Re: [�\��]�׫H�զW��
-�o�H��: ��U�]�Q (Sat, 05 Jul 2003 00:24:35 +0800 (CST))  Updated: 2004/07/23
+發信人: amaki.bbs@luna.twbbs.org (羊愛吃松茸) 看板: plan
+標  題: Re: [功能]擋信白名單
+發信站: 月下夜想 (Sat, 05 Jul 2003 00:24:35 +0800 (CST))  Updated: 2004/07/23
 
-  �Y�ǤH���H��y�q�ܤj�A�ܳ��w�⯸�~���峹�B�p���B��O�q�q�H�^�ۤv�H����
+  某些人的信件流量很大，很喜歡把站外的文章、小說、日記通通寄回自己信任的
 
-  ���x�A�w��o���y�q�j�A�B�����{�i(�q�`�O�p��Ʀn��)��id�A�i�H�ĥ�����
+  站台，針對這類流量大，且站長認可(通常是私交甚好的)的id，可以採用類似
 
-  mail.acl�覡�]�p�׫H�զW�檺�\��C
+  mail.acl方式設計擋信白名單的功能。
 
-  �t�~���H�Q�׫H��A�`�`�|�߰ݬO���OPOP3�άOSMTP���I�A�]������mail.acl�b
+  另外有人被擋信後，常常會詢問是不是POP3或是SMTP掛點，也索性讓mail.acl在
 
-  Announce�̦P�B�C
+  Announce裡同步。
 
-  �b���H�L���W��W���A�ӫH�@�ߤ��ˬd�O�_�W�L�g��
+  在收信無限名單上的，來信一律不檢查是否超過篇數
 
 : global.h
 
-#define MAIL_ACLFILE    "etc/mail.acl"          /* ���H�զW�� */
-#define UNMAIL_ACLFILE  "etc/unmail.acl"        /* ���H�¦W�� */
-+ #define UNLIMIT_ACLFILE "etc/unlimit.acl"     /* ���H�L���W�� */
+#define MAIL_ACLFILE    "etc/mail.acl"          /* 收信白名單 */
+#define UNMAIL_ACLFILE  "etc/unmail.acl"        /* 收信黑名單 */
++ #define UNLIMIT_ACLFILE "etc/unlimit.acl"     /* 收信無限名單 */
 
 : bmtad.c:struct Agent
 
@@ -35,9 +35,9 @@ typedef struct Agent
 
 : bmtad.c
 
-static ACL_t *mail_root = NULL;         /* MAIL_ACLFILE �� acl_root */
-static ACL_t *unmail_root = NULL;       /* UNMAIL_ACLFILE �� acl_root */
-+ static ACL_t *unlimit_root = NULL;    /* UNLIMIT_ACLFILE �� acl_root */
+static ACL_t *mail_root = NULL;         /* MAIL_ACLFILE 的 acl_root */
+static ACL_t *unmail_root = NULL;       /* UNMAIL_ACLFILE 的 acl_root */
++ static ACL_t *unlimit_root = NULL;    /* UNLIMIT_ACLFILE 的 acl_root */
 
 : bmtad.c:main()
 
@@ -95,9 +95,9 @@ static ACL_t *unmail_root = NULL;       /* UNMAIL_ACLFILE �� acl_root */
 
 : admutil.c:a_xfile()
 
-    "���H�զW��",
-    "���H�¦W��",
-+   "���H�L���W��",
+    "收信白名單",
+    "收信黑名單",
++   "收信無限名單",
 
   ...
   ...
@@ -108,12 +108,12 @@ static ACL_t *unmail_root = NULL;       /* UNMAIL_ACLFILE �� acl_root */
 
 : etc/unlimit.acl
 
-  �s�W�@�� unlimit.acl �ɮ� (�αq BBS �W�� (0)Admin��(X)file ��]�i�H)
-  �榡�M (un)mail.acl �����ۦP
-  �b�W��W���a�}�i�L���ӫH
+  新增一個 unlimit.acl 檔案 (或從 BBS 上的 (0)Admin→(X)file 改也可以)
+  格式和 (un)mail.acl 完全相同
+  在名單上的地址可無限來信
 
-  ��: �b�L���W��W���a�}�٬O�n���q�L�¥զW�檺�ˬd�A
-      �ҥH�٬O�o�b�զW��W�A�����b�¦W��W
+  註: 在無限名單上的地址還是要先通過黑白名單的檢查，
+      所以還是得在白名單上，但不在黑名單上
 
 --
   [1;33mOrigin: luna.twbbs.org[m

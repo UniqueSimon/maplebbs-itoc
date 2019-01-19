@@ -1,12 +1,12 @@
-µo«H¤H: tandrian.bbs@ntcb.twbbs.org.tw (¤Û°ìÅ]«°), ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ­­¨îguest±b¸¹
-µo«H¯¸: ¤Û±sÅ]«° (Sat Aug 17 20:36:32 2002)               Updated: 2004/06/24
+ç™¼ä¿¡äºº: tandrian.bbs@ntcb.twbbs.org.tw (å¹»åŸŸé­”åŸ), çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] é™åˆ¶guestå¸³è™Ÿ
+ç™¼ä¿¡ç«™: å¹»å¾¡é­”åŸ (Sat Aug 17 20:36:32 2002)               Updated: 2004/06/24
 
-¡° guest Á`¤H¼Æ­­¨î
+â€» guest ç¸½äººæ•¸é™åˆ¶
 
 : config.h
 
-+ #define MAXGUEST        (3)             /* ³Ì¦h°ÑÆ[ªÌ  */
++ #define MAXGUEST        (3)             /* æœ€å¤šåƒè§€è€…  */
 
 : bbsd.c:login_user()
 
@@ -18,16 +18,16 @@
         continue;
       }
 +     if (utmp_count(cuser.userno, 0) >= MAXGUEST)
-+       login_abort("\n" STR_GUEST " ±b¸¹¤w¸gÃzº¡¤F....¦A¨£ ...");
++       login_abort("\n" STR_GUEST " å¸³è™Ÿå·²ç¶“çˆ†æ»¿äº†....å†è¦‹ ...");
       logattempt(' ', content);
       cuser.userlevel = 0;
       cuser.ufo = UFO_DEFAULT_GUEST;
 
-¡° ¦P ip ªº guest Á`¤H¼Æ­­¨î
+â€» åŒ ip çš„ guest ç¸½äººæ•¸é™åˆ¶
 
 : config.h
 
-+ #define MAXGUEST        (3)             /* ³Ì¦h°ÑÆ[ªÌ  */
++ #define MAXGUEST        (3)             /* æœ€å¤šåƒè§€è€…  */
 
 : bbsd.c:login_user()
 
@@ -39,7 +39,7 @@
         continue;
       }
 +     if (utmp_ipcount(cuser.userno, &tn_addr) >= MAXGUEST)
-+       login_abort("\n" STR_GUEST " ±b¸¹¤w¸gÃzº¡¤F....¦A¨£ ...");
++       login_abort("\n" STR_GUEST " å¸³è™Ÿå·²ç¶“çˆ†æ»¿äº†....å†è¦‹ ...");
       logattempt(' ', content);
       cuser.userlevel = 0;
       cuser.ufo = UFO_DEFAULT_GUEST;
@@ -48,7 +48,7 @@
 
 +int utmp_ipcount(int userno, u_long *address);
 
-: cache.c ©ó utmp_count() ¤U·s¼W³o¨ç¦¡
+: cache.c æ–¼ utmp_count() ä¸‹æ–°å¢é€™å‡½å¼
 
 int
 utmp_ipcount(userno, address)
@@ -74,5 +74,5 @@ utmp_ipcount(userno, address)
 }
 
 --
-  [0m  [44mùŞùùùß ùáùùùù ùİùùùù ùàùùùß[40m  [1;32m¡¼ Origin: [33m¤Û°ìÅ]«° - ntcb.twbbs.org
-  [0m  [46;1mùå  ùã ùãùùùù ùãùùùù ùãùùùå[0m  [31m¡¼ From: [36m218-32-98-sparc49.pchome.com[m
+  [0m  [44mâ•¦â•â•— â•¬â•â• â•”â•â• â• â•â•—[40m  [1;32mâ–¡ Origin: [33må¹»åŸŸé­”åŸ - ntcb.twbbs.org
+  [0m  [46;1mâ•  â•š â•šâ•â• â•šâ•â• â•šâ•â•[0m  [31mâ–¡ From: [36m218-32-98-sparc49.pchome.com[m

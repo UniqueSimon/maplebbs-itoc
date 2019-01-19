@@ -1,69 +1,69 @@
-µo«H¤H: tsaikd.bbs@bbs.cs.nchu.edu.tw (¤d¤H±Ù) ¬ÝªO: plan
-¼Ð  ÃD: [·s¼W¥\¯à] edit.c ²Å¸¹¿é¤J¤u¨ãµøµ¡ª©
-µo«H¯¸: ¤¤¿³¸ê¬ì (2004/10/02 Sat 21:03:49)                Updated: 2004/10/02
+ç™¼ä¿¡äºº: tsaikd.bbs@bbs.cs.nchu.edu.tw (åƒäººæ–¬) çœ‹æ¿: plan
+æ¨™  é¡Œ: [æ–°å¢žåŠŸèƒ½] edit.c ç¬¦è™Ÿè¼¸å…¥å·¥å…·è¦–çª—ç‰ˆ
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (2004/10/02 Sat 21:03:49)                Updated: 2004/10/02
 
-: maple/edit.c : ­«¼ginput_tools()
+: maple/edit.c : é‡å¯«input_tools()
 
 #ifdef INPUT_TOOLS
 
 #ifdef HAVE_POPUPMENU
 static void
-input_tools()   /* tsaikd.041002: ²Å¸¹¿é¤J¤u¨ãµøµ¡ª© */
+input_tools()   /* tsaikd.041002: ç¬¦è™Ÿè¼¸å…¥å·¥å…·è¦–çª—ç‰ˆ */
 {
-  int ch, ch2, ch3;             /* Á`¦@­n¿ï¤T¦¸ */
+  int ch, ch2, ch3;             /* ç¸½å…±è¦é¸ä¸‰æ¬¡ */
 
   char *menu[] = {"1Q",
-      "1 ¬A²Å¤è¶ô", "2 ½u±øªí®Ø", "3 ¼Æ¾Ç²Å¸¹",
-      "4 ¹Ï®×¼Æ¦r", "5 §ÆÃ¾¦r¥À", "6 ª`­µ¼ÐÂI",
-      "Q ¨ú®ø", NULL};
+      "1 æ‹¬ç¬¦æ–¹å¡Š", "2 ç·šæ¢è¡¨æ¡†", "3 æ•¸å­¸ç¬¦è™Ÿ",
+      "4 åœ–æ¡ˆæ•¸å­—", "5 å¸Œè‡˜å­—æ¯", "6 æ³¨éŸ³æ¨™é»ž",
+      "Q å–æ¶ˆ", NULL};
 
-  char *ansi1[] = {"1Q",       /* 1 ¬A²Å¤è¶ô */
-      "1 ¢b¢c¢d¢e¢f¢g¢h¢i¢¨¢©",
-      "2 ¢j¢k¢l¢m¢n¢o¢p¢ª¢«¡¼",
-      "3 ¡]¡^¡a¡b¡e¡f¡i¡j¡m¡n",
-      "4 ¡q¡r¡u¡v¡y¡z¡k¡l¡o¡p",
-      "5 ¡_¡`¡c¡d¡g¡h¡w¡x¡{¡|",
-      "Q ¨ú®ø", NULL};
+  char *ansi1[] = {"1Q",       /* 1 æ‹¬ç¬¦æ–¹å¡Š */
+      "1 â–â–‚â–ƒâ–„â–…â–†â–‡â–ˆâ—¢â—£",
+      "2 â–â–Žâ–â–Œâ–‹â–Šâ–‰â—¥â—¤â–¡",
+      "3 ï¼ˆï¼‰ï½›ï½ã€”ã€•ã€ã€‘ã€Šã€‹",
+      "4 ã€ˆã€‰ã€Œã€ã€Žã€ï¸»ï¸¼ï¸½ï¸¾",
+      "5 ï¸µï¸¶ï¸·ï¸¸ï¸¹ï¸ºï¹ï¹‚ï¹ƒï¹„",
+      "Q å–æ¶ˆ", NULL};
 
-  char *ansi2[] = {"1Q",       /* 2 ½u±øªí®Ø */
-      "1 ùïùðùñùõùöù÷¢w¢xùù¡ü",
-      "2 ¢z¢s¢{¢u¢q¢t¢|¢r¢}¢®",
-      "3 ùÝùÞùßùàùáùâùãùäùå¡\\",
-      "4 ùæùèùéùëùìùî¢~¢¡¢¢¢£",
-      "5 ¢b¢v¢j¢y¢¬¢­¡ö¡÷¡ô¡õ",
-      "Q ¨ú®ø", NULL};
+  char *ansi2[] = {"1Q",       /* 2 ç·šæ¢è¡¨æ¡† */
+      "1 â•“â•¥â•–â•™â•¨â•œâ”€â”‚â•âˆ¥",
+      "2 â”Œâ”¬â”â”œâ”¼â”¤â””â”´â”˜â•³",
+      "3 â•”â•¦â•—â• â•¬â•£â•šâ•©â•ï¹\",
+      "4 â•’â••â•žâ•¡â•˜â•›â•­â•®â•°â•¯",
+      "5 â–â–”â–â–•â•±â•²â†â†’â†‘â†“",
+      "Q å–æ¶ˆ", NULL};
 
-  char *ansi3[] = {"1Q",       /* 3 ¼Æ¾Ç²Å¸¹ */
-      "1 ¡Ï¡Ð¡Ñ¡Ò¡Ó¡×¡Õ¡Ö¡Ø¡Ù",
-      "2 ¡Ú¡Ý¡ã¡î¡ï¡ä¡å¡Û£k¡Ô",
-      "3 £U£S¡ì¡í¡ç¡æ¡è¡é£G¢X",
-      "4 ¡­¡®¡¯¡°¢I¢C¢D¢F¢G¢H",
-      "5 ¢J¢K¢P¢Q¢R¢T¢U¢V¢W¡±",
-      "Q ¨ú®ø", NULL};
+  char *ansi3[] = {"1Q",       /* 3 æ•¸å­¸ç¬¦è™Ÿ */
+      "1 ï¼‹ï¼Ã—Ã·Â±ï¼ï¼œï¼žâ‰¦â‰§",
+      "2 â‰ â‰¡ï½žâˆµâˆ´âˆ©âˆªâˆžÏ€âˆš",
+      "3 Î£Î âˆ«âˆ®âˆ âŠ¥âˆŸâŠ¿Î”Â°",
+      "4 ï¼ƒï¼†ï¼Šâ€»ï¼ ï¼„ï¿¥ï¿ ï¿¡ï¼…",
+      "5 â„ƒâ„‰ãŽœãŽãŽžãŽ¡ãŽŽãŽã„Â§",
+      "Q å–æ¶ˆ", NULL};
 
-  char *ansi4[] = {"1Q",       /* 4 ¹Ï®×¼Æ¦r */
-      "1 ¡³¡´¡µ¡¶¡·¡¸¡º¡»¡¼¡½",
-      "2 ¡¾¡¿¡À¡ò¡ó¤Q¢Í¤Ê¡ñ¡ð",
-      "3 ¢¯¢°¢±¢²¢³¢´¢µ¢¶¢·¢¸",
-      "4 ¢¹¢º¢»¢¼¢½¢¾¢¿¢À¢Á¢Â",
-      "5 ÆµÆ¶Æ·Æ¸Æ¹ÆºÆ»Æ¼Æ½Æ¾",
-      "Q ¨ú®ø", NULL};
+  char *ansi4[] = {"1Q",       /* 4 åœ–æ¡ˆæ•¸å­— */
+      "1 â—‹â—â–³â–²â—Žâ˜†â—‡â—†â–¡â– ",
+      "2 â–½â–¼ãŠ£âŠ•âŠ™åå„å…â™‚â™€",
+      "3 ï¼ï¼‘ï¼’ï¼“ï¼”ï¼•ï¼–ï¼—ï¼˜ï¼™",
+      "4 â… â…¡â…¢â…£â…¤â…¥â…¦â…§â…¨â…©",
+      "5 ??????????",
+      "Q å–æ¶ˆ", NULL};
 
-  char *ansi5[] = {"1Q",       /* 5 §ÆÃ¾¦r¥À */
-      "1 £D£E£F£G£H£I£J£K£L£M",
-      "2 £N£O£P£Q£R£S£T£U£V£W",
-      "3 £X£Y£Z£[£\\£]£^£_£`£a",
-      "4 £b£c£d£e£f£g£h£i£j£k",
-      "5 £l£m£n£o£p£q£r£s¢A¢B",
-      "Q ¨ú®ø", NULL};
+  char *ansi5[] = {"1Q",       /* 5 å¸Œè‡˜å­—æ¯ */
+      "1 Î‘Î’Î“Î”Î•Î–Î—Î˜Î™Îš",
+      "2 Î›ÎœÎÎžÎŸÎ Î¡Î£Î¤Î¥",
+      "3 Î¦Î§Î¨Î©Î±\Î²Î³Î´ÎµÎ¶",
+      "4 Î·Î¸Î¹ÎºÎ»Î¼Î½Î¾Î¿Ï€",
+      "5 ÏÏƒÏ„Ï…Ï†Ï‡ÏˆÏ‰âˆ•ï¹¨",
+      "Q å–æ¶ˆ", NULL};
 
-  char *ansi6[] = {"1Q",       /* 6 ª`­µ¼ÐÂI */
-      "1 £t£u£v£w£x£y£z£{£|£}",
-      "2 £~£¡£¢£££¤£¥£¦£§£¨£©",
-      "3 £ª£«£¬£­£®£¯£°£±£²£³",
-      "4 £´£µ£¶£·£¸£¹£º£½£¾£¿",
-      "5 £»¡A¡C¡B¡I¡H¡G¡F¡u¡v",
-      "Q ¨ú®ø", NULL};
+  char *ansi6[] = {"1Q",       /* 6 æ³¨éŸ³æ¨™é»ž */
+      "1 ã„…ã„†ã„‡ã„ˆã„‰ã„Šã„‹ã„Œã„ã„Ž",
+      "2 ã„ã„ã„‘ã„’ã„“ã„”ã„•ã„–ã„—ã„˜",
+      "3 ã„™ã„šã„›ã„œã„ã„žã„Ÿã„ ã„¡ã„¢",
+      "4 ã„£ã„¤ã„¥ã„¦ã„§ã„¨ã„©ËŠË‡Ë‹",
+      "5 Ë™ï¼Œã€‚ã€ï¼ï¼Ÿï¼šï¼›ã€Œã€",
+      "Q å–æ¶ˆ", NULL};
 
   char **menu_ansi[] = {ansi1, ansi2, ansi3, ansi4, ansi5, ansi6};
 
@@ -72,39 +72,39 @@ input_tools()   /* tsaikd.041002: ²Å¸¹¿é¤J¤u¨ãµøµ¡ª© */
   char *tmp_menu[] = {"0Q",
     buf[0], buf[1], buf[2], buf[3], buf[4],
     buf[5], buf[6], buf[7], buf[8], buf[9],
-    "Q ¨ú®ø",NULL};
+    "Q å–æ¶ˆ",NULL};
 
   char *str;
   int i;
 
-  /* ¿ï¤ÀÃþ */
-  ch = pans(5, 25, "²Å¸¹¿é¤J¤u¨ã", menu);
-  if (ch == 'q')       /* ¨ú®ø´Nª½±µ¸õ¦^½s¿èµe­± */
+  /* é¸åˆ†é¡ž */
+  ch = pans(5, 25, "ç¬¦è™Ÿè¼¸å…¥å·¥å…·", menu);
+  if (ch == 'q')       /* å–æ¶ˆå°±ç›´æŽ¥è·³å›žç·¨è¼¯ç•«é¢ */
     return;
 
   ch2 = pans(5, 19, &menu[ch - '0'][2], menu_ansi[ch - '1']);
-  if (ch2 == 'q')      /* ¨ú®ø´Nª½±µ¸õ¦^½s¿èµe­± */
+  if (ch2 == 'q')      /* å–æ¶ˆå°±ç›´æŽ¥è·³å›žç·¨è¼¯ç•«é¢ */
     return;
 
   str = &menu_ansi[ch - '1'][ch2 - '0'][2];
 
-  /* ²Ä¤T¼h¬O¨Ì²Ä¤G¼h©Ò¿ï¾Üªº¨Ó¶ñ¤J */
-  for (i = 0; i < 10; i++)    /* ¨C­Ó¤¤¤å¦r¬O 2 char */
+  /* ç¬¬ä¸‰å±¤æ˜¯ä¾ç¬¬äºŒå±¤æ‰€é¸æ“‡çš„ä¾†å¡«å…¥ */
+  for (i = 0; i < 10; i++)    /* æ¯å€‹ä¸­æ–‡å­—æ˜¯ 2 char */
     sprintf(buf[i], "%d %2.2s", i, str + i * 2);
 
-  ch3 = pans(5, 28, "¿é¤J²Å¸¹", tmp_menu);
-  if (ch3 == 'q')      /* ¨ú®ø´Nª½±µ¸õ¦^½s¿èµe­± */
+  ch3 = pans(5, 28, "è¼¸å…¥ç¬¦è™Ÿ", tmp_menu);
+  if (ch3 == 'q')      /* å–æ¶ˆå°±ç›´æŽ¥è·³å›žç·¨è¼¯ç•«é¢ */
     return;
   str = &tmp_menu[ch3 - '0' + 1][2];
 
-  ve_char(*str);            /* ¦L¥X¤G­Ó char ¤¤¤å¦r */
+  ve_char(*str);            /* å°å‡ºäºŒå€‹ char ä¸­æ–‡å­— */
   ve_char(*++str);
 }
 
 + #else           /* HAVE_POPUPMENU */
 
 static void
-input_tools()   /* itoc.000319: ²Å¸¹¿é¤J¤u¨ã */
+input_tools()   /* itoc.000319: ç¬¦è™Ÿè¼¸å…¥å·¥å…· */
 {
 
 ...
@@ -116,5 +116,5 @@ input_tools()   /* itoc.000319: ²Å¸¹¿é¤J¤u¨ã */
 #endif
 
 --
- [1m[42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m csNCHU.twbbs.org [m
- [1m[44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mtsaikd [30m±q [35m140.116.104.202 [30mµoªí[m
+ [1m[42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m csNCHU.twbbs.org [m
+ [1m[44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mtsaikd [30må¾ž [35m140.116.104.202 [30mç™¼è¡¨[m

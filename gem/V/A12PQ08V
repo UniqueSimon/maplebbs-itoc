@@ -1,10 +1,10 @@
-�o�H�H: guessi.bbs@bbs.wretch.cc (�S) �ݪO: plan
-��  �D: [�\��] �𰣶��m�ϥΪ�
-�o�H��: �L�W�p�� (2007/01/04 Thu 01:52:42)                Updated: 2007/01/04
+發信人: guessi.bbs@bbs.wretch.cc (沒) 看板: plan
+標  題: [功能] 踢除閒置使用者
+發信站: 無名小站 (2007/01/04 Thu 01:52:42)                Updated: 2007/01/04
 
-�𰣶��m�����L�[���ϥΪ�
+踢除閒置掛站過久的使用者
 
-: src/maple/ulist.c �s�W ulist_kick_idle()
+: src/maple/ulist.c 新增 ulist_kick_idle()
 
 static int
 ulist_kick_idle(xo)
@@ -18,7 +18,7 @@ ulist_kick_idle(xo)
   UTMP *up;
   char tmp[64], buf[64];
 
-  if (HAS_PERM(PERM_ALLADMIN) && vans("�𰣶��m(Y/N)�H[N] ") == 'y')
+  if (HAS_PERM(PERM_ALLADMIN) && vans("踢除閒置(Y/N)？[N] ") == 'y')
   {
     pos = 0;
     max = xo->max;
@@ -29,9 +29,9 @@ ulist_kick_idle(xo)
     {
       up = ulist_pool[pos];
 #ifdef DETAIL_IDLETIME
-      if (now - up->idle_time >= 1800) /* ���m1800��(�T�Q����) */
+      if (now - up->idle_time >= 1800) /* 閒置1800秒(三十分鐘) */
 #else
-      if (up->idle_time >= 30)  /* ���m1800��(�T�Q����) */
+      if (up->idle_time >= 30)  /* 閒置1800秒(三十分鐘) */
 #endif
       {
         pid = up->pid;
@@ -44,7 +44,7 @@ ulist_kick_idle(xo)
         {
           sprintf(buf, "%s (%s)", up->userid, up->username);
           blog("KICK", buf);
-          sprintf(tmp, "��[%s]�ϥΪ�", up->userid);
+          sprintf(tmp, "踢除[%s]使用者", up->userid);
           vmsg(tmp);
         }
       }
@@ -57,8 +57,8 @@ ulist_kick_idle(xo)
 
 
 --
-[1;30;40m�ҧL�̤����������δc���G���D�̤��B�g�l�~�h�Q���ΧL�h�Q�k�L�̤��������D�g�l[m
-[1;30m�������o�w[37m[30m�ӥΤ���H���W�ӦӤ����Ӭ����̬O�ֱ��H�Ҽֱ��H�̫h���i�o�ө�ѤU
-[m[1;30m�o�N�Ʃ|�����Ʃ|�k���N�x�~���W�N�x�~�k���H��§�B�����H�����H�s�d�_���ԳӥH[m
-[1;30m��§�B���D�`[37m�L�W[30m�����p�ѤU����ګJ���Y��u���U���N�ۻ��Ѧa�ۦX�H�����S����[m
-[1;30m���O�Ӧۧ��l��W�W��J���ҥ�N�����i�H��[37m134-208-34-179.ndhu.edu.tw[30m��[m
+[1;30;40m夫兵者不祥之器物或惡之故有道者不處君子居則貴左用兵則貴右兵者不祥之器非君子[m
+[1;30m之器不得已[37m[30m而用之恬淡為上勝而不美而美之者是樂殺人夫樂殺人者則不可得志於天下
+[m[1;30m矣吉事尚左凶事尚右偏將軍居左上將軍居右言以喪禮處之殺人之眾以哀悲泣之戰勝以[m
+[1;30m喪禮處之道常[37m無名[30m樸雖小天下莫能臣侯王若能守之萬物將自賓天地相合以降甘露民莫[m
+[1;30m之令而自均始制有名名亦既有夫亦將知止知止可以不[37m134-208-34-179.ndhu.edu.tw[30m海[m

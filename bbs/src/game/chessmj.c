@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* chessmj.c      ( NTHU CS MapleBBS Ver 3.10 )          */
 /*-------------------------------------------------------*/
-/* target : ¶H´Ñ³Â±N¹CÀ¸                                 */
+/* target : è±¡æ£‹éº»å°‡éŠæˆ²                                 */
 /* create : 98/07/29                                     */
 /* update : 05/06/30                                     */
 /* author : weiren@mail.eki.com.tw                       */
@@ -16,13 +16,13 @@
 #ifdef HAVE_GAME
 
 
-static int host_card[5];	/* ¹q¸£(²ø®a) ªºµP */
-static int guest_card[5];	/* ª±®aªºµP */
-static int throw[50];		/* ³Q¥á±óªºµP¡A¦h¯d¤@¨Ç¦ì¸m©ñ³Q¦YªºµP */
+static int host_card[5];	/* é›»è…¦(èŠå®¶) çš„ç‰Œ */
+static int guest_card[5];	/* ç©å®¶çš„ç‰Œ */
+static int throw[50];		/* è¢«ä¸Ÿæ£„çš„ç‰Œï¼Œå¤šç•™ä¸€äº›ä½ç½®æ”¾è¢«åƒçš„ç‰Œ */
 
 static int flag;
 static int tflag;
-static int selftouch;		/* ¦ÛºN */
+static int selftouch;		/* è‡ªæ‘¸ */
 
 static int cnum[32] = 
 {
@@ -41,8 +41,8 @@ static int group[14] =
 static char *chess[15] = 
 {
   "\033[1;30m  \033[m",
-  "\033[1;31m«Ó\033[m", "\033[1;31m¥K\033[m", "\033[1;31m¬Û\033[m", "\033[1;31mÚÏ\033[m", "\033[1;31mØX\033[m", "\033[1;31m¬¶\033[m", "\033[1;31m§L\033[m",
-  "\033[1;37m±N\033[m", "\033[1;37m¤h\033[m", "\033[1;37m¶H\033[m", "\033[1;37m¨®\033[m", "\033[1;37m°¨\033[m", "\033[1;37m¥]\033[m", "\033[1;37m¨ò\033[m"
+  "\033[1;31må¸¥\033[m", "\033[1;31mä»•\033[m", "\033[1;31mç›¸\033[m", "\033[1;31mç¡¨\033[m", "\033[1;31må‚Œ\033[m", "\033[1;31mç‚®\033[m", "\033[1;31må…µ\033[m",
+  "\033[1;37må°‡\033[m", "\033[1;37må£«\033[m", "\033[1;37mè±¡\033[m", "\033[1;37mè»Š\033[m", "\033[1;37mé¦¬\033[m", "\033[1;37måŒ…\033[m", "\033[1;37må’\033[m"
 };
 
 
@@ -51,9 +51,9 @@ out_song(money)
   int money;
 {
   move(b_lines - 2, 0);
-  prints("\033[1;37;44m²{¦³Äw½X: %-20d", cuser.money);
+  prints("\033[1;37;44mç¾æœ‰ç±Œç¢¼: %-20d", cuser.money);
   if(money)
-    prints("©ãª`ª÷ÃB: %-38d\033[m", money);
+    prints("æŠ¼æ³¨é‡‘é¡: %-38d\033[m", money);
   else
     outs("                                                \033[m");
 }
@@ -65,7 +65,7 @@ print_sign(host)
 {
   int y = (tflag-1) / 2 * 4; 
   move((host * 3 + 8), y);
-  outs("¢~¡´¢¡");
+  outs("â•­â—â•®");
 }
 
 
@@ -74,9 +74,9 @@ print_chess(x, y)
   int x, y;
 {
   move(x, y);
-  outs("¢~¢w¢¡");
+  outs("â•­â”€â•®");
   move(x + 2, y);
-  outs("¢¢¢w¢£");
+  outs("â•°â”€â•¯");
 }
 
 
@@ -101,13 +101,13 @@ print_all(cards, x)
   clrtoeol();
 
   for (i = 0; i < 4; i++)
-    prints("¢x%s¢x", chess[cards[i]]);
+    prints("â”‚%sâ”‚", chess[cards[i]]);
 
   if (cards[4] == 0)
     clear_chess(x, 24);
   else
   {
-    prints("¢x%s¢x", chess[cards[4]]);
+    prints("â”‚%sâ”‚", chess[cards[4]]);
     print_chess(x, 24);
   }
 }
@@ -134,10 +134,10 @@ print_throw(host)
   int x = 11 - host * 3;
 
   move(x + 1, 0);
-  outs("¢x");
+  outs("â”‚");
 
   for(; host < tflag; host += 2)
-    prints("%s¢x", chess[throw[host] & 0x0f]);
+    prints("%sâ”‚", chess[throw[host] & 0x0f]);
   
   print_chess(x, (host-2) / 2 * 4);
 }
@@ -207,17 +207,17 @@ testthree(a, b, c)
     b = tmp;
   }
   if (a == 1 && b == 2 && c == 3)
-    return 1;			/* «Ó¥K¬Û */
+    return 1;			/* å¸¥ä»•ç›¸ */
   if (a == 4 && b == 5 && c == 6)
-    return 1;			/* ÚÏØX¬¶ */
+    return 1;			/* ç¡¨å‚Œç‚® */
   if (a == 8 && b == 9 && c == 10)
-    return 1;			/* ±N¤h¶H */
+    return 1;			/* å°‡å£«è±¡ */
   if (a == 11 && b == 12 && c == 13)
-    return 1;			/* ¨®°¨¥] */
+    return 1;			/* è»Šé¦¬åŒ… */
   if (a == 7 && b == 7 && c == 7)
-    return 1;			/* §L§L§L */
+    return 1;			/* å…µå…µå…µ */
   if (a == 14 && b == 14 && c == 14)
-    return 1;			/* ¨ò¨ò¨ò */
+    return 1;			/* å’å’å’ */
   return 0;
 }
 
@@ -262,7 +262,7 @@ testlisten(set)
       j++;
   }
   if (j == 0)
-    return 1;			/* ¥|¤ä§L */
+    return 1;			/* å››æ”¯å…µ */
 
   j = 0;
   for (i = 0; i < 4; i++)
@@ -271,7 +271,7 @@ testlisten(set)
       j++;
   }
   if (j == 0)
-    return 1;			/* ¥|¤ä¨ò */
+    return 1;			/* å››æ”¯å’ */
 
   if (testthree(set[1], set[2], set[3]) != 0)
     return 1;
@@ -280,14 +280,14 @@ testlisten(set)
   if (testthree(set[0], set[1], set[3]) != 0)
     return 1;
   if (testthree(set[0], set[1], set[2]) != 0)
-    return 1;			/* ¤T¤ä¦¨§Î«hÅ¥ */
+    return 1;			/* ä¸‰æ”¯æˆå½¢å‰‡è½ */
 
   for (i = 0; i < 3; i++)
   {
     for (j = i + 1; j < 4; j++)
     {
       if (testpair(set[i], set[j]))
-      {				/* ¨â¤ä¦³­F¬İ¥t¨â¤ä¦³¨S¦³Å¥ */
+      {				/* å…©æ”¯æœ‰èƒšçœ‹å¦å…©æ”¯æœ‰æ²’æœ‰è½ */
 	m = 0;
 	for (k = 0; k < 4; k++)
 	{
@@ -297,7 +297,7 @@ testlisten(set)
 	    m++;
 	  }
 	  if (group[set[i]] == 3 || group[set[i]] == 6)
-	    mm = 1;		/* ¦³­Fªº¬O§L©Î¨ò */
+	    mm = 1;		/* æœ‰èƒšçš„æ˜¯å…µæˆ–å’ */
 	}
       }
     }
@@ -305,7 +305,7 @@ testlisten(set)
   if (m != 0)
   {
     if ((group[p[0]] == group[p[1]]) && (p[0] != p[1]))
-      return 1;			/* ¨â¤ä¬O pair ¥t¨â¤ä¦³Å¥ */
+      return 1;			/* å…©æ”¯æ˜¯ pair å¦å…©æ”¯æœ‰è½ */
     if ((group[p[0]] == group[p[1]] == 3) || (group[p[0]] == group[p[1]] == 6))
       return 1;
     if (testpair(p[0], p[1]) && mm == 1)
@@ -315,7 +315,7 @@ testlisten(set)
 }
 
 static int
-diecard(a)			/* ¶Ç¶i¤@±iµP, ¬İ¬O§_µ´±i */
+diecard(a)			/* å‚³é€²ä¸€å¼µç‰Œ, çœ‹æ˜¯å¦çµ•å¼µ */
   int a;
 {
   int i, k = 0;
@@ -329,7 +329,7 @@ diecard(a)			/* ¶Ç¶i¤@±iµP, ¬İ¬O§_µ´±i */
       return 1;
   }
   if ((a == 7 || a == 14) && k == 4)
-    return 1;			/* §L¨òµ´±i */
+    return 1;			/* å…µå’çµ•å¼µ */
   if (k == 1 && (a != 7 && a != 14))
     return 1;
   return 0;
@@ -340,9 +340,9 @@ static inline int
 any_throw()
 {
   int i, j, k = 0, set[5] = {0}, tmp[4] = {0};
-  int point[5] = {0};	/* point[5] ¬°µû¤À¨t²Î, ¬İ¥á­ş±iµP¤ñ¸û¦n, ¤À¼Æ°ªªºÀu¥ı¥á */
+  int point[5] = {0};	/* point[5] ç‚ºè©•åˆ†ç³»çµ±, çœ‹ä¸Ÿå“ªå¼µç‰Œæ¯”è¼ƒå¥½, åˆ†æ•¸é«˜çš„å„ªå…ˆä¸Ÿ */
 
-  /* ´ú¸Õ±N¤â¤W¤­¤ä®³±¼¤@¤ä */
+  /* æ¸¬è©¦å°‡æ‰‹ä¸Šäº”æ”¯æ‹¿æ‰ä¸€æ”¯ */
   for (i = 0; i < 5; i++)
   {
     k = 0;
@@ -354,11 +354,11 @@ any_throw()
 	k++;
       }
     }
-    if (testlisten(tmp))	/* ­Y³Ñ¾lªº¥|¤ä¤wÅ¥µP, ¥á¦hªº¨º±i */
+    if (testlisten(tmp))	/* è‹¥å‰©é¤˜çš„å››æ”¯å·²è½ç‰Œ, ä¸Ÿå¤šçš„é‚£å¼µ */
     {
-      point[i] += 10;		/* ¦³Å¥´N¥[ 10 ¤À */
+      point[i] += 10;		/* æœ‰è½å°±åŠ  10 åˆ† */
       if (diecard(host_card[i]))
-	point[i] += 5;		/* µ´±i§ó¸Ó¥á */
+	point[i] += 5;		/* çµ•å¼µæ›´è©²ä¸Ÿ */
       for (k = 0; k < 4; k++)
       {
 	if (((host_card[i] == tmp[k])
@@ -367,30 +367,30 @@ any_throw()
 	  && host_card[i] != 7 && host_card[i] != 14)
 	  point[i] += 10;
       }
-      /* ¨®°¨¥]¥], ¥]¸Ó¥á */
+      /* è»Šé¦¬åŒ…åŒ…, åŒ…è©²ä¸Ÿ */
     }
   }
   k = 0;
-  for (i = 0; i < 5; i++)	/* ºâ¦³´X¤ä§L */
+  for (i = 0; i < 5; i++)	/* ç®—æœ‰å¹¾æ”¯å…µ */
   {
     if (host_card[i] == 7)
       k++;
   }
-  if (k == 3)			/* ¦³¤T¤ä§L: ³Ñ¤U¤G¤ä¤£¬O§Lªº¦U¥[ 5 ¤À */
+  if (k == 3)			/* æœ‰ä¸‰æ”¯å…µ: å‰©ä¸‹äºŒæ”¯ä¸æ˜¯å…µçš„å„åŠ  5 åˆ† */
   {
     for (i = 0; i < 5; i++)
       if (host_card[i] != 7)
 	point[i] += 5;
   }
-  else if (k == 4)		/* ¦³¥|¤ä§Lªº¸Ü */
+  else if (k == 4)		/* æœ‰å››æ”¯å…µçš„è©± */
   {
-    if (diecard(7))		/* ¦ı³Ì«á¤@¤ä§L¤wµ´±i: ¥á§L */
+    if (diecard(7))		/* ä½†æœ€å¾Œä¸€æ”¯å…µå·²çµ•å¼µ: ä¸Ÿå…µ */
     {
       for (i = 0; i < 5; i++)
 	if (host_card[i] == 7)
 	  point[i] += 999;
     }
-    else			/* ³Ì«á¤@¤ä§L©|¥¼µ´±i: ¥á¤£¬O§Lªº¨º¤ä */
+    else			/* æœ€å¾Œä¸€æ”¯å…µå°šæœªçµ•å¼µ: ä¸Ÿä¸æ˜¯å…µçš„é‚£æ”¯ */
     {
       for (i = 0; i < 5; i++)
 	if (host_card[i] != 7)
@@ -398,26 +398,26 @@ any_throw()
     }
   }
   k = 0;
-  for (i = 0; i < 5; i++)	/* ºâ¦³´X¤ä¨ò */
+  for (i = 0; i < 5; i++)	/* ç®—æœ‰å¹¾æ”¯å’ */
   {
     if (host_card[i] == 14)
       k++;
   }
-  if (k == 3)			/* ¦³¤T¤ä¨ò: ³Ñ¤U¤G¤ä¤£¬O¨òªº¦U¥[ 5 ¤À */
+  if (k == 3)			/* æœ‰ä¸‰æ”¯å’: å‰©ä¸‹äºŒæ”¯ä¸æ˜¯å’çš„å„åŠ  5 åˆ† */
   {
     for (i = 0; i < 5; i++)
       if (host_card[i] != 14)
 	point[i] += 5;
   }
-  else if (k == 4)		/* ¦³¥|¤ä¨òªº¸Ü */
+  else if (k == 4)		/* æœ‰å››æ”¯å’çš„è©± */
   {
-    if (diecard(14))		/* ¦ı³Ì«á¤@¤ä¨ò¤wµ´±i: ¥á¨ò */
+    if (diecard(14))		/* ä½†æœ€å¾Œä¸€æ”¯å’å·²çµ•å¼µ: ä¸Ÿå’ */
     {
       for (i = 0; i < 5; i++)
 	if (host_card[i] == 14)
 	  point[i] += 999;
     }
-    else			/* ³Ì«á¤@¤ä¨ò©|¥¼µ´±i: ¥á¤£¬O¨òªº¨º¤ä */
+    else			/* æœ€å¾Œä¸€æ”¯å’å°šæœªçµ•å¼µ: ä¸Ÿä¸æ˜¯å’çš„é‚£æ”¯ */
     {
       for (i = 0; i < 5; i++)
 	if (host_card[i] != 14)
@@ -430,7 +430,7 @@ any_throw()
     if (host_card[i] == 7)
       point[i] -= 1;
     if (host_card[i] == 14)
-      point[i] -= 1;		/* §L¨òºÉ¶q¤£¥á */
+      point[i] -= 1;		/* å…µå’ç›¡é‡ä¸ä¸Ÿ */
   }
 
   for (i = 0; i < 4; i++)
@@ -440,17 +440,17 @@ any_throw()
       if (group[host_card[i]] == group[host_card[j]])
       {
 	point[i] -= 2;
-	point[j] -= 2;		/* ®t¤@¤ä¦¨¤Tªº¤£¥á */
+	point[j] -= 2;		/* å·®ä¸€æ”¯æˆä¸‰çš„ä¸ä¸Ÿ */
       }
       if (testpair(host_card[i], host_card[j]))
       {
 	point[i] -= 2;
-	point[j] -= 2;		/* ¦³­Fªº¤£¥á */
+	point[j] -= 2;		/* æœ‰èƒšçš„ä¸ä¸Ÿ */
       }
     }
   }
 
-#if 1	/* ­A½â, ¦pªG¥á¤F·|³Q­J´N¦º³£¤£¥á, ­A½â¾÷²v 1/2 */
+#if 1	/* è€è³¤, å¦‚æœä¸Ÿäº†æœƒè¢«èƒ¡å°±æ­»éƒ½ä¸ä¸Ÿ, è€è³¤æ©Ÿç‡ 1/2 */
   for (i = 0; i < 4; i++)
     set[i] = guest_card[i];
   for (i = 0; i < 5; i++)
@@ -461,7 +461,7 @@ any_throw()
   }
 #endif
 
-  /* §ä¥X¤À¼Æ³Ì°ªªº */
+  /* æ‰¾å‡ºåˆ†æ•¸æœ€é«˜çš„ */
   j = 0;
   k = point[0];
   for (i = 1; i < 5; i++)
@@ -478,16 +478,16 @@ any_throw()
 
 static int
 count_tai(set)
-  int set[5];		/* Ä¹ªº¤­±iµP */
+  int set[5];		/* è´çš„äº”å¼µç‰Œ */
 {
   char *name[10] = 
   {
-    "±N«Ó¹ï", "±N¤h¶H", "«Ó¥K¬Û",
-    "¤­§L¦XÁa", "¤­¨ò³s¾î", "¤T§L¤J¦C", "¤T¨ò¤J¦C",
-    "®ü©³", "¤Ñ­J", "¦ÛºN"
+    "å°‡å¸¥å°", "å°‡å£«è±¡", "å¸¥ä»•ç›¸",
+    "äº”å…µåˆç¸±", "äº”å’é€£æ©«", "ä¸‰å…µå…¥åˆ—", "ä¸‰å’å…¥åˆ—",
+    "æµ·åº•", "å¤©èƒ¡", "è‡ªæ‘¸"
   };
 
-  int tai[10] = 	/* ¥x¼Æ¹ïÀ³¤W­±ªº±Ô­z */
+  int tai[10] = 	/* å°æ•¸å°æ‡‰ä¸Šé¢çš„æ•˜è¿° */
   {
     2, 1, 1,
     5, 5, 2, 2,
@@ -498,16 +498,16 @@ count_tai(set)
   int i, j, k, sum;
 
   if (selftouch)
-    yes[9] = 1;			/* ¦ÛºN */
+    yes[9] = 1;			/* è‡ªæ‘¸ */
 
   if (flag == 32)
-    yes[7] = 1;			/* ®ü©³ */
+    yes[7] = 1;			/* æµ·åº• */
   else if (tflag <= 1)
-    yes[8] = 1;			/* ¤Ñ­J */
+    yes[8] = 1;			/* å¤©èƒ¡ */
 
   for (i = 0, j = 0, k = 0; i < 5; i++)
   {
-    /* ºâ «Ó/±N ªº¤ä¼Æ */
+    /* ç®— å¸¥/å°‡ çš„æ”¯æ•¸ */
     if (set[i] == 1)
       j++;
     if (set[i] == 8)
@@ -516,38 +516,38 @@ count_tai(set)
   if (j)
   {
     if (k)
-      yes[0] = 1;		/* ¦³«Ó¤S¦³±N´N¬O ±N«Ó¹ï */
+      yes[0] = 1;		/* æœ‰å¸¥åˆæœ‰å°‡å°±æ˜¯ å°‡å¸¥å° */
     else
-      yes[2] = 1;		/* ¦³«Ó¨S¦³±N´N¬O «Ó¥K¬Û */
+      yes[2] = 1;		/* æœ‰å¸¥æ²’æœ‰å°‡å°±æ˜¯ å¸¥ä»•ç›¸ */
   }
   else if (k)
   {
-    yes[1] = 1;			/* ¦³±N¨S¦³«Ó´N¬O ±N¤h¶H */
+    yes[1] = 1;			/* æœ‰å°‡æ²’æœ‰å¸¥å°±æ˜¯ å°‡å£«è±¡ */
   }
 
   for (i = 0, j = 0; i < 5; i++)
   {
-    /* ºâ §L ªº¤ä¼Æ */
+    /* ç®— å…µ çš„æ”¯æ•¸ */
     if (set[i] == 7)
       j++;
   }
   if (j == 5)
-    yes[3] = 1;			/* ¤­§L¦XÁa */
+    yes[3] = 1;			/* äº”å…µåˆç¸± */
   else if (j == 3)
-    yes[5] = 1;			/* ¤T§L¤J¦C */
+    yes[5] = 1;			/* ä¸‰å…µå…¥åˆ— */
 
   for (i = 0, j = 0; i < 5; i++)
   {
-    /* ºâ ¨ò ªº¤ä¼Æ */
+    /* ç®— å’ çš„æ”¯æ•¸ */
     if (set[i] == 14)
       j++;
   }
   if (j == 5)
-    yes[4] = 1;			/* ¤­¨ò³s¾î */
+    yes[4] = 1;			/* äº”å’é€£æ©« */
   else if (j == 3)
-    yes[6] = 1;			/* ¤T¨ò¤J¦C */
+    yes[6] = 1;			/* ä¸‰å’å…¥åˆ— */
 
-  /* ºâ¥x¼Æ */
+  /* ç®—å°æ•¸ */
   sum = 0;
   for (i = 0; i < 10; i++)
   {
@@ -555,18 +555,18 @@ count_tai(set)
       sum += tai[i];
   }
 
-  /* ¦C¦L¥X¼ú¶µ */
+  /* åˆ—å°å‡ºçé … */
   move(b_lines - 5, 0);
-  outs("¢z¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢{\n");
+  outs("â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n");
   for (i = 0; i < 10; i++)
   {
-    if (yes[i])		/* ³Ì¦h¥|ºØ */
-      prints("  %8s [%d ¥x] ", name[i], tai[i]);
+    if (yes[i])		/* æœ€å¤šå››ç¨® */
+      prints("  %8s [%d å°] ", name[i], tai[i]);
   }
   move(b_lines - 2, 0);
-  clrtoeol();		/* ²M°£ out_song() */
-  prints("        ©³ [2 ¥x]       ¦X­p [%d ¥x]\n", sum += 2);
-  outs("¢|¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢}");
+  clrtoeol();		/* æ¸…é™¤ out_song() */
+  prints("        åº• [2 å°]       åˆè¨ˆ [%d å°]\n", sum += 2);
+  outs("â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜");
 
   return sum;
 }
@@ -575,12 +575,12 @@ count_tai(set)
 int
 main_chessmj()
 {
-  int money;			/* ©ãª÷ */
-  int mo;			/* 1:¤wºNµP 0:¥¼ºNµP */
-  int picky;			/* 1:¾ß§O¤HªºµP 0:¦Û¤vºNªº */
+  int money;			/* æŠ¼é‡‘ */
+  int mo;			/* 1:å·²æ‘¸ç‰Œ 0:æœªæ‘¸ç‰Œ */
+  int picky;			/* 1:æ’¿åˆ¥äººçš„ç‰Œ 0:è‡ªå·±æ‘¸çš„ */
   int pickup;
-  int listen;			/* 1:Å¥µP 0:¨S¦³Å¥µP */
-  int chesslist[32];		/* 32 ±iµP²Õ */
+  int listen;			/* 1:è½ç‰Œ 0:æ²’æœ‰è½ç‰Œ */
+  int chesslist[32];		/* 32 å¼µç‰Œçµ„ */
 
   int i, j, k, m;
   int jp, x, xx, ch, z;
@@ -596,35 +596,35 @@ main_chessmj()
 
   while (1)
   {
-    vs_bar("¶H´Ñ³Â±N");
+    vs_bar("è±¡æ£‹éº»å°‡");
 
     out_song(0);
 
-    vget(2, 0, "½Ğ°İ­n¤Uª`¦h¤Ö©O¡H(1 ~ 50000) ", ans, 6, DOECHO);
+    vget(2, 0, "è«‹å•è¦ä¸‹æ³¨å¤šå°‘å‘¢ï¼Ÿ(1 ~ 50000) ", ans, 6, DOECHO);
     money = atoi(ans);
     if (money < 1 || money > 50000 || money > cuser.money)
-      break;			/* Â÷¶}½ä³õ */
-    cuser.money -= money;	/* ¦©¤@¥÷½äª÷¡Aª±®a¦pªG¤¤³~Â÷¶}±N®³¤£¦^½äª÷ */
+      break;			/* é›¢é–‹è³­å ´ */
+    cuser.money -= money;	/* æ‰£ä¸€ä»½è³­é‡‘ï¼Œç©å®¶å¦‚æœä¸­é€”é›¢é–‹å°‡æ‹¿ä¸å›è³­é‡‘ */
 
     out_song(money);
     move(2, 0);
-    clrtoeol();		/* ²M±¼¡u½Ğ°İ­n¤Uª`¦h¤Ö¡v */
-    outs("(«ö ¡ö¡÷¿ïµP, ¡ô¥áµP, «ö ENTER ­JµP)");
+    clrtoeol();		/* æ¸…æ‰ã€Œè«‹å•è¦ä¸‹æ³¨å¤šå°‘ã€ */
+    outs("(æŒ‰ â†â†’é¸ç‰Œ, â†‘ä¸Ÿç‰Œ, æŒ‰ ENTER èƒ¡ç‰Œ)");
 
-    for (i = 0; i < 32; i++)		/* µP¥ı¤@±i¤@±i±Æ¦n¡A·Ç³Æ¬~µP */
+    for (i = 0; i < 32; i++)		/* ç‰Œå…ˆä¸€å¼µä¸€å¼µæ’å¥½ï¼Œæº–å‚™æ´—ç‰Œ */
       chesslist[i] = cnum[i];
 
     for (i = 0; i < 31; i++)
     {
       j = rnd(32 - i) + i;
 
-      /* chesslist[j] ©M chesslist[i] ¥æ´« */
+      /* chesslist[j] å’Œ chesslist[i] äº¤æ› */
       m = chesslist[i];
       chesslist[i] = chesslist[j];
       chesslist[j] = m;
     }
 
-    selftouch = 0;			/* Âk¹s */
+    selftouch = 0;			/* æ­¸é›¶ */
     mo = 0;
     pickup = 0;
     picky = 0;
@@ -632,7 +632,7 @@ main_chessmj()
     flag = 0;
     tflag = 0;
 
-    for (i = 0; i < 4; i++)		/* µo«e¥|±iµP */
+    for (i = 0; i < 4; i++)		/* ç™¼å‰å››å¼µç‰Œ */
     {
       host_card[i] = chesslist[flag];
       flag++;
@@ -641,21 +641,21 @@ main_chessmj()
     }
     guest_card[4] = 0;
 
-    sortchess();			/* ±Æ§Ç */
+    sortchess();			/* æ’åº */
 
     move(4, 0);
-    outs("¢~¢w¢¡¢~¢w¢¡¢~¢w¢¡¢~¢w¢¡");
+    outs("â•­â”€â•®â•­â”€â•®â•­â”€â•®â•­â”€â•®");
     move(5, 0);
-    outs("¢x  ¢x¢x  ¢x¢x  ¢x¢x  ¢x");
+    outs("â”‚  â”‚â”‚  â”‚â”‚  â”‚â”‚  â”‚");
     move(6, 0);
-    outs("¢¢¢w¢£¢¢¢w¢£¢¢¢w¢£¢¢¢w¢£");
+    outs("â•°â”€â•¯â•°â”€â•¯â•°â”€â•¯â•°â”€â•¯");
     move(15, 0);
-    outs("¢~¢w¢¡¢~¢w¢¡¢~¢w¢¡¢~¢w¢¡");
+    outs("â•­â”€â•®â•­â”€â•®â•­â”€â•®â•­â”€â•®");
 
 	print_guest();
 
     move(17, 0);
-    outs("¢¢¢w¢£¢¢¢w¢£¢¢¢w¢£¢¢¢w¢£");  /* ¦L¥X«e¥|±iµP */
+    outs("â•°â”€â•¯â•°â”€â•¯â•°â”€â•¯â•°â”€â•¯");  /* å°å‡ºå‰å››å¼µç‰Œ */
 
     for (;;)
     {
@@ -668,7 +668,7 @@ main_chessmj()
 	if (!mo)
 	{
 	  move(14, 24);
-	  outs("«öªÅ¥ÕÁäºNµP(©Î ¡õ ¾ßµP)");
+	  outs("æŒ‰ç©ºç™½éµæ‘¸ç‰Œ(æˆ– â†“ æ’¿ç‰Œ)");
 	}
 	else
 	{
@@ -676,14 +676,14 @@ main_chessmj()
 	  clrtoeol();
 	}
 	move(18, 2 + (jp - 1) * 6);
-	outs("¡¶");
-	move(18, 3 + (jp - 1) * 6);		/* Á×§K¥ş§Î°»´ú */
+	outs("â–²");
+	move(18, 3 + (jp - 1) * 6);		/* é¿å…å…¨å½¢åµæ¸¬ */
 
 	ch = vkey();
 
 	if (!mo && ch != KEY_DOWN && ch != '\n')
 	{
-	  ch = 'p';		/* ¥|±iµP«h±j¨îºNµP */
+	  ch = 'p';		/* å››å¼µç‰Œå‰‡å¼·åˆ¶æ‘¸ç‰Œ */
 	}
 
 	switch (ch)
@@ -695,8 +695,8 @@ main_chessmj()
 	  if (jp > 5)
 	    jp = 5;
 	  move(18, 2 + (jp - 1) * 6);
-	  outs("¡¶");
-	  move(18, 3 + (jp - 1) * 6);	/* Á×§K¥ş§Î°»´ú */
+	  outs("â–²");
+	  move(18, 3 + (jp - 1) * 6);	/* é¿å…å…¨å½¢åµæ¸¬ */
 	  break;
 
 	case KEY_LEFT:
@@ -706,11 +706,11 @@ main_chessmj()
 	  if (jp < 1)
 	    jp = 1;
 	  move(18, 2 + (jp - 1) * 6);
-	  outs("¡¶");
-	  move(18, 3 + (jp - 1) * 6);	/* Á×§K¥ş§Î°»´ú */
+	  outs("â–²");
+	  move(18, 3 + (jp - 1) * 6);	/* é¿å…å…¨å½¢åµæ¸¬ */
 	  break;
 
-	case KEY_UP:		/* ¥XµP */
+	case KEY_UP:		/* å‡ºç‰Œ */
 	  move(18, 2 + (jp - 1) * 6);
 	  outs("  ");
 	  throw[tflag] = guest_card[jp - 1];
@@ -725,12 +725,12 @@ main_chessmj()
 	  picky = 0;
 	  break;
 
-	case 'p':		/* ºNµP */
+	case 'p':		/* æ‘¸ç‰Œ */
 	  if (!mo)
 	  {
         if (flag == 32)
         {
-          strcpy(msg, "¬y§½");
+          strcpy(msg, "æµå±€");
           goto next_game;
         }
 	    move(18, 2 + (jp - 1) * 6);
@@ -764,13 +764,13 @@ main_chessmj()
 	  {
 	    selftouch = 1;
 	    addmoney(money *= count_tai(guest_card));
-	    sprintf(msg, "«z«¨¦ÛºN°Õ¡IÄ¹¤F%d¤¸", money);
+	    sprintf(msg, "å“‡å’§è‡ªæ‘¸å•¦ï¼è´äº†%då…ƒ", money);
 	    goto next_game;
 	  }
 	  else if (picky && testall(guest_card))
 	  {
 	    addmoney(money *= count_tai(guest_card));
-	    sprintf(msg, "¬İ§Úªº¼F®`¡A­J°Õ¡IÄ¹¤F%d¤¸", money);
+	    sprintf(msg, "çœ‹æˆ‘çš„å²å®³ï¼Œèƒ¡å•¦ï¼è´äº†%då…ƒ", money);
 	    goto next_game;
 	  }
 
@@ -783,7 +783,7 @@ main_chessmj()
 	      print_sign(0);
 	      print_guest();
 	      addmoney(money *= count_tai(guest_card));
-	      sprintf(msg, "­J¡IÄ¹¤F%d¤¸", money);
+	      sprintf(msg, "èƒ¡ï¼è´äº†%då…ƒ", money);
 	      goto next_game;
 	    }
 	    guest_card[4] = i;
@@ -798,9 +798,9 @@ main_chessmj()
       host_card[4] = throw[tflag - 1];
       if (testall(host_card))
       {
-	print_sign(1);	/* ¦L¾ßµP²Å¸¹ */
-	sprintf(msg, "¹q¸£­J°Õ¡I¿é¤F%d¤¸", money *= count_tai(host_card));
-	cuser.money -= money;	/* ¹q¸£¥x¼Æ¶V¦h´N½ß¶V¦h¡A¥B©ãª÷¨S¦¬ */
+	print_sign(1);	/* å°æ’¿ç‰Œç¬¦è™Ÿ */
+	sprintf(msg, "é›»è…¦èƒ¡å•¦ï¼è¼¸äº†%då…ƒ", money *= count_tai(host_card));
+	cuser.money -= money;	/* é›»è…¦å°æ•¸è¶Šå¤šå°±è³ è¶Šå¤šï¼Œä¸”æŠ¼é‡‘æ²’æ”¶ */
 	if (cuser.money < 0)
 	  cuser.money = 0;
 	goto next_game;
@@ -809,7 +809,7 @@ main_chessmj()
       if (flag == 32)
       {
         host_card[4] = 0;
-        strcpy(msg, "¬y§½");
+        strcpy(msg, "æµå±€");
         goto next_game;
       }
 
@@ -817,8 +817,8 @@ main_chessmj()
       if (testall(host_card))
       {
 	selftouch = 1;
-	sprintf(msg, "¹q¸£¦ÛºN¡I¿é¤F%d¤¸", money *= count_tai(host_card));
-	cuser.money -= money;	/* ¹q¸£¥x¼Æ¶V¦h´N½ß¶V¦h¡A¥B©ãª÷¨S¦¬ */
+	sprintf(msg, "é›»è…¦è‡ªæ‘¸ï¼è¼¸äº†%då…ƒ", money *= count_tai(host_card));
+	cuser.money -= money;	/* é›»è…¦å°æ•¸è¶Šå¤šå°±è³ è¶Šå¤šï¼Œä¸”æŠ¼é‡‘æ²’æ”¶ */
 	if (cuser.money < 0)
 	  cuser.money = 0;
 	goto next_game;
@@ -828,7 +828,7 @@ main_chessmj()
 	tmp[i] = host_card[i];
 
       if (!testlisten(tmp))
-      {				/* ¨SÅ¥ªº¸Ü */
+      {				/* æ²’è½çš„è©± */
 	for (i = 0; i < 4; i++)
 	{
 	  k = 0;
@@ -840,16 +840,16 @@ main_chessmj()
 	      k++;
 	    }
 	  }
-	  tmp[3] = throw[tflag - 1];	/* §â¾ß°_¨º±i¸ò¤â¤WªºµP¤ñ¹ï */
+	  tmp[3] = throw[tflag - 1];	/* æŠŠæ’¿èµ·é‚£å¼µè·Ÿæ‰‹ä¸Šçš„ç‰Œæ¯”å° */
 	  if (testlisten(tmp))
-	  {			/* ¾ßµP¦³Å¥ªº¸Ü */
+	  {			/* æ’¿ç‰Œæœ‰è½çš„è©± */
 	    listen = 1;
 	    host_card[4] = throw[tflag - 1];
 	    throw[tflag - 1] |= 0x80;
-	    print_sign(1);	/* ¦L¾ßµP²Å¸¹ */
-	    xx = i;		/* ¬ö¿ı¤U­n¥áªº¨º±iµP */
+	    print_sign(1);	/* å°æ’¿ç‰Œç¬¦è™Ÿ */
+	    xx = i;		/* ç´€éŒ„ä¸‹è¦ä¸Ÿçš„é‚£å¼µç‰Œ */
 	    pickup = 1;
-	    break;		/* ¸õ¥X i loop */
+	    break;		/* è·³å‡º i loop */
 	  }
 	}
       }
@@ -857,7 +857,7 @@ main_chessmj()
       for (i = 0; i < 4; i++)
 	tmp[i] = host_card[i];
       if (testlisten(tmp) && !pickup)
-      {				/* ¦³Å¥¥B­è­è¨S¾ß */
+      {				/* æœ‰è½ä¸”å‰›å‰›æ²’æ’¿ */
 	m = 0;
 	for (i = 0; i < 4; i++)
 	  if (tmp[i] == 7)
@@ -888,7 +888,7 @@ main_chessmj()
 	{
 	  host_card[4] = throw[tflag - 1];
 	  throw[tflag - 1] |= 0x80;
-	  print_sign(1);	/* ¦L¾ßµP²Å¸¹ */
+	  print_sign(1);	/* å°æ’¿ç‰Œç¬¦è™Ÿ */
 	}
       }
 
@@ -898,7 +898,7 @@ main_chessmj()
 	host_card[4] = chesslist[flag];
 	flag++;
       }
-      /* ­è­è¨S¾ßµP²{¦b´NºNµP */
+      /* å‰›å‰›æ²’æ’¿ç‰Œç¾åœ¨å°±æ‘¸ç‰Œ */
 
       if (!pickup)
       {
@@ -915,10 +915,10 @@ main_chessmj()
 	  }
 	  tmp[3] = host_card[4];
 	  if (testlisten(tmp))
-	  {			/* ºNµP¦³Å¥ªº¸Ü */
+	  {			/* æ‘¸ç‰Œæœ‰è½çš„è©± */
 	    listen = 1;
-	    xx = i;		/* ¬ö¿ı¤U­n¥áªº¨º±iµP */
-	    break;		/* ¸õ¥X i loop */
+	    xx = i;		/* ç´€éŒ„ä¸‹è¦ä¸Ÿçš„é‚£å¼µç‰Œ */
+	    break;		/* è·³å‡º i loop */
 	  }
 	}
       }
@@ -930,23 +930,23 @@ main_chessmj()
 
       throw[tflag] = host_card[xx];
       tflag++;
-      host_card[xx] = host_card[4];	/* ¥á¥X¨SÅ¥¨º±i */
+      host_card[xx] = host_card[4];	/* ä¸Ÿå‡ºæ²’è½é‚£å¼µ */
       print_throw(1);
 
       host_card[4] = 0;
       pickup = 0;
       listen = 0;
 
-    }		/* for °j°éµ²§ô */
+    }		/* for è¿´åœˆçµæŸ */
 
 next_game:
     print_host();
     move(b_lines, 0);
     clrtoeol();
-    prints("\033[1;37;44m ¡» %-55s \033[1;33;46m [½Ğ«ö¥ô·NÁäÄ~Äò] \033[m", msg);
+    prints("\033[1;37;44m â—† %-55s \033[1;33;46m [è«‹æŒ‰ä»»æ„éµç¹¼çºŒ] \033[m", msg);
     vkey();
 
-  }		/* while °j°éµ²§ô */
+  }		/* while è¿´åœˆçµæŸ */
 
 abort_game:
   return 0;

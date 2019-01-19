@@ -1,20 +1,20 @@
-µo«H¤H: LHD.bbs@YoMin.twbbs.org (§Ú²Ö¤F) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¾ã¦æ¥ú´Î(5)¡Ğpost.c ¤å³¹¦Cªí
-µo«H¯¸: ¹C¥Á¤§®a (Mon, 14 Jul 2003 17:33:30 +0800 (CST))  Updated: 2004/12/24
+ç™¼ä¿¡äºº: LHD.bbs@YoMin.twbbs.org (æˆ‘ç´¯äº†) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] æ•´è¡Œå…‰æ£’(5)ï¼post.c æ–‡ç« åˆ—è¡¨
+ç™¼ä¿¡ç«™: éŠæ°‘ä¹‹å®¶ (Mon, 14 Jul 2003 17:33:30 +0800 (CST))  Updated: 2004/12/24
 
 : maple.p
 
 + void hdr_outs_bar(HDR *hdr, int cc);
 
-: post.c:hdr_outs_bar()  ¥[¦b hdr_outs() «á­±
+: post.c:hdr_outs_bar()  åŠ åœ¨ hdr_outs() å¾Œé¢
 
 #ifdef HAVE_LIGHTBAR
 void
 hdr_outs_bar(hdr, cc)           /* print HDR's subject */
   HDR *hdr;
-  int cc;               /* ¦L¥X³Ì¦h cc - 1 ­Ó¦r */
+  int cc;               /* å°å‡ºæœ€å¤š cc - 1 å€‹å­— */
 {
-  static char *type[4] = {"Re", "¡º", "\033[33m=>", "\033[32m¡»"};
+  static char *type[4] = {"Re", "â—‡", "\033[33m=>", "\033[32mâ—†"};
   uschar *title, *mark;
   int ch, len;
 
@@ -24,7 +24,7 @@ hdr_outs_bar(hdr, cc)           /* print HDR's subject */
 
   if (cc)
   {
-#ifdef HAVE_DECLARE     /* itoc.010117: ¤é´Á¤W¦â */
+#ifdef HAVE_DECLARE     /* itoc.010117: æ—¥æœŸä¸Šè‰² */
     prints("\033[3%dm%s\033[37;44m ", cal_day(hdr->date) + 1, hdr->date + 3);
 #else
     outs(hdr->date + 3);
@@ -76,7 +76,7 @@ hdr_outs_bar(hdr, cc)           /* print HDR's subject */
 #endif
 
 
-: post.c:post_item_bar()  ¥[¦b post_item() «á­±
+: post.c:post_item_bar()  åŠ åœ¨ post_item() å¾Œé¢
 
 #ifdef HAVE_LIGHTBAR
 static int
@@ -117,7 +117,7 @@ post_item_bar(xo, mode)
   }
 
   if (mode)
-    hdr_outs_bar(hdr, 46);    /* ¤Ö¤@®æ¨Ó©ñ¤À¼Æ */
+    hdr_outs_bar(hdr, 46);    /* å°‘ä¸€æ ¼ä¾†æ”¾åˆ†æ•¸ */
   else
     hdr_outs(hdr, 46);
 #else
@@ -144,7 +144,7 @@ post_item_bar(xo, mode)
 KeyFunc post_cb[] =
 {
 #ifdef HAVE_LIGHTBAR
-  XO_ITEM, post_item_bar,          /* verit.20030129 : ½Ğ°È¥²±N¦¹©ñ¦b²Ä¤@¶µ */
+  XO_ITEM, post_item_bar,          /* verit.20030129 : è«‹å‹™å¿…å°‡æ­¤æ”¾åœ¨ç¬¬ä¸€é … */
 #endif
 ...
 
@@ -153,7 +153,7 @@ KeyFunc post_cb[] =
 KeyFunc xpost_cb[] =
 {
 #ifdef HAVE_LIGHTBAR
-  XO_ITEM, post_item_bar,         /* verit.20030129 : ½Ğ°È¥²±N¦¹©ñ¦b²Ä¤@¶µ */
+  XO_ITEM, post_item_bar,         /* verit.20030129 : è«‹å‹™å¿…å°‡æ­¤æ”¾åœ¨ç¬¬ä¸€é … */
 #endif
 ...
 
@@ -162,11 +162,11 @@ KeyFunc xpost_cb[] =
 KeyFunc news_cb[] =
 {
 #ifdef HAVE_LIGHTBAR
-  XO_ITEM, post_item_bar,         /* verit.20030129 : ½Ğ°È¥²±N¦¹©ñ¦b²Ä¤@¶µ */
+  XO_ITEM, post_item_bar,         /* verit.20030129 : è«‹å‹™å¿…å°‡æ­¤æ”¾åœ¨ç¬¬ä¸€é … */
 #endif
 ...
 
 --
-[m¢d¢e¢f¢g¢h¢f¢e¢d¢c¢b                [33m¢©  ¢¨      ¢i¢©¢¨¢i ¡´   [1;30mbbs.cis95.net[m
-[30;47m¢h¢f¢e¢c¢b¡Å¢d¢f¢g[0;35m   ©~µL©w©Òªº¶³   [33m¢ª¢i¢« ¢«¢ª ¢i¢ª¢«¢i ¡¶ ¢i¢h¢© [0;1m¹C¥Á¤§®a[m
-[1;34mÄÆ¦Û [31mcismpc19.cis.nctu.edu.tw         [0;33m¢i   ¢©¢¨ ¢i    ¢i ¢i ¢i  ¢i¡Etwbbs¡Eorg[m
+[mâ–ƒâ–„â–…â–†â–‡â–…â–„â–ƒâ–‚â–                [33mâ—£  â—¢      â–ˆâ—£â—¢â–ˆ â—   [1;30mbbs.cis95.net[m
+[30;47mâ–‡â–…â–„â–‚â–?â–ƒâ–…â–†[0;35m   å±…ç„¡å®šæ‰€çš„é›²   [33mâ—¥â–ˆâ—¤ â—¤â—¥ â–ˆâ—¥â—¤â–ˆ â–² â–ˆâ–‡â—£ [0;1méŠæ°‘ä¹‹å®¶[m
+[1;34mé£„è‡ª [31mcismpc19.cis.nctu.edu.tw         [0;33mâ–ˆ   â—£â—¢ â–ˆ    â–ˆ â–ˆ â–ˆ  â–ˆ?twbbs?org[m

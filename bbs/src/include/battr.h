@@ -16,35 +16,35 @@
 /* ----------------------------------------------------- */
 
 
-#define BRD_NOZAP	0x01	/* ���i zap */
-#define BRD_NOTRAN	0x02	/* ����H */
-#define BRD_NOCOUNT	0x04	/* ���p�峹�o���g�� */
-#define BRD_NOSTAT	0x08	/* ���ǤJ�������D�έp */
-#define BRD_NOVOTE	0x10	/* �����G�벼���G�� [record] �O */
-#define BRD_ANONYMOUS	0x20	/* �ΦW�ݪO */
-#define BRD_NOSCORE	0x40	/* �������ݪO */
+#define BRD_NOZAP	0x01	/* 不可 zap */
+#define BRD_NOTRAN	0x02	/* 不轉信 */
+#define BRD_NOCOUNT	0x04	/* 不計文章發表篇數 */
+#define BRD_NOSTAT	0x08	/* 不納入熱門話題統計 */
+#define BRD_NOVOTE	0x10	/* 不公佈投票結果於 [record] 板 */
+#define BRD_ANONYMOUS	0x20	/* 匿名看板 */
+#define BRD_NOSCORE	0x40	/* 不評分看板 */
 
 
 /* ----------------------------------------------------- */
-/* �U�غX�Ъ�����N�q					 */
+/* 各種旗標的中文意義					 */
 /* ----------------------------------------------------- */
 
 
 #define NUMBATTRS	7
 
-#define STR_BATTR	"zTcsvA%"			/* itoc: �s�W�X�Ъ��ɭԧO�ѤF��o�̰� */
+#define STR_BATTR	"zTcsvA%"			/* itoc: 新增旗標的時候別忘了改這裡啊 */
 
 
 #ifdef _ADMIN_C_
 static char *battr_tbl[NUMBATTRS] =
 {
-  "���i Zap",			/* BRD_NOZAP */
-  "����H�X�h",			/* BRD_NOTRAN */
-  "���O���g��",			/* BRD_NOCOUNT */
-  "�����������D�έp",		/* BRD_NOSTAT */
-  "�����}�벼���G",		/* BRD_NOVOTE */
-  "�ΦW�ݪO",			/* BRD_ANONYMOUS */
-  "�������ݪO",			/* BRD_NOSCORE */
+  "不可 Zap",			/* BRD_NOZAP */
+  "不轉信出去",			/* BRD_NOTRAN */
+  "不記錄篇數",			/* BRD_NOCOUNT */
+  "不做熱門話題統計",		/* BRD_NOSTAT */
+  "不公開投票結果",		/* BRD_NOVOTE */
+  "匿名看板",			/* BRD_ANONYMOUS */
+  "不評分看板",			/* BRD_NOSCORE */
 };
 
 #endif

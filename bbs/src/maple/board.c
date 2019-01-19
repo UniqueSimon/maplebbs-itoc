@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* board.c	( NTHU CS MapleBBS Ver 2.36 )		 */
 /*-------------------------------------------------------*/
-/* target : ¬İªO¡B¸s²Õ¥\¯à	 			 */
+/* target : çœ‹æ¿ã€ç¾¤çµ„åŠŸèƒ½	 			 */
 /* create : 95/03/29				 	 */
 /* update : 95/12/15				 	 */
 /*-------------------------------------------------------*/
@@ -18,7 +18,7 @@ extern char xo_pool[];
 char brd_bits[MAXBOARD];
 
 #ifndef ENHANCED_VISIT
-time_t brd_visit[MAXBOARD];		/* ³ÌªñÂsÄı®É¶¡ */
+time_t brd_visit[MAXBOARD];		/* æœ€è¿‘ç€è¦½æ™‚é–“ */
 #endif
 
 
@@ -27,29 +27,29 @@ static XO board_xo;
 
 
 /* ----------------------------------------------------- */
-/* ¬İªO¾\Åª°O¿ı .BRH (Board Reading History)		 */
+/* çœ‹æ¿é–±è®€è¨˜éŒ„ .BRH (Board Reading History)		 */
 /* ----------------------------------------------------- */
 
 
 typedef struct BoardReadingHistory
 {
-  time_t bstamp;		/* «Ø¥ß¬İªOªº®É¶¡, unique */	/* Thor.brh_tail */
-  time_t bvisit;		/* ¤W¦¸¾\Åª®É¶¡ */		/* Thor.980904: ¨S¦bÅª®É©ñ¤W¦¸Åªªº®É¶¡, ¥¿¦bÅª®É©ñ bhno */
-  int bcount;			/* Thor.980902: ¨S¥Î¨ì */
+  time_t bstamp;		/* å»ºç«‹çœ‹æ¿çš„æ™‚é–“, unique */	/* Thor.brh_tail */
+  time_t bvisit;		/* ä¸Šæ¬¡é–±è®€æ™‚é–“ */		/* Thor.980904: æ²’åœ¨è®€æ™‚æ”¾ä¸Šæ¬¡è®€çš„æ™‚é–“, æ­£åœ¨è®€æ™‚æ”¾ bhno */
+  int bcount;			/* Thor.980902: æ²’ç”¨åˆ° */
 
   /* --------------------------------------------------- */
   /* time_t {final, begin} / {final | BRH_SIGN}		 */
   /* --------------------------------------------------- */
-                           /* Thor.980904.µù¸Ñ: BRH_SIGN¥Nªífinal begin ¬Û¦P */
-                           /* Thor.980904.µù¸Ñ: ¥Ñ¤j¨ì¤p±Æ¦C,¦s©ñ¤wÅªinterval */
+                           /* Thor.980904.è¨»è§£: BRH_SIGNä»£è¡¨final begin ç›¸åŒ */
+                           /* Thor.980904.è¨»è§£: ç”±å¤§åˆ°å°æ’åˆ—,å­˜æ”¾å·²è®€interval */
 }                   BRH;
 
 
-#define	BRH_EXPIRE	180		/* Thor.980902.µù¸Ñ: «O¯d¦h¤Ö¤Ñ */
-#define BRH_MAX		200		/* Thor.980902.µù¸Ñ: ¨CªO³Ì¦h¦³´X­Ó¼ĞÅÒ */
-#define BRH_PAGE	2048		/* Thor.980902.µù¸Ñ: ¨C¦¸¦h°t¶q, ¥Î¤£¨ì¤F */
-#define	BRH_MASK	0x7fffffff	/* Thor.980902.µù¸Ñ: ³Ì¤j¶q¬°2038¦~1¤ë¤¤*/
-#define	BRH_SIGN	0x80000000	/* Thor.980902.µù¸Ñ: zap¤ÎÀ£final±M¥Î */
+#define	BRH_EXPIRE	180		/* Thor.980902.è¨»è§£: ä¿ç•™å¤šå°‘å¤© */
+#define BRH_MAX		200		/* Thor.980902.è¨»è§£: æ¯æ¿æœ€å¤šæœ‰å¹¾å€‹æ¨™ç±¤ */
+#define BRH_PAGE	2048		/* Thor.980902.è¨»è§£: æ¯æ¬¡å¤šé…é‡, ç”¨ä¸åˆ°äº† */
+#define	BRH_MASK	0x7fffffff	/* Thor.980902.è¨»è§£: æœ€å¤§é‡ç‚º2038å¹´1æœˆä¸­*/
+#define	BRH_SIGN	0x80000000	/* Thor.980902.è¨»è§£: zapåŠå£“finalå°ˆç”¨ */
 #define	BRH_WINDOW	(sizeof(BRH) + sizeof(time_t) * BRH_MAX * 2)
 
 
@@ -72,7 +72,7 @@ brh_alloc(tail, size)
   if (size > brh_size)
   {
     /* size = (size & -BRH_PAGE) + BRH_PAGE; */
-    size += n >> 4;		/* ¦h¹w¬ù¤@¨Ç°O¾ĞÅé */
+    size += n >> 4;		/* å¤šé ç´„ä¸€äº›è¨˜æ†¶é«” */
     base = (int *) realloc((char *) base, size);
 
     if (base == NULL)
@@ -100,9 +100,9 @@ brh_put()
   {
     int *head, *tail, n, item, chrono;
 
-    n = *++list;   /* Thor.980904: ¥¿Åª®É¬Obhno */
+    n = *++list;   /* Thor.980904: æ­£è®€æ™‚æ˜¯bhno */
     brd_bits[n] |= BRD_H_BIT;
-    time((time_t *) list);    /* Thor.980904.µù¸Ñ: bvisit time */
+    time((time_t *) list);    /* Thor.980904.è¨»è§£: bvisit time */
 
     item = *++list;
     head = ++list;
@@ -112,7 +112,7 @@ brh_put()
     {
       chrono = *head++;
       n = *head++;
-      if (n == chrono) /* Thor.980904.µù¸Ñ: ¬Û¦Pªº®É­ÔÀ£°_¨Ó */
+      if (n == chrono) /* Thor.980904.è¨»è§£: ç›¸åŒçš„æ™‚å€™å£“èµ·ä¾† */
       {
 	n |= BRH_SIGN;
 	item--;
@@ -126,7 +126,7 @@ brh_put()
 
     list[-item - 1] = item;
     *list = 0;
-    brh_tail = list;  /* Thor.980904: ·sªºªÅbrh */
+    brh_tail = list;  /* Thor.980904: æ–°çš„ç©ºbrh */
   }
 }
 
@@ -140,7 +140,7 @@ brh_get(bstamp, bhno)
   int size, bcnt, item;
   char buf[BRH_WINDOW];
 
-  if (bstamp == *brh_tail) /* Thor.980904.µù¸Ñ: ¸ÓªO¤w¦b brh_tail¤W */
+  if (bstamp == *brh_tail) /* Thor.980904.è¨»è§£: è©²æ¿å·²åœ¨ brh_tailä¸Š */
     return;
 
   brh_put();
@@ -205,7 +205,7 @@ brh_unread(chrono)
 {
   int *head, *tail, item;
 
-  /* itoc.010407.µù¸Ñ: BRH_EXPIRE (180) ¤Ñ«eªº¤å³¹³£³]¬°¤wÅª */
+  /* itoc.010407.è¨»è§£: BRH_EXPIRE (180) å¤©å‰çš„æ–‡ç« éƒ½è¨­ç‚ºå·²è®€ */
   if (chrono <= brh_expire)
     return 0;
 
@@ -234,7 +234,7 @@ brh_unread(chrono)
 void
 brh_visit(mode)
   int mode;			/* 0 : visit, 1: un-visit */
-{				/* itoc.010207: ©Î¬O¶Ç¤Jchrono, ¥NªíÅª¦Ü­ş */
+{				/* itoc.010207: æˆ–æ˜¯å‚³å…¥chrono, ä»£è¡¨è®€è‡³å“ª */
   int *list;
 
   list = (int *) brh_tail + 2;
@@ -248,7 +248,7 @@ brh_visit(mode)
     time((time_t *)list);
   }
   /* *++list = mode; */
-  *++list = 0;	/* itoc.010207: ±j©w¬° 0, for ³¡¤À visit */
+  *++list = 0;	/* itoc.010207: å¼·å®šç‚º 0, for éƒ¨åˆ† visit */
 }
 
 
@@ -342,9 +342,9 @@ brh_add(prev, chrono, next)
 /* ----------------------------------------------------- */
 
 
-int			/* >=1:²Ä´X­ÓªO¥D 0:¤£¬OªO¥D */
+int			/* >=1:ç¬¬å¹¾å€‹æ¿ä¸» 0:ä¸æ˜¯æ¿ä¸» */
 is_bm(list, userid)
-  char *list;		/* ªO¥D¡GBM list */
+  char *list;		/* æ¿ä¸»ï¼šBM list */
   char *userid;
 {
   return str_has(list, userid, strlen(userid));
@@ -361,26 +361,26 @@ Ben_Perm(bno, ulevel)
   BRD *brd;
 #ifdef HAVE_MODERATED_BOARD
   BPAL *bpal;
-  int ftype;	/* 0:¤@¯ëID 1:ªO¦n 2:ªOÃa */
+  int ftype;	/* 0:ä¸€èˆ¬ID 1:æ¿å¥½ 2:æ¿å£ */
 
-  /* itoc.040103: ¬İªO¾\Åªµ¥¯Å»¡©úªí
+  /* itoc.040103: çœ‹æ¿é–±è®€ç­‰ç´šèªªæ˜è¡¨
 
-  ¢z¢w¢w¢w¢w¢s¢w¢w¢w¢w¢s¢w¢w¢w¢w¢s¢w¢w¢w¢w¢{
-  ¢x        ¢x¤@¯ë¥Î¤á¢x¬İªO¦n¤Í¢x¬İªOÃa¤H¢x
-  ¢u¢w¢w¢w¢w¢q¢w¢w¢w¢w¢q¢w¢w¢w¢w¢q¢w¢w¢w¢w¢t
-  ¢x¤@¯ë¬İªO¢xÅv­­¨M©w¢x  ¤ô±í  ¢x ¬İ¤£¨£ ¢x    ¬İ¤£¨£¡G¦b¬İªO¦Cªí¤¤µLªk¬İ¨ì³o­ÓªO¡A¤]¶i¤£¥h
-  ¢u¢w¢w¢w¢w¢q¢w¢w¢w¢w¢q¢w¢w¢w¢w¢q¢w¢w¢w¢w¢t    ¶i¤£¥h¡G¦b¬İªO¦Cªí¤¤¥i¥H¬İ¨ì³o­ÓªO¡A¦ı¬O¶i¤£¥h
-  ¢x¦n¤Í¬İªO¢x ¶i¤£¥h ¢x  §¹¾ã  ¢x  ¤ô±í  ¢x    ¤ô  ±í¡G¦b¬İªO¦Cªí¤¤¥i¥H¬İ¨ì³o­ÓªO¡A¤]¶i±o¥h¡A¦ı¬O¤£¯àµo¤å
-  ¢u¢w¢w¢w¢w¢q¢w¢w¢w¢w¢q¢w¢w¢w¢w¢q¢w¢w¢w¢w¢t    §¹  ¾ã¡G¦b¬İªO¦Cªí¤¤¥i¥H¬İ¨ì³o­ÓªO¡A¤]¶i±o¥h¤Îµo¤å
-  ¢x¯µ±K¬İªO¢x ¬İ¤£¨£ ¢x  §¹¾ã  ¢x  ¤ô±í  ¢x
-  ¢|¢w¢w¢w¢w¢r¢w¢w¢w¢w¢r¢w¢w¢w¢w¢r¢w¢w¢w¢w¢}
+  â”Œâ”€â”€â”€â”€â”¬â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”
+  â”‚        â”‚ä¸€èˆ¬ç”¨æˆ¶â”‚çœ‹æ¿å¥½å‹â”‚çœ‹æ¿å£äººâ”‚
+  â”œâ”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¤
+  â”‚ä¸€èˆ¬çœ‹æ¿â”‚æ¬Šé™æ±ºå®šâ”‚  æ°´æ¡¶  â”‚ çœ‹ä¸è¦‹ â”‚    çœ‹ä¸è¦‹ï¼šåœ¨çœ‹æ¿åˆ—è¡¨ä¸­ç„¡æ³•çœ‹åˆ°é€™å€‹æ¿ï¼Œä¹Ÿé€²ä¸å»
+  â”œâ”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¤    é€²ä¸å»ï¼šåœ¨çœ‹æ¿åˆ—è¡¨ä¸­å¯ä»¥çœ‹åˆ°é€™å€‹æ¿ï¼Œä½†æ˜¯é€²ä¸å»
+  â”‚å¥½å‹çœ‹æ¿â”‚ é€²ä¸å» â”‚  å®Œæ•´  â”‚  æ°´æ¡¶  â”‚    æ°´  æ¡¶ï¼šåœ¨çœ‹æ¿åˆ—è¡¨ä¸­å¯ä»¥çœ‹åˆ°é€™å€‹æ¿ï¼Œä¹Ÿé€²å¾—å»ï¼Œä½†æ˜¯ä¸èƒ½ç™¼æ–‡
+  â”œâ”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”¤    å®Œ  æ•´ï¼šåœ¨çœ‹æ¿åˆ—è¡¨ä¸­å¯ä»¥çœ‹åˆ°é€™å€‹æ¿ï¼Œä¹Ÿé€²å¾—å»åŠç™¼æ–‡
+  â”‚ç§˜å¯†çœ‹æ¿â”‚ çœ‹ä¸è¦‹ â”‚  å®Œæ•´  â”‚  æ°´æ¡¶  â”‚
+  â””â”€â”€â”€â”€â”´â”€â”€â”€â”€â”´â”€â”€â”€â”€â”´â”€â”€â”€â”€â”˜
   */
 
   static int bit_data[9] =
-  {                /* ¤@¯ë¥Î¤á   ¬İªO¦n¤Í                           ¬İªOÃa¤H */
-    /* ¤½¶}¬İªO */    0,         BRD_L_BIT | BRD_R_BIT,             0,
-    /* ¦n¤Í¬İªO */    BRD_L_BIT, BRD_L_BIT | BRD_R_BIT | BRD_W_BIT, BRD_L_BIT | BRD_R_BIT,
-    /* ¯µ±K¬İªO */    0,         BRD_L_BIT | BRD_R_BIT | BRD_W_BIT, BRD_L_BIT | BRD_R_BIT,
+  {                /* ä¸€èˆ¬ç”¨æˆ¶   çœ‹æ¿å¥½å‹                           çœ‹æ¿å£äºº */
+    /* å…¬é–‹çœ‹æ¿ */    0,         BRD_L_BIT | BRD_R_BIT,             0,
+    /* å¥½å‹çœ‹æ¿ */    BRD_L_BIT, BRD_L_BIT | BRD_R_BIT | BRD_W_BIT, BRD_L_BIT | BRD_R_BIT,
+    /* ç§˜å¯†çœ‹æ¿ */    0,         BRD_L_BIT | BRD_R_BIT | BRD_W_BIT, BRD_L_BIT | BRD_R_BIT,
   };
 #endif
 
@@ -395,13 +395,13 @@ Ben_Perm(bno, ulevel)
   bpal = bshm->pcache + bno;
   ftype = is_bgood(bpal) ? 1 : is_bbad(bpal) ? 2 : 0;
 
-  if (readlevel == PERM_SYSOP)		/* ¯µ±K¬İªO */
+  if (readlevel == PERM_SYSOP)		/* ç§˜å¯†çœ‹æ¿ */
     bits = bit_data[6 + ftype];
-  else if (readlevel == PERM_BOARD)	/* ¦n¤Í¬İªO */
+  else if (readlevel == PERM_BOARD)	/* å¥½å‹çœ‹æ¿ */
     bits = bit_data[3 + ftype];
-  else if (ftype)			/* ¤½¶}¬İªO¡A­Y¦bªO¦n/ªOÃa¦W³æ¤¤ */
+  else if (ftype)			/* å…¬é–‹çœ‹æ¿ï¼Œè‹¥åœ¨æ¿å¥½/æ¿å£åå–®ä¸­ */
     bits = bit_data[ftype];
-  else					/* ¤½¶}¬İªO¡A¨ä¥L¨ÌÅv­­§P©w */
+  else					/* å…¬é–‹çœ‹æ¿ï¼Œå…¶ä»–ä¾æ¬Šé™åˆ¤å®š */
 #endif
 
   if (!readlevel || (readlevel & ulevel))
@@ -417,12 +417,12 @@ Ben_Perm(bno, ulevel)
     bits = 0;
   }
 
-  /* Thor.980813.µù¸Ñ: ¯S§O¬° BM ¦Ò¶q¡AªO¥D¦³¸ÓªOªº©Ò¦³Åv­­ */
+  /* Thor.980813.è¨»è§£: ç‰¹åˆ¥ç‚º BM è€ƒé‡ï¼Œæ¿ä¸»æœ‰è©²æ¿çš„æ‰€æœ‰æ¬Šé™ */
   blist = brd->BM;
   if ((ulevel & PERM_BM) && blist[0] > ' ' && is_bm(blist, cuser.userid))
     bits = BRD_L_BIT | BRD_R_BIT | BRD_W_BIT | BRD_X_BIT | BRD_M_BIT;
 
-  /* itoc.030515: ¬İªOÁ`ºŞ­«·s§PÂ_ */
+  /* itoc.030515: çœ‹æ¿ç¸½ç®¡é‡æ–°åˆ¤æ–· */
   else if (ulevel & PERM_ALLBOARD)
     bits = BRD_L_BIT | BRD_R_BIT | BRD_W_BIT | BRD_X_BIT;
 
@@ -431,7 +431,7 @@ Ben_Perm(bno, ulevel)
 
 
 /* ----------------------------------------------------- */
-/* ¸ü¤J currboard ¶i¦æ­Y¤z³]©w				 */
+/* è¼‰å…¥ currboard é€²è¡Œè‹¥å¹²è¨­å®š				 */
 /* ----------------------------------------------------- */
 
 
@@ -487,7 +487,7 @@ brh_load()
   } while (++n < cbno);
 
   /* --------------------------------------------------- */
-  /* ±N .BRH ¸ü¤J memory				 */
+  /* å°‡ .BRH è¼‰å…¥ memory				 */
   /* --------------------------------------------------- */
 
   size = 0;
@@ -504,7 +504,7 @@ brh_load()
   }
 
   /* --------------------------------------------------- */
-  /* ¦h«O¯d BRH_WINDOW ªº¹B§@ªÅ¶¡			 */
+  /* å¤šä¿ç•™ BRH_WINDOW çš„é‹ä½œç©ºé–“			 */
   /* --------------------------------------------------- */
 
   /* brh_size = n = ((size + BRH_WINDOW) & -BRH_PAGE) + BRH_PAGE; */
@@ -534,7 +534,7 @@ brh_load()
 	bhno = bstamp2bno(bstamp);
 	if (bhno >= 0)
 	{
-	  /* itoc.001029: NOZAP®É, ¤´·|¥X²{ */
+	  /* itoc.001029: NOZAPæ™‚, ä»æœƒå‡ºç¾ */
 	  brdp = bshm->bcache + bhno;
 	  if (!(brdp->battr & BRD_NOZAP))
 	    bits[bhno] |= BRD_Z_BIT;
@@ -552,21 +552,21 @@ brh_load()
       n = *list;
       size = n + 3;
 
-      /* ³o­Ó¬İªO¦s¦b¡B¨S¦³³Q zap ±¼¡B¥i¥H list */
+      /* é€™å€‹çœ‹æ¿å­˜åœ¨ã€æ²’æœ‰è¢« zap æ‰ã€å¯ä»¥ list */
 
       if (bhno >= 0 && (bits[bhno] & BRD_L_BIT))
       {
-	bits[bhno] |= BRD_H_BIT;/* ¤w¦³¾\Åª°O¿ı */
+	bits[bhno] |= BRD_H_BIT;/* å·²æœ‰é–±è®€è¨˜éŒ„ */
 
 #ifndef ENHANCED_VISIT
-	bstp[bhno] = head[1];	/* ¤W¦¸¾\Åª®É¶¡ */
+	bstp[bhno] = head[1];	/* ä¸Šæ¬¡é–±è®€æ™‚é–“ */
 #endif
 
 	cbno = bhno;
 
 	if (n > 0)
 	{
-	  list += n;	/* Thor.980904.µù¸Ñ: ³Ì«á¤@­Ó tag */
+	  list += n;	/* Thor.980904.è¨»è§£: æœ€å¾Œä¸€å€‹ tag */
 
 	  if (list > tail)
 	    break;
@@ -612,7 +612,7 @@ brh_save()
   BRD *bhdr, *bend;
   char *bits;
 
-  /* Thor.980830: lkchu patch:  ÁÙ¨S load ´N¤£¥Î save */ 
+  /* Thor.980830: lkchu patch:  é‚„æ²’ load å°±ä¸ç”¨ save */ 
   if (!(base = brh_base))
     return;
 
@@ -669,21 +669,21 @@ brh_save()
 
 
 /* ----------------------------------------------------- */
-/* ¤ÀÃş zap °O¿ı .CZH (Class Zap History)		 */
+/* åˆ†é¡ zap è¨˜éŒ„ .CZH (Class Zap History)		 */
 /* ----------------------------------------------------- */
 
 
 typedef struct ClassZapHistory
 {
-  char brdname[BNLEN + 1];	/* ¤ÀÃşªº brdname */
+  char brdname[BNLEN + 1];	/* åˆ†é¡çš„ brdname */
 }                   CZH;
 
 
 static char class_bits[CH_MAX + 3];
 
 
-static int			/* >=0:pos  -1:¤£¦b .CZH */
-czh_find(fpath, brdname)	/* ÀË¬d¬O§_¤w¸g¦b .CZH ¤º */
+static int			/* >=0:pos  -1:ä¸åœ¨ .CZH */
+czh_find(fpath, brdname)	/* æª¢æŸ¥æ˜¯å¦å·²ç¶“åœ¨ .CZH å…§ */
   char *fpath;
   char *brdname;
 {
@@ -709,7 +709,7 @@ czh_find(fpath, brdname)	/* ÀË¬d¬O§_¤w¸g¦b .CZH ¤º */
 }
 
 
-static int		/* >=0:¦b .CZH  -1:¤£¦b .CZH */
+static int		/* >=0:åœ¨ .CZH  -1:ä¸åœ¨ .CZH */
 czh_put(brdname)
   char *brdname;
 {
@@ -718,7 +718,7 @@ czh_put(brdname)
 
   usr_fpath(fpath, cuser.userid, FN_CZH);
 
-  /* ­Y¤w¸g¦b .CZH ¤ºªº¸Ü¡A«h§R°£¦¹µ§¸ê®Æ¡F­Y¤£¦b .CZH ¤ºªº¸Ü¡A«h¥[¤J¦¹µ§¸ê®Æ */
+  /* è‹¥å·²ç¶“åœ¨ .CZH å…§çš„è©±ï¼Œå‰‡åˆªé™¤æ­¤ç­†è³‡æ–™ï¼›è‹¥ä¸åœ¨ .CZH å…§çš„è©±ï¼Œå‰‡åŠ å…¥æ­¤ç­†è³‡æ–™ */
   if ((pos = czh_find(fpath, brdname)) >= 0)
     rec_del(fpath, sizeof(CZH), pos, NULL);
   else
@@ -748,7 +748,7 @@ czh_load()
     img = class_img;
     do
     {
-      for (chn = CH_END - 2;; chn--)	/* ¦b©Ò¦³ªº¤ÀÃş¤¤§ä¤@­ÓªO¦W¬Û¦Pªº */
+      for (chn = CH_END - 2;; chn--)	/* åœ¨æ‰€æœ‰çš„åˆ†é¡ä¸­æ‰¾ä¸€å€‹æ¿åç›¸åŒçš„ */
       {
 	chx = (short *) img + (CH_END - chn);
 	if (!strncmp(czh->brdname, img + *chx, BNLEN))
@@ -756,7 +756,7 @@ czh_load()
 	  class_bits[-chn] |= BRD_Z_BIT;
 	  break;
 	}
-	if (chn <= min_chn)	/* ¦pªG§ä¤£¨ì¡Aªí¥Ü¸Ó¤ÀÃş¤w®ø¥¢¡A±q .CZH §R°£ */
+	if (chn <= min_chn)	/* å¦‚æœæ‰¾ä¸åˆ°ï¼Œè¡¨ç¤ºè©²åˆ†é¡å·²æ¶ˆå¤±ï¼Œå¾ .CZH åˆªé™¤ */
 	{
 	  czh_put(czh->brdname);
 	  break;
@@ -775,12 +775,12 @@ mantime_add(outbno, inbno)
   int outbno;
   int inbno;
 {
-  /* itoc.050613.µù¸Ñ: ¤H®ğªº´î¤Ö¤£¬O¦bÂ÷¶}¬İªO®É¡A¦Ó¬O¦b¶i¤J·sªº¬İªO©Î¬OÂ÷¯¸®É¡A
-     ³o¬O¬°¤FÁ×§K switch ¸õ¬İªO·|ºâ¿ù¤H®ğ */
+  /* itoc.050613.è¨»è§£: äººæ°£çš„æ¸›å°‘ä¸æ˜¯åœ¨é›¢é–‹çœ‹æ¿æ™‚ï¼Œè€Œæ˜¯åœ¨é€²å…¥æ–°çš„çœ‹æ¿æˆ–æ˜¯é›¢ç«™æ™‚ï¼Œ
+     é€™æ˜¯ç‚ºäº†é¿å… switch è·³çœ‹æ¿æœƒç®—éŒ¯äººæ°£ */
   if (outbno >= 0)
-    bshm->mantime[outbno]--;		/* °h¥X¤W¤@­ÓªO */
+    bshm->mantime[outbno]--;		/* é€€å‡ºä¸Šä¸€å€‹æ¿ */
   if (inbno >= 0)
-    bshm->mantime[inbno]++;		/* ¶i¤J·sªºªO */
+    bshm->mantime[inbno]++;		/* é€²å…¥æ–°çš„æ¿ */
 }
 
 
@@ -794,22 +794,22 @@ XoPost(bno)
   char *str, fpath[64];
 
   brd = bshm->bcache + bno;
-  if (!brd->brdname[0])	/* ¤w§R°£ªº¬İªO */
+  if (!brd->brdname[0])	/* å·²åˆªé™¤çš„çœ‹æ¿ */
     return -1;
 
   bits = brd_bits[bno];
 
-  if (currbno != bno)	/* ¬İªO¨S´«³q±`¬O¦]¬° every_Z() ¦^­ì¬İªO */
+  if (currbno != bno)	/* çœ‹æ¿æ²’æ›é€šå¸¸æ˜¯å› ç‚º every_Z() å›åŸçœ‹æ¿ */
   {
 #ifdef HAVE_MODERATED_BOARD
     if (!(bits & BRD_R_BIT))
     {
-      vmsg("¹ï¤£°_¡A¦¹ªO¥u­ãªO¤Í¶i¤J¡A½Ğ¦VªO¥D¥Ó½Ğ¤J¹Ò³\\¥i");
+      vmsg("å°ä¸èµ·ï¼Œæ­¤æ¿åªå‡†æ¿å‹é€²å…¥ï¼Œè«‹å‘æ¿ä¸»ç”³è«‹å…¥å¢ƒè¨±\å¯");
       return -1;
     }
 #endif
 
-    /* ³B²zÅv­­ */
+    /* è™•ç†æ¬Šé™ */
     bbstate = STAT_STARTED;
     if (bits & BRD_M_BIT)
       bbstate |= (STAT_BM | STAT_BOARD | STAT_POST);
@@ -824,7 +824,7 @@ XoPost(bno)
     currbattr = brd->battr;
     strcpy(currboard, brd->brdname);
     str = brd->BM;
-    sprintf(currBM, "ªO¥D¡G%s", *str <= ' ' ? "¼x¨D¤¤" : str);
+    sprintf(currBM, "æ¿ä¸»ï¼š%s", *str <= ' ' ? "å¾µæ±‚ä¸­" : str);
 #ifdef HAVE_BRDMATE
     strcpy(cutmp->reading, currboard);
 #endif
@@ -832,7 +832,7 @@ XoPost(bno)
     brd_fpath(fpath, currboard, fn_dir);
 
 #ifdef AUTO_JUMPPOST
-    xz[XZ_POST - XO_ZONE].xo = xo = xo_get_post(fpath, brd);	/* itoc.010910: ¬° XoPost ¶q¨­¥´³y¤@¤ä xo_get() */
+    xz[XZ_POST - XO_ZONE].xo = xo = xo_get_post(fpath, brd);	/* itoc.010910: ç‚º XoPost é‡èº«æ‰“é€ ä¸€æ”¯ xo_get() */
 #else
     xz[XZ_POST - XO_ZONE].xo = xo = xo_get(fpath);
 #endif
@@ -840,7 +840,7 @@ XoPost(bno)
     xo->xyz = brd->title;
   }
 
-  /* itoc.011113: ²Ä¤@¦¸¶iªO¤@©w­n¬İ¶iªOµe­±¡A²Ä¤G¦¸¥H«á«h¨ú¨M ufo ³]©w */
+  /* itoc.011113: ç¬¬ä¸€æ¬¡é€²æ¿ä¸€å®šè¦çœ‹é€²æ¿ç•«é¢ï¼Œç¬¬äºŒæ¬¡ä»¥å¾Œå‰‡å–æ±º ufo è¨­å®š */
   if (!(bits & BRD_V_BIT) || (cuser.ufo & UFO_BRDNOTE))
   {
     brd_bits[bno] = bits | BRD_V_BIT;
@@ -856,9 +856,9 @@ XoPost(bno)
 
 #ifdef HAVE_FORCE_BOARD
 void
-brd_force()			/* itoc.010407: ±j¨î¾\Åª¤½§iªO¡A¥B±j­¢Åª³Ì«á¤@½g */
+brd_force()			/* itoc.010407: å¼·åˆ¶é–±è®€å…¬å‘Šæ¿ï¼Œä¸”å¼·è¿«è®€æœ€å¾Œä¸€ç¯‡ */
 {
-  if (cuser.userlevel)		/* guest ¸õ¹L */
+  if (cuser.userlevel)		/* guest è·³é */
   {
     int bno;
     BRD *brd;
@@ -866,7 +866,7 @@ brd_force()			/* itoc.010407: ±j¨î¾\Åª¤½§iªO¡A¥B±j­¢Åª³Ì«á¤@½g */
     if ((bno = brd_bno(BN_ANNOUNCE)) < 0)
       return;
     brd = bshm->bcache + bno;
-    if (brd->btime < 0)		/* ©|¥¼§ó·s brd->blast ´N¤£±j¨î¾\Åª¤½§iªO */
+    if (brd->btime < 0)		/* å°šæœªæ›´æ–° brd->blast å°±ä¸å¼·åˆ¶é–±è®€å…¬å‘Šæ¿ */
       return;
 
 #ifdef ENHANCED_VISIT
@@ -876,7 +876,7 @@ brd_force()			/* itoc.010407: ±j¨î¾\Åª¤½§iªO¡A¥B±j­¢Åª³Ì«á¤@½g */
     if (brd->blast > brd_visit[bno])
 #endif
     {
-      vmsg("¦³·s¤½§i¡I½Ğ¥ı¾\\Åª§¹·s¤½§i«á¦AÂ÷¶}");
+      vmsg("æœ‰æ–°å…¬å‘Šï¼è«‹å…ˆé–±\è®€å®Œæ–°å…¬å‘Šå¾Œå†é›¢é–‹");
       XoPost(bno);
       xover(XZ_POST);
 
@@ -890,12 +890,12 @@ brd_force()			/* itoc.010407: ±j¨î¾\Åª¤½§iªO¡A¥B±j­¢Åª³Ì«á¤@½g */
 
 
 /* ----------------------------------------------------- */
-/* Class [¤ÀÃş¸s²Õ]					 */
+/* Class [åˆ†é¡ç¾¤çµ„]					 */
 /* ----------------------------------------------------- */
 
 
 #ifdef AUTO_JUMPBRD
-static int class_jumpnext = 0;	/* itoc.010910: ¬O§_¸õ¥h¤U¤@­Ó¥¼ÅªªO 1:­n 0:¤£­n */
+static int class_jumpnext = 0;	/* itoc.010910: æ˜¯å¦è·³å»ä¸‹ä¸€å€‹æœªè®€æ¿ 1:è¦ 0:ä¸è¦ */
 #endif
 
 
@@ -914,7 +914,7 @@ class_load(xo)
   BRD *brd;
   char *bits;
 
-  /* lkchu.990106: ¨¾¤î ¥¼¥Î account ³y¥X class.img ©Î¨S¦³ class ªº±¡ªp */
+  /* lkchu.990106: é˜²æ­¢ æœªç”¨ account é€ å‡º class.img æˆ–æ²’æœ‰ class çš„æƒ…æ³ */
   if (!class_img)
     return 0;
 
@@ -946,13 +946,13 @@ class_load(xo)
   do
   {
     chn = *chead++;
-    if (chn >= 0)	/* ¤@¯ë¬İªO */
+    if (chn >= 0)	/* ä¸€èˆ¬çœ‹æ¿ */
     {
       val = bits[chn];
       if (!(val & BRD_L_BIT) || (val & zap) || !(brd[chn].brdname[0]))
 	continue;
     }
-    else		/* ¤ÀÃş¸s²Õ */
+    else		/* åˆ†é¡ç¾¤çµ„ */
     {
       if (class_bits[-chn] & zap)
 	continue;
@@ -976,8 +976,8 @@ XoClass(chn)
 {
   XO xo, *xt;
 
-  /* Thor.980727: ¸Ñ¨M XO xoªº¤£½T©w©Ê, 
-                  class_load¤º³¡·| initial xo.max, ¨ä¥L¤£½T©w */
+  /* Thor.980727: è§£æ±º XO xoçš„ä¸ç¢ºå®šæ€§, 
+                  class_loadå…§éƒ¨æœƒ initial xo.max, å…¶ä»–ä¸ç¢ºå®š */
   xo.pos = xo.top = 0;
 
   xo.key = chn;
@@ -994,7 +994,7 @@ XoClass(chn)
 
 #ifdef AUTO_JUMPBRD
   if (cuser.ufo & UFO_JUMPBRD)
-    class_jumpnext = 1;	/* itoc.010910: ¥D°Ê¸õ¥h¤U¤@­Ó¥¼Åª¬İªO */
+    class_jumpnext = 1;	/* itoc.010910: ä¸»å‹•è·³å»ä¸‹ä¸€å€‹æœªè®€çœ‹æ¿ */
 #endif
   xover(XZ_CLASS);
 
@@ -1009,7 +1009,7 @@ static inline void
 btime_refresh(brd)
   BRD *brd;
 {
-  /* itoc.020123: ¤£ºŞ¦³µL UFO_BRDPOST¡A¤@·§§ó·s¡A¥H§K¥¼Åª¿O¤£·|«G */
+  /* itoc.020123: ä¸ç®¡æœ‰ç„¡ UFO_BRDPOSTï¼Œä¸€æ¦‚æ›´æ–°ï¼Œä»¥å…æœªè®€ç‡ˆä¸æœƒäº® */
   if (brd->btime < 0)
   {
     int fd, fsize;
@@ -1026,7 +1026,7 @@ btime_refresh(brd)
 	HDR hdr;
 
 	brd->bpost = fsize / sizeof(HDR);
-	/* itoc.020829: §ä³Ì«á¤@½g¥¼³Q¥[±K¡B¤£¬O¸m©³ªº HDR */
+	/* itoc.020829: æ‰¾æœ€å¾Œä¸€ç¯‡æœªè¢«åŠ å¯†ã€ä¸æ˜¯ç½®åº•çš„ HDR */
 	while ((fsize -= sizeof(HDR)) >= 0)
 	{
 	  lseek(fd, fsize, SEEK_SET);
@@ -1062,11 +1062,11 @@ class_item(num, bno, brdpost)
 
   btime_refresh(brd);
 
-  /* ³B²z ½s¸¹/½g¼Æ */
+  /* è™•ç† ç·¨è™Ÿ/ç¯‡æ•¸ */
   if (brdpost)
     num = brd->bpost;
 
-  /* ³B²z zap/friend/secret ªOªº²Å¸¹ */
+  /* è™•ç† zap/friend/secret æ¿çš„ç¬¦è™Ÿ */
   if (brd_bits[bno] & BRD_Z_BIT)
     token = TOKEN_ZAP_BRD;
   else if (brd->readlevel == PERM_SYSOP)
@@ -1076,25 +1076,25 @@ class_item(num, bno, brdpost)
   else
     token = ' ';
 
-  /* ³B²z ¤wÅª/¥¼Åª */
+  /* è™•ç† å·²è®€/æœªè®€ */
 #ifdef ENHANCED_VISIT
-  /* itoc.010407: §ï¥Î³Ì«á¤@½g¤wÅª/¥¼Åª¨Ó§PÂ_ */
+  /* itoc.010407: æ”¹ç”¨æœ€å¾Œä¸€ç¯‡å·²è®€/æœªè®€ä¾†åˆ¤æ–· */
   brh_get(brd->bstamp, bno);
   str1 = brh_unread(brd->blast) ? ICON_UNREAD_BRD : ICON_READ_BRD;
 #else
   str1 = brd->blast > brd_visit[bno] ? ICON_UNREAD_BRD : ICON_READ_BRD;
 #endif
 
-  /* ³B²z §ë²¼/Âà«H */
+  /* è™•ç† æŠ•ç¥¨/è½‰ä¿¡ */
   if (brd->bvote)
     str2 = (brd->bvote > 0) ? ICON_VOTED_BRD : ICON_GAMBLED_BRD;
   else
     str2 = (brd->battr & BRD_NOTRAN) ? ICON_NOTRAN_BRD : ICON_TRAN_BRD;
 
-  /* ³B²z ¤H®ğ */
+  /* è™•ç† äººæ°£ */
   bno = bshm->mantime[bno];
   if (bno > 99)
-    str3 = "\033[1;31mÃz\033[m";
+    str3 = "\033[1;31mçˆ†\033[m";
   else if (bno > 0)
     sprintf(str3 = buf, "%2d", bno);
   else
@@ -1103,7 +1103,7 @@ class_item(num, bno, brdpost)
   prints("%6d%c%s%-13s\033[1;3%dm%-5s\033[m%s ",
     num, token, str1, brd->brdname,
     brd->class[3] & 7, brd->class, str2);
-  /* itoc.060530: ­É¥Î str1¡Bnum ¨Ó³B²z¬İªO±Ô­zÅã¥Üªº¤¤¤åÂ_¦r */
+  /* itoc.060530: å€Ÿç”¨ str1ã€num ä¾†è™•ç†çœ‹æ¿æ•˜è¿°é¡¯ç¤ºçš„ä¸­æ–‡æ–·å­— */
   str1 = brd->title;
   num = (d_cols >> 1) + 33;
   prints("%-*.*s", num, IS_ZHC_LO(str1, num - 1) ? num - 2 : num - 1, str1);
@@ -1129,7 +1129,7 @@ class_body(xo)
 #ifdef AUTO_JUMPBRD
   nextpos = 0;
 
-  /* itoc.010910: ·j´M¤U¤@­Ó¥¼Åª¬İªO */
+  /* itoc.010910: æœå°‹ä¸‹ä¸€å€‹æœªè®€çœ‹æ¿ */
   if (class_jumpnext)
   {
     class_jumpnext = 0;
@@ -1146,7 +1146,7 @@ class_body(xo)
 	brd = bcache + chn;
 
 #ifdef ENHANCED_VISIT
-	/* itoc.010407: §ï¥Î³Ì«á¤@½g¤wÅª/¥¼Åª¨Ó§PÂ_ */
+	/* itoc.010407: æ”¹ç”¨æœ€å¾Œä¸€ç¯‡å·²è®€/æœªè®€ä¾†åˆ¤æ–· */
 	brh_get(brd->bstamp, chn);
 	if (brh_unread(brd->blast))
 #else
@@ -1160,7 +1160,7 @@ class_body(xo)
       n++;
     }
 
-    /* ¤U¤@­Ó¥¼ÅªªO¦b§O­¶¡A­nÂ½¹L¥h */
+    /* ä¸‹ä¸€å€‹æœªè®€æ¿åœ¨åˆ¥é ï¼Œè¦ç¿»éå» */
     if (nextpos >= cnt + XO_TALL)
       return nextpos + XO_MOVE;
   }
@@ -1178,11 +1178,11 @@ class_body(xo)
     {
       clrtoeol();
       cnt++;
-      if (chn >= 0)		/* ¤@¯ë¬İªO */
+      if (chn >= 0)		/* ä¸€èˆ¬çœ‹æ¿ */
       {
 	class_item(cnt, chn, brdpost);
       }
-      else			/* ¤ÀÃş¸s²Õ */
+      else			/* åˆ†é¡ç¾¤çµ„ */
       {
 	short *chx;
 	char *img, *str;
@@ -1204,12 +1204,12 @@ class_body(xo)
   } while (++n < b_lines);
 
 #ifdef AUTO_JUMPBRD
-  /* itoc.010910: ¤U¤@­Ó¥¼ÅªªO¦b¥»­¶¡A­n§â´å¼Ğ²¾¹L¥h */
+  /* itoc.010910: ä¸‹ä¸€å€‹æœªè®€æ¿åœ¨æœ¬é ï¼Œè¦æŠŠæ¸¸æ¨™ç§»éå» */
   outf(FEETER_CLASS);   
   return nextpos ? nextpos + XO_MOVE : XO_NONE;
 #else
   /* return XO_NONE; */
-  return XO_FOOT;	/* itoc.010403: §â b_lines ¶ñ¤W feeter */
+  return XO_FOOT;	/* itoc.010403: æŠŠ b_lines å¡«ä¸Š feeter */
 #endif
 }
 
@@ -1220,7 +1220,7 @@ class_neck(xo)
 {
   move(1, 0);
   prints(NECKER_CLASS, 
-    cuser.ufo & UFO_BRDPOST ? "Á`¼Æ" : "½s¸¹", 
+    cuser.ufo & UFO_BRDPOST ? "ç¸½æ•¸" : "ç·¨è™Ÿ", 
     d_cols >> 1, "", d_cols - (d_cols >> 1), "");
   return class_body(xo);
 }
@@ -1230,7 +1230,7 @@ static int
 class_head(xo)
   XO *xo;
 {
-  vs_head("¬İªO¦Cªí", str_site);
+  vs_head("çœ‹æ¿åˆ—è¡¨", str_site);
   return class_neck(xo);
 }
 
@@ -1255,7 +1255,7 @@ class_postmode(xo)
 
 
 static int
-class_namemode(xo)		/* itoc.010413: ¬İªO¨Ì·Ó¦r¥À/¤ÀÃş±Æ¦C */
+class_namemode(xo)		/* itoc.010413: çœ‹æ¿ä¾ç…§å­—æ¯/åˆ†é¡æ’åˆ— */
   XO *xo;
 {
   static time_t last = 0;
@@ -1263,16 +1263,16 @@ class_namemode(xo)		/* itoc.010413: ¬İªO¨Ì·Ó¦r¥À/¤ÀÃş±Æ¦C */
  
   if (time(&now) - last < 10)
   {
-    vmsg("¨C¤Q¬íÄÁ¥u¯à¤Á´«¤@¦¸");
+    vmsg("æ¯åç§’é˜åªèƒ½åˆ‡æ›ä¸€æ¬¡");
     return XO_FOOT;
   }
   last = now;
 
   if (cuser.userlevel)
-    brh_save();			/* itoc.010711: Àx¦s¾\Åª°O¿ıÀÉ */
+    brh_save();			/* itoc.010711: å„²å­˜é–±è®€è¨˜éŒ„æª” */
   cuser.ufo ^= UFO_BRDNAME;
   cutmp->ufo = cuser.ufo;
-  board_main();			/* ­«·s¸ü¤J class_img */
+  board_main();			/* é‡æ–°è¼‰å…¥ class_img */
   return class_neck(xo);
 }
 
@@ -1315,7 +1315,7 @@ class_search(xo)
 	brd = bcache + chn;
 	if (str_str(brd->brdname, buf) || str_sub(brd->title, buf))
 	{
-	  outf(FEETER_CLASS);	/* itoc.010913: §â b_lines ¶ñ¤W feeter */
+	  outf(FEETER_CLASS);	/* itoc.010913: æŠŠ b_lines å¡«ä¸Š feeter */
 	  return pos + XO_MOVE;
 	}
       }
@@ -1333,7 +1333,7 @@ class_searchBM(xo)
   int num, pos, max;
   char buf[IDLEN + 1];
 
-  if (vget(b_lines, 0, "½Ğ¿é¤JªO¥D¡G", buf, IDLEN + 1, DOECHO))
+  if (vget(b_lines, 0, "è«‹è¼¸å…¥æ¿ä¸»ï¼š", buf, IDLEN + 1, DOECHO))
   {
     short *chp, chn;
     BRD *bcache, *brd;
@@ -1355,7 +1355,7 @@ class_searchBM(xo)
 	brd = bcache + chn;
 	if (str_str(brd->BM, buf))
 	{
-	  outf(FEETER_CLASS);	/* itoc.010913: §â b_lines ¶ñ¤W feeter */
+	  outf(FEETER_CLASS);	/* itoc.010913: æŠŠ b_lines å¡«ä¸Š feeter */
 	  return pos + XO_MOVE;
 	}
       }
@@ -1370,9 +1370,9 @@ static int
 class_yank(xo)
   XO *xo;
 {
-  /* itoc.001029: ©Ò¦³ªºclass,board¦Cªí¤U, key < 0, 1 «h¬°§ä´M§@ªÌ¼Ò¦¡
-                  ¨Ï¨ä¤£¯à¶] XO_INIT(ùØ­±ªºclass_load), ¦p class_yank,
-                  °£¤F¨¾¤î§ä¥Xªº§@ªÌ¬İªO¦Cªí®ø¥¢, ¤]¨¾½ğ¤H  */
+  /* itoc.001029: æ‰€æœ‰çš„class,boardåˆ—è¡¨ä¸‹, key < 0, 1 å‰‡ç‚ºæ‰¾å°‹ä½œè€…æ¨¡å¼
+                  ä½¿å…¶ä¸èƒ½è·‘ XO_INIT(è£é¢çš„class_load), å¦‚ class_yank,
+                  é™¤äº†é˜²æ­¢æ‰¾å‡ºçš„ä½œè€…çœ‹æ¿åˆ—è¡¨æ¶ˆå¤±, ä¹Ÿé˜²è¸¢äºº  */
   if (xo->key >= 0)
     return XO_NONE;
     
@@ -1393,16 +1393,16 @@ class_zap(xo)
   pos = xo->pos;
   chp = (short *) xo->xyz + pos;
   chn = *chp;
-  if (chn >= 0)		/* ¤@¯ë¬İªO */
+  if (chn >= 0)		/* ä¸€èˆ¬çœ‹æ¿ */
   {
     brd = bshm->bcache + chn;
     if (!(brd->battr & BRD_NOZAP))
     {
-      /* itoc.010909: ­nÀH class_item() ª©­±ÅÜ */
+      /* itoc.010909: è¦éš¨ class_item() ç‰ˆé¢è®Š */
       move(3 + pos - xo->top, 6);
       num = brd_bits[chn] ^= BRD_Z_BIT;
 
-      /* ³B²z zap/friend/secret ªOªº²Å¸¹ */
+      /* è™•ç† zap/friend/secret æ¿çš„ç¬¦è™Ÿ */
       if (num & BRD_Z_BIT)
 	token = TOKEN_ZAP_BRD;
       else if (brd->readlevel == PERM_SYSOP)
@@ -1415,12 +1415,12 @@ class_zap(xo)
       outc(token);
     }
   }
-  else			/* ¤ÀÃş¸s²Õ */
+  else			/* åˆ†é¡ç¾¤çµ„ */
   {
     short *chx;
     char *img, brdname[BNLEN + 1];
 
-    /* itoc.010909: ­nÀH class_body() ª©­±ÅÜ */
+    /* itoc.010909: è¦éš¨ class_body() ç‰ˆé¢è®Š */
     move(3 + pos - xo->top, 6);
     num = class_bits[-chn] ^= BRD_Z_BIT;
     outc(num & BRD_Z_BIT ? TOKEN_ZAP_BRD : ' ');
@@ -1432,7 +1432,7 @@ class_zap(xo)
   }
 
   /* return XO_NONE; */
-  return XO_MOVE + pos + 1;	/* itoc.020219: ¸õ¦Ü¤U¤@¶µ */
+  return XO_MOVE + pos + 1;	/* itoc.020219: è·³è‡³ä¸‹ä¸€é … */
 }
 
 
@@ -1443,7 +1443,7 @@ class_zapall(xo)
   BRD *brdp, *bend;
   int ans, bno;
 
-  ans = vans("³]©w©Ò¦³¬İªO (U)­q¾\\ (Z)¤£­q¾\\ (Q)¨ú®ø¡H [Q] ");
+  ans = vans("è¨­å®šæ‰€æœ‰çœ‹æ¿ (U)è¨‚é–±\ (Z)ä¸è¨‚é–±\ (Q)å–æ¶ˆï¼Ÿ [Q] ");
   if (ans != 'z' && ans != 'u')
     return XO_FOOT;
 
@@ -1465,13 +1465,13 @@ class_zapall(xo)
     bno++;
   } while (++brdp < bend);
 
-  class_bfo |= BFO_YANK;	/* ±j­¢ yank °_¨Ó¬İµ²ªG */
+  class_bfo |= BFO_YANK;	/* å¼·è¿« yank èµ·ä¾†çœ‹çµæœ */
   return class_init(xo);
 }
 
 
 static int
-class_visit(xo)		/* itoc.010128: ¬İªO¦Cªí³]©w¬İªO¤wÅª */
+class_visit(xo)		/* itoc.010128: çœ‹æ¿åˆ—è¡¨è¨­å®šçœ‹æ¿å·²è®€ */
   XO *xo;
 {
   short *chp;
@@ -1494,7 +1494,7 @@ class_visit(xo)		/* itoc.010128: ¬İªO¦Cªí³]©w¬İªO¤wÅª */
 
 
 static int
-class_unvisit(xo)		/* itoc.010129: ¬İªO¦Cªí³]©w¬İªO¥¼Åª */
+class_unvisit(xo)		/* itoc.010129: çœ‹æ¿åˆ—è¡¨è¨­å®šçœ‹æ¿æœªè®€ */
   XO *xo;
 {
   short *chp;
@@ -1509,7 +1509,7 @@ class_unvisit(xo)		/* itoc.010129: ¬İªO¦Cªí³]©w¬İªO¥¼Åª */
     brh_get(brd->bstamp, chn);
     brh_visit(1);
 #ifndef ENHANCED_VISIT
-    brd_visit[chn] = 0;	/* itoc.010402: ³ÌªñÂsÄı®É¶¡Âk¹s¡A¨Ï¬İªO¦Cªí¤¤Åã¥Ü¥¼Åª */
+    brd_visit[chn] = 0;	/* itoc.010402: æœ€è¿‘ç€è¦½æ™‚é–“æ­¸é›¶ï¼Œä½¿çœ‹æ¿åˆ—è¡¨ä¸­é¡¯ç¤ºæœªè®€ */
 #endif
   }
   return class_body(xo);
@@ -1532,12 +1532,12 @@ class_nextunread(xo)
   while (++pos < max)
   {
     chn = *(++chp);
-    if (chn >= 0 && !(brd_bits[chn] & BRD_Z_BIT))	/* ¸õ¹L¤ÀÃş¤Î zap ±¼ªº¬İªO */
+    if (chn >= 0 && !(brd_bits[chn] & BRD_Z_BIT))	/* è·³éåˆ†é¡åŠ zap æ‰çš„çœ‹æ¿ */
     {
       brd = bcache + chn;
 
 #ifdef ENHANCED_VISIT
-      /* itoc.010407: §ï¥Î³Ì«á¤@½g¤wÅª/¥¼Åª¨Ó§PÂ_ */
+      /* itoc.010407: æ”¹ç”¨æœ€å¾Œä¸€ç¯‡å·²è®€/æœªè®€ä¾†åˆ¤æ–· */
       brh_get(brd->bstamp, chn);
       if (brh_unread(brd->blast))
 #else
@@ -1565,7 +1565,7 @@ class_edit(xo)
     if (chn >= 0)
     {
       if (!HAS_PERM(PERM_ALLBOARD))
-	brd_title(chn);		/* itoc.000312: ªO¥D­×§ï¤¤¤å±Ô­z */
+	brd_title(chn);		/* itoc.000312: æ¿ä¸»ä¿®æ”¹ä¸­æ–‡æ•˜è¿° */
       else
 	brd_edit(chn);
       return class_init(xo);
@@ -1580,7 +1580,7 @@ hdr_cmp(a, b)
   HDR *a;
   HDR *b;
 {
-  /* ¥ı¤ñ¹ï¤ÀÃş¡A¦A¤ñ¹ïªO¦W */
+  /* å…ˆæ¯”å°åˆ†é¡ï¼Œå†æ¯”å°æ¿å */
   int k = strncmp(a->title + BNLEN + 1, b->title + BNLEN + 1, BCLEN);
   return k ? k : str_cmp(a->xname, b->xname);
 }
@@ -1597,14 +1597,14 @@ class_newbrd(xo)
 
   memset(&newboard, 0, sizeof(BRD));
 
-  /* itoc.010211: ·s¬İªO¹w³] postlevel = PERM_POST; battr = ¤£Âà«H */
+  /* itoc.010211: æ–°çœ‹æ¿é è¨­ postlevel = PERM_POST; battr = ä¸è½‰ä¿¡ */
   newboard.postlevel = PERM_POST;
   newboard.battr = BRD_NOTRAN;
 
   if (brd_new(&newboard) < 0)
     return class_head(xo);
 
-  if (xo->key < CH_END)		/* ¦b¤ÀÃş¸s²Õ¸Ì­± */
+  if (xo->key < CH_END)		/* åœ¨åˆ†é¡ç¾¤çµ„è£¡é¢ */
   {
     short *chx;
     char *img, *str;
@@ -1619,17 +1619,17 @@ class_newbrd(xo)
     if (str = strchr(xname, '/'))
       *str = '\0';
 
-    /* ¥[¤J¤ÀÃş¸s²Õ */
+    /* åŠ å…¥åˆ†é¡ç¾¤çµ„ */
     sprintf(fpath, "gem/@/@%s", xname);
     brd2gem(&newboard, &hdr);
     rec_add(fpath, &hdr, sizeof(HDR));
     rec_sync(fpath, sizeof(HDR), hdr_cmp, NULL);
 
-    vmsg("·sªO¦¨¥ß");
+    vmsg("æ–°æ¿æˆç«‹");
   }
-  else				/* ¦b¬İªO¦Cªí¸Ì­± */
+  else				/* åœ¨çœ‹æ¿åˆ—è¡¨è£¡é¢ */
   {
-    vmsg("·sªO¦¨¥ß¡A°OµÛ¥[¤J¤ÀÃş¸s²Õ");
+    vmsg("æ–°æ¿æˆç«‹ï¼Œè¨˜è‘—åŠ å…¥åˆ†é¡ç¾¤çµ„");
   }
 
   return class_init(xo);
@@ -1645,14 +1645,14 @@ class_browse(xo)
 
   chp = (short *) xo->xyz + xo->pos;
   chn = *chp;
-  if (chn < 0)		/* ¶i¤J¤ÀÃş */
+  if (chn < 0)		/* é€²å…¥åˆ†é¡ */
   {
     if (!XoClass(chn))
       return XO_NONE;
   }
-  else			/* ¶i¤J¬İªO */
+  else			/* é€²å…¥çœ‹æ¿ */
   {
-    if (XoPost(chn))	/* µLªk¾\Åª¸ÓªO */
+    if (XoPost(chn))	/* ç„¡æ³•é–±è®€è©²æ¿ */
       return XO_FOOT;
     xover(XZ_POST);
 #ifndef ENHANCED_VISIT
@@ -1662,10 +1662,10 @@ class_browse(xo)
 
 #ifdef AUTO_JUMPBRD
   if (cuser.ufo & UFO_JUMPBRD)
-    class_jumpnext = 1;		/* itoc.010910: ¥u¦³¦bÂ÷¶}¬İªO¦^¨ì¬İªO¦Cªí®É¤~»İ­n¸õ¥h¤U¤@­Ó¥¼Åª¬İªO */
+    class_jumpnext = 1;		/* itoc.010910: åªæœ‰åœ¨é›¢é–‹çœ‹æ¿å›åˆ°çœ‹æ¿åˆ—è¡¨æ™‚æ‰éœ€è¦è·³å»ä¸‹ä¸€å€‹æœªè®€çœ‹æ¿ */
 #endif
 
-  return class_head(xo);	/* Thor.980701: µLªk²M¤Ö¤@ÂI, ¦]¬° XoPost */
+  return class_head(xo);	/* Thor.980701: ç„¡æ³•æ¸…å°‘ä¸€é», å› ç‚º XoPost */
 }
 
 
@@ -1706,7 +1706,7 @@ class_switch(xo)
 #ifdef MY_FAVORITE
 
 /* ----------------------------------------------------- */
-/* MyFavorite [§Úªº³Ì·R]				 */
+/* MyFavorite [æˆ‘çš„æœ€æ„›]				 */
 /* ----------------------------------------------------- */
 
 
@@ -1755,7 +1755,7 @@ class_addMF(xo)
   chp = (short *) xo->xyz + xo->pos;
   chn = *chp;
       
-  if (chn >= 0)		/* ¤@¯ë¬İªO */
+  if (chn >= 0)		/* ä¸€èˆ¬çœ‹æ¿ */
   {
     BRD *bhdr;
 
@@ -1770,14 +1770,14 @@ class_addMF(xo)
 
       mf_fpath(fpath, cuser.userid, FN_MF);
       rec_add(fpath, &mf, sizeof(MF));
-      vmsg("¤w±N¦¹¬İªO¥[¤J§Úªº³Ì·R");
+      vmsg("å·²å°‡æ­¤çœ‹æ¿åŠ å…¥æˆ‘çš„æœ€æ„›");
     }
     else
     {
-      vmsg("¦¹¬İªO¤w¦b³Ì·R¤¤¡C­Y­n­«ÂĞ¥[¤J¡A½Ğ¶i§Úªº³Ì·R¸Ì·s¼W");
+      vmsg("æ­¤çœ‹æ¿å·²åœ¨æœ€æ„›ä¸­ã€‚è‹¥è¦é‡è¦†åŠ å…¥ï¼Œè«‹é€²æˆ‘çš„æœ€æ„›è£¡æ–°å¢");
     }
   }
-  else			/* ¤ÀÃş¸s²Õ */
+  else			/* åˆ†é¡ç¾¤çµ„ */
   {
     short *chx;
     char *img, *str, *ptr;
@@ -1796,7 +1796,7 @@ class_addMF(xo)
 
     mf_fpath(fpath, cuser.userid, FN_MF);
     rec_add(fpath, &mf, sizeof(MF));
-    vmsg("¤w±N¦¹¤ÀÃş¥[¤J§Úªº³Ì·R");
+    vmsg("å·²å°‡æ­¤åˆ†é¡åŠ å…¥æˆ‘çš„æœ€æ„›");
   }
 
   return XO_FOOT;
@@ -1834,10 +1834,10 @@ MFclass_browse(name)
 
 
 #ifdef AUTHOR_EXTRACTION
-/* Thor.980818: ·Q§ï¦¨¥H¥Ø«eªº¬İªO¦Cªí©Î¤ÀÃş¨Ó§ä, ¤£­n§ä¥ş³¡ */
+/* Thor.980818: æƒ³æ”¹æˆä»¥ç›®å‰çš„çœ‹æ¿åˆ—è¡¨æˆ–åˆ†é¡ä¾†æ‰¾, ä¸è¦æ‰¾å…¨éƒ¨ */
 
 
-/* opus.1127 : ­pµe­«¼g, ¥i extract author/title */
+/* opus.1127 : è¨ˆç•«é‡å¯«, å¯ extract author/title */
 
 
 static int
@@ -1871,9 +1871,9 @@ XoAuthor(xo)
 
   do
   {
-    if ((chn = *chead++) >= 0)	/* Thor.980818: ¤£¬° group */
+    if ((chn = *chead++) >= 0)	/* Thor.980818: ä¸ç‚º group */
     {
-      /* Thor.980701: ´M§ä«ü©w§@ªÌ¤å³¹, ¦³«h²¾¦ì¸m, ¨Ã©ñ¤J */
+      /* Thor.980701: å°‹æ‰¾æŒ‡å®šä½œè€…æ–‡ç« , æœ‰å‰‡ç§»ä½ç½®, ä¸¦æ”¾å…¥ */
 
       int fsize;
       char *fimage;
@@ -1881,7 +1881,7 @@ XoAuthor(xo)
       char folder[80];
       HDR *head, *tail;
 
-      sprintf(folder, "¡m´M§ä«ü©w¼ĞÃD§@ªÌ¡n¬İªO¡G%s \033[5m...\033[m«ö¥ô·NÁä¤¤Â_", brd[chn].brdname);
+      sprintf(folder, "ã€Šå°‹æ‰¾æŒ‡å®šæ¨™é¡Œä½œè€…ã€‹çœ‹æ¿ï¼š%s \033[5m...\033[mæŒ‰ä»»æ„éµä¸­æ–·", brd[chn].brdname);
       outz(folder);
       refresh();
 
@@ -1908,7 +1908,7 @@ XoAuthor(xo)
       munmap(fimage, fsize);
     }
 
-    /* ¨Ï¥ÎªÌ¥i¥H¤¤Â_·j´M */
+    /* ä½¿ç”¨è€…å¯ä»¥ä¸­æ–·æœå°‹ */
     value = 1;
     if (select(1, (fd_set *) &value, NULL, NULL, &tv) > 0)
     {
@@ -1920,29 +1920,29 @@ XoAuthor(xo)
   if (!tag)
   {
     free(chp);
-    vmsg("ªÅµL¤@ª«");
+    vmsg("ç©ºç„¡ä¸€ç‰©");
     return XO_FOOT;
   }
 
   xo_a.pos = xo_a.top = 0;
   xo_a.max = tag;
   xo_a.key = 1;			/* all boards */
-  /* Thor.990621: ©Ò¦³ªºclass,board¦Cªí¤U, key < 0, ¥H 1 »P¥¿±`¼Ò¦¡°Ï¤À
-                  ¨Ï¨ä¤£¯à¶] XO_INIT(ùØ­±ªºclass_load), ¦p class_yank,
-                  °£¤F¨¾¤î§ä¥Xªº§@ªÌ¬İªO¦Cªí®ø¥¢, ¤]¨¾½ğ¤H */ 
+  /* Thor.990621: æ‰€æœ‰çš„class,boardåˆ—è¡¨ä¸‹, key < 0, ä»¥ 1 èˆ‡æ­£å¸¸æ¨¡å¼å€åˆ†
+                  ä½¿å…¶ä¸èƒ½è·‘ XO_INIT(è£é¢çš„class_load), å¦‚ class_yank,
+                  é™¤äº†é˜²æ­¢æ‰¾å‡ºçš„ä½œè€…çœ‹æ¿åˆ—è¡¨æ¶ˆå¤±, ä¹Ÿé˜²è¸¢äºº */ 
   xo_a.xyz = (char *) chp;
 
-  xoTmp = xz[XZ_CLASS - XO_ZONE].xo;	/* Thor.980701: °O¤U­ì¨Óªºclass_xo */
+  xoTmp = xz[XZ_CLASS - XO_ZONE].xo;	/* Thor.980701: è¨˜ä¸‹åŸä¾†çš„class_xo */
   xz[XZ_CLASS - XO_ZONE].xo = &xo_a;
 
 #ifdef AUTO_JUMPBRD
   if (cuser.ufo & UFO_JUMPBRD)
-    class_jumpnext = 1;	/* itoc.010910: ¥D°Ê¸õ¥h¤U¤@­Ó¥¼Åª¬İªO */
+    class_jumpnext = 1;	/* itoc.010910: ä¸»å‹•è·³å»ä¸‹ä¸€å€‹æœªè®€çœ‹æ¿ */
 #endif
   xover(XZ_CLASS);
 
   free(chp);
-  xz[XZ_CLASS - XO_ZONE].xo = xoTmp;	/* Thor.980701: ÁÙ­ì class_xo */
+  xz[XZ_CLASS - XO_ZONE].xo = xoTmp;	/* Thor.980701: é‚„åŸ class_xo */
 
   return class_body(xo);
 }
@@ -1990,10 +1990,10 @@ int
 Class()
 {
   /* XoClass(CH_END - 1); */
-  /* Thor.980804: ¨¾¤î ¥¼¥Î account ³y¥X class.img ©Î¨S¦³ class ªº±¡ªp */
+  /* Thor.980804: é˜²æ­¢ æœªç”¨ account é€ å‡º class.img æˆ–æ²’æœ‰ class çš„æƒ…æ³ */
   if (!class_img || !XoClass(CH_END - 1))
   {
-    vmsg("¥¼©w¸q¤À²Õ°Q½×°Ï");
+    vmsg("æœªå®šç¾©åˆ†çµ„è¨è«–å€");
     return XEASY;
   }
   return 0;
@@ -2007,22 +2007,22 @@ board_main()
 
   brh_load();
 
-  if (class_img)	/* itoc.030416: ²Ä¤G¦¸¶i¤J board_main ®É¡A­n free ±¼ class_img */
+  if (class_img)	/* itoc.030416: ç¬¬äºŒæ¬¡é€²å…¥ board_main æ™‚ï¼Œè¦ free æ‰ class_img */
   {
     free(class_img);
   }
-  else			/* itoc.040102: ²Ä¤@¦¸¶i¤J board_main ®É¡A¤~»İ­nªì©l¤Æ class_bfo */
+  else			/* itoc.040102: ç¬¬ä¸€æ¬¡é€²å…¥ board_main æ™‚ï¼Œæ‰éœ€è¦åˆå§‹åŒ– class_bfo */
   {
     if (!cuser.userlevel)			/* guest yank all boards */
       class_bfo |= BFO_YANK;
 
-    /* ³]©w default board */
+    /* è¨­å®š default board */
     strcpy(currboard, BN_NULL);
     currbno = -1;
   }
 
   /* class_img = f_img(CLASS_IMGFILE, &fsize); */
-  /* itoc.010413: ¨Ì·Ó ufo ¨Ó¸ü¤J¤£¦Pªº class image */
+  /* itoc.010413: ä¾ç…§ ufo ä¾†è¼‰å…¥ä¸åŒçš„ class image */
   class_img = f_img(cuser.ufo & UFO_BRDNAME ? CLASS_IMGFILE_NAME : CLASS_IMGFILE_TITLE, &fsize);
 
   if (class_img == NULL)
@@ -2041,11 +2041,11 @@ board_main()
 int
 Boards()
 {
-  /* class_xo = &board_xo; *//* Thor: ¤w¦³ default, ¤£»İ§@¦¹ */
+  /* class_xo = &board_xo; *//* Thor: å·²æœ‰ default, ä¸éœ€ä½œæ­¤ */
 
 #ifdef AUTO_JUMPBRD
   if (cuser.ufo & UFO_JUMPBRD)
-    class_jumpnext = 1;	/* itoc.010910: ¥D°Ê¸õ¥h¤U¤@­Ó¥¼Åª¬İªO */
+    class_jumpnext = 1;	/* itoc.010910: ä¸»å‹•è·³å»ä¸‹ä¸€å€‹æœªè®€çœ‹æ¿ */
 #endif
   xover(XZ_CLASS);
 

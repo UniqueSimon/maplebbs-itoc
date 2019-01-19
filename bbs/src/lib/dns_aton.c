@@ -14,7 +14,7 @@
 /* get IP address by address string 			 */
 /* ----------------------------------------------------- */
 
-/* Thor.990811: §ì¥Xip addr */
+/* Thor.990811: æŠ“å‡ºip addr */
 
 unsigned long
 dns_aton(name)

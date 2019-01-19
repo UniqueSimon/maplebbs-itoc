@@ -1,24 +1,24 @@
-�o�H�H: SnowWolf.bbs@xeon.tfcis.org (�R�]) �ݪO: plan
-��  �D: [���] BLog for itoc-maple ����----0
-�o�H��: �ʤO�֤� (Sun, 07 Sep 2003 23:11:19 +0800 (CST))  Updated: 2003/09/07
+發信人: SnowWolf.bbs@xeon.tfcis.org (靜夜) 看板: plan
+標  題: [文件] BLog for itoc-maple 說明----0
+發信站: 動力核心 (Sun, 07 Sep 2003 23:11:19 +0800 (CST))  Updated: 2003/09/07
 
-�ͯ��ۥx�jptt2�����ӤFBLog�\��
-�g ptt2 ���� in2 �j�j�P�N�� �N�ק�᪺�����K�쥻�����U��j�j�Ѧ�...
-�t�~�ѩ�ӵ{���O�H GPL �� license �ŧi��
-�ҥH�ק�᪺�{���]�۰ʬO GPL ��...^^
-�t�~�U��O in2 �j�j�ҵ��ڪ��^�峡��
+敝站自台大ptt2站移植了BLog功能
+經 ptt2 站長 in2 大大同意後 將修改後的版本貼到本版給各位大大參考...
+另外由於該程式是以 GPL 的 license 宣告的
+所以修改後的程式也自動是 GPL 的...^^
+另外下文是 in2 大大所給我的回文部份
 --------------------------------------
-�٦��@�I�i��n�`�N���O,
- PttBlog default���ͥX�Ӫ�����,
-�O�i�H�����Y movable type �� styles.css ,
-���L�x�责�Ѫ� styles.css �O�����v�����D��~ :Q
-�p�G�z���ק擄��n��& �}�G�� css�ɤ]�Ʊ�i�H�Ǥ@�����ڭ� :p
+還有一點可能要注意的是,
+ PttBlog default產生出來的頁面,
+是可以直接吃 movable type 的 styles.css ,
+不過官方提供的 styles.css 是有版權的問題的~ :Q
+如果您有修改什麼好用& 漂亮的 css檔也希望可以傳一份給我們 :p
 
-�t�~�ثe PttBlog����٦��ܦh�F��S���g�� :p
-���O rss, ping, trackback ���� :p
-�p�G�z�۷������쪺��, �ݬݬO���O�i�H��o�����g��,
-�M��ڭ̳o��A merge�^�� :DD
+另外目前 PttBlog其實還有很多東西沒有寫完 :p
+像是 rss, ping, trackback 等等 :p
+如果您相當有興趣的話, 看看是不是可以把這部份寫完,
+然後我們這邊再 merge回來 :DD
 
 --
-[1;36m=[37m[[36m��[37m:[33m�[37mݢ�[m���[1;33m�[37m:[36m�� [31mOrigin[37m ]|[[m     [31m�[1mʤ[0;31mO�[1m֤[0;31m� [1mprocessor.tfcis.org    [37m]|[�[33mݣ��[m�[1;36m��[37m:][36m=[m
-[1;36m=[m[[1;36m��[37m:[33m�[30mݢ�[m���[1;33m�[37m:[36m�� [31mAuthor[m ]|[ [1m    140.127.38.223                  [m]|[�[1;33m�[30m�[37m��[30m�[36m��[37m:[m][1;36m=[m
+[1;36m=[37m[[36m﹎[37m:[33m?[37m摃?[m◣?[1;33m?[37m:[36m﹎ [31mOrigin[37m ]|[[m     [31m?[1m吨[0;31mO?[1m痐[0;31m?[1mprocessor.tfcis.org    [37m]|[?[33m搟說[m?[1;36m﹎[37m:][36m=[m
+[1;36m=[m[[1;36m﹊[37m:[33m?[30m摃?[m╱?[1;33m?[37m:[36m﹊ [31mAuthor[m ]|[ [1m    140.127.38.223                  [m]|[?[1;33m?[30m?[37m插[30m?[36m﹊[37m:[m][1;36m=[m

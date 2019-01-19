@@ -1,13 +1,13 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: Ãö©ó"³s¸p¨t²Î"
-µo«H¯¸: °Ê¤O®Ö¤ß (2007/03/12 Mon 21:58:18)                Updated: 2007/03/13
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: é—œæ–¼"é€£ç½²ç³»çµ±"
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2007/03/12 Mon 21:58:18)                Updated: 2007/03/13
 
-¡° ¤Ş­z¡mguessi (¨S)¡n¤§»Ê¨¥¡G
-> °µ¤F  ¡º [¥\¯à] xover.c ¶i¤J newboard ªO´N¶i³s¸p¾÷
-> §Æ±æ newboard ¬İªO¥¼Åª¿O¸¹¨Ì¾Ú³s¸p¤º®eÅã¥Ü
-> ·Qªk: §PÂ_³s¸p¾÷¨î¤º ¦³"¥ô¤@"³s¸p¤£¬°"NBRD_FINISH"«hÅã¥Ü"ICON_UNREAD_BRD"
+â€» å¼•è¿°ã€Šguessi (æ²’)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> åšäº†  â—‡ [åŠŸèƒ½] xover.c é€²å…¥ newboard æ¿å°±é€²é€£ç½²æ©Ÿ
+> å¸Œæœ› newboard çœ‹æ¿æœªè®€ç‡ˆè™Ÿä¾æ“šé€£ç½²å…§å®¹é¡¯ç¤º
+> æƒ³æ³•: åˆ¤æ–·é€£ç½²æ©Ÿåˆ¶å…§ æœ‰"ä»»ä¸€"é€£ç½²ä¸ç‚º"NBRD_FINISH"å‰‡é¡¯ç¤º"ICON_UNREAD_BRD"
 
-: board.c:nbrd_unread() ·s¼W¨ç¦¡¦b btime_refresh() «e­±
+: board.c:nbrd_unread() æ–°å¢å‡½å¼åœ¨ btime_refresh() å‰é¢
 
 static int
 nbrd_unread(folder)
@@ -53,10 +53,10 @@ nbrd_unread(folder)
 
     brd_fpath(folder, brd->brdname, fn_dir);
 
-: ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w :
+: â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ :
 
-  µM«á¦b newbrd.c ¸Ì­±©Ò¦³·|§ó°Ê NBRD_FINISH ºX¼Ğªº¦a¤è
-  ³£¥[¤W btime_update()
+  ç„¶å¾Œåœ¨ newbrd.c è£¡é¢æ‰€æœ‰æœƒæ›´å‹• NBRD_FINISH æ——æ¨™çš„åœ°æ–¹
+  éƒ½åŠ ä¸Š btime_update()
 
 : newbrd.c:nbrd_add()
 
@@ -100,5 +100,5 @@ nbrd_unread(folder)
 + btime_update(brd_bno("newboard"));
 
 --
-[1;36m=[37m[[36m¡É[37m:[33m¡[37mİ¢¨[m¢©¡[1;33mİ[37m:[36m¡É [31mOrigin[37m ]|[[m  [0;31m°[1mÊ[1m¤[0;31mO[0;31m®[1mÖ[1m¤[0;31mß [1mcpu.tfcis.org  [37m]|[¡[33mİ£»¡[mİ[1;36m¡É[37m:][36m=[m
-[1;36m=[0m[[1;36m¡Ç[37m:[33m¡[30mİ¢ª[m¢¬¡[1;33mİ[37m:[36m¡Ç [31mAuthor[m ]|[[1m218-168-194-169.dynamic.hi[m]|[¡[1;33mİ[30m¡[37m´¡[30mİ[36m¡Ç[37m:[m][1;36m=[m
+[1;36m=[37m[[36mï¹[37m:[33m?[37mæ‘ƒ?[mâ—£?[1;33m?[37m:[36mï¹ [31mOrigin[37m ]|[[m  [0;31m?[1m?[1m?[0;31mO[0;31m?[1m?[1m?[0;31m?[1mcpu.tfcis.org  [37m]|[?[33mæŸèªª[m?[1;36mï¹[37m:][36m=[m
+[1;36m=[0m[[1;36mï¹Š[37m:[33m?[30mæ‘ƒ?[mâ•±?[1;33m?[37m:[36mï¹Š [31mAuthor[m ]|[[1m218-168-194-169.dynamic.hi[m]|[?[1;33m?[30m?[37mæ’[30m?[36mï¹Š[37m:[m][1;36m=[m

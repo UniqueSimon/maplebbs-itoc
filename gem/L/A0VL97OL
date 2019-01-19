@@ -1,75 +1,75 @@
-µo«H¤H: Dinsam.bbs@ccudream.twbbs.org («e¥@.. o.O) ¬ÝªO: plan
-¼Ð  ÃD: [¥\¯à]¤p«¬°ÊºA¬ÝªO2(§ï¨Ï¥Îcamera)
-µo«H¯¸: ¤¤¥¿¿v¹Ú¶é (Tue, 02 Sep 2003 15:20:50 +0800)      Updated: 2005/05/17
+ç™¼ä¿¡äºº: Dinsam.bbs@ccudream.twbbs.org (å‰ä¸–.. o.O) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]å°åž‹å‹•æ…‹çœ‹æ¿2(æ”¹ä½¿ç”¨camera)
+ç™¼ä¿¡ç«™: ä¸­æ­£ç¯‰å¤¢åœ’ (Tue, 02 Sep 2003 15:20:50 +0800)      Updated: 2005/05/17
 
-¦b¥\¯à¦Cªí¥kÃäªºªÅ¥Õ ¥i¥H¦³¤p°ÊºA¬ÝªO
+åœ¨åŠŸèƒ½åˆ—è¡¨å³é‚Šçš„ç©ºç™½ å¯ä»¥æœ‰å°å‹•æ…‹çœ‹æ¿
 
-¥Ø«e¤wª¾°ÝÃD¡G
+ç›®å‰å·²çŸ¥å•é¡Œï¼š
 
-   1.¥²¶·¶}±Ò¶i¤J¤l¿ï³æ­«¼· movie ¤~¯à¸Ñ¨M´Ý¼v°ÝÃD
-     (¤£ª¾¹D¦³¨S¦³¤H¥i¥H§ï¦¨©M­ì¥»ªºmovie¦P¨B¡A³o¼Ë´N§ó¦nÅo)
-   2.¥i¨Ï¥ÎASCII©Î±m¦â¡A¦ý¨Ï¥Î®É½Ðª`·Nªø«×(¯S§O¬O¨Ï¥ÎÂù¦â¦r)¤£¯à¶W¹L80
-   3.¦pªG©w¦æ¼Æ¬°¤C¦æ¡A´N¥þ³¡³£­n¥Î¤C¦æ¡A¤£¯à¦h¤]¤£¯à¤Ö¡A¤£µM·|¦³©Çµe­±
+   1.å¿…é ˆé–‹å•Ÿé€²å…¥å­é¸å–®é‡æ’¥ movie æ‰èƒ½è§£æ±ºæ®˜å½±å•é¡Œ
+     (ä¸çŸ¥é“æœ‰æ²’æœ‰äººå¯ä»¥æ”¹æˆå’ŒåŽŸæœ¬çš„movieåŒæ­¥ï¼Œé€™æ¨£å°±æ›´å¥½å›‰)
+   2.å¯ä½¿ç”¨ASCIIæˆ–å½©è‰²ï¼Œä½†ä½¿ç”¨æ™‚è«‹æ³¨æ„é•·åº¦(ç‰¹åˆ¥æ˜¯ä½¿ç”¨é›™è‰²å­—)ä¸èƒ½è¶…éŽ80
+   3.å¦‚æžœå®šè¡Œæ•¸ç‚ºä¸ƒè¡Œï¼Œå°±å…¨éƒ¨éƒ½è¦ç”¨ä¸ƒè¡Œï¼Œä¸èƒ½å¤šä¹Ÿä¸èƒ½å°‘ï¼Œä¸ç„¶æœƒæœ‰æ€ªç•«é¢
 
 
 : global.h
 
-#define FN_ETC_FEAST    "etc/feast"     /* ¸`¤é */
-+ #define FN_GEM_ADVER  "gem/@/@-ad"    /*¤p°ÊºA¬ÝªO */
+#define FN_ETC_FEAST    "etc/feast"     /* ç¯€æ—¥ */
++ #define FN_GEM_ADVER  "gem/@/@-ad"    /*å°å‹•æ…‹çœ‹æ¿ */
 
-: BBS ¯¸¤º (A)nnounce ºëµØ¤½§GÄæ
+: BBS ç«™å…§ (A)nnounce ç²¾è¯å…¬ä½ˆæ¬„
 
-  Ctrl+P => (D)¸ê®Æ ¥[¤J @-ad ³oÀÉ®×³sµ²
-  ³o¼Ë¥H«á­n­×§ï¤ñ¸û®e©ö
+  Ctrl+P => (D)è³‡æ–™ åŠ å…¥ @-ad é€™æª”æ¡ˆé€£çµ
+  é€™æ¨£ä»¥å¾Œè¦ä¿®æ”¹æ¯”è¼ƒå®¹æ˜“
 
-: @-ad½d¨ÒÀÉ (¥H¤C¦æ¬°½d¨Ò)
+: @-adç¯„ä¾‹æª” (ä»¥ä¸ƒè¡Œç‚ºç¯„ä¾‹)
 
-# ¤«¸¹¶}ÀYªºªº¬Oµù¸Ñ
-ùÝùùùùùùùùùùùùùùùùùùùùùùùùùß
-ùø     ¤p¼s§i¬ÝªO         ùø
-ùø                        ùø
-ùø                        ùø
-ùø                        ùø
-ùø                        ùø
-ùãùùùùùùùùùùùùùùùùùùùùùùùùùå
-ùÝùùùùùùùùùùùùùùùùùùùùùùùùùß
-ùø     ¤p¼s§i¬ÝªO         ùø
-ùø                        ùø
-ùø                        ùø
-ùø                        ùø
-ùø                        ùø
-ùãùùùùùùùùùùùùùùùùùùùùùùùùùå
-ùÝùùùùùùùùùùùùùùùùùùùùùùùùùß
-ùø     ¤p¼s§i¬ÝªO         ùø
-ùø                        ùø
-ùø                        ùø
-ùø                        ùø
-ùø                        ùø
-ùãùùùùùùùùùùùùùùùùùùùùùùùùùå
+# äº•è™Ÿé–‹é ­çš„çš„æ˜¯è¨»è§£
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â•‘     å°å»£å‘Šçœ‹æ¿         â•‘
+â•‘                        â•‘
+â•‘                        â•‘
+â•‘                        â•‘
+â•‘                        â•‘
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â•‘     å°å»£å‘Šçœ‹æ¿         â•‘
+â•‘                        â•‘
+â•‘                        â•‘
+â•‘                        â•‘
+â•‘                        â•‘
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•
+â•”â•â•â•â•â•â•â•â•â•â•â•â•â•—
+â•‘     å°å»£å‘Šçœ‹æ¿         â•‘
+â•‘                        â•‘
+â•‘                        â•‘
+â•‘                        â•‘
+â•‘                        â•‘
+â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•
 
 : config.h
 
 #undef  CURSOR_BAR
 
-  CURSOR_BAR ±o undef ¤~¤£·|¥X¿ù
+  CURSOR_BAR å¾— undef æ‰ä¸æœƒå‡ºéŒ¯
 
 : config.h
 
-/* camera.c °ÊºA¬ÝªO */
+/* camera.c å‹•æ…‹çœ‹æ¿ */
 
-#define MOVIE_MAX       180             /* °Êµe±i¼Æ */
-#define MOVIE_SIZE      (108 * 1024)    /* °Êµe cache size */
-+ #define AD_LINE       7               /* ¤p«¬°ÊºA¬ÝªO¦³¤C¦æ */
+#define MOVIE_MAX       180             /* å‹•ç•«å¼µæ•¸ */
+#define MOVIE_SIZE      (108 * 1024)    /* å‹•ç•« cache size */
++ #define AD_LINE       7               /* å°åž‹å‹•æ…‹çœ‹æ¿æœ‰ä¸ƒè¡Œ */
 
 : struct.h
 
 typedef struct
 {
-  int shot[MOVIE_MAX];  /* Thor.980805: ¦X²z½d³ò¬° 0..MOVIE_MAX - 1 */
+  int shot[MOVIE_MAX];  /* Thor.980805: åˆç†ç¯„åœç‚º 0..MOVIE_MAX - 1 */
   char film[MOVIE_SIZE];
   char today[16];
-+ int adnum;                    /* ¦³´X½g§¹¾ã¼s§i */
-+ char ad[AD_LINE * 20][128];   /* ³Ì¦h 20 ½g§¹¾ã¼s§i  */
++ int adnum;                    /* æœ‰å¹¾ç¯‡å®Œæ•´å»£å‘Š */
++ char ad[AD_LINE * 20][128];   /* æœ€å¤š 20 ç¯‡å®Œæ•´å»£å‘Š  */
 } FCACHE;
 
 
@@ -81,11 +81,11 @@ typedef struct
 }
 
 
-: camera.c:do_ad() ¥[¤J main() «e­±
+: camera.c:do_ad() åŠ å…¥ main() å‰é¢
 
 
 /* ----------------------------------------------------- */
-/* ¸ü¤J¤p«¬°ÊºA¬ÝªO                                      */
+/* è¼‰å…¥å°åž‹å‹•æ…‹çœ‹æ¿                                      */
 /* ----------------------------------------------------- */
 
 
@@ -99,7 +99,7 @@ do_ad(fshm)
 
   if (fp = fopen(FN_GEM_ADVER, "r"))
   {
-    for (num = 0; num < AD_LINE * 20;)  /* ³Ì¦h 20 ½g§¹¾ã¼s§i */
+    for (num = 0; num < AD_LINE * 20;)  /* æœ€å¤š 20 ç¯‡å®Œæ•´å»£å‘Š */
     {
       if (!fgets(msg, STRLEN, fp))
         break;
@@ -122,7 +122,7 @@ do_ad(fshm)
   }
 
   fshm->adnum = 1;
-  strcpy(fshm->ad[0], "¿ù»~¡I¤p«¬°ÊºA¬ÝªO¦³°ÝÃD");
+  strcpy(fshm->ad[0], "éŒ¯èª¤ï¼å°åž‹å‹•æ…‹çœ‹æ¿æœ‰å•é¡Œ");
 }
 
 
@@ -132,10 +132,10 @@ do_ad(fshm)
 + {
 +   int i, x;
 +
-+   i = (time(0) % fshm->adnum) * AD_LINE - 1;         /* ¶Ã¼Æ¿ï¤@­Ó¼s§i */
++   i = (time(0) % fshm->adnum) * AD_LINE - 1;         /* äº‚æ•¸é¸ä¸€å€‹å»£å‘Š */
 +   for (x = MENU_XPOS; x <= MENU_XPOS + AD_LINE; x++)
 +   {
-+     move(x, 42);              /* ©ñ¦b¿ï³æªº¥kÃä */
++     move(x, 42);              /* æ”¾åœ¨é¸å–®çš„å³é‚Š */
 +     outs(fshm->ad[i++]);
 +   }
     film_out(FILM_MOVIE, MENU_XNOTE);
@@ -161,7 +161,7 @@ do_ad(fshm)
 ...............
 ...............
 
-      if (cmd <= M_XMENU)       /* ¤l¥Ø¿ýªº mode ­n <= M_XMENU */
+      if (cmd <= M_XMENU)       /* å­ç›®éŒ„çš„ mode è¦ <= M_XMENU */
       {
         menu->level = PERM_MENU + mptr->desc[0];
         menu = (MENU *) mptr->func;
@@ -184,7 +184,7 @@ do_ad(fshm)
 
 : visio.c igetch()
 
--         if (bbsmode < M_XMENU)        /* ¦b menu ¸Ì­±­n´« movie */
+-         if (bbsmode < M_XMENU)        /* åœ¨ menu è£¡é¢è¦æ› movie */
 -         {
 -           movie();
 -           refresh();
@@ -192,12 +192,12 @@ do_ad(fshm)
 
 --
 
-§ï§¹½sÄ¶§¹¤§«á°O±oreboot
+æ”¹å®Œç·¨è­¯å®Œä¹‹å¾Œè¨˜å¾—reboot
 
 
 --
-[m[1;33m¡´[36m     [37m£»[36m    [37m£»[36m ¢¨¢h¢© ¢¨¢h¢© ¢h  ¢h ¢i¢h¢© ¢i¢h¢© ¢i¢h¢© ¢¨¢h¢© ¢i¢h¢p   [33m¡þ[m
-  [1m£»[m [1;33m¢­[37m         ¢i     ¢i     ¢i  ¢i ¢i  ¢p ¢i  ¢p ¢i¢g   ¢i¢g¢p ¢p¢p¢p [33m¡¹[m
-[32m¢¨[37;42m     [1;33m¡¹[37m£»     [33m¢ª¢i¢« ¢ª¢i¢« ¢ª¢i¢« ¢i¢i¢« ¢i¢ª¢g ¢i¢g¢« ¢i  ¢p ¢p¢p¢p[37m£»[;37;42m  [32;40m¢©[m
-[32;42m  [1;37m¢Ñ¢Ò¢Ð¢Ð¢á  [32m¤¤¥¿[35m¿v¹Ú¶é[36mBBS¯¸ [31mÅwªï»YÁ{°ÑÆ[[32m cd.twbbs.org  (140.123.20.230)[36m [;37;42m   [m
-[1;32m http://cd.twbbs.org[;32;40m¢ª[30;42m [1;33m [37m¡¯[32m [37mAuthor:[;30;42m Dinsam      [1;37m¡¹ From:[;30;42m 218.171.110.242 [1;32m  [33m [;32;40m¢«[m
+[m[1;33mâ—[36m     [37mË™[36m    [37mË™[36m â—¢â–‡â—£ â—¢â–‡â—£ â–‡  â–‡ â–ˆâ–‡â—£ â–ˆâ–‡â—£ â–ˆâ–‡â—£ â—¢â–‡â—£ â–ˆâ–‡â–‰   [33mï¼[m
+  [1mË™[m [1;33mâ•²[37m         â–ˆ     â–ˆ     â–ˆ  â–ˆ â–ˆ  â–‰ â–ˆ  â–‰ â–ˆâ–†   â–ˆâ–†â–‰ â–‰â–‰â–‰ [33mâ˜…[m
+[32mâ—¢[37;42m     [1;33mâ˜…[37mË™     [33mâ—¥â–ˆâ—¤ â—¥â–ˆâ—¤ â—¥â–ˆâ—¤ â–ˆâ–ˆâ—¤ â–ˆâ—¥â–† â–ˆâ–†â—¤ â–ˆ  â–‰ â–‰â–‰â–‰[37mË™[;37;42m  [32;40mâ—£[m
+[32;42m  [1;37mï¼£ï¼¤ï¼¢ï¼¢ï¼³  [32mä¸­æ­£[35mç¯‰å¤¢åœ’[36mBBSç«™ [31mæ­¡è¿Žè’žè‡¨åƒè§€[32m cd.twbbs.org  (140.123.20.230)[36m [;37;42m   [m
+[1;32m http://cd.twbbs.org[;32;40mâ—¥[30;42m [1;33m [37mï¼Š[32m [37mAuthor:[;30;42m Dinsam      [1;37mâ˜… From:[;30;42m 218.171.110.242 [1;32m  [33m [;32;40mâ—¤[m

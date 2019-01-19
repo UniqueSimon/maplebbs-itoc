@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* dice.c         ( NTHU CS MapleBBS Ver 3.10 )          */
 /*-------------------------------------------------------*/
-/* target : ÂY»ë¤l¹CÀ¸                                   */
+/* target : æ“²éª°å­éŠæˆ²                                   */
 /* create : 01/02/15                                     */
 /* update : 01/04/20                                     */
 /* author : wsyfish                                      */
@@ -17,28 +17,28 @@
 static char *pic[6][3] = 
 {
   "        ",
-  "   ¡´   ",		/* 1 */
+  "   â—   ",		/* 1 */
   "        ",
 
-  "   ¡´   ",
+  "   â—   ",
   "        ",		/* 2 */
-  "   ¡´   ",
+  "   â—   ",
 
-  "¡´      ",
-  "   ¡´   ",		/* 3 */
-  "      ¡´",
+  "â—      ",
+  "   â—   ",		/* 3 */
+  "      â—",
 
-  "¡´    ¡´",
+  "â—    â—",
   "        ",		/* 4 */
-  "¡´    ¡´",
+  "â—    â—",
 
-  "¡´    ¡´",
-  "   ¡´   ",		/* 5 */
-  "¡´    ¡´",
+  "â—    â—",
+  "   â—   ",		/* 5 */
+  "â—    â—",
 
-  "¡´    ¡´",
-  "¡´    ¡´",		/* 6 */
-  "¡´    ¡´"
+  "â—    â—",
+  "â—    â—",		/* 6 */
+  "â—    â—"
 };
 
 
@@ -47,23 +47,23 @@ out_song()
 {
   static int count = 0;
 
-  /* ¶O¥É²M£»¶}¤@®°¤ßµ¡ */
+  /* è²»çŽ‰æ¸…Ë™é–‹ä¸€æ‰‡å¿ƒçª— */
   uschar *msg[11] = 
   {
-    "¶}¤@®°¤ßµ¡  ­¼µÛ¹Úªº¯Í»H­¸µ¾",
-    "ÂàÀþ¶¡´N¯à¨ì¹F",
-    "¶}¤@®°¤ßµ¡  ¤£­n¦b¶Â·t¤¤·K´a",
-    "´§§O¤Fµh­W¤ß»Ä",
-    "Åý¥Í¬¡±q¦¹¹L±oÂ²³æ  ³¬¤W²´·ú´N¥i¥H·Q¹³",
-    "¾C¹CµLÃäµL»Ú¯EÃv®ü¬v  ¬Ý¨£ÂÅ¤Ñ¤£¦A°g±¦",
-    "­n¦h«º¦h±m¦Û¥Ñ©b©ñ",
-    "¶§¥ú  »´»´¦a¶}¤@®°¤ßµ¡",
-    "¥^¥^¦a±a§Ú­Ì¨«¥X¶Â·t  ¾ã­Ó¥@¬É³£ÀéÄê½÷·×",
-    "¶§¥ú  »´»´¦a¶}¤@®°¤ßµ¡",
-    "¬X¬X¦a°{Ä£µÛ¬üÄR¹Ú·Q  ©Ò¦³Åw¼ÖÄ@»P§A¤À¨É"
+    "é–‹ä¸€æ‰‡å¿ƒçª—  ä¹˜è‘—å¤¢çš„ç¿…è†€é£›ç¿”",
+    "è½‰çž¬é–“å°±èƒ½åˆ°é”",
+    "é–‹ä¸€æ‰‡å¿ƒçª—  ä¸è¦åœ¨é»‘æš—ä¸­å¾¬å¾¨",
+    "æ®åˆ¥äº†ç—›è‹¦å¿ƒé…¸",
+    "è®“ç”Ÿæ´»å¾žæ­¤éŽå¾—ç°¡å–®  é–‰ä¸Šçœ¼ç›å°±å¯ä»¥æƒ³åƒ",
+    "é¨éŠç„¡é‚Šç„¡éš›æµ©ç€šæµ·æ´‹  çœ‹è¦‹è—å¤©ä¸å†è¿·æƒ˜",
+    "è¦å¤šå§¿å¤šå½©è‡ªç”±å¥”æ”¾",
+    "é™½å…‰  è¼•è¼•åœ°é–‹ä¸€æ‰‡å¿ƒçª—",
+    "åŒ†åŒ†åœ°å¸¶æˆ‘å€‘èµ°å‡ºé»‘æš—  æ•´å€‹ä¸–ç•Œéƒ½ç‡¦çˆ›è¼ç…Œ",
+    "é™½å…‰  è¼•è¼•åœ°é–‹ä¸€æ‰‡å¿ƒçª—",
+    "æŸ”æŸ”åœ°é–ƒè€€è‘—ç¾Žéº—å¤¢æƒ³  æ‰€æœ‰æ­¡æ¨‚é¡˜èˆ‡ä½ åˆ†äº«"
   };
   move(b_lines - 2, 0);
-  prints("\033[1;3%dm%s\033[m  Äw½XÁÙ¦³ %d ¤¸", time(0) % 7, msg[count], cuser.money);
+  prints("\033[1;3%dm%s\033[m  ç±Œç¢¼é‚„æœ‰ %d å…ƒ", time(0) % 7, msg[count], cuser.money);
   clrtoeol();
   if (++count == 11)
     count = 0;
@@ -73,11 +73,11 @@ out_song()
 int
 main_dice()
 {
-  int money;		/* ©ãª÷ */
-  int i;		/* ¶Ã¼Æ */
-  char choice;		/* °O¿ý¿ï¶µ */
-  char dice[3];		/* ¤T­Ó»ë¤lªº­È */
-  char total;		/* ¤T­Ó»ë¤lªº©M */
+  int money;		/* æŠ¼é‡‘ */
+  int i;		/* äº‚æ•¸ */
+  char choice;		/* è¨˜éŒ„é¸é … */
+  char dice[3];		/* ä¸‰å€‹éª°å­çš„å€¼ */
+  char total;		/* ä¸‰å€‹éª°å­çš„å’Œ */
   char buf[60];
 
   if (HAS_STATUS(STATUS_COINLOCK))
@@ -86,42 +86,42 @@ main_dice()
     return XEASY;
   }
 
-  vs_bar("£££¸ £t£« £{£« ¤Uª`");
+  vs_bar("ã„’ã„§ ã„…ã„š ã„Œã„š ä¸‹æ³¨");
   outs("\n\n\n"
-    "¢z¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢{\n"
-    "¢x  2­¿   1. ¤j      2. ¤p                                                ¢x\n"
-    "¢x 14­¿   3. ¤TÂI    4. ¥|ÂI    5. ¤­ÂI    6. ¤»ÂI    7. ¤CÂI             ¢x\n"
-    "¢x  8­¿   8. ¤KÂI    9. ¤EÂI   10. ¤QÂI   11. ¤Q¤@ÂI 12. ¤Q¤GÂI 13. ¤Q¤TÂI¢x\n"
-    "¢x 14­¿  14. ¤Q¥|ÂI 15. ¤Q¤­ÂI 16. ¤Q¤»ÂI 17. ¤Q¤CÂI 18. ¤Q¤KÂI           ¢x\n"
-    "¢x216­¿  19. ¤@¤@¤@ 20. ¤G¤G¤G 21. ¤T¤T¤T 22. ¥|¥|¥| 23. ¤­¤­¤­ 24. ¤»¤»¤»¢x\n"
-    "¢|¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢}\n");
+    "â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n"
+    "â”‚  2å€   1. å¤§      2. å°                                                â”‚\n"
+    "â”‚ 14å€   3. ä¸‰é»ž    4. å››é»ž    5. äº”é»ž    6. å…­é»ž    7. ä¸ƒé»ž             â”‚\n"
+    "â”‚  8å€   8. å…«é»ž    9. ä¹é»ž   10. åé»ž   11. åä¸€é»ž 12. åäºŒé»ž 13. åä¸‰é»žâ”‚\n"
+    "â”‚ 14å€  14. åå››é»ž 15. åäº”é»ž 16. åå…­é»ž 17. åä¸ƒé»ž 18. åå…«é»ž           â”‚\n"
+    "â”‚216å€  19. ä¸€ä¸€ä¸€ 20. äºŒäºŒäºŒ 21. ä¸‰ä¸‰ä¸‰ 22. å››å››å›› 23. äº”äº”äº” 24. å…­å…­å…­â”‚\n"
+    "â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n");
 
-#if 0	/* ÂY»ë¤l¨C 216 ¦¸¦UÁ`¼Æ¥X²{ªº¦¸¼Æ¾÷²v */
-¢z¢w¢w¢s¢w¢s¢w¢s¢w¢s¢w¢s¢w¢s¢w¢s¢w¢s¢w¢s¢w¢s¢w¢s¢w¢s¢w¢s¢w¢s¢w¢s¢w¢s¢w¢{
-¢xÁ`¼Æ¢x3 ¢x4 ¢x5 ¢x6 ¢x7 ¢x8 ¢x9 ¢x10¢x11¢x12¢x13¢x14¢x15¢x16¢x17¢x18¢x
-¢u¢w¢w¢q¢w¢q¢w¢q¢w¢q¢w¢q¢w¢q¢w¢q¢w¢q¢w¢q¢w¢q¢w¢q¢w¢q¢w¢q¢w¢q¢w¢q¢w¢q¢w¢t
-¢x¦¸¼Æ¢x1 ¢x3 ¢x6 ¢x10¢x15¢x21¢x25¢x27¢x27¢x25¢x21¢x15¢x10¢x6 ¢x3 ¢x1 ¢x / 216 ¦¸
-¢|¢w¢w¢r¢w¢r¢w¢r¢w¢r¢w¢r¢w¢r¢w¢r¢w¢r¢w¢r¢w¢r¢w¢r¢w¢r¢w¢r¢w¢r¢w¢r¢w¢r¢w¢}
+#if 0	/* æ“²éª°å­æ¯ 216 æ¬¡å„ç¸½æ•¸å‡ºç¾çš„æ¬¡æ•¸æ©ŸçŽ‡ */
+â”Œâ”€â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”¬â”€â”
+â”‚ç¸½æ•¸â”‚3 â”‚4 â”‚5 â”‚6 â”‚7 â”‚8 â”‚9 â”‚10â”‚11â”‚12â”‚13â”‚14â”‚15â”‚16â”‚17â”‚18â”‚
+â”œâ”€â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¼â”€â”¤
+â”‚æ¬¡æ•¸â”‚1 â”‚3 â”‚6 â”‚10â”‚15â”‚21â”‚25â”‚27â”‚27â”‚25â”‚21â”‚15â”‚10â”‚6 â”‚3 â”‚1 â”‚ / 216 æ¬¡
+â””â”€â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”´â”€â”˜
 #endif
 
   out_song();
 
   while (1)
   {
-    vget(2, 0, "½Ð°Ý­n¤Uª`¦h¤Ö©O¡H(1 ~ 50000) ", buf, 6, DOECHO);
+    vget(2, 0, "è«‹å•è¦ä¸‹æ³¨å¤šå°‘å‘¢ï¼Ÿ(1 ~ 50000) ", buf, 6, DOECHO);
     money = atoi(buf);
     if (money < 1 || money > 50000 || money > cuser.money)
-      break;				/* Â÷¶}½ä³õ */
+      break;				/* é›¢é–‹è³­å ´ */
 
-    vget(12, 0, "­n©ã­þ¤@¶µ©O¡H(½Ð¿é¤J¸¹½X) ", buf, 3, DOECHO);
+    vget(12, 0, "è¦æŠ¼å“ªä¸€é …å‘¢ï¼Ÿ(è«‹è¼¸å…¥è™Ÿç¢¼) ", buf, 3, DOECHO);
     choice = atoi(buf);
     if (choice < 1 || choice > 24)
-      break;				/* Â÷¶}½ä³õ */
+      break;				/* é›¢é–‹è³­å ´ */
 
-    outs("\n«ö¥ô¤@ÁäÂY¥X»ë¤l \033[5m....\033[m\n");
+    outs("\næŒ‰ä»»ä¸€éµæ“²å‡ºéª°å­ \033[5m....\033[m\n");
     igetch();
 
-    /* ¨M©w¤T­Ó»ë¤lÂI¼Æ */
+    /* æ±ºå®šä¸‰å€‹éª°å­é»žæ•¸ */
     total = 0;
     for (i = 0; i < 3; i++)
     {
@@ -129,44 +129,44 @@ main_dice()
       total += dice[i];
     }
 
-    /* ³B²zµ²ªG */
-    if ((choice == 1 && total > 10) || (choice == 2 && total <= 10))	/* ³B²z¤j¤p */
+    /* è™•ç†çµæžœ */
+    if ((choice == 1 && total > 10) || (choice == 2 && total <= 10))	/* è™•ç†å¤§å° */
     {
-      sprintf(buf, "¤¤¤F¡I±o¨ì¢±­¿¼úª÷ %d ¤¸", money * 2);
+      sprintf(buf, "ä¸­äº†ï¼å¾—åˆ°ï¼’å€çŽé‡‘ %d å…ƒ", money * 2);
       addmoney(money);
     }
-    else if (choice <= 18 && total == choice)				/* ³B²zÁ`©M */
+    else if (choice <= 18 && total == choice)				/* è™•ç†ç¸½å’Œ */
     {
       if (choice >= 8 && choice <= 13)
       {
-	sprintf(buf, "¤¤¤F¡I±o¨ì¢·­¿¼úª÷ %d ¤¸", money * 8);
+	sprintf(buf, "ä¸­äº†ï¼å¾—åˆ°ï¼˜å€çŽé‡‘ %d å…ƒ", money * 8);
 	addmoney(money * 7);
       }
       else
       {
-	sprintf(buf, "¤¤¤F¡I±o¨ì¢°¢³­¿¼úª÷ %d ¤¸", money * 14);
+	sprintf(buf, "ä¸­äº†ï¼å¾—åˆ°ï¼‘ï¼”å€çŽé‡‘ %d å…ƒ", money * 14);
 	addmoney(money * 13);
       }
     }
-    else if ((choice - 18) == dice[0] && (dice[0] == dice[1]) && (dice[1] == dice[2]))/* ³B²z¤T­Ó¤@¼Ë */
+    else if ((choice - 18) == dice[0] && (dice[0] == dice[1]) && (dice[1] == dice[2]))/* è™•ç†ä¸‰å€‹ä¸€æ¨£ */
     {
-      sprintf(buf, "¤¤¤F¡I±o¨ì¢±¢°¢µ­¿¼úª÷ %d ¤¸", money * 216);
+      sprintf(buf, "ä¸­äº†ï¼å¾—åˆ°ï¼’ï¼‘ï¼–å€çŽé‡‘ %d å…ƒ", money * 216);
       addmoney(money * 215);
     }
-    else								/* ³B²z¨S¤¤ */
+    else								/* è™•ç†æ²’ä¸­ */
     {
-      strcpy(buf, "«Ü¥i±¤¨S¦³©ã¤¤¡I");
+      strcpy(buf, "å¾ˆå¯æƒœæ²’æœ‰æŠ¼ä¸­ï¼");
       cuser.money -= money;
     }
 
-    /* ¦L¥X»ë¤lµ²ªG */
-    outs("¢~¢w¢w¢w¢w¢¡¢~¢w¢w¢w¢w¢¡¢~¢w¢w¢w¢w¢¡\n");
+    /* å°å‡ºéª°å­çµæžœ */
+    outs("â•­â”€â”€â”€â”€â•®â•­â”€â”€â”€â”€â•®â•­â”€â”€â”€â”€â•®\n");
     for (i = 0; i < 3; i++)
     {
-      prints("¢x%s¢x¢x%s¢x¢x%s¢x\n", pic[dice[0] - 1][i], 
+      prints("â”‚%sâ”‚â”‚%sâ”‚â”‚%sâ”‚\n", pic[dice[0] - 1][i], 
         pic[dice[1] - 1][i], pic[dice[2] - 1][i]);
     }
-    outs("¢¢¢w¢w¢w¢w¢£¢¢¢w¢w¢w¢w¢£¢¢¢w¢w¢w¢w¢£\n\n");
+    outs("â•°â”€â”€â”€â”€â•¯â•°â”€â”€â”€â”€â•¯â•°â”€â”€â”€â”€â•¯\n\n");
 
     out_song();
     vmsg(buf);

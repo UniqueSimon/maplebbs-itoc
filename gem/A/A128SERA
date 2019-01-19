@@ -1,29 +1,29 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (  - THE END -) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¤å³¹¾\Åª\µoªí±±¨î½XÂX¼W¡C
-µo«H¯¸: ¤¤¿³¸ê¬ì (Tue, 18 Nov 2003 00:56:38 +0800 (CST))  Updated: 2006/06/28
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (  - THE END -) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] æ–‡ç« é–±è®€\ç™¼è¡¨æ§åˆ¶ç¢¼æ“´å¢ã€‚
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (Tue, 18 Nov 2003 00:56:38 +0800 (CST))  Updated: 2006/06/28
 
-        ¢°. ±N Ctrl + Q ªº¿ï¶µ¿é¤J§ï¬°µøµ¡¤Æ¿ï³æ¡C
+        ï¼‘. å°‡ Ctrl + Q çš„é¸é …è¼¸å…¥æ”¹ç‚ºè¦–çª—åŒ–é¸å–®ã€‚
 
-        ¢±. ÂX¼W±±¨î½XªººØÃş¡C
+        ï¼’. æ“´å¢æ§åˆ¶ç¢¼çš„ç¨®é¡ã€‚
 
 ==============================================================================
 
-: edit.c:vedit() case Ctrl('Q'): ªº³¡¤À§ï¦¨³o¼Ë
+: edit.c:vedit() case Ctrl('Q'): çš„éƒ¨åˆ†æ”¹æˆé€™æ¨£
 
 #ifdef SHOW_USER_IN_TEXT
       case Ctrl('Q'):
 +       {
-+         /* qazq.031117: ¦h¼Ë¤ÆÅã¥Ü¨Ï¥ÎªÌ¸ê®Æ */
++         /* qazq.031117: å¤šæ¨£åŒ–é¡¯ç¤ºä½¿ç”¨è€…è³‡æ–™ */
 +         char *msg[] = {"10",
-+                        "1  ¢×¢Ò      (**s)", "2  ¼ÊºÙ      (**n)",
-+                        "3  ¤W¯¸¦¸¼Æ  (**l)", "4  µo¤å¦¸¼Æ  (**p)",
-+                        "5  ª÷¹ô      (**g)", "6  »È¹ô      (**m)",
-+                        "7  ²{¦b®É¨è  (**t)", "8  ½u¤W¤H¼Æ  (**u)",
-+                        "9  ¥Í¤é      (**b)", "0  ¨ú®ø",
++                        "1  ï¼©ï¼¤      (**s)", "2  æš±ç¨±      (**n)",
++                        "3  ä¸Šç«™æ¬¡æ•¸  (**l)", "4  ç™¼æ–‡æ¬¡æ•¸  (**p)",
++                        "5  é‡‘å¹£      (**g)", "6  éŠ€å¹£      (**m)",
++                        "7  ç¾åœ¨æ™‚åˆ»  (**t)", "8  ç·šä¸Šäººæ•¸  (**u)",
++                        "9  ç”Ÿæ—¥      (**b)", "0  å–æ¶ˆ",
 +                        NULL};
 
--         cc = vans("Åã¥Ü¨Ï¥ÎªÌ¸ê®Æ(1)id (2)¼ÊºÙ¡H");
-+         cc = pans(5, 20, "Åã¥Ü¨Ï¥ÎªÌ¸ê®Æ", msg);
+-         cc = vans("é¡¯ç¤ºä½¿ç”¨è€…è³‡æ–™(1)id (2)æš±ç¨±ï¼Ÿ");
++         cc = pans(5, 20, "é¡¯ç¤ºä½¿ç”¨è€…è³‡æ–™", msg);
 -         if (cc >= '1' && cc <= '2')
 +         if (cc > '0')
           {
@@ -51,44 +51,44 @@ outx(str)
 
       switch (str[2])
       {
-      case 's':         /* **s Åã¥Ü ID */
+      case 's':         /* **s é¡¯ç¤º ID */
         outs(cuser.userid);
         str += 3;
         continue;
-      case 'n':         /* **n Åã¥Ü¼ÊºÙ */
+      case 'n':         /* **n é¡¯ç¤ºæš±ç¨± */
         outs(cuser.username);
         str += 3;
         continue;
-+     case 'l':       /* **l Åã¥Ü¤W¯¸¦¸¼Æ */
++     case 'l':       /* **l é¡¯ç¤ºä¸Šç«™æ¬¡æ•¸ */
 +       sprintf(buf, "%d", cuser.numlogins);
 +       outs(buf);
 +       str += 3;
 +       continue;
-+     case 'p':       /* **p Åã¥Üµo¤å¦¸¼Æ */
++     case 'p':       /* **p é¡¯ç¤ºç™¼æ–‡æ¬¡æ•¸ */
 +       sprintf(buf, "%d", cuser.numposts);
 +       outs(buf);
 +       str += 3;
 +       continue;
-+     case 'g':       /* **g Åã¥Üª÷¹ô */
++     case 'g':       /* **g é¡¯ç¤ºé‡‘å¹£ */
 +       sprintf(buf, "%d", cuser.gold);
 +       outs(buf);
 +       str += 3;
 +       continue;
-+     case 'm':       /* **m Åã¥Ü»È¹ô */
++     case 'm':       /* **m é¡¯ç¤ºéŠ€å¹£ */
 +       sprintf(buf, "%d", cuser.money);
 +       outs(buf);
 +       str += 3;
 +       continue;
-+     case 't':       /* **t Åã¥Ü¤é´Á */
++     case 't':       /* **t é¡¯ç¤ºæ—¥æœŸ */
 +       outs(Now());
 +       str += 3;
 +       continue;
-+     case 'u':       /* **u Åã¥Ü½u¤W¤H¼Æ */
++     case 'u':       /* **u é¡¯ç¤ºç·šä¸Šäººæ•¸ */
 +       sprintf(buf, "%d", total_user);
 +       outs(buf);
 +       str += 3;
 +       continue;
-+     case 'b':       /* **b Åã¥Ü¥Í¤é */
++     case 'b':       /* **b é¡¯ç¤ºç”Ÿæ—¥ */
 +       sprintf(buf, "%d/%d", cuser.month, cuser.day);
 +       outs(buf);
 +       str += 3;
@@ -103,32 +103,32 @@ outx(str)
 -       len += BMAX(IDLEN, UNLEN) - 1;
 +       switch (str[1])
 +       {
-+       case 's':         /* **s Åã¥Ü ID */
++       case 's':         /* **s é¡¯ç¤º ID */
 +         len += IDLEN - 1;
 +         break;
-+       case 'n':         /* **n Åã¥Ü¼ÊºÙ */
++       case 'n':         /* **n é¡¯ç¤ºæš±ç¨± */
 +         outs(cuser.username);
 +         len += UNLEN - 1;
 +         break;
-+       case 'l':       /* **l Åã¥Ü¤W¯¸¦¸¼Æ */
-+         len += 5 - 1;     /* °²³]³Ì¦h¤­¦ì¼Æ */
++       case 'l':       /* **l é¡¯ç¤ºä¸Šç«™æ¬¡æ•¸ */
++         len += 5 - 1;     /* å‡è¨­æœ€å¤šäº”ä½æ•¸ */
 +         break;
-+       case 'p':       /* **p Åã¥Üµo¤å¦¸¼Æ */
-+         len += 5 - 1;     /* °²³]³Ì¦h¤­¦ì¼Æ */
++       case 'p':       /* **p é¡¯ç¤ºç™¼æ–‡æ¬¡æ•¸ */
++         len += 5 - 1;     /* å‡è¨­æœ€å¤šäº”ä½æ•¸ */
 +         break;
-+       case 'g':       /* **g Åã¥Üª÷¹ô */
-+         len += 10 - 1;    /* °²³]³Ì¦h¤Q¦ì¼Æ */
++       case 'g':       /* **g é¡¯ç¤ºé‡‘å¹£ */
++         len += 10 - 1;    /* å‡è¨­æœ€å¤šåä½æ•¸ */
 +         break;
-+       case 'm':       /* **m Åã¥Ü»È¹ô */
-+         len += 10 - 1;    /* °²³]³Ì¦h¤Q¦ì¼Æ */
++       case 'm':       /* **m é¡¯ç¤ºéŠ€å¹£ */
++         len += 10 - 1;    /* å‡è¨­æœ€å¤šåä½æ•¸ */
 +         break;
-+       case 't':       /* **t Åã¥Ü¤é´Á */
++       case 't':       /* **t é¡¯ç¤ºæ—¥æœŸ */
 +         len += 23 - 1;
 +         break;
-+       case 'u':       /* **u Åã¥Ü½u¤W¤H¼Æ */
-+         len += 5 - 1;     /* °²³]³Ì¦h¤­¦ì¼Æ */
++       case 'u':       /* **u é¡¯ç¤ºç·šä¸Šäººæ•¸ */
++         len += 5 - 1;     /* å‡è¨­æœ€å¤šäº”ä½æ•¸ */
 +         break;
-+       case 'b':       /* **b Åã¥Ü¥Í¤é */
++       case 'b':       /* **b é¡¯ç¤ºç”Ÿæ—¥ */
 +         sprintf(buf, "%d/%d", cuser.month, cuser.day);
 +         len += 5 - 1;
 +         break;
@@ -142,5 +142,5 @@ outx(str)
       }
 
 --
- [1m[42m¢z[41m¢q[m Au[1mth[30mor[m: [43m ¤¤¿³¸ê¬ì£»¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [33;47m csNCHU.twbbs.org [m
- [1m[44m¢|[43m¢}[m O[1mri[30mgi[mn: [1;36mqazq [30m±q [35m61-216-137-32.HINET-IP.hinet.net [30mµoªí[m
+ [1m[42mâ”Œ[41mâ”¼[m Au[1mth[30mor[m: [43m ä¸­èˆˆè³‡ç§‘Ë™ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [33;47m csNCHU.twbbs.org [m
+ [1m[44mâ””[43mâ”˜[m O[1mri[30mgi[mn: [1;36mqazq [30må¾ [35m61-216-137-32.HINET-IP.hinet.net [30mç™¼è¡¨[m

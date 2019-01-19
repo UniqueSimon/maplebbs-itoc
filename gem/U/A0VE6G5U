@@ -1,13 +1,13 @@
-µo«H¤H: tandrian.bbs@ntcb.twbbs.org.tw (¤Û°ìÅ]«°), ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ÁôÂÃ¤W¯¸¨Ó·½
-µo«H¯¸: ¤Û±sÅ]«° (Sun Aug 11 18:40:27 2002)               Updated: 2005/03/27
+ç™¼ä¿¡äºº: tandrian.bbs@ntcb.twbbs.org.tw (å¹»åŸŸé­”åŸ), çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] éš±è—ä¸Šç«™ä¾†æº
+ç™¼ä¿¡ç«™: å¹»å¾¡é­”åŸ (Sun Aug 11 18:40:27 2002)               Updated: 2005/03/27
 
-  ÁôÂÃ¤W¯¸¨Ó·½(¾Ö¦³Áô¨­Åv­­ªº¤H¤~¯àÁôÂÃ¤W¯¸¦aÂI)
+  éš±è—ä¸Šç«™ä¾†æº(æ“æœ‰éš±èº«æ¬Šé™çš„äººæ‰èƒ½éš±è—ä¸Šç«™åœ°é»)
 
-: ufo.h  // ½Ğ¨Ì¦Û¤vªº ufo.h ½Õ¾ã
+: ufo.h  // è«‹ä¾è‡ªå·±çš„ ufo.h èª¿æ•´
 
 - #define UFO_NOUSE18     BFLAG(18)
-+ #define UFO_HIDDEN      BFLAG(18)       /* ÁôÂÃ¨Ó·½ */
++ #define UFO_HIDDEN      BFLAG(18)       /* éš±è—ä¾†æº */
 
   ...
 
@@ -16,8 +16,8 @@
 
   ...
 
-- "«O¯d",
-+ "ÁôÂÃ¤W¯¸¨Ó·½    (ÁôÂÃ/¥X²{)",        /* UFO_HIDEDN */
+- "ä¿ç•™",
++ "éš±è—ä¸Šç«™ä¾†æº    (éš±è—/å‡ºç¾)",        /* UFO_HIDEDN */
 
 : talk.c:do_query()
 
@@ -25,7 +25,7 @@
   int userno, rich;
 + int hidden;
   char *userid;
-  char fortune[4][9] = {"¨ª³h¤^¤¢", "¤@¯ë­ÓÅé", "®a¹Ò¤p±d", "°]»Ö¦a¥D"};
+  char fortune[4][9] = {"èµ¤è²§ä¹ä¸", "ä¸€èˆ¬å€‹é«”", "å®¶å¢ƒå°åº·", "è²¡é–¥åœ°ä¸»"};
 
   ...
 
@@ -37,22 +37,22 @@
 
   ...
 
-  prints("[¨Ó·½] (%s) %s\n",
+  prints("[ä¾†æº] (%s) %s\n",
 -   Btime(&acct->lastlogin), acct->lasthost);
-+   hidden ? "¤Ñªø¦a¤[¦³®ÉºÉ" : Btime(&acct->lastlogin),
-+   hidden ? "¦¹«ëºøºøµLµ´´Á" : acct->lasthost);
++   hidden ? "å¤©é•·åœ°ä¹…æœ‰æ™‚ç›¡" : Btime(&acct->lastlogin),
++   hidden ? "æ­¤æ¨ç¶¿ç¶¿ç„¡çµ•æœŸ" : acct->lasthost);
 
 : ulist.c:ulist_item()
 
-  §â prints(); ¸Ì­±ªº
-  up->from ´«¦¨
+  æŠŠ prints(); è£¡é¢çš„
+  up->from æ›æˆ
   (up->ufo & UFO_HIDDEN && !HAS_PERM(PERM_ALLACCT)) ? MYHOSTNAME : up->from
 
 : edit.c:ve_banner()
 
-  §â fromhost ´«¦¨
+  æŠŠ fromhost æ›æˆ
   (cuser.ufo & UFO_HIDDEN ? MYHOSTNAME : fromhost)
 
 --
-[0m  [44mùŞùùùß ùáùùùù ùİùùùù ùàùùùß[40m  [32;1m¡¼ Origin: [33m¤Û°ìÅ]«° [37mntcb.twbbs.org[0m
-[0m  [46;1mùå  ùã ùãùùùù ùãùùùù ùãùùùå[0m  [31;1m¡¼ From:[0m[36mntcb.twbbs.org[m
+[0m  [44mâ•¦â•â•— â•¬â•â• â•”â•â• â• â•â•—[40m  [32;1mâ–¡ Origin: [33må¹»åŸŸé­”åŸ [37mntcb.twbbs.org[0m
+[0m  [46;1mâ•  â•š â•šâ•â• â•šâ•â• â•šâ•â•[0m  [31;1mâ–¡ From:[0m[36mntcb.twbbs.org[m

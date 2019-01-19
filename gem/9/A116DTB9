@@ -1,18 +1,18 @@
-µo«H¤H: bluesway.bbs@bluesway.tfcis.org (Under Constructio ¬İªO: plan
-¼Ğ  ÃD: ¯S©w ID ¹ïÀ³¤W¯¸¬G¶m
-µo«H¯¸: çn¸ô¤p¿v (2005/04/21 Thu 00:46:07)                Updated: 2005/04/21
+ç™¼ä¿¡äºº: bluesway.bbs@bluesway.tfcis.org (Under Constructio çœ‹æ¿: plan
+æ¨™  é¡Œ: ç‰¹å®š ID å°æ‡‰ä¸Šç«™æ•…é„‰
+ç™¼ä¿¡ç«™: è“½è·¯å°ç¯‰ (2005/04/21 Thu 00:46:07)                Updated: 2005/04/21
 
-¯S©w id ¹ïÀ³¤W¯¸¬G¶m
+ç‰¹å®š id å°æ‡‰ä¸Šç«™æ•…é„‰
 
-¤ñ¸û¾A¦X¥Î¦b¨p¤H¯¸
+æ¯”è¼ƒé©åˆç”¨åœ¨ç§äººç«™
 
-©Î¬O¦³¿ú¤H¨­¤W
+æˆ–æ˜¯æœ‰éŒ¢äººèº«ä¸Š
 
-¦b ~/etc ¤U·s¼W idhome ³o­ÓÀÉ®×
+åœ¨ ~/etc ä¸‹æ–°å¢ idhome é€™å€‹æª”æ¡ˆ
 
-®æ¦¡©M host ©Î fqdn Ãş¦ü ( ID   ¬G¶m )
+æ ¼å¼å’Œ host æˆ– fqdn é¡ä¼¼ ( ID   æ•…é„‰ )
 
-¥i¥H¦b¨t²ÎÀÉ®×¿ï³æ­×§ï¡C
+å¯ä»¥åœ¨ç³»çµ±æª”æ¡ˆé¸å–®ä¿®æ”¹ã€‚
 
 
 
@@ -20,30 +20,30 @@
 
     char name[40];
 
-+   /* ¥ı¤ñ¹ï id mapping */
++   /* å…ˆæ¯”å° id mapping */
 +   str_lower(name, cuser.userid);
 +   if (!belong_list(FN_ETC_IDHOME, name, utmp.from))
 +   {
-+     /* ¦A¤ñ¹ï FQDN */
--     /* ¥ı¤ñ¹ï FQDN */
-      str_lower(name, fromhost);  /* itoc.011011: ¤j¤p¼g§¡¥i¡Aetc/fqdn ¸Ì­±
-                                                                ³£­n¼g¤p¼g */
++     /* å†æ¯”å° FQDN */
+-     /* å…ˆæ¯”å° FQDN */
+      str_lower(name, fromhost);  /* itoc.011011: å¤§å°å¯«å‡å¯ï¼Œetc/fqdn è£¡é¢
+                                                                éƒ½è¦å¯«å°å¯« */
       if (!belong_list(FN_ETC_FQDN, name, utmp.from))
       {
-        /* ¦A¤ñ¹ï ip */
+        /* å†æ¯”å° ip */
         sprintf(name, "%d.%d.%d.%d", addr[0], addr[1], addr[2], addr[3]);
         if (!belong_list(FN_ETC_HOST, name, utmp.from))
-          str_ncpy(utmp.from, fromhost, sizeof(utmp.from)); /* ¦pªG³£¨S
-                                           §ä¨ì¹ïÀ³¬G¶m¡A´N¬O¥Î fromhost */
+          str_ncpy(utmp.from, fromhost, sizeof(utmp.from)); /* å¦‚æœéƒ½æ²’
+                                           æ‰¾åˆ°å°æ‡‰æ•…é„‰ï¼Œå°±æ˜¯ç”¨ fromhost */
       }
 +   }
 
 : admutil.c:a_xfile()
 
   #ifdef HAVE_WHERE
-+     "¬G¶m ID",
-      "¬G¶m IP",
-      "¬G¶m FQDN",
++     "æ•…é„‰ ID",
+      "æ•…é„‰ IP",
+      "æ•…é„‰ FQDN",
   #endif
 
 ...
@@ -54,22 +54,22 @@
       FN_ETC_FQDN,
   #endif
 
-: global.h: ¦b¾A·í¦ì¸m¥[¤J
+: global.h: åœ¨é©ç•¶ä½ç½®åŠ å…¥
 
-+ #define FN_ETC_IDHOME   "etc/idhome"    /* ¬G¶m ID */
++ #define FN_ETC_IDHOME   "etc/idhome"    /* æ•…é„‰ ID */
 
-: ±q BBS ¤W½s¿è "¬G¶m ID" ³oÀÉ®×¡A®æ¦¡¦p¤U
+: å¾ BBS ä¸Šç·¨è¼¯ "æ•…é„‰ ID" é€™æª”æ¡ˆï¼Œæ ¼å¼å¦‚ä¸‹
 
-sysop       ¯¸ªøªº®a
-userid1     ¥~¤ÓªÅ
-userid2     ¤õ¬P
-
---
-
-    [1m¦pªG¤@­Ó¤H¤£³ß·R©t¿W¡A´N¤£³ß·R¦Û¥Ñ¡C[m
-
-                                    [1;30m¡Ğ¨û¥»µØ[m
+sysop       ç«™é•·çš„å®¶
+userid1     å¤–å¤ªç©º
+userid2     ç«æ˜Ÿ
 
 --
- [1;36;44m¢¨[;37;44m¢©[1;30;40m±­±­©óÂ²µuªº [37;47mbluesway.tfcis.org[30;40m §ÚµLªk¨¥»y©t¿W±jÅ§¤W [37;44mçn¸ô¤p¿v[m
- [1;44m¢ª[34m¢«[30;40m¤Û¤Æ¬°Ëñ®F¤¤¤@©Ù [34;44mbluesway[30;40m ªº²H¼v§Ú§ä¤£¨ì¥X¤f¦^¨ì [34;47m192.168.33.109 [m
+
+    [1må¦‚æœä¸€å€‹äººä¸å–œæ„›å­¤ç¨ï¼Œå°±ä¸å–œæ„›è‡ªç”±ã€‚[m
+
+                                    [1;30mï¼å”æœ¬è¯[m
+
+--
+ [1;36;44mâ—¢[;37;44mâ—£[1;30;40mæˆšæˆšæ–¼ç°¡çŸ­çš„ [37;47mbluesway.tfcis.org[30;40m æˆ‘ç„¡æ³•è¨€èªå­¤ç¨å¼·è¥²ä¸Š [37;44mè“½è·¯å°ç¯‰[m
+ [1;44mâ—¥[34mâ—¤[30;40må¹»åŒ–ç‚ºå›¹åœ„ä¸­ä¸€æŠ¹ [34;44mbluesway[30;40m çš„æ·¡å½±æˆ‘æ‰¾ä¸åˆ°å‡ºå£å›åˆ° [34;47m192.168.33.109 [m

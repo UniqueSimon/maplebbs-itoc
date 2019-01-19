@@ -1,26 +1,26 @@
-�@��: itoc (�֤߰ʤO) �ݪO: itoc
-���D: Re: [���D]�{���X�ק��bbs�i���h
-�ɶ�: 2004/09/06 Mon 09:51:46
+作者: itoc (核心動力) 看板: itoc
+標題: Re: [問題]程式碼修改後bbs進不去
+時間: 2004/09/06 Mon 09:51:46
 
-�� �ޭz�mhtw (htw)�n���ʨ��G
-> �аݤ@�U����cygwin�H��n��򰵤~����Ӫ��ݪO�M�ϥΪ̸�Ʃ�^�h�O?
-> ������bbs��Ƨ��U�����F��ŤU�K�W��?
+※ 引述《htw (htw)》之銘言：
+> 請問一下重裝cygwin以後要怎麼做才能把原來的看板和使用者資料放回去呢?
+> 直接把bbs資料夾下面的東西剪下貼上嗎?
 
-  0. �b����H�U�ʧ@���e�A�n����Ҧ� BBS ���{�ǳ����� (�Y����)
+  0. 在執行以下動作之前，要先把所有 BBS 的程序都關閉 (即關站)
 
-  1. �N c:\cygwin\home\bbs �ŤU�A�ƻs���L�a��
+  1. 將 c:\cygwin\home\bbs 剪下，複製到其他地方
 
-  2. ���� c:\cygwin
+  2. 移除 c:\cygwin
 
-  3. ���s�w�� Cygwin
+  3. 重新安裝 Cygwin
 
-  4. �˦n Cygwin �H��
-     �A���~�ƥ� c:\cygwin\home\bbs �ƻs�^��
+  4. 裝好 Cygwin 以後
+     再把剛才備份 c:\cygwin\home\bbs 複製回來
 
-  5. ���s�]�w crontab
+  5. 重新設定 crontab
 
-  [��] format �w�Э��� Windows ���ܡA�B�J�]�@��
+  [註] format 硬碟重灌 Windows 的話，步驟也一樣
 
 --
- [1;41m�~[44m�q[m Or[1mig[30min[m: [43m Maple-itoc���ʤO�֤� [35;47m processor.tfcis.org [m
- [1;42m�q[45m�}[m A[1mut[30mho[mr: [1;31mitoc [30m�q [36mitoc.Dorm11.NCTU.edu.tw [30m�o��[m
+ [1;41m╭[44m┼[m Or[1mig[30min[m: [43m Maple-itoc˙動力核心 [35;47m processor.tfcis.org [m
+ [1;42m┼[45m┘[m A[1mut[30mho[mr: [1;31mitoc [30m從 [36mitoc.Dorm11.NCTU.edu.tw [30m發表[m

@@ -1,10 +1,10 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬ÝªO: Maple_itoc
-¼Ð  ÃD: Re: [°ÝÃD] ¦n¤Í¤W¯¸³qª¾
-µo«H¯¸: °Ê¤O®Ö¤ß (04/20/04 09:32:45 Tue)                  Updated: 2004/04/20
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: Maple_itoc
+æ¨™  é¡Œ: Re: [å•é¡Œ] å¥½å‹ä¸Šç«™é€šçŸ¥
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (04/20/04 09:32:45 Tue)                  Updated: 2004/04/20
 
-¡° ¤Þ­z¡mRojer (ª±¼Ö­n¶X¦­)¡n¤§»Ê¨¥¡G
->     ·Q½Ð±Ð¤@¤U¡A¦³¨S¦³¿ìªkÅý¦n¤Í¤W¯¸³qª¾¡A¥i¥H³qª¾¦n¤Í¸Ó¨Ï¥ÎªÌ¤W¯¸
->     ¦ý¬O¨Ã¤£·|¼g¤J¨ì¨Ï¥ÎªÌªº¼ö°T¤¤
+â€» å¼•è¿°ã€ŠRojer (çŽ©æ¨‚è¦è¶æ—©)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>     æƒ³è«‹æ•™ä¸€ä¸‹ï¼Œæœ‰æ²’æœ‰è¾¦æ³•è®“å¥½å‹ä¸Šç«™é€šçŸ¥ï¼Œå¯ä»¥é€šçŸ¥å¥½å‹è©²ä½¿ç”¨è€…ä¸Šç«™
+>     ä½†æ˜¯ä¸¦ä¸æœƒå¯«å…¥åˆ°ä½¿ç”¨è€…çš„ç†±è¨Šä¸­
 
 : bmw.c:bmw_rqst()
 
@@ -12,13 +12,13 @@
     {
       mptr = &bmw[i];
 
-+     if (mptr->sender || strncmp(mptr->msg, "¡· ­è­è½ñ¶i", 11))
++     if (mptr->sender || strncmp(mptr->msg, "â—Ž å‰›å‰›è¸é€²", 11))
 +     {
-        /* lkchu.981230: §Q¥Î xover ¾ã¦X bmw */
+        /* lkchu.981230: åˆ©ç”¨ xover æ•´åˆ bmw */
         usr_fpath(buf, cuser.userid, fn_bmw);
         rec_add(buf, mptr, sizeof(BMW));
 
-        /* itoc.020126: ¥[¤J FN_AMW */
+        /* itoc.020126: åŠ å…¥ FN_AMW */
         fprintf(fp, BMW_FORMAT " %s\n",
           mptr->userid, mptr->msg, Btime(&(mptr->btime)));
 +     }
@@ -28,5 +28,5 @@
 
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ž [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

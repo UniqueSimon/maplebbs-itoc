@@ -1,15 +1,15 @@
-§@ªÌ: itoc (®Ö¤ß°Ê¤O) ¬İªO: itoc
-¼ĞÃD: Re: ·Q½Ğ±Ğ¤j¤jÃö©ó¹CÀ¸ªº°İÃD
-®É¶¡: 2005/05/01 Sun 17:43:41                           Updated: 2005/05/01
+ä½œè€…: itoc (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: itoc
+æ¨™é¡Œ: Re: æƒ³è«‹æ•™å¤§å¤§é—œæ–¼éŠæˆ²çš„å•é¡Œ
+æ™‚é–“: 2005/05/01 Sun 17:43:41                           Updated: 2005/05/01
 
-¡° ¤Ş­z¡mPon (¸I¡ã)¡n¤§»Ê¨¥¡G
->     ¹ï¤F¡ã·Q½Ğ°İ¤@¤U¤j¤j¦³¿ìªk¬ö¿ı¨Ï¥ÎªÌª±¹CÀ¸ªº log ¶Ü @@?
->     ¦]¬°¦³µo²{¯¸¤W¤@¨Çª÷¹ô¯S§O¦hªº¡A¦ü¥G³£¬O§Q¥Î³nÅé±¾¯¸¬~¿ú
->     ½ğ¤U¥h¹L´X¬í¤S¦Û°Ê³s¤W¨Ó¤F \___/
->     ¦ı¬O«o¨S¦³®Ú¾Ú¯à°÷ªv¥L­Ì¡A
->     ©Ò¥H·Q½Ğ°İ¤@¤U¤j¤j¦³¨S¦³¼g¹L³o¼Ëªºµ{¦¡ @@?
+â€» å¼•è¿°ã€ŠPon (ç¢°ï½)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>     å°äº†ï½æƒ³è«‹å•ä¸€ä¸‹å¤§å¤§æœ‰è¾¦æ³•ç´€éŒ„ä½¿ç”¨è€…ç©éŠæˆ²çš„ log å— @@?
+>     å› ç‚ºæœ‰ç™¼ç¾ç«™ä¸Šä¸€äº›é‡‘å¹£ç‰¹åˆ¥å¤šçš„ï¼Œä¼¼ä¹éƒ½æ˜¯åˆ©ç”¨è»Ÿé«”æ›ç«™æ´—éŒ¢
+>     è¸¢ä¸‹å»éå¹¾ç§’åˆè‡ªå‹•é€£ä¸Šä¾†äº† \___/
+>     ä½†æ˜¯å»æ²’æœ‰æ ¹æ“šèƒ½å¤ æ²»ä»–å€‘ï¼Œ
+>     æ‰€ä»¥æƒ³è«‹å•ä¸€ä¸‹å¤§å¤§æœ‰æ²’æœ‰å¯«éé€™æ¨£çš„ç¨‹å¼ @@?
 
-  ³ÌÂ²³æªº¼gªk¡A¤£¥hºŞ¹CÀ¸ªººØÃş
+  æœ€ç°¡å–®çš„å¯«æ³•ï¼Œä¸å»ç®¡éŠæˆ²çš„ç¨®é¡
 
 : acct.c:addmoney()
 
@@ -17,30 +17,30 @@ void
 addmoney(addend)
   int addend;
 {
-  if (addend < (INT_MAX - cuser.money)) /* Á×§K·¸¦ì */
+  if (addend < (INT_MAX - cuser.money)) /* é¿å…æº¢ä½ */
     cuser.money += addend;
   else
     cuser.money = INT_MAX;
 + if (bbsmode == M_GAME)
 + {
 +   char buf[256];
-+   sprintf("[%s] %s ª±¹CÀ¸ÁÈ¤F %d »È\n", Now(), cuser.userid, addend);
++   sprintf("[%s] %s ç©éŠæˆ²è³ºäº† %d éŠ€\n", Now(), cuser.userid, addend);
 +   f_cat("run/gamelog", buf);
 + }
 }
 
 : account.c:main()
 
-    sprintf(title, "%s¤å³¹½g¼Æ²Î­p", date);
+    sprintf(title, "%sæ–‡ç« ç¯‡æ•¸çµ±è¨ˆ", date);
     keeplog(FN_RUN_POST_LOG, BN_SECURITY, title, 2);
 
-+   sprintf(title, "%s¹CÀ¸ÁÈ¿ú°O¿ı", date);
++   sprintf(title, "%séŠæˆ²è³ºéŒ¢è¨˜éŒ„", date);
 +   keeplog("run/gamelog", BN_SECURITY, title, 2);
 
 --
-  ¦pªG·Qª¾¹D¦b­ş­Ó¹CÀ¸ÁÈ¿úªº¡A´N±o¦b addmoney() ¥[¤@­Ó°Ñ¼Æ
-  µM«á§ï *.c ªº addmoney(xx); ÅÜ¦¨ addmoney(xx, "ºØÃş");
+  å¦‚æœæƒ³çŸ¥é“åœ¨å“ªå€‹éŠæˆ²è³ºéŒ¢çš„ï¼Œå°±å¾—åœ¨ addmoney() åŠ ä¸€å€‹åƒæ•¸
+  ç„¶å¾Œæ”¹ *.c çš„ addmoney(xx); è®Šæˆ addmoney(xx, "ç¨®é¡");
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

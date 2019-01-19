@@ -1,9 +1,9 @@
-�o�H�H: itoc.bbs@processor.tfcis.org (:MM:) �ݪO: plan
-��  �D: Re: [�\��] post.c �峹�����\��
-�o�H��: XEON (Wed, 09 Apr 2003 22:26:34 +0800 (CST))      Updated: 2007/04/26
+發信人: itoc.bbs@processor.tfcis.org (:MM:) 看板: plan
+標  題: Re: [功能] post.c 文章評分功能
+發信站: XEON (Wed, 09 Apr 2003 22:26:34 +0800 (CST))      Updated: 2007/04/26
 
-�� �ޭz�mamaki.bbs@luna.twbbs.org (�P��p��)�n���ʨ��G
-> ��ܤ峹�Q�\�������Ƶ{���_�H
+※ 引述《amaki.bbs@luna.twbbs.org (仙草小羊)》之銘言：
+> 顯示文章被閱覽的次數程式否？
 
 : post.c:post_browse()
 
@@ -18,23 +18,23 @@
 
     hdr_fpath(fpath, dir, hdr);
 
-    /* Thor.990204: ���Ҽ{more �Ǧ^�� */
+    /* Thor.990204: 為考慮more 傳回值 */
     if ((key = more(fpath, FOOTER_POST)) < 0)
       break;
 
 : hdr.h:struct HDR
 
-  char owner[80];               /* �@�� (E-mail address) */
-- char nick[49];                /* �ʺ� */
-+ char nick[44];                /* �ʺ� */
-+ int numread;                  /* �Q�\Ū�L�X�� */
+  char owner[80];               /* 作者 (E-mail address) */
+- char nick[49];                /* 暱稱 */
++ char nick[44];                /* 暱稱 */
++ int numread;                  /* 被閱讀過幾次 */
 + char nouse;
-  char score;                   /* �峹������� */
+  char score;                   /* 文章評比分數 */
 
   char date[9];                 /* 96/12/31 */
   char title[73];
 
-: post.c:post_item() �ƪ��۩w
+: post.c:post_item() 排版自定
 
 static void
 post_item(num, hdr)
@@ -48,7 +48,7 @@ post_item(num, hdr)
 
 - prints("%6d%c%c", (hdr->xmode & POST_BOTTOM) ? -1 : num,
 -   tag_char(hdr->chrono), post_attr(hdr));
-+ numread = hdr->numread / 1000;     /* �C�@�d���s����@�� */
++ numread = hdr->numread / 1000;     /* 每一千次瀏覽算一分 */
 + prints("%6d%c%c%c", (hdr->xmode & POST_BOTTOM) ? -1 : num,
 +   tag_char(hdr->chrono), post_attr(hdr),
 +   numread ? '0' + numread : ' ');
@@ -65,7 +65,7 @@ post_item(num, hdr)
 - prints("%6d%c%c", (hdr->xmode & POST_BOTTOM) ? -1 : num,
 -   tag_char(hdr->chrono), post_attr(hdr));
 - hdr_outs(hdr, d_cols + 47);
-+ numread = hdr->numread / 1000;     /* �C�@�d���s����@�� */
++ numread = hdr->numread / 1000;     /* 每一千次瀏覽算一分 */
 + prints("%6d%c%c%c", (hdr->xmode & POST_BOTTOM) ? -1 : num,
 +   tag_char(hdr->chrono), post_attr(hdr),
 +   numread ? '0' + numread : ' ');
@@ -73,11 +73,11 @@ post_item(num, hdr)
 }
 
 --
-  �b web ���j�a�ä��`�Ǿ\Ū�A�ҥH�I�\���Ʀ��@�w���Ѧһ���
-  �M�Ӧb bbs �W�j�a���O�@�g�@�g�`�Ǿ\Ū
-  �ҥH�I�\�����ܪ�����򦳰Ѧһ���
-  (�]�\�b��ذϤ��|�����ȡA���O�ݪO�����|)
+  在 web 中大家並不循序閱讀，所以點閱次數有一定的參考價值
+  然而在 bbs 上大家都是一篇一篇循序閱讀
+  所以點閱次數變的不怎麼有參考價值
+  (也許在精華區中會有價值，但是看板中不會)
 
 --
-    [1;32m�~�w Origin �w�� [0;36m�[1m�[0;36m�[1mO[0;36m�[1m�[0;36m�[1m� [1;31m processor.tfcis.org [32m �� �e�f�g �w�t[m
-    [1;32m�u   Author   �� [33;44mitoc.dorm-gd2.nctu.edu.tw                [m
+    [1;32m╭─ Origin ─╗ [0;36m?[1m?[0;36m?[1mO[0;36m?[1m?[0;36m?[1m?[1;31m processor.tfcis.org [32m ～ κλμ ─┤[m
+    [1;32m├   Author   ╡ [33;44mitoc.dorm-gd2.nctu.edu.tw                [m

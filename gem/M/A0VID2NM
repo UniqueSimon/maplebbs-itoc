@@ -1,15 +1,15 @@
-§@ªÌ: itoc (SS ­n§¹³J¤F) ¬İªO: plan
-¼ĞÃD: [­×¥¿] ³s¸p§¹¶}ªO¦Û°Ê¥[¤J Class
-®É¶¡: Tue Jan 14 14:22:09 2003                          Updated: 2005/05/19
+ä½œè€…: itoc (SS è¦å®Œè›‹äº†) çœ‹æ¿: plan
+æ¨™é¡Œ: [ä¿®æ­£] é€£ç½²å®Œé–‹æ¿è‡ªå‹•åŠ å…¥ Class
+æ™‚é–“: Tue Jan 14 14:22:09 2003                          Updated: 2005/05/19
 
-: newbrd.c ¦b nbrd_newbrd() «e­±¥[¤J³o¤G­Ó¨ç¦¡
+: newbrd.c åœ¨ nbrd_newbrd() å‰é¢åŠ å…¥é€™äºŒå€‹å‡½å¼
 
 static int
 hdr_cmp(a, b)
   HDR *a;
   HDR *b;
 {
-  /* ¥ı¤ñ¹ï¤ÀÃş¡A¦A¤ñ¹ïªO¦W */
+  /* å…ˆæ¯”å°åˆ†é¡ï¼Œå†æ¯”å°æ¿å */
   int k = strncmp(a->title + BNLEN + 1, b->title + BNLEN + 1, BCLEN);
   return k ? k : str_cmp(a->xname, b->xname);
 }
@@ -22,28 +22,28 @@ add_class(brd)
   HDR hdr;
   char *fpath;
 
-  [1;44m// ¥H¤U³o¤@¬q­n¥Ñ¦U¯¸¦Û©w [m
-  if (!strcmp(brd->class, "­Ó¤H"))
+  [1;44m// ä»¥ä¸‹é€™ä¸€æ®µè¦ç”±å„ç«™è‡ªå®š [m
+  if (!strcmp(brd->class, "å€‹äºº"))
     fpath = "gem/@/@11_Personal";
-  else if (!strcmp(brd->class, "¹ìªO"))
+  else if (!strcmp(brd->class, "å¯¢æ¿"))
     fpath = "gem/@/@10_Room";
-  else if (!strcmp(brd->class, "Àç¶¤"))
+  else if (!strcmp(brd->class, "ç‡ŸéšŠ"))
     fpath = "gem/@/@09_Camp";
-  [1;44m// ¥H¤W³o¤@¬q­n¥Ñ¦U¯¸¦Û©w [m
+  [1;44m// ä»¥ä¸Šé€™ä¸€æ®µè¦ç”±å„ç«™è‡ªå®š [m
 
   else
   {
-    vmsg("µ{¦¡µLªk§PÂ_¦¹¬İªO¤§¤ÀÃş¡A½Ğ¦Û¦æ¥[¤J¤ÀÃş");
+    vmsg("ç¨‹å¼ç„¡æ³•åˆ¤æ–·æ­¤çœ‹æ¿ä¹‹åˆ†é¡ï¼Œè«‹è‡ªè¡ŒåŠ å…¥åˆ†é¡");
     return;
   }
 
-  /* ¥[¤J¾A·íªº¤ÀÃş */
+  /* åŠ å…¥é©ç•¶çš„åˆ†é¡ */
 
   brd2gem(brd, &hdr);
   rec_add(fpath, &hdr, sizeof(HDR));
   rec_sync(fpath, sizeof(HDR), hdr_cmp, NULL);
 
-  vmsg("·sªO¦¨¥ß¡Aµ{¦¡¦Û°Ê¥[¤J Class ¸s²Õ¦¨¥\\");
+  vmsg("æ–°æ¿æˆç«‹ï¼Œç¨‹å¼è‡ªå‹•åŠ å…¥ Class ç¾¤çµ„æˆåŠŸ\");
 }
 
 : newbrd.c:nbrd_newbrd()
@@ -53,8 +53,8 @@ add_class(brd)
 
 + add_class(&newboard);
 
-- vmsg("·sªO¦¨¥ß¡A°OµÛ¥[¤J¤ÀÃş¸s²Õ");
+- vmsg("æ–°æ¿æˆç«‹ï¼Œè¨˜è‘—åŠ å…¥åˆ†é¡ç¾¤çµ„");
   return 1;
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm-GD2.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm-GD2.NCTU.edu.tw[37m ç™¼è¡¨[m

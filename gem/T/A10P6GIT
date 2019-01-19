@@ -1,13 +1,13 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G802) ¯¸¤º: plan
-¼ĞÃD: [­×¥¿] ³Q½s¿è¹Lªº¤å³¹ÅÜ¥¼Åª
-®É¶¡: 2004/11/11 Thu 18:31:21                           Updated: 2007/04/26
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š802) ç«™å…§: plan
+æ¨™é¡Œ: [ä¿®æ­£] è¢«ç·¨è¼¯éçš„æ–‡ç« è®Šæœªè®€
+æ™‚é–“: 2004/11/11 Thu 18:31:21                           Updated: 2007/04/26
 
-  ¥²¶·¥ı°µ³o½g
-  [¥\¯à] post.c HDR ·s¼W¤@­ÓÄæ¦ìµ¹¤wÅª¥¼Åª»²§U§PÂ_
+  å¿…é ˆå…ˆåšé€™ç¯‡
+  [åŠŸèƒ½] post.c HDR æ–°å¢ä¸€å€‹æ¬„ä½çµ¦å·²è®€æœªè®€è¼”åŠ©åˆ¤æ–·
 
 : post.c:post_edit()
 
-  if (HAS_PERM(PERM_ALLBOARD))                  /* ¯¸ªø­×§ï */
+  if (HAS_PERM(PERM_ALLBOARD))                  /* ç«™é•·ä¿®æ”¹ */
   {
 #ifdef HAVE_REFUSEMARK
     if (!chkrestrict(hdr))
@@ -22,7 +22,7 @@
   }
   else if (!strcmp(hdr->owner, cuser.userid) && HAS_PERM(PERM_POST))
   {
-    if (!vedit(fpath, 0))       /* ­Y«D¨ú®ø«h¥[¤W­×§ï¸ê°T */
+    if (!vedit(fpath, 0))       /* è‹¥éå–æ¶ˆå‰‡åŠ ä¸Šä¿®æ”¹è³‡è¨Š */
     {
       if (fp = fopen(fpath, "a"))
       {
@@ -38,4 +38,4 @@
   }
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

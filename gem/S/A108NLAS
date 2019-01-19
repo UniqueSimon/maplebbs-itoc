@@ -1,41 +1,41 @@
-µo«H¤H: chwaian.bbs@processor.tfcis.org (µL¨¥) ¬İªO: Maple_itoc
-¼Ğ  ÃD: Re: veditªºKEY_UP¡BKEY_DOWN¥i¸õ¦æÁÙ­ìve_col
-µo«H¯¸: °Ê¤O®Ö¤ß (04/19/04 00:58:36 Mon)                  Updated: 2005/03/16
+ç™¼ä¿¡äºº: chwaian.bbs@processor.tfcis.org (ç„¡è¨€) çœ‹æ¿: Maple_itoc
+æ¨™  é¡Œ: Re: veditçš„KEY_UPã€KEY_DOWNå¯è·³è¡Œé‚„åŸve_col
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (04/19/04 00:58:36 Mon)                  Updated: 2005/03/16
 
-°²³]¤å³¹¤º¤å¬°³o¼Ë
-
-------------
-¤@¤G¤T¥|¤­
-¤@¤G¤T
-         (ªÅ¦æ)
-¤@¤G¤T¥|
-¤@¤G¤T¥|¤­
--------------
-
-¦pªG¦b²Ä¤@¦æªº³Ì«á­±¤@ª½«öKEY_DOWN
-
-´å¼Ğªº²¾°Ê¤è¦¡¦p¤U
+å‡è¨­æ–‡ç« å…§æ–‡ç‚ºé€™æ¨£
 
 ------------
- ¤@¤G¤T¥|¤­[1;33m_[m
- ¤@¤G¤T[1;33m_[m
-[1;33m_[m        (ªÅ¦æ)
-[1;33m_[m¤@¤G¤T¥|
-[1;33m_[m¤@¤G¤T¥|¤­
+ä¸€äºŒä¸‰å››äº”
+ä¸€äºŒä¸‰
+         (ç©ºè¡Œ)
+ä¸€äºŒä¸‰å››
+ä¸€äºŒä¸‰å››äº”
 -------------
 
-§ï§¹³o½g«á
+å¦‚æœåœ¨ç¬¬ä¸€è¡Œçš„æœ€å¾Œé¢ä¸€ç›´æŒ‰KEY_DOWN
+
+æ¸¸æ¨™çš„ç§»å‹•æ–¹å¼å¦‚ä¸‹
 
 ------------
- ¤@¤G¤T¥|¤­[1;33m_[m
- ¤@¤G¤T[1;33m_[m
-[1;33m_ [m       (ªÅ¦æ)
- ¤@¤G¤T¥|[1;33m_[m
- ¤@¤G¤T¥|¤­[1;33m_[m
+ ä¸€äºŒä¸‰å››äº”[1;33m_[m
+ ä¸€äºŒä¸‰[1;33m_[m
+[1;33m_[m        (ç©ºè¡Œ)
+[1;33m_[mä¸€äºŒä¸‰å››
+[1;33m_[mä¸€äºŒä¸‰å››äº”
+-------------
+
+æ”¹å®Œé€™ç¯‡å¾Œ
+
+------------
+ ä¸€äºŒä¸‰å››äº”[1;33m_[m
+ ä¸€äºŒä¸‰[1;33m_[m
+[1;33m_ [m       (ç©ºè¡Œ)
+ ä¸€äºŒä¸‰å››[1;33m_[m
+ ä¸€äºŒä¸‰å››äº”[1;33m_[m
 -------------
 
 
-  ¦ı¬O¦b Ctrl+V ªº ansi-mode ¤§¤U¡A¤´©M¤§«e²¾°Ê¤è¦¡¤@¼Ë
+  ä½†æ˜¯åœ¨ Ctrl+V çš„ ansi-mode ä¹‹ä¸‹ï¼Œä»å’Œä¹‹å‰ç§»å‹•æ–¹å¼ä¸€æ¨£
 
 
 : edit.c
@@ -136,7 +136,7 @@ static int ve_col;
           if (col > cc)
             ve_col = cc;
 +         else
-+           ve_col = (cc < ve_coll) ? cc : ve_coll;  /* ÁÙ­ì¥ı«eªº ve_col */
++           ve_col = (cc < ve_coll) ? cc : ve_coll;  /* é‚„åŸå…ˆå‰çš„ ve_col */
 
   ...
   ...
@@ -146,7 +146,7 @@ static int ve_col;
           if (col > cc)
             ve_col = cc;
 +         else
-+           ve_col = (cc < ve_coll) ? cc : ve_coll;  /* ÁÙ­ì¥ı«eªº ve_col */
++           ve_col = (cc < ve_coll) ? cc : ve_coll;  /* é‚„åŸå…ˆå‰çš„ ve_col */
 
       case Ctrl('S'):           /* start of file */
 
@@ -164,7 +164,7 @@ static int ve_col;
 
 -       vln->len = ve_col = 0;
 +       vln->len = ve_col = ve_coll = 0;
-        vln->data[0] = '\0'; /* Thor.981001: ±N¤º®e¤@¨Ö²M°£ */
+        vln->data[0] = '\0'; /* Thor.981001: å°‡å…§å®¹ä¸€ä½µæ¸…é™¤ */
 
       case Ctrl('K'):           /* delete to end of line */
 
@@ -179,9 +179,9 @@ static int ve_col;
 
 
 
-¤£ª¾¹D¦³¨S¦³º|§ï©Î¦³°İÃDªº¦a¤è @_@
+ä¸çŸ¥é“æœ‰æ²’æœ‰æ¼æ”¹æˆ–æœ‰å•é¡Œçš„åœ°æ–¹ @_@
 
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mchwaian [30m±q [35m218-171-118-64.dynamic.hinet.net [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mchwaian [30må¾ [35m218-171-118-64.dynamic.hinet.net [30mç™¼è¡¨[m

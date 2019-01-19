@@ -1,8 +1,8 @@
-µo«H¤H: LHD.bbs@YoMin.twbbs.org (§Ú²Ö¤F) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ¾ã¦æ¥ú´Î¡Ğboard.c (©ö©ó¾ã¦Xfavor.cª©)
-µo«H¯¸: ¹C¥Á¤§®a (Mon, 14 Jul 2003 17:54:20 +0800 (CST))  Updated: 2005/10/07
+ç™¼ä¿¡äºº: LHD.bbs@YoMin.twbbs.org (æˆ‘ç´¯äº†) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] æ•´è¡Œå…‰æ£’ï¼board.c (æ˜“æ–¼æ•´åˆfavor.cç‰ˆ)
+ç™¼ä¿¡ç«™: éŠæ°‘ä¹‹å®¶ (Mon, 14 Jul 2003 17:54:20 +0800 (CST))  Updated: 2005/10/07
 
-: board.c:class_item_bar() ¤Î class_bar() ¥[¦b class_item() ¤§«á
+: board.c:class_item_bar() åŠ class_bar() åŠ åœ¨ class_item() ä¹‹å¾Œ
 
 #ifdef HAVE_LIGHTBAR
 #ifdef MY_FAVORITE
@@ -19,20 +19,20 @@ class_item_bar(brd, bno, chn, brdpost)
   char folder[64];
   struct stat st;
 
-  /* itoc.020123: ¤£ºŞ¦³µL UFO_BRDPOST¡A¤@·§§ó·s¡A¥H§K¥¼Åª¿O¤£·|«G */
+  /* itoc.020123: ä¸ç®¡æœ‰ç„¡ UFO_BRDPOSTï¼Œä¸€æ¦‚æ›´æ–°ï¼Œä»¥å…æœªè®€ç‡ˆä¸æœƒäº® */
   brd_fpath(folder, brd->brdname, fn_dir);
   if ((fd = open(folder, O_RDONLY)) >= 0 && !fstat(fd, &st))
   {
     if (st.st_mtime > brd->btime)
     {
-      brd->btime = time(0) + 0; /* 45 ¬íÄÁ¤º¤£­«½ÆÀË¬d */
+      brd->btime = time(0) + 0; /* 45 ç§’é˜å…§ä¸é‡è¤‡æª¢æŸ¥ */
       if ((fsize = st.st_size) >= sizeof(HDR))
       {
 #ifdef ENHANCED_BSHM_UPDATE
         HDR hdr;
 
         brd->bpost = fsize / sizeof(HDR);
-        /* itoc.020829: §ä³Ì«á¤@½g¥¼³Q§R°£/¥[±Kªº HDR */
+        /* itoc.020829: æ‰¾æœ€å¾Œä¸€ç¯‡æœªè¢«åˆªé™¤/åŠ å¯†çš„ HDR */
         for (fsize -= sizeof(HDR); fsize >= sizeof(HDR); fsize -= sizeof(HDR))
         {
           lseek(fd, fsize, SEEK_SET);
@@ -55,10 +55,10 @@ class_item_bar(brd, bno, chn, brdpost)
     close(fd);
   }
 
-  /* ³B²z ½s¸¹/½g¼Æ */
+  /* è™•ç† ç·¨è™Ÿ/ç¯‡æ•¸ */
   num = brdpost ? brd->bpost : bno;
 
-  /* ³B²z zap/friend/secret ªOªº²Å¸¹ */
+  /* è™•ç† zap/friend/secret æ¿çš„ç¬¦è™Ÿ */
   if (brd_bits[chn] & BRD_Z_BIT)
     token = TOKEN_ZAP_BRD;
   else if (brd->readlevel == PERM_SYSOP)
@@ -68,25 +68,25 @@ class_item_bar(brd, bno, chn, brdpost)
   else
     token = ' ';
 
-  /* ³B²z ¤wÅª/¥¼Åª */
+  /* è™•ç† å·²è®€/æœªè®€ */
 #ifdef ENHANCED_VISIT
-  /* itoc.010407: §ï¥Î³Ì«á¤@½g¤wÅª/¥¼Åª¨Ó§PÂ_ */
+  /* itoc.010407: æ”¹ç”¨æœ€å¾Œä¸€ç¯‡å·²è®€/æœªè®€ä¾†åˆ¤æ–· */
   brh_get(brd->bstamp, chn);
   str1 = brh_unread(brd->blast) ? ICON_UNREAD_BRD : ICON_READ_BRD;
 #else
   str1 = brd->blast > brd_visit[chn] ? ICON_UNREAD_BRD : ICON_READ_BRD;
 #endif
 
-  /* ³B²z §ë²¼/Âà«H */
+  /* è™•ç† æŠ•ç¥¨/è½‰ä¿¡ */
   if (brd->bvote)
     str2 = (brd->bvote > 0) ? ICON_VOTED_BRD : ICON_GAMBLED_BRD;
   else
     str2 = (brd->battr & BRD_NOTRAN) ? ICON_NOTRAN_BRD : ICON_TRAN_BRD;
 
-  /* ³B²z ¤H®ğ */
+  /* è™•ç† äººæ°£ */
   bno = bshm->mantime[bno];
   if (bno > 99)
-    str3 = "\033[1;31mÃz\033[m";
+    str3 = "\033[1;31mçˆ†\033[m";
   else if (bno > 0)
     sprintf(str3 = buf, "%2d", bno);
   else
@@ -116,7 +116,7 @@ class_bar(xo, mode)
   brd = bshm->bcache + chn;
   brdpost = class_flag & UFO_BRDPOST;
 
-  if (chn >= 0)         /* ¤@¯ë¬İªO */
+  if (chn >= 0)         /* ä¸€èˆ¬çœ‹æ¿ */
   {
     if (mode)
       class_item_bar(brd, cnt, chn, brdpost);
@@ -152,6 +152,6 @@ static KeyFunc class_cb[] =
 ...
 
 --
-[m¢d¢e¢f¢g¢h¢f¢e¢d¢c¢b                [33m¢©  ¢¨      ¢i¢©¢¨¢i ¡´   [1;30mbbs.cis95.net[m
-[30;47m¢h¢f¢e¢c¢b¡Å¢d¢f¢g[0;35m   ©~µL©w©Òªº¶³   [33m¢ª¢i¢« ¢«¢ª ¢i¢ª¢«¢i ¡¶ ¢i¢h¢© [0;1m¹C¥Á¤§®a[m
-[1;34mÄÆ¦Û [31mcismpc19.cis.nctu.edu.tw         [0;33m¢i   ¢©¢¨ ¢i    ¢i ¢i ¢i  ¢i¡Etwbbs¡Eorg[m
+[mâ–ƒâ–„â–…â–†â–‡â–…â–„â–ƒâ–‚â–                [33mâ—£  â—¢      â–ˆâ—£â—¢â–ˆ â—   [1;30mbbs.cis95.net[m
+[30;47mâ–‡â–…â–„â–‚â–?â–ƒâ–…â–†[0;35m   å±…ç„¡å®šæ‰€çš„é›²   [33mâ—¥â–ˆâ—¤ â—¤â—¥ â–ˆâ—¥â—¤â–ˆ â–² â–ˆâ–‡â—£ [0;1méŠæ°‘ä¹‹å®¶[m
+[1;34mé£„è‡ª [31mcismpc19.cis.nctu.edu.tw         [0;33mâ–ˆ   â—£â—¢ â–ˆ    â–ˆ â–ˆ â–ˆ  â–ˆ?twbbs?org[m

@@ -1,62 +1,62 @@
-§@ªÌ: itoc (¯¸¤W¤H¼Æ¡G802) ¯¸¤º: plan
-¼ÐÃD: [¥\¯à] HDR ·s¼W¤@­ÓÄæ¦ìµ¹¤wÅª¥¼Åª»²§U§PÂ_
-®É¶¡: 2004/11/11 Thu 17:46:58                           Updated: 2007/03/06
+ä½œè€…: itoc (ç«™ä¸Šäººæ•¸ï¼š802) ç«™å…§: plan
+æ¨™é¡Œ: [åŠŸèƒ½] HDR æ–°å¢žä¸€å€‹æ¬„ä½çµ¦å·²è®€æœªè®€è¼”åŠ©åˆ¤æ–·
+æ™‚é–“: 2004/11/11 Thu 17:46:58                           Updated: 2007/03/06
 
-  ¦b struct HDR ·s¼W¤@­ÓÄæ¦ì stamp
-  stamp ¤]¬O unique ªº¡A¥B©M chrono ¤£¯à­«ÂÐ
-  (­YÀÉ®×¨S¦³³Q§ó§ï¹L¡A¨º»ò stamp ´N¬O 0)
+  åœ¨ struct HDR æ–°å¢žä¸€å€‹æ¬„ä½ stamp
+  stamp ä¹Ÿæ˜¯ unique çš„ï¼Œä¸”å’Œ chrono ä¸èƒ½é‡è¦†
+  (è‹¥æª”æ¡ˆæ²’æœ‰è¢«æ›´æ”¹éŽï¼Œé‚£éº¼ stamp å°±æ˜¯ 0)
 
-  ¦b¬ÝªO¤¤ chrono/stamp ªº¶¶§Ç±N¤£¦A«ö·Ó½g¼Æ»¼¼W
+  åœ¨çœ‹æ¿ä¸­ chrono/stamp çš„é †åºå°‡ä¸å†æŒ‰ç…§ç¯‡æ•¸éžå¢ž
 
-  ¥Øªº¬O§Æ±æ¦b ±À¤å/§ï¤å ®É
-  ¦b¤å³¹¦Cªí·|¥X²{ +
-  ¦b¬ÝªO¦Cªí¤]·|¥X²{¥¼Åª¿O (§Y¨Ï¨S¦³·s¤å³¹¡A¥u¦³·s±À¤å)
+  ç›®çš„æ˜¯å¸Œæœ›åœ¨ æŽ¨æ–‡/æ”¹æ–‡ æ™‚
+  åœ¨æ–‡ç« åˆ—è¡¨æœƒå‡ºç¾ +
+  åœ¨çœ‹æ¿åˆ—è¡¨ä¹Ÿæœƒå‡ºç¾æœªè®€ç‡ˆ (å³ä½¿æ²’æœ‰æ–°æ–‡ç« ï¼Œåªæœ‰æ–°æŽ¨æ–‡)
 
-  ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+  â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  [½d¨Ò]
+  [ç¯„ä¾‹]
 
-  ¬Y¬ÝªOªº .DIR °O¿ý¦p¤U¡G
+  æŸçœ‹æ¿çš„ .DIR è¨˜éŒ„å¦‚ä¸‹ï¼š
 
-     ²Ä´X½g  chrono  stamp
+     ç¬¬å¹¾ç¯‡  chrono  stamp
        1      100      0
        2      200     301
        3      300      0
        4      400      0
 
-  §PÂ_²Ä 1 ½g¬O§_¤wÅª®É¡A¥h¬d¬Ý¾\Åª°O¿ý¸Ì­±¬O§_¦³ 100
-  §PÂ_²Ä 2 ½g¬O§_¤wÅª®É¡A¥h¬d¬Ý¾\Åª°O¿ý¸Ì­±¬O§_¦³ 301
+  åˆ¤æ–·ç¬¬ 1 ç¯‡æ˜¯å¦å·²è®€æ™‚ï¼ŒåŽ»æŸ¥çœ‹é–±è®€è¨˜éŒ„è£¡é¢æ˜¯å¦æœ‰ 100
+  åˆ¤æ–·ç¬¬ 2 ç¯‡æ˜¯å¦å·²è®€æ™‚ï¼ŒåŽ»æŸ¥çœ‹é–±è®€è¨˜éŒ„è£¡é¢æ˜¯å¦æœ‰ 301
 
-  ·í¾\Åª²Ä 1 ½g§¹¡A·|±N 100 ¼g¦^¾\Åª°O¿ý
-  ·í¾\Åª²Ä 2 ½g§¹¡A·|±N 301 ¼g¦^¾\Åª°O¿ý
+  ç•¶é–±è®€ç¬¬ 1 ç¯‡å®Œï¼Œæœƒå°‡ 100 å¯«å›žé–±è®€è¨˜éŒ„
+  ç•¶é–±è®€ç¬¬ 2 ç¯‡å®Œï¼Œæœƒå°‡ 301 å¯«å›žé–±è®€è¨˜éŒ„
 
-  ­Y¾ã­Ó¬ÝªO³£Åª§¹¡A¨º»ò¦b¾\Åª°O¿ý¸Ì­±¦³ 100 300 301 400
+  è‹¥æ•´å€‹çœ‹æ¿éƒ½è®€å®Œï¼Œé‚£éº¼åœ¨é–±è®€è¨˜éŒ„è£¡é¢æœ‰ 100 300 301 400
 
-  ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+  â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-  ÁÙ¦³¡A§ï³o­Ó¥\¯à­n¥I¥Xªº¥N»ù¥]¬A¡G
+  é‚„æœ‰ï¼Œæ”¹é€™å€‹åŠŸèƒ½è¦ä»˜å‡ºçš„ä»£åƒ¹åŒ…æ‹¬ï¼š
 
-  1. ¦]¬°­n±o¨ì unique stamp
-     ©Ò¥H¨C¤@¦¸ ±À¤å/§ï¤å (§ó°Êstamp) ³£·|¦h²£¥Í¤@­ÓÀÉ®×
-     (ª½¨ì expire.c ªº sync ¤~·|³Q²M°£)
+  1. å› ç‚ºè¦å¾—åˆ° unique stamp
+     æ‰€ä»¥æ¯ä¸€æ¬¡ æŽ¨æ–‡/æ”¹æ–‡ (æ›´å‹•stamp) éƒ½æœƒå¤šç”¢ç”Ÿä¸€å€‹æª”æ¡ˆ
+     (ç›´åˆ° expire.c çš„ sync æ‰æœƒè¢«æ¸…é™¤)
 
-  2. ¦]¬°¦b¬ÝªO¤¤ BMAX(chrono,stamp) ªº¶¶§Ç±N¤£¦A«ö·Ó½g¼Æ»¼¼W¡A
-     ©Ò¥H¨C¤@½gÀx¦s¾\Åª°O¿ý³£­n¥h±½¤@¦¸ .DIR
+  2. å› ç‚ºåœ¨çœ‹æ¿ä¸­ BMAX(chrono,stamp) çš„é †åºå°‡ä¸å†æŒ‰ç…§ç¯‡æ•¸éžå¢žï¼Œ
+     æ‰€ä»¥æ¯ä¸€ç¯‡å„²å­˜é–±è®€è¨˜éŒ„éƒ½è¦åŽ»æŽƒä¸€æ¬¡ .DIR
 
-  ¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w
+  â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 : hdr.h:struct HDR
 
-- char owner[80];               /* §@ªÌ (E-mail address) */
-+ char owner[76];               /* §@ªÌ (E-mail address) */
-+ time_t stamp;                 /* ³Ìªñ¤@¦¸§ó§ïÀÉ®×ªº®É¶¡ */
-  char nick[49];                /* ¼ÊºÙ */
+- char owner[80];               /* ä½œè€… (E-mail address) */
++ char owner[76];               /* ä½œè€… (E-mail address) */
++ time_t stamp;                 /* æœ€è¿‘ä¸€æ¬¡æ›´æ”¹æª”æ¡ˆçš„æ™‚é–“ */
+  char nick[49];                /* æš±ç¨± */
 
 : post.c:post_attr()
 
-  ±N !brh_unread(hdr->chrono)
-  ¨ú¥N¦¨ !brh_unread(BMAX(hdr->chrono, hdr->stamp))
-  ¦@¦³¤G³B
+  å°‡ !brh_unread(hdr->chrono)
+  å–ä»£æˆ !brh_unread(BMAX(hdr->chrono, hdr->stamp))
+  å…±æœ‰äºŒè™•
 
 : xover.c:xo_get_post()
 
@@ -125,7 +125,7 @@
 
 : xpost.c:xpost_history()
 
-  ¦¹¨ç¦¡¾ã­Ó§R°£
+  æ­¤å‡½å¼æ•´å€‹åˆªé™¤
 
 : xpost.c:xpost_browse()
 
@@ -136,10 +136,10 @@
 
 + void post_history(XO *xo, HDR *hdr);
 
-: post.c:post_history() §ï¦¨³o¼Ë
+: post.c:post_history() æ”¹æˆé€™æ¨£
 
 void
-post_history(xo, hdr)          /* ±N hdr ³o½g¥[¤J brh */
+post_history(xo, hdr)          /* å°‡ hdr é€™ç¯‡åŠ å…¥ brh */
   XO *xo;
   HDR *hdr;
 {
@@ -148,7 +148,7 @@ post_history(xo, hdr)          /* ±N hdr ³o½g¥[¤J brh */
   HDR buf;
 
   chrono = BMAX(hdr->chrono, hdr->stamp);
-  if (!brh_unread(chrono))      /* ¦pªG¤w¦b brh ¤¤¡A´NµL»Ý°Ê§@ */
+  if (!brh_unread(chrono))      /* å¦‚æžœå·²åœ¨ brh ä¸­ï¼Œå°±ç„¡éœ€å‹•ä½œ */
     return;
 
   if ((fd = open(xo->dir, O_RDONLY)) >= 0)
@@ -167,16 +167,16 @@ post_history(xo, hdr)          /* ±N hdr ³o½g¥[¤J brh */
     }
     close(fd);
 
-    if (prev > chrono)      /* ¨S¦³¤U¤@½g */
+    if (prev > chrono)      /* æ²’æœ‰ä¸‹ä¸€ç¯‡ */
       prev = chrono;
-    if (next < chrono)      /* ¨S¦³¤W¤@½g */
+    if (next < chrono)      /* æ²’æœ‰ä¸Šä¸€ç¯‡ */
       next = chrono;
 
     brh_add(prev, chrono, next);
   }
 }
 
-: post.c:change_stamp() ·s¼W¨ç¦¡¦b cmpchrono() «á­±
+: post.c:change_stamp() æ–°å¢žå‡½å¼åœ¨ cmpchrono() å¾Œé¢
 
 static void
 change_stamp(folder, hdr)
@@ -185,16 +185,16 @@ change_stamp(folder, hdr)
 {
   HDR buf;
 
-  /* ¬°¤F½T©w·s³y¥X¨Óªº stamp ¤]¬O unique (¤£©M¬J¦³ªº chrono ­«ÂÐ)¡A
-     ´N²£¥Í¤@­Ó·sªºÀÉ®×¡A¸ÓÀÉ®×ÀH«K link §Y¥i¡C
-     ³o­Ó¦h²£¥Í¥X¨Óªº©U§£·|¦b expire ³Q sync ±¼ (¦]¬°¤£¦b .DIR ¤¤) */
+  /* ç‚ºäº†ç¢ºå®šæ–°é€ å‡ºä¾†çš„ stamp ä¹Ÿæ˜¯ unique (ä¸å’Œæ—¢æœ‰çš„ chrono é‡è¦†)ï¼Œ
+     å°±ç”¢ç”Ÿä¸€å€‹æ–°çš„æª”æ¡ˆï¼Œè©²æª”æ¡ˆéš¨ä¾¿ link å³å¯ã€‚
+     é€™å€‹å¤šç”¢ç”Ÿå‡ºä¾†çš„åžƒåœ¾æœƒåœ¨ expire è¢« sync æŽ‰ (å› ç‚ºä¸åœ¨ .DIR ä¸­) */
   hdr_stamp(folder, HDR_LINK | 'A', &buf, "etc/stamp");
   hdr->stamp = buf.chrono;
 }
 
-: etc/stamp ·s¼W¤@­ÓÀÉ®×
+: etc/stamp æ–°å¢žä¸€å€‹æª”æ¡ˆ
 
-  ¤º®eÀH«K¥´
+  å…§å®¹éš¨ä¾¿æ‰“
 
 : board.c:btime_refresh()
 
@@ -208,7 +208,7 @@ change_stamp(folder, hdr)
         HDR hdr;
 
         brd->bpost = fsize / sizeof(HDR);
-        /* itoc.020829: §ä³Ì«á¤@½g¥¼³Q¥[±Kªº HDR */
+        /* itoc.020829: æ‰¾æœ€å¾Œä¸€ç¯‡æœªè¢«åŠ å¯†çš„ HDR */
 -       while ((fsize -= sizeof(HDR)) >= 0)
 +       maxchrono = 0;
 +       while (read(fd, &hdr, sizeof(HDR)) == sizeof(HDR))
@@ -227,7 +227,7 @@ change_stamp(folder, hdr)
 #else
 
 --
-  «÷ I/O °Ú
+  æ‹¼ I/O å•Š
 
 --
-[1;37m¡¼ ¥»¤å³¹¥Ñ [33mitoc[37m ±q [32mitoc.Dorm11.NCTU.edu.tw[37m µoªí[m
+[1;37mâ–¡ æœ¬æ–‡ç« ç”± [33mitoc[37m å¾ž [32mitoc.Dorm11.NCTU.edu.tw[37m ç™¼è¡¨[m

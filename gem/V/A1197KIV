@@ -1,10 +1,10 @@
-µo«H¤H: itoc.bbs@cpu.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [½Ğ¯q] ­×§ï¤å³¹³Æ¥÷°İÃD
-µo«H¯¸: °Ê¤O®Ö¤ß (2005/05/24 Tue 18:55:31)                Updated: 2007/04/26
+ç™¼ä¿¡äºº: itoc.bbs@cpu.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [è«‹ç›Š] ä¿®æ”¹æ–‡ç« å‚™ä»½å•é¡Œ
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2005/05/24 Tue 18:55:31)                Updated: 2007/04/26
 
-¡° ¤Ş­z¡mRagnarok (§b§bØp(¡Ù¡ó¡ó¡Ø))¡n¤§»Ê¨¥¡G
-> §Ú·Q¹³ JUNK/DELETED ¤@¼Ë³Æ¥÷³Q­×§ï¹Lªº¤å³¹(½s¿è«eªº¤º®e)¡A¦s¨ì BN_MODIFY ªO
-> §Ú·Q³Ì®e©öªº¤èªk¦n¹³¬O¦b post_edit() ¤¤¡A¦b¶i¤Jvedit()«e½Æ»s¤@¥÷¤º®e¦Ü¸ÓªO¡C
+â€» å¼•è¿°ã€ŠRagnarok (å‘†å‘†å–µ(â‰§âŠ™âŠ™â‰¦))ã€‹ä¹‹éŠ˜è¨€ï¼š
+> æˆ‘æƒ³åƒ JUNK/DELETED ä¸€æ¨£å‚™ä»½è¢«ä¿®æ”¹éçš„æ–‡ç« (ç·¨è¼¯å‰çš„å…§å®¹)ï¼Œå­˜åˆ° BN_MODIFY æ¿
+> æˆ‘æƒ³æœ€å®¹æ˜“çš„æ–¹æ³•å¥½åƒæ˜¯åœ¨ post_edit() ä¸­ï¼Œåœ¨é€²å…¥vedit()å‰è¤‡è£½ä¸€ä»½å…§å®¹è‡³è©²æ¿ã€‚
 
 : post.c:post_edit()
 
@@ -19,7 +19,7 @@
   hdr_fpath(fpath, xo->dir, hdr);
 + brd_fpath(folder, BN_JUNK, fn_dir);
 
-  if (HAS_PERM(PERM_ALLBOARD))                  /* ¯¸ªø­×§ï */
+  if (HAS_PERM(PERM_ALLBOARD))                  /* ç«™é•·ä¿®æ”¹ */
   {
 #ifdef HAVE_REFUSEMARK
     if (!chkrestrict(hdr))
@@ -47,7 +47,7 @@
 +   strcpy(xpost.owner, hdr->owner);
 +   strcpy(xpost.nick, hdr->nick);
 +   strcpy(xpost.title, hdr->title);
-    if (!vedit(fpath, 0))       /* ­Y«D¨ú®ø«h¥[¤W­×§ï¸ê°T */
+    if (!vedit(fpath, 0))       /* è‹¥éå–æ¶ˆå‰‡åŠ ä¸Šä¿®æ”¹è³‡è¨Š */
     {
       if (fp = fopen(fpath, "a"))
       {
@@ -65,5 +65,5 @@
   }
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mitoc [30m±q [31mitoc.Dorm11.NCTU.edu.tw [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [31mitoc.Dorm11.NCTU.edu.tw [30mç™¼è¡¨[m

@@ -21,7 +21,7 @@
 #include <resolv.h>
 
 
-#undef	HAVE_RELAY_SERVER	/* ±Ä¥Î relay server ¨Ó¥~±H«H¥ó */
+#undef	HAVE_RELAY_SERVER	/* æ¡ç”¨ relay server ä¾†å¤–å¯„ä¿¡ä»¶ */
 
 #ifdef HAVE_RELAY_SERVER
 #define	RELAY_SERVER	"mail.tnfsh.tn.edu.tw"	/* outbound mail server */
@@ -59,7 +59,7 @@ typedef union
 #endif
 
 
-/* MAX_MXLIST ­n¤ñ MAX_DNAME ¤j±o¦h */
+/* MAX_MXLIST è¦æ¯” MAX_DNAME å¤§å¾—å¤š */
 #define MAX_DNAME	128	/* maximum domain name */
 #define MAX_MXLIST      1024	/* maximum dx list */
 

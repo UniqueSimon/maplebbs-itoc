@@ -1,26 +1,26 @@
-µo«H¤H: amaki.bbs@luna.twbbs.org (¤ÈÄ±¦Ï) ¬İªO: plan
-¼Ğ  ÃD: [­×§ï]§â.USR©ñ¤Jshm¸Ì
-µo«H¯¸: ¤ë¤U©]·Q (2003/12/15 Mon 21:57:24)                Updated: 2003/12/15
+ç™¼ä¿¡äºº: amaki.bbs@luna.twbbs.org (åˆè¦ºç¾Š) çœ‹æ¿: plan
+æ¨™  é¡Œ: [ä¿®æ”¹]æŠŠ.USRæ”¾å…¥shmè£¡
+ç™¼ä¿¡ç«™: æœˆä¸‹å¤œæƒ³ (2003/12/15 Mon 21:57:24)                Updated: 2003/12/15
 
-  §A¤£¤@©w­n°µ³o­×§ï¡AµM¦Ó¦pªG§Aªº¾÷¾¹±`¥X²{userno­«½ÆªÌ¡A¨º»ò§A¥i¥H¦Ò¼{°µ³o
+  ä½ ä¸ä¸€å®šè¦åšé€™ä¿®æ”¹ï¼Œç„¶è€Œå¦‚æœä½ çš„æ©Ÿå™¨å¸¸å‡ºç¾usernoé‡è¤‡è€…ï¼Œé‚£éº¼ä½ å¯ä»¥è€ƒæ…®åšé€™
 
-  ­×§ï¡C
+  ä¿®æ”¹ã€‚
 
-  ³o­×§ï¦³´X­Ó¦n³B:
+  é€™ä¿®æ”¹æœ‰å¹¾å€‹å¥½è™•:
 
-  1. µ¹pal_body()°µÀË¬d¥Î
+  1. çµ¦pal_body()åšæª¢æŸ¥ç”¨
 
-  2. Â²¤Æ¾ã²zusernoªº¤u§@¡AÅÜ¦¨¥u»İ­n¼g¤@¤äÂ²³æªºutility§Y¥i§¹¤u(À³¸Ó«Ü¦n¼g¡A
+  2. ç°¡åŒ–æ•´ç†usernoçš„å·¥ä½œï¼Œè®Šæˆåªéœ€è¦å¯«ä¸€æ”¯ç°¡å–®çš„utilityå³å¯å®Œå·¥(æ‡‰è©²å¾ˆå¥½å¯«ï¼Œ
 
-     ´N¬O¶}±ÒshmµM«á¶}©l³v¤@§â.USRªº¦ì¸m¶ñ¤J.ACCT¸Ì¡A¥u¦³¤£¥¿½Tªº¤~­n§ï)¡C
+     å°±æ˜¯é–‹å•Ÿshmç„¶å¾Œé–‹å§‹é€ä¸€æŠŠ.USRçš„ä½ç½®å¡«å…¥.ACCTè£¡ï¼Œåªæœ‰ä¸æ­£ç¢ºçš„æ‰è¦æ”¹)ã€‚
 
-  3. §äuserno®É¤£¦A»İ­nÅªµwºĞ¡A¥i¥Hª½±µ¦bshm¸Ì¤ñ
+  3. æ‰¾usernoæ™‚ä¸å†éœ€è¦è®€ç¡¬ç¢Ÿï¼Œå¯ä»¥ç›´æ¥åœ¨shmè£¡æ¯”
 
-  SCHEMAµ²ºc16 bytes¡A§Ú­è¶]¥h¬İ¤F¤@¤Uitocªº¯¸¥x¾ú¥v¬ö¿ı¬ù¦³¤@¸U¤Hµù¥U¡A°²³]§A
+  SCHEMAçµæ§‹16 bytesï¼Œæˆ‘å‰›è·‘å»çœ‹äº†ä¸€ä¸‹itocçš„ç«™å°æ­·å²ç´€éŒ„ç´„æœ‰ä¸€è¬äººè¨»å†Šï¼Œå‡è¨­ä½ 
 
-  ªº¯¸¥x¦³2¸U¦n¤F¡A¤j¬ù­n¥Î±¼ 16 ¡Ñ20000 = 312.5 Kbytes¡A¤j¯¸¥xÀ³¸Ó¨S¦³°O¾ĞÅé
+  çš„ç«™å°æœ‰2è¬å¥½äº†ï¼Œå¤§ç´„è¦ç”¨æ‰ 16 Ã—20000 = 312.5 Kbytesï¼Œå¤§ç«™å°æ‡‰è©²æ²’æœ‰è¨˜æ†¶é«”
 
-  ¤£°÷ªºÅU¼{¡C
+  ä¸å¤ çš„é¡§æ…®ã€‚
 
 : include / config.h
 
@@ -28,7 +28,7 @@
 
 : include / struct.h
 
-  ¦bµ²ºc©w¸qBCACHE«á­±¥[¤J³o¬q¡AMAX_SCHEMA_SHMµø§Aªº¯¸¥x³W¼Ò¦Û­q¡C
+  åœ¨çµæ§‹å®šç¾©BCACHEå¾Œé¢åŠ å…¥é€™æ®µï¼ŒMAX_SCHEMA_SHMè¦–ä½ çš„ç«™å°è¦æ¨¡è‡ªè¨‚ã€‚
 
 #define MAX_SCHEMA_SHM 131072   /* 131072 = 1024 * 128 */
 
@@ -41,7 +41,7 @@ typedef struct
 
 : maple / cache.c
 
-  ¦butmp_search()«á­±§Û¤W³o¤@¬q
+  åœ¨utmp_search()å¾Œé¢æŠ„ä¸Šé€™ä¸€æ®µ
 
 /*-------------------------------------------------------*/
 /* .USR cache                                            */
@@ -100,7 +100,7 @@ schema_shm_init()
 
 : maple / bbsd.c
 
-  §ïmain()
+  æ”¹main()
 
   ushm_init();
   bshm_init();
@@ -109,14 +109,14 @@ schema_shm_init()
 
 : util / reaper.c
 
-  «e­±¥[¤W
+  å‰é¢åŠ ä¸Š
 
 static int funo;
 static int max_uno;
 static SCHEMA schema;
 + static SCACHE *schema_shm;
 
-  main()«e­±§Û¤W³o¤@¬q
+  main()å‰é¢æŠ„ä¸Šé€™ä¸€æ®µ
 
 static void
 schema_shmsync()
@@ -143,7 +143,7 @@ schema_shmsync()
   time(uptime);
 }
 
-  §ïmain()
+  æ”¹main()
 
 #endif
 

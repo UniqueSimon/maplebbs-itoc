@@ -1,20 +1,20 @@
-§@ªÌ: itoc (test) ¬ÝªO: plan
-¼ÐÃD: [¥\¯à] ¤å³¹µû¤À¥\¯à
-®É¶¡: Sun Aug 18 14:45:05 2002                          Updated: 2004/12/18
+ä½œè€…: itoc (test) çœ‹æ¿: plan
+æ¨™é¡Œ: [åŠŸèƒ½] æ–‡ç« è©•åˆ†åŠŸèƒ½
+æ™‚é–“: Sun Aug 18 14:45:05 2002                          Updated: 2004/12/18
 
-  ³Qµû¤Àªº¤å³¹·|ÅÜ¥¼¾\Åª
+  è¢«è©•åˆ†çš„æ–‡ç« æœƒè®Šæœªé–±è®€
 
-  ¤èªk¬O½á¤©³Q±À¤åªº¤å³¹·sªº chrono/xname
+  æ–¹æ³•æ˜¯è³¦äºˆè¢«æŽ¨æ–‡çš„æ–‡ç« æ–°çš„ chrono/xname
 
 
-  [Äµ§i] ¦pªG§A°µ¤F³o­Ó patch¡A·|³y¦¨¥H¤U«á¿ò¯g¡G
+  [è­¦å‘Š] å¦‚æžœä½ åšäº†é€™å€‹ patchï¼Œæœƒé€ æˆä»¥ä¸‹å¾Œéºç—‡ï¼š
 
-  1) hdr.date ©M hdr.chrono ¤£¦P¨B ¡Ð ³o­Ó¤£·|«ç»ò¼Ë¡A¤Ï¥¿ date ³oÄæ¦ì¥u¨Ñ
-     Åã¥Ü¥Î¡A¹³Âà«HªOªº¤å³¹³£¬O¤£¦P¨Bªº¡C
+  1) hdr.date å’Œ hdr.chrono ä¸åŒæ­¥ ï¼ é€™å€‹ä¸æœƒæ€Žéº¼æ¨£ï¼Œåæ­£ date é€™æ¬„ä½åªä¾›
+     é¡¯ç¤ºç”¨ï¼Œåƒè½‰ä¿¡æ¿çš„æ–‡ç« éƒ½æ˜¯ä¸åŒæ­¥çš„ã€‚
 
-  2) ¬ÝªO¤ºªº hdr.chrono ¤£¨Ì§Ç±Æ¦C ¡Ð ­ì¥»¬ÝªO¤¤¤å³¹ªº chrono ¬O¥Ñ¤p±Æ¨ì¤j
-     ªº¡A¦pªG§ï¤F³o patch¡A±N·|³Q¤£¨Ì§Ç±Æ¦C¡C¥Ø«eÀ³¸Ó¬O¤£·|¦³¤°»ò°ÝÃD¡A¥¼¨Ó
-     ·|¦³¤°»ò³W¹º´N¤£¤@©w¤F¡C
+  2) çœ‹æ¿å…§çš„ hdr.chrono ä¸ä¾åºæŽ’åˆ— ï¼ åŽŸæœ¬çœ‹æ¿ä¸­æ–‡ç« çš„ chrono æ˜¯ç”±å°æŽ’åˆ°å¤§
+     çš„ï¼Œå¦‚æžœæ”¹äº†é€™ patchï¼Œå°‡æœƒè¢«ä¸ä¾åºæŽ’åˆ—ã€‚ç›®å‰æ‡‰è©²æ˜¯ä¸æœƒæœ‰ä»€éº¼å•é¡Œï¼Œæœªä¾†
+     æœƒæœ‰ä»€éº¼è¦åŠƒå°±ä¸ä¸€å®šäº†ã€‚
 
 : post.c:addscore()
 
@@ -27,7 +27,7 @@ static void
 addscore(hdd, ram)
   HDR *hdd, *ram;
 {
-+ /* itoc.030618: ³y¤@­Ó·sªº chrono ¤Î xname */
++ /* itoc.030618: é€ ä¸€å€‹æ–°çš„ chrono åŠ xname */
 + hdd->chrono = newchrono;
 + strcpy(hdd->xname, newxname);
 
@@ -61,13 +61,13 @@ post_score(xo)
 
 - return XO_FOOT;
 
-+ /* ­««Ø¤@­Ó post */
++ /* é‡å»ºä¸€å€‹ post */
 + hdr_fpath(fpath, dir, hdr);
 + hdr_stamp(dir, HDR_LINK | 'A', &post, fpath);
 
-+ /* ¤£¬å±¼­ì¥ýªº¤å³¹ÀÉ®×¡A¦pªG¨ä¥L¤H xo_pool ¬OÂÂªº¡A¤]¤£·|¥X²{¼È®É©Ê¥ÛÀY¤å¡F
-+    ¤SÂà«H out.bntp ¤¤¼gªºÀÉ¦W¤]¬OÂÂ¦W¡A©Ò¥H«O¯dÂÂÀÉ¥i¨ÏÂà«H¦¨¥\¡F
-+    ¦ý³o¼Ë·|¯d¤U .DIR ¤¤¨S¦³«ü¦VªºÂÂÀÉ¡A¥u¦n¦b expire.c ¤¤²M°£¡C */
++ /* ä¸ç æŽ‰åŽŸå…ˆçš„æ–‡ç« æª”æ¡ˆï¼Œå¦‚æžœå…¶ä»–äºº xo_pool æ˜¯èˆŠçš„ï¼Œä¹Ÿä¸æœƒå‡ºç¾æš«æ™‚æ€§çŸ³é ­æ–‡ï¼›
++    åˆè½‰ä¿¡ out.bntp ä¸­å¯«çš„æª”åä¹Ÿæ˜¯èˆŠåï¼Œæ‰€ä»¥ä¿ç•™èˆŠæª”å¯ä½¿è½‰ä¿¡æˆåŠŸï¼›
++    ä½†é€™æ¨£æœƒç•™ä¸‹ .DIR ä¸­æ²’æœ‰æŒ‡å‘çš„èˆŠæª”ï¼Œåªå¥½åœ¨ expire.c ä¸­æ¸…é™¤ã€‚ */
 + /* unlink(fpath); */
 
 + currchrono = hdr->chrono;
@@ -76,7 +76,7 @@ post_score(xo)
 + rec_ref(dir, hdr, sizeof(HDR), xo->key == XZ_XPOST ?
 +   hdr->xid : pos, cmpchrono, addscore);
 
-+ /* ¥[¤J¦Û¤vªº¾\Åª°O¿ý */
++ /* åŠ å…¥è‡ªå·±çš„é–±è®€è¨˜éŒ„ */
 + brh_add(newchrono, newchrono, newchrono);
 + btime_update(currbno);
 
@@ -85,11 +85,11 @@ post_score(xo)
 
 : post.c:post_history()
 
-+ /* wretch.030404: °t¦X±µ¤å³¹ªºchrono¡A¦³¥i¯à prev > chrono»Pnext < chrono */
++ /* wretch.030404: é…åˆæŽ¥æ–‡ç« çš„chronoï¼Œæœ‰å¯èƒ½ prev > chronoèˆ‡next < chrono */
 + if (prev > chrono || next < chrono)
 +   prev = next = chrono;
 
   brh_add(prev, chrono, next);
 
 --
-[1;32m¡¼ Origin: [33m°Ê¤O®Ö¤ß [37mxeon.tfcis.org  [31m¡¼ From: [36mitoc.Dorm-GD2.NCTU.edu.tw[m
+[1;32mâ–¡ Origin: [33må‹•åŠ›æ ¸å¿ƒ [37mxeon.tfcis.org  [31mâ–¡ From: [36mitoc.Dorm-GD2.NCTU.edu.tw[m

@@ -1,58 +1,58 @@
-µo«H¤H: tsaikd.bbs@tsaikd.no-ip.org (¤d¤H±Ù) ¬İªO: plan
-¼Ğ  ÃD: [·s¼W¥\¯à] global hdr bhttpd edit more post visio ºô­¶¤å³¹®æ¦¡
-µo«H¯¸: ¦a¤U´cÅ]«° (2005/08/28 Sun 00:34:33)              Updated: 2005/08/28
+ç™¼ä¿¡äºº: tsaikd.bbs@tsaikd.no-ip.org (åƒäººæ–¬) çœ‹æ¿: plan
+æ¨™  é¡Œ: [æ–°å¢åŠŸèƒ½] global hdr bhttpd edit more post visio ç¶²é æ–‡ç« æ ¼å¼
+ç™¼ä¿¡ç«™: åœ°ä¸‹æƒ¡é­”åŸ (2005/08/28 Sun 00:34:33)              Updated: 2005/08/28
 
-[·s¼W¥\¯à] global.h hdr.h bhttpd.c edit.c more.c post.c visio.c ºô­¶¤å³¹®æ¦¡
+[æ–°å¢åŠŸèƒ½] global.h hdr.h bhttpd.c edit.c more.c post.c visio.c ç¶²é æ–‡ç« æ ¼å¼
 
-¬Û¨Ì¡G
-    [­×¥¿] window.c °T®§µøµ¡¦Û°Ê½Õ¾ã¼e«×¨Ã¥i¤ä´©¦h¦æ°T®§
+ç›¸ä¾ï¼š
+    [ä¿®æ­£] window.c è¨Šæ¯è¦–çª—è‡ªå‹•èª¿æ•´å¯¬åº¦ä¸¦å¯æ”¯æ´å¤šè¡Œè¨Šæ¯
 
-¥\¯à¡G
-    ³o­Ó patch ¥D­nªº¥\¯à¬OÅıÃş¦ü bbcode ªº»yªk
-    ¯à¦b bbs ¤W¤Î bhttpd ¤W¥¿½TÅã¥Ü
+åŠŸèƒ½ï¼š
+    é€™å€‹ patch ä¸»è¦çš„åŠŸèƒ½æ˜¯è®“é¡ä¼¼ bbcode çš„èªæ³•
+    èƒ½åœ¨ bbs ä¸ŠåŠ bhttpd ä¸Šæ­£ç¢ºé¡¯ç¤º
 
-¥Î³~¡G
-    §Ú¬O¦]¬°·Q¦b bbs ¤W¼g¨Ç¹³ blog ªºªF¦è
-    ¥i¬O¦pªG¦³¨Ç¹Ï¤ù·Q©ñ¤W¥h´N¨S¦³¿ìªk¤F
-    ©Ò¥H³o½g patch ¥D­n¬OÅı bbs ¸ò web °µ¶i¤@¨Bªº³sµ²
-    Åı bbs ¥\¯à§ó±j¤j
+ç”¨é€”ï¼š
+    æˆ‘æ˜¯å› ç‚ºæƒ³åœ¨ bbs ä¸Šå¯«äº›åƒ blog çš„æ±è¥¿
+    å¯æ˜¯å¦‚æœæœ‰äº›åœ–ç‰‡æƒ³æ”¾ä¸Šå»å°±æ²’æœ‰è¾¦æ³•äº†
+    æ‰€ä»¥é€™ç¯‡ patch ä¸»è¦æ˜¯è®“ bbs è·Ÿ web åšé€²ä¸€æ­¥çš„é€£çµ
+    è®“ bbs åŠŸèƒ½æ›´å¼·å¤§
 
-»¡©ú¡G
-    ¬°¤F¤£§ï¨ì¤@¯ë¯Â¤å¦r¤å³¹ªºÅã¥Ü
-    °Ï§O¤@¯ë¤å³¹¸òºô­¶¤å³¹§Ú¬O¥Î¤@­Ó¼ĞÅÒ¨Ó¼Ğ°O (POST_HTTP)
-    ¦bµo§¹¤å³¹«á¡A«ö Ctrl + W §Y¥i¼Ğ°O¬°ºô­¶¤å³¹
-    ¦A«ö¤@¦¸´N¦^´_¦¨¤@¯ë¤å³¹
+èªªæ˜ï¼š
+    ç‚ºäº†ä¸æ”¹åˆ°ä¸€èˆ¬ç´”æ–‡å­—æ–‡ç« çš„é¡¯ç¤º
+    å€åˆ¥ä¸€èˆ¬æ–‡ç« è·Ÿç¶²é æ–‡ç« æˆ‘æ˜¯ç”¨ä¸€å€‹æ¨™ç±¤ä¾†æ¨™è¨˜ (POST_HTTP)
+    åœ¨ç™¼å®Œæ–‡ç« å¾Œï¼ŒæŒ‰ Ctrl + W å³å¯æ¨™è¨˜ç‚ºç¶²é æ–‡ç« 
+    å†æŒ‰ä¸€æ¬¡å°±å›å¾©æˆä¸€èˆ¬æ–‡ç« 
 
-    ¼Ğ°O¬°ºô­¶¤å³¹«á
-    ­Y¥Î bbs ª½±µÂsÄı
-    «h·|´£¿ô¨Ï¥ÎªÌ¨Ï¥Îºô­¶ÂsÄı¥»¤å
-    ¨Ãªş¤Wºô§}
+    æ¨™è¨˜ç‚ºç¶²é æ–‡ç« å¾Œ
+    è‹¥ç”¨ bbs ç›´æ¥ç€è¦½
+    å‰‡æœƒæé†’ä½¿ç”¨è€…ä½¿ç”¨ç¶²é ç€è¦½æœ¬æ–‡
+    ä¸¦é™„ä¸Šç¶²å€
 
-    ¦]¬°³o­Ó patch °Ê¨ì¤F«Ü¦hµ{¦¡
-    ¥i¯à·|¦³§Ú¨Sµo²{¨ìªº bug
-    ©Î¬O§Úªº¤èªk®Ä¯à«ÜÁV
-    ´N½Ğ¦U¦ì±jªÌ¤j¤j¦³ªÅªº¸ÜÀ°¦£¤@¤U§a...^_^
+    å› ç‚ºé€™å€‹ patch å‹•åˆ°äº†å¾ˆå¤šç¨‹å¼
+    å¯èƒ½æœƒæœ‰æˆ‘æ²’ç™¼ç¾åˆ°çš„ bug
+    æˆ–æ˜¯æˆ‘çš„æ–¹æ³•æ•ˆèƒ½å¾ˆç³Ÿ
+    å°±è«‹å„ä½å¼·è€…å¤§å¤§æœ‰ç©ºçš„è©±å¹«å¿™ä¸€ä¸‹å§...^_^
 
-½d¨Ò¡G
+ç¯„ä¾‹ï¼š
   example 1:
-    in normal bbs:      <img=abc.jpg>¹Ï¤ù»¡©ú</img>
-    in patched bbs:     ¹Ï¤ù»¡©ú
-    in bhttpd:          ¹Ï¤ù»¡©ú (¤U­±±µ¤F¤@±iabc.jpgªº¹Ï¤ù)
+    in normal bbs:      <img=abc.jpg>åœ–ç‰‡èªªæ˜</img>
+    in patched bbs:     åœ–ç‰‡èªªæ˜
+    in bhttpd:          åœ–ç‰‡èªªæ˜ (ä¸‹é¢æ¥äº†ä¸€å¼µabc.jpgçš„åœ–ç‰‡)
 
   example 2:
-    in normal bbs:      <link=http://abc.def/>¶W³sµ²</link>
-    in patched bbs:     ¶W³sµ²
-    in bhttpd:          ¶W³sµ² (¥Î·Æ¹«ÂI¤@¤U´N³s¹L¥h¤F)
+    in normal bbs:      <link=http://abc.def/>è¶…é€£çµ</link>
+    in patched bbs:     è¶…é€£çµ
+    in bhttpd:          è¶…é€£çµ (ç”¨æ»‘é¼ é»ä¸€ä¸‹å°±é€£éå»äº†)
 
   example 3:
-    in normal bbs:      <lnimg=http://abc.def/,abc.jpg>¶W³sµ²¹Ï¤ù</lnimg>
-    in patched bbs:     ¶W³sµ²¹Ï¤ù
-    in bhttpd:          ¶W³sµ²¹Ï¤ù (¤U­±±µ¤F¤@±iabc.jpgªº¹Ï¤ù)
-                                   (¥Î·Æ¹«ÂI¤@¤U´N³s¹L¥h¤F)
+    in normal bbs:      <lnimg=http://abc.def/,abc.jpg>è¶…é€£çµåœ–ç‰‡</lnimg>
+    in patched bbs:     è¶…é€£çµåœ–ç‰‡
+    in bhttpd:          è¶…é€£çµåœ–ç‰‡ (ä¸‹é¢æ¥äº†ä¸€å¼µabc.jpgçš„åœ–ç‰‡)
+                                   (ç”¨æ»‘é¼ é»ä¸€ä¸‹å°±é€£éå»äº†)
   example site:
-    ¦b§Úªº­Ó¤H bbs ¤Wªº­Ó¤HªO¡A¦³¤@¨Ç¬OÄİ©óºô­¶«¬¤å³¹ªº
+    åœ¨æˆ‘çš„å€‹äºº bbs ä¸Šçš„å€‹äººæ¿ï¼Œæœ‰ä¸€äº›æ˜¯å±¬æ–¼ç¶²é å‹æ–‡ç« çš„
     (telnet://tsaikd.no-ip.org) (P_tsaikd)
-    ¦³¿³½ìªº¥i¥H¨Ó¬İ¬İ...^_^
+    æœ‰èˆˆè¶£çš„å¯ä»¥ä¾†çœ‹çœ‹...^_^
 
 : global.h
 
@@ -67,17 +67,17 @@ VAR usint currbattr;           /* currently selected board battr */
 VAR char *str_ransi    INI("\033[m");
 
 + /* ----------------------------------------------------- */
-+ /* BHTTPD ºô­¶«ü¥O³]©w                                   */
++ /* BHTTPD ç¶²é æŒ‡ä»¤è¨­å®š                                   */
 + /* ----------------------------------------------------- */
 +
-+ #define HTTP_CODENUM    3       /* ºô­¶«ü¥O¼Æ¶q */
-+ #define HTTP_CODEMAXLEN 5 + 1   /* ºô­¶«ü¥O³Ìªø¦r¼Æ */
++ #define HTTP_CODENUM    3       /* ç¶²é æŒ‡ä»¤æ•¸é‡ */
++ #define HTTP_CODEMAXLEN 5 + 1   /* ç¶²é æŒ‡ä»¤æœ€é•·å­—æ•¸ */
 +
 + #ifdef _MAIN_C_
 + VAR char HTML_CODE[HTTP_CODENUM][HTTP_CODEMAXLEN] =
 + {
 +   "link", "img", "lnimg"
-+ };                              /* ºô­¶«ü¥O¦Cªí */
++ };                              /* ç¶²é æŒ‡ä»¤åˆ—è¡¨ */
 + #else
 + VAR char HTML_CODE[HTTP_CODENUM][HTTP_CODEMAXLEN];
 + #endif
@@ -88,9 +88,9 @@ VAR char *str_ransi    INI("\033[m");
 : hdr.h
 
 - #define POST_3         0x00000004
-+ #define POST_HTTP      0x00000004      /* ¦³ºô­¶¼Ğ°Oªº */
++ #define POST_HTTP      0x00000004      /* æœ‰ç¶²é æ¨™è¨˜çš„ */
 
-: bhttpd.c:ansi_lnimg() ·s¼W¦b ansi_hyperlink() «á­±
+: bhttpd.c:ansi_lnimg() æ–°å¢åœ¨ ansi_hyperlink() å¾Œé¢
 
 #ifdef HAVE_HYPERLINK
 static void
@@ -101,17 +101,17 @@ ansi_lnimg(fpw, src)
   int ch, mode;
   uschar *textsrc;
 
-  /* tsaikd.050827: ¦]¬°¦¹ tag ¦³¨âºØ¼Ò¦¡¡A©Ò¥H¤ñ¸û³Â·Ğ
-     mode: 0x00 ªì©l¤Æ
-           0x01 ¦³ hyperlink
-           0x02 ¦³ image */
+  /* tsaikd.050827: å› ç‚ºæ­¤ tag æœ‰å…©ç¨®æ¨¡å¼ï¼Œæ‰€ä»¥æ¯”è¼ƒéº»ç…©
+     mode: 0x00 åˆå§‹åŒ–
+           0x01 æœ‰ hyperlink
+           0x02 æœ‰ image */
 
   mode = 0x00;
   ch = *src;
-  if (ch != ',' && ch != '>') /* §PÂ_¬O§_¦³ link */
+  if (ch != ',' && ch != '>') /* åˆ¤æ–·æ˜¯å¦æœ‰ link */
     mode |= 0x01;
 
-  /* ³B²z link ªº³¡¥÷ */
+  /* è™•ç† link çš„éƒ¨ä»½ */
   if (mode & 0x01)
   {
     fputs("<a class=PRE target=_blank href=\"", fpw);
@@ -125,7 +125,7 @@ ansi_lnimg(fpw, src)
     fputs("\">", fpw);
   }
 
-  /* ¥ı³B²z³Q tag ¥]°_¨Óªº¤å¦r */
+  /* å…ˆè™•ç†è¢« tag åŒ…èµ·ä¾†çš„æ–‡å­— */
   if (ch == ',' || ch=='>')
     textsrc = strstr(src, ">") + 1;
   else
@@ -138,11 +138,11 @@ ansi_lnimg(fpw, src)
     textsrc++;
   }
 
-  if (*src == ',' && *(src+1) != '>') /* §PÂ_¬O§_¦³ img */
+  if (*src == ',' && *(src+1) != '>') /* åˆ¤æ–·æ˜¯å¦æœ‰ img */
     mode |= 0x02;
   src++;
 
-  /* ³B²z img ªº³¡¥÷ */
+  /* è™•ç† img çš„éƒ¨ä»½ */
   if (mode & 0x02)
   {
     fputs("\n<img src=\"", fpw);
@@ -156,7 +156,7 @@ ansi_lnimg(fpw, src)
     fputs("\">", fpw);
   }
 
-  /* µ²§À¸É¤W html ªº tag */
+  /* çµå°¾è£œä¸Š html çš„ tag */
   if (mode & 0x01)
     fputs("</a>", fpw);
   if (mode & 0x02)
@@ -170,7 +170,7 @@ ansi_lnimg(fpw, src)
       continue;
     }
 
-+   /* tsaikd.050821: ¥[¤J¦Û©w¶W³sµ² */
++   /* tsaikd.050821: åŠ å…¥è‡ªå®šè¶…é€£çµ */
 +   int code_len;
 +   code_len = strlen("<link>");
 +   if (!str_ncmp(src - 1, "<link=", code_len) && strstr(src, "</link>"))
@@ -201,7 +201,7 @@ ansi_lnimg(fpw, src)
 +     continue;
 +   }
 
-    /* ³Ñ¤Uªº¦r¤¸°µhtmlÂà´« */
+    /* å‰©ä¸‹çš„å­—å…ƒåšhtmlè½‰æ› */
     if (ch1 == '<')
     {
 
@@ -213,7 +213,7 @@ ansi_lnimg(fpw, src)
       continue;
     }
 +   else if ((currxmode & POST_HTTP) && (ch == '<'))
-+   { /* tsaikd.050827: ­pºâºô­¶¦Xªk«ü¥Oªø«× */
++   { /* tsaikd.050827: è¨ˆç®—ç¶²é åˆæ³•æŒ‡ä»¤é•·åº¦ */
 +     uschar *tmpstr;
 +     int code_index, code_len;
 +     uschar code_st[HTTP_CODEMAXLEN + 3], code_end[HTTP_CODEMAXLEN + 3];
@@ -250,7 +250,7 @@ ansi_lnimg(fpw, src)
       continue;
     }
 +   else if ((currxmode & POST_HTTP) && (ch == '<'))
-+   { /* tsaikd.050827: ­pºâºô­¶¦Xªk«ü¥Oªø«× */
++   { /* tsaikd.050827: è¨ˆç®—ç¶²é åˆæ³•æŒ‡ä»¤é•·åº¦ */
 +     uschar *tmpstr;
 +     int code_index, code_len;
 +     uschar code_st[HTTP_CODEMAXLEN + 3], code_end[HTTP_CODEMAXLEN + 3];
@@ -303,7 +303,7 @@ ansi_lnimg(fpw, src)
        in_ansi = 0;
     }
 +   else if ((currxmode & POST_HTTP) && (ch == '<'))
-+   { /* tsaikd.050827: ºô­¶«ü¥O¤£ºâ¤JÅã¥Ü¦r¼Æ */
++   { /* tsaikd.050827: ç¶²é æŒ‡ä»¤ä¸ç®—å…¥é¡¯ç¤ºå­—æ•¸ */
 +     uschar *tmpstr;
 +     int code_index, code_len;
 +     uschar code_st[HTTP_CODEMAXLEN + 3], code_end[HTTP_CODEMAXLEN + 3];
@@ -334,19 +334,19 @@ ansi_lnimg(fpw, src)
       break;
 #endif
 
-+   /* tsaikd.050821: «ØÄ³¨Ï¥ÎÂsÄı¾¹¬İºô­¶«¬¤å³¹ */
++   /* tsaikd.050821: å»ºè­°ä½¿ç”¨ç€è¦½å™¨çœ‹ç¶²é å‹æ–‡ç«  */
 +   currxmode = xmode;
 +   if (currxmode & POST_HTTP)
 +   {
 +     char buf[512];
 +
-+     sprintf(buf, "¦¹¤å³¹¬°ºô­¶®æ¦¡¡A«ØÄ³¨Ï¥ÎÂsÄı¾¹³sµ²\nhttp://%s:%d/bmore?%s&%d", MYHOSTNAME, BHTTP_PORT, currboard, pos+1);
++     sprintf(buf, "æ­¤æ–‡ç« ç‚ºç¶²é æ ¼å¼ï¼Œå»ºè­°ä½¿ç”¨ç€è¦½å™¨é€£çµ\nhttp://%s:%d/bmore?%s&%d", MYHOSTNAME, BHTTP_PORT, currboard, pos+1);
 +     vmsg(buf);
 +   }
 +
     hdr_fpath(fpath, dir, hdr);
 
-    /* Thor.990204: ¬°¦Ò¼{more ¶Ç¦^­È */
+    /* Thor.990204: ç‚ºè€ƒæ…®more å‚³å›å€¼ */
 
   ...
   ...
@@ -357,7 +357,7 @@ ansi_lnimg(fpw, src)
 
   return post_head(xo);
 
-: post.c ·s¼W¥H¤U¨ç¦¡©ó post_help() «e­±
+: post.c æ–°å¢ä»¥ä¸‹å‡½å¼æ–¼ post_help() å‰é¢
 
 static int
 post_http(xo)
@@ -392,15 +392,15 @@ http_edit(xo)
   xo_load(xo, sizeof(HDR));
   hdr = (HDR *) xo_pool + (xo->pos - xo->top);
 
-  if (!cuser.userlevel) /* tsaikd.050822: guest ¤£¯à¹ï¨ä¥L guest ªº¤å³¹­×§ïª¬ºA */
+  if (!cuser.userlevel) /* tsaikd.050822: guest ä¸èƒ½å°å…¶ä»– guest çš„æ–‡ç« ä¿®æ”¹ç‹€æ…‹ */
     return XO_NONE;
-  if (!(bbstate & STAT_BOARD) && strcmp(hdr->owner, cuser.userid)) /* tsaikd.050822: ¬İªOÁ`ºŞ¸ò§@ªÌ¥i­×§ïª¬ºA */
+  if (!(bbstate & STAT_BOARD) && strcmp(hdr->owner, cuser.userid)) /* tsaikd.050822: çœ‹æ¿ç¸½ç®¡è·Ÿä½œè€…å¯ä¿®æ”¹ç‹€æ…‹ */
     return XO_NONE;
 
   if (hdr->xmode & POST_HTTP)
-    vmsg("¤å³¹ª¬ºA§ï¬°«Dºô­¶®æ¦¡¡I");
+    vmsg("æ–‡ç« ç‹€æ…‹æ”¹ç‚ºéç¶²é æ ¼å¼ï¼");
   else
-    vmsg("¤å³¹ª¬ºA§ï¬°ºô­¶®æ¦¡¡I");
+    vmsg("æ–‡ç« ç‹€æ…‹æ”¹ç‚ºç¶²é æ ¼å¼ï¼");
 
   return post_http(xo);
 }
@@ -430,7 +430,7 @@ http_edit(xo)
        continue;
       }
     }
-+   else if (currxmode & POST_HTTP) /* tsaikd.050827: ¿é¥X®É¡A¤£Åã¥Üºô­¶«ü¥O */
++   else if (currxmode & POST_HTTP) /* tsaikd.050827: è¼¸å‡ºæ™‚ï¼Œä¸é¡¯ç¤ºç¶²é æŒ‡ä»¤ */
 +   {
 +     if ((*str == '<') && (strstr(str, ">")))
 +     {
@@ -460,12 +460,12 @@ http_edit(xo)
     str++;
 
 --
- [7;30;41m¤d        ¤H         ±Ù    KD !![m [1;31m¦a¤U´cÅ]«° [32mtelnet://tsaikd.no-ip.org[m
- [1;37;44mK[m [1;37;44mD[melete         ±ş±ş±ş [31m±ş¨ì§A²æ¿Ç¤l "©ñ§¾" !![m
- i    ~~ [1;31m¡´[m     [1;5;33m¢e¢d¢c¢b[m       ¡s¡·    ¡s¡·    ¡s¡· §Ö°k°Ú!!
- l    ~~ ¢«¡Ã¡Ã                  ¢«¡t    ¢«¡t    ¢«¡t
- o   ~ ¡ş¡ı                  ..¡t¡r....¡t¡r....¡t¡r[m
+ [7;30;41måƒ        äºº         æ–¬    KD !![m [1;31måœ°ä¸‹æƒ¡é­”åŸ [32mtelnet://tsaikd.no-ip.org[m
+ [1;37;44mK[m [1;37;44mD[melete         æ®ºæ®ºæ®º [31mæ®ºåˆ°ä½ è„«è¤²å­ "æ”¾å±" !![m
+ i    ~~ [1;31mâ—[m     [1;5;33mâ–„â–ƒâ–‚â–[m       ï¸¿â—    ï¸¿â—    ï¸¿â— å¿«é€ƒå•Š!!
+ l    ~~ â—¤ï¿£ï¿£                  â—¤ï¹€    â—¤ï¹€    â—¤ï¹€
+ o   ~ ï¼âˆ£                  ..ï¹€ã€‰....ï¹€ã€‰....ï¹€ã€‰[m
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m ¦¨¤j¸ê°T£»¦a¤U´cÅ]«° [36;47m tsaikd.no-ip.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mtsaikd [30m±q [31m140.116.103.204 [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m æˆå¤§è³‡è¨ŠË™åœ°ä¸‹æƒ¡é­”åŸ [36;47m tsaikd.no-ip.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mtsaikd [30må¾ [31m140.116.103.204 [30mç™¼è¡¨[m

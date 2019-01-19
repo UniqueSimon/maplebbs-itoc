@@ -1,24 +1,24 @@
-µo«H¤H: itoc.bbs@xeon.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD] ­­¨î­Ó¤H«H½c®e¶q
-µo«H¯¸: °Ê¤O®Ö¤ß (Tue, 04 Nov 2003 09:16:36 +0800 (CST))  Updated: 2005/05/17
+ç™¼ä¿¡äºº: itoc.bbs@xeon.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] é™åˆ¶å€‹äººä¿¡ç®±å®¹é‡
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (Tue, 04 Nov 2003 09:16:36 +0800 (CST))  Updated: 2005/05/17
 
-¡° ¤Ş­z¡mcpd.bbs@pitch.twbbs.org (Seasons)¡n¤§»Ê¨¥¡G
-> ´N¬O§Ú·Q­n­­¨î¨C­Ó¨Ï¥ÎªÌªº«H½c¨Ï¥Î®e¶q(­ì¥»¥u¦³­­¨î½g¼Æ)...
-> ­n¬O«H½c¨Ï¥Î¶W¹L¤W­­¡A´N­­¨î¥u¯à¨ì¶l¥ó¿ï³æ¡A°£«D§R°£¤@¨Ç«H¤~¯àÂ÷¶}¶l¥ó¿ï³æ..
+â€» å¼•è¿°ã€Šcpd.bbs@pitch.twbbs.org (Seasons)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> å°±æ˜¯æˆ‘æƒ³è¦é™åˆ¶æ¯å€‹ä½¿ç”¨è€…çš„ä¿¡ç®±ä½¿ç”¨å®¹é‡(åŸæœ¬åªæœ‰é™åˆ¶ç¯‡æ•¸)...
+> è¦æ˜¯ä¿¡ç®±ä½¿ç”¨è¶…éä¸Šé™ï¼Œå°±é™åˆ¶åªèƒ½åˆ°éƒµä»¶é¸å–®ï¼Œé™¤éåˆªé™¤ä¸€äº›ä¿¡æ‰èƒ½é›¢é–‹éƒµä»¶é¸å–®..
 
 : config.h
 
-#define MAX_BBSMAIL     500             /* PERM_MBOX ¦¬«H¤W­­(«Ê) */
-#define MAX_VALIDMAIL   300             /* »{ÃÒ user ¦¬«H¤W­­(«Ê) */
-#define MAX_NOVALIDMAIL 100             /* ¥¼»{ÃÒ user ¦¬«H¤W­­(«Ê) */
+#define MAX_BBSMAIL     500             /* PERM_MBOX æ”¶ä¿¡ä¸Šé™(å°) */
+#define MAX_VALIDMAIL   300             /* èªè­‰ user æ”¶ä¿¡ä¸Šé™(å°) */
+#define MAX_NOVALIDMAIL 100             /* æœªèªè­‰ user æ”¶ä¿¡ä¸Šé™(å°) */
 
-+ #define MAX_BBSMAILSIZE     1024000       /* PERM_MBOX ®e¶q¤W­­(byte) */
-+ #define MAX_VALIDMAILSIZE   512000        /* »{ÃÒ user ®e¶q¤W­­(byte) */
-+ #define MAX_NOVALIDMAILSIZE 204800        /* ¥¼»{ÃÒ user ®e¶q¤W­­(byte) */
++ #define MAX_BBSMAILSIZE     1024000       /* PERM_MBOX å®¹é‡ä¸Šé™(byte) */
++ #define MAX_VALIDMAILSIZE   512000        /* èªè­‰ user å®¹é‡ä¸Šé™(byte) */
++ #define MAX_NOVALIDMAILSIZE 204800        /* æœªèªè­‰ user å®¹é‡ä¸Šé™(byte) */
 
-: bbsd.c:m_overflow() ¥[¦b tn_motd() «e­±
+: bbsd.c:m_overflow() åŠ åœ¨ tn_motd() å‰é¢
 
-static int          /* 1:¹L¤j */
+static int          /* 1:éå¤§ */
 m_overflow()
 {
   int total_size, limit;
@@ -32,7 +32,7 @@ m_overflow()
   if (stat(fpath, &st))
     return 0;
 
-  /* ¤W­­´X½g */
+  /* ä¸Šé™å¹¾ç¯‡ */
   if (HAS_PERM(PERM_MBOX))
     limit = MAX_BBSMAIL;
   else if (HAS_PERM(PERM_VALID))
@@ -48,7 +48,7 @@ m_overflow()
 
   if (dirp = opendir(fpath))
   {
-    /* ®e¶q´X byte */
+    /* å®¹é‡å¹¾ byte */
     if (HAS_PERM(PERM_MBOX))
       limit = MAX_BBSMAILSIZE;
     else if (HAS_PERM(PERM_VALID))
@@ -90,15 +90,15 @@ tn_motd()
 
 + while (m_overflow())
 + {
-+   vmsg("±zªº«H¥ó¹L¦h¡A½Ğ¥´¥]¦^®a©Î§R°£³¡¤À«H¥ó");
++   vmsg("æ‚¨çš„ä¿¡ä»¶éå¤šï¼Œè«‹æ‰“åŒ…å›å®¶æˆ–åˆªé™¤éƒ¨åˆ†ä¿¡ä»¶");
 +   m_zip();
 +   xover(XZ_MBOX);
 + }
 }
 
 --
-  ³o¥\¯à«Ü¦Y I/O
+  é€™åŠŸèƒ½å¾ˆåƒ I/O
 
 --
- [1;43m¢z[44m¢q[m Or[1mig[30min[m: [44m Maple-itoc£»°Ê¤O®Ö¤ß [31;47m processor.tfcis.org [m
- [1;41m¢|[42m¢}[m A[1mut[30mho[mr: [1;36mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ”Œ[44mâ”¼[m Or[1mig[30min[m: [44m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [31;47m processor.tfcis.org [m
+ [1;41mâ””[42mâ”˜[m A[1mut[30mho[mr: [1;36mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

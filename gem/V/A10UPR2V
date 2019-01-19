@@ -1,18 +1,18 @@
-µo«H¤H: allan914.bbs@cnmc31.hs.ntnu.edu.tw (Allan) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] ±m¦â¼Ğ°O¤À¦â·j´M
-µo«H¯¸: ²Ä¤C»â°ì (2005/01/18 Tue 13:09:57)                Updated: 2006/09/23
+ç™¼ä¿¡äºº: allan914.bbs@cnmc31.hs.ntnu.edu.tw (Allan) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] å½©è‰²æ¨™è¨˜åˆ†è‰²æœå°‹
+ç™¼ä¿¡ç«™: ç¬¬ä¸ƒé ˜åŸŸ (2005/01/18 Tue 13:09:57)                Updated: 2006/09/23
 
-µ¹¦³°µ  [¥\¯à] post.c ±m¦â¤å³¹¼Ğ°O  ªº¤H¥Îªº:P
+çµ¦æœ‰åš  [åŠŸèƒ½] post.c å½©è‰²æ–‡ç« æ¨™è¨˜  çš„äººç”¨çš„:P
 
-: xpost.c  ¦b filter_mark() «e­±¥[
+: xpost.c  åœ¨ filter_mark() å‰é¢åŠ 
 
-+ static int postmarkcolor;       /* ±m¦âm¤å·j´M:Àx¦sÃC¦â */
++ static int postmarkcolor;       /* å½©è‰²mæ–‡æœå°‹:å„²å­˜é¡è‰² */
 
 : xpost.c:filter_mark()
 
 filter_mark(head, hdr)
-  HDR *head;    /* «İ´úª« */
-  HDR *hdr;     /* ±ø¥ó */
+  HDR *head;    /* å¾…æ¸¬ç‰© */
+  HDR *hdr;     /* æ¢ä»¶ */
 {
 +  switch(postmarkcolor)
 +  {
@@ -49,23 +49,23 @@ filter_mark(head, hdr)
 
 : xpost.c:XoXmark()
 
-  if (xz[XZ_XPOST - XO_ZONE].xo)        /* itoc.020308: ¤£±o²Ö¿n¶i¤J¤G¦¸ */
+  if (xz[XZ_XPOST - XO_ZONE].xo)        /* itoc.020308: ä¸å¾—ç´¯ç©é€²å…¥äºŒæ¬¡ */
   {
     vmsg(MSG_XYDENY);
     return XO_FOOT;
   }
 
-+  postmarkcolor = vans("¡· ¼Ğ°OÃC¦â 1)¬õ¦â 2)ºñ¦â 3)¶À¦â 4)ÂÅ¦â "
-+    "5)µµ¦â 6)«C¦â 7)¥Õ¦â 8)¥ş³¡¡G[8] ");
-- strcpy(HintWord, "\033[1;33m©Ò¦³ mark ¤å³¹\033[m");
-+ strcpy(Hintword, "\033[1;33m «ü©wÃC¦âªº mark ¤å³¹\033[m");
++  postmarkcolor = vans("â— æ¨™è¨˜é¡è‰² 1)ç´…è‰² 2)ç¶ è‰² 3)é»ƒè‰² 4)è—è‰² "
++    "5)ç´«è‰² 6)é’è‰² 7)ç™½è‰² 8)å…¨éƒ¨ï¼š[8] ");
+- strcpy(HintWord, "\033[1;33mæ‰€æœ‰ mark æ–‡ç« \033[m");
++ strcpy(Hintword, "\033[1;33m æŒ‡å®šé¡è‰²çš„ mark æ–‡ç« \033[m");
   HintAuthor[0] = '\0';
 
   return XoXpost(xo, NULL, 0, INT_MAX, filter_mark);
 
 --
-²Ä¤@¦¸¼g¥\¯à  ¼gªº¤£¤Óº}«GÁÙ½Ğ¦h¦h¥]²[m_m
-ÁÙ½Ğ¦U¦ì«e½úÀ°¦£¬İ¤@¤U­ş¸Ì¦³¿ù³o¼Ë Orz
+ç¬¬ä¸€æ¬¡å¯«åŠŸèƒ½  å¯«çš„ä¸å¤ªæ¼‚äº®é‚„è«‹å¤šå¤šåŒ…æ¶µm_m
+é‚„è«‹å„ä½å‰è¼©å¹«å¿™çœ‹ä¸€ä¸‹å“ªè£¡æœ‰éŒ¯é€™æ¨£ Orz
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m ®v¤jªş¤¤£»²Ä¤C»â°ì [36;47m cnmc31.hs.ntnu.edu.tw [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mallan914 [30m±q [31m220-137-75-13.dynamic.hinet.net [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m å¸«å¤§é™„ä¸­Ë™ç¬¬ä¸ƒé ˜åŸŸ [36;47m cnmc31.hs.ntnu.edu.tw [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mallan914 [30må¾ [31m220-137-75-13.dynamic.hinet.net [30mç™¼è¡¨[m

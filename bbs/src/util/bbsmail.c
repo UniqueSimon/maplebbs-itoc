@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/bbsmail.c	( NTHU CS MapleBBS Ver 3.00 )	 */
 /*-------------------------------------------------------*/
-/* target : ¥Ñ Internet ±H«Hµ¹ BBS ¯¸¤º¨Ï¥ÎªÌ		 */
+/* target : ç”± Internet å¯„ä¿¡çµ¦ BBS ç«™å…§ä½¿ç”¨è€…		 */
 /* create : 95/03/29					 */
 /* update : 97/03/29					 */
 /*-------------------------------------------------------*/
@@ -11,8 +11,8 @@
 
 #include <sysexits.h>
 
-#define	ANTI_HTMLMAIL		/* itoc.021014: ¾× html_mail */
-#define	ANTI_NOTMYCHARSETMAIL	/* itoc.030513: ¾× not-mycharset mail */
+#define	ANTI_HTMLMAIL		/* itoc.021014: æ“‹ html_mail */
+#define	ANTI_NOTMYCHARSETMAIL	/* itoc.030513: æ“‹ not-mycharset mail */
 
 
 static void
@@ -38,7 +38,7 @@ mailog(msg)
 
 
 /* ----------------------------------------------------- */
-/* user¡Gshm ³¡¥÷¶·»P cache.c ¬Û®e			 */
+/* userï¼šshm éƒ¨ä»½é ˆèˆ‡ cache.c ç›¸å®¹			 */
 /* ----------------------------------------------------- */
 
 
@@ -60,7 +60,7 @@ bbs_biff(userid)
   usint offset;
 
   offset = ushm->offset;
-  if (offset > (MAXACTIVE - 1) * sizeof(UTMP))	/* Thor.980805: ¤£µMcall¤£¨ì */
+  if (offset > (MAXACTIVE - 1) * sizeof(UTMP))	/* Thor.980805: ä¸ç„¶callä¸åˆ° */
     offset = (MAXACTIVE - 1) * sizeof(UTMP);
 
   utmp = ushm->uslot;
@@ -75,7 +75,7 @@ bbs_biff(userid)
 
 
 /* ----------------------------------------------------- */
-/* ¥Dµ{¦¡						 */
+/* ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -131,8 +131,8 @@ start:
       else
 	strcpy(sender, owner);
 
-      /* itoc.040804: ¾×«H¶Â¥Õ¦W³æ */
-      str_lower(buf, owner);	/* «O«ù­ì email ªº¤j¤p¼g */
+      /* itoc.040804: æ“‹ä¿¡é»‘ç™½åå–® */
+      str_lower(buf, owner);	/* ä¿æŒåŸ email çš„å¤§å°å¯« */
       if (ptr = (char *) strchr(buf, '@'))
       {
 	*ptr++ = '\0';
@@ -151,12 +151,12 @@ start:
     {
       str_ansi(title, buf + 9, sizeof(title));
       /* str_decode(title); */
-      /* LHD.051106: ­Y¥i¯à¸g RFC 2047 QP encode «h¦³¥i¯à¦h¦æ subject */
+      /* LHD.051106: è‹¥å¯èƒ½ç¶“ RFC 2047 QP encode å‰‡æœ‰å¯èƒ½å¤šè¡Œ subject */
       if (strstr(buf + 9, "=?"))
       {
 	while (fgets(buf, sizeof(buf), stdin))
 	{
-	  if (buf[0] == ' ' || buf[0] == '\t')  /* ²Ä¤G¦æ¥H«á·|¥HªÅ¥Õ©Î TAB ¶}ÀY */
+	  if (buf[0] == ' ' || buf[0] == '\t')  /* ç¬¬äºŒè¡Œä»¥å¾Œæœƒä»¥ç©ºç™½æˆ– TAB é–‹é ­ */
 	    str_ansi(title + strlen(title), strstr(buf, "=?"), sizeof(title));
 	  else
 	  {
@@ -172,9 +172,9 @@ start:
       str = buf + 14;
 
 #ifdef ANTI_HTMLMAIL
-      /* ¤@¯ë BBS ¨Ï¥ÎªÌ³q±`¥u±H¤å¦r¶l¥ó©Î¬O±q¨ä¥L BBS ¯¸±H¤å³¹¨ì¦Û¤vªº«H½c
-         ¦Ó¼s§i«H¥ó³q±`¬O html ®æ¦¡©Î¬O¸Ì­±¦³§¨±a¨ä¥LÀÉ®×
-         §Q¥Î¶l¥óªºÀÉÀY¦³ Content-Type: ªºÄİ©Ê§â°£¤F text/plain (¤å¦r¶l¥ó) ªº«H¥ó³£¾×¤U¨Ó */
+      /* ä¸€èˆ¬ BBS ä½¿ç”¨è€…é€šå¸¸åªå¯„æ–‡å­—éƒµä»¶æˆ–æ˜¯å¾å…¶ä»– BBS ç«™å¯„æ–‡ç« åˆ°è‡ªå·±çš„ä¿¡ç®±
+         è€Œå»£å‘Šä¿¡ä»¶é€šå¸¸æ˜¯ html æ ¼å¼æˆ–æ˜¯è£¡é¢æœ‰å¤¾å¸¶å…¶ä»–æª”æ¡ˆ
+         åˆ©ç”¨éƒµä»¶çš„æª”é ­æœ‰ Content-Type: çš„å±¬æ€§æŠŠé™¤äº† text/plain (æ–‡å­—éƒµä»¶) çš„ä¿¡ä»¶éƒ½æ“‹ä¸‹ä¾† */
       if (*str != '\0' && str_ncmp(str, "text/plain", 10))
       {
 	sprintf(buf, "ANTI-HTML [%d] %s => %s", getppid(), sender, userid);
@@ -216,14 +216,14 @@ start:
   str_ncpy(hdr.owner, owner, sizeof(hdr.owner));
   str_ncpy(hdr.nick, nick, sizeof(hdr.nick));
   if (!title[0])
-    sprintf(title, "¨Ó¦Û %.64s", sender);
+    sprintf(title, "ä¾†è‡ª %.64s", sender);
   str_ncpy(hdr.title, title, sizeof(hdr.title));
 
   /* copy the stdin to the specified file */
 
   fp = fdopen(fd, "w");
 
-  fprintf(fp, "§@ªÌ: %.72s\n¼ĞÃD: %.72s\n®É¶¡: %s\n\n",
+  fprintf(fp, "ä½œè€…: %.72s\næ¨™é¡Œ: %.72s\næ™‚é–“: %s\n\n",
     sender, title, Btime(&hdr.chrono));
 
   while (fgets(buf, sizeof(buf), stdin))
@@ -240,9 +240,9 @@ start:
 
   rec_add(folder, &hdr, sizeof(HDR));
 
-  bbs_biff(userid);	/* itoc.021113: ³qª¾ user ¦³·s«H¥ó */
+  bbs_biff(userid);	/* itoc.021113: é€šçŸ¥ user æœ‰æ–°ä¿¡ä»¶ */
 
-  /* Thor.980827: ¥[¤W parent process id¡A¥H«K§ì©U§£«H */
+  /* Thor.980827: åŠ ä¸Š parent process idï¼Œä»¥ä¾¿æŠ“åƒåœ¾ä¿¡ */
   sprintf(buf, "[%d] %s => %s", getppid(), sender, userid); 
   mailog(buf);
 
@@ -288,7 +288,7 @@ main(argc, argv)
   signal(SIGPIPE, sig_catch);
 
   init_ushm();
-  str_lower(buf, argv[1]);	/* §â userid ´«¦¨¤p¼g */
+  str_lower(buf, argv[1]);	/* æŠŠ userid æ›æˆå°å¯« */
 
   if (mail2bbs(buf))
   {

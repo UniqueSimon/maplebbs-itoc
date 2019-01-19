@@ -1,12 +1,12 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: Maple_itoc
-¼Ğ  ÃD: Re: [°İÃD] ÂIºqª©ªº¼ÊºÙ«ç»òÅã¥Ü¥X¨Ó©O¡H
-µo«H¯¸: °Ê¤O®Ö¤ß (04/21/04 10:32:58 Wed)                  Updated: 2004/04/21
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: Maple_itoc
+æ¨™  é¡Œ: Re: [å•é¡Œ] é»æ­Œç‰ˆçš„æš±ç¨±æ€éº¼é¡¯ç¤ºå‡ºä¾†å‘¢ï¼Ÿ
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (04/21/04 10:32:58 Wed)                  Updated: 2004/04/21
 
-¡° ¤Ş­z¡mboybaby.bbs@fy.adsldns.org (¤pÄé¾i¼Ö¦h)¡n¤§»Ê¨¥¡G
-> ÂIºqª©¸Ì­±ªº¼ÊºÙÂIºq
-> «ç»òÅã¥Ü¥X¼ÊºÙªÌªº¦W¤l©O??
+â€» å¼•è¿°ã€Šboybaby.bbs@fy.adsldns.org (å°çŒé¤Šæ¨‚å¤š)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> é»æ­Œç‰ˆè£¡é¢çš„æš±ç¨±é»æ­Œ
+> æ€éº¼é¡¯ç¤ºå‡ºæš±ç¨±è€…çš„åå­å‘¢??
 
-  §ï hdr-dump.c ¯S¦a¥Î¨Ó¬İ ktv ªOªº .DIR
+  æ”¹ hdr-dump.c ç‰¹åœ°ç”¨ä¾†çœ‹ ktv æ¿çš„ .DIR
 
 : hdr-dump.c:main()
 
@@ -20,11 +20,11 @@
 +     hdr.nick, hdr.date, hdr.title);
   }
 
-  µM«á¤W¤u§@¯¸°õ¦æ
+  ç„¶å¾Œä¸Šå·¥ä½œç«™åŸ·è¡Œ
 
   % cd ~
   % bin/hdr-dump brd/ktv/.DIR
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;45m¢¢[42m¢¡[m [1mMo[30mdi[mfy: [1;36m2004/04/21 Wed 10:32:58[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;45mâ•°[42mâ•®[m [1mMo[30mdi[mfy: [1;36m2004/04/21 Wed 10:32:58[m

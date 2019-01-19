@@ -1,14 +1,14 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (®Ö¤ß°Ê¤O) ¬İªO: Maple_itoc
-¼Ğ  ÃD: Re: [°İÃD]·sªOinnbbsdªºRFC¼Ğ·Ç¤ä´©
-µo«H¯¸: °Ê¤O®Ö¤ß (04/21/04 11:00:02 Wed)                  Updated: 2004/04/21
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (æ ¸å¿ƒå‹•åŠ›) çœ‹æ¿: Maple_itoc
+æ¨™  é¡Œ: Re: [å•é¡Œ]æ–°æ¿innbbsdçš„RFCæ¨™æº–æ”¯æ´
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (04/21/04 11:00:02 Wed)                  Updated: 2004/04/21
 
-¡° ¤Ş­z¡mitoc (®Ö¤ß°Ê¤O)¡n¤§»Ê¨¥¡G
->   ¦]¬°§Ú§âÀË¬d history ªº³¡¤À®³±¼¤F
->   ©Ò¥H¦pªG§A¥Î bbsnnrp §ì¤G¦¸
->   ©Î¬O news ¥D°ÊÁı«H¤G¦¸
->   ´N·|¦P¼Ëªº¤å³¹¥X²{¤G¦¸
+â€» å¼•è¿°ã€Šitoc (æ ¸å¿ƒå‹•åŠ›)ã€‹ä¹‹éŠ˜è¨€ï¼š
+>   å› ç‚ºæˆ‘æŠŠæª¢æŸ¥ history çš„éƒ¨åˆ†æ‹¿æ‰äº†
+>   æ‰€ä»¥å¦‚æœä½ ç”¨ bbsnnrp æŠ“äºŒæ¬¡
+>   æˆ–æ˜¯ news ä¸»å‹•é¤µä¿¡äºŒæ¬¡
+>   å°±æœƒåŒæ¨£çš„æ–‡ç« å‡ºç¾äºŒæ¬¡
 
-  ¦pªG¤£·Q­«ÂĞ¥X²{¡A¨º»ò´N¬O§ï¦¨³o¼Ë
+  å¦‚æœä¸æƒ³é‡è¦†å‡ºç¾ï¼Œé‚£éº¼å°±æ˜¯æ”¹æˆé€™æ¨£
 
 : rec_article.c:receive_article()
 
@@ -23,8 +23,8 @@ receive_article()
 +   return 0;
 
 --
-  À³¸Ó¬O³o¼Ë§a :p
+  æ‡‰è©²æ˜¯é€™æ¨£å§ :p
 
 --
- [1;43m¢~[46m¢q[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [32;47m processor.tfcis.org [m
- [1;44m¢q[41m¢£[m A[1mut[30mho[mr: [1;33mitoc [30m±q [35mitoc.dorm11.nctu.edu.tw [30mµoªí[m
+ [1;43mâ•­[46mâ”¼[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [32;47m processor.tfcis.org [m
+ [1;44mâ”¼[41mâ•¯[m A[1mut[30mho[mr: [1;33mitoc [30må¾ [35mitoc.dorm11.nctu.edu.tw [30mç™¼è¡¨[m

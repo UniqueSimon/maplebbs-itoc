@@ -1,8 +1,8 @@
-µo«H¤H: SnowWolf.bbs@xeon.tfcis.org (ÀR©]) ¬İªO: plan
-¼Ğ  ÃD: [¤å¥ó] BLog for itoc-maple µ{¦¡­×§ï----2
-µo«H¯¸: °Ê¤O®Ö¤ß (Sun, 07 Sep 2003 23:36:46 +0800 (CST))  Updated: 2004/03/11
+ç™¼ä¿¡äºº: SnowWolf.bbs@xeon.tfcis.org (éœå¤œ) çœ‹æ¿: plan
+æ¨™  é¡Œ: [æ–‡ä»¶] BLog for itoc-maple ç¨‹å¼ä¿®æ”¹----2
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (Sun, 07 Sep 2003 23:36:46 +0800 (CST))  Updated: 2004/03/11
 
-: gem.c  ·s¼W¤U¦Cµ{¦¡¦bgem_toggle¤§«á
+: gem.c  æ–°å¢ä¸‹åˆ—ç¨‹å¼åœ¨gem_toggleä¹‹å¾Œ
 
 static void
 BlogMain(num)
@@ -10,28 +10,28 @@ BlogMain(num)
 {
   char cmd[256], userid[IDLEN + 1], hash[35];
 
-  vs_bar("³¡¸¨®æ");
+  vs_bar("éƒ¨è½æ ¼");
 
   move(1, 0);
-  outs("½Ğ¿ï¾Ü±z­n°õ¦æªº­«§@:\n"
-    "0.¦^¨ì¤W¤@¼h\n"
-    "1.»s§@³¡¸¨®æ¼ËªO®æ¦¡\n"
-    "  ¨Ï¥Î·sªº config ¥Ø¿ı¤U¼ËªO¸ê®Æ\n"
-    "  ³q±`¦b²Ä¤@¦¸¨Ï¥Î³¡¸¨®æ©Î¼ËªO§ó·sªº®É­Ô¨Ï¥Î\n"
+  outs("è«‹é¸æ“‡æ‚¨è¦åŸ·è¡Œçš„é‡ä½œ:\n"
+    "0.å›åˆ°ä¸Šä¸€å±¤\n"
+    "1.è£½ä½œéƒ¨è½æ ¼æ¨£æ¿æ ¼å¼\n"
+    "  ä½¿ç”¨æ–°çš„ config ç›®éŒ„ä¸‹æ¨£æ¿è³‡æ–™\n"
+    "  é€šå¸¸åœ¨ç¬¬ä¸€æ¬¡ä½¿ç”¨éƒ¨è½æ ¼æˆ–æ¨£æ¿æ›´æ–°çš„æ™‚å€™ä½¿ç”¨\n"
     "\n"
-    "2.­«·s»s§@³¡¸¨®æ\n"
-    "  ¥u¦b³¡¸¨®æ¸ê®Æ¾ã­Ó¶Ã±¼ªº®É­Ô¤~¨Ï¥Î\n"
+    "2.é‡æ–°è£½ä½œéƒ¨è½æ ¼\n"
+    "  åªåœ¨éƒ¨è½æ ¼è³‡æ–™æ•´å€‹äº‚æ‰çš„æ™‚å€™æ‰ä½¿ç”¨\n"
     "\n"
-    "3.±N¥»¤å¥[¤J³¡¸¨®æ\n"
-    "  ±N´å¼Ğ©Ò¦b¦ì¸mªº¤å³¹¥[¤J³¡¸¨®æ\n"
+    "3.å°‡æœ¬æ–‡åŠ å…¥éƒ¨è½æ ¼\n"
+    "  å°‡æ¸¸æ¨™æ‰€åœ¨ä½ç½®çš„æ–‡ç« åŠ å…¥éƒ¨è½æ ¼\n"
     "\n"
-    "4.§R°£°jÅT\n");
+    "4.åˆªé™¤è¿´éŸ¿\n");
 
   str_lower(userid, cuser.userid);
 
   while (1)
   {
-    switch (vans("½Ğ¿ï¾Ü(0-3)¡H[0] "))
+    switch (vans("è«‹é¸æ“‡(0-3)ï¼Ÿ[0] "))
     {
     case '1':
       sprintf(cmd, "bin/builddb.pl -c %s", userid);
@@ -46,7 +46,7 @@ BlogMain(num)
       system(cmd);
       break;
     case '4':
-      if (vget(16, 0, "½Ğ¿é¤J¸Ó½gªºÂø´ê­È¡G", hash, sizeof(hash), DOECHO) &&
+      if (vget(16, 0, "è«‹è¼¸å…¥è©²ç¯‡çš„é›œæ¹Šå€¼ï¼š", hash, sizeof(hash), DOECHO) &&
         vans(msg_del_ny) == 'y')
       {
         sprintf(cmd, "bin/bmysql %s %s", hash, userid);
@@ -67,11 +67,11 @@ gem_blog(xo)
 {
   char cmd[256], userid[IDLEN + 1];
 
-  /* ¥u­­­Ó¤HºëµØ°Ï¨Ï¥Î */
+  /* åªé™å€‹äººç²¾è¯å€ä½¿ç”¨ */
   if (xo->dir[0] != 'u')
     return XO_NONE;
 
-  switch (vans("1)°µ³¡¸¨®æ 2)§ó·s³¡¸¨®æ¡H[N] "))
+  switch (vans("1)åšéƒ¨è½æ ¼ 2)æ›´æ–°éƒ¨è½æ ¼ï¼Ÿ[N] "))
   {
   case '1':
     BlogMain(xo->pos);
@@ -81,7 +81,7 @@ gem_blog(xo)
     str_lower(userid, cuser.userid);
     sprintf(cmd, "bin/builddb.pl -f -n %d %s", xo->pos, userid);
     system(cmd);
-    vmsg("¸ê®Æ§ó·s§¹¦¨");
+    vmsg("è³‡æ–™æ›´æ–°å®Œæˆ");
     break;
   }
 
@@ -112,11 +112,11 @@ freebsd:
  [1;33m-L/usr/local/lib/mysql -lmysqlclient[m
  -ldao -lcrypt" $(EXE)
 
-: util/bmysql.c  ·s¼W bmysql.c ©ó util/
+: util/bmysql.c  æ–°å¢ bmysql.c æ–¼ util/
 
 #include <mysql/mysql.h>
 
-/* JCWang:½Ğ¦U¦ì¤j¤j¨Ì·Ó¦Û¤vªº¨t²Î¦Û¦æ­×§ï¤U­±define */
+/* JCWang:è«‹å„ä½å¤§å¤§ä¾ç…§è‡ªå·±çš„ç³»çµ±è‡ªè¡Œä¿®æ”¹ä¸‹é¢define */
 #define BLOGDB_HOST   "localhost"
 #define BLOGDB_USER   "root"
 #define BLOGDB_PASSWD "yourpwd"
@@ -146,5 +146,5 @@ main(argc, argv)
 }
 
 --
-[1;36m=[37m[[36m¡É[37m:[33m¡[37mİ¢¨[m¢©¡[1;33mİ[37m:[36m¡É [31mOrigin[37m ]|[[m     [31m°[1mÊ¤[0;31mO®[1mÖ¤[0;31mß [1mprocessor.tfcis.org    [37m]|[¡[33mİ£»¡[mİ[1;36m¡É[37m:][36m=[m
-[1;36m=[m[[1;36m¡Ç[37m:[33m¡[30mİ¢ª[m¢¬¡[1;33mİ[37m:[36m¡Ç [31mAuthor[m ]|[ [1m    140.127.38.223                  [m]|[¡[1;33mİ[30m¡[37m´¡[30mİ[36m¡Ç[37m:[m][1;36m=[m
+[1;36m=[37m[[36mï¹[37m:[33m?[37mæ‘ƒ?[mâ—£?[1;33m?[37m:[36mï¹ [31mOrigin[37m ]|[[m     [31m?[1må¨[0;31mO?[1mç—[0;31m?[1mprocessor.tfcis.org    [37m]|[?[33mæŸèªª[m?[1;36mï¹[37m:][36m=[m
+[1;36m=[m[[1;36mï¹Š[37m:[33m?[30mæ‘ƒ?[mâ•±?[1;33m?[37m:[36mï¹Š [31mAuthor[m ]|[ [1m    140.127.38.223                  [m]|[?[1;33m?[30m?[37mæ’[30m?[36mï¹Š[37m:[m][1;36m=[m

@@ -13,7 +13,7 @@
 
 
 /*-------------------------------------------------------*/
-/* ©Ò¦³´Ñ½L¤½¥Îªº°Ñ¼Æ					 */
+/* æ‰€æœ‰æ£‹ç›¤å…¬ç”¨çš„åƒæ•¸					 */
 /*-------------------------------------------------------*/
 
 
@@ -41,8 +41,8 @@ enum
 static int msgline;		/* Where to display message now */
 static int cfd;			/* socket number */
 static int myColor;		/* my chess color */
-static int Choose;		/* -3:¶Â¥Õ´Ñ -2:¤­¤l´Ñ -1:³ò´Ñ 0:­x´Ñ 1:·t´Ñ */
-static int dark_choose;		/* ·t´Ñ¬O§_¤wÂ½¶}²Ä¤@¤l */
+static int Choose;		/* -3:é»‘ç™½æ£‹ -2:äº”å­æ£‹ -1:åœæ£‹ 0:è»æ£‹ 1:æš—æ£‹ */
+static int dark_choose;		/* æš—æ£‹æ˜¯å¦å·²ç¿»é–‹ç¬¬ä¸€å­ */
 
 static int (**rule) ();
 
@@ -50,7 +50,7 @@ static int bwRow, bwCol;
 static char Board[19][19];
 
 
-static char *ruleStrSet[] = {"¶Â¥Õ´Ñ", "¤­¤l´Ñ", "³ò´Ñ", "­x´Ñ", "·t´Ñ"};
+static char *ruleStrSet[] = {"é»‘ç™½æ£‹", "äº”å­æ£‹", "åœæ£‹", "è»æ£‹", "æš—æ£‹"};
 static char *ruleStr;
 
 static KeyFunc *mapTalk, *mapTurn;
@@ -81,10 +81,10 @@ do_send(buf)
 static void
 check_biff()
 {
-  /* Thor.980805: ¦³¤H¦b®ÇÃä«öenter¤~»İ­ncheck biff */
+  /* Thor.980805: æœ‰äººåœ¨æ—é‚ŠæŒ‰enteræ‰éœ€è¦check biff */
   static int old_biff;
   int biff;
-  char *msg = "¡» ¾´! ¶l®t¨Ó«ö¹a¤F!";
+  char *msg = "â—† å™¹! éƒµå·®ä¾†æŒ‰éˆ´äº†!";
 
   biff = cutmp->status & STATUS_BIFF;
   if (biff && !old_biff)
@@ -163,7 +163,7 @@ ftkEnter()
     if (!do_send(talkBuf))
       return DISCONNECT;
 
-    sprintf(msg, "\033[1;36m¡¸%s\033[m", cmdBuf);
+    sprintf(msg, "\033[1;36mâ˜†%s\033[m", cmdBuf);
     (Choose < 0) ? bw_printmsg(msg) : ch_printmsg(1, msg);
 
     *cmdBuf = '\0';
@@ -261,19 +261,19 @@ static KeyFunc Talk[] =
 
 
 /*-------------------------------------------------------*/
-/* target : ¾ÔÁZ°O¿ıµ{¦¡				 */
+/* target : æˆ°ç¸¾è¨˜éŒ„ç¨‹å¼				 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
 /*-------------------------------------------------------*/
 
 
 static void
-play_count(userid, total, win)	/* ¦^¶Ç userid ªºÁ`³õ¼Æ¡B³Ó³õ¼Æ */
+play_count(userid, total, win)	/* å›å‚³ userid çš„ç¸½å ´æ•¸ã€å‹å ´æ•¸ */
   char *userid;
   int *total, *win;
 {
   char fpath[64];
   int fd;
-  int grade[32];	/* «O¯d 32 ­Ó int */
+  int grade[32];	/* ä¿ç•™ 32 å€‹ int */
 
   *total = 0;
   *win = 0;
@@ -284,7 +284,7 @@ play_count(userid, total, win)	/* ¦^¶Ç userid ªºÁ`³õ¼Æ¡B³Ó³õ¼Æ */
     read(fd, grade, sizeof(grade));
     close(fd);
 
-    /* ¨Ì§ÇÀx¦s ¶Â¥ÕÁ`,¶Â¥Õ³Ó; ¤­¤lÁ`,¤­¤l³Ó; ³òÁ`,³ò³Ó; ­xÁ`,­x³Ó; ·tÁ`,·t³Ó */
+    /* ä¾åºå„²å­˜ é»‘ç™½ç¸½,é»‘ç™½å‹; äº”å­ç¸½,äº”å­å‹; åœç¸½,åœå‹; è»ç¸½,è»å‹; æš—ç¸½,æš—å‹ */
     fd = (Choose + 3) << 1;
     *total = grade[fd];
     *win = grade[fd + 1];
@@ -293,12 +293,12 @@ play_count(userid, total, win)	/* ¦^¶Ç userid ªºÁ`³õ¼Æ¡B³Ó³õ¼Æ */
 
 
 static void
-play_add(win)			/* §ÚªºÁ`/³Ó³õ¼Æ +1 */
+play_add(win)			/* æˆ‘çš„ç¸½/å‹å ´æ•¸ +1 */
   int win;
 {
   char fpath[64];
   int fd, kind;
-  int grade[32];	/* «O¯d 32 ­Ó int */
+  int grade[32];	/* ä¿ç•™ 32 å€‹ int */
 
   usr_fpath(fpath, cuser.userid, "bwboard");
   if ((fd = open(fpath, O_RDWR | O_CREAT, 0600)) >= 0)
@@ -306,7 +306,7 @@ play_add(win)			/* §ÚªºÁ`/³Ó³õ¼Æ +1 */
     if (read(fd, grade, sizeof(grade)) != sizeof(grade))
       memset(grade, 0, sizeof(grade));
 
-    /* ¨Ì§ÇÀx¦s ¶Â¥ÕÁ`,¶Â¥Õ³Ó; ¤­¤lÁ`,¤­¤l³Ó; ³òÁ`,³ò³Ó; ­xÁ`,­x³Ó; ·tÁ`,·t³Ó */
+    /* ä¾åºå„²å­˜ é»‘ç™½ç¸½,é»‘ç™½å‹; äº”å­ç¸½,äº”å­å‹; åœç¸½,åœå‹; è»ç¸½,è»å‹; æš—ç¸½,æš—å‹ */
     kind = (Choose + 3) << 1;
     grade[kind]++;
     if (win)
@@ -320,7 +320,7 @@ play_add(win)			/* §ÚªºÁ`/³Ó³õ¼Æ +1 */
 
 
 /*-------------------------------------------------------*/
-/* target : Black & White Chess Board ¶Â¥Õ´Ñ/¤­¤l´Ñ/³ò´Ñ */
+/* target : Black & White Chess Board é»‘ç™½æ£‹/äº”å­æ£‹/åœæ£‹ */
 /* create : 99/02/20					 */
 /* update : 02/08/05					 */
 /* author : thor.bbs@bbs.cs.nthu.edu.tw			 */
@@ -336,7 +336,7 @@ enum
 
 static KeyFunc myRound[], yourRound[];
 
-static char *bw_icon[] = {"¢q", "¡´", "¡³", "  "};	/* Empty, Black, White, Deny */
+static char *bw_icon[] = {"â”¼", "â—", "â—‹", "  "};	/* Empty, Black, White, Deny */
 
 
 /* 19 * 19, standard chess board */
@@ -393,7 +393,7 @@ countBWnum()
 
 
   /*-----------------------------------------------------*/
-  /* ¶Â¥Õ´Ñ 8 x 8					 */
+  /* é»‘ç™½æ£‹ 8 x 8					 */
   /*-----------------------------------------------------*/
 
 static int
@@ -469,9 +469,9 @@ othUpdate(Color, row, col)
   /* count numWhite & numBlack */
   countBWnum();
 
-  /* Thor.990329.µù¸Ñ: ¤Uº¡®É */
+  /* Thor.990329.è¨»è§£: ä¸‹æ»¿æ™‚ */
   {
-    int my = myColor;		/* Thor.990331: ¼È¦smyColor */
+    int my = myColor;		/* Thor.990331: æš«å­˜myColor */
     int allowBlack, allowWhite;
     myColor = Black;
     allowBlack = othAllow();
@@ -547,7 +547,7 @@ static int (*othRule[]) () =
 
 
   /*-----------------------------------------------------*/
-  /* ¤­¤l´Ñ 15 x 15					 */
+  /* äº”å­æ£‹ 15 x 15					 */
   /*-----------------------------------------------------*/
 
 static int
@@ -601,9 +601,9 @@ fivUpdate(Color, row, col)
     numWhite++;
 
 
-  /* ¶Â´Ñ¡]¥ıµÛªÌ¡^¦³¤U¦C¤TµÛ¸TµÛ(¤SºÙ¸T¤â)ÂI¡G¤T¤T(Âù¬¡¤T)¡B¥|¥|¡Bªø³s¡C */
-  /* ¦b³s¤­¤§«e§Î¦¨¸TµÛªÌ¡Aµô©w¬°¸TµÛ­t¡C                                 */
-  /* ¥Õ´Ñ¨S¦³¸TµÛÂI¡Aªø³s©ÎªÌ¤T¤T¤]³£¥i¥H³Ó¡C                             */
+  /* é»‘æ£‹ï¼ˆå…ˆè‘—è€…ï¼‰æœ‰ä¸‹åˆ—ä¸‰è‘—ç¦è‘—(åˆç¨±ç¦æ‰‹)é»ï¼šä¸‰ä¸‰(é›™æ´»ä¸‰)ã€å››å››ã€é•·é€£ã€‚ */
+  /* åœ¨é€£äº”ä¹‹å‰å½¢æˆç¦è‘—è€…ï¼Œè£å®šç‚ºç¦è‘—è² ã€‚                                 */
+  /* ç™½æ£‹æ²’æœ‰ç¦è‘—é»ï¼Œé•·é€£æˆ–è€…ä¸‰ä¸‰ä¹Ÿéƒ½å¯ä»¥å‹ã€‚                             */
 
 #if 0
   cnt[0] = fivCount(Color, row, col, -1, -1) + fivCount(Color, row, col, +1, +1) + 1;
@@ -611,10 +611,10 @@ fivUpdate(Color, row, col)
   cnt[2] = fivCount(Color, row, col, 0, -1) + fivCount(Color, row, col, 0, +1) + 1;
   cnt[3] = fivCount(Color, row, col, -1, +1) + fivCount(Color, row, col, +1, -1) + 1;
 
-  n3 = 0;			/* Âù¬¡¤T */
-  n4 = 0;			/* Âù¥| */
-  n5 = 0;			/* ¤­ */
-  nL = 0;			/* ªø³s */
+  n3 = 0;			/* é›™æ´»ä¸‰ */
+  n4 = 0;			/* é›™å›› */
+  n5 = 0;			/* äº” */
+  nL = 0;			/* é•·é€£ */
 
   for (i = 0; i < 4; i++)
   {
@@ -636,17 +636,17 @@ fivUpdate(Color, row, col)
     {
       if (n3 >= 2)
       {
-	bw_printmsg("¡» ¶Â¤èÂù¤T¸TµÛ");
+	bw_printmsg("â—† é»‘æ–¹é›™ä¸‰ç¦è‘—");
 	winside = White;
       }
       if (n4 >= 2)
       {
-	bw_printmsg("¡» ¶Â¤èÂù¥|¸TµÛ");
+	bw_printmsg("â—† é»‘æ–¹é›™å››ç¦è‘—");
 	winside = White;
       }
       if (nL > 0)
       {
-	bw_printmsg("¡» ¶Â¤èªø³s¸TµÛ");
+	bw_printmsg("â—† é»‘æ–¹é•·é€£ç¦è‘—");
 	winside = White;
       }
     }
@@ -658,25 +658,25 @@ fivUpdate(Color, row, col)
   }
 #endif
 
-#if 0   /* Thor.990415: ¤W­±¨º¬q¤S¼g¿ù¤F, ¯d«İ¦³¤ß¤H¤h¦AºCºC¼g§a :p */
+#if 0   /* Thor.990415: ä¸Šé¢é‚£æ®µåˆå¯«éŒ¯äº†, ç•™å¾…æœ‰å¿ƒäººå£«å†æ…¢æ…¢å¯«å§ :p */
 
-    (¤@)¡´  ¡´  ¡´  ¡´
-              ¡ô
-            ¦A©ñ¶i¥h´Nºâ¥|¥|
-                ¡õ
-    (¤G)¡´¡´¡´      ¡´¡´¡´(¤¤¶¡ªÅ¤T®æ)
+    (ä¸€)â—  â—  â—  â—
+              â†‘
+            å†æ”¾é€²å»å°±ç®—å››å››
+                â†“
+    (äºŒ)â—â—â—      â—â—â—(ä¸­é–“ç©ºä¸‰æ ¼)
 
-    (¤T)¡´  ¡´¡´¡³
-          ¡ô©ñ³o¸Ì¤]ºâ
-              ¡´
-                ¡´
-                  ¡´
+    (ä¸‰)â—  â—â—â—‹
+          â†‘æ”¾é€™è£¡ä¹Ÿç®—
+              â—
+                â—
+                  â—
 
-    (¥|)¡´¡´  ¡´    ¡´¡´
-                ¡ô¦A©ñ´N¬O¥|¥|
+    (å››)â—â—  â—    â—â—
+                â†‘å†æ”¾å°±æ˜¯å››å››
 
 
-    ªø³sªº¸Ü,¥u­n¤­¤l¥H¤W´Nºâ,¤£ºŞ¦º¬¡
+    é•·é€£çš„è©±,åªè¦äº”å­ä»¥ä¸Šå°±ç®—,ä¸ç®¡æ­»æ´»
 
 #endif
 
@@ -712,7 +712,7 @@ static int (*fivRule[]) () =
 
 
   /*-----------------------------------------------------*/
-  /* ³ò´Ñ 19 x 19					 */
+  /* åœæ£‹ 19 x 19					 */
   /*-----------------------------------------------------*/
 
 static int
@@ -844,27 +844,27 @@ bw_brdline(row)
       if (row == 0)
       {
 	if (i == 0)
-	  t = "ùİ";
+	  t = "â•”";
 	else if (i >= 18 || Board[row][i + 1] == Deny)
-	  t = "ùß";
+	  t = "â•—";
 	else
-	  t = "ùç";
+	  t = "â•¤";
       }
       else if (row >= 18 || Board[row + 1][i] == Deny)
       {
 	if (i == 0)
-	  t = "ùã";
+	  t = "â•š";
 	else if (i >= 18 || Board[row][i + 1] == Deny)
-	  t = "ùå";
+	  t = "â•";
 	else
-	  t = "ùí";
+	  t = "â•§";
       }
       else
       {
 	if (i == 0)
-	  t = "ùò";
+	  t = "â•Ÿ";
 	else if (i >= 18 || Board[row][i + 1] == Deny)
-	  t = "ùô";
+	  t = "â•¢";
       }
     }
     if (t != bw_icon[Black] && t != bw_icon[White])
@@ -914,7 +914,7 @@ bw_printmsg(msg)
     line = 1;
   move(line, 0);
   outs(bw_brdline(line - 1));
-  outs("¡÷");
+  outs("â†’");
   clrtoeol();
   msgline = line;
 }
@@ -933,10 +933,10 @@ bw_draw()
   yourNum = (myColor == Black) ? numWhite : numBlack;
 
   move(b_lines - 2, 0);
-  prints("²Ä%d¦^ %s%d¤l%dÅı (%s) %s%d¤l%dÅı",
+  prints("ç¬¬%då› %s%då­%dè®“ (%s) %s%då­%dè®“",
     BMIN(myStep, yourStep) + 1, bw_icon[Deny - myColor], myNum, myPass,
-    (mapTurn == myRound ? "¡ö" : "¡÷"), bw_icon[myColor], yourNum, yourPass);
-  /* Thor.990219: ¯S§Oª`·N, ¦b¦¹¦]ÃC¦âÃö«Y, ¬G¥Î¤lªºicon, ­è¦n»P­ì¥»¬Û¤Ï */
+    (mapTurn == myRound ? "â†" : "â†’"), bw_icon[myColor], yourNum, yourPass);
+  /* Thor.990219: ç‰¹åˆ¥æ³¨æ„, åœ¨æ­¤å› é¡è‰²é—œä¿‚, æ•…ç”¨å­çš„icon, å‰›å¥½èˆ‡åŸæœ¬ç›¸å */
   /* nth turn,myColor,num,pass <- youcolor, num,pass */
 }
 
@@ -946,7 +946,7 @@ bw_init()
 {
   yourPass = myPass = yourStep = myStep = 0;
 
-  /* ¶Â¥Õ´Ñ/¤­¤l´Ñ/³ò´Ñ¬°¶Â¤l¥ı¦æ */
+  /* é»‘ç™½æ£‹/äº”å­æ£‹/åœæ£‹ç‚ºé»‘å­å…ˆè¡Œ */
   if (myColor == Black)
   {
     (*rule[Ballow]) ();
@@ -958,7 +958,7 @@ bw_init()
   }
 
   move(b_lines - 1, 0);
-  outs(COLOR1 " ¹ï«³¼Ò¦¡ " COLOR2 " (Enter)¸¨¤l (TAB)¤Á´«´Ñ½L/¥æ½Í (^P)Åı¤â (^C)­«ª± (^D)Â÷¶}          \033[m");
+  outs(COLOR1 " å°å¥•æ¨¡å¼ " COLOR2 " (Enter)è½å­ (TAB)åˆ‡æ›æ£‹ç›¤/äº¤è«‡ (^P)è®“æ‰‹ (^C)é‡ç© (^D)é›¢é–‹          \033[m");
 
   bw_draw();
 }
@@ -968,11 +968,11 @@ static inline void
 bw_overgame()
 {
   if (GameOver == Black)
-    bw_printmsg("\033[1;32m¡» ¶Â¤èÀò³Ó\033[m");
+    bw_printmsg("\033[1;32mâ—† é»‘æ–¹ç²å‹\033[m");
   else if (GameOver == White)
-    bw_printmsg("\033[1;32m¡» ¥Õ¤èÀò³Ó\033[m");
+    bw_printmsg("\033[1;32mâ—† ç™½æ–¹ç²å‹\033[m");
   else if (GameOver == Deny)
-    bw_printmsg("\033[1;32m¡» Âù¤è¥­¤â\033[m");
+    bw_printmsg("\033[1;32mâ—† é›™æ–¹å¹³æ‰‹\033[m");
 
   play_add(myColor == GameOver);
 }
@@ -1034,7 +1034,7 @@ bw_recv()
 
       /* talk line by line, T.....\0 */
     case 'T':
-      sprintf(msg, "\033[1;33m¡¹%s\033[m", str);
+      sprintf(msg, "\033[1;33mâ˜…%s\033[m", str);
       bw_printmsg(msg);
       break;
 
@@ -1043,7 +1043,7 @@ bw_recv()
       yourStep++;
       /* get pos */
       i = atoi(str);
-      sprintf(msg, "¡» ¹ï¤è¸¨¤l %s", bw_coorstr(i / 19, i % 19));
+      sprintf(msg, "â—† å°æ–¹è½å­ %s", bw_coorstr(i / 19, i % 19));
       /* update board */
       GameOver = (*rule[Bupdate]) (Deny - myColor, i / 19, i % 19);
 
@@ -1061,7 +1061,7 @@ bw_recv()
       else
       {
 	if ((*rule[Ballow]) () <= 0)
-	  bw_printmsg("¡» ±z¨«§ëµL¸ô¤F");
+	  bw_printmsg("â—† æ‚¨èµ°æŠ•ç„¡è·¯äº†");
       }
       break;
 
@@ -1072,7 +1072,7 @@ bw_recv()
 
       mapTurn = myRound;
       bw_draw();
-      bw_printmsg("¡» ¹ï¤èÅı¤â");
+      bw_printmsg("â—† å°æ–¹è®“æ‰‹");
       if (GameOver)
       {
 	memset(Allow, 0, sizeof(Allow));
@@ -1080,7 +1080,7 @@ bw_recv()
       else
       {
 	if ((*rule[Ballow]) () <= 0)
-	  bw_printmsg("¡» ±z¨«§ëµL¸ô¤F");	/* Thor.990329: ending game? */
+	  bw_printmsg("â—† æ‚¨èµ°æŠ•ç„¡è·¯äº†");	/* Thor.990329: ending game? */
       }
       break;
 
@@ -1162,7 +1162,7 @@ ftnPass()
       return DISCONNECT;
     mapTurn = yourRound;
     bw_draw();
-    bw_printmsg("¡» §Ú¤èÅı¤â");
+    bw_printmsg("â—† æˆ‘æ–¹è®“æ‰‹");
   }
   return NOTHING;
 }
@@ -1177,7 +1177,7 @@ ftnEnter()
   if (!Allow[bwRow][bwCol])
     return NOTHING;
 
-  sprintf(msg, "¡» §Ú¤è¸¨¤l %s", bw_coorstr(bwRow, bwCol));
+  sprintf(msg, "â—† æˆ‘æ–¹è½å­ %s", bw_coorstr(bwRow, bwCol));
 
   myStep++;
   sprintf(buf, "D%d", bwRow * 19 + bwCol);
@@ -1231,7 +1231,7 @@ static KeyFunc myRound[] =
 
 
 /*-------------------------------------------------------*/
-/* target : Chinese Chess Board ­x´Ñ/·t´Ñ		 */
+/* target : Chinese Chess Board è»æ£‹/æš—æ£‹		 */
 /* create : 99/12/14					 */
 /* update : 02/08/05					 */
 /* author : weichung.bbs@bbs.ntit.edu.tw		 */
@@ -1248,7 +1248,7 @@ enum
 static KeyFunc myTurn[], yourTurn[];
 
 static int sideline;
-static int Totalch;		/* ¥[³t¥Î :p */
+static int Totalch;		/* åŠ é€Ÿç”¨ :p */
 static int Focus;
 static int youreat_index;
 static int myeat_index;
@@ -1258,14 +1258,14 @@ static char Appear[14];
 
 static char *ch_icon[] = 
 {
-  "  ", "¡´", 		/* Empty, Cover */
-  "«Ó", "¥K", "¬Û", "ÚÏ", "ØX", "¬¶", "§L", 
-  "±N", "¤h", "¶H", "¨®", "°¨", "¥]", "¨ò"
+  "  ", "â—", 		/* Empty, Cover */
+  "å¸¥", "ä»•", "ç›¸", "ç¡¨", "å‚Œ", "ç‚®", "å…µ", 
+  "å°‡", "å£«", "è±¡", "è»Š", "é¦¬", "åŒ…", "å’"
 };
 
 
   /*-----------------------------------------------------*/
-  /* ­x´Ñ 10 x 9					 */
+  /* è»æ£‹ 10 x 9					 */
   /*-----------------------------------------------------*/
 
 static int
@@ -1279,21 +1279,21 @@ armyInit()
       Board[i][j] = Empty;
   }
 
-  Board[0][4] = 2;			/* «Ó */
-  Board[0][3] = Board[0][5] = 3;	/* ¥K */
-  Board[0][2] = Board[0][6] = 4;	/* ¬Û */
-  Board[0][1] = Board[0][7] = 6;	/* ØX */
-  Board[0][0] = Board[0][8] = 5;	/* ÚÏ */
-  Board[2][1] = Board[2][7] = 7;	/* ¬¶ */
-  Board[3][0] = Board[3][2] = Board[3][4] = Board[3][6] = Board[3][8] = 8;	/* §L */
+  Board[0][4] = 2;			/* å¸¥ */
+  Board[0][3] = Board[0][5] = 3;	/* ä»• */
+  Board[0][2] = Board[0][6] = 4;	/* ç›¸ */
+  Board[0][1] = Board[0][7] = 6;	/* å‚Œ */
+  Board[0][0] = Board[0][8] = 5;	/* ç¡¨ */
+  Board[2][1] = Board[2][7] = 7;	/* ç‚® */
+  Board[3][0] = Board[3][2] = Board[3][4] = Board[3][6] = Board[3][8] = 8;	/* å…µ */
 
-  Board[9][4] = 9;			/* ±N */
-  Board[9][3] = Board[9][5] = 10;	/* ¤h */
-  Board[9][2] = Board[9][6] = 11;	/* ¶H */
-  Board[9][1] = Board[9][7] = 13;	/* °¨ */
-  Board[9][0] = Board[9][8] = 12;	/* ¨® */
-  Board[7][1] = Board[7][7] = 14;	/* ¥] */
-  Board[6][0] = Board[6][2] = Board[6][4] = Board[6][6] = Board[6][8] = 15;	/* ¨ò */
+  Board[9][4] = 9;			/* å°‡ */
+  Board[9][3] = Board[9][5] = 10;	/* å£« */
+  Board[9][2] = Board[9][6] = 11;	/* è±¡ */
+  Board[9][1] = Board[9][7] = 13;	/* é¦¬ */
+  Board[9][0] = Board[9][8] = 12;	/* è»Š */
+  Board[7][1] = Board[7][7] = 14;	/* åŒ… */
+  Board[6][0] = Board[6][2] = Board[6][4] = Board[6][6] = Board[6][8] = 15;	/* å’ */
 
   memset(MyEat, Empty, sizeof(MyEat));
   memset(YourEat, Empty, sizeof(YourEat));
@@ -1310,7 +1310,7 @@ static int (*armyRule[]) () =
 
 
   /*-----------------------------------------------------*/
-  /* ·t´Ñ 4 x 8						 */
+  /* æš—æ£‹ 4 x 8						 */
   /*-----------------------------------------------------*/
 
 static int
@@ -1358,12 +1358,12 @@ ch_printmsg(type, msg)
     if (++msgline >= 11)
       msgline = 1;
     move(msgline + 9, 37);
-    outs("¡÷");
+    outs("â†’");
     clrtoeol();
     break;
 
   case 2:			/* for select */
-    sprintf(buf, "\033[1;33m¡»±z¿ï¨ú¤F %s(%d, %c)\033[m", 
+    sprintf(buf, "\033[1;33mâ—†æ‚¨é¸å–äº† %s(%d, %c)\033[m", 
       ch_icon[Focus / 256], bwCol, bwRow + 'A');
     move(1, 37);
     outs(buf);
@@ -1410,7 +1410,7 @@ ch_overgame(win)
 {
   char buf[80];
 
-  sprintf(buf, "%s¤èÀò³Ó¡I½Ğ«ö Ctrl-C ­«ª±", win == myColor ? "§Ú" : "¹ï");
+  sprintf(buf, "%sæ–¹ç²å‹ï¼è«‹æŒ‰ Ctrl-C é‡ç©", win == myColor ? "æˆ‘" : "å°");
   ch_printmsg(1, buf);
 
   play_add(win == myColor);
@@ -1423,19 +1423,19 @@ ch_brdline(row)
 {
   char *t, *str, ch;
   static char buf[80];
-  static char river[] = "¢x·¡      ªe          º~      ¬É¢x";
+  static char river[] = "â”‚æ¥š      æ²³          æ¼¢      ç•Œâ”‚";
   static char side[] = " A B C D E F G H I J";
   int i;
 
-  if (row > 8 && Choose)	/* ·t´Ñªº row ³Ì¦h¨ì 8 */
+  if (row > 8 && Choose)	/* æš—æ£‹çš„ row æœ€å¤šåˆ° 8 */
     return NULL;
 
-  if (row == 9)			/* ­x´Ñªº row 9 ¬O ·¡ªeº~¬É */
+  if (row == 9)			/* è»æ£‹çš„ row 9 æ˜¯ æ¥šæ²³æ¼¢ç•Œ */
     return river;
 
   str = buf;
 
-  /* µe®æ¤l¤Î®æ¤l¤Wªº´Ñ¤l */
+  /* ç•«æ ¼å­åŠæ ¼å­ä¸Šçš„æ£‹å­ */
 
   for (i = 0; i < 17; i++)
   {
@@ -1446,45 +1446,45 @@ ch_brdline(row)
 
     if (Choose || (ch == Empty))
     {
-      if (row == 0)					/* ¢z¢w¢s¢w¢{ */
+      if (row == 0)					/* â”Œâ”€â”¬â”€â” */
       {
 	if (i == 0)
-	  t = "¢z";
+	  t = "â”Œ";
 	else if (i == 16)
-	  t = "¢{";
+	  t = "â”";
 	else if (i % 2)
-	  t = "¢w";
+	  t = "â”€";
 	else
-	  t = "¢s";
+	  t = "â”¬";
       }
-      else if (row == 18 || (row == 8 && Choose))	/* ¢|¢w¢r¢w¢} */
+      else if (row == 18 || (row == 8 && Choose))	/* â””â”€â”´â”€â”˜ */
       {
 	if (i == 0)
-	  t = "¢|";
+	  t = "â””";
 	else if (i == 16)
-	  t = "¢}";
+	  t = "â”˜";
 	else if (i % 2)
-	  t = "¢w";
+	  t = "â”€";
 	else
-	  t = "¢r";
+	  t = "â”´";
       }
-      else if (row % 2)					/* ¢x  ¢x  ¢x */
+      else if (row % 2)					/* â”‚  â”‚  â”‚ */
       {
 	if (i % 2)
 	  t = ch_icon[ch];
 	else
-	  t = "¢x";
+	  t = "â”‚";
       }
-      else						/* ¢u¢w¢q¢w¢t */
+      else						/* â”œâ”€â”¼â”€â”¤ */
       {
 	if (i == 0)
-	  t = "¢u";
+	  t = "â”œ";
 	else if (i == 16)
-	  t = "¢t";
+	  t = "â”¤";
 	else if (i % 2)
-	  t = "¢w";
+	  t = "â”€";
 	else
-	  t = "¢q";
+	  t = "â”¼";
       }
     }
     else
@@ -1516,22 +1516,22 @@ ch_draw()
     outs(ch_brdline(i));
   }
   move(3, 37);
-  outs("¡¸§Ú¤è©Ò¦Y¤§¤l");
+  outs("â˜†æˆ‘æ–¹æ‰€åƒä¹‹å­");
   move(6, 37);
-  outs("¡¹¹ï¤è©Ò¦Y¤§¤l");
+  outs("â˜…å°æ–¹æ‰€åƒä¹‹å­");
   move(9, 37);
   outs("====================================");
 
   move(sideline + 1, 0);
   if (Choose)
-    outs("  ¢İ  ¢°  ¢±  ¢²  ¢³  ¢´  ¢µ  ¢¶");
+    outs("  ï¼¯  ï¼‘  ï¼’  ï¼“  ï¼”  ï¼•  ï¼–  ï¼—");
   else
-    outs("¢İ  ¢°  ¢±  ¢²  ¢³  ¢´  ¢µ  ¢¶  ¢·");
+    outs("ï¼¯  ï¼‘  ï¼’  ï¼“  ï¼”  ï¼•  ï¼–  ï¼—  ï¼˜");
 
   move(b_lines - 2, 0);
-  prints("§Ú¬O \033[47;%s¤l\033[m [½ü¨ì%s]", 
-    dark_choose ? (myColor == Black ? "30m¶Â" : "31m¬õ") : "30m¥Õ", 
-    mapTurn == myTurn ? "§Ú¤F" : "¹ï¤è");
+  prints("æˆ‘æ˜¯ \033[47;%så­\033[m [è¼ªåˆ°%s]", 
+    dark_choose ? (myColor == Black ? "30mé»‘" : "31mç´…") : "30mç™½", 
+    mapTurn == myTurn ? "æˆ‘äº†" : "å°æ–¹");
 }
 
 
@@ -1540,14 +1540,14 @@ ch_init()
 {
   Totalch = youreat_index = myeat_index = Focus = 0;
 
-  /* ·t´Ñªº«ù¤lÃC¦â¥¼©w */
+  /* æš—æ£‹çš„æŒå­é¡è‰²æœªå®š */
   dark_choose = (Choose == 1) ? 0 : 1;
 
-  /* ­x´Ñ/·t´Ñ¬°¶Â¤l¥ı¦æ (·t´Ñ: ¯u¥¿ªº«ù¤lÃC¦â·|¦b²Ä¤@¦¸Â½¤l®É¨M©w) */
+  /* è»æ£‹/æš—æ£‹ç‚ºé»‘å­å…ˆè¡Œ (æš—æ£‹: çœŸæ­£çš„æŒå­é¡è‰²æœƒåœ¨ç¬¬ä¸€æ¬¡ç¿»å­æ™‚æ±ºå®š) */
   mapTurn = (myColor == Black) ? myTurn : yourTurn;
 
   move(b_lines - 1, 0);
-  outs(COLOR1 " ¹ï«³¼Ò¦¡ " COLOR2 " (Enter)Â½¤l/²¾°Ê (TAB)¤Á´«´Ñ½L/¥æ½Í (^S)»{¿é (^C)­«ª± (^D)Â÷¶}     \033[m");
+  outs(COLOR1 " å°å¥•æ¨¡å¼ " COLOR2 " (Enter)ç¿»å­/ç§»å‹• (TAB)åˆ‡æ›æ£‹ç›¤/äº¤è«‡ (^S)èªè¼¸ (^C)é‡ç© (^D)é›¢é–‹     \033[m");
 
   ch_draw();
 }
@@ -1581,13 +1581,13 @@ ch_recv()
     Appear[ch - 2]++;
     Totalch++;
     mapTurn = myTurn;
-    sprintf(msg, "\033[1;32m¡µ¹ï¤èÂ½¶} %s(%d, %c)\033[m", ch_icon[ch], col, row + 'A');
+    sprintf(msg, "\033[1;32mâ–³å°æ–¹ç¿»é–‹ %s(%d, %c)\033[m", ch_icon[ch], col, row + 'A');
     ch_printmsg(1, msg);
     ch_draw();
     break;
 
   case 'T':
-    sprintf(msg, "\033[1;33m¡¹%s\033[m", buf + 1);
+    sprintf(msg, "\033[1;33mâ˜…%s\033[m", buf + 1);
     ch_printmsg(1, msg);
     break;
 
@@ -1605,7 +1605,7 @@ ch_recv()
     Board[row2][col2] = ch;
     YourEat[youreat_index++] = ch2;
     mapTurn = myTurn;
-    sprintf(msg, "\033[1;32m¡¾¹ï¤è²¾°Ê %s(%d, %c) ¦Y %s(%d, %c)\033[m",
+    sprintf(msg, "\033[1;32mâ–½å°æ–¹ç§»å‹• %s(%d, %c) åƒ %s(%d, %c)\033[m",
       ch_icon[ch], col, row + 'A',
       ch_icon[ch2], col2, row2 + 'A');
     ch_printmsg(1, msg);
@@ -1637,7 +1637,7 @@ ch_recv()
     Board[row][col] = Empty;
     Board[row2][col2] = ch;
     mapTurn = myTurn;
-    sprintf(msg, "\033[1;37m¡¾¹ï¤è²¾°Ê %s(%d, %c) ¦Ü (%d, %c)\033[m",
+    sprintf(msg, "\033[1;37mâ–½å°æ–¹ç§»å‹• %s(%d, %c) è‡³ (%d, %c)\033[m",
       ch_icon[ch], col, row + 'A', col2, row2 + 'A');
     ch_printmsg(1, msg);
     ch_draw();
@@ -1667,7 +1667,7 @@ ch_rand()
   int rd, i;
   char *index[] = {"1", "2", "2", "2", "2", "2", "5", "1", "2", "2", "2", "2", "2", "5"};
 
-  if (Totalch == 31)		/* Á×§K³Ñ³Ì«á¤@­Ó®ÉÁÙ­n random */
+  if (Totalch == 31)		/* é¿å…å‰©æœ€å¾Œä¸€å€‹æ™‚é‚„è¦ random */
   {
     for (i = 0; i < 14; i++)
     {
@@ -1699,12 +1699,12 @@ ch_rand()
 
 
 static int
-ch_count(row, col)	/* ¦^¶Ç¥]/¬¶»P«İ¦Yª«¤¤¶¡¦³´X¤@¤l */
+ch_count(row, col)	/* å›å‚³åŒ…/ç‚®èˆ‡å¾…åƒç‰©ä¸­é–“æœ‰å¹¾ä¸€å­ */
   int row, col;
 {
   int count, start, end;
 
-  if (bwRow != row && bwCol != col)	/* ¥²¶·¦b¦P¤@¦æ©Î¦P¤@¦C¸õ */
+  if (bwRow != row && bwCol != col)	/* å¿…é ˆåœ¨åŒä¸€è¡Œæˆ–åŒä¸€åˆ—è·³ */
     return -1;
 
   count = 0;
@@ -1749,7 +1749,7 @@ ch_count(row, col)	/* ¦^¶Ç¥]/¬¶»P«İ¦Yª«¤¤¶¡¦³´X¤@¤l */
 }
 
 
-static int		/* 0:¬Û¦PÃC¦â 1:¤£¦PÃC¦â */
+static int		/* 0:ç›¸åŒé¡è‰² 1:ä¸åŒé¡è‰² */
 ch_check(ch)
   char ch;
 {
@@ -1762,7 +1762,7 @@ ch_check(ch)
 
 
 static int
-ch_Mv0()			/* for ­x´Ñ */
+ch_Mv0()			/* for è»æ£‹ */
 {
   int mych, yourch, way;	/* way: 0:NOTHING  1:move  2:eat */
   int row, col, Rdis, Cdis;
@@ -1779,10 +1779,10 @@ ch_Mv0()			/* for ­x´Ñ */
 
   switch (mych)
   {
-  case 2:	/* «Ó±N */
+  case 2:	/* å¸¥å°‡ */
   case 9:
-    if (((bwCol >= 3 && bwCol <= 5) && (bwRow <= 2 || bwRow >= 7) && (Rdis + Cdis == 1)) ||	/* ­­¨î¦b¤E®c®æ¤¤¡A¨«¤@®æ */
-      (bwCol == col && abs(mych - yourch) == 7 && !ch_count(row, col)))				/* ¤ı¨£¤ı */
+    if (((bwCol >= 3 && bwCol <= 5) && (bwRow <= 2 || bwRow >= 7) && (Rdis + Cdis == 1)) ||	/* é™åˆ¶åœ¨ä¹å®®æ ¼ä¸­ï¼Œèµ°ä¸€æ ¼ */
+      (bwCol == col && abs(mych - yourch) == 7 && !ch_count(row, col)))				/* ç‹è¦‹ç‹ */
     {
       if (yourch == Empty)
 	way = 1;
@@ -1791,10 +1791,10 @@ ch_Mv0()			/* for ­x´Ñ */
     }
     break;
 
-  case 3:	/* ¥K¤h */
+  case 3:	/* ä»•å£« */
   case 10:
-    if ((bwCol >= 3 && bwCol <= 5) && (bwRow <= 2 || bwRow >= 7) &&	/* ­­¨î¦b¤E®c®æ¤¤ */
-      (Rdis == 1 && Cdis == 1))						/* ¨«¤@±× */
+    if ((bwCol >= 3 && bwCol <= 5) && (bwRow <= 2 || bwRow >= 7) &&	/* é™åˆ¶åœ¨ä¹å®®æ ¼ä¸­ */
+      (Rdis == 1 && Cdis == 1))						/* èµ°ä¸€æ–œ */
     {
       if (yourch == Empty)
 	way = 1;
@@ -1803,11 +1803,11 @@ ch_Mv0()			/* for ­x´Ñ */
     }
     break;
 
-  case 4:	/* ¬Û¶H */
+  case 4:	/* ç›¸è±¡ */
   case 11:
-    if (((bwRow <= 4 && myColor == Red) || (bwRow >= 5 && myColor == Black)) &&	/* ­­¨î¤£¯à¹Lªe */
-      (Rdis == 2 && Cdis == 2) &&					/* ¨«¤@¥Ğ */
-      (Board[(bwRow + row) / 2][(bwCol + col) / 2] == Empty))		/* ¤£¯à©ä¶H¸} */
+    if (((bwRow <= 4 && myColor == Red) || (bwRow >= 5 && myColor == Black)) &&	/* é™åˆ¶ä¸èƒ½éæ²³ */
+      (Rdis == 2 && Cdis == 2) &&					/* èµ°ä¸€ç”° */
+      (Board[(bwRow + row) / 2][(bwCol + col) / 2] == Empty))		/* ä¸èƒ½æ‹è±¡è…³ */
     {
       if (yourch == Empty)
 	way = 1;
@@ -1816,9 +1816,9 @@ ch_Mv0()			/* for ­x´Ñ */
     }
     break;
 
-  case 5:	/* ÚÏ¨® */
+  case 5:	/* ç¡¨è»Š */
   case 12:
-    if (!ch_count(row, col) && (row == bwRow || col == bwCol))	/* ¨«¤@½u */
+    if (!ch_count(row, col) && (row == bwRow || col == bwCol))	/* èµ°ä¸€ç·š */
     {
       if (yourch == Empty)
 	way = 1;
@@ -1827,10 +1827,10 @@ ch_Mv0()			/* for ­x´Ñ */
     }
     break;
 
-  case 6:	/* ØX°¨ */
+  case 6:	/* å‚Œé¦¬ */
   case 13:
-    if ((Rdis == 2 && Cdis == 1 && Board[(bwRow + row) / 2][col] == Empty) ||	/* ¨«¤@©ä */
-      (Rdis == 1 && Cdis == 2 && Board[row][(bwCol + col) / 2] == Empty))	/* ¤£¯à©ä°¨¸} */
+    if ((Rdis == 2 && Cdis == 1 && Board[(bwRow + row) / 2][col] == Empty) ||	/* èµ°ä¸€æ‹ */
+      (Rdis == 1 && Cdis == 2 && Board[row][(bwCol + col) / 2] == Empty))	/* ä¸èƒ½æ‹é¦¬è…³ */
     {
       if (yourch == Empty)
 	way = 1;
@@ -1839,11 +1839,11 @@ ch_Mv0()			/* for ­x´Ñ */
     }
     break;
 
-  case 7:	/* ¬¶¥] */
+  case 7:	/* ç‚®åŒ… */
   case 14:
-    if (row == bwRow || col == bwCol)				/* ¨«¤@½u */
+    if (row == bwRow || col == bwCol)				/* èµ°ä¸€ç·š */
     {
-      Rdis = ch_count(row, col);	/* ­É¥Î Rdis */
+      Rdis = ch_count(row, col);	/* å€Ÿç”¨ Rdis */
       if (Rdis == 0 && yourch == Empty)
 	way = 1;
       else if (Rdis == 1 && yourch != Empty && ch_check(yourch))
@@ -1851,21 +1851,21 @@ ch_Mv0()			/* for ­x´Ñ */
     }
     break;
 
-  case 8:	/* §L¨ò */
+  case 8:	/* å…µå’ */
   case 15:
-    if (Rdis + Cdis != 1)	/* ¨«¤@®æ */
+    if (Rdis + Cdis != 1)	/* èµ°ä¸€æ ¼ */
       break;
 
     if (myColor == Red)
     {
-      if ((bwRow < row) || 		/* ¤£¯à¨«¦^ÀY¨B */
-	(row <= 4 && col != bwCol))	/* ¦b°ê¤º¥u¯à¨«ª½ªº */
+      if ((bwRow < row) || 		/* ä¸èƒ½èµ°å›é ­æ­¥ */
+	(row <= 4 && col != bwCol))	/* åœ¨åœ‹å…§åªèƒ½èµ°ç›´çš„ */
 	break;
     }
     else
     {
-      if ((bwRow > row) ||		/* ¤£¯à¨«¦^ÀY¨B */
-	(row >= 5 && col != bwCol))	/* ¦b°ê¤º¥u¯à¨«ª½ªº */
+      if ((bwRow > row) ||		/* ä¸èƒ½èµ°å›é ­æ­¥ */
+	(row >= 5 && col != bwCol))	/* åœ¨åœ‹å…§åªèƒ½èµ°ç›´çš„ */
 	break;
     }
 
@@ -1881,7 +1881,7 @@ ch_Mv0()			/* for ­x´Ñ */
     sprintf(buf, "M%d:%d", Focus, bwRow * 16 + bwCol);
     if (!do_send(buf))
       return DISCONNECT;
-    sprintf(buf, "\033[1;36m¡¿§Ú¤è²¾°Ê %s(%d, %c) ¦Ü (%d, %c)\033[m",
+    sprintf(buf, "\033[1;36mâ–¼æˆ‘æ–¹ç§»å‹• %s(%d, %c) è‡³ (%d, %c)\033[m",
       ch_icon[mych], col, row + 'A', bwCol, bwRow + 'A');
   }
   else if (way == 2)
@@ -1889,7 +1889,7 @@ ch_Mv0()			/* for ­x´Ñ */
     sprintf(buf, "E%d:%d", Focus, yourch * 256 + bwRow * 16 + bwCol);
     if (!do_send(buf))
       return DISCONNECT;
-    sprintf(buf, "\033[1;32m¡¿§Ú¤è²¾°Ê %s(%d, %c) ¦Y %s(%d, %c)\033[m",
+    sprintf(buf, "\033[1;32mâ–¼æˆ‘æ–¹ç§»å‹• %s(%d, %c) åƒ %s(%d, %c)\033[m",
       ch_icon[mych], col, col + 'A', ch_icon[yourch], bwCol, bwRow + 'A');
     MyEat[myeat_index++] = yourch;    
     ch_printeat();
@@ -1913,7 +1913,7 @@ ch_Mv0()			/* for ­x´Ñ */
 
 
 static int
-ch_Mv1()			/* for ·t´Ñ */
+ch_Mv1()			/* for æš—æ£‹ */
 {
   int row, col;
   char mych, yourch;
@@ -1924,49 +1924,49 @@ ch_Mv1()			/* for ·t´Ñ */
   mych = Focus / 256;
   yourch = Board[bwRow][bwCol];
 
-  if (yourch == Empty)	/* ²¾¶iªÅ¦a */
+  if (yourch == Empty)	/* ç§»é€²ç©ºåœ° */
   {
-    if (abs(bwRow - row) + abs(bwCol - col) != 1)	/* ­n¦b¹j¾À¤~¯à²¾¹L¥h */
+    if (abs(bwRow - row) + abs(bwCol - col) != 1)	/* è¦åœ¨éš”å£æ‰èƒ½ç§»éå» */
       return NOTHING;
 
     sprintf(buf, "M%d:%d", Focus, bwRow * 16 + bwCol);
     if (!do_send(buf))
       return DISCONNECT;
-    sprintf(buf, "\033[1;36m¡¿§Ú¤è²¾°Ê %s(%d, %c) ¦Ü (%d, %c)\033[m",
+    sprintf(buf, "\033[1;36mâ–¼æˆ‘æ–¹ç§»å‹• %s(%d, %c) è‡³ (%d, %c)\033[m",
       ch_icon[mych], col, row + 'A', bwCol, bwRow + 'A');
   }
-  else			/* ²¾¶i¦³¤lªº¦a */
+  else			/* ç§»é€²æœ‰å­çš„åœ° */
   {
-    if (!ch_check(yourch))		/* ¤£¦P¦â¤~¥i¥H¦Y */
+    if (!ch_check(yourch))		/* ä¸åŒè‰²æ‰å¯ä»¥åƒ */
       return NOTHING;
 
-    if (mych == 7 || mych == 14)	/* ¥]/¬¶¥Î¸õªº¤~¯à¦Y */
+    if (mych == 7 || mych == 14)	/* åŒ…/ç‚®ç”¨è·³çš„æ‰èƒ½åƒ */
     {
       if (ch_count(row, col) != 1)
 	return NOTHING;
     }
     else
     {
-      if (abs(bwRow - row) + abs(bwCol - col) != 1)	/* ¤@¯ë¤l­n¦b¹j¾À¤~¯à¦Y¹L¥h */
+      if (abs(bwRow - row) + abs(bwCol - col) != 1)	/* ä¸€èˆ¬å­è¦åœ¨éš”å£æ‰èƒ½åƒéå» */
 	return NOTHING;
 
       if (myColor == Black)
       {
-	if (mych != 15 || yourch != 2)		/* ¨ò¥i¥H¦Y«Ó */
+	if (mych != 15 || yourch != 2)		/* å’å¯ä»¥åƒå¸¥ */
 	{
-	  if (mych - 7 > yourch)		/* ¤p¤£¯à¦Y¤j */
+	  if (mych - 7 > yourch)		/* å°ä¸èƒ½åƒå¤§ */
 	    return NOTHING;
-	  if (mych == 9 && yourch == 8)	/* ±N¤£¯à¦Y§L */
+	  if (mych == 9 && yourch == 8)	/* å°‡ä¸èƒ½åƒå…µ */
 	    return NOTHING;
 	}
       }
       else
       {
-	if (mych != 8 || yourch != 9)		/* §L¥i¥H¦Y±N */
+	if (mych != 8 || yourch != 9)		/* å…µå¯ä»¥åƒå°‡ */
 	{
-	  if (mych + 7 > yourch)		/* ¤p¤£¯à¦Y¤j */
+	  if (mych + 7 > yourch)		/* å°ä¸èƒ½åƒå¤§ */
 	    return NOTHING;
-	  if (mych == 2 && yourch == 15)	/* «Ó¤£¯à¦Y§L */
+	  if (mych == 2 && yourch == 15)	/* å¸¥ä¸èƒ½åƒå…µ */
 	    return NOTHING;
 	}
       }
@@ -1976,7 +1976,7 @@ ch_Mv1()			/* for ·t´Ñ */
     if (!do_send(buf))
       return DISCONNECT;
     MyEat[myeat_index++] = yourch;
-    sprintf(buf, "\033[1;32m¡¿§Ú¤è²¾°Ê %s(%d, %c) ¦Y %s(%d, %c)\033[m",
+    sprintf(buf, "\033[1;32mâ–¼æˆ‘æ–¹ç§»å‹• %s(%d, %c) åƒ %s(%d, %c)\033[m",
       ch_icon[mych], col, row + 'A', ch_icon[yourch], bwCol, bwRow + 'A');
     ch_printeat();
   }
@@ -2048,7 +2048,7 @@ chEnter()
   char buf[40], ch;
 
   ch = Board[bwRow][bwCol];
-  if (ch == Cover)	/* ·t´ÑÂ½¤l */
+  if (ch == Cover)	/* æš—æ£‹ç¿»å­ */
   {
     ch = ch_rand();
     Board[bwRow][bwCol] = ch;
@@ -2056,7 +2056,7 @@ chEnter()
     if (!do_send(buf))
       return DISCONNECT;
 
-    if (!dark_choose)	/* ·t´Ñ²Ä¤@¦¸Â½¤l¨M©wÃC¦â */
+    if (!dark_choose)	/* æš—æ£‹ç¬¬ä¸€æ¬¡ç¿»å­æ±ºå®šé¡è‰² */
     {
       dark_choose = 1;
       myColor = (ch < 9) ? Red : Black;
@@ -2067,16 +2067,16 @@ chEnter()
 
     mapTurn = yourTurn;
     Focus = Empty;
-    sprintf(buf, "\033[1;32m¡¶§Ú¤èÂ½¶} %s(%d, %c)\033[m",
+    sprintf(buf, "\033[1;32mâ–²æˆ‘æ–¹ç¿»é–‹ %s(%d, %c)\033[m",
       ch_icon[ch], bwCol, bwRow + 'A');
     ch_printmsg(1, buf);
     ch_draw();
   }
   else
   {
-    if (Focus)		/* ­x/·t´Ñ²¾°Ê */
+    if (Focus)		/* è»/æš—æ£‹ç§»å‹• */
     {
-      if (Focus == ch * 256 + bwRow * 16 + bwCol)	/* ¦A¿ï¤@¹Mªí¥Ü¨ú®ø¿ï¨ú */
+      if (Focus == ch * 256 + bwRow * 16 + bwCol)	/* å†é¸ä¸€éè¡¨ç¤ºå–æ¶ˆé¸å– */
       {
 	Focus = 0;
 	ch_printmsg(3, NULL);
@@ -2084,7 +2084,7 @@ chEnter()
       else
 	return Choose ? ch_Mv1() : ch_Mv0();
     }
-    else		/* ­x/·t´Ñ¿ï¨ú */
+    else		/* è»/æš—æ£‹é¸å– */
     {
       if (ch != Empty && !ch_check(ch))
       {
@@ -2127,7 +2127,7 @@ static KeyFunc myTurn[] =
 
 
 /*-------------------------------------------------------*/
-/* ©Ò¦³´Ñ½L¤½¥Î¥Dµ{¦¡					 */
+/* æ‰€æœ‰æ£‹ç›¤å…¬ç”¨ä¸»ç¨‹å¼					 */
 /*-------------------------------------------------------*/
 
 
@@ -2146,7 +2146,7 @@ do_init()
 
   /* Initialize state */
   (*rule[Binit]) ();
-  mapTalk = NULL;	/* ¤@¶}©l¶i¤J¬O¦b´Ñ½L¤W */
+  mapTalk = NULL;	/* ä¸€é–‹å§‹é€²å…¥æ˜¯åœ¨æ£‹ç›¤ä¸Š */
 
   bwRow = bwCol = 0;
   msgline = 1;
@@ -2161,14 +2161,14 @@ do_init()
   t = cuser.userid;
   mateid = cutmp->mateid;
 
-  /* ¨ú±o¾ÔÁZ */
+  /* å–å¾—æˆ°ç¸¾ */
   play_count(t, &myTotal, &myWin);
   play_count(mateid, &yourTotal, &yourWin);
 
-  sprintf(buf, "¡¸%s(%d¾Ô%d³Ó) vs ¡¹%s(%d¾Ô%d³Ó) \033[m", 
+  sprintf(buf, "â˜†%s(%dæˆ°%då‹) vs â˜…%s(%dæˆ°%då‹) \033[m", 
     t, myTotal, myWin, mateid, yourTotal, yourWin);
 
-  sprintf(msg, "\033[1;33;44m¡i ¹ï«³%s ¡j", ruleStr);
+  sprintf(msg, "\033[1;33;44mã€ å°å¥•%s ã€‘", ruleStr);
   i = 80 - strlen(buf) + 3 - strlen(msg) + 10;
   t = str_tail(msg);
   for (; i; i--)
@@ -2196,7 +2196,7 @@ main_board(sock, later)
   {
     /* ask for which rule set */
     /* assume: peer won't send char until setup */
-    c = vans("·Q¤U­şºØ´Ñ (1)¶Â¥Õ´Ñ (2)¤­¤l´Ñ (3)³ò´Ñ (4)­x´Ñ (5)·t´Ñ (Q)¨ú®ø¡H[Q] ");
+    c = vans("æƒ³ä¸‹å“ªç¨®æ£‹ (1)é»‘ç™½æ£‹ (2)äº”å­æ£‹ (3)åœæ£‹ (4)è»æ£‹ (5)æš—æ£‹ (Q)å–æ¶ˆï¼Ÿ[Q] ");
     if (c >= '1' && c <= '5')
     {
       c -= '1';
@@ -2204,28 +2204,28 @@ main_board(sock, later)
     else
     {
       c = -1;
-      vs_restore(sl);	/* lkchu.990428: §â foot restore ¦^¨Ó */
+      vs_restore(sl);	/* lkchu.990428: æŠŠ foot restore å›ä¾† */
     }
 
     /* transmit rule set */
     if (send(cfd, &c, 1, 0) != 1)
       return DISCONNECT;
 
-    /* ±Ò°Ê¹CÀ¸ªÌ¬°¶Â¤l */
+    /* å•Ÿå‹•éŠæˆ²è€…ç‚ºé»‘å­ */
     myColor = Black;
   }
   else
   {
     /* prompt for waiting rule set */
-    outz("¡¹ ¹ï¤è­n¨D¶i¤J¹ï«³¼Ò¦¡¿ï¾Ü¤¤¡A½Ğµy­Ô \033[5m...\033[m");
+    outz("â˜… å°æ–¹è¦æ±‚é€²å…¥å°å¥•æ¨¡å¼é¸æ“‡ä¸­ï¼Œè«‹ç¨å€™ \033[5m...\033[m");
     refresh();
     /* receive rule set */
     if (recv(cfd, &c, 1, 0) != 1)
       return DISCONNECT;
 
-    vs_restore(sl);		/* lkchu.990428: §â foot restore ¦^¨Ó */
+    vs_restore(sl);		/* lkchu.990428: æŠŠ foot restore å›ä¾† */
 
-    /* ³Q±Ò°Ê¹CÀ¸ªÌ¬°¬õ(¥Õ)¤l */
+    /* è¢«å•Ÿå‹•éŠæˆ²è€…ç‚ºç´…(ç™½)å­ */
     myColor = White;		/* White == Red */
   }
 
@@ -2234,7 +2234,7 @@ main_board(sock, later)
   rule = ruleSet[c];
   ruleStr = ruleStrSet[c];
 
-  Choose = c - 3;		/* -3:¶Â¥Õ´Ñ -2:¤­¤l´Ñ -1:³ò´Ñ 0:­x´Ñ 1:·t´Ñ */
+  Choose = c - 3;		/* -3:é»‘ç™½æ£‹ -2:äº”å­æ£‹ -1:åœæ£‹ 0:è»æ£‹ 1:æš—æ£‹ */
 
   /* initialize all */
   do_init();
@@ -2269,22 +2269,22 @@ main_board(sock, later)
     }
 
 #ifdef EVERY_Z
-    /* Thor: Chat ¤¤«ö ctrl-z */
+    /* Thor: Chat ä¸­æŒ‰ ctrl-z */
     else if (ch == Ctrl('Z'))
     {
       char buf[IDLEN + 1];
       screenline slt[T_LINES];
 
-      /* Thor.980731: ¼È¦s mateid, ¦]¬°¥X¥h®É¥i¯à·|¥Î±¼ mateid */
+      /* Thor.980731: æš«å­˜ mateid, å› ç‚ºå‡ºå»æ™‚å¯èƒ½æœƒç”¨æ‰ mateid */
       strcpy(buf, cutmp->mateid);
 
-      vio_save();	/* Thor.980727: ¼È¦s vio_fd */
+      vio_save();	/* Thor.980727: æš«å­˜ vio_fd */
       vs_save(slt);
       every_Z(0);
       vs_restore(slt);
-      vio_restore();	/* Thor.980727: ÁÙ­ì vio_fd */
+      vio_restore();	/* Thor.980727: é‚„åŸ vio_fd */
 
-      /* Thor.980731: ÁÙ­ì mateid, ¦]¬°¥X¥h®É¥i¯à·|¥Î±¼ mateid */
+      /* Thor.980731: é‚„åŸ mateid, å› ç‚ºå‡ºå»æ™‚å¯èƒ½æœƒç”¨æ‰ mateid */
       strcpy(cutmp->mateid, buf);
       continue;
     }

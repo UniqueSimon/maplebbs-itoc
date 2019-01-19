@@ -1,13 +1,13 @@
-µo«H¤H: itoc.bbs@processor.tfcis.org (1999 Commencement) ¬İªO: plan
-¼Ğ  ÃD: Re: [¥\¯à] ¤ô²y¨t²Î
-µo«H¯¸: XEON (Sat, 28 Jun 2003 09:12:00 +0800 (CST))      Updated: 2005/03/09
+ç™¼ä¿¡äºº: itoc.bbs@processor.tfcis.org (1999 Commencement) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [åŠŸèƒ½] æ°´çƒç³»çµ±
+ç™¼ä¿¡ç«™: XEON (Sat, 28 Jun 2003 09:12:00 +0800 (CST))      Updated: 2005/03/09
 
-¡° ¤Ş­z¡mFrequency (ÀW²v)¡n¤§»Ê¨¥¡G
-> ¦Ó¬O§ï¦¨...¦pªG§Ú¦^¤Fbmw_pos¥Ø«eªº¤ô²y...
-> ¤U¤@¦¸call bmw_display()®É...¬P¸¹·|ÅÜ¦¨"£¾"...
-> ¤]´N¬O»¡...¦^¹Lªº¤ô²y·|ÅÜ¦¨¥´¤Ä...
+â€» å¼•è¿°ã€ŠFrequency (é »ç‡)ã€‹ä¹‹éŠ˜è¨€ï¼š
+> è€Œæ˜¯æ”¹æˆ...å¦‚æœæˆ‘å›äº†bmw_posç›®å‰çš„æ°´çƒ...
+> ä¸‹ä¸€æ¬¡call bmw_display()æ™‚...æ˜Ÿè™Ÿæœƒè®Šæˆ"Ë‡"...
+> ä¹Ÿå°±æ˜¯èªª...å›éçš„æ°´çƒæœƒè®Šæˆæ‰“å‹¾...
 
-: struct.h   // §ì 1-bit µ¹ replied
+: struct.h   // æŠ“ 1-bit çµ¦ replied
 
 typedef struct
 {
@@ -15,10 +15,10 @@ typedef struct
   UTMP *caller;                 /* who call-in me ? */
   int sender;                   /* calling userno */
   int recver;                   /* called userno */
-  char userid[IDLEN + 1 + 2];   /* itoc.010529: «O¯d 2 byte µ¹¼s¼½²Å¸¹ > */
-- char msg[69];                 /* ¤ô²y */
-+ char msg[68];                 /* ¤ô²y */
-+ char replied;                 /* 1: ¤w¦^¤ô²y */
+  char userid[IDLEN + 1 + 2];   /* itoc.010529: ä¿ç•™ 2 byte çµ¦å»£æ’­ç¬¦è™Ÿ > */
+- char msg[69];                 /* æ°´çƒ */
++ char msg[68];                 /* æ°´çƒ */
++ char replied;                 /* 1: å·²å›æ°´çƒ */
 }      BMW;                     /* bbs message write */
 
 : bmw.c:bmw_edit()
@@ -31,7 +31,7 @@ typedef struct
 +   {
 +     BMW *benz;
 +
-+     /* ^R ¦^¹Lªº¤ô²y¼Ğ°O¤w¦^ */
++     /* ^R å›éçš„æ°´çƒæ¨™è¨˜å·²å› */
 +     benz = &bmw_lslot[bmw_pos];
 +     benz->replied = 1;
 +   }
@@ -48,16 +48,16 @@ typedef struct
     usr_fpath(fpath, userid, fn_bmw);
     rec_add(fpath, bmw, sizeof(BMW));
 
-: bmw.c  ª©­±¦Û¦æ½Õ¾ã
+: bmw.c  ç‰ˆé¢è‡ªè¡Œèª¿æ•´
 
-#define BMW_FORMAT  "\033[1;33;46m¡¹%s \033[37;45m %s \033[m" /* ¦¬¨ìªº¤ô²y */
-#define BMW_FORMAT2 "\033[1;33;41m¡¸%s \033[34;47m %s \033[m" /* °e¥Xªº¤ô²y */
-+ #define BMW_FORMAT4 "\033[1;33;46m£¾%s \033[37;45m %s \033[m" /* ¤w¦^ÂĞ */
+#define BMW_FORMAT  "\033[1;33;46mâ˜…%s \033[37;45m %s \033[m" /* æ”¶åˆ°çš„æ°´çƒ */
+#define BMW_FORMAT2 "\033[1;33;41mâ˜†%s \033[34;47m %s \033[m" /* é€å‡ºçš„æ°´çƒ */
++ #define BMW_FORMAT4 "\033[1;33;46mË‡%s \033[37;45m %s \033[m" /* å·²å›è¦† */
 
 : bmw.c:bmw_display()
 
   for (; max >= 0; max--)
-  {     /* ±q¸û·sªº¤ô²y©¹¤U¦L */
+  {     /* å¾è¼ƒæ–°çš„æ°´çƒå¾€ä¸‹å° */
     bmw = &bmw_lslot[max];
     move(i, 0);
     clrtoeol();
@@ -68,5 +68,5 @@ typedef struct
   }
 
 --
-[1;36m=[37m[[36m¡É[37m:[33m¡[37mİ¢¨[m¢©¡[1;33mİ[37m:[36m¡É [31mOrigin[37m ]|[[m     [31m°[1mÊ¤[0;31mO®[1mÖ¤[0;31mß [1mprocessor.tfcis.org    [37m]|[¡[33mİ£»¡[mİ[1;36m¡É[37m:][36m=[m
-[1;36m=[m[[1;36m¡Ç[37m:[33m¡[30mİ¢ª[m¢¬¡[1;33mİ[37m:[36m¡Ç [31mAuthor[m ]|[ [1m      itoc.Dorm11.NCTU.edu.tw       [m]|[¡[1;33mİ[30m¡[37m´¡[30mİ[36m¡Ç[37m:[m][1;36m=[m
+[1;36m=[37m[[36mï¹[37m:[33m?[37mæ‘ƒ?[mâ—£?[1;33m?[37m:[36mï¹ [31mOrigin[37m ]|[[m     [31m?[1må¨[0;31mO?[1mç—[0;31m?[1mprocessor.tfcis.org    [37m]|[?[33mæŸèªª[m?[1;36mï¹[37m:][36m=[m
+[1;36m=[m[[1;36mï¹Š[37m:[33m?[30mæ‘ƒ?[mâ•±?[1;33m?[37m:[36mï¹Š [31mAuthor[m ]|[ [1m      itoc.Dorm11.NCTU.edu.tw       [m]|[?[1;33m?[30m?[37mæ’[30m?[36mï¹Š[37m:[m][1;36m=[m

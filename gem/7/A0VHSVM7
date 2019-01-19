@@ -1,14 +1,14 @@
-µo«H¤H: qazq.bbs@bbs.cs.nchu.edu.tw (£i·R±¡±s¦u£i) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à] sinastar.c ¨Ï¥ÎªÌ¿ï³æª½±µ¬d¸ß<¤µ¤é¹B¶Õ>(1)
-µo«H¯¸: ¤¤¿³¸ê¬ì (Wed, 23 Jul 2003 18:25:11 +0800 (CST))  Updated: 2003/07/23
+ç™¼ä¿¡äºº: qazq.bbs@bbs.cs.nchu.edu.tw (Î¾æ„›æƒ…å¾¡å®ˆÎ¾) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½] sinastar.c ä½¿ç”¨è€…é¸å–®ç›´æ¥æŸ¥è©¢<ä»Šæ—¥é‹å‹¢>(1)
+ç™¼ä¿¡ç«™: ä¸­èˆˆè³‡ç§‘ (Wed, 23 Jul 2003 18:25:11 +0800 (CST))  Updated: 2003/07/23
 
-    °½¾Ç¢Ù¢Ù¢ë¢ñ¢ü£Bªº....¨ş¨ş¡ã
+    å·å­¸ï¼«ï¼«ï½ƒï½‰ï½”ï½™çš„....å‘µå‘µï½
 
-    ¥u¯à¬d¸ß¤µ¤é¹B¶Õ­ò¡A¦pªG­n¬d¸ß¨ä¥Lªº....¦Û¦æ­×§ï¡I
+    åªèƒ½æŸ¥è©¢ä»Šæ—¥é‹å‹¢å”·ï¼Œå¦‚æœè¦æŸ¥è©¢å…¶ä»–çš„....è‡ªè¡Œä¿®æ”¹ï¼
 
 ------------------------------------------------------------------------------
 
-    ­º¥ı¡A­n¦b¯¸¤W¥[¤J [¥\¯à] ·s®ö¬P®y¹B¶Õ¬d¸ß
+    é¦–å…ˆï¼Œè¦åœ¨ç«™ä¸ŠåŠ å…¥ [åŠŸèƒ½] æ–°æµªæ˜Ÿåº§é‹å‹¢æŸ¥è©¢
 
 
 : src/so/sinastar.c:main_sinastar()
@@ -25,13 +25,13 @@ main_sinastar()
 -   "cancer",    "leo",      "virgo",
 -   "libra",     "scorpio",  "sagittarius",
 -   "capricorn", "aquarius", "pisces"
-- };                                    //²¾¥X¥h·í¥ş°ìÅÜ¼Æ
+- };                                    //ç§»å‡ºå»ç•¶å…¨åŸŸè®Šæ•¸
   ....
   ....
 }
 
 
-: sinastar.c    ¥[¤J¤U­±ªº¥ş°ìÅÜ¼Æ¦b http_conn() ¤W­±
+: sinastar.c    åŠ å…¥ä¸‹é¢çš„å…¨åŸŸè®Šæ•¸åœ¨ http_conn() ä¸Šé¢
 
   char *star[12] =
   {
@@ -44,11 +44,11 @@ main_sinastar()
 
 
 
-: sinastar.c:count_star()    ·s¼W¦b http_conn() ¤U­±
+: sinastar.c:count_star()    æ–°å¢åœ¨ http_conn() ä¸‹é¢
 
 
-int                     /* qazq.030723: ºâ¥X³Q¬d¸ß¤Hªº¬P®y */
-count_star(month, day)  //°½§Û topusr ªº.... :p
+int                     /* qazq.030723: ç®—å‡ºè¢«æŸ¥è©¢äººçš„æ˜Ÿåº§ */
+count_star(month, day)  //å·æŠ„ topusr çš„.... :p
   int month;
   int day;
 {
@@ -133,7 +133,7 @@ count_star(month, day)  //°½§Û topusr ªº.... :p
 
 
 
-: sinastar.c:query_star()   ·s¼W¦b count_star() ¤U­±
+: sinastar.c:query_star()   æ–°å¢åœ¨ count_star() ä¸‹é¢
 
 
 int
@@ -147,7 +147,7 @@ query_star(acct)
 
   if (acct_star == 12)
   {
-    vmsg("¦¹¤H¬P®y¤£¥i¦Ò¡AµLªk¬d¸ß¡I");
+    vmsg("æ­¤äººæ˜Ÿåº§ä¸å¯è€ƒï¼Œç„¡æ³•æŸ¥è©¢ï¼");
     return 0;
   }
   sprintf(sendform, "GET /west/MC-12stars/%s1.html HTTP/1.0\n\n",
@@ -159,5 +159,5 @@ query_star(acct)
 }
 
 --
-[1;31m|[33m Origin [31m| [0;45m ¤¤¿³¸ê¬ì ¤¤¿³¸ê¬ì ¢í¸ê¿W¨q [35;47m bbs.cs.nchu.edu.tw [m
+[1;31m|[33m Origin [31m| [0;45m ä¸­èˆˆè³‡ç§‘ ä¸­èˆˆè³‡ç§‘ ï½…è³‡ç¨ç§€ [35;47m bbs.cs.nchu.edu.tw [m
 [1;31m|[35m Author [31m| [36m61-216-139-67.HINET-IP.hinet.net[m

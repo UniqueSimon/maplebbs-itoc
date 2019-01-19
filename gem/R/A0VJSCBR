@@ -1,10 +1,10 @@
-µo«H¤H: PaulLiu.bbs@processor.tfcis.org (GrandPaul) ¬İªO: plan
-¼Ğ  ÃD: Re: [°İÃD] Ãö©ó RFC 2045 / RFC 2047
-µo«H¯¸: XEON (Tue, 01 Apr 2003 19:22:16 +0800 (CST))      Updated: 2003/08/16
+ç™¼ä¿¡äºº: PaulLiu.bbs@processor.tfcis.org (GrandPaul) çœ‹æ¿: plan
+æ¨™  é¡Œ: Re: [å•é¡Œ] é—œæ–¼ RFC 2045 / RFC 2047
+ç™¼ä¿¡ç«™: XEON (Tue, 01 Apr 2003 19:22:16 +0800 (CST))      Updated: 2003/08/16
 
-¡° -------------- mail ªº³¡¤À -------------- ¡°
+â€» -------------- mail çš„éƒ¨åˆ† -------------- â€»
 
-: bmtad/Makefile ­Y¬O FreeBSD ­n§ï³o­Ó
+: bmtad/Makefile è‹¥æ˜¯ FreeBSD è¦æ”¹é€™å€‹
 
 freebsd:
 !       .... -L../lib -ldao -lcrypt [1;33m-L/usr/local/lib -liconv[m -export ....
@@ -45,7 +45,7 @@ freebsd:
        .... -L../lib -ldao -lcrypt  [1;33m-L/usr/local/lib -liconv[m
 
 : util/bbsmail.c
-: util/brdmail.c  ¤G­Óµ{¦¡§ïªk¤@¼Ë
+: util/brdmail.c  äºŒå€‹ç¨‹å¼æ”¹æ³•ä¸€æ¨£
 
 - #define ANTI_NOTMYCHARSETMAIL
 + #undef  ANTI_NOTMYCHARSETMAIL
@@ -83,5 +83,5 @@ freebsd:
     fputs(buf, fp);
   }
 --
-    [1;32m¢~¢w Origin ¢wùß [;36;40m°[1mÊ[;36;40m¤[1mO[;36;40m®[1mÖ[;36;40m¤[1mß [31m processor.tfcis.org [32m ¡ã £e£f£g ¢w¢t[m
-    [1;32m¢u   Author   ùë [33;44mcnal.csie.nctu.edu.tw                    [m
+    [1;32mâ•­â”€ Origin â”€â•— [;36;40m?[1m?[;36;40m?[1mO[;36;40m?[1m?[;36;40m?[1m?[31m processor.tfcis.org [32m ï½ ÎºÎ»Î¼ â”€â”¤[m
+    [1;32mâ”œ   Author   â•¡ [33;44mcnal.csie.nctu.edu.tw                    [m

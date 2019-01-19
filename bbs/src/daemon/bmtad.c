@@ -15,14 +15,14 @@
 #undef	SMTP_CONN_CHECK
 #define	HELO_CHECK
 
-#define ANTI_HTMLMAIL		/* itoc.021014: ¾× html_mail */
-#define	ANTI_NOTMYCHARSETMAIL	/* itoc.030513: ¾× not-mycharset mail */
+#define ANTI_HTMLMAIL		/* itoc.021014: æ“‹ html_mail */
+#define	ANTI_NOTMYCHARSETMAIL	/* itoc.030513: æ“‹ not-mycharset mail */
 
 
 #include "bbs.h"
 
 
-/* Thor.990221: ¾¨¶q fflush ¥X log */
+/* Thor.990221: å„˜é‡ fflush å‡º log */
 #undef DEBUG
 
 #define ADM_ALIASES     {"root", "mailer-daemon", NULL}
@@ -38,13 +38,13 @@
 
 
 #define BMTA_PIDFILE    "run/bmta.pid"
-/* #define BMTA_LOGFILE    "run/bmta.log" */	/* ·h¥h global.h */
+/* #define BMTA_LOGFILE    "run/bmta.log" */	/* æ¬å» global.h */
 #define BMTA_DEBUGFILE	"run/bmta.debug"
 
 
-#define BMTA_PERIOD	(60 * 15)	/* ¨C 15 ¤ÀÄÁ check ¤@¦¸ */
-#define BMTA_TIMEOUT	(60 * 30)	/* ¶W¹L 30 ¤ÀÄÁªº³s½u´Nµø¬°¿ù»~ */
-#define BMTA_FRESH	86400		/* ¨C 1 ¤Ñ¾ã²z¤@¦¸ */
+#define BMTA_PERIOD	(60 * 15)	/* æ¯ 15 åˆ†é˜ check ä¸€æ¬¡ */
+#define BMTA_TIMEOUT	(60 * 30)	/* è¶…é 30 åˆ†é˜çš„é€£ç·šå°±è¦–ç‚ºéŒ¯èª¤ */
+#define BMTA_FRESH	86400		/* æ¯ 1 å¤©æ•´ç†ä¸€æ¬¡ */
 #define BMTA_FAULT	100
 
 
@@ -55,20 +55,20 @@
 
 
 #define MIN_DATA_SIZE	8000
-#define MAX_DATA_SIZE	262143		/* ¨C¤@«Ê«Hªº¤j¤p­­¨î(byte) */
+#define MAX_DATA_SIZE	262143		/* æ¯ä¸€å°ä¿¡çš„å¤§å°é™åˆ¶(byte) */
 #define MAX_CMD_LEN	1024
-#define MAX_RCPT	7		/* ¦P¤@«H¦³¶W¹L 7 ­Ó¦¬«HªÌ´N¾×±¼ */
+#define MAX_RCPT	7		/* åŒä¸€ä¿¡æœ‰è¶…é 7 å€‹æ”¶ä¿¡è€…å°±æ“‹æ‰ */
 #define MAX_HOST_CONN	2
 
 
-#define SPAM_MHOST_LIMIT	1000	/* ¦P¤@­Ó @host ±H¶i¨Ó¶W¹L 1000 «Ê«H¡A´N±N¦¹ @host µø¬°¼s§i°Ó */
-#define SPAM_MFROM_LIMIT	128	/* ¦P¤@­Ó from ±H¶i¨Ó¶W¹L 128 «Ê«H¡A´N±N¦¹ from µø¬°¼s§i°Ó */
+#define SPAM_MHOST_LIMIT	1000	/* åŒä¸€å€‹ @host å¯„é€²ä¾†è¶…é 1000 å°ä¿¡ï¼Œå°±å°‡æ­¤ @host è¦–ç‚ºå»£å‘Šå•† */
+#define SPAM_MFROM_LIMIT	128	/* åŒä¸€å€‹ from å¯„é€²ä¾†è¶…é 128 å°ä¿¡ï¼Œå°±å°‡æ­¤ from è¦–ç‚ºå»£å‘Šå•† */
 
-#define SPAM_TITLE_LIMIT	50	/* ¦P¤@­Ó¼ĞÃD±H¶i¨Ó¶W¹L 50 ¦¸´N¯S§O°O¿ı */
-#define SPAM_FORGE_LIMIT	10	/* ¦P¤@­Ó @domain ¿ù 10 ¦¸¥H¤W¡A´N»{©w¤£¬Oµ§»~¡A¦Ó¬O¬G·Nªº */
+#define SPAM_TITLE_LIMIT	50	/* åŒä¸€å€‹æ¨™é¡Œå¯„é€²ä¾†è¶…é 50 æ¬¡å°±ç‰¹åˆ¥è¨˜éŒ„ */
+#define SPAM_FORGE_LIMIT	10	/* åŒä¸€å€‹ @domain éŒ¯ 10 æ¬¡ä»¥ä¸Šï¼Œå°±èªå®šä¸æ˜¯ç­†èª¤ï¼Œè€Œæ˜¯æ•…æ„çš„ */
 
 
-/* Thor.000425: POSIX ¥Î O_NONBLOCK */
+/* Thor.000425: POSIX ç”¨ O_NONBLOCK */
 
 #ifndef O_NONBLOCK
 #define M_NONBLOCK  FNDELAY
@@ -108,7 +108,7 @@ typedef struct Agent
   int sno;
   int state;
   int mode;
-  int letter;			/* 1:±Hµ¹ *.bbs@  0:±Hµ¹ *.brd@ */
+  int letter;			/* 1:å¯„çµ¦ *.bbs@  0:å¯„çµ¦ *.brd@ */
   u_long ip_addr;
 
   time_t uptime;
@@ -128,7 +128,7 @@ typedef struct Agent
   char title[80];
 
   char addr[80];
-  char nick[256];		/* Thor.000131: ¦³ªº¤HµoºÆµ¹¤Óªø */
+  char nick[256];		/* Thor.000131: æœ‰çš„äººç™¼ç˜‹çµ¦å¤ªé•· */
 
   int nrcpt;			/* number of rcpt */
   RCPT *rcpt;
@@ -159,8 +159,8 @@ static int servo_sno;
 /* ----------------------------------------------------- */
 
 
-#define AM_VALID    0x001	/* ¦¬¥ó¤H¬O bbsreg@MYHOSTNAME */
-#define AM_BBSADM   0x002	/* ¦¬¥ó¤H¬O ADM_ALIASES@MYHOSTNAME */
+#define AM_VALID    0x001	/* æ”¶ä»¶äººæ˜¯ bbsreg@MYHOSTNAME */
+#define AM_BBSADM   0x002	/* æ”¶ä»¶äººæ˜¯ ADM_ALIASES@MYHOSTNAME */
 
 #define AM_DROP     0x010	/* swallow command */
 #define AM_SWALLOW  0x020	/* swallow data */
@@ -350,7 +350,7 @@ acct_fetch(userid, acct)
 
 
 /* ----------------------------------------------------- */
-/* board¡Gshm ³¡¥÷¶·»P cache.c ¬Û®e			 */
+/* boardï¼šshm éƒ¨ä»½é ˆèˆ‡ cache.c ç›¸å®¹			 */
 /* ----------------------------------------------------- */
 
 
@@ -360,12 +360,12 @@ static BCACHE *bshm;
 static void
 init_bshm()
 {
-  /* itoc.030727: ¦b¶}±Ò bbsd ¤§«e¡AÀ³¸Ó´N­n°õ¦æ¹L account¡A
-     ©Ò¥H bshm À³¸Ó¤w³]©w¦n */
+  /* itoc.030727: åœ¨é–‹å•Ÿ bbsd ä¹‹å‰ï¼Œæ‡‰è©²å°±è¦åŸ·è¡Œé accountï¼Œ
+     æ‰€ä»¥ bshm æ‡‰è©²å·²è¨­å®šå¥½ */
 
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-  if (bshm->uptime <= 0)	/* bshm ¥¼³]©w§¹¦¨ */
+  if (bshm->uptime <= 0)	/* bshm æœªè¨­å®šå®Œæˆ */
     exit(0);
 }
 
@@ -387,7 +387,7 @@ brd_get(bname)
 }
 
 
-static int			/* 1: §ä¨ì¤F³o­ÓªO¡A¥BªO¦W¦b brdname */
+static int			/* 1: æ‰¾åˆ°äº†é€™å€‹æ¿ï¼Œä¸”æ¿ååœ¨ brdname */
 getbrdname(brdname)
   char *brdname;
 {
@@ -395,7 +395,7 @@ getbrdname(brdname)
 
   if (brd = brd_get(brdname))
   {
-    strcpy(brdname, brd->brdname);	/* ´«¦¨¥¿½Tªº¤j¤p¼g */
+    strcpy(brdname, brd->brdname);	/* æ›æˆæ­£ç¢ºçš„å¤§å°å¯« */
     return 1;
   }
   return 0;
@@ -414,7 +414,7 @@ update_btime(brdname)
 
 
 /* ----------------------------------------------------- */
-/* user¡Gshm ³¡¥÷¶·»P cache.c ¬Û®e			 */
+/* userï¼šshm éƒ¨ä»½é ˆèˆ‡ cache.c ç›¸å®¹			 */
 /* ----------------------------------------------------- */
 
 
@@ -436,7 +436,7 @@ bbs_biff(userno)
   usint offset;
 
   offset = ushm->offset;
-  if (offset > (MAXACTIVE - 1) * sizeof(UTMP))	/* Thor.980805: ¤£µMcall¤£¨ì */
+  if (offset > (MAXACTIVE - 1) * sizeof(UTMP))	/* Thor.980805: ä¸ç„¶callä¸åˆ° */
     offset = (MAXACTIVE - 1) * sizeof(UTMP);
 
   utmp = ushm->uslot;
@@ -466,8 +466,8 @@ typedef struct HashEntry
   time_t uptime;
   int visit;			/* reference counts */
   int score;
-  int fsize;			/* file size (¥u¦³¦b title_ht ¤~¦³¥Î) */
-  struct HashEntry *ttl;	/* title (¥u¦³¦b mfrom_ht ¤~¦³¥Î) */
+  int fsize;			/* file size (åªæœ‰åœ¨ title_ht æ‰æœ‰ç”¨) */
+  struct HashEntry *ttl;	/* title (åªæœ‰åœ¨ mfrom_ht æ‰æœ‰ç”¨) */
   char key[0];
 }         HashEntry;
 
@@ -851,7 +851,7 @@ static HashTable *title_ht;
 #ifdef FORGE_CHECK
 static HashTable *forge_ht;
 
-static int		/* 1: host/domain ¬O°²³yªº */
+static int		/* 1: host/domain æ˜¯å‡é€ çš„ */
 is_forge(host)
   char *host;
 {
@@ -869,14 +869,14 @@ is_forge(host)
     /* if (dns_aton(domain) != INADDR_NONE) return; */
     dns_mx(host, mxlist);
     if (!*mxlist && dns_a(host) == INADDR_NONE)
-      he->uptime = addr = INADDR_NONE;	/* Thor.990811: ¬O­tªº, ·|³Q expire */
+      he->uptime = addr = INADDR_NONE;	/* Thor.990811: æ˜¯è² çš„, æœƒè¢« expire */
     else
-      he->uptime = addr = time(0);	/* Thor.990811: ¤Ï¥¿¥u­n¤£¬OINADDR_NONE´N¥i¥H¤F */
+      he->uptime = addr = time(0);	/* Thor.990811: åæ­£åªè¦ä¸æ˜¯INADDR_NONEå°±å¯ä»¥äº† */
   }
   else
     addr = he->uptime;
 
-  /* if (addr != INADDR_NONE) */	/* Thor.990811: ¦s¦bªºhost¤~¥[¤À¡A¯dµÛ */
+  /* if (addr != INADDR_NONE) */	/* Thor.990811: å­˜åœ¨çš„hostæ‰åŠ åˆ†ï¼Œç•™è‘— */
   he->score = ++score;
 
   if (score == SPAM_FORGE_LIMIT)
@@ -890,7 +890,7 @@ is_forge(host)
 
 #else
 
-static int		/* 1: host/domain ¬O°²³yªº */
+static int		/* 1: host/domain æ˜¯å‡é€ çš„ */
 is_forge(host)
   char *host;
 {
@@ -1060,12 +1060,12 @@ visit_fresh()
   vx_log(fp, "Host", mhost_ht);
   vx_log(fp, "From", mfrom_ht);
   vx_log(fp, "Rcpt", mrcpt_ht);
-  vx_log(fp, "¼ĞÃD", title_ht);
+  vx_log(fp, "æ¨™é¡Œ", title_ht);
   fclose(fp);
 
   hdr.xmode = POST_MARKED;
   strcpy(hdr.owner, "<BMTA>");
-  strcpy(hdr.title, "²Î­p¸ê®Æ");
+  strcpy(hdr.title, "çµ±è¨ˆè³‡æ–™");
   rec_bot(folder, &hdr, sizeof(HDR));
 
   update_btime(BN_JUNK);
@@ -1083,7 +1083,7 @@ mta_memo(ap, mark)
   int mark;
 {
   /* char folder[64], fpath[64], nick[80], *memo; */
-  char folder[64], fpath[64], nick[256], *memo;	/* Thor.000131: ¥H¨¾¸U¤@ */
+  char folder[64], fpath[64], nick[256], *memo;	/* Thor.000131: ä»¥é˜²è¬ä¸€ */
   FILE *fp;
   HDR hdr;
 
@@ -1108,7 +1108,7 @@ mta_memo(ap, mark)
   if (!(fp = fdopen(hdr_stamp(folder, 'A', &hdr, fpath), "w")))
     return;
 
-  /* Thor.990915: Åã¥Ü mail from ¥H«K°lÂÜ */
+  /* Thor.990915: é¡¯ç¤º mail from ä»¥ä¾¿è¿½è¹¤ */
   fprintf(fp, "MAIL FROM: <%s>\nFrom: %s%s\nSubj: %s\nDate: %s\n"
     "Host: %s\nMemo: %s\nFile: %s\nSize: %d\n%s",
     ap->from, ap->addr, nick, ap->title, Btime(&hdr.chrono),
@@ -1178,9 +1178,9 @@ bbs_mail(ap, data, userid)
   if (!method)
   {
     if (!*title)
-      sprintf(title, "¨Ó¦Û %.64s", author);
+      sprintf(title, "ä¾†è‡ª %.64s", author);
 
-    sprintf(buf, "§@ªÌ: %.72s\n¼ĞÃD: %.72s\n®É¶¡: %s\n\n",
+    sprintf(buf, "ä½œè€…: %.72s\næ¨™é¡Œ: %.72s\næ™‚é–“: %s\n\n",
       from, title, Btime(&hdr.chrono));
 
     write(fd, buf, strlen(buf));
@@ -1198,7 +1198,7 @@ bbs_mail(ap, data, userid)
   ap->xdata += ap->used;
 
   /* --------------------------------------------------- */
-  /* ³qª¾ user ¦³·s«H¥ó					 */
+  /* é€šçŸ¥ user æœ‰æ–°ä¿¡ä»¶					 */
   /* --------------------------------------------------- */
 
   sprintf(folder, "usr/%c/%s/.ACCT", *userid, userid);
@@ -1216,7 +1216,7 @@ bbs_mail(ap, data, userid)
 
 
 static int
-bbs_brd(ap, data, brdname)	/* itoc.030323: ±H«Hµ¹¬İªO */
+bbs_brd(ap, data, brdname)	/* itoc.030323: å¯„ä¿¡çµ¦çœ‹æ¿ */
   Agent *ap;
   char *data;
   char *brdname;
@@ -1254,9 +1254,9 @@ bbs_brd(ap, data, brdname)	/* itoc.030323: ±H«Hµ¹¬İªO */
   if (method == 'A')
   {
     if (!*title)
-      sprintf(title, "¨Ó¦Û %.64s", author);
+      sprintf(title, "ä¾†è‡ª %.64s", author);
 
-    sprintf(buf, "µo«H¤H: %.50s ¬İªO: %s\n¼Ğ  ÃD: %.72s\nµo«H¯¸: %s\n\n",
+    sprintf(buf, "ç™¼ä¿¡äºº: %.50s çœ‹æ¿: %s\næ¨™  é¡Œ: %.72s\nç™¼ä¿¡ç«™: %s\n\n",
       from, brdname, title, Btime(&hdr.chrono));
 
     write(fd, buf, strlen(buf));
@@ -1295,7 +1295,7 @@ bbs_valid(ap)
   sno = ap->sno;
   ptr = ap->title;
 
-  /* itoc.µù¸Ñ: mail.c: TAG_VALID " userid(regkey) [VALID]" */
+  /* itoc.è¨»è§£: mail.c: TAG_VALID " userid(regkey) [VALID]" */
   if (!(str = strstr(ptr, TAG_VALID)))
   {
     sprintf(ap->memo, "REG : %.64s", ptr);
@@ -1334,7 +1334,7 @@ bbs_valid(ap)
     return -1;
   }
 
-  /* ´£¤ÉÅv­­ */
+  /* æå‡æ¬Šé™ */
   acct.userlevel |= PERM_VALID;
   time(&acct.tvalid);
   lseek(fd, 0, SEEK_SET);
@@ -1363,7 +1363,7 @@ bbs_valid(ap)
     fclose(fp);
   }
 
-  /* ¦b usr ¥Ø¿ı¯d¤U§¹¾ã¦^«H°O¿ı */
+  /* åœ¨ usr ç›®éŒ„ç•™ä¸‹å®Œæ•´å›ä¿¡è¨˜éŒ„ */
   usr_fpath(folder, userid, FN_EMAIL);
   if (fp = fopen(folder, "w"))
   {
@@ -1372,7 +1372,7 @@ bbs_valid(ap)
     fclose(fp);
   }
 
-  /* Thor.990414: ¥[¦L Timestamp, ¤è«K°l¬d */
+  /* Thor.990414: åŠ å° Timestamp, æ–¹ä¾¿è¿½æŸ¥ */
   fprintf(fp, "REG\t[%d] <%s> %s %s\n", sno, acct.userid, justify, str + 1);
   sprintf(ap->memo, "REG + %s", userid);
   ap->xrcpt++;
@@ -1419,7 +1419,7 @@ str_cpy(dst, src, n)
     if (cc >= 'A' && cc <= 'Z')
       cc |= 0x20;
     *dst = cc;
-    if ((len > n) || (!cc))	/* lkchu.990511: Á×§K overflow */
+    if ((len > n) || (!cc))	/* lkchu.990511: é¿å… overflow */
       break;
     src++;
     dst++;
@@ -1486,7 +1486,7 @@ acl_load(fpath, root)
   char buf[256];
   ACL_t *ax, *nacl;
 
-  /* ¥ı²MªÅ */
+  /* å…ˆæ¸…ç©º */
   if (ax = root)
   {
     do
@@ -1531,8 +1531,8 @@ acl_match(root, ruser, rhost)
   if (!(ax = root))
     return 0;
 
-  /* lkchu.990511: rhost ©M ruser ³£¨S¦³¥ıÀË¬dªø«×´N copy, 
-                   «Ü¥i¯àµo¥Í segmentation fault */
+  /* lkchu.990511: rhost å’Œ ruser éƒ½æ²’æœ‰å…ˆæª¢æŸ¥é•·åº¦å°± copy, 
+                   å¾ˆå¯èƒ½ç™¼ç”Ÿ segmentation fault */
   luser = str_cpy(xuser, ruser, sizeof(xuser));
   lhost = str_cpy(xhost, rhost, sizeof(xhost));
   ruser = xuser;
@@ -1580,7 +1580,7 @@ acl_match(root, ruser, rhost)
     }
 #endif
 
-    /* subnet ¬Û¦P¤]ºâ match */
+    /* subnet ç›¸åŒä¹Ÿç®— match */
     if (locus <= lhost)
     {
       if (!strcmp(rhost + lhost - locus, filter))
@@ -1592,8 +1592,8 @@ acl_match(root, ruser, rhost)
 }
 
 
-static ACL_t *mail_root = NULL;		/* MAIL_ACLFILE ªº acl_root */
-static ACL_t *unmail_root = NULL;	/* UNMAIL_ACLFILE ªº acl_root */
+static ACL_t *mail_root = NULL;		/* MAIL_ACLFILE çš„ acl_root */
+static ACL_t *unmail_root = NULL;	/* UNMAIL_ACLFILE çš„ acl_root */
 
 
 static int		/* 1: spam */
@@ -1601,7 +1601,7 @@ acl_spam(ruser, rhost)
   unsigned char *ruser;
   unsigned char *rhost;
 {
-  /* ¤£¦b¥Õ¦W³æ¤W©Î¦b¶Â¦W³æ¤W */
+  /* ä¸åœ¨ç™½åå–®ä¸Šæˆ–åœ¨é»‘åå–®ä¸Š */
   return (!acl_match(mail_root, ruser, rhost) || acl_match(unmail_root, ruser, rhost));
 }
 
@@ -1621,7 +1621,7 @@ acl_spam(ruser, rhost)
 static char *
 mta_from(ap, str)
   Agent *ap;
-  unsigned char *str;		/* Thor.990629: ¤¤¤å? */
+  unsigned char *str;		/* Thor.990629: ä¸­æ–‡? */
 {
   int cc;
   char pool[512], *head, *tail;
@@ -1670,20 +1670,20 @@ mta_from(ap, str)
 
   str_from(pool, head = ap->addr, ap->nick);
 
-  /* Thor.000909: ¨S¦³head (from)ªº´N¦Û¤v¸É¤W¤F */
+  /* Thor.000909: æ²’æœ‰head (from)çš„å°±è‡ªå·±è£œä¸Šäº† */
   if (!*head)
     strcpy(head, ap->from);
 
   if (str_cmp(head, ap->from))
-  {	/* Thor.000911.µù¸Ñ: ¦pªG¤£¤@¼Ëªº¸Ü, ­ncheck; ¤@¼Ëªº¤§«echeck¹L¤F */
-    if (tail = strchr(head, '@'))	/* Thor.000911.µù¸Ñ: ¥¿±`ªºaddrªº¸Ü */
+  {	/* Thor.000911.è¨»è§£: å¦‚æœä¸ä¸€æ¨£çš„è©±, è¦check; ä¸€æ¨£çš„ä¹‹å‰checkéäº† */
+    if (tail = strchr(head, '@'))	/* Thor.000911.è¨»è§£: æ­£å¸¸çš„addrçš„è©± */
     {
       *tail++ = '\0';
       
-      if (is_forge(tail))	/* Thor.990811: °²³yªº, ·Q³£§O·Q */
+      if (is_forge(tail))	/* Thor.990811: å‡é€ çš„, æƒ³éƒ½åˆ¥æƒ³ */
 	return NULL;
 
-      /* ÀË¬d From: ¬O§_¦b¶Â¥Õ¦W³æ¤W */
+      /* æª¢æŸ¥ From: æ˜¯å¦åœ¨é»‘ç™½åå–®ä¸Š */
       if (!(ap->mode & (AM_VALID | AM_BBSADM)) && acl_spam(head, tail))
       {
 	tail[-1] = '@';
@@ -1693,7 +1693,7 @@ mta_from(ap, str)
 
       tail[-1] = '@';
     }
-    else	/* Thor.000911: ¤£¦¬¤£¥¿±`ªº addr */
+    else	/* Thor.000911: ä¸æ”¶ä¸æ­£å¸¸çš„ addr */
     {
       return NULL;
     }
@@ -1731,7 +1731,7 @@ mta_subject(ap, str)
     if (cc == '\0')
     {
       sprintf(head, "%s %s", ap->from, ap->addr);
-      agent_log(ap, "Subj:", pool /* head */ );	/* Thor.980904:·Q¬İsubj¥ş»ª */
+      agent_log(ap, "Subj:", pool /* head */ );	/* Thor.980904:æƒ³çœ‹subjå…¨è²Œ */
       return str;
     }
 
@@ -1821,14 +1821,14 @@ mta_boundary(ap, str, boundary)
 
     if (tmp = str_str(str, "boundary="))
     {
-      /* Thor.990221: ©~µM¦³ªº¤H¤£¥Î " */
+      /* Thor.990221: å±…ç„¶æœ‰çš„äººä¸ç”¨ " */
       tmp += 9;
       if (*tmp == '"')
 	tmp++;
 
       while (*tmp && *tmp != '"' && *tmp != '\n')
 	*boundary++ = *tmp++;
-      /* *boundary++ = '\n'; */	/* Thor.980907: ¤§«á·|³QµL·N¶¡¸õ¹L */
+      /* *boundary++ = '\n'; */	/* Thor.980907: ä¹‹å¾Œæœƒè¢«ç„¡æ„é–“è·³é */
       *boundary = 0;
     }
     logit("MULTI", base);
@@ -1916,7 +1916,7 @@ multipart(src, dst, boundary)
     for (;;)			/* Thor: processing sub-header */
     {
       if (!str_ncmp(src, "Content-Transfer-Encoding:", 26))
-      {				/* Thor.980901: ¸Ñ rfc1522 body code */
+      {				/* Thor.980901: è§£ rfc1522 body code */
 	src = mta_decode(NULL, src + 26, &decode);
       }
       else if (!str_ncmp(src, "Content-Type:", 13))
@@ -1926,7 +1926,7 @@ multipart(src, dst, boundary)
       else
       {
 	while (cc = *src)
-	  /* Thor.980907: ­è¦n¸õ¤Fboundary«áªº \n,¤£¬O¬G·Nªº :p */
+	  /* Thor.980907: å‰›å¥½è·³äº†boundaryå¾Œçš„ \n,ä¸æ˜¯æ•…æ„çš„ :p */
 	{
 	  src++;
 	  if (cc == '\n')
@@ -1980,15 +1980,15 @@ mta_mailer(ap)
       data = mta_subject(ap, data + 8);
     }
     else if (!str_ncmp(data, "Content-Transfer-Encoding:", 26))
-    {				/* Thor.980901: ¸Ñ rfc1522 body code */
+    {				/* Thor.980901: è§£ rfc1522 body code */
       data = mta_decode(ap, data + 26, &decode);
     }
     else if (!str_ncmp(data, "Content-Type:", 13))
-    {				/* Thor.980907: ¸Ñ multi-part */
+    {				/* Thor.980907: è§£ multi-part */
 #ifdef ANTI_HTMLMAIL
-      /* ¤@¯ë BBS ¨Ï¥ÎªÌ³q±`¥u±H¤å¦r¶l¥ó©Î¬O±q¨ä¥L BBS ¯¸±H¤å³¹¨ì¦Û¤vªº«H½c
-         ¦Ó¼s§i«H¥ó³q±`¬O html ®æ¦¡©Î¬O¸Ì­±¦³§¨±a¨ä¥LÀÉ®×
-         §Q¥Î¶l¥óªºÀÉÀY¦³ Content-Type: ªºÄİ©Ê§â°£¤F text/plain (¤å¦r¶l¥ó) ªº«H¥ó³£¾×¤U¨Ó */
+      /* ä¸€èˆ¬ BBS ä½¿ç”¨è€…é€šå¸¸åªå¯„æ–‡å­—éƒµä»¶æˆ–æ˜¯å¾å…¶ä»– BBS ç«™å¯„æ–‡ç« åˆ°è‡ªå·±çš„ä¿¡ç®±
+         è€Œå»£å‘Šä¿¡ä»¶é€šå¸¸æ˜¯ html æ ¼å¼æˆ–æ˜¯è£¡é¢æœ‰å¤¾å¸¶å…¶ä»–æª”æ¡ˆ
+         åˆ©ç”¨éƒµä»¶çš„æª”é ­æœ‰ Content-Type: çš„å±¬æ€§æŠŠé™¤äº† text/plain (æ–‡å­—éƒµä»¶) çš„ä¿¡ä»¶éƒ½æ“‹ä¸‹ä¾† */
       char *content = data + 14;
       if (*content != '\0' && str_ncmp(content, "text/plain", 10))
       {
@@ -2061,7 +2061,7 @@ mta_mail_body:
 #ifdef EMAIL_JUSTIFY
   if (mode & AM_VALID)
   {
-    /* Thor.000328: µù¸Ñ: rcpt to bbsreg@MYHOSTNAME */
+    /* Thor.000328: è¨»è§£: rcpt to bbsreg@MYHOSTNAME */
     if (bbs_valid(ap) == -2)
       *data = '\n';
 
@@ -2083,7 +2083,7 @@ mta_mail_body:
     cc = *++data;
     if (cc == '\0')		/* null mail body */
     {
-      /* Thor.000327: °O¿ıªÅ«H */
+      /* Thor.000327: è¨˜éŒ„ç©ºä¿¡ */
       fprintf(flog, "NULL BODY\t[%d] from:%s nrcpt:%d\n", ap->sno, ap->from, ap->nrcpt);
       return 0;
     }
@@ -2102,22 +2102,22 @@ mta_mail_body:
     /* logit("MULTIDATA",data); */
     cc = multipart(data, data, boundary);
     if (cc > 0)
-      ap->used = (data - ap->data) + cc;	/* (data - ap->data) ¬O header ªø«×¡Acc ¬O«H¤º®eªºªø«× */
+      ap->used = (data - ap->data) + cc;	/* (data - ap->data) æ˜¯ header é•·åº¦ï¼Œcc æ˜¯ä¿¡å…§å®¹çš„é•·åº¦ */
   }
   /* Thor.980901: decode mail body */
   else if (decode)
   {
     /* data[mmdecode(data,decode,data)]=0; */
-    /* Thor.980901: ¦] decode¥²¬° b or q, ¬G mmdecode¤£¬°-1, *
-     * ¥²©w¦¨¥\, ¤S¦] mmdecode¤£¦Û°Ê¥[ 0, ¬G¤â°Ê¥[¤W         */
+    /* Thor.980901: å›  decodeå¿…ç‚º b or q, æ•… mmdecodeä¸ç‚º-1, *
+     * å¿…å®šæˆåŠŸ, åˆå›  mmdecodeä¸è‡ªå‹•åŠ  0, æ•…æ‰‹å‹•åŠ ä¸Š         */
 
-    /* Thor.980901: ¤£¥Î 0 §@µ²§ô, ¦Ó¥Îªø«×, ­pºâ¤è¦¡¦p¤U    *
+    /* Thor.980901: ä¸ç”¨ 0 ä½œçµæŸ, è€Œç”¨é•·åº¦, è¨ˆç®—æ–¹å¼å¦‚ä¸‹    *
      * write(fd, data, ap->data + ap->used - data);          *
-     * ¬G­×§ï ap->used, ¥HºI±¼¹Lªø data                      */
+     * æ•…ä¿®æ”¹ ap->used, ä»¥æˆªæ‰éé•· data                      */
 
     cc = mmdecode(data, decode, data);
     if (cc > 0)
-      ap->used = (data - ap->data) + cc;	/* (data - ap->data) ¬O header ªø«×¡Acc ¬O«H¤º®eªºªø«× */
+      ap->used = (data - ap->data) + cc;	/* (data - ap->data) æ˜¯ header é•·åº¦ï¼Œcc æ˜¯ä¿¡å…§å®¹çš„é•·åº¦ */
 
     /* logit("DECODEDATA", data); */
   }
@@ -2137,12 +2137,12 @@ mta_mail_body:
     nrcpt = ap->nrcpt;
 
     /* -------------------------------------------------- */
-    /* ÀË¬d³o­Ó @host ±H¶i¨Óªº«H¦³µL¶W¹L SPAM_MHOST_LIMIT */
+    /* æª¢æŸ¥é€™å€‹ @host å¯„é€²ä¾†çš„ä¿¡æœ‰ç„¡è¶…é SPAM_MHOST_LIMIT */
     /* -------------------------------------------------- */
 
     he = ht_add(mhost_ht, ++str);
     he->uptime = uptime;
-    he->score += (nrcpt > 0) ? nrcpt : 1;	/* ¤@­Ó¦¬¥ó¤H³£¨S¦³¤]ºâ¤@¦¸³X°İ */
+    he->score += (nrcpt > 0) ? nrcpt : 1;	/* ä¸€å€‹æ”¶ä»¶äººéƒ½æ²’æœ‰ä¹Ÿç®—ä¸€æ¬¡è¨ªå• */
 
     if (he->score >= SPAM_MHOST_LIMIT)
     {
@@ -2155,24 +2155,24 @@ mta_mail_body:
     }
 
     /* -------------------------------------------- */
-    /* ÀË¬d³o­Ó title ªº«H¦³µL¶W¹L SPAM_TITLE_LIMIT */
+    /* æª¢æŸ¥é€™å€‹ title çš„ä¿¡æœ‰ç„¡è¶…é SPAM_TITLE_LIMIT */
     /* -------------------------------------------- */
 
     if (nrcpt > 0)
     {
       hx = ht_add(title_ht, str_ttl(ap->title));
       hx->uptime = uptime;
-      hx->visit += nrcpt - 1;	/* title_ht ªº visit ¬O°O¿ı³o¼ĞÃDªº«H¦³´X¤H¦¬¹L */
+      hx->visit += nrcpt - 1;	/* title_ht çš„ visit æ˜¯è¨˜éŒ„é€™æ¨™é¡Œçš„ä¿¡æœ‰å¹¾äººæ”¶é */
       hx->score += nrcpt;
       if (hx->score >= SPAM_TITLE_LIMIT)
 	fprintf(flog, "TITLE\t[%d] %s\n", ap->sno, ap->title);
  
-      /* ¦pªG³o¦¸¨Ó«H©M¤W¦¸¦P¼ĞÃDªº¨Ó«HÀÉ®×®t¤£¦h¤j¡A¨º»ò³o¦¸¨Ó«H«Ü¥i¯à¬O¼s§i«H */
+      /* å¦‚æœé€™æ¬¡ä¾†ä¿¡å’Œä¸Šæ¬¡åŒæ¨™é¡Œçš„ä¾†ä¿¡æª”æ¡ˆå·®ä¸å¤šå¤§ï¼Œé‚£éº¼é€™æ¬¡ä¾†ä¿¡å¾ˆå¯èƒ½æ˜¯å»£å‘Šä¿¡ */
       score = nrcpt;
       delta = hx->fsize - ap->used;
       if (delta >= -16 && delta <= 16)
 	score +=  SPAM_MFROM_LIMIT >> 6;
-      hx->fsize = ap->used;		/* °O¿ı¥Î³o¼ĞÃDªº³Ì«á¤@«Ê«H¤§ÀÉ®×¤j¤p */
+      hx->fsize = ap->used;		/* è¨˜éŒ„ç”¨é€™æ¨™é¡Œçš„æœ€å¾Œä¸€å°ä¿¡ä¹‹æª”æ¡ˆå¤§å° */
     }
     else
     {
@@ -2180,22 +2180,22 @@ mta_mail_body:
     }
     
     /* ------------------------------------------------- */
-    /* ÀË¬d³o­Ó from ±H¶i¨Óªº«H¦³µL¶W¹L SPAM_MFROM_LIMIT */
+    /* æª¢æŸ¥é€™å€‹ from å¯„é€²ä¾†çš„ä¿¡æœ‰ç„¡è¶…é SPAM_MFROM_LIMIT */
     /* ------------------------------------------------- */
 
     he = ht_add(mfrom_ht, addr);
     he->uptime = uptime;
 
-    if (nrcpt > 0)	/* ¦³ title_ht ªº HashEntry hx-> */
+    if (nrcpt > 0)	/* æœ‰ title_ht çš„ HashEntry hx-> */
     {
-      /* itoc.060420.µù¸Ñ: ¦³¨Ç¨Ï¥ÎªÌ·|±q§Oªº BBS ¯¸¤@¦¸Âà±H¾ã­Ó°Q½×¦êªº¤å³¹(¦P¼ĞÃD)
-         ¨Ó¥»¯¸¡A´N·|¦]¬°¤U­±³o±ø rule ¦Ó³Qµø¬°¼s§i°Ó */
+      /* itoc.060420.è¨»è§£: æœ‰äº›ä½¿ç”¨è€…æœƒå¾åˆ¥çš„ BBS ç«™ä¸€æ¬¡è½‰å¯„æ•´å€‹è¨è«–ä¸²çš„æ–‡ç« (åŒæ¨™é¡Œ)
+         ä¾†æœ¬ç«™ï¼Œå°±æœƒå› ç‚ºä¸‹é¢é€™æ¢ rule è€Œè¢«è¦–ç‚ºå»£å‘Šå•† */
 
-      /* ¦pªG³o­Ó from ¦b³o¦¸¨Ó«H©M¥L¦Û¤v¤W¦¸¨Ó«Hªº¼ĞÃD¬Û¦P¡A¨º»ò³o­Ó from «Ü¥i¯à¬O¼s§i°Ó */
+      /* å¦‚æœé€™å€‹ from åœ¨é€™æ¬¡ä¾†ä¿¡å’Œä»–è‡ªå·±ä¸Šæ¬¡ä¾†ä¿¡çš„æ¨™é¡Œç›¸åŒï¼Œé‚£éº¼é€™å€‹ from å¾ˆå¯èƒ½æ˜¯å»£å‘Šå•† */
       if (he->ttl == hx)
 	score += SPAM_MFROM_LIMIT >> 5;
       else
-	he->ttl = hx;		/* °O¿ı³o­Ó from ¦b³o¦¸¨Ó«Hªº¼ĞÃD */
+	he->ttl = hx;		/* è¨˜éŒ„é€™å€‹ from åœ¨é€™æ¬¡ä¾†ä¿¡çš„æ¨™é¡Œ */
     }
 
     he->score += score;
@@ -2212,7 +2212,7 @@ mta_mail_body:
 
     /* ------------------------------------------------- */
 
-    if (*delimiter)	/* ­Y *delimiter == '\n'¡Aªí¥Ü¶W¹L SPAM_*_LIMIT */
+    if (*delimiter)	/* è‹¥ *delimiter == '\n'ï¼Œè¡¨ç¤ºè¶…é SPAM_*_LIMIT */
     {
       MYDOG;
       mta_memo(ap, 0);
@@ -2232,7 +2232,7 @@ mta_mail_body:
     addr = ap->addr;
     if (dot = strchr(addr, '.'))
     {
-      if (!str_cmp(dot, ".bbs@" MYHOSTNAME))	/* itoc.020125.µù¸Ñ: ­Y±H«HªÌ¬°¥»¯¸µo«H¡A¥u¯d ID */
+      if (!str_cmp(dot, ".bbs@" MYHOSTNAME))	/* itoc.020125.è¨»è§£: è‹¥å¯„ä¿¡è€…ç‚ºæœ¬ç«™ç™¼ä¿¡ï¼Œåªç•™ ID */
 	*dot = '\0';
       else
 	dot = NULL;
@@ -2510,7 +2510,7 @@ cmd_mail(ap)
     return;
   }
 
-  /* Thor.990811: §ì°²³yªºdomain */
+  /* Thor.990811: æŠ“å‡é€ çš„domain */
   MYDOG;
   if (is_forge(domain))
   {
@@ -2521,14 +2521,14 @@ cmd_mail(ap)
     return;
   }
 
-  /* Thor.990817: ¦pªGhost°²³y¡A³s¥[³£¤£·Q¥[¤Jmfrom_ht */
+  /* Thor.990817: å¦‚æœhostå‡é€ ï¼Œé€£åŠ éƒ½ä¸æƒ³åŠ å…¥mfrom_ht */
   MYDOG;
   ptr = data + MAX_CMD_LEN;
   sprintf(ptr, "%s@%s", user, domain);
   ht_add(mfrom_ht, ptr);
 
   MYDOG;
-  /* ÀË¬d MAIL FROM: ¬O§_¦b¶Â¥Õ¦W³æ¤W */
+  /* æª¢æŸ¥ MAIL FROM: æ˜¯å¦åœ¨é»‘ç™½åå–®ä¸Š */
   if (acl_spam(user, domain))
   {
     ap->xspam++;
@@ -2546,10 +2546,10 @@ cmd_mail(ap)
 }
 
 
-static int		/* AM_VALID:»{ÃÒ«H  AM_BBSADM:bbsadm  0:¤@¯ë«H  -1:©Ú¦¬ */
+static int		/* AM_VALID:èªè­‰ä¿¡  AM_BBSADM:bbsadm  0:ä¸€èˆ¬ä¿¡  -1:æ‹’æ”¶ */
 is_rcpt(rcpt, letter)
   char *rcpt;
-  int *letter;		/* ¦^¶Ç 1:±Hµ¹ *.bbs@  0:±Hµ¹ *.brd@ */
+  int *letter;		/* å›å‚³ 1:å¯„çµ¦ *.bbs@  0:å¯„çµ¦ *.brd@ */
 {
   int len;
   char *str, fpath[64];
@@ -2571,7 +2571,7 @@ is_rcpt(rcpt, letter)
   /* check the users */
 
   len = strlen(rcpt);
-  if (len > 4)		/* ".bbs" ©Î ".brd" => 4 */
+  if (len > 4)		/* ".bbs" æˆ– ".brd" => 4 */
   {
     str = rcpt + len - 4;
 
@@ -2626,9 +2626,9 @@ cmd_rcpt(ap)
   {
     /* maybe spammer */
 
-    /* Thor.000131: ³o¼Ë´N¤£¥Î¤@ª½¥h§Runmail.acl­«ÂĞªºentry :) */
+    /* Thor.000131: é€™æ¨£å°±ä¸ç”¨ä¸€ç›´å»åˆªunmail.aclé‡è¦†çš„entry :) */
     if (!(ap->mode & AM_SPAM))
-      agent_spam(ap);		/* ¦P¤@«H±Hµ¹¤Ó¦h¦¬«HªÌª½±µ¾×±¼ */
+      agent_spam(ap);		/* åŒä¸€ä¿¡å¯„çµ¦å¤ªå¤šæ”¶ä¿¡è€…ç›´æ¥æ“‹æ‰ */
 
     ap->mode |= AM_SPAM;
     ap->xspam += ap->nrcpt;
@@ -2656,7 +2656,7 @@ cmd_rcpt(ap)
   }
 
   /* if (str_cmp(domain, MYHOSTNAME)) */
-  if (!is_host_alias(domain))	/* HOST_ALIAS ¸Ìªº³£¥i¥H */
+  if (!is_host_alias(domain))	/* HOST_ALIAS è£¡çš„éƒ½å¯ä»¥ */
   {
     ap->xerro++;
     agent_reply(ap, "550 we dont relay mail");
@@ -2667,20 +2667,20 @@ cmd_rcpt(ap)
 
   cc = is_rcpt(user, &letter);
 
-  if (cc < 0)		/* µL¦¹¨Ï¥ÎªÌ©Î¬İªO */
+  if (cc < 0)		/* ç„¡æ­¤ä½¿ç”¨è€…æˆ–çœ‹æ¿ */
   {
     ap->xerro++;
     agent_reply(ap, "550 no such user or board");
     return;
   }
 
-  if (cc)		/* AM_VALID¡BAM_BBSADM */
+  if (cc)		/* AM_VALIDã€AM_BBSADM */
   {
     ap->mode |= cc;
   }
-  else			/* Thor.991130.µù¸Ñ: ¤@¯ë *.bbs@ ©Î *.brd@ ±¡ªp */
+  else			/* Thor.991130.è¨»è§£: ä¸€èˆ¬ *.bbs@ æˆ– *.brd@ æƒ…æ³ */
   {
-#if 1	/* Thor.981227: ½T©w¤£¬O bbsreg ¤~¾×¡Adelay ¾×³s½u */
+#if 1	/* Thor.981227: ç¢ºå®šä¸æ˜¯ bbsreg æ‰æ“‹ï¼Œdelay æ“‹é€£ç·š */
     /* format: sprintf(servo_ident, "[%d] %s ip:%08x", ++servo_sno, rhost, csin.sin_addr.s_addr); */
     char rhost[256], *s;
 
@@ -2691,7 +2691,7 @@ cmd_rcpt(ap)
       {
 	*s = '\0';
 
-	/* ÀË¬d µo«Hªº¾÷¾¹ ¬O§_¦b¶Â¥Õ¦W³æ¤W */
+	/* æª¢æŸ¥ ç™¼ä¿¡çš„æ©Ÿå™¨ æ˜¯å¦åœ¨é»‘ç™½åå–®ä¸Š */
 	if (acl_spam("*", rhost))
 	{
 	  ap->mode |= AM_SPAM;
@@ -2703,7 +2703,7 @@ cmd_rcpt(ap)
     }
 #endif
 
-#if 1	/* Thor.981223: ½T©w¤£¬O bbsreg ´N¾× */
+#if 1	/* Thor.981223: ç¢ºå®šä¸æ˜¯ bbsreg å°±æ“‹ */
     if (ap->mode & AM_SPAM)
     {
       agent_reply(ap, "550 spam mail");
@@ -2717,7 +2717,7 @@ cmd_rcpt(ap)
     MYDOG;
     rcpt = (RCPT *) malloc(sizeof(RCPT) + cc);
     MYDOG;
-    if (!rcpt)			/* Thor.990205: °O¿ıªÅ¶¡¤£°÷ */
+    if (!rcpt)			/* Thor.990205: è¨˜éŒ„ç©ºé–“ä¸å¤  */
       logit("ERROR", "Not enough space in cmd_rcpt()");
 
     rcpt->rnext = ap->rcpt;
@@ -2819,7 +2819,7 @@ cmd_nogo(ap)
 static Command cmd_table[] =
 {
   cmd_helo, "helo", "HELO <hostname> - Introduce yourself",
-  cmd_nogo, "ehlo", "",		/* Thor.980929: ¤£¤ä´©enhanced smtp */
+  cmd_nogo, "ehlo", "",		/* Thor.980929: ä¸æ”¯æ´enhanced smtp */
   cmd_mail, "mail", "MAIL FROM: <sender> - Specifies the sender",
   cmd_rcpt, "rcpt", "RCPT TO: <recipient> - Specifies the recipient",
   cmd_data, "data", "",
@@ -2962,7 +2962,7 @@ agent_recv(ap)
 	}
 	else
 	{
-	  /* DATA ¤Óªø¤F¡A³q³q¦Y¤U¨Ó¡A¨Ã°²³] mail header ¤£·|¶W¹L HEADER_SIZE */
+	  /* DATA å¤ªé•·äº†ï¼Œé€šé€šåƒä¸‹ä¾†ï¼Œä¸¦å‡è¨­ mail header ä¸æœƒè¶…é HEADER_SIZE */
 
 #define HEADER_SIZE   8192
 	  data[HEADER_SIZE - 2] = data[used - 2];
@@ -3042,7 +3042,7 @@ agent_recv(ap)
 
       if (cc == '\n')
       {
-	/* Thor.990604: \n«á°¨¤Wcheck, ¥H¥ß¨è±Æ°£ \r\n.\r\n ªºª¬ªp */
+	/* Thor.990604: \nå¾Œé¦¬ä¸Šcheck, ä»¥ç«‹åˆ»æ’é™¤ \r\n.\r\n çš„ç‹€æ³ */
 	used = dest - data + 1;
 	if (used >= 2 && *dest == '.' && dest[-1] == '\n')
 	  break;		/* end of mail body */
@@ -3083,7 +3083,7 @@ agent_recv(ap)
     }
     MYDOG;
 
-#if 1		/* Thor.990906: null from ´N±µ¦a:p */
+#if 1		/* Thor.990906: null from å°±æ¥åœ°:p */
     cc = *ap->from;
     if (cc == ' ' || cc == '\0')
     {
@@ -3114,7 +3114,7 @@ agent_recv(ap)
     ap->used = dest - data;
 
     MYDOG;
-    /* Thor.981223: ½T©w¤£¬O bbsreg ¤~¾× */
+    /* Thor.981223: ç¢ºå®šä¸æ˜¯ bbsreg æ‰æ“‹ */
     if (!(mode & (AM_VALID | AM_BBSADM)) && (mode & AM_SPAM))
     {
       sprintf(ap->memo, "SPAM : %s", ap->from);
@@ -3315,7 +3315,7 @@ agent_accept()
 
   value = 1;
 
-  /* Thor.000511: µù¸Ñ: don't delay send to coalesce(Áp¦X) packets */
+  /* Thor.000511: è¨»è§£: don't delay send to coalesce(è¯åˆ) packets */
   setsockopt(csock, IPPROTO_TCP, TCP_NODELAY, (char *) &value, sizeof(value));
 
   /* --------------------------------------------------- */
@@ -3324,14 +3324,14 @@ agent_accept()
 
   MYDOG;
 
-  /* Thor.001026: °lÂÜ¥d¦b­ş  */
+  /* Thor.001026: è¿½è¹¤å¡åœ¨å“ª  */
   sprintf(gtext, "ip:%08x", csin.sin_addr.s_addr);
 
   hht_look((HostAddr *) &csin.sin_addr, rhost);
 
   *gtext = 0;
   MYDOG;
-  /* Thor.981207: °lÂÜ ip address */
+  /* Thor.981207: è¿½è¹¤ ip address */
   sprintf(ident = servo_ident, "[%d] %s ip:%08x", ++servo_sno, rhost, csin.sin_addr.s_addr);
 
   MYDOG;
@@ -3439,9 +3439,9 @@ servo_signal()
 {
   struct sigaction act;
 
-  /* sigblock(sigmask(SIGPIPE)); *//* Thor.981206: ²Î¤@ POSIX ¼Ğ·Ç¥Îªk */
+  /* sigblock(sigmask(SIGPIPE)); *//* Thor.981206: çµ±ä¸€ POSIX æ¨™æº–ç”¨æ³• */
 
-  /* act.sa_mask = 0; *//* Thor.981105: ¼Ğ·Ç¥Îªk */
+  /* act.sa_mask = 0; *//* Thor.981105: æ¨™æº–ç”¨æ³• */
   sigemptyset(&act.sa_mask);
   act.sa_flags = 0;
 
@@ -3452,7 +3452,7 @@ servo_signal()
   sigaction(SIGSEGV, &act, NULL);	/* if rlimit violate */
   sigaction(SIGBUS, &act, NULL);
 
-#if 1	/* Thor.990203: §ì signal */
+#if 1	/* Thor.990203: æŠ“ signal */
   sigaction(SIGURG, &act, NULL);
   sigaction(SIGXCPU, &act, NULL);
   sigaction(SIGXFSZ, &act, NULL);
@@ -3466,7 +3466,7 @@ servo_signal()
 #ifdef LINUX
   sigaction(SIGSYS, &act, NULL);
   /* sigaction(SIGEMT, &act, NULL); */
-  /* itoc.010317: §Úªº linux ¨S¦³³o­Ó»¡ :p */
+  /* itoc.010317: æˆ‘çš„ linux æ²’æœ‰é€™å€‹èªª :p */
 #endif
 
   sigaction(SIGFPE, &act, NULL);
@@ -3493,8 +3493,8 @@ servo_signal()
   sigaction(SIGPROF, &act, NULL);
 #endif
 
-  /* Thor.981206: lkchu patch: ²Î¤@ POSIX ¼Ğ·Ç¥Îªk */
-  /* ¦b¦¹­É¥Î sigset_t act.sa_mask */
+  /* Thor.981206: lkchu patch: çµ±ä¸€ POSIX æ¨™æº–ç”¨æ³• */
+  /* åœ¨æ­¤å€Ÿç”¨ sigset_t act.sa_mask */
   sigaddset(&act.sa_mask, SIGPIPE);
   sigprocmask(SIG_BLOCK, &act.sa_mask, NULL);
 }
@@ -3594,7 +3594,7 @@ servo_daemon(inetd)
 }
 
 
-/* Thor.990204: µù¸Ñ: ¨C¤Ñ¦­¤W 5:30 ¾ã²z¤@¦¸ */
+/* Thor.990204: è¨»è§£: æ¯å¤©æ—©ä¸Š 5:30 æ•´ç†ä¸€æ¬¡ */
 #define SERVO_HOUR  5
 #define SERVO_MIN   30
 
@@ -3608,7 +3608,7 @@ fresh_time(uptime)
 
   local = localtime(&uptime);
   i = (SERVO_HOUR - local->tm_hour) * 3600 + (SERVO_MIN - local->tm_min) * 60;
-  if (i < 120)			/* «O¯d®É¶¡®t 120 ¬í */
+  if (i < 120)			/* ä¿ç•™æ™‚é–“å·® 120 ç§’ */
     i += BMTA_FRESH;
   return (uptime + i);
 }
@@ -3712,7 +3712,7 @@ main(argc, argv)
       {
 	tscore = uptime + 120 * 60;
 
-	/* ¶W¹L 120 ¤ÀÄÁ¨S·s¶i°O¿ı¡A´N¶}©l expire */
+	/* è¶…é 120 åˆ†é˜æ²’æ–°é€²è¨˜éŒ„ï¼Œå°±é–‹å§‹ expire */
 
 	tcheck = uptime - 120 * 60;
 	ht_expire(mfrom_ht, tcheck);
@@ -3729,7 +3729,7 @@ main(argc, argv)
 	/* ht_expire(forge_ht, tcheck); /* never expire */
 
 #ifdef FORGE_CHECK
-	/* Thor.990811: expire±¼¨S¥Îªºforge host */
+	/* Thor.990811: expireæ‰æ²’ç”¨çš„forge host */
 	ht_expire(forge_ht, tcheck);
 #endif
       }
@@ -3900,7 +3900,7 @@ main(argc, argv)
     /* serve new connection				 */
     /* ------------------------------------------------- */
 
-    /* Thor.000209: ¦Ò¼{²¾«e¦¹³¡¤À, §K±o¥d¦b accept() */
+    /* Thor.000209: è€ƒæ…®ç§»å‰æ­¤éƒ¨åˆ†, å…å¾—å¡åœ¨ accept() */
     if (FD_ISSET(0, &rset))
     {
       /* Thor.990319: check maximum connection number */
@@ -3928,9 +3928,9 @@ main(argc, argv)
 	  sprintf(buf, "421 %s over max connection\r\n", MYHOSTNAME);
 
 	  MYDOG;
-	  fcntl(sock, F_SETFL, M_NONBLOCK);	/* Thor.000511: ©È block */
+	  fcntl(sock, F_SETFL, M_NONBLOCK);	/* Thor.000511: æ€• block */
 	  MYDOG;
-	  send(sock, buf, strlen(buf), 0);	/* Thor.981206: ¸É­Ó0¤W¨Ó */
+	  send(sock, buf, strlen(buf), 0);	/* Thor.981206: è£œå€‹0ä¸Šä¾† */
 	  MYDOG;
 	  shutdown(sock, 2);
 	  MYDOG;
@@ -3951,7 +3951,7 @@ main(argc, argv)
 	  MYDOG;
 	  agent = (Agent *) malloc(sizeof(Agent));
 	  MYDOG;
-	  if (!agent)		/* Thor.990205: °O¿ıªÅ¶¡¤£°÷ */
+	  if (!agent)		/* Thor.990205: è¨˜éŒ„ç©ºé–“ä¸å¤  */
 	    logit("ERROR", "Not enough space in main()");
 	}
 
@@ -3980,9 +3980,9 @@ main(argc, argv)
 	MYDOG;
 	agent->data = (char *) malloc(MIN_DATA_SIZE);
 	MYDOG;
-	if (!agent->data)	/* Thor.990205: °O¿ıªÅ¶¡¤£°÷ */
+	if (!agent->data)	/* Thor.990205: è¨˜éŒ„ç©ºé–“ä¸å¤  */
 	  logit("ERROR", "Not enough space in agent->data");
-	sprintf(agent->data, "220 " MYHOSTNAME " SMTP ready %s\r\n", servo_ident);	/* Thor.981001: ¤£¥Î enhanced SMTP */
+	sprintf(agent->data, "220 " MYHOSTNAME " SMTP ready %s\r\n", servo_ident);	/* Thor.981001: ä¸ç”¨ enhanced SMTP */
 	agent->used = strlen(agent->data);
 	agent->size = MIN_DATA_SIZE;
       }

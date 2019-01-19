@@ -1,119 +1,119 @@
-µo«H¤H: TKyo.bbs@cpu.tfcis.org (·t¶Â¶Q¤½¤l) ¬İªO: plan
-¼Ğ  ÃD: [¥\¯à]IP/FQDN ªíºŞ²z¤¶­±
-µo«H¯¸: °Ê¤O®Ö¤ß (2005/01/25 Tue 18:06:54)                Updated: 2006/04/17
+ç™¼ä¿¡äºº: TKyo.bbs@cpu.tfcis.org (æš—é»‘è²´å…¬å­) çœ‹æ¿: plan
+æ¨™  é¡Œ: [åŠŸèƒ½]IP/FQDN è¡¨ç®¡ç†ä»‹é¢
+ç™¼ä¿¡ç«™: å‹•åŠ›æ ¸å¿ƒ (2005/01/25 Tue 18:06:54)                Updated: 2006/04/17
 
 #if 0
 
-  ¥\¯àÂ²¤¶ :
+  åŠŸèƒ½ç°¡ä»‹ :
 
-         1.±N­ì¥»¥H¤å¦r°O¸üªº IP/FQDN ªíµ¹ xover() ¤¶­±¤Æ, ¤è«KºŞ²z
-         2.¦³®Ä´î¤Öµn¤J®É·j´M¤¾ªø IP/FQDN ¤å¦rÀÉ©Ò¯Ó¶Oªº®É¶¡
-         3.IP ªí¥H range ¨Ó°µ§PÂ_, FQDN ªí«h¥HÃöÁä¦r°µ§PÂ_
+         1.å°‡åŸæœ¬ä»¥æ–‡å­—è¨˜è¼‰çš„ IP/FQDN è¡¨çµ¦ xover() ä»‹é¢åŒ–, æ–¹ä¾¿ç®¡ç†
+         2.æœ‰æ•ˆæ¸›å°‘ç™»å…¥æ™‚æœå°‹å†—é•· IP/FQDN æ–‡å­—æª”æ‰€è€—è²»çš„æ™‚é–“
+         3.IP è¡¨ä»¥ range ä¾†åšåˆ¤æ–·, FQDN è¡¨å‰‡ä»¥é—œéµå­—åšåˆ¤æ–·
 
-  ³]©w½d¨Ò :
+  è¨­å®šç¯„ä¾‹ :
 
-       ¥æ¤j - 140.113.xxx.xxx
+       äº¤å¤§ - 140.113.xxx.xxx
 
-       ·s¼W IP ªí®É
+       æ–°å¢ IP è¡¨æ™‚
 
-         IP ½d³ò°_ÂI¡G140.113.0.0
-         IP ½d³ò²×ÂI¡G140.113.255.255
-                »¡©ú¡G°ê¥ß¥æ³q¤j¾Ç
+         IP ç¯„åœèµ·é»ï¼š140.113.0.0
+         IP ç¯„åœçµ‚é»ï¼š140.113.255.255
+                èªªæ˜ï¼šåœ‹ç«‹äº¤é€šå¤§å­¸
 
-       ·s¼W FQDN ªí®É
+       æ–°å¢ FQDN è¡¨æ™‚
 
-         FQDN ÃöÁä¦r¡G.nctu.edu.tw
-                »¡©ú¡G°ê¥ß¥æ³q¤j¾Ç
+         FQDN é—œéµå­—ï¼š.nctu.edu.tw
+                èªªæ˜ï¼šåœ‹ç«‹äº¤é€šå¤§å­¸
 
-  §ó¬½ªº¨Ò¤l :
+  æ›´ç‹ çš„ä¾‹å­ :
 
        TANET - 140.xxx.xxx.xxx
 
-       ·s¼W IP ªí®É
+       æ–°å¢ IP è¡¨æ™‚
 
-         IP ½d³ò°_ÂI¡G140.0.0.0
-         IP ½d³ò²×ÂI¡G140.255.255.255
+         IP ç¯„åœèµ·é»ï¼š140.0.0.0
+         IP ç¯„åœçµ‚é»ï¼š140.255.255.255
 
-       ·s¼W FQDN ªí®É
+       æ–°å¢ FQDN è¡¨æ™‚
 
-         FQDN ÃöÁä¦r¡G.edu.tw
-                »¡©ú¡GTANET
+         FQDN é—œéµå­—ï¼š.edu.tw
+                èªªæ˜ï¼šTANET
 
-  Q : ³o®É¦³¨Ç¤H·|°İ, ¦pªG§Ú³]©w¤F TANET ¤Î¥æ¤j, «ö 's' ±Æ§Ç«á, TANET ªº³]©w
-      ·|¦b«e­±, ¨º¨t²Î§PÂ_®É, fromhost ¤£´N¥Ã»·³£¬OÅã¥Ü TANET ¶Ü?
+  Q : é€™æ™‚æœ‰äº›äººæœƒå•, å¦‚æœæˆ‘è¨­å®šäº† TANET åŠäº¤å¤§, æŒ‰ 's' æ’åºå¾Œ, TANET çš„è¨­å®š
+      æœƒåœ¨å‰é¢, é‚£ç³»çµ±åˆ¤æ–·æ™‚, fromhost ä¸å°±æ°¸é éƒ½æ˜¯é¡¯ç¤º TANET å—?
 
-  A : ©Ò¥H, ´£¨Ñ¤F 'L' Âê©w IP/FQDN ¸ê®Æªº¥\¯à, ³QÂê©wªº¸ê®Æ·|¸m³»
-      ¥B«ö 's' ±Æ§Ç®É, ³QÂê©wªº IP/FQDN ¥u·|¸ò¦P¬°Âê©wªº IP/FQDN ¸ê®Æ¸m³»±Æ§Ç
+  A : æ‰€ä»¥, æä¾›äº† 'L' é–å®š IP/FQDN è³‡æ–™çš„åŠŸèƒ½, è¢«é–å®šçš„è³‡æ–™æœƒç½®é ‚
+      ä¸”æŒ‰ 's' æ’åºæ™‚, è¢«é–å®šçš„ IP/FQDN åªæœƒè·ŸåŒç‚ºé–å®šçš„ IP/FQDN è³‡æ–™ç½®é ‚æ’åº
 
 #endif
 
 : src/include/global.h
 
   /* --------------------------------------------------- */
-  /* etc/ ¥Ø¿ı¤U¨t²ÎÀÉ®×                                 */
+  /* etc/ ç›®éŒ„ä¸‹ç³»çµ±æª”æ¡ˆ                                 */
   /* --------------------------------------------------- */
     .
     .
     .
 + #ifdef HAVE_WHERE
 
-+ #define FN_ETC_IPT      "etc/ipt.dat"   /* ¨Ó·½ IP ¸ê®Æªí */
-+ #define FN_ETC_FQDNT    "etc/fqdnt.dat" /* ¨Ó·½ FQDN ¸ê®Æªí */
++ #define FN_ETC_IPT      "etc/ipt.dat"   /* ä¾†æº IP è³‡æ–™è¡¨ */
++ #define FN_ETC_FQDNT    "etc/fqdnt.dat" /* ä¾†æº FQDN è³‡æ–™è¡¨ */
 
 + #endif
 
-: src/include/modes.h : °²³] XO_ZONE ³Ì«á¬°ºëµØ°Ï, »İ¸ò xz[] ¦P¨B
+: src/include/modes.h : å‡è¨­ XO_ZONE æœ€å¾Œç‚ºç²¾è¯å€, éœ€è·Ÿ xz[] åŒæ­¥
 
-  #define XZ_GEM          (XO_ZONE + 13)          /* ºëµØ°Ï */
-+ #define XZ_ADMIP        (XO_ZONE + 14)          /*  IP ºŞ²z */
-+ #define XZ_ADMFQDN      (XO_ZONE + 15)          /* FQDN ºŞ²z */
+  #define XZ_GEM          (XO_ZONE + 13)          /* ç²¾è¯å€ */
++ #define XZ_ADMIP        (XO_ZONE + 14)          /*  IP ç®¡ç† */
++ #define XZ_ADMFQDN      (XO_ZONE + 15)          /* FQDN ç®¡ç† */
 
-: src/include/struct.h : ¾A·í¦ì¸m¥[¤J
+: src/include/struct.h : é©ç•¶ä½ç½®åŠ å…¥
 
 + #ifdef HAVE_WHERE
 
 + typedef struct
 + {
-+   time_t stamp;                 /* ½s¸¹ */
-+   int xmode;                    /* ¼Ò¦¡ */
-+   u_long ip_range_src;          /* IP ½d³ò°_ÂI */
-+   u_long ip_range_dest;         /* IP ½d³ò²×ÂI */
-+   char cname[34];               /* »¡©ú */
++   time_t stamp;                 /* ç·¨è™Ÿ */
++   int xmode;                    /* æ¨¡å¼ */
++   u_long ip_range_src;          /* IP ç¯„åœèµ·é» */
++   u_long ip_range_dest;         /* IP ç¯„åœçµ‚é» */
++   char cname[34];               /* èªªæ˜ */
 + }       IPT;
 
 + typedef struct
 + {
-+   time_t stamp;                 /* ½s¸¹ */
-+   int xmode;                    /* ¼Ò¦¡ */
-+   char query[38];               /* FQDN ÃöÁä¦r */
-+   char cname[34];               /* »¡©ú */
++   time_t stamp;                 /* ç·¨è™Ÿ */
++   int xmode;                    /* æ¨¡å¼ */
++   char query[38];               /* FQDN é—œéµå­— */
++   char cname[34];               /* èªªæ˜ */
 + }       FQDNT;
 
 + #endif                          /* HAVE_WHERE */
 
-: src/include/theme.h : ¾A·í¦ì¸m¥[¤J
+: src/include/theme.h : é©ç•¶ä½ç½®åŠ å…¥
 
 
-+ #define COLOR_LOCKED    "\033[1;36m"    /* Âê¦íªº IP/FQDN */
-+ #define COLOR_NORMAL    "\033[0;37m"    /* ¤@¯ë IP/FQDN */
++ #define COLOR_LOCKED    "\033[1;36m"    /* é–ä½çš„ IP/FQDN */
++ #define COLOR_NORMAL    "\033[0;37m"    /* ä¸€èˆ¬ IP/FQDN */
 
-+ #define NECKER_ADMIP    "[¡ö]Â÷¶} [T]­×§ï IP ¸ê®Æ»¡©ú [t]¼ĞÅÒ" \
-+ " [d/D]§R°£ [^D]¼ĞÅÒ§R°£\n" \
-+ "COLOR3 "  ½s¸¹    IP ½d³ò°_ÂI      IP ½d³ò²×ÂI      " \
-+ "»¡              ©ú%*s                \033[m"
++ #define NECKER_ADMIP    "[â†]é›¢é–‹ [T]ä¿®æ”¹ IP è³‡æ–™èªªæ˜ [t]æ¨™ç±¤" \
++ " [d/D]åˆªé™¤ [^D]æ¨™ç±¤åˆªé™¤\n" \
++ "COLOR3 "  ç·¨è™Ÿ    IP ç¯„åœèµ·é»      IP ç¯„åœçµ‚é»      " \
++ "èªª              æ˜%*s                \033[m"
 
-+ #define NECKER_ADMFQDN  "[¡ö]Â÷¶} [T]­×§ï FQDN ¸ê®Æ»¡©ú [t]¼ĞÅÒ" \
-+ " [d/D]§R°£ [^D]¼ĞÅÒ§R°£\n" \
-+ COLOR3 "  ½s¸¹    FQDN ÃöÁä¦r                           " \
-+ "»¡              ©ú%*s            \033[m"
++ #define NECKER_ADMFQDN  "[â†]é›¢é–‹ [T]ä¿®æ”¹ FQDN è³‡æ–™èªªæ˜ [t]æ¨™ç±¤" \
++ " [d/D]åˆªé™¤ [^D]æ¨™ç±¤åˆªé™¤\n" \
++ COLOR3 "  ç·¨è™Ÿ    FQDN é—œéµå­—                           " \
++ "èªª              æ˜%*s            \033[m"
 
 + #define FEETER_ADMIP    \
-+ COLOR1 " ¢×¢ŞºŞ²z " COLOR2 " (a)·s¼W (E)­×§ï (s)±Æ§Ç (¡ô/¡õ)¤W¤U" \
-+ " (PgUp/PgDn)¤W¤U­¶ (¡ö)Â÷¶}     "
++ COLOR1 " ï¼©ï¼°ç®¡ç† " COLOR2 " (a)æ–°å¢ (E)ä¿®æ”¹ (s)æ’åº (â†‘/â†“)ä¸Šä¸‹" \
++ " (PgUp/PgDn)ä¸Šä¸‹é  (â†)é›¢é–‹     "
 
 + #define FEETER_ADMFQDN  \
-+ COLOR1 " FQDNºŞ²z " COLOR2 " (a)·s¼W (E)­×§ï (s)±Æ§Ç (¡ô/¡õ)¤W¤U" \
-+ " (PgUp/PgDn)¤W¤U­¶ (¡ö)Â÷¶}     "
++ COLOR1 " FQDNç®¡ç† " COLOR2 " (a)æ–°å¢ (E)ä¿®æ”¹ (s)æ’åº (â†‘/â†“)ä¸Šä¸‹" \
++ " (PgUp/PgDn)ä¸Šä¸‹é  (â†)é›¢é–‹     "
 
 : src/maple/xover.c : xz[]
 
@@ -122,18 +122,18 @@
 + {NULL, NULL, M_SYSTEM, FEETER_ADMIP},         /* XZ_ADMIP */
 + {NULL, NULL, M_SYSTEM, FEETER_ADMFQDN}        /* XZ_ADMFQDN */
 
-: src/maple/menu.c : ¾A·í¿ï³æ¥[¤J
+: src/maple/menu.c : é©ç•¶é¸å–®åŠ å…¥
 
 + "bin/admip.so:admip_main", PERM_ALLADMIN, - M_SYSTEM,
-+ "IP-Manage     IP ºŞ²z",
++ "IP-Manage     IP ç®¡ç†",
 
 + "bin/admfqdn.so:admfqdn_main", PERM_ALLADMIN, - M_SYSTEM,
-+ "FQDN-Manage   FQDN ºŞ²z",
++ "FQDN-Manage   FQDN ç®¡ç†",
 
 
 : src/maple/bbsd.c
 
-/* utmp_setup() ¤W¤è¥[¤J 4 ­Ó function */
+/* utmp_setup() ä¸Šæ–¹åŠ å…¥ 4 å€‹ function */
 
 static u_long
 trans_inaddr(ipdata)
@@ -209,14 +209,14 @@ belong_table(fpath, data, size, key, from, fchk)
     char name[40];
 +   FQDNT fqdnt;
 
-    /* ¥ı¤ñ¹ï FQDN */
+    /* å…ˆæ¯”å° FQDN */
     str_lower(name, fromhost);
 -   if (!belong_list(FN_ETC_FQDN, name, utmp.from))
 +   if (!(belong_table(FN_ETC_FQDNT, &fqdnt, sizeof(FQDNT),
       name, utmp.from, chkfqdnt)))
     {
 +     IPT ipt;
-      /* ¦A¤ñ¹ï ip */
+      /* å†æ¯”å° ip */
 -     sprintf(name, "%d.%d.%d.%d", addr[0], addr[1], addr[2], addr[3]);
 -     if (!belong_list(FN_ETC_HOST, name, utmp.from))
 +   if (!(belong_table(FN_ETC_IPT, &ipt, sizeof(IPT),
@@ -224,12 +224,12 @@ belong_table(fpath, data, size, key, from, fchk)
     str_ncpy(utmp.from, fromhost, sizeof(utmp.from));
     }
 
-: src/so/admip.c ·s¼W³o°¦µ{¦¡
+: src/so/admip.c æ–°å¢é€™éš»ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* admip.c          ( NTHU CS MapleBBS Ver 3.10 )        */
 /*-------------------------------------------------------*/
-/* target : IP      ºŞ²zµ{¦¡                             */
+/* target : IP      ç®¡ç†ç¨‹å¼                             */
 /* author : kyo.bbs@cszone.org                           */
 /* create : 05/01/11                                     */
 /* update :   /  /                                       */
@@ -279,11 +279,11 @@ admip_edit(ipt, echo)
 
   for (;;)
   {
-    if (!(vget(b_lines, 0, "IP ½d³ò°_ÂI¡G", buf, 16, echo)))
+    if (!(vget(b_lines, 0, "IP ç¯„åœèµ·é»ï¼š", buf, 16, echo)))
       return 0;
     i = inet_addr(buf);
     if (i == -1)
-      vmsg("IP ¿é¤J®æ¦¡¿ù»~¡I");
+      vmsg("IP è¼¸å…¥æ ¼å¼éŒ¯èª¤ï¼");
     else
     {
       ipt->ip_range_src = i;
@@ -296,11 +296,11 @@ admip_edit(ipt, echo)
 
   for (;;)
   {
-    if (!(vget(b_lines, 0, "IP ½d³ò²×ÂI¡G", buf, 16, echo)))
+    if (!(vget(b_lines, 0, "IP ç¯„åœçµ‚é»ï¼š", buf, 16, echo)))
       return 0;
     i = inet_addr(buf);
     if (i == -1)
-      vmsg("IP ¿é¤J®æ¦¡¿ù»~");
+      vmsg("IP è¼¸å…¥æ ¼å¼éŒ¯èª¤");
     else
     {
       ipt->ip_range_dest = i;
@@ -310,11 +310,11 @@ admip_edit(ipt, echo)
 
   if (trans_inaddr(ipt->ip_range_src) > trans_inaddr(ipt->ip_range_dest))
   {
-    vmsg("IP ½d³òÀË¬d¿ù»~!!\nIP ½d³ò²×ÂI¥²¶·¤j©ó©Îµ¥©ó IP ½d³ò°_ÂI");
+    vmsg("IP ç¯„åœæª¢æŸ¥éŒ¯èª¤!!\nIP ç¯„åœçµ‚é»å¿…é ˆå¤§æ–¼æˆ–ç­‰æ–¼ IP ç¯„åœèµ·é»");
     return 0;
   }
 
-  if (!(vget(b_lines, 0, "»¡©ú¡G", ipt->cname, 34, echo)))
+  if (!(vget(b_lines, 0, "èªªæ˜ï¼š", ipt->cname, 34, echo)))
     return 0;
 
   return 1;
@@ -355,7 +355,7 @@ admip_change(xo)
   {
     if (memcmp(ipt, &old_ipt, sizeof(IPT)))
     {
-      if (vans("½T©w­n­×§ï¶Ü¡H[N] ") == 'y')
+      if (vans("ç¢ºå®šè¦ä¿®æ”¹å—ï¼Ÿ[N] ") == 'y')
       {
         rec_put(FN_ETC_IPT, &old_ipt, sizeof(IPT), pos);
         return XO_LOAD;
@@ -379,7 +379,7 @@ admip_title(xo)
 
   old_ipt = *ipt;
 
-  if (vget(b_lines, 0, "»¡©ú¡G", old_ipt.cname, 34, GCARRY))
+  if (vget(b_lines, 0, "èªªæ˜ï¼š", old_ipt.cname, 34, GCARRY))
   {
     if (memcmp(ipt, &old_ipt, sizeof(IPT)))
     {
@@ -396,12 +396,12 @@ admip_query(xo)
   XO *xo;
 {
   char *menu[] = {"QQ",
-      "A  ·s¼W IP ¸ê®Æ",
-      "T  ­×§ï IP ¸ê®Æ»¡©ú",
-      "E  ­×§ï IP ¸ê®Æ",
-      "Q  ¨ú®ø", NULL};
+      "A  æ–°å¢ IP è³‡æ–™",
+      "T  ä¿®æ”¹ IP è³‡æ–™èªªæ˜",
+      "E  ä¿®æ”¹ IP è³‡æ–™",
+      "Q  å–æ¶ˆ", NULL};
 
-  switch (pans(-1, -1, "¥\\¯à¿ï³æ", menu))
+  switch (pans(-1, -1, "åŠŸ\èƒ½é¸å–®", menu))
   {
     case 'a':
       return admip_add(xo);
@@ -485,7 +485,7 @@ admip_body(xo)
   max = xo->max;
   if (max <= 0)
   {
-    if (vans("·s¼W IP ¸ê®Æ¡H[N] ") == 'y')
+    if (vans("æ–°å¢ IP è³‡æ–™ï¼Ÿ[N] ") == 'y')
       return admip_add(xo);
 
     return XO_QUIT;
@@ -504,7 +504,7 @@ admip_body(xo)
   } while (num < max);
   clrtobot();
 
-  return XO_FOOT;       /* itoc.010403: §â b_lines ¶ñ¤W feeter */
+  return XO_FOOT;       /* itoc.010403: æŠŠ b_lines å¡«ä¸Š feeter */
 }
 
 
@@ -512,7 +512,7 @@ static int
 admip_head(xo)
   XO *xo;
 {
-  vs_head("¢×¢ŞºŞ²z", str_site);
+  vs_head("ï¼©ï¼°ç®¡ç†", str_site);
   prints(NECKER_ADMIP, d_cols, "");
 
   return admip_body(xo);
@@ -552,7 +552,7 @@ admip_tag(xo)
     admip_item(++pos, ipt);
   }
 
-  return xo->pos + 1 + XO_MOVE; /* lkchu.981201: ¸õ¦Ü¤U¤@¶µ */
+  return xo->pos + 1 + XO_MOVE; /* lkchu.981201: è·³è‡³ä¸‹ä¸€é … */
 }
 
 static int
@@ -611,7 +611,7 @@ admip_move(xo)
 
 
 
-  sprintf(buf, "½Ğ¿é¤J²Ä %d ¿ï¶µªº·s¦ì¸m¡G", pos + 1);
+  sprintf(buf, "è«‹è¼¸å…¥ç¬¬ %d é¸é …çš„æ–°ä½ç½®ï¼š", pos + 1);
   if (vget(b_lines, 0, buf, ans, 5, DOECHO))
   {
     i = atoi(ans) - 1;
@@ -699,12 +699,12 @@ admip_main()
 
 #endif                          /* HAVE_WHERE */
 
-: src/so/admfqdn.c ·s¼W³o°¦µ{¦¡
+: src/so/admfqdn.c æ–°å¢é€™éš»ç¨‹å¼
 
 /*-------------------------------------------------------*/
 /* admfqdn.c        ( NTHU CS MapleBBS Ver 3.10 )        */
 /*-------------------------------------------------------*/
-/* target : FQDN ºŞ²zµ{¦¡                                */
+/* target : FQDN ç®¡ç†ç¨‹å¼                                */
 /* author : kyo.bbs@cszone.org                           */
 /* create : 05/01/11                                     */
 /* update :   /  /                                       */
@@ -727,12 +727,12 @@ admfqdn_edit(fqdnt, echo)
   int echo;
 {
 
-  if (!(vget(b_lines, 0, "FQDN ÃöÁä¦r¡G", fqdnt->query, 38, echo)))
+  if (!(vget(b_lines, 0, "FQDN é—œéµå­—ï¼š", fqdnt->query, 38, echo)))
     return 0;
 
   str_lower(fqdnt->query, fqdnt->query);
 
-  if (!(vget(b_lines, 0, "»¡©ú¡G", fqdnt->cname, 34, echo)))
+  if (!(vget(b_lines, 0, "èªªæ˜ï¼š", fqdnt->cname, 34, echo)))
     return 0;
 
   return 1;
@@ -773,7 +773,7 @@ admfqdn_change(xo)
   {
     if (memcmp(fqdnt, &old_fqdnt, sizeof(FQDNT)))
     {
-      if (vans("½T©w­n­×§ï¶Ü¡H[N] ") == 'y')
+      if (vans("ç¢ºå®šè¦ä¿®æ”¹å—ï¼Ÿ[N] ") == 'y')
       {
         rec_put(FN_ETC_FQDNT, &old_fqdnt, sizeof(FQDNT), pos);
         return XO_LOAD;
@@ -797,7 +797,7 @@ admfqdn_title(xo)
 
   old_fqdnt = *fqdnt;
 
-  if (vget(b_lines, 0, "»¡©ú¡G", old_fqdnt.cname, 34, GCARRY))
+  if (vget(b_lines, 0, "èªªæ˜ï¼š", old_fqdnt.cname, 34, GCARRY))
   {
     if (memcmp(fqdnt, &old_fqdnt, sizeof(FQDNT)))
     {
@@ -814,12 +814,12 @@ admfqdn_query(xo)
   XO *xo;
 {
   char *menu[] = {"QQ",
-      "A  ·s¼W FQDN ¸ê®Æ",
-      "T  ­×§ï FQDN ¸ê®Æ»¡©ú",
-      "E  ­×§ï FQDN ¸ê®Æ",
-      "Q  ¨ú®ø", NULL};
+      "A  æ–°å¢ FQDN è³‡æ–™",
+      "T  ä¿®æ”¹ FQDN è³‡æ–™èªªæ˜",
+      "E  ä¿®æ”¹ FQDN è³‡æ–™",
+      "Q  å–æ¶ˆ", NULL};
 
-  switch (pans(-1, -1, "¥\\¯à¿ï³æ", menu))
+  switch (pans(-1, -1, "åŠŸ\èƒ½é¸å–®", menu))
   {
     case 'a':
       return admfqdn_add(xo);
@@ -900,7 +900,7 @@ admfqdn_body(xo)
   max = xo->max;
   if (max <= 0)
   {
-    if (vans("·s¼W FQDN ¸ê®Æ¡H[N] ") == 'y')
+    if (vans("æ–°å¢ FQDN è³‡æ–™ï¼Ÿ[N] ") == 'y')
       return admfqdn_add(xo);
 
     return XO_QUIT;
@@ -919,7 +919,7 @@ admfqdn_body(xo)
   } while (num < max);
   clrtobot();
 
-  return XO_FOOT;       /* itoc.010403: §â b_lines ¶ñ¤W feeter */
+  return XO_FOOT;       /* itoc.010403: æŠŠ b_lines å¡«ä¸Š feeter */
 }
 
 
@@ -927,7 +927,7 @@ static int
 admfqdn_head(xo)
   XO *xo;
 {
-  vs_head("FQDNºŞ²z", str_site);
+  vs_head("FQDNç®¡ç†", str_site);
   prints(NECKER_ADMFQDN, d_cols, "");
 
   return admfqdn_body(xo);
@@ -968,7 +968,7 @@ admfqdn_tag(xo)
     admfqdn_item(++pos, fqdnt);
   }
 
-  return xo->pos + 1 + XO_MOVE; /* lkchu.981201: ¸õ¦Ü¤U¤@¶µ */
+  return xo->pos + 1 + XO_MOVE; /* lkchu.981201: è·³è‡³ä¸‹ä¸€é … */
 }
 
 static int
@@ -1014,7 +1014,7 @@ admfqdn_move(xo)
   cur = pos - xo->top;
   fqdnt = (FQDNT *) xo_pool + cur;
 
-  sprintf(buf, "½Ğ¿é¤J²Ä %d ¿ï¶µªº·s¦ì¸m¡G", pos + 1);
+  sprintf(buf, "è«‹è¼¸å…¥ç¬¬ %d é¸é …çš„æ–°ä½ç½®ï¼š", pos + 1);
   if (vget(b_lines, 0, buf, ans, 5, DOECHO))
   {
     i = atoi(ans) - 1;
@@ -1104,5 +1104,5 @@ admfqdn_main()
 
 
 --
- [1;43m¢«[46m¢ª[m Or[1mig[30min[m: [41m Maple-itoc£»°Ê¤O®Ö¤ß [36;47m cpu.tfcis.org [m
- [1;44m¢©[41m¢¨[m A[1mut[30mho[mr: [1;33mTKyo [30m±q [31mcszone.twbbs.org [30mµoªí[m
+ [1;43mâ—¤[46mâ—¥[m Or[1mig[30min[m: [41m Maple-itocË™å‹•åŠ›æ ¸å¿ƒ [36;47m cpu.tfcis.org [m
+ [1;44mâ—£[41mâ—¢[m A[1mut[30mho[mr: [1;33mTKyo [30må¾ [31mcszone.twbbs.org [30mç™¼è¡¨[m

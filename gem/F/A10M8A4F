@@ -1,16 +1,16 @@
-�o�H�H: amaki.bbs@luna.twbbs.org (�ϥ�������) �ݪO: plan
-��  �D: Re: [���D] �R�����v����ݤ���ۤv....
-�o�H��: ��U�]�Q (Wed, 11 Jun 2003 05:07:14 +0800 (CST))  Updated: 2004/10/02
+發信人: amaki.bbs@luna.twbbs.org (羊奶供應商) 看板: plan
+標  題: Re: [問題] 買隱身權限～看不到自己....
+發信站: 月下夜想 (Wed, 11 Jun 2003 05:07:14 +0800 (CST))  Updated: 2004/10/02
 
-�� �ޭz�mTideWave.bbs@140.119.164.16 (�ͻH�㭸��)�n���ʨ��G
-> �@��ϥΪ�  ��F10���R�F�Ȯ��������v�O
-> ���O.....�b  �ϥΪ̦C��  �ݤ���ۤv�F.....
+※ 引述《TideWave.bbs@140.119.164.16 (翅膀～飛翔)》之銘言：
+> 一般使用者  花了10金買了暫時隱身的權力
+> 但是.....在  使用者列表  看不到自己了.....
 
-  ��n�ڤ]�I�W�o���D�A�u�ncan_see()��@�U�N����OK�F�C
+  剛好我也碰上這問題，只要can_see()改一下就全部OK了。
 
 : bmw.c:can_see()
 
-int                     /* 1:�i�ݨ� 0:���i�ݨ� */
+int                     /* 1:可看見 0:不可看見 */
 can_see(my, up)
   UTMP *my;
   UTMP *up;

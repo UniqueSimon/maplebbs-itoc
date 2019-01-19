@@ -8,1800 +8,1800 @@
 /*-------------------------------------------------------*/
 
 
- ¥» BBS ª©¥»¬O¥Ñ NTHU CS MapleBBS Ver 3.10 §ïª©¦Ó¨Ó¡C
+ æœ¬ BBS ç‰ˆæœ¬æ˜¯ç”± NTHU CS MapleBBS Ver 3.10 æ”¹ç‰ˆè€Œä¾†ã€‚
 
- ¨ä¤¤°Ñ¦Ò bbs.cs.nthu.edu.tw [plan] ªO ½Ñ¦ì¤j¤jªº´¼¼zµ²´¹¡A
+ å…¶ä¸­åƒè€ƒ bbs.cs.nthu.edu.tw [plan] æ¿ è«¸ä½å¤§å¤§çš„æ™ºæ…§çµæ™¶ï¼Œ
 
- ¥H¤Î WindTop WD Ptt Firebird µ¥ BBS µ{¦¡¡C
+ ä»¥åŠ WindTop WD Ptt Firebird ç­‰ BBS ç¨‹å¼ã€‚
 
- ©Ò¦³´¼¼z°]²£§¡Äİ©ó­ì§@ªÌ¡C
+ æ‰€æœ‰æ™ºæ…§è²¡ç”¢å‡å±¬æ–¼åŸä½œè€…ã€‚
 
 
 
-[2000/02/  ] bbsd.c §ï¦¨¤W¯¸¤@¤ÀÄÁ¥H«á¤~¼W¥[¤W¯¸¦¸¼Æ¡C
-             acct.c perm.h ·s¼W¡yµù¥U²Õªø¡zÅv­­  PERM_REGISTRAR¡Aµ¹¼f®Öµù¥U³æ¥Î¡C
-             post.c ¤å³¹§@ªÌ¥i¥H edit ¦Û¤vªº¤å³¹¡C
+[2000/02/  ] bbsd.c æ”¹æˆä¸Šç«™ä¸€åˆ†é˜ä»¥å¾Œæ‰å¢åŠ ä¸Šç«™æ¬¡æ•¸ã€‚
+             acct.c perm.h æ–°å¢ã€è¨»å†Šçµ„é•·ã€æ¬Šé™  PERM_REGISTRARï¼Œçµ¦å¯©æ ¸è¨»å†Šå–®ç”¨ã€‚
+             post.c æ–‡ç« ä½œè€…å¯ä»¥ edit è‡ªå·±çš„æ–‡ç« ã€‚
 
-[2000/02/13] post.c ­ì§@ªÌ¥i¥H«ö T ­×§ï¦Û¤vªº¤å³¹¼ĞÃD¡C
-             talk.c ¦n¤Í¼s¼½¥X²{¼s¼½ªÌªº id¡C¬°¥H¥Ü°Ï§O¡A¤ô²y¥X²{ id¡A¼s¼½¥X²{ id >¡C
+[2000/02/13] post.c åŸä½œè€…å¯ä»¥æŒ‰ T ä¿®æ”¹è‡ªå·±çš„æ–‡ç« æ¨™é¡Œã€‚
+             talk.c å¥½å‹å»£æ’­å‡ºç¾å»£æ’­è€…çš„ idã€‚ç‚ºä»¥ç¤ºå€åˆ¥ï¼Œæ°´çƒå‡ºç¾ idï¼Œå»£æ’­å‡ºç¾ id >ã€‚
 
-[2000/02/19] acct.c menu.c maple.p ¥[/´î PERM_BM µ{¦¡¡C
+[2000/02/19] acct.c menu.c maple.p åŠ /æ¸› PERM_BM ç¨‹å¼ã€‚
 
-[2000/02/20] gem.c ·s¼W¤pªO¥D¥\¯à¡C
+[2000/02/20] gem.c æ–°å¢å°æ¿ä¸»åŠŸèƒ½ã€‚
 
-[2000/02/25] talk.c ·s¼W¨Ï¥ÎªÌ¦W³æ¦n¤Í¸m«e¨ÌID±Æ§Ç¡A¥B³]¬°¹w³]­È¡C
+[2000/02/25] talk.c æ–°å¢ä½¿ç”¨è€…åå–®å¥½å‹ç½®å‰ä¾IDæ’åºï¼Œä¸”è¨­ç‚ºé è¨­å€¼ã€‚
 
-[2000/02/26] gem.c ºëµØ°Ï­­¨î¯Å¤å³¹¦WºÙ«O±K¡C
+[2000/02/26] gem.c ç²¾è¯å€é™åˆ¶ç´šæ–‡ç« åç¨±ä¿å¯†ã€‚
 
-[2000/02/27] post.c ¦ê±µ·j´M¦pªG¨S¦³¿é¤J¼ĞÃD¡B§@ªÌ¡A«h·j´M´å¼Ğ©Ò¦b¤å³¹¼ĞÃD¡C(¤w¨ú®ø)
-             post.c ·s¼W¦ê¦C·j´M¤U [ ªº¥\¯à¡C
+[2000/02/27] post.c ä¸²æ¥æœå°‹å¦‚æœæ²’æœ‰è¼¸å…¥æ¨™é¡Œã€ä½œè€…ï¼Œå‰‡æœå°‹æ¸¸æ¨™æ‰€åœ¨æ–‡ç« æ¨™é¡Œã€‚(å·²å–æ¶ˆ)
+             post.c æ–°å¢ä¸²åˆ—æœå°‹ä¸‹ [ çš„åŠŸèƒ½ã€‚
 
-[2000/02/28] gem.c ºëµØ°Ï¦¬¿ı¤è¦¡±q link ÅÜ copy¡AÁ×§K­×§ï¨ìªO¤Wªº¤å³¹¡C
+[2000/02/28] gem.c ç²¾è¯å€æ”¶éŒ„æ–¹å¼å¾ link è®Š copyï¼Œé¿å…ä¿®æ”¹åˆ°æ¿ä¸Šçš„æ–‡ç« ã€‚
 
-[2000/03/03] post.c ­×¥¿¦ê±µ·j´M¼Ò¦¡«á h Â÷¶}·|¦³°İÃD¡C
+[2000/03/03] post.c ä¿®æ­£ä¸²æ¥æœå°‹æ¨¡å¼å¾Œ h é›¢é–‹æœƒæœ‰å•é¡Œã€‚
 
-[2000/03/04] xover.c ¾\Åª¤å³¹®É¤£´`Àô¾\Åª¡C
+[2000/03/04] xover.c é–±è®€æ–‡ç« æ™‚ä¸å¾ªç’°é–±è®€ã€‚
 
-[2000/03/05] account.c ¤W¯¸¤H¦¸°O¿ı ¦~¥÷ % 100¡C
+[2000/03/05] account.c ä¸Šç«™äººæ¬¡è¨˜éŒ„ å¹´ä»½ % 100ã€‚
 
-[2000/03/12] acct.c board.c ªO¥D¥i¥H­×§ï¤¤¤åªO¦W±Ô­z¡C
-             talk.c ²á¤Ñ«Ç·s¼W«ü¥O HOME/END/Ctrl+A/Ctrl+E ²¾¨ì¦æÀY/¦æ§À¡C
+[2000/03/12] acct.c board.c æ¿ä¸»å¯ä»¥ä¿®æ”¹ä¸­æ–‡æ¿åæ•˜è¿°ã€‚
+             talk.c èŠå¤©å®¤æ–°å¢æŒ‡ä»¤ HOME/END/Ctrl+A/Ctrl+E ç§»åˆ°è¡Œé ­/è¡Œå°¾ã€‚
 
-[2000/03/15] config.h acct.c pop3_check.c ·s¼W POP3 ¦Û°Ê»{ÃÒ¡C
+[2000/03/15] config.h acct.c pop3_check.c æ–°å¢ POP3 è‡ªå‹•èªè­‰ã€‚
 
-[2000/03/17] post.c ­×¥¿ more §¹²¦®É¤£·|¥X²{ help¡C
+[2000/03/17] post.c ä¿®æ­£ more å®Œç•¢æ™‚ä¸æœƒå‡ºç¾ helpã€‚
 
-[2000/03/19] xover.c every_Z ³Ì¦h¤G¼h¡C
-             edit.c ·s¼W ¤å³¹½s¿è®É Ctrl+W ²Å¸¹¿é¤J¤u¨ã¡C
-             xover.c ­×¥¿­­¨î¯Å¤å³¹¤£±oÂà±H¡B¶×¤J¼È¦sÀÉ¡B Z-modem ¤U¸ü¡C
-             post.c ¦Û¤v­èµoªí«áªº¤å³¹¤£­n¥X²{¥¼¾\Åªªº¡Ï¸¹¡C
-             bbsd.c guest ¶Ã¼Æ¨ú¼ÊºÙ¡C
+[2000/03/19] xover.c every_Z æœ€å¤šäºŒå±¤ã€‚
+             edit.c æ–°å¢ æ–‡ç« ç·¨è¼¯æ™‚ Ctrl+W ç¬¦è™Ÿè¼¸å…¥å·¥å…·ã€‚
+             xover.c ä¿®æ­£é™åˆ¶ç´šæ–‡ç« ä¸å¾—è½‰å¯„ã€åŒ¯å…¥æš«å­˜æª”ã€ Z-modem ä¸‹è¼‰ã€‚
+             post.c è‡ªå·±å‰›ç™¼è¡¨å¾Œçš„æ–‡ç« ä¸è¦å‡ºç¾æœªé–±è®€çš„ï¼‹è™Ÿã€‚
+             bbsd.c guest äº‚æ•¸å–æš±ç¨±ã€‚
 
-[2000/03/20] acct.c struch.h User -> Setup ·s¼W¤£¨Ï¥ÎÃ±¦WÀÉ UFO_NOSIGN¡C
-             acct.c struct.h edit.c User -> Setup ·s¼WÅã¥ÜÃ±¦WÀÉ UFO_SHOWSIGN¡C
-             bbsd.c ÅÜ°Ê·s¨Ï¥ÎªÌªº¹w³]ºX¼Ğ¡C
+[2000/03/20] acct.c struch.h User -> Setup æ–°å¢ä¸ä½¿ç”¨ç°½åæª” UFO_NOSIGNã€‚
+             acct.c struct.h edit.c User -> Setup æ–°å¢é¡¯ç¤ºç°½åæª” UFO_SHOWSIGNã€‚
+             bbsd.c è®Šå‹•æ–°ä½¿ç”¨è€…çš„é è¨­æ——æ¨™ã€‚
 
-[2000/03/25] global.h mail.c ­×§ï¸s²Õ±H«H»P¦^¤ô²yµ{¦¡½Ä¬ğªº°İÃD¡C
+[2000/03/25] global.h mail.c ä¿®æ”¹ç¾¤çµ„å¯„ä¿¡èˆ‡å›æ°´çƒç¨‹å¼è¡çªçš„å•é¡Œã€‚
 
-[2000/03/28] modes.h ½s¨t²ÎÀÉ®× & ½s­Ó¤HÀÉ®× ®É­Ô¨ú®ø¥i¥H³Q talk request¡C
+[2000/03/28] modes.h ç·¨ç³»çµ±æª”æ¡ˆ & ç·¨å€‹äººæª”æ¡ˆ æ™‚å€™å–æ¶ˆå¯ä»¥è¢« talk requestã€‚
 
-[2000/04/07] bbsd.c board.c 0Announce ¦³·s¤å³¹®É±j­¢¾\Åª¡C
-             acct.c ³]©w Â²¤Æ¶i/Â÷¯¸µe­± ªÌ¡AÂ÷¯¸¤£Åã¥Ü­Ó¤H¸ê®Æ¡C
-             post.c µoªí¤å³¹¶W¹L 100 ½g¥H«á¤£´£¥Ü¤å³¹µoªíºõ»â¡C
-             xover.c ­×¥¿ M_VOTE M_BMW °ÊºA¿ù»~¡C
+[2000/04/07] bbsd.c board.c 0Announce æœ‰æ–°æ–‡ç« æ™‚å¼·è¿«é–±è®€ã€‚
+             acct.c è¨­å®š ç°¡åŒ–é€²/é›¢ç«™ç•«é¢ è€…ï¼Œé›¢ç«™ä¸é¡¯ç¤ºå€‹äººè³‡æ–™ã€‚
+             post.c ç™¼è¡¨æ–‡ç« è¶…é 100 ç¯‡ä»¥å¾Œä¸æç¤ºæ–‡ç« ç™¼è¡¨ç¶±é ˜ã€‚
+             xover.c ä¿®æ­£ M_VOTE M_BMW å‹•æ…‹éŒ¯èª¤ã€‚
 
-[2000/04/26] acct.c ¶}ªO³Ì«á·|³]©w expire.conf¡C(¤w¨ú®ø)
+[2000/04/26] acct.c é–‹æ¿æœ€å¾Œæœƒè¨­å®š expire.confã€‚(å·²å–æ¶ˆ)
 
-[2000/05/07] sh/bakbbs/bak* ·s¼W³Æ¥÷ script¡C
+[2000/05/07] sh/bakbbs/bak* æ–°å¢å‚™ä»½ scriptã€‚
 
-[2000/05/12] acct.c ¸Ñ¨M¦P®É¬å°£¦P¤@­Ó¬İªO·|³y¦¨ºëµØ°Ï¡B¬İªO¥ş·´ªº°İÃD¡C
-             visio.c ¶¢¸m¹L¤[µ¹¤©Äµ§i¡C
-             mail.c menu.c admutil.c ±H«Hµ¹¥ş³¡ªO¥D/¨Ï¥ÎªÌ¡C
+[2000/05/12] acct.c è§£æ±ºåŒæ™‚ç é™¤åŒä¸€å€‹çœ‹æ¿æœƒé€ æˆç²¾è¯å€ã€çœ‹æ¿å…¨æ¯€çš„å•é¡Œã€‚
+             visio.c é–’ç½®éä¹…çµ¦äºˆè­¦å‘Šã€‚
+             mail.c menu.c admutil.c å¯„ä¿¡çµ¦å…¨éƒ¨æ¿ä¸»/ä½¿ç”¨è€…ã€‚
 
-[2000/05/13] mail.c «HÅª¨ì¤@¥b¥i¥H reply mark delete forward¡C
-             more.c ¤å³¹/«H¾\Åª¨ì¤@¥bªº®É­Ô«ö q ¥i¥Hª½±µÂ÷¶}¡C
-             more.c §ïÅÜ¤@¨Ç«öÁä©w¸q¡C
+[2000/05/13] mail.c ä¿¡è®€åˆ°ä¸€åŠå¯ä»¥ reply mark delete forwardã€‚
+             more.c æ–‡ç« /ä¿¡é–±è®€åˆ°ä¸€åŠçš„æ™‚å€™æŒ‰ q å¯ä»¥ç›´æ¥é›¢é–‹ã€‚
+             more.c æ”¹è®Šä¸€äº›æŒ‰éµå®šç¾©ã€‚
 
-[2000/05/15] post.c mail.c post_browse mbox_browse ®É¥i¦s¤J¼È¦sÀÉ¡B¬İ help¡C
+[2000/05/15] post.c mail.c post_browse mbox_browse æ™‚å¯å­˜å…¥æš«å­˜æª”ã€çœ‹ helpã€‚
 
-[2000/05/16] acct.c Â_½u®Éµù¥U³æ­×´_¡C
+[2000/05/16] acct.c æ–·ç·šæ™‚è¨»å†Šå–®ä¿®å¾©ã€‚
 
-[2000/05/27] bbsd.c Á×§K¦³¯¸ªø¥á¤ô²yµ¹ guest¡C
+[2000/05/27] bbsd.c é¿å…æœ‰ç«™é•·ä¸Ÿæ°´çƒçµ¦ guestã€‚
 
-[2000/09/30] xover.c ­×¥¿ every_Z «áªO¥DÅv­­¿ù»~¡C
+[2000/09/30] xover.c ä¿®æ­£ every_Z å¾Œæ¿ä¸»æ¬Šé™éŒ¯èª¤ã€‚
 
-[2000/10/29] mail.c ¯¸ªø¥i¥HÅª¨ú¨Ï¥ÎªÌ«H½c¡C
+[2000/10/29] mail.c ç«™é•·å¯ä»¥è®€å–ä½¿ç”¨è€…ä¿¡ç®±ã€‚
 
-[2000/11/01] perm.h *.c §â¯¸°ÈªºÅv­­µe²M¡C
+[2000/11/01] perm.h *.c æŠŠç«™å‹™çš„æ¬Šé™ç•«æ¸…ã€‚
 
-[2000/11/02] bbsd.c ¥H sysop µn¤J¥i¥HÅÜ§ó¨Ï¥ÎªÌ¨­¤À¡C
+[2000/11/02] bbsd.c ä»¥ sysop ç™»å…¥å¯ä»¥è®Šæ›´ä½¿ç”¨è€…èº«åˆ†ã€‚
 
-[2000/11/09] menu.c post.c §ïÅÜ PERM_ALLBOARD ¦bºëµØ°ÏªºÅv­­¡C
-             gem.c §âºëµØ°Ï¦¬¿ı´£¥Ü¦r¼Ë§ï¦¨¤¤¤å¡C
+[2000/11/09] menu.c post.c æ”¹è®Š PERM_ALLBOARD åœ¨ç²¾è¯å€çš„æ¬Šé™ã€‚
+             gem.c æŠŠç²¾è¯å€æ”¶éŒ„æç¤ºå­—æ¨£æ”¹æˆä¸­æ–‡ã€‚
 
-[2000/11/18] post.c ·s¼W XoXsearch() ·j´M¬Û¦P¼ĞÃD¤å³¹¡C
-             bbsd.c config.h HAVE_WHERE ­×¥¿¬G¶m§P©w¡C
-             acct.c menu.c ¦pªG¨S¦³ define HAVE_ALOHA¡A´N¤£¥Î UFO_ALOHA¡C
+[2000/11/18] post.c æ–°å¢ XoXsearch() æœå°‹ç›¸åŒæ¨™é¡Œæ–‡ç« ã€‚
+             bbsd.c config.h HAVE_WHERE ä¿®æ­£æ•…é„‰åˆ¤å®šã€‚
+             acct.c menu.c å¦‚æœæ²’æœ‰ define HAVE_ALOHAï¼Œå°±ä¸ç”¨ UFO_ALOHAã€‚
 
-[2000/11/19] acct.c ²¾°£ etc/register¡C
+[2000/11/19] acct.c ç§»é™¤ etc/registerã€‚
 
-[2000/11/25] mail.c §ï¼g¸s²Õ¦^«HªºÀË¬d¡C
+[2000/11/25] mail.c æ”¹å¯«ç¾¤çµ„å›ä¿¡çš„æª¢æŸ¥ã€‚
 
 [2000/11/26] maple.p Makefile acct.c talk.c bbsd.c xover.c aloha.c camera.c rec_loc.c
-             global.h modes.h struct.h @aloha.hlp ·sªº HAVE_ALOHA¡C
-             talk.c ·s¼W¤ô²y°O¿ı°Ï¬q§R°£¡C
+             global.h modes.h struct.h @aloha.hlp æ–°çš„ HAVE_ALOHAã€‚
+             talk.c æ–°å¢æ°´çƒè¨˜éŒ„å€æ®µåˆªé™¤ã€‚
 
 [2000/12/02] maple.p Makefile favorite.c bbsd.c board.c menu.c xover.c camera.c 
-             config.h global.h modes.h struct.h @mf.hlp ·s¼W MY_FAVORITE¡C
-             aloha.c ·s¼W¦n¤Í¦W³æ±Æ§Ç¡B¬d¸ß¥\¯à¡C
+             config.h global.h modes.h struct.h @mf.hlp æ–°å¢ MY_FAVORITEã€‚
+             aloha.c æ–°å¢å¥½å‹åå–®æ’åºã€æŸ¥è©¢åŠŸèƒ½ã€‚
 
-[2000/12/03] outgo.c ¦Û°Ê°e«Hµ{¦¡¡C
-             camera.c ²¾°£ FILM_GOODBYE¡C
+[2000/12/03] outgo.c è‡ªå‹•é€ä¿¡ç¨‹å¼ã€‚
+             camera.c ç§»é™¤ FILM_GOODBYEã€‚
 
-[2000/12/17] perm.h ­×§ï HAS_PERM(x) HAVE_PERM(x)¡C
-             *.c HAVE_PERM(x) ¤Î cuser.level & x ´«¦¨ HAS_PERM()¡C
+[2000/12/17] perm.h ä¿®æ”¹ HAS_PERM(x) HAVE_PERM(x)ã€‚
+             *.c HAVE_PERM(x) åŠ cuser.level & x æ›æˆ HAS_PERM()ã€‚
 
-[2000/12/20] config.h §â SYSOPNICK ¿W¥ß¥X¨Ó¡C
-             post.c ·s¼W post_cross_terminator() §R°£¬Û¦P§@ªÌ¡C
-             xover.c §ïÅÜ¤@¨Ç«öÁä keymap¡C
-             post.c ·s¼W XoX ¨t¦Cªº·j´M¡A¨Ï»P ¨ä¥Lª©¥» BBS ¬Û¦P¡C
+[2000/12/20] config.h æŠŠ SYSOPNICK ç¨ç«‹å‡ºä¾†ã€‚
+             post.c æ–°å¢ post_cross_terminator() åˆªé™¤ç›¸åŒä½œè€…ã€‚
+             xover.c æ”¹è®Šä¸€äº›æŒ‰éµ keymapã€‚
+             post.c æ–°å¢ XoX ç³»åˆ—çš„æœå°‹ï¼Œä½¿èˆ‡ å…¶ä»–ç‰ˆæœ¬ BBS ç›¸åŒã€‚
 
-[2000/12/21] talk.c Talk ®É¥i¥H¤è¦VÁä²¾°Ê¡BCtrl+Y ²M°£¤§Ãşªº¥\¯àÁä¡C
-             config.h talk.c ²¾°£ TALK_USER_LIST¡C
+[2000/12/21] talk.c Talk æ™‚å¯ä»¥æ–¹å‘éµç§»å‹•ã€Ctrl+Y æ¸…é™¤ä¹‹é¡çš„åŠŸèƒ½éµã€‚
+             config.h talk.c ç§»é™¤ TALK_USER_LISTã€‚
 
-[2000/12/22] talk.c ¨Ï¥ÎªÌ¦W³æ¥[¦n¤Í®ÉÀË¬d¦n¤Í­Ó¼Æ¬O§_¶W¹L¤W­­¡C
-             global.h §â³\¦h message define ¦b³o¡A¨Ã±N COLOR ¿W¥ß¥X¨Ó¡C
+[2000/12/22] talk.c ä½¿ç”¨è€…åå–®åŠ å¥½å‹æ™‚æª¢æŸ¥å¥½å‹å€‹æ•¸æ˜¯å¦è¶…éä¸Šé™ã€‚
+             global.h æŠŠè¨±å¤š message define åœ¨é€™ï¼Œä¸¦å°‡ COLOR ç¨ç«‹å‡ºä¾†ã€‚
 
-[2000/12/23] talk.c cache.c bbsd.c §âÃa¤H¤]¸ü¤J CACHE¡C
+[2000/12/23] talk.c cache.c bbsd.c æŠŠå£äººä¹Ÿè¼‰å…¥ CACHEã€‚
 
-[2000/12/24] config.h global.h talk.c ADV_ULIST ¨Ï¥ÎªÌ¦W³æ¤¤¡A¤£¦Pªº¦n¤Í·|°Ï¤ÀÃC¦â¡C
-             aloha.c ¤Ş¤J¦n¤Í¦Ü¦h¥u¤Ş¨ì ALOHA_MAX ªº­Ó¼Æ
+[2000/12/24] config.h global.h talk.c ADV_ULIST ä½¿ç”¨è€…åå–®ä¸­ï¼Œä¸åŒçš„å¥½å‹æœƒå€åˆ†é¡è‰²ã€‚
+             aloha.c å¼•å…¥å¥½å‹è‡³å¤šåªå¼•åˆ° ALOHA_MAX çš„å€‹æ•¸
 
-[2001/01/01] acct.c ­×¥¿ POP3 »{ÃÒ®É¤£·|Àx¦s¨Ï¥ÎªÌ«H½c¡C
-             talk.c ¨Ï¥ÎªÌ¦W³æ¤¤ UFO_PAL ¤£¥X²{»P§Ú¬°¤Í¡A¥H§K¦n¤Í¼s¼½¿ù»~¡C
+[2001/01/01] acct.c ä¿®æ­£ POP3 èªè­‰æ™‚ä¸æœƒå„²å­˜ä½¿ç”¨è€…ä¿¡ç®±ã€‚
+             talk.c ä½¿ç”¨è€…åå–®ä¸­ UFO_PAL ä¸å‡ºç¾èˆ‡æˆ‘ç‚ºå‹ï¼Œä»¥å…å¥½å‹å»£æ’­éŒ¯èª¤ã€‚
 
-[2001/01/02] acct.c ¨t²Î­«¸m¡C
+[2001/01/02] acct.c ç³»çµ±é‡ç½®ã€‚
 
-[2001/01/06] dns_aton.c dns_open.c dns_smtp.c bmtad.c ¤ä´© mail-abuse¡C
-             config.h global.h acct.c untrust.acl trust.acl HAVE_TRUST »{ÃÒ¶Â¥Õ¦W³æ¡C
-             acct.c camera.c struct.h §â ¤@¨Ç±`¥Îªº¤å¥ó§ì¥h FILM_XX¡C
-             talk.c ¥[ªø¤ô²yªø«×¡C
-             talk.c @ulist.hlp ¨Ï¥ÎªÌ¦W³æ¤¤«ö d §R°£¦n¤Í/Ãa¤H¡C
+[2001/01/06] dns_aton.c dns_open.c dns_smtp.c bmtad.c æ”¯æ´ mail-abuseã€‚
+             config.h global.h acct.c untrust.acl trust.acl HAVE_TRUST èªè­‰é»‘ç™½åå–®ã€‚
+             acct.c camera.c struct.h æŠŠ ä¸€äº›å¸¸ç”¨çš„æ–‡ä»¶æŠ“å» FILM_XXã€‚
+             talk.c åŠ é•·æ°´çƒé•·åº¦ã€‚
+             talk.c @ulist.hlp ä½¿ç”¨è€…åå–®ä¸­æŒ‰ d åˆªé™¤å¥½å‹/å£äººã€‚
 
 [2001/01/08] config.h global.h struct.h modes.h camera.c menu.c newbrd.c
-             ´£¨Ñ¬İªO³s¸p¥\¯à¡C
-             talk.c °O¿ı²á¤Ñ¶}©l®É¶¡¡C
+             æä¾›çœ‹æ¿é€£ç½²åŠŸèƒ½ã€‚
+             talk.c è¨˜éŒ„èŠå¤©é–‹å§‹æ™‚é–“ã€‚
 
-[2001/01/10] §â src/maple ¤¤ªº so ·h¥h src/so¡C
+[2001/01/10] æŠŠ src/maple ä¸­çš„ so æ¬å» src/soã€‚
              admutil.c menu.c acct.c maple.p 
-             §â¯¸ªø«ü¥O m_xfile m_resetsys m_reg_merge ¥~±¾¡C
-             favorite.c @mf.hlp §Úªº³Ì·R¤¤¥i¥H­×§ï¬İªO¡C
+             æŠŠç«™é•·æŒ‡ä»¤ m_xfile m_resetsys m_reg_merge å¤–æ›ã€‚
+             favorite.c @mf.hlp æˆ‘çš„æœ€æ„›ä¸­å¯ä»¥ä¿®æ”¹çœ‹æ¿ã€‚
 
-[2001/01/11] *.c §â xxx_head ¤ºªº´£¥Ü¦r¼Ë®æ¦¡§ï¦¨¬Û¦P¡C
-             config.h mail.c acct.c ¨Ï undef EMAIL_JUSTIFY ¦³®Ä¡C
+[2001/01/11] *.c æŠŠ xxx_head å…§çš„æç¤ºå­—æ¨£æ ¼å¼æ”¹æˆç›¸åŒã€‚
+             config.h mail.c acct.c ä½¿ undef EMAIL_JUSTIFY æœ‰æ•ˆã€‚
 
 [2001/01/12] config.h global.h acct.c mail.c menu.c maple.p bmtad.c
-             @justify @e-mail valid HAVE_REGKEY_CHECK »{ÃÒ½XÅçÃÒ¡C
-             bbsd.c ¨Ï¬G¶m±Æ§Ç¥¿±`¡C
+             @justify @e-mail valid HAVE_REGKEY_CHECK èªè­‰ç¢¼é©—è­‰ã€‚
+             bbsd.c ä½¿æ•…é„‰æ’åºæ­£å¸¸ã€‚
 
-[2001/01/13] config.h menu.c ´£¨Ñ¿ï³æ¥ú´Î¡C
+[2001/01/13] config.h menu.c æä¾›é¸å–®å…‰æ£’ã€‚
 
-[2001/01/15] xover.c menu.c Ctrl('U') ¸õ¨ì¨Ï¥ÎªÌ¦W³æ¡C
+[2001/01/15] xover.c menu.c Ctrl('U') è·³åˆ°ä½¿ç”¨è€…åå–®ã€‚
 
-[2001/01/16] §â COLOR3 ¿W¥ß¥X¨Ó¡C
+[2001/01/16] æŠŠ COLOR3 ç¨ç«‹å‡ºä¾†ã€‚
 
-[2001/01/17] mail.c ¤å³¹¡B¶l¥ó¤é´Á¤W¦â¡C
+[2001/01/17] mail.c æ–‡ç« ã€éƒµä»¶æ—¥æœŸä¸Šè‰²ã€‚
 
-[2001/01/27] newbrd.c struct.h °Î¦W³s¸p¾÷¨î¡C
-             visio.c menu.c ­×¥¿ vmsg(NULL) pad_view() 
-             ¦b°»´ú¥ª¥kÁä¥ş§Î¤U¡A«ö¥ªÁä·|¸õÂ÷¤G¼h¿ï³æªº°İÃD¡C
-             talk.c ¹ï¤è§Y¨Ï¨S¶}¡u¦n¤Í¤W¯¸³qª¾¡v¤]³qª¾¡C
-             talk.c ¦Û¤v¬O¹ï¤èªº¦n¤Í¥B¹ï¤è¨S¦³¡u»·Â÷¹ĞÄÛ¡v¤~¥i¥H¦^¦©¤W¯¸³qª¾¡C
-             §ó·s bpop3d.c¡C
+[2001/01/27] newbrd.c struct.h åŒ¿åé€£ç½²æ©Ÿåˆ¶ã€‚
+             visio.c menu.c ä¿®æ­£ vmsg(NULL) pad_view() 
+             åœ¨åµæ¸¬å·¦å³éµå…¨å½¢ä¸‹ï¼ŒæŒ‰å·¦éµæœƒè·³é›¢äºŒå±¤é¸å–®çš„å•é¡Œã€‚
+             talk.c å°æ–¹å³ä½¿æ²’é–‹ã€Œå¥½å‹ä¸Šç«™é€šçŸ¥ã€ä¹Ÿé€šçŸ¥ã€‚
+             talk.c è‡ªå·±æ˜¯å°æ–¹çš„å¥½å‹ä¸”å°æ–¹æ²’æœ‰ã€Œé é›¢å¡µå›‚ã€æ‰å¯ä»¥å›æ‰£ä¸Šç«™é€šçŸ¥ã€‚
+             æ›´æ–° bpop3d.cã€‚
 
-[2001/01/28] bbsd.c admutil.c ¬G¶m¤ñ¹ï¥i¥H¤ñ¹ï FQDN¡C
-             board.c @class.hlp ¬İªO¦Cªí«ö v ³]©w¬İªO¤wÅª¡C
+[2001/01/28] bbsd.c admutil.c æ•…é„‰æ¯”å°å¯ä»¥æ¯”å° FQDNã€‚
+             board.c @class.hlp çœ‹æ¿åˆ—è¡¨æŒ‰ v è¨­å®šçœ‹æ¿å·²è®€ã€‚
 
-[2001/01/29] bmtad.c ¥H indent ±Æª©¡C
-             board.c @class.hlp ¬İªO¦Cªí«ö V ³]©w¬İªO¥¼Åª¡C
+[2001/01/29] bmtad.c ä»¥ indent æ’ç‰ˆã€‚
+             board.c @class.hlp çœ‹æ¿åˆ—è¡¨æŒ‰ V è¨­å®šçœ‹æ¿æœªè®€ã€‚
 
-[2001/02/05] edit.c post.c bmtad.c config.h ÅÜ´« Origin ¼Ë¦¡¡C
-             post.c ­­¨î¤å³¹Âà¿ı½g¼Æ¡C
-             post.c µoªí«áªº¤å³¹´N°O¿ı¡A¨Ï¤£¥X²{¥¼¾\Åªªº¡Ï¸¹¡C
+[2001/02/05] edit.c post.c bmtad.c config.h è®Šæ› Origin æ¨£å¼ã€‚
+             post.c é™åˆ¶æ–‡ç« è½‰éŒ„ç¯‡æ•¸ã€‚
+             post.c ç™¼è¡¨å¾Œçš„æ–‡ç« å°±è¨˜éŒ„ï¼Œä½¿ä¸å‡ºç¾æœªé–±è®€çš„ï¼‹è™Ÿã€‚
              config.h struct.h global.h menu.c xover.c song.c camera.c 
-             @song.hlp ´£¨ÑÂIºq¥\¯à¡C
+             @song.hlp æä¾›é»æ­ŒåŠŸèƒ½ã€‚
 
-[2001/02/07] camera.c ´£¨ÑÂIºq¨ì°ÊºA¬İªO¥\¯à¡C
-             global.h *.c §â¨t²ÎªO¦W¿W¥ß¥X¨Ó define BN_XXXX¡C
-             bwboard.c guessnum.c ¥H indent ±Æª©¡C
-             post.c board.c ¤å³¹¦Cªí³¡¤À visit¡C
-             bmtad.c mailpost ®ÉÀË¬d¨Ï¥ÎªÌÅv­­¬O§_º¡¨¬¬İªO¾\Åª/µoªíÅv­­¡C
+[2001/02/07] camera.c æä¾›é»æ­Œåˆ°å‹•æ…‹çœ‹æ¿åŠŸèƒ½ã€‚
+             global.h *.c æŠŠç³»çµ±æ¿åç¨ç«‹å‡ºä¾† define BN_XXXXã€‚
+             bwboard.c guessnum.c ä»¥ indent æ’ç‰ˆã€‚
+             post.c board.c æ–‡ç« åˆ—è¡¨éƒ¨åˆ† visitã€‚
+             bmtad.c mailpost æ™‚æª¢æŸ¥ä½¿ç”¨è€…æ¬Šé™æ˜¯å¦æ»¿è¶³çœ‹æ¿é–±è®€/ç™¼è¡¨æ¬Šé™ã€‚
 
-[2001/02/08] bbsd.c talk.c guest ¶Ã¼Æ¨ú¬G¶m¡C
-             modes.h menu.c °ÊºA­«±Æ¡C
-             km.c menu.c ´£¨Ñ¤Õ©ú´Ñ¹CÀ¸¡C
+[2001/02/08] bbsd.c talk.c guest äº‚æ•¸å–æ•…é„‰ã€‚
+             modes.h menu.c å‹•æ…‹é‡æ’ã€‚
+             km.c menu.c æä¾›å­”æ˜æ£‹éŠæˆ²ã€‚
 
-[2001/02/09] menu.c ­«·s¾ã²z¿ï³æ¡C
-             menu.c ¥D¿ï³æ«ö s ª½±µ¶i¤J Select()¡A´î¤Ö¿ï³æªø«×¡C
+[2001/02/09] menu.c é‡æ–°æ•´ç†é¸å–®ã€‚
+             menu.c ä¸»é¸å–®æŒ‰ s ç›´æ¥é€²å…¥ Select()ï¼Œæ¸›å°‘é¸å–®é•·åº¦ã€‚
 
-[2001/02/10] dns_smtp.c ¥Î relay server¡C
+[2001/02/10] dns_smtp.c ç”¨ relay serverã€‚
 
-[2001/02/11] acct.c bbsd.c ¦Û°Ê¨ú¤UÂ÷Â¾ªO¥DÅv­­¡C
-             acct.c ·s¬İªO¹w³]µoªíÅv­­¬°µoªí¤å³¹¡A¹w³]Äİ©Ê¬°¤£Âà«H¡C
+[2001/02/11] acct.c bbsd.c è‡ªå‹•å–ä¸‹é›¢è·æ¿ä¸»æ¬Šé™ã€‚
+             acct.c æ–°çœ‹æ¿é è¨­ç™¼è¡¨æ¬Šé™ç‚ºç™¼è¡¨æ–‡ç« ï¼Œé è¨­å±¬æ€§ç‚ºä¸è½‰ä¿¡ã€‚
 
-[2001/02/12] src/Makefile §Ö³t¦w¸Ë¥Îªº Makefile¡C
-             acct.c ¶}·sªO/­×§ï¬İªO¦Û°Ê¥[¤WªO¥DÅv­­¡C
+[2001/02/12] src/Makefile å¿«é€Ÿå®‰è£ç”¨çš„ Makefileã€‚
+             acct.c é–‹æ–°æ¿/ä¿®æ”¹çœ‹æ¿è‡ªå‹•åŠ ä¸Šæ¿ä¸»æ¬Šé™ã€‚
 
-[2001/02/15] mine.c menu.c ´£¨Ñ½ò¦a¹p¹CÀ¸¡C
+[2001/02/15] mine.c menu.c æä¾›è¸©åœ°é›·éŠæˆ²ã€‚
 
-[2001/02/17] mail.c ¤å³¹¡B«H¥ó¦Cªí¤é´Á§ï¥Î¬P´Á´X¤W¦â¡C
-             talk.c Talk ®É¦³ insert ¥\¯à¡C
+[2001/02/17] mail.c æ–‡ç« ã€ä¿¡ä»¶åˆ—è¡¨æ—¥æœŸæ”¹ç”¨æ˜ŸæœŸå¹¾ä¸Šè‰²ã€‚
+             talk.c Talk æ™‚æœ‰ insert åŠŸèƒ½ã€‚
 
-[2001/02/18] gem.c ºëµØ°Ï²§°Ê°O¿ı®æ¦¡ÅÜ°Ê¡C
+[2001/02/18] gem.c ç²¾è¯å€ç•°å‹•è¨˜éŒ„æ ¼å¼è®Šå‹•ã€‚
 
-[2001/02/20] fantan.c menu.c ´£¨Ñ±µÀs¹CÀ¸¡C
+[2001/02/20] fantan.c menu.c æä¾›æ¥é¾éŠæˆ²ã€‚
 
-[2001/02/21] favorite.c ­­¨î§Úªº³Ì·R¥u¯à§R°£ªÅ¥Ø¿ı¡A¥H§K¯d¤UÀÉ®×´İÀe¡C
-             global.h edit.c §â origin banner ªº logo ¿W¥ß¥X¨Ó¡C
+[2001/02/21] favorite.c é™åˆ¶æˆ‘çš„æœ€æ„›åªèƒ½åˆªé™¤ç©ºç›®éŒ„ï¼Œä»¥å…ç•™ä¸‹æª”æ¡ˆæ®˜éª¸ã€‚
+             global.h edit.c æŠŠ origin banner çš„ logo ç¨ç«‹å‡ºä¾†ã€‚
 
-[2001/02/22] gem-check.c Á×§KºëµØ°Ï Class¤U©ñ Folder ³Q expire ±¼¡C
-             transacct.c .ACCT Âà´«µ{¦¡¡C
+[2001/02/22] gem-check.c é¿å…ç²¾è¯å€ Classä¸‹æ”¾ Folder è¢« expire æ‰ã€‚
+             transacct.c .ACCT è½‰æ›ç¨‹å¼ã€‚
 
-[2001/02/23] maple/Makefile ¤£¥Î make clean ª½±µ¹ï©Ò¦³ªº .o °µ³sµ²¡C
-             bbsd.c ¯¸°È¤£°µ©w´Á»{ÃÒ¡C
-             perm.h *.c §â¯¸°ÈÅv­­°µ§ó²Ó¨Bªº­«¾ã¡C
-             *.hlp ¥[¤J xover.c ¤¤ªº«ü¥O¡A¨Ã­«·s¾ã²z±Æª©¦¨¬Û¦P®æ¦¡¡C
-             post.c gem.c ·s¼W¨Ï¥ÎªÌ²ßºDªº c/p ¦¬¿ıºëµØ°Ï¡C
+[2001/02/23] maple/Makefile ä¸ç”¨ make clean ç›´æ¥å°æ‰€æœ‰çš„ .o åšé€£çµã€‚
+             bbsd.c ç«™å‹™ä¸åšå®šæœŸèªè­‰ã€‚
+             perm.h *.c æŠŠç«™å‹™æ¬Šé™åšæ›´ç´°æ­¥çš„é‡æ•´ã€‚
+             *.hlp åŠ å…¥ xover.c ä¸­çš„æŒ‡ä»¤ï¼Œä¸¦é‡æ–°æ•´ç†æ’ç‰ˆæˆç›¸åŒæ ¼å¼ã€‚
+             post.c gem.c æ–°å¢ä½¿ç”¨è€…ç¿’æ…£çš„ c/p æ”¶éŒ„ç²¾è¯å€ã€‚
 
-[2001/02/24] gem-check.c µL±ø¥ó§R°£¨S¥ÎªºÀÉ®×¡C
-             account.c §â¤@¨Ç¤å¥ó©ñ¦b [BN_SECURITY]¡C
-             usies-sort.c account.c ²Î­p§C¨Ï¥Î²vªº¬İªO¨ì [BN_SECURITY]¡C
-             acct.c account.c °O¿ı¯¸ªø­×§ïÅv­­¨ì [BN_SECURITY]¡C
+[2001/02/24] gem-check.c ç„¡æ¢ä»¶åˆªé™¤æ²’ç”¨çš„æª”æ¡ˆã€‚
+             account.c æŠŠä¸€äº›æ–‡ä»¶æ”¾åœ¨ [BN_SECURITY]ã€‚
+             usies-sort.c account.c çµ±è¨ˆä½ä½¿ç”¨ç‡çš„çœ‹æ¿åˆ° [BN_SECURITY]ã€‚
+             acct.c account.c è¨˜éŒ„ç«™é•·ä¿®æ”¹æ¬Šé™åˆ° [BN_SECURITY]ã€‚
 
-[2001/02/25] mine.c ­×¥¿¤p¿ù»~¡C
-             talk.c ·s¼W²Ä¤Tª© talk_char()¡C
+[2001/02/25] mine.c ä¿®æ­£å°éŒ¯èª¤ã€‚
+             talk.c æ–°å¢ç¬¬ä¸‰ç‰ˆ talk_char()ã€‚
 
-[2001/02/26] board.c favorite.c ­×¥¿¤¤¤åªO¦W¤Óªø®É¡A¬Y¨Ç term ¬İ°_¨Ó·|¸õ¦æªº°İÃD¡C
+[2001/02/26] board.c favorite.c ä¿®æ­£ä¸­æ–‡æ¿åå¤ªé•·æ™‚ï¼ŒæŸäº› term çœ‹èµ·ä¾†æœƒè·³è¡Œçš„å•é¡Œã€‚
 
 [2001/02/28] config.h menu.c mail.c maple.p HAVE_MAIL_ZIP 
-             ´£¨Ñ§â«H¥ó/ºëµØ°ÏÀ£ÁYÂà±Hªº¥\¯à¡C
+             æä¾›æŠŠä¿¡ä»¶/ç²¾è¯å€å£“ç¸®è½‰å¯„çš„åŠŸèƒ½ã€‚
 
-[2001/03/01] xyz.c menu.c etc/tip ¨C¤é¤p¯µ³Z¡C
-             post.c edit.c ´£¨Ñ½s¿è(¦ı¤£¯àÀx¦s)¨ä¥L¤Hµoªí¤å³¹ªº¥\¯à¡C
-             mail.c ´£¨Ñ½s¿è(¦ı¤£¯àÀx¦s)«H½c¤¤«H¥óªº¥\¯à¡C
-             fantan.c ­×¥¿¯}Ãö®É¤£·|µ²§ôªº°İÃD¡C
+[2001/03/01] xyz.c menu.c etc/tip æ¯æ—¥å°ç§˜è¨£ã€‚
+             post.c edit.c æä¾›ç·¨è¼¯(ä½†ä¸èƒ½å„²å­˜)å…¶ä»–äººç™¼è¡¨æ–‡ç« çš„åŠŸèƒ½ã€‚
+             mail.c æä¾›ç·¨è¼¯(ä½†ä¸èƒ½å„²å­˜)ä¿¡ç®±ä¸­ä¿¡ä»¶çš„åŠŸèƒ½ã€‚
+             fantan.c ä¿®æ­£ç ´é—œæ™‚ä¸æœƒçµæŸçš„å•é¡Œã€‚
 
-[2001/03/02] inst.sh ¦Û°Ê¦w¸Ë script¡C
-             util/uno/Makefile util/tran/Makefile ¤è«K make¡C
-             config.h talk.c HAVE_BADPAL ¥i¥H®³±¼¾ã­ÓÃa¤H¥\¯à¡C
+[2001/03/02] inst.sh è‡ªå‹•å®‰è£ scriptã€‚
+             util/uno/Makefile util/tran/Makefile æ–¹ä¾¿ makeã€‚
+             config.h talk.c HAVE_BADPAL å¯ä»¥æ‹¿æ‰æ•´å€‹å£äººåŠŸèƒ½ã€‚
 
-[2001/03/03] bbsd.c currtitle ÁÙ­ì¡C
-             more.c @more.hlp ·s¼W¤W±²¤@¦æ¡C
+[2001/03/03] bbsd.c currtitle é‚„åŸã€‚
+             more.c @more.hlp æ–°å¢ä¸Šæ²ä¸€è¡Œã€‚
 
-[2001/03/04] newbrd.c @cosign.hlp §â³s¸p¬É­±°µ±o§ó¹³¾\Åª¤å³¹¤@¼Ë¡C
-             global.h *.c ¾ã²z©Ò¦³ªº footer¡C
-             talk.c ¼Wªø¤ô²y°O¿ı¡C
-             menu.c ¶i¥X¤l¿ï³æ³£­«¼·°ÊºA¬İªO¡C
-             menu.c ·s¼W§Úªº³Ì·R§Ö³tÁä¡C
-             talk.c ¦b¤ô²y¦^ÅU¤¤¡AÅı¶Ç°T/¦¬°T/¼s¼½ªº¤ô²y³£¥i¥H¦^¡C
+[2001/03/04] newbrd.c @cosign.hlp æŠŠé€£ç½²ç•Œé¢åšå¾—æ›´åƒé–±è®€æ–‡ç« ä¸€æ¨£ã€‚
+             global.h *.c æ•´ç†æ‰€æœ‰çš„ footerã€‚
+             talk.c å¢é•·æ°´çƒè¨˜éŒ„ã€‚
+             menu.c é€²å‡ºå­é¸å–®éƒ½é‡æ’¥å‹•æ…‹çœ‹æ¿ã€‚
+             menu.c æ–°å¢æˆ‘çš„æœ€æ„›å¿«é€Ÿéµã€‚
+             talk.c åœ¨æ°´çƒå›é¡§ä¸­ï¼Œè®“å‚³è¨Š/æ”¶è¨Š/å»£æ’­çš„æ°´çƒéƒ½å¯ä»¥å›ã€‚
 
-[2001/03/06] config.h mail.c CHECK_ONLINE ¤å³¹¦Cªí¤¤¥i¥HÅã¥Ü¨Ï¥ÎªÌ¬O§_¦b¯¸¤W¡C
+[2001/03/06] config.h mail.c CHECK_ONLINE æ–‡ç« åˆ—è¡¨ä¸­å¯ä»¥é¡¯ç¤ºä½¿ç”¨è€…æ˜¯å¦åœ¨ç«™ä¸Šã€‚
 
-[2001/03/07] xyz.c menu.c ´£¨Ñ BBSNET ªA°È¡C
+[2001/03/07] xyz.c menu.c æä¾› BBSNET æœå‹™ã€‚
 
-[2001/03/09] menu.c ¤£¥²Â÷¯¸¥i¥H¼g¯d¨¥ªO¡C
-             menu.c ¯d¨¥ªO´£¨Ñ¤£¦PªºÃC¦â¤Î­¶¼Æ¡C
-             acct.c §â User/Setup ªº»¡©ú¼g©ú¥Õ¤@ÂI¡C
-             acct.c ¿é¤J id ®É´£¥Ü¥i«ö space ¦Û°Ê·j´M¡C
-             menu.c ¿ï³æ±Ô­z½s±Æ¡C
-             struct.h bbsd.c §â userlevel ¤]©ñ¤J cache¡C
-             talk.c §Q¥Î cache ªº userlevel §ïµ½ÀË¬d³t«×¡C
+[2001/03/09] menu.c ä¸å¿…é›¢ç«™å¯ä»¥å¯«ç•™è¨€æ¿ã€‚
+             menu.c ç•™è¨€æ¿æä¾›ä¸åŒçš„é¡è‰²åŠé æ•¸ã€‚
+             acct.c æŠŠ User/Setup çš„èªªæ˜å¯«æ˜ç™½ä¸€é»ã€‚
+             acct.c è¼¸å…¥ id æ™‚æç¤ºå¯æŒ‰ space è‡ªå‹•æœå°‹ã€‚
+             menu.c é¸å–®æ•˜è¿°ç·¨æ’ã€‚
+             struct.h bbsd.c æŠŠ userlevel ä¹Ÿæ”¾å…¥ cacheã€‚
+             talk.c åˆ©ç”¨ cache çš„ userlevel æ”¹å–„æª¢æŸ¥é€Ÿåº¦ã€‚
 
-[2001/03/10] mail.c ­×¥¿¸s²Õ±H«Hµ²§ô®É½Ğ«ö¥ô·NÁäÄ~Äò·|©Ç©Çªº¡C
+[2001/03/10] mail.c ä¿®æ­£ç¾¤çµ„å¯„ä¿¡çµæŸæ™‚è«‹æŒ‰ä»»æ„éµç¹¼çºŒæœƒæ€ªæ€ªçš„ã€‚
 
-[2001/03/11] global.h menu.c acct.c visio.c §ì¥X MENU_XYPOS ©w¸q¡A¥H«K­×§ï¤¶­±¡C
-             global.h acct.c menu.c §ì¥X MENU_YNOTE ©w¸q¡A¥H«K­×§ï¤¶­±¡C
-             cache.c camera.c §ì¥X MOVIE_LINES ©w¸q¡A¥H«K­×§ï¤¶­±¡C
-             post.c mbox.c @board.hlp @mbox.hlp ²Î¤@«öÁä¡C
-             'x' Âàµ¹ user  'X' Âà¨ì board  ^X ©Ø·¬¸¨¸­
+[2001/03/11] global.h menu.c acct.c visio.c æŠ“å‡º MENU_XYPOS å®šç¾©ï¼Œä»¥ä¾¿ä¿®æ”¹ä»‹é¢ã€‚
+             global.h acct.c menu.c æŠ“å‡º MENU_YNOTE å®šç¾©ï¼Œä»¥ä¾¿ä¿®æ”¹ä»‹é¢ã€‚
+             cache.c camera.c æŠ“å‡º MOVIE_LINES å®šç¾©ï¼Œä»¥ä¾¿ä¿®æ”¹ä»‹é¢ã€‚
+             post.c mbox.c @board.hlp @mbox.hlp çµ±ä¸€æŒ‰éµã€‚
+             'x' è½‰çµ¦ user  'X' è½‰åˆ° board  ^X æ‹‚æ¥“è½è‘‰
 
-[2001/03/12] config.h modes.h talk.c visio.c BMW_COUNT ­pºâ¤¤¤ô²yªº­Ó¼Æ¡C
-             visio.c acct.c ­×¥¿ vget() ´å¼Ğ²¾°ÊÅã¥Üªº°İÃD¡C
-             fantan.c guessnum.c mine.c ¨ú®ø¤@¨Ç¨S¥Îªº°T®§¡C
-             config.h *.c §â¤@¨Ç°Ñ¼Æ¾ã²z¤@¤U¡A·h¥h¥L­ÌÂkÄİªºµ{¦¡¡C
+[2001/03/12] config.h modes.h talk.c visio.c BMW_COUNT è¨ˆç®—ä¸­æ°´çƒçš„å€‹æ•¸ã€‚
+             visio.c acct.c ä¿®æ­£ vget() æ¸¸æ¨™ç§»å‹•é¡¯ç¤ºçš„å•é¡Œã€‚
+             fantan.c guessnum.c mine.c å–æ¶ˆä¸€äº›æ²’ç”¨çš„è¨Šæ¯ã€‚
+             config.h *.c æŠŠä¸€äº›åƒæ•¸æ•´ç†ä¸€ä¸‹ï¼Œæ¬å»ä»–å€‘æ­¸å±¬çš„ç¨‹å¼ã€‚
 
-[2001/03/13] config.h talk.c BMW_DISPLAY Åã¥Ü«e´X­Ó¤ô²y¡C
-             acct.c ¥[±jª©ªº¿Ã¹õÂê©w¥\¯à¡AÅıÂê©w®É¤£¯à±µ/¶Ç¤ô²y¡A¥B²M°£¿Ã¹õ¡C
+[2001/03/13] config.h talk.c BMW_DISPLAY é¡¯ç¤ºå‰å¹¾å€‹æ°´çƒã€‚
+             acct.c åŠ å¼·ç‰ˆçš„è¢å¹•é–å®šåŠŸèƒ½ï¼Œè®“é–å®šæ™‚ä¸èƒ½æ¥/å‚³æ°´çƒï¼Œä¸”æ¸…é™¤è¢å¹•ã€‚
 
-[2001/03/15] struct.h acct.c talk.c ¥[¤J¦Û©w Ctrl+R ¬O§_­n¦^ÅU¤ô²yªº¿ï¶µ¡C
+[2001/03/15] struct.h acct.c talk.c åŠ å…¥è‡ªå®š Ctrl+R æ˜¯å¦è¦å›é¡§æ°´çƒçš„é¸é …ã€‚
 
-[2001/03/16] *.c ²Î¤@°İÃD®æ¦¡¬° "§A­n¶Ü(Y/N)¡H[N] "  ¥ş§Î°İ¸¹  ¤j¼g Y/N  ¹w³]¥Î [] ¡C
-                                       ^ µLªÅ¥Õ  ^ªÅ¥Õ
+[2001/03/16] *.c çµ±ä¸€å•é¡Œæ ¼å¼ç‚º "ä½ è¦å—(Y/N)ï¼Ÿ[N] "  å…¨å½¢å•è™Ÿ  å¤§å¯« Y/N  é è¨­ç”¨ [] ã€‚
+                                       ^ ç„¡ç©ºç™½  ^ç©ºç™½
 
-[2001/03/17] acct.c bbsd.c ¤£Åı user ­×§ï©m¦WÄæ¦ì¡C
-             util/backup/*.c ¦Û°Ê³Æ¥÷µ{¦¡¡C
+[2001/03/17] acct.c bbsd.c ä¸è®“ user ä¿®æ”¹å§“åæ¬„ä½ã€‚
+             util/backup/*.c è‡ªå‹•å‚™ä»½ç¨‹å¼ã€‚
 
-[2001/03/19] *.c *.h §â©Ò¦³ªº define ¤ÀÃş¾ã²z¨ì config.h¡C
+[2001/03/19] *.c *.h æŠŠæ‰€æœ‰çš„ define åˆ†é¡æ•´ç†åˆ° config.hã€‚
              config.h modes.h bbsd.c mail.c xover.c mboxgem.c reaper.c
-             HAVE_MBOX_GEM ´£¨Ñ­Ó¤H«H½cºëµØ°Ï¡C
+             HAVE_MBOX_GEM æä¾›å€‹äººä¿¡ç®±ç²¾è¯å€ã€‚
 
-[2001/03/21] xchatd.c MUD-like ªº«ü¥O³¡¤À match ´Nºâ¡C
-             xchatd.c MUD-like «ü¥O«ö¦r¥À±Æ§Ç¡C
+[2001/03/21] xchatd.c MUD-like çš„æŒ‡ä»¤éƒ¨åˆ† match å°±ç®—ã€‚
+             xchatd.c MUD-like æŒ‡ä»¤æŒ‰å­—æ¯æ’åºã€‚
 
-[2001/03/22] chat.c ¶i¤J²á¤Ñ«Ç®É¹w³]§ï¬°¤£²á¤Ñ¡C
-             xover.c §â¤£±`¥ÎªºÁä®³±¼¡AÄÀ¥Xµ¹¨ä¥Lµ{¦¡¨Ï¥Î¡C
-             *.c @*.hlp «öÁä­«·s²Î¤@¡C
-             edit.c ANSI ½s¿è®É«ö«á°hÁä¦^¨ì«D ANSI ¼Ò¦¡¡C
+[2001/03/22] chat.c é€²å…¥èŠå¤©å®¤æ™‚é è¨­æ”¹ç‚ºä¸èŠå¤©ã€‚
+             xover.c æŠŠä¸å¸¸ç”¨çš„éµæ‹¿æ‰ï¼Œé‡‹å‡ºçµ¦å…¶ä»–ç¨‹å¼ä½¿ç”¨ã€‚
+             *.c @*.hlp æŒ‰éµé‡æ–°çµ±ä¸€ã€‚
+             edit.c ANSI ç·¨è¼¯æ™‚æŒ‰å¾Œé€€éµå›åˆ°é ANSI æ¨¡å¼ã€‚
 
-[2001/03/24] post.c ¦ê¦C·j´Mµ²ªG´£¥Ü§@ªÌ/¥DÃD¡A¨Ã¸Ñ¨M´£¥Ü¤¤¤å¦r·|©Ç©Çªº°İÃD¡C
-             mail.c ¸Ñ¨M«H¥óÂsÄı¥u§â³Ì«á¤@½g³]¤wÅªªº°İÃD¡C
-             more.c KEY_UP KEY_PGUP ¹ï¤G­¶¥H¤Wªº¤å³¹¥iÂ÷¶}¨ÃÂ½¤W¤@½g¡C
-             post.c ¦ê¦C·j´M¼Ò¦¡¤¤®É«ö¤W¤UÁä¤]¥i¥H´`§Ç¾\Åª¡C
+[2001/03/24] post.c ä¸²åˆ—æœå°‹çµæœæç¤ºä½œè€…/ä¸»é¡Œï¼Œä¸¦è§£æ±ºæç¤ºä¸­æ–‡å­—æœƒæ€ªæ€ªçš„å•é¡Œã€‚
+             mail.c è§£æ±ºä¿¡ä»¶ç€è¦½åªæŠŠæœ€å¾Œä¸€ç¯‡è¨­å·²è®€çš„å•é¡Œã€‚
+             more.c KEY_UP KEY_PGUP å°äºŒé ä»¥ä¸Šçš„æ–‡ç« å¯é›¢é–‹ä¸¦ç¿»ä¸Šä¸€ç¯‡ã€‚
+             post.c ä¸²åˆ—æœå°‹æ¨¡å¼ä¸­æ™‚æŒ‰ä¸Šä¸‹éµä¹Ÿå¯ä»¥å¾ªåºé–±è®€ã€‚
 
-[2001/03/25] bmtad.c mail post ÀË¬d¬O§_¦³µoªíªºÅv­­¡C
-             post.c @board.hlp ·j´M©Ò¦³ mark ªº¤å³¹¡C
-             talk.c ½Õ¾ã¨Ï¥ÎªÌ¦W³æªº°ÊºAªø«×¡C
+[2001/03/25] bmtad.c mail post æª¢æŸ¥æ˜¯å¦æœ‰ç™¼è¡¨çš„æ¬Šé™ã€‚
+             post.c @board.hlp æœå°‹æ‰€æœ‰ mark çš„æ–‡ç« ã€‚
+             talk.c èª¿æ•´ä½¿ç”¨è€…åå–®çš„å‹•æ…‹é•·åº¦ã€‚
 
-[2001/03/27] post.c ´£¨ÑªO¥D¦bªO¤º­×§ï¤¤¤åªO¦W¡C
-             xover.c ­×¥¿¦bºëµØ°Ï¤£¥iÂà±H¡C
+[2001/03/27] post.c æä¾›æ¿ä¸»åœ¨æ¿å…§ä¿®æ”¹ä¸­æ–‡æ¿åã€‚
+             xover.c ä¿®æ­£åœ¨ç²¾è¯å€ä¸å¯è½‰å¯„ã€‚
 
-[2001/03/28] post.c cache.c @board.hlp ¦b¤å³¹¦Cªí¥i¥H¥á½u¤W§@ªÌ¤ô²y¡C
-             config.h acct.c more.c post.c xover.c §ì¥X HAVE_NOFORWARD¡C
-             *.c §â¬İª©¡B¼Æ¥D³£§ï¦¨¡uªO¡v¡A²Î¤@¥Î¦r¡C :p
-             *.c Åı xxx_cb ¤¤ªº dynamic load ¤£·|¦³ warning¡C
+[2001/03/28] post.c cache.c @board.hlp åœ¨æ–‡ç« åˆ—è¡¨å¯ä»¥ä¸Ÿç·šä¸Šä½œè€…æ°´çƒã€‚
+             config.h acct.c more.c post.c xover.c æŠ“å‡º HAVE_NOFORWARDã€‚
+             *.c æŠŠçœ‹ç‰ˆã€æ•¸ä¸»éƒ½æ”¹æˆã€Œæ¿ã€ï¼Œçµ±ä¸€ç”¨å­—ã€‚ :p
+             *.c è®“ xxx_cb ä¸­çš„ dynamic load ä¸æœƒæœ‰ warningã€‚
 
-[2001/03/29] mode.h ­«·s¾ã²z¡C
+[2001/03/29] mode.h é‡æ–°æ•´ç†ã€‚
 
 [2001/03/30] bmw.c board.c pal.c post.c talk.c maple.p
-             §â talk.c ¸Ì­±ªºµ{¦¡¤À´²¨ì¦U¾A·íªº¦a¤è¡C
-             util/tran/*.c ´£¨Ñ sob Ptt WD FireBird Âà maple 3 ªºµ{¦¡¡C
+             æŠŠ talk.c è£¡é¢çš„ç¨‹å¼åˆ†æ•£åˆ°å„é©ç•¶çš„åœ°æ–¹ã€‚
+             util/tran/*.c æä¾› sob Ptt WD FireBird è½‰ maple 3 çš„ç¨‹å¼ã€‚
 
-[2001/04/02] favor.c §Úªº³Ì·R¤¤¥i¥H³]©w¬İªO¤wÅª/¥¼Åª¡C
-             board.c favor.c mf.hlp ¬İªO¦Cªí¤¤³]©w¬İªO¥¼Åª«á¡A¥¼Åªªº¿O·|«G°_¨Ó¡C
+[2001/04/02] favor.c æˆ‘çš„æœ€æ„›ä¸­å¯ä»¥è¨­å®šçœ‹æ¿å·²è®€/æœªè®€ã€‚
+             board.c favor.c mf.hlp çœ‹æ¿åˆ—è¡¨ä¸­è¨­å®šçœ‹æ¿æœªè®€å¾Œï¼Œæœªè®€çš„ç‡ˆæœƒäº®èµ·ä¾†ã€‚
 
-[2001/04/03] bmw.c ­×´_¤ô²y°Ï¶ô§R°£ªº¥\¯à¡C
-             xover.c *.c global.h ¦b³Ì«á¤@¦æ´£¥Ü«ü¥O¡C
-             song.c ºq¥»¤¤Åı¤@¯ë¨Ï¥ÎªÌ¤]¥i¥H edit ¬İ±±¨î½X¡C
+[2001/04/03] bmw.c ä¿®å¾©æ°´çƒå€å¡Šåˆªé™¤çš„åŠŸèƒ½ã€‚
+             xover.c *.c global.h åœ¨æœ€å¾Œä¸€è¡Œæç¤ºæŒ‡ä»¤ã€‚
+             song.c æ­Œæœ¬ä¸­è®“ä¸€èˆ¬ä½¿ç”¨è€…ä¹Ÿå¯ä»¥ edit çœ‹æ§åˆ¶ç¢¼ã€‚
 
-[2001/04/07] config.h board.c favor.c ENHANCED_VISIT ¤wÅª/¥¼Åª§ï¬°§PÂ_³Ì«á¤@½g¤å³¹¡C
-             menu.c ­×¥¿ guest ¥i¥H¶i¤J§Úªº³Ì·Rªº bug¡C
-             cache.c edit.c more.c visio.c ¼W¥[ SHOW_USER_IN_TEXT ªººØÃş¡C
+[2001/04/07] config.h board.c favor.c ENHANCED_VISIT å·²è®€/æœªè®€æ”¹ç‚ºåˆ¤æ–·æœ€å¾Œä¸€ç¯‡æ–‡ç« ã€‚
+             menu.c ä¿®æ­£ guest å¯ä»¥é€²å…¥æˆ‘çš„æœ€æ„›çš„ bugã€‚
+             cache.c edit.c more.c visio.c å¢åŠ  SHOW_USER_IN_TEXT çš„ç¨®é¡ã€‚
 
-[2001/04/08] acct.c talk.c ·s¼Wª÷¿ú¡B¥Í¤é¡B©Ê§OÄæ¦ì¡C
-             post.c edit.c µoªí¤å³¹¥[¿ú¡C
-             mail.c ¦b«H¥ó¦Cªí¥i¥H¥á½u¤W§@ªÌ¤ô²y¡C
+[2001/04/08] acct.c talk.c æ–°å¢é‡‘éŒ¢ã€ç”Ÿæ—¥ã€æ€§åˆ¥æ¬„ä½ã€‚
+             post.c edit.c ç™¼è¡¨æ–‡ç« åŠ éŒ¢ã€‚
+             mail.c åœ¨ä¿¡ä»¶åˆ—è¡¨å¯ä»¥ä¸Ÿç·šä¸Šä½œè€…æ°´çƒã€‚
 
-[2001/04/13] mboxgem.c ¤p patch¡C
-             @board.hlp @mbox.hlp ¥[±j¡C
-             struch.h @class.hlp board.c acct.c account.c ¬İªO¦Cªí¥i¿ï¾Ü¨Ì¦r¥À/¤ÀÃş±Æ§Ç¡C
+[2001/04/13] mboxgem.c å° patchã€‚
+             @board.hlp @mbox.hlp åŠ å¼·ã€‚
+             struch.h @class.hlp board.c acct.c account.c çœ‹æ¿åˆ—è¡¨å¯é¸æ“‡ä¾å­—æ¯/åˆ†é¡æ’åºã€‚
 
-[2001/04/14] vote.c menu.c global.h ·s¼W§ë²¼¤¤¤ßªº¥\¯à¡C
+[2001/04/14] vote.c menu.c global.h æ–°å¢æŠ•ç¥¨ä¸­å¿ƒçš„åŠŸèƒ½ã€‚
 
-[2001/04/15] account.c ·s¼W¦P¤@ email »{ÃÒ¹L¦hªº°O¿ı¡C
-             bbsd.c ¥Í¤é·í¤Ñ¤W¯¸¦³¯S§Oªº¶i¯¸µe­±¡C
+[2001/04/15] account.c æ–°å¢åŒä¸€ email èªè­‰éå¤šçš„è¨˜éŒ„ã€‚
+             bbsd.c ç”Ÿæ—¥ç•¶å¤©ä¸Šç«™æœ‰ç‰¹åˆ¥çš„é€²ç«™ç•«é¢ã€‚
 
-[2001/04/19] @gem.hlp gem.c mboxgem.c ¥[¤JºëµØ°Ï·s¼W¤å³¹/¨÷©vªº§Ö³tÁä¡C
+[2001/04/19] @gem.hlp gem.c mboxgem.c åŠ å…¥ç²¾è¯å€æ–°å¢æ–‡ç« /å·å®—çš„å¿«é€Ÿéµã€‚
 
-[2001/04/20] *.c §â¤@¨Ç vget() ¤£»İ­n GCARRY ªº´«¦¨ DOECHO¡C
-             dice.c menu.c ·s¼WÂY»ë¤l¹CÀ¸¡C
+[2001/04/20] *.c æŠŠä¸€äº› vget() ä¸éœ€è¦ GCARRY çš„æ›æˆ DOECHOã€‚
+             dice.c menu.c æ–°å¢æ“²éª°å­éŠæˆ²ã€‚
 
-[2001/04/21] gp.c menu.c ·s¼Wª÷¼³§J±ô«¢¹CÀ¸¡C
-             race.c menu.c ·s¼WÁÉ°¨³õ¹CÀ¸¡C
-             bingo.c menu.c ·s¼W»«ªG¹CÀ¸¡C
-             bmw.c cache.c ¸Ñ¨M¦pªG post ®É¤¤¤ô²y¡A¤£·|Åã¥Ü¨Ó·½ªº°İÃD¡C
+[2001/04/21] gp.c menu.c æ–°å¢é‡‘æ’²å…‹æ¢­å“ˆéŠæˆ²ã€‚
+             race.c menu.c æ–°å¢è³½é¦¬å ´éŠæˆ²ã€‚
+             bingo.c menu.c æ–°å¢è³“æœéŠæˆ²ã€‚
+             bmw.c cache.c è§£æ±ºå¦‚æœ post æ™‚ä¸­æ°´çƒï¼Œä¸æœƒé¡¯ç¤ºä¾†æºçš„å•é¡Œã€‚
 
-[2001/04/23] bj.c menu.c ·s¼W¶Â³Ç§J¤G¤Q¤@ÂI¹CÀ¸¡C
-             admutil.c acct.c menu.c maplep.p §âµù¥U³æ»{ÃÒªºµ{¦¡·h¥h dynamic load¡C
+[2001/04/23] bj.c menu.c æ–°å¢é»‘å‚‘å…‹äºŒåä¸€é»éŠæˆ²ã€‚
+             admutil.c acct.c menu.c maplep.p æŠŠè¨»å†Šå–®èªè­‰çš„ç¨‹å¼æ¬å» dynamic loadã€‚
 
-[2001/04/24] nine.c menu.c etc/game/99 ·s¼W¤Ñ¦a¤E¤E¹CÀ¸¡C
+[2001/04/24] nine.c menu.c etc/game/99 æ–°å¢å¤©åœ°ä¹ä¹éŠæˆ²ã€‚
 
-[2001/04/25] chessmj.c menu.c ·s¼W¶H´Ñ³Â±N¹CÀ¸¡C
+[2001/04/25] chessmj.c menu.c æ–°å¢è±¡æ£‹éº»å°‡éŠæˆ²ã€‚
 
-[2001/04/26] util/tran/wd2brd.c ´£¨ÑÂà´«¬İªOÄİ©Ê¡C
-             seven.c menu.c ·s¼W½ä«°¤C±i¹CÀ¸¡C
-             marie.c etc/game/marie menu.c ·s¼W¤pº¿ÄR¼Ö¶é¹CÀ¸¡C
+[2001/04/26] util/tran/wd2brd.c æä¾›è½‰æ›çœ‹æ¿å±¬æ€§ã€‚
+             seven.c menu.c æ–°å¢è³­åŸä¸ƒå¼µéŠæˆ²ã€‚
+             marie.c etc/game/marie menu.c æ–°å¢å°ç‘ªéº—æ¨‚åœ’éŠæˆ²ã€‚
 
-[2001/04/27] bar.c menu.c ·s¼W§a¥xº¿ÄR¹CÀ¸¡C
+[2001/04/27] bar.c menu.c æ–°å¢å§å°ç‘ªéº—éŠæˆ²ã€‚
 
-[2001/05/02] km.c ¤Õ©ú´Ñ§ï¶i¡A¨Ï·|¥X²{´ÑÃĞ¦WºÙ¡C
+[2001/05/02] km.c å­”æ˜æ£‹æ”¹é€²ï¼Œä½¿æœƒå‡ºç¾æ£‹è­œåç¨±ã€‚
 
 [2001/05/08] stock.c menu.c etc/game/stock.name etc/game/stock.now etc/game/stock.sh 
-             ·s¼WªÑ¥«¤j¦ë¹CÀ¸¡C
+             æ–°å¢è‚¡å¸‚å¤§äº¨éŠæˆ²ã€‚
 
-[2001/05/09] km.c ¤Õ©ú´Ñ§ï¶i¡A¨Ï¯à°O¿ı§¹¦¨ªº´ÑÃĞ¤Î®¬´Ñ¡C
-             etc/game/km ¿é¤J¤j¶q¤Õ©ú´ÑÃĞ¡C
+[2001/05/09] km.c å­”æ˜æ£‹æ”¹é€²ï¼Œä½¿èƒ½è¨˜éŒ„å®Œæˆçš„æ£‹è­œåŠæ‚”æ£‹ã€‚
+             etc/game/km è¼¸å…¥å¤§é‡å­”æ˜æ£‹è­œã€‚
 
-[2001/05/25] visio.c ¡u½Ğ«ö¥ô·NÁäÄ~Äò¡v¶]°¨¿O¡C
+[2001/05/25] visio.c ã€Œè«‹æŒ‰ä»»æ„éµç¹¼çºŒã€è·‘é¦¬ç‡ˆã€‚
 
-[2001/05/28] chat.c ¤£¥i¥H¥Î§O¤Hªº id ·í°µ²á¤Ñ«Ç¥N¸¹¡C
+[2001/05/28] chat.c ä¸å¯ä»¥ç”¨åˆ¥äººçš„ id ç•¶åšèŠå¤©å®¤ä»£è™Ÿã€‚
 
-[2001/05/29] struct.h ¼W¥[ BMW.userid ªºªø«×¡Aµ¹¼s¼½²Å¸¹¥Î¡C
+[2001/05/29] struct.h å¢åŠ  BMW.userid çš„é•·åº¦ï¼Œçµ¦å»£æ’­ç¬¦è™Ÿç”¨ã€‚
 
-[2001/06/02] menu.c §ï±¼¤@¨Ç­«ÂĞÃöÁä¦rªº¿ï¶µ¡C
-             config.h post.c xover.c @board.hlp HAVE_REFUSEMARK ´£¨Ñ¬İªO¤å³¹¥[±K¥\¯à¡C
-             xover.c ­×¥¿¤w§R°£¤å³¹¤£±oÂà±H¡B¶×¤J¼È¦sÀÉ¡B Z-modem ¤U¸ü¡C
-             bmtad.c mailpost.c ¸Ñ¨M¤£¯à Email Justufy »{ÃÒ¡C
+[2001/06/02] menu.c æ”¹æ‰ä¸€äº›é‡è¦†é—œéµå­—çš„é¸é …ã€‚
+             config.h post.c xover.c @board.hlp HAVE_REFUSEMARK æä¾›çœ‹æ¿æ–‡ç« åŠ å¯†åŠŸèƒ½ã€‚
+             xover.c ä¿®æ­£å·²åˆªé™¤æ–‡ç« ä¸å¾—è½‰å¯„ã€åŒ¯å…¥æš«å­˜æª”ã€ Z-modem ä¸‹è¼‰ã€‚
+             bmtad.c mailpost.c è§£æ±ºä¸èƒ½ Email Justufy èªè­‰ã€‚
 
-[2001/06/06] bpop3d.c ­×¥¿¬Y¨Ç client ¨ú«H·|¥d¦ºªº°İÃD¡C
-             dl_lib.c ¸Ñ¨M¥~±¾¤Ó¦h.so Ãz±¼¤Fªº°İÃD¡C
+[2001/06/06] bpop3d.c ä¿®æ­£æŸäº› client å–ä¿¡æœƒå¡æ­»çš„å•é¡Œã€‚
+             dl_lib.c è§£æ±ºå¤–æ›å¤ªå¤š.so çˆ†æ‰äº†çš„å•é¡Œã€‚
 
-[2001/06/09] railway.c ¿é¤J¨®¯¸¦W®É§ï¥Î¿ï¸¹½Xªº¡C
+[2001/06/09] railway.c è¼¸å…¥è»Šç«™åæ™‚æ”¹ç”¨é¸è™Ÿç¢¼çš„ã€‚
 
-[2001/06/16] menu.c ¸Ñ¨M°ÊºA¬İªO 12 ¦æ¡A¤S¨Ï¥Î¿ï³æ¥ú´Î®É¡Aµe­±·|¦³´İÀeªº°İÃD¡C
+[2001/06/16] menu.c è§£æ±ºå‹•æ…‹çœ‹æ¿ 12 è¡Œï¼Œåˆä½¿ç”¨é¸å–®å…‰æ£’æ™‚ï¼Œç•«é¢æœƒæœ‰æ®˜éª¸çš„å•é¡Œã€‚
 
-[2001/06/19] wd2usr.c ¸Ñ¨M .PASSWD ±`¦³ªÅ¥ÕÄæ¦ìªº°İÃD¡C
+[2001/06/19] wd2usr.c è§£æ±º .PASSWD å¸¸æœ‰ç©ºç™½æ¬„ä½çš„å•é¡Œã€‚
 
-[2001/06/29] more.c ±N¤Ş¨¥¤ÀÃC¦â¡C
+[2001/06/29] more.c å°‡å¼•è¨€åˆ†é¡è‰²ã€‚
 
-[2001/07/09] acct.c POP3 REGKEY »{ÃÒ¥u¯à¦³ PERM_VALID¡A¦b¤U¦¸ login ®É¦Û°Ê¥[¤W¨ä¥LÅv­­¡A
-             ¥H§K³Q°±ÅvªÌÂÇ¦¹¤èªk´_Åv¡A¤]¤£·|»P NEWUSER_LIMIT ½Ä¬ğ¡C
+[2001/07/09] acct.c POP3 REGKEY èªè­‰åªèƒ½æœ‰ PERM_VALIDï¼Œåœ¨ä¸‹æ¬¡ login æ™‚è‡ªå‹•åŠ ä¸Šå…¶ä»–æ¬Šé™ï¼Œ
+             ä»¥å…è¢«åœæ¬Šè€…è—‰æ­¤æ–¹æ³•å¾©æ¬Šï¼Œä¹Ÿä¸æœƒèˆ‡ NEWUSER_LIMIT è¡çªã€‚
 
-[2001/07/09] post.c ­×§ï¤å³¹¼ĞÃD®É¶¶«K­×§ï¤º¤åªº¼ĞÃD¡C
+[2001/07/09] post.c ä¿®æ”¹æ–‡ç« æ¨™é¡Œæ™‚é †ä¾¿ä¿®æ”¹å…§æ–‡çš„æ¨™é¡Œã€‚
 
-[2001/07/10] chip.c ª±¹CÀ¸¤£¯à multi_login¡C
-             backupacct.c ³Æ¥÷¥ş¯¸¨Ï¥ÎªÌ .ACCT¡C
-             menu.c ­×¥¿ system load ¬d¸ß¡C
+[2001/07/10] chip.c ç©éŠæˆ²ä¸èƒ½ multi_loginã€‚
+             backupacct.c å‚™ä»½å…¨ç«™ä½¿ç”¨è€… .ACCTã€‚
+             menu.c ä¿®æ­£ system load æŸ¥è©¢ã€‚
 
-[2001/07/11] board.c ¬İªO¨Ì¦WºÙ/¤¤¤åªO¦W¤Á´«®ÉÀ³Àx¦s¾\Åª°O¿ı¡C
-             topusr.c ¥i²Î­p¤W¯¸¦¸¼Æ/Äé¤ô¦¸¼Æ/»È¹ô/ª÷¹ô/¦~ÄÖ/¬P®y¡C
-             mine.c ­×¥¿ª±½ò¦a¹pÀH«K¶Ã¼Ğ°O¡A·í¼Ğ°O¼Æ=¦a¹p¼Æ´N»¡§A¹LÃö¤F¡C
-             post.c §R°£¤å³¹­n¦©¿ú¡C
+[2001/07/11] board.c çœ‹æ¿ä¾åç¨±/ä¸­æ–‡æ¿ååˆ‡æ›æ™‚æ‡‰å„²å­˜é–±è®€è¨˜éŒ„ã€‚
+             topusr.c å¯çµ±è¨ˆä¸Šç«™æ¬¡æ•¸/çŒæ°´æ¬¡æ•¸/éŠ€å¹£/é‡‘å¹£/å¹´é½¡/æ˜Ÿåº§ã€‚
+             mine.c ä¿®æ­£ç©è¸©åœ°é›·éš¨ä¾¿äº‚æ¨™è¨˜ï¼Œç•¶æ¨™è¨˜æ•¸=åœ°é›·æ•¸å°±èªªä½ éé—œäº†ã€‚
+             post.c åˆªé™¤æ–‡ç« è¦æ‰£éŒ¢ã€‚
 
-[2001/07/12] chip.c marie.c etc/game/marie ­×§ï¦X²zªº½ß²v¡C
-             post.c §ï¥Î¦r¼Æ¤Îªá¶O®É¶¡¨Ó­pºâ½Z¶O¡C
+[2001/07/12] chip.c marie.c etc/game/marie ä¿®æ”¹åˆç†çš„è³ ç‡ã€‚
+             post.c æ”¹ç”¨å­—æ•¸åŠèŠ±è²»æ™‚é–“ä¾†è¨ˆç®—ç¨¿è²»ã€‚
 
-[2001/07/14] dice.c ­×§ï¦X²zªº½ß²v¡C
-             gp.c ­×§ï¨Ï¯à§@¹ú¨Ó­°§C³Ó²v¡C
-             .BRD brd/* gem/brd/* run/class*.img §â¹w³]¬İªO«Ø¥ß°_¨Ó¡C
-             gem/@ §â (A)nnounce ¿ï³æ«Ø¥ß°_¨Ó¡C
+[2001/07/14] dice.c ä¿®æ”¹åˆç†çš„è³ ç‡ã€‚
+             gp.c ä¿®æ”¹ä½¿èƒ½ä½œå¼Šä¾†é™ä½å‹ç‡ã€‚
+             .BRD brd/* gem/brd/* run/class*.img æŠŠé è¨­çœ‹æ¿å»ºç«‹èµ·ä¾†ã€‚
+             gem/@ æŠŠ (A)nnounce é¸å–®å»ºç«‹èµ·ä¾†ã€‚
 
-[2001/07/16] showUSR.c showACCT.c Åã¥Ü .USR .ACCT ¥Îµ{¦¡¡C
-             setusr.c setperm.c ¥~³¡³]©w¨Ï¥ÎªÌ¸ê®Æ¡C
-             menu.c bank.c ¥[¤J»È¦æ¡A´£¨ÑÂà±b¡B¶×§I¥\¯à¡C
-             config.h struct.h acct.c bbsd.c HAVE_NOALOHA ´£¨Ñ¤W¯¸¤£³qª¾¦n¤Í¡C
-             config.h struct.h acct.c talk.c HAVE_NOBROAD ´£¨Ñ©Ú¦¬¼s¼½¡C
-             bbsd.c «OÃÒ¤H¨î«×°O¿ı«O¤H¡C
-             stock.c ¹w¨¾ªÑ»ù = 0 (¤½¥q­Ë³¬)¡C
+[2001/07/16] showUSR.c showACCT.c é¡¯ç¤º .USR .ACCT ç”¨ç¨‹å¼ã€‚
+             setusr.c setperm.c å¤–éƒ¨è¨­å®šä½¿ç”¨è€…è³‡æ–™ã€‚
+             menu.c bank.c åŠ å…¥éŠ€è¡Œï¼Œæä¾›è½‰å¸³ã€åŒ¯å…ŒåŠŸèƒ½ã€‚
+             config.h struct.h acct.c bbsd.c HAVE_NOALOHA æä¾›ä¸Šç«™ä¸é€šçŸ¥å¥½å‹ã€‚
+             config.h struct.h acct.c talk.c HAVE_NOBROAD æä¾›æ‹’æ”¶å»£æ’­ã€‚
+             bbsd.c ä¿è­‰äººåˆ¶åº¦è¨˜éŒ„ä¿äººã€‚
+             stock.c é é˜²è‚¡åƒ¹ = 0 (å…¬å¸å€’é–‰)ã€‚
 
-[2001/07/17] post.c ´£¨Ñ XPOST ¤¤¥i¥H½s¿è¼ĞÃD¡B¤å³¹¡A¥[±K¡C
-             config.h menu.c bank.c ´£¨ÑÁÊ¶RÅv­­¡C
-             menu.c ½Õ¾ã feeter ªºªø«×¡C
-             config.h talk.c @ulist.hlp HAVE_CHANGE_ID ¨Ï¥ÎªÌ¦W³æ¯¸ªø¼È®É­×§ïID¡C
+[2001/07/17] post.c æä¾› XPOST ä¸­å¯ä»¥ç·¨è¼¯æ¨™é¡Œã€æ–‡ç« ï¼ŒåŠ å¯†ã€‚
+             config.h menu.c bank.c æä¾›è³¼è²·æ¬Šé™ã€‚
+             menu.c èª¿æ•´ feeter çš„é•·åº¦ã€‚
+             config.h talk.c @ulist.hlp HAVE_CHANGE_ID ä½¿ç”¨è€…åå–®ç«™é•·æš«æ™‚ä¿®æ”¹IDã€‚
 
-[2001/07/19] menu.c recall.c ´£¨Ñ°O¾Ğ¹CÀ¸¡C
+[2001/07/19] menu.c recall.c æä¾›è¨˜æ†¶éŠæˆ²ã€‚
 
-[2001/07/20] vote.c ­×¥¿ vote_all «ö End ©Î $ À³ÀË¬d¬O§_¤w¨ì³Ì«á¤@¶µ¡C
+[2001/07/20] vote.c ä¿®æ­£ vote_all æŒ‰ End æˆ– $ æ‡‰æª¢æŸ¥æ˜¯å¦å·²åˆ°æœ€å¾Œä¸€é …ã€‚
 
-[2001/07/23] xover.c post.c gem.c §ï¼g gem_gather()¡C
-             menu.c gray.c ´£¨Ñ²L¦Ç¤j¾Ô¹CÀ¸¡C
-             gem.c mboxgem.c ­×¥¿¬Y¨Ç±¡ªp¤U¤£¯à Ctrl+P gem_add ªº°İÃD¡C
+[2001/07/23] xover.c post.c gem.c æ”¹å¯« gem_gather()ã€‚
+             menu.c gray.c æä¾›æ·ºç°å¤§æˆ°éŠæˆ²ã€‚
+             gem.c mboxgem.c ä¿®æ­£æŸäº›æƒ…æ³ä¸‹ä¸èƒ½ Ctrl+P gem_add çš„å•é¡Œã€‚
 
-[2001/07/25] menu.c pip/* etc/game/pipgame etc/game/pipdata ´£¨Ñ¹q¤l¤pÂû¹CÀ¸¡C
-             post.c §Y¨Ï¬O­ì¤åÂà¸ü¡A¤]¤£­n¥Î HDR_LINK ªº¤èªk¡A´Nµø¬°¬O¤£¦Pªº¤å³¹¡C
-             gem.c ©Ò¦³¦¬¿ı¤å³¹ªº°Ê§@³£§ï¦¨¨S¦³ HDR_LINK¡A¤@½g¤å³¹´N¬O¤@­ÓÀÉ®×¡C
+[2001/07/25] menu.c pip/* etc/game/pipgame etc/game/pipdata æä¾›é›»å­å°é›éŠæˆ²ã€‚
+             post.c å³ä½¿æ˜¯åŸæ–‡è½‰è¼‰ï¼Œä¹Ÿä¸è¦ç”¨ HDR_LINK çš„æ–¹æ³•ï¼Œå°±è¦–ç‚ºæ˜¯ä¸åŒçš„æ–‡ç« ã€‚
+             gem.c æ‰€æœ‰æ”¶éŒ„æ–‡ç« çš„å‹•ä½œéƒ½æ”¹æˆæ²’æœ‰ HDR_LINKï¼Œä¸€ç¯‡æ–‡ç« å°±æ˜¯ä¸€å€‹æª”æ¡ˆã€‚
 
-[2001/07/26] gem.c ¥Ñ©ó¤@½g¤å³¹´N¬O¤@­ÓÀÉ®×¡A©Ò¥H§R°£®É§ï¦¨ª½±µ§R°£ÀÉ®×¡C
-             gem.c ´£¨Ñ°Ï¬q§R°£¥\¯à¡C
-             gem.c ¤ä´©¸ó°Ï«ş¨©¡C
-             gem-check.c ¤£¦A¨Ï¥Î¡C
-             favor.c ¨t²Î¦Û°Ê²¾°£¾D¬åªOªº¬İªO¡B¬İªO±¶®|¡C
+[2001/07/26] gem.c ç”±æ–¼ä¸€ç¯‡æ–‡ç« å°±æ˜¯ä¸€å€‹æª”æ¡ˆï¼Œæ‰€ä»¥åˆªé™¤æ™‚æ”¹æˆç›´æ¥åˆªé™¤æª”æ¡ˆã€‚
+             gem.c æä¾›å€æ®µåˆªé™¤åŠŸèƒ½ã€‚
+             gem.c æ”¯æ´è·¨å€æ‹·è²ã€‚
+             gem-check.c ä¸å†ä½¿ç”¨ã€‚
+             favor.c ç³»çµ±è‡ªå‹•ç§»é™¤é­ç æ¿çš„çœ‹æ¿ã€çœ‹æ¿æ·å¾‘ã€‚
 
-[2001/07/27] acct.c ­×§ï¬İªO®É¡A´£¨Ñ²M°£©Ò¦³ªO¥D(ªO¥DÄæ¯d¥Õ)¡C
-             mboxgem.c config.h global.h modes.h ¨ú®ø¤£¨Ï¥Î¡C
-             gem.c ¥Ñ©ó¤ä´©¸ó°Ï«ş¨©¡A¤¹³\©Ò¦³¤H¦¬¿ı¬İªO¡B½Æ»sºëµØ°Ï¤å³¹¨ì¥L¾á¥ô(¤p)ªO¥D/­Ó¤H«H½cªº¦a½L¡C
-             gem.c ºëµØ°Ï¶K¤W®ÉÀË¬dÁ×§Kµo¥Í°j°é¡C
-             bbsd.c gem.c ±N­Ó¤H«H½cºëµØ°Ï©M¬İªOºëµØ°Ï¾ã¦X¡C
-             fb2usr.c sob2usr.c wd2usr.c Âà´«µ{¦¡¼W¥[­Ó¤HºëµØ°Ï¡C
+[2001/07/27] acct.c ä¿®æ”¹çœ‹æ¿æ™‚ï¼Œæä¾›æ¸…é™¤æ‰€æœ‰æ¿ä¸»(æ¿ä¸»æ¬„ç•™ç™½)ã€‚
+             mboxgem.c config.h global.h modes.h å–æ¶ˆä¸ä½¿ç”¨ã€‚
+             gem.c ç”±æ–¼æ”¯æ´è·¨å€æ‹·è²ï¼Œå…è¨±æ‰€æœ‰äººæ”¶éŒ„çœ‹æ¿ã€è¤‡è£½ç²¾è¯å€æ–‡ç« åˆ°ä»–æ“”ä»»(å°)æ¿ä¸»/å€‹äººä¿¡ç®±çš„åœ°ç›¤ã€‚
+             gem.c ç²¾è¯å€è²¼ä¸Šæ™‚æª¢æŸ¥é¿å…ç™¼ç”Ÿè¿´åœˆã€‚
+             bbsd.c gem.c å°‡å€‹äººä¿¡ç®±ç²¾è¯å€å’Œçœ‹æ¿ç²¾è¯å€æ•´åˆã€‚
+             fb2usr.c sob2usr.c wd2usr.c è½‰æ›ç¨‹å¼å¢åŠ å€‹äººç²¾è¯å€ã€‚
 
-[2001/07/29] dreye.c ´£¨ÑÄ¶¨å³q½u¤W¦r¨å¥\¯à¡C
+[2001/07/29] dreye.c æä¾›è­¯å…¸é€šç·šä¸Šå­—å…¸åŠŸèƒ½ã€‚
 
-[2001/08/02] etc/pipgame/* pip/* ¹q¤lÂû¹CÀ¸¤j§ïª©¡C
+[2001/08/02] etc/pipgame/* pip/* é›»å­é›éŠæˆ²å¤§æ”¹ç‰ˆã€‚
 
-[2001/08/03] @goodbye struct.h camera.c menu.c Â÷¯¸®É¨q¤@±i¹Ï¡C
+[2001/08/03] @goodbye struct.h camera.c menu.c é›¢ç«™æ™‚ç§€ä¸€å¼µåœ–ã€‚
 
-[2001/08/04] acct.c ´_Åv¥\¯à¡C
+[2001/08/04] acct.c å¾©æ¬ŠåŠŸèƒ½ã€‚
 
-[2001/08/05] acct.c ­×¥¿­«·s»{ÃÒ®ÉÅv­­¤£¹ïªº°İÃD¡C
-             visio.c «ö¥ô¤@Áä²M°£¤ô²y¼Æ¡C
-             newbrd.c acct.c ·sªO³s¸p§¹¡A¯¸ªø¥i¥Hª½±µ¶}ªO¡C
+[2001/08/05] acct.c ä¿®æ­£é‡æ–°èªè­‰æ™‚æ¬Šé™ä¸å°çš„å•é¡Œã€‚
+             visio.c æŒ‰ä»»ä¸€éµæ¸…é™¤æ°´çƒæ•¸ã€‚
+             newbrd.c acct.c æ–°æ¿é€£ç½²å®Œï¼Œç«™é•·å¯ä»¥ç›´æ¥é–‹æ¿ã€‚
 
-[2001/08/11] acct.c so/*.c pip/pip_basic.c post.c §â¥[´î¿ú¦^¦sµwºĞªº¨ç¦¡¿W¥ß¦¨ acct_savemoney()¡C
-             cache.c acct.c perm.h bbsd.c admutil.c maple.p °ÊºA³]©w¨Ï¥ÎªÌ¸ê®Æ¡C
+[2001/08/11] acct.c so/*.c pip/pip_basic.c post.c æŠŠåŠ æ¸›éŒ¢å›å­˜ç¡¬ç¢Ÿçš„å‡½å¼ç¨ç«‹æˆ acct_savemoney()ã€‚
+             cache.c acct.c perm.h bbsd.c admutil.c maple.p å‹•æ…‹è¨­å®šä½¿ç”¨è€…è³‡æ–™ã€‚
 
-[2001/08/12] menu.c so/*.c §â¹CÀ¸°İÄw½Xªº¨ç¦¡¨Ö¤J menu.c¡C
+[2001/08/12] menu.c so/*.c æŠŠéŠæˆ²å•ç±Œç¢¼çš„å‡½å¼ä½µå…¥ menu.cã€‚
 
-[2001/08/14] pip_stuff.c §ïÅÜ¦sÀÉ®æ¦¡¡C
-             pipstruct.h pip_fight.c pip_prac.c ·s¼WÅ@¨­¡B»´¥\¡B¤ßªk¡B¤Mªkµ¥¾Ô°«§Ş¯à¡C
-             pip_fight.c Â×´I©ÇÃ~²£¥Í¾¹¥[¤J©Çª«Äİ©Ê¡C
+[2001/08/14] pip_stuff.c æ”¹è®Šå­˜æª”æ ¼å¼ã€‚
+             pipstruct.h pip_fight.c pip_prac.c æ–°å¢è­·èº«ã€è¼•åŠŸã€å¿ƒæ³•ã€åˆ€æ³•ç­‰æˆ°é¬¥æŠ€èƒ½ã€‚
+             pip_fight.c è±å¯Œæ€ªç¸ç”¢ç”Ÿå™¨åŠ å…¥æ€ªç‰©å±¬æ€§ã€‚
 
-[2001/08/15] mail.c ´£¨Ñ§â­Ó¤HºëµØ°ÏÀ£ÁY±H¦^¥hªº¥\¯à¡C
+[2001/08/15] mail.c æä¾›æŠŠå€‹äººç²¾è¯å€å£“ç¸®å¯„å›å»çš„åŠŸèƒ½ã€‚
 
-[2001/08/16] xchatd.c ½Í¤Ñ«Ç¤¤ mud-like «ü¥O±Ô­z§ï¼g¡C
-             pip/* etc/game/pip/* ­«·s¾ã²z¡C
+[2001/08/16] xchatd.c è«‡å¤©å®¤ä¸­ mud-like æŒ‡ä»¤æ•˜è¿°æ”¹å¯«ã€‚
+             pip/* etc/game/pip/* é‡æ–°æ•´ç†ã€‚
 
-[2001/08/20] pip.c pip_fight.c pipstruct.h ·s¼W¯S®í§Ş¯à¡C
-             gem.c post.c ¦¬¿ıºëµØ°Ï¤£¥[¤W POST_GEM¡C
-             *.c etc/* ²Î¤@¡u¨­¤À¡v¥Î¦r¡C
-             acct.c bmtad.c mailpost.c §ï¼g»{ÃÒ³¡¤Àµ{¦¡¡C
+[2001/08/20] pip.c pip_fight.c pipstruct.h æ–°å¢ç‰¹æ®ŠæŠ€èƒ½ã€‚
+             gem.c post.c æ”¶éŒ„ç²¾è¯å€ä¸åŠ ä¸Š POST_GEMã€‚
+             *.c etc/* çµ±ä¸€ã€Œèº«åˆ†ã€ç”¨å­—ã€‚
+             acct.c bmtad.c mailpost.c æ”¹å¯«èªè­‰éƒ¨åˆ†ç¨‹å¼ã€‚
 
-[2001/08/21] chessmj.c ­×¥¿¥[¿ú¿ù»~¡C
-             global.h *.c ¾ã²z¤ÀÃş FN_XXXX¡C
-             so/*.c ¨ú®øª±¹CÀ¸¤£»İ­n­«Ã¸¿ï³æ¡C
-             jcee.c etc/jcee/* ¤j¾ÇÁp¦Ò¬dº]¡C
-             favor.c ­×¥¿¬İªO­^¤å¦WºÙÅÜ°Ê«á¡A§Úªº³Ì·R·|¥X¿ù¡F­×¥¿Åv­­ÅÜ°Ê«á¡A¬İ¨ì·sÅv­­¤£¯à¬İ¨ìªº¬İªO¡C
-             newbrd.c acct.c ­×¥¿³s¸p¶}ªO®É¤£·|§â§@ªÌ¦Û°Ê¥[¤WªO¥DÅv­­ªº°İÃD¡C
-             global.h edit.c more.c §ï¤@¨Ç FOOTER ¨Ïµ¥ªø¹ï»ô¡C
+[2001/08/21] chessmj.c ä¿®æ­£åŠ éŒ¢éŒ¯èª¤ã€‚
+             global.h *.c æ•´ç†åˆ†é¡ FN_XXXXã€‚
+             so/*.c å–æ¶ˆç©éŠæˆ²ä¸éœ€è¦é‡ç¹ªé¸å–®ã€‚
+             jcee.c etc/jcee/* å¤§å­¸è¯è€ƒæŸ¥æ¦œã€‚
+             favor.c ä¿®æ­£çœ‹æ¿è‹±æ–‡åç¨±è®Šå‹•å¾Œï¼Œæˆ‘çš„æœ€æ„›æœƒå‡ºéŒ¯ï¼›ä¿®æ­£æ¬Šé™è®Šå‹•å¾Œï¼Œçœ‹åˆ°æ–°æ¬Šé™ä¸èƒ½çœ‹åˆ°çš„çœ‹æ¿ã€‚
+             newbrd.c acct.c ä¿®æ­£é€£ç½²é–‹æ¿æ™‚ä¸æœƒæŠŠä½œè€…è‡ªå‹•åŠ ä¸Šæ¿ä¸»æ¬Šé™çš„å•é¡Œã€‚
+             global.h edit.c more.c æ”¹ä¸€äº› FOOTER ä½¿ç­‰é•·å°é½Šã€‚
 
-[2001/08/22] config.h mode.h global.h xover.c post.c HAVE_XYNEWS ·s»D¾\Åª¼Ò¦¡¡C
-             post.c ·j´M¥»¦a¤å³¹¡C
+[2001/08/22] config.h mode.h global.h xover.c post.c HAVE_XYNEWS æ–°èé–±è®€æ¨¡å¼ã€‚
+             post.c æœå°‹æœ¬åœ°æ–‡ç« ã€‚
 
-[2001/08/24] pipstruct.h pip_fight.c ·s¼W§Ş¯à·t¾¹¡C
-             xyz.c §ïµ½ BBSNET ªº¬É­±¡C
+[2001/08/24] pipstruct.h pip_fight.c æ–°å¢æŠ€èƒ½æš—å™¨ã€‚
+             xyz.c æ”¹å–„ BBSNET çš„ç•Œé¢ã€‚
 
-[2001/08/25] xyz.c etc/game/qkmj/* ·s¼W QKMJ¡C
-             global.h bmtad.c mailpost.c mail.c acct.c »{ÃÒ½X»{ÃÒ¤£»İ­n¶}ÀÉ¡C
+[2001/08/25] xyz.c etc/game/qkmj/* æ–°å¢ QKMJã€‚
+             global.h bmtad.c mailpost.c mail.c acct.c èªè­‰ç¢¼èªè­‰ä¸éœ€è¦é–‹æª”ã€‚
 
-[2001/08/27] innbbsd/Makefile §ï¼g¡C
-             gem-expire.c §ï¼g¡C
-             visio.c ·s¼W½Ğ«ö¯S®íÁäÄ~Äò¡C
+[2001/08/27] innbbsd/Makefile æ”¹å¯«ã€‚
+             gem-expire.c æ”¹å¯«ã€‚
+             visio.c æ–°å¢è«‹æŒ‰ç‰¹æ®Šéµç¹¼çºŒã€‚
 
-[2001/08/29] talk.c §ïµ½¨Ï¥ÎªÌ¦W³æ®Ä²v¡C
-             pal.c ­×¥¿ÁÙ¨S¨ì¦n¤Í¤W­­´NÄµ§i¦n¤Í¹L¦hªº°İÃD¡C
+[2001/08/29] talk.c æ”¹å–„ä½¿ç”¨è€…åå–®æ•ˆç‡ã€‚
+             pal.c ä¿®æ­£é‚„æ²’åˆ°å¥½å‹ä¸Šé™å°±è­¦å‘Šå¥½å‹éå¤šçš„å•é¡Œã€‚
 
-[2001/08/30] gp.c ­×¥¿¯S®íµP«¬¿é¿úªº°İÃD¡C
+[2001/08/30] gp.c ä¿®æ­£ç‰¹æ®Šç‰Œå‹è¼¸éŒ¢çš„å•é¡Œã€‚
 
 [2001/08/31] acct.c bbsd.c menu.c post.c so/*.c pip_basic.c perm.h
-             §Q¥Î disable ²Ä¤G°¦¥H«áªº multi-login ªº¿ú¹ô¨Ó¹w¨¾ multi ÁÈ¿ú¡A
-             ¦p¦¹«K¥i¥H¨ú®øÄw½X¨î«×¡A¨Ã´î¤Ö¤j¶qªº¦^¦s .ACCT¡C 
+             åˆ©ç”¨ disable ç¬¬äºŒéš»ä»¥å¾Œçš„ multi-login çš„éŒ¢å¹£ä¾†é é˜² multi è³ºéŒ¢ï¼Œ
+             å¦‚æ­¤ä¾¿å¯ä»¥å–æ¶ˆç±Œç¢¼åˆ¶åº¦ï¼Œä¸¦æ¸›å°‘å¤§é‡çš„å›å­˜ .ACCTã€‚ 
 
-[2001/09/01] struct.h ­×¥¿ MODE_STAT ·|¿ù¶Ãªº°İÃD¡C
-             vote.c global.h §ë²¼°Ï¥kÁä§Y¥i§ë²¼¡C
+[2001/09/01] struct.h ä¿®æ­£ MODE_STAT æœƒéŒ¯äº‚çš„å•é¡Œã€‚
+             vote.c global.h æŠ•ç¥¨å€å³éµå³å¯æŠ•ç¥¨ã€‚
 
-[2001/09/02] admutil.c menu.c ·j´M¨Ï¥ÎªÌ¡C
+[2001/09/02] admutil.c menu.c æœå°‹ä½¿ç”¨è€…ã€‚
 
-[2001/09/07] visio.c ­×¥¿¥Î Ctrl-R ¦^¤ô²y¤£·|­«­p¤ô²y¼Æ¡C
-             classtable.c menu.c ´£¨Ñ¥\½Òªí¥\¯à¡C
-             gray.c Â÷¶}²L¦Ç¹CÀ¸­n­«Ã¸ menu¡C
+[2001/09/07] visio.c ä¿®æ­£ç”¨ Ctrl-R å›æ°´çƒä¸æœƒé‡è¨ˆæ°´çƒæ•¸ã€‚
+             classtable.c menu.c æä¾›åŠŸèª²è¡¨åŠŸèƒ½ã€‚
+             gray.c é›¢é–‹æ·ºç°éŠæˆ²è¦é‡ç¹ª menuã€‚
 
-[2001/09/08] wd2pal.c sob2pal.c Âà´«¦n¤Í¦W³æµ{¦¡¡C
+[2001/09/08] wd2pal.c sob2pal.c è½‰æ›å¥½å‹åå–®ç¨‹å¼ã€‚
 
-[2001/09/09] talk.c §Ö³tÁô¨­¡C
-             brd2gem.c Âà´«¬İªO¤ÀÃş¨ìºëµØ°Ï¡C
-             board.c favor.c vote.c ¬İªO¦Cªí¬İªO¤ÀÃş¥[ÃC¦â¡C
-             talk.c bmw.c pal.c struct.h ­×¥¿Âê©w¦^¤ô²y§PÂ_¤£¥¿½Tªº°İÃD¡C
+[2001/09/09] talk.c å¿«é€Ÿéš±èº«ã€‚
+             brd2gem.c è½‰æ›çœ‹æ¿åˆ†é¡åˆ°ç²¾è¯å€ã€‚
+             board.c favor.c vote.c çœ‹æ¿åˆ—è¡¨çœ‹æ¿åˆ†é¡åŠ é¡è‰²ã€‚
+             talk.c bmw.c pal.c struct.h ä¿®æ­£é–å®šå›æ°´çƒåˆ¤æ–·ä¸æ­£ç¢ºçš„å•é¡Œã€‚
 
-[2001/09/10] config.h board.c xover.c maple.p ²Ä¤@¦¸¶i¤J¤å³¹¦Cªí¡A§â´å¼Ğ©ñ¦b²Ä¤@½g¥¼Åª¡C
-             config.h board.c ¬İªO¦Cªí¦Û°Ê¸õ¥h¤U¤@­Ó¥¼Åª¬İªO¡C
-             menu.c Select Favorite everywhere¡C
+[2001/09/10] config.h board.c xover.c maple.p ç¬¬ä¸€æ¬¡é€²å…¥æ–‡ç« åˆ—è¡¨ï¼ŒæŠŠæ¸¸æ¨™æ”¾åœ¨ç¬¬ä¸€ç¯‡æœªè®€ã€‚
+             config.h board.c çœ‹æ¿åˆ—è¡¨è‡ªå‹•è·³å»ä¸‹ä¸€å€‹æœªè®€çœ‹æ¿ã€‚
+             menu.c Select Favorite everywhereã€‚
 
-[2001/09/11] edit.c @edit.hlp etc/model ½s¿è¤å³¹®É´¡¤J½d¥»ºëÆF¡C
+[2001/09/11] edit.c @edit.hlp etc/model ç·¨è¼¯æ–‡ç« æ™‚æ’å…¥ç¯„æœ¬ç²¾éˆã€‚
 
-[2001/09/12] struct.h board.c favor.c acct.c «í¬°·s¤å³¹¼Ò¦¡¡C
-             talk.c menu.c maple.p Áô¨­±Kªk¡C
+[2001/09/12] struct.h board.c favor.c acct.c æ†ç‚ºæ–°æ–‡ç« æ¨¡å¼ã€‚
+             talk.c menu.c maple.p éš±èº«å¯†æ³•ã€‚
 
-[2001/09/13] board.c talk.c xover.c ­×¥¿·j´M®É¤£·|²M°£³Ì«á¤@¦æªº°İÃD¡C
+[2001/09/13] board.c talk.c xover.c ä¿®æ­£æœå°‹æ™‚ä¸æœƒæ¸…é™¤æœ€å¾Œä¸€è¡Œçš„å•é¡Œã€‚
 
-[2001/09/15] struct.h acct.c bbsd.c talk.c §â realname ©M username ªºªø«×§ì¥X¨Ó define¡C
-             wd2mf.c §Úªº³Ì·RÂà´«µ{¦¡¡C
+[2001/09/15] struct.h acct.c bbsd.c talk.c æŠŠ realname å’Œ username çš„é•·åº¦æŠ“å‡ºä¾† defineã€‚
+             wd2mf.c æˆ‘çš„æœ€æ„›è½‰æ›ç¨‹å¼ã€‚
 
-[2001/09/17] gem.c ­×¥¿ºëµØ°Ï¬å¥Ø¿ı»~¬åªº°İÃD¡C
+[2001/09/17] gem.c ä¿®æ­£ç²¾è¯å€ç ç›®éŒ„èª¤ç çš„å•é¡Œã€‚
 
-[2001/09/22] talk.c maple.p menu.c cache.c ¥[¤J¿ï¾Ü Talk ¥\¯à¡C
-             acct.c User/Info ´«ª©­±¡C
-             admutil.c ¯S®í·j´M«á¥i¥H­×§ï¸Ó¨Ï¥ÎªÌ¡C
+[2001/09/22] talk.c maple.p menu.c cache.c åŠ å…¥é¸æ“‡ Talk åŠŸèƒ½ã€‚
+             acct.c User/Info æ›ç‰ˆé¢ã€‚
+             admutil.c ç‰¹æ®Šæœå°‹å¾Œå¯ä»¥ä¿®æ”¹è©²ä½¿ç”¨è€…ã€‚
 
-[2001/09/23] talk.c ¿ï³æ¤Á´«¦©¾÷¡C
-             edit.c ­×¥¿ SHOW_USER_IN_TEXT ¦b­«·s½s¿è¤å³¹®Éªº bug¡C
-             wd2usr.c Âà´« habit¡C
-             pal.c ­×¥¿¦b¬İªO¦n¤Í¦W³æ¤¤¥i¥H­«ÂĞ¥[¤J¡C
-             config.h pal.c menu.c maple.p ·s¼W¯S§O¦W³æªº¥\¯à¡C
-             pal.c aloha.c @pal.hlp @aloha.hlp ¦b¦n¤Í/¤W¯¸¦W³æ¤¤¥i¥H±H«H/¤ô²y¡C
-             maple/*.c xyz.c modes.h ²Î¤@¦r¦ê¬°¡u¤ô²y¡v¡C
+[2001/09/23] talk.c é¸å–®åˆ‡æ›æ‰£æ©Ÿã€‚
+             edit.c ä¿®æ­£ SHOW_USER_IN_TEXT åœ¨é‡æ–°ç·¨è¼¯æ–‡ç« æ™‚çš„ bugã€‚
+             wd2usr.c è½‰æ› habitã€‚
+             pal.c ä¿®æ­£åœ¨çœ‹æ¿å¥½å‹åå–®ä¸­å¯ä»¥é‡è¦†åŠ å…¥ã€‚
+             config.h pal.c menu.c maple.p æ–°å¢ç‰¹åˆ¥åå–®çš„åŠŸèƒ½ã€‚
+             pal.c aloha.c @pal.hlp @aloha.hlp åœ¨å¥½å‹/ä¸Šç«™åå–®ä¸­å¯ä»¥å¯„ä¿¡/æ°´çƒã€‚
+             maple/*.c xyz.c modes.h çµ±ä¸€å­—ä¸²ç‚ºã€Œæ°´çƒã€ã€‚
 
-[2001/09/24] bbsd.c fb2usr.c sob2usr.c wd2usr.c §ïÅÜ­Ó¤HºëµØ°Ï¬[ºc¨Ó´î¤Ö¥Ø¿ı­Ó¼Æ¡C
-             modeh.h ­×¥¿ mode ©M type ¹ïÀ³¿ù»~¡C
-             bbsd.c etc/mboxgem.over ÀË¬d­Ó¤HºëµØ°Ï¬O§_¹L¤j¡C
+[2001/09/24] bbsd.c fb2usr.c sob2usr.c wd2usr.c æ”¹è®Šå€‹äººç²¾è¯å€æ¶æ§‹ä¾†æ¸›å°‘ç›®éŒ„å€‹æ•¸ã€‚
+             modeh.h ä¿®æ­£ mode å’Œ type å°æ‡‰éŒ¯èª¤ã€‚
+             bbsd.c etc/mboxgem.over æª¢æŸ¥å€‹äººç²¾è¯å€æ˜¯å¦éå¤§ã€‚
 
-[2001/09/24] gem.c post.c @gem.hlp @board.hlp §ï¼gºëµØ°Ï¡G
-             ­×¥¿¤@¯ë¨Ï¥ÎªÌ¦b«DªO¥D¬İªOºëµØ°Ï¤£¯à gem_copy()¡C
-             Åı©Ò¦³¨Ï¥ÎªÌ¦bºëµØ°Ï¥i¥H½s¿è¤å³¹(¤£¯àÀx¦s)¡C
-             ¤pªO¥D¥i¥H¬İ¨£¦Û¤vºŞÁÒ°Ï¤¤ªº­­¨î¯Å¥Ø¿ı¦WºÙ¡C
-             ­×¥¿¸ó°Ï«ş¨©¿ïªş¥[ÀÉ®×·|¥¢±Ñ¡C
-             ­­¨î gem_gather() ¤@©w­n¥ı©wÁã¡A¥H§K¼È¦s­Ó¤HºëµØ°Ï¦^¦¬µ©¤Ó¦h¡C
-             ·s¼W post_copy() ¦¬¿ı¬İªO¤¤¤å³¹¨ìºëµØ°Ï¡C
+[2001/09/24] gem.c post.c @gem.hlp @board.hlp æ”¹å¯«ç²¾è¯å€ï¼š
+             ä¿®æ­£ä¸€èˆ¬ä½¿ç”¨è€…åœ¨éæ¿ä¸»çœ‹æ¿ç²¾è¯å€ä¸èƒ½ gem_copy()ã€‚
+             è®“æ‰€æœ‰ä½¿ç”¨è€…åœ¨ç²¾è¯å€å¯ä»¥ç·¨è¼¯æ–‡ç« (ä¸èƒ½å„²å­˜)ã€‚
+             å°æ¿ä¸»å¯ä»¥çœ‹è¦‹è‡ªå·±ç®¡è½„å€ä¸­çš„é™åˆ¶ç´šç›®éŒ„åç¨±ã€‚
+             ä¿®æ­£è·¨å€æ‹·è²é¸é™„åŠ æª”æ¡ˆæœƒå¤±æ•—ã€‚
+             é™åˆ¶ gem_gather() ä¸€å®šè¦å…ˆå®šéŒ¨ï¼Œä»¥å…æš«å­˜å€‹äººç²¾è¯å€å›æ”¶ç­’å¤ªå¤šã€‚
+             æ–°å¢ post_copy() æ”¶éŒ„çœ‹æ¿ä¸­æ–‡ç« åˆ°ç²¾è¯å€ã€‚
 
-[2001/09/26] vote.c ´£¨Ñ¥ß§Y¶}²¼¿ï¶µ¡C
-             jcee.c ­×¥¿¥u¿é¤J©m¦W¬d¸ß®É¿ù»~ªº°İÃD¡C
+[2001/09/26] vote.c æä¾›ç«‹å³é–‹ç¥¨é¸é …ã€‚
+             jcee.c ä¿®æ­£åªè¼¸å…¥å§“åæŸ¥è©¢æ™‚éŒ¯èª¤çš„å•é¡Œã€‚
 
-[2001/09/27] util/tran/*.c ¸É¤Wº|±¼ªº closedir()¡C
-             src/Makefile bin/install.sh §ï¼g¡C
-             xchatd.c §ïµ½ Mud-like «ü¥O·j´M¡C
+[2001/09/27] util/tran/*.c è£œä¸Šæ¼æ‰çš„ closedir()ã€‚
+             src/Makefile bin/install.sh æ”¹å¯«ã€‚
+             xchatd.c æ”¹å–„ Mud-like æŒ‡ä»¤æœå°‹ã€‚
 
 [2001/09/28] config.h global.h struct.h song.c topsong.c @-topsong
-             LOG_SONG_USIES ºq¥»¨Ï¥Î²Î­p¡C
-             global.h bbsd.c talk.c menu.c ­×¥¿¯¸¤WÁ`¨Ï¥ÎªÌÅã¥Ü¤£¥¿½Tªº°İÃD¡C
+             LOG_SONG_USIES æ­Œæœ¬ä½¿ç”¨çµ±è¨ˆã€‚
+             global.h bbsd.c talk.c menu.c ä¿®æ­£ç«™ä¸Šç¸½ä½¿ç”¨è€…é¡¯ç¤ºä¸æ­£ç¢ºçš„å•é¡Œã€‚
 
-[2001/09/29] admutil.c ¸É¤Wº|±¼ªº closedir()¡C
-             board.c menu.c maple.p ¼W¥[­×§ï¬İªO¿ï¶µ¡C
+[2001/09/29] admutil.c è£œä¸Šæ¼æ‰çš„ closedir()ã€‚
+             board.c menu.c maple.p å¢åŠ ä¿®æ”¹çœ‹æ¿é¸é …ã€‚
 
-[2001/10/01] topusr.c @-birthday ²Î­p¥»¤é¹Ø¬P¡C
+[2001/10/01] topusr.c @-birthday çµ±è¨ˆæœ¬æ—¥å£½æ˜Ÿã€‚
 
 [2001/10/02] reaper.c bquota.c crontab (reaper-vac.c bquota-vac.c)
-             §â¥­®É/´»°²¥Îªº±b¸¹/«H¥ó²M°£µ{¦¡¾ã¦X¦¨¤@¤ä¡A¦Û°Ê§PÂ_¤é´Á¡C
-             talk.c ­×¥¿ guest ¥i¥HÂÇ¥Ñ¨Ï¥ÎªÌ¦W³æ¶i¤J XZ_BMW¡C
-             talk.c ­×¥¿¨Ï¥ÎªÌ¦W³æ±H«H­«ÂĞÀË¬dÅv­­¡C
+             æŠŠå¹³æ™‚/æš‘å‡ç”¨çš„å¸³è™Ÿ/ä¿¡ä»¶æ¸…é™¤ç¨‹å¼æ•´åˆæˆä¸€æ”¯ï¼Œè‡ªå‹•åˆ¤æ–·æ—¥æœŸã€‚
+             talk.c ä¿®æ­£ guest å¯ä»¥è—‰ç”±ä½¿ç”¨è€…åå–®é€²å…¥ XZ_BMWã€‚
+             talk.c ä¿®æ­£ä½¿ç”¨è€…åå–®å¯„ä¿¡é‡è¦†æª¢æŸ¥æ¬Šé™ã€‚
 
-[2001/10/03] np2gem.c Napoleon Âà´«ºëµØ°Ïµ{¦¡¡C
+[2001/10/03] np2gem.c Napoleon è½‰æ›ç²¾è¯å€ç¨‹å¼ã€‚
 
-[2001/10/04] nine.c ­×¥¿¤Ñ¦a¤E¤E·|¦Û¤vÀ°ª±®a¥XµPªº°İÃD¡C
-             account.c ­«·s¾ã²z½s±Æ¤@¤U¡C
+[2001/10/04] nine.c ä¿®æ­£å¤©åœ°ä¹ä¹æœƒè‡ªå·±å¹«ç©å®¶å‡ºç‰Œçš„å•é¡Œã€‚
+             account.c é‡æ–°æ•´ç†ç·¨æ’ä¸€ä¸‹ã€‚
 
-[2001/10/05] showACCT.c showBRD.c Åã¥Ü .ACCT .BRD¡C
-             acct.c ­×§ï acct_show() ºX¼ĞÅã¥Ü¡C
-             gem.c ­­¨î©Ê¤å³¹¤£¯à³Q½Æ»s¶K¤W¡C
+[2001/10/05] showACCT.c showBRD.c é¡¯ç¤º .ACCT .BRDã€‚
+             acct.c ä¿®æ”¹ acct_show() æ——æ¨™é¡¯ç¤ºã€‚
+             gem.c é™åˆ¶æ€§æ–‡ç« ä¸èƒ½è¢«è¤‡è£½è²¼ä¸Šã€‚
 
-[2001/10/11] dice.c ­×¥¿Åã¥Ü­¿²v©M¥[¿ú¤£¦X¡C
-             bbsd.c ¤j¤p¼g¨Ó·½³£¯à³Q¦¨¥\§P©w¬G¶m¡C
-             chessmj.c ­×¥¿¥[¿ú¤£¹ïªº°İÃD¡C
-             bj.c ­×¥¿¥i¥HµL­­¦¸ double¡B¹q¸£®³¨ì AA µP®Éªº§PÂ_¿ù»~¡C
+[2001/10/11] dice.c ä¿®æ­£é¡¯ç¤ºå€ç‡å’ŒåŠ éŒ¢ä¸åˆã€‚
+             bbsd.c å¤§å°å¯«ä¾†æºéƒ½èƒ½è¢«æˆåŠŸåˆ¤å®šæ•…é„‰ã€‚
+             chessmj.c ä¿®æ­£åŠ éŒ¢ä¸å°çš„å•é¡Œã€‚
+             bj.c ä¿®æ­£å¯ä»¥ç„¡é™æ¬¡ doubleã€é›»è…¦æ‹¿åˆ° AA ç‰Œæ™‚çš„åˆ¤æ–·éŒ¯èª¤ã€‚
 
-[2001/10/12] etc/tip §ï¤@¨Ç¤£¹ïªº¡C
-             edit.c ¥Î -- ¤À³ÎÃ±¦WÀÉ¡A¤£¥²­n¤»¦æ¡C
+[2001/10/12] etc/tip æ”¹ä¸€äº›ä¸å°çš„ã€‚
+             edit.c ç”¨ -- åˆ†å‰²ç°½åæª”ï¼Œä¸å¿…è¦å…­è¡Œã€‚
 
-[2001/10/13] song.c ÂIºq³Ì«á¤@¦æ¥[¤W <~Src~> ·Q¹ï <~Des~> »¡ <~Say~> (¬°WDªººq¥»³]­p)¡C
+[2001/10/13] song.c é»æ­Œæœ€å¾Œä¸€è¡ŒåŠ ä¸Š <~Src~> æƒ³å° <~Des~> èªª <~Say~> (ç‚ºWDçš„æ­Œæœ¬è¨­è¨ˆ)ã€‚
 
-[2001/10/18] gem.c ºëµØ°Ï«ş¨©/§R°£³¡¤Àµ{¦¡§ïµ½¡A­×¥¿«İ§R°£¨÷©v¤U¦³¸ê®Æ¡B
-             ¬İªO¡B­­¨î¯Å¤å³¹®É·|µo¥ÍµL½a°j°éªº°İÃD¡C
+[2001/10/18] gem.c ç²¾è¯å€æ‹·è²/åˆªé™¤éƒ¨åˆ†ç¨‹å¼æ”¹å–„ï¼Œä¿®æ­£å¾…åˆªé™¤å·å®—ä¸‹æœ‰è³‡æ–™ã€
+             çœ‹æ¿ã€é™åˆ¶ç´šæ–‡ç« æ™‚æœƒç™¼ç”Ÿç„¡çª®è¿´åœˆçš„å•é¡Œã€‚
 
-[2001/10/19] backup*.c ³Æ¥÷µ{¦¡¡C
+[2001/10/19] backup*.c å‚™ä»½ç¨‹å¼ã€‚
 
-[2001/10/22] bar.c ­×¥¿¿ù»~¡C
-             struct.h bbsd.c talk.c ¨Ï¥ÎªÌ¦W³æÅã¥Ü¹Ø¬P¡C
+[2001/10/22] bar.c ä¿®æ­£éŒ¯èª¤ã€‚
+             struct.h bbsd.c talk.c ä½¿ç”¨è€…åå–®é¡¯ç¤ºå£½æ˜Ÿã€‚
 
-[2001/10/23] pip_stuff.c ­×¥¿¦¬Ã¬©u¤ñÁÉ¥[¿ú¤£¹ï¡C
-             gp.c ­YÄ~ÄòÀ£ª`¡Aµ¹¿ú·|¤£¹ï¡C
+[2001/10/23] pip_stuff.c ä¿®æ­£æ”¶ç©«å­£æ¯”è³½åŠ éŒ¢ä¸å°ã€‚
+             gp.c è‹¥ç¹¼çºŒå£“æ³¨ï¼Œçµ¦éŒ¢æœƒä¸å°ã€‚
 
-[2001/10/24] bj.c ²ø®aÅã¥ÜÂI¼Æ¿ù»~¡C
-             etc/game/pip/badman/pic000 pip_fight.c ¾Ô°«­×¦æ³õ´º¦a¹Ï¡C
+[2001/10/24] bj.c èŠå®¶é¡¯ç¤ºé»æ•¸éŒ¯èª¤ã€‚
+             etc/game/pip/badman/pic000 pip_fight.c æˆ°é¬¥ä¿®è¡Œå ´æ™¯åœ°åœ–ã€‚
 
-[2001/10/25] board.c @class.hlp ¨ÌªO¥D·j´M¬İªO¡C
-             mail.c «H½c¤å³¹«ş¨©¡C
+[2001/10/25] board.c @class.hlp ä¾æ¿ä¸»æœå°‹çœ‹æ¿ã€‚
+             mail.c ä¿¡ç®±æ–‡ç« æ‹·è²ã€‚
 
-[2001/10/26] struct.h talk.c post.c transacct.c §â ACCT ¤¤ money/gold Äæ¦ì§ï¦¨ int¡C
-             post.c ­×¥¿©Ø·¬¸¨¸­±Ù¥\¯à¡C
-             src/util/backup/* ³Æ¥÷/³Æ¥÷«ì´_µ{¦¡¡C
+[2001/10/26] struct.h talk.c post.c transacct.c æŠŠ ACCT ä¸­ money/gold æ¬„ä½æ”¹æˆ intã€‚
+             post.c ä¿®æ­£æ‹‚æ¥“è½è‘‰æ–¬åŠŸèƒ½ã€‚
+             src/util/backup/* å‚™ä»½/å‚™ä»½æ¢å¾©ç¨‹å¼ã€‚
 
-[2001/10/27] global.h bbsd.c menu.c talk.c ¯¸¤WÁ`¤H¼ÆÅã¥Ü­×¥¿¡C
+[2001/10/27] global.h bbsd.c menu.c talk.c ç«™ä¸Šç¸½äººæ•¸é¡¯ç¤ºä¿®æ­£ã€‚
 
-[2001/10/30] pip_prac.c ½m²ß®É¿ï¨ú®ø¤@¼Ë·|¥[Äİ©Ê¡C
+[2001/10/30] pip_prac.c ç·´ç¿’æ™‚é¸å–æ¶ˆä¸€æ¨£æœƒåŠ å±¬æ€§ã€‚
 
-[2001/11/04] modes.h vote.c board.c maple.p ´£¨Ñ¦n¤Í¬İªOÄİ©Ê¡C
-             vote.c ­×¥¿§ë²¼¤¤¤ß«ö PGDN PGUP ·|Â½¹LÀYªº°İÃD¡C
+[2001/11/04] modes.h vote.c board.c maple.p æä¾›å¥½å‹çœ‹æ¿å±¬æ€§ã€‚
+             vote.c ä¿®æ­£æŠ•ç¥¨ä¸­å¿ƒæŒ‰ PGDN PGUP æœƒç¿»éé ­çš„å•é¡Œã€‚
 
-[2001/11/05] camera.c ¤¹³\°ÊºA¬İªO¤ÀÃş¤¤ÁÙ¦³¨÷©v¤ÀÃş¡C
+[2001/11/05] camera.c å…è¨±å‹•æ…‹çœ‹æ¿åˆ†é¡ä¸­é‚„æœ‰å·å®—åˆ†é¡ã€‚
 
-[2001/11/10] aloha.c ­×¥¿§R°£¤W¯¸³qª¾¦W³æ®É¡A­Y³Q§R°£ªº¨Ï¥ÎªÌ¤w¾D reaper ·|¶i¤JµL½a°j°éªº°İÃD¡C
+[2001/11/10] aloha.c ä¿®æ­£åˆªé™¤ä¸Šç«™é€šçŸ¥åå–®æ™‚ï¼Œè‹¥è¢«åˆªé™¤çš„ä½¿ç”¨è€…å·²é­ reaper æœƒé€²å…¥ç„¡çª®è¿´åœˆçš„å•é¡Œã€‚
 
-[2001/11/15] mail.c maple.p acct.c km.c §â±HÀÉ®×ªº¨ç¦¡µ¹¿W¥ß¥X¨Ó¡C
-             song.c Åı¨S¦³ <~Src~> ªººq¥»¤]¯à¥D°Ê¥[¤J <~Src~>¡C
+[2001/11/15] mail.c maple.p acct.c km.c æŠŠå¯„æª”æ¡ˆçš„å‡½å¼çµ¦ç¨ç«‹å‡ºä¾†ã€‚
+             song.c è®“æ²’æœ‰ <~Src~> çš„æ­Œæœ¬ä¹Ÿèƒ½ä¸»å‹•åŠ å…¥ <~Src~>ã€‚
 
-[2001/11/16] etc/re-reg global.h bbsd.c ­«·s»{ÃÒ³qª¾«H¡C
+[2001/11/16] etc/re-reg global.h bbsd.c é‡æ–°èªè­‰é€šçŸ¥ä¿¡ã€‚
 
 [2001/11/20] config.h global.h mail.c bmw.c menu.c talk.c xover.c chat.c
-             topsong.c wd2mf.c ­×¥¿¤@¨Ç #undef ®Éªº¤p¿ù»~¡C
-             acct.c ¯¸ªø¥i¥H©ñ¤ô¥[¨Ï¥ÎªÌ»{ÃÒÅv­­¡C
-             showACCT.c §ï¥¿¿ù»~ªºµ{¦¡¡C
+             topsong.c wd2mf.c ä¿®æ­£ä¸€äº› #undef æ™‚çš„å°éŒ¯èª¤ã€‚
+             acct.c ç«™é•·å¯ä»¥æ”¾æ°´åŠ ä½¿ç”¨è€…èªè­‰æ¬Šé™ã€‚
+             showACCT.c æ”¹æ­£éŒ¯èª¤çš„ç¨‹å¼ã€‚
 
-[2001/11/23] bmw.c ´«¤ô²y°O¿ı®æ¦¡¡C
-             @bmw.hlp bmw.c ¤ô²y¦Cªí¤¤¥i¿ï¾ÜÀx¦s¡A¤£¥²µ¥¦AÂ÷¯¸¡C
-             admutil.c ¯¸ªø¥ş¯¸¨Ï¥ÎªÌ/ªO¥D±H«H®É¡A­Y¿ï¾Ü¨ú®ø¡AÀÉ®×¤£·|²M°£¡C
+[2001/11/23] bmw.c æ›æ°´çƒè¨˜éŒ„æ ¼å¼ã€‚
+             @bmw.hlp bmw.c æ°´çƒåˆ—è¡¨ä¸­å¯é¸æ“‡å„²å­˜ï¼Œä¸å¿…ç­‰å†é›¢ç«™ã€‚
+             admutil.c ç«™é•·å…¨ç«™ä½¿ç”¨è€…/æ¿ä¸»å¯„ä¿¡æ™‚ï¼Œè‹¥é¸æ“‡å–æ¶ˆï¼Œæª”æ¡ˆä¸æœƒæ¸…é™¤ã€‚
 
-[2001/11/24] talk.c ¨Ï¥ÎªÌ¦W³æ¤¤¤£¯à¥á¤ô²yµ¹Áô§Îªº¨Ï¥ÎªÌ¡C
-             talk.c ­×¥¿¨Ï¥ÎªÌ¦W³æ¤¤¬İ¨ìÁô§Îªº¨Ï¥ÎªÌ¤Î¤£¬O¦n¤Íªº¦n¤Í¡C
+[2001/11/24] talk.c ä½¿ç”¨è€…åå–®ä¸­ä¸èƒ½ä¸Ÿæ°´çƒçµ¦éš±å½¢çš„ä½¿ç”¨è€…ã€‚
+             talk.c ä¿®æ­£ä½¿ç”¨è€…åå–®ä¸­çœ‹åˆ°éš±å½¢çš„ä½¿ç”¨è€…åŠä¸æ˜¯å¥½å‹çš„å¥½å‹ã€‚
 
-[2001/11/25] post.c ¬İªO¤¤­×§ï¤¤¤åªO¦W«á¡A­n§ó·sª©­±¡C
-             vote.c ªO¥D¦b¨S¦³§ë²¼ªº¬İªOÁ|¦æ§ë²¼¡A¦ı¤£¿é¤J¼ĞÃD¡A·|µo¥Í¿ù»~¡C
+[2001/11/25] post.c çœ‹æ¿ä¸­ä¿®æ”¹ä¸­æ–‡æ¿åå¾Œï¼Œè¦æ›´æ–°ç‰ˆé¢ã€‚
+             vote.c æ¿ä¸»åœ¨æ²’æœ‰æŠ•ç¥¨çš„çœ‹æ¿èˆ‰è¡ŒæŠ•ç¥¨ï¼Œä½†ä¸è¼¸å…¥æ¨™é¡Œï¼Œæœƒç™¼ç”ŸéŒ¯èª¤ã€‚
 
-[2001/11/26] talk.c ­×¥¿¼s¼½»~´Óªº°İÃD¡C
+[2001/11/26] talk.c ä¿®æ­£å»£æ’­èª¤æ¤çš„å•é¡Œã€‚
 
-[2001/12/08] acct.c newbrd.c §ï¥Î¸û«K§Qªº¬İªOÅv­­³]©w¡C
-             bank.c ÀË¬d¿ú¬O§_¬°­tªº¡C
+[2001/12/08] acct.c newbrd.c æ”¹ç”¨è¼ƒä¾¿åˆ©çš„çœ‹æ¿æ¬Šé™è¨­å®šã€‚
+             bank.c æª¢æŸ¥éŒ¢æ˜¯å¦ç‚ºè² çš„ã€‚
 
-[2001/12/09] pip_stuff.c ­×¥¿¤pÂû³Æ¥÷Àx¦s/Åª¨ú·|¥¢±Ñ¡C
-             modes.h ­×¥¿°ÊºA¬°¬d¸ß/½Í¤Ñ®É¤£·|¥X²{¹ï¶H id¡C
-             xover.c guest ¤£±oÂÇ every_Z ¶i¤J¤ô²y¦^ÅU¡C
-             xover.c menu.c talk.c bwboard.c chat.c  ­×¥¿
-             ¶i§Úªº³Ì·R/¤ô²y¦^ÅU«á¥Î every_Z ¸õ¥h¨ä¥L¿ï³æ¦A¥X¨Ó·|µo¥Í¿ù»~¡C
+[2001/12/09] pip_stuff.c ä¿®æ­£å°é›å‚™ä»½å„²å­˜/è®€å–æœƒå¤±æ•—ã€‚
+             modes.h ä¿®æ­£å‹•æ…‹ç‚ºæŸ¥è©¢/è«‡å¤©æ™‚ä¸æœƒå‡ºç¾å°è±¡ idã€‚
+             xover.c guest ä¸å¾—è—‰ every_Z é€²å…¥æ°´çƒå›é¡§ã€‚
+             xover.c menu.c talk.c bwboard.c chat.c  ä¿®æ­£
+             é€²æˆ‘çš„æœ€æ„›/æ°´çƒå›é¡§å¾Œç”¨ every_Z è·³å»å…¶ä»–é¸å–®å†å‡ºä¾†æœƒç™¼ç”ŸéŒ¯èª¤ã€‚
 
-[2001/12/10] pip_basic.c ¬İ playboy ®É¸oÄ^¬O¼W¥[¤£¬O´î¤Ö¡C
+[2001/12/10] pip_basic.c çœ‹ playboy æ™‚ç½ªå­½æ˜¯å¢åŠ ä¸æ˜¯æ¸›å°‘ã€‚
 
-[2001/12/17] acct.c board.c maple.p is_bm() ¨ç¦¡¾ã¦X¦b¤@°_¡C
-             gem.c ÅıºëµØ°Ï¤¤ [userA/userB ªº¦h¦ì¤pªO¥D¼Ò¦¡¤]¾A¥Î¡C
+[2001/12/17] acct.c board.c maple.p is_bm() å‡½å¼æ•´åˆåœ¨ä¸€èµ·ã€‚
+             gem.c è®“ç²¾è¯å€ä¸­ [userA/userB çš„å¤šä½å°æ¿ä¸»æ¨¡å¼ä¹Ÿé©ç”¨ã€‚
 
-[2001/12/21] bmtad.c ID ªø«×«ê¬° IDLEN ªº¨Ï¥ÎªÌµLªk¦¬¨Ó¦ÛInternetªº«H¥ó¡C
+[2001/12/21] bmtad.c ID é•·åº¦æ°ç‚º IDLEN çš„ä½¿ç”¨è€…ç„¡æ³•æ”¶ä¾†è‡ªInternetçš„ä¿¡ä»¶ã€‚
 
-[2001/12/22] pipstruct.h pip_menu.c pip_visio.c pip_quest.c etc/game/pip/quest/ ¹q¤lÂû¥ô°È¡C
+[2001/12/22] pipstruct.h pip_menu.c pip_visio.c pip_quest.c etc/game/pip/quest/ é›»å­é›ä»»å‹™ã€‚
 
-[2001/12/26] modes.h talk.c acct.c µo§b¥i¿é¤J²z¥Ñ¡C
+[2001/12/26] modes.h talk.c acct.c ç™¼å‘†å¯è¼¸å…¥ç†ç”±ã€‚
 
-[2001/12/30] pip.h pip_fight.c pip_quest.c pip_item.c ­×¥¿ bug ¤Î¼W¥[¥ô°È¡C
-             post.c @board.hlp mail.c maple.p ·s¼WÂà¿ı¬İªO¤å³¹µ¹¨Ï¥ÎªÌ¡A¨Ã»P mbox ¾ã¦X¦b¤@°_¡C
+[2001/12/30] pip.h pip_fight.c pip_quest.c pip_item.c ä¿®æ­£ bug åŠå¢åŠ ä»»å‹™ã€‚
+             post.c @board.hlp mail.c maple.p æ–°å¢è½‰éŒ„çœ‹æ¿æ–‡ç« çµ¦ä½¿ç”¨è€…ï¼Œä¸¦èˆ‡ mbox æ•´åˆåœ¨ä¸€èµ·ã€‚
 
-[2002/01/04] bmw.c global.h ¦^¤ô²y®É¥i¥Î ^R ^T ±²°Ê¡C
+[2002/01/04] bmw.c global.h å›æ°´çƒæ™‚å¯ç”¨ ^R ^T æ²å‹•ã€‚
 
-[2002/01/05] bmw.c Åı¦^¤ô²y®É¡A¦b¤W¤èªº¦^ÅU¦³½bÀYÀH¤ô²y²¾°Ê¦Ó°Ê¡C
-             wd2brd.c wd2gem.c wd2usr.c WD->M3 Âà´«µ{¦¡¥i¤@¦¸Âà´«³æ¤H©Î¥ş¯¸¡C
+[2002/01/05] bmw.c è®“å›æ°´çƒæ™‚ï¼Œåœ¨ä¸Šæ–¹çš„å›é¡§æœ‰ç®­é ­éš¨æ°´çƒç§»å‹•è€Œå‹•ã€‚
+             wd2brd.c wd2gem.c wd2usr.c WD->M3 è½‰æ›ç¨‹å¼å¯ä¸€æ¬¡è½‰æ›å–®äººæˆ–å…¨ç«™ã€‚
 
-[2002/01/07] util/uno/*.c ¥[¤W chdir(BBSHOME); ¥H§K¨S¦b BBSHOME ¤U°õ¦æ¡C
+[2002/01/07] util/uno/*.c åŠ ä¸Š chdir(BBSHOME); ä»¥å…æ²’åœ¨ BBSHOME ä¸‹åŸ·è¡Œã€‚
 
-[2002/01/08] global.h ¥[¤J«öÁä¹ïÀ³µù¸Ñ¡C
+[2002/01/08] global.h åŠ å…¥æŒ‰éµå°æ‡‰è¨»è§£ã€‚
 
-[2002/01/13] xover.c ­×¥¿­Y¨ú®ø every_Z ¥H«á¤£¯à¦A¶i every_Z¡A
-             ¥H¤Î¥Î every_Z ±q XZ_ ¦^ menu ®É³Ì«á¤@¦æ¥¼¦^´_¡C
-             vote.c ­×§ï§ë²¼¿ï¶µªº®É­Ô·|¹w³]¥X²{­ì¥ıªº¿ï¶µ¡C
-             maple.p mail.c post.c Åı¦Û¤v¥i¥H½s¿è¦Û¤v«H½cªº«Hªº¼ĞÃD¤Î¤º®e¡C
-             config.h post.c POST_PREFIX µoªí¤å³¹®É¿ï¾Ü¤å³¹¼ĞÃD¤ÀÃş¡C
+[2002/01/13] xover.c ä¿®æ­£è‹¥å–æ¶ˆ every_Z ä»¥å¾Œä¸èƒ½å†é€² every_Zï¼Œ
+             ä»¥åŠç”¨ every_Z å¾ XZ_ å› menu æ™‚æœ€å¾Œä¸€è¡Œæœªå›å¾©ã€‚
+             vote.c ä¿®æ”¹æŠ•ç¥¨é¸é …çš„æ™‚å€™æœƒé è¨­å‡ºç¾åŸå…ˆçš„é¸é …ã€‚
+             maple.p mail.c post.c è®“è‡ªå·±å¯ä»¥ç·¨è¼¯è‡ªå·±ä¿¡ç®±çš„ä¿¡çš„æ¨™é¡ŒåŠå…§å®¹ã€‚
+             config.h post.c POST_PREFIX ç™¼è¡¨æ–‡ç« æ™‚é¸æ“‡æ–‡ç« æ¨™é¡Œåˆ†é¡ã€‚
 
-[2002/01/14] post.c guest ¤£¯à¹ï¨ä¥L guest ªº¤å³¹¥[±K¡C
+[2002/01/14] post.c guest ä¸èƒ½å°å…¶ä»– guest çš„æ–‡ç« åŠ å¯†ã€‚
 
-[2002/01/17] struct.h vote.c pal.c maple.p ´£¨Ñ­­¨î¦W³æ§ë²¼¡C
-             acct.c §R°£¬İªO®É¶¶«K§R°£ gem/@/@Class ¤Uªº¬İªOºëµØ°Ï±¶®|¡C
+[2002/01/17] struct.h vote.c pal.c maple.p æä¾›é™åˆ¶åå–®æŠ•ç¥¨ã€‚
+             acct.c åˆªé™¤çœ‹æ¿æ™‚é †ä¾¿åˆªé™¤ gem/@/@Class ä¸‹çš„çœ‹æ¿ç²¾è¯å€æ·å¾‘ã€‚
 
-[2002/01/18] board.c Ben_Perm() ­×§ï¡C
+[2002/01/18] board.c Ben_Perm() ä¿®æ”¹ã€‚
 
-[2002/01/20] acct.c POP3 »{ÃÒ®É¡A¥[¤J¥D¾÷¦WºÙ pop3.xxx ªº³s½u¡C
+[2002/01/20] acct.c POP3 èªè­‰æ™‚ï¼ŒåŠ å…¥ä¸»æ©Ÿåç¨± pop3.xxx çš„é€£ç·šã€‚
 
-[2002/01/22] newbrd.c ¦b¨S¦³³s¸p®ÉÁ|¦æ³s¸p¡A¦ı¨ú®ø¡A·|µo¥Í¿ù»~¡C
-             wd2bmw.c WD->M3 Âà´«¤ô²y°O¿ı¡C
-             menu.c ­×¥¿¾\Åª¯d¨¥ªO®É¡A­¶½XÅã¥Ü¿ù»~¤Î­Y«ê¦³ 5n ½g®É·|¦h¨q¤@­¶ªÅ¥Õ¡C
+[2002/01/22] newbrd.c åœ¨æ²’æœ‰é€£ç½²æ™‚èˆ‰è¡Œé€£ç½²ï¼Œä½†å–æ¶ˆï¼Œæœƒç™¼ç”ŸéŒ¯èª¤ã€‚
+             wd2bmw.c WD->M3 è½‰æ›æ°´çƒè¨˜éŒ„ã€‚
+             menu.c ä¿®æ­£é–±è®€ç•™è¨€æ¿æ™‚ï¼Œé ç¢¼é¡¯ç¤ºéŒ¯èª¤åŠè‹¥æ°æœ‰ 5n ç¯‡æ™‚æœƒå¤šç§€ä¸€é ç©ºç™½ã€‚
 
-[2002/01/23] board.c favor.c ¤£ºŞ¦³µL UFO_BRDPOST¡A¤@·§§ó·s¬İªOª¬ºA¡A¥H§K¥¼Åª¿O¤£·|«G¡C
-             acct.c XFile ¤À¤GÄæ¡A¨Ï¥i¥H½s¿è¤ñ¸û¦hÀÉ®×¡C
-             acct.c edit.c ¤T­ÓÃ±¦WÀÉÀÉ®×¤À¶}¡C
+[2002/01/23] board.c favor.c ä¸ç®¡æœ‰ç„¡ UFO_BRDPOSTï¼Œä¸€æ¦‚æ›´æ–°çœ‹æ¿ç‹€æ…‹ï¼Œä»¥å…æœªè®€ç‡ˆä¸æœƒäº®ã€‚
+             acct.c XFile åˆ†äºŒæ¬„ï¼Œä½¿å¯ä»¥ç·¨è¼¯æ¯”è¼ƒå¤šæª”æ¡ˆã€‚
+             acct.c edit.c ä¸‰å€‹ç°½åæª”æª”æ¡ˆåˆ†é–‹ã€‚
 
-[2002/01/24] xover.c ¦b³Ì«á¤@­¶«ö KEY_PGDN ¥iÂ½¨ì³Ì«e­±¡C
+[2002/01/24] xover.c åœ¨æœ€å¾Œä¸€é æŒ‰ KEY_PGDN å¯ç¿»åˆ°æœ€å‰é¢ã€‚
 
-[2002/01/25] config.h bmtad.c HOST_ALIAS §ì¥X¨Ó define¡C
-             mail.c ¯¸¤º internet mail ®É·|ÄdºI±H«H¨ì¥»¯¸ªº¡C
+[2002/01/25] config.h bmtad.c HOST_ALIAS æŠ“å‡ºä¾† defineã€‚
+             mail.c ç«™å…§ internet mail æ™‚æœƒæ””æˆªå¯„ä¿¡åˆ°æœ¬ç«™çš„ã€‚
 
-[2002/01/26] config.h global.h credit.c menu.c HAVE_CREDIT ´£¨Ñ°O±b¥»¥\¯à¡C
-             mail.c ½Õ¾ã«H½cª©­±¨Ï©M¨ä¥L XZ_ ª©­±¬Û¦P¡C
-             admutil.c ¥ş¯¸/ªO¥D³q§iµ{¦¡­×¥¿¡C
-             wd2pip.c Âà´«¹q¤lÂûµ{¦¡¡C
-             wd2list.c Âà´«¯S®í¦W³æµ{¦¡¡C
-             global.h bbsd.c maple.p menu.c bmw.c ¤ô²yÂsÄı¬É­±¡C
+[2002/01/26] config.h global.h credit.c menu.c HAVE_CREDIT æä¾›è¨˜å¸³æœ¬åŠŸèƒ½ã€‚
+             mail.c èª¿æ•´ä¿¡ç®±ç‰ˆé¢ä½¿å’Œå…¶ä»– XZ_ ç‰ˆé¢ç›¸åŒã€‚
+             admutil.c å…¨ç«™/æ¿ä¸»é€šå‘Šç¨‹å¼ä¿®æ­£ã€‚
+             wd2pip.c è½‰æ›é›»å­é›ç¨‹å¼ã€‚
+             wd2list.c è½‰æ›ç‰¹æ®Šåå–®ç¨‹å¼ã€‚
+             global.h bbsd.c maple.p menu.c bmw.c æ°´çƒç€è¦½ç•Œé¢ã€‚
 
-[2002/01/27] topgem.c ¤£ÀË¬d¯µ±K¬İªO¡C
-             topusr.c ª©­±­×¥¿¡C
+[2002/01/27] topgem.c ä¸æª¢æŸ¥ç§˜å¯†çœ‹æ¿ã€‚
+             topusr.c ç‰ˆé¢ä¿®æ­£ã€‚
 
-[2002/01/29] stock-open.c crontab ¨úªÑ¥«¸ê®Æ¡C
-             enews.c menu.c global.h struch.h enews-open.c run/kimo/* crontab ´£¨Ñ¹q¤l³ø¥\¯à¡C
+[2002/01/29] stock-open.c crontab å–è‚¡å¸‚è³‡æ–™ã€‚
+             enews.c menu.c global.h struch.h enews-open.c run/kimo/* crontab æä¾›é›»å­å ±åŠŸèƒ½ã€‚
 
-[2002/01/30] mail.c post.c global.h @mbox.hlp @board.hlp ²Î¤@¦b post/mbox ¤¤
-             ³£¬O¤p¼g x Âà¬İªO¡A¤j¼g X Âà¨Ï¥ÎªÌ¡C
-             xover.c ­YµL¿ï Tag ®É¡AAskTag ¤£°İ°İÃD¡C
+[2002/01/30] mail.c post.c global.h @mbox.hlp @board.hlp çµ±ä¸€åœ¨ post/mbox ä¸­
+             éƒ½æ˜¯å°å¯« x è½‰çœ‹æ¿ï¼Œå¤§å¯« X è½‰ä½¿ç”¨è€…ã€‚
+             xover.c è‹¥ç„¡é¸ Tag æ™‚ï¼ŒAskTag ä¸å•å•é¡Œã€‚
 
-[2002/02/17] config.h bbsd.c mail.c OVERDUE_MAILDEL ÀË¬d¹L´Á«H¥ó¡C
-             railway.c ¸¹½X§ï¬°ÅK¸ô¯¸ªº¨®¯¸¥N½X¡C
-             enews.c ­×¥¿¶W¹L¤@¦æªº¼ĞÃD·|¸õ¦æ¡C
-             config.h pipstruct.h pip_menu.c pip_pk.c cache.c maple.p ¹q¤lÂû PK ¹ï¾Ô¡C
+[2002/02/17] config.h bbsd.c mail.c OVERDUE_MAILDEL æª¢æŸ¥éæœŸä¿¡ä»¶ã€‚
+             railway.c è™Ÿç¢¼æ”¹ç‚ºéµè·¯ç«™çš„è»Šç«™ä»£ç¢¼ã€‚
+             enews.c ä¿®æ­£è¶…éä¸€è¡Œçš„æ¨™é¡Œæœƒè·³è¡Œã€‚
+             config.h pipstruct.h pip_menu.c pip_pk.c cache.c maple.p é›»å­é› PK å°æˆ°ã€‚
 
-[2002/02/27] mail.c ¥´¥]¬İªO¤å³¹¡C
+[2002/02/27] mail.c æ‰“åŒ…çœ‹æ¿æ–‡ç« ã€‚
 
-[2002/03/01] visio.c Åı ESC + * + s µ¥±±¨î½X¦b¤å³¹½s¿è/¾\Åª¤]¾A¥Î¡C
-             config.h post.c board.c HAVE_BUCKET ´£¨Ñ¬İªO¤ô±í¥\¯à¡C
-             bank.c Âà±b¤]¥i¥HÂàª÷¹ô¡C
-             menu.c ¥D¿ï³æ¾\Åª¬İªO¡C
+[2002/03/01] visio.c è®“ ESC + * + s ç­‰æ§åˆ¶ç¢¼åœ¨æ–‡ç« ç·¨è¼¯/é–±è®€ä¹Ÿé©ç”¨ã€‚
+             config.h post.c board.c HAVE_BUCKET æä¾›çœ‹æ¿æ°´æ¡¶åŠŸèƒ½ã€‚
+             bank.c è½‰å¸³ä¹Ÿå¯ä»¥è½‰é‡‘å¹£ã€‚
+             menu.c ä¸»é¸å–®é–±è®€çœ‹æ¿ã€‚
 
-[2002/03/02] board.c ­×¥¿¬Y¨ÇÁôÂÃªO·|³Q¬İ¨£ªº°İÃD¡C
+[2002/03/02] board.c ä¿®æ­£æŸäº›éš±è—æ¿æœƒè¢«çœ‹è¦‹çš„å•é¡Œã€‚
 
-[2002/03/05] post.c ­×¥¿Âà¹F¤å³¹¦^«H½c¡A¤å³¹¸Ì­±¼ÊºÙ¿ù»~¡C
-             xover.c Á×§K every_U ¶i¤J¤Ó¦h¼h¥H¤Î­×¥¿¬Y¨ÇÂ_½u°İÃD¡C
-             menu.c xover.c ¿ï³æ¯S®íÁäµ{¦¡§ó·s¡C
+[2002/03/05] post.c ä¿®æ­£è½‰é”æ–‡ç« å›ä¿¡ç®±ï¼Œæ–‡ç« è£¡é¢æš±ç¨±éŒ¯èª¤ã€‚
+             xover.c é¿å… every_U é€²å…¥å¤ªå¤šå±¤ä»¥åŠä¿®æ­£æŸäº›æ–·ç·šå•é¡Œã€‚
+             menu.c xover.c é¸å–®ç‰¹æ®Šéµç¨‹å¼æ›´æ–°ã€‚
 
-[2002/03/07] config.h hdr.h @board.hlp post.c HAVE_LABELMARK ¬İªO¤å³¹¥[«İ¬å¼Ğ°O¥\¯à¡C
+[2002/03/07] config.h hdr.h @board.hlp post.c HAVE_LABELMARK çœ‹æ¿æ–‡ç« åŠ å¾…ç æ¨™è¨˜åŠŸèƒ½ã€‚
 
-[2002/03/08] post.c ­×¥¿¥Ñ every_Z ­«ÂĞ¶i¤J¦ê±µ¼Ò¦¡/·s»D¾\Åª¡AÂ÷¶}·|µo¥Í¿ù»~¡C
+[2002/03/08] post.c ä¿®æ­£ç”± every_Z é‡è¦†é€²å…¥ä¸²æ¥æ¨¡å¼/æ–°èé–±è®€ï¼Œé›¢é–‹æœƒç™¼ç”ŸéŒ¯èª¤ã€‚
 
-[2002/03/10] talk.c Áô§Îªº¤H¦b talk ®É¤£³Qª¾¹D©M½Ö talk¡C
+[2002/03/10] talk.c éš±å½¢çš„äººåœ¨ talk æ™‚ä¸è¢«çŸ¥é“å’Œèª° talkã€‚
 
-[2002/03/14] talk.c bwboard.c chat.c ½Í¤Ñ/²á¤Ñ/¤U´Ñ®É«ö Ctrl+Z ¦^¨Ó«á¿Ã¹õ¤£·|«ì´_¡C
+[2002/03/14] talk.c bwboard.c chat.c è«‡å¤©/èŠå¤©/ä¸‹æ£‹æ™‚æŒ‰ Ctrl+Z å›ä¾†å¾Œè¢å¹•ä¸æœƒæ¢å¾©ã€‚
 
-[2002/03/16] config.h talk.c visio.c bbsd.c bguard.c DETAIL_IDLETIME ®É±`§ó·s¶¢¸m®É¶¡¡C
-             bbsd.c §ó§ï¬G¶m§P©wµ{¦¡
+[2002/03/16] config.h talk.c visio.c bbsd.c bguard.c DETAIL_IDLETIME æ™‚å¸¸æ›´æ–°é–’ç½®æ™‚é–“ã€‚
+             bbsd.c æ›´æ”¹æ•…é„‰åˆ¤å®šç¨‹å¼
 
-[2002/03/21] talk.c bmw.c maple.p post.c pal.c aloha.c §ó·s can_override()¡C
+[2002/03/21] talk.c bmw.c maple.p post.c pal.c aloha.c æ›´æ–° can_override()ã€‚
 
 [2002/03/25] shm.c cache.c maple.p account.c mailtoall.c bmtad.c bguard.c
-             pip_pk.c stock.c §â attach_shm() ¥Î lib/shm.c ¤¤ªº shm_new() ¨ú¥N¡C
+             pip_pk.c stock.c æŠŠ attach_shm() ç”¨ lib/shm.c ä¸­çš„ shm_new() å–ä»£ã€‚
 
-[2002/03/26] restoreacct.c ÁÙ­ì³Æ¥÷ªº .ACCT¡C
+[2002/03/26] restoreacct.c é‚„åŸå‚™ä»½çš„ .ACCTã€‚
 
-[2002/04/01] poststat.c ­×¥¿¥»¶g/¥»¤ë/¥»¦~ªº¤Q¤j¸ÜÃDµLªkÅã¥Ü¡C
+[2002/04/01] poststat.c ä¿®æ­£æœ¬é€±/æœ¬æœˆ/æœ¬å¹´çš„åå¤§è©±é¡Œç„¡æ³•é¡¯ç¤ºã€‚
 
-[2002/04/02] mail.c ­×¥¿¸s²Õ±H«H¦pªG¦¬«H¤H¤Ó¦hªº¸Ü·|±¾±¼¡C
+[2002/04/02] mail.c ä¿®æ­£ç¾¤çµ„å¯„ä¿¡å¦‚æœæ”¶ä¿¡äººå¤ªå¤šçš„è©±æœƒæ›æ‰ã€‚
 
-[2002/04/05] song.c ¦bÂIºq®É¡A¶i¤J¬İ§¹ºq³æ¦A¥X¨Ó«á¡A©³³¡ªº´£¥Ü°T®§·|®ø¥¢¡C
-             board.c ¬İªO«e«ö v/V ©ó .BRD ²Ä¤@­ÓªOµL®Ä¡C
+[2002/04/05] song.c åœ¨é»æ­Œæ™‚ï¼Œé€²å…¥çœ‹å®Œæ­Œå–®å†å‡ºä¾†å¾Œï¼Œåº•éƒ¨çš„æç¤ºè¨Šæ¯æœƒæ¶ˆå¤±ã€‚
+             board.c çœ‹æ¿å‰æŒ‰ v/V æ–¼ .BRD ç¬¬ä¸€å€‹æ¿ç„¡æ•ˆã€‚
 
-[2002/04/10] bmw.c maple.p post.c pal.c talk.c aloha.c ©Ò¦³ xo_write() ³£¾ã¦X°_¨Ó¡C
-             xyz.c BBSNET µ{¦¡­×¥¿¡C
+[2002/04/10] bmw.c maple.p post.c pal.c talk.c aloha.c æ‰€æœ‰ xo_write() éƒ½æ•´åˆèµ·ä¾†ã€‚
+             xyz.c BBSNET ç¨‹å¼ä¿®æ­£ã€‚
 
-[2002/04/15] menu.c mail.c §ï vs_head()¡C
+[2002/04/15] menu.c mail.c æ”¹ vs_head()ã€‚
 
-[2002/04/27] bbsmail.c Á×§K SIGSEGV¡C
+[2002/04/27] bbsmail.c é¿å… SIGSEGVã€‚
 
-[2002/04/31] newbrd.c §â³s¸p°O¿ı²¾¨ì run/newbrd/ ¤U¡C
-             vote.c §â§ë²¼°O¿ı²¾¨ì brd/_/@/G*¡C
+[2002/04/31] newbrd.c æŠŠé€£ç½²è¨˜éŒ„ç§»åˆ° run/newbrd/ ä¸‹ã€‚
+             vote.c æŠŠæŠ•ç¥¨è¨˜éŒ„ç§»åˆ° brd/_/@/G*ã€‚
 
-[2002/05/02] newbrd.c @cosign.hlp ­×§ï³s¸p¤º®e¡C
+[2002/05/02] newbrd.c @cosign.hlp ä¿®æ”¹é€£ç½²å…§å®¹ã€‚
 
-[2002/05/04] board.c guest ¤£¯à±q¬İªO¦Cªí¥[¤J§Úªº³Ì·R¡C
+[2002/05/04] board.c guest ä¸èƒ½å¾çœ‹æ¿åˆ—è¡¨åŠ å…¥æˆ‘çš„æœ€æ„›ã€‚
 
-[2002/05/10] acct.c ¥i³]©w¨Ï¥ÎªÌ±b¸¹¡C
+[2002/05/10] acct.c å¯è¨­å®šä½¿ç”¨è€…å¸³è™Ÿã€‚
 
-[2002/05/14] setusr.c ¥i³]©w¨Ï¥ÎªÌ²ßºD¡C
-             ufo.h struct.h acct.c §â UFO ¿W¥ß¥X¨Ó¦¨¬° ufo.h¡C
-             acct.c ¥i³]©w¨Ï¥ÎªÌ²ßºD¡C
+[2002/05/14] setusr.c å¯è¨­å®šä½¿ç”¨è€…ç¿’æ…£ã€‚
+             ufo.h struct.h acct.c æŠŠ UFO ç¨ç«‹å‡ºä¾†æˆç‚º ufo.hã€‚
+             acct.c å¯è¨­å®šä½¿ç”¨è€…ç¿’æ…£ã€‚
 
-[2002/05/23] liteon.c menu.c ·s¼W¶}¿O¹CÀ¸¡C
+[2002/05/23] liteon.c menu.c æ–°å¢é–‹ç‡ˆéŠæˆ²ã€‚
 
-[2002/05/29] mail.c @mbox.hlp «H¥ó³]©w¾\Åª°O¿ı¡C
+[2002/05/29] mail.c @mbox.hlp ä¿¡ä»¶è¨­å®šé–±è®€è¨˜éŒ„ã€‚
 
-[2002/05/30] railway.c ·sª©µ{¦¡¡C
+[2002/05/30] railway.c æ–°ç‰ˆç¨‹å¼ã€‚
 
-[2002/05/31] talk.c ·sªº Talk µ{¦¡¡C
-             bbsnet.c ¿W¥ß©ó xyz.c¡C
-             visio.c save_foot() restore_foot() ­×¥¿¡C
+[2002/05/31] talk.c æ–°çš„ Talk ç¨‹å¼ã€‚
+             bbsnet.c ç¨ç«‹æ–¼ xyz.cã€‚
+             visio.c save_foot() restore_foot() ä¿®æ­£ã€‚
 
 [2002/06/01] innbbsd/Makefile bbslib.c bbslink.c receive_article.c ncmbbs.h ncmbbs.c innd/ncmperm.bbs
-             ´£¨Ñ NoCeM ¥\¯à¡C
+             æä¾› NoCeM åŠŸèƒ½ã€‚
 
-[2002/06/02] menu.c xyz.c etc/loveletter ´£¨Ñ±¡®Ñ²£¥Í¾¹¡C
-             config.h global.h board.c talk.c HAVE_BRDPAL ´£¨Ñ¬İªO¦n¤Í¥\¯à¡C
-             config.h ufo.h talk.c bmw.c @ulist.hlp HAVE_SUPERCLOAK ´£¨Ñ¶W¯ÅÁô§Î(µµÁô)¥\¯à¡C
-             config.h global.h post.c HAVE_UNANONYMOUS_BOARD ¤Ï°Î¦WªO¡C
+[2002/06/02] menu.c xyz.c etc/loveletter æä¾›æƒ…æ›¸ç”¢ç”Ÿå™¨ã€‚
+             config.h global.h board.c talk.c HAVE_BRDPAL æä¾›çœ‹æ¿å¥½å‹åŠŸèƒ½ã€‚
+             config.h ufo.h talk.c bmw.c @ulist.hlp HAVE_SUPERCLOAK æä¾›è¶…ç´šéš±å½¢(ç´«éš±)åŠŸèƒ½ã€‚
+             config.h global.h post.c HAVE_UNANONYMOUS_BOARD ååŒ¿åæ¿ã€‚
 
-[2002/06/08] account.c ªÅÀÉ®×¤£¦bªO¤W keeplog¡C
-             usies-sort.c ­×¥¿¦pªG¨S¦³¤H¤W¯¸·|µo²{¿ù»~¡C
+[2002/06/08] account.c ç©ºæª”æ¡ˆä¸åœ¨æ¿ä¸Š keeplogã€‚
+             usies-sort.c ä¿®æ­£å¦‚æœæ²’æœ‰äººä¸Šç«™æœƒç™¼ç¾éŒ¯èª¤ã€‚
 
-[2002/06/11] post.c «İ¬åªº¤å³¹¤£¯à mark¡C
-             config.h maple.p menu.c visio.c acct.c talk.c pal.c mine.c ²Î¤@®y¼Ğ¬° (x, y)¡C
+[2002/06/11] post.c å¾…ç çš„æ–‡ç« ä¸èƒ½ markã€‚
+             config.h maple.p menu.c visio.c acct.c talk.c pal.c mine.c çµ±ä¸€åº§æ¨™ç‚º (x, y)ã€‚
 
-[2002/06/12] post.c ­×¥¿¦b¦ê±µ¼Ò¦¡¤¤ªO¥D copy ¤å³¹¨ìºëµØ°Ï¡A¦^¦ê±µ·|¿ù»~¡C
-             post.c ­×¥¿¦b¦ê±µ¼Ò¦¡¤¤¾\Åª¤å³¹ more() ®É¡AªO¥D«ö m ·|¥XÂñ¡C
-             etc/feast global.h menu.c bbsd.c ¿ï³æ feeter Åã¥Ü¸`¤é¡C
-             config.h mail.c post.c HAVE_DECORATE ªº³¡¤Àµ{¦¡§R°£¡C
-             mail.c ¥uÅıªO¥D§â¬İªO/ºëµØ°Ï¥´¥]¦^®a¡C
+[2002/06/12] post.c ä¿®æ­£åœ¨ä¸²æ¥æ¨¡å¼ä¸­æ¿ä¸» copy æ–‡ç« åˆ°ç²¾è¯å€ï¼Œå›ä¸²æ¥æœƒéŒ¯èª¤ã€‚
+             post.c ä¿®æ­£åœ¨ä¸²æ¥æ¨¡å¼ä¸­é–±è®€æ–‡ç«  more() æ™‚ï¼Œæ¿ä¸»æŒ‰ m æœƒå‡ºéšã€‚
+             etc/feast global.h menu.c bbsd.c é¸å–® feeter é¡¯ç¤ºç¯€æ—¥ã€‚
+             config.h mail.c post.c HAVE_DECORATE çš„éƒ¨åˆ†ç¨‹å¼åˆªé™¤ã€‚
+             mail.c åªè®“æ¿ä¸»æŠŠçœ‹æ¿/ç²¾è¯å€æ‰“åŒ…å›å®¶ã€‚
 
-[2002/06/13] check_newsfeeds.c ÀË¬d newsfeeds.bbs ¬O§_¦³¤£¦s¦bªº¬İªOÁÙÂà«Hªº¡C
+[2002/06/13] check_newsfeeds.c æª¢æŸ¥ newsfeeds.bbs æ˜¯å¦æœ‰ä¸å­˜åœ¨çš„çœ‹æ¿é‚„è½‰ä¿¡çš„ã€‚
 
-[2002/06/15] board.c favor.c ¤ÀÃş¬İªO¤Î§Úªº³Ì·R³£¥i¥H¨Ï¥Î¦Û°Ê¸õ¥h¤U¤@­Ó¥¼Åª¬İªO¥\¯à¡C
+[2002/06/15] board.c favor.c åˆ†é¡çœ‹æ¿åŠæˆ‘çš„æœ€æ„›éƒ½å¯ä»¥ä½¿ç”¨è‡ªå‹•è·³å»ä¸‹ä¸€å€‹æœªè®€çœ‹æ¿åŠŸèƒ½ã€‚
 
-[2002/06/15] talk.c t_pager() ©Ú¦¬¼s¼½ªºµ{¦¡­×¥¿¡C
-             newbrd.c nbrd_browse() ÅıÂsÄı§ó¬yºZ¡C
+[2002/06/15] talk.c t_pager() æ‹’æ”¶å»£æ’­çš„ç¨‹å¼ä¿®æ­£ã€‚
+             newbrd.c nbrd_browse() è®“ç€è¦½æ›´æµæš¢ã€‚
 
-[2002/06/17] topusr.c ²Î­p¥»¤ë¹Ø¬P¡C
+[2002/06/17] topusr.c çµ±è¨ˆæœ¬æœˆå£½æ˜Ÿã€‚
 
-[2002/06/18] xover.c xo_forward() µ{¦¡­×¥¿¡C
+[2002/06/18] xover.c xo_forward() ç¨‹å¼ä¿®æ­£ã€‚
 
-[2002/06/19] bbsd.c ­×¥¿ multi-login ½ğ¨ì¦Û¤v¥i¥H­«½Æ¬~¿ú¡C
+[2002/06/19] bbsd.c ä¿®æ­£ multi-login è¸¢åˆ°è‡ªå·±å¯ä»¥é‡è¤‡æ´—éŒ¢ã€‚
 
-[2002/06/21] fb2usr.c sob2usr.c wd2usr.c Âà´«µ{¦¡­n«Ø usr/_/_/MF ³o¥Ø¿ı¡C
-             mail.c ¾\Åª«H¥ó¨ì¤@¥b«ö d §R°£¶l¥ó¥H«á­n­«·s¸ü¤J .DIR¡C
+[2002/06/21] fb2usr.c sob2usr.c wd2usr.c è½‰æ›ç¨‹å¼è¦å»º usr/_/_/MF é€™ç›®éŒ„ã€‚
+             mail.c é–±è®€ä¿¡ä»¶åˆ°ä¸€åŠæŒ‰ d åˆªé™¤éƒµä»¶ä»¥å¾Œè¦é‡æ–°è¼‰å…¥ .DIRã€‚
 
-[2002/06/23] stock.c µ{¦¡´«·s¡C
+[2002/06/23] stock.c ç¨‹å¼æ›æ–°ã€‚
 
-[2002/07/02] camera.c µ{¦¡­×¥¿¡C
+[2002/07/02] camera.c ç¨‹å¼ä¿®æ­£ã€‚
 
-[2002/07/03] mail.c m_internet() ª©­±§ó°Ê¡C
-             visio.c bmw.c §â¦^¤ô²y·h¥h³Ì¤W­±¤@¦æ¡C
+[2002/07/03] mail.c m_internet() ç‰ˆé¢æ›´å‹•ã€‚
+             visio.c bmw.c æŠŠå›æ°´çƒæ¬å»æœ€ä¸Šé¢ä¸€è¡Œã€‚
 
-[2002/07/04] gem.c ºëµØ°Ï§R°£®É­n½T»{¡C
-             gem-index.c µ{¦¡­×¥¿¡C
-             src/Makefile ­×¥¿¦³¨Ç OS ·|¥X²{»yªk¿ù»~ªº°İÃD¡C
-             *.h *.c LINUX ¤U sys/time.h ´«¦¨ time.h¡C
-             wd2gem.c wd2usr.c ­×¥¿Âà´«¹LªººëµØ°Ï©MºëµØ°Ï¯Á¤Ş/²§°Ê½Ä¬ğªº°İÃD¡C
+[2002/07/04] gem.c ç²¾è¯å€åˆªé™¤æ™‚è¦ç¢ºèªã€‚
+             gem-index.c ç¨‹å¼ä¿®æ­£ã€‚
+             src/Makefile ä¿®æ­£æœ‰äº› OS æœƒå‡ºç¾èªæ³•éŒ¯èª¤çš„å•é¡Œã€‚
+             *.h *.c LINUX ä¸‹ sys/time.h æ›æˆ time.hã€‚
+             wd2gem.c wd2usr.c ä¿®æ­£è½‰æ›éçš„ç²¾è¯å€å’Œç²¾è¯å€ç´¢å¼•/ç•°å‹•è¡çªçš„å•é¡Œã€‚
 
-[2002/07/08] menu.c pad_draw() ­×¥¿·|Â_½uªº°İÃD¡C
+[2002/07/08] menu.c pad_draw() ä¿®æ­£æœƒæ–·ç·šçš„å•é¡Œã€‚
 
-[2002/07/12] bbsnet.c BBSNET ¤ä´© port ¤£¬O 23 ªº telnet¡C
-             classtable.c ¥\½Òªí¥\¯à¥[±j¡C
+[2002/07/12] bbsnet.c BBSNET æ”¯æ´ port ä¸æ˜¯ 23 çš„ telnetã€‚
+             classtable.c åŠŸèª²è¡¨åŠŸèƒ½åŠ å¼·ã€‚
 
-[2002/07/13] menu.c vs_head() µ{¦¡­×¥¿¡C
-             railway.c ­×¥¿§ì¤£¨ìºô­¶·|¶i¤JµL½a°j°éªº°İÃD¡C
+[2002/07/13] menu.c vs_head() ç¨‹å¼ä¿®æ­£ã€‚
+             railway.c ä¿®æ­£æŠ“ä¸åˆ°ç¶²é æœƒé€²å…¥ç„¡çª®è¿´åœˆçš„å•é¡Œã€‚
 
-[2002/07/16] bank.c ¶R§¹Åv­­·|´£¥Ü­«·s¤W¯¸¦r²´¡AÁ×§K¨Ï¥ÎªÌ¤@ª½­«ÂĞ¶RÅv­­¡C
-             cache.c talk.c µµÁô©ó§@ªÌ½u¤W¤Î¬d¸ß®É¤]¬İ¤£¨£¡C
+[2002/07/16] bank.c è²·å®Œæ¬Šé™æœƒæç¤ºé‡æ–°ä¸Šç«™å­—çœ¼ï¼Œé¿å…ä½¿ç”¨è€…ä¸€ç›´é‡è¦†è²·æ¬Šé™ã€‚
+             cache.c talk.c ç´«éš±æ–¼ä½œè€…ç·šä¸ŠåŠæŸ¥è©¢æ™‚ä¹Ÿçœ‹ä¸è¦‹ã€‚
 
-[2002/07/18] bbsnet.c BBSNET ¥[¤J°O¿ı¡C
-             board.c gem/@/@class.hlp ·s¼W Zap ±¼¥ş³¡¬İªOªº¥\¯à¡C
-             talk.c ¨Ï¥ÎªÌ¦W³æ¬İ¤£¨ìªO¤Íªº¬G¶m¡C
-             talk.c ©MÁô§Î¤H Talk ¤£¦b°ÊºA¤¤Åã¥Ü¡C
+[2002/07/18] bbsnet.c BBSNET åŠ å…¥è¨˜éŒ„ã€‚
+             board.c gem/@/@class.hlp æ–°å¢ Zap æ‰å…¨éƒ¨çœ‹æ¿çš„åŠŸèƒ½ã€‚
+             talk.c ä½¿ç”¨è€…åå–®çœ‹ä¸åˆ°æ¿å‹çš„æ•…é„‰ã€‚
+             talk.c å’Œéš±å½¢äºº Talk ä¸åœ¨å‹•æ…‹ä¸­é¡¯ç¤ºã€‚
 
-[2002/07/20] bank.c ­×¥¿¶×¿ú¦³ bug ªº°İÃD¡C
-             enews.c enews-open.c run/kimo/L ©_¼¯·s»D·s¼W¥ğ¶¢Ãş¡C
+[2002/07/20] bank.c ä¿®æ­£åŒ¯éŒ¢æœ‰ bug çš„å•é¡Œã€‚
+             enews.c enews-open.c run/kimo/L å¥‡æ‘©æ–°èæ–°å¢ä¼‘é–’é¡ã€‚
 
-[2002/07/21] post.c Åı¤@¯ë¨Ï¥ÎªÌ¤]¯à¬İ¨ì¶iªOµe­±ªº ANSI ½X 
+[2002/07/21] post.c è®“ä¸€èˆ¬ä½¿ç”¨è€…ä¹Ÿèƒ½çœ‹åˆ°é€²æ¿ç•«é¢çš„ ANSI ç¢¼ 
 
-[2002/07/25] etc/webx.conf.cwb ®ğ¶H³ø¾É¡C
-             newbrd.c struct.h @cosign.hlp ·s¼W§@ªÌ¬d¸ß/³]©w¤Î³s¸p³]©wªº¥\¯à¡C
+[2002/07/25] etc/webx.conf.cwb æ°£è±¡å ±å°ã€‚
+             newbrd.c struct.h @cosign.hlp æ–°å¢ä½œè€…æŸ¥è©¢/è¨­å®šåŠé€£ç½²è¨­å®šçš„åŠŸèƒ½ã€‚
 
-[2002/07/26] railway.c ­×¥¿·|¯d¤U´İ¾lÀÉ®×ªº°İÃD¡C
-             railway.c ­×¥¿¿ï³Ì«á¤@¦æªº¯¸®É·|Â_½u¡C
-             bbcall.c dreye.c enew.c fortune.c ¿ù¦r­q¥¿¡C
-             mail.c ¯¸ªø¥i¬İ guest ªº«H½c¡C
-             acct.c newbrd.c ¶}·sªO³s¸p®É­nÀË¬d¬İªOªO¦W¬O§_¦Xªk¡C
+[2002/07/26] railway.c ä¿®æ­£æœƒç•™ä¸‹æ®˜é¤˜æª”æ¡ˆçš„å•é¡Œã€‚
+             railway.c ä¿®æ­£é¸æœ€å¾Œä¸€è¡Œçš„ç«™æ™‚æœƒæ–·ç·šã€‚
+             bbcall.c dreye.c enew.c fortune.c éŒ¯å­—è¨‚æ­£ã€‚
+             mail.c ç«™é•·å¯çœ‹ guest çš„ä¿¡ç®±ã€‚
+             acct.c newbrd.c é–‹æ–°æ¿é€£ç½²æ™‚è¦æª¢æŸ¥çœ‹æ¿æ¿åæ˜¯å¦åˆæ³•ã€‚
 
-[2002/07/28] km.c ¹CÀ¸¦¨¥\©Î¥¢±Ñ³£¥i±µÃö¡C
+[2002/07/28] km.c éŠæˆ²æˆåŠŸæˆ–å¤±æ•—éƒ½å¯æ¥é—œã€‚
 
-[2002/07/30] check_newsfeeds.c ÀË¬d newsfeeds.bbs ¤¤¬O§_¦³¥¼Âà«Hªº¬İªO¡C
+[2002/07/30] check_newsfeeds.c æª¢æŸ¥ newsfeeds.bbs ä¸­æ˜¯å¦æœ‰æœªè½‰ä¿¡çš„çœ‹æ¿ã€‚
 
-[2002/08/05] bwboard.c ·s¼W­x´Ñ/·t´Ñ¹CÀ¸¡C
+[2002/08/05] bwboard.c æ–°å¢è»æ£‹/æš—æ£‹éŠæˆ²ã€‚
 
-[2002/08/06] show_id_in_USR.c ¥i¥H·j´M¬Y id ¦b .USR ¤¤ªº userno¡C
+[2002/08/06] show_id_in_USR.c å¯ä»¥æœå°‹æŸ id åœ¨ .USR ä¸­çš„ usernoã€‚
 
-[2002/08/07] acct.c ­×¥¿ 0Admin/QSetBoard ®É­Y¬O edit currboard ·|¥¢±Ñ¡C
-             board.c ­×¥¿¦b Boards ¬İ§¹¬YªO¤å³¹«á¡A¦A±q¿ï³æ«ö s ¶i¥h¸ÓªO¡A­è¬İ§¹ªº¤å³¹ÁÙ¬O¨S¬İ§¹¡C
-             acct.c pop3.c POP3 »{ÃÒµ{¦¡­×¥¿¡C
-             bbsd.c Åı ps ®É¯à¥X²{ bbsd ¬O­ş­Ó¨Ï¥ÎªÌ¤Î¨Ó·½¡C
+[2002/08/07] acct.c ä¿®æ­£ 0Admin/QSetBoard æ™‚è‹¥æ˜¯ edit currboard æœƒå¤±æ•—ã€‚
+             board.c ä¿®æ­£åœ¨ Boards çœ‹å®ŒæŸæ¿æ–‡ç« å¾Œï¼Œå†å¾é¸å–®æŒ‰ s é€²å»è©²æ¿ï¼Œå‰›çœ‹å®Œçš„æ–‡ç« é‚„æ˜¯æ²’çœ‹å®Œã€‚
+             acct.c pop3.c POP3 èªè­‰ç¨‹å¼ä¿®æ­£ã€‚
+             bbsd.c è®“ ps æ™‚èƒ½å‡ºç¾ bbsd æ˜¯å“ªå€‹ä½¿ç”¨è€…åŠä¾†æºã€‚
 
-[2002/08/08] post.c ¯¸ªø§ï¤å³¹¼ĞÃD®É¡A¤]¥i¶¶«K§ï¼ÊºÙ¡C
+[2002/08/08] post.c ç«™é•·æ”¹æ–‡ç« æ¨™é¡Œæ™‚ï¼Œä¹Ÿå¯é †ä¾¿æ”¹æš±ç¨±ã€‚
 
-[2002/08/09] etc/jcee/90.txt etc/jcee/91.txt jcee.c ´£¨Ñ 91 ¦~¤j¾ÇÁp©Û¬dº]¡C
+[2002/08/09] etc/jcee/90.txt etc/jcee/91.txt jcee.c æä¾› 91 å¹´å¤§å­¸è¯æ‹›æŸ¥æ¦œã€‚
 
-[2002/08/11] talk.c @ulist.hlp ¨Ï¥ÎªÌ¦W³æ¤Á´«¬G¶m/¤Í½Ë¡C
+[2002/08/11] talk.c @ulist.hlp ä½¿ç”¨è€…åå–®åˆ‡æ›æ•…é„‰/å‹èª¼ã€‚
 
-[2002/08/12] src/innbbsd/Makefile innbbsd.h innbbsd.c ®³±¼ ADMINUSER¡C
-             menu.c ¯d¨¥ªO§ïÅÜª©­±¡C
-             stock-open.c ­×¥¿¬P´Á¤@¤£·|§ìªÑ¥«¦¬½L»ùªº°İÃD¡C
+[2002/08/12] src/innbbsd/Makefile innbbsd.h innbbsd.c æ‹¿æ‰ ADMINUSERã€‚
+             menu.c ç•™è¨€æ¿æ”¹è®Šç‰ˆé¢ã€‚
+             stock-open.c ä¿®æ­£æ˜ŸæœŸä¸€ä¸æœƒæŠ“è‚¡å¸‚æ”¶ç›¤åƒ¹çš„å•é¡Œã€‚
 
-[2002/08/13] config.h global.h maple.p edit.c post.c km.c bmtad.c mailpost.c ²¾°£ RANDOM_BANNER¡C
-             edit.c post.c km.c ¼W¥[¨ç¦¡ ve_banner()¡C
+[2002/08/13] config.h global.h maple.p edit.c post.c km.c bmtad.c mailpost.c ç§»é™¤ RANDOM_BANNERã€‚
+             edit.c post.c km.c å¢åŠ å‡½å¼ ve_banner()ã€‚
 
-[2002/08/14] modes.h struct.h bguard.c bmw.c cache.c talk.c visio.c BMW_COUNT µ{¦¡§ï¼g¡C
+[2002/08/14] modes.h struct.h bguard.c bmw.c cache.c talk.c visio.c BMW_COUNT ç¨‹å¼æ”¹å¯«ã€‚
 
-[2002/08/16] talk.c @ulist.hlp ¨Ï¥ÎªÌ¦W³æ«ö L ÂsÄı¤ô²y¡C
-             bbsd.c ­×¥¿ multi-login ®É¿ù»~ªº acct_save()¡C
+[2002/08/16] talk.c @ulist.hlp ä½¿ç”¨è€…åå–®æŒ‰ L ç€è¦½æ°´çƒã€‚
+             bbsd.c ä¿®æ­£ multi-login æ™‚éŒ¯èª¤çš„ acct_save()ã€‚
 
-[2002/08/17] newbrd.c credit.c aloha.c ²Î¤@ vs_head() ªº¥Îªk¡C
-             bbs.h config.h global.h theme.h *.c §G´º¥DÃD¡C
+[2002/08/17] newbrd.c credit.c aloha.c çµ±ä¸€ vs_head() çš„ç”¨æ³•ã€‚
+             bbs.h config.h global.h theme.h *.c ä½ˆæ™¯ä¸»é¡Œã€‚
 
-[2002/08/21] visio.c ­×¥¿¦b¤W¯¸³~¤¤/ºëµØ°Ï idle ¹L¤[¡A·|¥X²{ status_foot¡C
+[2002/08/21] visio.c ä¿®æ­£åœ¨ä¸Šç«™é€”ä¸­/ç²¾è¯å€ idle éä¹…ï¼Œæœƒå‡ºç¾ status_footã€‚
 
-[2002/08/22] mailpost.c §â¤@¨Ç¨ç¦¡¥Î lib/ ¤¤ªº¥N±¼¡C
-             cache.c menu.c §â¶Ã¼Æ¿ï°ÊºA¬İªOªºµ{¦¡±q film_out() ²¾¨ì movie()¡C
+[2002/08/22] mailpost.c æŠŠä¸€äº›å‡½å¼ç”¨ lib/ ä¸­çš„ä»£æ‰ã€‚
+             cache.c menu.c æŠŠäº‚æ•¸é¸å‹•æ…‹çœ‹æ¿çš„ç¨‹å¼å¾ film_out() ç§»åˆ° movie()ã€‚
 
-[2002/08/23] bmw.c theme.h ¦^¤ô²y®É«ö¤W¤UÁä§ï¦¨lastcmd¦Ó¤£¬O¦^«e«á¤@­Ó¨Ï¥ÎªÌ¡C
+[2002/08/23] bmw.c theme.h å›æ°´çƒæ™‚æŒ‰ä¸Šä¸‹éµæ”¹æˆlastcmdè€Œä¸æ˜¯å›å‰å¾Œä¸€å€‹ä½¿ç”¨è€…ã€‚
 
-[2002/08/28] bbsd.c ­×¥¿¦b¶}ÀYµe­±¹L¤[¥¼¿é¤J®É igetch ·|¥X²{ movie¡C
-             so/*.c pip.c ­×¥¿¦P¤@®É¶¡¤£¦P±b¸¹¶Ã¼Æ¤]¬Û¦Pªº°İÃD¡C
-             chessmj.c ¹CÀ¸¤@¶}©l®É´N¥ı¦©¤@¥÷¥»ª÷¡A¥H§Kª±®aª½±µ¸õ¥X®É¨S¦©¨ì¿ú¡C
-             bbs.h proto.h so/*.c ­×¥¿¶Ã¼Æµ{¦¡¡C
-             mail.c multi-send ®É¨ú®ø¦Ó·|³Q·í¦¨ MAIL_REPLIED¡C
+[2002/08/28] bbsd.c ä¿®æ­£åœ¨é–‹é ­ç•«é¢éä¹…æœªè¼¸å…¥æ™‚ igetch æœƒå‡ºç¾ movieã€‚
+             so/*.c pip.c ä¿®æ­£åŒä¸€æ™‚é–“ä¸åŒå¸³è™Ÿäº‚æ•¸ä¹Ÿç›¸åŒçš„å•é¡Œã€‚
+             chessmj.c éŠæˆ²ä¸€é–‹å§‹æ™‚å°±å…ˆæ‰£ä¸€ä»½æœ¬é‡‘ï¼Œä»¥å…ç©å®¶ç›´æ¥è·³å‡ºæ™‚æ²’æ‰£åˆ°éŒ¢ã€‚
+             bbs.h proto.h so/*.c ä¿®æ­£äº‚æ•¸ç¨‹å¼ã€‚
+             mail.c multi-send æ™‚å–æ¶ˆè€Œæœƒè¢«ç•¶æˆ MAIL_REPLIEDã€‚
 
-[2002/08/29] talk.c ¤W¯¸³qª¾/¨ó´M¡A§Y¨Ï§ÚÁô§Î¡A¹ï¤è¦pªG¦³¬İ¨£Áô§Î¤]³qª¾¡C
-             bmw.c µµÁôªº¤H¥i¥H¥áµµÁôªº¤H¤ô²y¡C
-             menu.c ¿ï³æ¤p´T½Õ¾ã¡C
-             expire.c µ{¦¡­×§ï¡C
-             talk.c bwboard.c cache.c ²á¤Ñ¹ï¶HÁô§Î®É¦b¨Ï¥ÎªÌ¦W³æ°ÊºA¤£³Q¬İ¨ì¡C
-             bbsd.c ufo.h maple.p §â¤W¯¸¤£°e¨ó´M¨Ö¤J UFO_NOALOHA¡C
+[2002/08/29] talk.c ä¸Šç«™é€šçŸ¥/å”å°‹ï¼Œå³ä½¿æˆ‘éš±å½¢ï¼Œå°æ–¹å¦‚æœæœ‰çœ‹è¦‹éš±å½¢ä¹Ÿé€šçŸ¥ã€‚
+             bmw.c ç´«éš±çš„äººå¯ä»¥ä¸Ÿç´«éš±çš„äººæ°´çƒã€‚
+             menu.c é¸å–®å°å¹…èª¿æ•´ã€‚
+             expire.c ç¨‹å¼ä¿®æ”¹ã€‚
+             talk.c bwboard.c cache.c èŠå¤©å°è±¡éš±å½¢æ™‚åœ¨ä½¿ç”¨è€…åå–®å‹•æ…‹ä¸è¢«çœ‹åˆ°ã€‚
+             bbsd.c ufo.h maple.p æŠŠä¸Šç«™ä¸é€å”å°‹ä½µå…¥ UFO_NOALOHAã€‚
 
-[2002/08/30] cola2brd.c cola2gem.c Cola Âà´«µ{¦¡¡C
+[2002/08/30] cola2brd.c cola2gem.c Cola è½‰æ›ç¨‹å¼ã€‚
 
-[2002/08/31] src/maple/Makefile src/util/Makefile solaris ªº Makefile¡C
-             menu.c SunOS ¤U¨S¦³ getloadavg()¡C
-             global.h bank.c account.c Âà±b°O¿ı¡C
-             calendar.c menu.c ¸U¦~¾ä¡C
+[2002/08/31] src/maple/Makefile src/util/Makefile solaris çš„ Makefileã€‚
+             menu.c SunOS ä¸‹æ²’æœ‰ getloadavg()ã€‚
+             global.h bank.c account.c è½‰å¸³è¨˜éŒ„ã€‚
+             calendar.c menu.c è¬å¹´æ›†ã€‚
 
-[2002/09/01] src/maple/Makefile src/so/Makefile src/pip/Makefile §ï¼g¡C
-             doc/b_postfix FreeBSD ¤U postfix + bbsmail + mailpost ªº¨Ï¥Î»¡©ú¡C
-             talk.c pal_ship() µ{¦¡­×¥¿¡C
+[2002/09/01] src/maple/Makefile src/so/Makefile src/pip/Makefile æ”¹å¯«ã€‚
+             doc/b_postfix FreeBSD ä¸‹ postfix + bbsmail + mailpost çš„ä½¿ç”¨èªªæ˜ã€‚
+             talk.c pal_ship() ç¨‹å¼ä¿®æ­£ã€‚
 
-[2002/09/02] receive_article.c ­×¥¿¨Ï NoCeM notice ¦³®Ä¡C
-             gem/?/* ·s¼W¤@¨Ç»¡©ú¤å¥ó¡C
+[2002/09/02] receive_article.c ä¿®æ­£ä½¿ NoCeM notice æœ‰æ•ˆã€‚
+             gem/?/* æ–°å¢ä¸€äº›èªªæ˜æ–‡ä»¶ã€‚
 
-[2002/09/04] edit.c ¤º½X¿é¤J¤u¨ãµ{¦¡­×¥¿¡C
-             rec_sync.c ·s¼W record ­«¾ã library¡C
+[2002/09/04] edit.c å…§ç¢¼è¼¸å…¥å·¥å…·ç¨‹å¼ä¿®æ­£ã€‚
+             rec_sync.c æ–°å¢ record é‡æ•´ libraryã€‚
 
-[2002/09/05] menu.c pushbox.c etc/game/pushbox.map ´£¨Ñ­Ü®wµf¹CÀ¸¡C
-             wd2*.c sob2*.c src/util/tran/Makefile ¤p§ï¼g¡C
-             talk.c ¤W¯¸³qª¾/¨ó´M¡AµµÁô¤£³qª¾¡C
+[2002/09/05] menu.c pushbox.c etc/game/pushbox.map æä¾›å€‰åº«ç•ªéŠæˆ²ã€‚
+             wd2*.c sob2*.c src/util/tran/Makefile å°æ”¹å¯«ã€‚
+             talk.c ä¸Šç«™é€šçŸ¥/å”å°‹ï¼Œç´«éš±ä¸é€šçŸ¥ã€‚
 
-[2002/09/10] mag2*.c Magic Âà´«µ{¦¡¡C
-             make_new_USR.c µ{¦¡­×¥¿¡C
-             etc/game/qkmj/* QKMJ µ{¦¡ª©¥»§ó·s¡C
+[2002/09/10] mag2*.c Magic è½‰æ›ç¨‹å¼ã€‚
+             make_new_USR.c ç¨‹å¼ä¿®æ­£ã€‚
+             etc/game/qkmj/* QKMJ ç¨‹å¼ç‰ˆæœ¬æ›´æ–°ã€‚
 
-[2002/09/11] receive_article.c µ{¦¡­×¥¿¡C
+[2002/09/11] receive_article.c ç¨‹å¼ä¿®æ­£ã€‚
 
-[2002/09/14] pip.h pip_play.c pip_weapon.c gem.c railway.c µ{¦¡­×¥¿¡C
+[2002/09/14] pip.h pip_play.c pip_weapon.c gem.c railway.c ç¨‹å¼ä¿®æ­£ã€‚
 
-[2002/09/15] bar.c ­×§ï§a¥xº¿²úªº¤¤¼ú¾÷²v¡C
+[2002/09/15] bar.c ä¿®æ”¹å§å°ç‘ªè‰çš„ä¸­çæ©Ÿç‡ã€‚
 
-[2002/09/16] gem.c favor.c song.c vote.c µ{¦¡­×¥¿¡C
+[2002/09/16] gem.c favor.c song.c vote.c ç¨‹å¼ä¿®æ­£ã€‚
 
-[2002/09/17] acct.c ­×¥¿¥Î multi-login + User/Info ªº¤èªk¨Ó¨Ï¿ú­¿¼W¡C
+[2002/09/17] acct.c ä¿®æ­£ç”¨ multi-login + User/Info çš„æ–¹æ³•ä¾†ä½¿éŒ¢å€å¢ã€‚
 
-[2002/09/29] nine.c ¤Ñ¦a¤[¤[µ{¦¡§ï¼g¡C
+[2002/09/29] nine.c å¤©åœ°ä¹…ä¹…ç¨‹å¼æ”¹å¯«ã€‚
 
-[2002/10/09] marie.c etc/game/marie ¤pº¿²úµ{¦¡§ï¼g¡C
-             more.c ­×¥¿¦b¤G­¶¥H¤Wªº¤å³¹¤¤«ö KEY_DEL µo²{¿ù»~¡C
-             song.c µ{¦¡­×¥¿¡C
+[2002/10/09] marie.c etc/game/marie å°ç‘ªè‰ç¨‹å¼æ”¹å¯«ã€‚
+             more.c ä¿®æ­£åœ¨äºŒé ä»¥ä¸Šçš„æ–‡ç« ä¸­æŒ‰ KEY_DEL ç™¼ç¾éŒ¯èª¤ã€‚
+             song.c ç¨‹å¼ä¿®æ­£ã€‚
 
-[2002/10/11] post.c ©Ø·¬¸¨¸­±Ù¥i¦Û©w§R°£ªº§@ªÌ¼ĞÃD¡C
+[2002/10/11] post.c æ‹‚æ¥“è½è‘‰æ–¬å¯è‡ªå®šåˆªé™¤çš„ä½œè€…æ¨™é¡Œã€‚
 
-[2002/10/14] marie.c ¤pº¿²ú­­¨îÁ`©ãª÷¡C
-             bmtad.c bbsmail.c ¾× html ®æ¦¡ªº«H¥ó¡C
+[2002/10/14] marie.c å°ç‘ªè‰é™åˆ¶ç¸½æŠ¼é‡‘ã€‚
+             bmtad.c bbsmail.c æ“‹ html æ ¼å¼çš„ä¿¡ä»¶ã€‚
 
-[2002/10/15] marie.c ­×¥¿»ÊÁÂ´fÅU®É¤¤¼ú¶µ¥Ø·|¥X²{¿ù»~¡C
-             menu.c tetris.c ·s¼W«XÃ¹´µ¤è¶ô¹CÀ¸¡C
+[2002/10/15] marie.c ä¿®æ­£éŠ˜è¬æƒ é¡§æ™‚ä¸­çé …ç›®æœƒå‡ºç¾éŒ¯èª¤ã€‚
+             menu.c tetris.c æ–°å¢ä¿„ç¾…æ–¯æ–¹å¡ŠéŠæˆ²ã€‚
 
-[2002/10/18] fortune.c ¹B¶Õ¹w´úºô­¶¸ô®|­×¥¿¡C
-             gem.c ¶i¤JªÅºëµØ°Ï¥i¥H°¨¤W¶K½Æ¡C
+[2002/10/18] fortune.c é‹å‹¢é æ¸¬ç¶²é è·¯å¾‘ä¿®æ­£ã€‚
+             gem.c é€²å…¥ç©ºç²¾è¯å€å¯ä»¥é¦¬ä¸Šè²¼è¤‡ã€‚
 
-[2002/10/21] acct.c ¼W¥[§R°£±b¸¹ªº¿ï¶µ¡C
+[2002/10/21] acct.c å¢åŠ åˆªé™¤å¸³è™Ÿçš„é¸é …ã€‚
 
-[2002/10/26] wd2usr.c wd2gem.c µ{¦¡­×¥¿¡C
-             sob.h sob2brd.c sob2gem.c sob2usr.c SOB Âà´«µ{¦¡§ï¼g¡C
+[2002/10/26] wd2usr.c wd2gem.c ç¨‹å¼ä¿®æ­£ã€‚
+             sob.h sob2brd.c sob2gem.c sob2usr.c SOB è½‰æ›ç¨‹å¼æ”¹å¯«ã€‚
 
-[2002/10/27] post.c ­×¥¿¥[±K¤å³¹¥i¥ô·NÂà¹F¨Ï¥ÎªÌ¡C
+[2002/10/27] post.c ä¿®æ­£åŠ å¯†æ–‡ç« å¯ä»»æ„è½‰é”ä½¿ç”¨è€…ã€‚
 
-[2002/10/28] post.c ­×¥¿ guest ¥iÂÇ¦^§@ªÌ«H½c¨Ó±H«H¡C
-             mail.c ¸s²Õ¦^«Hµ{¦¡§ï¼g¡C
+[2002/10/28] post.c ä¿®æ­£ guest å¯è—‰å›ä½œè€…ä¿¡ç®±ä¾†å¯„ä¿¡ã€‚
+             mail.c ç¾¤çµ„å›ä¿¡ç¨‹å¼æ”¹å¯«ã€‚
 
-[2002/10/29] gem.c ­×¥¿ºëµØ°Ï§R°£¤å³¹§¹¥H«á¡A¥Ø¿ı¤º³Ñ 0 ½g¡A¿Ã¹õ·|¤£°®²b¡C
+[2002/10/29] gem.c ä¿®æ­£ç²¾è¯å€åˆªé™¤æ–‡ç« å®Œä»¥å¾Œï¼Œç›®éŒ„å…§å‰© 0 ç¯‡ï¼Œè¢å¹•æœƒä¸ä¹¾æ·¨ã€‚
 
-[2002/10/31] post.c ­×¥¿ guest ¥iÂà¹F¤å³¹¡C
-             src/pip/* ¹q¤lÂû¹CÀ¸·s¼W¤É¯Å¥ô°È¡BªZ¾¹¨t²Î¡C
-             enews.c ­×¥¿©_¼¯·s»DÂà¿ı¨ú®ø¿Ã¹õ¿ù¶Ãªº°İÃD¡C
+[2002/10/31] post.c ä¿®æ­£ guest å¯è½‰é”æ–‡ç« ã€‚
+             src/pip/* é›»å­é›éŠæˆ²æ–°å¢å‡ç´šä»»å‹™ã€æ­¦å™¨ç³»çµ±ã€‚
+             enews.c ä¿®æ­£å¥‡æ‘©æ–°èè½‰éŒ„å–æ¶ˆè¢å¹•éŒ¯äº‚çš„å•é¡Œã€‚
 
 [2002/11/01] board.c favor.c config.h ENHANCED_BSHM_UPDATE
-             ¬İªO¦Cªí§R°£/¼Ğ°O¤å³¹¤£¦C¤J¥¼Åªªº¿O¡C
+             çœ‹æ¿åˆ—è¡¨åˆªé™¤/æ¨™è¨˜æ–‡ç« ä¸åˆ—å…¥æœªè®€çš„ç‡ˆã€‚
 
-[2002/11/02] bmw.c config.h ¤ô²y¦sÃÒ¡C
-             song.c ­­¨î¨C¤ÑÂIºq¦¸¼Æ¡C
+[2002/11/02] bmw.c config.h æ°´çƒå­˜è­‰ã€‚
+             song.c é™åˆ¶æ¯å¤©é»æ­Œæ¬¡æ•¸ã€‚
 
-[2002/11/05] bguard.c bmw.c talk.c §âÀË¬d¬O§_¯à¬İ¨£¹ï¤èªºµ{¦¡¾ã²z¦b¤@°_¡C
+[2002/11/05] bguard.c bmw.c talk.c æŠŠæª¢æŸ¥æ˜¯å¦èƒ½çœ‹è¦‹å°æ–¹çš„ç¨‹å¼æ•´ç†åœ¨ä¸€èµ·ã€‚
 
-[2002/11/07] src/web/ html/ WEB-BBS ¥\¯à¡C
+[2002/11/07] src/web/ html/ WEB-BBS åŠŸèƒ½ã€‚
 
-[2002/11/11] bj.c chessmj.c fantan.c gp.c seven.c §ïÅÜ¨úµPªº¶Ã¼Æµ{¦¡¡C
+[2002/11/11] bj.c chessmj.c fantan.c gp.c seven.c æ”¹è®Šå–ç‰Œçš„äº‚æ•¸ç¨‹å¼ã€‚
 
-[2002/11/13] showUSR.c µ{¦¡§ï¼g¡C
+[2002/11/13] showUSR.c ç¨‹å¼æ”¹å¯«ã€‚
 
-[2002/11/14] Makefile ´£¨Ñ make update ªº«ü¥O¡C
+[2002/11/14] Makefile æä¾› make update çš„æŒ‡ä»¤ã€‚
 
-[2002/11/17] make_new_USR.c ­×¥¿¿ù»~¡C
+[2002/11/17] make_new_USR.c ä¿®æ­£éŒ¯èª¤ã€‚
 
-[2002/11/22] xover.c vote.c §âÃş XZ_ µ²ºcªº´å¼Ğ²¾°Êµ{¦¡¾ã²z¦b¤@°_¡C
-             xover.c maple.p camera.c struct.h *.c §â help ¿W¥ß¥X film_out ÅÜ¦¨¿ï³æ¡C
+[2002/11/22] xover.c vote.c æŠŠé¡ XZ_ çµæ§‹çš„æ¸¸æ¨™ç§»å‹•ç¨‹å¼æ•´ç†åœ¨ä¸€èµ·ã€‚
+             xover.c maple.p camera.c struct.h *.c æŠŠ help ç¨ç«‹å‡º film_out è®Šæˆé¸å–®ã€‚
 
-[2002/11/26] favor.c ­×¥¿ºëµØ°Ï±¶®|ªO¥DÅv­­¿ù»~ªº°İÃD¡C
+[2002/11/26] favor.c ä¿®æ­£ç²¾è¯å€æ·å¾‘æ¿ä¸»æ¬Šé™éŒ¯èª¤çš„å•é¡Œã€‚
 
-[2002/12/04] favor.c ·s¼W§Úªº³Ì·R¿ï¨ú¬İªO¥\¯à¡C
+[2002/12/04] favor.c æ–°å¢æˆ‘çš„æœ€æ„›é¸å–çœ‹æ¿åŠŸèƒ½ã€‚
 
-[2002/12/05] menu.c ­×¥¿ #define COLOR_HEADER ®É¡A¶l®t¨Ó«ö¹aªºÃC¦â·|¤£¹ï¡C
-             talk.c ­Y¦b Talk ®É«ö¤F¤@°ï¦L¤£¥X¨Óªº¦r¡A´N¤£¼g¶i talk-log¡C
-             *.c mail_self() ¦h¤@­Ó°Ñ¼Æ¡A§ó¤è«K¨Ï¥Î¡C
-             talk.c §â mail_self() ¾ã¦X¶i talk_save()¡C
-             talk.c ­×¥¿ Talk ®É³Ì«á¤@¥y¸Ü¤£·|³Q°O¦b½Í¤Ñ°O¿ı¤¤¡C
-             talk.c ­×¥¿ Talk ®É·í´å¼Ğ¦A¹ï¤è°Ï°ì®É«ö¤UCtrl+k·|µo¥Í¿ù»~¡C
+[2002/12/05] menu.c ä¿®æ­£ #define COLOR_HEADER æ™‚ï¼Œéƒµå·®ä¾†æŒ‰éˆ´çš„é¡è‰²æœƒä¸å°ã€‚
+             talk.c è‹¥åœ¨ Talk æ™‚æŒ‰äº†ä¸€å †å°ä¸å‡ºä¾†çš„å­—ï¼Œå°±ä¸å¯«é€² talk-logã€‚
+             *.c mail_self() å¤šä¸€å€‹åƒæ•¸ï¼Œæ›´æ–¹ä¾¿ä½¿ç”¨ã€‚
+             talk.c æŠŠ mail_self() æ•´åˆé€² talk_save()ã€‚
+             talk.c ä¿®æ­£ Talk æ™‚æœ€å¾Œä¸€å¥è©±ä¸æœƒè¢«è¨˜åœ¨è«‡å¤©è¨˜éŒ„ä¸­ã€‚
+             talk.c ä¿®æ­£ Talk æ™‚ç•¶æ¸¸æ¨™å†å°æ–¹å€åŸŸæ™‚æŒ‰ä¸‹Ctrl+kæœƒç™¼ç”ŸéŒ¯èª¤ã€‚
 
-[2002/12/06] board.c favor.c theme.h maple.p Åı¬İªO¦Cªí¤¤ªº¯µ±KªO¡B¦n¤ÍªO¡BZAP ªO¼Ğ¥Ü²M·¡¡C
+[2002/12/06] board.c favor.c theme.h maple.p è®“çœ‹æ¿åˆ—è¡¨ä¸­çš„ç§˜å¯†æ¿ã€å¥½å‹æ¿ã€ZAP æ¿æ¨™ç¤ºæ¸…æ¥šã€‚
 
-[2002/12/09] enews-open.c §ì©_¼¯·s»Dªºµ{¦¡§ó·s¡C
+[2002/12/09] enews-open.c æŠ“å¥‡æ‘©æ–°èçš„ç¨‹å¼æ›´æ–°ã€‚
 
-[2002/12/10] pal.c ½s¿èªO¤Í¦W³æ®É¡A¤Ş¤J¦n¤Í¦W³æ¡C
+[2002/12/10] pal.c ç·¨è¼¯æ¿å‹åå–®æ™‚ï¼Œå¼•å…¥å¥½å‹åå–®ã€‚
 
-[2002/12/13] global.h struct.h account.c board.c ¥i¥H zap ±¼¤ÀÃş¡C
+[2002/12/13] global.h struct.h account.c board.c å¯ä»¥ zap æ‰åˆ†é¡ã€‚
 
-[2002/12/15] account.c µ{¦¡§ï¼g¡C
+[2002/12/15] account.c ç¨‹å¼æ”¹å¯«ã€‚
 
-[2002/12/16] bbslib.c ¦pªG nodelist.bbs ¸Ì­±¶ñªº¤£¬O¥¿¸Ñ¡A¹ï¤èÁÙ¬O¥i¥H access¡C
-             mail.c ­×§ï¸s²Õ±H«H®É¡A­Y¦W³æ¹L¦h·|Â_½u¡C
+[2002/12/16] bbslib.c å¦‚æœ nodelist.bbs è£¡é¢å¡«çš„ä¸æ˜¯æ­£è§£ï¼Œå°æ–¹é‚„æ˜¯å¯ä»¥ accessã€‚
+             mail.c ä¿®æ”¹ç¾¤çµ„å¯„ä¿¡æ™‚ï¼Œè‹¥åå–®éå¤šæœƒæ–·ç·šã€‚
 
-[2002/12/18] song.c µ{¦¡­×¥¿¡C
-             bbslink.c news ¿é¥X RFC 2045¡C
+[2002/12/18] song.c ç¨‹å¼ä¿®æ­£ã€‚
+             bbslink.c news è¼¸å‡º RFC 2045ã€‚
 
-[2002/12/21] dns_ident.c dl_lib.c µ{¦¡§ó·s¡C
+[2002/12/21] dns_ident.c dl_lib.c ç¨‹å¼æ›´æ–°ã€‚
 
-[2002/12/22] *.c Query µ{¦¡§ó·s¡C
+[2002/12/22] *.c Query ç¨‹å¼æ›´æ–°ã€‚
 
-[2002/12/24] struct.h acct.c bbsd.c §â±K½Xªø«×²Î¤@­­©w¬° 8¡C
-             edit.c ¦]Â_½u¥¼§¹¦¨ªº¤å³¹¥i¿ï¾Ü¥á¥h¼È¦sÀÉ©Î«H½c¡C
+[2002/12/24] struct.h acct.c bbsd.c æŠŠå¯†ç¢¼é•·åº¦çµ±ä¸€é™å®šç‚º 8ã€‚
+             edit.c å› æ–·ç·šæœªå®Œæˆçš„æ–‡ç« å¯é¸æ“‡ä¸Ÿå»æš«å­˜æª”æˆ–ä¿¡ç®±ã€‚
 
-[2002/12/26] post.c ¦b¦ê±µ¼Ò¦¡¤U edit ¤å³¹§¹¡AÀ³¸Ó¥X²{ xpost_head() ¦Ó¤£¬O post_head()¡C
+[2002/12/26] post.c åœ¨ä¸²æ¥æ¨¡å¼ä¸‹ edit æ–‡ç« å®Œï¼Œæ‡‰è©²å‡ºç¾ xpost_head() è€Œä¸æ˜¯ post_head()ã€‚
 
-[2002/12/27] xover.c post.hlp gem.hlp ²¾°£ Z-modem ¤U¸ü¥\¯à¡C
-             fortune.c menu.c ²¾°£¹B¶Õ¹w´ú¥\¯à¡C
-             bbcall.c menu.c ²¾°£ BBCall ¥\¯à¡C
-             emailpage.c mail.c bmtad.c ²¾°£ emailpage ¥\¯à¡C
-             config.h edit.c §R°£ HAVE_ORIGIN¡C
-             config.h km.c edit.c talk.c §R°£ REALINFO¡C
-             cache.c µ{¦¡§ó·s¡C
-             bingo.c µ{¦¡§ó·s¡C
+[2002/12/27] xover.c post.hlp gem.hlp ç§»é™¤ Z-modem ä¸‹è¼‰åŠŸèƒ½ã€‚
+             fortune.c menu.c ç§»é™¤é‹å‹¢é æ¸¬åŠŸèƒ½ã€‚
+             bbcall.c menu.c ç§»é™¤ BBCall åŠŸèƒ½ã€‚
+             emailpage.c mail.c bmtad.c ç§»é™¤ emailpage åŠŸèƒ½ã€‚
+             config.h edit.c åˆªé™¤ HAVE_ORIGINã€‚
+             config.h km.c edit.c talk.c åˆªé™¤ REALINFOã€‚
+             cache.c ç¨‹å¼æ›´æ–°ã€‚
+             bingo.c ç¨‹å¼æ›´æ–°ã€‚
 
-[2002/12/28] camera.c menu.c config.h µ{¦¡§ó·s¡C
+[2002/12/28] camera.c menu.c config.h ç¨‹å¼æ›´æ–°ã€‚
 
-[2002/12/30] camera.c cache.c str_rle.c fshm ¤£À£ÁY¡C
+[2002/12/30] camera.c cache.c str_rle.c fshm ä¸å£“ç¸®ã€‚
 
-[2003/01/01] talk.c ­×¥¿¯¸ªø°µ¦n¤Í¼s¼½®É¥i¯à·|»~´Óªº°İÃD¡C
-             ufo.h acct.c §â²ßºDªºªø«×§ì¥X¨Ó define ¦¨ NUMUFOS¡C
-             bmta.sh ¤ÀªR bmta.log ªº³s½u¦¸¼Æ¡C
+[2003/01/01] talk.c ä¿®æ­£ç«™é•·åšå¥½å‹å»£æ’­æ™‚å¯èƒ½æœƒèª¤æ¤çš„å•é¡Œã€‚
+             ufo.h acct.c æŠŠç¿’æ…£çš„é•·åº¦æŠ“å‡ºä¾† define æˆ NUMUFOSã€‚
+             bmta.sh åˆ†æ bmta.log çš„é€£ç·šæ¬¡æ•¸ã€‚
 
-[2003/01/02] pip_fight.c ­×¥¿¦³¨Ç§Ş¯à¾Ç¨ì¥H«áµLªk¨Ï¥Îªº°İÃD¡C
+[2003/01/02] pip_fight.c ä¿®æ­£æœ‰äº›æŠ€èƒ½å­¸åˆ°ä»¥å¾Œç„¡æ³•ä½¿ç”¨çš„å•é¡Œã€‚
 
-[2003/01/03] src/innbbsd/*.c µ{¦¡ºëÂ²¡C
-             *.c ²¾°£ HAVE_NOFORWARD¡A¨Ã§â NUMATTRS ©M STR_BATTR §ì¥X¨Ó©w¸q¡C
-             *.c ½Õ¾ã¬Y¨Ç¯¸ªøÅv­­¡C
+[2003/01/03] src/innbbsd/*.c ç¨‹å¼ç²¾ç°¡ã€‚
+             *.c ç§»é™¤ HAVE_NOFORWARDï¼Œä¸¦æŠŠ NUMATTRS å’Œ STR_BATTR æŠ“å‡ºä¾†å®šç¾©ã€‚
+             *.c èª¿æ•´æŸäº›ç«™é•·æ¬Šé™ã€‚
 
-[2003/01/10] topgem.c µ{¦¡§ó·s¡C
+[2003/01/10] topgem.c ç¨‹å¼æ›´æ–°ã€‚
 
-[2003/01/11] more.c µ{¦¡´«·s¡A­×¥¿¤W±²¤@¦æ¿ù»~¡B·j´M¦r¦ê·|§ä¤£¨ìªº°İÃD¡C
-             innbbsd/* Âà«Hµ{¦¡§ïª©¡C
-             aloha.c newbrd.c µ{¦¡§ó·s¡C
-             xover.c ­×¥¿¦b help ®É«ö KEY_HOME ·|Â_½uªº°İÃD¡C
+[2003/01/11] more.c ç¨‹å¼æ›æ–°ï¼Œä¿®æ­£ä¸Šæ²ä¸€è¡ŒéŒ¯èª¤ã€æœå°‹å­—ä¸²æœƒæ‰¾ä¸åˆ°çš„å•é¡Œã€‚
+             innbbsd/* è½‰ä¿¡ç¨‹å¼æ”¹ç‰ˆã€‚
+             aloha.c newbrd.c ç¨‹å¼æ›´æ–°ã€‚
+             xover.c ä¿®æ­£åœ¨ help æ™‚æŒ‰ KEY_HOME æœƒæ–·ç·šçš„å•é¡Œã€‚
 
-[2003/01/12] bmw.c ­×¥¿¤ô²yÀx¦sÅÜ¦¨¬Û¤Ï¹ï¸Üªº°İÃD¡C
+[2003/01/12] bmw.c ä¿®æ­£æ°´çƒå„²å­˜è®Šæˆç›¸åå°è©±çš„å•é¡Œã€‚
 
-[2003/01/13] song.c °Î¦WÂIºq¤]ºâ¤J¨C¤é¥u¯àÂI¤T­º¡C
+[2003/01/13] song.c åŒ¿åé»æ­Œä¹Ÿç®—å…¥æ¯æ—¥åªèƒ½é»ä¸‰é¦–ã€‚
 
-[2003/01/15] innbbsd/* µ{¦¡§ó·s¡C
-             xover.c ­×¥¿ every_Z ¶i¤J¬İªO®É¥i¯à³y¦¨¤å³¹¤wÅª/¥¼Åª¿ù»~¡C
+[2003/01/15] innbbsd/* ç¨‹å¼æ›´æ–°ã€‚
+             xover.c ä¿®æ­£ every_Z é€²å…¥çœ‹æ¿æ™‚å¯èƒ½é€ æˆæ–‡ç« å·²è®€/æœªè®€éŒ¯èª¤ã€‚
 
-[2003/01/19] admutil.c ¯¸ªø­«¸m¨t²Î®ÉÀx¦s¬İªO¾\Åª°O¿ı¡C
-             modes.h menu.c ®³±¼ M_CLASS¡C
+[2003/01/19] admutil.c ç«™é•·é‡ç½®ç³»çµ±æ™‚å„²å­˜çœ‹æ¿é–±è®€è¨˜éŒ„ã€‚
+             modes.h menu.c æ‹¿æ‰ M_CLASSã€‚
 
-[2003/01/23] railway.c ÀH¥xÅKªº®æ¦¡§ó·s¡C
+[2003/01/23] railway.c éš¨å°éµçš„æ ¼å¼æ›´æ–°ã€‚
 
-[2003/02/07] enews.c ©_¼¯·s»DÂà±H¨ì¯¸¥~¡C
+[2003/02/07] enews.c å¥‡æ‘©æ–°èè½‰å¯„åˆ°ç«™å¤–ã€‚
 
-[2003/02/08] edit.c ­­¨î¼È¦sÀÉ¤j¤p¡C
-             marie.c ­°§C¤j¤pº¿²ú¹CÀ¸ªº´Á±æ­È¡C
-             dice.c ­°§C¨gÂY»ë¤l¹CÀ¸ªº´Á±æ­È¡C
-             xover.c enews.c mail.c ¾ã²z DENYMAIL ªºµ{¦¡¡C
+[2003/02/08] edit.c é™åˆ¶æš«å­˜æª”å¤§å°ã€‚
+             marie.c é™ä½å¤§å°ç‘ªè‰éŠæˆ²çš„æœŸæœ›å€¼ã€‚
+             dice.c é™ä½ç‹‚æ“²éª°å­éŠæˆ²çš„æœŸæœ›å€¼ã€‚
+             xover.c enews.c mail.c æ•´ç† DENYMAIL çš„ç¨‹å¼ã€‚
 
-[2003/02/11] cola.h cola2brd.c cola2gem.c cola2usr.c ColaBBS Âà´«µ{¦¡¡C
+[2003/02/11] cola.h cola2brd.c cola2gem.c cola2usr.c ColaBBS è½‰æ›ç¨‹å¼ã€‚
 
-[2003/02/19] innbbsd/* innd/newsfeeds.bbs etc/b2g_table etc/g2b_table Â²ÁcÅéÂà«H¡C
+[2003/02/19] innbbsd/* innd/newsfeeds.bbs etc/b2g_table etc/g2b_table ç°¡ç¹é«”è½‰ä¿¡ã€‚
 
-[2003/02/21] cola2post.c Cola ¬İªO¤å³¹®æ¦¡Âà´«¡C
+[2003/02/21] cola2post.c Cola çœ‹æ¿æ–‡ç« æ ¼å¼è½‰æ›ã€‚
 
-[2003/02/23] post.c ­×¥¿Âà¿ı¤å³¹¨ì¤£°µ¼öªù¸ÜÃD²Î­pªº¬İªO¡A³o½g³QÂà¿ıªº¤å³¹¤´µM·|³Q¦C¤J²Î­p¡C
-             acct.c ¥u¦³ PERM_SYSOP ¯àÅÜ§ó¨ä¥L¯¸°Èªº±K½X¡C
+[2003/02/23] post.c ä¿®æ­£è½‰éŒ„æ–‡ç« åˆ°ä¸åšç†±é–€è©±é¡Œçµ±è¨ˆçš„çœ‹æ¿ï¼Œé€™ç¯‡è¢«è½‰éŒ„çš„æ–‡ç« ä»ç„¶æœƒè¢«åˆ—å…¥çµ±è¨ˆã€‚
+             acct.c åªæœ‰ PERM_SYSOP èƒ½è®Šæ›´å…¶ä»–ç«™å‹™çš„å¯†ç¢¼ã€‚
 
-[2003/02/25] cola2gem.c sob2gem.c wd2gem.c ­×¥¿¤l¥Ø¿ıÂà´«¥¢±Ñªº°İÃD¡C
+[2003/02/25] cola2gem.c sob2gem.c wd2gem.c ä¿®æ­£å­ç›®éŒ„è½‰æ›å¤±æ•—çš„å•é¡Œã€‚
 
-[2003/03/02] brdmail.c ¥Ñ Internet ±H«Hµ¹ BBS ¯¸¤º¬İªO¡C
+[2003/03/02] brdmail.c ç”± Internet å¯„ä¿¡çµ¦ BBS ç«™å…§çœ‹æ¿ã€‚
 
-[2003/03/03] counter.c ¾ú¥v­y¸ñ¡C
+[2003/03/03] counter.c æ­·å²è»Œè·¡ã€‚
 
-[2003/03/04] enews-open.c ©_¼¯·s»D¼ĞÃD¤Óªø®É·|¦³¿ù»~¡C
-             song.c ºq¥»¥[±K®É¤£¯àÂI¨º­ººq¡C
+[2003/03/04] enews-open.c å¥‡æ‘©æ–°èæ¨™é¡Œå¤ªé•·æ™‚æœƒæœ‰éŒ¯èª¤ã€‚
+             song.c æ­Œæœ¬åŠ å¯†æ™‚ä¸èƒ½é»é‚£é¦–æ­Œã€‚
 
-[2003/03/05] edit.c Ã±¦WÀÉ¤]ºâ¤Ş¨¥ªø«×¡C
+[2003/03/05] edit.c ç°½åæª”ä¹Ÿç®—å¼•è¨€é•·åº¦ã€‚
 
-[2003/03/06] song.c global.h ºq¥»§ï©ñ¦b ktv ªOºëµØ°Ï¡C
-             gem-index.c ºëµØ°Ï¯Á¤Ş/²§°Ê ¥iÁôÂÃ¡C
+[2003/03/06] song.c global.h æ­Œæœ¬æ”¹æ”¾åœ¨ ktv æ¿ç²¾è¯å€ã€‚
+             gem-index.c ç²¾è¯å€ç´¢å¼•/ç•°å‹• å¯éš±è—ã€‚
 
-[2003/03/07] gem.c ­×¥¿ºëµØ°Ï½Æ»sªº³¡¤Àµ{¦¡¡C
-             hdr.h *.c ¤£¥Î lazy_delete¡Arec_del() ®³±¼¤@­ÓÄæ¦ì¡APOST_DELETE ²¾°£¡C
-             hdr.h post.c POST_LABEL ´«½s¸¹¡C
-             *.c §ó·s record ®É­nÀË¬d¡C
-             rec_article.c ¦¬¨ì cancel ¤å³¹ª½±µ§R°£¡A¤£ lazy_delete¡C
-             hdr.h *.c POST_CANCEL ²¾°£¡C
+[2003/03/07] gem.c ä¿®æ­£ç²¾è¯å€è¤‡è£½çš„éƒ¨åˆ†ç¨‹å¼ã€‚
+             hdr.h *.c ä¸ç”¨ lazy_deleteï¼Œrec_del() æ‹¿æ‰ä¸€å€‹æ¬„ä½ï¼ŒPOST_DELETE ç§»é™¤ã€‚
+             hdr.h post.c POST_LABEL æ›ç·¨è™Ÿã€‚
+             *.c æ›´æ–° record æ™‚è¦æª¢æŸ¥ã€‚
+             rec_article.c æ”¶åˆ° cancel æ–‡ç« ç›´æ¥åˆªé™¤ï¼Œä¸ lazy_deleteã€‚
+             hdr.h *.c POST_CANCEL ç§»é™¤ã€‚
 
-[2003/03/10] vote.c ¤À¨­¤£¯à§ë²¼¡C
-             rec_loc.c bmw.c aloha.c °Ï¬q§R°£µ{¦¡­×¥¿¡C
+[2003/03/10] vote.c åˆ†èº«ä¸èƒ½æŠ•ç¥¨ã€‚
+             rec_loc.c bmw.c aloha.c å€æ®µåˆªé™¤ç¨‹å¼ä¿®æ­£ã€‚
 
-[2003/03/15] edit.c Show Ã±¦WÀÉ®É¡A«e¨â­Ó¥u¯à¨q¥X MAXSIGLINES-1 ¦æ¡C
+[2003/03/15] edit.c Show ç°½åæª”æ™‚ï¼Œå‰å…©å€‹åªèƒ½ç§€å‡º MAXSIGLINES-1 è¡Œã€‚
 
-[2003/03/23] bmtad.c ±H«Hµ¹¬İªO¡C
-             mail.c mail ¿é¥X RFC 2045¡C
+[2003/03/23] bmtad.c å¯„ä¿¡çµ¦çœ‹æ¿ã€‚
+             mail.c mail è¼¸å‡º RFC 2045ã€‚
 
-[2003/03/25] hdr_stamp.c post.c enews.c gem.c hdr_stamp() ·s¼W HDR_COPY ³o­Ó token¡C
-             bank.c Âà±bµ{¦¡­×¥¿¡C
-             post.c outgo.c Á×§K¨S¦³ nick ®É·|³y¦¨Âà«H¥¢±Ñ¡C
-             expire.c µ{¦¡¤p§ïª©¡C
+[2003/03/25] hdr_stamp.c post.c enews.c gem.c hdr_stamp() æ–°å¢ HDR_COPY é€™å€‹ tokenã€‚
+             bank.c è½‰å¸³ç¨‹å¼ä¿®æ­£ã€‚
+             post.c outgo.c é¿å…æ²’æœ‰ nick æ™‚æœƒé€ æˆè½‰ä¿¡å¤±æ•—ã€‚
+             expire.c ç¨‹å¼å°æ”¹ç‰ˆã€‚
 
-[2003/03/26] admutil.c ­×¥¿¥ş¯¸/ªO¥D³q§i³¡¤Àµ{¦¡¡A¨Ã¥[¤W¶l®t¨Ó«ö¹a¡C
+[2003/03/26] admutil.c ä¿®æ­£å…¨ç«™/æ¿ä¸»é€šå‘Šéƒ¨åˆ†ç¨‹å¼ï¼Œä¸¦åŠ ä¸Šéƒµå·®ä¾†æŒ‰éˆ´ã€‚
 
-[2003/03/27] post.c mail.c §ï¼ĞÃD®É­Y¨S¦³ÅÜ°Ê¡A«h¤£°İ Y/N¡C
-             more.c µ{¦¡­×¥¿¡C
+[2003/03/27] post.c mail.c æ”¹æ¨™é¡Œæ™‚è‹¥æ²’æœ‰è®Šå‹•ï¼Œå‰‡ä¸å• Y/Nã€‚
+             more.c ç¨‹å¼ä¿®æ­£ã€‚
 
-[2003/03/30] rec_article.c ­×¥¿¿é¤J RFC 2047 »P ANSI ±±¨î½Xªº°İÃD¡C
+[2003/03/30] rec_article.c ä¿®æ­£è¼¸å…¥ RFC 2047 èˆ‡ ANSI æ§åˆ¶ç¢¼çš„å•é¡Œã€‚
 
-[2003/03/31] pip_race.c ¦¬Ã¬©u²i¶¹¤ñÁÉ·s¼Wµæ¦â¿ï¾Ü¡C
+[2003/03/31] pip_race.c æ”¶ç©«å­£çƒ¹é£ªæ¯”è³½æ–°å¢èœè‰²é¸æ“‡ã€‚
 
-[2003/04/01] gem.c ºëµØ°Ïªº²Å¸¹¤À²M·¡¤@ÂI¡C
+[2003/04/01] gem.c ç²¾è¯å€çš„ç¬¦è™Ÿåˆ†æ¸…æ¥šä¸€é»ã€‚
 
-[2003/04/07] post.c mail.c hdr_out() ±q mail.c ·h¥h post.c¡C
-             post.c §R°£ getsubject()¡C
-             rec_put.c µ{¦¡­×§ï¡C
+[2003/04/07] post.c mail.c hdr_out() å¾ mail.c æ¬å» post.cã€‚
+             post.c åˆªé™¤ getsubject()ã€‚
+             rec_put.c ç¨‹å¼ä¿®æ”¹ã€‚
 
-[2003/04/08] xover.c Ãş XZ_* µ²ºcªº´å¼Ğ²¾°Êµ{¦¡­×§ï¡C
+[2003/04/08] xover.c é¡ XZ_* çµæ§‹çš„æ¸¸æ¨™ç§»å‹•ç¨‹å¼ä¿®æ”¹ã€‚
 
-[2003/04/11] rfc2047.c dao.p bbslink.c mail.c news/mail ¿é¥X RFC 2047¡C
+[2003/04/11] rfc2047.c dao.p bbslink.c mail.c news/mail è¼¸å‡º RFC 2047ã€‚
 
-[2003/04/15] inntobbs.c inntobbs.h rec_article.c ¨S¥Î¨ìªº HEADER ´N¤£¨ú¤F¡C
+[2003/04/15] inntobbs.c inntobbs.h rec_article.c æ²’ç”¨åˆ°çš„ HEADER å°±ä¸å–äº†ã€‚
 
-[2003/04/16] board.c ²Ä¤G¦¸¶i¤J board_main ®É¡A­n free ±¼ class_img¡C
+[2003/04/16] board.c ç¬¬äºŒæ¬¡é€²å…¥ board_main æ™‚ï¼Œè¦ free æ‰ class_imgã€‚
 
-[2003/04/22] talk.c config.h theme.h ±N #ndef ADV_ULIST ªºµ{¦¡§R°£¡C
-             aloha.c bmw.c pal.c xxxx_body() ²Î¤@©M¨ä¥L®æ¦¡¤@¼Ë¡C
-             talk.c ulist_body() ²Î¤@©M¨ä¥L®æ¦¡¤@¼Ë¡A¨Ã¿W¥ß¥X ulist_item¡C
-             railway.c ¥xÅKºô­¶®æ¦¡ÅÜ°Ê¡C
+[2003/04/22] talk.c config.h theme.h å°‡ #ndef ADV_ULIST çš„ç¨‹å¼åˆªé™¤ã€‚
+             aloha.c bmw.c pal.c xxxx_body() çµ±ä¸€å’Œå…¶ä»–æ ¼å¼ä¸€æ¨£ã€‚
+             talk.c ulist_body() çµ±ä¸€å’Œå…¶ä»–æ ¼å¼ä¸€æ¨£ï¼Œä¸¦ç¨ç«‹å‡º ulist_itemã€‚
+             railway.c å°éµç¶²é æ ¼å¼è®Šå‹•ã€‚
 
-[2003/04/23] post.c bmtad.c topgem.c bwboard.c ­×§ï¤@¤U¨Ï²Å¦X gcc 3.2.2¡C
+[2003/04/23] post.c bmtad.c topgem.c bwboard.c ä¿®æ”¹ä¸€ä¸‹ä½¿ç¬¦åˆ gcc 3.2.2ã€‚
 
-[2003/04/26] talk.c ulist_cb[] µ{¦¡­×¥¿¡C
-             xover.c ­×¥¿©ó help ·s¼W»¡©ú®É¡A­Y¶W¹L¤@­¶·|µo¥Í¿ù»~¡C
+[2003/04/26] talk.c ulist_cb[] ç¨‹å¼ä¿®æ­£ã€‚
+             xover.c ä¿®æ­£æ–¼ help æ–°å¢èªªæ˜æ™‚ï¼Œè‹¥è¶…éä¸€é æœƒç™¼ç”ŸéŒ¯èª¤ã€‚
 
-[2003/05/03] edit.c ª`­µ¤å¹LÂo¡C
+[2003/05/03] edit.c æ³¨éŸ³æ–‡éæ¿¾ã€‚
 
-[2003/05/04] Makefile ¥ş³¡²Î¤@¼gªk¡C
+[2003/05/04] Makefile å…¨éƒ¨çµ±ä¸€å¯«æ³•ã€‚
 
 [2003/05/10] str_ansi.c bmtad.c rec_article.c bbsmail.c brdmail.c mailpost.c cola2post.c
-             §â strip_ansi ªºµ{¦¡²Î¤@¦b lib/¡C
+             æŠŠ strip_ansi çš„ç¨‹å¼çµ±ä¸€åœ¨ lib/ã€‚
              cola2brd.c fb2brd.c mag2brd.c sob2brd.c wd2brd.c
-             Âà´«µ{¦¡³B²z¤å³¹¼ĞÃD®É¥[¤J strip_ansi¡C
+             è½‰æ›ç¨‹å¼è™•ç†æ–‡ç« æ¨™é¡Œæ™‚åŠ å…¥ strip_ansiã€‚
              mak_dirs.c bbsd.c cola2brd.c fb2brd.c mag2brd.c sob2brd.c wd2brd.c transacct.c
-             §â mak_links ªºµ{¦¡²Î¤@¦b lib/¡C
-             help.c xover.c xo_help() ·h¥h so/¡C
+             æŠŠ mak_links çš„ç¨‹å¼çµ±ä¸€åœ¨ lib/ã€‚
+             help.c xover.c xo_help() æ¬å» so/ã€‚
 
-[2003/05/11] innbbsd ³¡¤Àµ{¦¡§ï¼g¡C
+[2003/05/11] innbbsd éƒ¨åˆ†ç¨‹å¼æ”¹å¯«ã€‚
 
-[2003/05/13] bmtad.c bbsmail.c ¾×±¼«D big5 ªº«H¥ó¡C
+[2003/05/13] bmtad.c bbsmail.c æ“‹æ‰é big5 çš„ä¿¡ä»¶ã€‚
 
-[2003/05/14] config.h visio.c bguard.c TIME_KICKER ¬O§_¦Û°ÊÃ±°h idle ¹L¤[ªº¨Ï¥ÎªÌ¡C
-             bbs.h Makefile ®³±¼ REDHAT ªº³¡¤À¡C
+[2003/05/14] config.h visio.c bguard.c TIME_KICKER æ˜¯å¦è‡ªå‹•ç°½é€€ idle éä¹…çš„ä½¿ç”¨è€…ã€‚
+             bbs.h Makefile æ‹¿æ‰ REDHAT çš„éƒ¨åˆ†ã€‚
 
-[2003/05/15] modes.h board.c post.c xover.c ±N STAT_BOARD »P STAT_BM ¤ÀÂ÷¥X¨Ó¡C
-             post.c xover.c ¯¸ªøµLªk¬İ¨ì¥[±K¤å³¹¡C
+[2003/05/15] modes.h board.c post.c xover.c å°‡ STAT_BOARD èˆ‡ STAT_BM åˆ†é›¢å‡ºä¾†ã€‚
+             post.c xover.c ç«™é•·ç„¡æ³•çœ‹åˆ°åŠ å¯†æ–‡ç« ã€‚
 
-[2003/05/24] showDIR.c ¨q¥X .DIR ªº¸ê°T¡C
+[2003/05/24] showDIR.c ç§€å‡º .DIR çš„è³‡è¨Šã€‚
 
-[2003/05/25] board.c ­×¥¿¿ù»~ªº¬İªO¾\Åª°O¿ı·|·í¦b¤W¯¸µe­±¡C
-             mail.c ±H¥Xªº«HªºÀÉÀY From Äæ¦ì¥[¤W real name Äæ¦ì¡C
+[2003/05/25] board.c ä¿®æ­£éŒ¯èª¤çš„çœ‹æ¿é–±è®€è¨˜éŒ„æœƒç•¶åœ¨ä¸Šç«™ç•«é¢ã€‚
+             mail.c å¯„å‡ºçš„ä¿¡çš„æª”é ­ From æ¬„ä½åŠ ä¸Š real name æ¬„ä½ã€‚
 
-[2003/05/26] lottery.c lottery-open.c etc/game/lottery.main etc/game/lottery.rule ¼Ö³z¹CÀ¸¡C
+[2003/05/26] lottery.c lottery-open.c etc/game/lottery.main etc/game/lottery.rule æ¨‚é€éŠæˆ²ã€‚
 
-[2003/05/27] *.c *.h ¤ä´©¶W¹L 24 ¦Cªø¿Ã¹õªºµe­±¡C
-             util/Makefile §ï¼g¡C
+[2003/05/27] *.c *.h æ”¯æ´è¶…é 24 åˆ—é•·è¢å¹•çš„ç•«é¢ã€‚
+             util/Makefile æ”¹å¯«ã€‚
 
-[2003/05/28] post.c ¦ê¦C/·s»Dµ{¦¡§ï¼g¡C
+[2003/05/28] post.c ä¸²åˆ—/æ–°èç¨‹å¼æ”¹å¯«ã€‚
 
-[2003/06/04] config.h bmtad.c bbsmail.c mail.c §â MYCHARSET §ì¥X¨Ó©w¸q¡C
+[2003/06/04] config.h bmtad.c bbsmail.c mail.c æŠŠ MYCHARSET æŠ“å‡ºä¾†å®šç¾©ã€‚
 
-[2003/06/05] cache.c post.c utmp_get() µ{¦¡­×¥¿¡C
-             hdr.h gem.c xover.c song.c camera.c gem-index.c gem-check.c §R°£ GEM_HTTP ¤Î GEM_URL¡C
+[2003/06/05] cache.c post.c utmp_get() ç¨‹å¼ä¿®æ­£ã€‚
+             hdr.h gem.c xover.c song.c camera.c gem-index.c gem-check.c åˆªé™¤ GEM_HTTP åŠ GEM_URLã€‚
 
-[2003/06/06] innbbsd/* Âà«Hµ{¦¡­×§ï¡C
+[2003/06/06] innbbsd/* è½‰ä¿¡ç¨‹å¼ä¿®æ”¹ã€‚
 
-[2003/06/07] post.c mail.c maple.p §â tag ¼Ğ * ªº§¤¼Ğ±q (x, 8) ²¾¨ì (x, 6)¡C
-             config.h hdr.h post.c ¤å³¹µû¤À¥\¯à¡C
+[2003/06/07] post.c mail.c maple.p æŠŠ tag æ¨™ * çš„åæ¨™å¾ (x, 8) ç§»åˆ° (x, 6)ã€‚
+             config.h hdr.h post.c æ–‡ç« è©•åˆ†åŠŸèƒ½ã€‚
 
-[2003/06/11] global.h *.c ¨Ï¥Î¥ş°ìÅÜ¼Æ currbno ¨Ó¥N´À brd_bno(currboard)¡C
+[2003/06/11] global.h *.c ä½¿ç”¨å…¨åŸŸè®Šæ•¸ currbno ä¾†ä»£æ›¿ brd_bno(currboard)ã€‚
 
-[2003/06/13] rec_article.c «O¯d³Q cancel ªº¤å³¹©ó deleted ªO¡C
+[2003/06/13] rec_article.c ä¿ç•™è¢« cancel çš„æ–‡ç« æ–¼ deleted æ¿ã€‚
 
-[2003/06/18] global.h post.c edit.c ¨Ï¥Î¥ş°ìÅÜ¼Æ currbattr ±N battr ¿W¥ß¥X bbstate¡C
+[2003/06/18] global.h post.c edit.c ä½¿ç”¨å…¨åŸŸè®Šæ•¸ currbattr å°‡ battr ç¨ç«‹å‡º bbstateã€‚
 
-[2003/06/19] bmw.c mail.c §R°£ bmw_choose() ªº¥\¯à¡C
-             bmw.c theme.h visio.c talk.c §ïÅÜ¤ô²y®æ¦¡¡C
+[2003/06/19] bmw.c mail.c åˆªé™¤ bmw_choose() çš„åŠŸèƒ½ã€‚
+             bmw.c theme.h visio.c talk.c æ”¹è®Šæ°´çƒæ ¼å¼ã€‚
 
-[2003/06/20] bmw.c visio.c ¦b reply ¤ô²y®É·|¨q¥X¤W¦¸¶Çµ¹³o¤Hªº¸Ü¡C
+[2003/06/20] bmw.c visio.c åœ¨ reply æ°´çƒæ™‚æœƒç§€å‡ºä¸Šæ¬¡å‚³çµ¦é€™äººçš„è©±ã€‚
 
-[2003/06/27] global.h ufo.h visio.c more.c acct.c ²¾°£ UFO_COLOR¡C
+[2003/06/27] global.h ufo.h visio.c more.c acct.c ç§»é™¤ UFO_COLORã€‚
 
-[2003/06/28] battr.h struct.h bbs.h acct.c ±N battr ¾ã²z¨ì battr.h¡C
-             bbslink.c ­×¥¿ cmsg »P­n¬åªº¤å³¹ Message-ID ¬Û¦P·|³Q news server ©Úµ´ªº°İÃD¡C
-             rec_article.c brdmail.c bmtad.c ®³±¼ Âà«H¯¸: ¤Î Origin: ªº¤å³¹ÀÉÀY¡C
-             more.c ¤£°»´ú Âà«H¯¸: ¤Î Origin: ªº¤å³¹ÀÉÀY¡C
+[2003/06/28] battr.h struct.h bbs.h acct.c å°‡ battr æ•´ç†åˆ° battr.hã€‚
+             bbslink.c ä¿®æ­£ cmsg èˆ‡è¦ç çš„æ–‡ç«  Message-ID ç›¸åŒæœƒè¢« news server æ‹’çµ•çš„å•é¡Œã€‚
+             rec_article.c brdmail.c bmtad.c æ‹¿æ‰ è½‰ä¿¡ç«™: åŠ Origin: çš„æ–‡ç« æª”é ­ã€‚
+             more.c ä¸åµæ¸¬ è½‰ä¿¡ç«™: åŠ Origin: çš„æ–‡ç« æª”é ­ã€‚
 
 [2003/06/30] struct.h acct.c board.c post.c gem.c vote.c newbrd.c tran/*brd.c account.c
-             ¼W¥[ BRD.class ¬İªO¤ÀÃşÄæ¦ì¡C
-             theme.h board.c §ì¥X ICON_(NO)TRAN_BRD ¨Ó©w¸q¡C
-             windtop.h windtop2usr.c windtop2brd.c WindTop Âà´«µ{¦¡¡C
+             å¢åŠ  BRD.class çœ‹æ¿åˆ†é¡æ¬„ä½ã€‚
+             theme.h board.c æŠ“å‡º ICON_(NO)TRAN_BRD ä¾†å®šç¾©ã€‚
+             windtop.h windtop2usr.c windtop2brd.c WindTop è½‰æ›ç¨‹å¼ã€‚
 
-[2003/07/02] bbsd.c ¤¹³\ belong_list() ¤¤ªº desc ¥i¥H¦³ªÅ¥Õ¡C
+[2003/07/02] bbsd.c å…è¨± belong_list() ä¸­çš„ desc å¯ä»¥æœ‰ç©ºç™½ã€‚
 
-[2003/07/03] weather.sh ¤Ñ®ğ¹w³ø¥[¤W more ÀÉÀY¡C
-             topusr.c ²Î­p©Ê§O¡C
+[2003/07/03] weather.sh å¤©æ°£é å ±åŠ ä¸Š more æª”é ­ã€‚
+             topusr.c çµ±è¨ˆæ€§åˆ¥ã€‚
 
-[2003/07/04] bbslink.c ±q¤W¦¸¤¤Â_³BÄ~Äò°e«H¡C
-             admutil.c ¼f§¹µù¥U³æ³q¹L¡A·|¨Ï·í®É¦b½u¤Wªº¨Ï¥ÎªÌ«G°_¶l®t¨Ó«ö¹a¡C
-             acct.c showACCT.c topusr.c §ïÅÜ sex Äæ¦ì¹ï©Ê§Oªº©w¸q¡A¼W¥[¤¤©Ê¡C
+[2003/07/04] bbslink.c å¾ä¸Šæ¬¡ä¸­æ–·è™•ç¹¼çºŒé€ä¿¡ã€‚
+             admutil.c å¯©å®Œè¨»å†Šå–®é€šéï¼Œæœƒä½¿ç•¶æ™‚åœ¨ç·šä¸Šçš„ä½¿ç”¨è€…äº®èµ·éƒµå·®ä¾†æŒ‰éˆ´ã€‚
+             acct.c showACCT.c topusr.c æ”¹è®Š sex æ¬„ä½å°æ€§åˆ¥çš„å®šç¾©ï¼Œå¢åŠ ä¸­æ€§ã€‚
 
-[2003/07/05] struct.h ufo.h perm.h ±N PERM_DATALOCK PERM_COINLOCK UFO_BIFF
-             UFO_REJECT UFO_BIRTHDAY UFO_MQUOTA ¿W¥ß¥X¨Ó¦¨¬° UTMP.status¡C
-             ±N cuser.ufo ¤Î cutmp->ufo ¦P¨B¡C
+[2003/07/05] struct.h ufo.h perm.h å°‡ PERM_DATALOCK PERM_COINLOCK UFO_BIFF
+             UFO_REJECT UFO_BIRTHDAY UFO_MQUOTA ç¨ç«‹å‡ºä¾†æˆç‚º UTMP.statusã€‚
+             å°‡ cuser.ufo åŠ cutmp->ufo åŒæ­¥ã€‚
 
-[2003/07/06] bbslink.c bbsnnrp.c ¤ä´©»İ­n±b¸¹/±K½Xªº news server¡C
-             talk.c bmw.c ¼s¼½µ{¦¡­×¥¿¡C
+[2003/07/06] bbslink.c bbsnnrp.c æ”¯æ´éœ€è¦å¸³è™Ÿ/å¯†ç¢¼çš„ news serverã€‚
+             talk.c bmw.c å»£æ’­ç¨‹å¼ä¿®æ­£ã€‚
 
-[2003/07/07] bhttpd.c Â²©öªº Web-BBS¡C
+[2003/07/07] bhttpd.c ç°¡æ˜“çš„ Web-BBSã€‚
 
-[2003/07/09] transbrd.c .BRD Âà´«µ{¦¡¡C
+[2003/07/09] transbrd.c .BRD è½‰æ›ç¨‹å¼ã€‚
 
-[2003/07/13] ±N doc ´«¦¨ html ÀÉ¡C
+[2003/07/13] å°‡ doc æ›æˆ html æª”ã€‚
 
-[2003/07/14] decode.ic §R°£¡C
-             mailpost.c µ{¦¡§ï¼g¡C
+[2003/07/14] decode.ic åˆªé™¤ã€‚
+             mailpost.c ç¨‹å¼æ”¹å¯«ã€‚
 
-[2003/07/15] tetris.c µ{¦¡§ï¼g¡C
+[2003/07/15] tetris.c ç¨‹å¼æ”¹å¯«ã€‚
 
-[2003/07/18] bmw.c ­×¥¿­Y¹ï¤è¤U¯¸¤F¡A¤ô²y¥i¯à·|¥á¿ù¤H¡C
-             board.c ¥ş°ì·j´M¥i¦P®É·j´M¼ĞÃD¡C
-             pal.c ¦n¤Í/¸s²Õ¦W³æ¼s¼½¡C
-             bbsnnrp.c ¤j´T§ï¼g¡C
+[2003/07/18] bmw.c ä¿®æ­£è‹¥å°æ–¹ä¸‹ç«™äº†ï¼Œæ°´çƒå¯èƒ½æœƒä¸ŸéŒ¯äººã€‚
+             board.c å…¨åŸŸæœå°‹å¯åŒæ™‚æœå°‹æ¨™é¡Œã€‚
+             pal.c å¥½å‹/ç¾¤çµ„åå–®å»£æ’­ã€‚
+             bbsnnrp.c å¤§å¹…æ”¹å¯«ã€‚
 
-[2003/07/19] gem.c post.c mail.c edit.c vote.c ¼ĞÃD vget() ªø«×ªº­×§ï¡C
-             admutil.c ¥ş¯¸¨Ï¥ÎªÌ/ªO¥D±H«Hµ{¦¡­×§ï¡C
+[2003/07/19] gem.c post.c mail.c edit.c vote.c æ¨™é¡Œ vget() é•·åº¦çš„ä¿®æ”¹ã€‚
+             admutil.c å…¨ç«™ä½¿ç”¨è€…/æ¿ä¸»å¯„ä¿¡ç¨‹å¼ä¿®æ”¹ã€‚
 
-[2003/07/20] hdr.h hdr_fpath.c gem.c §â GEM_EXTEND ªº¥\¯à²¾°£¡C
-             gem.c ­×¥¿ªO¥D¥i¥H¦b¨ä¥LªO¨Ï¥Î gem_state¡C
+[2003/07/20] hdr.h hdr_fpath.c gem.c æŠŠ GEM_EXTEND çš„åŠŸèƒ½ç§»é™¤ã€‚
+             gem.c ä¿®æ­£æ¿ä¸»å¯ä»¥åœ¨å…¶ä»–æ¿ä½¿ç”¨ gem_stateã€‚
 
-[2003/07/22] bmw.c »P¯S©w¹ï¶Hªº¤ô²y¦s¦Ü«H½c¡C
+[2003/07/22] bmw.c èˆ‡ç‰¹å®šå°è±¡çš„æ°´çƒå­˜è‡³ä¿¡ç®±ã€‚
 
-[2003/07/23] dragon.c ±µÀs¹CÀ¸¡C
-             config.h window.c edit.c visio.c ÂÛ¥X¦¡µøµ¡¡C
-             etc/game/pip ¸É»ô¹q¤lÂûªº´¡¹Ï¡C
-             account.c ÀË¬d CH_MAX ¬O§_¤p©ó Class ¼Æ¶q¡C
+[2003/07/23] dragon.c æ¥é¾éŠæˆ²ã€‚
+             config.h window.c edit.c visio.c è¹¦å‡ºå¼è¦–çª—ã€‚
+             etc/game/pip è£œé½Šé›»å­é›çš„æ’åœ–ã€‚
+             account.c æª¢æŸ¥ CH_MAX æ˜¯å¦å°æ–¼ Class æ•¸é‡ã€‚
 
-[2003/07/24] camera.c ¨t²Î¤å¥ó¦³¯Ê®É¡A·|¦Û°Ê¸É¤W³qª¾¡C
+[2003/07/24] camera.c ç³»çµ±æ–‡ä»¶æœ‰ç¼ºæ™‚ï¼Œæœƒè‡ªå‹•è£œä¸Šé€šçŸ¥ã€‚
 
-[2003/07/25] account.c ¾ã²z .BRD ¤¤ªÅ¥ÕªºÄæ¦ì¡C
-             bmw.c visio.c Ctrl+T ¥i¥H¦^§OÁû¤ô²y¡C
+[2003/07/25] account.c æ•´ç† .BRD ä¸­ç©ºç™½çš„æ¬„ä½ã€‚
+             bmw.c visio.c Ctrl+T å¯ä»¥å›åˆ¥é¡†æ°´çƒã€‚
 
-[2003/07/27] post.c manage.c ±NªO¥D¿ï³æ¾ã¦X¦b¤@°_¡C
-             bhttpd.c bshm µ{¦¡§ï¼g¡C
-             gemd.c ­×¥¿¥i¥H¥Ñ gopher ¬İ¯µ±KªOºëµØ°Ïªº°İÃD¡C
+[2003/07/27] post.c manage.c å°‡æ¿ä¸»é¸å–®æ•´åˆåœ¨ä¸€èµ·ã€‚
+             bhttpd.c bshm ç¨‹å¼æ”¹å¯«ã€‚
+             gemd.c ä¿®æ­£å¯ä»¥ç”± gopher çœ‹ç§˜å¯†æ¿ç²¾è¯å€çš„å•é¡Œã€‚
 
-[2003/07/28] bbsd.c mail.c global.h ±N etc/* ªºÀÉ®×¸ô®|¾ã²z¥X¨Ó FN_ETC_*¡C
+[2003/07/28] bbsd.c mail.c global.h å°‡ etc/* çš„æª”æ¡ˆè·¯å¾‘æ•´ç†å‡ºä¾† FN_ETC_*ã€‚
 
-[2003/07/31] xover.c every_Z ­×¥¿ÂÇµÛ ^Z ¸õ¥h§OªO¦A¦^³oªO®Éªº¿ù»~¡C
+[2003/07/31] xover.c every_Z ä¿®æ­£è—‰è‘— ^Z è·³å»åˆ¥æ¿å†å›é€™æ¿æ™‚çš„éŒ¯èª¤ã€‚
 
-[2003/08/01] bbsd.c ªø¿Ã¹õµ{¦¡­×¥¿¡C
+[2003/08/01] bbsd.c é•·è¢å¹•ç¨‹å¼ä¿®æ­£ã€‚
 
-[2003/08/03] Makefile make update ­Y¥X²{ error «h©¿²¤¡C
+[2003/08/03] Makefile make update è‹¥å‡ºç¾ error å‰‡å¿½ç•¥ã€‚
 
-[2003/08/07] pal.c ­×¥¿ªO¤Í¦W³æ¤Ş¤J¦n¤Í¿ù»~¡C
+[2003/08/07] pal.c ä¿®æ­£æ¿å‹åå–®å¼•å…¥å¥½å‹éŒ¯èª¤ã€‚
 
-[2003/08/09] jcee.c etc/jcee/92.txt 92 ¦~¬dº]ªA°È¡C
+[2003/08/09] jcee.c etc/jcee/92.txt 92 å¹´æŸ¥æ¦œæœå‹™ã€‚
 
-[2003/08/13] struct.h enews.c xover.c ²¾°£ MQ_UUENCODE¡C
-             struct.h mail.c ­×¥¿«H¥ó¥´¥]®É Content-Type ¿ù»~¡C
+[2003/08/13] struct.h enews.c xover.c ç§»é™¤ MQ_UUENCODEã€‚
+             struct.h mail.c ä¿®æ­£ä¿¡ä»¶æ‰“åŒ…æ™‚ Content-Type éŒ¯èª¤ã€‚
 
-[2003/08/15] board.c ·j´M¤U¤@­Ó¥¼Åª¬İªO¡C
-             rec_del.c µ{¦¡­×¥¿¡C
+[2003/08/15] board.c æœå°‹ä¸‹ä¸€å€‹æœªè®€çœ‹æ¿ã€‚
+             rec_del.c ç¨‹å¼ä¿®æ­£ã€‚
 
-[2003/08/16] aloha.c ¥Î rec_del ¨Ó¨ú¥N rec_loc¡C
-             src/lib ­«·s¾ã²z¡A±N¨S¥Î¨ìªº§R°£¡C
-             bbsmail.c brdmail.c ¸Ñ½X quoted-printable/base64 ªº«H¥ó¡C
-             str_decode.c ­×¥¿·í«H¥ó¤º¤å¬° QP ½s½X®É·|µo¥Í¿ù»~¡C
-             str_decode.c bbsmail.c brdmail.c bmtad.c ±N¨ú¥X charset ¤Î encode ªºµ{¦¡¶°¤¤¨ì lib¡C
+[2003/08/16] aloha.c ç”¨ rec_del ä¾†å–ä»£ rec_locã€‚
+             src/lib é‡æ–°æ•´ç†ï¼Œå°‡æ²’ç”¨åˆ°çš„åˆªé™¤ã€‚
+             bbsmail.c brdmail.c è§£ç¢¼ quoted-printable/base64 çš„ä¿¡ä»¶ã€‚
+             str_decode.c ä¿®æ­£ç•¶ä¿¡ä»¶å…§æ–‡ç‚º QP ç·¨ç¢¼æ™‚æœƒç™¼ç”ŸéŒ¯èª¤ã€‚
+             str_decode.c bbsmail.c brdmail.c bmtad.c å°‡å–å‡º charset åŠ encode çš„ç¨‹å¼é›†ä¸­åˆ° libã€‚
 
-[2003/08/17] bmw.c µ{¦¡­×¥¿¡C
+[2003/08/17] bmw.c ç¨‹å¼ä¿®æ­£ã€‚
 
-[2003/08/23] src/Makefile src/game/ ±N so/ ¤Uªº¹CÀ¸¤Îºô¸ôªA°È·h¨ì game/¡C
-             str_has.c acct.c board.c bmtad.c ªO¥D¦W³æµ{¦¡³¡¤À¾ã¨Ö¡C
-             edit.c ­×¥¿Â²¤Æ½s¿è¾¹¡C
+[2003/08/23] src/Makefile src/game/ å°‡ so/ ä¸‹çš„éŠæˆ²åŠç¶²è·¯æœå‹™æ¬åˆ° game/ã€‚
+             str_has.c acct.c board.c bmtad.c æ¿ä¸»åå–®ç¨‹å¼éƒ¨åˆ†æ•´ä½µã€‚
+             edit.c ä¿®æ­£ç°¡åŒ–ç·¨è¼¯å™¨ã€‚
 
-[2003/08/24] todo.c etc/todo.welcome global.h menu.c ¦æ¨Æ¾ä¡C
+[2003/08/24] todo.c etc/todo.welcome global.h menu.c è¡Œäº‹æ›†ã€‚
 
-[2003/08/27] bbsnnrp.c ­×¥¿·í host/active ¤£¦s¦b®É¡AµLªk unlock ªº°İÃD¡C
-             favor.c §Úªº³Ì·R·j´M¤U¤@­Ó¥¼Åª¬İªO¡C
+[2003/08/27] bbsnnrp.c ä¿®æ­£ç•¶ host/active ä¸å­˜åœ¨æ™‚ï¼Œç„¡æ³• unlock çš„å•é¡Œã€‚
+             favor.c æˆ‘çš„æœ€æ„›æœå°‹ä¸‹ä¸€å€‹æœªè®€çœ‹æ¿ã€‚
 
-[2003/08/29] stock.c µ{¦¡­×¥¿¡C
+[2003/08/29] stock.c ç¨‹å¼ä¿®æ­£ã€‚
 
-[2003/09/06] pal.c ¦n¤Í/ªO¤Í/¯S§O¦W³æ¥æ¤e¤Ş¥Î¡C
-             vote.c §ë²¼¨ì¤@¥b¡AªO¥D¥i¥H°½¬İ¥Ø«e§ë²¼ª¬ªp¡C
+[2003/09/06] pal.c å¥½å‹/æ¿å‹/ç‰¹åˆ¥åå–®äº¤å‰å¼•ç”¨ã€‚
+             vote.c æŠ•ç¥¨åˆ°ä¸€åŠï¼Œæ¿ä¸»å¯ä»¥å·çœ‹ç›®å‰æŠ•ç¥¨ç‹€æ³ã€‚
 
-[2003/09/07] pal.c ¦n¤Í¦W³æ°Ï¬q§R°£¡C
-             config.h menu.c acct.c §R°£ HAVE_REPORT °O¿ı°£¿ùªºµ{¦¡¡C
-             visio.c ANSILINELEN µ{¦¡­×¥¿¡C
+[2003/09/07] pal.c å¥½å‹åå–®å€æ®µåˆªé™¤ã€‚
+             config.h menu.c acct.c åˆªé™¤ HAVE_REPORT è¨˜éŒ„é™¤éŒ¯çš„ç¨‹å¼ã€‚
+             visio.c ANSILINELEN ç¨‹å¼ä¿®æ­£ã€‚
 
-[2003/09/11] account.c admutil.c ­«¸m¨t²Î®É¤£°µ¼öªù¸ÜÃD²Î­p¡C
+[2003/09/11] account.c admutil.c é‡ç½®ç³»çµ±æ™‚ä¸åšç†±é–€è©±é¡Œçµ±è¨ˆã€‚
 
-[2003/09/12] favor.c §Úªº³Ì·R°Ï¬q§R°£¡C
+[2003/09/12] favor.c æˆ‘çš„æœ€æ„›å€æ®µåˆªé™¤ã€‚
 
-[2003/09/13] bhttpd.c ´£¨Ñ email µoªí¤å³¹¡C
-             bguard.c talk.c ¯¸ªø kick ¨Ï¥ÎªÌ®ÉÀ³±N ushm->count ´î¤@¡C
+[2003/09/13] bhttpd.c æä¾› email ç™¼è¡¨æ–‡ç« ã€‚
+             bguard.c talk.c ç«™é•· kick ä½¿ç”¨è€…æ™‚æ‡‰å°‡ ushm->count æ¸›ä¸€ã€‚
 
-[2003/09/14] mail.c ¯¸°È«H½c¿ï ID ®É¥i¥H«öªÅ¥ÕÁä¦Û°Ê·j´M¡C
-             post.c ¥ş¤å·j´M¡C
+[2003/09/14] mail.c ç«™å‹™ä¿¡ç®±é¸ ID æ™‚å¯ä»¥æŒ‰ç©ºç™½éµè‡ªå‹•æœå°‹ã€‚
+             post.c å…¨æ–‡æœå°‹ã€‚
 
-[2003/09/23] xpost.c post.c mbox.c ±N¦ê±µ·j´M¼Ò¦¡¾ã¦X¤J«H½c¡C
+[2003/09/23] xpost.c post.c mbox.c å°‡ä¸²æ¥æœå°‹æ¨¡å¼æ•´åˆå…¥ä¿¡ç®±ã€‚
 
-[2003/09/26] bbsd.c mail.c ±N m_count() ÀË¬d«H½c¤w¸g¶W¹L¤W­­ªº³¡¤À²¾¨ì bbsd.c¡C
-             mail.c ±N¦^«Hªºµ{¦¡¾ã¨Ö¨ì do_mreply() ¸Ì­±¡C
-             mail.c post.c §ï¼g mbox_browse() ¤Î post_browse()¡C
-             mail.c xpost.c ¦ê±µ¶l¥ó¤¤¥i¦^«H¡C
-             menu.c mail.c admutil.c ±N¿ï³æ¤¤·|¥Î¨ìªº¶l¥ó¿ï¶µ³£§ï¦W¬° m_xxxx()¡C
-             menu.c acct.c admutil.c ±N¿ï³æ¤¤·|¥Î¨ìªº¯¸°È¿ï¶µ³£§ï¦W¬° a_xxxx()¡C
+[2003/09/26] bbsd.c mail.c å°‡ m_count() æª¢æŸ¥ä¿¡ç®±å·²ç¶“è¶…éä¸Šé™çš„éƒ¨åˆ†ç§»åˆ° bbsd.cã€‚
+             mail.c å°‡å›ä¿¡çš„ç¨‹å¼æ•´ä½µåˆ° do_mreply() è£¡é¢ã€‚
+             mail.c post.c æ”¹å¯« mbox_browse() åŠ post_browse()ã€‚
+             mail.c xpost.c ä¸²æ¥éƒµä»¶ä¸­å¯å›ä¿¡ã€‚
+             menu.c mail.c admutil.c å°‡é¸å–®ä¸­æœƒç”¨åˆ°çš„éƒµä»¶é¸é …éƒ½æ”¹åç‚º m_xxxx()ã€‚
+             menu.c acct.c admutil.c å°‡é¸å–®ä¸­æœƒç”¨åˆ°çš„ç«™å‹™é¸é …éƒ½æ”¹åç‚º a_xxxx()ã€‚
 
-[2003/09/27] post.c gem.c ºëµØ°ÏÂà¿ı¨ì¬İªO¡BÂà¹F¨Ï¥ÎªÌ¡C
+[2003/09/27] post.c gem.c ç²¾è¯å€è½‰éŒ„åˆ°çœ‹æ¿ã€è½‰é”ä½¿ç”¨è€…ã€‚
 
-[2003/09/28] bbsd.c §ï¼g tn_login()¡C
+[2003/09/28] bbsd.c æ”¹å¯« tn_login()ã€‚
 
-[2003/09/29] ufo.h *.c ±N HAS_STATUS ¥¨¶°¾ã²z¥X¨Ó¡C
+[2003/09/29] ufo.h *.c å°‡ HAS_STATUS å·¨é›†æ•´ç†å‡ºä¾†ã€‚
 
-[2003/10/01] xover.c bmw.c pal.c favor.c aloha.c post.c mail.c gem.c ±N°Ï¬q§R°£ªºµ{¦¡¾ã¦X¦b¤@°_¡C
+[2003/10/01] xover.c bmw.c pal.c favor.c aloha.c post.c mail.c gem.c å°‡å€æ®µåˆªé™¤çš„ç¨‹å¼æ•´åˆåœ¨ä¸€èµ·ã€‚
 
-[2003/10/03] gem.c global.h backupgem.c restoregem.c ¼o°£ºëµØ°Ï¸ê·½¦^¦¬µ©ªº¥\¯à¡C
-             gem.c §ï¼gºëµØ°Ï§R°£ªºµ{¦¡¡C
-             xover.c post.c mail.c gem.c ±N¼ĞÅÒ§R°£ªºµ{¦¡¾ã¦X¦b¤@°_¡C
+[2003/10/03] gem.c global.h backupgem.c restoregem.c å»¢é™¤ç²¾è¯å€è³‡æºå›æ”¶ç­’çš„åŠŸèƒ½ã€‚
+             gem.c æ”¹å¯«ç²¾è¯å€åˆªé™¤çš„ç¨‹å¼ã€‚
+             xover.c post.c mail.c gem.c å°‡æ¨™ç±¤åˆªé™¤çš„ç¨‹å¼æ•´åˆåœ¨ä¸€èµ·ã€‚
 
-[2003/10/04] edit.c post.c modes.h µo¤å¥[±K¦sÀÉ¡C
-             enews.c µ{¦¡­×¥¿¡C
+[2003/10/04] edit.c post.c modes.h ç™¼æ–‡åŠ å¯†å­˜æª”ã€‚
+             enews.c ç¨‹å¼ä¿®æ­£ã€‚
 
-[2003/10/08] gem.c ­×¥¿¥[±K¤å³¹¥iÂÇ¥ÑºëµØ°Ïªş¥[ÀÉ®×¨Ó°½¬İ¡C
+[2003/10/08] gem.c ä¿®æ­£åŠ å¯†æ–‡ç« å¯è—‰ç”±ç²¾è¯å€é™„åŠ æª”æ¡ˆä¾†å·çœ‹ã€‚
 
-[2003/10/20] bhttpd.c ¤¹³\¨Ï¥ÎªÌµn¤J¡C
+[2003/10/20] bhttpd.c å…è¨±ä½¿ç”¨è€…ç™»å…¥ã€‚
 
-[2003/11/09] edit.c ¶Ã¼Æ¿ï¾ÜÃ±¦WÀÉ¡C
+[2003/11/09] edit.c äº‚æ•¸é¸æ“‡ç°½åæª”ã€‚
 
-[2003/11/10] stock.c stock-open.c ²¾°£ªÑ¥«¹CÀ¸¡C
+[2003/11/10] stock.c stock-open.c ç§»é™¤è‚¡å¸‚éŠæˆ²ã€‚
 
-[2003/11/18] visio.c more.c edit.c etc/* °±¥Î ### %%% Åã¥Ü¨Ï¥Î¦WºÙ±±¨î½X¡A§ï¥Î **s ³oÃş«¬ªº¡C
+[2003/11/18] visio.c more.c edit.c etc/* åœç”¨ ### %%% é¡¯ç¤ºä½¿ç”¨åç¨±æ§åˆ¶ç¢¼ï¼Œæ”¹ç”¨ **s é€™é¡å‹çš„ã€‚
 
-[2003/11/22] dl_lib.c visio.c bbslink.c fileglue.c verbose.c ±N <varargs.h> §ï¥Î <stdarg.h>¡C
+[2003/11/22] dl_lib.c visio.c bbslink.c fileglue.c verbose.c å°‡ <varargs.h> æ”¹ç”¨ <stdarg.h>ã€‚
 
-[2003/11/23] more.c ­×¥¿ more_line() ¦b­è¦n 80 ¦r·|¦h¤@ªÅ¦æ¡C
-             struct.h edit.c more.c talk.c visio.c ±N¿Ã¹õ¼e«×³£²Î¤@¬° SCR_WIDTH¡C
+[2003/11/23] more.c ä¿®æ­£ more_line() åœ¨å‰›å¥½ 80 å­—æœƒå¤šä¸€ç©ºè¡Œã€‚
+             struct.h edit.c more.c talk.c visio.c å°‡è¢å¹•å¯¬åº¦éƒ½çµ±ä¸€ç‚º SCR_WIDTHã€‚
 
-[2003/11/26] account.c ¶}²¼¥H«á­n²M°£¥i§ë²¼¦W³æ¡B¤w»â²¼°O¿ı¡C
+[2003/11/26] account.c é–‹ç¥¨ä»¥å¾Œè¦æ¸…é™¤å¯æŠ•ç¥¨åå–®ã€å·²é ˜ç¥¨è¨˜éŒ„ã€‚
 
-[2003/11/28] board.c class_namemode() ¥[¤J®É¶¡­­¨î¡C
+[2003/11/28] board.c class_namemode() åŠ å…¥æ™‚é–“é™åˆ¶ã€‚
 
-[2003/11/30] visio.c vget() ¤ä´© KEY_DEL¡C
+[2003/11/30] visio.c vget() æ”¯æ´ KEY_DELã€‚
 
-[2003/12/01] str_time.c *.c ±N©Ò¦³®É¶¡ªº®æ¦¡³£²Î¤@¡C
+[2003/12/01] str_time.c *.c å°‡æ‰€æœ‰æ™‚é–“çš„æ ¼å¼éƒ½çµ±ä¸€ã€‚
 
-[2003/12/02] acct.c admutil.c manage.c newbrd.c ­×¥¿³B²zÅv­­ÅÜ°Êªºµ{¦¡¡C
-             post.c ¦Û°Ê°»´ú cross-post¡C
+[2003/12/02] acct.c admutil.c manage.c newbrd.c ä¿®æ­£è™•ç†æ¬Šé™è®Šå‹•çš„ç¨‹å¼ã€‚
+             post.c è‡ªå‹•åµæ¸¬ cross-postã€‚
 
-[2003/12/03] game/*.c ­×¥¿ª±¹CÀ¸®É­Y¶}±Ò¤è¦VÁä¥ş«¬°»´ú·|³y¦¨¿ù»~¡C
+[2003/12/03] game/*.c ä¿®æ­£ç©éŠæˆ²æ™‚è‹¥é–‹å•Ÿæ–¹å‘éµå…¨å‹åµæ¸¬æœƒé€ æˆéŒ¯èª¤ã€‚
 
-[2003/12/04] more.c xover.c SLIDE_SHOW ¤å³¹/°Êµe¦Û°Ê¼½©ñ¡C
+[2003/12/04] more.c xover.c SLIDE_SHOW æ–‡ç« /å‹•ç•«è‡ªå‹•æ’­æ”¾ã€‚
 
-[2003/12/11] rec_sync.c pal.c aloha.c ±N¯Á¤Ş±Æ§Çªºµ{¦¡¿W¥ß¥X¨Ó¡C
+[2003/12/11] rec_sync.c pal.c aloha.c å°‡ç´¢å¼•æ’åºçš„ç¨‹å¼ç¨ç«‹å‡ºä¾†ã€‚
 
-[2003/12/14] bbslink.c Â²¤Æ Message-ID ªº²£¥Í¤½¦¡¡Aª½±µ®³ÀÉ¦W¡BªO¦W¨Óªí¥Ü¡C
-             bnntpd.c BBS-NNTP server¡C
+[2003/12/14] bbslink.c ç°¡åŒ– Message-ID çš„ç”¢ç”Ÿå…¬å¼ï¼Œç›´æ¥æ‹¿æª”åã€æ¿åä¾†è¡¨ç¤ºã€‚
+             bnntpd.c BBS-NNTP serverã€‚
 
-[2004/01/02] struct.h account.c board.c manage.c bhttpd.c bmtad.c ±NªO¤Í¦W³æ©ñ¶i shm¡C
+[2004/01/02] struct.h account.c board.c manage.c bhttpd.c bmtad.c å°‡æ¿å‹åå–®æ”¾é€² shmã€‚
 
-[2004/01/03] attr_lib.c attr.h §R°£ attr library¡C
-             bwboard.c §ï¼g¾ÔÁZ°O¿ıµ{¦¡¡C
+[2004/01/03] attr_lib.c attr.h åˆªé™¤ attr libraryã€‚
+             bwboard.c æ”¹å¯«æˆ°ç¸¾è¨˜éŒ„ç¨‹å¼ã€‚
 
-[2004/01/04] pal.c manage.c board.c ªO¤Í/¦n¤Í§Ö¨úµ{¦¡¾ã²z¦b¤@°_¡C
+[2004/01/04] pal.c manage.c board.c æ¿å‹/å¥½å‹å¿«å–ç¨‹å¼æ•´ç†åœ¨ä¸€èµ·ã€‚
 
-[2004/01/06] acct.c bbsd.c bank.c game/*.c ª÷»È¹ô·¸¦ìÀË¬d¡C
+[2004/01/06] acct.c bbsd.c bank.c game/*.c é‡‘éŠ€å¹£æº¢ä½æª¢æŸ¥ã€‚
 
-[2004/01/10] bbsd.c µn¤J®É¦b¿é¤J§¹ ID/±K½X ¥H«á¤~¸ü¤J .ACCT¡AÁ×§K¦³¤HÂÇ vget ²£¥Íªº®É®t¨Ó¬~¿ú¡C
-             global.h bbsd.c ®³±¼ dns_ident ªº¨BÆJ¡C
+[2004/01/10] bbsd.c ç™»å…¥æ™‚åœ¨è¼¸å…¥å®Œ ID/å¯†ç¢¼ ä»¥å¾Œæ‰è¼‰å…¥ .ACCTï¼Œé¿å…æœ‰äººè—‰ vget ç”¢ç”Ÿçš„æ™‚å·®ä¾†æ´—éŒ¢ã€‚
+             global.h bbsd.c æ‹¿æ‰ dns_ident çš„æ­¥é©Ÿã€‚
 
-[2004/01/12] global.h cache.c bbsd.c §â¤@¨Ç etc/ ¤å¥ó·h¶i cache¡C
-             admutil.c §â etc/ ¤å¥ó³£¥[¤J¨t²ÎÀÉ®×²M³æ¤¤¡C
-             expire.c rec_article.c ­×¥¿ chrono32 ¿ù»~¡C
+[2004/01/12] global.h cache.c bbsd.c æŠŠä¸€äº› etc/ æ–‡ä»¶æ¬é€² cacheã€‚
+             admutil.c æŠŠ etc/ æ–‡ä»¶éƒ½åŠ å…¥ç³»çµ±æª”æ¡ˆæ¸…å–®ä¸­ã€‚
+             expire.c rec_article.c ä¿®æ­£ chrono32 éŒ¯èª¤ã€‚
 
-[2004/01/13] str_hash2.c str_xor.c mail.c ifsigned.c §ïÅÜ¹q¤lÃ±³¹ªº²£¥Í¤½¦¡¡C
+[2004/01/13] str_hash2.c str_xor.c mail.c ifsigned.c æ”¹è®Šé›»å­ç°½ç« çš„ç”¢ç”Ÿå…¬å¼ã€‚
 
-[2004/01/30] ufo.h edit.c help.c ­×¥¿¦b vedit ®É¶i¤J help ¦A¶i¤J vedit ³y¦¨¤å³¹¬y¥¢¡C
+[2004/01/30] ufo.h edit.c help.c ä¿®æ­£åœ¨ vedit æ™‚é€²å…¥ help å†é€²å…¥ vedit é€ æˆæ–‡ç« æµå¤±ã€‚
 
-[2004/02/11] enews-open.c ¶®ªê¡I©_¼¯·s»Dºô­¶§ïª©¡C
+[2004/02/11] enews-open.c é›…è™ï¼å¥‡æ‘©æ–°èç¶²é æ”¹ç‰ˆã€‚
 
-[2004/02/16] dreye.c menu.c Ä¶ÂI³q½u¤W¦r¨åªA°È°±¤î¡C
+[2004/02/16] dreye.c menu.c è­¯é»é€šç·šä¸Šå­—å…¸æœå‹™åœæ­¢ã€‚
 
-[2004/02/17] more.c post.c mail.c gem.c ·j´M¦r¦ê¤Ï¥Õ¡C
+[2004/02/17] more.c post.c mail.c gem.c æœå°‹å­—ä¸²åç™½ã€‚
 
-[2004/02/21] bhttpd.c µn¤J¡Bµoªí¤å³¹¡B§Úªº³Ì·Rµ{¦¡­×¥¿¡C
+[2004/02/21] bhttpd.c ç™»å…¥ã€ç™¼è¡¨æ–‡ç« ã€æˆ‘çš„æœ€æ„›ç¨‹å¼ä¿®æ­£ã€‚
 
-[2004/02/28] post.c Âà¿ı®É¥i¿ï¾Ü¥[±K¦sÀÉ¡C
+[2004/02/28] post.c è½‰éŒ„æ™‚å¯é¸æ“‡åŠ å¯†å­˜æª”ã€‚
 
-[2004/03/03] xpost.c ¦ê¦C¼Ò¦¡¾\Åª¤@­¶¤å³¹§¹¥i·j´M¦r¦ê¡B¼È¦s¡Bµû¤À¡C
+[2004/03/03] xpost.c ä¸²åˆ—æ¨¡å¼é–±è®€ä¸€é æ–‡ç« å®Œå¯æœå°‹å­—ä¸²ã€æš«å­˜ã€è©•åˆ†ã€‚
 
-[2004/03/05] pal.c aloha.c bmw.c ¦n¤Í/¤W¯¸³qª¾/¤ô²y¨t²Î¤ä´© tag ¼ĞÅÒ¡C
-             xover.c post.c mbox.c gem.c pal.c aloha.c bmw.c ¼ĞÅÒ§R°£¾ã¦X¦b¤@°_¡C
+[2004/03/05] pal.c aloha.c bmw.c å¥½å‹/ä¸Šç«™é€šçŸ¥/æ°´çƒç³»çµ±æ”¯æ´ tag æ¨™ç±¤ã€‚
+             xover.c post.c mbox.c gem.c pal.c aloha.c bmw.c æ¨™ç±¤åˆªé™¤æ•´åˆåœ¨ä¸€èµ·ã€‚
 
-[2004/03/06] vote.c ¥[¤J°Ï¬q§R°£¤Î¼ĞÅÒ§R°£¡C
-             more.c xpost.c ¦ê¦C/¦r¦ê·j´M®É¡A³B²z¤¤¤å¦rÅÜ¤p¼gªº°İÃD¡C
+[2004/03/06] vote.c åŠ å…¥å€æ®µåˆªé™¤åŠæ¨™ç±¤åˆªé™¤ã€‚
+             more.c xpost.c ä¸²åˆ—/å­—ä¸²æœå°‹æ™‚ï¼Œè™•ç†ä¸­æ–‡å­—è®Šå°å¯«çš„å•é¡Œã€‚
 
-[2003/03/11] board.c post.c account.c rec_article.c bmtad.c brdmail.c ­×¥¿¬İªO btime §ó·sªºµ{¦¡¡C
+[2003/03/11] board.c post.c account.c rec_article.c bmtad.c brdmail.c ä¿®æ­£çœ‹æ¿ btime æ›´æ–°çš„ç¨‹å¼ã€‚
 
-[2003/03/13] bbsmail.c brdmail.c §ï¼g¡AºÉ¶q§ï¥Î libdao ªº¨ç¦¡¡C
+[2003/03/13] bbsmail.c brdmail.c æ”¹å¯«ï¼Œç›¡é‡æ”¹ç”¨ libdao çš„å‡½å¼ã€‚
 
-[2003/03/14] mailpost.c bmtad.c ®³±¼ mailpost ªº³¡¤À¡C
+[2003/03/14] mailpost.c bmtad.c æ‹¿æ‰ mailpost çš„éƒ¨åˆ†ã€‚
 
-[2004/03/15] struct.h *.c ±N PASSLEN ´À´«¦¨ PASSLEN + 1¡A¨Ã±N PASSLEN ±q 14 §ï¬° 13¡C
+[2004/03/15] struct.h *.c å°‡ PASSLEN æ›¿æ›æˆ PASSLEN + 1ï¼Œä¸¦å°‡ PASSLEN å¾ 14 æ”¹ç‚º 13ã€‚
 
-[2004/03/18] bquota.c ¤£§R°£¾×«H¦W³æ¤W¨Ó·½ªº«H¡C
-             config.h acct.c admutil.c HAVE_TRUST ÅÜ¦¨©l²× #define¡C
-             global.h admutil.c bmtad.c acl.ic etc/mail.acl etc/unmail.acl ¦¬«H¶Â¥Õ¦W³æ¡C
+[2004/03/18] bquota.c ä¸åˆªé™¤æ“‹ä¿¡åå–®ä¸Šä¾†æºçš„ä¿¡ã€‚
+             config.h acct.c admutil.c HAVE_TRUST è®Šæˆå§‹çµ‚ #defineã€‚
+             global.h admutil.c bmtad.c acl.ic etc/mail.acl etc/unmail.acl æ”¶ä¿¡é»‘ç™½åå–®ã€‚
 
-[2004/03/22] topgem.c µ{¦¡§ï¼g¡C
+[2004/03/22] topgem.c ç¨‹å¼æ”¹å¯«ã€‚
 
-[2004/03/30] favor.c §Úªº³Ì·R¥i¥H¨ì¤U¤@­¶·j´M¥¼Åª¬İªO¡C
+[2004/03/30] favor.c æˆ‘çš„æœ€æ„›å¯ä»¥åˆ°ä¸‹ä¸€é æœå°‹æœªè®€çœ‹æ¿ã€‚
 
-[2004/04/01] innbbsd/* InnNNSD §ïª©¡C
+[2004/04/01] innbbsd/* InnNNSD æ”¹ç‰ˆã€‚
 
-[2004/04/05] str_len.c talk.c acct.c ®³±¼ str_len¡C
-             board.c acct.c ¦b Class ¤Uª½±µ·s¼W¬İªO¨ì¸Ó¤ÀÃş¡C
+[2004/04/05] str_len.c talk.c acct.c æ‹¿æ‰ str_lenã€‚
+             board.c acct.c åœ¨ Class ä¸‹ç›´æ¥æ–°å¢çœ‹æ¿åˆ°è©²åˆ†é¡ã€‚
 
-[2004/04/13] ±N bguard.c bmtad.c bpop3d.c gemd.c xchatd.c bhttpd.c bnntpd.c ·h¨ì daemon/ ¥Ø¿ı¡C
+[2004/04/13] å°‡ bguard.c bmtad.c bpop3d.c gemd.c xchatd.c bhttpd.c bnntpd.c æ¬åˆ° daemon/ ç›®éŒ„ã€‚
 
-[2004/04/24] song.c ÂIºq¨ì¯¸¥~«H½c¡C
+[2004/04/24] song.c é»æ­Œåˆ°ç«™å¤–ä¿¡ç®±ã€‚
 
-[2004/04/25] innbbsd/*.c admutil.c ±NÂà«H³]©w©M BBS µ²¦X¡C
+[2004/04/25] innbbsd/*.c admutil.c å°‡è½‰ä¿¡è¨­å®šå’Œ BBS çµåˆã€‚
 
-[2004/04/30] struct.h bbslink.c post.c outgo.c ±N out.bntp/*.link ªº§ï¬° binary ®æ¦¡¡C
+[2004/04/30] struct.h bbslink.c post.c outgo.c å°‡ out.bntp/*.link çš„æ”¹ç‚º binary æ ¼å¼ã€‚
 
-[2004/05/11] mail.c post.c ²Î¤@±H«H§¹ªº°T®§¡C
+[2004/05/11] mail.c post.c çµ±ä¸€å¯„ä¿¡å®Œçš„è¨Šæ¯ã€‚
 
-[2004/05/19] game/*.c so/*.c ¹CÀ¸°T®§¤¤ªº¡u§A¡v§ï¦¨¡u±z¡v¡C
-             mailpost.c »{ÃÒ«H³¡¤Àµ{¦¡­×¥¿¡C
+[2004/05/19] game/*.c so/*.c éŠæˆ²è¨Šæ¯ä¸­çš„ã€Œä½ ã€æ”¹æˆã€Œæ‚¨ã€ã€‚
+             mailpost.c èªè­‰ä¿¡éƒ¨åˆ†ç¨‹å¼ä¿®æ­£ã€‚
 
-[2004/05/21] qkmj.c etc/game/qkmj ²¾°£ QKMJ ³s½u³Â±N¡C
-             jcee.c etc/jcee ²¾°£Áp¦Òº]³æ¬d¸ß¡C
-             webx.c ²¾°£®ğ¶H³ø¾É§ì¨ú¡C
-             edit.c ²¾°Ê´¡¤J½d¥»¡C
+[2004/05/21] qkmj.c etc/game/qkmj ç§»é™¤ QKMJ é€£ç·šéº»å°‡ã€‚
+             jcee.c etc/jcee ç§»é™¤è¯è€ƒæ¦œå–®æŸ¥è©¢ã€‚
+             webx.c ç§»é™¤æ°£è±¡å ±å°æŠ“å–ã€‚
+             edit.c ç§»å‹•æ’å…¥ç¯„æœ¬ã€‚
 
-[2004/06/13] newbrd.c Â²¤Æ³s¸p¨t²Î¡C
+[2004/06/13] newbrd.c ç°¡åŒ–é€£ç½²ç³»çµ±ã€‚
 
-[2004/06/16] board.c ­×¥¿¥i¶i¤J¤w§R°£ªº¬İªO¡C
+[2004/06/16] board.c ä¿®æ­£å¯é€²å…¥å·²åˆªé™¤çš„çœ‹æ¿ã€‚
 
-[2004/06/21] *.c *.h ¤ä´©¶W¹L 80 ¦æ¼e¿Ã¹õªºµe­±¡C
+[2004/06/21] *.c *.h æ”¯æ´è¶…é 80 è¡Œå¯¬è¢å¹•çš„ç•«é¢ã€‚
 
-[2004/07/21] bhttpd.c µoªí¤å³¹¨ú®ø¦r¼Æ­­¨î¡A¼W¥[µo¤å¨Ó·½¡A¨Ã¯àÂà«H¡C
+[2004/07/21] bhttpd.c ç™¼è¡¨æ–‡ç« å–æ¶ˆå­—æ•¸é™åˆ¶ï¼Œå¢åŠ ç™¼æ–‡ä¾†æºï¼Œä¸¦èƒ½è½‰ä¿¡ã€‚
 
-[2004/07/22] favor.c §Úªº³Ì·R´£¨Ñ¤À¹j½u¡C
+[2004/07/22] favor.c æˆ‘çš„æœ€æ„›æä¾›åˆ†éš”ç·šã€‚
 
-[2004/08/02] more.c ¤¤¤å¦rÂ_¦æ¡C
+[2004/08/02] more.c ä¸­æ–‡å­—æ–·è¡Œã€‚
 
-[2004/08/04] bbsmail.c brdmail.c ¥[¤J¾×«H¶Â¥Õ¦W³æ¾÷¨î¡C
+[2004/08/04] bbsmail.c brdmail.c åŠ å…¥æ“‹ä¿¡é»‘ç™½åå–®æ©Ÿåˆ¶ã€‚
 
-[2004/08/06] str_lowest.c str_sub.c §ì¨ì library¡C
-             struct.h admutil.c bbslib.c rec_article.c ¥[¤J¾×«H³W«h¡C
+[2004/08/06] str_lowest.c str_sub.c æŠ“åˆ° libraryã€‚
+             struct.h admutil.c bbslib.c rec_article.c åŠ å…¥æ“‹ä¿¡è¦å‰‡ã€‚
 
-[2004/08/24] xpost.c ¥ş¤å·j´M¥[¤J½d³ò­­¨î¡C
+[2004/08/24] xpost.c å…¨æ–‡æœå°‹åŠ å…¥ç¯„åœé™åˆ¶ã€‚
 
-[2004/09/01] menu.c cache.c ¥D¿ï³æ/°ÊºA¬İªO¨Ì¼e¿Ã¹õ¸m¤¤¡C
+[2004/09/01] menu.c cache.c ä¸»é¸å–®/å‹•æ…‹çœ‹æ¿ä¾å¯¬è¢å¹•ç½®ä¸­ã€‚
 
-[2004/09/07] config.h xover.c post.c mail.c xpost.c HAVE_XYPOST ÅÜ¦¨©l²× #define¡C
+[2004/09/07] config.h xover.c post.c mail.c xpost.c HAVE_XYPOST è®Šæˆå§‹çµ‚ #defineã€‚
 
-[2004/09/11] bbsd.c struct.c camera.c §R°£ FILM_WELCOME Â²¤Æ¶i¯¸µe­±¡C
+[2004/09/11] bbsd.c struct.c camera.c åˆªé™¤ FILM_WELCOME ç°¡åŒ–é€²ç«™ç•«é¢ã€‚
 
-[2004/09/16] xover.c xo_thread() §ï¼g¡C
+[2004/09/16] xover.c xo_thread() æ”¹å¯«ã€‚
 
-[2004/09/17] more.c ¶W¹L 256 ­¶ªºÀÉ®×¤]¯à°÷¥¿½Tªº³Q­pºâ¡C
+[2004/09/17] more.c è¶…é 256 é çš„æª”æ¡ˆä¹Ÿèƒ½å¤ æ­£ç¢ºçš„è¢«è¨ˆç®—ã€‚
 
-[2004/09/22] bbslink.c bbsnnrp.c ­×¥¿¿ù»~¨Ã¼W¥[ -v ªº°T®§¡C
+[2004/09/22] bbslink.c bbsnnrp.c ä¿®æ­£éŒ¯èª¤ä¸¦å¢åŠ  -v çš„è¨Šæ¯ã€‚
 
-[2004/09/30] windtop2pip.c WindTop Âà´«¹q¤lÂû¡C
+[2004/09/30] windtop2pip.c WindTop è½‰æ›é›»å­é›ã€‚
 
-[2004/10/01] talk.c ¨Ï¥ÎªÌ¦W³æµ{¦¡Â½·s¡C
+[2004/10/01] talk.c ä½¿ç”¨è€…åå–®ç¨‹å¼ç¿»æ–°ã€‚
 
-[2004/10/02] *.c *.h etc/help/pal ¡u¦n¤Í¦W³æ¡v§ï¬°¤¤©Êªº¡uªB¤Í¦W³æ¡v¡A¥H°Ï¤À¡u¦n¤Í¡v¡B¡uÃa¤H¡v¡B¡uªO¤Í¡v¡C
-             theme.h talk.c board.c ¡uªO¤Í¡v§ï¬°¡uªO¦ñ¡v¡C
+[2004/10/02] *.c *.h etc/help/pal ã€Œå¥½å‹åå–®ã€æ”¹ç‚ºä¸­æ€§çš„ã€Œæœ‹å‹åå–®ã€ï¼Œä»¥å€åˆ†ã€Œå¥½å‹ã€ã€ã€Œå£äººã€ã€ã€Œæ¿å‹ã€ã€‚
+             theme.h talk.c board.c ã€Œæ¿å‹ã€æ”¹ç‚ºã€Œæ¿ä¼´ã€ã€‚
 
-[2004/10/06] more.c ¾\Åª¨ì¤@¥b®É­Y¨Ï¥ÎªÌ¤¤Â_¡A«h¤£¨q footer¡C 
-             bmtad.c ¶Â/¥Õ¦W³æÀË¬dµ{¦¡­×¥¿¡C
-             talk.c ¨Ï¥ÎªÌ¦W³æ¨ÌªO¦ñ±Æ§Ç¡C
+[2004/10/06] more.c é–±è®€åˆ°ä¸€åŠæ™‚è‹¥ä½¿ç”¨è€…ä¸­æ–·ï¼Œå‰‡ä¸ç§€ footerã€‚ 
+             bmtad.c é»‘/ç™½åå–®æª¢æŸ¥ç¨‹å¼ä¿®æ­£ã€‚
+             talk.c ä½¿ç”¨è€…åå–®ä¾æ¿ä¼´æ’åºã€‚
 
-[2004/10/07] ulist.c ±N¨Ï¥ÎªÌ¦W³æ³¡¤Àªºµ{¦¡±q talk.c ¿W¥ß¥X¨Ó¡C
-             ulist.c ²¾°£¥ô·N±Æ¦C¡C
+[2004/10/07] ulist.c å°‡ä½¿ç”¨è€…åå–®éƒ¨åˆ†çš„ç¨‹å¼å¾ talk.c ç¨ç«‹å‡ºä¾†ã€‚
+             ulist.c ç§»é™¤ä»»æ„æ’åˆ—ã€‚
 
-[2004/10/10] mail.c song.c ¯¸¥~±H«H¥¢±Ñ´N¦s©³½Z¡C
-             talk.c bbsd.c FN_FRIEND_BENZ ¦P¨Bµ{¦¡¡C
+[2004/10/10] mail.c song.c ç«™å¤–å¯„ä¿¡å¤±æ•—å°±å­˜åº•ç¨¿ã€‚
+             talk.c bbsd.c FN_FRIEND_BENZ åŒæ­¥ç¨‹å¼ã€‚
 
-[2004/10/11] struct.h talk.c ±N¨t²Î¨ó´Mªº struct BENZ ¿W¥ß¥X¨Ó¡C
-             struct.h talk.c aloha.c ±N¤W¯¸³qª¾ªº struct FRIENZ ¿W¥ß¥X¨Ó¡C
+[2004/10/11] struct.h talk.c å°‡ç³»çµ±å”å°‹çš„ struct BENZ ç¨ç«‹å‡ºä¾†ã€‚
+             struct.h talk.c aloha.c å°‡ä¸Šç«™é€šçŸ¥çš„ struct FRIENZ ç¨ç«‹å‡ºä¾†ã€‚
 
-[2004/10/16] util/uno/* ­«¼g¾ã²z userno ªºµ{¦¡¡C
+[2004/10/16] util/uno/* é‡å¯«æ•´ç† userno çš„ç¨‹å¼ã€‚
 
-[2004/10/19] ulist.c ¾\Åª°Î¦WªO¤£¬İ¨ìªO¦ñ¡C
+[2004/10/19] ulist.c é–±è®€åŒ¿åæ¿ä¸çœ‹åˆ°æ¿ä¼´ã€‚
 
-[2004/10/23] gem.c mail.c post.c xpost.c ¾\Åª¨ì¨ì¤@¥b®É¥i¥H«ö E ½s¿è¤å³¹¡C
-             more.c ¦Û°Ê¼½©ñ§ï¬°¥u­­©w¦b³æ¤@½g¤å³¹¡C
-             bbslink.c bbsnnrp.c ±N°e«H¡B§ì«H¦X¨Ö¬°³æ¤@µ{¦¡¡C
+[2004/10/23] gem.c mail.c post.c xpost.c é–±è®€åˆ°åˆ°ä¸€åŠæ™‚å¯ä»¥æŒ‰ E ç·¨è¼¯æ–‡ç« ã€‚
+             more.c è‡ªå‹•æ’­æ”¾æ”¹ç‚ºåªé™å®šåœ¨å–®ä¸€ç¯‡æ–‡ç« ã€‚
+             bbslink.c bbsnnrp.c å°‡é€ä¿¡ã€æŠ“ä¿¡åˆä½µç‚ºå–®ä¸€ç¨‹å¼ã€‚
 
-[2004/10/25] struct.h admutil.c µù¥U³æ§R°£¯u¹ê©m¦WÄæ¦ì¡C
+[2004/10/25] struct.h admutil.c è¨»å†Šå–®åˆªé™¤çœŸå¯¦å§“åæ¬„ä½ã€‚
 
-[2004/10/27] lottery.c lottery-open.c etc/game/lottery.main etc/game/lottery.rule ®³±¼¼Ö³z¹CÀ¸¡C
+[2004/10/27] lottery.c lottery-open.c etc/game/lottery.main etc/game/lottery.rule æ‹¿æ‰æ¨‚é€éŠæˆ²ã€‚
 
-[2004/10/28] struct.h admutil.c rec_article.c ¾×«H³W«h¼W¥[ SITE¡C
-             struct.h global.h bank.c ¤ä²¼¶×´Ú¡C
+[2004/10/28] struct.h admutil.c rec_article.c æ“‹ä¿¡è¦å‰‡å¢åŠ  SITEã€‚
+             struct.h global.h bank.c æ”¯ç¥¨åŒ¯æ¬¾ã€‚
 
-[2004/11/01] vote.c ¥ß§Y¶}²¼¡C
-             vote.c account.c struct.h ´£¨Ñ½ä½L¥\¯à¡C
+[2004/11/01] vote.c ç«‹å³é–‹ç¥¨ã€‚
+             vote.c account.c struct.h æä¾›è³­ç›¤åŠŸèƒ½ã€‚
 
-[2004/11/10] struct.h cache.c account.c bno ¨ÌªO¦W±Æ§Ç¡A¥[³t¬İªO·j´M¡C
+[2004/11/10] struct.h cache.c account.c bno ä¾æ¿åæ’åºï¼ŒåŠ é€Ÿçœ‹æ¿æœå°‹ã€‚
 
-[2004/11/13] cache.c menu.c °ÊºA¬İªO§ï¬°§¹¥şÀH¾÷¼½©ñ¡A¦Ó¤£¬O´`§ÇÀH¾÷¼½©ñ¡C
+[2004/11/13] cache.c menu.c å‹•æ…‹çœ‹æ¿æ”¹ç‚ºå®Œå…¨éš¨æ©Ÿæ’­æ”¾ï¼Œè€Œä¸æ˜¯å¾ªåºéš¨æ©Ÿæ’­æ”¾ã€‚
 
-[2004/11/14] more.c §ó·s¾\Åª¤å³¹®É¡A«ö Up/PgUp ¤W±²ªºµ{¦¡¡C
+[2004/11/14] more.c æ›´æ–°é–±è®€æ–‡ç« æ™‚ï¼ŒæŒ‰ Up/PgUp ä¸Šæ²çš„ç¨‹å¼ã€‚
 
-[2004/11/16] mail.c account.c °O¿ı¯¸¤º±H«H¡A¨Ã±N¯¸¤º/¯¸¥~±H«Hªº°O¿ı©ñ¦b log ªO¡C
+[2004/11/16] mail.c account.c è¨˜éŒ„ç«™å…§å¯„ä¿¡ï¼Œä¸¦å°‡ç«™å…§/ç«™å¤–å¯„ä¿¡çš„è¨˜éŒ„æ”¾åœ¨ log æ¿ã€‚
 
-[2004/11/19] struct.h admutil.c rec_article.c ¾×«H³W«h¼W¥[ POSTHOST¡C
+[2004/11/19] struct.h admutil.c rec_article.c æ“‹ä¿¡è¦å‰‡å¢åŠ  POSTHOSTã€‚
 
-[2004/11/25] admutil.c rec_article.c ¾×«H³W«h¥i¦UªO¯S§O­q©w¡C
+[2004/11/25] admutil.c rec_article.c æ“‹ä¿¡è¦å‰‡å¯å„æ¿ç‰¹åˆ¥è¨‚å®šã€‚
 
-[2004/11/29] redir.c ºëµØ°Ï .DIR ­««Øµ{¦¡¡C
+[2004/11/29] redir.c ç²¾è¯å€ .DIR é‡å»ºç¨‹å¼ã€‚
 
-[2004/12/10] rec_bot.c *.c ­«­n¤å³¹¸m©³¡C
+[2004/12/10] rec_bot.c *.c é‡è¦æ–‡ç« ç½®åº•ã€‚
 
-[2004/12/11] cache.c ­×¥¿±qªB¤Í¦W³æ¥[¤J/²¾°£½u¤W¨Ï¥ÎªÌ®É¡A¦Û¤vªº¨Ï¥ÎªÌ¦W³æ¤£·|ÅÜ¦â¡C
+[2004/12/11] cache.c ä¿®æ­£å¾æœ‹å‹åå–®åŠ å…¥/ç§»é™¤ç·šä¸Šä½¿ç”¨è€…æ™‚ï¼Œè‡ªå·±çš„ä½¿ç”¨è€…åå–®ä¸æœƒè®Šè‰²ã€‚
 
-[2004/12/23] config.h board.c HAVE_MMAP ÅÜ¦¨©l²× #define¡C
+[2004/12/23] config.h board.c HAVE_MMAP è®Šæˆå§‹çµ‚ #defineã€‚
 
-[2004/12/26] more.c ­×¥¿ Home ·|µo¥Í¿ù»~¡C
+[2004/12/26] more.c ä¿®æ­£ Home æœƒç™¼ç”ŸéŒ¯èª¤ã€‚
 
-[2004/12/30] admutil.c Âà«H³]©w¼W¥[·j´Mªº¥\¯à¡C
+[2004/12/30] admutil.c è½‰ä¿¡è¨­å®šå¢åŠ æœå°‹çš„åŠŸèƒ½ã€‚
 
-[2004/12/31] more.c §ïµ½¦b¾\Åªªø½g¤å³¹®É¤W±²³t«×«ÜºCªº°İÃD¡C
+[2004/12/31] more.c æ”¹å–„åœ¨é–±è®€é•·ç¯‡æ–‡ç« æ™‚ä¸Šæ²é€Ÿåº¦å¾ˆæ…¢çš„å•é¡Œã€‚
 
-[2005/01/01] bbsd.c §R°£³Ì«á¤@­Ó­«½Æ login «áÅÜ¦¨¥»´L¡C
+[2005/01/01] bbsd.c åˆªé™¤æœ€å¾Œä¸€å€‹é‡è¤‡ login å¾Œè®Šæˆæœ¬å°Šã€‚
 
-[2005/01/08] global.h acct.c mail.c xover.c enews.c ±N¿ù»~ E-mail address ªº°T®§²Î¤@¦¨ ERR_EMAIL¡C
-             mail.c ±q¯¸¤W±H«Hµ¹ xyz.brd@mydoamil ¤Ï¦Ó·|±Hµ¹ xyz ³o ID¡C
+[2005/01/08] global.h acct.c mail.c xover.c enews.c å°‡éŒ¯èª¤ E-mail address çš„è¨Šæ¯çµ±ä¸€æˆ ERR_EMAILã€‚
+             mail.c å¾ç«™ä¸Šå¯„ä¿¡çµ¦ xyz.brd@mydoamil åè€Œæœƒå¯„çµ¦ xyz é€™ IDã€‚
 
-[2005/01/11] manage.c post.c ·s¼W¬İªOÄİ©Ê¡G¤£¯àµû¤À¡C
-             admutil.c »{ÃÒ¹L´Á«e¤Q¤Ñ¥i¶ñµù¥U³æ¡C
-             acct.c ­Ó¤H¤W¯¸¬ö¿ıÀË¯Á¡C
-             xyz.c §Ñ°O±K½XªA°È¡C
-             etc/cross-post global.h post.c Cross-Post °±Åv±H«H³qª¾¡C
+[2005/01/11] manage.c post.c æ–°å¢çœ‹æ¿å±¬æ€§ï¼šä¸èƒ½è©•åˆ†ã€‚
+             admutil.c èªè­‰éæœŸå‰åå¤©å¯å¡«è¨»å†Šå–®ã€‚
+             acct.c å€‹äººä¸Šç«™ç´€éŒ„æª¢ç´¢ã€‚
+             xyz.c å¿˜è¨˜å¯†ç¢¼æœå‹™ã€‚
+             etc/cross-post global.h post.c Cross-Post åœæ¬Šå¯„ä¿¡é€šçŸ¥ã€‚
 
-[2005/02/28] enews.c enews-open.c ²¾°£©_¼¯·s»D¡C
+[2005/02/28] enews.c enews-open.c ç§»é™¤å¥‡æ‘©æ–°èã€‚
 
-[2005/03/08] global.h edit.c post.c more.c §â QUOTE_CHAR ²Î¤@¦b¤@°_¡C
+[2005/03/08] global.h edit.c post.c more.c æŠŠ QUOTE_CHAR çµ±ä¸€åœ¨ä¸€èµ·ã€‚
 
-[2005/03/09] bhttpd.c ±N«H½c¦Cªí§ï¬°¤@¦¸¥u¦L¥X¤­¤Q«Ê«H¡C
+[2005/03/09] bhttpd.c å°‡ä¿¡ç®±åˆ—è¡¨æ”¹ç‚ºä¸€æ¬¡åªå°å‡ºäº”åå°ä¿¡ã€‚
 
-[2005/03/13] vote.c §R°£½ä½L®É·|°h´«½äª÷¡C
+[2005/03/13] vote.c åˆªé™¤è³­ç›¤æ™‚æœƒé€€æ›è³­é‡‘ã€‚
 
-[2005/03/16] config.h global.h board.c account.c usies-sort.c ²¾°£ LOG_BRD_USIES¡C
+[2005/03/16] config.h global.h board.c account.c usies-sort.c ç§»é™¤ LOG_BRD_USIESã€‚
 
-[2005/03/23] board.c bhttpd.c pal.c ¬İªOÃa¤H¡C
+[2005/03/23] board.c bhttpd.c pal.c çœ‹æ¿å£äººã€‚
 
-[2005/03/28] board.c pal.c ulist.c xover.c ¨Ï·j´M¤¤¤åÃöÁä¦r®É¤£·|¥X¿ù¡C
+[2005/03/28] board.c pal.c ulist.c xover.c ä½¿æœå°‹ä¸­æ–‡é—œéµå­—æ™‚ä¸æœƒå‡ºéŒ¯ã€‚
 
-[2005/03/29] acct.c ­×§ï¬İªOªO¦W®É¡A@Class ·|¤@¨ÖÅÜ°Ê¡C
+[2005/03/29] acct.c ä¿®æ”¹çœ‹æ¿æ¿åæ™‚ï¼Œ@Class æœƒä¸€ä½µè®Šå‹•ã€‚
 
-[2005/04/05] innbbs.c admutil.c ±NÂà«H³]©w¿W¥ß¦¨ innbbs.c¡C
-             acct.c admutil.c ±N¯¸°È«ü¥O¶°¤¤¨ì admutil.c¡C
-             acct.c user.c ±N¨Ï¥ÎªÌ«ü¥O¶°¤¤¨ì user.c¡C
-             struct.h user.c admutil.c ¨Ï¥ÎªÌ¦Û¦æ´_Åv¡C
+[2005/04/05] innbbs.c admutil.c å°‡è½‰ä¿¡è¨­å®šç¨ç«‹æˆ innbbs.cã€‚
+             acct.c admutil.c å°‡ç«™å‹™æŒ‡ä»¤é›†ä¸­åˆ° admutil.cã€‚
+             acct.c user.c å°‡ä½¿ç”¨è€…æŒ‡ä»¤é›†ä¸­åˆ° user.cã€‚
+             struct.h user.c admutil.c ä½¿ç”¨è€…è‡ªè¡Œå¾©æ¬Šã€‚
 
-[2005/04/13] innbbs.c channel.c bbslink.c inntobbs.c rec_article.c ¾×«H³W«h¥i«]­­¾×¬Y¯S©w·s»D¦øªA¾¹ªº«H¡C
+[2005/04/13] innbbs.c channel.c bbslink.c inntobbs.c rec_article.c æ“‹ä¿¡è¦å‰‡å¯ä¾·é™æ“‹æŸç‰¹å®šæ–°èä¼ºæœå™¨çš„ä¿¡ã€‚
 
-[2005/04/14] gem.c ­×¥¿ºëµØ°Ï½Æ»s·|Â_½uªº°İÃD¡C
+[2005/04/14] gem.c ä¿®æ­£ç²¾è¯å€è¤‡è£½æœƒæ–·ç·šçš„å•é¡Œã€‚
 
-[2005/04/20] bwboard.c ­×¥¿­x´Ñ¬¶/¥]¦æ¨«¤è¦¡¡C
-             bwboard.c ·t´Ñ«ö·Ó²Ä¤@­ÓÂ½¤l¨M©wÃC¦â¡C
+[2005/04/20] bwboard.c ä¿®æ­£è»æ£‹ç‚®/åŒ…è¡Œèµ°æ–¹å¼ã€‚
+             bwboard.c æš—æ£‹æŒ‰ç…§ç¬¬ä¸€å€‹ç¿»å­æ±ºå®šé¡è‰²ã€‚
 
-[2005/04/23] manage.c ©Ø·¬¸¨¸­±Ù¥i«ü©w¥i¬å(¤£)Âà«HªO¡C
-             post.c ªO¥D¦bºŞ²zªº¬İªO¤¤Âà¿ı¤£ºâ¸ó¶K¡C
-             vote.c ½ä½Lªº²¼»ù¥ÑªO¥D¨Ó¨M©w¡C
+[2005/04/23] manage.c æ‹‚æ¥“è½è‘‰æ–¬å¯æŒ‡å®šå¯ç (ä¸)è½‰ä¿¡æ¿ã€‚
+             post.c æ¿ä¸»åœ¨ç®¡ç†çš„çœ‹æ¿ä¸­è½‰éŒ„ä¸ç®—è·¨è²¼ã€‚
+             vote.c è³­ç›¤çš„ç¥¨åƒ¹ç”±æ¿ä¸»ä¾†æ±ºå®šã€‚
 
-[2005/04/24] innbbs.c innbbsd/* active ÀÉªº³]©w·h¤J newsfeeds.bbs ¤º¡C
+[2005/04/24] innbbs.c innbbsd/* active æª”çš„è¨­å®šæ¬å…¥ newsfeeds.bbs å…§ã€‚
 
-[2005/05/17] struct.h cache.c menu.c camera.c ±N¸`¤é·h¨ì fshm¡C
-             camera.c etc/feast ¤ä´©¬Y¤ë²Ä´X­Ó¬P´Á´X¬°¸`¤éªº®æ¦¡¡C
+[2005/05/17] struct.h cache.c menu.c camera.c å°‡ç¯€æ—¥æ¬åˆ° fshmã€‚
+             camera.c etc/feast æ”¯æ´æŸæœˆç¬¬å¹¾å€‹æ˜ŸæœŸå¹¾ç‚ºç¯€æ—¥çš„æ ¼å¼ã€‚
 
-[2005/05/18] xpost.c ­×¥¿¦P¼ĞÃD·j´M­n¼ĞÃD§¹¥ş¬Û¦P¤~ match¡C
+[2005/05/18] xpost.c ä¿®æ­£åŒæ¨™é¡Œæœå°‹è¦æ¨™é¡Œå®Œå…¨ç›¸åŒæ‰ matchã€‚
 
-[2005/05/19] *.h *.c ±N¬İªOªø«×±q IDLEN ¿W¥ß¦¨ BNLEN¡C
+[2005/05/19] *.h *.c å°‡çœ‹æ¿é•·åº¦å¾ IDLEN ç¨ç«‹æˆ BNLENã€‚
 
-[2005/05/28] camera.c etc/feast ¤ä´©¹A¾ä¸`¼y¡C
+[2005/05/28] camera.c etc/feast æ”¯æ´è¾²æ›†ç¯€æ…¶ã€‚
 
-[2005/06/04] perm.h *.c §â¯¸¤º±H«HªºÅv­­¿W¥ß¦¨ PERM_LOCAL¡C
+[2005/06/04] perm.h *.c æŠŠç«™å…§å¯„ä¿¡çš„æ¬Šé™ç¨ç«‹æˆ PERM_LOCALã€‚
 
-[2005/06/06] config.h bbsd.c user.c admutil.c ±N INVALID_NOTICE_PERIOD ¾ã²z¥X¨Ó¡C
+[2005/06/06] config.h bbsd.c user.c admutil.c å°‡ INVALID_NOTICE_PERIOD æ•´ç†å‡ºä¾†ã€‚
 
-[2005/06/09] theme.h edit.c bhttpd.c §â BANNER ¾ã²z¥X¨Ó¡C
-             struct.h board.c vote.c account.c ¬İªO¦CªíÅã¥Ü¸Ó¬İªO¦³½ä½L¶i¦æ¤¤¡C
+[2005/06/09] theme.h edit.c bhttpd.c æŠŠ BANNER æ•´ç†å‡ºä¾†ã€‚
+             struct.h board.c vote.c account.c çœ‹æ¿åˆ—è¡¨é¡¯ç¤ºè©²çœ‹æ¿æœ‰è³­ç›¤é€²è¡Œä¸­ã€‚
 
-[2005/06/11] topusr.c ±Æ¦æº]¤¹³\¦P¦W¦¸¡C
+[2005/06/11] topusr.c æ’è¡Œæ¦œå…è¨±åŒåæ¬¡ã€‚
 
-[2005/06/13] struct.h board.c post.c bbsd.c ¬İªO¤H®ğ¡C
+[2005/06/13] struct.h board.c post.c bbsd.c çœ‹æ¿äººæ°£ã€‚
 
-[2005/06/17] bbsd.c game/*.c ¹CÀ¸¶Ã¼Æ¿ï¨ú¡C
+[2005/06/17] bbsd.c game/*.c éŠæˆ²äº‚æ•¸é¸å–ã€‚
 
-[2005/06/25] modes.h perm.h gem.c ºëµØ°ÏÅv­­»P¬İªOÅv­­¦P¨B¡C
+[2005/06/25] modes.h perm.h gem.c ç²¾è¯å€æ¬Šé™èˆ‡çœ‹æ¿æ¬Šé™åŒæ­¥ã€‚
 
-[2005/06/26] *.c ºëµØ°Ï¤£´£¨Ñ Gopher¡C
+[2005/06/26] *.c ç²¾è¯å€ä¸æä¾› Gopherã€‚
 
-[2005/06/30] *.c ±N xsort §ï¥Î qsort¡C
+[2005/06/30] *.c å°‡ xsort æ”¹ç”¨ qsortã€‚
 
-[2005/07/01] bnntpd.c BNNTPD §ï¬° daemon¡C
+[2005/07/01] bnntpd.c BNNTPD æ”¹ç‚º daemonã€‚
 
-[2005/07/09] bhttpd.c BHTTPD §ï¬° daemon¡C
+[2005/07/09] bhttpd.c BHTTPD æ”¹ç‚º daemonã€‚
 
-[2005/07/12] xover.c bmw.c ±N bmw_cb ª½±µ¼g¨ì xz[]¡C
-             xover.c pal.c manage.c vote.c ±N pal_cb ª½±µ¼g¨ì xz[]¡C
-             modes.h pal.c manage.c vote.c °Ï¤ÀªB¤Í/¸s²Õ/ªO¤Í¦W³æªº´£¥Ü¦r¼Ë¡C
+[2005/07/12] xover.c bmw.c å°‡ bmw_cb ç›´æ¥å¯«åˆ° xz[]ã€‚
+             xover.c pal.c manage.c vote.c å°‡ pal_cb ç›´æ¥å¯«åˆ° xz[]ã€‚
+             modes.h pal.c manage.c vote.c å€åˆ†æœ‹å‹/ç¾¤çµ„/æ¿å‹åå–®çš„æç¤ºå­—æ¨£ã€‚
 
-[2005/07/16] post.c cache.c ´Nºâ¨S¦³ #define CHECK_ONLINE¡A¤]¥i¥H¥á¤å³¹/«H¥ó§@ªÌ¤ô²y¡C
-             pal.c aloha.c ªB¤Í¦W³æ/¤W¯¸³qª¾¦W³æ¤¤¡A­Y¸Ó¨Ï¥ÎªÌ¦b¯¸¤W·|«G¦â¡C
-             pal.c ­×¥¿§ï¸s²Õ¦W³æ/ªO¤Í¦W³æ/­­¨î§ë²¼¦W³æ®É·|¿ù»~¥[¤W STATUS_PALDIRTY¡C
+[2005/07/16] post.c cache.c å°±ç®—æ²’æœ‰ #define CHECK_ONLINEï¼Œä¹Ÿå¯ä»¥ä¸Ÿæ–‡ç« /ä¿¡ä»¶ä½œè€…æ°´çƒã€‚
+             pal.c aloha.c æœ‹å‹åå–®/ä¸Šç«™é€šçŸ¥åå–®ä¸­ï¼Œè‹¥è©²ä½¿ç”¨è€…åœ¨ç«™ä¸Šæœƒäº®è‰²ã€‚
+             pal.c ä¿®æ­£æ”¹ç¾¤çµ„åå–®/æ¿å‹åå–®/é™åˆ¶æŠ•ç¥¨åå–®æ™‚æœƒéŒ¯èª¤åŠ ä¸Š STATUS_PALDIRTYã€‚
 
-[2005/08/10] bhttpd.c ¤j´T§ïª©¡C
+[2005/08/10] bhttpd.c å¤§å¹…æ”¹ç‰ˆã€‚
 
-[2005/08/14] cache.c ­×¥¿¨Ï¥ÎªÌ¤£¦b½u¤W¡A¦ı¦b¦Cªí¤¤«o«G¦â¡C
+[2005/08/14] cache.c ä¿®æ­£ä½¿ç”¨è€…ä¸åœ¨ç·šä¸Šï¼Œä½†åœ¨åˆ—è¡¨ä¸­å»äº®è‰²ã€‚
 
-[2005/08/26] visio.c §ï¼g¿Ã¹õ±±¨î³¡¤À¡C
+[2005/08/26] visio.c æ”¹å¯«è¢å¹•æ§åˆ¶éƒ¨åˆ†ã€‚
 
-[2005/08/31] *.c ±N©Ò¦³´«¤j¤p¼gªºµ{¦¡²Î¤@¡C
+[2005/08/31] *.c å°‡æ‰€æœ‰æ›å¤§å°å¯«çš„ç¨‹å¼çµ±ä¸€ã€‚
 
-[2005/09/01] inntobbs.h inntobbs.c rec_article.c Organization ¤£¦C¬°¥²­nÀÉÀY¡C
+[2005/09/01] inntobbs.h inntobbs.c rec_article.c Organization ä¸åˆ—ç‚ºå¿…è¦æª”é ­ã€‚
 
-[2005/10/07] *.c ¯¸ªø¦æ¬°°O¿ı¡C
+[2005/10/07] *.c ç«™é•·è¡Œç‚ºè¨˜éŒ„ã€‚
 
-[2005/10/08] admutil.c ÁÙ­ì³Æ¥÷¡C
+[2005/10/08] admutil.c é‚„åŸå‚™ä»½ã€‚
 
-[2005/10/15] config.h innbbsd/* §â BBSNAME2¡BTAG_VALID¡Bbbsname.bbs ¾ã¦X¦b¤@°_¡C
+[2005/10/15] config.h innbbsd/* æŠŠ BBSNAME2ã€TAG_VALIDã€bbsname.bbs æ•´åˆåœ¨ä¸€èµ·ã€‚
 
-[2005/10/19] visio.c talk.c chat.c bwboard.c ­×¥¿ vio_fd »P mysql ©R¦W½Ä¬ğ¡C
+[2005/10/19] visio.c talk.c chat.c bwboard.c ä¿®æ­£ vio_fd èˆ‡ mysql å‘½åè¡çªã€‚
 
-[2005/10/20] post.c ±q¯µ±K¬İªOÂà¿ı¥X¥hªº¤å³¹¤£Åã¥Ü¨Ó·½¬İªO¡C
+[2005/10/20] post.c å¾ç§˜å¯†çœ‹æ¿è½‰éŒ„å‡ºå»çš„æ–‡ç« ä¸é¡¯ç¤ºä¾†æºçœ‹æ¿ã€‚
 
-[2005/11/17] xover.c ­×¥¿¦b¤å³¹¦Cªí«ö ^Z ¿ï¬İªO®É¡A·|¦h°µ¤@¦¸ XoPost()¡C
+[2005/11/17] xover.c ä¿®æ­£åœ¨æ–‡ç« åˆ—è¡¨æŒ‰ ^Z é¸çœ‹æ¿æ™‚ï¼Œæœƒå¤šåšä¸€æ¬¡ XoPost()ã€‚
 
-[2005/11/18] more.c ±Ë±ó buffered file read ªº¤è¦¡¡A¦Ó±Ä full file read¡C
+[2005/11/18] more.c æ¨æ£„ buffered file read çš„æ–¹å¼ï¼Œè€Œæ¡ full file readã€‚
 
-[2005/11/23] bmw.c ´£¨Ñ§R°£©Ò¦³¤ô²yªº¥\¯à¡C
+[2005/11/23] bmw.c æä¾›åˆªé™¤æ‰€æœ‰æ°´çƒçš„åŠŸèƒ½ã€‚
 
-[2005/12/09] bbsnet.c connlist ²¾°£ BBSNET¡C
+[2005/12/09] bbsnet.c connlist ç§»é™¤ BBSNETã€‚
 
-[2005/12/25] acct.c manage.c ªO¥D¦W³æ¿é¤J¦P¼Ë ID ®É¥i²¾°£¸Ó ID¡C
+[2005/12/25] acct.c manage.c æ¿ä¸»åå–®è¼¸å…¥åŒæ¨£ ID æ™‚å¯ç§»é™¤è©² IDã€‚
 
-[2006/01/23] camera.c etc/feasts ¯S®í¸`¤éªº¶}ÀYµe­±¡C
+[2006/01/23] camera.c etc/feasts ç‰¹æ®Šç¯€æ—¥çš„é–‹é ­ç•«é¢ã€‚
 
-[2006/02/06] xpost.c post.c mail.c xover.c ¦ê¦C·j´M¤¹³\¼W¥[±ø¥ó¦A«×·j´M¡C
+[2006/02/06] xpost.c post.c mail.c xover.c ä¸²åˆ—æœå°‹å…è¨±å¢åŠ æ¢ä»¶å†åº¦æœå°‹ã€‚
 
-[2006/02/08] struct.h innbbs.c bbslink.c ¦b newsfeeds ¸Ì­±Åã¥Ü§ä¤£¨ì¸s²Õ¡C
+[2006/02/08] struct.h innbbs.c bbslink.c åœ¨ newsfeeds è£¡é¢é¡¯ç¤ºæ‰¾ä¸åˆ°ç¾¤çµ„ã€‚
 
-[2006/03/24] board.c vote.c ­×¥¿¬İªO¤H®ğ­pºâ¿ù»~¡C
+[2006/03/24] board.c vote.c ä¿®æ­£çœ‹æ¿äººæ°£è¨ˆç®—éŒ¯èª¤ã€‚
 
-[2006/03/30] bhttpd.c ´£¨Ñ robot exclusion¡C
-             ats2*.c ´£¨Ñ ATS Âà´«µ{¦¡¡C
+[2006/03/30] bhttpd.c æä¾› robot exclusionã€‚
+             ats2*.c æä¾› ATS è½‰æ›ç¨‹å¼ã€‚
 
-[2006/04/10] board.c ¦b¬İªO¦Cªí±N¬İªO¥[¤J§Úªº³Ì·R¤£·|­«ÂĞ¥[¤J¡C
-             visio.c vget() ®É«öªÅ¥ÕÁä¾¨¶q¸É§¹ªO¦W¡C
+[2006/04/10] board.c åœ¨çœ‹æ¿åˆ—è¡¨å°‡çœ‹æ¿åŠ å…¥æˆ‘çš„æœ€æ„›ä¸æœƒé‡è¦†åŠ å…¥ã€‚
+             visio.c vget() æ™‚æŒ‰ç©ºç™½éµå„˜é‡è£œå®Œæ¿åã€‚
 
-[2006/04/17] camera.c ­­¨î°ÊºA¬İªO¨C¦Cªø«×¡C
+[2006/04/17] camera.c é™åˆ¶å‹•æ…‹çœ‹æ¿æ¯åˆ—é•·åº¦ã€‚
 
-[2006/04/20] more.c ­×¥¿¤å³¹¾\Åª¨ì¤@¥b®É¡A¶i¥X help ·|¿ù»~¡C
-             str_ttl.c post.c ±NÂà¿ı¦r¼Ë§ï¦¨ Fw:¡C
+[2006/04/20] more.c ä¿®æ­£æ–‡ç« é–±è®€åˆ°ä¸€åŠæ™‚ï¼Œé€²å‡º help æœƒéŒ¯èª¤ã€‚
+             str_ttl.c post.c å°‡è½‰éŒ„å­—æ¨£æ”¹æˆ Fw:ã€‚
 
-[2006/05/10] visio.c edit.c ¤ä´©º~¦r¾ã¦r§R°£¡B²¾°Ê¡BÅã¥Ü¡C
+[2006/05/10] visio.c edit.c æ”¯æ´æ¼¢å­—æ•´å­—åˆªé™¤ã€ç§»å‹•ã€é¡¯ç¤ºã€‚
 
-[2006/05/12] chat.c ´£¨Ñ KEY_DEL §R¦r¥\¯à¡C
-             talk.c chat.c ¤ä´©º~¦r¾ã¦r§R°£¡B²¾°Ê¡BÅã¥Ü¡C
+[2006/05/12] chat.c æä¾› KEY_DEL åˆªå­—åŠŸèƒ½ã€‚
+             talk.c chat.c æ”¯æ´æ¼¢å­—æ•´å­—åˆªé™¤ã€ç§»å‹•ã€é¡¯ç¤ºã€‚
 
-[2006/05/21] railway.c ²¾°£ÅK¸ô®É¨è¬d¸ß¡C
+[2006/05/21] railway.c ç§»é™¤éµè·¯æ™‚åˆ»æŸ¥è©¢ã€‚
 
-[2006/05/24] gem.c ºëµØ°Ï¼W¥[¤À¹j½u¡C
+[2006/05/24] gem.c ç²¾è¯å€å¢åŠ åˆ†éš”ç·šã€‚
 
-[2006/05/29] vote.c §ë²¼­­¨îµn¤J/µo¤å¦¸¼Æ¡C
+[2006/05/29] vote.c æŠ•ç¥¨é™åˆ¶ç™»å…¥/ç™¼æ–‡æ¬¡æ•¸ã€‚
 
-[2006/06/05] gem.c ±N tag ²Å¸¹¦ì¸m»P¥[±K²Å¸¹¦ì¸m¹ï½Õ¡A¨Ï»P¤å³¹¦Cªí¬Û¦P¡C
-             gem.c ­×¥¿ºëµØ°Ï¥i¯àµo¥Í¤å³¹©M¨÷©v chrono ¬Û¦Pªº°İÃD¡C
-             gem.c post.c mail.c ¥i¥H±N¥[±K¤å³¹½Æ»s¶K¨ìºëµØ°Ï¡C
+[2006/06/05] gem.c å°‡ tag ç¬¦è™Ÿä½ç½®èˆ‡åŠ å¯†ç¬¦è™Ÿä½ç½®å°èª¿ï¼Œä½¿èˆ‡æ–‡ç« åˆ—è¡¨ç›¸åŒã€‚
+             gem.c ä¿®æ­£ç²¾è¯å€å¯èƒ½ç™¼ç”Ÿæ–‡ç« å’Œå·å®— chrono ç›¸åŒçš„å•é¡Œã€‚
+             gem.c post.c mail.c å¯ä»¥å°‡åŠ å¯†æ–‡ç« è¤‡è£½è²¼åˆ°ç²¾è¯å€ã€‚
 
-[2006/10/13] favor.c board.c §Úªº³Ì·R¥i¥H¦¬¾ã­Ó¤ÀÃş¸s²Õ¡C
+[2006/10/13] favor.c board.c æˆ‘çš„æœ€æ„›å¯ä»¥æ”¶æ•´å€‹åˆ†é¡ç¾¤çµ„ã€‚
 
-[2006/12/06] acct.c ¬İªO½s¿è¥i²§°ÊªO¦W¤j¤p¼g¡C
+[2006/12/06] acct.c çœ‹æ¿ç·¨è¼¯å¯ç•°å‹•æ¿åå¤§å°å¯«ã€‚
 
-[2006/12/26] board.c ¬İªO¥ş°ì·j´M¥i¤¤Â_·j´M¡C
+[2006/12/26] board.c çœ‹æ¿å…¨åŸŸæœå°‹å¯ä¸­æ–·æœå°‹ã€‚
 
-[2007/04/05] mail.c ­×¥¿¥´¥]¸ê®Æ®É«H¥óªºÀÉÀY¡C
+[2007/04/05] mail.c ä¿®æ­£æ‰“åŒ…è³‡æ–™æ™‚ä¿¡ä»¶çš„æª”é ­ã€‚
 
-[2007/04/26] post.c ·í±b¸¹³Q²M°£«á¡A·sµù¥U¬Û¦P ID ªº±b¸¹¨Ã¤£¾Ö¦³¹L¥h¸Ó ID µoªíªº¤å³¹¤§©Ò¦³Åv¡C
+[2007/04/26] post.c ç•¶å¸³è™Ÿè¢«æ¸…é™¤å¾Œï¼Œæ–°è¨»å†Šç›¸åŒ ID çš„å¸³è™Ÿä¸¦ä¸æ“æœ‰éå»è©² ID ç™¼è¡¨çš„æ–‡ç« ä¹‹æ‰€æœ‰æ¬Šã€‚
 
-[2007/05/09] bbsmail.c brdmail.c §ï¥Î str_from()¡C
+[2007/05/09] bbsmail.c brdmail.c æ”¹ç”¨ str_from()ã€‚
 
-[2007/05/17] visio.c talk.c ±N b_cols ªº©w¸q±q¨C¦C¦r¼Æ§ï¬°´å¼Ğ³Ì¤j¥i¤Î³B (©M b_lines ¬Û¦P)¡C
-             struct.h edit.c talk.c camera.c ­«·s¾ã²z SCR_WIDTH ¬ÛÃöµ{¦¡¡C
-             more.c ±N more() ªº¼e«×©ñ¤j¨ì»P telnet term ¿Ã¹õ¼e«×¬Û¦P¡C
+[2007/05/17] visio.c talk.c å°‡ b_cols çš„å®šç¾©å¾æ¯åˆ—å­—æ•¸æ”¹ç‚ºæ¸¸æ¨™æœ€å¤§å¯åŠè™• (å’Œ b_lines ç›¸åŒ)ã€‚
+             struct.h edit.c talk.c camera.c é‡æ–°æ•´ç† SCR_WIDTH ç›¸é—œç¨‹å¼ã€‚
+             more.c å°‡ more() çš„å¯¬åº¦æ”¾å¤§åˆ°èˆ‡ telnet term è¢å¹•å¯¬åº¦ç›¸åŒã€‚
 
-[2007/05/18] struct.h ¥[¤j ANSILINELEN¡C
+[2007/05/18] struct.h åŠ å¤§ ANSILINELENã€‚
 
-[2007/06/09] xover.c xo_cursor() ¥[¤J¥iª½±µ¿é¤J¦ì¸m¸õ¥h¸Ó½gªº¥\¯à¡C
+[2007/06/09] xover.c xo_cursor() åŠ å…¥å¯ç›´æ¥è¼¸å…¥ä½ç½®è·³å»è©²ç¯‡çš„åŠŸèƒ½ã€‚
 
-[2007/10/16] acct.c Á×§K¦h¦ì¯¸°È­«ÂĞ¶}ªO¡C
+[2007/10/16] acct.c é¿å…å¤šä½ç«™å‹™é‡è¦†é–‹æ¿ã€‚
 
-[2007/11/18] reversi.c ±N gray.c ¥¿¦W¡C
+[2007/11/18] reversi.c å°‡ gray.c æ­£åã€‚
 
-[2011/08/23] user.c ­×¥¿ pop3 «H½c»{ÃÒ timeout¡C
+[2011/08/23] user.c ä¿®æ­£ pop3 ä¿¡ç®±èªè­‰ timeoutã€‚
 
-[2012/06/18] *.c ­×¥¿¼Æ­Ó¼ç¦bªº°O¾ĞÅé¦s¨ú°İÃD¡C
+[2012/06/18] *.c ä¿®æ­£æ•¸å€‹æ½›åœ¨çš„è¨˜æ†¶é«”å­˜å–å•é¡Œã€‚
 
-[2012/10/19] */Makefile ­×¥¿¿ù»~¡C
-             *.c ²M±¼³¡¤À»yªk¿ù»~¡C
+[2012/10/19] */Makefile ä¿®æ­£éŒ¯èª¤ã€‚
+             *.c æ¸…æ‰éƒ¨åˆ†èªæ³•éŒ¯èª¤ã€‚
 
-[2012/10/21] expire.c reaper.c config.h ³]©w·h¥h config.h¡C
+[2012/10/21] expire.c reaper.c config.h è¨­å®šæ¬å» config.hã€‚
 

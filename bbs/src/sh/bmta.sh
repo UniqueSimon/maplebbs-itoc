@@ -1,6 +1,6 @@
 #!/bin/sh
-#¥»µ{¦¡¥Î¨Ó¤ÀªR³s±µ bbs ªº smtp ³s±µ¨Ó·½¼Æ¶q
-cat /dev/null | awk 'BEGIN {printf("%10s    %-20s\n", "³s½u¦¸¼Æ", "³s½u¨Ó·½")} {} END{}'
+#æœ¬ç¨‹å¼ç”¨ä¾†åˆ†æé€£æ¥ bbs çš„ smtp é€£æ¥ä¾†æºæ•¸é‡
+cat /dev/null | awk 'BEGIN {printf("%10s    %-20s\n", "é€£ç·šæ¬¡æ•¸", "é€£ç·šä¾†æº")} {} END{}'
 
 cat /home/bbs/run/bmta.log.* | grep CONN | sort -k 3 -r | awk '{print $3}'| awk 'BEGIN {} {Number[$1]++} END {
   for(course in Number)

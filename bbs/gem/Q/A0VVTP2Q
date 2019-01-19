@@ -1,19 +1,19 @@
-�@��: itoc (�\��о�) ����: SYSOP
-���D: �W�[�ʺA�ݪO
-�ɶ�: Sat Jan  1 00:00:00 2000
+作者: itoc (功能教學) 站內: SYSOP
+標題: 增加動態看板
+時間: Sat Jan  1 00:00:00 2000
 
-                        [1;42m �� �W�[�ʺA�ݪO �� [m
+                        [1;42m □ 增加動態看板 □ [m
 
-    �n�W�[�ʺA�ݪO�A�Цb [note] �O��ذ� note/ �̭��[�峹�Y�i�C
+    要增加動態看板，請在 [note] 板精華區 note/ 裡面加文章即可。
 
-    �i�H�ϥΨ��v�Ӿ�z�����A���v���U���峹�]�|���i�ʺA�ݪO�C
+    可以使用卷宗來整理分類，卷宗底下的文章也會收進動態看板。
 
-    �Q�[�K���峹/���v�N���|�Q����C
+    被加密的文章/卷宗將不會被撥放。
 
-    �ʺA�ݪO�O���g��/�j�p������A�W�L�@�w�ƶq/�j�p�H�᪺�N���|�Q����C
+    動態看板是有篇數/大小的限制，超過一定數量/大小以後的將不會被撥放。
 
-    �粒�n���s���J (0)Admin �� (B)BSreset �� 1)�ʺA�ݪO
-    �p�G���h��ʭ��s���J�Acrontab �]�|�۰ʥh��s�C
+    改完要重新載入 (0)Admin → (B)BSreset → 1)動態看板
+    如果不去手動重新載入，crontab 也會自動去更新。
 
 --
-[1;37m�� ���峹�Ӧ� [33;44m ��j�q�l [0;1;37m �� [32mEE.NCTU.edu.tw[37m �ҵo��[m
+[1;37m□ 本文章來自 [33;44m 交大電子 [0;1;37m 由 [32mEE.NCTU.edu.tw[37m 所發表[m
