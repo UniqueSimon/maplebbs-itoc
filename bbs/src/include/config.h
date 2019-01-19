@@ -25,26 +25,26 @@
 /* 定義 BBS 站名位址					 */
 /* ------------------------------------------------------*/
 
-#define SCHOOLNAME	"台南一中"		/* 組織名稱 */
-#define BBSNAME		"與南共舞"		/* 中文站名 */
-#define BBSNAME2	"WolfBBS"		/* 英文站名 */
-#define SYSOPNICK	"狼人長老"		/* sysop 的暱稱 */
+#define SCHOOLNAME	"Steamgay"		/* 組織名稱 */
+#define BBSNAME		"人類的本質"		/* 中文站名 */
+#define BBSNAME2	"Human Nature"		/* 英文站名 */
+#define SYSOPNICK	"複讀機"		/* sysop 的暱稱 */
 #define TAG_VALID       "["BBSNAME2"]To"	/* 身分認證函 token */
 
-#define MYIPADDR	"210.70.137.5"		/* IP address */
-#define MYHOSTNAME	"bbs.tnfsh.tn.edu.tw"	/* 網路地址 FQDN */
+#define MYIPADDR	"255.255.255.255"		/* IP address */
+#define MYHOSTNAME	"local.bbs"	/* 網路地址 FQDN */
 
 #define HOST_ALIASES	{MYHOSTNAME, MYIPADDR, \
-			 "wolf.twbbs.org", "wolf.twbbs.org.tw", \
+			 "local.bbs", "local.bbs", \
 			 NULL}
 
-#define MYCHARSET	"big5"			/* BBS 所使用的字集 */
+#define MYCHARSET	"utf-8"			/* BBS 所使用的字集 */
 
 #define BBSHOME		"/home/bbs"		/* BBS 的家 */
 #define BAKPATH		"/home/bbs/bak"		/* 備份檔的路徑 */
 
 #define BBSUID		9999
-#define BBSGID		99			/* Linux 請設為 999 */
+#define BBSGID		999			/* Linux 請設為 999 */
 
 
 /* ----------------------------------------------------- */

@@ -19,18 +19,19 @@
 # 事後再去改 src/include/config.h 即可
 
 
-schoolname="台南一中"
-bbsname="與南共舞"
-bbsname2="WolfBBS"
-sysopnick="狼人長老"
-myipaddr="210.70.137.5"
-myhostname="bbs.tnfsh.tn.edu.tw"
+schoolname="Steamgay"
+bbsname="人類的本質"
+bbsname2="Human Nature"
+sysopnick="複讀機"
+myipaddr="255.255.255.255"
+myhostname="local.bbs"
 msg_bmw="水球"
 
 # 請修改您的作業系統
 # sun linux solaris sol-x86 freebsd bsd
 
-ostype="freebsd"
+# ostype="freebsd"
+ostype="linux"
 
 echo "您所設定的 SCHOOLNAME 是 $schoolname"
 echo "您所設定的 BBSNAME    是 $bbsname"
