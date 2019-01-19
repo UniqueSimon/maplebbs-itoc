@@ -6,30 +6,25 @@
 /* update : 96/04/05				 	 */
 /*-------------------------------------------------------*/
 
-
-#define	_ADMIN_C_
-
+#define _ADMIN_C_
 
 #include "bbs.h"
 
-
 extern BCACHE *bshm;
-
 
 /* ----------------------------------------------------- */
 /* (.ACCT) 使用者帳號 (account) subroutines		 */
 /* ----------------------------------------------------- */
 
-
 int
-acct_load(acct, userid)
-  ACCT *acct;
-  char *userid;
+    acct_load(acct, userid)
+        ACCT *acct;
+char *userid;
 {
   int fd;
 
-  usr_fpath((char *) acct, userid, fn_acct);
-  fd = open((char *) acct, O_RDONLY);
+  usr_fpath((char *)acct, userid, fn_acct);
+  fd = open((char *)acct, O_RDONLY);
   if (fd >= 0)
   {
     /* Thor.990416: 特別注意, 有時 .ACCT的長度會是0 */
@@ -39,11 +34,10 @@ acct_load(acct, userid)
   return fd;
 }
 
-
-/* static */	/* itoc.010408: 給其他程式用 */
+/* static */ /* itoc.010408: 給其他程式用 */
 void
-acct_save(acct)
-  ACCT *acct;
+    acct_save(acct)
+        ACCT *acct;
 {
   int fd;
   char fpath[64];
@@ -53,7 +47,7 @@ acct_save(acct)
     return;
 
   usr_fpath(fpath, acct->userid, fn_acct);
-  fd = open(fpath, O_WRONLY, 0600);	/* fpath 必須已經存在 */
+  fd = open(fpath, O_WRONLY, 0600); /* fpath 必須已經存在 */
   if (fd >= 0)
   {
     write(fd, acct, sizeof(ACCT));
@@ -61,10 +55,8 @@ acct_save(acct)
   }
 }
 
-
 int
-acct_userno(userid)
-  char *userid;
+    acct_userno(userid) char *userid;
 {
   int fd;
   int userno;
@@ -81,7 +73,6 @@ acct_userno(userid)
   return 0;
 }
 
-
 /* ----------------------------------------------------- */
 /* name complete for user ID				 */
 /* ----------------------------------------------------- */
@@ -91,14 +82,12 @@ acct_userno(userid)
 /* ow.: 傳回該 userid 之 userno				 */
 /* ----------------------------------------------------- */
 
-
 int
-acct_get(msg, acct)
-  char *msg;
-  ACCT *acct;
+    acct_get(msg, acct) char *msg;
+ACCT *acct;
 {
   outz("★ 輸入首字母後，可以按空白鍵自動搜尋");
-  
+
   if (!vget(1, 0, msg, acct->userid, IDLEN + 1, GET_USER))
     return 0;
 
@@ -109,20 +98,17 @@ acct_get(msg, acct)
   return -1;
 }
 
-
 /* ----------------------------------------------------- */
 /* bit-wise display and setup				 */
 /* ----------------------------------------------------- */
 
-
-#define BIT_ON		"■"
-#define BIT_OFF		"□"
-
+#define BIT_ON "■"
+#define BIT_OFF "□"
 
 void
-bitmsg(msg, str, level)
-  char *msg, *str;
-  int level;
+    bitmsg(msg, str, level) char *msg,
+    *str;
+int level;
 {
   int cc;
 
@@ -137,14 +123,13 @@ bitmsg(msg, str, level)
   outc('\n');
 }
 
-
 usint
-bitset(pbits, count, maxon, msg, perms)
-  usint pbits;
-  int count;			/* 共有幾個選項 */
-  int maxon;			/* 最多可以 enable 幾項 */
-  char *msg;
-  char *perms[];
+    bitset(pbits, count, maxon, msg, perms)
+        usint pbits;
+int count; /* 共有幾個選項 */
+int maxon; /* 最多可以 enable 幾項 */
+char *msg;
+char *perms[];
 {
   int i, j, on;
 
@@ -177,15 +162,15 @@ bitset(pbits, count, maxon, msg, perms)
       j = 1 << i;
       if (pbits & j)
       {
-	on--;
-	msg = BIT_OFF;
+        on--;
+        msg = BIT_OFF;
       }
       else
       {
-	if (on >= maxon)
-	  continue;
-	on++;
-	msg = BIT_ON;
+        if (on >= maxon)
+          continue;
+        on++;
+        msg = BIT_ON;
       }
 
       pbits ^= j;
@@ -196,10 +181,9 @@ bitset(pbits, count, maxon, msg, perms)
   return (pbits);
 }
 
-
 static usint
-setperm(level)
-  usint level;
+    setperm(level)
+        usint level;
 {
   if (HAS_PERM(PERM_SYSOP))
     return bitset(level, NUMPERMS, NUMPERMS, MSG_USERPERM, perm_tbl);
@@ -212,22 +196,20 @@ setperm(level)
   return bitset(level, NUMPERMS - 4, NUMPERMS - 4, MSG_USERPERM, perm_tbl);
 }
 
-
 /* ----------------------------------------------------- */
 /* 帳號管理						 */
 /* ----------------------------------------------------- */
 
-
 static void
-bm_list(userid)			/* 顯示 userid 是哪些板的板主 */
-  char *userid;
+    bm_list(userid) /* 顯示 userid 是哪些板的板主 */
+    char *userid;
 {
   int len;
   char *list;
   BRD *bhead, *btail;
 
   len = strlen(userid);
-  outs("  \033[32m擔任板主：\033[37m");		/* itoc.010922: 換 user info 版面 */
+  outs("  \033[32m擔任板主：\033[37m"); /* itoc.010922: 換 user info 版面 */
 
   bhead = bshm->bcache;
   btail = bhead + bshm->number;
@@ -245,10 +227,10 @@ bm_list(userid)			/* 顯示 userid 是哪些板的板主 */
   outc('\n');
 }
 
-
 static void
-adm_log(old, new)
-  ACCT *old, *new;
+    adm_log(old, new)
+        ACCT *old,
+    *new;
 {
   int i;
   usint bit, oldl, newl;
@@ -279,11 +261,10 @@ adm_log(old, new)
   }
 }
 
-
 void
-acct_show(u, adm)
-  ACCT *u;
-  int adm;			/* 0: user info  1: admin  2: reg-form */
+    acct_show(u, adm)
+        ACCT *u;
+int adm; /* 0: user info  1: admin  2: reg-form */
 {
   int diff;
   usint ulevel;
@@ -295,13 +276,13 @@ acct_show(u, adm)
   if (adm == 0)
   {
     outs("\n        \033[30;41m┬┴┬┴┬┴\033[m  \033[45m╰╦╦╮╭╦═╮"
-      "╔╦═╮╭╦═╮\033[m  \033[30;41m┬┴┬┴┬┴\033[m\n"
-      "        \033[30;41m┴┬┴┬┴┬\033[m  \033[1;37;45m  ╠╣  ╠╣"
-      "  ║╠╬╣  ╠╣  ║\033[m  \033[30;41m┴┬┴┬┴┬\033[m\n"
-      "        \033[30;41m┬┴┬┴┬┴\033[m  \033[45m  ╠╣  ╠╣  ║"
-      "╠╣╯  ╠╣  ║\033[m  \033[30;41m┬┴┬┴┬┴\033[m\n"
-      "        \033[30;41m┴┬┴┬┴┬\033[m  \033[1;30;45m╰╩╩╮╚╝"
-      "  ╰╚╝    ╰╩═╯\033[m  \033[30;41m┴┬┴┬┴┬\033[m\n");
+         "╔╦═╮╭╦═╮\033[m  \033[30;41m┬┴┬┴┬┴\033[m\n"
+         "        \033[30;41m┴┬┴┬┴┬\033[m  \033[1;37;45m  ╠╣  ╠╣"
+         "  ║╠╬╣  ╠╣  ║\033[m  \033[30;41m┴┬┴┬┴┬\033[m\n"
+         "        \033[30;41m┬┴┬┴┬┴\033[m  \033[45m  ╠╣  ╠╣  ║"
+         "╠╣╯  ╠╣  ║\033[m  \033[30;41m┬┴┬┴┬┴\033[m\n"
+         "        \033[30;41m┴┬┴┬┴┬\033[m  \033[1;30;45m╰╩╩╮╚╝"
+         "  ╰╚╝    ╰╩═╯\033[m  \033[30;41m┴┬┴┬┴┬\033[m\n");
   }
 
   uid = u->userid;
@@ -381,11 +362,10 @@ end_show:
   outs("\033[m");
 }
 
-
 void
-acct_setup(u, adm)
-  ACCT *u;
-  int adm;
+    acct_setup(u, adm)
+        ACCT *u;
+int adm;
 {
   ACCT x;
   int i, num;
@@ -420,7 +400,7 @@ acct_setup(u, adm)
       /* itoc.010804.註解: 改使用者代號時請確定該 user 不在站上 */
       vget(i, 0, "使用者代號(不改請按 Enter)：", str, IDLEN + 1, GCARRY);
       if (!str_cmp(str, u->userid) || !acct_userno(str))
-	break;
+        break;
       vmsg("錯誤！已有相同 ID 的使用者");
     }
   }
@@ -441,14 +421,14 @@ acct_setup(u, adm)
     for (;;)
     {
       if (!vget(i, 0, "設定新密碼(不改請按 Enter)：", buf, PSWDLEN + 1, NOECHO))
-	break;
+        break;
 
       strcpy(pass, buf);
       vget(i + 1, 0, "檢查新密碼：", buf, PSWDLEN + 1, NOECHO);
       if (!strcmp(buf, pass))
       {
-	str_ncpy(x.passwd, genpasswd(buf), sizeof(x.passwd));
-	break;
+        str_ncpy(x.passwd, genpasswd(buf), sizeof(x.passwd));
+        break;
       }
     }
   }
@@ -539,27 +519,27 @@ acct_setup(u, adm)
 
     if (vans("設定權限(Y/N)？[N] ") == 'y')
     {
-set_perm:
+    set_perm:
 
       i = setperm(num = x.userlevel);
 
       if (i == num)
       {
-	vmsg("取消修改");
-	if (adm == '2')
-	  return;
+        vmsg("取消修改");
+        if (adm == '2')
+          return;
       }
       else
       {
-	x.userlevel = i;
+        x.userlevel = i;
 
-	/* itoc.011120: 站長放水加上認證通過權限，要附加改認證時間 */
-	if ((i & PERM_VALID) && !(num & PERM_VALID))
-	  time(&x.tvalid);
+        /* itoc.011120: 站長放水加上認證通過權限，要附加改認證時間 */
+        if ((i & PERM_VALID) && !(num & PERM_VALID))
+          time(&x.tvalid);
 
-	/* itoc.050413: 如果站長手動停權，就要由站長才能來復權 */
-	if ((i & PERM_ALLDENY) && (i & PERM_ALLDENY) != (num & PERM_ALLDENY))
-	  x.tvalid = INT_MAX;
+        /* itoc.050413: 如果站長手動停權，就要由站長才能來復權 */
+        if ((i & PERM_ALLDENY) && (i & PERM_ALLDENY) != (num & PERM_ALLDENY))
+          x.tvalid = INT_MAX;
       }
     }
   }
@@ -603,8 +583,7 @@ set_perm:
   acct_save(u);
 }
 
-
-#if 0	/* itoc.010805.註解 */
+#if 0 /* itoc.010805.註解 */
 
   認證成功只加上 PERM_VALID，讓 user 在下次進站才自動得到 PERM_POST | PERM_PAGE | PERM_CHAT
   以免新手上路、停權的功能失效
@@ -614,7 +593,7 @@ set_perm:
 
 #endif
 
-#if 0	/* itoc.010831.註解 */
+#if 0 /* itoc.010831.註解 */
 
   因為線上 cuser.userlevel 並不是最新的，使用者如果在線上認證或是被停權，
   硬碟中的 .ACCT 寫的才是正確的 userlevel，
@@ -627,10 +606,10 @@ set_perm:
 #endif
 
 void
-acct_setperm(u, levelup, leveldown)	/* itoc.000219: 加/減權限程式 */
-  ACCT *u;
-  usint levelup;		/* 加權限 */
-  usint leveldown;		/* 減權限 */
+    acct_setperm(u, levelup, leveldown) /* itoc.000219: 加/減權限程式 */
+    ACCT *u;
+usint levelup;   /* 加權限 */
+usint leveldown; /* 減權限 */
 {
   u->userlevel |= levelup;
   u->userlevel &= ~leveldown;
@@ -638,45 +617,37 @@ acct_setperm(u, levelup, leveldown)	/* itoc.000219: 加/減權限程式 */
   acct_save(u);
 }
 
-
 /* ----------------------------------------------------- */
 /* 增加金銀幣						 */
 /* ----------------------------------------------------- */
 
-
 void
-addmoney(addend)
-  int addend;
+    addmoney(addend) int addend;
 {
-  if (addend < (INT_MAX - cuser.money))	/* 避免溢位 */
+  if (addend < (INT_MAX - cuser.money)) /* 避免溢位 */
     cuser.money += addend;
   else
     cuser.money = INT_MAX;
 }
 
-
 void
-addgold(addend)
-  int addend;
+    addgold(addend) int addend;
 {
-  if (addend < (INT_MAX - cuser.gold))	/* 避免溢位 */
+  if (addend < (INT_MAX - cuser.gold)) /* 避免溢位 */
     cuser.gold += addend;
   else
     cuser.gold = INT_MAX;
 }
 
-
 /* ----------------------------------------------------- */
 /* 看板管理						 */
 /* ----------------------------------------------------- */
 
-
 #ifndef HAVE_COSIGN
 static
 #endif
-int			/* 1:合法的板名 */
-valid_brdname(brd)
-  char *brd;
+    int /* 1:合法的板名 */
+        valid_brdname(brd) char *brd;
 {
   int ch;
 
@@ -691,11 +662,10 @@ valid_brdname(brd)
   return 1;
 }
 
-
 static int
-brd_set(brd, row)
-  BRD *brd;
-  int row;
+    brd_set(brd, row)
+        BRD *brd;
+int row;
 {
   int i, BMlen, len;
   char *brdname, buf[80], userid[IDLEN + 2];
@@ -709,17 +679,17 @@ brd_set(brd, row)
   {
     if (!vget(i, 0, MSG_BID, brdname, BNLEN + 1, GCARRY))
     {
-      if (i == 1)	/* 開新板若無輸入板名表示離開 */
-	return -1;
+      if (i == 1) /* 開新板若無輸入板名表示離開 */
+        return -1;
 
-      strcpy(brdname, buf);	/* Thor: 若是清空則設為原名稱 */
+      strcpy(brdname, buf); /* Thor: 若是清空則設為原名稱 */
       continue;
     }
 
     if (!valid_brdname(brdname))
       continue;
 
-    if (!str_cmp(buf, brdname))	/* Thor: 與舊板原名相同則跳過 */
+    if (!str_cmp(buf, brdname)) /* Thor: 與舊板原名相同則跳過 */
       break;
 
     if (brd_bno(brdname) >= 0)
@@ -751,47 +721,47 @@ brd_set(brd, row)
       buf[0] = '\0';
       BMlen = 0;
     }
-    else if (is_bm(buf, userid))	/* 刪除舊有的板主 */
+    else if (is_bm(buf, userid)) /* 刪除舊有的板主 */
     {
       len = strlen(userid);
       if (BMlen == len)
       {
-	buf[0] = '\0';
+        buf[0] = '\0';
       }
-      else if (!str_cmp(buf + BMlen - len, userid) && buf[BMlen - len - 1] == '/')	/* 名單上最後一位，ID 後面不接 '/' */
+      else if (!str_cmp(buf + BMlen - len, userid) && buf[BMlen - len - 1] == '/') /* 名單上最後一位，ID 後面不接 '/' */
       {
-	buf[BMlen - len - 1] = '\0';			/* 刪除 ID 及前面的 '/' */
-	len++;
+        buf[BMlen - len - 1] = '\0'; /* 刪除 ID 及前面的 '/' */
+        len++;
       }
-      else						/* ID 後面會接 '/' */
+      else /* ID 後面會接 '/' */
       {
-	str_lower(userid, userid);
-	strcat(userid, "/");
-	len++;
-	brdname = str_str(buf, userid);
+        str_lower(userid, userid);
+        strcat(userid, "/");
+        len++;
+        brdname = str_str(buf, userid);
         strcpy(brdname, brdname + len);
       }
       BMlen -= len;
     }
-    else if (acct_load(&acct, userid) >= 0 && !is_bm(buf, userid))	/* 輸入新板主 */
+    else if (acct_load(&acct, userid) >= 0 && !is_bm(buf, userid)) /* 輸入新板主 */
     {
       len = strlen(userid);
       if (BMlen)
       {
-	len++;		/* '/' + userid */
-	if (BMlen + len > BMLEN)
-	{
-	  vmsg("板主名單過長，無法將這 ID 設為板主");
-	  continue;
-	}
-	sprintf(buf + BMlen, "/%s", acct.userid);
-	BMlen += len;
+        len++; /* '/' + userid */
+        if (BMlen + len > BMLEN)
+        {
+          vmsg("板主名單過長，無法將這 ID 設為板主");
+          continue;
+        }
+        sprintf(buf + BMlen, "/%s", acct.userid);
+        BMlen += len;
       }
       else
       {
-	strcpy(buf, acct.userid);
-	BMlen = len;
-      }      
+        strcpy(buf, acct.userid);
+        BMlen = len;
+      }
 
       acct_setperm(&acct, PERM_BM, 0);
     }
@@ -804,19 +774,18 @@ brd_set(brd, row)
   }
   strcpy(brd->BM, buf);
 
-
 #ifdef HAVE_MODERATED_BOARD
   /* itoc.011208: 改用較便利的看板權限設定 */
   switch (vget(++i, 0, "看板權限 A)一般 B)自定 C)秘密 D)好友？[Q] ", buf, 3, LCECHO))
   {
   case 'c':
-    brd->readlevel = PERM_SYSOP;	/* 秘密看板 */
+    brd->readlevel = PERM_SYSOP; /* 秘密看板 */
     brd->postlevel = 0;
     brd->battr |= (BRD_NOSTAT | BRD_NOVOTE);
     break;
 
   case 'd':
-    brd->readlevel = PERM_BOARD;	/* 好友看板 */
+    brd->readlevel = PERM_BOARD; /* 好友看板 */
     brd->postlevel = 0;
     brd->battr |= (BRD_NOSTAT | BRD_NOVOTE);
     break;
@@ -827,8 +796,8 @@ brd_set(brd, row)
 
   case 'a':
     brd->readlevel = 0;
-    brd->postlevel = PERM_POST;		/* 一般看板發表權限為 PERM_POST */
-    brd->battr &= ~(BRD_NOSTAT | BRD_NOVOTE);	/* 拿掉好友＆秘密板屬性 */
+    brd->postlevel = PERM_POST;               /* 一般看板發表權限為 PERM_POST */
+    brd->battr &= ~(BRD_NOSTAT | BRD_NOVOTE); /* 拿掉好友＆秘密板屬性 */
     break;
 
   case 'b':
@@ -849,7 +818,7 @@ brd_set(brd, row)
     }
     break;
 
-  default:	/* 預設不變動 */
+  default: /* 預設不變動 */
     break;
   }
 
@@ -859,10 +828,9 @@ brd_set(brd, row)
   return 0;
 }
 
-
-int			/* 0:開板成功 -1:開板失敗 */
-brd_new(brd)
-  BRD *brd;
+int /* 0:開板成功 -1:開板失敗 */
+    brd_new(brd)
+        BRD *brd;
 {
   int bno;
   char fpath[64];
@@ -902,20 +870,19 @@ brd_new(brd)
   mak_dirs(fpath);
   mak_dirs(fpath + 4);
 
-  bshm_reload();		/* force reload of bcache */
+  bshm_reload(); /* force reload of bcache */
 
   brh_save();
-  board_main();			/* reload brd_bits[] */
+  board_main(); /* reload brd_bits[] */
 
   return 0;
 }
 
-
 static void
-brd_classchange(folder, oldname, newbrd)	/* itoc.020117: 異動 @Class 中的看板 */
-  char *folder;
-  char *oldname;
-  BRD *newbrd;		/* 若為 NULL，表示要刪除看板 */
+    brd_classchange(folder, oldname, newbrd) /* itoc.020117: 異動 @Class 中的看板 */
+    char *folder;
+char *oldname;
+BRD *newbrd; /* 若為 NULL，表示要刪除看板 */
 {
   int pos, xmode;
   char fpath[64];
@@ -926,23 +893,23 @@ brd_classchange(folder, oldname, newbrd)	/* itoc.020117: 異動 @Class 中的看
   {
     xmode = hdr.xmode & (GEM_BOARD | GEM_FOLDER);
 
-    if (xmode == (GEM_BOARD | GEM_FOLDER))	/* 看板精華區捷徑 */
+    if (xmode == (GEM_BOARD | GEM_FOLDER)) /* 看板精華區捷徑 */
     {
       if (!strcmp(hdr.xname, oldname))
       {
-	if (newbrd)	/* 看板更名 */
-	{
-	  brd2gem(newbrd, &hdr);
-	  rec_put(folder, &hdr, sizeof(HDR), pos, NULL);
-	}
-	else		/* 看板刪除 */
-	{
-	  rec_del(folder, sizeof(HDR), pos, NULL);
-	  continue;	/* rec_del 以後不需要 pos++ */
-	}
+        if (newbrd) /* 看板更名 */
+        {
+          brd2gem(newbrd, &hdr);
+          rec_put(folder, &hdr, sizeof(HDR), pos, NULL);
+        }
+        else /* 看板刪除 */
+        {
+          rec_del(folder, sizeof(HDR), pos, NULL);
+          continue; /* rec_del 以後不需要 pos++ */
+        }
       }
     }
-    else if (xmode == GEM_FOLDER)		/* 分類 recursive 進去砍 */
+    else if (xmode == GEM_FOLDER) /* 分類 recursive 進去砍 */
     {
       hdr_fpath(fpath, folder, &hdr);
       brd_classchange(fpath, oldname, newbrd);
@@ -951,19 +918,18 @@ brd_classchange(folder, oldname, newbrd)	/* itoc.020117: 異動 @Class 中的看
   }
 }
 
-
 void
-brd_edit(bno)
-  int bno;
+    brd_edit(bno) int bno;
 {
   BRD *bhdr, newbh;
-  char *bname, src[64], dst[64];;
+  char *bname, src[64], dst[64];
+  ;
 
   vs_bar("看板設定");
   bhdr = bshm->bcache + bno;
   memcpy(&newbh, bhdr, sizeof(BRD));
   prints("看板名稱：%s\n看板說明：[%s] %s\n板主名單：%s\n",
-    newbh.brdname, newbh.class, newbh.title, newbh.BM);
+         newbh.brdname, newbh.class, newbh.title, newbh.BM);
 
   bitmsg(MSG_READPERM, STR_PERM, newbh.readlevel);
   bitmsg(MSG_POSTPERM, STR_PERM, newbh.postlevel);
@@ -980,24 +946,24 @@ brd_edit(bno)
     else
     {
       bname = bhdr->brdname;
-      if (*bname)	/* itoc.000512: 同時砍除同一個看板會造成精華區、看板全毀 */
+      if (*bname) /* itoc.000512: 同時砍除同一個看板會造成精華區、看板全毀 */
       {
-	alog("刪除看板", bname);
+        alog("刪除看板", bname);
 
-	gem_fpath(src, bname, NULL);
-	f_rm(src);
-	f_rm(src + 4);
-	brd_classchange("gem/@/@"CLASS_INIFILE, bname, NULL);	/* itoc.020117: 刪除 @Class 中的看板精華區捷徑 */
-	memset(&newbh, 0, sizeof(BRD));
-	sprintf(newbh.title, "[%s] deleted by %s", bname, cuser.userid);
-	memcpy(bhdr, &newbh, sizeof(BRD));
-	rec_put(FN_BRD, &newbh, sizeof(BRD), bno, NULL);
+        gem_fpath(src, bname, NULL);
+        f_rm(src);
+        f_rm(src + 4);
+        brd_classchange("gem/@/@" CLASS_INIFILE, bname, NULL); /* itoc.020117: 刪除 @Class 中的看板精華區捷徑 */
+        memset(&newbh, 0, sizeof(BRD));
+        sprintf(newbh.title, "[%s] deleted by %s", bname, cuser.userid);
+        memcpy(bhdr, &newbh, sizeof(BRD));
+        rec_put(FN_BRD, &newbh, sizeof(BRD), bno, NULL);
 
-	/* itoc.050531: 砍板會造成看板不是按字母排序，所以要修正 numberOld */
-	if (bshm->numberOld > bno)
-	  bshm->numberOld = bno;
+        /* itoc.050531: 砍板會造成看板不是按字母排序，所以要修正 numberOld */
+        if (bshm->numberOld > bno)
+          bshm->numberOld = bno;
 
-	vmsg("刪板完畢");
+        vmsg("刪板完畢");
       }
     }
     break;
@@ -1011,22 +977,22 @@ brd_edit(bno)
     {
       if (memcmp(&newbh, bhdr, sizeof(BRD)) && vans(msg_sure_ny) == 'y')
       {
-	bname = bhdr->brdname;
-	if (strcmp(bname, newbh.brdname))	/* 看板更名要移目錄 */
-	{
-	  /* Thor.980806: 特別注意如果看板不在同一partition裡的話會有問題 */
-	  gem_fpath(src, bname, NULL);
-	  gem_fpath(dst, newbh.brdname, NULL);
-	  rename(src, dst);
-	  rename(src + 4, dst + 4);
-	  brd_classchange("gem/@/@"CLASS_INIFILE, bname, &newbh);/* itoc.050329: 異動 @Class 中的看板精華區捷徑 */
+        bname = bhdr->brdname;
+        if (strcmp(bname, newbh.brdname)) /* 看板更名要移目錄 */
+        {
+          /* Thor.980806: 特別注意如果看板不在同一partition裡的話會有問題 */
+          gem_fpath(src, bname, NULL);
+          gem_fpath(dst, newbh.brdname, NULL);
+          rename(src, dst);
+          rename(src + 4, dst + 4);
+          brd_classchange("gem/@/@" CLASS_INIFILE, bname, &newbh); /* itoc.050329: 異動 @Class 中的看板精華區捷徑 */
 
-	  /* itoc.050520: 改了板名會造成看板不是按字母排序，所以要修正 numberOld */
-	  if (bshm->numberOld > bno)
-	    bshm->numberOld = bno;
-	}
-	memcpy(bhdr, &newbh, sizeof(BRD));
-	rec_put(FN_BRD, &newbh, sizeof(BRD), bno, NULL);
+          /* itoc.050520: 改了板名會造成看板不是按字母排序，所以要修正 numberOld */
+          if (bshm->numberOld > bno)
+            bshm->numberOld = bno;
+        }
+        memcpy(bhdr, &newbh, sizeof(BRD));
+        rec_put(FN_BRD, &newbh, sizeof(BRD), bno, NULL);
       }
     }
     vmsg("設定完畢");
@@ -1034,10 +1000,9 @@ brd_edit(bno)
   }
 }
 
-
 void
-brd_title(bno)		/* itoc.000312: 板主修改中文敘述 */
-  int bno;
+    brd_title(bno) /* itoc.000312: 板主修改中文敘述 */
+    int bno;
 {
   BRD *bhdr, newbh;
   char *blist;

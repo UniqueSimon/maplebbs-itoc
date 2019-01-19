@@ -432,11 +432,18 @@ sover_post(sover)
     }
   }
 
-  if (sover->charset[0] == 'g')
+  /* simon.190120.注释: 编码从GBK改为Big5 */
+  // if (sover->charset[0] == 'g')
+  // {
+  //   b52gb(BODY);
+  //   b52gb(sover->from);
+  //   b52gb(sover->title);
+  // }
+  if (sover->charset[0] == 'b')
   {
-    b52gb(BODY);
-    b52gb(sover->from);
-    b52gb(sover->title);
+    gb2b5(BODY);
+    gb2b5(sover->from);
+    gb2b5(sover->title);
   }
 
   return 0;

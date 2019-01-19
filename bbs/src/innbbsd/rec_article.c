@@ -8,46 +8,38 @@
 /* modify : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
 /*-------------------------------------------------------*/
 
-
 #if 0
    收到之文章內容和檔頭分別在
    內文 (body)   在 char *BODY
    檔頭 (header) 在 char *SUBJECT, *FROM, *SITE, *DATE, *PATH, *GROUP, *MSGID, *POSTHOST, *CONTROL;
 #endif
 
-
 #include "innbbsconf.h"
 #include "bbslib.h"
 #include "inntobbs.h"
-
 
 /* ----------------------------------------------------- */
 /* board：shm 部份須與 cache.c 相容			 */
 /* ----------------------------------------------------- */
 
-
 static BCACHE *bshm;
 
-
-void
-init_bshm()
+void init_bshm()
 {
   /* itoc.030727: 在開啟 bbsd 之前，應該就要執行過 account，
      所以 bshm 應該已設定好 */
 
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-  if (bshm->uptime <= 0)	/* bshm 未設定完成 */
+  if (bshm->uptime <= 0) /* bshm 未設定完成 */
     exit(0);
 }
-
 
 /* ----------------------------------------------------- */
 /* 處理 DATE						 */
 /* ----------------------------------------------------- */
 
-
-#if 0	/* itoc.030303.註解: RFC 822 的 DATE 欄位；RFC 1123 將 year 改成 4-DIGIT */
+#if 0 /* itoc.030303.註解: RFC 822 的 DATE 欄位；RFC 1123 將 year 改成 4-DIGIT */
 
 date-time := [ wday "," ] date time ; dd mm yy, hh:mm:ss zzz 
 wday      :=  "Mon" / "Tue" / "Wed" / "Thu" / "Fri" / "Sat" / "Sun" 
@@ -62,7 +54,7 @@ zone      :=  "UT" / "GMT" / "EST" / "EDT" / "CST" / "CDT" / "MST" / "MDT" / "PS
 static time_t datevalue;
 
 static void
-parse_date()		/* 把符合 "dd mmm yyyy hh:mm:ss" 的格式，轉成 time_t */
+parse_date() /* 把符合 "dd mmm yyyy hh:mm:ss" 的格式，轉成 time_t */
 {
   static char months[12][4] = {"jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"};
   int i;
@@ -70,7 +62,7 @@ parse_date()		/* 把符合 "dd mmm yyyy hh:mm:ss" 的格式，轉成 time_t */
   struct tm ptime;
 
   str_ncpy(buf, DATE, sizeof(buf));
-  str_lower(buf, buf);			/* 通通換小寫，因為 Dec DEC dec 各種都有人用 */
+  str_lower(buf, buf); /* 通通換小寫，因為 Dec DEC dec 各種都有人用 */
 
   str = buf + 2;
   for (i = 0; i < 12; i++)
@@ -86,7 +78,7 @@ parse_date()		/* 把符合 "dd mmm yyyy hh:mm:ss" 的格式，轉成 time_t */
     ptime.tm_sec = atoi(ptr + 15);
     ptime.tm_min = atoi(ptr + 12);
     ptime.tm_hour = atoi(ptr + 9);
-    ptime.tm_mday = (ptr == buf + 2 || ptr == buf + 7) ? atoi(ptr - 2) : atoi(ptr - 3);	/* RFC 822 允許 mday 是 1- 或 2- DIGIT */
+    ptime.tm_mday = (ptr == buf + 2 || ptr == buf + 7) ? atoi(ptr - 2) : atoi(ptr - 3); /* RFC 822 允許 mday 是 1- 或 2- DIGIT */
     ptime.tm_mon = i;
     ptime.tm_year = atoi(ptr + 4) - 1900;
     ptime.tm_isdst = 0;
@@ -107,7 +99,7 @@ parse_date()		/* 把符合 "dd mmm yyyy hh:mm:ss" 的格式，轉成 time_t */
       /* 如果有 -1000 (HST) 等註明時區，先調回 GMT 時區 */
       datevalue += ((ptr[1] - '0') * 10 + (ptr[2] - '0')) * 3600 + ((ptr[3] - '0') * 10 + (ptr[4] - '0')) * 60;
     }
-    datevalue += 28800;		/* 台灣所在的 CST 時區比 GMT 快八小時 */
+    datevalue += 28800; /* 台灣所在的 CST 時區比 GMT 快八小時 */
   }
   else
   {
@@ -117,15 +109,12 @@ parse_date()		/* 把符合 "dd mmm yyyy hh:mm:ss" 的格式，轉成 time_t */
   }
 }
 
-
 /* ----------------------------------------------------- */
 /* process post write					 */
 /* ----------------------------------------------------- */
 
-
 static void
-update_btime(brdname)
-  char *brdname;
+    update_btime(brdname) char *brdname;
 {
   BRD *brdp, *bend;
 
@@ -141,10 +130,9 @@ update_btime(brdname)
   } while (++brdp < bend);
 }
 
-
 static void
-bbspost_add(board, addr, nick)
-  char *board, *addr, *nick;
+    bbspost_add(board, addr, nick) char *board,
+    *addr, *nick;
 {
   int cc;
   char *str;
@@ -173,9 +161,9 @@ bbspost_add(board, addr, nick)
     {
       if (cc == '.')
       {
-	/* for line beginning with a period, collapse the doubled period to a single one. */
-	if (str >= BODY + 2 && str[-1] == '.' && str[-2] == '\n')
-	  continue;
+        /* for line beginning with a period, collapse the doubled period to a single one. */
+        if (str >= BODY + 2 && str[-1] == '.' && str[-2] == '\n')
+          continue;
       }
 
       fputc(cc, fp);
@@ -191,7 +179,7 @@ bbspost_add(board, addr, nick)
   /* Thor.980825: 防止字串太長蓋過頭 */
   str_ncpy(hdr.owner, addr, sizeof(hdr.owner));
   str_ncpy(hdr.nick, nick, sizeof(hdr.nick));
-  str_stamp(hdr.date, &datevalue);	/* 依 DATE: 欄位的日期，與 hdr.chrono 不同步 */
+  str_stamp(hdr.date, &datevalue); /* 依 DATE: 欄位的日期，與 hdr.chrono 不同步 */
   str_ncpy(hdr.title, SUBJECT, sizeof(hdr.title));
 
   rec_bot(folder, &hdr, sizeof(HDR));
@@ -201,17 +189,15 @@ bbspost_add(board, addr, nick)
   HISadd(MSGID, board, hdr.xname);
 }
 
-
 /* ----------------------------------------------------- */
 /* process cancel write					 */
 /* ----------------------------------------------------- */
 
-
 #ifdef _KEEP_CANCEL_
 static inline void
-move_post(hdr, board, filename)
-  HDR *hdr;
-  char *board, *filename;
+    move_post(hdr, board, filename)
+        HDR *hdr;
+char *board, *filename;
 {
   HDR post;
   char folder[64];
@@ -230,12 +216,10 @@ move_post(hdr, board, filename)
 }
 #endif
 
-
 static void
-bbspost_cancel(board, chrono, fpath)
-  char *board;
-  time_t chrono;
-  char *fpath;
+    bbspost_cancel(board, chrono, fpath) char *board;
+time_t chrono;
+char *fpath;
 {
   HDR hdr;
   struct stat st;
@@ -256,7 +240,7 @@ bbspost_cancel(board, chrono, fpath)
 
   fstat(fd, &st);
   size = sizeof(HDR);
-  ent = ((long) st.st_size) / size;
+  ent = ((long)st.st_size) / size;
 
   /* itoc.030307.註解: 去 .DIR 中藉由比對 chrono 找出是哪一篇 */
 
@@ -271,43 +255,43 @@ bbspost_cancel(board, chrono, fpath)
     if (read(fd, &hdr, size) != size)
       break;
 
-    if (hdr.chrono <= chrono)	/* 落在這個 block 裡 */
+    if (hdr.chrono <= chrono) /* 落在這個 block 裡 */
     {
       do
       {
-	if (hdr.chrono == chrono)
-	{
-	  /* Thor.981014: mark 的文章不被 cancel */
-	  if (hdr.xmode & POST_MARKED)
-	    break;
+        if (hdr.chrono == chrono)
+        {
+          /* Thor.981014: mark 的文章不被 cancel */
+          if (hdr.xmode & POST_MARKED)
+            break;
 
 #ifdef _KEEP_CANCEL_
-	  /* itoc.030613: 保留被 cancel 的文章於 [deleted] */
-	  move_post(&hdr, BN_DELETED, fpath);
+          /* itoc.030613: 保留被 cancel 的文章於 [deleted] */
+          move_post(&hdr, BN_DELETED, fpath);
 #else
-	  unlink(fpath);
+          unlink(fpath);
 #endif
 
-	  update_btime(board);
+          update_btime(board);
 
-	  /* itoc.030307: 被 cancel 的文章不保留 header */
+          /* itoc.030307: 被 cancel 的文章不保留 header */
 
-	  off = lseek(fd, 0, SEEK_CUR);
-	  len = st.st_size - off;
+          off = lseek(fd, 0, SEEK_CUR);
+          len = st.st_size - off;
 
-	  board = (char *) malloc(len);
-	  read(fd, board, len);
+          board = (char *)malloc(len);
+          read(fd, board, len);
 
-	  lseek(fd, off - size, SEEK_SET);
-	  write(fd, board, len);
-	  ftruncate(fd, st.st_size - size);
+          lseek(fd, off - size, SEEK_SET);
+          write(fd, board, len);
+          ftruncate(fd, st.st_size - size);
 
-	  free(board);
-	  break;
-	}
+          free(board);
+          break;
+        }
 
-	if (hdr.chrono > chrono)
-	  break;
+        if (hdr.chrono > chrono)
+          break;
       } while (read(fd, &hdr, size) == size);
 
       break;
@@ -322,10 +306,8 @@ bbspost_cancel(board, chrono, fpath)
   return;
 }
 
-
-int			/* 0:cancel success  -1:cancel fail */
-cancel_article(msgid)
-  char *msgid;
+int /* 0:cancel success  -1:cancel fail */
+    cancel_article(msgid) char *msgid;
 {
   int fd;
   char fpath[64], cancelfrom[128], buffer[128];
@@ -340,7 +322,7 @@ cancel_article(msgid)
 
   /* XLOG("cancel %s (%s)\n", cancelfrom, buffer); */
 
-  sprintf(fpath, "brd/%s/%c/%s", board, xname[7], xname);	/* 去找出那篇文章 */
+  sprintf(fpath, "brd/%s/%c/%s", board, xname[7], xname); /* 去找出那篇文章 */
 
   /* XLOG("cancel fpath (%s)\n", fpath); */
 
@@ -359,21 +341,21 @@ cancel_article(msgid)
       xfrom = buffer + 8;
       if (str = strchr(xfrom, ' '))
       {
-	*str = '\0';
+        *str = '\0';
 
 #ifdef _NoCeM_
-	/* gslin.000607: ncm_issuer 可以砍別站發的信 */
-	if (strcmp(xfrom, cancelfrom) && !search_issuer(FROM, NULL))
+        /* gslin.000607: ncm_issuer 可以砍別站發的信 */
+        if (strcmp(xfrom, cancelfrom) && !search_issuer(FROM, NULL))
 #else
-	if (strcmp(xfrom, cancelfrom))
+        if (strcmp(xfrom, cancelfrom))
 #endif
-	{
-	  /* itoc.030107.註解: 若 cancelfrom 和本地文章 header 記錄的 xfrom 不同，就是 fake cancel */
-	  bbslog("<rec_article> :Warn: 無效的 cancel：%s, sender: %s, path: %s\n", xfrom, FROM, PATH);
-	  return -1;
-	}
+        {
+          /* itoc.030107.註解: 若 cancelfrom 和本地文章 header 記錄的 xfrom 不同，就是 fake cancel */
+          bbslog("<rec_article> :Warn: 無效的 cancel：%s, sender: %s, path: %s\n", xfrom, FROM, PATH);
+          return -1;
+        }
 
-	bbspost_cancel(board, chrono32(xname), fpath);
+        bbspost_cancel(board, chrono32(xname), fpath);
       }
     }
   }
@@ -381,15 +363,13 @@ cancel_article(msgid)
   return 0;
 }
 
-
 /* ----------------------------------------------------- */
 /* check spam rule					 */
 /* ----------------------------------------------------- */
 
-
-static int		/* 1: 符合擋信規則 */
-is_spam(board, addr, nick)
-  char *board, *addr, *nick;
+static int /* 1: 符合擋信規則 */
+    is_spam(board, addr, nick) char *board,
+    *addr, *nick;
 {
   spamrule_t *spam;
   int i, xmode;
@@ -422,9 +402,9 @@ is_spam(board, addr, nick)
       compare = MSGID;
     else if (xmode & INN_SPAMBODY)
       compare = BODY;
-    else if (xmode & INN_SPAMSITE && SITE)		/* SITE 可以是 NULL */
+    else if (xmode & INN_SPAMSITE && SITE) /* SITE 可以是 NULL */
       compare = SITE;
-    else if (xmode & INN_SPAMPOSTHOST && POSTHOST)	/* POSTHOST 可以是 NULL */
+    else if (xmode & INN_SPAMPOSTHOST && POSTHOST) /* POSTHOST 可以是 NULL */
       compare = POSTHOST;
     else
       continue;
@@ -435,18 +415,15 @@ is_spam(board, addr, nick)
   return 0;
 }
 
-
 /* ----------------------------------------------------- */
 /* process receive article				 */
 /* ----------------------------------------------------- */
 
-
 #ifndef _NoCeM_
-static 
+static
 #endif
-newsfeeds_t *
-search_newsfeeds_bygroup(newsgroup)
-  char *newsgroup;
+    newsfeeds_t *
+        search_newsfeeds_bygroup(newsgroup) char *newsgroup;
 {
   newsfeeds_t nf, *find;
 
@@ -457,8 +434,7 @@ search_newsfeeds_bygroup(newsgroup)
   return NULL;
 }
 
-
-int				/* 0:success  -1:fail */
+int /* 0:success  -1:fail */
 receive_article()
 {
   newsfeeds_t *nf;
@@ -473,50 +449,59 @@ receive_article()
     if (!(nf = search_newsfeeds_bygroup(group)))
       continue;
 
-    if (firstboard)	/* opus: 第一個板才需要處理 */
+    if (firstboard) /* opus: 第一個板才需要處理 */
     {
-      /* Thor.980825: gc patch: lib/str_decode 只能接受 decode 完 strlen < 256 */ 
+      /* Thor.980825: gc patch: lib/str_decode 只能接受 decode 完 strlen < 256 */
 
       str_ncpy(poolx, SUBJECT, 255);
       str_decode(poolx);
-      str_ansi(mysubject, poolx, 70);	/* 70 是 bbspost_add() 標題所需的長度 */
+      str_ansi(mysubject, poolx, 70); /* 70 是 bbspost_add() 標題所需的長度 */
       SUBJECT = mysubject;
 
       str_ncpy(poolx, FROM, 255);
       str_decode(poolx);
-      str_ansi(myfrom, poolx, 128);	/* 雖然 bbspost_add() 發信人所需的長度只需要 50，但是 str_from() 需要長一些 */
+      str_ansi(myfrom, poolx, 128); /* 雖然 bbspost_add() 發信人所需的長度只需要 50，但是 str_from() 需要長一些 */
       FROM = myfrom;
 
       /* itoc.030218.註解: 處理「發信站」中的時間 */
       parse_date();
-      strcpy(mydate, (char *) Btime(&datevalue));
+      strcpy(mydate, (char *)Btime(&datevalue));
       DATE = mydate;
 
-      if (*nf->charset == 'g')
+      /* simon.190120.注释: 编码从Big5改为GBK */
+      // if (*nf->charset == 'g')
+      // {
+      //   gb2b5(BODY);
+      //   gb2b5(FROM);
+      //   gb2b5(SUBJECT);
+      //   if (SITE)
+      //     gb2b5(SITE);
+      // }
+      if (*nf->charset == 'b')
       {
-	gb2b5(BODY);
-	gb2b5(FROM);
-	gb2b5(SUBJECT);
-	if (SITE)
-	  gb2b5(SITE);
+        b52gb(BODY);
+        b52gb(FROM);
+        b52gb(SUBJECT);
+        if (SITE)
+          b52gb(SITE);
       }
-
+      
       strcpy(poolx, FROM);
       str_from(poolx, myaddr, mynick);
 
       if (is_spam(nf->board, myaddr, mynick))
       {
 #ifdef _KEEP_CANCEL_
-	bbspost_add(BN_DELETED, myaddr, mynick);
+        bbspost_add(BN_DELETED, myaddr, mynick);
 #endif
-	break;
+        break;
       }
 
       firstboard = 0;
     }
 
     bbspost_add(nf->board, myaddr, mynick);
-  }		/* for board1,board2,... */
+  } /* for board1,board2,... */
 
   return 0;
 }
