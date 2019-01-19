@@ -14,16 +14,16 @@ extern XZ xz[];
 extern char xo_pool[];
 
 
-static int pal_max = 0;		/* §Y cutmp->pal_max¡A¦]¬°¤Ó±`ÀË¬dªB¤Í¦W³æ¡A©Ò¥H°O¤U¨Ó¥[³t */
-static int *pal_pool = NULL;	/* §Y cutmp->pal_spool¡A¦]¬°¤Ó±`ÀË¬dªB¤Í¦W³æ¡A©Ò¥H°O¤U¨Ó¥[³t */
+static int pal_max = 0;		/* å³ cutmp->pal_maxï¼Œå› ç‚ºå¤ªå¸¸æª¢æŸ¥æœ‹å‹åå–®ï¼Œæ‰€ä»¥è¨˜ä¸‹ä¾†åŠ é€Ÿ */
+static int *pal_pool = NULL;	/* å³ cutmp->pal_spoolï¼Œå› ç‚ºå¤ªå¸¸æª¢æŸ¥æœ‹å‹åå–®ï¼Œæ‰€ä»¥è¨˜ä¸‹ä¾†åŠ é€Ÿ */
 
 
 /* ----------------------------------------------------- */
-/* ªB¤Í§P§O						 */
+/* æœ‹å‹åˆ¤åˆ¥						 */
 /* ----------------------------------------------------- */
 
 
-static int			/* 1: userno ¦b pool ¦W³æ¤W */
+static int			/* 1: userno åœ¨ pool åå–®ä¸Š */
 belong_pal(pool, max, userno)
   int *pool;
   int max;
@@ -54,7 +54,7 @@ belong_pal(pool, max, userno)
 
 
 int
-is_mygood(userno)		/*  1: §Ú³]¹ï¤è¬°¦n¤Í */
+is_mygood(userno)		/*  1: æˆ‘è¨­å°æ–¹ç‚ºå¥½å‹ */
   int userno;
 {
   return belong_pal(pal_pool, pal_max, userno);
@@ -62,7 +62,7 @@ is_mygood(userno)		/*  1: §Ú³]¹ï¤è¬°¦n¤Í */
 
 
 int
-is_mybad(userno)		/*  1: §Ú³]¹ï¤è¬°Ãa¤H */
+is_mybad(userno)		/*  1: æˆ‘è¨­å°æ–¹ç‚ºå£äºº */
   int userno;
 {
 #ifdef HAVE_BADPAL
@@ -74,7 +74,7 @@ is_mybad(userno)		/*  1: §Ú³]¹ï¤è¬°Ãa¤H */
 
 
 int
-is_ogood(up)			/* 1: ¹ï¤è³]§Ú¬°¦n¤Í */
+is_ogood(up)			/* 1: å°æ–¹è¨­æˆ‘ç‚ºå¥½å‹ */
   UTMP *up;
 {
   return belong_pal(up->pal_spool, up->pal_max, cuser.userno);
@@ -82,7 +82,7 @@ is_ogood(up)			/* 1: ¹ï¤è³]§Ú¬°¦n¤Í */
 
 
 int
-is_obad(up)			/* 1: ¹ï¤è³]§Ú¬°Ãa¤H */
+is_obad(up)			/* 1: å°æ–¹è¨­æˆ‘ç‚ºå£äºº */
   UTMP *up;
 {
 #ifdef HAVE_BADPAL
@@ -95,7 +95,7 @@ is_obad(up)			/* 1: ¹ï¤è³]§Ú¬°Ãa¤H */
 
 #ifdef HAVE_MODERATED_BOARD
 int
-is_bgood(bpal)			/* 1: §Ú¬O¸ÓªOªºªO¦n */
+is_bgood(bpal)			/* 1: æˆ‘æ˜¯è©²æ¿çš„æ¿å¥½ */
   BPAL *bpal;
 {
   return belong_pal(bpal->pal_spool, bpal->pal_max, cuser.userno);
@@ -103,7 +103,7 @@ is_bgood(bpal)			/* 1: §Ú¬O¸ÓªOªºªO¦n */
 
 
 int
-is_bbad(bpal)			/* 1: §Ú¬O¸ÓªOªºªOÃa */
+is_bbad(bpal)			/* 1: æˆ‘æ˜¯è©²æ¿çš„æ¿å£ */
   BPAL *bpal;
 {
 #ifdef HAVE_BADPAL
@@ -116,7 +116,7 @@ is_bbad(bpal)			/* 1: §Ú¬O¸ÓªOªºªOÃa */
 
 
 /* ----------------------------------------------------- */
-/* ªB¤Í¦W³æ¡G·s¼W¡B§R°£¡B­×§ï¡B¸ü¤J¡B¦P¨B		 */
+/* æœ‹å‹åå–®ï¼šæ–°å¢ã€åˆªé™¤ã€ä¿®æ”¹ã€è¼‰å…¥ã€åŒæ­¥		 */
 /* ----------------------------------------------------- */
 
 
@@ -141,7 +141,7 @@ image_pal(fpath, pool)
 
   if (fimage = f_img(fpath, &fsize))
   {
-    if (fsize <= PAL_MAX * sizeof(PAL))	/* ¦pªG¶W¹L PAL_MAX¡A´N¤£¸ü¤J */
+    if (fsize <= PAL_MAX * sizeof(PAL))	/* å¦‚æœè¶…é PAL_MAXï¼Œå°±ä¸è¼‰å…¥ */
     {
       plist = pool;
       phead = (PAL *) fimage;
@@ -150,7 +150,7 @@ image_pal(fpath, pool)
 
       do
       {
-	/* ­Y¬OÃa¤H¡A¦s -userno¡F­Y¬O¦n¤Í¡A¦s +userno */
+	/* è‹¥æ˜¯å£äººï¼Œå­˜ -usernoï¼›è‹¥æ˜¯å¥½å‹ï¼Œå­˜ +userno */
 	*plist++ = (phead->ftype & PAL_BAD) ? -(phead->userno) : phead->userno;
       } while (++phead < ptail);
 
@@ -177,7 +177,7 @@ pal_cache()
 {
   char fpath[64];
 
-  if (!pal_pool)	/* ²Ä¤@¦¸³]©w¡A¬O¦b utmp_new() ¸Ì­± */
+  if (!pal_pool)	/* ç¬¬ä¸€æ¬¡è¨­å®šï¼Œæ˜¯åœ¨ utmp_new() è£¡é¢ */
     pal_pool = cutmp->pal_spool;
 
   usr_fpath(fpath, cuser.userid, fn_pal);
@@ -227,13 +227,13 @@ pal_list(reciper)
   for (;;)
   {
 #ifdef HAVE_LIST
-    switch (ch = vget(1, 0, "(A)¼W¥[ (D)§R°£ (F)¦n¤Í (G)¸s²Õ (M)©w®× (1~5)¯S§O¦W³æ (Q)¨ú®ø¡H[M] ", buf, 3, LCECHO))
+    switch (ch = vget(1, 0, "(A)å¢åŠ  (D)åˆªé™¤ (F)å¥½å‹ (G)ç¾¤çµ„ (M)å®šæ¡ˆ (1~5)ç‰¹åˆ¥åå–® (Q)å–æ¶ˆï¼Ÿ[M] ", buf, 3, LCECHO))
 #else
-    switch (vget(1, 0, "(A)¼W¥[ (D)§R°£ (F)¦n¤Í (G)¸s²Õ (M)©w®× (Q)¨ú®ø¡H[M] ", buf, 3, LCECHO))
+    switch (vget(1, 0, "(A)å¢åŠ  (D)åˆªé™¤ (F)å¥½å‹ (G)ç¾¤çµ„ (M)å®šæ¡ˆ (Q)å–æ¶ˆï¼Ÿ[M] ", buf, 3, LCECHO))
 #endif
     {
     case 'a':
-      while (acct_get("½Ğ¿é¤J¥N¸¹(¥u«ö ENTER µ²§ô·s¼W): ", &acct) > 0)
+      while (acct_get("è«‹è¼¸å…¥ä»£è™Ÿ(åªæŒ‰ ENTER çµæŸæ–°å¢): ", &acct) > 0)
       {
 	if (!ll_has(acct.userid))
 	{
@@ -247,7 +247,7 @@ pal_list(reciper)
     case 'd':
       while (reciper)
       {
-	if (!vget(1, 0, "½Ğ¿é¤J¥N¸¹(¥u«ö ENTER µ²§ô§R°£): ", buf, IDLEN + 1, GET_LIST))
+	if (!vget(1, 0, "è«‹è¼¸å…¥ä»£è™Ÿ(åªæŒ‰ ENTER çµæŸåˆªé™¤): ", buf, IDLEN + 1, GET_LIST))
 	  break;
 	if (ll_del(buf))
 	  reciper--;
@@ -261,13 +261,13 @@ pal_list(reciper)
     case '3':
     case '4':
     case '5':
-      /* itoc.010923: ¤Ş¥Î¯S§O¦W³æ¡A¶¶«K¨Ï¥Î¸s²Õ±ø¥ó */
+      /* itoc.010923: å¼•ç”¨ç‰¹åˆ¥åå–®ï¼Œé †ä¾¿ä½¿ç”¨ç¾¤çµ„æ¢ä»¶ */
       sprintf(buf, "%s.%c", FN_LIST, ch);
       usr_fpath(fpath, cuser.userid, buf);
 #endif
 
     case 'g':
-      if (userno = vget(b_lines, 0, "¸s²Õ±ø¥ó¡G", buf, 16, DOECHO))
+      if (userno = vget(b_lines, 0, "ç¾¤çµ„æ¢ä»¶ï¼š", buf, 16, DOECHO))
 	str_lowest(buf, buf);
 
     case 'f':
@@ -311,7 +311,7 @@ pal_list(reciper)
 
 
 /* ----------------------------------------------------- */
-/* ªB¤Í¦W³æ¡G¿ï³æ¦¡¾Ş§@¬É­±´y­z				 */
+/* æœ‹å‹åå–®ï¼šé¸å–®å¼æ“ä½œç•Œé¢æè¿°				 */
 /* ----------------------------------------------------- */
 
 
@@ -327,11 +327,11 @@ pal_item(num, pal)
   UTMP *online = utmp_get(pal->userno, NULL);
 
   prints("%6d%c%-3s%s%-14s%s%s\n", 
-    num, tag_char(pal->userno), pal->ftype & PAL_BAD ? "¢æ" : "", 
+    num, tag_char(pal->userno), pal->ftype & PAL_BAD ? "ï¼¸" : "", 
     online ? COLOR7 : "", pal->userid, online ? str_ransi : "", pal->ship);
 #else
   prints("%6d%c%-3s%-14s%s\n", 
-    num, tag_char(pal->userno), pal->ftype & PAL_BAD ? "¢æ" : "", pal->userid, pal->ship);
+    num, tag_char(pal->userno), pal->ftype & PAL_BAD ? "ï¼¸" : "", pal->userid, pal->ship);
 #endif
 }
 
@@ -346,7 +346,7 @@ pal_body(xo)
   max = xo->max;
   if (max <= 0)
   {
-    if (vans("­n¥æ·sªB¤Í¶Ü(Y/N)¡H[N] ") == 'y')
+    if (vans("è¦äº¤æ–°æœ‹å‹å—(Y/N)ï¼Ÿ[N] ") == 'y')
       return pal_add(xo);
     return XO_QUIT;
   }
@@ -365,7 +365,7 @@ pal_body(xo)
   clrtobot();
 
   /* return XO_NONE; */
-  return XO_FOOT;	/* itoc.010403: §â b_lines ¶ñ¤W feeter */
+  return XO_FOOT;	/* itoc.010403: æŠŠ b_lines å¡«ä¸Š feeter */
 }
 
 
@@ -373,7 +373,7 @@ static int
 pal_head(xo)
   XO *xo;
 {
-  char *head[] = {"ªB¤Í¦W³æ", "¸s²Õ¦W³æ", "ªO¤Í¦W³æ", "­­¨î§ë²¼¦W³æ"};
+  char *head[] = {"æœ‹å‹åå–®", "ç¾¤çµ„åå–®", "æ¿å‹åå–®", "é™åˆ¶æŠ•ç¥¨åå–®"};
 
   vs_head(head[xo->key], str_site);
   prints(NECKER_PAL, d_cols, "");
@@ -407,19 +407,19 @@ pal_edit(key, pal, echo)
 {
   if (echo == DOECHO)
     memset(pal, 0, sizeof(PAL));
-  vget(b_lines, 0, "¤Í½Ë¡G", pal->ship, sizeof(pal->ship), echo);
+  vget(b_lines, 0, "å‹èª¼ï¼š", pal->ship, sizeof(pal->ship), echo);
 #ifdef HAVE_BADPAL
-  if (key != PALTYPE_VOTE)	/* ­­¨î§ë²¼¦W³æ¨S¦³Ãa¤H */
-    pal->ftype = vans("Ãa¤H(Y/N)¡H[N] ") == 'y' ? PAL_BAD : 0;
+  if (key != PALTYPE_VOTE)	/* é™åˆ¶æŠ•ç¥¨åå–®æ²’æœ‰å£äºº */
+    pal->ftype = vans("å£äºº(Y/N)ï¼Ÿ[N] ") == 'y' ? PAL_BAD : 0;
   else
 #endif
     pal->ftype = 0;
 }
 
 
-/* static */ 			/* itoc.020117: µ¹ vote.c ¥Î */
+/* static */ 			/* itoc.020117: çµ¦ vote.c ç”¨ */
 int
-pal_find(fpath, userno)		/* itoc.010923: ªB¤Í¦W³æ¤¤¬O§_¤w¦³¦¹¤H */
+pal_find(fpath, userno)		/* itoc.010923: æœ‹å‹åå–®ä¸­æ˜¯å¦å·²æœ‰æ­¤äºº */
   char *fpath;
   int userno;
 {
@@ -458,13 +458,13 @@ pal_add(xo)
 
   userno = acct_get(msg_uid, &acct);
 
-  if (userno == cuser.userno)	/* lkchu.981201: ªB¤Í¦W³æ¤£¥i¥[¦Û¤v */
+  if (userno == cuser.userno)	/* lkchu.981201: æœ‹å‹åå–®ä¸å¯åŠ è‡ªå·± */
   {
-    vmsg("¦Û¤v¤£¶·¥[¤JªB¤Í¦W³æ¤¤");
+    vmsg("è‡ªå·±ä¸é ˆåŠ å…¥æœ‹å‹åå–®ä¸­");
   }
   else if (pal_find(xo->dir, userno))
   {
-    vmsg("¦W³æ¤¤¤w¦³¦¹¤H");
+    vmsg("åå–®ä¸­å·²æœ‰æ­¤äºº");
   }
   else if (userno > 0)
   {
@@ -478,7 +478,7 @@ pal_add(xo)
     if (xo->key == PALTYPE_PAL)
       utmp_admset(userno, STATUS_PALDIRTY);
 
-    xo->pos = XO_TAIL;		/* ©ñ¦b³Ì«á */
+    xo->pos = XO_TAIL;		/* æ”¾åœ¨æœ€å¾Œ */
     return pal_init(xo);
   }
 
@@ -611,11 +611,11 @@ pal_broadcast(xo)
     return XO_NONE;
 
   bmw.caller = NULL;
-  bmw_edit(NULL, "¡¹¼s¼½¡G", &bmw);
+  bmw_edit(NULL, "â˜…å»£æ’­ï¼š", &bmw);
 
-  if (bmw.caller)	/* bmw_edit() ¤¤¦^µª Yes ­n°e¥X¼s¼½ */
+  if (bmw.caller)	/* bmw_edit() ä¸­å›ç­” Yes è¦é€å‡ºå»£æ’­ */
   {
-    /* itoc.000213: ¥[ "> " ¬°¤F»P¤@¯ë¤ô²y°Ï¤À */
+    /* itoc.000213: åŠ  "> " ç‚ºäº†èˆ‡ä¸€èˆ¬æ°´çƒå€åˆ† */
     sprintf(bmw.userid, "%s> ", cuser.userid);
 
     if ((fd = open(xo->dir, O_RDONLY)) >= 0)
@@ -657,14 +657,14 @@ pal_cite(xo)
   char fpath[64], *dir;
   PAL *pal;
 
-  fd = vans("­n¤Ş¤J (P)ªB¤Í¦W³æ "
+  fd = vans("è¦å¼•å…¥ (P)æœ‹å‹åå–® "
 #ifdef HAVE_MODERATED_BOARD
-    "(B)ªO¤Í¦W³æ "
+    "(B)æ¿å‹åå–® "
 #endif
 #ifdef HAVE_LIST
-    "(1-5)¯S§O¦W³æ"
+    "(1-5)ç‰¹åˆ¥åå–®"
 #endif
-    "¡H[Q] ");
+    "ï¼Ÿ[Q] ");
 
   if (fd == 'p')
   {
@@ -675,7 +675,7 @@ pal_cite(xo)
   {
     if (currbno < 0 || !(bbstate & STAT_BOARD))
     {
-      vmsg("±z©|¥¼¿ï©w¬İªO¡A©Î¬O±z¤£¬O¸ÓªOªºªO¥D");
+      vmsg("æ‚¨å°šæœªé¸å®šçœ‹æ¿ï¼Œæˆ–æ˜¯æ‚¨ä¸æ˜¯è©²æ¿çš„æ¿ä¸»");
       return XO_FOOT;
     }
     brd_fpath(fpath, currboard, fn_pal);
@@ -697,7 +697,7 @@ pal_cite(xo)
   dir = xo->dir;
   if (!strcmp(dir, fpath))
   {
-    vmsg("¤£¯à¤Ş¤J¦P¤@¥÷¦W³æ");
+    vmsg("ä¸èƒ½å¼•å…¥åŒä¸€ä»½åå–®");
     return XO_FOOT;
   }
 
@@ -711,11 +711,11 @@ pal_cite(xo)
   {
     if (!(pal->ftype & PAL_BAD) && !pal_find(dir, pal->userno))
     {
-      if (--num < 0)		/* itoc.001224: ¤Ş¤J¦W³æ¥u¥[¨ì PAL_MAX */
+      if (--num < 0)		/* itoc.001224: å¼•å…¥åå–®åªåŠ åˆ° PAL_MAX */
 	break;
 
       rec_add(dir, pal, sizeof(PAL));
-      xo->pos = XO_TAIL;	/* ­Y¦³¤Ş¤J¦W³æ¡A´N§â´å¼Ğ©ñ¦b³Ì«á */
+      xo->pos = XO_TAIL;	/* è‹¥æœ‰å¼•å…¥åå–®ï¼Œå°±æŠŠæ¸¸æ¨™æ”¾åœ¨æœ€å¾Œ */
     }
   }
   close(fd);
@@ -766,7 +766,7 @@ pal_tag(xo)
   }
 
   /* return XO_NONE; */
-  return xo->pos + 1 + XO_MOVE;	/* lkchu.981201: ¸õ¦Ü¤U¤@¶µ */
+  return xo->pos + 1 + XO_MOVE;	/* lkchu.981201: è·³è‡³ä¸‹ä¸€é … */
 }
 
 
@@ -819,16 +819,16 @@ t_pal()
   xover(XZ_PAL);
   free(xo);
 
-  /* itoc.041211.µù¸Ñ: ¦bÂ÷¶}ªB¤Í¦W³æ¦A¤@¨Ö¦P¨B cache ¬O¦³°İÃDªº¡A
-     ·í§Ú©|¥¼Â÷¶}ªB¤Í¦W³æ®É¡A¦¹®É cutmp->pal_spool ©|¥¼¦P¨B¡A
-     ¦ı³Q§Ú²§°ÊªB¤Íª¬ºAªº¹ï¤è¤w¸g¥[¤J¤F STATUS_PALDIRTY¡A
-     ­Y¹ï¤è¦b§Ú©|¥¼Â÷¶}ªB¤Í¦W³æ®É´N¥ı¦æ¶i¤J¨Ï¥ÎªÌ¦W³æ¡A
-     ³o®ÉÁöµM¥L¤w¸g¦¬¨ì§Úµ¹¥Lªº STATUS_PALDIRTY¡AµM¦Ó«o¦]¬°§Úªº pal_spool ©|¥¼¦P¨B¡A
-     ©ó¬O¥L¨Ã¨S¦³¦¨¥\ÅÜ§ó§ÚªºªB¤Íª¬ºA¡A¦ı STATUS_PALDIRTY ¤w®ø¥¢¡C
-     ­n¸Ñ¨M³o­Ó°İÃD¡A±o¦b²§°Ê¨C¤@µ§ªB¤Í®Éªº utmp_admset(STATUS_PALDIRTY) ¤§«e´N¥ı pal_cache()¡A
-     ¤£¹L²{¦bÁÙ¨S¦³¤H©ê«è³o°İÃD¡A©Ò¥H´N¬ÙÂI¤u¦n¤F :p */
+  /* itoc.041211.è¨»è§£: åœ¨é›¢é–‹æœ‹å‹åå–®å†ä¸€ä½µåŒæ­¥ cache æ˜¯æœ‰å•é¡Œçš„ï¼Œ
+     ç•¶æˆ‘å°šæœªé›¢é–‹æœ‹å‹åå–®æ™‚ï¼Œæ­¤æ™‚ cutmp->pal_spool å°šæœªåŒæ­¥ï¼Œ
+     ä½†è¢«æˆ‘ç•°å‹•æœ‹å‹ç‹€æ…‹çš„å°æ–¹å·²ç¶“åŠ å…¥äº† STATUS_PALDIRTYï¼Œ
+     è‹¥å°æ–¹åœ¨æˆ‘å°šæœªé›¢é–‹æœ‹å‹åå–®æ™‚å°±å…ˆè¡Œé€²å…¥ä½¿ç”¨è€…åå–®ï¼Œ
+     é€™æ™‚é›–ç„¶ä»–å·²ç¶“æ”¶åˆ°æˆ‘çµ¦ä»–çš„ STATUS_PALDIRTYï¼Œç„¶è€Œå»å› ç‚ºæˆ‘çš„ pal_spool å°šæœªåŒæ­¥ï¼Œ
+     æ–¼æ˜¯ä»–ä¸¦æ²’æœ‰æˆåŠŸè®Šæ›´æˆ‘çš„æœ‹å‹ç‹€æ…‹ï¼Œä½† STATUS_PALDIRTY å·²æ¶ˆå¤±ã€‚
+     è¦è§£æ±ºé€™å€‹å•é¡Œï¼Œå¾—åœ¨ç•°å‹•æ¯ä¸€ç­†æœ‹å‹æ™‚çš„ utmp_admset(STATUS_PALDIRTY) ä¹‹å‰å°±å…ˆ pal_cache()ï¼Œ
+     ä¸éç¾åœ¨é‚„æ²’æœ‰äººæŠ±æ€¨é€™å•é¡Œï¼Œæ‰€ä»¥å°±çœé»å·¥å¥½äº† :p */
 
-  pal_cache();	/* itoc.010923: Â÷¶}ªB¤Í¦W³æ¦A¤@¨Ö¦P¨B cache */
+  pal_cache();	/* itoc.010923: é›¢é–‹æœ‹å‹åå–®å†ä¸€ä½µåŒæ­¥ cache */
 
   return 0;
 }
@@ -848,24 +848,24 @@ t_list()
   for (n = 1; n <= 5; n++)
   {
     move(n + MENU_XPOS - 1, MENU_YPOS - 1);
-    prints("(\033[1;36m%d\033[m) ¸s²Õ¦W³æ.%d", n, n);
+    prints("(\033[1;36m%d\033[m) ç¾¤çµ„åå–®.%d", n, n);
   }
 
-  n = vans("½Ğ¿ï¾ÜÀÉ®×½s¸¹¡A©Î«ö [0] ¨ú®ø¡G") - '0';
+  n = vans("è«‹é¸æ“‡æª”æ¡ˆç·¨è™Ÿï¼Œæˆ–æŒ‰ [0] å–æ¶ˆï¼š") - '0';
   if (n <= 0 || n > 5)
     return 0;
 
   sprintf(buf, "%s.%d", FN_LIST, n);
   usr_fpath(fpath, cuser.userid, buf);
 
-  switch (vget(b_lines, 36, "(D)§R°£ (E)½s¿è [Q]¨ú®ø¡H", buf, 3, LCECHO))
+  switch (vget(b_lines, 36, "(D)åˆªé™¤ (E)ç·¨è¼¯ [Q]å–æ¶ˆï¼Ÿ", buf, 3, LCECHO))
   {
   case 'd':
     unlink(fpath);
     break;
 
   case 'e':
-    /* ­É¥Î XZ_PAL §Y¥i */
+    /* å€Ÿç”¨ XZ_PAL å³å¯ */
     xz[XZ_PAL - XO_ZONE].xo = xo = xo_new(fpath);
     xo->key = PALTYPE_LIST;
     xover(XZ_PAL);

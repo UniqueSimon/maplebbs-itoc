@@ -14,20 +14,20 @@ extern char *ufo_tbl[];
 
 
 /* ----------------------------------------------------- */
-/* »{ÃÒ¥Î¨ç¦¡						 */
+/* èªè­‰ç”¨å‡½å¼						 */
 /* ----------------------------------------------------- */
 
 
 void
-justify_log(userid, justify)	/* itoc.010822: ®³±¼ .ACCT ¤¤ justify ³oÄæ¦ì¡A§ï°O¿ı¦b FN_JUSTIFY */
+justify_log(userid, justify)	/* itoc.010822: æ‹¿æ‰ .ACCT ä¸­ justify é€™æ¬„ä½ï¼Œæ”¹è¨˜éŒ„åœ¨ FN_JUSTIFY */
   char *userid;
-  char *justify;	/* »{ÃÒ¸ê®Æ RPY:email-reply  KEY:»{ÃÒ½X  POP:pop3»{ÃÒ  REG:µù¥U³æ */
+  char *justify;	/* èªè­‰è³‡æ–™ RPY:email-reply  KEY:èªè­‰ç¢¼  POP:pop3èªè­‰  REG:è¨»å†Šå–® */
 {
   char fpath[64];
   FILE *fp;
 
   usr_fpath(fpath, userid, FN_JUSTIFY);
-  if (fp = fopen(fpath, "a"))		/* ¥Îªş¥[ÀÉ®×¡A¥i¥H«O¦s¾ú¦¸»{ÃÒ°O¿ı */
+  if (fp = fopen(fpath, "a"))		/* ç”¨é™„åŠ æª”æ¡ˆï¼Œå¯ä»¥ä¿å­˜æ­·æ¬¡èªè­‰è¨˜éŒ„ */
   {
     fprintf(fp, "%s\n", justify);
     fclose(fp);
@@ -40,13 +40,13 @@ ban_addr(addr)
   char *addr;
 {
   char *host;
-  char foo[128];	/* SoC: ©ñ¸m«İÀË¬dªº email address */
+  char foo[128];	/* SoC: æ”¾ç½®å¾…æª¢æŸ¥çš„ email address */
 
-  /* Thor.991112: °O¿ı¥Î¨Ó»{ÃÒªºemail */
+  /* Thor.991112: è¨˜éŒ„ç”¨ä¾†èªè­‰çš„email */
   sprintf(foo, "%s # %s (%s)\n", addr, cuser.userid, Now());
   f_cat(FN_RUN_EMAILREG, foo);
 
-  /* SoC: «O«ù­ì email ªº¤j¤p¼g */
+  /* SoC: ä¿æŒåŸ email çš„å¤§å°å¯« */
   str_lower(foo, addr);
 
   /* check for acl (lower case filter) */
@@ -54,24 +54,24 @@ ban_addr(addr)
   host = (char *) strchr(foo, '@');
   *host = '\0';
 
-  /* *.bbs@xx.yy.zz¡B*.brd@xx.yy.zz ¤@«ß¤£±µ¨ü */
+  /* *.bbs@xx.yy.zzã€*.brd@xx.yy.zz ä¸€å¾‹ä¸æ¥å— */
   if (host > foo + 4 && (!str_cmp(host - 4, ".bbs") || !str_cmp(host - 4, ".brd")))
     return 1;
 
-  /* ¤£¦b¥Õ¦W³æ¤W©Î¦b¶Â¦W³æ¤W */
+  /* ä¸åœ¨ç™½åå–®ä¸Šæˆ–åœ¨é»‘åå–®ä¸Š */
   return (!acl_has(TRUST_ACLFILE, foo, host + 1) ||
     acl_has(UNTRUST_ACLFILE, foo, host + 1) > 0);
 }
 
 
 /* ----------------------------------------------------- */
-/* POP3 »{ÃÒ						 */
+/* POP3 èªè­‰						 */
 /* ----------------------------------------------------- */
 
 
 #ifdef HAVE_POP3_CHECK
 
-static int		/* >=0:socket -1:³s½u¥¢±Ñ */
+static int		/* >=0:socket -1:é€£ç·šå¤±æ•— */
 Get_Socket(site)	/* site for hostname */
   char *site;
 {
@@ -111,7 +111,7 @@ Get_Socket(site)	/* site for hostname */
 }
 
 
-static int		/* 0:¦¨¥\ */
+static int		/* 0:æˆåŠŸ */
 POP3_Check(sock, account, passwd)
   int sock;
   char *account, *passwd;
@@ -121,7 +121,7 @@ POP3_Check(sock, account, passwd)
 
   if (!(fsock = fdopen(sock, "r+")))
   {
-    outs("\n¶Ç¦^¿ù»~­È¡A½Ğ­«¸Õ´X¦¸¬İ¬İ\n");
+    outs("\nå‚³å›éŒ¯èª¤å€¼ï¼Œè«‹é‡è©¦å¹¾æ¬¡çœ‹çœ‹\n");
     return -1;
   }
 
@@ -163,7 +163,7 @@ POP3_Check(sock, account, passwd)
     }
     else
     {
-      outs("\n»·ºİ¨t²Î¶Ç¦^¿ù»~°T®§¦p¤U¡G\n");
+      outs("\né ç«¯ç³»çµ±å‚³å›éŒ¯èª¤è¨Šæ¯å¦‚ä¸‹ï¼š\n");
       prints("%s\n", buf);
       sock = -1;
     }
@@ -171,8 +171,8 @@ POP3_Check(sock, account, passwd)
 }
 
 
-static int		/* -1:¤£¤ä´© 0:±K½X¿ù»~ 1:¦¨¥\ */
-do_pop3(addr)		/* itoc.010821: §ï¼g¤@¤U :) */
+static int		/* -1:ä¸æ”¯æ´ 0:å¯†ç¢¼éŒ¯èª¤ 1:æˆåŠŸ */
+do_pop3(addr)		/* itoc.010821: æ”¹å¯«ä¸€ä¸‹ :) */
   char *addr;
 {
   int sock, i;
@@ -186,31 +186,31 @@ do_pop3(addr)		/* itoc.010821: §ï¼g¤@¤U :) */
 
   clear();
   move(2, 0);
-  prints("¥D¾÷: %s\n±b¸¹: %s\n", ptr, username);
-  outs("\033[1;5;36m³s½u»·ºİ¥D¾÷¤¤...½Ğµy­Ô\033[m\n");
+  prints("ä¸»æ©Ÿ: %s\nå¸³è™Ÿ: %s\n", ptr, username);
+  outs("\033[1;5;36mé€£ç·šé ç«¯ä¸»æ©Ÿä¸­...è«‹ç¨å€™\033[m\n");
   refresh();
 
   for (i = 0; str = alias[i]; i++)
   {
-    sprintf(buf, "%s%s", str, ptr);	/* itoc.020120: ¥D¾÷¦WºÙ¥[¤W pop3. ¸Õ¸Õ¬İ */
-    if ((sock = Get_Socket(buf)) >= 0)	/* §ä¨ì³o¾÷¾¹¥B¹ï¤è¤ä´© POP3 */
+    sprintf(buf, "%s%s", str, ptr);	/* itoc.020120: ä¸»æ©Ÿåç¨±åŠ ä¸Š pop3. è©¦è©¦çœ‹ */
+    if ((sock = Get_Socket(buf)) >= 0)	/* æ‰¾åˆ°é€™æ©Ÿå™¨ä¸”å°æ–¹æ”¯æ´ POP3 */
       break;
   }
 
   if (sock < 0)
   {
-    outs("±zªº¹q¤l¶l¥ó¨t²Î¤£¤ä´© POP3 »{ÃÒ¡A¨Ï¥Î»{ÃÒ«H¨ç¨­¤À½T»{\n\n\033[1;36;5m¨t²Î°e«H¤¤...\033[m");
+    outs("æ‚¨çš„é›»å­éƒµä»¶ç³»çµ±ä¸æ”¯æ´ POP3 èªè­‰ï¼Œä½¿ç”¨èªè­‰ä¿¡å‡½èº«åˆ†ç¢ºèª\n\n\033[1;36;5mç³»çµ±é€ä¿¡ä¸­...\033[m");
     return -1;
   }
 
-  if (vget(15, 0, "½Ğ¿é¤J¥H¤W©Ò¦C¥X¤§¤u§@¯¸±b¸¹ªº±K½X¡G", buf, 20, NOECHO))
+  if (vget(15, 0, "è«‹è¼¸å…¥ä»¥ä¸Šæ‰€åˆ—å‡ºä¹‹å·¥ä½œç«™å¸³è™Ÿçš„å¯†ç¢¼ï¼š", buf, 20, NOECHO))
   {
     move(17, 0);
-    outs("\033[5;37m¨­¤À½T»{¤¤...½Ğµy­Ô\033[m\n");
+    outs("\033[5;37mèº«åˆ†ç¢ºèªä¸­...è«‹ç¨å€™\033[m\n");
 
-    if (!POP3_Check(sock, username, buf))	/* POP3 »{ÃÒ¦¨¥\ */
+    if (!POP3_Check(sock, username, buf))	/* POP3 èªè­‰æˆåŠŸ */
     {
-      /* ´£¤ÉÅv­­ */
+      /* æå‡æ¬Šé™ */
       sprintf(buf, "POP: %s", addr);
       justify_log(cuser.userid, buf);
       strcpy(cuser.email, addr);
@@ -220,7 +220,7 @@ do_pop3(addr)		/* itoc.010821: §ï¼g¤@¤U :) */
 	acct_setperm(&acct, PERM_VALID, 0);
       }
 
-      /* ±H«H³qª¾¨Ï¥ÎªÌ */
+      /* å¯„ä¿¡é€šçŸ¥ä½¿ç”¨è€… */
       mail_self(FN_ETC_JUSTIFIED, str_sysop, msg_reg_valid, 0);
       cutmp->status |= STATUS_BIFF;
       vmsg(msg_reg_valid);
@@ -232,15 +232,15 @@ do_pop3(addr)		/* itoc.010821: §ï¼g¤@¤U :) */
 
   close(sock);
 
-  /* POP3 »{ÃÒ¥¢±Ñ */
-  outs("±zªº±K½X©Î³\\¥´¿ù¤F¡A¨Ï¥Î»{ÃÒ«H¨ç¨­¤À½T»{\n\n\033[1;36;5m¨t²Î°e«H¤¤...\033[m");
+  /* POP3 èªè­‰å¤±æ•— */
+  outs("æ‚¨çš„å¯†ç¢¼æˆ–è¨±\æ‰“éŒ¯äº†ï¼Œä½¿ç”¨èªè­‰ä¿¡å‡½èº«åˆ†ç¢ºèª\n\n\033[1;36;5mç³»çµ±é€ä¿¡ä¸­...\033[m");
   return 0;
 }
 #endif
 
 
 /* ----------------------------------------------------- */
-/* ³]©w E-mail address					 */
+/* è¨­å®š E-mail address					 */
 /* ----------------------------------------------------- */
 
 
@@ -255,16 +255,16 @@ u_addr()
     return XEASY;
   }
 
-  /* itoc.050405: ¤£¯àÅı°±ÅvªÌ­«·s»{ÃÒ¡A¦]¬°·|§ï±¼¥Lªº tvalid (°±Åv¨ì´Á®É¶¡) */
+  /* itoc.050405: ä¸èƒ½è®“åœæ¬Šè€…é‡æ–°èªè­‰ï¼Œå› ç‚ºæœƒæ”¹æ‰ä»–çš„ tvalid (åœæ¬Šåˆ°æœŸæ™‚é–“) */
   if (HAS_PERM(PERM_ALLDENY))
   {
-    vmsg("±z³Q°±Åv¡AµLªk§ï«H½c");
+    vmsg("æ‚¨è¢«åœæ¬Šï¼Œç„¡æ³•æ”¹ä¿¡ç®±");
     return XEASY;
   }
 
   film_out(FILM_EMAIL, 0);
 
-  if (vget(b_lines - 2, 0, "E-mail ¦a§}¡G", addr, sizeof(cuser.email), DOECHO))
+  if (vget(b_lines - 2, 0, "E-mail åœ°å€ï¼š", addr, sizeof(cuser.email), DOECHO))
   {
     if (not_addr(addr))
     {
@@ -272,25 +272,25 @@ u_addr()
     }
     else if (ban_addr(addr))
     {
-      msg = "¥»¯¸¤£±µ¨ü±zªº«H½c°µ¬°»{ÃÒ¦a§}";
+      msg = "æœ¬ç«™ä¸æ¥å—æ‚¨çš„ä¿¡ç®±åšç‚ºèªè­‰åœ°å€";
     }
     else
     {
 #ifdef EMAIL_JUSTIFY
-      if (vans("­×§ï E-mail ­n­«·s»{ÃÒ¡A½T©w­n­×§ï¶Ü(Y/N)¡H[Y] ") == 'n')
+      if (vans("ä¿®æ”¹ E-mail è¦é‡æ–°èªè­‰ï¼Œç¢ºå®šè¦ä¿®æ”¹å—(Y/N)ï¼Ÿ[Y] ") == 'n')
 	return 0;
 
 #  ifdef HAVE_POP3_CHECK
-      if (vans("¬O§_¨Ï¥Î POP3 »{ÃÒ(Y/N)¡H[N] ") == 'y')
+      if (vans("æ˜¯å¦ä½¿ç”¨ POP3 èªè­‰(Y/N)ï¼Ÿ[N] ") == 'y')
       {
-	if (do_pop3(addr) > 0)	/* ­Y POP3 »{ÃÒ¦¨¥\¡A«hÂ÷¶}¡A§_«h¥H»{ÃÒ«H±H¥X */
+	if (do_pop3(addr) > 0)	/* è‹¥ POP3 èªè­‰æˆåŠŸï¼Œå‰‡é›¢é–‹ï¼Œå¦å‰‡ä»¥èªè­‰ä¿¡å¯„å‡º */
 	  return 0;
       }
 #  endif
 
       if (bsmtp(NULL, NULL, addr, MQ_JUSTIFY) < 0)
       {
-	msg = "¨­¤À»{ÃÒ«H¨çµLªk±H¥X¡A½Ğ¥¿½T¶ñ¼g E-mail address";
+	msg = "èº«åˆ†èªè­‰ä¿¡å‡½ç„¡æ³•å¯„å‡ºï¼Œè«‹æ­£ç¢ºå¡«å¯« E-mail address";
       }
       else
       {
@@ -305,8 +305,8 @@ u_addr()
 	}
 
 	film_out(FILM_JUSTIFY, 0);
-	prints("\n%s(%s)±z¦n¡A¥Ñ©ó±z§ó·s E-mail address ªº³]©w¡A\n\n"
-	  "½Ğ±z¾¨§Ö¨ì \033[44m%s\033[m ©Ò¦bªº¤u§@¯¸¦^ÂĞ¡y¨­¤À»{ÃÒ«H¨ç¡z¡C",
+	prints("\n%s(%s)æ‚¨å¥½ï¼Œç”±æ–¼æ‚¨æ›´æ–° E-mail address çš„è¨­å®šï¼Œ\n\n"
+	  "è«‹æ‚¨å„˜å¿«åˆ° \033[44m%s\033[m æ‰€åœ¨çš„å·¥ä½œç«™å›è¦†ã€èº«åˆ†èªè­‰ä¿¡å‡½ã€ã€‚",
 	  cuser.userid, cuser.username, addr);
 	msg = NULL;
       }
@@ -323,7 +323,7 @@ u_addr()
 
 
 /* ----------------------------------------------------- */
-/* ¶ñ¼gµù¥U³æ						 */
+/* å¡«å¯«è¨»å†Šå–®						 */
 /* ----------------------------------------------------- */
 
 
@@ -353,7 +353,7 @@ u_register()
   if (HAS_PERM(PERM_VALID))
 #endif
   {
-    zmsg("±zªº¨­¤À½T»{¤w¸g§¹¦¨¡A¤£»İ¶ñ¼g¥Ó½Ğªí");
+    zmsg("æ‚¨çš„èº«åˆ†ç¢ºèªå·²ç¶“å®Œæˆï¼Œä¸éœ€å¡«å¯«ç”³è«‹è¡¨");
     return XEASY;
   }
 
@@ -364,28 +364,28 @@ u_register()
       if ((rform.userno == cuser.userno) && !strcmp(rform.userid, cuser.userid))
       {
 	fclose(fn);
-	zmsg("±zªºµù¥U¥Ó½Ğ³æ©|¦b³B²z¤¤¡A½Ğ­@¤ßµ¥­Ô");
+	zmsg("æ‚¨çš„è¨»å†Šç”³è«‹å–®å°šåœ¨è™•ç†ä¸­ï¼Œè«‹è€å¿ƒç­‰å€™");
 	return XEASY;
       }
     }
     fclose(fn);
   }
 
-  if (vans("±z½T©w­n¶ñ¼gµù¥U³æ¶Ü(Y/N)¡H[N] ") != 'y')
+  if (vans("æ‚¨ç¢ºå®šè¦å¡«å¯«è¨»å†Šå–®å—(Y/N)ï¼Ÿ[N] ") != 'y')
     return XEASY;
 
   move(1, 0);
   clrtobot();
-  prints("\n%s(%s) ±z¦n¡A½Ğ¾Ú¹ê¶ñ¼g¥H¤Uªº¸ê®Æ¡G\n(«ö [Enter] ±µ¨üªì©l³]©w)",
+  prints("\n%s(%s) æ‚¨å¥½ï¼Œè«‹æ“šå¯¦å¡«å¯«ä»¥ä¸‹çš„è³‡æ–™ï¼š\n(æŒ‰ [Enter] æ¥å—åˆå§‹è¨­å®š)",
     cuser.userid, cuser.username);
 
   memset(&rform, 0, sizeof(RFORM));
   for (;;)
   {
-    getfield(5, 50, rform.career, "ªA°È³æ¦ì¡G", "¾Ç®Õ¨t¯Å©Î³æ¦ìÂ¾ºÙ");
-    getfield(8, 60, rform.address, "¥Ø«e¦í§}¡G", "¥]¬A¹ì«Ç©ÎªùµP¸¹½X");
-    getfield(11, 20, rform.phone, "³sµ¸¹q¸Ü¡G", "¥]¬Aªø³~¼·¸¹°Ï°ì½X");
-    ans = vans("¥H¤W¸ê®Æ¬O§_¥¿½T(Y/N/Q)¡H[N] ");
+    getfield(5, 50, rform.career, "æœå‹™å–®ä½ï¼š", "å­¸æ ¡ç³»ç´šæˆ–å–®ä½è·ç¨±");
+    getfield(8, 60, rform.address, "ç›®å‰ä½å€ï¼š", "åŒ…æ‹¬å¯¢å®¤æˆ–é–€ç‰Œè™Ÿç¢¼");
+    getfield(11, 20, rform.phone, "é€£çµ¡é›»è©±ï¼š", "åŒ…æ‹¬é•·é€”æ’¥è™Ÿå€åŸŸç¢¼");
+    ans = vans("ä»¥ä¸Šè³‡æ–™æ˜¯å¦æ­£ç¢º(Y/N/Q)ï¼Ÿ[N] ");
     if (ans == 'q')
       return 0;
     if (ans == 'y')
@@ -402,7 +402,7 @@ u_register()
 
 
 /* ----------------------------------------------------- */
-/* ¶ñ¼gµù»{½X						 */
+/* å¡«å¯«è¨»èªç¢¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -415,21 +415,21 @@ u_verify()
   
   if (HAS_PERM(PERM_VALID))
   {
-    zmsg("±zªº¨­¤À½T»{¤w¸g§¹¦¨¡A¤£»İ¶ñ¼g»{ÃÒ½X");
+    zmsg("æ‚¨çš„èº«åˆ†ç¢ºèªå·²ç¶“å®Œæˆï¼Œä¸éœ€å¡«å¯«èªè­‰ç¢¼");
   }
   else
   {
-    if (vget(b_lines, 0, "½Ğ¿é¤J»{ÃÒ½X¡G", buf, 8, DOECHO))
+    if (vget(b_lines, 0, "è«‹è¼¸å…¥èªè­‰ç¢¼ï¼š", buf, 8, DOECHO))
     {
-      archiv32(str_hash(cuser.email, cuser.tvalid), key);	/* itoc.010825: ¤£¥Î¶}ÀÉ¤F¡Aª½±µ®³ tvalid ¨Ó¤ñ´N¬O¤F */
+      archiv32(str_hash(cuser.email, cuser.tvalid), key);	/* itoc.010825: ä¸ç”¨é–‹æª”äº†ï¼Œç›´æ¥æ‹¿ tvalid ä¾†æ¯”å°±æ˜¯äº† */
 
       if (str_ncmp(key, buf, 7))
       {
-	zmsg("©êºp¡A±zªº»{ÃÒ½X¿ù»~");      
+	zmsg("æŠ±æ­‰ï¼Œæ‚¨çš„èªè­‰ç¢¼éŒ¯èª¤");      
       }
       else
       {
-	/* ´£¤ÉÅv­­ */
+	/* æå‡æ¬Šé™ */
 	sprintf(buf, "KEY: %s", cuser.email);
 	justify_log(cuser.userid, buf);
 	if (acct_load(&acct, cuser.userid) >= 0)
@@ -438,7 +438,7 @@ u_verify()
 	  acct_setperm(&acct, PERM_VALID, 0);
 	}
 
-	/* ±H«H³qª¾¨Ï¥ÎªÌ */
+	/* å¯„ä¿¡é€šçŸ¥ä½¿ç”¨è€… */
 	mail_self(FN_ETC_JUSTIFIED, str_sysop, msg_reg_valid, 0);
 	cutmp->status |= STATUS_BIFF;
 	vmsg(msg_reg_valid);
@@ -452,7 +452,7 @@ u_verify()
 
 
 /* ----------------------------------------------------- */
-/* «ì´_Åv­­						 */
+/* æ¢å¾©æ¬Šé™						 */
 /* ----------------------------------------------------- */
 
 
@@ -466,29 +466,29 @@ u_deny()
 
   if (!HAS_PERM(PERM_ALLDENY))
   {
-    zmsg("±z¨S³Q°±Åv¡A¤£»İ´_Åv");
+    zmsg("æ‚¨æ²’è¢«åœæ¬Šï¼Œä¸éœ€å¾©æ¬Š");
   }
   else
   {
-    if ((diff = cuser.tvalid - time(0)) < 0)      /* °±Åv®É¶¡¨ì¤F */
+    if ((diff = cuser.tvalid - time(0)) < 0)      /* åœæ¬Šæ™‚é–“åˆ°äº† */
     {
       if (acct_load(&acct, cuser.userid) >= 0)
       {
 	time(&acct.tvalid);
 #ifdef JUSTIFY_PERIODICAL
-	/* xeon.050112: ¦b»{ÃÒ§Ö¨ì´Á«e®É Cross-Post¡AµM«á tvalid ´N·|³Q³]©w¨ì¥¼¨Ó®É¶¡¡A
-	   µ¥´_Åv®É¶¡¨ì¤F¥h´_Åv¡A³o¼Ë´N¥i¥HÁ×¹L­«·s»{ÃÒ¡A©Ò¥H´_Åv«á­n­«·s»{ÃÒ¡C */
+	/* xeon.050112: åœ¨èªè­‰å¿«åˆ°æœŸå‰æ™‚ Cross-Postï¼Œç„¶å¾Œ tvalid å°±æœƒè¢«è¨­å®šåˆ°æœªä¾†æ™‚é–“ï¼Œ
+	   ç­‰å¾©æ¬Šæ™‚é–“åˆ°äº†å»å¾©æ¬Šï¼Œé€™æ¨£å°±å¯ä»¥é¿éé‡æ–°èªè­‰ï¼Œæ‰€ä»¥å¾©æ¬Šå¾Œè¦é‡æ–°èªè­‰ã€‚ */
 	acct_setperm(&acct, 0, PERM_ALLVALID | PERM_ALLDENY);
 #else
 	acct_setperm(&acct, 0, PERM_ALLDENY);
 #endif
-	vmsg("¤U¦¸½Ğ¤Å¦A¥Ç¡A½Ğ­«·s¤W¯¸");
+	vmsg("ä¸‹æ¬¡è«‹å‹¿å†çŠ¯ï¼Œè«‹é‡æ–°ä¸Šç«™");
       }
     }
     else
     {
       ptime = gmtime(&diff);
-      sprintf(msg, "±zÁÙ­nµ¥ %d ¦~ %d ¤Ñ %d ®É %d ¤À %d ¬í¤~¯à¥Ó½Ğ´_Åv",
+      sprintf(msg, "æ‚¨é‚„è¦ç­‰ %d å¹´ %d å¤© %d æ™‚ %d åˆ† %d ç§’æ‰èƒ½ç”³è«‹å¾©æ¬Š",
 	ptime->tm_year - 70, ptime->tm_yday, ptime->tm_hour, ptime->tm_min, ptime->tm_sec);
       vmsg(msg);
     }
@@ -499,7 +499,7 @@ u_deny()
 
 
 /* ----------------------------------------------------- */
-/* ­Ó¤H¤u¨ã						 */
+/* å€‹äººå·¥å…·						 */
 /* ----------------------------------------------------- */
 
 
@@ -529,15 +529,15 @@ u_setup()
   usint ulevel;
   int len;
 
-  /* itoc.000320: ¼W´î¶µ¥Ø­n§ó§ï len ¤j¤p, ¤]§O§Ñ¤F§ï ufo.h ªººX¼Ğ STR_UFO */
+  /* itoc.000320: å¢æ¸›é …ç›®è¦æ›´æ”¹ len å¤§å°, ä¹Ÿåˆ¥å¿˜äº†æ”¹ ufo.h çš„æ——æ¨™ STR_UFO */
 
   ulevel = cuser.userlevel;
   if (!ulevel)
     len = NUMUFOS_GUEST;
   else if (ulevel & PERM_ALLADMIN)
-    len = NUMUFOS;		/* ADMIN °£¤F¥i¥Î acl¡AÁÙ¶¶«K¤]¥i¥H¥ÎÁô¨­³N */
+    len = NUMUFOS;		/* ADMIN é™¤äº†å¯ç”¨ aclï¼Œé‚„é †ä¾¿ä¹Ÿå¯ä»¥ç”¨éš±èº«è¡“ */
   else if (ulevel & PERM_CLOAK)
-    len = NUMUFOS - 2;		/* ¤£¯à¥ÎµµÁô¡Bacl */
+    len = NUMUFOS - 2;		/* ä¸èƒ½ç”¨ç´«éš±ã€acl */
   else
     len = NUMUFOS_USER;
 
@@ -552,30 +552,30 @@ u_lock()
 {
   char buf[PSWDLEN + 1];
 
-  switch (vans("¬O§_¶i¤J¿Ã¹õÂê©wª¬ºA¡A±N¤£¯à¶Ç°e/±µ¦¬¤ô²y(Y/N/C)¡H[N] "))
+  switch (vans("æ˜¯å¦é€²å…¥è¢å¹•é–å®šç‹€æ…‹ï¼Œå°‡ä¸èƒ½å‚³é€/æ¥æ”¶æ°´çƒ(Y/N/C)ï¼Ÿ[N] "))
   {
-  case 'c':		/* itoc.011226: ¥i¦Û¦æ¿é¤Jµo§bªº²z¥Ñ */
-    if (vget(b_lines, 0, "½Ğ¿é¤Jµo§bªº²z¥Ñ¡G", cutmp->mateid, IDLEN + 1, DOECHO))
+  case 'c':		/* itoc.011226: å¯è‡ªè¡Œè¼¸å…¥ç™¼å‘†çš„ç†ç”± */
+    if (vget(b_lines, 0, "è«‹è¼¸å…¥ç™¼å‘†çš„ç†ç”±ï¼š", cutmp->mateid, IDLEN + 1, DOECHO))
       break;
 
   case 'y':
-    strcpy(cutmp->mateid, "±¾¯¸");
+    strcpy(cutmp->mateid, "æ›ç«™");
     break;
 
   default:
     return XEASY;
   }
 
-  bbstate |= STAT_LOCK;		/* lkchu.990513: Âê©w®É¤£¥i¦^¤ô²y */
-  cutmp->status |= STATUS_REJECT;	/* Âê©w®É¤£¦¬¤ô²y */
+  bbstate |= STAT_LOCK;		/* lkchu.990513: é–å®šæ™‚ä¸å¯å›æ°´çƒ */
+  cutmp->status |= STATUS_REJECT;	/* é–å®šæ™‚ä¸æ”¶æ°´çƒ */
 
   clear();
   move(5, 20);
-  prints("\033[1;33m" BBSNAME "    ¶¢¸m/Âê©wª¬ºA\033[m  [%s]", cuser.userid);
+  prints("\033[1;33m" BBSNAME "    é–’ç½®/é–å®šç‹€æ…‹\033[m  [%s]", cuser.userid);
 
   do
   {
-    vget(b_lines, 0, "¡» ½Ğ¿é¤J±K½X¡A¥H¸Ñ°£¿Ã¹õÂê©w¡G", buf, PSWDLEN + 1, NOECHO);
+    vget(b_lines, 0, "â—† è«‹è¼¸å…¥å¯†ç¢¼ï¼Œä»¥è§£é™¤è¢å¹•é–å®šï¼š", buf, PSWDLEN + 1, NOECHO);
   } while (chkpasswd(cuser.passwd, buf));
 
   cutmp->status ^= STATUS_REJECT;
@@ -597,11 +597,11 @@ u_log()
 
 
 /* ----------------------------------------------------- */
-/* ³]©wÀÉ®×						 */
+/* è¨­å®šæª”æ¡ˆ						 */
 /* ----------------------------------------------------- */
 
 
-/* static */			/* itoc.010110: µ¹ a_xfile() ¥Î */
+/* static */			/* itoc.010110: çµ¦ a_xfile() ç”¨ */
 void
 x_file(mode, xlist, flist)
   int mode;			/* M_XFILES / M_UFILES */
@@ -618,7 +618,7 @@ x_file(mode, xlist, flist)
   while (desc = xlist[n])
   {
     n++;
-    if (n <= 9)			/* itoc.020123: ¤À¤GÄæ¡A¤@Äæ¤E­Ó */
+    if (n <= 9)			/* itoc.020123: åˆ†äºŒæ¬„ï¼Œä¸€æ¬„ä¹å€‹ */
     {
       move(n + MENU_XPOS - 1, 0);
       clrtoeol();
@@ -630,7 +630,7 @@ x_file(mode, xlist, flist)
     }
     prints("(%d) %s", n, desc);
 
-    if (mode == M_XFILES)	/* Thor.980806.µù¸Ñ: ¦L¥XÀÉ¦W */
+    if (mode == M_XFILES)	/* Thor.980806.è¨»è§£: å°å‡ºæª”å */
     {
       if (n <= 9)
 	move(n + MENU_XPOS - 1, 22);
@@ -640,12 +640,12 @@ x_file(mode, xlist, flist)
     }
   }
 
-  vget(b_lines, 0, "½Ğ¿ï¾ÜÀÉ®×½s¸¹¡A©Î«ö [0] ¨ú®ø¡G", buf, 3, DOECHO);
+  vget(b_lines, 0, "è«‹é¸æ“‡æª”æ¡ˆç·¨è™Ÿï¼Œæˆ–æŒ‰ [0] å–æ¶ˆï¼š", buf, 3, DOECHO);
   i = atoi(buf);
   if (i <= 0 || i > n)
     return;
 
-  n = vget(b_lines, 36, "(D)§R°£ (E)½s¿è [Q]¨ú®ø¡H", buf, 3, LCECHO);
+  n = vget(b_lines, 36, "(D)åˆªé™¤ (E)ç·¨è¼¯ [Q]å–æ¶ˆï¼Ÿ", buf, 3, LCECHO);
   if (n != 'd' && n != 'e')
     return;
 
@@ -662,7 +662,7 @@ x_file(mode, xlist, flist)
   }
   else
   {
-    vmsg(vedit(buf, 0) ? "­ì«Ê¤£°Ê" : "§ó·s§¹²¦");	/* Thor.981020: ª`·N³Qtalkªº°İÃD  */
+    vmsg(vedit(buf, 0) ? "åŸå°ä¸å‹•" : "æ›´æ–°å®Œç•¢");	/* Thor.981020: æ³¨æ„è¢«talkçš„å•é¡Œ  */
   }
 }
 
@@ -674,16 +674,16 @@ u_xfile()
 
   static char *desc[] = 
   {
-    "¤W¯¸¦aÂI³]©wÀÉ",
-    "¦W¤ùÀÉ",
-    "Ã±¦WÀÉ.1",
-    "Ã±¦WÀÉ.2",
-    "Ã±¦WÀÉ.3",
-    "¼È¦sÀÉ.1",
-    "¼È¦sÀÉ.2",
-    "¼È¦sÀÉ.3",
-    "¼È¦sÀÉ.4",
-    "¼È¦sÀÉ.5",
+    "ä¸Šç«™åœ°é»è¨­å®šæª”",
+    "åç‰‡æª”",
+    "ç°½åæª”.1",
+    "ç°½åæª”.2",
+    "ç°½åæª”.3",
+    "æš«å­˜æª”.1",
+    "æš«å­˜æª”.2",
+    "æš«å­˜æª”.3",
+    "æš«å­˜æª”.4",
+    "æš«å­˜æª”.5",
     NULL
   };
 

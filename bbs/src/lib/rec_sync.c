@@ -30,7 +30,7 @@ rec_sync(fpath, size, fsync, fchk)
 
     if (fsize >= size)
     {
-      if (fchk)		/* ÀË¬d¬O§_¦³¤£¥¿½Tªº¸ê®Æ */
+      if (fchk)		/* æª¢æŸ¥æ˜¯å¦æœ‰ä¸æ­£ç¢ºçš„è³‡æ–™ */
       {
 	char *head, *tail;
 
@@ -38,13 +38,13 @@ rec_sync(fpath, size, fsync, fchk)
 	tail = base + fsize;
 	while (head < tail)
 	{
-	  if (fchk(head))	/* ¦¹µ§¸ê®Æ¥¿½T */
+	  if (fchk(head))	/* æ­¤ç­†è³‡æ–™æ­£ç¢º */
 	  {
 	    head += size;
 	    continue;
 	  }
 
-	  /* ¦³°İÃDªº¸ê®Æ­n§R°£ */
+	  /* æœ‰å•é¡Œçš„è³‡æ–™è¦åˆªé™¤ */
 	  tail -= size;
 	  if (head >= tail)
 	    break;

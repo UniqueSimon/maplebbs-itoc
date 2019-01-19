@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* race.c         ( NTHU CS MapleBBS Ver 3.10 )          */
 /*-------------------------------------------------------*/
-/* target : ÁÉ°¨³õ¹CÀ¸                                   */
+/* target : è³½é¦¬å ´éŠæˆ²                                   */
 /* create : 98/12/17                                     */
 /* update : 01/04/21                                     */
 /* author : SugarII (u861838@Oz.nthu.edu.tw)             */
@@ -15,7 +15,7 @@
 #ifdef HAVE_GAME
 
 
-static int pace[5];		/* ¤­¤Ç°¨¶]¤F¦h»· */
+static int pace[5];		/* äº”åŒ¹é¦¬è·‘äº†å¤šé  */
 
 
 static void
@@ -23,32 +23,32 @@ out_song()
 {
   static int count = 0;  
 
-  /* ±i«B£»¤@¨¥ÃøºÉ */
+  /* å¼µé›¨Ë™ä¸€è¨€é›£ç›¡ */
   uschar *msg[13] = 
   {
-    "©pµ¹§Ú¤@³õÀ¸  ©p¬İµÛ§Ú¤J°g",
-    "³Q©p±q¤ß¸Ì­é¸¨ªº·P±¡  µhªº¤£ª¾«ç»ò±Ë¥h",
-    "¿ğ¿ğ¤£¯à¬Û«H³o·PÄ±  ¹³¦Û¤v©M¦Û¤v¤ÀÂ÷",
-    "¦Ó«H»}¥¹¥¹ªº·R±¡  ¦b¨º¸Ì",
-    "§Ú¤@¨¥ÃøºÉ  §Ô¤£¦í¶Ë¤ß",
-    "¿Å¶q¤£¥X·R©Î¤£·R¤§¶¡ªº¶ZÂ÷",
-    "©p»¡©pªº¤ß  ¤£¦A·Å¼ö¦p©õ",
-    "±q¨º¸Ì¶}©l  ±q¨º¸Ì¥¢¥h",
-    "§Ú¤@¨¥ÃøºÉ  §Ô¤£¦í¶Ë¤ß",
-    "¿Å¶q¤£¥X·R©Î¤£·R¤§¶¡ªº¶ZÂ÷",
-    "ÁôÁô¬ù¬ù¤¤  ©ú¥Õ©pªº¨M©w",
-    "¤£´±«j±j©p  ¥u¦n¬°Ãø¦Û¤v",
-    "§Ú¬°Ãø§Ú¦Û¤v  §Ú¬°Ãø§Ú¦Û¤v"
+    "å¦³çµ¦æˆ‘ä¸€å ´æˆ²  å¦³çœ‹è‘—æˆ‘å…¥è¿·",
+    "è¢«å¦³å¾å¿ƒè£¡å‰è½çš„æ„Ÿæƒ…  ç—›çš„ä¸çŸ¥æ€éº¼æ¨å»",
+    "é²é²ä¸èƒ½ç›¸ä¿¡é€™æ„Ÿè¦º  åƒè‡ªå·±å’Œè‡ªå·±åˆ†é›¢",
+    "è€Œä¿¡èª“æ—¦æ—¦çš„æ„›æƒ…  åœ¨é‚£è£¡",
+    "æˆ‘ä¸€è¨€é›£ç›¡  å¿ä¸ä½å‚·å¿ƒ",
+    "è¡¡é‡ä¸å‡ºæ„›æˆ–ä¸æ„›ä¹‹é–“çš„è·é›¢",
+    "å¦³èªªå¦³çš„å¿ƒ  ä¸å†æº«ç†±å¦‚æ˜”",
+    "å¾é‚£è£¡é–‹å§‹  å¾é‚£è£¡å¤±å»",
+    "æˆ‘ä¸€è¨€é›£ç›¡  å¿ä¸ä½å‚·å¿ƒ",
+    "è¡¡é‡ä¸å‡ºæ„›æˆ–ä¸æ„›ä¹‹é–“çš„è·é›¢",
+    "éš±éš±ç´„ç´„ä¸­  æ˜ç™½å¦³çš„æ±ºå®š",
+    "ä¸æ•¢å‹‰å¼·å¦³  åªå¥½ç‚ºé›£è‡ªå·±",
+    "æˆ‘ç‚ºé›£æˆ‘è‡ªå·±  æˆ‘ç‚ºé›£æˆ‘è‡ªå·±"
   };
   move(b_lines - 2, 0);
-  prints("\033[1;3%dm%s\033[m  Äw½XÁÙ¦³ %d ¤¸", time(0) % 7, msg[count], cuser.money);
+  prints("\033[1;3%dm%s\033[m  ç±Œç¢¼é‚„æœ‰ %d å…ƒ", time(0) % 7, msg[count], cuser.money);
   clrtoeol();
   if (++count == 13)
     count = 0;
 }
 
 
-static int			/* -1: ÁÙ¨S¤À¥X³Ó­t 0~4:Ä¹ªº¨º¤Ç°¨ */
+static int			/* -1: é‚„æ²’åˆ†å‡ºå‹è²  0~4:è´çš„é‚£åŒ¹é¦¬ */
 race_path(run, j, step)
   int run, j, step;
 {
@@ -73,7 +73,7 @@ race_path(run, j, step)
   /* step > 0 */
   move(run + 9, j * 2 + 8);
   for (i = 0; i < step; i++)
-    outs("¡½");
+    outs("â– ");
 
   if (pace[run] + step * 100 > 3000)
     return run;
@@ -84,16 +84,16 @@ race_path(run, j, step)
 int
 main_race()
 {
-  int money[5];			/* ¤­¤Ç°¨ªº©ãª÷ */
-  int speed[5];			/* ¤­¤Ç°¨ªº³t«× */
-  int stop[5];			/* ¤­¤Ç°¨ªº¼È°± */
-  int bomb;			/* ¬O§_¨Ï¥Î¬µ¼u */
-  int run;			/* ¥Ø«e¦b­pºâªº¨º¤Ç */
-  int win;			/* ­ş¤Ç°¨Ä¹¤F */
-  int flag;			/* ¨Æ¥óµo¥Í¦¸¼Æ */
+  int money[5];			/* äº”åŒ¹é¦¬çš„æŠ¼é‡‘ */
+  int speed[5];			/* äº”åŒ¹é¦¬çš„é€Ÿåº¦ */
+  int stop[5];			/* äº”åŒ¹é¦¬çš„æš«åœ */
+  int bomb;			/* æ˜¯å¦ä½¿ç”¨ç‚¸å½ˆ */
+  int run;			/* ç›®å‰åœ¨è¨ˆç®—çš„é‚£åŒ¹ */
+  int win;			/* å“ªåŒ¹é¦¬è´äº† */
+  int flag;			/* äº‹ä»¶ç™¼ç”Ÿæ¬¡æ•¸ */
   int i, j, ch;
   char buf[60];
-  char *racename[5] = {"¨ª¨ß", "ªº¿c", "¤ö¶À", "­¸¹q", "¦½¦å"};
+  char *racename[5] = {"èµ¤å…”", "çš„ç›§", "çˆªé»ƒ", "é£›é›»", "æ±—è¡€"};
 
   if (HAS_STATUS(STATUS_COINLOCK))
   {
@@ -103,7 +103,7 @@ main_race()
 
   while (1)
   {
-    vs_bar("ÁÉ°¨³õ");
+    vs_bar("è³½é¦¬å ´");
     out_song();
     bomb = 0;
     win = -1;
@@ -115,45 +115,45 @@ main_race()
       speed[i] = 100;
     }
     move(5, 0);
-    outs("  \033[1m°¨¦W¡G\033[m");
+    outs("  \033[1mé¦¬åï¼š\033[m");
     for (i = 0; i < 5; i++)
       prints("     %d. \033[1;3%dm%s\033[m", i + 1, i + 1, racename[i]);
-    outs("\n  \033[1m³t«×¡G\033[m\n  \033[1m½äª÷¡G\033[m\n\n");
+    outs("\n  \033[1mé€Ÿåº¦ï¼š\033[m\n  \033[1mè³­é‡‘ï¼š\033[m\n\n");
 
     for (i = 0; i < 5; i++)
-      prints("%d.\033[1;3%dm%s\033[mùø\n", i + 1, i + 1, racename[i]);
-    outs("¢w¢w¢wùö¢w¢w¢r¢w¢w¢r¢w¢w¢r¢w¢w¢r¢w¢w¢r¢w¢w¢r¢w¢w¢r¢w¢w¢r¢w¢w¢r¢w¢wù÷");
+      prints("%d.\033[1;3%dm%s\033[mâ•‘\n", i + 1, i + 1, racename[i]);
+    outs("â”€â”€â”€â•¨â”€â”€â”´â”€â”€â”´â”€â”€â”´â”€â”€â”´â”€â”€â”´â”€â”€â”´â”€â”€â”´â”€â”€â”´â”€â”€â”´â”€â”€â•œ");
 
     while (1)
     {
-      /* ¨M©w¦U¤Ç°¨½äª` */
-      ch = vget(2, 0, "±z­n©ã­ş¤Ç°¨(1-5)¡H[S]¶}©l [Q]Â÷¶}¡G", buf, 3, DOECHO);
+      /* æ±ºå®šå„åŒ¹é¦¬è³­æ³¨ */
+      ch = vget(2, 0, "æ‚¨è¦æŠ¼å“ªåŒ¹é¦¬(1-5)ï¼Ÿ[S]é–‹å§‹ [Q]é›¢é–‹ï¼š", buf, 3, DOECHO);
       i = buf[0];
       if (!ch || i == 's')
       {
 	if (money[0] || money[1] || money[2] || money[3] || money[4])
 	  break;
-	addmoney(money[0] + money[1] + money[2] + money[3] + money[4]);	/* ÁÙ¿ú */
+	addmoney(money[0] + money[1] + money[2] + money[3] + money[4]);	/* é‚„éŒ¢ */
 	goto abort_game;
       }
       else if (i < '1' || i > '5')
       {
-	addmoney(money[0] + money[1] + money[2] + money[3] + money[4]);	/* ÁÙ¿ú */
+	addmoney(money[0] + money[1] + money[2] + money[3] + money[4]);	/* é‚„éŒ¢ */
 	goto abort_game;
       }
 
-      ch = vget(3, 0, "­n©ã¦h¤Ö½äª÷¡H", buf, 6, DOECHO);
+      ch = vget(3, 0, "è¦æŠ¼å¤šå°‘è³­é‡‘ï¼Ÿ", buf, 6, DOECHO);
       j = atoi(buf);
       if (!ch)
       {
 	if (money[0] || money[1] || money[2] || money[3] || money[4])
 	  break;
-	addmoney(money[0] + money[1] + money[2] + money[3] + money[4]);	/* ÁÙ¿ú */
+	addmoney(money[0] + money[1] + money[2] + money[3] + money[4]);	/* é‚„éŒ¢ */
 	goto abort_game;
       }
       if (j < 1 || j > cuser.money)
       {
-	addmoney(money[0] + money[1] + money[2] + money[3] + money[4]);	/* ÁÙ¿ú */
+	addmoney(money[0] + money[1] + money[2] + money[3] + money[4]);	/* é‚„éŒ¢ */
 	goto abort_game;
       }
 
@@ -169,12 +169,12 @@ main_race()
       out_song();
     }
 
-    /* ¶}©l¹CÀ¸ */
+    /* é–‹å§‹éŠæˆ² */
     move(3, 0);
     clrtoeol();
     move(2, 0);
     clrtoeol();
-    outs("-== ½Ğ«ö \033[1;36mk\033[m ¬°±z¿ïªº«l¾s¥[ªo¡A«ö \033[1;36mz\033[m ¥i¥á¥X¬µ¼u(¥u¦³¤@¦¸¾÷·|) ==-");
+    outs("-== è«‹æŒ‰ \033[1;36mk\033[m ç‚ºæ‚¨é¸çš„å‹é§’åŠ æ²¹ï¼ŒæŒ‰ \033[1;36mz\033[m å¯ä¸Ÿå‡ºç‚¸å½ˆ(åªæœ‰ä¸€æ¬¡æ©Ÿæœƒ) ==-");
 
     while (win < 0)
     {
@@ -196,64 +196,64 @@ main_race()
 	ch = igetch();
       } while (ch != 'k' && (ch != 'z' || bomb));
 
-      run = rnd(5);		/* ¿ï¾Ü¨Æ¥óµo¥Í¹ï¶H */
-      flag %= 5;		/* ¦C¦L¨Æ¥ó©ó¿Ã¹õ¤W */
+      run = rnd(5);		/* é¸æ“‡äº‹ä»¶ç™¼ç”Ÿå°è±¡ */
+      flag %= 5;		/* åˆ—å°äº‹ä»¶æ–¼è¢å¹•ä¸Š */
       move(15 + flag, 0);
       clrtoeol();
 
-      if (ch == 'z')		/* ¥á¬µ¼u */
+      if (ch == 'z')		/* ä¸Ÿç‚¸å½ˆ */
       {
 	stop[run] = 3;
-	prints("\033[1m«OÄÖ²y¯{¨ì\033[3%dm%s\033[37m°±¤î«e¶i¤T¦¸¡A³t«× = 0\033[m",
+	prints("\033[1mä¿é½¡çƒç ¸åˆ°\033[3%dm%s\033[37måœæ­¢å‰é€²ä¸‰æ¬¡ï¼Œé€Ÿåº¦ = 0\033[m",
 	  run + 1, racename[run]);
 	speed[run] = 0;
 	flag++;
 	bomb = 1;
       }
-      else if (rnd(12) == 0)	/* ¯S®í¨Æ¥ó */
+      else if (rnd(12) == 0)	/* ç‰¹æ®Šäº‹ä»¶ */
       {
 	prints("\033[1;3%dm%s\033[36m", run + 1, racename[run]);
 
 	switch (rnd(14))
 	{
 	case 0:
-	  outs("ªA¤U«Â¦Ó­è¡A³t«× x1.5\033[m");
+	  outs("æœä¸‹å¨è€Œå‰›ï¼Œé€Ÿåº¦ x1.5\033[m");
 	  speed[run] *= 1.5;
 	  break;
 	case 1:
-	  outs("¨Ï¥XºµªºÃzµo¤O¡A«e¶i¤­®æ\033[m");
+	  outs("ä½¿å‡ºç†Šçš„çˆ†ç™¼åŠ›ï¼Œå‰é€²äº”æ ¼\033[m");
 	  win = race_path(run, pace[run] / 100, 5);
 	  pace[run] += 500;
 	  break;
 	case 2:
-	  outs("½ò¨ì¦a¹p¡A³t«×´î¥b\033[m");
+	  outs("è¸©åˆ°åœ°é›·ï¼Œé€Ÿåº¦æ¸›åŠ\033[m");
 	  speed[run] /= 2;
 	  break;
 	case 3:
-	  outs("½ò¨ì­»¿¼¥Ö·Æ­Ë¡A¼È°±¤G¦¸\033[m");
+	  outs("è¸©åˆ°é¦™è•‰çš®æ»‘å€’ï¼Œæš«åœäºŒæ¬¡\033[m");
 	  stop[run] += 2;
 	  break;
 	case 4:
-	  outs("½Ğ¯«¤W¨­¡A¼È°±¥|¦¸¡A³t«×¥[­¿\033[m");
+	  outs("è«‹ç¥ä¸Šèº«ï¼Œæš«åœå››æ¬¡ï¼Œé€Ÿåº¦åŠ å€\033[m");
 	  stop[run] += 4;
 	  speed[run] *= 2;
 	  break;
 	case 5:
-	  outs("°Û¥X¤jÅ]ªk©G¡A¨Ï¨ä¥L¤H¼È°±¤T¦¸\033[m");
+	  outs("å”±å‡ºå¤§é­”æ³•å’’ï¼Œä½¿å…¶ä»–äººæš«åœä¸‰æ¬¡\033[m");
 	  for (i = 0; i < 5 && i != run; i++)
 	    stop[i] += 3;
 	  break;
 	case 6:
-	  outs("Å¥¨£ badboy ªº¥[ªoÁn¡A³t«× +100\033[m");
+	  outs("è½è¦‹ badboy çš„åŠ æ²¹è²ï¼Œé€Ÿåº¦ +100\033[m");
 	  speed[run] += 100;
 	  break;
 	case 7:
-	  outs("¨Ï¥X¿ûÅKÅÜ¨­¡A«e¶i¤T®æ¡A³t«× +30\033[m");
+	  outs("ä½¿å‡ºé‹¼éµè®Šèº«ï¼Œå‰é€²ä¸‰æ ¼ï¼Œé€Ÿåº¦ +30\033[m");
 	  win = race_path(run, pace[run] / 100, 3);
 	  speed[run] += 30;
 	  break;
 	case 8:
-	  outs("°I¯«¤W¨­³t«×´î¥b¡A®ÇÃä¼È°±¤G¦¸\033[m");
+	  outs("è¡°ç¥ä¸Šèº«é€Ÿåº¦æ¸›åŠï¼Œæ—é‚Šæš«åœäºŒæ¬¡\033[m");
 	  speed[run] /= 2;
 	  if (run > 0)
 	    stop[run - 1] += 2;
@@ -261,19 +261,19 @@ main_race()
 	    stop[run + 1] += 2;
 	  break;
 	case 9:
-	  outs("³Q¶A©G¡A¦^¨ì°_ÂI\033[m");
+	  outs("è¢«è©›å’’ï¼Œå›åˆ°èµ·é»\033[m");
 	  win = race_path(run, pace[run] / 100, -30);
 	  break;
 	case 10:
 	  if (pace[0] + pace[1] + pace[2] + pace[3] + pace[4] > 6000)
 	  {
-	    outs("\033[5m¨Ï¥X³Í¤ÆÂÈ³³¡A©Ò¦³¤H¦^¨ì°_ÂI\033[m");
+	    outs("\033[5mä½¿å‡ºå‡±åŒ–è–°é™¶ï¼Œæ‰€æœ‰äººå›åˆ°èµ·é»\033[m");
 	    for (i = 0; i < 5; i++)
 	      win = race_path(i, pace[i] / 100, -30);
 	  }
 	  else
 	  {
-	    outs("¨Ï¥X¥øÃZ¼u¸õ¡A³t«× x1.3¡A¨ä¥L¤H´î¥b\033[m");
+	    outs("ä½¿å‡ºä¼éµå½ˆè·³ï¼Œé€Ÿåº¦ x1.3ï¼Œå…¶ä»–äººæ¸›åŠ\033[m");
 	    for (i = 0; i < 5 && i != run; i++)
 	      speed[i] /= 2;
 	    speed[run] *= 1.3;
@@ -282,26 +282,26 @@ main_race()
 	case 11:
 	  if (money[run])
 	  {
-	    outs("¾ß¨ì«Ü¦h¿ú¡A¼È°±¤@¦¸\033[m");
+	    outs("æ’¿åˆ°å¾ˆå¤šéŒ¢ï¼Œæš«åœä¸€æ¬¡\033[m");
 	    addmoney(money[run]);
 	    out_song();
 	    stop[run]++;
 	  }
 	  else
 	  {
-	    outs("¾ã¤Ç°¨²n°_¨Ó¤F¡A³t«× +50\033[m");
+	    outs("æ•´åŒ¹é¦¬çˆ½èµ·ä¾†äº†ï¼Œé€Ÿåº¦ +50\033[m");
 	    speed[run] += 50;
 	  }
 	  break;
 	case 12:
 	  j = rnd(5);
-	  prints("·R¤W¤F[3%dm%s[36m¡A³t«×¸ò¨e¤@¼Ë", j + 1, racename[j]);
+	  prints("æ„›ä¸Šäº†[3%dm%s[36mï¼Œé€Ÿåº¦è·Ÿç‰ ä¸€æ¨£", j + 1, racename[j]);
 	  speed[run] = speed[j];
 	  break;
 	case 13:
 	  if (money[run] > 0)
 	  {
-	    outs("ªº½äª÷ x1.5¡AÁÈ°Õ¡I\033[m");
+	    outs("çš„è³­é‡‘ x1.5ï¼Œè³ºå•¦ï¼\033[m");
 	    money[run] *= 1.5;
 	    move(7, 15);
 	    clrtoeol();
@@ -312,22 +312,22 @@ main_race()
 	  }
 	  else
 	  {
-	    outs("¾c¤l±¼¤F¡A°h«á¤T®æ\033[m");
+	    outs("é‹å­æ‰äº†ï¼Œé€€å¾Œä¸‰æ ¼\033[m");
 	    race_path(run, pace[run] / 100, -3);
 	  }
 	  break;
 	}
       }
-      else		/* ©¹«e¶] */
+      else		/* å¾€å‰è·‘ */
       {
 	if (stop[run])
 	{
-	  prints("\033[1;3%dm%s\033[37m ª¦¤£°_¨Ó\033[m", run + 1, racename[run]);
+	  prints("\033[1;3%dm%s\033[37m çˆ¬ä¸èµ·ä¾†\033[m", run + 1, racename[run]);
 	  stop[run]--;
 	}
 	else
 	{
-	  prints("\033[1;3%dm%s\033[37m ©é©R©b¶]\033[m", run + 1, racename[run]);
+	  prints("\033[1;3%dm%s\033[37m æ‹šå‘½å¥”è·‘\033[m", run + 1, racename[run]);
 	  i = pace[run] / 100;
 	  win = race_path(run, i, (pace[run] + speed[run]) / 100 - i);
 	  pace[run] += speed[run];
@@ -336,17 +336,17 @@ main_race()
       flag++;
     }
     move(b_lines - 1, 0);
-    prints("\033[1;35m¡¹ \033[37m¹CÀ¸µ²§ô \033[35m¡¹ \033[37mÀò³Óªº¬O\033[3%dm %s \033[m",
+    prints("\033[1;35mâ˜… \033[37méŠæˆ²çµæŸ \033[35mâ˜… \033[37mç²å‹çš„æ˜¯\033[3%dm %s \033[m",
       win + 1, racename[win]);
     if (money[win])
     {
       money[win] += money[win] * (pace[win] - (pace[0] + pace[1] + pace[2] + pace[3] + pace[4]) / 5) / 500;
-      sprintf(buf, "®¥³ß±z©ã¤¤¤F¡AÀò±o¼úª÷ %d ¤¸", money[win]);
+      sprintf(buf, "æ­å–œæ‚¨æŠ¼ä¸­äº†ï¼Œç²å¾—çé‡‘ %d å…ƒ", money[win]);
       addmoney(money[win]);
     }
     else
     {
-      strcpy(buf, "©êºp...±z¨S©ã¤¤£¬~~~");
+      strcpy(buf, "æŠ±æ­‰...æ‚¨æ²’æŠ¼ä¸­ã„›~~~");
     }
     vmsg(buf);
   }

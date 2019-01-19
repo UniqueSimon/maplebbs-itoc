@@ -13,38 +13,38 @@
 #include <fcntl.h>
 #include <errno.h>
 
-#if 0	/* itoc.030303.����: ²������ */
+#if 0	/* itoc.030303.註解: 簡易說明 */
 
-  hdr_stamp() �|���X�@�ӷs�� HDR�A�̶ǤJ�� token ���P�Ӧ��t���G
+  hdr_stamp() 會做出一個新的 HDR，依傳入的 token 不同而有差異：
 
-   0 : �s�W�@�g�H��(family �O @)�A�^�Ǫ� fpath �O hdr �ҫ��V
-       �M hdr_fpath(fpath, folder, hdr); �Ҳ��ͪ� fpath �ۦP
+   0 : 新增一篇信件(family 是 @)，回傳的 fpath 是 hdr 所指向
+       和 hdr_fpath(fpath, folder, hdr); 所產生的 fpath 相同
 
-  'A': �s�W�@�g�峹(family �O A)�A�^�Ǫ� fpath �O hdr �ҫ��V
-       �M hdr_fpath(fpath, folder, hdr); �Ҳ��ͪ� fpath �ۦP
+  'A': 新增一篇文章(family 是 A)，回傳的 fpath 是 hdr 所指向
+       和 hdr_fpath(fpath, folder, hdr); 所產生的 fpath 相同
 
-  'F': �s�W�@�Ө��v(family �O F)�A�^�Ǫ� fpath �O hdr �ҫ��V
-       �M hdr_fpath(fpath, folder, hdr); �Ҳ��ͪ� fpath �ۦP
+  'F': 新增一個卷宗(family 是 F)，回傳的 fpath 是 hdr 所指向
+       和 hdr_fpath(fpath, folder, hdr); 所產生的 fpath 相同
 
-  HDR_LINK      : fpath �w�����ɮ׮ɡA�n�ƻs���ɮר�s�H��(family �O @) �h
-                  �ñN hdr ���V�o�g�s�H��A�^�Ǫ� fpath �O������ɮ�
-                  ���ɮשM�s�H��O hard link�A��F�䤤�@�g�A�t�@�g�]�|�@�_�Q��
-                  �R�����ɮסA�s�H��ä��|�Q�R��
+  HDR_LINK      : fpath 已有舊檔案時，要複製舊檔案到新信件(family 是 @) 去
+                  並將 hdr 指向這篇新信件，回傳的 fpath 是原來舊檔案
+                  舊檔案和新信件是 hard link，改了其中一篇，另一篇也會一起被改
+                  刪除舊檔案，新信件並不會被刪除
 
-  HDR_LINK | 'A': fpath �w�����ɮ׮ɡA�n�ƻs���ɮר�s�峹(family �O A) �h
-                  �ñN hdr ���V�o�g�s�峹�A�^�Ǫ� fpath �O������ɮ�
-                  ���ɮשM�s�峹�O hard link�A��F�䤤�@�g�A�t�@�g�]�|�@�_�Q��
-                  �R�����ɮסA�s�峹�ä��|�Q�R��
+  HDR_LINK | 'A': fpath 已有舊檔案時，要複製舊檔案到新文章(family 是 A) 去
+                  並將 hdr 指向這篇新文章，回傳的 fpath 是原來舊檔案
+                  舊檔案和新文章是 hard link，改了其中一篇，另一篇也會一起被改
+                  刪除舊檔案，新文章並不會被刪除
 
-  HDR_COPY      : fpath �w�����ɮ׮ɡA�n�ƻs���ɮר�s�H��(family �O @) �h
-                  �ñN hdr ���V�o�g�s�H��A�^�Ǫ� fpath �O������ɮ�
-                  ���ɮשM�s�H��O copy�A��F�䤤�@�g�A�t�@�g�ä��|�Q��
-                  ���ɮ׻P�s�H��O�����W�ߤ��������G���ɮ�
+  HDR_COPY      : fpath 已有舊檔案時，要複製舊檔案到新信件(family 是 @) 去
+                  並將 hdr 指向這篇新信件，回傳的 fpath 是原來舊檔案
+                  舊檔案和新信件是 copy，改了其中一篇，另一篇並不會被改
+                  舊檔案與新信件是完全獨立不相關的二個檔案
 
-  HDR_COPY | 'A': fpath �w�����ɮ׮ɡA�n�ƻs���ɮר�s�峹(family �O A) �h
-                  �ñN hdr ���V�o�g�s�峹�A�^�Ǫ� fpath �O������ɮ�
-                  ���ɮשM�s�峹�O copy�A��F�䤤�@�g�A�t�@�g�ä��|�Q��
-                  ���ɮ׻P�s�峹�O�����W�ߤ��������G���ɮ�
+  HDR_COPY | 'A': fpath 已有舊檔案時，要複製舊檔案到新文章(family 是 A) 去
+                  並將 hdr 指向這篇新文章，回傳的 fpath 是原來舊檔案
+                  舊檔案和新文章是 copy，改了其中一篇，另一篇並不會被改
+                  舊檔案與新文章是完全獨立不相關的二個檔案
 
 #endif
 
@@ -84,7 +84,7 @@ hdr_stamp(folder, token, hdr, fpath)
     *fname++ = '/';
   }
 
-  if (rc = token & 0xdf)	/* �ܤj�g */
+  if (rc = token & 0xdf)	/* 變大寫 */
   {
     *fname++ = rc;
   }

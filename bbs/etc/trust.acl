@@ -1,52 +1,52 @@
-# ¦b trust.acl ¤£¦b untrust.acl ¤¤ªº email ¤~¥i»{ÃÒ
-# ±Ğ¨|¾÷ºc
+# åœ¨ trust.acl ä¸åœ¨ untrust.acl ä¸­çš„ email æ‰å¯èªè­‰
+# æ•™è‚²æ©Ÿæ§‹
 .edu.tw
 
 # ISP
-.eranet.net             # ¦~¥Nºô¸ôISP
-ethome.net.tw           # ªF´Ë
-giga.net.tw             # ©M«H¶Wºô¸ô
-.giga.net.tw            # ©M«H¶Wºô¸ô
+.eranet.net             # å¹´ä»£ç¶²è·¯ISP
+ethome.net.tw           # æ±æ£®
+giga.net.tw             # å’Œä¿¡è¶…ç¶²è·¯
+.giga.net.tw            # å’Œä¿¡è¶…ç¶²è·¯
 .hinet.net              # HiNet
-.is.net.tw              # ­^´¶¹FISP
+.is.net.tw              # è‹±æ™®é”ISP
 .seed.net.tw            # SeedNet
 seed.net.tw             # SeedNet
 so-net.net.tw           # Sony Net
-.tisnet.net.tw          # ¤j¦Pºô¸ô¤½¥q
+.tisnet.net.tw          # å¤§åŒç¶²è·¯å…¬å¸
 
-# ¥I¶O¹q¤l«H½c
+# ä»˜è²»é›»å­ä¿¡ç®±
 mail2000.com.tw         # Mail2000
 
-# ¤½¥q¦æ¸¹
-acer.com.tw             # §»ùÖ¹q¸£
-asus.com.tw             # µØºÓ¹q¸£
-.chinatrust.com.tw      # ¤¤°ê«H°U
-email.ots.com.tw        # ¹´¿³¸ê°T
-fpg.com.tw              # ¥xÆW¶ì½¦
-mail.mosel.com.tw       # ¥xÆW­Zª¿
-mail.ttn.com.tw         # ¥xÆW¹q°T
-.mustek.com.tw          # ÂE¤Í¬ì§Ş
-mtk.com.tw              # Ápµo¬ì§Ş
-mxic.com.tw             # ©ô§»¹q¤l
-ppt.com.tw              # ¥şÀ·ºë±K
-psitech.com.tw          # ¼z·ù¸ê°T
-realtek.com.tw          # ·ç¬R¥b¾ÉÅé
-silitek.com             # ¥úÄ_ LITEON ¬ì§Ş
-sunplus.com             # ­â¶§¬ì§Ş
-tasc.com.tw             # ¥x¨È¤ÑÆl
-tsmc.com.tw             # ¥xÆW¿nÅé¹q¸ô
-umc.com                 # ÁpµØ¹q¤l
-via.com.tw              # «Â²±¹q¤l
-winbond.com.tw          # µØ¨¹¹q¤l
-zyxel.com.tw            # ¦X¶Ô¬ì§Ş
+# å…¬å¸è¡Œè™Ÿ
+acer.com.tw             # å®ç¢é›»è…¦
+asus.com.tw             # è¯ç¢©é›»è…¦
+.chinatrust.com.tw      # ä¸­åœ‹ä¿¡è¨—
+email.ots.com.tw        # åƒ‘èˆˆè³‡è¨Š
+fpg.com.tw              # å°ç£å¡‘è† 
+mail.mosel.com.tw       # å°ç£èŒ‚çŸ½
+mail.ttn.com.tw         # å°ç£é›»è¨Š
+.mustek.com.tw          # é´»å‹ç§‘æŠ€
+mtk.com.tw              # è¯ç™¼ç§‘æŠ€
+mxic.com.tw             # æ—ºå®é›»å­
+ppt.com.tw              # å…¨æ‡‹ç²¾å¯†
+psitech.com.tw          # æ…§ç›Ÿè³‡è¨Š
+realtek.com.tw          # ç‘æ˜±åŠå°é«”
+silitek.com             # å…‰å¯¶ LITEON ç§‘æŠ€
+sunplus.com             # å‡Œé™½ç§‘æŠ€
+tasc.com.tw             # å°äºå¤©çºœ
+tsmc.com.tw             # å°ç£ç©é«”é›»è·¯
+umc.com                 # è¯è¯é›»å­
+via.com.tw              # å¨ç››é›»å­
+winbond.com.tw          # è¯é‚¦é›»å­
+zyxel.com.tw            # åˆå‹¤ç§‘æŠ€
 
-# ²ÕÂ´©Î¤½®a³æ¦ì
-iii.org.tw              # ¸êµ¦·|
-itri.org.tw             # ¤u¬ã°|
-ndl.gov.tw              # °ê®a©`¦Ì¹êÅç«Ç
-srrc.gov.tw             # ¦P¨B¿ç®g¬ã¨s¤¤¤ß
-tcfst.org.tw            # ¦Û±j¤u·~°òª÷·|
+# çµ„ç¹”æˆ–å…¬å®¶å–®ä½
+iii.org.tw              # è³‡ç­–æœƒ
+itri.org.tw             # å·¥ç ”é™¢
+ndl.gov.tw              # åœ‹å®¶å¥ˆç±³å¯¦é©—å®¤
+srrc.gov.tw             # åŒæ­¥è¼»å°„ç ”ç©¶ä¸­å¿ƒ
+tcfst.org.tw            # è‡ªå¼·å·¥æ¥­åŸºé‡‘æœƒ
 
 # Disable
-#.gov.tw                # gov.tw ºŞ²z¤£µ½
-#.org.tw                # org.tw ¥i¯à¦³ freemail
+#.gov.tw                # gov.tw ç®¡ç†ä¸å–„
+#.org.tw                # org.tw å¯èƒ½æœ‰ freemail

@@ -26,26 +26,26 @@ typedef struct
 
   int xid;			/* reserved */
 
-  char xname[32];		/* ÀÉ®×¦WºÙ */
-  char owner[80];		/* §@ªÌ (E-mail address) */
-  char nick[49];		/* ¼ÊºÙ */
-  char score;			/* ¤å³¹µû¤ñ¤À¼Æ */
+  char xname[32];		/* æª”æ¡ˆåç¨± */
+  char owner[80];		/* ä½œè€… (E-mail address) */
+  char nick[49];		/* æš±ç¨± */
+  char score;			/* æ–‡ç« è©•æ¯”åˆ†æ•¸ */
 
   char date[9];			/* 96/12/31 */
-  /* Thor.990329:¯S§Oª`·N, date¥u¨ÑÅã¥Ü¥Î, ¤£§@¤ñ¸û, ¥HÁ×§K y2k °İÃD,
-                 ©w¸q 2000¬° 00, 2001¬°01 */
+  /* Thor.990329:ç‰¹åˆ¥æ³¨æ„, dateåªä¾›é¡¯ç¤ºç”¨, ä¸ä½œæ¯”è¼ƒ, ä»¥é¿å… y2k å•é¡Œ,
+                 å®šç¾© 2000ç‚º 00, 2001ç‚º01 */
 
-  char title[73];		/* ¥DÃD TTLEN + 1 */
+  char title[73];		/* ä¸»é¡Œ TTLEN + 1 */
 }          HDR;
 
 
-/* gopher url ¦r¦ê¡Gxname + owner + nick + date */
+/* gopher url å­—ä¸²ï¼šxname + owner + nick + date */
 
 #define	GEM_URLEN	(32 + 80 + 50 + 9 - 1)
 
 
 /* ----------------------------------------------------- */
-/* post.xmode ªº©w¸q					 */
+/* post.xmode çš„å®šç¾©					 */
 /* ----------------------------------------------------- */
 
 
@@ -55,58 +55,58 @@ typedef struct
 #define POST_4		0x00000008
 #define POST_5		0x00000010
 #define POST_6		0x00000020
-#define POST_BOTTOM	0x00000040	/* ¸m©³ */
-#define POST_DELETE	0x00000080	/* ¼Ğ°O«İ¬åªº */
-#define	POST_INCOME	0x00000100	/* Âà«H¶i¨Óªº */
+#define POST_BOTTOM	0x00000040	/* ç½®åº• */
+#define POST_DELETE	0x00000080	/* æ¨™è¨˜å¾…ç çš„ */
+#define	POST_INCOME	0x00000100	/* è½‰ä¿¡é€²ä¾†çš„ */
 #define	POST_10		0x00000200
-#define	POST_OUTGO	0x00000400	/* ¶·Âà«H¥X¥h */
-#define	POST_RESTRICT	0x00000800	/* ­­¨î¯Å¤å³¹¡A¶· manager/owner ¤~¯à¬İ */
-#define POST_RESERVED	0x00001000	/* ­­¨î¯Å¤å³¹¡A¶· sysop ¤~¯à§ó§ï */
+#define	POST_OUTGO	0x00000400	/* é ˆè½‰ä¿¡å‡ºå» */
+#define	POST_RESTRICT	0x00000800	/* é™åˆ¶ç´šæ–‡ç« ï¼Œé ˆ manager/owner æ‰èƒ½çœ‹ */
+#define POST_RESERVED	0x00001000	/* é™åˆ¶ç´šæ–‡ç« ï¼Œé ˆ sysop æ‰èƒ½æ›´æ”¹ */
 #define POST_14		0x00002000
-#define POST_SCORE	0x00004000	/* ¼Ğ°Oµû¤À¹Lªº */
+#define POST_SCORE	0x00004000	/* æ¨™è¨˜è©•åˆ†éçš„ */
 #define POST_16		0x00008000
 
 
 /* ----------------------------------------------------- */
-/* mail.xmode ªº©w¸q					 */
+/* mail.xmode çš„å®šç¾©					 */
 /* ----------------------------------------------------- */
 
 
 #define MAIL_READ	0x00000001	/* already read */
 #define MAIL_MARKED	0x00000002	/* marked */
-#define MAIL_REPLIED	0x00000004	/* ¤w¸g¦^¹L«H¤F */
+#define MAIL_REPLIED	0x00000004	/* å·²ç¶“å›éä¿¡äº† */
 #define	MAIL_MULTI	0x00000008	/* mail list */
 #define	MAIL_5		0x00000010
-#define	MAIL_NOREPLY	0x00000020	/* ¤£¥i¦^«H */
-#define MAIL_BOTTOM	0x00000040	/* ¸m©³ */
-#define MAIL_DELETE	0x00000080	/* ±N¾D§R°£ */
-#define	MAIL_INCOME	0x00000100	/* bbsmail ¶i¨Óªº */
+#define	MAIL_NOREPLY	0x00000020	/* ä¸å¯å›ä¿¡ */
+#define MAIL_BOTTOM	0x00000040	/* ç½®åº• */
+#define MAIL_DELETE	0x00000080	/* å°‡é­åˆªé™¤ */
+#define	MAIL_INCOME	0x00000100	/* bbsmail é€²ä¾†çš„ */
 #define MAIL_10		0x00000200
 #define MAIL_11		0x00000400
-#define	MAIL_RESTRICT	0x00000800	/* ­­¨î¯Å«H¥ó¡A¶· manager/owner ¤~¯à¬İ */
-#define MAIL_RESERVED	0x00001000	/* ­­¨î¯Å«H¥ó¡A¶· sysop ¤~¯à§ó§ï */
+#define	MAIL_RESTRICT	0x00000800	/* é™åˆ¶ç´šä¿¡ä»¶ï¼Œé ˆ manager/owner æ‰èƒ½çœ‹ */
+#define MAIL_RESERVED	0x00001000	/* é™åˆ¶ç´šä¿¡ä»¶ï¼Œé ˆ sysop æ‰èƒ½æ›´æ”¹ */
 #define MAIL_14		0x00002000
 #define MAIL_15		0x00004000
 #define MAIL_16		0x00008000
 
 
 /* ----------------------------------------------------- */
-/* gem(gopher).xmode ªº©w¸q				 */
+/* gem(gopher).xmode çš„å®šç¾©				 */
 /* ----------------------------------------------------- */
 
 
-/* itoc.010602.µù¸Ñ: GEM_RESTRICT/RESERVED ©M POST_RESTRICT/RESERVED ­n¤Ç°t */
-#define	GEM_RESTRICT	0x00000800	/* ­­¨î¯ÅºëµØ°Ï¡A¶· manager/owner ¤~¯à¬İ */
-#define	GEM_RESERVED	0x00001000	/* ­­¨î¯ÅºëµØ°Ï¡A¶· sysop ¤~¯à§ó§ï */
+/* itoc.010602.è¨»è§£: GEM_RESTRICT/RESERVED å’Œ POST_RESTRICT/RESERVED è¦åŒ¹é… */
+#define	GEM_RESTRICT	0x00000800	/* é™åˆ¶ç´šç²¾è¯å€ï¼Œé ˆ manager/owner æ‰èƒ½çœ‹ */
+#define	GEM_RESERVED	0x00001000	/* é™åˆ¶ç´šç²¾è¯å€ï¼Œé ˆ sysop æ‰èƒ½æ›´æ”¹ */
 
 #define	GEM_FOLDER	0x00010000	/* folder / article */
-#define	GEM_BOARD	0x00020000	/* ¬İªOºëµØ°Ï */
+#define	GEM_BOARD	0x00020000	/* çœ‹æ¿ç²¾è¯å€ */
 #define GEM_19		0x00040000
-#define GEM_LINE	0x00080000	/* ¤À¹j½u */
+#define GEM_LINE	0x00080000	/* åˆ†éš”ç·š */
 
 
 /* ----------------------------------------------------- */
-/* hdr_stamp() ªº©w¸q					 */
+/* hdr_stamp() çš„å®šç¾©					 */
 /* ----------------------------------------------------- */
 
 

@@ -3,7 +3,7 @@ str_lowest(dst, src)
   char *dst, *src;
 {
   int ch;
-  int in_chi = 0;	/* 1: «e¤@½X¬O¤¤¤å¦r */
+  int in_chi = 0;	/* 1: å‰ä¸€ç¢¼æ˜¯ä¸­æ–‡å­— */
 
   do
   {

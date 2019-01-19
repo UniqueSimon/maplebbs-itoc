@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* gem.c	( NTHU CS MapleBBS Ver 3.00 )		 */
 /*-------------------------------------------------------*/
-/* target : ºëµØ°Ï¾\Åª¡B½s¿ï			     	 */
+/* target : ç²¾è¯å€é–±è®€ã€ç·¨é¸			     	 */
 /* create : 95/03/29				     	 */
 /* update : 97/02/02				     	 */
 /*-------------------------------------------------------*/
@@ -19,12 +19,12 @@ extern TagItem TagList[];
 
 
 #define	GEM_WAY		3
-static int gem_way;		/* 0:¥u¦L¼ĞÃD 1:¼ĞÃD¥[ÀÉ¦W 2:¼ĞÃD¥[½sªÌ */
+static int gem_way;		/* 0:åªå°æ¨™é¡Œ 1:æ¨™é¡ŒåŠ æª”å 2:æ¨™é¡ŒåŠ ç·¨è€… */
 
-static int GemBufferNum;	/* Thor.990414: ´£«e«Å§i¡A¥Î©ógem_head */
+static int GemBufferNum;	/* Thor.990414: æå‰å®£å‘Šï¼Œç”¨æ–¼gem_head */
 
-static char GemAnchor[64];	/* ©wÁã°Ïªº¸ô®| */
-static char GemSailor[20];	/* ©wÁã°Ïªº¼ĞÃD */
+static char GemAnchor[64];	/* å®šéŒ¨å€çš„è·¯å¾‘ */
+static char GemSailor[20];	/* å®šéŒ¨å€çš„æ¨™é¡Œ */
 
 static int gem_add_all();
 static int gem_paste();
@@ -39,24 +39,24 @@ gem_item(num, hdr, level)
 {
   int xmode, gtype;
 
-  /* ¡·¡¸¡¹¡º¡»¡¼¡½¡¾¡¿ : A1B7 ... */
+  /* â—â˜†â˜…â—‡â—†â–¡â– â–½â–¼ : A1B7 ... */
 
   xmode = hdr->xmode;
   gtype = (char) 0xba;
 
-  /* ¥Ø¿ı¥Î¹ê¤ß¡A¤£¬O¥Ø¿ı¥ÎªÅ¤ß */
-  if (xmode & GEM_FOLDER)			/* ¤å³¹:¡º ¨÷©v:¡» */
+  /* ç›®éŒ„ç”¨å¯¦å¿ƒï¼Œä¸æ˜¯ç›®éŒ„ç”¨ç©ºå¿ƒ */
+  if (xmode & GEM_FOLDER)			/* æ–‡ç« :â—‡ å·å®—:â—† */
     gtype += 1;
 
-  if (hdr->xname[0] == '@')			/* ¸ê®Æ:¡¸ ¤ÀÃş:¡¹ */
+  if (hdr->xname[0] == '@')			/* è³‡æ–™:â˜† åˆ†é¡:â˜… */
     gtype -= 2;
-  else if (xmode & (GEM_BOARD | GEM_LINE))	/* ¤À¹j:¡¼ ¬İªO:¡½ */
+  else if (xmode & (GEM_BOARD | GEM_LINE))	/* åˆ†éš”:â–¡ çœ‹æ¿:â–  */
     gtype += 2;
 
   prints("%6d%c%c\241%c ", num, tag_char(hdr->chrono), xmode & GEM_RESTRICT ? ')' : ' ', gtype);
 
   if ((xmode & GEM_RESTRICT) && !(level & GEM_M_BIT))
-    outs(MSG_DATA_CLOAK);				/* itoc.000319: ­­¨î¯Å¤å³¹«O±K */
+    outs(MSG_DATA_CLOAK);				/* itoc.000319: é™åˆ¶ç´šæ–‡ç« ä¿å¯† */
   else if (gem_way == 0)
     prints("%.*s\n", d_cols + 64, hdr->title);
   else
@@ -74,11 +74,11 @@ gem_body(xo)
   max = xo->max;
   if (max <= 0)
   {
-    outs("\n\n¡mºëµØ°Ï¡n©|¦b§l¨ú¤Ñ¦a¶¡ªº¤éºë¤ëµØ :)");
+    outs("\n\nã€Šç²¾è¯å€ã€‹å°šåœ¨å¸å–å¤©åœ°é–“çš„æ—¥ç²¾æœˆè¯ :)");
 
     if (xo->key & GEM_W_BIT)
     {
-      switch (vans("(A)·s¼W¸ê®Æ (P)¶K½Æ (G)®üÁã¥\\¯à [N]µL©Ò¨Æ¨Æ "))
+      switch (vans("(A)æ–°å¢è³‡æ–™ (P)è²¼è¤‡ (G)æµ·éŒ¨åŠŸ\èƒ½ [N]ç„¡æ‰€äº‹äº‹ "))
       {
       case 'a':
 	max = gem_add_all(xo);
@@ -111,7 +111,7 @@ gem_body(xo)
     max = tail;
 
   move(3, 0);
-  tail = xo->key;	/* ­É¥Î tail */
+  tail = xo->key;	/* å€Ÿç”¨ tail */
   do
   {
     gem_item(++num, hdr++, tail);
@@ -119,7 +119,7 @@ gem_body(xo)
   clrtobot();
 
   /* return XO_NONE; */
-  return XO_FOOT;	/* itoc.010403: §â b_lines ¶ñ¤W feeter */
+  return XO_FOOT;	/* itoc.010403: æŠŠ b_lines å¡«ä¸Š feeter */
 }
 
 
@@ -129,10 +129,10 @@ gem_head(xo)
 {
   char buf[20];
 
-  vs_head("ºëµØ¤å³¹", xo->xyz);
+  vs_head("ç²¾è¯æ–‡ç« ", xo->xyz);
 
   if ((xo->key & GEM_W_BIT) && GemBufferNum > 0)
-    sprintf(buf, "(°Å¶KÃ¯ %d ½g)", GemBufferNum);
+    sprintf(buf, "(å‰ªè²¼ç°¿ %d ç¯‡)", GemBufferNum);
   else
     buf[0] = '\0';
 
@@ -148,7 +148,7 @@ gem_toggle(xo)
   gem_way++;
   gem_way %= GEM_WAY;
 
-  /* ¥u¦³¯¸ªø¯à¬İ¨ìÀÉ¦W */
+  /* åªæœ‰ç«™é•·èƒ½çœ‹åˆ°æª”å */
   if (!(xo->key & GEM_X_BIT) && gem_way == 1)
     gem_way++;
 
@@ -179,10 +179,10 @@ gem_load(xo)
 /* ----------------------------------------------------- */
 
 
-#define	GEM_PLAIN	0x01	/* ¹w´Á¬O plain text */
+#define	GEM_PLAIN	0x01	/* é æœŸæ˜¯ plain text */
 
 
-static HDR *		/* NULL:µLÅvÅª¨ú */
+static HDR *		/* NULL:ç„¡æ¬Šè®€å– */
 gem_check(xo, fpath, op)
   XO *xo;
   char *fpath;
@@ -215,21 +215,21 @@ gem_check(xo, fpath, op)
 
 
 #if 0
-static int	/* -1:¤£¬O¬İªOºëµØ°Ï  >=0:bno */
+static int	/* -1:ä¸æ˜¯çœ‹æ¿ç²¾è¯å€  >=0:bno */
 gem_bno(xo)
   XO *xo;
 {
   char *dir, *str;
   int bno;
 
-  /* ¥Ñ xo->dir §ä¥X¥Ø«e¦b­ş¤@­ÓªOªººëµØ°Ï */
+  /* ç”± xo->dir æ‰¾å‡ºç›®å‰åœ¨å“ªä¸€å€‹æ¿çš„ç²¾è¯å€ */
   dir = xo->dir;
 
-  /* ÀË¬d¬O§_¬° gem/brd/brdname/.DIR ªº®æ¦¡¡A
-     Á×§K­Y¦b gem/.DIR ©Î usr/u/userid/gem/.DIR ·|³y¦¨¿ù»~ */
+  /* æª¢æŸ¥æ˜¯å¦ç‚º gem/brd/brdname/.DIR çš„æ ¼å¼ï¼Œ
+     é¿å…è‹¥åœ¨ gem/.DIR æˆ– usr/u/userid/gem/.DIR æœƒé€ æˆéŒ¯èª¤ */
   if (dir[0] == 'g' && dir[4] == 'b')
   {
-    dir += 8;	/* ¸õ¹L "gem/brd/" */
+    dir += 8;	/* è·³é "gem/brd/" */
     if (str = strchr(dir, '/'))
     {
       *str = '\0';
@@ -245,23 +245,23 @@ gem_bno(xo)
 
 
 /* ----------------------------------------------------- */
-/* ¸ê®Æ¤§·s¼W¡Gappend / insert				 */
+/* è³‡æ–™ä¹‹æ–°å¢ï¼šappend / insert				 */
 /* ----------------------------------------------------- */
 
 
 /* itoc.060605:
-  1. ¦b hdr_stamp() ¤¤¥ÎÀÉ®×¬O§_¤w¸g¦s¦bªº¤èªk¨Ó½T»{¬O§_¬° unique chrono¡A
-     µM¦ÓºëµØ°ÏªºÀÉ®×¥i¥H¦³¤TºØ token (F/A/L)¡A©Ò¥H¥i¥H·|µo¥Í F1234567/A1234567/L1234567
-     ¤T­Ó¤£¦PÀÉ¦W¦ı«o¬Û¦P chrono ªº¿ù»~¡C
-  2. Tagger() ­n¨D unique chrono¡A§_«h¦pªG tag ¨ì¬Û¦P chrono ªºÀÉ®×¡A¸Ó chrono ªº©Ò¦³ÀÉ®×
-     ³£·| tag ¥¢®Ä¡C
-  3. ©Ò¥H´N±q hdr_stamp() §ï¼g¤@°¦ gem_hdr_stamp()¡C
+  1. åœ¨ hdr_stamp() ä¸­ç”¨æª”æ¡ˆæ˜¯å¦å·²ç¶“å­˜åœ¨çš„æ–¹æ³•ä¾†ç¢ºèªæ˜¯å¦ç‚º unique chronoï¼Œ
+     ç„¶è€Œç²¾è¯å€çš„æª”æ¡ˆå¯ä»¥æœ‰ä¸‰ç¨® token (F/A/L)ï¼Œæ‰€ä»¥å¯ä»¥æœƒç™¼ç”Ÿ F1234567/A1234567/L1234567
+     ä¸‰å€‹ä¸åŒæª”åä½†å»ç›¸åŒ chrono çš„éŒ¯èª¤ã€‚
+  2. Tagger() è¦æ±‚ unique chronoï¼Œå¦å‰‡å¦‚æœ tag åˆ°ç›¸åŒ chrono çš„æª”æ¡ˆï¼Œè©² chrono çš„æ‰€æœ‰æª”æ¡ˆ
+     éƒ½æœƒ tag å¤±æ•ˆã€‚
+  3. æ‰€ä»¥å°±å¾ hdr_stamp() æ”¹å¯«ä¸€éš» gem_hdr_stamp()ã€‚
 */
 
 static int
 gem_hdr_stamp(folder, token, hdr, fpath)
   char *folder;
-  int token;		/* ¥u·|¦³ F/A/L | HDR_LINK/HDR_COPY */
+  int token;		/* åªæœƒæœ‰ F/A/L | HDR_LINK/HDR_COPY */
   HDR *hdr;
   char *fpath;
 {
@@ -269,8 +269,8 @@ gem_hdr_stamp(folder, token, hdr, fpath)
   int rc, chrono;
   char *flink, buf[128];
   int i;
-  int Token;		/* token ªº¤j¼g */
-  char *ptr;		/* token ©Ò¦b³B */
+  int Token;		/* token çš„å¤§å¯« */
+  char *ptr;		/* token æ‰€åœ¨è™• */
   char *pool = "FAL";
   static time_t chrono0;
 
@@ -299,13 +299,13 @@ gem_hdr_stamp(folder, token, hdr, fpath)
     *fname++ = '/';
   }
 
-  Token = token & 0xdf;	/* ÅÜ¤j¼g */
+  Token = token & 0xdf;	/* è®Šå¤§å¯« */
   ptr = fname;
   fname++;
 
   chrono = time(0);
 
-  /* itoc.060605: ¥Ñ©óºëµØ°Ï©¹©¹¦³¤j¶q½Æ»s¶K¤W¡A©Ò¥H´N°®¯Ü§â¤W¤@¦¸³Ì«áªº chrono °O¤U¨Ó¡A³o¦¸´N¤£¥Î±qÀY try */
+  /* itoc.060605: ç”±æ–¼ç²¾è¯å€å¾€å¾€æœ‰å¤§é‡è¤‡è£½è²¼ä¸Šï¼Œæ‰€ä»¥å°±ä¹¾è„†æŠŠä¸Šä¸€æ¬¡æœ€å¾Œçš„ chrono è¨˜ä¸‹ä¾†ï¼Œé€™æ¬¡å°±ä¸ç”¨å¾é ­ try */
   if (chrono <= chrono0)
     chrono = chrono0 + 1;
 
@@ -314,7 +314,7 @@ gem_hdr_stamp(folder, token, hdr, fpath)
     *family = radix32[chrono & 31];
     archiv32(chrono, fname);
 
-    /* ­n½T«O³o­Ó chrono ªº F/A/L ³£¨S¦³ÀÉ®× */
+    /* è¦ç¢ºä¿é€™å€‹ chrono çš„ F/A/L éƒ½æ²’æœ‰æª”æ¡ˆ */
     for (i = 0; i < 3; i++)
     {
       if (pool[i] != Token)
@@ -375,7 +375,7 @@ brd2gem(brd, gem)
 }
 
 
-#if 0	/* itoc.010218: ´«·sªº gem_log() */
+#if 0	/* itoc.010218: æ›æ–°çš„ gem_log() */
 static void
 gem_log(folder, action, hdr)
   char *folder;
@@ -415,7 +415,7 @@ gem_log(folder, action, hdr)
   if (!(fp1 = fopen(fpath1, "a")))
     return;
 
-  /* §â·sªº²§°Ê©ñ¦b³Ì¤W­±¡A¨Ã¨Ì²§°Ê¶¶§Ç½s¸¹ */
+  /* æŠŠæ–°çš„ç•°å‹•æ”¾åœ¨æœ€ä¸Šé¢ï¼Œä¸¦ä¾ç•°å‹•é †åºç·¨è™Ÿ */
 
   fprintf(fp1, "<01> %s %-12s [%s] %s\n     %s\n\n", Now(),
     cuser.userid, action, hdr->xname, hdr->title);
@@ -423,20 +423,20 @@ gem_log(folder, action, hdr)
   if (fp2 = fopen(fpath2, "r"))
   {
     char buf[STRLEN];
-    int i = 6;				/* ±q²Ä¤G½g¶}©l */
+    int i = 6;				/* å¾ç¬¬äºŒç¯‡é–‹å§‹ */
     int j;
 
     while (fgets(buf, STRLEN, fp2))
     {
-      if (++i > 63)			/* ¥u«O¯d³Ì·s 20 µ§²§°Ê */
+      if (++i > 63)			/* åªä¿ç•™æœ€æ–° 20 ç­†ç•°å‹• */
 	break;
 
       j = i % 3;
-      if (j == 1)			/* ²Ä¤@¦æ */
+      if (j == 1)			/* ç¬¬ä¸€è¡Œ */
 	fprintf(fp1, "<%02d> %s", i / 3, buf + 5);
-      else if (j == 2)			/* ²Ä¤G¦æ */
+      else if (j == 2)			/* ç¬¬äºŒè¡Œ */
 	fprintf(fp1, "%s\n", buf);
-					/* ²Ä¤T¦æ¬OªÅ¦æ */
+					/* ç¬¬ä¸‰è¡Œæ˜¯ç©ºè¡Œ */
     }
     fclose(fp2);
   }
@@ -460,9 +460,9 @@ gem_add(xo, gtype)
   if (!gtype)
   {
     gtype = vans((level & GEM_X_BIT) ?
-      /* "·s¼W A)rticle B)oard C)lass D)ata F)older L)ine P)aste Q)uit [Q] " : */
-      "·s¼W (A)¤å³¹ (B)¬İªO (C)¤ÀÃş (D)¸ê®Æ (F)¨÷©v (L)¤À¹j (P)¶K½Æ (Q)¨ú®ø¡H[Q] " : 
-      "·s¼W (A)¤å³¹ (F)¨÷©v (L)¤À¹j (P)¶K½Æ (Q)¨ú®ø¡H[Q] ");
+      /* "æ–°å¢ A)rticle B)oard C)lass D)ata F)older L)ine P)aste Q)uit [Q] " : */
+      "æ–°å¢ (A)æ–‡ç«  (B)çœ‹æ¿ (C)åˆ†é¡ (D)è³‡æ–™ (F)å·å®— (L)åˆ†éš” (P)è²¼è¤‡ (Q)å–æ¶ˆï¼Ÿ[Q] " : 
+      "æ–°å¢ (A)æ–‡ç«  (F)å·å®— (L)åˆ†éš” (P)è²¼è¤‡ (Q)å–æ¶ˆï¼Ÿ[Q] ");
   }
 
   if (gtype == 'p')
@@ -487,17 +487,17 @@ gem_add(xo, gtype)
   }
   else
   {
-    if (!vget(b_lines, 0, "¼ĞÃD¡G", title, TTLEN + 1, DOECHO))
+    if (!vget(b_lines, 0, "æ¨™é¡Œï¼š", title, TTLEN + 1, DOECHO))
       return XO_FOOT;
 
     if (gtype == 'c' || gtype == 'd')
     {
-      if (!vget(b_lines, 0, "ÀÉ¦W¡G", fpath, BNLEN + 1, DOECHO))
+      if (!vget(b_lines, 0, "æª”åï¼š", fpath, BNLEN + 1, DOECHO))
 	return XO_FOOT;
 
       if (strchr(fpath, '/'))
       {
-	zmsg("¤£¦XªkªºÀÉ®×¦WºÙ");
+	zmsg("ä¸åˆæ³•çš„æª”æ¡ˆåç¨±");
 	return XO_FOOT;
       }
 
@@ -508,7 +508,7 @@ gem_add(xo, gtype)
       if (gtype == 'c')
       {
 	strcat(fpath, "/");
-	sprintf(hdr.title, "%-13s¤ÀÃş ¡¼ %.50s", fpath, title);
+	sprintf(hdr.title, "%-13såˆ†é¡ â–¡ %.50s", fpath, title);
 	hdr.xmode = GEM_FOLDER;
       }
       else
@@ -526,7 +526,7 @@ gem_add(xo, gtype)
 
       if (gtype == 'a')
       {
-	if (vedit(fpath, 0))	/* Thor.981020: ª`·N³Qtalkªº°İÃD */
+	if (vedit(fpath, 0))	/* Thor.981020: æ³¨æ„è¢«talkçš„å•é¡Œ */
 	{
 	  unlink(fpath);
 	  zmsg(msg_cancel);
@@ -548,8 +548,8 @@ gem_add(xo, gtype)
     }
   }
 
-  /* ans = vans("¦s©ñ¦ì¸m A)ppend I)nsert N)ext Q)uit [A] "); */
-  ans = vans("¦s©ñ¦ì¸m A)¥[¨ì³Ì«á I/N)´¡¤J¥Ø«e¦ì¸m Q)Â÷¶} [A] ");
+  /* ans = vans("å­˜æ”¾ä½ç½® A)ppend I)nsert N)ext Q)uit [A] "); */
+  ans = vans("å­˜æ”¾ä½ç½® A)åŠ åˆ°æœ€å¾Œ I/N)æ’å…¥ç›®å‰ä½ç½® Q)é›¢é–‹ [A] ");
 
   if (ans == 'q')
   {
@@ -565,7 +565,7 @@ gem_add(xo, gtype)
   else
     rec_add(dir, &hdr, sizeof(HDR));
 
-  gem_log(dir, "·s¼W", &hdr);
+  gem_log(dir, "æ–°å¢", &hdr);
 
   return (gtype ? gem_load(xo) : gem_init(xo));
 }
@@ -580,7 +580,7 @@ gem_add_all(xo)
 
 
 static int
-gem_add_article(xo)		/* itoc.010419: §Ö³tÁä */
+gem_add_article(xo)		/* itoc.010419: å¿«é€Ÿéµ */
   XO *xo;
 {
   return gem_add(xo, 'a');
@@ -588,7 +588,7 @@ gem_add_article(xo)		/* itoc.010419: §Ö³tÁä */
 
 
 static int
-gem_add_folder(xo)		/* itoc.010419: §Ö³tÁä */
+gem_add_folder(xo)		/* itoc.010419: å¿«é€Ÿéµ */
   XO *xo;
 {
   return gem_add(xo, 'f');
@@ -596,7 +596,7 @@ gem_add_folder(xo)		/* itoc.010419: §Ö³tÁä */
 
 
 /* ----------------------------------------------------- */
-/* ¸ê®Æ¤§­×§ï¡Gedit / title				 */
+/* è³‡æ–™ä¹‹ä¿®æ”¹ï¼šedit / title				 */
 /* ----------------------------------------------------- */
 
 
@@ -620,7 +620,7 @@ gem_edit(xo)
   else
   {
     if (vedit(fpath, 0) >= 0)
-      gem_log(xo->dir, "­×§ï", hdr);
+      gem_log(xo->dir, "ä¿®æ”¹", hdr);
   }
 
   return gem_head(xo);
@@ -639,13 +639,13 @@ gem_title(xo)
 
   memcpy(&mhdr, fhdr, sizeof(HDR));
 
-  vget(b_lines, 0, "¼ĞÃD¡G", mhdr.title, TTLEN + 1, GCARRY);
+  vget(b_lines, 0, "æ¨™é¡Œï¼š", mhdr.title, TTLEN + 1, GCARRY);
 
   if (xo->key & GEM_X_BIT)
   {
-    vget(b_lines, 0, "½sªÌ¡G", mhdr.owner, IDLEN + 1, GCARRY);
-    /* vget(b_lines, 0, "¼ÊºÙ¡G", mhdr.nick, sizeof(mhdr.nick), GCARRY); */	/* ºëµØ°Ï¦¹Äæ¦ì¬°ªÅ */
-    vget(b_lines, 0, "¤é´Á¡G", mhdr.date, sizeof(mhdr.date), GCARRY);
+    vget(b_lines, 0, "ç·¨è€…ï¼š", mhdr.owner, IDLEN + 1, GCARRY);
+    /* vget(b_lines, 0, "æš±ç¨±ï¼š", mhdr.nick, sizeof(mhdr.nick), GCARRY); */	/* ç²¾è¯å€æ­¤æ¬„ä½ç‚ºç©º */
+    vget(b_lines, 0, "æ—¥æœŸï¼š", mhdr.date, sizeof(mhdr.date), GCARRY);
   }
 
   if (memcmp(fhdr, &mhdr, sizeof(HDR)) && vans(msg_sure_ny) == 'y')
@@ -659,7 +659,7 @@ gem_title(xo)
     move(3 + cur, 0);
     gem_item(++pos, fhdr, xo->key);
 
-    gem_log(xo->dir, "¼ĞÃD", fhdr);
+    gem_log(xo->dir, "æ¨™é¡Œ", fhdr);
   }
   return XO_FOOT;
 }
@@ -718,12 +718,12 @@ gem_state(xo)
 
 
 /* ----------------------------------------------------- */
-/* ¸ê®Æ¤§ÂsÄı¡Gedit / title				 */
+/* è³‡æ–™ä¹‹ç€è¦½ï¼šedit / title				 */
 /* ----------------------------------------------------- */
 
 
-int			/* -1:µLÅv­­ */
-gem_link(brdname)	/* ÀË¬d³sµ²¥h¨ä¥L¬İªOºëµØ°ÏªºÅv­­ */
+int			/* -1:ç„¡æ¬Šé™ */
+gem_link(brdname)	/* æª¢æŸ¥é€£çµå»å…¶ä»–çœ‹æ¿ç²¾è¯å€çš„æ¬Šé™ */
   char *brdname;
 {
   int bno, level;
@@ -770,15 +770,15 @@ gem_browse(xo)
       {
 	if ((op = gem_link(hdr->xname)) < 0)
 	{
-	  vmsg("¹ï¤£°_¡A¦¹ªOºëµØ°Ï¥u­ãªO¤Í¶i¤J¡A½Ğ¦VªO¥D¥Ó½Ğ¤J¹Ò³\\¥i");
+	  vmsg("å°ä¸èµ·ï¼Œæ­¤æ¿ç²¾è¯å€åªå‡†æ¿å‹é€²å…¥ï¼Œè«‹å‘æ¿ä¸»ç”³è«‹å…¥å¢ƒè¨±\å¯");
 	  return XO_FOOT;
 	}
       }
-      else			/* ¤@¯ë¨÷©v¤~¦³¤pªO¥D */
+      else			/* ä¸€èˆ¬å·å®—æ‰æœ‰å°æ¿ä¸» */
       {
-	op = xo->key;		/* Ä~©Ó¥À¨÷©vªºÅv­­ */
+	op = xo->key;		/* ç¹¼æ‰¿æ¯å·å®—çš„æ¬Šé™ */
 
-	/* itoc.011217: [userA/userB ªº¦h¦ì¤pªO¥D¼Ò¦¡¤]¾A¥Î */
+	/* itoc.011217: [userA/userB çš„å¤šä½å°æ¿ä¸»æ¨¡å¼ä¹Ÿé©ç”¨ */
 	if ((ptr = strrchr(title, '[')) && is_bm(ptr + 1, cuser.userid))
 	  op |= GEM_W_BIT | GEM_M_BIT;
       }
@@ -789,7 +789,7 @@ gem_browse(xo)
 
     /* browse article */
 
-    /* Thor.990204: ¬°¦Ò¼{more ¶Ç¦^­È */   
+    /* Thor.990204: ç‚ºè€ƒæ…®more å‚³å›å€¼ */   
     if ((xmode = more(fpath, FOOTER_GEM)) < 0)
       break;
 
@@ -802,7 +802,7 @@ re_key:
       continue;
 
     case '/':
-      if (vget(b_lines, 0, "·j´M¡G", hunt, sizeof(hunt), DOECHO))
+      if (vget(b_lines, 0, "æœå°‹ï¼š", hunt, sizeof(hunt), DOECHO))
       {
 	more(fpath, FOOTER_GEM);
 	goto re_key;
@@ -835,7 +835,7 @@ re_key:
 
 
 /* ----------------------------------------------------- */
-/* ºëµØ°Ï¤§§R°£						 */
+/* ç²¾è¯å€ä¹‹åˆªé™¤						 */
 /* ----------------------------------------------------- */
 
 
@@ -865,15 +865,15 @@ delgem(xo, hdr)
   HDR fhdr;
   FILE *fp;
 
-  if (hdr->xmode & GEM_FOLDER)		/* ¨÷©v/¤ÀÃş/¬İªO */
+  if (hdr->xmode & GEM_FOLDER)		/* å·å®—/åˆ†é¡/çœ‹æ¿ */
   {
     hdr_fpath(folder, xo->dir, hdr);
 
-    /* Kyo.050328: ©wÁã°Ï³Q§R°£®É­n©ŞÁã */
+    /* Kyo.050328: å®šéŒ¨å€è¢«åˆªé™¤æ™‚è¦æ‹”éŒ¨ */
     if (!strcmp(GemAnchor, folder))
       GemAnchor[0] = '\0';
 
-    /* ¨÷©v­n¶i¤l¥Ø¿ı§R°£¡F¬İªO/¤ÀÃş«h¤£»İ­n */
+    /* å·å®—è¦é€²å­ç›®éŒ„åˆªé™¤ï¼›çœ‹æ¿/åˆ†é¡å‰‡ä¸éœ€è¦ */
     if (hdr->xmode == GEM_FOLDER && hdr->xname[0] != '@')
     {
       if (fp = fopen(folder, "r"))
@@ -886,9 +886,9 @@ delgem(xo, hdr)
       }
     }
   }
-  else					/* ¤å³¹/¸ê®Æ */
+  else					/* æ–‡ç« /è³‡æ–™ */
   {
-    /* ¤å³¹­n§R°£ÀÉ®×¡F¸ê®Æ«h¤£§R°£ÀÉ®× */
+    /* æ–‡ç« è¦åˆªé™¤æª”æ¡ˆï¼›è³‡æ–™å‰‡ä¸åˆªé™¤æª”æ¡ˆ */
     if (hdr->xname[0] != '@')
     {
       hdr_fpath(folder, xo->dir, hdr);
@@ -920,7 +920,7 @@ gem_delete(xo)
 
     if (!rec_del(xo->dir, sizeof(HDR), xo->pos, NULL))
     {
-      gem_log(xo->dir, "§R°£", hdr);
+      gem_log(xo->dir, "åˆªé™¤", hdr);
       return gem_load(xo);
     }
   }
@@ -930,7 +930,7 @@ gem_delete(xo)
 
 
 static int
-gem_rangedel(xo)	/* itoc.010726: ´£¨Ñ°Ï¬q§R°£ */
+gem_rangedel(xo)	/* itoc.010726: æä¾›å€æ®µåˆªé™¤ */
   XO *xo;
 {
   if (!(xo->key & GEM_W_BIT) || !gem_check(xo, NULL, 0))
@@ -951,17 +951,17 @@ gem_prune(xo)
 
 
 /* ----------------------------------------------------- */
-/* ºëµØ°Ï¤§½Æ»s¡B¶K¤W¡B²¾°Ê				 */
+/* ç²¾è¯å€ä¹‹è¤‡è£½ã€è²¼ä¸Šã€ç§»å‹•				 */
 /* ----------------------------------------------------- */
 
 
 static char GemFolder[64];
 
 static HDR *GemBuffer;
-/* static int GemBufferNum; */	/* Thor.990414: ´£«e«Å§iµ¹gem_head¥Î */
+/* static int GemBufferNum; */	/* Thor.990414: æå‰å®£å‘Šçµ¦gem_headç”¨ */
 
 
-/* °t¸m¨¬°÷ªºªÅ¶¡©ñ¤J header */
+/* é…ç½®è¶³å¤ çš„ç©ºé–“æ”¾å…¥ header */
 
 
 static HDR *
@@ -969,7 +969,7 @@ gbuf_malloc(num)
   int num;
 {
   HDR *gbuf;
-  static int GemBufferSiz;	/* ¥Ø«e GemBuffer ªº size ¬O GemBufferSiz * sizeof(HDR) */
+  static int GemBufferSiz;	/* ç›®å‰ GemBuffer çš„ size æ˜¯ GemBufferSiz * sizeof(HDR) */
 
   if (gbuf = GemBuffer)
   {
@@ -993,8 +993,8 @@ gbuf_malloc(num)
 void
 gem_buffer(dir, hdr, fchk)
   char *dir;
-  HDR *hdr;			/* NULL ¥Nªí©ñ¤J TagList, §_«h±N¶Ç¤Jªº©ñ¤J */
-  int (*fchk)();		/* ¤¹³\©ñ¤J gbuf ªº±ø¥ó */
+  HDR *hdr;			/* NULL ä»£è¡¨æ”¾å…¥ TagList, å¦å‰‡å°‡å‚³å…¥çš„æ”¾å…¥ */
+  int (*fchk)();		/* å…è¨±æ”¾å…¥ gbuf çš„æ¢ä»¶ */
 {
   int max, locus, num;
   HDR *gbuf, buf;
@@ -1047,7 +1047,7 @@ static int
 chkgemrestrict(hdr)
   HDR *hdr;
 {
-  if (hdr->xmode & GEM_BOARD)		/* ¬İªO¤£¯à³Q½Æ»s/¶K¤W */
+  if (hdr->xmode & GEM_BOARD)		/* çœ‹æ¿ä¸èƒ½è¢«è¤‡è£½/è²¼ä¸Š */
     return 0;
 
   if ((hdr->xmode & GEM_RESTRICT) && !IamBM)
@@ -1063,7 +1063,7 @@ gem_copy(xo)
 {
   int tag;
 
-  tag = AskTag("ºëµØ°Ï«ş¨©");
+  tag = AskTag("ç²¾è¯å€æ‹·è²");
 
   if (tag < 0)
     return XO_FOOT;
@@ -1071,9 +1071,9 @@ gem_copy(xo)
   IamBM = (xo->key & GEM_M_BIT);
   gem_buffer(xo->dir, tag ? NULL : (HDR *) xo_pool + (xo->pos - xo->top), chkgemrestrict);
 
-  zmsg("«ş¨©§¹¦¨¡C[ª`·N] ¶K¤W«á¤~¯à§R°£­ì¤å¡I");
+  zmsg("æ‹·è²å®Œæˆã€‚[æ³¨æ„] è²¼ä¸Šå¾Œæ‰èƒ½åˆªé™¤åŸæ–‡ï¼");
   /* return XO_FOOT; */
-  return gem_head(xo);		/* Thor.990414: Åı°Å¶K½g¼Æ§ó·s */
+  return gem_head(xo);		/* Thor.990414: è®“å‰ªè²¼ç¯‡æ•¸æ›´æ–° */
 }
 
 
@@ -1100,7 +1100,7 @@ gem_extend(xo, num)
   {
     if ((hdr->chrono != chrono) && !(hdr->xmode & (GEM_FOLDER | GEM_RESTRICT | GEM_RESERVED)))
     {
-      hdr_fpath(gpath, GemFolder, hdr);	/* itoc.010924: ­×¥¿¤£¦P¥Ø¿ı·| extend ¥¢±Ñ */
+      hdr_fpath(gpath, GemFolder, hdr);	/* itoc.010924: ä¿®æ­£ä¸åŒç›®éŒ„æœƒ extend å¤±æ•— */
       fputs(str_line, fp);
       f_suck(fp, gpath);
     }
@@ -1111,11 +1111,11 @@ gem_extend(xo, num)
 }
 
 
-static int					/* 1: µL½a°j°é  0: ¦Xªk */
-invalid_loop(srcDir, dstDir, hdr, depth)	/* itoc.010727: ÀË¬d¬O§_·|³y¦¨µL½a°j°é for gem_paste() */
+static int					/* 1: ç„¡çª®è¿´åœˆ  0: åˆæ³• */
+invalid_loop(srcDir, dstDir, hdr, depth)	/* itoc.010727: æª¢æŸ¥æ˜¯å¦æœƒé€ æˆç„¡çª®è¿´åœˆ for gem_paste() */
   char *srcDir, *dstDir;
   HDR *hdr;
-  int depth;				/* 0: »¼°j²Ä¤@°é  1: »¼°j¤¤ */
+  int depth;				/* 0: éè¿´ç¬¬ä¸€åœˆ  1: éè¿´ä¸­ */
 {
   static int valid;
 
@@ -1131,10 +1131,10 @@ invalid_loop(srcDir, dstDir, hdr, depth)	/* itoc.010727: ÀË¬d¬O§_·|³y¦¨µL½a°j°é 
     str_folder(fpath1, srcDir, fn_dir);
     str_folder(fpath2, dstDir, fn_dir);
 
-    if (strcmp(fpath1, fpath2))		/* ¸ó°Ï«ş¨©¤@©w¤£·|³y¦¨µL½a°j°é */
+    if (strcmp(fpath1, fpath2))		/* è·¨å€æ‹·è²ä¸€å®šä¸æœƒé€ æˆç„¡çª®è¿´åœˆ */
       return 0;
 
-    hdr_fpath(fpath1, srcDir, hdr);	/* §â¦Û¤v«ş¨ì¦Û¤v¸Ì­± */
+    hdr_fpath(fpath1, srcDir, hdr);	/* æŠŠè‡ªå·±æ‹·åˆ°è‡ªå·±è£¡é¢ */
     if (!strcmp(fpath1, dstDir))
       return 1;
 
@@ -1142,7 +1142,7 @@ invalid_loop(srcDir, dstDir, hdr, depth)	/* itoc.010727: ÀË¬d¬O§_·|³y¦¨µL½a°j°é 
   }
   else
   {
-    if (valid)		/* ¦b¬Y¤@­Ó»¼°j¤¤§ä¨ì«DªkÃÒ¾Ú´N°±¤î·jÃÒ¤u§@ */
+    if (valid)		/* åœ¨æŸä¸€å€‹éè¿´ä¸­æ‰¾åˆ°éæ³•è­‰æ“šå°±åœæ­¢æœè­‰å·¥ä½œ */
       return 1;
 
     hdr_fpath(fpath1, srcDir, hdr);
@@ -1152,7 +1152,7 @@ invalid_loop(srcDir, dstDir, hdr, depth)	/* itoc.010727: ÀË¬d¬O§_·|³y¦¨µL½a°j°é 
   {
     while (read(fd, &fhdr, sizeof(HDR)) == sizeof(HDR))
     {  
-      if (fhdr.xmode & GEM_FOLDER)	/* plain text ¤£·|³y¦¨µL½a°j°é */
+      if (fhdr.xmode & GEM_FOLDER)	/* plain text ä¸æœƒé€ æˆç„¡çª®è¿´åœˆ */
       {
 	hdr_fpath(fpath2, srcDir, &fhdr);
 	if (!strcmp(fpath2, dstDir))
@@ -1161,7 +1161,7 @@ invalid_loop(srcDir, dstDir, hdr, depth)	/* itoc.010727: ÀË¬d¬O§_·|³y¦¨µL½a°j°é 
 	  return 1;
 	}
 
-	/* recursive ¦a¤@¼h¤@¼h¥Ø¿ı¶i¥hÀË¬d¬O§_·|³y¦¨µL½a°j°é */
+	/* recursive åœ°ä¸€å±¤ä¸€å±¤ç›®éŒ„é€²å»æª¢æŸ¥æ˜¯å¦æœƒé€ æˆç„¡çª®è¿´åœˆ */
 	invalid_loop(fpath1, dstDir, &fhdr, 1);
       }
     }
@@ -1177,7 +1177,7 @@ gem_do_paste(srcDir, dstDir, hdr, pos)		/* itoc.010725: for gem_paste() */
   char *srcDir;		/* source folder */
   char *dstDir;		/* destination folder */
   HDR *hdr;		/* source hdr */
-  int pos;		/* -1: ªş¥[¦b³Ì«á  >=0: ¶K¤Wªº¦ì¸m */
+  int pos;		/* -1: é™„åŠ åœ¨æœ€å¾Œ  >=0: è²¼ä¸Šçš„ä½ç½® */
 {
   int xmode, fsize;
   char folder[64], fpath[64];
@@ -1185,16 +1185,16 @@ gem_do_paste(srcDir, dstDir, hdr, pos)		/* itoc.010725: for gem_paste() */
 
   xmode = hdr->xmode;
 
-  if (xmode & GEM_FOLDER)	/* ¨÷©v/¤ÀÃş */
+  if (xmode & GEM_FOLDER)	/* å·å®—/åˆ†é¡ */
   {
-    /* ¦b½Æ»s/¶K¤W«á¤@«ßÅÜ¦¨¨÷©v¡A¦]¬°¤ÀÃş¬O¯¸ªø±M¥Î¯S®í¥Î³~ªº */
+    /* åœ¨è¤‡è£½/è²¼ä¸Šå¾Œä¸€å¾‹è®Šæˆå·å®—ï¼Œå› ç‚ºåˆ†é¡æ˜¯ç«™é•·å°ˆç”¨ç‰¹æ®Šç”¨é€”çš„ */
     if ((fsize = gem_hdr_stamp(dstDir, 'F', &fhdr, fpath)) < 0)
       return;
     close(fsize);
 
     fhdr.xmode = GEM_FOLDER;
   }
-  else if (xmode & GEM_LINE)	/* ¤À¹j */
+  else if (xmode & GEM_LINE)	/* åˆ†éš” */
   {
     if ((fsize = gem_hdr_stamp(dstDir, 'L', &fhdr, fpath)) < 0)
       return;
@@ -1202,11 +1202,11 @@ gem_do_paste(srcDir, dstDir, hdr, pos)		/* itoc.010725: for gem_paste() */
 
     fhdr.xmode = GEM_LINE;
   }
-  else				/* ¤å³¹/¸ê®Æ */
+  else				/* æ–‡ç« /è³‡æ–™ */
   {
     hdr_fpath(folder, srcDir, hdr);
 
-    /* ¦b½Æ»s/¶K¤W«á¤@«ßÅÜ¦¨¤å³¹¡A¦]¬°¸ê®Æ¬O¯¸ªø±M¥Î¯S®í¥Î³~ªº */
+    /* åœ¨è¤‡è£½/è²¼ä¸Šå¾Œä¸€å¾‹è®Šæˆæ–‡ç« ï¼Œå› ç‚ºè³‡æ–™æ˜¯ç«™é•·å°ˆç”¨ç‰¹æ®Šç”¨é€”çš„ */
     gem_hdr_stamp(dstDir, HDR_COPY | 'A', &fhdr, folder);
   }
 
@@ -1218,11 +1218,11 @@ gem_do_paste(srcDir, dstDir, hdr, pos)		/* itoc.010725: for gem_paste() */
     rec_add(dstDir, &fhdr, sizeof(HDR));
   else
     rec_ins(dstDir, &fhdr, sizeof(HDR), pos, 1);
-  gem_log(dstDir, "½Æ»s", &fhdr);
+  gem_log(dstDir, "è¤‡è£½", &fhdr);
 
-  if (xmode & GEM_FOLDER)	/* ¨÷©v/¤ÀÃş */
+  if (xmode & GEM_FOLDER)	/* å·å®—/åˆ†é¡ */
   {
-    /* «Ø¥ß§¹¦Û¤v³o­Ó¨÷©v¥H«á¡A¦A recursive ¦a¤@¼h¤@¼h¥Ø¿ı¶i¥h¤@½g¤@½g¥t¦s·sÀÉ */
+    /* å»ºç«‹å®Œè‡ªå·±é€™å€‹å·å®—ä»¥å¾Œï¼Œå† recursive åœ°ä¸€å±¤ä¸€å±¤ç›®éŒ„é€²å»ä¸€ç¯‡ä¸€ç¯‡å¦å­˜æ–°æª” */
     hdr_fpath(folder, srcDir, hdr);
     if (data = (HDR *) f_img(folder, &fsize))
     {
@@ -1230,7 +1230,7 @@ gem_do_paste(srcDir, dstDir, hdr, pos)		/* itoc.010725: for gem_paste() */
       tail = data + (fsize / sizeof(HDR));
       do
       {
-	/* ¥u¦³ gem_copy() ¤~¥i¯à¦³ GEM_FOLDER¡A©Ò¥H¥ÎºëµØ°Ïªº chkgemrestrict */
+	/* åªæœ‰ gem_copy() æ‰å¯èƒ½æœ‰ GEM_FOLDERï¼Œæ‰€ä»¥ç”¨ç²¾è¯å€çš„ chkgemrestrict */
 	if (chkgemrestrict(head))
 	  gem_do_paste(folder, fpath, head, -1);
       } while (++head < tail);
@@ -1254,21 +1254,21 @@ gem_paste(xo)
 
   if (!(num = GemBufferNum))
   {
-    zmsg("½Ğ¥ı°õ¦æ copy ©R¥O«á¦A paste");
+    zmsg("è«‹å…ˆåŸ·è¡Œ copy å‘½ä»¤å¾Œå† paste");
     return XO_FOOT;
   }
 
   dir = xo->dir;
 
-  /* switch (ans = vans("¦s©ñ¦ì¸m A)ppend I)nsert N)ext E)xtend Q)uit [A] ")) */
-  switch (ans = vans("¦s©ñ¦ì¸m A)¥[¨ì³Ì«á I/N)´¡¤J¥Ø«e¦ì¸m E)ªş¥[ÀÉ®× Q)Â÷¶} [A] "))
+  /* switch (ans = vans("å­˜æ”¾ä½ç½® A)ppend I)nsert N)ext E)xtend Q)uit [A] ")) */
+  switch (ans = vans("å­˜æ”¾ä½ç½® A)åŠ åˆ°æœ€å¾Œ I/N)æ’å…¥ç›®å‰ä½ç½® E)é™„åŠ æª”æ¡ˆ Q)é›¢é–‹ [A] "))
   {
   case 'q':
     return XO_FOOT;
 
   case 'e':
     if (gem_extend(xo, num))
-      zmsg("[Extend ÀÉ®×ªş¥[] °Ê§@¨Ã¥¼§¹¥ş¦¨¥\\");
+      zmsg("[Extend æª”æ¡ˆé™„åŠ ] å‹•ä½œä¸¦æœªå®Œå…¨æˆåŠŸ\");
     return XO_FOOT;
 
   default:
@@ -1278,15 +1278,15 @@ gem_paste(xo)
     tail = head + num;
     do
     {
-      if (invalid_loop(GemFolder, dir, head, 0))	/* itoc.010727: ³y¦¨°j°éªÌ¤£¤¹³\¶K¤W */
+      if (invalid_loop(GemFolder, dir, head, 0))	/* itoc.010727: é€ æˆè¿´åœˆè€…ä¸å…è¨±è²¼ä¸Š */
       {
-	vmsg("³y¦¨°j°éªº¨÷©v±NµLªk¦¬¿ı");
+	vmsg("é€ æˆè¿´åœˆçš„å·å®—å°‡ç„¡æ³•æ”¶éŒ„");
 	continue;
       }
       else
       {
 	gem_do_paste(GemFolder, dir, head, pos);
-	if (pos >= 0)		/* Insert/Next:­nÄ~Äò©¹¤U¶K Append:¤@ª½¶K¦b³Ì«á */
+	if (pos >= 0)		/* Insert/Next:è¦ç¹¼çºŒå¾€ä¸‹è²¼ Append:ä¸€ç›´è²¼åœ¨æœ€å¾Œ */
 	  pos++;
       }
     } while (++head < tail);
@@ -1308,7 +1308,7 @@ gem_move(xo)
     return XO_NONE;
 
   pos = xo->pos;
-  sprintf(buf, "½Ğ¿é¤J²Ä %d ¿ï¶µªº·s¦ì¸m¡G", pos + 1);
+  sprintf(buf, "è«‹è¼¸å…¥ç¬¬ %d é¸é …çš„æ–°ä½ç½®ï¼š", pos + 1);
   if (!vget(b_lines, 0, buf, buf, 5, DOECHO))
     return XO_FOOT;
 
@@ -1339,20 +1339,20 @@ gem_anchor(xo)
   int ans;
   char *folder;
 
-  if (!(xo->key & GEM_W_BIT))	/* Thor.981020: ¥u­nªO¥D¥H¤W§Y¥i¨Ï¥Îanchor */
-    return XO_NONE; 		/* Thor.981020: ¤£¶}©ñ¤@¯ë user ¨Ï¥Î¬O¬°¤F¨¾¤îªO¥D¸Õ¥X¥t¤@­Ó¤p bug :P */
+  if (!(xo->key & GEM_W_BIT))	/* Thor.981020: åªè¦æ¿ä¸»ä»¥ä¸Šå³å¯ä½¿ç”¨anchor */
+    return XO_NONE; 		/* Thor.981020: ä¸é–‹æ”¾ä¸€èˆ¬ user ä½¿ç”¨æ˜¯ç‚ºäº†é˜²æ­¢æ¿ä¸»è©¦å‡ºå¦ä¸€å€‹å° bug :P */
   
-  ans = vans("ºëµØ°Ï A)©wÁã D)©ŞÁã J)´N¦ì Q)¨ú®ø [A] ");
+  ans = vans("ç²¾è¯å€ A)å®šéŒ¨ D)æ‹”éŒ¨ J)å°±ä½ Q)å–æ¶ˆ [A] ");
   if (ans != 'q')
   {
     folder = GemAnchor;
 
     if (ans == 'j')
     {
-      if (!*folder)			/* ¨S¦³©wÁã */
+      if (!*folder)			/* æ²’æœ‰å®šéŒ¨ */
 	return XO_FOOT;
 
-      XoGem(folder, "¡´ ºëµØ©wÁã°Ï ¡´", xo->key);
+      XoGem(folder, "â— ç²¾è¯å®šéŒ¨å€ â—", xo->key);
       return gem_init(xo);
     }
     else if (ans == 'd')
@@ -1365,7 +1365,7 @@ gem_anchor(xo)
       str_ncpy(GemSailor, xo->xyz, sizeof(GemSailor));
     }
 
-    zmsg("Áã°Ê§@§¹¦¨");
+    zmsg("éŒ¨å‹•ä½œå®Œæˆ");
   }
 
   return XO_FOOT;
@@ -1376,10 +1376,10 @@ static int
 chkgather(hdr)
   HDR *hdr;
 {
-  if (hdr->xmode & GEM_RESTRICT)	/* ­­¨î¯ÅºëµØ°Ï¤£¯à©wÁã¦¬¿ı */
+  if (hdr->xmode & GEM_RESTRICT)	/* é™åˆ¶ç´šç²¾è¯å€ä¸èƒ½å®šéŒ¨æ”¶éŒ„ */
     return 0;
     
-  if (hdr->xmode & GEM_FOLDER)		/* ¬d hdr ¬O§_ plain text (§Y¤å³¹/¸ê®Æ) */
+  if (hdr->xmode & GEM_FOLDER)		/* æŸ¥ hdr æ˜¯å¦ plain text (å³æ–‡ç« /è³‡æ–™) */
     return 0;
 
   return 1;
@@ -1399,23 +1399,23 @@ gem_gather(xo)
 
   if (!*folder)
   {
-    zmsg("½Ğ¥ı©wÁã¥H«á¦Aª½±µ¦¬¿ı¦Ü©wÁã°Ï");
+    zmsg("è«‹å…ˆå®šéŒ¨ä»¥å¾Œå†ç›´æ¥æ”¶éŒ„è‡³å®šéŒ¨å€");
     return XO_FOOT;
   }
 
-  sprintf(fpath, "¦¬¿ı¦Ü©wÁã°Ï (%s)", GemSailor);
+  sprintf(fpath, "æ”¶éŒ„è‡³å®šéŒ¨å€ (%s)", GemSailor);
   tag = AskTag(fpath);
 
   if (tag < 0)
     return XO_FOOT;
 
-  /* gather µø¦P copy¡A¥i·Ç³Æ§@ paste */
+  /* gather è¦–åŒ copyï¼Œå¯æº–å‚™ä½œ paste */
   dir = xo->dir;
   gem_buffer(dir, tag ? NULL : (HDR *) xo_pool + (xo->pos - xo->top), chkgather);
 
   if (!GemBufferNum)
   {
-    zmsg("µL¥i¦¬¿ı¤å³¹");
+    zmsg("ç„¡å¯æ”¶éŒ„æ–‡ç« ");
     return XO_FOOT;
   }
 
@@ -1423,7 +1423,7 @@ gem_gather(xo)
 
   if (tag > 0)
   {
-    switch (vans("¦ê¦C¤å³¹ 1)¦X¦¨¤@½g 2)¤À§O«ØÀÉ Q)¨ú®ø [1] "))
+    switch (vans("ä¸²åˆ—æ–‡ç«  1)åˆæˆä¸€ç¯‡ 2)åˆ†åˆ¥å»ºæª” Q)å–æ¶ˆ [1] "))
     {
     case 'q':
       return XO_FOOT;
@@ -1433,7 +1433,7 @@ gem_gather(xo)
 
     default:
       strcpy(title, currtitle);
-      if (!vget(b_lines, 0, "¼ĞÃD¡G", title, TTLEN + 1, GCARRY))
+      if (!vget(b_lines, 0, "æ¨™é¡Œï¼š", title, TTLEN + 1, GCARRY))
 	return XO_FOOT;
       fp = fdopen(gem_hdr_stamp(folder, 'A', &hdr, fpath), "w");
       strcpy(hdr.owner, cuser.userid);
@@ -1447,12 +1447,12 @@ gem_gather(xo)
   {
     hdr_fpath(fpath, dir, head);
 
-    if (fp)	/* ¦X¦¨¤@½g */
+    if (fp)	/* åˆæˆä¸€ç¯‡ */
     {
       f_suck(fp, fpath);
       fputs(str_line, fp);
     }
-    else	/* ¤À§O«ØÀÉ */
+    else	/* åˆ†åˆ¥å»ºæª” */
     {
       gem_do_paste(dir, folder, head, -1);
     }
@@ -1462,16 +1462,16 @@ gem_gather(xo)
   {
     fclose(fp);
     rec_add(folder, &hdr, sizeof(HDR));
-    gem_log(folder, "·s¼W", &hdr);
+    gem_log(folder, "æ–°å¢", &hdr);
   }
 
-  zmsg("¦¬¿ı§¹¦¨¡A¦ı¬O¥[±K¤å³¹¤£·|³Q¦¬¿ı");
+  zmsg("æ”¶éŒ„å®Œæˆï¼Œä½†æ˜¯åŠ å¯†æ–‡ç« ä¸æœƒè¢«æ”¶éŒ„");
 
-  if (*dir == 'g')	/* ¦bºëµØ°Ï¤¤ gem_gather() ¤~­n­«Ã¸°Å¶KÃ¯½g¼Æ¡A¦b¬İªO/«H½c¸Ì³£¤£¥Î */
+  if (*dir == 'g')	/* åœ¨ç²¾è¯å€ä¸­ gem_gather() æ‰è¦é‡ç¹ªå‰ªè²¼ç°¿ç¯‡æ•¸ï¼Œåœ¨çœ‹æ¿/ä¿¡ç®±è£¡éƒ½ä¸ç”¨ */
   {
     move(1, 59);
     clrtoeol();
-    prints("(°Å¶KÃ¯ %d ½g)\n", GemBufferNum);
+    prints("(å‰ªè²¼ç°¿ %d ç¯‡)\n", GemBufferNum);
   }
   return XO_FOOT;
 }
@@ -1495,7 +1495,7 @@ gem_tag(xo)
   }
 
   /* return XO_NONE; */
-  return pos + 1 + XO_MOVE;	/* lkchu.981201: ¸õ¦Ü¤U¤@¶µ */
+  return pos + 1 + XO_MOVE;	/* lkchu.981201: è·³è‡³ä¸‹ä¸€é … */
 }
 
 
@@ -1517,24 +1517,24 @@ static KeyFunc gem_cb[] =
 
   'r', gem_browse,
 
-  Ctrl('P'), gem_add_all,	/* itoc.010723: gem_cb ªº¤Ş¼Æ¥u¦³ xo */
+  Ctrl('P'), gem_add_all,	/* itoc.010723: gem_cb çš„å¼•æ•¸åªæœ‰ xo */
   'a', gem_add_article,
   'f', gem_add_folder,
 
   'E', gem_edit,
   'T', gem_title,
   'd', gem_delete,
-  'D', gem_rangedel,		/* itoc.010726: ´£¨Ñ°Ï¬q§R°£ */
+  'D', gem_rangedel,		/* itoc.010726: æä¾›å€æ®µåˆªé™¤ */
 
   'c', gem_copy,
   'g', gem_gather,
 
   Ctrl('G'), gem_anchor,
   Ctrl('V'), gem_paste,
-  'p', gem_paste,		/* itoc.010223: ¨Ï¥ÎªÌ²ßºD c/p ¦¬¿ıºëµØ°Ï */
+  'p', gem_paste,		/* itoc.010223: ä½¿ç”¨è€…ç¿’æ…£ c/p æ”¶éŒ„ç²¾è¯å€ */
 
   't', gem_tag,
-  'x', post_cross,		/* ¦b post/mbox ¤¤³£¬O¤p¼g x Âà¬İªO¡A¤j¼g X Âà¨Ï¥ÎªÌ */
+  'x', post_cross,		/* åœ¨ post/mbox ä¸­éƒ½æ˜¯å°å¯« x è½‰çœ‹æ¿ï¼Œå¤§å¯« X è½‰ä½¿ç”¨è€… */
   'X', post_forward,
   'B', gem_toggle,
   'o', gem_refuse,
@@ -1546,8 +1546,8 @@ static KeyFunc gem_cb[] =
 
   Ctrl('D'), gem_prune,
 #if 0
-  Ctrl('Q'), xo_uquery,		/* ºëµØ°Ïªº hdr.owner ¤@¯ë¬O«ü¦¬¿ıªºªO¥D¡A¦Ó¤£¬O§@ªÌ */
-  Ctrl('O'), xo_usetup,		/* ºëµØ°Ïªº hdr.owner ¤@¯ë¬O«ü¦¬¿ıªºªO¥D¡A¦Ó¤£¬O§@ªÌ */
+  Ctrl('Q'), xo_uquery,		/* ç²¾è¯å€çš„ hdr.owner ä¸€èˆ¬æ˜¯æŒ‡æ”¶éŒ„çš„æ¿ä¸»ï¼Œè€Œä¸æ˜¯ä½œè€… */
+  Ctrl('O'), xo_usetup,		/* ç²¾è¯å€çš„ hdr.owner ä¸€èˆ¬æ˜¯æŒ‡æ”¶éŒ„çš„æ¿ä¸»ï¼Œè€Œä¸æ˜¯ä½œè€… */
 #endif
 
   'h', gem_help
@@ -1582,12 +1582,12 @@ gem_main()
 {
   XO *xo;
 
-  /* itoc.060706.µù¸Ñ: ¶i¯¸®É´N­nªì©l¤Æ¡A¦]¬°¨Ï¥ÎªÌ¥i¯à¤@¤W¯¸´N every_Z ¸õ¥hºëµØ°Ï */
+  /* itoc.060706.è¨»è§£: é€²ç«™æ™‚å°±è¦åˆå§‹åŒ–ï¼Œå› ç‚ºä½¿ç”¨è€…å¯èƒ½ä¸€ä¸Šç«™å°± every_Z è·³å»ç²¾è¯å€ */
 
   xz[XZ_GEM - XO_ZONE].xo = xo = xo_new("gem/"FN_DIR);
   xz[XZ_GEM - XO_ZONE].cb = gem_cb;
   xo->pos = 0;
-  /* ¬İªOÁ`ºŞ¦b (A)nnounce ¸Ì­±¦³ GEM_X_BIT ¨Ó·s¼W¬İªO±¶®| */
+  /* çœ‹æ¿ç¸½ç®¡åœ¨ (A)nnounce è£¡é¢æœ‰ GEM_X_BIT ä¾†æ–°å¢çœ‹æ¿æ·å¾‘ */
   xo->key = (HAS_PERM(PERM_ALLBOARD) ? (GEM_W_BIT | GEM_X_BIT | GEM_M_BIT) : 0);
   xo->xyz = "";
 }

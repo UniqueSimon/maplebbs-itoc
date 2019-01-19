@@ -14,8 +14,8 @@
 #include "bbs.h"
 
 
-#define VO_MAX		3072	/* output buffer ¤j¤p */
-#define VI_MAX		256	/* input buffer ¤j¤p */
+#define VO_MAX		3072	/* output buffer å¤§å° */
+#define VI_MAX		256	/* input buffer å¤§å° */
 
 
 #define INPUT_ACTIVE	0
@@ -27,12 +27,12 @@ static int cur_pos;			/* current position with ANSI codes */
 
 
 /* ----------------------------------------------------- */
-/* º~¦r (zh-char) §PÂ_					 */
+/* æ¼¢å­— (zh-char) åˆ¤æ–·					 */
 /* ----------------------------------------------------- */
 
 
-int			/* 1:¬O 0:¤£¬O */
-is_zhc_low(str, n)	/* hightman.060504: §PÂ_¦r¦ê¤¤ªº²Ä n ­Ó¦r²Å¬O§_¬°º~¦rªº«á¥b¦r */
+int			/* 1:æ˜¯ 0:ä¸æ˜¯ */
+is_zhc_low(str, n)	/* hightman.060504: åˆ¤æ–·å­—ä¸²ä¸­çš„ç¬¬ n å€‹å­—ç¬¦æ˜¯å¦ç‚ºæ¼¢å­—çš„å¾ŒåŠå­— */
   char *str;
   int n;
 {
@@ -183,9 +183,9 @@ static screenline vbuf[T_LINES];
 static screenline *cur_slp;	/* current screen line pointer */
 
 
-/* itoc.020611.µù¸Ñ: ®y¼ĞÀ³¸Ó¬O (x, y) ¦Ó¤£¬O (y, x)
-   ¦]¬° row ¬O ¦V¤U¬°¥¿¡Acolumn ¬O¦V¥k¬°¥¿¡A
-   ¦Ó +x cross +y = +z ¬O¥X¿Ã¹õ­± */
+/* itoc.020611.è¨»è§£: åº§æ¨™æ‡‰è©²æ˜¯ (x, y) è€Œä¸æ˜¯ (y, x)
+   å› ç‚º row æ˜¯ å‘ä¸‹ç‚ºæ­£ï¼Œcolumn æ˜¯å‘å³ç‚ºæ­£ï¼Œ
+   è€Œ +x cross +y = +z æ˜¯å‡ºè¢å¹•é¢ */
 
 void
 move(x, y)
@@ -194,7 +194,7 @@ move(x, y)
 {
   screenline *cslp;
 
-  /* itoc.070517.µù¸Ñ: µe­±¤j¤p¬O (b_lines+1)*(b_cols+1)¡A¤¹³\ªº®y¼Ğ (x,y) ½d³ò¬O x=0~b_lines¡By=0~b_cols */
+  /* itoc.070517.è¨»è§£: ç•«é¢å¤§å°æ˜¯ (b_lines+1)*(b_cols+1)ï¼Œå…è¨±çš„åº§æ¨™ (x,y) ç¯„åœæ˜¯ x=0~b_linesã€y=0~b_cols */
 
   if (x > b_lines)
     return;
@@ -211,7 +211,7 @@ move(x, y)
 #if 0
 
   /* ------------------------------------- */
-  /* ¹LÂo ANSI codes¡A­pºâ´å¼Ğ¯u¥¿©Ò¦b¦ì¸m */
+  /* éæ¿¾ ANSI codesï¼Œè¨ˆç®—æ¸¸æ¨™çœŸæ­£æ‰€åœ¨ä½ç½® */
   /* ------------------------------------- */
 
   if (y)
@@ -267,7 +267,7 @@ getxy(x, y)
 
 
 /*-------------------------------------------------------*/
-/* ­pºâ slp ¤¤ len ¤§³Bªº´å¼Ğ column ©Ò¦b		 */
+/* è¨ˆç®— slp ä¸­ len ä¹‹è™•çš„æ¸¸æ¨™ column æ‰€åœ¨		 */
 /*-------------------------------------------------------*/
 
 
@@ -588,7 +588,7 @@ clear()
   while (i++ <= b_lines)
   {
     /* memset(slp, 0, sizeof(screenline)); */
-    /* ¥u»İ slp->data[0] = '\0' §Y¥i¡A¤£»İ²M¾ã­Ó ANSILINELEN */
+    /* åªéœ€ slp->data[0] = '\0' å³å¯ï¼Œä¸éœ€æ¸…æ•´å€‹ ANSILINELEN */
     memset(slp, 0, sizeof(screenline) - ANSILINELEN + 1);
     slp++;
   }
@@ -596,7 +596,7 @@ clear()
 
 
 void
-clrtoeol()	/* clear screen to end of line (¦C§À) */
+clrtoeol()	/* clear screen to end of line (åˆ—å°¾) */
 {
   screenline *slp = cur_slp;
   int len;
@@ -608,14 +608,14 @@ clrtoeol()	/* clear screen to end of line (¦C§À) */
   }
   else
   {
-    /* ²M±¼ oldlen ¥H«áªº¥ş³¡¡Fdata ¥u»İ²M­º byte §Y¥i */
+    /* æ¸…æ‰ oldlen ä»¥å¾Œçš„å…¨éƒ¨ï¼›data åªéœ€æ¸…é¦– byte å³å¯ */
     memset((char *) slp + sizeof(slp->oldlen), 0, sizeof(screenline) - ANSILINELEN + 1 - sizeof(slp->oldlen));
   }
 }
 
 
 void
-clrtobot()	/* clear screen to bottom (¿Ã¹õ©³³¡) */
+clrtobot()	/* clear screen to bottom (è¢å¹•åº•éƒ¨) */
 {
   screenline *slp;
   int i, j;
@@ -630,7 +630,7 @@ clrtobot()	/* clear screen to bottom (¿Ã¹õ©³³¡) */
       j = 0;
       slp = vbuf;
     }
-    /* ²M±¼ oldlen ¥H«áªº¥ş³¡¡Fdata ¥u»İ²M­º byte §Y¥i */
+    /* æ¸…æ‰ oldlen ä»¥å¾Œçš„å…¨éƒ¨ï¼›data åªéœ€æ¸…é¦– byte å³å¯ */
     memset((char *) slp + sizeof(slp->oldlen), 0, sizeof(screenline) - ANSILINELEN + 1 - sizeof(slp->oldlen));
 
     i++;
@@ -679,7 +679,7 @@ new_line:
     }
     else
     {
-      /* ²M±¼ oldlen ¥H«áªº¥ş³¡¡Fdata ¥u»İ²M­º byte §Y¥i */
+      /* æ¸…æ‰ oldlen ä»¥å¾Œçš„å…¨éƒ¨ï¼›data åªéœ€æ¸…é¦– byte å³å¯ */
       memset((char *) slp + sizeof(slp->oldlen), 0, sizeof(screenline) - ANSILINELEN + 1 - sizeof(slp->oldlen));
     }
 
@@ -695,10 +695,10 @@ new_line:
     return;
   }
 
-  data = &(slp->data[pos]);	/* «ü¦V¥Ø«e¿é¥X¦ì¸m */
+  data = &(slp->data[pos]);	/* æŒ‡å‘ç›®å‰è¼¸å‡ºä½ç½® */
 
   /* -------------------- */
-  /* ¸É¨¬©Ò»İ­nªºªÅ¥Õ¦r¤¸ */
+  /* è£œè¶³æ‰€éœ€è¦çš„ç©ºç™½å­—å…ƒ */
   /* -------------------- */
 
   cy = slp->len - pos;
@@ -717,7 +717,7 @@ new_line:
   }
 
   /* ---------------------------- */
-  /* ANSI control code ¤§¯S§O³B²z */
+  /* ANSI control code ä¹‹ç‰¹åˆ¥è™•ç† */
   /* ---------------------------- */
 
   if (i = ansipos)
@@ -748,7 +748,7 @@ new_line:
   }
 
   /* ---------------------------- */
-  /* §P©w­ş¨Ç¤å¦r»İ­n­«·s°e¥X¿Ã¹õ */
+  /* åˆ¤å®šå“ªäº›æ–‡å­—éœ€è¦é‡æ–°é€å‡ºè¢å¹• */
   /* ---------------------------- */
 
   if ( /* !(slp->mode & SL_ANSICODE) && */ (ch != cy))
@@ -795,7 +795,7 @@ outs(str)
 
 
 /* ----------------------------------------------------- */
-/* eXtended output: ¨q¥X user ªº name ©M nick		 */
+/* eXtended output: ç§€å‡º user çš„ name å’Œ nick		 */
 /* ----------------------------------------------------- */
 
 
@@ -808,16 +808,16 @@ outx(str)
 
   while (ch = *str)
   {
-    /* itoc.020301: ESC + * + s µ¥±±¨î½X */
+    /* itoc.020301: ESC + * + s ç­‰æ§åˆ¶ç¢¼ */
     if (ch == KEY_ESC && str[1] == '*')
     {
       switch (str[2])
       {
-      case 's':		/* **s Åã¥Ü ID */
+      case 's':		/* **s é¡¯ç¤º ID */
 	outs(cuser.userid);
 	str += 3;
 	continue;
-      case 'n':		/* **n Åã¥Ü¼ÊºÙ */
+      case 'n':		/* **n é¡¯ç¤ºæš±ç¨± */
 	outs(cuser.username);
 	str += 3;
 	continue;
@@ -858,7 +858,7 @@ void
 prints(char *fmt, ...)
 {
   va_list args;
-  uschar buf[512], *str;	/* ³Ìªø¥u¯à¦L 512 ¦r */
+  uschar buf[512], *str;	/* æœ€é•·åªèƒ½å° 512 å­— */
   int cc;
 
   va_start(args, fmt);
@@ -895,27 +895,27 @@ rscroll()
 
 
 static int old_col, old_row, old_roll;
-static int old_pos; /* Thor.990401: ¦h¦s¤@­Ó */
+static int old_pos; /* Thor.990401: å¤šå­˜ä¸€å€‹ */
 
 
 /* static void */
-void		/* Thor.981028: ¬°¤FÅı talk.c ¦³¤H©I¥s®É·|show¦r */
+void		/* Thor.981028: ç‚ºäº†è®“ talk.c æœ‰äººå‘¼å«æ™‚æœƒshowå­— */
 cursor_save()
 {
   old_col = cur_col;
   old_row = cur_row;
 
-  old_pos = cur_pos; /* Thor.990401: ¦h¦s¤@­Ó */
+  old_pos = cur_pos; /* Thor.990401: å¤šå­˜ä¸€å€‹ */
 }
 
 
 /* static void */
-void		/* Thor.981028: ¬°¤FÅı talk.c ¦³¤H©I¥s®É·|show¦r */
+void		/* Thor.981028: ç‚ºäº†è®“ talk.c æœ‰äººå‘¼å«æ™‚æœƒshowå­— */
 cursor_restore()
 {
   move(old_row, old_col);
   
-  cur_pos = old_pos; /* Thor.990401: ¦hÁÙ­ì¤@­Ó */
+  cur_pos = old_pos; /* Thor.990401: å¤šé‚„åŸä¸€å€‹ */
 }
 
 
@@ -924,14 +924,14 @@ save_foot(slp)
   screenline *slp;
 {
   int i;
-  int lines[3] = {0, b_lines, b_lines - 1};	/* Àx¦s³o¤T¦C */
+  int lines[3] = {0, b_lines, b_lines - 1};	/* å„²å­˜é€™ä¸‰åˆ— */
 
   for (i = 0; i < 3; i++)
   {
     move(lines[i], 0);
     memcpy(slp + i, cur_slp, sizeof(screenline));
     slp[i].smod = 0;
-    slp[i].emod = ANSILINELEN;	/* Thor.990125: ¤£½×³Ì«á¤@¦¸§ï¨ì­ş, ¥ş³¡­nÃ¸¤W */
+    slp[i].emod = ANSILINELEN;	/* Thor.990125: ä¸è«–æœ€å¾Œä¸€æ¬¡æ”¹åˆ°å“ª, å…¨éƒ¨è¦ç¹ªä¸Š */
     slp[i].oldlen = ANSILINELEN;
     slp[i].mode |= SL_MODIFIED;
   }
@@ -941,10 +941,10 @@ save_foot(slp)
 void
 restore_foot(slp, line)
   screenline *slp;
-  int line;		/* ­n«ì´_ lines[] ¸Ì­±ªº«e´X¦C */
+  int line;		/* è¦æ¢å¾© lines[] è£¡é¢çš„å‰å¹¾åˆ— */
 {
   int i;
-  int lines[3] = {0, b_lines, b_lines - 1};	/* «ì´_³o¤T¦C */
+  int lines[3] = {0, b_lines, b_lines - 1};	/* æ¢å¾©é€™ä¸‰åˆ— */
 
   for (i = 0; i < line; i++)
   {
@@ -960,7 +960,7 @@ vs_save(slp)
 {
   old_roll = roll;
   memcpy(slp, vbuf, sizeof(screenline) * (b_lines + 1));
-  return old_roll;	/* itoc.030723: ¶Ç¦^¥Ø«eªº roll */
+  return old_roll;	/* itoc.030723: å‚³å›ç›®å‰çš„ roll */
 }
 
 
@@ -976,7 +976,7 @@ vs_restore(slp)
 
 #if 0
 int
-imsg(msg)			/* itoc.010827: ­«­n°T®§Åã¥Ü important message */
+imsg(msg)			/* itoc.010827: é‡è¦è¨Šæ¯é¡¯ç¤º important message */
   char *msg;			/* length <= 54 */
 {
   int i;
@@ -984,40 +984,40 @@ imsg(msg)			/* itoc.010827: ­«­n°T®§Åã¥Ü important message */
   char scroller[128], spacebar[60], buf[80];
   char alphabet[26][3] = 
   {
-    "¢é", "¢ê", "¢ë", "¢ì", "¢í", "¢î", "¢ï", "¢ğ", "¢ñ", 
-    "¢ò", "¢ó", "¢ô", "¢õ", "¢ö", "¢÷", "¢ø", "¢ù", "¢ú", 
-    "¢û", "¢ü", "¢ı", "¢ş", "£@", "£A", "£B", "£C"
+    "ï½", "ï½‚", "ï½ƒ", "ï½„", "ï½…", "ï½†", "ï½‡", "ï½ˆ", "ï½‰", 
+    "ï½Š", "ï½‹", "ï½Œ", "ï½", "ï½", "ï½", "ï½", "ï½‘", "ï½’", 
+    "ï½“", "ï½”", "ï½•", "ï½–", "ï½—", "ï½˜", "ï½™", "ï½š"
   };
 
-  time(&now);				/* ¥Î®É¶¡¨Ó random */
+  time(&now);				/* ç”¨æ™‚é–“ä¾† random */
 
-#if 1	/* §Q¥Î¶]°¨¿O®ÄªG¨Ó´£¥Ü­«­n°T®§ */
-  i = now % 6 + 1;			/* ÃC¦â½X */
-  sprintf(spacebar, "\033[%d;H", b_lines + 1);	/* ²¾¦ì½X */
-  sprintf(buf, "\033[3%dm¢j¢k¢l¢m¢n¢o\033[1;37;4%dm   ­«­n°T®§½Ğª`·N   \033[m", i, i);
+#if 1	/* åˆ©ç”¨è·‘é¦¬ç‡ˆæ•ˆæœä¾†æç¤ºé‡è¦è¨Šæ¯ */
+  i = now % 6 + 1;			/* é¡è‰²ç¢¼ */
+  sprintf(spacebar, "\033[%d;H", b_lines + 1);	/* ç§»ä½ç¢¼ */
+  sprintf(buf, "\033[3%dmâ–â–â–â–Œâ–‹â–Š\033[1;37;4%dm   é‡è¦è¨Šæ¯è«‹æ³¨æ„   \033[m", i, i);
 
-  /* ¤£²M°£ b_lines¡A¨Ï¦³²H¥Xªº®ÄªG */
+  /* ä¸æ¸…é™¤ b_linesï¼Œä½¿æœ‰æ·¡å‡ºçš„æ•ˆæœ */
   for (i = 1; i <= 47; i += 2)
   {
-    sprintf(scroller, "%s%s", spacebar, buf);		/* scroller ¶]°¨¿O */
-    strcat(spacebar, "  ");				/* ¤@¦¸¸õ¤G®æ¡A¼W¥[³t«× */
-    telnet_flush(scroller, strlen(scroller) + 1);	/* §Y®É¿é¥X¡A¶]°¨¿O®ÄªG */
+    sprintf(scroller, "%s%s", spacebar, buf);		/* scroller è·‘é¦¬ç‡ˆ */
+    strcat(spacebar, "  ");				/* ä¸€æ¬¡è·³äºŒæ ¼ï¼Œå¢åŠ é€Ÿåº¦ */
+    telnet_flush(scroller, strlen(scroller) + 1);	/* å³æ™‚è¼¸å‡ºï¼Œè·‘é¦¬ç‡ˆæ•ˆæœ */
     usleep(1000);
   }
 #endif
 
-  i = now % 26;		/* 'a' ~ 'z' ¶Ã¨ú¤@Áä */
+  i = now % 26;		/* 'a' ~ 'z' äº‚å–ä¸€éµ */
 
   if (msg)
   {
     move(b_lines, 0);
     clrtoeol();
-    prints(COLOR1 " ¡» %-55s " COLOR2 " [½Ğ«ö %s ÁäÄ~Äò] \033[m", msg, alphabet[i]);
+    prints(COLOR1 " â—† %-55s " COLOR2 " [è«‹æŒ‰ %s éµç¹¼çºŒ] \033[m", msg, alphabet[i]);
   }
   else
   {
     move(b_lines, 27);
-    prints(COLOR1 " ¡´ ½Ğ«ö %s ÁäÄ~Äò ¡´ \033[m", alphabet[i]);
+    prints(COLOR1 " â— è«‹æŒ‰ %s éµç¹¼çºŒ â— \033[m", alphabet[i]);
   }
 
   i += 'a';
@@ -1039,7 +1039,7 @@ vmsg(msg)
 
   move(b_lines, 0);
   outs(VMSG_NULL);
-  move(b_lines, 0);	/* itoc.010127: ­×¥¿¦b°»´ú¥ª¥kÁä¥ş§Î¤U¡A«ö¥ªÁä·|¸õÂ÷¤G¼h¿ï³æªº°İÃD */
+  move(b_lines, 0);	/* itoc.010127: ä¿®æ­£åœ¨åµæ¸¬å·¦å³éµå…¨å½¢ä¸‹ï¼ŒæŒ‰å·¦éµæœƒè·³é›¢äºŒå±¤é¸å–®çš„å•é¡Œ */
   return vkey();
 }
 #else
@@ -1051,13 +1051,13 @@ vmsg(msg)
   {
     move(b_lines, 0);
     clrtoeol();
-    prints(COLOR1 " ¡» %-55s " COLOR2 " [½Ğ«ö¥ô·NÁäÄ~Äò] \033[m", msg);
+    prints(COLOR1 " â—† %-55s " COLOR2 " [è«‹æŒ‰ä»»æ„éµç¹¼çºŒ] \033[m", msg);
   }
   else
   {
     move(b_lines, 0);
     outs(VMSG_NULL);
-    move(b_lines, 0);	/* itoc.010127: ­×¥¿¦b°»´ú¥ª¥kÁä¥ş§Î¤U¡A«ö¥ªÁä·|¸õÂ÷¤G¼h¿ï³æªº°İÃD */
+    move(b_lines, 0);	/* itoc.010127: ä¿®æ­£åœ¨åµæ¸¬å·¦å³éµå…¨å½¢ä¸‹ï¼ŒæŒ‰å·¦éµæœƒè·³é›¢äºŒå±¤é¸å–®çš„å•é¡Œ */
   }
   return vkey();
 }
@@ -1068,7 +1068,7 @@ static inline void
 zkey()				/* press any key or timeout */
 {
   /* static */ struct timeval tv = {1, 100};  
-  /* Thor.980806: man page °²³] timeval struct¬O·|§ïÅÜªº */
+  /* Thor.980806: man page å‡è¨­ timeval structæ˜¯æœƒæ”¹è®Šçš„ */
 
   int rset;
 
@@ -1089,7 +1089,7 @@ zmsg(msg)			/* easy message */
   char *msg;
 {
   outz(msg);
-  move(b_lines, 0);	/* itoc.031029: ­×¥¿¦b°»´ú¥ª¥kÁä¥ş§Î¤U¡A«ö¥ªÁä·|¸õÂ÷¤G¼h¿ï³æªº°İÃD */
+  move(b_lines, 0);	/* itoc.031029: ä¿®æ­£åœ¨åµæ¸¬å·¦å³éµå…¨å½¢ä¸‹ï¼ŒæŒ‰å·¦éµæœƒè·³é›¢äºŒå±¤é¸å–®çš„å•é¡Œ */
 
   refresh();
   zkey();
@@ -1101,7 +1101,7 @@ vs_bar(title)
   char *title;
 {
   clear();
-  prints("\033[1;33;44m¡i %s ¡j\033[m\n", title);
+  prints("\033[1;33;44mã€ %s ã€‘\033[m\n", title);
 }
 
 
@@ -1149,7 +1149,7 @@ static int vio_fd;
 
 #ifdef EVERY_Z
 
-static int holdon_fd;		 /* Thor.980727: ¸õ¥Xchat&talk¼È¦svio_fd¥Î */
+static int holdon_fd;		 /* Thor.980727: è·³å‡ºchat&talkæš«å­˜vio_fdç”¨ */
 
 
 void
@@ -1213,7 +1213,7 @@ iac_count(current)
     {
       uschar *look = current + 2;
 
-      /* fuse.030518: ½u¤W½Õ¾ãµe­±¤j¤p¡A­«§ì b_lines */
+      /* fuse.030518: ç·šä¸Šèª¿æ•´ç•«é¢å¤§å°ï¼Œé‡æŠ“ b_lines */
       if ((*look) == TELOPT_NAWS)
       {
 	b_lines = ntohs(* (short *) (look + 3)) - 1;
@@ -1278,11 +1278,11 @@ igetch()
       for (;;)
       {
 	struct timeval tv = vio_to;
-	/* Thor.980806: man page °²³] timeval ¬O·|§ïÅÜªº */
+	/* Thor.980806: man page å‡è¨­ timeval æ˜¯æœƒæ”¹è®Šçš„ */
 
 	rset = 1 | fd;
 	cc = select(nfds, (fd_set *) & rset, NULL, NULL, &tv /*&vio_to*/);
-			/* Thor.980806: man page °²³] timeval ¬O·|§ïÅÜªº */
+			/* Thor.980806: man page å‡è¨­ timeval æ˜¯æœƒæ”¹è®Šçš„ */
 
 	if (cc > 0)
 	{
@@ -1306,13 +1306,13 @@ igetch()
 	      idle = 0;
 
 #ifdef DETAIL_IDLETIME
-	      time(&cutmp->idle_time);	/* ­Y #define DETAIL_IDLETIME¡A«h idle_time ªí¥Ü¶}©l¶¢¸mªº®É¶¡(¬í) */
+	      time(&cutmp->idle_time);	/* è‹¥ #define DETAIL_IDLETIMEï¼Œå‰‡ idle_time è¡¨ç¤ºé–‹å§‹é–’ç½®çš„æ™‚é–“(ç§’) */
 #else
-	      cutmp->idle_time = 0;	/* ­Y #undef DETAIL_IDLETIME¡A«h idle_time ªí¥Ü¤w¸g¶¢¸m¤F¦h¤[(¤À) */
+	      cutmp->idle_time = 0;	/* è‹¥ #undef DETAIL_IDLETIMEï¼Œå‰‡ idle_time è¡¨ç¤ºå·²ç¶“é–’ç½®äº†å¤šä¹…(åˆ†) */
 #endif
 
 #ifdef BMW_COUNT
-	      /* itoc.010421: «ö¥ô¤@Áä«á±µ¦¬¤ô²y¼Æ¦^Âk 0 */
+	      /* itoc.010421: æŒ‰ä»»ä¸€éµå¾Œæ¥æ”¶æ°´çƒæ•¸å›æ­¸ 0 */
 	      cutmp->bmw_count = 0;
 #endif
 	    }
@@ -1324,24 +1324,24 @@ igetch()
 	else if (cc == 0)
 	{
 	  cc = vio_to.tv_sec;
-	  if (cc < 60)		/* paging timeout : ¨C 60 ¬í§ó·s¤@¦¸ idle */
+	  if (cc < 60)		/* paging timeout : æ¯ 60 ç§’æ›´æ–°ä¸€æ¬¡ idle */
 	    return I_TIMEOUT;
 
 	  idle += cc / 60;
-	  vio_to.tv_sec = cc + 60;	/* Thor.980806: ¨C¦¸timeout³£¼W¥[60¬í¡A©Ò¥H¤ù¤l·U´«·UºC¡A¦nÃi:p */
-	  /* Thor.990201.µù¸Ñ: °£¤Ftalk_rqst¡Bchat¤§¥~¡A»İ­n¦b°Ê¤@°Ê¤§«á¡A­«³]tv_sec¬°60¬í¶Ü? (¹w³]­È) */
+	  vio_to.tv_sec = cc + 60;	/* Thor.980806: æ¯æ¬¡timeoutéƒ½å¢åŠ 60ç§’ï¼Œæ‰€ä»¥ç‰‡å­æ„ˆæ›æ„ˆæ…¢ï¼Œå¥½æ‡¶:p */
+	  /* Thor.990201.è¨»è§£: é™¤äº†talk_rqstã€chatä¹‹å¤–ï¼Œéœ€è¦åœ¨å‹•ä¸€å‹•ä¹‹å¾Œï¼Œé‡è¨­tv_secç‚º60ç§’å—? (é è¨­å€¼) */
 
 #ifdef TIME_KICKER
 	  if (idle > IDLE_TIMEOUT)
 	  {
-	    outs("¡¹ ¶W¹L¶¢¸m®É¶¡¡I");
+	    outs("â˜… è¶…éé–’ç½®æ™‚é–“ï¼");
 	    refresh();
 	    abort_bbs();
   	  }
-	  else if (idle >= IDLE_TIMEOUT - IDLE_WARNOUT)	/* itoc.001222: ¶¢¸m¹L¤[Äµ§i */
+	  else if (idle >= IDLE_TIMEOUT - IDLE_WARNOUT)	/* itoc.001222: é–’ç½®éä¹…è­¦å‘Š */
 	  {
-	    bell();		/* itoc.010315: ¥s¤@¤U :p */
-	    prints("\033[1;5;31mÄµ§i\033[m±z¤w¸g¶¢¸m¹L¤[¡A¨t²Î±N¦b %d ¤ÀÄÁ«á§â±z½ğ°£¡I", IDLE_WARNOUT);
+	    bell();		/* itoc.010315: å«ä¸€ä¸‹ :p */
+	    prints("\033[1;5;31mè­¦å‘Š\033[mæ‚¨å·²ç¶“é–’ç½®éä¹…ï¼Œç³»çµ±å°‡åœ¨ %d åˆ†é˜å¾ŒæŠŠæ‚¨è¸¢é™¤ï¼", IDLE_WARNOUT);
 	    refresh();
 	  }	  
 #endif
@@ -1350,7 +1350,7 @@ igetch()
 	  cutmp->idle_time = idle;
 #endif
 
-	  if (bbsmode < M_XMENU)	/* ¦b menu ¸Ì­±­n´« movie */
+	  if (bbsmode < M_XMENU)	/* åœ¨ menu è£¡é¢è¦æ› movie */
 	  {
 	    movie();
 	    refresh();
@@ -1390,11 +1390,11 @@ igetch()
     }
 
     if ((cc == Ctrl('R')) && (bbstate & STAT_STARTED) && !(bbstate & STAT_LOCK) && !(imode & IM_REPLY))
-						/* lkchu.990513: Âê©w®É¤£¥i¦^°T */
+						/* lkchu.990513: é–å®šæ™‚ä¸å¯å›è¨Š */
     {
       signal(SIGUSR1, SIG_IGN);
 
-      /* Thor.980307: ¦b ^R ®É talk ·|¦]¨S¦³ vio_fd ¬İ¤£¨ì I_OTHERDATA¡A¦Ó¬İ¤£¨ì¹ï¤è¥´ªº¦r¡A©Ò¥H¦b ^R ®É¸T¤î talk */
+      /* Thor.980307: åœ¨ ^R æ™‚ talk æœƒå› æ²’æœ‰ vio_fd çœ‹ä¸åˆ° I_OTHERDATAï¼Œè€Œçœ‹ä¸åˆ°å°æ–¹æ‰“çš„å­—ï¼Œæ‰€ä»¥åœ¨ ^R æ™‚ç¦æ­¢ talk */
       imode |= IM_REPLY;
       bmw_reply();
       imode ^= IM_REPLY;
@@ -1402,7 +1402,7 @@ igetch()
       signal(SIGUSR1, (void *) talk_rqst);
 
 #ifdef BMW_COUNT
-      /* itoc.010907: «ö¥ô¤@Áä«á±µ¦¬¤ô²y¼Æ¦^Âk 0 */
+      /* itoc.010907: æŒ‰ä»»ä¸€éµå¾Œæ¥æ”¶æ°´çƒæ•¸å›æ­¸ 0 */
       cutmp->bmw_count = 0;
 #endif
       continue;
@@ -1414,14 +1414,14 @@ igetch()
 
 
 #define	MATCH_END	0x8000
-/* Thor.990204.µù¸Ñ: ¥NªíMATCH§¹µ², ­n¹À´N¸É¨¬, ­n¹À´Nºû«ù­ìª¬, ¤£¨q¥X¥i¯àªº­È¤F */
+/* Thor.990204.è¨»è§£: ä»£è¡¨MATCHå®Œçµ, è¦å˜›å°±è£œè¶³, è¦å˜›å°±ç¶­æŒåŸç‹€, ä¸ç§€å‡ºå¯èƒ½çš„å€¼äº† */
 
 static void
 match_title()
 {
   move(2, 0);
   clrtobot();
-  vs_line("¬ÛÃö¸ê°T¤@Äıªí");
+  vs_line("ç›¸é—œè³‡è¨Šä¸€è¦½è¡¨");
 }
 
 
@@ -1430,7 +1430,7 @@ match_getch()
 {
   int ch;
 
-  outs("\n¡¹ ¦Cªí(C)Ä~Äò (Q)µ²§ô¡H[C] ");
+  outs("\nâ˜… åˆ—è¡¨(C)ç¹¼çºŒ (Q)çµæŸï¼Ÿ[C] ");
   ch = vkey();
   if (ch == 'q' || ch == 'Q')
     return ch;
@@ -1442,7 +1442,7 @@ match_getch()
 
 
 /* ----------------------------------------------------- */
-/* ¿ï¾Ü board	 					 */
+/* é¸æ“‡ board	 					 */
 /* ----------------------------------------------------- */
 
 
@@ -1461,7 +1461,7 @@ ask_board(board, perm, msg)
     outs(msg);
   }
 
-  if (vget(1, 0, "½Ğ¿é¤J¬İªO¦WºÙ(«öªÅ¥ÕÁä¦Û°Ê·j´M)¡G", board, BNLEN + 1, GET_BRD | perm))
+  if (vget(1, 0, "è«‹è¼¸å…¥çœ‹æ¿åç¨±(æŒ‰ç©ºç™½éµè‡ªå‹•æœå°‹)ï¼š", board, BNLEN + 1, GET_BRD | perm))
     return xbrd;
 
   return NULL;
@@ -1475,9 +1475,9 @@ vget_match(prefix, len, op)
   int op;
 {
   char *data, *hit;
-  char newprefix[BNLEN + 1];	/* Ä~Äò¸É§¹ªºªO¦W */
+  char newprefix[BNLEN + 1];	/* ç¹¼çºŒè£œå®Œçš„æ¿å */
   int row, col, match;
-  int rlen;			/* ¥i¸É§¹ªº³Ñ¾lªø«× */
+  int rlen;			/* å¯è£œå®Œçš„å‰©é¤˜é•·åº¦ */
 
   row = 3;
   col = match = rlen = 0;
@@ -1529,7 +1529,7 @@ vget_match(prefix, len, op)
 	    rlen = strlen(data + len);
 	  }
 	}
-	else if (rlen)	/* LHD.051014: ÁÙ¦³¥i¸É§¹ªº¾l¦a */
+	else if (rlen)	/* LHD.051014: é‚„æœ‰å¯è£œå®Œçš„é¤˜åœ° */
 	{
 	  n = newprefix + len;
 	  b = data + len;
@@ -1543,7 +1543,7 @@ vget_match(prefix, len, op)
 	outs(data);
 
 	col += BNLEN + 1;
-	if (col > b_cols + 1 - BNLEN - 1)	/* Á`¦@¥i¥H©ñ (b_cols + 1) / (BNLEN + 1) Äæ */
+	if (col > b_cols + 1 - BNLEN - 1)	/* ç¸½å…±å¯ä»¥æ”¾ (b_cols + 1) / (BNLEN + 1) æ¬„ */
 	{
 	  col = 0;
 	  if (++row >= b_lines)
@@ -1565,7 +1565,7 @@ vget_match(prefix, len, op)
     int cc;
     char fpath[16];
 
-    /* Thor.981203: USER name¦Ü¤Ö¥´¤@¦r, ¥Î"<="·|¤ñ¸û¦n¶Ü? */
+    /* Thor.981203: USER nameè‡³å°‘æ‰“ä¸€å­—, ç”¨"<="æœƒæ¯”è¼ƒå¥½å—? */
     if (len == 0)
       return 0;
 
@@ -1586,14 +1586,14 @@ vget_match(prefix, len, op)
       if (!match++)
       {
 	match_title();
-	strcpy(hit = fpath, data);	/* ²Ä¤@µ§²Å¦Xªº¸ê®Æ */
+	strcpy(hit = fpath, data);	/* ç¬¬ä¸€ç­†ç¬¦åˆçš„è³‡æ–™ */
       }
 
       move(row, col);
       outs(data);
 
       col += IDLEN + 1;
-      if (col > b_cols + 1 - IDLEN - 1)	/* Á`¦@¥i¥H©ñ (b_cols + 1) / (IDLEN + 1) Äæ */
+      if (col > b_cols + 1 - IDLEN - 1)	/* ç¸½å…±å¯ä»¥æ”¾ (b_cols + 1) / (IDLEN + 1) æ¬„ */
       {
 	col = 0;
 	if (++row >= b_lines)
@@ -1607,7 +1607,7 @@ vget_match(prefix, len, op)
 
     closedir(dirp);
   }
-  else /* Thor.990203.µù¸Ñ: GET_LIST */
+  else /* Thor.990203.è¨»è§£: GET_LIST */
   {
     LinkList *list;
     extern LinkList *ll_head;
@@ -1638,7 +1638,7 @@ vget_match(prefix, len, op)
       outs(data);
 
       col += IDLEN + 1;
-      if (col > b_cols + 1 - IDLEN - 1)	/* Á`¦@¥i¥H©ñ (b_cols + 1) / (IDLEN + 1) Äæ */
+      if (col > b_cols + 1 - IDLEN - 1)	/* ç¸½å…±å¯ä»¥æ”¾ (b_cols + 1) / (IDLEN + 1) æ¬„ */
       {
 	col = 0;
 	if (++row >= b_lines)
@@ -1670,10 +1670,10 @@ char lastcmd[MAXLASTCMD][80];
 
 
 /* Flags to getdata input function */
-/* NOECHO  0x0000  ¤£Åã¥Ü¡A¥Î©ó±K½X¨ú±o */
-/* DOECHO  0x0100  ¤@¯ëÅã¥Ü */
-/* LCECHO  0x0200  low case echo¡A´«¦¨¤p¼g */
-/* GCARRY  0x0400  ·|Åã¥Ü¤W¤@¦¸/¥Ø«eªº­È */
+/* NOECHO  0x0000  ä¸é¡¯ç¤ºï¼Œç”¨æ–¼å¯†ç¢¼å–å¾— */
+/* DOECHO  0x0100  ä¸€èˆ¬é¡¯ç¤º */
+/* LCECHO  0x0200  low case echoï¼Œæ›æˆå°å¯« */
+/* GCARRY  0x0400  æœƒé¡¯ç¤ºä¸Šä¸€æ¬¡/ç›®å‰çš„å€¼ */
 
 int
 vget(line, col, prompt, data, max, echo)
@@ -1686,7 +1686,7 @@ vget(line, col, prompt, data, max, echo)
   int i, next;
   int vlen, hlen;
 
-  /* itoc.010312: ¥ı¬ö¿ı¦ì¸m ¦]¬°«á­± line ©M prompt ³£³Q§ó§ï¤F */ 
+  /* itoc.010312: å…ˆç´€éŒ„ä½ç½® å› ç‚ºå¾Œé¢ line å’Œ prompt éƒ½è¢«æ›´æ”¹äº† */ 
   vlen = line;
   hlen = col + strlen(prompt);
 
@@ -1717,7 +1717,7 @@ vget(line, col, prompt, data, max, echo)
   }
 
   /* --------------------------------------------------- */
-  /* ¨ú±o board / userid / on-line user			 */
+  /* å–å¾— board / userid / on-line user			 */
   /* --------------------------------------------------- */
 
   ch = len;
@@ -1740,7 +1740,7 @@ vget(line, col, prompt, data, max, echo)
     {
       data[len] = '\0';
       if ((echo & (GET_BRD | GET_LIST)) && len > 0)
-      /* Thor.990204:­n¨D¿é¤J¥ô¤@¦r¤~¥Nªí¦Û°Ê match, §_«hºâcancel */
+      /* Thor.990204:è¦æ±‚è¼¸å…¥ä»»ä¸€å­—æ‰ä»£è¡¨è‡ªå‹• match, å¦å‰‡ç®—cancel */
       {
 	ch = len;
 	len = vget_match(data, len, echo | MATCH_END);
@@ -1798,7 +1798,7 @@ vget(line, col, prompt, data, max, echo)
     }
 
     /* ----------------------------------------------- */
-    /* ¿é¤J password ®É¥u¯à«ö BackSpace		       */
+    /* è¼¸å…¥ password æ™‚åªèƒ½æŒ‰ BackSpace		       */
     /* ----------------------------------------------- */
 
     if (!echo && ch != KEY_BKSP)
@@ -1825,7 +1825,7 @@ vget(line, col, prompt, data, max, echo)
       len--;
       col--;
 #ifdef HAVE_MULTI_BYTE
-      /* hightman.060504: §PÂ_²{¦b§R°£ªº¦ì¸m¬O§_¬°º~¦rªº«á¥b¬q¡A­Y¬O§R¤G¦r¤¸ */
+      /* hightman.060504: åˆ¤æ–·ç¾åœ¨åˆªé™¤çš„ä½ç½®æ˜¯å¦ç‚ºæ¼¢å­—çš„å¾ŒåŠæ®µï¼Œè‹¥æ˜¯åˆªäºŒå­—å…ƒ */
       if ((cuser.ufo & UFO_ZHC) && echo && col && IS_ZHC_LO(data, col))
       {
 	len--;
@@ -1856,7 +1856,7 @@ vget(line, col, prompt, data, max, echo)
 
       len--;
 #ifdef HAVE_MULTI_BYTE
-      /* hightman.060504: §PÂ_²{¦b§R°£ªº¦ì¸m¬O§_¬°º~¦rªº«e¥b¬q¡A­Y¬O§R¤G¦r¤¸ */
+      /* hightman.060504: åˆ¤æ–·ç¾åœ¨åˆªé™¤çš„ä½ç½®æ˜¯å¦ç‚ºæ¼¢å­—çš„å‰åŠæ®µï¼Œè‹¥æ˜¯åˆªäºŒå­—å…ƒ */
       if ((cuser.ufo & UFO_ZHC) && col < len && IS_ZHC_HI(data[col]))
       {
 	len--;
@@ -1880,7 +1880,7 @@ vget(line, col, prompt, data, max, echo)
       {
 	col--;
 #ifdef HAVE_MULTI_BYTE
-	/* hightman.060504: ¥ª²¾®É¸I¨ìº~¦r²¾Âù®æ */
+	/* hightman.060504: å·¦ç§»æ™‚ç¢°åˆ°æ¼¢å­—ç§»é›™æ ¼ */
 	if ((cuser.ufo & UFO_ZHC) && col && IS_ZHC_LO(data, col))
 	  col--;
 #endif
@@ -1893,7 +1893,7 @@ vget(line, col, prompt, data, max, echo)
       {
 	col++;
 #ifdef HAVE_MULTI_BYTE
-	/* hightman.060504: ¥k²¾®É¸I¨ìº~¦r²¾Âù®æ */
+	/* hightman.060504: å³ç§»æ™‚ç¢°åˆ°æ¼¢å­—ç§»é›™æ ¼ */
 	if ((cuser.ufo & UFO_ZHC) && col < len && IS_ZHC_HI(data[col - 1]))
 	  col++;
 #endif
@@ -1944,8 +1944,8 @@ vget(line, col, prompt, data, max, echo)
 	  break;
 	}
 
-#if 0	/* ¤£»İ­n¡A¦]¬° bmtad/receive_article ·| strip ¨ì ansi code */
-	if (ch == KEY_ESC)	/* itoc.020601: ¤£±o¨Ï¥Î±±¨î½X */
+#if 0	/* ä¸éœ€è¦ï¼Œå› ç‚º bmtad/receive_article æœƒ strip åˆ° ansi code */
+	if (ch == KEY_ESC)	/* itoc.020601: ä¸å¾—ä½¿ç”¨æ§åˆ¶ç¢¼ */
 	  ch = '*';
 #endif
 
@@ -1966,12 +1966,12 @@ vget(line, col, prompt, data, max, echo)
       }
       break;
 
-    /* itoc.030619: Åı vget ¤¤ÁÙ¯à«ö ^R ¿ï¤ô²y */
+    /* itoc.030619: è®“ vget ä¸­é‚„èƒ½æŒ‰ ^R é¸æ°´çƒ */
     case Ctrl('R'):
     case Ctrl('T'):
       if (bbsmode == M_BMW_REPLY)
       {
-	if (bmw_reply_CtrlRT(ch))	/* ¦³¦hÁû¤ô²y */
+	if (bmw_reply_CtrlRT(ch))	/* æœ‰å¤šé¡†æ°´çƒ */
 	{
 	  data[len] = '\0';
 	  return ch;
@@ -1988,7 +1988,7 @@ vget(line, col, prompt, data, max, echo)
     strcpy(lastcmd[0], data);
   }
 
-  move(vlen, strlen(data) + hlen);	/* itoc.010312: ©T©w²¾¨ì¸Ó¦C¦C§À¦A¦L¥X'\n' */
+  move(vlen, strlen(data) + hlen);	/* itoc.010312: å›ºå®šç§»åˆ°è©²åˆ—åˆ—å°¾å†å°å‡º'\n' */
   outc('\n');
 
   ch = data[0];
@@ -2005,7 +2005,7 @@ vans(prompt)
 {
   char ans[3];
 
-  /* itoc.010812.µù¸Ñ: ·|¦Û°Ê´«¦¨¤p¼gªº */
+  /* itoc.010812.è¨»è§£: æœƒè‡ªå‹•æ›æˆå°å¯«çš„ */
   return vget(b_lines, 0, prompt, ans, sizeof(ans), LCECHO);
 }
 

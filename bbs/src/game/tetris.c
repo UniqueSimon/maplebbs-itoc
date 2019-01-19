@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* tetris.c	( NTHU CS MapleBBS Ver 3.10 )		 */
 /*-------------------------------------------------------*/
-/* target : «XÃ¹´µ¤è¶ô					 */
+/* target : ä¿„ç¾…æ–¯æ–¹å¡Š					 */
 /* create :   /  /  					 */
 /* update : 02/10/15					 */
 /* author : zhch.bbs@bbs.nju.edu.cn			 */
@@ -14,12 +14,12 @@
 
 #ifdef HAVE_GAME
 
-#define MAX_MAP_WIDTH	10	/* ´Ñ½Lªº¼e«×¦@ 10 ¦æ */
-#define MAX_MAP_HEIGHT	20	/* ´Ñ½Lªº°ª«×¦@ 20 ¦C */
-#define MAX_STYLE	7	/* Á`¦@¦³ 7 ºØÃş«¬ªº¤è¶ô */
+#define MAX_MAP_WIDTH	10	/* æ£‹ç›¤çš„å¯¬åº¦å…± 10 è¡Œ */
+#define MAX_MAP_HEIGHT	20	/* æ£‹ç›¤çš„é«˜åº¦å…± 20 åˆ— */
+#define MAX_STYLE	7	/* ç¸½å…±æœ‰ 7 ç¨®é¡å‹çš„æ–¹å¡Š */
 
 
-/* ¨CºØ¤è¶ô³£¬O 4*4 ªº¡AµM«á¥i¥HÂà 4 ­Ó¤è¦V */
+/* æ¯ç¨®æ–¹å¡Šéƒ½æ˜¯ 4*4 çš„ï¼Œç„¶å¾Œå¯ä»¥è½‰ 4 å€‹æ–¹å‘ */
 
 static int style_x[MAX_STYLE][4][4] =
 {
@@ -46,14 +46,14 @@ static int style_y[MAX_STYLE][4][4] =
 
 static int map[MAX_MAP_HEIGHT + 1][MAX_MAP_WIDTH + 2];
 
-static int my_lines;		/* Á`®ø¥h±ø¼Æ */
-static int my_scores;		/* Á`±o¤À */
-static int level;		/* Ãö¥d */
-static int delay;		/* ¤è¶ô¦Û°Ê¤U¶^ªº®É¶¡¶¡¶Z (³æ¦ì:usec) */
-static int cx, cy;		/* ¥Ø«e©Ò¦b (x, y) */
-static int style;		/* ¥Ø«e¤è¶ôªºÃş«¬ */
-static int dir;			/* ¥Ø«e¤è¶ôªº¤è¦V */
-static int last_dir;		/* ¤W¦¸¤è¦Vªº¤è¦V */
+static int my_lines;		/* ç¸½æ¶ˆå»æ¢æ•¸ */
+static int my_scores;		/* ç¸½å¾—åˆ† */
+static int level;		/* é—œå¡ */
+static int delay;		/* æ–¹å¡Šè‡ªå‹•ä¸‹è·Œçš„æ™‚é–“é–“è· (å–®ä½:usec) */
+static int cx, cy;		/* ç›®å‰æ‰€åœ¨ (x, y) */
+static int style;		/* ç›®å‰æ–¹å¡Šçš„é¡å‹ */
+static int dir;			/* ç›®å‰æ–¹å¡Šçš„æ–¹å‘ */
+static int last_dir;		/* ä¸Šæ¬¡æ–¹å‘çš„æ–¹å‘ */
 
 
 static void
@@ -68,31 +68,31 @@ static void
 tetris_welcome()
 {
   move(4, 33);
-  outs("«öÁä»¡©ú¡G");
+  outs("æŒ‰éµèªªæ˜ï¼š");
   move(5, 35);
-  outs("¡õ¡ö¡÷       ²¾°Ê¤è¦V");
+  outs("â†“â†â†’       ç§»å‹•æ–¹å‘");
   move(6, 35);
-  outs("Space        §Ö³t­°¤U");
+  outs("Space        å¿«é€Ÿé™ä¸‹");
   move(7, 35);
-  outs("¡ô           180 «×±ÛÂà");
+  outs("â†‘           180 åº¦æ—‹è½‰");
   move(8, 35);
-  outs("k            ¶¶®É°w±ÛÂà");
+  outs("k            é †æ™‚é‡æ—‹è½‰");
   move(9, 35);
-  outs("j            °f®É°w±ÛÂà");
+  outs("j            é€†æ™‚é‡æ—‹è½‰");
   move(10, 35);
-  outs("^S           ¼È°±¹CÀ¸");
+  outs("^S           æš«åœéŠæˆ²");
   move(11, 35);
-  outs("q            Â÷¶}¹CÀ¸");
+  outs("q            é›¢é–‹éŠæˆ²");
 
   move(13, 35);
-  outs("­Y´å¼Ğ¦³²¾°Ê¿ù»~ªº²{¶H");
+  outs("è‹¥æ¸¸æ¨™æœ‰ç§»å‹•éŒ¯èª¤çš„ç¾è±¡");
   move(14, 35);
-  outs("¼È®É±N°»´ú¤è¦VÁä¥ş§ÎÃö³¬§Y¥i");
+  outs("æš«æ™‚å°‡åµæ¸¬æ–¹å‘éµå…¨å½¢é—œé–‰å³å¯");
 
   move(16, 33);
-  outs("¨C®ø¢²¢¯±ø¤É¤@¯Å");
+  outs("æ¯æ¶ˆï¼“ï¼æ¢å‡ä¸€ç´š");
   move(17, 33);
-  outs("®ø¤@¦æ±o¢°¤À¡B¤G¦æ¢²¤À¡B¤T¦æ¢¶¤À¡B¥|¦æ¢°¢´¤À");
+  outs("æ¶ˆä¸€è¡Œå¾—ï¼‘åˆ†ã€äºŒè¡Œï¼“åˆ†ã€ä¸‰è¡Œï¼—åˆ†ã€å››è¡Œï¼‘ï¼•åˆ†");
 
   vmsg(NULL);
 }
@@ -103,27 +103,27 @@ tetris_init()		/* initialize map[][] */
 {
   int i, j, line;
 
-  line = MAX_MAP_HEIGHT - level;	/* ¨Ìµ¥¯Å¨Ó¨M©w¦³´X¦æ¦³ªF¦è */
+  line = MAX_MAP_HEIGHT - level;	/* ä¾ç­‰ç´šä¾†æ±ºå®šæœ‰å¹¾è¡Œæœ‰æ±è¥¿ */
 
-  /* map[][] ¸Ì­±ªº­È 0:ªÅ¥Õ(  ) 1:¦ûº¡(¢i) 2:¥ª¥k¬É(¢x) 3:©³¬É(¢w) 4:¥ª¨¤¸¨¬É(¢|) 5:¥k¨¤¸¨¬É(¢}) */
+  /* map[][] è£¡é¢çš„å€¼ 0:ç©ºç™½(  ) 1:ä½”æ»¿(â–ˆ) 2:å·¦å³ç•Œ(â”‚) 3:åº•ç•Œ(â”€) 4:å·¦è§’è½ç•Œ(â””) 5:å³è§’è½ç•Œ(â”˜) */
 
   for (i = 0; i < MAX_MAP_HEIGHT; i++)
   {
     for (j = 1; j <= MAX_MAP_WIDTH; j++)
     {
       if (i >= line)
-	map[i][j] = rnd(2);			/* ¦ûº¡ */
+	map[i][j] = rnd(2);			/* ä½”æ»¿ */
       else
-	map[i][j] = 0;				/* ªÅ¥Õ */
+	map[i][j] = 0;				/* ç©ºç™½ */
     }
-    map[i][0] = map[i][MAX_MAP_WIDTH + 1] = 2;	/* ¥ª¥k¬É */
+    map[i][0] = map[i][MAX_MAP_WIDTH + 1] = 2;	/* å·¦å³ç•Œ */
   }
 
   for (j = 1; j <= MAX_MAP_WIDTH; j++)
-    map[MAX_MAP_HEIGHT][j] = 3;			/* ©³¬É */
+    map[MAX_MAP_HEIGHT][j] = 3;			/* åº•ç•Œ */
 
-  map[MAX_MAP_HEIGHT][0] = 4;			/* ¥ª¨¤¸¨¬É */
-  map[MAX_MAP_HEIGHT][MAX_MAP_WIDTH + 1] = 5;	/* ¥ª¨¤¸¨¬É */
+  map[MAX_MAP_HEIGHT][0] = 4;			/* å·¦è§’è½ç•Œ */
+  map[MAX_MAP_HEIGHT][MAX_MAP_WIDTH + 1] = 5;	/* å·¦è§’è½ç•Œ */
 }
 
 
@@ -131,9 +131,9 @@ static void
 tetris_mapshow()
 {
   int i, j;
-  char piece[6][3] = {"  ", "¢i", "¢x", "¢w", "¢|", "¢}"};
+  char piece[6][3] = {"  ", "â–ˆ", "â”‚", "â”€", "â””", "â”˜"};
 
-  /* map[][] ¸Ì­±ªº­È 0:ªÅ¥Õ(  ) 1:¦ûº¡(¢i) 2:¥ª¥k¬É(¢x) 3:©³¬É(¢w) 4:¥ª¨¤¸¨¬É(¢|) 5:¥k¨¤¸¨¬É(¢}) */
+  /* map[][] è£¡é¢çš„å€¼ 0:ç©ºç™½(  ) 1:ä½”æ»¿(â–ˆ) 2:å·¦å³ç•Œ(â”‚) 3:åº•ç•Œ(â”€) 4:å·¦è§’è½ç•Œ(â””) 5:å³è§’è½ç•Œ(â”˜) */
 
   for (i = 0; i <= MAX_MAP_HEIGHT; i++)
   {
@@ -149,7 +149,7 @@ tetris_blineshow()
 {
   move(b_lines, 0);
   clrtoeol();
-  prints("µ¥¯Å¡G\033[1;32m%d\033[m  Á`®ø¥h±ø¼Æ¡G\033[1;32m%d\033[m  Á`±o¤À¡G\033[1;32m%d\033[m",
+  prints("ç­‰ç´šï¼š\033[1;32m%d\033[m  ç¸½æ¶ˆå»æ¢æ•¸ï¼š\033[1;32m%d\033[m  ç¸½å¾—åˆ†ï¼š\033[1;32m%d\033[m",
     level, my_lines, my_scores);
 }
 
@@ -159,7 +159,7 @@ block_show(x, y, s, d, f)
   int x, y;		/* (x, y) */
   int s;		/* style */
   int d;		/* dir */
-  int f;		/* 1:¥[¤W¤è¶ô 0:²¾°£¤è¶ô */
+  int f;		/* 1:åŠ ä¸Šæ–¹å¡Š 0:ç§»é™¤æ–¹å¡Š */
 {
   int n;
 
@@ -170,7 +170,7 @@ block_show(x, y, s, d, f)
   {
     move_map(x + style_x[s][d][n], y + style_y[s][d][n]);
     if (f)
-      outs("¢i");	/* piece[1] */
+      outs("â–ˆ");	/* piece[1] */
     else
       outs("  ");	/* piece[0] */
   }
@@ -200,13 +200,13 @@ block_move()
 static void
 tune_delay()
 {
-  /* delay ­n¦b 1 ~ 999999 ¤§¶¡ */
+  /* delay è¦åœ¨ 1 ~ 999999 ä¹‹é–“ */
   delay = 999999 / (level + 1);
 }
 
 
 static void
-check_lines()		/* ÀË¬d¬İ¬O§_¯à®ø¥h¤@±ø */
+check_lines()		/* æª¢æŸ¥çœ‹æ˜¯å¦èƒ½æ¶ˆå»ä¸€æ¢ */
 {
   int i, j, s;
 
@@ -215,7 +215,7 @@ check_lines()		/* ÀË¬d¬İ¬O§_¯à®ø¥h¤@±ø */
   {
     for (j = 1; j <= MAX_MAP_WIDTH; j++)
     {
-      if (map[i][j] == 0)	/* ªÅ¥Õ */
+      if (map[i][j] == 0)	/* ç©ºç™½ */
 	break;
     }
 
@@ -224,7 +224,7 @@ check_lines()		/* ÀË¬d¬İ¬O§_¯à®ø¥h¤@±ø */
       int n;
 
       s *= 2;
-      /* ®ø¥h±ø¤W³¡¥ş³¡¤U²¾ */
+      /* æ¶ˆå»æ¢ä¸Šéƒ¨å…¨éƒ¨ä¸‹ç§» */
       for (n = i; n > 0; n--)
       {
 	for (j = 1; j <= MAX_MAP_WIDTH; j++)
@@ -233,7 +233,7 @@ check_lines()		/* ÀË¬d¬İ¬O§_¯à®ø¥h¤@±ø */
       for (j = 1; j <= MAX_MAP_WIDTH; j++)
 	map[0][j] = 0;
 
-      if (++my_lines % 30 == 0)	/* ¨C®ø 30 ±øÃö¥d¥[¤@ */
+      if (++my_lines % 30 == 0)	/* æ¯æ¶ˆ 30 æ¢é—œå¡åŠ ä¸€ */
       {
 	level++;
 	tune_delay();
@@ -241,7 +241,7 @@ check_lines()		/* ÀË¬d¬İ¬O§_¯à®ø¥h¤@±ø */
     }
   }
 
-  if (--s > 0)	/* ¦³®ø¥h¦Ü¤Ö¤@±ø */
+  if (--s > 0)	/* æœ‰æ¶ˆå»è‡³å°‘ä¸€æ¢ */
   {
     s = s * (10 + level) / 10;
     my_scores += s;
@@ -251,7 +251,7 @@ check_lines()		/* ÀË¬d¬İ¬O§_¯à®ø¥h¤@±ø */
 }
 
 
-static int	/* 1:¸I¨ì»ÙÃªª« 0:³q¦æµLªı */
+static int	/* 1:ç¢°åˆ°éšœç¤™ç‰© 0:é€šè¡Œç„¡é˜» */
 crash(x, y, s, d)
   int x, y;	/* (x, y) */
   int s;	/* style */
@@ -261,7 +261,7 @@ crash(x, y, s, d)
 
   for (n = 0; n <= 3; n++)
   {
-    if (map[x + style_x[s][d][n]][y + style_y[s][d][n]])	/* ¤w¦ûº¡ */
+    if (map[x + style_x[s][d][n]][y + style_y[s][d][n]])	/* å·²ä½”æ»¿ */
       return 1;
   }
   return 0;
@@ -274,7 +274,7 @@ arrived()
   int n;
 
   for (n = 0; n <= 3; n++)
-    map[cx + style_x[style][dir][n]][cy + style_y[style][dir][n]] = 1;	/* ¦ûº¡ */
+    map[cx + style_x[style][dir][n]][cy + style_y[style][dir][n]] = 1;	/* ä½”æ»¿ */
 
   check_lines();
 }
@@ -290,7 +290,7 @@ getkey()
   tv.tv_sec = 0;
   tv.tv_usec = delay;
 
-  /* ­Y¦³«öÁä¡A¦^¶Ç©Ò«öªºÁä¡F­Y delay ªº®É¶¡¨ì¤F¤´¨S¦³«öÁä¡A¦^¶Ç 0 */
+  /* è‹¥æœ‰æŒ‰éµï¼Œå›å‚³æ‰€æŒ‰çš„éµï¼›è‹¥ delay çš„æ™‚é–“åˆ°äº†ä»æ²’æœ‰æŒ‰éµï¼Œå›å‚³ 0 */
 
   if (select(1, (fd_set *) &fd, NULL, NULL, &tv) > 0)
     return vkey();
@@ -305,19 +305,19 @@ main_tetris()
   int ch;
   int next_style;
 
-  vs_bar("«XÃ¹´µ¤è¶ô");
+  vs_bar("ä¿„ç¾…æ–¯æ–¹å¡Š");
   tetris_welcome();
 
 start_game:
 
-  level = vans("±q²Ä´X¯Å¶}©lª±(0-9)¡H[0] ") - '0';
+  level = vans("å¾ç¬¬å¹¾ç´šé–‹å§‹ç©(0-9)ï¼Ÿ[0] ") - '0';
   if (level < 0 || level > 9)
     level = 0;
 
   tetris_init();
   tetris_mapshow();
 
-  vmsg("¹CÀ¸¶}©l");
+  vmsg("éŠæˆ²é–‹å§‹");
   tetris_blineshow();
 
   style = 0;
@@ -328,19 +328,19 @@ start_game:
   while (1)
   {
     style = next_style;
-    next_style = rnd(MAX_STYLE);/* ¶Ã¼Æ¨M©w¤U¤@­Ó¥X¨Óªº¤è¶ôÃş«¬ */
-    last_dir = -1;		/* ¨C¦¸·s¤è¶ô¥X¨Ó³£­n­«³]¬° -1 */
-    dir = 0;			/* ¤è¶ô¤@¥X¨Ó¬O´Â¤Wªº */
-    cx = 0;			/* ¤è¶ô¤@¥X¨Óªº¦ì¸m */
+    next_style = rnd(MAX_STYLE);/* äº‚æ•¸æ±ºå®šä¸‹ä¸€å€‹å‡ºä¾†çš„æ–¹å¡Šé¡å‹ */
+    last_dir = -1;		/* æ¯æ¬¡æ–°æ–¹å¡Šå‡ºä¾†éƒ½è¦é‡è¨­ç‚º -1 */
+    dir = 0;			/* æ–¹å¡Šä¸€å‡ºä¾†æ˜¯æœä¸Šçš„ */
+    cx = 0;			/* æ–¹å¡Šä¸€å‡ºä¾†çš„ä½ç½® */
     cy = MAX_MAP_WIDTH / 2;
 
-    /* §â¤W¤@­Ó¤w¥X¨Óªº²M°£¡A§â¤U¤@­Ó­n¥X¨Óªºµe¦b¥k¤W¨¤ */
+    /* æŠŠä¸Šä¸€å€‹å·²å‡ºä¾†çš„æ¸…é™¤ï¼ŒæŠŠä¸‹ä¸€å€‹è¦å‡ºä¾†çš„ç•«åœ¨å³ä¸Šè§’ */
     block_show(0, MAX_MAP_WIDTH + 2, style, dir, 0);
     block_show(0, MAX_MAP_WIDTH + 2, next_style, dir, 1);
 
     block_move();
 
-    if (crash(cx, cy, style, dir))	/* ·s¤è¶ô¤@¥X¨Ó´N crash¡Agame over */
+    if (crash(cx, cy, style, dir))	/* æ–°æ–¹å¡Šä¸€å‡ºä¾†å°± crashï¼Œgame over */
       break;
 
     for (;;)
@@ -348,7 +348,7 @@ start_game:
       switch (ch = getkey())
       {
       case Ctrl('S'):
-	vmsg("¹CÀ¸¼È°±¡A«ö¥ô·NÁäÄ~Äòª±");
+	vmsg("éŠæˆ²æš«åœï¼ŒæŒ‰ä»»æ„éµç¹¼çºŒç©");
 	tetris_blineshow();
 	break;
 
@@ -413,7 +413,7 @@ start_game:
 	ch = '#';
 	break;
 
-      case 0:		/* ÀH delay ®É¶¡¤@¨ì·|¦Û°Ê©¹¤U¸õ */
+      case 0:		/* éš¨ delay æ™‚é–“ä¸€åˆ°æœƒè‡ªå‹•å¾€ä¸‹è·³ */
 	if (!crash(cx + 1, cy, style, dir))
 	{
 	  cx++;
@@ -438,7 +438,7 @@ start_game:
       break;
   }		/* end of while (1) */
 
-  if (vans("¥»§½µ²§ô¡I±zÁÙ­nÄ~Äòª±¶Ü(Y/N)¡H[N] ") == 'y')
+  if (vans("æœ¬å±€çµæŸï¼æ‚¨é‚„è¦ç¹¼çºŒç©å—(Y/N)ï¼Ÿ[N] ") == 'y')
     goto start_game;
 
   return 0;

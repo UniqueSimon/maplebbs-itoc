@@ -18,22 +18,22 @@
 
 
 /* ----------------------------------------------------- */
-/* ¤@¯ë²ÕºA						 */
+/* ä¸€èˆ¬çµ„æ…‹						 */
 /* ----------------------------------------------------- */
 
-#define VERSION		"0.8-MapleBBS"		/* ª©¥»«Å§i */
+#define VERSION		"0.8-MapleBBS"		/* ç‰ˆæœ¬å®£å‘Š */
 
-#define MYBBSID		BBSNAME2		/* Path: ¥Î­^¤å¯¸¦W */
+#define MYBBSID		BBSNAME2		/* Path: ç”¨è‹±æ–‡ç«™å */
 
-#define LOGFILE		"innd/innbbs.log"	/* °O¿ıÀÉ¸ô®| */
+#define LOGFILE		"innd/innbbs.log"	/* è¨˜éŒ„æª”è·¯å¾‘ */
 
 
 /* ----------------------------------------------------- */
-/* innbbsd ªº³]©w					 */
+/* innbbsd çš„è¨­å®š					 */
 /* ----------------------------------------------------- */
 
   /* --------------------------------------------------- */
-  /* channel ªº³]©w					 */
+  /* channel çš„è¨­å®š					 */
   /* --------------------------------------------------- */
 
 #define MAXCLIENT 	20		/* Maximum number of connections accepted by innbbsd */
@@ -42,28 +42,28 @@
 #define ReadSize	4096
 
   /* --------------------------------------------------- */
-  /* rec_article ªº³]©w					 */
+  /* rec_article çš„è¨­å®š					 */
   /* --------------------------------------------------- */
 
-#define	_NoCeM_				/* No See Them ¾×«H¾÷¨î */
+#define	_NoCeM_				/* No See Them æ“‹ä¿¡æ©Ÿåˆ¶ */
 
-#undef	_KEEP_CANCEL_			/* «O¯d cancel ªº¤å³¹©ó deleted ªO */
-
-
-/* ----------------------------------------------------- */
-/* bbslink ªº³]©w					 */
-/* ----------------------------------------------------- */
-
-#define MAX_ARTS	100		/* ¨C­Ó newsgroup ¤@¦¸³Ì¦h¦¬´X«Ê«H */
-
-#define BBSLINK_EXPIRE	3600		/* bbslink ­Y°õ¦æ¹L¤[¡A´Nª½±µ kill ±¼(¬í) */
+#undef	_KEEP_CANCEL_			/* ä¿ç•™ cancel çš„æ–‡ç« æ–¼ deleted æ¿ */
 
 
 /* ----------------------------------------------------- */
-/* History Âà«H°O¿ıºûÅ@					 */
+/* bbslink çš„è¨­å®š					 */
 /* ----------------------------------------------------- */
 
-#define EXPIREDAYS	5		/* Âà«H°O¿ı«O¯d¤Ñ¼Æ */
+#define MAX_ARTS	100		/* æ¯å€‹ newsgroup ä¸€æ¬¡æœ€å¤šæ”¶å¹¾å°ä¿¡ */
+
+#define BBSLINK_EXPIRE	3600		/* bbslink è‹¥åŸ·è¡Œéä¹…ï¼Œå°±ç›´æ¥ kill æ‰(ç§’) */
+
+
+/* ----------------------------------------------------- */
+/* History è½‰ä¿¡è¨˜éŒ„ç¶­è­·					 */
+/* ----------------------------------------------------- */
+
+#define EXPIREDAYS	5		/* è½‰ä¿¡è¨˜éŒ„ä¿ç•™å¤©æ•¸ */
 #define HIS_MAINT_HOUR	4		/* time to maintain history database */
 #define HIS_MAINT_MIN	30		/* time to maintain history database */
 

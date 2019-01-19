@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/transacct.c	( NTHU CS MapleBBS Ver 3.10 )	 */
 /*-------------------------------------------------------*/
-/* target : M3 ACCT Âà´«µ{¦¡				 */
+/* target : M3 ACCT è½‰æ›ç¨‹å¼				 */
 /* create : 98/12/15					 */
 /* update : 02/04/29					 */
 /* author : mat.bbs@fall.twbbs.org			 */
@@ -13,15 +13,15 @@
 
 #if 0
 
-  ¨Ï¥Î¤èªk¡G
+  ä½¿ç”¨æ–¹æ³•ï¼š
 
   0. For Maple 3.X To Maple 3.X
 
-  1. ¨Ï¥Î«e½Ğ¥ı§Q¥Î backupacct.c ³Æ¥÷ .ACCT
+  1. ä½¿ç”¨å‰è«‹å…ˆåˆ©ç”¨ backupacct.c å‚™ä»½ .ACCT
 
-  2. ½Ğ¦Û¦æ§ï struct NEW ©M struct OLD
+  2. è«‹è‡ªè¡Œæ”¹ struct NEW å’Œ struct OLD
 
-  3. ¨Ì¤£¦Pªº NEW¡BOLD ¨Ó§ï trans_acct()¡C
+  3. ä¾ä¸åŒçš„ NEWã€OLD ä¾†æ”¹ trans_acct()ã€‚
 
 #endif
 
@@ -30,85 +30,85 @@
 
 
 /* ----------------------------------------------------- */
-/* (·sªº) ¨Ï¥ÎªÌ±b¸¹ .ACCT struct			 */
+/* (æ–°çš„) ä½¿ç”¨è€…å¸³è™Ÿ .ACCT struct			 */
 /* ----------------------------------------------------- */
 
 
-typedef struct			/* ­n©M·sª©µ{¦¡ struct ¤@¼Ë */
+typedef struct			/* è¦å’Œæ–°ç‰ˆç¨‹å¼ struct ä¸€æ¨£ */
 {
   int userno;			/* unique positive code */
 
   char userid[IDLEN + 1];	/* ID */
-  char passwd[PASSLEN + 1];	/* ±K½X */
-  char realname[RNLEN + 1];	/* ¯u¹ê©m¦W */
-  char username[UNLEN + 1];	/* ¼ÊºÙ */
+  char passwd[PASSLEN + 1];	/* å¯†ç¢¼ */
+  char realname[RNLEN + 1];	/* çœŸå¯¦å§“å */
+  char username[UNLEN + 1];	/* æš±ç¨± */
 
-  usint userlevel;		/* Åv­­ */
+  usint userlevel;		/* æ¬Šé™ */
   usint ufo;			/* user favor option */
-  uschar signature;		/* ¹w³]Ã±¦WÀÉ */
+  uschar signature;		/* é è¨­ç°½åæª” */
 
-  char year;			/* ¥Í¤é(¥Á°ê¦~) */
-  char month;			/* ¥Í¤é(¤ë) */
-  char day;			/* ¥Í¤é(¤é) */
-  char sex;			/* ©Ê§O 0:¤¤©Ê ©_¼Æ:¨k©Ê °¸¼Æ:¤k©Ê */
-  int money;			/* »È¹ô */
-  int gold;			/* ª÷¹ô */
+  char year;			/* ç”Ÿæ—¥(æ°‘åœ‹å¹´) */
+  char month;			/* ç”Ÿæ—¥(æœˆ) */
+  char day;			/* ç”Ÿæ—¥(æ—¥) */
+  char sex;			/* æ€§åˆ¥ 0:ä¸­æ€§ å¥‡æ•¸:ç”·æ€§ å¶æ•¸:å¥³æ€§ */
+  int money;			/* éŠ€å¹£ */
+  int gold;			/* é‡‘å¹£ */
 
-  int numlogins;		/* ¤W¯¸¦¸¼Æ */
-  int numposts;			/* µoªí¦¸¼Æ */
-  int numemails;		/* ±Hµo Inetrnet E-mail ¦¸¼Æ */
+  int numlogins;		/* ä¸Šç«™æ¬¡æ•¸ */
+  int numposts;			/* ç™¼è¡¨æ¬¡æ•¸ */
+  int numemails;		/* å¯„ç™¼ Inetrnet E-mail æ¬¡æ•¸ */
  
-  time_t firstlogin;		/* ²Ä¤@¦¸¤W¯¸®É¶¡ */
-  time_t lastlogin;		/* ¤W¤@¦¸¤W¯¸®É¶¡ */
-  time_t tcheck;		/* ¤W¦¸ check «H½c/¦n¤Í¦W³æªº®É¶¡ */
-  time_t tvalid;		/* ³q¹L»{ÃÒªº®É¶¡ */
+  time_t firstlogin;		/* ç¬¬ä¸€æ¬¡ä¸Šç«™æ™‚é–“ */
+  time_t lastlogin;		/* ä¸Šä¸€æ¬¡ä¸Šç«™æ™‚é–“ */
+  time_t tcheck;		/* ä¸Šæ¬¡ check ä¿¡ç®±/å¥½å‹åå–®çš„æ™‚é–“ */
+  time_t tvalid;		/* é€šéèªè­‰çš„æ™‚é–“ */
 
-  char lasthost[30];		/* ¤W¦¸µn¤J¨Ó·½ */
-  char email[60];		/* ¥Ø«eµn°Oªº¹q¤l«H½c */
+  char lasthost[30];		/* ä¸Šæ¬¡ç™»å…¥ä¾†æº */
+  char email[60];		/* ç›®å‰ç™»è¨˜çš„é›»å­ä¿¡ç®± */
 }	NEW;
 
 
 /* ----------------------------------------------------- */
-/* (ÂÂªº) ¨Ï¥ÎªÌ±b¸¹ .ACCT struct			 */
+/* (èˆŠçš„) ä½¿ç”¨è€…å¸³è™Ÿ .ACCT struct			 */
 /* ----------------------------------------------------- */
 
 
-typedef struct			/* ­n©MÂÂª©µ{¦¡ struct ¤@¼Ë */
+typedef struct			/* è¦å’ŒèˆŠç‰ˆç¨‹å¼ struct ä¸€æ¨£ */
 {
   int userno;			/* unique positive code */
 
   char userid[IDLEN + 1];	/* ID */
-  char passwd[PASSLEN + 1];	/* ±K½X */
-  char realname[RNLEN + 1];	/* ¯u¹ê©m¦W */
-  char username[UNLEN + 1];	/* ¼ÊºÙ */
+  char passwd[PASSLEN + 1];	/* å¯†ç¢¼ */
+  char realname[RNLEN + 1];	/* çœŸå¯¦å§“å */
+  char username[UNLEN + 1];	/* æš±ç¨± */
 
-  usint userlevel;		/* Åv­­ */
+  usint userlevel;		/* æ¬Šé™ */
   usint ufo;			/* user favor option */
-  uschar signature;		/* ¹w³]Ã±¦WÀÉ */
+  uschar signature;		/* é è¨­ç°½åæª” */
 
-  char year;			/* ¥Í¤é(¥Á°ê¦~) */
-  char month;			/* ¥Í¤é(¤ë) */
-  char day;			/* ¥Í¤é(¤é) */
-  char sex;			/* ©Ê§O 0:¤¤©Ê ©_¼Æ:¨k©Ê °¸¼Æ:¤k©Ê */
-  int money;			/* »È¹ô */
-  int gold;			/* ª÷¹ô */
+  char year;			/* ç”Ÿæ—¥(æ°‘åœ‹å¹´) */
+  char month;			/* ç”Ÿæ—¥(æœˆ) */
+  char day;			/* ç”Ÿæ—¥(æ—¥) */
+  char sex;			/* æ€§åˆ¥ 0:ä¸­æ€§ å¥‡æ•¸:ç”·æ€§ å¶æ•¸:å¥³æ€§ */
+  int money;			/* éŠ€å¹£ */
+  int gold;			/* é‡‘å¹£ */
 
-  int numlogins;		/* ¤W¯¸¦¸¼Æ */
-  int numposts;			/* µoªí¦¸¼Æ */
-  int numemails;		/* ±Hµo Inetrnet E-mail ¦¸¼Æ */
+  int numlogins;		/* ä¸Šç«™æ¬¡æ•¸ */
+  int numposts;			/* ç™¼è¡¨æ¬¡æ•¸ */
+  int numemails;		/* å¯„ç™¼ Inetrnet E-mail æ¬¡æ•¸ */
  
-  time_t firstlogin;		/* ²Ä¤@¦¸¤W¯¸®É¶¡ */
-  time_t lastlogin;		/* ¤W¤@¦¸¤W¯¸®É¶¡ */
-  time_t tcheck;		/* ¤W¦¸ check «H½c/¦n¤Í¦W³æªº®É¶¡ */
-  time_t tvalid;		/* ³q¹L»{ÃÒªº®É¶¡ */
+  time_t firstlogin;		/* ç¬¬ä¸€æ¬¡ä¸Šç«™æ™‚é–“ */
+  time_t lastlogin;		/* ä¸Šä¸€æ¬¡ä¸Šç«™æ™‚é–“ */
+  time_t tcheck;		/* ä¸Šæ¬¡ check ä¿¡ç®±/å¥½å‹åå–®çš„æ™‚é–“ */
+  time_t tvalid;		/* é€šéèªè­‰çš„æ™‚é–“ */
 
-  char lasthost[30];		/* ¤W¦¸µn¤J¨Ó·½ */
-  char email[60];		/* ¥Ø«eµn°Oªº¹q¤l«H½c */
+  char lasthost[30];		/* ä¸Šæ¬¡ç™»å…¥ä¾†æº */
+  char email[60];		/* ç›®å‰ç™»è¨˜çš„é›»å­ä¿¡ç®± */
 }	OLD;
 
 
 /* ----------------------------------------------------- */
-/* Âà´«¥Dµ{¦¡						 */
+/* è½‰æ›ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -196,11 +196,11 @@ main(argc, argv)
 
       read(fd, &old, sizeof(OLD));
       close(fd);
-      unlink(buf);			/* itoc.010831: ¬å±¼­ì¨Óªº FN_ACCT */
+      unlink(buf);			/* itoc.010831: ç æ‰åŸä¾†çš„ FN_ACCT */
 
       trans_acct(&old, &new);
 
-      fd = open(buf, O_WRONLY | O_CREAT, 0600);	/* itoc.010831: ­««Ø·sªº FN_ACCT */
+      fd = open(buf, O_WRONLY | O_CREAT, 0600);	/* itoc.010831: é‡å»ºæ–°çš„ FN_ACCT */
       write(fd, &new, sizeof(NEW));
       close(fd);
     }

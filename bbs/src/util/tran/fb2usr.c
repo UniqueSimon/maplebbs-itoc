@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/fb/fb2usr.c					 */
 /*-------------------------------------------------------*/
-/* target : firebird 3.0 Âà Maple 3.x ¨Ï¥ÎªÌ¸ê®Æ	 */
+/* target : firebird 3.0 è½‰ Maple 3.x ä½¿ç”¨è€…è³‡æ–™	 */
 /*          .PASSWDS => .USR .ACCT			 */
 /* create : 00/11/22					 */
 /* update :   /  /  					 */
@@ -15,11 +15,11 @@
 #include "fb.h"
 
 
-static char uperid[80];		/* ¤j¼gªº ID */
+static char uperid[80];		/* å¤§å¯«çš„ ID */
 
 
 /* ----------------------------------------------------- */
-/* Âà´« .ACCT						 */
+/* è½‰æ› .ACCT						 */
 /* ----------------------------------------------------- */
 
 
@@ -53,7 +53,7 @@ uniq_userno(fd)
 {
   char buf[4096];
   int userno, size;
-  SCHEMA *sp;			/* record length 16 ¥i¾ã°£ 4096 */
+  SCHEMA *sp;			/* record length 16 å¯æ•´é™¤ 4096 */
 
   userno = 1;
 
@@ -77,7 +77,7 @@ uniq_userno(fd)
 }
 
 
-static void				/* ´«¤j¼g */
+static void				/* æ›å¤§å¯« */
 str_uper(dst, src)
   char *dst, *src;
 {
@@ -151,7 +151,7 @@ creat_dirs(old)
   mkdir(fpath, 0700);
   usr_fpath(fpath, new.userid, "MF");
   mkdir(fpath, 0700);
-  usr_fpath(fpath, new.userid, "gem");	/* itoc.010727: ­Ó¤HºëµØ°Ï */
+  usr_fpath(fpath, new.userid, "gem");	/* itoc.010727: å€‹äººç²¾è¯å€ */
   mak_links(fpath);
 
   usr_fpath(fpath, new.userid, ".ACCT");
@@ -162,7 +162,7 @@ creat_dirs(old)
 
 
 /* ----------------------------------------------------- */
-/* Âà´««H¥ó						 */
+/* è½‰æ›ä¿¡ä»¶						 */
 /* ----------------------------------------------------- */
 
 
@@ -187,11 +187,11 @@ trans_mail(old)
     {
       sprintf(buf, OLD_BBSHOME "/mail/%c/%s/%s", *uperid, old->userid, fh.filename);
 
-      if (dashf(buf))     /* ¤å³¹ÀÉ®×¦b¤~°µÂà´« */
+      if (dashf(buf))     /* æ–‡ç« æª”æ¡ˆåœ¨æ‰åšè½‰æ› */
       {
 	char new_name[10] = "@";      
 
-	/* Âà´«¤å³¹ .DIR */
+	/* è½‰æ›æ–‡ç«  .DIR */
 	memset(&hdr, 0, sizeof(HDR));
 	chrono++;
 	new_name[1] = radix32[chrono & 31];
@@ -202,11 +202,11 @@ trans_mail(old)
 	str_ncpy(hdr.owner, fh.owner, sizeof(hdr.owner));
 	str_ncpy(hdr.title, fh.title, sizeof(hdr.title));
 	str_stamp(hdr.date, &chrono);
-	hdr.xmode = MAIL_READ;	/* ³]¬°¤wÅª */
+	hdr.xmode = MAIL_READ;	/* è¨­ç‚ºå·²è®€ */
 
 	rec_add(folder, &hdr, sizeof(HDR));
 
-	/* «þ¨©ÀÉ®× */
+	/* æ‹·è²æª”æ¡ˆ */
 	usr_fpath(fpath, old->userid, "@/");
 	strcat(fpath, new_name);
 	f_cp(buf, fpath, O_TRUNC);
@@ -220,7 +220,7 @@ trans_mail(old)
 
 
 /* ----------------------------------------------------- */
-/* Âà´«¥Dµ{¦¡						 */
+/* è½‰æ›ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -230,35 +230,35 @@ transusr(user)
 {
   char buf[64], fpath[64];
 
-  printf("Âà´« %s ¨Ï¥ÎªÌ\n", user->userid);
+  printf("è½‰æ› %s ä½¿ç”¨è€…\n", user->userid);
 
   if (is_bad_userid(user->userid))
   {
-    printf("%s ¤£¬O¦Xªk ID\n", user->userid);
+    printf("%s ä¸æ˜¯åˆæ³• ID\n", user->userid);
     return;
   }
 
   usr_fpath(buf, user->userid, NULL);
   if (dashd(buf))
   {
-    printf("%s ¤w¸g¦³¦¹ ID\n", user->userid);
+    printf("%s å·²ç¶“æœ‰æ­¤ ID\n", user->userid);
     return;
   }
 
-  /* FireBird ¬O¥Î¤j¼g id */
+  /* FireBird æ˜¯ç”¨å¤§å¯« id */
   str_uper(uperid, user->userid);
 
   sprintf(buf, OLD_BBSHOME "/home/%c/%s", *uperid, user->userid);
   if (!dashd(buf))
   {
-    printf("%s ªºÀÉ®×¤£¦s¦b\n", user->userid);
+    printf("%s çš„æª”æ¡ˆä¸å­˜åœ¨\n", user->userid);
     return;
   }
 
-  /* Âà´« .ACCT */
+  /* è½‰æ› .ACCT */
   creat_dirs(user);
     
-  /* Âà´«­pµeÀÉ/Ã±¦WÀÉ */
+  /* è½‰æ›è¨ˆç•«æª”/ç°½åæª” */
   sprintf(buf, OLD_BBSHOME "/home/%c/%s/plans", *uperid, user->userid);
   if (dashf(buf))
   {
@@ -272,7 +272,7 @@ transusr(user)
     f_cp(buf, fpath, O_TRUNC);
   }
 
-  /* Âà´««H¥ó */
+  /* è½‰æ›ä¿¡ä»¶ */
   trans_mail(user);
 }
 
@@ -285,8 +285,8 @@ main(argc, argv)
   int fd;
   userec user;
 
-  /* argc == 1 Âà¥þ³¡¨Ï¥ÎªÌ */
-  /* argc == 2 Âà¬Y¯S©w¨Ï¥ÎªÌ */
+  /* argc == 1 è½‰å…¨éƒ¨ä½¿ç”¨è€… */
+  /* argc == 2 è½‰æŸç‰¹å®šä½¿ç”¨è€… */
 
   if (argc > 2)
   {

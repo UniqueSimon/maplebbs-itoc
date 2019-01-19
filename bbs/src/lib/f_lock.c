@@ -16,7 +16,7 @@ f_exlock(fd)
 #if 0
   return flock(fd, LOCK_EX); 
 #endif
-  /* Thor.981205: ¥Î fcntl ¨ú¥N flock¡APOSIX ¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£ flockï¼ŒPOSIX æ¨™æº–ç”¨æ³• */
   fl.l_type = F_WRLCK;
   /* Thor.990309: with blocking */
   return fcntl(fd, F_SETLKW /* F_SETLK */, &fl);
@@ -30,7 +30,7 @@ f_unlock(fd)
 #if 0
   return flock(fd, LOCK_UN); 
 #endif
-  /* Thor.981205: ¥Î fcntl ¨ú¥N flock¡APOSIX ¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£ flockï¼ŒPOSIX æ¨™æº–ç”¨æ³• */
   fl.l_type = F_UNLCK;
   return fcntl(fd, F_SETLKW /* F_SETLK */, &fl);
 }

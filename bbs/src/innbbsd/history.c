@@ -13,16 +13,16 @@
 
 typedef struct
 {
-  time_t htime;			/* ¥[¤J history ÀÉªº®É¶¡ */
-  int hash;			/* ¬°¤F§Ö³t·j´M */
-  char msgid[256];		/* message id (°²³] 256 ¤w°÷ªø) */
+  time_t htime;			/* åŠ å…¥ history æª”çš„æ™‚é–“ */
+  int hash;			/* ç‚ºäº†å¿«é€Ÿæœå°‹ */
+  char msgid[256];		/* message id (å‡è¨­ 256 å·²å¤ é•·) */
   char board[BNLEN + 1];
   char xname[9];
 }	HIS;
 
 
 void 
-HISmaint()			/* ºûÅ@ history ÀÉ¡A±N¹L¦­ªº history §R°£ */
+HISmaint()			/* ç¶­è­· history æª”ï¼Œå°‡éæ—©çš„ history åˆªé™¤ */
 {
   int i, fd, total;
   char fpath[64];
@@ -30,7 +30,7 @@ HISmaint()			/* ºûÅ@ history ÀÉ¡A±N¹L¦­ªº history §R°£ */
   struct stat st;
   HIS *data, *hhead, *htail, *his;
 
-  /* ¥u«O¯d³Ìªñ EXPIREDAYS ¤Ñªº history */
+  /* åªä¿ç•™æœ€è¿‘ EXPIREDAYS å¤©çš„ history */
   time(&now);
   now = time(NULL) - EXPIREDAYS * 86400;
 
@@ -52,7 +52,7 @@ HISmaint()			/* ºûÅ@ history ÀÉ¡A±N¹L¦­ªº history §R°£ */
 
     for (his = hhead; his < htail; his++)
     {
-      if (his->htime > now)	/* ³oµ§ history ¤£³Q¬å */
+      if (his->htime > now)	/* é€™ç­† history ä¸è¢«ç  */
       {
 	memcpy(hhead, his, sizeof(HIS));
 	hhead++;
@@ -72,7 +72,7 @@ HISmaint()			/* ºûÅ@ history ÀÉ¡A±N¹L¦­ªº history §R°£ */
 
 
 void 
-HISadd(msgid, board, xname)	/* ±N (msgid, path, xname) ¦¹°t¹ï°O¿ı¦b history ¤¤ */
+HISadd(msgid, board, xname)	/* å°‡ (msgid, path, xname) æ­¤é…å°è¨˜éŒ„åœ¨ history ä¸­ */
   char *msgid;
   char *board;
   char *xname;
@@ -88,16 +88,16 @@ HISadd(msgid, board, xname)	/* ±N (msgid, path, xname) ¦¹°t¹ï°O¿ı¦b history ¤¤ *
   str_ncpy(his.board, board, sizeof(his.board));
   str_ncpy(his.xname, xname, sizeof(his.xname));
 
-  /* ¨Ì msgid ±N history ¥´´²¦Ü 32 ­ÓÀÉ®× */
+  /* ä¾ msgid å°‡ history æ‰“æ•£è‡³ 32 å€‹æª”æ¡ˆ */
   sprintf(fpath, "innd/history/%02d", his.hash & 31);
   rec_add(fpath, &his, sizeof(HIS));
 }
 
 
-int				/* 1:¦bhistory¤¤ 0:¤£¦bhistory¤¤ */
-HISfetch(msgid, board, xname)	/* ¬d¸ß history ¤¤¡Amsgid µoªí¥h¤F­ş¸Ì */
+int				/* 1:åœ¨historyä¸­ 0:ä¸åœ¨historyä¸­ */
+HISfetch(msgid, board, xname)	/* æŸ¥è©¢ history ä¸­ï¼Œmsgid ç™¼è¡¨å»äº†å“ªè£¡ */
   char *msgid;
-  char *board;			/* ¶Ç¥X¦b history ¤¤ªº°O¿ıªº¬İªO¤ÎÀÉ¦W */
+  char *board;			/* å‚³å‡ºåœ¨ history ä¸­çš„è¨˜éŒ„çš„çœ‹æ¿åŠæª”å */
   char *xname;
 {
   HIS his;
@@ -105,19 +105,19 @@ HISfetch(msgid, board, xname)	/* ¬d¸ß history ¤¤¡Amsgid µoªí¥h¤F­ş¸Ì */
   int fd, hash;
   int rc = 0;
 
-  /* ¦pªG¦P¤@ msgid µoªí¥h«Ü¦h­Ó¬İªO¡A¨º»ò¥Ø«e¥u·|¦^¶Ç²Ä¤@­Ó¬İªO¤ÎÀÉ¦W */
+  /* å¦‚æœåŒä¸€ msgid ç™¼è¡¨å»å¾ˆå¤šå€‹çœ‹æ¿ï¼Œé‚£éº¼ç›®å‰åªæœƒå›å‚³ç¬¬ä¸€å€‹çœ‹æ¿åŠæª”å */
 
-  /* ¨Ì msgid §ä¥X¦b­ş¤@¥÷ history ÀÉ®×¤¤ */
+  /* ä¾ msgid æ‰¾å‡ºåœ¨å“ªä¸€ä»½ history æª”æ¡ˆä¸­ */
   hash = str_hash(msgid, 1);
   sprintf(fpath, "innd/history/%02d", hash & 31);
 
-  /* ¥h¸Ó¥÷ history ÀÉ®×¤¤§ä¬İ¬İ¦³¨S¦³ */
+  /* å»è©²ä»½ history æª”æ¡ˆä¸­æ‰¾çœ‹çœ‹æœ‰æ²’æœ‰ */
   if ((fd = open(fpath, O_RDONLY)) >= 0)
   {
     lseek(fd, 0, SEEK_SET);
     while (read(fd, &his, sizeof(HIS)) == sizeof(HIS))
     {
-      /* ¥Î hash ¥ı²Ê²¤¤ñ¹ï¡A­Y¬Û¦P¦A¥Î msgid §¹¾ã¤ñ¹ï */
+      /* ç”¨ hash å…ˆç²—ç•¥æ¯”å°ï¼Œè‹¥ç›¸åŒå†ç”¨ msgid å®Œæ•´æ¯”å° */
       if ((hash == his.hash) && !strcmp(msgid, his.msgid))
       {
 	if (board)

@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/setusr.c	( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ³]©w¨Ï¥ÎªÌ¸ê®Æ                               */
+/* target : è¨­å®šä½¿ç”¨è€…è³‡æ–™                               */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
 /* create : 01/07/16                                     */
 /* update :                                              */
@@ -9,25 +9,25 @@
 
 
 #if 0
-  ³]©w itoc ªº ©m¦W¬°¤ı¤j©ú ¼ÊºÙ¬°¤j©ú »È¹ô¦³1000 ª÷¹ô¦³500
-  setusr -r ¤ı¤j©ú -n ¤j©ú -m 1000 -g 500 itoc
+  è¨­å®š itoc çš„ å§“åç‚ºç‹å¤§æ˜ æš±ç¨±ç‚ºå¤§æ˜ éŠ€å¹£æœ‰1000 é‡‘å¹£æœ‰500
+  setusr -r ç‹å¤§æ˜ -n å¤§æ˜ -m 1000 -g 500 itoc
 
-  ³]©w itoc ªºÅv­­
-  setusr -p 11100...1101 itoc   (Åv­­¦³ 32 = NUMPERMS ºØ)
-            ^^^^^ 32 ­Ó 0 ©M 1
+  è¨­å®š itoc çš„æ¬Šé™
+  setusr -p 11100...1101 itoc   (æ¬Šé™æœ‰ 32 = NUMPERMS ç¨®)
+            ^^^^^ 32 å€‹ 0 å’Œ 1
 
-  ³]©w itoc ªº²ßºD
-  setusr -f 11100...1101 itoc   (²ßºD¦³ 27 = NUMUFOS ºØ)
-            ^^^^^ 27 ­Ó 0 ©M 1
+  è¨­å®š itoc çš„ç¿’æ…£
+  setusr -f 11100...1101 itoc   (ç¿’æ…£æœ‰ 27 = NUMUFOS ç¨®)
+            ^^^^^ 27 å€‹ 0 å’Œ 1
 
-  ¸Ó¨Ï¥ÎªÌ¥²¶·¤£¦b½u¤W¤~¦³®Ä
+  è©²ä½¿ç”¨è€…å¿…é ˆä¸åœ¨ç·šä¸Šæ‰æœ‰æ•ˆ
 #endif
 
 
 #include "bbs.h"
 
 
-#define MAXUSIES	9	/* ¦@¦³ 9 ºØ¥i¥H§ïªº */
+#define MAXUSIES	9	/* å…±æœ‰ 9 ç¨®å¯ä»¥æ”¹çš„ */
 
 static void
 usage(msg)
@@ -53,14 +53,14 @@ usage(msg)
 
 static usint
 bitcfg(len, str)	/* config bits */
-  int len;		/* ¸ÓÄæ¦ìªºªø«× */
+  int len;		/* è©²æ¬„ä½çš„é•·åº¦ */
   char *str;		/* optarg */
 {
   int i;
   char c;
   usint bits;
 
-  if (strlen(str) != len)	/* ª½±µµ¹­Ó¼Æ¦r */
+  if (strlen(str) != len)	/* ç›´æ¥çµ¦å€‹æ•¸å­— */
   {
     bits = (usint) atoi(str);
   }
@@ -73,7 +73,7 @@ bitcfg(len, str)	/* config bits */
 
       if (c != '0' && c != '1')
       {
-	printf("bit ¤@©w­n¬O 0 ©Î 1\n");
+	printf("bit ä¸€å®šè¦æ˜¯ 0 æˆ– 1\n");
 	exit(1);
       }
 
@@ -95,7 +95,7 @@ main(argc, argv)
   char *userid, fpath[64];
   ACCT acct;
 
-  if (argc < 4 || argc % 2)	/* argc ­n¬O°¸¼Æ */
+  if (argc < 4 || argc % 2)	/* argc è¦æ˜¯å¶æ•¸ */
   {
     usage(argv[0]);
     exit(1);
@@ -140,7 +140,7 @@ main(argc, argv)
       break;
 
     case 'j':		/* justify */
-      if (atoi(optarg)) /* »{ÃÒ³q¹L */
+      if (atoi(optarg)) /* èªè­‰é€šé */
 	acct.userlevel |= PERM_VALID;
       else
 	acct.userlevel &= ~PERM_VALID;

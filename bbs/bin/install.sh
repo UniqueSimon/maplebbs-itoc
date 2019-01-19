@@ -1,71 +1,71 @@
 #!/bin/sh
-# ¨Ï¥Î¦¹ script «e¡A½Ğ¥ı½T»{¤w¸g­×§ï¤F¤U­±ªº¬ÛÃö³]©w
+# ä½¿ç”¨æ­¤ script å‰ï¼Œè«‹å…ˆç¢ºèªå·²ç¶“ä¿®æ”¹äº†ä¸‹é¢çš„ç›¸é—œè¨­å®š
 
-# ½Ğ¦b³oÃä­×§ï¦¨¦Û¤vªº³]©w
+# è«‹åœ¨é€™é‚Šä¿®æ”¹æˆè‡ªå·±çš„è¨­å®š
 #
-# ¥H¤U¦WºÙ³]©w¤¤¬Ò¤£¯à¦³ &`"\ µ¥²Å¸¹
+# ä»¥ä¸‹åç¨±è¨­å®šä¸­çš†ä¸èƒ½æœ‰ &`"\ ç­‰ç¬¦è™Ÿ
 #
-#   (1) ¤£¯à¦³ & ²Å¸¹¡A¦]¬°³o¬O­I´º°õ¦æªº«O¯d²Å¸¹
-#   (2) ¤£¯à¦³ ` ²Å¸¹
-#   (3) °£¤F«e«áªº "" ¥H¥~¡A¤£¯à¦A¦³¨ä¥Lªº " ²Å¸¹
-#   (4) ¤£¯à¦³ \ ²Å¸¹¡A¦]¬° Big5 ½s½Xªº°İÃD¡A¥H¤U³o¨Ç¦r¤]¤£¯à¨Ï¥Î
-#       ¢\ £\ ¤\ ¥\ ¦\ §\ ¨\ ©\ ª\ «\ ¬\ ­\ ®\ ¯\ °\ ±\ ²\ ³\ ´\ µ\
-#       ¶\ ·\ ¸\ ¹\ º\ »\ ¼\ ½\ ¾\ ¿\ À\ Á\ Â\ Ã\ Ä\ Å\ Æ\ Ç\ È\ É\
-#       Ê\ Ë\ Ì\ Í\ Î\ Ï\ Ğ\ Ñ\ Ò\ Ó\ Ô\ Õ\ Ö\ ×\ Ø\ Ù\ Ú\ Û\ Ü\ İ\
-#       Ş\ ß\ à\ á\ â\ ã\ ä\ å\ æ\ ç\ è\ é\ ê\ ë\ ì\ í\ î\ ï\ ğ\ ñ\
-#       ò\ ó\ ô\ õ\ ö\ ÷\ ø\ ù\
+#   (1) ä¸èƒ½æœ‰ & ç¬¦è™Ÿï¼Œå› ç‚ºé€™æ˜¯èƒŒæ™¯åŸ·è¡Œçš„ä¿ç•™ç¬¦è™Ÿ
+#   (2) ä¸èƒ½æœ‰ ` ç¬¦è™Ÿ
+#   (3) é™¤äº†å‰å¾Œçš„ "" ä»¥å¤–ï¼Œä¸èƒ½å†æœ‰å…¶ä»–çš„ " ç¬¦è™Ÿ
+#   (4) ä¸èƒ½æœ‰ \ ç¬¦è™Ÿï¼Œå› ç‚º Big5 ç·¨ç¢¼çš„å•é¡Œï¼Œä»¥ä¸‹é€™äº›å­—ä¹Ÿä¸èƒ½ä½¿ç”¨
+#       å… Î± ä¹ˆ åŠŸ å’ å­ æ²” å¼ æ­¿ ä¿ æ¯ è‹’ å¨‰ ç® è±¹ å´¤ æ·š è¨± å»„ çµ
+#       è·š æ„§ ç¨ éˆ¾ æš è“‹ å¢¦ ç©€ é–± ç’ é¤ ç¸· æ“º é»  å­€ é« èº¡ ? ? å°
+#       ä½¢ æ±» å²¤ ç‹– å¥ æŸ¦ èƒ å¨– æ¶‚ ç½¡ å… æƒ ç‰¾ è å‚œ æŠ ç„® èŒ» é„ƒ å¹‹
+#       æ»œ ç¶… èµ¨ å¡¿ æ§™ ç®¤ è¸Š å«¹ æ½¿ è”Œ é†† å¬ ç¦ è é¤¤ ç‡¡ è° é§¹ ç¤’ éª
+#       ç€™ é…€ ç€µ é¨± é…… è´• é±‹ é±­
 #
-# ¦pªG±z§Æ±æ¯¸¦Wµ¥³]©w¤º¦³ &`"\ µ¥²Å¸¹ªº¸Ü¡A½Ğ¥ıÀH«Kµ¹­Ó³]©w¡A
-# ¨Æ«á¦A¥h§ï src/include/config.h §Y¥i
+# å¦‚æœæ‚¨å¸Œæœ›ç«™åç­‰è¨­å®šå…§æœ‰ &`"\ ç­‰ç¬¦è™Ÿçš„è©±ï¼Œè«‹å…ˆéš¨ä¾¿çµ¦å€‹è¨­å®šï¼Œ
+# äº‹å¾Œå†å»æ”¹ src/include/config.h å³å¯
 
 
-schoolname="¥x«n¤@¤¤"
-bbsname="»P«n¦@»R"
+schoolname="å°å—ä¸€ä¸­"
+bbsname="èˆ‡å—å…±èˆ"
 bbsname2="WolfBBS"
-sysopnick="¯T¤Hªø¦Ñ"
+sysopnick="ç‹¼äººé•·è€"
 myipaddr="210.70.137.5"
 myhostname="bbs.tnfsh.tn.edu.tw"
-msg_bmw="¤ô²y"
+msg_bmw="æ°´çƒ"
 
-# ½Ğ­×§ï±zªº§@·~¨t²Î
+# è«‹ä¿®æ”¹æ‚¨çš„ä½œæ¥­ç³»çµ±
 # sun linux solaris sol-x86 freebsd bsd
 
 ostype="freebsd"
 
-echo "±z©Ò³]©wªº SCHOOLNAME ¬O $schoolname"
-echo "±z©Ò³]©wªº BBSNAME    ¬O $bbsname"
-echo "±z©Ò³]©wªº BBSNAME2   ¬O $bbsname2"
-echo "±z©Ò³]©wªº SYSOPNICK  ¬O $sysopnick"
-echo "±z©Ò³]©wªº MYIPADDR   ¬O $myipaddr"
-echo "±z©Ò³]©wªº MYHOSTNAME ¬O $myhostname"
-echo "±z©Ò³]©wªº MSG_BMW    ¬O $msg_bmw"
-echo "­Y±z¦³¦h­Ó FQDN (Eg: twbbs)¡A«hÁÙ»İ¤â°Ê­×§ï src/include/config.h ªº HOST_ALIASES"
+echo "æ‚¨æ‰€è¨­å®šçš„ SCHOOLNAME æ˜¯ $schoolname"
+echo "æ‚¨æ‰€è¨­å®šçš„ BBSNAME    æ˜¯ $bbsname"
+echo "æ‚¨æ‰€è¨­å®šçš„ BBSNAME2   æ˜¯ $bbsname2"
+echo "æ‚¨æ‰€è¨­å®šçš„ SYSOPNICK  æ˜¯ $sysopnick"
+echo "æ‚¨æ‰€è¨­å®šçš„ MYIPADDR   æ˜¯ $myipaddr"
+echo "æ‚¨æ‰€è¨­å®šçš„ MYHOSTNAME æ˜¯ $myhostname"
+echo "æ‚¨æ‰€è¨­å®šçš„ MSG_BMW    æ˜¯ $msg_bmw"
+echo "è‹¥æ‚¨æœ‰å¤šå€‹ FQDN (Eg: twbbs)ï¼Œå‰‡é‚„éœ€æ‰‹å‹•ä¿®æ”¹ src/include/config.h çš„ HOST_ALIASES"
 
-echo "±zªº§@·~¨t²Î          ¬O $ostype"
+echo "æ‚¨çš„ä½œæ¥­ç³»çµ±          æ˜¯ $ostype"
 
-echo "±z¥i¥H¦b http://processor.tfcis.org/~itoc §ä¨ì³Ì·sªºµ{¦¡¤Î¦w¸Ë¤å¥ó"
+echo "æ‚¨å¯ä»¥åœ¨ http://processor.tfcis.org/~itoc æ‰¾åˆ°æœ€æ–°çš„ç¨‹å¼åŠå®‰è£æ–‡ä»¶"
 
-# ¦^ BBSHOME
+# å› BBSHOME
 cd
-echo "[1;36m¶i¦æÂà´«¤¤ [0;5m...[m"
+echo "[1;36mé€²è¡Œè½‰æ›ä¸­ [0;5m...[m"
 
 
-# ´«¦WºÙ ip addr
+# æ›åç¨± ip addr
 
 filelist_1="etc/valid src/include/config.h"
 
 for i in $filelist_1
 do
-  cat $i | sed 's/¥x«n¤@¤¤/'"$schoolname"'/g' > $i.sed
+  cat $i | sed 's/å°å—ä¸€ä¸­/'"$schoolname"'/g' > $i.sed
   mv -f $i.sed $i
 
-  cat $i | sed 's/»P«n¦@»R/'"$bbsname"'/g' > $i.sed
+  cat $i | sed 's/èˆ‡å—å…±èˆ/'"$bbsname"'/g' > $i.sed
   mv -f $i.sed $i
 
   cat $i | sed 's/WolfBBS/'"$bbsname2"'/g' > $i.sed
   mv -f $i.sed $i
 
-  cat $i | sed 's/¯T¤Hªø¦Ñ/'"$sysopnick"'/g' > $i.sed
+  cat $i | sed 's/ç‹¼äººé•·è€/'"$sysopnick"'/g' > $i.sed
   mv -f $i.sed $i
 
   cat $i | sed 's/210.70.137.5/'"$myipaddr"'/g' > $i.sed
@@ -76,7 +76,7 @@ do
 done
 
 
-# ´« ¤ô²y
+# æ› æ°´çƒ
 
 filelist_2="etc/tip \
 src/include/config.h src/include/global.h src/include/modes.h \
@@ -87,22 +87,22 @@ src/maple/xover.c"
 
 for i in $filelist_2
 do
-  cat $i | sed 's/¤ô²y/'"$msg_bmw"'/g' > $i.sed
+  cat $i | sed 's/æ°´çƒ/'"$msg_bmw"'/g' > $i.sed
   mv -f $i.sed $i
 done
 
 
-# ¦w¸Ë Maple 3.10
-echo "[1;36m¦w¸Ë BBS ¤¤ [0;5m...[m"
+# å®‰è£ Maple 3.10
+echo "[1;36må®‰è£ BBS ä¸­ [0;5m...[m"
 cd src
 make clean $ostype install
 
-# ±Ò°Ê
-# °²³]¶}¦b port 9987
+# å•Ÿå‹•
+# å‡è¨­é–‹åœ¨ port 9987
 cd
 bin/bbsd 9987
 bin/camera
 bin/account
 
-# telnet ´ú¸Õ
+# telnet æ¸¬è©¦
 telnet 0 9987

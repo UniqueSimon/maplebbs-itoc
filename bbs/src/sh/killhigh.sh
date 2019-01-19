@@ -1,3 +1,3 @@
 #!/bin/sh
 ps aux | awk '$3 > 30 {print $2}' | xargs kill -9
-# ¬å±¼¦Y¸ê·½ > 30 ªº process
+# ç æŽ‰åƒè³‡æº > 30 çš„ process

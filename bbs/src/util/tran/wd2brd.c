@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/transbrd.c					 */
 /*-------------------------------------------------------*/
-/* target : WD ¦Ü Maple 3.02 ¬ÝªOÂà´«			 */
+/* target : WD è‡³ Maple 3.02 çœ‹æ¿è½‰æ›			 */
 /*          .BOARDS => .BRD				 */
 /* create : 98/06/15					 */
 /* update : 02/01/05					 */
@@ -11,14 +11,14 @@
 
 #if 0
 
-   1. ­×§ï struct boardheader ¤Î transbrd()
-      (boardheader ¨âª©©w¸qªº¦r¦êªø«×¤£¤@¡A½Ð¦Û¦æ´«¦¨¼Æ¦r)      
-   2. WD ¬ÝªO¤ÀÃþ(boardheader.title «e 4 bytes)±Ë±ó
-   3. §ë²¼¤£Âà´«
-   4. ¶iªOµe­±ª½±µ copy
-   5. ¦p¦³»Ý­n½Ð chmod 644 `find PATH -perm 600`
-   6. ¶} gem ¥Ø¿ý gem/target_board/? ¦ý¤£Âà´« gem
-   7. ¤£·|§ó·s bshm¡A¨Ï¥Î«á½Ð¦Û¦æ§ó·s
+   1. ä¿®æ”¹ struct boardheader åŠ transbrd()
+      (boardheader å…©ç‰ˆå®šç¾©çš„å­—ä¸²é•·åº¦ä¸ä¸€ï¼Œè«‹è‡ªè¡Œæ›æˆæ•¸å­—)      
+   2. WD çœ‹æ¿åˆ†é¡ž(boardheader.title å‰ 4 bytes)æ¨æ£„
+   3. æŠ•ç¥¨ä¸è½‰æ›
+   4. é€²æ¿ç•«é¢ç›´æŽ¥ copy
+   5. å¦‚æœ‰éœ€è¦è«‹ chmod 644 `find PATH -perm 600`
+   6. é–‹ gem ç›®éŒ„ gem/target_board/? ä½†ä¸è½‰æ› gem
+   7. ä¸æœƒæ›´æ–° bshmï¼Œä½¿ç”¨å¾Œè«‹è‡ªè¡Œæ›´æ–°
 
    ps. Use on ur own risk.
 
@@ -29,7 +29,7 @@
 
 
 static inline usint
-trans_brd_battr(brdattr)		/* itoc.010426: Âà´«¬ÝªOÄÝ©Ê */
+trans_brd_battr(brdattr)		/* itoc.010426: è½‰æ›çœ‹æ¿å±¬æ€§ */
   usint brdattr;
 {
   usint battr;
@@ -51,7 +51,7 @@ trans_brd_battr(brdattr)		/* itoc.010426: Âà´«¬ÝªOÄÝ©Ê */
 #endif
 
 #ifdef HAVE_MODERATED_BOARD
-  if (brdattr & (00020 | 01000))	/* ÁôÂÃªO§ë²¼¤£¤½§i */
+  if (brdattr & (00020 | 01000))	/* éš±è—æ¿æŠ•ç¥¨ä¸å…¬å‘Š */
     battr |= BRD_NOVOTE;
 #endif
 
@@ -60,32 +60,32 @@ trans_brd_battr(brdattr)		/* itoc.010426: Âà´«¬ÝªOÄÝ©Ê */
 
 
 static inline usint
-trans_brd_rlevel(brdattr)		/* itoc.010426: Âà´«¬ÝªO¾\ÅªÅv­­ */
+trans_brd_rlevel(brdattr)		/* itoc.010426: è½‰æ›çœ‹æ¿é–±è®€æ¬Šé™ */
   usint brdattr;
 {
 #ifdef HAVE_MODERATED_BOARD
-  if (brdattr & 00020)			/* ÁôÂÃªO */
+  if (brdattr & 00020)			/* éš±è—æ¿ */
     return PERM_SYSOP;
-  else if (brdattr & 01000)		/* ¦n¤ÍªO */
+  else if (brdattr & 01000)		/* å¥½å‹æ¿ */
     return PERM_BOARD;
-  else					/* ¤@¯ë¬ÝªO */
+  else					/* ä¸€èˆ¬çœ‹æ¿ */
 #endif
     return 0;
 }
 
 
 static inline usint
-trans_brd_plevel(brdattr)		/* itoc.010426: Âà´«¬ÝªOµoªíÅv­­ */
+trans_brd_plevel(brdattr)		/* itoc.010426: è½‰æ›çœ‹æ¿ç™¼è¡¨æ¬Šé™ */
   usint brdattr;
 {
 #ifdef HAVE_MODERATED_BOARD
-  if (brdattr & 00020)			/* ÁôÂÃªO */
+  if (brdattr & 00020)			/* éš±è—æ¿ */
     return 0;
-  else if (brdattr & 01000)		/* ¦n¤ÍªO */
+  else if (brdattr & 01000)		/* å¥½å‹æ¿ */
     return 0;
-  else					/* ¤@¯ë¬ÝªO */
+  else					/* ä¸€èˆ¬çœ‹æ¿ */
 #endif
-    return PERM_POST;	/* ¤@¯ë¬ÝªO¹w³]¬° POST_POST */
+    return PERM_POST;	/* ä¸€èˆ¬çœ‹æ¿é è¨­ç‚º POST_POST */
 }
 
 
@@ -95,7 +95,7 @@ trans_hdr_chrono(filename)
 {
   char time_str[11];
 
-  /* M.1087654321.A ©Î M.987654321.A */
+  /* M.1087654321.A æˆ– M.987654321.A */
   str_ncpy(time_str, filename + 2, filename[2] == '1' ? 11 : 10);
 
   return (time_t) atoi(time_str);
@@ -147,7 +147,7 @@ trans_hdr_stamp(folder, t, hdr, fpath)
 
 
 /* ----------------------------------------------------- */
-/* Âà´«¥Dµ{¦¡						 */
+/* è½‰æ›ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -164,19 +164,19 @@ transbrd(bh)
   BRD newboard;
   time_t chrono;
 
-  printf("Âà´« %s ¬ÝªO\n", bh->brdname);
+  printf("è½‰æ› %s çœ‹æ¿\n", bh->brdname);
 
   brd_fpath(buf, bh->brdname, NULL);
   if (dashd(buf))
   {
-    printf("%s ¤w¸g¦³¦¹¬ÝªO\n", bh->brdname);
+    printf("%s å·²ç¶“æœ‰æ­¤çœ‹æ¿\n", bh->brdname);
     return;
   }
 
   if (!stamp)
     time(&stamp);
 
-  /* Âà´« .BRD */
+  /* è½‰æ› .BRD */
 
   memset(&newboard, 0, sizeof(newboard));
   str_ncpy(newboard.brdname, bh->brdname, sizeof(newboard.brdname));
@@ -188,15 +188,15 @@ transbrd(bh)
   newboard.readlevel = trans_brd_rlevel(bh->brdattr);
   newboard.postlevel = trans_brd_plevel(bh->brdattr);
 
-  rec_add(FN_BRD, &newboard, sizeof(newboard));		/* §O§Ñ¤F¥Î brd2gem.c ¨ÓÂà´« Class */
+  rec_add(FN_BRD, &newboard, sizeof(newboard));		/* åˆ¥å¿˜äº†ç”¨ brd2gem.c ä¾†è½‰æ› Class */
 
-  /* ¶}·s¥Ø¿ý */
+  /* é–‹æ–°ç›®éŒ„ */
 
   sprintf(fpath, "gem/brd/%s", newboard.brdname);
   mak_dirs(fpath);
   mak_dirs(fpath + 4);
 
-  /* Âà´«¶iªOµe­± */
+  /* è½‰æ›é€²æ¿ç•«é¢ */
 
   sprintf(buf, OLD_BBSHOME "/boards/%s/notes", bh->brdname);
   
@@ -206,19 +206,19 @@ transbrd(bh)
     f_cp(buf, fpath, O_TRUNC);
   }
 
-  /* Âà´«¤å³¹ */
+  /* è½‰æ›æ–‡ç«  */
 
-  sprintf(index, OLD_BBSHOME "/boards/%s/.DIR", bh->brdname);	/* ÂÂªº .DIR */
-  brd_fpath(folder, newboard.brdname, ".DIR");			/* ·sªº .DIR */
+  sprintf(index, OLD_BBSHOME "/boards/%s/.DIR", bh->brdname);	/* èˆŠçš„ .DIR */
+  brd_fpath(folder, newboard.brdname, ".DIR");			/* æ–°çš„ .DIR */
 
   if ((fd = open(index, O_RDONLY)) >= 0)
   {
     while (read(fd, &fh, sizeof(fh)) == sizeof(fh))
     {
       sprintf(buf, OLD_BBSHOME "/boards/%s/%s", bh->brdname, fh.filename);
-      if (dashf(buf))	/* ¤å³¹ÀÉ®×¦b¤~°µÂà´« */
+      if (dashf(buf))	/* æ–‡ç« æª”æ¡ˆåœ¨æ‰åšè½‰æ› */
       {
-	/* Âà´«¤å³¹ .DIR */
+	/* è½‰æ›æ–‡ç«  .DIR */
 	memset(&hdr, 0, sizeof(HDR));
 	chrono = trans_hdr_chrono(fh.filename);
 	trans_hdr_stamp(folder, chrono, &hdr, fpath);
@@ -227,7 +227,7 @@ transbrd(bh)
 	hdr.xmode = (fh.filemode & 0x2) ? POST_MARKED : 0;
 	rec_add(folder, &hdr, sizeof(HDR));
 
-	/* «þ¨©ÀÉ®× */
+	/* æ‹·è²æª”æ¡ˆ */
 	f_cp(buf, fpath, O_TRUNC);
       }
     }
@@ -244,8 +244,8 @@ main(argc, argv)
   int fd;
   boardheader bh;
 
-  /* argc == 1 Âà¥þ³¡ªO */
-  /* argc == 2 Âà¬Y¯S©wªO */
+  /* argc == 1 è½‰å…¨éƒ¨æ¿ */
+  /* argc == 2 è½‰æŸç‰¹å®šæ¿ */
 
   if (argc > 2)
   {

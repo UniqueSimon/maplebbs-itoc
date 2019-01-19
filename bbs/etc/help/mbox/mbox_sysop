@@ -1,14 +1,14 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xTAB   �xmbox_sysop  �x���ȫH�c                                        �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │TAB   │mbox_sysop  │站務信箱                                        │
+  └───┴──────┴────────────────────────┘
 
-    �� TAB �i�H�����쯸�Ȫ��H�c�A��K SYSOPs �Ӧ� sysop �o�עҪ��H�C
+    按 TAB 可以切換到站務的信箱，方便 SYSOPs 來收 sysop 這ＩＤ的信。
 
-  �i�J (1)sysop (2)guest ���H�c�H    �� ��ܶi�J sysop �� guest ���H�c
+  進入 (1)sysop (2)guest 的信箱？    → 選擇進入 sysop 或 guest 的信箱
 
-    �����h�� SYSOPs ���ɭԡA�o�\��i�H�����쯸�ȳ��i�H�����^ sysop ���H�A�w
-  �^�Ъ��H�|�X�{ r �� R ���Ÿ��A�ҥH���ξ�ߤ��P���ȷ|�^���Ъ��H�C
+    當有多位 SYSOPs 的時候，這功能可以讓眾位站務都可以幫忙回 sysop 的信，已
+  回覆的信會出現 r 或 R 的符號，所以不用擔心不同站務會回重覆的信。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

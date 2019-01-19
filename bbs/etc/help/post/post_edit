@@ -1,12 +1,12 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xE     �xpost_edit   �x�s��峹                                        �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │E     │post_edit   │編輯文章                                        │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� E �i�H�s��ӽg�峹�C
+    將游標移到某欄，按 E 可以編輯該篇文章。
 
-    ���D�O�����άO�ӽg�峹�@�̬O�ۤv�A�_�h�N�����x�s�C�Y�Ϥ����x�s�A�٬O�i
-  �H�Φ���k�Ӭݳo�g�ΤF���� ANSI ����X�C
+    除非是站長或是該篇文章作者是自己，否則將不能儲存。即使不能儲存，還是可
+  以用此方法來看這篇用了什麼 ANSI 控制碼。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

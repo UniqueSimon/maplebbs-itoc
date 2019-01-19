@@ -1,11 +1,11 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xv     �xmf_visit    �x�wŪ�ݪO�峹                                    �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │v     │mf_visit    │已讀看板文章                                    │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� v �i�H�N�ӬݪO�]�������峹�wŪ�A��Ū�O�|�����C
+    將游標移到某欄，按 v 可以將該看板設為全部文章已讀，未讀燈會熄滅。
 
-    �u���ݪO���|�~�i�H�]���wŪ�C
+    只有看板捷徑才可以設為已讀。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

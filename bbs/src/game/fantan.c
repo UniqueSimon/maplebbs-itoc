@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* fantan.c	( NTHU CS MapleBBS Ver 3.10 )		 */
 /*-------------------------------------------------------*/
-/* target : ±µÀs¹CÀ¸					 */
+/* target : æ¥é¾éŠæˆ²					 */
 /* create : 98/08/04					 */
 /* update : 01/03/01					 */
 /* author : dsyan.bbs@Forever.twbbs.org			 */
@@ -15,26 +15,26 @@
 
 enum
 {
-  SIDE_UP = 1,				/* ¦b¤W­± */
-  SIDE_DOWN = 0				/* ¦b¤U­± */
+  SIDE_UP = 1,				/* åœ¨ä¸Šé¢ */
+  SIDE_DOWN = 0				/* åœ¨ä¸‹é¢ */
 };
 
 
 static inline int
-cal_kind(card)				/* ºâªá¦â */
+cal_kind(card)				/* ç®—èŠ±è‰² */
   int card;
 {
-  /* card:  1 - 13 ²Ä¡³ºØªá¦â ¡¸
-	   14 - 26 ²Ä¤@ºØªá¦â ¡¹
-	   27 - 39 ²Ä¤GºØªá¦â ¡³
-	   40 - 52 ²Ä¤TºØªá¦â ¡´ */
+  /* card:  1 - 13 ç¬¬â—‹ç¨®èŠ±è‰² â˜†
+	   14 - 26 ç¬¬ä¸€ç¨®èŠ±è‰² â˜…
+	   27 - 39 ç¬¬äºŒç¨®èŠ±è‰² â—‹
+	   40 - 52 ç¬¬ä¸‰ç¨®èŠ±è‰² â— */
 
   return (card - 1) / 13;
 }
 
 
 static inline int 
-cal_num(card)				/* ºâÂI¼Æ */
+cal_num(card)				/* ç®—é»æ•¸ */
   int card;
 {
   card %= 13;
@@ -43,20 +43,20 @@ cal_num(card)				/* ºâÂI¼Æ */
 
 
 static void
-move_cur(a, b, c, d)			/* ²¾°Ê½b¸¹ */
-  int a, b;		/* ­ì¦ì¸m */
-  int c, d;		/* ·s¦ì¸m */
+move_cur(a, b, c, d)			/* ç§»å‹•ç®­è™Ÿ */
+  int a, b;		/* åŸä½ç½® */
+  int c, d;		/* æ–°ä½ç½® */
 {
   move(a, b);
   outs("  ");
   move(c, d);
-  outs("¡÷");
-  move(c, d + 1);	/* Á×§K¦Û°Ê°»´ú¥ş§Î */
+  outs("â†’");
+  move(c, d + 1);	/* é¿å…è‡ªå‹•åµæ¸¬å…¨å½¢ */
 }
 
 
 static inline int
-ycol(y)					/* ºâ®y¼Ğ */
+ycol(y)					/* ç®—åº§æ¨™ */
   int y;
 {
   return y * 11 - 8;
@@ -64,43 +64,43 @@ ycol(y)					/* ºâ®y¼Ğ */
 
 
 static void
-draw(x, y, card)			/* µeµP */
+draw(x, y, card)			/* ç•«ç‰Œ */
   int x, y;
   int card;
 {
-  char kind[4][3] = {"¡¸", "¡¹", "¡³", "¡´"};			/* ªá¦â */
-  char num[13][3] = {"¢Ï", "¢±", "¢²", "¢³", "¢´", "¢µ", "¢¶",	/* ÂI¼Æ */
-		     "¢·", "¢¸", "¢â", "¢Ø", "¢ß", "¢Ù"};
+  char kind[4][3] = {"â˜†", "â˜…", "â—‹", "â—"};			/* èŠ±è‰² */
+  char num[13][3] = {"ï¼¡", "ï¼’", "ï¼“", "ï¼”", "ï¼•", "ï¼–", "ï¼—",	/* é»æ•¸ */
+		     "ï¼˜", "ï¼™", "ï¼´", "ï¼ª", "ï¼±", "ï¼«"};
 
   move(x, y);
 
   if (card > 0)
-    prints("¢u%s%s¢t", kind[cal_kind(card)], num[cal_num(card) - 1]);
+    prints("â”œ%s%sâ”¤", kind[cal_kind(card)], num[cal_num(card) - 1]);
   else if (!card)
-    outs("¢u¢w¢w¢t");
+    outs("â”œâ”€â”€â”¤");
   else
     outs("        ");
 }
 
 
 static inline void
-out_prompt()			/* ´£¥Ü¦r²´ */
+out_prompt()			/* æç¤ºå­—çœ¼ */
 {
   move(b_lines - 1, 0);
-  outs(COLOR2 " (q)Â÷¶} (r)­«ª± (¡ö¡÷¡ô¡õ)²¾°Ê (¡ô)Â½Âà (Enter)°ïÅ| (Space)«ü©w/²¾°Ê/Â½µP    \033[m");
+  outs(COLOR2 " (q)é›¢é–‹ (r)é‡ç© (â†â†’â†‘â†“)ç§»å‹• (â†‘)ç¿»è½‰ (Enter)å †ç–Š (Space)æŒ‡å®š/ç§»å‹•/ç¿»ç‰Œ    \033[m");
 }
 
 
 static char
 get_newcard(mode)
-  int mode;			/* 0:­«·s¬~µP  1:µoµP */
+  int mode;			/* 0:é‡æ–°æ´—ç‰Œ  1:ç™¼ç‰Œ */
 {
-  static char card[52];		/* ³Ì¦h¥u·|¥Î¨ì 52 ±iµP */
-  static int now;		/* µo¥X²Ä now ±iµP */
+  static char card[52];		/* æœ€å¤šåªæœƒç”¨åˆ° 52 å¼µç‰Œ */
+  static int now;		/* ç™¼å‡ºç¬¬ now å¼µç‰Œ */
   int i, num;
   char tmp;
 
-  if (!mode)   /* ­«·s¬~µP */
+  if (!mode)   /* é‡æ–°æ´—ç‰Œ */
   {
     for (i = 0; i < 52; i++)
       card[i] = i + 1;
@@ -109,7 +109,7 @@ get_newcard(mode)
     {
       num = rnd(52 - i) + i;
 
-      /* card[num] ©M card[i] ¥æ´« */
+      /* card[num] å’Œ card[i] äº¤æ› */
       tmp = card[i];
       card[i] = card[num];
       card[num] = tmp;
@@ -128,33 +128,33 @@ get_newcard(mode)
 int
 main_fantan()
 {
-  char max[9];				/* ¨C°ïªºµP¼Æ¡A²Ä¤K°ï¬O¥ª¤W¨¤ªºµP */
-  char rmax[8];				/* ¨C°ï¥¼©|³QÂ½¶}ªºµP¼Æ */
+  char max[9];				/* æ¯å †çš„ç‰Œæ•¸ï¼Œç¬¬å…«å †æ˜¯å·¦ä¸Šè§’çš„ç‰Œ */
+  char rmax[8];				/* æ¯å †æœªå°šè¢«ç¿»é–‹çš„ç‰Œæ•¸ */
 
-  char left_stack[25];			/* ¥ª¤W¨¤ªº 24 ±iµP */
-  char up_stack[5];			/* ¥k¤W¨¤ªº 4 ±iµP (¥u­n°O¿ı³Ì¤jµP§Y¥i) */
-  char down_stack[8][21];		/* ¤U­±¤C­Ó°ïÅ|ªº©Ò¦³µP */
+  char left_stack[25];			/* å·¦ä¸Šè§’çš„ 24 å¼µç‰Œ */
+  char up_stack[5];			/* å³ä¸Šè§’çš„ 4 å¼µç‰Œ (åªè¦è¨˜éŒ„æœ€å¤§ç‰Œå³å¯) */
+  char down_stack[8][21];		/* ä¸‹é¢ä¸ƒå€‹å †ç–Šçš„æ‰€æœ‰ç‰Œ */
 
-  int level;				/* ¤@¦¸Â½´X±iµP */
-  int side;				/* ´å¼Ğ¦b¤W­±ÁÙ¬O¤U­± */
+  int level;				/* ä¸€æ¬¡ç¿»å¹¾å¼µç‰Œ */
+  int side;				/* æ¸¸æ¨™åœ¨ä¸Šé¢é‚„æ˜¯ä¸‹é¢ */
 
-  int cx, cy;				/* ¥Ø«e©Ò¦b (x, y) ®y¼Ğ */
-  int xx, yy;				/* ¹L¥h©Ò¦b (x, y) ®y¼Ğ */
-  int star_c, star_x, star_y;		/* ¥´ '*' ³Bªº µP¡B®y¼Ğ */
-  int left;				/* ¥ª¤W¨¤°ïÅ|Â½¨ì²Ä´X±i */
+  int cx, cy;				/* ç›®å‰æ‰€åœ¨ (x, y) åº§æ¨™ */
+  int xx, yy;				/* éå»æ‰€åœ¨ (x, y) åº§æ¨™ */
+  int star_c, star_x, star_y;		/* æ‰“ '*' è™•çš„ ç‰Œã€åº§æ¨™ */
+  int left;				/* å·¦ä¸Šè§’å †ç–Šç¿»åˆ°ç¬¬å¹¾å¼µ */
 
   int i, j;
 
-  time_t init_time;			/* ¹CÀ¸¶}©lªº®É¶¡ */
+  time_t init_time;			/* éŠæˆ²é–‹å§‹çš„æ™‚é–“ */
 
-  level = vans("½Ğ¿ï¾Ü¤@¦¸Â½ [1~3] ¤@¡ã¤T ±iµP¡A©Î«ö [Q] Â÷¶}¡G");
+  level = vans("è«‹é¸æ“‡ä¸€æ¬¡ç¿» [1~3] ä¸€ï½ä¸‰ å¼µç‰Œï¼Œæˆ–æŒ‰ [Q] é›¢é–‹ï¼š");
   if (level > '0' && level < '4')
     level -= '0';
   else
     return XEASY;
 
 game_start:
-  vs_bar("±µÀs");
+  vs_bar("æ¥é¾");
   out_prompt();
 
   side = SIDE_DOWN;
@@ -162,25 +162,25 @@ game_start:
   star_x = 2;
   star_y = 79;
 
-  for (i = 0; i <= 4; i++)			/* ¤W­±ªº¥|­Ó°ïÅ|Âk¹s */
+  for (i = 0; i <= 4; i++)			/* ä¸Šé¢çš„å››å€‹å †ç–Šæ­¸é›¶ */
     up_stack[i] = 0;
 
-  get_newcard(0);	/* ¬~µP */
+  get_newcard(0);	/* æ´—ç‰Œ */
 
   for (i = 1; i <= 7; i++)
   {
-    max[i] = i;					/* ²Ä i °ï­è¶}©l¦³ i ±iµP */
-    rmax[i] = i - 1;				/* ²Ä i °ï­è¶}©l¦³ i-1 ±i¥¼¥´¶} */
+    max[i] = i;					/* ç¬¬ i å †å‰›é–‹å§‹æœ‰ i å¼µç‰Œ */
+    rmax[i] = i - 1;				/* ç¬¬ i å †å‰›é–‹å§‹æœ‰ i-1 å¼µæœªæ‰“é–‹ */
     for (j = 1; j <= i; j++)
     {
-      down_stack[i][j] = get_newcard(1);	/* °t¸m¤U­±ªºµP */
-      draw(j + 2, ycol(i), i != j ? 0 : down_stack[i][j]);	/* ¨C°ï¥´¶}³Ì«á¤@±iµP */
+      down_stack[i][j] = get_newcard(1);	/* é…ç½®ä¸‹é¢çš„ç‰Œ */
+      draw(j + 2, ycol(i), i != j ? 0 : down_stack[i][j]);	/* æ¯å †æ‰“é–‹æœ€å¾Œä¸€å¼µç‰Œ */
     }
   }
 
-  max[8] = 24;					/* ¥ª¤W¨¤­è¶}©l¦³ 24 ±iµP */
+  max[8] = 24;					/* å·¦ä¸Šè§’å‰›é–‹å§‹æœ‰ 24 å¼µç‰Œ */
   for (i = 1; i <= 24; i++)
-    left_stack[i] = get_newcard(1);		/* °t¸m¥ª¤W¨¤ªºµP */
+    left_stack[i] = get_newcard(1);		/* é…ç½®å·¦ä¸Šè§’çš„ç‰Œ */
   draw(1, 1, 0);
 
   left = 0;
@@ -189,7 +189,7 @@ game_start:
   xx = 1;
   yy = 1;
 
-  init_time = time(0);		/* ¶}©l°O¿ı®É¶¡ */
+  init_time = time(0);		/* é–‹å§‹è¨˜éŒ„æ™‚é–“ */
 
   for (;;)
   {
@@ -232,14 +232,14 @@ game_start:
 
       case KEY_UP:
 	cx--;
-	if (!cx)					/* ¶]¨ì¤W­±¥h¤F */
+	if (!cx)					/* è·‘åˆ°ä¸Šé¢å»äº† */
 	{
 	  side = SIDE_UP;
 	  move_cur(xx + 2, ycol(yy) - 2, 1, 9);
 	}
 	break;
 
-      case '\n':				/* ®³µP¨ì¥k¤W¨¤ */
+      case '\n':				/* æ‹¿ç‰Œåˆ°å³ä¸Šè§’ */
 	j = down_stack[cy][cx];
 	if ((cal_num(j) == up_stack[cal_kind(j)] + 1) && cx == max[cy] && cx > rmax[cy])
 	{
@@ -247,17 +247,17 @@ game_start:
 	  max[cy]--;
 	  draw(1, cal_kind(j) * 10 + 40, j);
 	  draw(cx + 2, ycol(cy), -1);
-	  if (star_c == j)			/* ¦pªG¦³°O¸¹´N®ø±¼ */
+	  if (star_c == j)			/* å¦‚æœæœ‰è¨˜è™Ÿå°±æ¶ˆæ‰ */
 	  {
 	    move(star_x, star_y);
 	    outc(' ');
 	  }
 	}
-	/* ¯}Ãö±ø¥ó: ¥k¤W¨¤¥|­Ó³£¬O 13 */
+	/* ç ´é—œæ¢ä»¶: å³ä¸Šè§’å››å€‹éƒ½æ˜¯ 13 */
 	if (up_stack[0] & up_stack[1] & up_stack[2] & up_stack[3] == 13)
 	{
 	  char buf[80];
-	  sprintf(buf, "±zªá¤F %.0lf ¬í ¯}²Ä %d Ãö ¦n±R«ô ^O^", 
+	  sprintf(buf, "æ‚¨èŠ±äº† %.0lf ç§’ ç ´ç¬¬ %d é—œ å¥½å´‡æ‹œ ^O^", 
 	    difftime(time(0), init_time), level);
 	  vmsg(buf);
 	  addmoney(level * 100);
@@ -266,13 +266,13 @@ game_start:
 	break;
 
       case ' ':
-	if (cx == max[cy] && cx == rmax[cy])	/* Â½·sµP */
+	if (cx == max[cy] && cx == rmax[cy])	/* ç¿»æ–°ç‰Œ */
 	{
 	  rmax[cy]--;
 	  draw(cx + 2, ycol(cy), down_stack[cy][cx]);
 	  break;
 	}
-	else if (cx > rmax[cy] && cx <= max[cy])	/* °Å¤U */
+	else if (cx > rmax[cy] && cx <= max[cy])	/* å‰ªä¸‹ */
 	{
 	  move(star_x, star_y);
 	  outc(' ');
@@ -284,13 +284,13 @@ game_start:
 	  break;
 	}
 	else if (cx != max[cy] + 1)
-	  break;				/* ¶K¤W */
+	  break;				/* è²¼ä¸Š */
 
 	if ((max[cy] && (cal_num(down_stack[cy][max[cy]]) == cal_num(star_c) + 1) && 
 	  (cal_kind(down_stack[cy][max[cy]]) + cal_kind(star_c)) % 2) ||
 	  (max[cy] == 0 && cal_num(star_c) == 13))
 	{
-	  if (star_x == 1)		/* ±q¤W­±¶K¤U¨Óªº */
+	  if (star_x == 1)		/* å¾ä¸Šé¢è²¼ä¸‹ä¾†çš„ */
 	  {
 	    max[cy]++;
 	    max[8]--;
@@ -304,7 +304,7 @@ game_start:
 	    outc(' ');
 	    draw(1, 11, left ? left_stack[left] : -1);
 	  }
-	  else if (star_x > 2)		/* ¦b¤U­±¶K¨Ó¶K¥hªº */
+	  else if (star_x > 2)		/* åœ¨ä¸‹é¢è²¼ä¾†è²¼å»çš„ */
 	  {
 	    int tmp;;
 	    j = star_y / 11;
@@ -326,7 +326,7 @@ game_start:
       }
 
     }
-    else /* side == SIDE_UP */	/* ¦b¤W­± */
+    else /* side == SIDE_UP */	/* åœ¨ä¸Šé¢ */
     {
       draw(1, 11, left ? left_stack[left] : -1);
 
@@ -339,7 +339,7 @@ game_start:
       case 'r':
 	goto game_start;
 
-      case '\n':				/* ®³µP¨ì¥k¤W¨¤ */
+      case '\n':				/* æ‹¿ç‰Œåˆ°å³ä¸Šè§’ */
 	j = left_stack[left];
 	if (cal_num(j) == up_stack[cal_kind(j)] + 1)
 	{
@@ -353,17 +353,17 @@ game_start:
 
 	  draw(1, 11, left ? left_stack[left] : -1);
 
-	  if (star_x == 1)	/* ¦pªG¦³°O¸¹´N²M±¼ */
+	  if (star_x == 1)	/* å¦‚æœæœ‰è¨˜è™Ÿå°±æ¸…æ‰ */
 	  {
 	    star_x = 2;
 	    move(1, 19);
 	    outc(' ');
 	  }
-	  /* ¯}Ãö±ø¥ó: ¥k¤W¨¤¥|­Ó³£¬O 13 */
+	  /* ç ´é—œæ¢ä»¶: å³ä¸Šè§’å››å€‹éƒ½æ˜¯ 13 */
 	  if (up_stack[0] & up_stack[1] & up_stack[2] & up_stack[3] == 13)
 	  {
 	    char buf[80];
-	    sprintf(buf, "±zªá¤F %.0lf ¬í ¯}²Ä %d Ãö ¦n±R«ô ^O^", 
+	    sprintf(buf, "æ‚¨èŠ±äº† %.0lf ç§’ ç ´ç¬¬ %d é—œ å¥½å´‡æ‹œ ^O^", 
 	      difftime(time(0), init_time), level);
 	    vmsg(buf);
 	  }
@@ -380,7 +380,7 @@ game_start:
 	if (left == max[8])
 	  left = 0;
 	else
-	  left += level;	/* ¤@¦¸µo level ±iµP */
+	  left += level;	/* ä¸€æ¬¡ç™¼ level å¼µç‰Œ */
 	if (left > max[8])
 	  left = max[8];
 

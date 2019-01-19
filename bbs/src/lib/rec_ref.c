@@ -22,7 +22,7 @@ rec_ref(fpath, data, size, pos, fchk, fref)
     return -1;
 
   /* flock(fd, LOCK_EX); */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_exlock(fd);
 
   fstat(fd, &st);
@@ -31,7 +31,7 @@ rec_ref(fpath, data, size, pos, fchk, fref)
   fpath = pool;
   off = size * pos;
 
-  /* ÅçÃÒ pos ¦ì¸m¸ê®Æªº¥¿½T©Ê */
+  /* é©—è­‰ pos ä½ç½®è³‡æ–™çš„æ­£ç¢ºæ€§ */
 
   if (len > off)
   {
@@ -43,18 +43,18 @@ rec_ref(fpath, data, size, pos, fchk, fref)
   {
     if (len)
     {
-      pos = 0;	/* ±qÀY§ä°_ */
+      pos = 0;	/* å¾é ­æ‰¾èµ· */
     }
     else
     {
-      /* ­Y­ì¥»¬OªÅÀÉ®×¡A¨º»ò©ñ±ó */
+      /* è‹¥åŸæœ¬æ˜¯ç©ºæª”æ¡ˆï¼Œé‚£éº¼æ”¾æ£„ */
       f_unlock(fd);
       close(fd);
       return -1;
     }
   }
 
-  /* ¤£¹ïªº¸Ü¡A­«ÀY§ä°_ */
+  /* ä¸å°çš„è©±ï¼Œé‡é ­æ‰¾èµ· */
 
   if (!pos)
   {
@@ -69,7 +69,7 @@ rec_ref(fpath, data, size, pos, fchk, fref)
     }
   }
 
-  /* §ä¨ì¤§«á¡A§ó·s¸ê®Æ */
+  /* æ‰¾åˆ°ä¹‹å¾Œï¼Œæ›´æ–°è³‡æ–™ */
 
   if (pos)
   {
@@ -79,7 +79,7 @@ rec_ref(fpath, data, size, pos, fchk, fref)
   }
 
   /* flock(fd, LOCK_UN); */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_unlock(fd);
 
   close(fd);

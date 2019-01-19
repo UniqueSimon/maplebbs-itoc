@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* mine.c         ( NTHU CS MapleBBS Ver 3.10 )          */
 /*-------------------------------------------------------*/
-/* target : ½ò¦a¹p¹CÀ¸                                   */
+/* target : è¸©åœ°é›·éŠæˆ²                                   */
 /* create : 01/02/15                                     */
 /* update : 01/03/01                                     */
 /* author : piaip.bbs@sob.twbbs.org                      */
@@ -13,45 +13,45 @@
 
 #ifdef HAVE_GAME
 
-#define _CHINESE_	/* ¤¤¤å¦r symbol */
+#define _CHINESE_	/* ä¸­æ–‡å­— symbol */
 
 enum
 {
-  /* MINE_XPOS + MAP_MAX_X ­n¤p©ó b_lines - 2 = 21    *
-   * MINE_YPOS + MAP_MAX_Y * 2 ­n¤p©ó STRLEN - 1 = 79 *
-   * MINE_YPOS ­n¨¬°÷¨Ï out_prompt() ©ñ¤J             */
+  /* MINE_XPOS + MAP_MAX_X è¦å°æ–¼ b_lines - 2 = 21    *
+   * MINE_YPOS + MAP_MAX_Y * 2 è¦å°æ–¼ STRLEN - 1 = 79 *
+   * MINE_YPOS è¦è¶³å¤ ä½¿ out_prompt() æ”¾å…¥             */
 
   MINE_XPOS = 0,
   MINE_YPOS = 17,
-  MAP_MAX_X = 20,		/* ¡õ x ¤è¦V */
-  MAP_MAX_Y = 30,		/* ¡÷ y ¤è¦V */
+  MAP_MAX_X = 20,		/* â†“ x æ–¹å‘ */
+  MAP_MAX_Y = 30,		/* â†’ y æ–¹å‘ */
 
   /* These are flags for bitwise operators */
-  TILE_BLANK = 0,		/* ¨S¦³¦a¹p */
-  TILE_MINE = 1,		/* ¦³¦a¹p */
-  TILE_TAGGED = 0x10,		/* ³Q¼Ğ°O */
-  TILE_EXPAND = 0x20		/* ¤w³Q®i¶} */
+  TILE_BLANK = 0,		/* æ²’æœ‰åœ°é›· */
+  TILE_MINE = 1,		/* æœ‰åœ°é›· */
+  TILE_TAGGED = 0x10,		/* è¢«æ¨™è¨˜ */
+  TILE_EXPAND = 0x20		/* å·²è¢«å±•é–‹ */
 };
 
 
-static char MineMap[MAP_MAX_X + 2][MAP_MAX_Y + 2];	/* ¦a¹Ï¤W¨C®æªºÄİ©Ê */
-static char MineNei[MAP_MAX_X + 2][MAP_MAX_Y + 2];	/* ¦a¹Ï¤W¨C®æ¾F©~¦³¦h¤Ö¦a¹p */
+static char MineMap[MAP_MAX_X + 2][MAP_MAX_Y + 2];	/* åœ°åœ–ä¸Šæ¯æ ¼çš„å±¬æ€§ */
+static char MineNei[MAP_MAX_X + 2][MAP_MAX_Y + 2];	/* åœ°åœ–ä¸Šæ¯æ ¼é„°å±…æœ‰å¤šå°‘åœ°é›· */
 
-static int MAP_X, MAP_Y;	/* ´Ñ½L¤j¤p */
+static int MAP_X, MAP_Y;	/* æ£‹ç›¤å¤§å° */
 static int cx, cy;		/* current (x, y) */
-static int TotalMines;		/* ¤w¼Ğ°Oªº¦a¹p¼Æ */
-static int TaggedMines;		/* ¤w¼Ğ°Oªº¦a¹p¼Æ */
-static time_t InitTime;		/* ¶}©lª±ªº®É¶¡ */
-static int LoseGame;		/* 1: ¿é¤F     0: ÁÙ¦bª± */
-static int EndGame;		/* 1: Â÷¶}¹CÀ¸ 0: ÁÙ¦bª± */
+static int TotalMines;		/* å·²æ¨™è¨˜çš„åœ°é›·æ•¸ */
+static int TaggedMines;		/* å·²æ¨™è¨˜çš„åœ°é›·æ•¸ */
+static time_t InitTime;		/* é–‹å§‹ç©çš„æ™‚é–“ */
+static int LoseGame;		/* 1: è¼¸äº†     0: é‚„åœ¨ç© */
+static int EndGame;		/* 1: é›¢é–‹éŠæˆ² 0: é‚„åœ¨ç© */
 
 
 #ifdef _CHINESE_
-static char symTag[3] = "¡°";	/* ¼Ğ°O¦a¹p/¦¹³B¦³¦a¹p¥B¦³³Q¼Ğ¥Ü */
-static char symMine[3] = "¡ó";	/* /¦¹³B¦³¦a¹p¦ı¨S³Q¼Ğ¥Ü */
-static char symWrong[3] = "¢æ";	/* /¦¹³B¨S¦a¹p¦ı¦³³Q¼Ğ¥Ü */
-static char symBlank[3] = "¡½";	/* ¥¼³Q®i¶}/¦¹³B¨S¦a¹p¥B¨S³Q®i¶} */
-static char *strMines[9] = {"¡@", "¢°", "¢±", "¢²", "¢³", "¢´", "¢µ", "¢¶", "¢·"};	/* ®ÇÃä¦³´XÁû¦a¹p */
+static char symTag[3] = "â€»";	/* æ¨™è¨˜åœ°é›·/æ­¤è™•æœ‰åœ°é›·ä¸”æœ‰è¢«æ¨™ç¤º */
+static char symMine[3] = "âŠ™";	/* /æ­¤è™•æœ‰åœ°é›·ä½†æ²’è¢«æ¨™ç¤º */
+static char symWrong[3] = "ï¼¸";	/* /æ­¤è™•æ²’åœ°é›·ä½†æœ‰è¢«æ¨™ç¤º */
+static char symBlank[3] = "â– ";	/* æœªè¢«å±•é–‹/æ­¤è™•æ²’åœ°é›·ä¸”æ²’è¢«å±•é–‹ */
+static char *strMines[9] = {"ã€€", "ï¼‘", "ï¼’", "ï¼“", "ï¼”", "ï¼•", "ï¼–", "ï¼—", "ï¼˜"};	/* æ—é‚Šæœ‰å¹¾é¡†åœ°é›· */
 #else
 static char symTag[3] = " M";
 static char symMine[3] = " m";
@@ -78,7 +78,7 @@ init_map()
 {
   int x, y, i;
 
-  /* ³]©w¦³®Ä´Ñ½L */
+  /* è¨­å®šæœ‰æ•ˆæ£‹ç›¤ */
 
   for (x = 0; x < MAP_X + 2; x++)
   {
@@ -90,7 +90,7 @@ init_map()
     }
   }
 
-  /* ³]©w¦a¹p©Ò¦b */
+  /* è¨­å®šåœ°é›·æ‰€åœ¨ */
 
   for (i = 0; i < TotalMines;)
   {
@@ -104,7 +104,7 @@ init_map()
     }
   }
 
-  /* ºâ¥X©Ò¦³®æªº¾F©~¦³¦h¤Ö¦a¹p */
+  /* ç®—å‡ºæ‰€æœ‰æ ¼çš„é„°å±…æœ‰å¤šå°‘åœ°é›· */
 
   for (x = 1; x <= MAP_X; x++)
   {
@@ -114,7 +114,7 @@ init_map()
     }
   }
 
-  /* ²{¦b¶}©l­p®É¡A¦]¬° out_map() ªº out_info() ­n¥Î¨ì */
+  /* ç¾åœ¨é–‹å§‹è¨ˆæ™‚ï¼Œå› ç‚º out_map() çš„ out_info() è¦ç”¨åˆ° */
   InitTime = time(0);
 }
 
@@ -122,19 +122,19 @@ init_map()
 static void
 out_prompt()
 {
-  /* outs() ¸Ì­±ªº±Ô­z¤£±o¶W¹L MINE_YPOS¡A§_«h·|¿ù¶Ã */
+  /* outs() è£¡é¢çš„æ•˜è¿°ä¸å¾—è¶…é MINE_YPOSï¼Œå¦å‰‡æœƒéŒ¯äº‚ */
   move(3, 0);
-  outs("«öÁä»¡©ú¡G");
+  outs("æŒ‰éµèªªæ˜ï¼š");
   move(5, 0);
-  outs("²¾°Ê     ¤è¦VÁä");
+  outs("ç§»å‹•     æ–¹å‘éµ");
   move(7, 0);
-  outs("Â½¶}     ªÅ¥ÕÁä");
+  outs("ç¿»é–‹     ç©ºç™½éµ");
   move(9, 0);
-  outs("¼Ğ°O¦a¹p   ¢î");
+  outs("æ¨™è¨˜åœ°é›·   ï½†");
   move(11, 0);
-  outs("±½¹p       ¢ì");
+  outs("æƒé›·       ï½„");
   move(13, 0);
-  outs("Â÷¶}       ¢ù");
+  outs("é›¢é–‹       ï½‘");
 }
 
 
@@ -143,14 +143,14 @@ out_song()
 {
   uschar *msg[8] = 
   {
-    "«D¿FªyµL¥H©ú§Ó¡A«D¹çÀRµL¥H­P»·",			/* ½Ñ¸¯«G»|¤l®Ñ */
-    "¤@µ°¤@¶º¡A·í«ä±o¨Ó¤£©ö¡F¥bµ·¥bÁ\\¡A«í©Àª«¤OºûÁ}",	/* ¦¶¤l­P®a®æ¨¥ */
-    "©y¥¼«B¦Óº÷Á[¡A¤ğÁ{´÷¦Ó±¸¤«",			/* ¦¶¤l­P®a®æ¨¥ */
-    "µL©Àº¸¯ª¡A¦Ö²ç³Ö¼w",				/* ¤j¶® */
-    "¤j¾Ç¤§¹D¡A¦b©ú©ú¼w¡A¦b¿Ë¥Á¡A¦b¤î©ó¦Üµ½",		/* ¤j¾Ç */
-    "¤Ñ©R¤§¿×©Ê¡A²v©Ê¤§»w¹D¡A²ç¹D¤§¿×±Ğ",		/* ¤¤±e */
-    "¤£±w¤H¤§¤£ª¾¤v¡A±w¤£ª¾¤H¤]",			/* ½×»y£»¾Ç¦Ó */
-    "´Â»D¹D¡A¤i¦º¥i¨o"					/* ½×»y£»¨½¤¯ */
+    "éæ¾¹æ³Šç„¡ä»¥æ˜å¿—ï¼Œéå¯§éœç„¡ä»¥è‡´é ",			/* è«¸è‘›äº®èª¡å­æ›¸ */
+    "ä¸€ç²¥ä¸€é£¯ï¼Œç•¶æ€å¾—ä¾†ä¸æ˜“ï¼›åŠçµ²åŠç¸·\ï¼Œæ†å¿µç‰©åŠ›ç¶­è‰±",	/* æœ±å­è‡´å®¶æ ¼è¨€ */
+    "å®œæœªé›¨è€Œç¶¢ç¹†ï¼Œæ¯‹è‡¨æ¸´è€Œæ˜äº•",			/* æœ±å­è‡´å®¶æ ¼è¨€ */
+    "ç„¡å¿µçˆ¾ç¥–ï¼Œè¿è„©å¥å¾·",				/* å¤§é›… */
+    "å¤§å­¸ä¹‹é“ï¼Œåœ¨æ˜æ˜å¾·ï¼Œåœ¨è¦ªæ°‘ï¼Œåœ¨æ­¢æ–¼è‡³å–„",		/* å¤§å­¸ */
+    "å¤©å‘½ä¹‹è¬‚æ€§ï¼Œç‡æ€§ä¹‹èª¦é“ï¼Œè„©é“ä¹‹è¬‚æ•™",		/* ä¸­åº¸ */
+    "ä¸æ‚£äººä¹‹ä¸çŸ¥å·±ï¼Œæ‚£ä¸çŸ¥äººä¹Ÿ",			/* è«–èªË™å­¸è€Œ */
+    "æœèé“ï¼Œå¤•æ­»å¯çŸ£"					/* è«–èªË™é‡Œä» */
   };
   move(b_lines - 2, 0);
   prints("\033[1;3%dm%s\033[m", time(0) % 7, msg[time(0) % 8]);
@@ -162,7 +162,7 @@ static void
 out_info()
 {
   move(b_lines - 1, 0);
-  prints("©Òªá®É¶¡: %.0lf ¬í¡A³Ñ¤U %d ­Ó¦a¹p¥¼¼Ğ°O¡C",
+  prints("æ‰€èŠ±æ™‚é–“: %.0lf ç§’ï¼Œå‰©ä¸‹ %d å€‹åœ°é›·æœªæ¨™è¨˜ã€‚",
     difftime(time(0), InitTime), TotalMines - TaggedMines);
   clrtoeol();
 
@@ -175,7 +175,7 @@ out_map()
 {
   int x, y;
 
-  vs_bar("«lÃz½ò¦a¹p");
+  vs_bar("å‹çˆ†è¸©åœ°é›·");
 
   for (x = 1; x <= MAP_X; x++)
   {
@@ -191,11 +191,11 @@ out_map()
 
 
 static void
-draw_map()			/* µe¥X§¹¾ãµª®× */
+draw_map()			/* ç•«å‡ºå®Œæ•´ç­”æ¡ˆ */
 {
   int x, y;
 
-  vs_bar("«lÃz½ò¦a¹p");
+  vs_bar("å‹çˆ†è¸©åœ°é›·");
 
   for (x = 1; x <= MAP_X; x++)
   {
@@ -295,7 +295,7 @@ play_mine()
       EndGame = 1;
       return;
 
-      /* °µ¥ô¦ó°Ê§@³£­n§â´å¼Ğ¦^´_¨ì­ì¨Óªº¦ì¸m */
+      /* åšä»»ä½•å‹•ä½œéƒ½è¦æŠŠæ¸¸æ¨™å›å¾©åˆ°åŸä¾†çš„ä½ç½® */
 
     case KEY_UP:
       if (cx > 1)
@@ -345,7 +345,7 @@ play_mine()
     case 'f':
       if (MineMap[cx][cy] & TILE_EXPAND)
       {
-	if (MineMap[cx][cy] & TILE_TAGGED)	/* ¥»¨Ó³Q¼Ğ°O, ¨ú®ø */
+	if (MineMap[cx][cy] & TILE_TAGGED)	/* æœ¬ä¾†è¢«æ¨™è¨˜, å–æ¶ˆ */
 	{
 	  TaggedMines--;
 	  MineMap[cx][cy] ^= TILE_EXPAND;
@@ -354,7 +354,7 @@ play_mine()
 	  outs(symBlank);
 	}
       }
-      else		/* ¥»¨Ó¨S¼Ğ°O, ¤W¼Ğ°O */
+      else		/* æœ¬ä¾†æ²’æ¨™è¨˜, ä¸Šæ¨™è¨˜ */
       {
 	TaggedMines++;
 	MineMap[cx][cy] ^= TILE_EXPAND;
@@ -387,7 +387,7 @@ win()
       if (((MineMap[x][y] & TILE_TAGGED) && !(MineMap[x][y] & TILE_MINE)) ||
         (!(MineMap[x][y] & TILE_TAGGED) && (MineMap[x][y] & TILE_MINE)))
       {
-        return 0;		/* ¼Ğ¿ù¦a¤è */
+        return 0;		/* æ¨™éŒ¯åœ°æ–¹ */
       }
     }
   }
@@ -401,25 +401,25 @@ main_mine()
   int level;
   char ans[4];
 
-  level = vans("½Ğ¿ï¾Ü [1-5] µ¥¯Å¡A[0] ¦Û©w¡A©Î«ö [Q] Â÷¶}¡G");
+  level = vans("è«‹é¸æ“‡ [1-5] ç­‰ç´šï¼Œ[0] è‡ªå®šï¼Œæˆ–æŒ‰ [Q] é›¢é–‹ï¼š");
   if (level == 'q')
   {
     return XEASY;
   }
-  else if (level < '1' || level > '5')	/* ¦Û©w´Ñ½L¤£±o¤j©ó 60 * 20 */
+  else if (level < '1' || level > '5')	/* è‡ªå®šæ£‹ç›¤ä¸å¾—å¤§æ–¼ 60 * 20 */
   {
-    vget(b_lines, 0, "½Ğ¿é¤J¦a¹Ïªºªø¡G", ans, 3, DOECHO);
+    vget(b_lines, 0, "è«‹è¼¸å…¥åœ°åœ–çš„é•·ï¼š", ans, 3, DOECHO);
     MAP_Y = atoi(ans) > MAP_MAX_Y ? MAP_MAX_Y : atoi(ans);
 
-    vget(b_lines, 0, "½Ğ¿é¤J¦a¹Ïªº¼e¡G", ans, 3, DOECHO);
+    vget(b_lines, 0, "è«‹è¼¸å…¥åœ°åœ–çš„å¯¬ï¼š", ans, 3, DOECHO);
     MAP_X = atoi(ans) > MAP_MAX_X ? MAP_MAX_X : atoi(ans);
 
-    vget(b_lines, 0, "½Ğ¿é¤J¦a¹p¼Æ¡G", ans, 3, DOECHO);
+    vget(b_lines, 0, "è«‹è¼¸å…¥åœ°é›·æ•¸ï¼š", ans, 3, DOECHO);
     level = atoi(ans);
     TotalMines = MAP_Y * MAP_X / 3;
     if (TotalMines > level)
       TotalMines = level;
-    /* ­­¨î¦a¹p¼Æ¤£±o¶W¹L MAP_Y * MAP_X / 3¡A¥H§K init_map() ¶Ã¼Æ¨ú¤Ó¤[ */
+    /* é™åˆ¶åœ°é›·æ•¸ä¸å¾—è¶…é MAP_Y * MAP_X / 3ï¼Œä»¥å… init_map() äº‚æ•¸å–å¤ªä¹… */
 
     if (MAP_Y < 1 || MAP_X < 1 || TotalMines < 1)
       return 0;
@@ -428,8 +428,8 @@ main_mine()
   else
   {
     level -= '0';
-    MAP_Y = 5 * level;		/* ¤£±o¶W¹L MAP_MAX_Y */
-    MAP_X = (level < 4) ? 5 * level : MAP_MAX_X;	/* ¤£±o¶W¹L MAP_MAX_X */
+    MAP_Y = 5 * level;		/* ä¸å¾—è¶…é MAP_MAX_Y */
+    MAP_X = (level < 4) ? 5 * level : MAP_MAX_X;	/* ä¸å¾—è¶…é MAP_MAX_X */
     TotalMines = MAP_Y * MAP_X / 10;
   }
 
@@ -446,21 +446,21 @@ main_mine()
     if (LoseGame)
     {
       draw_map();
-      vmsg("¸I¡I½ò¨ì¦a¹p¤F¡I");
+      vmsg("ç¢°ï¼è¸©åˆ°åœ°é›·äº†ï¼");
     }
-    else	/* ¼Ğ°O¼Æ == ¦a¹p¼Æ */
+    else	/* æ¨™è¨˜æ•¸ == åœ°é›·æ•¸ */
     {
-      if (win())	/* itoc.010711: ­nÀË¬d¬O§_¯}Ãö¡A¥H§KÀH«K¶Ã¼Ğ°O¡A·í¼Ğ°O¼Æ=¦a¹p¼Æ´N»¡¹LÃö¤F */
+      if (win())	/* itoc.010711: è¦æª¢æŸ¥æ˜¯å¦ç ´é—œï¼Œä»¥å…éš¨ä¾¿äº‚æ¨™è¨˜ï¼Œç•¶æ¨™è¨˜æ•¸=åœ°é›·æ•¸å°±èªªéé—œäº† */
       {
 	char buf[STRLEN];
-	sprintf(buf, "±zªá¤F %.0lf ¬í ¯}²Ä %d Ãö ¦n±R«ô ^O^", difftime(time(0), InitTime), level);
+	sprintf(buf, "æ‚¨èŠ±äº† %.0lf ç§’ ç ´ç¬¬ %d é—œ å¥½å´‡æ‹œ ^O^", difftime(time(0), InitTime), level);
 	vmsg(buf);
 	addmoney(level * 75);
       }
       else
       {
         draw_map();
-        vmsg("±z¼Ğ¿ù¦a¹p¤F³á =.=");
+        vmsg("æ‚¨æ¨™éŒ¯åœ°é›·äº†å–” =.=");
       }
     }
   }

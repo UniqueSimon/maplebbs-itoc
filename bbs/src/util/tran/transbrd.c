@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/transacct.c	( NTHU CS MapleBBS Ver 3.10 )	 */
 /*-------------------------------------------------------*/
-/* target : M3 BRD Âà´«µ{¦¡				 */
+/* target : M3 BRD è½‰æ›ç¨‹å¼				 */
 /* create : 05/05/19					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -10,13 +10,13 @@
 
 #if 0
 
-  ¨Ï¥Î¤èªk¡G
+  ä½¿ç”¨æ–¹æ³•ï¼š
 
   0. For Maple 3.X To Maple 3.X
 
-  1. ¨Ï¥Î«e½Ğ¥ı³Æ¥÷ .BRD
+  1. ä½¿ç”¨å‰è«‹å…ˆå‚™ä»½ .BRD
 
-  2. ½Ğ¦Û¦æ§ï struct NEW ©M struct OLD
+  2. è«‹è‡ªè¡Œæ”¹ struct NEW å’Œ struct OLD
 
 #endif
 
@@ -25,55 +25,55 @@
 
 
 /* ----------------------------------------------------- */
-/* (·sªº) ¬İªO .BRD struct				 */
+/* (æ–°çš„) çœ‹æ¿ .BRD struct				 */
 /* ----------------------------------------------------- */
 
 
-typedef struct			/* ­n©M·sª©µ{¦¡ struct ¤@¼Ë */
+typedef struct			/* è¦å’Œæ–°ç‰ˆç¨‹å¼ struct ä¸€æ¨£ */
 {
   char brdname[BNLEN + 1];	/* board name */
   char class[BCLEN + 1];
   char title[BTLEN + 1];
   char BM[BMLEN + 1];		/* BMs' uid, token '/' */
 
-  char bvote;			/* 0:µL§ë²¼ -1:¦³½ä½L(¥i¯à¦³§ë²¼) 1:¦³§ë²¼ */
+  char bvote;			/* 0:ç„¡æŠ•ç¥¨ -1:æœ‰è³­ç›¤(å¯èƒ½æœ‰æŠ•ç¥¨) 1:æœ‰æŠ•ç¥¨ */
 
-  time_t bstamp;		/* «Ø¥ß¬İªOªº®É¶¡, unique */
-  usint readlevel;		/* ¾\Åª¤å³¹ªºÅv­­ */
-  usint postlevel;		/* µoªí¤å³¹ªºÅv­­ */
-  usint battr;			/* ¬İªOÄİ©Ê */
-  time_t btime;			/* -1:bpost/blast »İ­n§ó·s */
-  int bpost;			/* ¦@¦³´X½g post */
-  time_t blast;			/* ³Ì«á¤@½g post ªº®É¶¡ */
+  time_t bstamp;		/* å»ºç«‹çœ‹æ¿çš„æ™‚é–“, unique */
+  usint readlevel;		/* é–±è®€æ–‡ç« çš„æ¬Šé™ */
+  usint postlevel;		/* ç™¼è¡¨æ–‡ç« çš„æ¬Šé™ */
+  usint battr;			/* çœ‹æ¿å±¬æ€§ */
+  time_t btime;			/* -1:bpost/blast éœ€è¦æ›´æ–° */
+  int bpost;			/* å…±æœ‰å¹¾ç¯‡ post */
+  time_t blast;			/* æœ€å¾Œä¸€ç¯‡ post çš„æ™‚é–“ */
 }	NEW;
 
 
 /* ----------------------------------------------------- */
-/* (ÂÂªº) ¬İªO .BRD struct				 */
+/* (èˆŠçš„) çœ‹æ¿ .BRD struct				 */
 /* ----------------------------------------------------- */
 
 
-typedef struct			/* ­n©MÂÂª©µ{¦¡ struct ¤@¼Ë */
+typedef struct			/* è¦å’ŒèˆŠç‰ˆç¨‹å¼ struct ä¸€æ¨£ */
 {
   char brdname[BNLEN + 1];	/* board name */
   char class[BCLEN + 1];
   char title[BTLEN + 1];
   char BM[BMLEN + 1];		/* BMs' uid, token '/' */
 
-  char bvote;			/* 0:µL§ë²¼ -1:¦³½ä½L(¥i¯à¦³§ë²¼) 1:¦³§ë²¼ */
+  char bvote;			/* 0:ç„¡æŠ•ç¥¨ -1:æœ‰è³­ç›¤(å¯èƒ½æœ‰æŠ•ç¥¨) 1:æœ‰æŠ•ç¥¨ */
 
-  time_t bstamp;		/* «Ø¥ß¬İªOªº®É¶¡, unique */
-  usint readlevel;		/* ¾\Åª¤å³¹ªºÅv­­ */
-  usint postlevel;		/* µoªí¤å³¹ªºÅv­­ */
-  usint battr;			/* ¬İªOÄİ©Ê */
-  time_t btime;			/* -1:bpost/blast »İ­n§ó·s */
-  int bpost;			/* ¦@¦³´X½g post */
-  time_t blast;			/* ³Ì«á¤@½g post ªº®É¶¡ */
+  time_t bstamp;		/* å»ºç«‹çœ‹æ¿çš„æ™‚é–“, unique */
+  usint readlevel;		/* é–±è®€æ–‡ç« çš„æ¬Šé™ */
+  usint postlevel;		/* ç™¼è¡¨æ–‡ç« çš„æ¬Šé™ */
+  usint battr;			/* çœ‹æ¿å±¬æ€§ */
+  time_t btime;			/* -1:bpost/blast éœ€è¦æ›´æ–° */
+  int bpost;			/* å…±æœ‰å¹¾ç¯‡ post */
+  time_t blast;			/* æœ€å¾Œä¸€ç¯‡ post çš„æ™‚é–“ */
 }	OLD;
 
 
 /* ----------------------------------------------------- */
-/* Âà´«¥Dµ{¦¡						 */
+/* è½‰æ›ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -93,12 +93,12 @@ main()
   {
     while (read(fd, &old, sizeof(OLD)) == sizeof(OLD))
     {
-      if (!*old.brdname)	/* ¦¹ªO¤w³Q§R°£ */
+      if (!*old.brdname)	/* æ­¤æ¿å·²è¢«åˆªé™¤ */
 	continue;
 
       memset(&new, 0, sizeof(NEW));
 
-      /* Âà´«ªº°Ê§@¦b¦¹ */
+      /* è½‰æ›çš„å‹•ä½œåœ¨æ­¤ */
       str_ncpy(new.brdname, old.brdname, sizeof(new.brdname));
       str_ncpy(new.class, old.class, sizeof(new.class));
       str_ncpy(new.title, old.title, sizeof(new.title));
@@ -117,7 +117,7 @@ main()
     close(fd);
   }
 
-  /* §R°£ÂÂªº¡A§â·sªº§ó¦W */
+  /* åˆªé™¤èˆŠçš„ï¼ŒæŠŠæ–°çš„æ›´å */
   unlink(FN_BRD);
   rename(FN_BRD_TMP, FN_BRD);
 

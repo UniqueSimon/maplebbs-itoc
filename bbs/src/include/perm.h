@@ -15,7 +15,7 @@
 /* These are the 32 basic permission bits.		 */
 /* ----------------------------------------------------- */
 
-#define	PERM_BASIC	0x00000001	/* 1-8 : ���v�� */
+#define	PERM_BASIC	0x00000001	/* 1-8 : 基本權限 */
 #define PERM_CHAT	0x00000002
 #define	PERM_PAGE	0x00000004
 #define PERM_POST	0x00000008
@@ -33,7 +33,7 @@
 #define	PERM_15		0x00004000
 #define	PERM_16		0x00008000
 
-#define PERM_DENYPOST	0x00010000	/* 17-24 : �T���v�� */
+#define PERM_DENYPOST	0x00010000	/* 17-24 : 禁制權限 */
 #define	PERM_DENYTALK	0x00020000
 #define	PERM_DENYCHAT	0x00040000
 #define	PERM_DENYMAIL	0x00080000
@@ -42,7 +42,7 @@
 #define	PERM_DENYLOGIN	0x00400000
 #define	PERM_PURGE	0x00800000
 
-#define PERM_BM		0x01000000	/* 25-32 : �޲z�v�� */
+#define PERM_BM		0x01000000	/* 25-32 : 管理權限 */
 #define PERM_SEECLOAK	0x02000000
 #define PERM_ADMIN3	0x04000000
 #define PERM_REGISTRAR	0x08000000
@@ -60,98 +60,98 @@
 /* This is the default permission granted to all new accounts. */
 #define PERM_DEFAULT 	PERM_BASIC
 
-/* �� PERM_VALID �~�i�H�O�H�i�ӥ������U */
+/* 有 PERM_VALID 才可以保人進來本站註冊 */
 #ifdef HAVE_GUARANTOR
 #define PERM_GUARANTOR	PERM_VALID
 #endif
 
-#if 0   /* itoc.����: ���󯸰��v�� */
+#if 0   /* itoc.說明: 關於站務權限 */
 
-  �Ҧ��{�������󯸰Ȫ��v�����令 PERM_ALLXXXX
-  �b���e�@�ӹϨӴy�z�����v�����]�w�C
+  所有程式的關於站務的權限都改成 PERM_ALLXXXX
+  在此畫一個圖來描述站務權限的設定。
 
-                  �z ���U�`�� PERM_REGISTRAR : �i�H�f���U��C
-                  �x
-                  �u �b���`�� PERM_ACCOUNTS : �i�H�ק��v���B��u�W�ϥΪ̡B�f���U��C
-                  �x
-  ���� PERM_SYSOP �q ��ѫ��`�� PERM_CHATROOM : �b��ѫǬO roomop�C
-                  �x
-                  �u �ݪO�`�� PERM_BOARD : �i�H�ק�ݪO�]�w�B�i�J���K�Φn�ͬݪO�C
-                  �x
-                  �| ���鯸�� PERM_ALLADMIN : �H�W�|���`�ޡA�����H�U�\��G
-                     �W���ӷ��]�w�B�����N�B�����B�����w���{�ҡB�L���s�⨣�ߤT�ѡBmulti-login�B
-                     �קﯸ�W���B��s�t�ΡB�ި��i�H�L�h�B�H�H�������ϥΪ̡B�H�c�L�W���C
+                  ┌ 註冊總管 PERM_REGISTRAR : 可以審註冊單。
+                  │
+                  ├ 帳號總管 PERM_ACCOUNTS : 可以修改權限、踢線上使用者、審註冊單。
+                  │
+  站長 PERM_SYSOP ┼ 聊天室總管 PERM_CHATROOM : 在聊天室是 roomop。
+                  │
+                  ├ 看板總管 PERM_BOARD : 可以修改看板設定、進入秘密及好友看板。
+                  │
+                  └ 全體站務 PERM_ALLADMIN : 以上四個總管，都有以下功能：
+                     上站來源設定、隱身術、紫隱、不必定期認證、無須新手見習三天、multi-login、
+                     修改站上文件、更新系統、引言可以過多、寄信給全站使用者、信箱無上限。
 
-  ���� PERM_SYSOP ���F�H�W�Ҧ��\��A�پ֦��H�U�\��G
-  ��ذϫظm��ơB��ذϬݨ�[�K�ؿ������D�B�\Ū�Ҧ��H���H��B�o���Ҧ��H�b�ݭ��ӪO�B�}�ү����v���C
+  站長 PERM_SYSOP 除了以上所有功能，還擁有以下功能：
+  精華區建置資料、精華區看到加密目錄的標題、閱讀所有人的信件、得知所有人在看哪個板、開啟站務權限。
   
 #endif
 
-#define PERM_ALLADMIN	(PERM_REGISTRAR | PERM_BOARD | PERM_ACCOUNTS | PERM_SYSOP)	/* ���� */
-#define	PERM_ALLREG	(PERM_SYSOP | PERM_ACCOUNTS | PERM_REGISTRAR)	/* �f���U�� */
-#define	PERM_ALLACCT	(PERM_SYSOP | PERM_ACCOUNTS)			/* �b���޲z */
-#define PERM_ALLCHAT	(PERM_SYSOP | PERM_CHATROOM)			/* ��Ѻ޲z */
-#define PERM_ALLBOARD	(PERM_SYSOP | PERM_BOARD)			/* �ݪO�޲z */
+#define PERM_ALLADMIN	(PERM_REGISTRAR | PERM_BOARD | PERM_ACCOUNTS | PERM_SYSOP)	/* 站務 */
+#define	PERM_ALLREG	(PERM_SYSOP | PERM_ACCOUNTS | PERM_REGISTRAR)	/* 審註冊單 */
+#define	PERM_ALLACCT	(PERM_SYSOP | PERM_ACCOUNTS)			/* 帳號管理 */
+#define PERM_ALLCHAT	(PERM_SYSOP | PERM_CHATROOM)			/* 聊天管理 */
+#define PERM_ALLBOARD	(PERM_SYSOP | PERM_BOARD)			/* 看板管理 */
 
-#define PERM_ALLVALID	(PERM_VALID | PERM_POST | PERM_PAGE | PERM_CHAT)	/* �{�ҳq�L�������������v�� */
-#define PERM_ALLDENY	(PERM_DENYPOST | PERM_DENYTALK | PERM_DENYCHAT | PERM_DENYMAIL)	/* �Ҧ����v */
+#define PERM_ALLVALID	(PERM_VALID | PERM_POST | PERM_PAGE | PERM_CHAT)	/* 認證通過後應有的完整權限 */
+#define PERM_ALLDENY	(PERM_DENYPOST | PERM_DENYTALK | PERM_DENYCHAT | PERM_DENYMAIL)	/* 所有停權 */
 
-#define PERM_LOCAL	PERM_BASIC	/* ���O guest �N��H�H�쯸����L�ϥΪ� */
-#define PERM_INTERNET	PERM_VALID	/* �����{�ҹL�����~��H�H�� Internet */
+#define PERM_LOCAL	PERM_BASIC	/* 不是 guest 就能寄信到站內其他使用者 */
+#define PERM_INTERNET	PERM_VALID	/* 身分認證過關的才能寄信到 Internet */
 
 /* #define HAS_PERM(x)	((x)?cuser.userlevel&(x):1) */
 /* #define HAVE_PERM(x)	(cuser.userlevel&(x)) */
-/* itoc.001217: �{�������|�� HAS_PERM(0) ���g�k�AHAVE_PERM ���|�Ψ� */
+/* itoc.001217: 程式中不會有 HAS_PERM(0) 的寫法，HAVE_PERM 不會用到 */
 #define HAS_PERM(x)	(cuser.userlevel&(x))
 
 
 /* ----------------------------------------------------- */
-/* �U���v��������N�q					 */
+/* 各種權限的中文意義					 */
 /* ----------------------------------------------------- */
 
 #define	NUMPERMS	32
 
-#define STR_PERM	"bctpjm#x-------@PTCM--L*B#-RACBS"	/* itoc: �s�W�v�����ɭԧO�ѤF��o�̰� */
+#define STR_PERM	"bctpjm#x-------@PTCM--L*B#-RACBS"	/* itoc: 新增權限的時候別忘了改這裡啊 */
 
 #ifdef _ADMIN_C_
 
 static char *perm_tbl[NUMPERMS] = 
 {
-  "���v�O",			/* PERM_BASIC */
-  "�i�J��ѫ�",			/* PERM_CHAT */
-  "��H���",			/* PERM_PAGE */
-  "�o���峹",			/* PERM_POST */
-  "�����{��",			/* PERM_VALID */
-  "�H��L�W��",			/* PERM_MBOX */
-  "�����N",			/* PERM_CLOAK */
-  "�ä[�O�d�b��",		/* PERM_XEMPT */
+  "基本權力",			/* PERM_BASIC */
+  "進入聊天室",			/* PERM_CHAT */
+  "找人聊天",			/* PERM_PAGE */
+  "發表文章",			/* PERM_POST */
+  "身分認證",			/* PERM_VALID */
+  "信件無上限",			/* PERM_MBOX */
+  "隱身術",			/* PERM_CLOAK */
+  "永久保留帳號",		/* PERM_XEMPT */
 
-  "�O�d",			/* PERM_9 */
-  "�O�d",			/* PERM_10 */
-  "�O�d",			/* PERM_11 */
-  "�O�d",			/* PERM_12 */
-  "�O�d",			/* PERM_13 */
-  "�O�d",			/* PERM_14 */
-  "�O�d",			/* PERM_15 */
-  "�O�d",			/* PERM_16 */
+  "保留",			/* PERM_9 */
+  "保留",			/* PERM_10 */
+  "保留",			/* PERM_11 */
+  "保留",			/* PERM_12 */
+  "保留",			/* PERM_13 */
+  "保留",			/* PERM_14 */
+  "保留",			/* PERM_15 */
+  "保留",			/* PERM_16 */
 
-  "�T��o���峹",		/* PERM_DENYPOST */
-  "�T�� talk",			/* PERM_DENYTALK */
-  "�T�� chat",			/* PERM_DENYCHAT */
-  "�T�� mail",			/* PERM_DENYMAIL */
-  "�O�d",			/* PERM_DENY5 */
-  "�O�d",			/* PERM_DENY6 */
-  "�T�� login",			/* PERM_DENYLOGIN */
-  "�M���b��",			/* PERM_PURGE */
+  "禁止發表文章",		/* PERM_DENYPOST */
+  "禁止 talk",			/* PERM_DENYTALK */
+  "禁止 chat",			/* PERM_DENYCHAT */
+  "禁止 mail",			/* PERM_DENYMAIL */
+  "保留",			/* PERM_DENY5 */
+  "保留",			/* PERM_DENY6 */
+  "禁止 login",			/* PERM_DENYLOGIN */
+  "清除帳號",			/* PERM_PURGE */
 
-  "�O�D",			/* PERM_BM */
-  "�ݨ��Ԫ�",			/* PERM_SEECLOAK */
-  "�O�d",			/* PERM_ADMIN3 */
-  "���U�`��",			/* PERM_REGISTRAR */
-  "�b���`��",			/* PERM_ACCOUNTS */
-  "��ѫ��`��",			/* PERM_CHATCLOAK */
-  "�ݪO�`��",			/* PERM_BOARD */
-  "����"			/* PERM_SYSOP */
+  "板主",			/* PERM_BM */
+  "看見忍者",			/* PERM_SEECLOAK */
+  "保留",			/* PERM_ADMIN3 */
+  "註冊總管",			/* PERM_REGISTRAR */
+  "帳號總管",			/* PERM_ACCOUNTS */
+  "聊天室總管",			/* PERM_CHATCLOAK */
+  "看板總管",			/* PERM_BOARD */
+  "站長"			/* PERM_SYSOP */
 };
 
 #endif

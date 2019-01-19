@@ -1,4 +1,4 @@
-int			/* >=1:¦b¦W³æªº­ş¤@­Ó 0:¤£¦b¦W³æ¤º */
+int			/* >=1:åœ¨åå–®çš„å“ªä¸€å€‹ 0:ä¸åœ¨åå–®å…§ */
 str_has(list, tag, len)
   char *list;
   char *tag;
@@ -11,7 +11,7 @@ str_has(list, tag, len)
   str = tag;
   do
   {
-    cc = list[len];	/* itoc.030730.µù¸Ñ: ¥i¯à·|«ü¨ì¶W¹L list ªºªø«×¥H¥~¥h¤F¡A¤£¹L¨S®t */
+    cc = list[len];	/* itoc.030730.è¨»è§£: å¯èƒ½æœƒæŒ‡åˆ°è¶…é list çš„é•·åº¦ä»¥å¤–å»äº†ï¼Œä¸éæ²’å·® */
     if ((!cc || cc == '/') && !str_ncmp(list, str, len))
     {
       return priority;

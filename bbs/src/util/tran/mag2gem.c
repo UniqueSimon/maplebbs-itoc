@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/transman.c					 */
 /*-------------------------------------------------------*/
-/* target : Magic ¦Ü Maple 3.02 ºëµØ°ÏÂà´«		 */
+/* target : Magic è‡³ Maple 3.02 ç²¾è¯å€è½‰æ›		 */
 /* create : 01/10/03					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -10,9 +10,9 @@
 
 #if 0
 
-  0. ¾A¥Î Magic/Napoleon Âà Maple ºëµØ°Ï
-  1. µ{¦¡¤£¶}¥Ø¿ı¡A¨Ï¥Î«e¥ı½T©w gem/target_board/? ¥Ø¿ı¦s¦b
-    if not¡A¥ı¶}·sªO or transbrd
+  0. é©ç”¨ Magic/Napoleon è½‰ Maple ç²¾è¯å€
+  1. ç¨‹å¼ä¸é–‹ç›®éŒ„ï¼Œä½¿ç”¨å‰å…ˆç¢ºå®š gem/target_board/? ç›®éŒ„å­˜åœ¨
+    if notï¼Œå…ˆé–‹æ–°æ¿ or transbrd
 
   ps. User on ur own risk.
 
@@ -28,7 +28,7 @@
 
 
 static void
-merge_msg(msg)		/* fget() ¦r¦ê³Ì«á¦³ '\n' ­n³B²z±¼ */
+merge_msg(msg)		/* fget() å­—ä¸²æœ€å¾Œæœ‰ '\n' è¦è™•ç†æ‰ */
   char *msg;
 {
   int end;
@@ -44,12 +44,12 @@ merge_msg(msg)		/* fget() ¦r¦ê³Ì«á¦³ '\n' ­n³B²z±¼ */
 
     end++;
   }
-  msg[end] = '\0';	/* ±j¨îÂ_¦b 80 ¦r */
+  msg[end] = '\0';	/* å¼·åˆ¶æ–·åœ¨ 80 å­— */
 }
 
 
-static int			/* 'A':¤å³¹  'F':¥Ø¿ı */
-get_record(src, src_folder, title, path, num)	/* Åª¥X .Name */
+static int			/* 'A':æ–‡ç«   'F':ç›®éŒ„ */
+get_record(src, src_folder, title, path, num)	/* è®€å‡º .Name */
   char *src;
   char *src_folder;
   char *title, *path;
@@ -61,14 +61,14 @@ get_record(src, src_folder, title, path, num)	/* Åª¥X .Name */
 
   if (fp = fopen(src_folder, "r"))
   {
-    /* «e¤T¦æ¨S¥Î */
+    /* å‰ä¸‰è¡Œæ²’ç”¨ */
     j = num * 4 + 3;
     for (i = 0; i < j; i++)
     {
       fgets(buf, 80, fp);
     }
 
-    /* ¨C­Ó¯Á¤Ş¦³¥|¦æ */
+    /* æ¯å€‹ç´¢å¼•æœ‰å››è¡Œ */
     fgets(Name, 80, fp);
     fgets(Path, 80, fp);
     fgets(buf, 80, fp);
@@ -98,19 +98,19 @@ get_record(src, src_folder, title, path, num)	/* Åª¥X .Name */
 
 
 /* ----------------------------------------------------- */
-/* Âà´«µ{¦¡						 */
+/* è½‰æ›ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
 static void
 transman(brdname, src, dst_folder)
-  char *brdname;	/* ¬İªOªO¦W */
-  char *src;		/* ÂÂ¯¸ªº¥Ø¿ı */
-  char *dst_folder;	/* ·s¯¸ªº .DIR ©Î  FXXXXXXX */
+  char *brdname;	/* çœ‹æ¿æ¿å */
+  char *src;		/* èˆŠç«™çš„ç›®éŒ„ */
+  char *dst_folder;	/* æ–°ç«™çš„ .DIR æˆ–  FXXXXXXX */
 {
   int num;
   int type;
-  char src_folder[80];		/* ÂÂ¯¸ªº .Names */
+  char src_folder[80];		/* èˆŠç«™çš„ .Names */
   char sub_src[80];		
   char sub_dst_folder[80];
   char title[80], path[80];
@@ -122,7 +122,7 @@ transman(brdname, src, dst_folder)
 
   while ((type = get_record(src, src_folder, title, path, num)))
   {
-    if (type == 'A')		/* ¤å¥ó */
+    if (type == 'A')		/* æ–‡ä»¶ */
     {
       close(hdr_stamp(dst_folder, 'A', &hdr, cmd));
       str_ncpy(hdr.title, title, sizeof(hdr.title));
@@ -131,7 +131,7 @@ transman(brdname, src, dst_folder)
       sprintf(cmd, "cp %s/%s gem/brd/%s/%c/%s", src, path, brdname, hdr.xname[7], hdr.xname);
       system(cmd);
     }
-    else if (type == 'F')	/* ¥Ø¿ı */
+    else if (type == 'F')	/* ç›®éŒ„ */
     {
       close(hdr_stamp(dst_folder, 'F', &hdr, cmd));
       hdr.xmode = GEM_FOLDER;
@@ -169,7 +169,7 @@ main()
 	if (dashd(dst_folder))
 	{
 	  sprintf(dst_folder, "gem/brd/%s/.DIR", brd.brdname);
-	  transman(brd.brdname, src, dst_folder);	/* ·sÂÂ¯¸³£­n¦³³o­Ó¬İªO¤~Âà */
+	  transman(brd.brdname, src, dst_folder);	/* æ–°èˆŠç«™éƒ½è¦æœ‰é€™å€‹çœ‹æ¿æ‰è½‰ */
 	}
       }
     }

@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/snap2brd.c	( NTHU CS MapleBBS Ver 3.10 )	 */
 /*-------------------------------------------------------*/
-/* target : M3 BRD Âà´«µ{¦¡				 */
+/* target : M3 BRD è½‰æ›ç¨‹å¼				 */
 /* create : 03/07/09					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -27,15 +27,15 @@ main()
 
   while (fread(&bh, sizeof(bh), 1, fp) == 1)
   {
-    if (!*bh.brdname)	/* ¦¹ªO¤w³Q§R°£ */
+    if (!*bh.brdname)	/* æ­¤æ¿å·²è¢«åˆªé™¤ */
       continue;
 
     memset(&brd, 0, sizeof(BRD));
 
-    /* Âà´«ªº°Ê§@¦b¦¹ */
+    /* è½‰æ›çš„å‹•ä½œåœ¨æ­¤ */
     str_ncpy(brd.brdname, bh.brdname, sizeof(brd.brdname));
-    str_ncpy(brd.class, "¡H¡H", sizeof(brd.class));		/* ¤ÀÃş­n­«³] */
-    str_ncpy(brd.title, bh.title + 3, sizeof(brd.title));	/* ¸õ¹L "¡¼ " */
+    str_ncpy(brd.class, "ï¼Ÿï¼Ÿ", sizeof(brd.class));		/* åˆ†é¡è¦é‡è¨­ */
+    str_ncpy(brd.title, bh.title + 3, sizeof(brd.title));	/* è·³é "â–¡ " */
     str_ncpy(brd.BM, bh.BM, sizeof(brd.BM));
     brd.bvote = bh.bvote ? 1 : 0;
     brd.bstamp = bh.bstamp;
@@ -51,7 +51,7 @@ main()
 
   fclose(fp);
 
-  /* §R°£ÂÂªº¡A§â·sªº§ó¦W */
+  /* åˆªé™¤èˆŠçš„ï¼ŒæŠŠæ–°çš„æ›´å */
   unlink(FN_BRD);
   rename(FN_BRD_TMP, FN_BRD);
 

@@ -1,12 +1,12 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xs     �xpal_sort    �x��z�B�ͦW��                                    �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │s     │pal_sort    │整理朋友名單                                    │
+  └───┴──────┴────────────────────────┘
 
-    �� s �i�H��z�B�ͦW��A����H��A�N�|�⤣�s�b�� ID �R���A�ë� ID �^��r
-  ���ƦC�C
+    按 s 可以整理朋友名單，重整以後，將會把不存在的 ID 刪除，並按 ID 英文字
+  母排列。
 
-    �t�ΨC�L�@�q�ɶ��A�]�|�۰ʾ�z�B�ͦW�� (���]�A�O�ͦW��ίS�O�W��)�C
+    系統每過一段時間，也會自動整理朋友名單 (不包括板友名單及特別名單)。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

@@ -14,24 +14,24 @@
 
 #ifdef HAVE_GAME
 
-#define RETRACT_CHESS	/* ¬O§_´£¨Ñ®¬´Ñ¥\¯à */
+#define RETRACT_CHESS	/* æ˜¯å¦æä¾›æ‚”æ£‹åŠŸèƒ½ */
 
 #ifdef RETRACT_CHESS
-#  define LOG_KM	/* ¬O§_´£¨Ñ°O¿ı´ÑÃĞªº¥\¯à */
+#  define LOG_KM	/* æ˜¯å¦æä¾›è¨˜éŒ„æ£‹è­œçš„åŠŸèƒ½ */
 #endif
 
 
 #if 0
 
-´Ñ½L¦b etc/game/km ®æ¦¡¦p¤U¡G
+æ£‹ç›¤åœ¨ etc/game/km æ ¼å¼å¦‚ä¸‹ï¼š
 
-²Ä¤@¦æ©ñÁ`¦@¦³´X½L´Ñ½L(¤T¦ì¼Æ)¡A±q²Ä¤T¦æ¶}©l«h¬O¤@½L¤@½Lªº´ÑÃĞ¡C
+ç¬¬ä¸€è¡Œæ”¾ç¸½å…±æœ‰å¹¾ç›¤æ£‹ç›¤(ä¸‰ä½æ•¸)ï¼Œå¾ç¬¬ä¸‰è¡Œé–‹å§‹å‰‡æ˜¯ä¸€ç›¤ä¸€ç›¤çš„æ£‹è­œã€‚
 
-TILE_NOUSE 0 ªí¥Ü¤£¯à²¾°Êªº®æ¤l
-TILE_BLANK 1 ªí¥ÜªÅ®æ
-TILE_CHESS 2 ªí¥Ü´Ñ¤l
+TILE_NOUSE 0 è¡¨ç¤ºä¸èƒ½ç§»å‹•çš„æ ¼å­
+TILE_BLANK 1 è¡¨ç¤ºç©ºæ ¼
+TILE_CHESS 2 è¡¨ç¤ºæ£‹å­
 
-#123²V¤@¦t¤º
+#123æ··ä¸€å®‡å…§
 0 0 2 2 2 0 0
 0 0 2 2 2 0 0
 2 2 2 2 2 2 2
@@ -47,13 +47,13 @@ enum
 {
   KM_XPOS = 5,
   KM_YPOS = 5,
-  MAX_X = 7,			/* ­n¬O©_¼Æ */
-  MAX_Y = 7,			/* ­n¬O©_¼Æ */
+  MAX_X = 7,			/* è¦æ˜¯å¥‡æ•¸ */
+  MAX_Y = 7,			/* è¦æ˜¯å¥‡æ•¸ */
 
-  /* ¥Î bitwise operators & ¨Ó¨ú¥N == */
-  TILE_NOUSE = 0,		/* ¤£¯à²¾°Êªº®æ¤l */
-  TILE_BLANK = 1,		/* ªÅ®æ */
-  TILE_CHESS = 2		/* ´Ñ¤l */
+  /* ç”¨ bitwise operators & ä¾†å–ä»£ == */
+  TILE_NOUSE = 0,		/* ä¸èƒ½ç§»å‹•çš„æ ¼å­ */
+  TILE_BLANK = 1,		/* ç©ºæ ¼ */
+  TILE_CHESS = 2		/* æ£‹å­ */
 };
 
 
@@ -63,11 +63,11 @@ static int origin_board[MAX_X][MAX_Y];
 #endif
 static int cx, cy;
 static int stage, NUM_TABLE;
-static char piece[4][3] = {"¡@", "¡³", "¡´", "¡¸"};
-static char title[20];		/* ´ÑÃĞ¦WºÙ */
+static char piece[4][3] = {"ã€€", "â—‹", "â—", "â˜†"};
+static char title[20];		/* æ£‹è­œåç¨± */
 
 #ifdef RETRACT_CHESS
-static int route[MAX_X * MAX_Y][4];	/* °O¿ı (fx, fy) -> (tx, ty)¡A®¬´Ñ¨B¼Æ¤£¥i¯à¶W¹L´Ñ½L¤j¤p */
+static int route[MAX_X * MAX_Y][4];	/* è¨˜éŒ„ (fx, fy) -> (tx, ty)ï¼Œæ‚”æ£‹æ­¥æ•¸ä¸å¯èƒ½è¶…éæ£‹ç›¤å¤§å° */
 static int step;
 #endif
 
@@ -75,17 +75,17 @@ static int step;
 static void
 out_song()
 {
-  /* itoc.µù¸Ñ: ¨C¥y¸Ü³£§Ë¦¨¤@¼Ëªø«×¡A´N¤£¥Î clrtoeol() :p */
+  /* itoc.è¨»è§£: æ¯å¥è©±éƒ½å¼„æˆä¸€æ¨£é•·åº¦ï¼Œå°±ä¸ç”¨ clrtoeol() :p */
   uschar *msg[8] = 
   {
-    "±z¤Ó±j¤F¡A´N¬O³o¼Ë¡I",
-    "±z«ç»ò¥i¯à·Q¨ì³o¤@¨B",
-    "³o¯u¬O¤Ó¯«©_¤F¡A³Ç§J",
-    "§Ú¤£ª¾¹D¸Ó»¡¨Ç¤°»ò¤F",
-    "³o¤@µÛ¯u¬O¤Ñ¤H¤âµ§§r",
-    "¤Ó¨ØªA±z¤F¡A³o¼Ë¤]¦æ",
-    "§Ö§¹¦¨¤F¡I¥[ªo¥[ªo¡I",
-    "¦nªº´ÑÃĞ­n§i¶D¯¸ªø³á"
+    "æ‚¨å¤ªå¼·äº†ï¼Œå°±æ˜¯é€™æ¨£ï¼",
+    "æ‚¨æ€éº¼å¯èƒ½æƒ³åˆ°é€™ä¸€æ­¥",
+    "é€™çœŸæ˜¯å¤ªç¥å¥‡äº†ï¼Œå‚‘å…‹",
+    "æˆ‘ä¸çŸ¥é“è©²èªªäº›ä»€éº¼äº†",
+    "é€™ä¸€è‘—çœŸæ˜¯å¤©äººæ‰‹ç­†å‘€",
+    "å¤ªä½©æœæ‚¨äº†ï¼Œé€™æ¨£ä¹Ÿè¡Œ",
+    "å¿«å®Œæˆäº†ï¼åŠ æ²¹åŠ æ²¹ï¼",
+    "å¥½çš„æ£‹è­œè¦å‘Šè¨´ç«™é•·å–”"
   };
   move(21, 0);
   prints("\033[1;3%dm%s\033[m", time(0) % 7, msg[time(0) % 8]);
@@ -97,8 +97,8 @@ show_board()
 {
   int i, j;
 
-  vs_bar("¤Õ©ú´Ñ");
-  move(2, KM_YPOS + MAX_Y - 6);		/* ¸m¤¤Åã¥Ü´ÑÃĞ¦WºÙ */
+  vs_bar("å­”æ˜æ£‹");
+  move(2, KM_YPOS + MAX_Y - 6);		/* ç½®ä¸­é¡¯ç¤ºæ£‹è­œåç¨± */
   outs(title);
 
   for (i = 0; i < MAX_X; i++)
@@ -111,28 +111,28 @@ show_board()
   }
 
   move(3, 40);
-  outs("¡ô¡õ¡ö¡÷  ¤è¦VÁä");
+  outs("â†‘â†“â†â†’  æ–¹å‘éµ");
   move(5, 40);
-  outs("[Enter]   ¿ï¨ú/¤Ï¿ï¨ú");
+  outs("[Enter]   é¸å–/åé¸å–");
   move(7, 40);
-  outs("Q/q       Â÷¶}");
+  outs("Q/q       é›¢é–‹");
   move(9, 40);
-  outs("h         Åª¨ú´ÑÃĞ½d¨Ò");
+  outs("h         è®€å–æ£‹è­œç¯„ä¾‹");
 
 #ifdef RETRACT_CHESS
   move(11, 40);
-  outs("r         ®¬´Ñ");
+  outs("r         æ‚”æ£‹");
 #endif
 
   move(13, 40);
-  outs("¡³        ªÅ¦ì");
+  outs("â—‹        ç©ºä½");
   move(14, 40);
-  outs("¡´        ´Ñ¤l");
+  outs("â—        æ£‹å­");
   move(15, 40);
-  outs("¡¸        ¿ï¨ú");
+  outs("â˜†        é¸å–");
 
   out_song();
-  move(KM_XPOS + MAX_X / 2, KM_YPOS + MAX_Y / 2 * 2 + 1);	/* ¤@¶}©l±N´å¼Ğ¸m¤¤ */
+  move(KM_XPOS + MAX_X / 2, KM_YPOS + MAX_Y / 2 * 2 + 1);	/* ä¸€é–‹å§‹å°‡æ¸¸æ¨™ç½®ä¸­ */
 }
 
 
@@ -146,11 +146,11 @@ read_board()
   if (!(fp = fopen("etc/game/km", "r")))
     return 0;
 
-  if (stage < 0)	/* ²Ä¤@¦¸¶i¤J¹CÀ¸ */
+  if (stage < 0)	/* ç¬¬ä¸€æ¬¡é€²å…¥éŠæˆ² */
   {
     fgets(buf, 4, fp);
-    NUM_TABLE = atoi(buf);	/* etc/game/km ²Ä¤@¦æ°O¿ı´ÑÃĞ¼Æ */
-    sprintf(buf, "½Ğ¿ï¾Ü½s¸¹ [1-%d]¡A[0] ÀH¾÷¥XÃD¡A©Î«ö [Q] Â÷¶}¡G", NUM_TABLE);
+    NUM_TABLE = atoi(buf);	/* etc/game/km ç¬¬ä¸€è¡Œè¨˜éŒ„æ£‹è­œæ•¸ */
+    sprintf(buf, "è«‹é¸æ“‡ç·¨è™Ÿ [1-%d]ï¼Œ[0] éš¨æ©Ÿå‡ºé¡Œï¼Œæˆ–æŒ‰ [Q] é›¢é–‹ï¼š", NUM_TABLE);
     if (vget(b_lines, 0, buf, ans, 4, DOECHO) == 'q')
     {  
       fclose(fp);
@@ -158,14 +158,14 @@ read_board()
     }  
 
     stage = atoi(ans) - 1;
-    if (stage < 0 || stage >= NUM_TABLE)	/* ÀH¾÷¥XÃD */
+    if (stage < 0 || stage >= NUM_TABLE)	/* éš¨æ©Ÿå‡ºé¡Œ */
       stage = time(0) % NUM_TABLE;
   }
 
   fseek(fp, 4 + stage * (2 * MAX_X * MAX_Y + 14), SEEK_SET);
-  /* 4: ²Ä¤@¦æªº¤T¦ì¼Æ´ÑÃĞ¼Æ¥Ø\n  14: \n#999´ÑÃĞ¦WºÙ\n */
+  /* 4: ç¬¬ä¸€è¡Œçš„ä¸‰ä½æ•¸æ£‹è­œæ•¸ç›®\n  14: \n#999æ£‹è­œåç¨±\n */
 
-  fscanf(fp, "%s", &title);		/* ´ÑÃĞ¦WºÙ */
+  fscanf(fp, "%s", &title);		/* æ£‹è­œåç¨± */
 
   count = 0;
   for (i = 0; i < MAX_X; i++)
@@ -194,7 +194,7 @@ valid_pos(x, y)
   int x, y;
 {
   if (x < 0 || x >= MAX_X || y < 0 || y >= MAX_Y || 
-    board[x][y] == TILE_NOUSE)	/* TILE_NOUSE = 0 ¤£¯à¥Î & operation */
+    board[x][y] == TILE_NOUSE)	/* TILE_NOUSE = 0 ä¸èƒ½ç”¨ & operation */
   {
     return 0;
   }
@@ -372,7 +372,7 @@ log_km()
   usr_fpath(fpath, cuser.userid, "km.log");
   fp = fopen(fpath, "w");
   fprintf(fp, "%s %s (%s)\n", str_author1, cuser.userid, cuser.username);
-  fprintf(fp, "¼ĞÃD: ¤Õ©ú´ÑÃĞ %s ¯}¸Ñ¹Lµ{\n®É¶¡: %s\n\n", title, Now());
+  fprintf(fp, "æ¨™é¡Œ: å­”æ˜æ£‹è­œ %s ç ´è§£éç¨‹\næ™‚é–“: %s\n\n", title, Now());
   fprintf(fp, "%s\n\n", title);
 
   memcpy(board, origin_board, sizeof(board));
@@ -384,7 +384,7 @@ log_km()
     {
       for (j = 0; j < MAX_Y; j++)
       {
-#if 0	/* ¥[ÃC¦â¦n¹³¨S¤ñ¸û²M·¡ */
+#if 0	/* åŠ é¡è‰²å¥½åƒæ²’æ¯”è¼ƒæ¸…æ¥š */
 	fprintf(fp, "%s%s%s", 
 	  (i == fx && j == fy) ? "\033[1;43m" : (i == tx && j == ty) ? "\033[1;33m" : "", 
 	  piece[board[i][j]], 
@@ -411,7 +411,7 @@ log_km()
   ve_banner(fp, 0);
   fclose(fp);
 
-  sprintf(buf, "¤Õ©ú´ÑÃĞ %s ¯}¸Ñ¹Lµ{", title);
+  sprintf(buf, "å­”æ˜æ£‹è­œ %s ç ´è§£éç¨‹", title);
   mail_self(fpath, cuser.userid, buf, MAIL_READ);
 
   unlink(fpath);
@@ -442,15 +442,15 @@ start_game:
   while (1)
   {
     if (count == 1 && board[MAX_X / 2][MAX_Y / 2] & TILE_CHESS)
-    {			/* ³Ì«á¤@¤l­n¦b¥¿¤¤¶¡ */
-      vmsg("®¥³ß±z¦¨¥\\¤F");
+    {			/* æœ€å¾Œä¸€å­è¦åœ¨æ­£ä¸­é–“ */
+      vmsg("æ­å–œæ‚¨æˆåŠŸ\äº†");
 
 #ifdef LOG_KM
-      if (vans("±z¬O§_­n§â§¹¦¨ªº´ÑÃĞ«O¦s¦b«H½c¤¤(Y/N)¡H[Y] ") != 'n')
+      if (vans("æ‚¨æ˜¯å¦è¦æŠŠå®Œæˆçš„æ£‹è­œä¿å­˜åœ¨ä¿¡ç®±ä¸­(Y/N)ï¼Ÿ[Y] ") != 'n')
 	log_km();
 #endif
 
-      switch (vans("½Ğ¿ï¾Ü 1)Ä~Äò¤U¤@Ãö 2)­«·s¬D¾Ô¦¹Ãö Q)Â÷¶}¡H[1] "))
+      switch (vans("è«‹é¸æ“‡ 1)ç¹¼çºŒä¸‹ä¸€é—œ 2)é‡æ–°æŒ‘æˆ°æ­¤é—œ Q)é›¢é–‹ï¼Ÿ[1] "))
       {
       case 'q':
         goto abort_game;
@@ -464,9 +464,9 @@ start_game:
     }
     if (!live())
     {
-      vmsg("ÁV¿|...¨S´Ñ¤F...@@");
+      vmsg("ç³Ÿç³•...æ²’æ£‹äº†...@@");
 
-      switch (vans("½Ğ¿ï¾Ü 1)Ä~Äò¤U¤@Ãö 2)­«·s¬D¾Ô¦¹Ãö Q)Â÷¶}¡H[2] "))
+      switch (vans("è«‹é¸æ“‡ 1)ç¹¼çºŒä¸‹ä¸€é—œ 2)é‡æ–°æŒ‘æˆ°æ­¤é—œ Q)é›¢é–‹ï¼Ÿ[2] "))
       {
       case 'q':
         goto abort_game;
@@ -478,7 +478,7 @@ start_game:
       }
     }
 
-    while (1)		/* ²Ä¤@¦¸ */
+    while (1)		/* ç¬¬ä¸€æ¬¡ */
     {
       get_pos(&fx, &fy);
       if (fx < 0)
@@ -486,7 +486,7 @@ start_game:
 #ifdef RETRACT_CHESS
 	if (fx == -2)
 	{
-	  if (step)	/* ¤@¨B³£ÁÙ¨S¨«¡A¤£¯à®¬´Ñ */
+	  if (step)	/* ä¸€æ­¥éƒ½é‚„æ²’èµ°ï¼Œä¸èƒ½æ‚”æ£‹ */
 	  {
 	    retract();
 	    count++;
@@ -500,7 +500,7 @@ start_game:
       {
 	continue;
       }
-      else		/* ¿ï¤l */
+      else		/* é¸å­ */
       {
 	move(KM_XPOS + fx, KM_YPOS + fy * 2);
 	outs(piece[3]);
@@ -509,7 +509,7 @@ start_game:
       }
     }
 
-    while (1)		/* ²Ä¤G¦¸ */
+    while (1)		/* ç¬¬äºŒæ¬¡ */
     {
       get_pos(&tx, &ty);
       if (tx < 0)
@@ -517,23 +517,23 @@ start_game:
 #ifdef RETRACT_CHESS
 	if (tx == -2)
 	{
-	  continue;	/* ­n¨ú®ø¿ï¤l¤~¯à®¬´Ñ */
+	  continue;	/* è¦å–æ¶ˆé¸å­æ‰èƒ½æ‚”æ£‹ */
 	}
 #endif
 	goto abort_game;
       }
-      if (fx == tx && fy == ty)	/* ©ñ±ó¿ï¤l */
+      if (fx == tx && fy == ty)	/* æ”¾æ£„é¸å­ */
       {
 	move(KM_XPOS + tx, KM_YPOS + ty * 2);
 	outs(piece[2]);
 	move(KM_XPOS + tx, KM_YPOS + ty * 2 + 1);
 	break;
       }
-      else if (!(board[tx][ty] & TILE_BLANK) || !check(fx, fy, tx, ty))	/* ¿ï¸õªº¦a¤è¤£¯à¸õ */
+      else if (!(board[tx][ty] & TILE_BLANK) || !check(fx, fy, tx, ty))	/* é¸è·³çš„åœ°æ–¹ä¸èƒ½è·³ */
       {
 	continue;
       }
-      else		/* ¸õ¨ì¸Ó¦a¤è */
+      else		/* è·³åˆ°è©²åœ°æ–¹ */
       {
 	jump(fx, fy, tx, ty);
 	count--;

@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/windtop2usr.c					 */
 /*-------------------------------------------------------*/
-/* target : WindTop favorite Âà´«			 */
+/* target : WindTop favorite è½‰æ›			 */
 /* create : 06/08/02					 */
 /* update :   /  /  					 */
 /* author : dingyuchi.bbs@bbs.scu.edu.tw                 */
@@ -39,7 +39,7 @@ main()
       if (*str <= ' ' || *str == '.')
 	continue;
 
-      /* «Ø¥ß§Úªº³Ì·R¥Ø¿ı */
+      /* å»ºç«‹æˆ‘çš„æœ€æ„›ç›®éŒ„ */
       sprintf(buf, "%s/MF", str);
       mkdir(buf, 0700);
 
@@ -55,14 +55,14 @@ main()
       {
         memset(&mf, 0, sizeof(MF));
 
-        /* Âà´«ªº°Ê§@¦b¦¹ */
+        /* è½‰æ›çš„å‹•ä½œåœ¨æ­¤ */
         str_ncpy(mf.xname, favor.xname, sizeof(mf.xname));
         mf.mftype = MF_BOARD;
         sprintf(buf,"%s/MF/" FN_MF, str);
         rec_add(buf, &mf, sizeof(MF));
       }
 
-      /* §R°£ÂÂªº */
+      /* åˆªé™¤èˆŠçš„ */
       sprintf(buf,"%s/" FN_OLD_FAVORITE, str);
       unlink(buf);
       unlink(FN_OLDIMG_FAVORITE);

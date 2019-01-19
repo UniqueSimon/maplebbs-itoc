@@ -1,11 +1,11 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xV     �xvote_view   �x�벼�w��                                        �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │V     │vote_view   │投票預覽                                        │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� V �i�H�[��I��ثe����벼���p�C�Y�O�@��벼�A�u��
-  �O�D�i�H�ϥΦ��\��F�Y�O��L�A����Ҧ��ϥΪ̳��i�H�w����ثe����U�`��
-  �p�C
+    將游標移到某欄，按 V 可以觀察截止目前為止的投票狀況。若是一般投票，只有
+  板主可以使用此功能；若是賭盤，那麼所有使用者都可以預覽到目前為止的下注狀
+  況。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

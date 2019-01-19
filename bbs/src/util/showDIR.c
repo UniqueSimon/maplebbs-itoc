@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/showDIR.c	( NTHU CS MapleBBS Ver 3.10 )	 */
 /*-------------------------------------------------------*/
-/* target : Åã¥Ü .DIR ¸ê®Æ				 */
+/* target : é¡¯ç¤º .DIR è³‡æ–™				 */
 /* create : 03/05/24					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -43,7 +43,7 @@ showHDR(hdr)
   strcpy(msg1, Btime(&(hdr->chrono)));
   strcpy(msg2, _bitmsg("0123456789ABCDEFGHIJKLMNOPQRSTUV", hdr->xmode));
   printf("> ------------------------------------------------------------------------------------------ \n"
-    "®É¶¡: %s\nmode: %s\nÀÉ®×: %s\n§@ªÌ: %s\n¼ÊºÙ: %s\n¤é´Á: %s\n¥DÃD: %s\n", 
+    "æ™‚é–“: %s\nmode: %s\næª”æ¡ˆ: %s\nä½œè€…: %s\næš±ç¨±: %s\næ—¥æœŸ: %s\nä¸»é¡Œ: %s\n", 
     msg1, msg2, hdr->xname, hdr->owner, hdr->nick, hdr->date, hdr->title);
 }
 

@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/fb/fb2brd.c					 */
 /*-------------------------------------------------------*/
-/* target : firebird 3.0 Âà Maple 3.x ¬ÝªO		 */
+/* target : firebird 3.0 è½‰ Maple 3.x çœ‹æ¿		 */
 /*          .BOARDS => .BRD				 */
 /* create : 00/11/22					 */
 /* update :   /  /					 */
@@ -62,7 +62,7 @@ trans_hdr_stamp(folder, t, hdr, fpath)
 
 
 /* ----------------------------------------------------- */
-/* Âà´«¥Dµ{¦¡						 */
+/* è½‰æ›ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -80,28 +80,28 @@ transbrd(bh)
   BITS *p;
   time_t chrono;
 
-  printf("Âà´« %s ¬ÝªO\n", bh->filename);
+  printf("è½‰æ› %s çœ‹æ¿\n", bh->filename);
 
   brd_fpath(buf, bh->filename, NULL);
   if (dashd(buf))
   {
-    printf("%s ¤w¸g¦³¦¹¬ÝªO\n", bh->filename);
+    printf("%s å·²ç¶“æœ‰æ­¤çœ‹æ¿\n", bh->filename);
     return;
   }
 
   if (!stamp)
     time(&stamp);
 
-  /* Âà´« .BRD */
+  /* è½‰æ› .BRD */
 
   memset(&newboard, 0, sizeof(BRD));
   str_ncpy(newboard.brdname, bh->filename, sizeof(newboard.brdname));
-  str_ncpy(newboard.class, (bh->flag |= 0x4) ? "¡ô¡õ" : "¡÷¡ö", sizeof(newboard.class));
+  str_ncpy(newboard.class, (bh->flag |= 0x4) ? "â†‘â†“" : "â†’â†", sizeof(newboard.class));
   str_ncpy(newboard.title, bh->title + 10, sizeof(newboard.title));
   newboard.bstamp = stamp++;
   if (bh->BM[0] > ' ')
   {
-    /* ±N©Ò¦³ªº ',' ´«¦¨ '/' */
+    /* å°‡æ‰€æœ‰çš„ ',' æ›æˆ '/' */
     for (ptr = bh->BM; *ptr; ptr++)
     {
        if (*ptr == ',')
@@ -122,13 +122,13 @@ transbrd(bh)
   newboard.postlevel = newboard.readlevel;
   rec_add(FN_BRD, &newboard, sizeof(BRD));
 
-  /* ¶}·s¥Ø¿ý */
+  /* é–‹æ–°ç›®éŒ„ */
 
   sprintf(fpath, "gem/brd/%s", newboard.brdname);
   mak_dirs(fpath);
   mak_dirs(fpath + 4);
 
-  /* Âà´«¶iªOµe­± */
+  /* è½‰æ›é€²æ¿ç•«é¢ */
 
   sprintf(buf, OLD_BBSHOME "/boards/%s/notes", bh->filename);
 
@@ -138,7 +138,7 @@ transbrd(bh)
     f_cp(buf, fpath, O_TRUNC);
   }
 
-  /* Âà´«§ë²¼µ²ªG */
+  /* è½‰æ›æŠ•ç¥¨çµæžœ */
 
   sprintf(buf, OLD_BBSHOME "/boards/%s/results", bh->filename);
 
@@ -148,21 +148,21 @@ transbrd(bh)
     f_cp(buf, fpath, O_TRUNC);
   }
 
-  /* Âà´«¤å³¹ */
+  /* è½‰æ›æ–‡ç«  */
 
-  sprintf(index, OLD_BBSHOME "/boards/%s/.DIR", bh->filename);	/* ÂÂªº .DIR */
-  brd_fpath(folder, newboard.brdname, ".DIR");			/* ·sªº .DIR */
+  sprintf(index, OLD_BBSHOME "/boards/%s/.DIR", bh->filename);	/* èˆŠçš„ .DIR */
+  brd_fpath(folder, newboard.brdname, ".DIR");			/* æ–°çš„ .DIR */
 
   if ((fd = open(index, O_RDONLY)) >= 0)
   {
     while (read(fd, &fh, sizeof(fh)) == sizeof(fh))
     {
       sprintf(buf, OLD_BBSHOME "/boards/%s/%s", bh->filename, fh.filename);
-      if (dashf(buf))	/* ¤å³¹ÀÉ®×¦b¤~°µÂà´« */
+      if (dashf(buf))	/* æ–‡ç« æª”æ¡ˆåœ¨æ‰åšè½‰æ› */
       {
 	struct stat st;
 
-	/* Âà´«¤å³¹ .DIR */
+	/* è½‰æ›æ–‡ç«  .DIR */
 	memset(&hdr, 0, sizeof(HDR));
 	stat(buf, &st);
 	chrono = st.st_mtime;
@@ -172,7 +172,7 @@ transbrd(bh)
 	hdr.xmode = 0;
 	rec_add(folder, &hdr, sizeof(HDR));
 
-	/* «þ¨©ÀÉ®× */
+	/* æ‹·è²æª”æ¡ˆ */
 	f_cp(buf, fpath, O_TRUNC);
       }
     }
@@ -191,8 +191,8 @@ main(argc, argv)
   int fd;
   boardheader bh;
 
-  /* argc == 1 Âà¥þ³¡ªO */
-  /* argc == 2 Âà¬Y¯S©wªO */
+  /* argc == 1 è½‰å…¨éƒ¨æ¿ */
+  /* argc == 2 è½‰æŸç‰¹å®šæ¿ */
 
   if (argc > 2)
   {

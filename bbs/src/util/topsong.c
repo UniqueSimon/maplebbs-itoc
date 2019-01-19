@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/topsong.c        ( NTHU CS MapleBBS Ver 3.10 )   */
 /*-------------------------------------------------------*/
-/* target : ºq¥»¨Ï¥Î±Æ¦W                                 */
+/* target : æ­Œæœ¬ä½¿ç”¨æ’å                                 */
 /* create : 01/09/28                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -29,12 +29,12 @@ write_data(songs, num)
   if (!(fp = fopen(OUTFILE_TOPSONG, "w")))
     return;
 
-  fprintf(fp, "    \033[36m¢w¢w\033[37m¦W¦¸\033[36m¢w¢w¢w¢w¢w¢w\033[37mºq  ¦W"
-    "\033[36m¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w\033[37m¦¸¼Æ\033[36m¢w¢w\033[m\n");
+  fprintf(fp, "    \033[36mâ”€â”€\033[37måæ¬¡\033[36mâ”€â”€â”€â”€â”€â”€\033[37mæ­Œ  å"
+    "\033[36mâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\033[37mæ¬¡æ•¸\033[36mâ”€â”€\033[m\n");
 
-  for (n = 0; n < 50 && n < num; n++)		/* ¥u¨ú«e 50 ¦W */
+  for (n = 0; n < 50 && n < num; n++)		/* åªå–å‰ 50 å */
   {
-    fprintf(fp, "      %5d. %-38.38s %4d ¦¸\033[m\n", 
+    fprintf(fp, "      %5d. %-38.38s %4d æ¬¡\033[m\n", 
       n + 1, songs[n].title, songs[n].count);
   }
 

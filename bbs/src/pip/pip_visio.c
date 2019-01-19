@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* pipvisio.c	( NTHU CS MapleBBS Ver 3.10 )      	 */
 /*-------------------------------------------------------*/
-/* target : ¾i¤pÂû¹CÀ¸                                   */
+/* target : é¤Šå°é›éŠæˆ²                                   */
 /* create :   /  /                                       */
 /* update : 01/08/03                                     */
 /* author : dsyan.bbs@forever.twbbs.org                  */
@@ -17,52 +17,52 @@
 #include "pip.h"
 
 
-#if 0	/* itoc.010803.µù¸Ñ:¿Ã¹õ°t¸m */
+#if 0	/* itoc.010803.è¨»è§£:è¢å¹•é…ç½® */
 
-³Ì«e­±      ¤@¨Ç¸ê®ÆÅã¥Ü
+æœ€å‰é¢      ä¸€äº›è³‡æ–™é¡¯ç¤º
 
-¤¤¶¡        ¹Ï
+ä¸­é–“        åœ–
 
-b_lines - 2 ¸ß°İ¦C
-b_lines - 1 «ü¥O¦C
-b_lines     «ü¥O¦C
+b_lines - 2 è©¢å•åˆ—
+b_lines - 1 æŒ‡ä»¤åˆ—
+b_lines     æŒ‡ä»¤åˆ—
 
 #endif
 
 
 
 /*-------------------------------------------------------*/
-/* «ü¥O¨ú±o                                              */
+/* æŒ‡ä»¤å–å¾—                                              */
 /*-------------------------------------------------------*/
 
 
-int			/* itoc.010802: ¨ú¥N vans("Y/N¡H[Y] ") ³oÃş°İÃD¥Îªº¨ç¦¡ */
+int			/* itoc.010802: å–ä»£ vans("Y/Nï¼Ÿ[Y] ") é€™é¡å•é¡Œç”¨çš„å‡½å¼ */
 ians(x, y, msg)
-  int x, y;		/* itoc.010803: ¤@¯ë®³ (b_lines - 2, 0) ¨Ó·í¸ß°İ¦C */
+  int x, y;		/* itoc.010803: ä¸€èˆ¬æ‹¿ (b_lines - 2, 0) ä¾†ç•¶è©¢å•åˆ— */
   char *msg;
 {
-  move(x, 0);		/* ²M±¼¾ã¦C */
+  move(x, 0);		/* æ¸…æ‰æ•´åˆ— */
   clrtoeol();
   move(x, y);
   outs(msg);
   outs("\033[47m  \033[m");
-  move(x, y + strlen(msg));	/* ²¾¼Ğ²¾°Ê®Ø®Ø¤º */
-  return vkey();		/* ¥u«öÁä¡A¤£»İ­n«ö ENTER */
+  move(x, y + strlen(msg));	/* ç§»æ¨™ç§»å‹•æ¡†æ¡†å…§ */
+  return vkey();		/* åªæŒ‰éµï¼Œä¸éœ€è¦æŒ‰ ENTER */
 
 #if 0
   if (ch >= 'A' && ch <= 'Z')
-    ch |= 0x20;		/* ´«¤p¼g */
+    ch |= 0x20;		/* æ›å°å¯« */
 #endif
 }
 
 
 /*-------------------------------------------------------*/
-/* ¿Ã¹õ±±¨î						 */
+/* è¢å¹•æ§åˆ¶						 */
 /*-------------------------------------------------------*/
 
 
 void
-clrfromto(from, to)	/* ²M°£ from~to ¦C¡A³Ì«á´å¼Ğ°±¯d¦b (from, 0) */
+clrfromto(from, to)	/* æ¸…é™¤ from~to åˆ—ï¼Œæœ€å¾Œæ¸¸æ¨™åœç•™åœ¨ (from, 0) */
   int from, to;
 {
   while (to >= from)
@@ -74,8 +74,8 @@ clrfromto(from, to)	/* ²M°£ from~to ¦C¡A³Ì«á´å¼Ğ°±¯d¦b (from, 0) */
 }
 
 
-static int			/* 1: ÀÉ®×¦b  0: ÀÉ®×¤£¦b */
-show_file(fpath, ln, lines)	/* ±q²Ä ln ¦C¶}©l¦LÀÉ®× lines ¦C */
+static int			/* 1: æª”æ¡ˆåœ¨  0: æª”æ¡ˆä¸åœ¨ */
+show_file(fpath, ln, lines)	/* å¾ç¬¬ ln åˆ—é–‹å§‹å°æª”æ¡ˆ lines åˆ— */
   char *fpath;
   int ln, lines;
 {
@@ -93,24 +93,24 @@ show_file(fpath, ln, lines)	/* ±q²Ä ln ¦C¶}©l¦LÀÉ®× lines ¦C */
     return 1;
   }
 
-  /* itoc.010802: ¦^³øÀÉ®×¿ò¥¢ */
-  sprintf(buf, "%s ¿ò¥¢¡A½Ğ§iª¾¯¸ªø", fpath);
+  /* itoc.010802: å›å ±æª”æ¡ˆéºå¤± */
+  sprintf(buf, "%s éºå¤±ï¼Œè«‹å‘ŠçŸ¥ç«™é•·", fpath);
   zmsg(buf);
   return 0;
 }
 
 
 /*-------------------------------------------------------*/
-/* ¤pÂû¹Ï§Î°Ï                  				 */
+/* å°é›åœ–å½¢å€                  				 */
 /*-------------------------------------------------------*/
 
 
-/* itoc.010801: ½Ğ¨Ì·Ó¦U show_xxx_pic() ¤¤ show_file(buf, ln, lines) ªº lines ¨Ó±±¨î¹Ï®×¦C¼Æ */
-/* itoc.010801: ¥¿±`ª¬ªp¤U³£¬O 10 ¦C (­è¦n¤]¬O°ÊºA¬İªOªº¦C¼Æ)¡C­Y ln=0 ¥B lines=b_lines+1 ªí¥Ü¾ã­Ó¿Ã¹õ¥ş²M */
+/* itoc.010801: è«‹ä¾ç…§å„ show_xxx_pic() ä¸­ show_file(buf, ln, lines) çš„ lines ä¾†æ§åˆ¶åœ–æ¡ˆåˆ—æ•¸ */
+/* itoc.010801: æ­£å¸¸ç‹€æ³ä¸‹éƒ½æ˜¯ 10 åˆ— (å‰›å¥½ä¹Ÿæ˜¯å‹•æ…‹çœ‹æ¿çš„åˆ—æ•¸)ã€‚è‹¥ ln=0 ä¸” lines=b_lines+1 è¡¨ç¤ºæ•´å€‹è¢å¹•å…¨æ¸… */
 
 
 /* -------------------- */
-/* ¤@¯ëªº¹Ï¡A¦b 7~16 ¦C */
+/* ä¸€èˆ¬çš„åœ–ï¼Œåœ¨ 7~16 åˆ— */
 /* -------------------- */
 
 int
@@ -124,7 +124,7 @@ show_basic_pic(i)
 
 
 int
-show_feed_pic(i)		/* ¦YªF¦è */
+show_feed_pic(i)		/* åƒæ±è¥¿ */
   int i;
 {
   char buf[64];
@@ -134,7 +134,7 @@ show_feed_pic(i)		/* ¦YªF¦è */
 
 
 int
-show_usual_pic(i)		/* ¥­±`ª¬ºA */
+show_usual_pic(i)		/* å¹³å¸¸ç‹€æ…‹ */
   int i;
 {
   char buf[64];
@@ -144,7 +144,7 @@ show_usual_pic(i)		/* ¥­±`ª¬ºA */
 
 
 int
-show_special_pic(i)		/* ¯S®í¿ï³æ */
+show_special_pic(i)		/* ç‰¹æ®Šé¸å–® */
   int i;
 {
   char buf[64];
@@ -153,7 +153,7 @@ show_special_pic(i)		/* ¯S®í¿ï³æ */
 }
 
 int
-show_practice_pic(i)		/* ­×¦æ¥Îªº¹Ï */
+show_practice_pic(i)		/* ä¿®è¡Œç”¨çš„åœ– */
   int i;
 {
   char buf[64];
@@ -163,7 +163,7 @@ show_practice_pic(i)		/* ­×¦æ¥Îªº¹Ï */
 
 
 int
-show_job_pic(i)			/* ¥´¤uªºshow¹Ï */
+show_job_pic(i)			/* æ‰“å·¥çš„showåœ– */
   int i;
 {
   char buf[64];
@@ -173,7 +173,7 @@ show_job_pic(i)			/* ¥´¤uªºshow¹Ï */
 
 
 int
-show_play_pic(i)		/* ¥ğ¶¢ªº¹Ï */
+show_play_pic(i)		/* ä¼‘é–’çš„åœ– */
   int i;
 {
   char buf[64];
@@ -183,7 +183,7 @@ show_play_pic(i)		/* ¥ğ¶¢ªº¹Ï */
 
 
 int
-show_guess_pic(i)		/* ²q®±¥Î */
+show_guess_pic(i)		/* çŒœæ‹³ç”¨ */
   int i;
 {
   char buf[64];
@@ -193,13 +193,13 @@ show_guess_pic(i)		/* ²q®±¥Î */
 
 
 int
-show_badman_pic(i)		/* ©Çª« */
+show_badman_pic(i)		/* æ€ªç‰© */
   int i;
 {
   char buf[64];
 
-/* itoc.010731:  picabc   abc ¬O½s¸¹
-   ¦Ê¦ì¼Æ a ¬O¤ÀÃş¡A¤Q¦ì¼Æ­Ó¦ì¼Æ bc ¬O¸ÓÃş¹Ïªº½s¸¹ */
+/* itoc.010731:  picabc   abc æ˜¯ç·¨è™Ÿ
+   ç™¾ä½æ•¸ a æ˜¯åˆ†é¡ï¼Œåä½æ•¸å€‹ä½æ•¸ bc æ˜¯è©²é¡åœ–çš„ç·¨è™Ÿ */
 
   sprintf(buf, PIP_PICHOME "badman/pic%03d", i);
   return show_file(buf, 7, 10);
@@ -207,7 +207,7 @@ show_badman_pic(i)		/* ©Çª« */
 
 
 int
-show_fight_pic(i)		/* ¥´¬[ */
+show_fight_pic(i)		/* æ‰“æ¶ */
   int i;
 {
   char buf[64];
@@ -217,7 +217,7 @@ show_fight_pic(i)		/* ¥´¬[ */
 
 
 int
-show_resultshow_pic(i)		/* ¦¬Ã¬©u */
+show_resultshow_pic(i)		/* æ”¶ç©«å­£ */
   int i;
 {
   char buf[64];
@@ -227,7 +227,7 @@ show_resultshow_pic(i)		/* ¦¬Ã¬©u */
 
 
 int
-show_quest_pic(i)		/* ¥ô°È */
+show_quest_pic(i)		/* ä»»å‹™ */
   int i;
 {
   char buf[64];
@@ -237,11 +237,11 @@ show_quest_pic(i)		/* ¥ô°È */
 
 
 /* -------------------------- */
-/* ¤@¨Ç¯S®íªº¹Ï¡A¨q¦b 1~10 ¦C */
+/* ä¸€äº›ç‰¹æ®Šçš„åœ–ï¼Œç§€åœ¨ 1~10 åˆ— */
 /* -------------------------- */
 
 int
-show_weapon_pic(i)		/* ªZ¾¹¥Î */
+show_weapon_pic(i)		/* æ­¦å™¨ç”¨ */
   int i;
 {
   char buf[64];
@@ -251,7 +251,7 @@ show_weapon_pic(i)		/* ªZ¾¹¥Î */
 
 
 int
-show_palace_pic(i)		/* °Ñ¨£¤ı¦Ú¥Î */
+show_palace_pic(i)		/* åƒè¦‹ç‹è‡£ç”¨ */
   int i;
 {
   char buf[64];
@@ -261,11 +261,11 @@ show_palace_pic(i)		/* °Ñ¨£¤ı¦Ú¥Î */
 
 
 /* ------------------------------------- */
-/* ¤@¨Ç¯S®íªº¹Ï¡A¨q¦b 4~19(b_lines-4) ¦C */
+/* ä¸€äº›ç‰¹æ®Šçš„åœ–ï¼Œç§€åœ¨ 4~19(b_lines-4) åˆ— */
 /* ------------------------------------- */
 
 int
-show_system_pic(i)		/* ¨t²Î */
+show_system_pic(i)		/* ç³»çµ± */
   int i;
 {
   char buf[64];
@@ -275,7 +275,7 @@ show_system_pic(i)		/* ¨t²Î */
 
 
 int
-show_ending_pic(i)		/* µ²§ô */
+show_ending_pic(i)		/* çµæŸ */
   int i;
 {
   char buf[64];
@@ -285,11 +285,11 @@ show_ending_pic(i)		/* µ²§ô */
 
 
 /* -------------------------- */
-/* ¤@¨Ç¯S®íªº¹Ï¡A¨q¦b¾ã­Ó¿Ã¹õ */
+/* ä¸€äº›ç‰¹æ®Šçš„åœ–ï¼Œç§€åœ¨æ•´å€‹è¢å¹• */
 /* -------------------------- */
 
 int
-show_die_pic(i)			/* ¦º¤` */
+show_die_pic(i)			/* æ­»äº¡ */
   int i;
 {
   char buf[64];

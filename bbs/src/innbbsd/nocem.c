@@ -9,10 +9,10 @@
 /*-------------------------------------------------------*/
 
 
-#if 0	/* itoc.030109.µù¸Ñ: nocem.c ªº¬yµ{ */
-  ±q rec_article.c ¦¬¨ì receive_nocem() ¥H«á
-  receive_nocem() ¡÷ NCMparse() §â notice parse ¥X¨Ó ¡÷ NCMverify() ÅçÃÒ¬O¤£¬O¯uªº
-  ¡÷ NCMcancel() ¦A°e¦^ rec_article.c ªº cancel_article() ³B²z
+#if 0	/* itoc.030109.è¨»è§£: nocem.c çš„æµç¨‹ */
+  å¾ rec_article.c æ”¶åˆ° receive_nocem() ä»¥å¾Œ
+  receive_nocem() â†’ NCMparse() æŠŠ notice parse å‡ºä¾† â†’ NCMverify() é©—è­‰æ˜¯ä¸æ˜¯çœŸçš„
+  â†’ NCMcancel() å†é€å› rec_article.c çš„ cancel_article() è™•ç†
 #endif
                           
 
@@ -25,9 +25,9 @@
 #include "nocem.h"
 
 
-/* ÅçÃÒÃ±¦W¡G¥H¤U¤GªÌ¦Ü¦h¥u¯à¿ï¤@ªÌ #define (¥i¥H¤GªÌ³£ #undef) */
-#undef	PGP	/* ¥²¶·¸Ë¦³ pgp5 ¤~¥i define¡A¨Ã½ĞÀË¬d pgpv ªº¸ô®| */
-#undef	GPG	/* ¥²¶·¸Ë¦³ gpg ¤~¥i define¡A¨Ã½ĞÀË¬d gpg ªº¸ô®| */
+/* é©—è­‰ç°½åï¼šä»¥ä¸‹äºŒè€…è‡³å¤šåªèƒ½é¸ä¸€è€… #define (å¯ä»¥äºŒè€…éƒ½ #undef) */
+#undef	PGP	/* å¿…é ˆè£æœ‰ pgp5 æ‰å¯ defineï¼Œä¸¦è«‹æª¢æŸ¥ pgpv çš„è·¯å¾‘ */
+#undef	GPG	/* å¿…é ˆè£æœ‰ gpg æ‰å¯ defineï¼Œä¸¦è«‹æª¢æŸ¥ gpg çš„è·¯å¾‘ */
 
 static int num_spammid = 0;
 static char NCMVER[20];
@@ -47,7 +47,7 @@ static char errmsg[512] = "nothing";
 ncmperm_t *
 search_issuer(issuer, type)
   char *issuer;
-  char *type;		/* ­Y type == NULL ªí¥Ü¥u¤ñ¹ï issuer */
+  char *type;		/* è‹¥ type == NULL è¡¨ç¤ºåªæ¯”å° issuer */
 {
   ncmperm_t *find;
   int i;

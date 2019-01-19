@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/snap.h						 */
 /*-------------------------------------------------------*/
-/* target : Maple Âà´«					 */
+/* target : Maple è½‰æ›					 */
 /* create : 98/12/15					 */
 /* update : 02/04/29					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -10,34 +10,34 @@
 
 #if 0
 
-  0. «O¯d­ì¨Ó brd/ gem/ usr/ .USR¡A¨ä¾l´«¦¨·sª©ªº
+  0. ä¿ç•™åŸä¾† brd/ gem/ usr/ .USRï¼Œå…¶é¤˜æ›æˆæ–°ç‰ˆçš„
 
-  1. §Q¥Î snap2brd Âà´« .BRD
+  1. åˆ©ç”¨ snap2brd è½‰æ› .BRD
 
-  2. §Q¥Î snap2usr Âà´« .ACCT
+  2. åˆ©ç”¨ snap2usr è½‰æ› .ACCT
 
-  3. ±N·sª©ªº gem/@/ ¤Uªº³o¨ÇÀÉ®×½Æ»s¹L¨Ó
+  3. å°‡æ–°ç‰ˆçš„ gem/@/ ä¸‹çš„é€™äº›æª”æ¡ˆè¤‡è£½éä¾†
      @apply @e-mail @goodbye @index @justify @newuser @opening.0
      @opening.1 @opening.2 @post @re-reg @tryout @welcome
 
-  4. ¤W BBS ¯¸¡A¦b (A)nnounce ¸Ì­±¡A«Ø¥H¤U¤G­Ó¨÷©vªº©Ò¦³¸ê®Æ
-     {¸ÜÃD} ¼öªù°Q½×
-     {±Æ¦æ} ²Î­p¸ê®Æ
+  4. ä¸Š BBS ç«™ï¼Œåœ¨ (A)nnounce è£¡é¢ï¼Œå»ºä»¥ä¸‹äºŒå€‹å·å®—çš„æ‰€æœ‰è³‡æ–™
+     {è©±é¡Œ} ç†±é–€è¨è«–
+     {æ’è¡Œ} çµ±è¨ˆè³‡æ–™
 
 #endif
 
 
 #include "bbs.h"
 
-#define	MAK_DIRS	/* «Ø¥Ø¿ı MF/ ¤Î gem/ */
+#define	MAK_DIRS	/* å»ºç›®éŒ„ MF/ åŠ gem/ */
 
 
 /* ----------------------------------------------------- */
-/* (ÂÂªº) ¨Ï¥ÎªÌ±b¸¹ .ACCT struct			 */
+/* (èˆŠçš„) ä½¿ç”¨è€…å¸³è™Ÿ .ACCT struct			 */
 /* ----------------------------------------------------- */
 
 
-typedef struct			/* ­n©MÂÂª©µ{¦¡ struct ¤@¼Ë */
+typedef struct			/* è¦å’ŒèˆŠç‰ˆç¨‹å¼ struct ä¸€æ¨£ */
 {
   int userno;			/* unique positive code */
   char userid[13];
@@ -51,45 +51,45 @@ typedef struct			/* ­n©MÂÂª©µ{¦¡ struct ¤@¼Ë */
   usint ufo;
   time_t firstlogin;
   time_t lastlogin;
-  time_t staytime;		/* Á`¦@°±¯d®É¶¡ */
+  time_t staytime;		/* ç¸½å…±åœç•™æ™‚é–“ */
   time_t tcheck;		/* time to check mbox/pal */
   char lasthost[32];
-  int numemail;			/* ±Hµo Inetrnet E-mail ¦¸¼Æ */
-  time_t tvalid;		/* ³q¹L»{ÃÒ¡B§ó§ï mail address ªº®É¶¡ */
+  int numemail;			/* å¯„ç™¼ Inetrnet E-mail æ¬¡æ•¸ */
+  time_t tvalid;		/* é€šéèªè­‰ã€æ›´æ”¹ mail address çš„æ™‚é–“ */
   char email[60];
   char address[60];
   char justify[60];		/* FROM of replied justify mail */
-  char vmail[60];		/* ³q¹L»{ÃÒ¤§ email */
+  char vmail[60];		/* é€šéèªè­‰ä¹‹ email */
   char ident[140 - 20];
   time_t vtime;			/* validate time */
 }	userec;
 
 
 /* ----------------------------------------------------- */
-/* (ÂÂªº) ¨Ï¥ÎªÌ²ßºD ufo				 */
+/* (èˆŠçš„) ä½¿ç”¨è€…ç¿’æ…£ ufo				 */
 /* ----------------------------------------------------- */
 
-/* old UFO */			/* ­n©MÂÂª©µ{¦¡ struct ¤@¼Ë */
+/* old UFO */			/* è¦å’ŒèˆŠç‰ˆç¨‹å¼ struct ä¸€æ¨£ */
 
 #define HABIT_COLOR       BFLAG(0)        /* true if the ANSI color mode open */
 #define HABIT_MOVIE       BFLAG(1)        /* true if show movie */
-#define HABIT_BRDNEW      BFLAG(2)        /* ·s¤å³¹¼Ò¦¡ */
-#define HABIT_BNOTE       BFLAG(3)        /* Åã¥Ü¶iªOµe­± */
-#define HABIT_VEDIT       BFLAG(4)        /* Â²¤Æ½s¿è¾¹ */
-#define HABIT_PAGER       BFLAG(5)        /* Ãö³¬©I¥s¾¹ */
-#define HABIT_QUIET       BFLAG(6)        /* µ²Ãf¦b¤H¹Ò¡A¦ÓµL¨®°¨³Ù */
+#define HABIT_BRDNEW      BFLAG(2)        /* æ–°æ–‡ç« æ¨¡å¼ */
+#define HABIT_BNOTE       BFLAG(3)        /* é¡¯ç¤ºé€²æ¿ç•«é¢ */
+#define HABIT_VEDIT       BFLAG(4)        /* ç°¡åŒ–ç·¨è¼¯å™¨ */
+#define HABIT_PAGER       BFLAG(5)        /* é—œé–‰å‘¼å«å™¨ */
+#define HABIT_QUIET       BFLAG(6)        /* çµå»¬åœ¨äººå¢ƒï¼Œè€Œç„¡è»Šé¦¬å–§ */
 #define HABIT_PAL         BFLAG(7)        /* true if show pals only */
-#define HABIT_ALOHA       BFLAG(8)        /* ¤W¯¸®É¥D°Ê³qª¾¦n¤Í */
-#define HABIT_MOTD        BFLAG(9)        /* Â²¤Æ¶i¯¸µe­± */
+#define HABIT_ALOHA       BFLAG(8)        /* ä¸Šç«™æ™‚ä¸»å‹•é€šçŸ¥å¥½å‹ */
+#define HABIT_MOTD        BFLAG(9)        /* ç°¡åŒ–é€²ç«™ç•«é¢ */
 #define HABIT_CLOAK       BFLAG(19)       /* true if cloak was ON */
 #define HABIT_ACL         BFLAG(20)       /* true if ACL was ON */
-#define HABIT_MPAGER      BFLAG(10)       /* lkchu.990428: ¹q¤l¶l¥ó¶Ç©I */
-#define HABIT_NWLOG       BFLAG(11)       /* lkchu.990510: ¤£¦s¹ï¸Ü¬ö¿ı */
-#define HABIT_NTLOG       BFLAG(12)       /* lkchu.990510: ¤£¦s²á¤Ñ¬ö¿ı */
+#define HABIT_MPAGER      BFLAG(10)       /* lkchu.990428: é›»å­éƒµä»¶å‚³å‘¼ */
+#define HABIT_NWLOG       BFLAG(11)       /* lkchu.990510: ä¸å­˜å°è©±ç´€éŒ„ */
+#define HABIT_NTLOG       BFLAG(12)       /* lkchu.990510: ä¸å­˜èŠå¤©ç´€éŒ„ */
 
 
 /* ----------------------------------------------------- */
-/* (ÂÂªº) BOARDS struct					 */
+/* (èˆŠçš„) BOARDS struct					 */
 /* ----------------------------------------------------- */
 
 typedef struct
@@ -98,13 +98,13 @@ typedef struct
   char title[49];
   char BM[37];			/* BMs' uid, token '/' */
 
-  uschar bvote;			/* ¦@¦³´X¶µ§ë²¼Á|¦æ¤¤ */
+  uschar bvote;			/* å…±æœ‰å¹¾é …æŠ•ç¥¨èˆ‰è¡Œä¸­ */
 
-  time_t bstamp;		/* «Ø¥ß¬İªOªº®É¶¡, unique */
-  usint readlevel;		/* ¾\Åª¤å³¹ªºÅv­­ */
-  usint postlevel;		/* µoªí¤å³¹ªºÅv­­ */
-  usint battr;			/* ¬İªOÄİ©Ê */
-  time_t btime;			/* .DIR ªº st_mtime */
-  int bpost;			/* ¦@¦³´X½g post */
-  time_t blast;			/* ³Ì«á¤@½g post ªº®É¶¡ */
+  time_t bstamp;		/* å»ºç«‹çœ‹æ¿çš„æ™‚é–“, unique */
+  usint readlevel;		/* é–±è®€æ–‡ç« çš„æ¬Šé™ */
+  usint postlevel;		/* ç™¼è¡¨æ–‡ç« çš„æ¬Šé™ */
+  usint battr;			/* çœ‹æ¿å±¬æ€§ */
+  time_t btime;			/* .DIR çš„ st_mtime */
+  int bpost;			/* å…±æœ‰å¹¾ç¯‡ post */
+  time_t blast;			/* æœ€å¾Œä¸€ç¯‡ post çš„æ™‚é–“ */
 }	boardheader;

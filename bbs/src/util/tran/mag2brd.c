@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/transbrd.c					 */
 /*-------------------------------------------------------*/
-/* target : Magic ¦Ü Maple 3.02 ¬İªOÂà´«		 */
+/* target : Magic è‡³ Maple 3.02 çœ‹æ¿è½‰æ›		 */
 /*          .BOARDS => .BRD				 */
 /* create : 02/09/09					 */
 /* update :   /  /  					 */
@@ -11,9 +11,9 @@
 
 #if 0
 
-  0. ¾A¥Î Magic/FireBird Âà Maple ºëµØ°Ï
-  1. µ{¦¡¤£¶}¥Ø¿ı¡A¨Ï¥Î«e¥ı½T©w gem/target_board/? ¥Ø¿ı¦s¦b
-     if not¡A¥ı¶}·sªO or transbrd
+  0. é©ç”¨ Magic/FireBird è½‰ Maple ç²¾è¯å€
+  1. ç¨‹å¼ä¸é–‹ç›®éŒ„ï¼Œä½¿ç”¨å‰å…ˆç¢ºå®š gem/target_board/? ç›®éŒ„å­˜åœ¨
+     if notï¼Œå…ˆé–‹æ–°æ¿ or transbrd
 
   ps. User on ur own risk.
 
@@ -34,7 +34,7 @@ trans_hdr_chrono(filename)
 {
   char time_str[11];
 
-  /* M.1087654321.A ©Î M.987654321.A */
+  /* M.1087654321.A æˆ– M.987654321.A */
   str_ncpy(time_str, filename + 2, filename[2] == '1' ? 11 : 10);
 
   return (time_t) atoi(time_str);
@@ -97,7 +97,7 @@ trans_owner(hdr, old)
 
   if (strchr(owner, '.'))	/* innbbsd ==> bbs */
   {
-    /* ®æ¦¡: itoc.bbs@bbs.tnfsh.tn.edu.tw (§Úªº¼ÊºÙ) */
+    /* æ ¼å¼: itoc.bbs@bbs.tnfsh.tn.edu.tw (æˆ‘çš„æš±ç¨±) */
 
     hdr->xmode = POST_INCOME;
 
@@ -106,7 +106,7 @@ trans_owner(hdr, old)
 
     if (!left || !right)
     {
-      str_ncpy(hdr->owner, "§H¦W", sizeof(hdr->owner));
+      str_ncpy(hdr->owner, "ä½šå", sizeof(hdr->owner));
     }
     else
     {
@@ -118,7 +118,7 @@ trans_owner(hdr, old)
   }
   else if (left = strchr(owner, '('))	/* local post */
   {
-    /* ®æ¦¡: itoc (§Úªº¼ÊºÙ) */
+    /* æ ¼å¼: itoc (æˆ‘çš„æš±ç¨±) */
 
     *(left - 1) = '\0';
     str_ncpy(hdr->owner, owner, sizeof(hdr->owner));
@@ -130,7 +130,7 @@ trans_owner(hdr, old)
   }
   else
   {
-    /* ®æ¦¡: itoc */
+    /* æ ¼å¼: itoc */
 
     str_ncpy(hdr->owner, owner, sizeof(hdr->owner));
   }
@@ -138,7 +138,7 @@ trans_owner(hdr, old)
 
 
 /*-------------------------------------------------------*/
-/* Âà´«µ{¦¡						 */
+/* è½‰æ›ç¨‹å¼						 */
 /*-------------------------------------------------------*/
 
 
@@ -165,36 +165,36 @@ trans_brd(bh)
   if (!stamp)
     time(&stamp);
 
-  /* Âà´« .BRD */
+  /* è½‰æ› .BRD */
   memset(&brd, 0, sizeof(BRD));
   str_ncpy(brd.brdname, brdname, sizeof(brd.brdname));
   str_ncpy(brd.class, bh->title + 2, sizeof(brd.class));
   str_ncpy(brd.title, bh->title + 13, sizeof(brd.title));
-  /* str_ncpy(brd.BM, bh->BM, sizeof(brd.BM)); */	/* ¨S¦³ bh->BM? ¯¸ªø¤â°Ê§ï */
+  /* str_ncpy(brd.BM, bh->BM, sizeof(brd.BM)); */	/* æ²’æœ‰ bh->BM? ç«™é•·æ‰‹å‹•æ”¹ */
   brd.bstamp = stamp++;
-  brd.readlevel = 0;			/* ¥ı¹w³] read/post level¡A¯¸ªø¦A¦Û¤v¤â°Ê§ï */
+  brd.readlevel = 0;			/* å…ˆé è¨­ read/post levelï¼Œç«™é•·å†è‡ªå·±æ‰‹å‹•æ”¹ */
   brd.postlevel = PERM_POST;
   brd.battr = BRD_NOTRAN;
   rec_add(FN_BRD, &brd, sizeof(BRD));
 
-  /* «Ø¥Ø¿ı */
+  /* å»ºç›®éŒ„ */
   sprintf(buf, "gem/brd/%s", brdname);
   mak_dirs(buf);
   mak_dirs(buf + 4);
 
-  /* Âà´«¶iªOµe­± */
+  /* è½‰æ›é€²æ¿ç•«é¢ */
   sprintf(index, "%s/%s/notes", OLD_BOARDPATH, brdname);
   brd_fpath(folder, brdname, FN_NOTE);
   f_cp(index, folder, O_TRUNC);
 
-  /* Âà´«§ë²¼°O¿ı */
+  /* è½‰æ›æŠ•ç¥¨è¨˜éŒ„ */
   sprintf(index, "%s/%s/results", OLD_BOARDPATH, brdname);
   sprintf(folder, "brd/%s/@/@vote", brdname);
   f_cp(index, folder, O_TRUNC);
 
-  /* Âà´« .DIR */
-  sprintf(index, "%s/%s/.DIR", OLD_BOARDPATH, brdname);	/* ÂÂªº .DIR */
-  brd_fpath(folder, brdname, FN_DIR);			/* ·sªº .DIR */
+  /* è½‰æ› .DIR */
+  sprintf(index, "%s/%s/.DIR", OLD_BOARDPATH, brdname);	/* èˆŠçš„ .DIR */
+  brd_fpath(folder, brdname, FN_DIR);			/* æ–°çš„ .DIR */
 
   if ((fd = open(index, O_RDONLY)) >= 0)
   {
@@ -210,7 +210,7 @@ trans_brd(bh)
 	hdr.xmode |= POST_MARKED;
       rec_add(folder, &hdr, sizeof(HDR));
 
-      /* «ş¨©ÀÉ®× */
+      /* æ‹·è²æª”æ¡ˆ */
       f_cp(buf, fpath, O_TRUNC);
     }
     close(fd);

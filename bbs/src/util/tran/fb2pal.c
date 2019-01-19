@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/transpal.c                                       */
 /*-------------------------------------------------------*/
-/* target : WD ¦Ü Maple 3.02 (¬İªO)¦n¤Í¦W³æÂà´«          */
+/* target : WD è‡³ Maple 3.02 (çœ‹æ¿)å¥½å‹åå–®è½‰æ›          */
 /* create : 01/09/08                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.ee.nctu.edu.tw                  */
@@ -12,11 +12,11 @@
 
 #if 0
 
-   1. ­×§ï struct FRIEND ©M transpal() transbrdpal()
-   2. Âà´«(¬İªO)¦n¤Í¦W³æ¤§«e¡A±z¥²¶·¥ıÂà´«§¹¬İªO¤Î¨Ï¥ÎªÌ¡C
+   1. ä¿®æ”¹ struct FRIEND å’Œ transpal() transbrdpal()
+   2. è½‰æ›(çœ‹æ¿)å¥½å‹åå–®ä¹‹å‰ï¼Œæ‚¨å¿…é ˆå…ˆè½‰æ›å®Œçœ‹æ¿åŠä½¿ç”¨è€…ã€‚
 
-   ps. ¨Ï¥Î«e½Ğ¥ı¦æ³Æ¥÷¡Ause on ur own risk. µ{¦¡©å¦H½Ğ¥]²[ :p
-   ps. ·PÁÂ lkchu ªº Maple 3.02 for FreeBSD
+   ps. ä½¿ç”¨å‰è«‹å…ˆè¡Œå‚™ä»½ï¼Œuse on ur own risk. ç¨‹å¼æ‹™åŠ£è«‹åŒ…æ¶µ :p
+   ps. æ„Ÿè¬ lkchu çš„ Maple 3.02 for FreeBSD
 
 #endif
 
@@ -24,9 +24,9 @@
 #include "fb.h"
 
 
-static char uperid[80];         /* ¤j¼gªº ID */
+static char uperid[80];         /* å¤§å¯«çš„ ID */
 
-static void                             /* ´«¤j¼g */
+static void                             /* æ›å¤§å¯« */
 str_uper(dst, src)
   char *dst, *src;
 {
@@ -67,7 +67,7 @@ acct_uno(userid)
 
 
 /* ----------------------------------------------------- */
-/* Âà´«¥Dµ{¦¡                                            */
+/* è½‰æ›ä¸»ç¨‹å¼                                            */
 /* ----------------------------------------------------- */
 
         
@@ -81,10 +81,10 @@ transpal(userid)
   PAL pal;
   FRIEND friend;
 
-  /* FireBird ¬O¥Î¤j¼g id */
+  /* FireBird æ˜¯ç”¨å¤§å¯« id */
   str_uper(uperid, userid);
 
-  /* FB ªº usr ¥Ø¿ı¦³¤À¤j¤p¼g¡A©Ò¥H­n¥ı¨ú±o¤j¤p¼g */
+  /* FB çš„ usr ç›®éŒ„æœ‰åˆ†å¤§å°å¯«ï¼Œæ‰€ä»¥è¦å…ˆå–å¾—å¤§å°å¯« */
   usr_fpath(buf, userid, FN_ACCT);
   if ((fd = open(buf, O_RDONLY)) >= 0)
   {
@@ -96,14 +96,14 @@ transpal(userid)
     return;
   }
 
-  usr_fpath(fpath, userid, FN_PAL);			/* ·sªº¦n¤Í¦W³æ */
+  usr_fpath(fpath, userid, FN_PAL);			/* æ–°çš„å¥½å‹åå–® */
 
   if (dashf(fpath))
-    unlink(fpath);		/* ²M±¼­««Ø */
+    unlink(fpath);		/* æ¸…æ‰é‡å»º */
 
-  for (i = 0; i <= 1; i++)	/* ¦n¤Í¦W³æ/Ãa¤H¦W³æ ¤G¥÷ */
+  for (i = 0; i <= 1; i++)	/* å¥½å‹åå–®/å£äººåå–® äºŒä»½ */
   {
-    sprintf(buf, OLD_BBSHOME "/home/%c/%s/%s", *uperid, acct.userid, i ? "friends" : "rejects");	/* ÂÂªº¦n¤Í¦W³æ */
+    sprintf(buf, OLD_BBSHOME "/home/%c/%s/%s", *uperid, acct.userid, i ? "friends" : "rejects");	/* èˆŠçš„å¥½å‹åå–® */
 
     if ((fd = open(buf, O_RDONLY)) < 0)
       return;
@@ -115,7 +115,7 @@ transpal(userid)
       {
 	memset(&pal, 0, sizeof(PAL));
 	str_ncpy(pal.userid, friend.id, sizeof(pal.userid));
-	pal.ftype = i ? 0 : PAL_BAD;     /* ¦n¤Í vs ·l¤Í */
+	pal.ftype = i ? 0 : PAL_BAD;     /* å¥½å‹ vs æå‹ */
 	str_ncpy(pal.ship, friend.exp, sizeof(pal.ship));      
 	pal.userno = friend_userno;
 	rec_add(fpath, &pal, sizeof(PAL));
@@ -136,8 +136,8 @@ main(argc, argv)
   struct dirent *de;
   DIR *dirp;
 
-  /* argc == 1 Âà¥ş³¡¨Ï¥ÎªÌ¤Î¬İªO */
-  /* argc == 2 Âà¬Y¯S©w¨Ï¥ÎªÌ */
+  /* argc == 1 è½‰å…¨éƒ¨ä½¿ç”¨è€…åŠçœ‹æ¿ */
+  /* argc == 2 è½‰æŸç‰¹å®šä½¿ç”¨è€… */
 
   if (argc > 2)
   {
@@ -153,7 +153,7 @@ main(argc, argv)
     exit(1);
   }
 
-  /* Âà´«¨Ï¥ÎªÌ¦n¤Í¦W³æ */
+  /* è½‰æ›ä½¿ç”¨è€…å¥½å‹åå–® */
   for (c = 'a'; c <= 'z'; c++)
   {
     sprintf(buf, "usr/%c", c);

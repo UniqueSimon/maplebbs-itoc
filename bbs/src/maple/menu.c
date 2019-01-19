@@ -20,7 +20,7 @@ extern time_t brd_visit[];
 
 
 /* ----------------------------------------------------- */
-/* Â÷¶} BBS ¯¸						 */
+/* é›¢é–‹ BBS ç«™						 */
 /* ----------------------------------------------------- */
 
 
@@ -55,11 +55,11 @@ pad_view()
       vmsg(NULL);
       break;
     }
-    else if (!(count % 5))	/* itoc.020122: ¦³ pad ¤~¦L */
+    else if (!(count % 5))	/* itoc.020122: æœ‰ pad æ‰å° */
     {
       clear();
       move(0, 23);
-      prints("¡i »Ä ²¢ ­W »¶ ¯d ¨¥ ªO ¡j                ²Ä %d ­¶\n\n", count / 5 + 1);
+      prints("ã€ é…¸ ç”œ è‹¦ è¾£ ç•™ è¨€ æ¿ ã€‘                ç¬¬ %d é \n\n", count / 5 + 1);
     }
 
     outs(pad->msg);
@@ -68,8 +68,8 @@ pad_view()
     if (!(count % 5))
     {
       move(b_lines, 0);
-      outs("½Ğ«ö [SPACE] Ä~ÄòÆ[½à¡A©Î«ö¨ä¥LÁäµ²§ô¡G ");
-      /* itoc.010127: ­×¥¿¦b°»´ú¥ª¥kÁä¥ş§Î¤U¡A«ö¥ªÁä·|¸õÂ÷¤G¼h¿ï³æªº°İÃD */
+      outs("è«‹æŒ‰ [SPACE] ç¹¼çºŒè§€è³ï¼Œæˆ–æŒ‰å…¶ä»–éµçµæŸï¼š ");
+      /* itoc.010127: ä¿®æ­£åœ¨åµæ¸¬å·¦å³éµå…¨å½¢ä¸‹ï¼ŒæŒ‰å·¦éµæœƒè·³é›¢äºŒå±¤é¸å–®çš„å•é¡Œ */
 
       if (vkey() != ' ')
 	break;
@@ -89,11 +89,11 @@ pad_draw()
   Pad pad;
   char *str, buf[3][71];
 
-  /* itoc.µù¸Ñ: ¤£·Q¥Î°ª±m«×¡A¤Óªá */
+  /* itoc.è¨»è§£: ä¸æƒ³ç”¨é«˜å½©åº¦ï¼Œå¤ªèŠ± */
   static char pcolors[6] = {31, 32, 33, 34, 35, 36};
 
-  /* itoc.010309: ¯d¨¥ªO´£¨Ñ¤£¦PªºÃC¦â */
-  color = vans("¤ß±¡ÃC¦â 1) \033[41m  \033[m 2) \033[42m  \033[m 3) \033[43m  \033[m "
+  /* itoc.010309: ç•™è¨€æ¿æä¾›ä¸åŒçš„é¡è‰² */
+  color = vans("å¿ƒæƒ…é¡è‰² 1) \033[41m  \033[m 2) \033[42m  \033[m 3) \033[43m  \033[m "
     "4) \033[44m  \033[m 5) \033[45m  \033[m 6) \033[46m  \033[m [Q] ");
 
   if (color < '1' || color > '6')
@@ -106,30 +106,30 @@ pad_draw()
     buf[0][0] = buf[1][0] = buf[2][0] = '\0';
     move(MENU_XPOS, 0);
     clrtobot();
-    outs("\n½Ğ¯d¨¥ (¦Ü¦h¤T¦æ)¡A«ö[Enter]µ²§ô");
+    outs("\nè«‹ç•™è¨€ (è‡³å¤šä¸‰è¡Œ)ï¼ŒæŒ‰[Enter]çµæŸ");
     for (i = 0; (i < 3) &&
-      vget(16 + i, 0, "¡G", buf[i], 71, DOECHO); i++);
-    cc = vans("(S)¦sÀÉÆ[½à (E)­«·s¨Ó¹L (Q)ºâ¤F¡H[S] ");
+      vget(16 + i, 0, "ï¼š", buf[i], 71, DOECHO); i++);
+    cc = vans("(S)å­˜æª”è§€è³ (E)é‡æ–°ä¾†é (Q)ç®—äº†ï¼Ÿ[S] ");
     if (cc == 'q' || i == 0)
       return 0;
   } while (cc == 'e');
 
   time(&pad.tpad);
 
-  /* itoc.020812.µù¸Ñ: §ïª©­±ªº®É­Ô­nª`·N struct Pad.msg[] ¬O§_°÷¤j */
+  /* itoc.020812.è¨»è§£: æ”¹ç‰ˆé¢çš„æ™‚å€™è¦æ³¨æ„ struct Pad.msg[] æ˜¯å¦å¤ å¤§ */
   str = pad.msg;
-  sprintf(str, "¢~¢t\033[1;46m %s ¡Ğ %s \033[m¢u", cuser.userid, cuser.username);
+  sprintf(str, "â•­â”¤\033[1;46m %s ï¼ %s \033[mâ”œ", cuser.userid, cuser.username);
 
   for (cc = strlen(str); cc < 60; cc += 2)
-    strcpy(str + cc, "¢w");
+    strcpy(str + cc, "â”€");
   if (cc == 60)
     str[cc++] = ' ';
 
   sprintf(str + cc,
-    "\033[1;44m %s \033[m¢¡\n"
-    "¢x  \033[1;%dm%-70s\033[m  ¢x\n"
-    "¢x  \033[1;%dm%-70s\033[m  ¢x\n"
-    "¢¢  \033[1;%dm%-70s\033[m  ¢£\n",
+    "\033[1;44m %s \033[mâ•®\n"
+    "â”‚  \033[1;%dm%-70s\033[m  â”‚\n"
+    "â”‚  \033[1;%dm%-70s\033[m  â”‚\n"
+    "â•°  \033[1;%dm%-70s\033[m  â•¯\n",
     Btime(&pad.tpad),
     pcolors[color], buf[0],
     pcolors[color], buf[1],
@@ -169,13 +169,13 @@ pad_draw()
 static int
 goodbye()
 {
-  /* itoc.010803: ¨q±iÂ÷¯¸ªº¹Ï */
+  /* itoc.010803: ç§€å¼µé›¢ç«™çš„åœ– */
   clear();
   film_out(FILM_GOODBYE, 0);
 
-  switch (vans("G)ÀH­·¦Ó³u M)³ø§i¯¸ªø N)¯d¨¥ªO Q)¨ú®ø¡H[Q] "))
+  switch (vans("G)éš¨é¢¨è€Œé€ M)å ±å‘Šç«™é•· N)ç•™è¨€æ¿ Q)å–æ¶ˆï¼Ÿ[Q] "))
   {
-  /* lkchu.990428: ¤º©w§ï¬°¤£Â÷¯¸ */
+  /* lkchu.990428: å…§å®šæ”¹ç‚ºä¸é›¢ç«™ */
   case 'g':
   case 'y':
     break;    
@@ -186,25 +186,25 @@ goodbye()
 
   case 'n':
     /* if (cuser.userlevel) */
-    if (HAS_PERM(PERM_POST)) /* Thor.990118: ­n¯àpost¤~¯à¯d¨¥, ´£°ªªùÂe */
+    if (HAS_PERM(PERM_POST)) /* Thor.990118: è¦èƒ½postæ‰èƒ½ç•™è¨€, æé«˜é–€æª» */
       pad_draw();
     break;
 
   case 'q':
   default:
     /* return XEASY; */
-    return 0;	/* itoc.010803: ¨q¤F FILM_GOODBYE ­n­«Ã¸ */
+    return 0;	/* itoc.010803: ç§€äº† FILM_GOODBYE è¦é‡ç¹ª */
   }
 
 #ifdef LOG_BMW
-  bmw_log();			/* lkchu.981201: ¤ô²y°O¿ı³B²z */
+  bmw_log();			/* lkchu.981201: æ°´çƒè¨˜éŒ„è™•ç† */
 #endif
 
-  if (!(cuser.ufo & UFO_MOTD))	/* itoc.000407: Â÷¯¸µe­±¤@¨ÖÂ²¤Æ */
+  if (!(cuser.ufo & UFO_MOTD))	/* itoc.000407: é›¢ç«™ç•«é¢ä¸€ä½µç°¡åŒ– */
   {  
     clear();
-    prints("¿Ë·Rªº \033[32m%s(%s)\033[m¡A§O§Ñ¤F¦A«×¥úÁ{¡i %s ¡j\n"
-      "¥H¤U¬O±z¦b¯¸¤ºªºµù¥U¸ê®Æ¡G\n",
+    prints("è¦ªæ„›çš„ \033[32m%s(%s)\033[mï¼Œåˆ¥å¿˜äº†å†åº¦å…‰è‡¨ã€ %s ã€‘\n"
+      "ä»¥ä¸‹æ˜¯æ‚¨åœ¨ç«™å…§çš„è¨»å†Šè³‡æ–™ï¼š\n",
       cuser.userid, cuser.username, str_site);
     acct_show(&cuser, 0);
     vmsg(NULL);
@@ -224,31 +224,31 @@ void
 vs_head(title, mid)
   char *title, *mid;
 {
-  char buf[(T_COLS - 1) - 79 + 69 + 1];		/* d_cols ³Ì¤j¥i¯à¬O (T_COLS - 1) */
+  char buf[(T_COLS - 1) - 79 + 69 + 1];		/* d_cols æœ€å¤§å¯èƒ½æ˜¯ (T_COLS - 1) */
   char ttl[(T_COLS - 1) - 79 + 69 + 1];
   int spc, len;
 
-  if (mid)	/* xxxx_head() ³£¬O¥Î vs_head(title, str_site); */
+  if (mid)	/* xxxx_head() éƒ½æ˜¯ç”¨ vs_head(title, str_site); */
   {
     clear();
   }
-  else		/* menu() ¤¤¤~¥Î vs_head(title, NULL); ¿ï³æ¤¤µL»İ clear() */
+  else		/* menu() ä¸­æ‰ç”¨ vs_head(title, NULL); é¸å–®ä¸­ç„¡éœ€ clear() */
   {
     move(0, 0);
     clrtoeol();
     mid = str_site;
   }
 
-  len = d_cols + 69 - strlen(title) - strlen(currboard);	/* len: ¤¤¶¡ÁÙ³Ñ¤U¦hªøªºªÅ¶¡ */
+  len = d_cols + 69 - strlen(title) - strlen(currboard);	/* len: ä¸­é–“é‚„å‰©ä¸‹å¤šé•·çš„ç©ºé–“ */
 
   if (HAS_STATUS(STATUS_BIFF))
   {
-    mid = "\033[5;41m ¶l®t¨Ó«ö¹a¤F \033[m";
+    mid = "\033[5;41m éƒµå·®ä¾†æŒ‰éˆ´äº† \033[m";
     spc = 14;
   }
   else
   {
-    if ((spc = strlen(mid)) > len)	/* ªÅ¶¡¤£°÷Â\¤U­ì¥»­nÂ\ªº mid¡A¥u¦n§â mid ºIÂ_ */
+    if ((spc = strlen(mid)) > len)	/* ç©ºé–“ä¸å¤ æ“ºä¸‹åŸæœ¬è¦æ“ºçš„ midï¼Œåªå¥½æŠŠ mid æˆªæ–· */
     {
       spc = len;
       memcpy(ttl, mid, spc);
@@ -257,31 +257,31 @@ vs_head(title, mid)
     }
   }
 
-  spc = 2 + len - spc;		/* Â\§¹ mid ¥H«á¡A¤¤¶¡ÁÙ¦³ spc ®æªÅ¶¡¡A¦b mid ¥ª¥k¦U©ñ spc/2 ªøªºªÅ¥Õ */
+  spc = 2 + len - spc;		/* æ“ºå®Œ mid ä»¥å¾Œï¼Œä¸­é–“é‚„æœ‰ spc æ ¼ç©ºé–“ï¼Œåœ¨ mid å·¦å³å„æ”¾ spc/2 é•·çš„ç©ºç™½ */
   len = 1 - spc & 1;
   memset(buf, ' ', spc >>= 1);
   buf[spc] = '\0';
 
 #ifdef COLOR_HEADER
   spc = (time(0) % 7) + '1';
-  prints("\033[1;4%cm¡i%s¡j%s\033[33m%s\033[1;37;4%cm%s¡m%s¡n\033[m\n",
+  prints("\033[1;4%cmã€%sã€‘%s\033[33m%s\033[1;37;4%cm%sã€Š%sã€‹\033[m\n",
     spc, title, buf, mid, spc, buf + len, currboard);
 #else
-  prints("\033[1;44m¡i%s¡j%s\033[33m%s\033[1;37;44m%s¡m%s¡n\033[m\n",
+  prints("\033[1;44mã€%sã€‘%s\033[33m%s\033[1;37;44m%sã€Š%sã€‹\033[m\n",
     title, buf, mid, buf + len, currboard);
 #endif
 }
 
 
 /* ------------------------------------- */
-/* °Êµe³B²z				 */
+/* å‹•ç•«è™•ç†				 */
 /* ------------------------------------- */
 
 
 static char feeter[160];
 
 
-/* itoc.010403: §â feeter ªº status ¿W¥ß¥X¨Ó¡A¹w³Æ¨Ñ¨ä¥L function ¥s¥Î */
+/* itoc.010403: æŠŠ feeter çš„ status ç¨ç«‹å‡ºä¾†ï¼Œé å‚™ä¾›å…¶ä»– function å«ç”¨ */
 
 static void
 status_foot()
@@ -299,7 +299,7 @@ status_foot()
   ufo = cuser.ufo;
   time(&now);
 
-  /* Thor: ¦P®É Åã¥Ü ©I¥s¾¹ ¤W¯¸³qª¾ Áô¨­ */
+  /* Thor: åŒæ™‚ é¡¯ç¤º å‘¼å«å™¨ ä¸Šç«™é€šçŸ¥ éš±èº« */
 
 #ifdef HAVE_ALOHA
   ufo &= UFO_PAGER | UFO_ALOHA | UFO_CLOAK | UFO_QUIET;
@@ -308,10 +308,10 @@ status_foot()
     orig_flag = ufo;
     sprintf(flagmsg,
       "%s%s%s%s",
-      (ufo & UFO_PAGER) ? "Ãö" : "¶}",
-      (ufo & UFO_ALOHA) ? "¤W" : "  ",
-      (ufo & UFO_QUIET) ? "ÀR" : "  ",
-      (ufo & UFO_CLOAK) ? "Áô" : "  ");
+      (ufo & UFO_PAGER) ? "é—œ" : "é–‹",
+      (ufo & UFO_ALOHA) ? "ä¸Š" : "  ",
+      (ufo & UFO_QUIET) ? "éœ" : "  ",
+      (ufo & UFO_CLOAK) ? "éš±" : "  ");
   }
 #else
   ufo &= UFO_PAGER | UFO_CLOAK | UFO_QUIET;
@@ -320,13 +320,13 @@ status_foot()
     orig_flag = ufo;
     sprintf(flagmsg,
       "%s%s%s  ",
-      (ufo & UFO_PAGER) ? "Ãö" : "¶}",
-      (ufo & UFO_QUIET) ? "ÀR" : "  ",
-      (ufo & UFO_CLOAK) ? "Áô" : "  ");
+      (ufo & UFO_PAGER) ? "é—œ" : "é–‹",
+      (ufo & UFO_QUIET) ? "éœ" : "  ",
+      (ufo & UFO_CLOAK) ? "éš±" : "  ");
   }
 #endif
 
-  if (now > uptime)	/* ¹L¤F¤l©]­n§ó·s¥Í¤éºX¼Ğ */
+  if (now > uptime)	/* éäº†å­å¤œè¦æ›´æ–°ç”Ÿæ—¥æ——æ¨™ */
   {
     struct tm *ptime;
 
@@ -343,7 +343,7 @@ status_foot()
   if (cuser.money != orig_money)
   {
     orig_money = cuser.money;
-    sprintf(coinmsg, "»È%4d%c", 
+    sprintf(coinmsg, "éŠ€%4d%c", 
       (orig_money & 0x7FF00000) ? (orig_money >> 20) : (orig_money & 0x7FFFFC00) ? (orig_money >> 10) : orig_money, 
       (orig_money & 0x7FF00000) ? 'M' : (orig_money & 0x7FFFFC00) ? 'K' : ' ');
     coinmsg[7] = ' ';
@@ -351,18 +351,18 @@ status_foot()
   if (cuser.gold != orig_gold)
   {
     orig_gold = cuser.gold;
-    sprintf(coinmsg + 8, "ª÷%4d%c ", 
+    sprintf(coinmsg + 8, "é‡‘%4d%c ", 
       (orig_gold & 0x7FF00000) ? (orig_gold >> 20) : (orig_gold & 0x7FFFFC00) ? (orig_gold >> 10) : orig_gold, 
       (orig_gold & 0x7FF00000) ? 'M' : (orig_gold & 0x7FFFFC00) ? 'K' : ' ');
   }
 
-  /* Thor.980913.µù¸Ñ: ³Ì±`¨£©I¥s status_foot() ªº®É¾÷¬O¨C¦¸§ó·s film¡A¦b 60 ¬í¥H¤W¡A
-                       ¬G¤£»İ°w¹ï hh:mm ¨Ó¯S§O§@¤@¦r¦êÀx¦s¥H¥[³t */
+  /* Thor.980913.è¨»è§£: æœ€å¸¸è¦‹å‘¼å« status_foot() çš„æ™‚æ©Ÿæ˜¯æ¯æ¬¡æ›´æ–° filmï¼Œåœ¨ 60 ç§’ä»¥ä¸Šï¼Œ
+                       æ•…ä¸éœ€é‡å° hh:mm ä¾†ç‰¹åˆ¥ä½œä¸€å­—ä¸²å„²å­˜ä»¥åŠ é€Ÿ */
 
-  ufo = (now - (uptime - 86400)) / 60;	/* ­É¥Î ufo ¨Ó°µ®É¶¡(¤À) */
+  ufo = (now - (uptime - 86400)) / 60;	/* å€Ÿç”¨ ufo ä¾†åšæ™‚é–“(åˆ†) */
 
-  /* itoc.010717: §ï¤@¤U feeter ¨Ïªø«×©M FEETER_XXX ¤@­P */
-  sprintf(feeter, COLOR1 " %8.8s %02d:%02d " COLOR2 " ¤H¼Æ %-4d §Ú¬O %-12s %s [©I¥s]%-9s ",
+  /* itoc.010717: æ”¹ä¸€ä¸‹ feeter ä½¿é•·åº¦å’Œ FEETER_XXX ä¸€è‡´ */
+  sprintf(feeter, COLOR1 " %8.8s %02d:%02d " COLOR2 " äººæ•¸ %-4d æˆ‘æ˜¯ %-12s %s [å‘¼å«]%-9s ",
     fshm->today, ufo / 60, ufo % 60, total_user, cuser.userid, coinmsg, flagmsg);
   outf(feeter);
 }
@@ -376,7 +376,7 @@ movie()
   if ((bbsmode <= M_XMENU) && (cuser.ufo & UFO_MOVIE))
     film_out(FILM_MOVIE, MENU_XNOTE);
 
-  /* itoc.010403: §â feeter ªº status ¿W¥ß¥X¨Ó */
+  /* itoc.010403: æŠŠ feeter çš„ status ç¨ç«‹å‡ºä¾† */
   status_foot();
 }
 
@@ -410,36 +410,36 @@ static MENU menu_main[];
 static MENU menu_admin[] =
 {
   "bin/admutil.so:a_user", PERM_ALLACCT, - M_SYSTEM,
-  "User       ¢« ÅU«È¸ê®Æ ¢¨",
+  "User       â—¤ é¡§å®¢è³‡æ–™ â—¢",
 
   "bin/admutil.so:a_search", PERM_ALLACCT, - M_SYSTEM,
-  "Hunt       ¢« ·j´M¤ŞÀº ¢¨",
+  "Hunt       â—¤ æœå°‹å¼•æ“ â—¢",
 
   "bin/admutil.so:a_editbrd", PERM_ALLBOARD, - M_SYSTEM,
-  "QSetBoard  ¢« ³]©w¬İªO ¢¨",
+  "QSetBoard  â—¤ è¨­å®šçœ‹æ¿ â—¢",
 
   "bin/innbbs.so:a_innbbs", PERM_ALLBOARD, - M_SYSTEM,
-  "InnBBS     ¢« Âà«H³]©w ¢¨",
+  "InnBBS     â—¤ è½‰ä¿¡è¨­å®š â—¢",
 
 #ifdef HAVE_REGISTER_FORM
   "bin/admutil.so:a_register", PERM_ALLREG, - M_SYSTEM,
-  "Register   ¢« ¼fµù¥U³æ ¢¨",
+  "Register   â—¤ å¯©è¨»å†Šå–® â—¢",
 
   "bin/admutil.so:a_regmerge", PERM_ALLREG, - M_SYSTEM,
-  "Merge      ¢« ´_­ì¼f®Ö ¢¨",
+  "Merge      â—¤ å¾©åŸå¯©æ ¸ â—¢",
 #endif
 
   "bin/admutil.so:a_xfile", PERM_ALLADMIN, - M_XFILES,
-  "Xfile      ¢« ¨t²ÎÀÉ®× ¢¨",
+  "Xfile      â—¤ ç³»çµ±æª”æ¡ˆ â—¢",
   
   "bin/admutil.so:a_resetsys", PERM_ALLADMIN, - M_SYSTEM,
-  "BBSreset   ¢« ­«¸m¨t²Î ¢¨",
+  "BBSreset   â—¤ é‡ç½®ç³»çµ± â—¢",
 
   "bin/admutil.so:a_restore", PERM_SYSOP, - M_SYSTEM,
-  "TRestore   ¢« ÁÙ­ì³Æ¥÷ ¢¨",
+  "TRestore   â—¤ é‚„åŸå‚™ä»½ â—¢",
 
   menu_main, PERM_MENU + Ctrl('A'), M_AMENU,
-  "¨t²ÎºûÅ@"
+  "ç³»çµ±ç¶­è­·"
 };
 
 
@@ -459,40 +459,40 @@ XoMbox()
 static MENU menu_mail[] =
 {
   XoMbox, PERM_BASIC, M_RMAIL,
-  "Read       ¢u ¾\\Åª«H¥ó ¢t",
+  "Read       â”œ é–±\è®€ä¿¡ä»¶ â”¤",
 
   m_send, PERM_LOCAL, M_SMAIL,
-  "Mail       ¢u ¯¸¤º±H«H ¢t",
+  "Mail       â”œ ç«™å…§å¯„ä¿¡ â”¤",
 
-#ifdef MULTI_MAIL  /* Thor.981009: ¨¾¤î·R±¡©¯¹B«H */
+#ifdef MULTI_MAIL  /* Thor.981009: é˜²æ­¢æ„›æƒ…å¹¸é‹ä¿¡ */
   m_list, PERM_LOCAL, M_SMAIL,
-  "List       ¢u ¸s²Õ±H«H ¢t",
+  "List       â”œ ç¾¤çµ„å¯„ä¿¡ â”¤",
 #endif
 
   m_internet, PERM_INTERNET, M_SMAIL,
-  "Internet   ¢u ±H¨Ì©f¨à ¢t",
+  "Internet   â”œ å¯„ä¾å¦¹å…’ â”¤",
 
 #ifdef HAVE_SIGNED_MAIL
   m_verify, 0, M_XMODE,
-  "Verify     ¢u ÅçÃÒ«H¥ó ¢t",
+  "Verify     â”œ é©—è­‰ä¿¡ä»¶ â”¤",
 #endif
 
 #ifdef HAVE_MAIL_ZIP
   m_zip, PERM_INTERNET, M_SMAIL,
-  "Zip        ¢u ¥´¥]¸ê®Æ ¢t",
+  "Zip        â”œ æ‰“åŒ…è³‡æ–™ â”¤",
 #endif
 
   m_sysop, 0, M_SMAIL,
-  "Yes Sir!   ¢u §ë®Ñ¯¸ªø ¢t",
+  "Yes Sir!   â”œ æŠ•æ›¸ç«™é•· â”¤",
   
   "bin/admutil.so:m_bm", PERM_ALLADMIN, - M_SMAIL,
-  "BM All     ¢u ªO¥D³q§i ¢t",	/* itoc.000512: ·s¼W m_bm */
+  "BM All     â”œ æ¿ä¸»é€šå‘Š â”¤",	/* itoc.000512: æ–°å¢ m_bm */
   
   "bin/admutil.so:m_all", PERM_ALLADMIN, - M_SMAIL,
-  "User All   ¢u ¥ş¯¸³q§i ¢t",	/* itoc.000512: ·s¼W m_all */
+  "User All   â”œ å…¨ç«™é€šå‘Š â”¤",	/* itoc.000512: æ–°å¢ m_all */
 
-  menu_main, PERM_MENU + Ctrl('A'), M_MMENU,	/* itoc.020829: ©È guest ¨S¿ï¶µ */
-  "¹q¤l¶l¥ó"
+  menu_main, PERM_MENU + Ctrl('A'), M_MMENU,	/* itoc.020829: æ€• guest æ²’é¸é … */
+  "é›»å­éƒµä»¶"
 };
 
 
@@ -519,60 +519,60 @@ static MENU menu_talk[];
 static MENU menu_list[] =
 {
   t_pal, PERM_BASIC, M_PAL,
-  "Pal        ¡÷ ªB¤Í¦W³æ ¡ö",
+  "Pal        â†’ æœ‹å‹åå–® â†",
 
 #ifdef HAVE_LIST
   t_list, PERM_BASIC, M_PAL,
-  "List       ¡÷ ¯S§O¦W³æ ¡ö",
+  "List       â†’ ç‰¹åˆ¥åå–® â†",
 #endif
 
 #ifdef HAVE_ALOHA
   "bin/aloha.so:t_aloha", PERM_PAGE, - M_PAL,
-  "Aloha      ¡÷ ¤W¯¸³qª¾ ¡ö",
+  "Aloha      â†’ ä¸Šç«™é€šçŸ¥ â†",
 #endif
 
 #ifdef LOGIN_NOTIFY
   t_loginNotify, PERM_PAGE, M_PAL,
-  "Notify     ¡÷ ¨t²Î¨ó´M ¡ö",
+  "Notify     â†’ ç³»çµ±å”å°‹ â†",
 #endif
 
   menu_talk, PERM_MENU + 'P', M_TMENU,
-  "¦UÃş¦W³æ"
+  "å„é¡åå–®"
 };
 
 
 static MENU menu_talk[] =
 {
   XoUlist, 0, M_LUSERS,
-  "Users      ¡÷ ¹C«È¦W³æ ¡ö",
+  "Users      â†’ éŠå®¢åå–® â†",
 
   menu_list, PERM_BASIC, M_TMENU,
-  "ListMenu   ¡÷ ³]©w¦W³æ ¡ö",
+  "ListMenu   â†’ è¨­å®šåå–® â†",
 
   t_pager, PERM_BASIC, M_XMODE,
-  "Pager      ¡÷ ¤Á´«©I¥s ¡ö",
+  "Pager      â†’ åˆ‡æ›å‘¼å« â†",
 
   t_cloak, PERM_CLOAK, M_XMODE,
-  "Invis      ¡÷ Áô¨­±Kªk ¡ö",
+  "Invis      â†’ éš±èº«å¯†æ³• â†",
 
   t_query, 0, M_QUERY,
-  "Query      ¡÷ ¬d¸ßºô¤Í ¡ö",
+  "Query      â†’ æŸ¥è©¢ç¶²å‹ â†",
 
   t_talk, PERM_PAGE, M_PAGE,
-  "Talk       ¡÷ ±¡¸Üºøºø ¡ö",
+  "Talk       â†’ æƒ…è©±ç¶¿ç¶¿ â†",
 
-  /* Thor.990220: §ï±Ä¥~±¾ */
+  /* Thor.990220: æ”¹æ¡å¤–æ› */
   "bin/chat.so:t_chat", PERM_CHAT, - M_CHAT,
-  "ChatRoom   ¡÷ ²³¤fÅàª÷ ¡ö",
+  "ChatRoom   â†’ çœ¾å£é‘ é‡‘ â†",
 
   t_display, PERM_BASIC, M_BMW,
-  "Display    ¡÷ ÂsÄı¤ô²y ¡ö",
+  "Display    â†’ ç€è¦½æ°´çƒ â†",
 
   t_bmw, PERM_BASIC, M_BMW,
-  "Write      ¡÷ ¦^ÅU¤ô²y ¡ö",
+  "Write      â†’ å›é¡§æ°´çƒ â†",
 
   menu_main, PERM_MENU + 'U', M_TMENU,
-  "¥ğ¶¢²á¤Ñ"
+  "ä¼‘é–’èŠå¤©"
 };
 
 
@@ -591,55 +591,55 @@ static MENU menu_user[];
 static MENU menu_register[] =
 {
   u_addr, PERM_BASIC, M_XMODE,
-  "Address    ¡m ¹q¤l«H½c ¡n",
+  "Address    ã€Š é›»å­ä¿¡ç®± ã€‹",
 
 #ifdef HAVE_REGISTER_FORM
   u_register, PERM_BASIC, M_UFILES,
-  "Register   ¡m ¶ñµù¥U³æ ¡n",
+  "Register   ã€Š å¡«è¨»å†Šå–® ã€‹",
 #endif
 
 #ifdef HAVE_REGKEY_CHECK
   u_verify, PERM_BASIC, M_UFILES,
-  "Verify     ¡m ¶ñ»{ÃÒ½X ¡n",
+  "Verify     ã€Š å¡«èªè­‰ç¢¼ ã€‹",
 #endif
 
   u_deny, PERM_BASIC, M_XMODE,
-  "Perm       ¡m «ì´_Åv­­ ¡n",
+  "Perm       ã€Š æ¢å¾©æ¬Šé™ ã€‹",
 
   menu_user, PERM_MENU + 'A', M_UMENU,
-  "µù¥U¿ï³æ"
+  "è¨»å†Šé¸å–®"
 };
 
 
 static MENU menu_user[] =
 {
   u_info, PERM_BASIC, M_XMODE,
-  "Info       ¡m ­Ó¤H¸ê®Æ ¡n",
+  "Info       ã€Š å€‹äººè³‡æ–™ ã€‹",
 
   u_setup, 0, M_UFILES,
-  "Habit      ¡m ³ß¦n¼Ò¦¡ ¡n",
+  "Habit      ã€Š å–œå¥½æ¨¡å¼ ã€‹",
 
   menu_register, PERM_BASIC, M_UMENU,
-  "Register   ¡m µù¥U¿ï³æ ¡n",
+  "Register   ã€Š è¨»å†Šé¸å–® ã€‹",
 
   pad_view, 0, M_READA,
-  "Note       ¡m Æ[¬İ¯d¨¥ ¡n",
+  "Note       ã€Š è§€çœ‹ç•™è¨€ ã€‹",
 
-  /* itoc.010309: ¤£¥²Â÷¯¸¥i¥H¼g¯d¨¥ªO */
+  /* itoc.010309: ä¸å¿…é›¢ç«™å¯ä»¥å¯«ç•™è¨€æ¿ */
   pad_draw, PERM_POST, M_POST,
-  "Pad        ¡m ¤ß±¡¶î¾~ ¡n",
+  "Pad        ã€Š å¿ƒæƒ…å¡—é´‰ ã€‹",
 
   u_lock, PERM_BASIC, M_IDLE,
-  "Lock       ¡m Âê©w¿Ã¹õ ¡n",
+  "Lock       ã€Š é–å®šè¢å¹• ã€‹",
 
   u_xfile, PERM_BASIC, M_UFILES,
-  "Xfile      ¡m ­Ó¤HÀÉ®× ¡n",
+  "Xfile      ã€Š å€‹äººæª”æ¡ˆ ã€‹",
 
   u_log, PERM_BASIC, M_UFILES,
-  "ViewLog    ¡m ¤W¯¸°O¿ı ¡n",
+  "ViewLog    ã€Š ä¸Šç«™è¨˜éŒ„ ã€‹",
 
   menu_main, PERM_MENU + 'H', M_UMENU,
-  "­Ó¤H³]©w"
+  "å€‹äººè¨­å®š"
 };
 
 
@@ -661,16 +661,16 @@ static MENU menu_tool[];
 static MENU menu_song[] =
 {
   "bin/song.so:XoSongLog", 0, - M_XMODE,
-  "KTV        ¡ñ ÂIºq¬ö¿ı ¡ğ",
+  "KTV        â™‚ é»æ­Œç´€éŒ„ â™€",
 
   "bin/song.so:XoSongMain", 0, - M_XMODE,
-  "Book       ¡ñ °Û©Ò±ı¨¥ ¡ğ",
+  "Book       â™‚ å”±æ‰€æ¬²è¨€ â™€",
 
   "bin/song.so:XoSongSub", 0, - M_XMODE,
-  "Note       ¡ñ ºq¥»§ë½Z ¡ğ",
+  "Note       â™‚ æ­Œæœ¬æŠ•ç¨¿ â™€",
 
   menu_tool, PERM_MENU + 'K', M_XMENU,
-  "ª±ÂIºq¾÷"
+  "ç©é»æ­Œæ©Ÿ"
 };
 #endif
 
@@ -679,19 +679,19 @@ static MENU menu_song[] =
 
 #if 0
 
-  itoc.010426.µù¸Ñ:
-  ¯q´¼¹CÀ¸¤£¥Î½äª÷¨î«×¡AÅıª±®aª±¦nª±ªº¡A¥u¥[¿ú¡A¤£´î¿ú¡C
+  itoc.010426.è¨»è§£:
+  ç›Šæ™ºéŠæˆ²ä¸ç”¨è³­é‡‘åˆ¶åº¦ï¼Œè®“ç©å®¶ç©å¥½ç©çš„ï¼ŒåªåŠ éŒ¢ï¼Œä¸æ¸›éŒ¢ã€‚
 
-  itoc.010714.µù¸Ñ:
-  (a) ¨C¦¸ª±¹CÀ¸ªºÁ`´Á±æ­ÈÀ³¦b 1.01¡A¤@­Ó±ß¤W¬ù¥iª± 100 ¦¸¹CÀ¸¡A
-      ­Y±NÁ`°]²£§ë¤J¥hª±¹CÀ¸¡A«h 1.01^100 = 2.7 ­¿/¨Cª±¤@­Ó±ß¤W¡C
-  (b) ­Y¦U¶µ¾÷²v¤£§¡µ¥¡A¤]À³ºû«ù¦b 1.0 ~ 1.02 ¤§¶¡¡AÅıª±®a¤@©w¯àÁÈ¿ú¡A
-      ¥B­Y¤@ª½©ã³Ì°ª´Á±æ­Èªº¨º¤@¶µ¡A¤]¤£·|ÁÈ±o¹L©óÂ÷ÃĞ¡C
-  (c) ­ì«h¤W¡A¾÷²v¶V§CªÌ¨ä´Á±æ­ÈÀ³¬° 1.02¡A¾÷²v¸û°ªªÌ¨ä´Á±æ­ÈÀ³¬° 1.01¡C
+  itoc.010714.è¨»è§£:
+  (a) æ¯æ¬¡ç©éŠæˆ²çš„ç¸½æœŸæœ›å€¼æ‡‰åœ¨ 1.01ï¼Œä¸€å€‹æ™šä¸Šç´„å¯ç© 100 æ¬¡éŠæˆ²ï¼Œ
+      è‹¥å°‡ç¸½è²¡ç”¢æŠ•å…¥å»ç©éŠæˆ²ï¼Œå‰‡ 1.01^100 = 2.7 å€/æ¯ç©ä¸€å€‹æ™šä¸Šã€‚
+  (b) è‹¥å„é …æ©Ÿç‡ä¸å‡ç­‰ï¼Œä¹Ÿæ‡‰ç¶­æŒåœ¨ 1.0 ~ 1.02 ä¹‹é–“ï¼Œè®“ç©å®¶ä¸€å®šèƒ½è³ºéŒ¢ï¼Œ
+      ä¸”è‹¥ä¸€ç›´æŠ¼æœ€é«˜æœŸæœ›å€¼çš„é‚£ä¸€é …ï¼Œä¹Ÿä¸æœƒè³ºå¾—éæ–¼é›¢è­œã€‚
+  (c) åŸå‰‡ä¸Šï¼Œæ©Ÿç‡è¶Šä½è€…å…¶æœŸæœ›å€¼æ‡‰ç‚º 1.02ï¼Œæ©Ÿç‡è¼ƒé«˜è€…å…¶æœŸæœ›å€¼æ‡‰ç‚º 1.01ã€‚
 
-  itoc.011011.µù¸Ñ:
-  ¬°¤FÁ×§K user multi-login ª±¨Ó¬~¿ú¡A
-  ©Ò¥H¦bª±¹CÀ¸ªº¶}©l´N­nÀË¬d¬O§_­«ÂĞ login §Y if (HAS_STATUS(STATUS_COINLOCK))¡C
+  itoc.011011.è¨»è§£:
+  ç‚ºäº†é¿å… user multi-login ç©ä¾†æ´—éŒ¢ï¼Œ
+  æ‰€ä»¥åœ¨ç©éŠæˆ²çš„é–‹å§‹å°±è¦æª¢æŸ¥æ˜¯å¦é‡è¦† login å³ if (HAS_STATUS(STATUS_COINLOCK))ã€‚
 
 #endif
 
@@ -704,100 +704,100 @@ static MENU menu_game[];
 static MENU menu_game1[] =
 {
   "bin/liteon.so:main_liteon", 0, - M_GAME,
-  "0LightOn   ¡ñ ©Ğ¶¡¶}¿O ¡ğ",
+  "0LightOn   â™‚ æˆ¿é–“é–‹ç‡ˆ â™€",
 
   "bin/guessnum.so:guessNum", 0, - M_GAME,
-  "1GuessNum  ¡ñ ª±²q¼Æ¦r ¡ğ",
+  "1GuessNum  â™‚ ç©çŒœæ•¸å­— â™€",
 
   "bin/guessnum.so:fightNum", 0, - M_GAME,
-  "2FightNum  ¡ñ ¤¬²q¼Æ¦r ¡ğ",
+  "2FightNum  â™‚ äº’çŒœæ•¸å­— â™€",
 
   "bin/km.so:main_km", 0, - M_GAME,
-  "3KongMing  ¡ñ ¤Õ©ú´ÑÃĞ ¡ğ",
+  "3KongMing  â™‚ å­”æ˜æ£‹è­œ â™€",
 
   "bin/recall.so:main_recall", 0, - M_GAME,
-  "4Recall    ¡ñ ¦^¾Ğ¤§§Z ¡ğ",
+  "4Recall    â™‚ å›æ†¶ä¹‹åµ â™€",
 
   "bin/mine.so:main_mine", 0, - M_GAME,
-  "5Mine      ¡ñ ¶Ã½ò¦a¹p ¡ğ",
+  "5Mine      â™‚ äº‚è¸©åœ°é›· â™€",
 
   "bin/fantan.so:main_fantan", 0, - M_GAME, 
-  "6Fantan    ¡ñ µfÅu±µÀs ¡ğ",
+  "6Fantan    â™‚ ç•ªæ”¤æ¥é¾ â™€",
 
   "bin/dragon.so:main_dragon", 0, - M_GAME,
-  "7Dragon    ¡ñ ±µÀs¹CÀ¸ ¡ğ",
+  "7Dragon    â™‚ æ¥é¾éŠæˆ² â™€",
 
   "bin/nine.so:main_nine", 0, - M_GAME,
-  "8Nine      ¡ñ ¤Ñ¦a¤E¤E ¡ğ",
+  "8Nine      â™‚ å¤©åœ°ä¹ä¹ â™€",
 
   menu_game, PERM_MENU + '0', M_XMENU,
-  "¯q´¼ªÅ¶¡"
+  "ç›Šæ™ºç©ºé–“"
 };
 
 static MENU menu_game2[] =
 {
   "bin/dice.so:main_dice", 0, - M_GAME,
-  "0Dice      ¡ñ ¨gÂY»ë¤l ¡ğ",
+  "0Dice      â™‚ ç‹‚æ“²éª°å­ â™€",
 
   "bin/gp.so:main_gp", 0, - M_GAME,
-  "1GoldPoker ¡ñ ª÷µP¼³§J ¡ğ",
+  "1GoldPoker â™‚ é‡‘ç‰Œæ’²å…‹ â™€",
 
   "bin/bj.so:main_bj", 0, - M_GAME,
-  "2BlackJack ¡ñ ¤G¤Q¤@ÂI ¡ğ",
+  "2BlackJack â™‚ äºŒåä¸€é» â™€",
 
   "bin/chessmj.so:main_chessmj", 0, - M_GAME,
-  "3ChessMJ   ¡ñ ¶H´Ñ³Â±N ¡ğ",
+  "3ChessMJ   â™‚ è±¡æ£‹éº»å°‡ â™€",
 
   "bin/seven.so:main_seven", 0, - M_GAME,
-  "4Seven     ¡ñ ½ä«°¤C±i ¡ğ",
+  "4Seven     â™‚ è³­åŸä¸ƒå¼µ â™€",
  
   "bin/race.so:main_race", 0, - M_GAME,
-  "5Race      ¡ñ ¶iÁÉ°¨³õ ¡ğ",
+  "5Race      â™‚ é€²è³½é¦¬å ´ â™€",
 
   "bin/bingo.so:main_bingo", 0, - M_GAME,
-  "6Bingo     ¡ñ »«ªG¤j¾Ô ¡ğ",
+  "6Bingo     â™‚ è³“æœå¤§æˆ° â™€",
 
   "bin/marie.so:main_marie", 0, - M_GAME,
-  "7Marie     ¡ñ ¤j¤pº¿²ú ¡ğ",
+  "7Marie     â™‚ å¤§å°ç‘ªè‰ â™€",
 
   "bin/bar.so:main_bar", 0, - M_GAME,
-  "8Bar       ¡ñ §a¥xº¿²ú ¡ğ",
+  "8Bar       â™‚ å§å°ç‘ªè‰ â™€",
 
   menu_game, PERM_MENU + '0', M_XMENU,
-  "¹CÀ¸¼Ö¶é"
+  "éŠæˆ²æ¨‚åœ’"
 };
 
 static MENU menu_game3[] =
 {
   "bin/pip.so:main_pip", PERM_BASIC, - M_GAME,
-  "0Chicken   ¡ñ ¹q¤l¤pÂû ¡ğ",
+  "0Chicken   â™‚ é›»å­å°é› â™€",
 
   "bin/pushbox.so:main_pushbox", 0, - M_GAME,
-  "1PushBox   ¡ñ ­Ü®wµfµf ¡ğ",
+  "1PushBox   â™‚ å€‰åº«ç•ªç•ª â™€",
 
   "bin/tetris.so:main_tetris", 0, - M_GAME,
-  "2Tetris    ¡ñ «XÃ¹´µ¶ô ¡ğ",
+  "2Tetris    â™‚ ä¿„ç¾…æ–¯å¡Š â™€",
 
   "bin/reversi.so:main_reversi", 0, - M_GAME,
-  "3Reversi   ¡ñ ²L¦Ç¤j¾Ô ¡ğ",
+  "3Reversi   â™‚ æ·ºç°å¤§æˆ° â™€",
 
   menu_game, PERM_MENU + '0', M_XMENU,
-  "¤Ï¤æ¯S°Ï"
+  "åæ–—ç‰¹å€"
 };
 
 static MENU menu_game[] =
 {
   menu_game1, PERM_BASIC, M_XMENU,
-  "1Game      ¡i ¯q´¼¤Ñ°ó ¡j",
+  "1Game      ã€ ç›Šæ™ºå¤©å ‚ ã€‘",
 
   menu_game2, PERM_BASIC, M_XMENU,
-  "2Game      ¡i ¹CÀ¸¼Ö¶é ¡j",
+  "2Game      ã€ éŠæˆ²æ¨‚åœ’ ã€‘",
 
   menu_game3, PERM_BASIC, M_XMENU,
-  "3Game      ¡i ¤Ï¤æ¯S°Ï ¡j",
+  "3Game      ã€ åæ–—ç‰¹å€ ã€‘",
 
   menu_tool, PERM_MENU + '1', M_XMENU,
-  "¹CÀ¸¤H¥Í"
+  "éŠæˆ²äººç”Ÿ"
 };
 #endif
 
@@ -810,22 +810,22 @@ static MENU menu_game[] =
 static MENU menu_buy[] =
 {
   "bin/bank.so:x_bank", PERM_BASIC, - M_GAME,
-  "Bank       ¡ñ «H°U»È¦æ ¡ğ",
+  "Bank       â™‚ ä¿¡è¨—éŠ€è¡Œ â™€",
 
   "bin/bank.so:b_invis", PERM_BASIC, - M_GAME,
-  "Invis      ¡ñ Áô§Î²{¨­ ¡ğ",
+  "Invis      â™‚ éš±å½¢ç¾èº« â™€",
 
   "bin/bank.so:b_cloak", PERM_BASIC, - M_GAME,
-  "Cloak      ¡ñ µL­­Áô§Î ¡ğ",
+  "Cloak      â™‚ ç„¡é™éš±å½¢ â™€",
 
   "bin/bank.so:b_mbox", PERM_BASIC, - M_GAME,
-  "Mbox       ¡ñ «H½cµL­­ ¡ğ",
+  "Mbox       â™‚ ä¿¡ç®±ç„¡é™ â™€",
 
   "bin/bank.so:b_xempt", PERM_BASIC, - M_GAME,
-  "Xempt      ¡ñ ¥Ã¤[«O¯d ¡ğ",
+  "Xempt      â™‚ æ°¸ä¹…ä¿ç•™ â™€",
 
   menu_tool, PERM_MENU + 'B', M_XMENU,
-  "ª÷¿Ä¥«³õ"
+  "é‡‘èå¸‚å ´"
 };
 #endif
 
@@ -836,42 +836,42 @@ static MENU menu_buy[] =
 
 static MENU menu_other[] =
 {
-  "bin/vote.so:vote_all", PERM_BASIC, - M_VOTE,	/* itoc.010414: §ë²¼¤¤¤ß */
-  "VoteAll    ¡ñ §ë²¼¤¤¤ß ¡ğ",
+  "bin/vote.so:vote_all", PERM_BASIC, - M_VOTE,	/* itoc.010414: æŠ•ç¥¨ä¸­å¿ƒ */
+  "VoteAll    â™‚ æŠ•ç¥¨ä¸­å¿ƒ â™€",
 
 #ifdef HAVE_TIP
   "bin/xyz.so:x_tip", 0, - M_READA,
-  "Tip        ¡ñ ±Ğ¾ÇºëÆF ¡ğ",
+  "Tip        â™‚ æ•™å­¸ç²¾éˆ â™€",
 #endif
 
 #ifdef HAVE_LOVELETTER
   "bin/xyz.so:x_loveletter", 0, - M_READA,
-  "LoveLetter ¡ñ ±¡®Ñ¼¶¼g ¡ğ",
+  "LoveLetter â™‚ æƒ…æ›¸æ’°å¯« â™€",
 #endif
 
   "bin/xyz.so:x_password", PERM_VALID, - M_XMODE,
-  "Password   ¡ñ §Ñ°O±K½X ¡ğ",
+  "Password   â™‚ å¿˜è¨˜å¯†ç¢¼ â™€",
 
 #ifdef HAVE_CLASSTABLE
   "bin/classtable.so:main_classtable", PERM_BASIC, - M_XMODE,
-  "ClassTable ¡ñ ¥\\½Ò®É¬q ¡ğ",
+  "ClassTable â™‚ åŠŸ\èª²æ™‚æ®µ â™€",
 #endif
 
 #ifdef HAVE_CREDIT
   "bin/credit.so:main_credit", PERM_BASIC, - M_XMODE,
-  "MoneyNote  ¡ñ °O±b¤â¥¾ ¡ğ",
+  "MoneyNote  â™‚ è¨˜å¸³æ‰‹æœ­ â™€",
 #endif
 
 #ifdef HAVE_CALENDAR
   "bin/todo.so:main_todo", PERM_BASIC, - M_XMODE,
-  "XTodo      ¡ñ ­Ó¤H¦æµ{ ¡ğ",
+  "XTodo      â™‚ å€‹äººè¡Œç¨‹ â™€",
 
   "bin/calendar.so:main_calendar", 0, - M_XMODE,
-  "YCalendar  ¡ñ ¸U¦~¤ë¾ä ¡ğ",
+  "YCalendar  â™‚ è¬å¹´æœˆæ›† â™€",
 #endif
 
-  menu_tool, PERM_MENU + Ctrl('A'), M_XMENU,	/* itoc.020829: ©È guest ¨S¿ï¶µ */
-  "¨ä¥L¥\\¯à"
+  menu_tool, PERM_MENU + Ctrl('A'), M_XMENU,	/* itoc.020829: æ€• guest æ²’é¸é … */
+  "å…¶ä»–åŠŸ\èƒ½"
 };
 
 
@@ -879,29 +879,29 @@ static MENU menu_tool[] =
 {
 #ifdef HAVE_SONG
   menu_song, 0, M_XMENU,
-  "KTV        ¡i ¯u±¡ÂIºq ¡j",
+  "KTV        ã€ çœŸæƒ…é»æ­Œ ã€‘",
 #endif
 
 #ifdef HAVE_COSIGN
   "bin/newbrd.so:XoNewBoard", PERM_VALID, - M_XMODE,
-  "Join       ¡i ¬İªO³s¸p ¡j",
+  "Join       ã€ çœ‹æ¿é€£ç½² ã€‘",
 #endif
 
 #ifdef HAVE_GAME
   menu_game, PERM_BASIC, M_XMENU,
-  "Game       ¡i ¹CÀ¸¤H¥Í ¡j",
+  "Game       ã€ éŠæˆ²äººç”Ÿ ã€‘",
 #endif
 
 #ifdef HAVE_BUY
   menu_buy, PERM_BASIC, M_XMENU,
-  "Market     ¡i ª÷¿Ä¥«³õ ¡j",
+  "Market     ã€ é‡‘èå¸‚å ´ ã€‘",
 #endif
 
   menu_other, 0, M_XMENU,
-  "Other      ¡i Âø¤CÂø¤K ¡j",
+  "Other      ã€ é›œä¸ƒé›œå…« ã€‘",
 
-  menu_main, PERM_MENU + Ctrl('A'), M_XMENU,	/* itoc.020829: ©È guest ¨S¿ï¶µ */
-  "­Ó¤H¤u¨ã"
+  menu_main, PERM_MENU + Ctrl('A'), M_XMENU,	/* itoc.020829: æ€• guest æ²’é¸é … */
+  "å€‹äººå·¥å…·"
 };
 
 #endif	/* HAVE_EXTERNAL */
@@ -915,8 +915,8 @@ static MENU menu_tool[] =
 static int
 Gem()
 {
-  /* itoc.001109: ¬İªOÁ`ºŞ¦b (A)nnounce ¤U¦³ GEM_X_BIT¡A¤è«K¶}ªO */
-  XoGem("gem/"FN_DIR, "ºëµØ§G§iÄæ", (HAS_PERM(PERM_ALLBOARD) ? (GEM_W_BIT | GEM_X_BIT | GEM_M_BIT) : 0));
+  /* itoc.001109: çœ‹æ¿ç¸½ç®¡åœ¨ (A)nnounce ä¸‹æœ‰ GEM_X_BITï¼Œæ–¹ä¾¿é–‹æ¿ */
+  XoGem("gem/"FN_DIR, "ç²¾è¯ä½ˆå‘Šæ¬„", (HAS_PERM(PERM_ALLBOARD) ? (GEM_W_BIT | GEM_X_BIT | GEM_M_BIT) : 0));
   return 0;
 }
 
@@ -924,46 +924,46 @@ Gem()
 static MENU menu_main[] =
 {
   menu_admin, PERM_ALLADMIN, M_AMENU,
-  "0Admin    £X ¨t²ÎºûÅ@°Ï £X",
+  "0Admin    Î¦ ç³»çµ±ç¶­è­·å€ Î¦",
 
   Gem, 0, M_GEM,
-  "Announce  £i ºëµØ¤½§GÄæ £i",
+  "Announce  Î¾ ç²¾è¯å…¬ä½ˆæ¬„ Î¾",
 
   Boards, 0, M_BOARD,
-  "Boards    £[ §G§i°Q½×°Ï £[",
+  "Boards    Î© ä½ˆå‘Šè¨è«–å€ Î©",
 
   Class, 0, M_BOARD,
-  "Class     £p ¤À²Õ°Q½×¶° £p",
+  "Class     Ï† åˆ†çµ„è¨è«–é›† Ï†",
 
 #ifdef MY_FAVORITE
   MyFavorite, PERM_BASIC, M_MF,
-  "Favorite  £b §Úªº³Ì·R¸s £b",
+  "Favorite  Î· æˆ‘çš„æœ€æ„›ç¾¤ Î·",
 #endif
 
   menu_mail, 0, M_MMENU, 
-  "Mail      £g «H¥ó¨åÂÃ²° £g",
+  "Mail      Î¼ ä¿¡ä»¶å…¸è—ç›’ Î¼",
 
   menu_talk, 0, M_TMENU,
-  "Talk      £s ¥ğ¶¢²á¤Ñ¦a £s",
+  "Talk      Ï‰ ä¼‘é–’èŠå¤©åœ° Ï‰",
 
   menu_user, 0, M_UMENU,
-  "User      £k ­Ó¤H¤u¨ã§{ £k",
+  "User      Ï€ å€‹äººå·¥å…·åŠ Ï€",
 
 #ifdef HAVE_EXTERNAL
   menu_tool, 0, M_XMENU,
-  "Xyz       £c ¯S®í©Û«İ©Ò £c",
+  "Xyz       Î¸ ç‰¹æ®Šæ‹›å¾…æ‰€ Î¸",
 #endif
 
-#if 0	/* itoc.010209: ¿ï³æ«ö s ª½±µ¶i¤J Select() ´î¤Ö¿ï³æªø«× */
+#if 0	/* itoc.010209: é¸å–®æŒ‰ s ç›´æ¥é€²å…¥ Select() æ¸›å°‘é¸å–®é•·åº¦ */
   Select, 0, M_BOARD,
-  "Select    £m ¿ï¾Ü¥D¬İªO £m",
+  "Select    Ïƒ é¸æ“‡ä¸»çœ‹æ¿ Ïƒ",
 #endif
 
   goodbye, 0, M_XMODE,
-  "Goodbye   £_ ¤U¦¸¦A·|§a £_",
+  "Goodbye   Î´ ä¸‹æ¬¡å†æœƒå§ Î´",
 
   NULL, PERM_MENU + 'B', M_0MENU,
-  "¥D¥\\¯àªí"
+  "ä¸»åŠŸ\èƒ½è¡¨"
 };
 
 
@@ -993,7 +993,7 @@ menu()
 	{
 
 #ifdef	MENU_VERBOSE
-	  if (max < 0)		/* §ä¤£¨ì¾A¦XÅv­­¤§¥\¯à¡A¦^¤W¤@¼h¥\¯àªí */
+	  if (max < 0)		/* æ‰¾ä¸åˆ°é©åˆæ¬Šé™ä¹‹åŠŸèƒ½ï¼Œå›ä¸Šä¸€å±¤åŠŸèƒ½è¡¨ */
 	  {
 	    menu = (MENU *) menu->func;
 	    continue;
@@ -1002,7 +1002,7 @@ menu()
 
 	  break;
 	}
-	if (cc && !(cc & level))	/* ¦³¸ÓÅv­­¤~¨q¥X */
+	if (cc && !(cc & level))	/* æœ‰è©²æ¬Šé™æ‰ç§€å‡º */
 	  continue;
 
 	table[++max] = menu;
@@ -1011,7 +1011,7 @@ menu()
       if (mmx < max)
 	mmx = max;
 
-      if ((depth == 0) && HAS_STATUS(STATUS_BIFF))	/* ²Ä¤@¦¸¤W¯¸­Y¦³·s«H¡A¶i¤J Mail ¿ï³æ */
+      if ((depth == 0) && HAS_STATUS(STATUS_BIFF))	/* ç¬¬ä¸€æ¬¡ä¸Šç«™è‹¥æœ‰æ–°ä¿¡ï¼Œé€²å…¥ Mail é¸å–® */
 	cmd = 'M';
       else
 	cmd = cc ^ PERM_MENU;	/* default command */
@@ -1057,7 +1057,7 @@ menu()
       cc = (cc == 0) ? max : cc - 1;
       break;
 
-    case Ctrl('A'):	/* itoc.020829: ¹w³]¿ï¶µ²Ä¤@­Ó */
+    case Ctrl('A'):	/* itoc.020829: é è¨­é¸é …ç¬¬ä¸€å€‹ */
     case KEY_HOME:
       cc = 0;
       break;
@@ -1092,13 +1092,13 @@ menu()
 #endif
       utmp_mode(cmd);
 
-      if (cmd <= M_XMENU)	/* ¤l¥Ø¿ıªº mode ­n <= M_XMENU */
+      if (cmd <= M_XMENU)	/* å­ç›®éŒ„çš„ mode è¦ <= M_XMENU */
       {
 	menu->level = PERM_MENU + mptr->desc[0];
 	menu = (MENU *) mptr->func;
 
 	mode = MENU_LOAD | MENU_DRAW;
-	/* mode = MENU_LOAD | MENU_DRAW | MENU_FILM;	/* itoc.010304: ¶i¤J¤l¿ï³æ­«¼· movie */
+	/* mode = MENU_LOAD | MENU_DRAW | MENU_FILM;	/* itoc.010304: é€²å…¥å­é¸å–®é‡æ’¥ movie */
 
 	depth++;
 	continue;
@@ -1136,7 +1136,7 @@ menu()
       goto every_key;
 #endif
 
-    /* itoc.010911: Select everywhere¡A¤£¦A­­¨î¬O¦b M_0MENU */
+    /* itoc.010911: Select everywhereï¼Œä¸å†é™åˆ¶æ˜¯åœ¨ M_0MENU */
     case 's':
     case Ctrl('S'):
       utmp_mode(M_BOARD);
@@ -1144,10 +1144,10 @@ menu()
       goto every_key;
 
 #ifdef MY_FAVORITE
-    /* itoc.010911: Favorite everywhere¡A¤£¦A­­¨î¬O¦b M_0MENU */
+    /* itoc.010911: Favorite everywhereï¼Œä¸å†é™åˆ¶æ˜¯åœ¨ M_0MENU */
     case 'f':
     case Ctrl('F'):
-      if (cuser.userlevel)	/* itoc.010407: ­nÀË¬dÅv­­ */
+      if (cuser.userlevel)	/* itoc.010407: è¦æª¢æŸ¥æ¬Šé™ */
       {
 	utmp_mode(M_MF);
 	MyFavorite();
@@ -1170,9 +1170,9 @@ menu()
 	}
 	goto every_key;
       }
-      goto default_key;	/* ­Y¤£¦b M_0MENU ¤¤«ö r ªº¸Ü¡A­nµø¬°¤@¯ë«öÁä */
+      goto default_key;	/* è‹¥ä¸åœ¨ M_0MENU ä¸­æŒ‰ r çš„è©±ï¼Œè¦è¦–ç‚ºä¸€èˆ¬æŒ‰éµ */
 
-every_key:	/* ¯S®íÁä³B²zµ²§ô */
+every_key:	/* ç‰¹æ®Šéµè™•ç†çµæŸ */
       utmp_mode(menu->umode);
       mode = MENU_DRAW | MENU_FILM;
       cmd = table[cc]->desc[0];
@@ -1185,7 +1185,7 @@ every_key:	/* ¯S®íÁä³B²zµ²§ô */
 	menu->level = PERM_MENU + table[cc]->desc[0];
 	menu = (MENU *) menu->func;
 	mode = MENU_LOAD | MENU_DRAW;
-	/* mode = MENU_LOAD | MENU_DRAW | MENU_FILM;	/* itoc.010304: °h¥X¤l¿ï³æ­«¼· movie */
+	/* mode = MENU_LOAD | MENU_DRAW | MENU_FILM;	/* itoc.010304: é€€å‡ºå­é¸å–®é‡æ’¥ movie */
 	depth--;
 	continue;
       }
@@ -1195,7 +1195,7 @@ default_key:
     default:
 
       if (cmd >= 'a' && cmd <= 'z')
-	cmd ^= 0x20;			/* ÅÜ¤j¼g */
+	cmd ^= 0x20;			/* è®Šå¤§å¯« */
 
       cc = 0;
       for (;;)
@@ -1210,7 +1210,7 @@ default_key:
       }
     }
 
-    if (cc != cx)	/* ­Y´å¼Ğ²¾°Ê¦ì¸m */
+    if (cc != cx)	/* è‹¥æ¸¸æ¨™ç§»å‹•ä½ç½® */
     {
 #ifdef CURSOR_BAR
       if (cx >= 0)
@@ -1232,7 +1232,7 @@ default_key:
       str = mptr->desc;
       prints(COLOR4 "> (%c)%s \033[m", *str, str + 1);
       cx = cc;
-#else		/* ¨S¦³ CURSOR_BAR */
+#else		/* æ²’æœ‰ CURSOR_BAR */
       if (cx >= 0)
       {
 	move(MENU_XPOS + cx, MENU_YPOS);
@@ -1243,7 +1243,7 @@ default_key:
       cx = cc;
 #endif
     }
-    else		/* ­Y´å¼Ğªº¦ì¸m¨S¦³ÅÜ */
+    else		/* è‹¥æ¸¸æ¨™çš„ä½ç½®æ²’æœ‰è®Š */
     {
 #ifdef CURSOR_BAR
       move(MENU_XPOS + cc, MENU_YPOS);

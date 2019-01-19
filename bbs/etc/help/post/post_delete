@@ -1,15 +1,15 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xd     �xpost_delete �x�R���H��                                        �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │d     │post_delete │刪除信件                                        │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� d �i�H�R���ӽg�峹�A�u���O�D�έ��@�̤~��R���Ӥ峹�C
-  �Q�O�D�� d �R�����峹�|�b deleted �O�d�@���ƥ��F�Q���@�̥� d �R�����峹
-  �|�b junk �O�d�@���ƥ��C
+    將游標移到某欄，按 d 可以刪除該篇文章，只有板主及原文作者才能刪除該文章。
+  被板主用 d 刪除的文章會在 deleted 板留一份備份；被原文作者用 d 刪除的文章
+  會在 junk 板留一份備份。
 
-  �нT�w�R��(Y/N)�H          �� �T�{�R��
+  請確定刪除(Y/N)？          → 確認刪除
 
-    �Q�аO���峹�N�L�k�Q�R���C
+    被標記的文章將無法被刪除。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

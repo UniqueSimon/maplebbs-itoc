@@ -1,12 +1,12 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �x`     �xmf_nextunrea�x�j�M�U�@�ӥ�Ū�ݪO                              �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │`     │mf_nextunrea│搜尋下一個未讀看板                              │
+  └───┴──────┴────────────────────────┘
 
-    �� ` �i�H�j�M�U�@�ӥ�Ū�ݪO�A�j�M�ɷ|���L z �����ݪO�C
+    按 ` 可以搜尋下一個未讀看板，搜尋時會跳過 z 掉的看板。
 
-    �b�ݪO�C������ ` �]�i�H�j�M��Ū�ݪO�A�ӥB�|½�h�U���~���A�M�Ӧb�ڪ���
-  �R���A�u�|�j�M�����C
+    在看板列表中按 ` 也可以搜尋未讀看板，而且會翻去下頁繼續找，然而在我的最
+  愛中，只會搜尋本頁。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

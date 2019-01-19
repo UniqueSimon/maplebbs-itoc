@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/transbrd.c					 */
 /*-------------------------------------------------------*/
-/* target : Maple Sob 2.36 ¦Ü Maple 3.02 ¬ÝªOÂà´«	 */
+/* target : Maple Sob 2.36 è‡³ Maple 3.02 çœ‹æ¿è½‰æ›	 */
 /*          .BOARDS => .BRD				 */
 /* create :   /  /  					 */
 /* update : 98/06/14					 */
@@ -13,14 +13,14 @@
 
 #if 0
 
-   1. ­×§ï struct boardheader ¤Î transbrd()
-       (boardheader ¨âª©©w¸qªº¦r¦êªø«×¤£¤@¡A½Ð¦Û¦æ´«¦¨¼Æ¦r)
-   2. §ë²¼¤£Âà´«
-   3. ¶iªOµe­± copy
-   4. ¦p¦³»Ý­n½Ð chmod 644 `find PATH -perm 600`
-   5. ¶} gem ¥Ø¿ý gem/target_board/? ¦ý¤£Âà´« gem
-   6. ¤£·|§ó·s bshm¡A¨Ï¥Î«á½Ð¦Û¦æ§ó·s
-   7. Âà´««á½Ð¤â°Ê³]¬ÝªOÅv­­
+   1. ä¿®æ”¹ struct boardheader åŠ transbrd()
+       (boardheader å…©ç‰ˆå®šç¾©çš„å­—ä¸²é•·åº¦ä¸ä¸€ï¼Œè«‹è‡ªè¡Œæ›æˆæ•¸å­—)
+   2. æŠ•ç¥¨ä¸è½‰æ›
+   3. é€²æ¿ç•«é¢ copy
+   4. å¦‚æœ‰éœ€è¦è«‹ chmod 644 `find PATH -perm 600`
+   5. é–‹ gem ç›®éŒ„ gem/target_board/? ä½†ä¸è½‰æ› gem
+   6. ä¸æœƒæ›´æ–° bshmï¼Œä½¿ç”¨å¾Œè«‹è‡ªè¡Œæ›´æ–°
+   7. è½‰æ›å¾Œè«‹æ‰‹å‹•è¨­çœ‹æ¿æ¬Šé™
 
    ps. Use on ur own risk.
 
@@ -36,7 +36,7 @@ trans_hdr_chrono(filename)
 {
   char time_str[11];
 
-  /* M.1087654321.A ©Î M.987654321.A */
+  /* M.1087654321.A æˆ– M.987654321.A */
   str_ncpy(time_str, filename + 2, filename[2] == '1' ? 11 : 10);
 
   return (time_t) atoi(time_str);
@@ -88,7 +88,7 @@ trans_hdr_stamp(folder, t, hdr, fpath)
 
 
 /* ----------------------------------------------------- */
-/* Âà´«¥Dµ{¦¡						 */
+/* è½‰æ›ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -105,19 +105,19 @@ transbrd(bh)
   BRD newboard;
   time_t chrono;
 
-  printf("Âà´« %s ¬ÝªO\n", bh->brdname);
+  printf("è½‰æ› %s çœ‹æ¿\n", bh->brdname);
 
   brd_fpath(buf, bh->brdname, NULL);
   if (dashd(buf))
   {
-    printf("%s ¤w¸g¦³¦¹¬ÝªO\n", bh->brdname);
+    printf("%s å·²ç¶“æœ‰æ­¤çœ‹æ¿\n", bh->brdname);
     return;
   }
 
   if (!stamp)
     time(&stamp);
 
-  /* Âà´« .BRD */
+  /* è½‰æ› .BRD */
 
   memset(&newboard, 0, sizeof(newboard));
   str_ncpy(newboard.brdname, bh->brdname, sizeof(newboard.brdname));
@@ -125,19 +125,19 @@ transbrd(bh)
   str_ncpy(newboard.title, bh->title + 4, sizeof(newboard.title));
   str_ncpy(newboard.BM, bh->BM, sizeof(newboard.BM));
   newboard.bstamp = stamp++;
-  newboard.battr = BRD_NOTRAN;				/* ¹w³]¤£Âà«H */
+  newboard.battr = BRD_NOTRAN;				/* é è¨­ä¸è½‰ä¿¡ */
   newboard.readlevel = 0;
   newboard.postlevel = PERM_POST;
 
-  rec_add(FN_BRD, &newboard, sizeof(newboard));		/* §O§Ñ¤F¥Î brd2gem.c ¨ÓÂà´« Class */
+  rec_add(FN_BRD, &newboard, sizeof(newboard));		/* åˆ¥å¿˜äº†ç”¨ brd2gem.c ä¾†è½‰æ› Class */
 
-  /* ¶}·s¥Ø¿ý */
+  /* é–‹æ–°ç›®éŒ„ */
 
   sprintf(fpath, "gem/brd/%s", newboard.brdname);
   mak_dirs(fpath);
   mak_dirs(fpath + 4);
 
-  /* Âà´«¶iªOµe­± */
+  /* è½‰æ›é€²æ¿ç•«é¢ */
 
   sprintf(buf, OLD_BBSHOME "/boards/%s/notes", bh->brdname);
 
@@ -147,19 +147,19 @@ transbrd(bh)
     f_cp(buf, fpath, O_TRUNC);
   }
 
-  /* Âà´«¤å³¹ */
+  /* è½‰æ›æ–‡ç«  */
 
-  sprintf(index, OLD_BBSHOME "/boards/%s/.DIR", bh->brdname);	/* ÂÂªº .DIR */
-  brd_fpath(folder, newboard.brdname, ".DIR");			/* ·sªº .DIR */
+  sprintf(index, OLD_BBSHOME "/boards/%s/.DIR", bh->brdname);	/* èˆŠçš„ .DIR */
+  brd_fpath(folder, newboard.brdname, ".DIR");			/* æ–°çš„ .DIR */
 
   if ((fd = open(index, O_RDONLY)) >= 0)
   {
     while (read(fd, &fh, sizeof(fh)) == sizeof(fh))
     {
       sprintf(buf, OLD_BBSHOME "/boards/%s/%s", bh->brdname, fh.filename);
-      if (dashf(buf))	/* ¤å³¹ÀÉ®×¦b¤~°µÂà´« */
+      if (dashf(buf))	/* æ–‡ç« æª”æ¡ˆåœ¨æ‰åšè½‰æ› */
       {
-	/* Âà´«¤å³¹ .DIR */
+	/* è½‰æ›æ–‡ç«  .DIR */
 	memset(&hdr, 0, sizeof(HDR));
 	chrono = trans_hdr_chrono(fh.filename);
 	trans_hdr_stamp(folder, chrono, &hdr, fpath);
@@ -168,7 +168,7 @@ transbrd(bh)
 	hdr.xmode = (fh.filemode & 0x2) ? POST_MARKED : 0;
 	rec_add(folder, &hdr, sizeof(HDR));
 
-	/* «þ¨©ÀÉ®× */
+	/* æ‹·è²æª”æ¡ˆ */
 	f_cp(buf, fpath, O_TRUNC);
       }
     }
@@ -185,8 +185,8 @@ main(argc, argv)
   int fd;
   boardheader bh;
 
-  /* argc == 1 Âà¥þ³¡ªO */
-  /* argc == 2 Âà¬Y¯S©wªO */
+  /* argc == 1 è½‰å…¨éƒ¨æ¿ */
+  /* argc == 2 è½‰æŸç‰¹å®šæ¿ */
 
   if (argc > 2)
   {

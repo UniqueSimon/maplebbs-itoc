@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/transusr.c					 */
 /*-------------------------------------------------------*/
-/* target : WD ¦Ü Maple 3.02 ¨Ï¥ÎªÌÂà´«			 */
+/* target : WD è‡³ Maple 3.02 ä½¿ç”¨è€…è½‰æ›			 */
 /*          .PASSWDS => .USR .ACCT			 */
 /* create : 98/06/14					 */
 /* update : 02/01/05					 */
@@ -12,14 +12,14 @@
 
 #if 0
 
-   1. ­×§ï struct userec ¤Î creat_dirs()
-      (userec ¨âª©©w¸qªº¦r¦êªø«×¤£¤@¡A½Ğ¦Û¦æ´«¦¨¼Æ¦r)
-   2. °£ plans ÀÉ¦W¡A¦n¤Í¦W³æ¡B¼È¦sÀÉµ¥³£¤£Âà´«
-   3. Sob ¦³¤E­ÓÃ±¦WÀÉ¡A¥uÂà«e¤T­Ó
-   4. «H½c¤¤ªº internet mail ¦p¦³»İ­n½Ğ¥ı chmod 644 `find PATH -perm 600`
+   1. ä¿®æ”¹ struct userec åŠ creat_dirs()
+      (userec å…©ç‰ˆå®šç¾©çš„å­—ä¸²é•·åº¦ä¸ä¸€ï¼Œè«‹è‡ªè¡Œæ›æˆæ•¸å­—)
+   2. é™¤ plans æª”åï¼Œå¥½å‹åå–®ã€æš«å­˜æª”ç­‰éƒ½ä¸è½‰æ›
+   3. Sob æœ‰ä¹å€‹ç°½åæª”ï¼Œåªè½‰å‰ä¸‰å€‹
+   4. ä¿¡ç®±ä¸­çš„ internet mail å¦‚æœ‰éœ€è¦è«‹å…ˆ chmod 644 `find PATH -perm 600`
 
-   ps. ¨Ï¥Î«e½Ğ¥ı¦æ³Æ¥÷¡Ause on ur own risk. µ{¦¡©å¦H½Ğ¥]²[ :p
-   ps. ·PÁÂ lkchu ªº Maple 3.02 for FreeBSD
+   ps. ä½¿ç”¨å‰è«‹å…ˆè¡Œå‚™ä»½ï¼Œuse on ur own risk. ç¨‹å¼æ‹™åŠ£è«‹åŒ…æ¶µ :p
+   ps. æ„Ÿè¬ lkchu çš„ Maple 3.02 for FreeBSD
 
 #endif
 
@@ -28,7 +28,7 @@
 
 
 /* ----------------------------------------------------- */
-/* Âà´« .ACCT						 */
+/* è½‰æ› .ACCT						 */
 /* ----------------------------------------------------- */
 
 
@@ -62,7 +62,7 @@ uniq_userno(fd)
 {
   char buf[4096];
   int userno, size;
-  SCHEMA *sp;			/* record length 16 ¥i¾ã°£ 4096 */
+  SCHEMA *sp;			/* record length 16 å¯æ•´é™¤ 4096 */
 
   userno = 1;
 
@@ -86,20 +86,20 @@ uniq_userno(fd)
 }
 
 
-#define LEVEL_BASIC	000000000001	/* °ò¥»Åv¤O */
-#define LEVEL_CHAT	000000000002	/* ¶i¤J²á¤Ñ«Ç */
-#define LEVEL_PAGE	000000000004	/* §ä¤H²á¤Ñ */
-#define LEVEL_POST	000000000010	/* µoªí¤å³¹ */
-#define LEVEL_LOGINOK	000000000020	/* µù¥Uµ{§Ç»{ÃÒ */
-#define LEVEL_MAILLIMIT	000000000040	/* «H¥óµL¤W­­ */
-#define LEVEL_CLOAK	000000000100	/* Áô¨­³N */
-#define LEVEL_SEECLOAK	000000000200	/* ¬İ¨£§ÔªÌ */
-#define LEVEL_XEMPT	000000000400	/* ¥Ã¤[«O¯d±b¸¹ */
-#define LEVEL_BM	000000002000	/* ªO¥D */
-#define LEVEL_ACCOUNTS	000000004000	/* ±b¸¹Á`ºŞ */
-#define LEVEL_CHATROOM	000000010000	/* ²á¤Ñ«ÇÁ`ºŞ */
-#define LEVEL_BOARD	000000020000	/* ¬İªOÁ`ºŞ */
-#define LEVEL_SYSOP	000000040000	/* ¯¸ªø */
+#define LEVEL_BASIC	000000000001	/* åŸºæœ¬æ¬ŠåŠ› */
+#define LEVEL_CHAT	000000000002	/* é€²å…¥èŠå¤©å®¤ */
+#define LEVEL_PAGE	000000000004	/* æ‰¾äººèŠå¤© */
+#define LEVEL_POST	000000000010	/* ç™¼è¡¨æ–‡ç«  */
+#define LEVEL_LOGINOK	000000000020	/* è¨»å†Šç¨‹åºèªè­‰ */
+#define LEVEL_MAILLIMIT	000000000040	/* ä¿¡ä»¶ç„¡ä¸Šé™ */
+#define LEVEL_CLOAK	000000000100	/* éš±èº«è¡“ */
+#define LEVEL_SEECLOAK	000000000200	/* çœ‹è¦‹å¿è€… */
+#define LEVEL_XEMPT	000000000400	/* æ°¸ä¹…ä¿ç•™å¸³è™Ÿ */
+#define LEVEL_BM	000000002000	/* æ¿ä¸» */
+#define LEVEL_ACCOUNTS	000000004000	/* å¸³è™Ÿç¸½ç®¡ */
+#define LEVEL_CHATROOM	000000010000	/* èŠå¤©å®¤ç¸½ç®¡ */
+#define LEVEL_BOARD	000000020000	/* çœ‹æ¿ç¸½ç®¡ */
+#define LEVEL_SYSOP	000000040000	/* ç«™é•· */
 
 
 static inline usint
@@ -156,19 +156,19 @@ trans_acct_level(perm)
 }
 
 
-#define OLDUFO_MOVIE		000000000001	/* ¶}/Ãö°ÊºA¬İªO */
-#define OLDUFO_COLOR		000000000002	/* ±m¦â/¶Â¥Õ¤Á´« */
-#define OLDUFO_NOTE		000000000004	/* Åã¥Ü¯d¨¥ªO */
-#define OLDUFO_ALARM		000000000010	/* ¥bÂI³ø®É */
-#define OLDUFO_BELL		000000000020	/* Án­µ */
-#define OLDUFO_BOARDLIST	000000000040	/* ¬İªO¦CªíÅã¥Ü¤å³¹¼Æ©Î¬O½s¸¹ */
-#define OLDUFO_SEELOG		000000000100	/* ¤W¯¸³£¥h¬İ¬ö¿ı±Æ¦W? */
-#define OLDUFO_CYCLE		000000000200	/* ´`Àô¦¡¾\Åª */
+#define OLDUFO_MOVIE		000000000001	/* é–‹/é—œå‹•æ…‹çœ‹æ¿ */
+#define OLDUFO_COLOR		000000000002	/* å½©è‰²/é»‘ç™½åˆ‡æ› */
+#define OLDUFO_NOTE		000000000004	/* é¡¯ç¤ºç•™è¨€æ¿ */
+#define OLDUFO_ALARM		000000000010	/* åŠé»å ±æ™‚ */
+#define OLDUFO_BELL		000000000020	/* è²éŸ³ */
+#define OLDUFO_BOARDLIST	000000000040	/* çœ‹æ¿åˆ—è¡¨é¡¯ç¤ºæ–‡ç« æ•¸æˆ–æ˜¯ç·¨è™Ÿ */
+#define OLDUFO_SEELOG		000000000100	/* ä¸Šç«™éƒ½å»çœ‹ç´€éŒ„æ’å? */
+#define OLDUFO_CYCLE		000000000200	/* å¾ªç’°å¼é–±è®€ */
 #define OLDUFO_RPG		000000000400  
 #define OLDUFO_FEELING		000000001000  
 #define OLDUFO_FROM		000000002000  
 #define OLDUFO_NOTEMONEY	000000004000  
-#define OLDUFO_ALREADYSET 	000000010000	/* ¨C¦¸¤W¯¸³£³]©w? */
+#define OLDUFO_ALREADYSET 	000000010000	/* æ¯æ¬¡ä¸Šç«™éƒ½è¨­å®š? */
 #define OLDUFO_BIG5GB		000000020000	/* use big5 code or gb */
 
 
@@ -213,10 +213,10 @@ creat_dirs(old)
   new.userlevel = trans_acct_level(old->userlevel);
   new.ufo = trans_acct_ufo(old->habit);
   new.signature = 0;
-  new.year = old->year - 11;	/* ¦è¤¸´«¦¨¥Á°ê */
+  new.year = old->year - 11;	/* è¥¿å…ƒæ›æˆæ°‘åœ‹ */
   new.month = old->month;
   new.day = old->day;
-  new.sex = 1 - (old->sex % 2);	/* (0)¸¯®æ (1)©j±µ (2)©³­} (3)¬ü¬Ü (4)Á¦¨û (5)ªü«¼ (6)´Óª« (7)Äqª« */
+  new.sex = 1 - (old->sex % 2);	/* (0)è‘›æ ¼ (1)å§æ¥ (2)åº•è¿ª (3)ç¾çœ‰ (4)è–¯å” (5)é˜¿å§¨ (6)æ¤ç‰© (7)ç¤¦ç‰© */
   new.money = old->silvermoney;
   new.gold = old->goldmoney;
   new.numlogins = old->numlogins;
@@ -242,7 +242,7 @@ creat_dirs(old)
   mkdir(fpath, 0700);
   usr_fpath(fpath, new.userid, "MF");
   mkdir(fpath, 0700);
-  usr_fpath(fpath, new.userid, "gem");		/* itoc.010727: ­Ó¤HºëµØ°Ï */
+  usr_fpath(fpath, new.userid, "gem");		/* itoc.010727: å€‹äººç²¾è¯å€ */
   mak_links(fpath);
 
   usr_fpath(fpath, new.userid, ".ACCT");
@@ -253,7 +253,7 @@ creat_dirs(old)
 
 
 /* ----------------------------------------------------- */
-/* Âà´«»{ÃÒ¸ê®Æ						 */
+/* è½‰æ›èªè­‰è³‡æ–™						 */
 /* ----------------------------------------------------- */
 
 
@@ -267,14 +267,14 @@ trans_justify(old)
   usr_fpath(fpath, old->userid, FN_JUSTIFY);
   if (fp = fopen(fpath, "a"))
   {
-    fprintf(fp, "RPY: %s\n", old->justify);	/* Âà´«¹w³]¥H email »{ÃÒ */
+    fprintf(fp, "RPY: %s\n", old->justify);	/* è½‰æ›é è¨­ä»¥ email èªè­‰ */
     fclose(fp);
   }
 }
 
 
 /* ----------------------------------------------------- */
-/* Âà´«Ã±¦WÀÉ¡B­pµeÀÉ					 */
+/* è½‰æ›ç°½åæª”ã€è¨ˆç•«æª”					 */
 /* ----------------------------------------------------- */
 
 
@@ -285,9 +285,9 @@ trans_sig(old)
   int i;
   char buf[64], fpath[64], f_sig[20];
 
-  for (i = 1; i <= 3; i++)	/* Maple 3.0 ¥u¦³¤T­ÓÃ±¦W */
+  for (i = 1; i <= 3; i++)	/* Maple 3.0 åªæœ‰ä¸‰å€‹ç°½å */
   {
-    sprintf(buf, OLD_BBSHOME "/home/%s/sig.%d", old->userid, i);	/* ÂÂªºÃ±¦WÀÉ */
+    sprintf(buf, OLD_BBSHOME "/home/%s/sig.%d", old->userid, i);	/* èˆŠçš„ç°½åæª” */
     if (dashf(buf))
     {
       sprintf(f_sig, "%s.%d", FN_SIGN, i);
@@ -314,7 +314,7 @@ trans_plans(old)
 
 
 /* ----------------------------------------------------- */
-/* Âà´««H¥ó						 */
+/* è½‰æ›ä¿¡ä»¶						 */
 /* ----------------------------------------------------- */
 
 
@@ -324,7 +324,7 @@ trans_hdr_chrono(filename)
 {
   char time_str[11];
 
-  /* M.1087654321.A ©Î M.987654321.A */
+  /* M.1087654321.A æˆ– M.987654321.A */
   str_ncpy(time_str, filename + 2, filename[2] == '1' ? 11 : 10);
 
   return (time_t) atoi(time_str);
@@ -350,11 +350,11 @@ trans_mail(old)
     {
       sprintf(buf, OLD_BBSHOME "/home/%s/%s", old->userid, fh.filename);
 
-      if (dashf(buf))	/* ¤å³¹ÀÉ®×¦b¤~°µÂà´« */
+      if (dashf(buf))	/* æ–‡ç« æª”æ¡ˆåœ¨æ‰åšè½‰æ› */
       {
 	char new_name[10] = "@";      
 
-	/* Âà´«¤å³¹ .DIR */
+	/* è½‰æ›æ–‡ç«  .DIR */
 	memset(&hdr, 0, sizeof(HDR));
 	chrono = trans_hdr_chrono(fh.filename);
 	new_name[1] = radix32[chrono & 31];
@@ -362,14 +362,14 @@ trans_mail(old)
 
 	hdr.chrono = chrono;
 	str_ncpy(hdr.xname, new_name, sizeof(hdr.xname));
-	str_ncpy(hdr.owner, strstr(fh.owner, "[³Æ.") ? "[³Æ§Ñ¿ı]" : fh.owner, sizeof(hdr.owner));	/* [³Æ.§Ñ.¿ı] */
+	str_ncpy(hdr.owner, strstr(fh.owner, "[å‚™.") ? "[å‚™å¿˜éŒ„]" : fh.owner, sizeof(hdr.owner));	/* [å‚™.å¿˜.éŒ„] */
 	str_ncpy(hdr.title, fh.title, sizeof(hdr.title));
 	str_stamp(hdr.date, &hdr.chrono);
-	hdr.xmode = (fh.filemode & 0x2) ? (MAIL_MARKED | MAIL_READ) : MAIL_READ;	/* ³]¬°¤wÅª */
+	hdr.xmode = (fh.filemode & 0x2) ? (MAIL_MARKED | MAIL_READ) : MAIL_READ;	/* è¨­ç‚ºå·²è®€ */
 
 	rec_add(folder, &hdr, sizeof(HDR));
 
-	/* «ş¨©ÀÉ®× */
+	/* æ‹·è²æª”æ¡ˆ */
 	usr_fpath(fpath, old->userid, "@/");
 	strcat(fpath, new_name);
 	f_cp(buf, fpath, O_TRUNC);
@@ -381,7 +381,7 @@ trans_mail(old)
 
 
 /* ----------------------------------------------------- */
-/* Âà´«­Ó¤HºëµØ°Ï					 */
+/* è½‰æ›å€‹äººç²¾è¯å€					 */
 /* ----------------------------------------------------- */
 
 
@@ -452,9 +452,9 @@ transman(index, folder)
       ptr = strrchr(buf, '/') + 1;
       strcpy(ptr, fh.filename);
 
-      if (*fh.filename == 'M' && dashf(buf))	/* ¥uÂà M.xxxx.A ¤Î D.xxxx.a */
+      if (*fh.filename == 'M' && dashf(buf))	/* åªè½‰ M.xxxx.A åŠ D.xxxx.a */
       {
-	/* Âà´«¤å³¹ .DIR */
+	/* è½‰æ›æ–‡ç«  .DIR */
 	memset(&hdr, 0, sizeof(HDR));
 	chrono = trans_hdr_chrono(fh.filename);
 	trans_man_stamp(folder, 'A', &hdr, fpath, chrono);
@@ -463,23 +463,23 @@ transman(index, folder)
 	str_ncpy(hdr.title, fh.title + 3, sizeof(hdr.title));
 	rec_add(folder, &hdr, sizeof(HDR));
 
-	/* «ş¨©ÀÉ®× */
+	/* æ‹·è²æª”æ¡ˆ */
 	f_cp(buf, fpath, O_TRUNC);
       }
       else if (*fh.filename == 'D' && dashd(buf))
       {
 	char sub_index[256];
 
-	/* Âà´«¤å³¹ .DIR */
+	/* è½‰æ›æ–‡ç«  .DIR */
 	memset(&hdr, 0, sizeof(HDR));
-	 chrono = ++count;		/* WD ªº¥Ø¿ı©R¦W¤ñ¸û©_©Ç¡A¥u¦n¦Û¤vµ¹¼Æ¦r */
+	 chrono = ++count;		/* WD çš„ç›®éŒ„å‘½åæ¯”è¼ƒå¥‡æ€ªï¼Œåªå¥½è‡ªå·±çµ¦æ•¸å­— */
 	trans_man_stamp(folder, 'F', &hdr, fpath, chrono);
 	hdr.xmode = GEM_FOLDER;
 	str_ncpy(hdr.owner, fh.owner, sizeof(hdr.owner));
 	str_ncpy(hdr.title, fh.title + 3, sizeof(hdr.title));
 	rec_add(folder, &hdr, sizeof(HDR));
 
-	/* recursive ¶i¥hÂà´«¤l¥Ø¿ı */
+	/* recursive é€²å»è½‰æ›å­ç›®éŒ„ */
 	strcpy(sub_index, buf);
 	ptr = strrchr(sub_index, '/') + 1;
 	sprintf(ptr, "%s/.DIR", fh.filename);
@@ -493,7 +493,7 @@ transman(index, folder)
 
 
 /* ----------------------------------------------------- */
-/* Âà´«¥Dµ{¦¡						 */
+/* è½‰æ›ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -503,25 +503,25 @@ transusr(user)
 {
   char buf[64];
 
-  printf("Âà´« %s ¨Ï¥ÎªÌ\n", user->userid);
+  printf("è½‰æ› %s ä½¿ç”¨è€…\n", user->userid);
 
   if (is_bad_userid(user->userid))
   {
-    printf("%s ¤£¬O¦Xªk ID\n", user->userid);
+    printf("%s ä¸æ˜¯åˆæ³• ID\n", user->userid);
     return;
   }
 
   usr_fpath(buf, user->userid, NULL);
   if (dashd(buf))
   {
-    printf("%s ¤w¸g¦³¦¹ ID\n", user->userid);
+    printf("%s å·²ç¶“æœ‰æ­¤ ID\n", user->userid);
     return;
   }
 
   sprintf(buf, OLD_BBSHOME "/home/%s", user->userid);
   if (!dashd(buf))
   {
-    printf("%s ªºÀÉ®×¤£¦s¦b\n", user->userid);
+    printf("%s çš„æª”æ¡ˆä¸å­˜åœ¨\n", user->userid);
     return;
   }
 
@@ -554,8 +554,8 @@ main(argc, argv)
   int fd;
   userec user;
 
-  /* argc == 1 Âà¥ş³¡¨Ï¥ÎªÌ */
-  /* argc == 2 Âà¬Y¯S©w¨Ï¥ÎªÌ */
+  /* argc == 1 è½‰å…¨éƒ¨ä½¿ç”¨è€… */
+  /* argc == 2 è½‰æŸç‰¹å®šä½¿ç”¨è€… */
 
   if (argc > 2)
   {

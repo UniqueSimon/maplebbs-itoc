@@ -36,12 +36,12 @@ f_new(fold, fnew)
 
       if (stat(fnew, &st))
 	break;
-      if (st.st_mtime < time(NULL) - 20 * 60)	/* °²³] 20 ¤ÀÄÁ¤ºÀ³¸Ó³B²z§¹ */
+      if (st.st_mtime < time(NULL) - 20 * 60)	/* å‡è¨­ 20 åˆ†é˜å…§æ‡‰è©²è™•ç†å®Œ */
 	unlink(fnew);
     }
     else
     {
-      if (try > 24)		/* µ¥«İ 120 ¬íÄÁ */
+      if (try > 24)		/* ç­‰å¾… 120 ç§’é˜ */
 	break;
       sleep(5);
     }

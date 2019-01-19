@@ -1,16 +1,16 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xENTER �xmf_browse   �x�i�J�ڪ��̷R                                    �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │ENTER │mf_browse   │進入我的最愛                                    │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� r �� ENTER �i�H�i�J�ӳ̷R�C
+    將游標移到某欄，按 r 或 ENTER 可以進入該最愛。
 
-    �ڪ��̷R���Ҧ��`�@���H�U�|�ءG
+    我的最愛的模式總共有以下四種：
 
-  1) �ݪO���|�G  �i�J�Y�@�ݪO
-  2) ���v�G      �i�J�ؿ��𪬵��c
-  3) ��ذϱ��|�G�i�J�Y�@�ݪO����ذ�
-  4) ���j�u�G    �L�k�i�J�A�u�O�@�����j��ܥ�
+  1) 看板捷徑：  進入某一看板
+  2) 卷宗：      進入目錄樹狀結構
+  3) 精華區捷徑：進入某一看板的精華區
+  4) 分隔線：    無法進入，只是作為分隔顯示用
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

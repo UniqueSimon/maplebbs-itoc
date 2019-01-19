@@ -1,23 +1,23 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xa     �xpal_add     �x�[�J�B��                                        �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │a     │pal_add     │加入朋友                                        │
+  └───┴──────┴────────────────────────┘
 
-    �ҿצn�ʹN�O�z���w���H�A���z�����I�s���ɡA�u���n�ͤ~��I�s�z�C�b�ϥΪ̦W
-  �椤�A[1;32m�ڪ��n��[m�O�z�]�L���n�͡A[1;33m�P�ڬ���[m�O�L�]�z���n�͡A[1m���]�n��[m�O��J������
-  �]��謰�n�͡C
+    所謂好友就是您喜歡的人，當您關閉呼叫器時，只有好友才能呼叫您。在使用者名
+  單中，[1;32m我的好友[m是您設他為好友，[1;33m與我為友[m是他設您為好友，[1m互設好友[m是兩入都互相
+  設對方為好友。
 
-    �ҿ��a�H�N�O�z�Q�����H�A�L�N����I�s�z�A�ӥB�ݤ���z���s�b�C�b�ϥΪ̦W��
-  ���A[1;31m�a�H[m�|��ܬ���C
+    所謂壞人就是您討厭的人，他將不能呼叫您，而且看不到您的存在。在使用者名單
+  中，[1;31m壞人[m會顯示紅色。
 
-    �p�G�n�[�J�n�ͩάO�a�H�A�u�n�b�B�ͦW�椤�� a �Y�i�C
+    如果要加入好友或是壞人，只要在朋友名單中按 a 即可。
 
-  �п�J�N���G       �� ��J�L���N���A�ۤv�����[�J�B�ͦW�椤
-  �ͽˡG             �� ��J�@�Ǳz��L���y�z
-  �a�H(Y/N)�H        �� ��ܳ]���n���٬O�a�H
+  請輸入代號：       → 輸入他的代號，自己不須加入朋友名單中
+  友誼：             → 輸入一些您對他的描述
+  壞人(Y/N)？        → 選擇設為好友還是壞人
 
-    �b�ϥΪ̦W�椤�A�N��в���Y��A�� a �]�i�H�⨺�H�ܦ��n�ͩ��a�H�C�� d �h
-  �i�H�⨺�H�q�B�ͦW�椤�����C
+    在使用者名單中，將游標移到某欄，按 a 也可以把那人變成好友或壞人。按 d 則
+  可以把那人從朋友名單中移除。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

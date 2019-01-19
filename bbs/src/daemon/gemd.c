@@ -48,7 +48,7 @@ typedef struct Agent
   int state;
   int sock;
   int sno;
-  time_t tbegin;		/* «Ø¥ß connection ªº®É¶¡ */
+  time_t tbegin;		/* å»ºç«‹ connection çš„æ™‚é–“ */
   time_t uptime;
 
   FILE *stream;
@@ -130,7 +130,7 @@ log_open()
 
 
 /*-------------------------------------------------------*/
-/* BRD shm ³¡¤À¶·»P cache.c ¬Û®e                         */
+/* BRD shm éƒ¨åˆ†é ˆèˆ‡ cache.c ç›¸å®¹                         */
 /*-------------------------------------------------------*/
 
 
@@ -140,17 +140,17 @@ static BCACHE *bshm;
 static void
 init_bshm()
 {
-  /* itoc.030727: ¦b¶}±Ò bbsd ¤§«e¡AÀ³¸Ó´N­n°õ¦æ¹L account¡A
-     ©Ò¥H bshm À³¸Ó¤w³]©w¦n */
+  /* itoc.030727: åœ¨é–‹å•Ÿ bbsd ä¹‹å‰ï¼Œæ‡‰è©²å°±è¦åŸ·è¡ŒéŽ accountï¼Œ
+     æ‰€ä»¥ bshm æ‡‰è©²å·²è¨­å®šå¥½ */
 
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-  if (bshm->uptime <= 0)	/* bshm ¥¼³]©w§¹¦¨ */
+  if (bshm->uptime <= 0)	/* bshm æœªè¨­å®šå®Œæˆ */
     exit(0);
 }
 
 
-/* itoc.030708: ¥[¤WÀË¬d¬ÝªOÅv­­ªº³¡¤À¡A¥H§K¦³¤H¶Ã¿å */
+/* itoc.030708: åŠ ä¸Šæª¢æŸ¥çœ‹æ¿æ¬Šé™çš„éƒ¨åˆ†ï¼Œä»¥å…æœ‰äººäº‚è¸¹ */
 
 static int
 allow_brdname(brdname)
@@ -814,9 +814,9 @@ servo_signal()
 {
   struct sigaction act;
 
-  /* sigblock(sigmask(SIGPIPE)); */ /* Thor.981206: ²Î¤@ POSIX ¼Ð·Ç¥Îªk  */ 
+  /* sigblock(sigmask(SIGPIPE)); */ /* Thor.981206: çµ±ä¸€ POSIX æ¨™æº–ç”¨æ³•  */ 
 
-  /* act.sa_mask = 0; */ /* Thor.981105: ¼Ð·Ç¥Îªk */
+  /* act.sa_mask = 0; */ /* Thor.981105: æ¨™æº–ç”¨æ³• */
   sigemptyset(&act.sa_mask);      
   act.sa_flags = 0;
 
@@ -833,8 +833,8 @@ servo_signal()
   sigaction(SIGPROF, &act, NULL);
 #endif
 
-  /* Thor.981206: lkchu patch: ²Î¤@ POSIX ¼Ð·Ç¥Îªk  */
-  /* ¦b¦¹­É¥Î sigset_t act.sa_mask */
+  /* Thor.981206: lkchu patch: çµ±ä¸€ POSIX æ¨™æº–ç”¨æ³•  */
+  /* åœ¨æ­¤å€Ÿç”¨ sigset_t act.sa_mask */
   sigaddset(&act.sa_mask, SIGPIPE);
   sigprocmask(SIG_BLOCK, &act.sa_mask, NULL);
 

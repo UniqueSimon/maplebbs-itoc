@@ -1,16 +1,16 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xTAB   �xulist_toggle�x�����ƧǼҦ�                                    �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │TAB   │ulist_toggle│切換排序模式                                    │
+  └───┴──────┴────────────────────────┘
 
-    �� TAB �i�H�����ƧǼҦ��C
+    按 TAB 可以切換排序模式。
 
-  �ƦC�覡 [1]���N [2]�N�� [3]�ӷ� [4]�ʺA
+  排列方式 [1]任意 [2]代號 [3]來源 [4]動態
 
-  [1]���N �� �����S�O�Ƨ�
-  [2]�N�� �� �̢עҭ^��r���]�����j�p�g�^�Ƨ�
-  [3]�ӷ� �� �̢עިӷ��Ƨ�
-  [4]�ʺA �� �̰ʺA���p�Ƨ�
+  [1]任意 － 不做特別排序
+  [2]代號 － 依ＩＤ英文字母（不分大小寫）排序
+  [3]來源 － 依ＩＰ來源排序
+  [4]動態 － 依動態狀況排序
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

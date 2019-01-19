@@ -79,7 +79,7 @@ usr_fpath(fpath, user, fname)
 #if 0
   str_lower(buf, user);		/* lower case */
 #endif
-  /* Thor.981027: ¨¾¤î buffer overflow, ÁöµM SunOS 4.1.x¤WµL¦¹±¡ªp, ¥H«á¦A·Q¦nªº§ïªk */
+  /* Thor.981027: é˜²æ­¢ buffer overflow, é›–ç„¶ SunOS 4.1.xä¸Šç„¡æ­¤æƒ…æ³, ä»¥å¾Œå†æƒ³å¥½çš„æ”¹æ³• */
   str_ncpy(buf, user, sizeof(buf));
   str_lower(buf, buf);
     

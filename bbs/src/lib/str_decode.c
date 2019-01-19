@@ -54,7 +54,7 @@ base64_code(x)
 
 
 /* ----------------------------------------------------- */
-/* ¨ú encode / charset					 */
+/* å– encode / charset					 */
 /* ----------------------------------------------------- */
 
 
@@ -74,7 +74,7 @@ isspace(c)
 }
 
 
-/* ¨úContent-Transfer-Encode ªº²Ä¤@­Ó¦r¤¸, ¨Ì·Ó¼Ğ·Ç¥u¥i¯à¬O q,b,7,8 ³o¥|­Ó */
+/* å–Content-Transfer-Encode çš„ç¬¬ä¸€å€‹å­—å…ƒ, ä¾ç…§æ¨™æº–åªå¯èƒ½æ˜¯ q,b,7,8 é€™å››å€‹ */
 char *
 mm_getencode(str, code)
   unsigned char *str;
@@ -103,7 +103,7 @@ mm_getencode(str, code)
 }
 
 
-/* ¨ú charset */
+/* å– charset */
 void
 mm_getcharset(str, charset, size)
   const char *str;
@@ -124,7 +124,7 @@ mm_getcharset(str, charset, size)
 
   src += 8;
   dst = charset;
-  end = dst + size - 1;	/* «O¯dªÅ¶¡µ¹ '\0' */
+  end = dst + size - 1;	/* ä¿ç•™ç©ºé–“çµ¦ '\0' */
   delim = '\0';
 
   while (ch = *src++)
@@ -149,7 +149,7 @@ mm_getcharset(str, charset, size)
 
   *dst = '\0';
 
-  if (!str_cmp(charset, "iso-8859-1"))	/* ¾ú¥v¥]¥ñ¤£¥i¥á */
+  if (!str_cmp(charset, "iso-8859-1"))	/* æ­·å²åŒ…ä¼ä¸å¯ä¸Ÿ */
     *charset = '\0';
 }
 
@@ -160,15 +160,15 @@ mm_getcharset(str, charset, size)
 
 
 /* PaulLiu.030410: 
-   RFC 2047 (Header) QP ³¡¤À¡A¸Ì­±³W©w '_' ªí¥Ü ' ' (US_ASCIIªºªÅ¥Õ)
-   ¦Ó RFC 2045 (Body) QP ³¡¤À¡A'_' ÁÙ¬O '_'¡A¨S¦³¯S®í¥Î³~
-   ©Ò¥H¦b¦¹ mmdecode ¤À¤G°¦¼g
+   RFC 2047 (Header) QP éƒ¨åˆ†ï¼Œè£¡é¢è¦å®š '_' è¡¨ç¤º ' ' (US_ASCIIçš„ç©ºç™½)
+   è€Œ RFC 2045 (Body) QP éƒ¨åˆ†ï¼Œ'_' é‚„æ˜¯ '_'ï¼Œæ²’æœ‰ç‰¹æ®Šç”¨é€”
+   æ‰€ä»¥åœ¨æ­¤ mmdecode åˆ†äºŒéš»å¯«
 */
 
 static int
-mmdecode_header(src, encode, dst)	/* ¸Ñ Header ªº mmdecode */
-  unsigned char *src;		/* Thor.980901: src©Mdst¥i¬Û¦P, ¦ısrc¤@©w¦³?©Î\0µ²§ô */
-  unsigned char encode;		/* Thor.980901: ª`·N, decode¥Xªºµ²ªG¤£·|¦Û¤v¥[¤W \0 */
+mmdecode_header(src, encode, dst)	/* è§£ Header çš„ mmdecode */
+  unsigned char *src;		/* Thor.980901: srcå’Œdstå¯ç›¸åŒ, ä½†srcä¸€å®šæœ‰?æˆ–\0çµæŸ */
+  unsigned char encode;		/* Thor.980901: æ³¨æ„, decodeå‡ºçš„çµæœä¸æœƒè‡ªå·±åŠ ä¸Š \0 */
   unsigned char *dst;
 {
   unsigned char *t;
@@ -182,7 +182,7 @@ mmdecode_header(src, encode, dst)	/* ¸Ñ Header ªº mmdecode */
   {
   case 'q':			/* Thor: quoted-printable */
 
-    while ((ch = *src) && ch != '?')	/* Thor: Header ¸Ì­± 0 ©M '?' ³£¬O delimiter */
+    while ((ch = *src) && ch != '?')	/* Thor: Header è£¡é¢ 0 å’Œ '?' éƒ½æ˜¯ delimiter */
     {
       if (ch == '=')
       {
@@ -198,7 +198,7 @@ mmdecode_header(src, encode, dst)	/* ¸Ñ Header ªº mmdecode */
 
 	*t++ = (x << 4) + y;
       }
-      else if (ch == '_')	/* Header ­n§â '_' ´«¦¨ ' ' */
+      else if (ch == '_')	/* Header è¦æŠŠ '_' æ›æˆ ' ' */
       {
 	*t++ = ' ';
       }
@@ -216,7 +216,7 @@ mmdecode_header(src, encode, dst)	/* ¸Ñ Header ªº mmdecode */
     pattern = 0;
     bits = 0;
 
-    while ((ch = *src) && ch != '?')	/* Thor: Header ¸Ì­± 0 ©M '?' ³£¬O delimiter */
+    while ((ch = *src) && ch != '?')	/* Thor: Header è£¡é¢ 0 å’Œ '?' éƒ½æ˜¯ delimiter */
     {
       int x;
 
@@ -240,9 +240,9 @@ mmdecode_header(src, encode, dst)	/* ¸Ñ Header ªº mmdecode */
 
 
 int
-mmdecode(src, encode, dst)	/* ¸Ñ Header ªº mmdecode */
-  unsigned char *src;		/* Thor.980901: src©Mdst¥i¬Û¦P, ¦ısrc¤@©w¦³?©Î\0µ²§ô */
-  unsigned char encode;		/* Thor.980901: ª`·N, decode¥Xªºµ²ªG¤£·|¦Û¤v¥[¤W \0 */
+mmdecode(src, encode, dst)	/* è§£ Header çš„ mmdecode */
+  unsigned char *src;		/* Thor.980901: srcå’Œdstå¯ç›¸åŒ, ä½†srcä¸€å®šæœ‰?æˆ–\0çµæŸ */
+  unsigned char encode;		/* Thor.980901: æ³¨æ„, decodeå‡ºçš„çµæœä¸æœƒè‡ªå·±åŠ ä¸Š \0 */
   unsigned char *dst;
 {
   unsigned char *t;
@@ -256,7 +256,7 @@ mmdecode(src, encode, dst)	/* ¸Ñ Header ªº mmdecode */
   {
   case 'q':			/* Thor: quoted-printable */
 
-    while (ch = *src)		/* Thor: 0 ¬O delimiter */
+    while (ch = *src)		/* Thor: 0 æ˜¯ delimiter */
     {
       if (ch == '=')
       {
@@ -286,7 +286,7 @@ mmdecode(src, encode, dst)	/* ¸Ñ Header ªº mmdecode */
     pattern = 0;
     bits = 0;
 
-    while (ch = *src)		/* Thor: 0 ¬O delimiter */
+    while (ch = *src)		/* Thor: 0 æ˜¯ delimiter */
     {
       int x;
 
@@ -352,7 +352,7 @@ str_decode(str)
 	  {
 	    tmp += 3;		/* Thor: decode's src */
 	    while (*tmp && *tmp++ != '?');	/* Thor: no ? end, mmdecode_header -1 */
-	    /* Thor.980901: 0 ¤]ºâ decode µ²§ô */
+	    /* Thor.980901: 0 ä¹Ÿç®— decode çµæŸ */
 	    if (*tmp == '=')
 	      tmp++;
 	    src = tmp;		/* Thor: decode over */

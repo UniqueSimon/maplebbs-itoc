@@ -1,11 +1,11 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xC     �xmf_copy     �x�ƻs�ڪ��̷R                                    �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │C     │mf_copy     │複製我的最愛                                    │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� C �� g �i�H�ƻs�ӳ̷R�A�� p �� ^V �h�i�H�K�W�C
+    將游標移到某欄，按 C 或 g 可以複製該最愛，按 p 或 ^V 則可以貼上。
 
-    �n�`�N���O�A�ƻs/�K�W���v�ä��|�ƻs���v�̭������e�C
+    要注意的是，複製/貼上卷宗並不會複製卷宗裡面的內容。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

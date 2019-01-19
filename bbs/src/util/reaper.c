@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/reaper.c	( NTHU CS MapleBBS Ver 3.00 )	 */
 /*-------------------------------------------------------*/
-/* target : ¨Ï¥ÎªÌ±b¸¹©w´Á²M²z				 */
+/* target : ä½¿ç”¨è€…å¸³è™Ÿå®šæœŸæ¸…ç†				 */
 /* create : 95/03/29				 	 */
 /* update : 97/03/29				 	 */
 /*-------------------------------------------------------*/
@@ -18,18 +18,18 @@
 #include "bbs.h"
 
 
-/* Thor.980930: ­Y­nÃö³¬¥H¤U¥\¯à®É¥Î undef §Y¥i */
+/* Thor.980930: è‹¥è¦é—œé–‰ä»¥ä¸‹åŠŸèƒ½æ™‚ç”¨ undef å³å¯ */
 
-#define CHECK_LAZYBM		/* ÀË¬d°½ÃiªO¥D */
-#define EADDR_GROUPING		/* ÀË¬d¦@¥Î email */
+#define CHECK_LAZYBM		/* æª¢æŸ¥å·æ‡¶æ¿ä¸» */
+#define EADDR_GROUPING		/* æª¢æŸ¥å…±ç”¨ email */
 
 
 #ifdef CHECK_LAZYBM
-#define DAY_LAZYBM	7	/* 7 ¤Ñ¥H¤W¥¼¤W¯¸ªºªO¥D§Y°O¿ı */
+#define DAY_LAZYBM	7	/* 7 å¤©ä»¥ä¸Šæœªä¸Šç«™çš„æ¿ä¸»å³è¨˜éŒ„ */
 #endif
 
 #ifdef EADDR_GROUPING
-#define EMAIL_REG_LIMIT 3	/* 3 ­Ó¥H¤W¨Ï¥ÎªÌ¥Î¦P¤@ email §Y°O¿ı */
+#define EMAIL_REG_LIMIT 3	/* 3 å€‹ä»¥ä¸Šä½¿ç”¨è€…ç”¨åŒä¸€ email å³è¨˜éŒ„ */
 #endif
 
 
@@ -38,10 +38,10 @@ static time_t due_forfun;
 static time_t due_occupy;
 
 
-static int visit = 0;	/* Á` ID ªº¼Æ¥Ø */
-static int prune = 0;	/* ³Q²M°£IDªº¼Æ¥Ø */
-static int manager = 0;	/* ºŞ²zªÌªº¼Æ¥Ø */
-static int invalid = 0;	/* ¥¼»{ÃÒ³q¹LIDªº¼Æ¥Ø */
+static int visit = 0;	/* ç¸½ ID çš„æ•¸ç›® */
+static int prune = 0;	/* è¢«æ¸…é™¤IDçš„æ•¸ç›® */
+static int manager = 0;	/* ç®¡ç†è€…çš„æ•¸ç›® */
+static int invalid = 0;	/* æœªèªè­‰é€šéIDçš„æ•¸ç›® */
 
 
 static FILE *flog;
@@ -49,7 +49,7 @@ static FILE *flst;
 
 #ifdef CHECK_LAZYBM
 static time_t due_lazybm;
-static int lazybm = 0;	/* °½ÃiªO¥Dªº¼Æ¥Ø */
+static int lazybm = 0;	/* å·æ‡¶æ¿ä¸»çš„æ•¸ç›® */
 static FILE *fbm;
 #endif
 
@@ -59,7 +59,7 @@ static FILE *faddr;
 
 
 /* ----------------------------------------------------- */
-/* ²MªÅ .USR ¸Ì­±ªºÄæ¦ì					 */
+/* æ¸…ç©º .USR è£¡é¢çš„æ¬„ä½					 */
 /* ----------------------------------------------------- */
 
 
@@ -73,12 +73,12 @@ userno_free(uno)
 {
   off_t off;
   int fd;
-  static SCHEMA schema;	/* itoc.031216.µù¸Ñ: ¥Î static ¬O¦]¬° schema.userid ­n¤@ª½³Q²M¦¨¥ş¹s */
+  static SCHEMA schema;	/* itoc.031216.è¨»è§£: ç”¨ static æ˜¯å› ç‚º schema.userid è¦ä¸€ç›´è¢«æ¸…æˆå…¨é›¶ */
 
   fd = funo;
 
   /* flock(fd, LOCK_EX); */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_exlock(fd);
 
   time(&schema.uptime);
@@ -89,13 +89,13 @@ userno_free(uno)
     exit(2);
 
   /* flock(fd, LOCK_UN); */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_unlock(fd);
 }
 
 
 /* ----------------------------------------------------- */
-/* Åã¥Ü¥Î¨ç¦¡						 */
+/* é¡¯ç¤ºç”¨å‡½å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -135,7 +135,7 @@ datemsg(str, chrono)
 
 
 /*-------------------------------------------------------*/
-/* ¬İªOÅv­­³¡¤À¶·»P board.c ¬Û®e			 */
+/* çœ‹æ¿æ¬Šé™éƒ¨åˆ†é ˆèˆ‡ board.c ç›¸å®¹			 */
 /*-------------------------------------------------------*/
 
 
@@ -145,29 +145,29 @@ static BCACHE *bshm;
 static void
 init_bshm()
 {
-  /* itoc.030727: ¦b¶}±Ò bbsd ¤§«e¡AÀ³¸Ó´N­n°õ¦æ¹L account¡A
-     ©Ò¥H bshm À³¸Ó¤w³]©w¦n */
+  /* itoc.030727: åœ¨é–‹å•Ÿ bbsd ä¹‹å‰ï¼Œæ‡‰è©²å°±è¦åŸ·è¡Œé accountï¼Œ
+     æ‰€ä»¥ bshm æ‡‰è©²å·²è¨­å®šå¥½ */
 
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-  if (bshm->uptime <= 0)	/* bshm ¥¼³]©w§¹¦¨ */
+  if (bshm->uptime <= 0)	/* bshm æœªè¨­å®šå®Œæˆ */
     exit(0);
 }
 
 
 static int num_bm = 0;
-static char all_bm[MAXBOARD * BMLEN / 3][IDLEN + 1];	/* ¨CªO¦Ü¦h¦³ (BMLEN / 3) ­ÓªO¥D */
+static char all_bm[MAXBOARD * BMLEN / 3][IDLEN + 1];	/* æ¯æ¿è‡³å¤šæœ‰ (BMLEN / 3) å€‹æ¿ä¸» */
 
 
 static int
-bm_cmp(a, b)		/* ¨ä¹ê´N¬O str_cmp */
+bm_cmp(a, b)		/* å…¶å¯¦å°±æ˜¯ str_cmp */
   char *a, *b;
 {
   return str_cmp(a, b);
 }
 
 
-static char *		/* 1: ¦b¥ş¯¸ªO¥D¦W³æ¤º */
+static char *		/* 1: åœ¨å…¨ç«™æ¿ä¸»åå–®å…§ */
 check_allBM(userid)
   char *userid;		/* lower case userid */
 {
@@ -181,16 +181,16 @@ collect_allBM()
   BRD *head, *tail;
   char *ptr, *str, buf[BMLEN + 1];
 
-  /* ¥h bshm ¤¤§ì¥X©Ò¦³ brd->BM */
+  /* å» bshm ä¸­æŠ“å‡ºæ‰€æœ‰ brd->BM */
 
   head = bshm->bcache;
   tail = head + bshm->number;
-  do				/* ¦Ü¤Ö¦³ note ¤@ªO¡A¤£¥²¹ï¬İªO°µÀË¬d */
+  do				/* è‡³å°‘æœ‰ note ä¸€æ¿ï¼Œä¸å¿…å°çœ‹æ¿åšæª¢æŸ¥ */
   {
     ptr = buf;
     strcpy(ptr, head->BM);
 
-    while (*ptr)	/* §â brd->BM ¤¤ bm1/bm2/bm3/... ¦U­Ó bm §ì¥X¨Ó */
+    while (*ptr)	/* æŠŠ brd->BM ä¸­ bm1/bm2/bm3/... å„å€‹ bm æŠ“å‡ºä¾† */
     {
       if (str = strchr(ptr, '/'))
 	*str = '\0';
@@ -209,20 +209,20 @@ collect_allBM()
 
 
 /* ----------------------------------------------------- */
-/* ÀË¬d¦@¥Î email					 */
+/* æª¢æŸ¥å…±ç”¨ email					 */
 /* ----------------------------------------------------- */
 
 #ifdef EADDR_GROUPING
 /*
-   Thor.980930: ±N¦P¤@email addrªºaccount, ¦¬¶°°_¨Ó¨Ã¦Cªí ¤u§@­ì²z: 
-   1. _hash() ±N email addr ¼Æ­È¤Æ
-   2.¥Îbinary search, §ä¨ì«happend userno, §ä¤£¨ì«h insert ·sentry
-   3.±N userno list ¾ã²z¦C¥X
+   Thor.980930: å°‡åŒä¸€email addrçš„account, æ”¶é›†èµ·ä¾†ä¸¦åˆ—è¡¨ å·¥ä½œåŸç†: 
+   1. _hash() å°‡ email addr æ•¸å€¼åŒ–
+   2.ç”¨binary search, æ‰¾åˆ°å‰‡append userno, æ‰¾ä¸åˆ°å‰‡ insert æ–°entry
+   3.å°‡ userno list æ•´ç†åˆ—å‡º
 
-   ¸ê®Æµ²ºc: chain: int hash, int link_userno plist: int next_userno
+   è³‡æ–™çµæ§‹: chain: int hash, int link_userno plist: int next_userno
 
-   ¼È®É¹w¦ôemail addrÁ`¼Æ¤£¶W¹L100000, 
-   ¼È®É¹w¦ôuserÁ`¼Æ¤£¶W¹L 100000
+   æš«æ™‚é ä¼°email addrç¸½æ•¸ä¸è¶…é100000, 
+   æš«æ™‚é ä¼°userç¸½æ•¸ä¸è¶…é 100000
  */
 
 typedef struct
@@ -250,7 +250,7 @@ eaddr_group(userno, eaddr)
     int cmp;
     Chain *cptr;
 
-    if (left > right)		/* Thor.980930: §ä¨S */
+    if (left > right)		/* Thor.980930: æ‰¾æ²’ */
     {
       for (i = numC; i > left; i--)
 	chain[i] = chain[i - 1];
@@ -348,7 +348,7 @@ report_eaddr_group()
 
 
 /* ----------------------------------------------------- */
-/* ¥Dµ{¦¡						 */
+/* ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -366,7 +366,7 @@ reaper(fpath, lowid)
   sprintf(buf, "%s/" FN_ACCT, fpath);
   fd = open(buf, O_RDWR);
   if (fd < 0)
-  {				/* Thor.981001: ¥[¨Ç log */
+  {				/* Thor.981001: åŠ äº› log */
     fprintf(flog, "acct can't open %-13s ==> %s\n", lowid, buf);
     return;
   }
@@ -380,7 +380,7 @@ reaper(fpath, lowid)
 
   ulevel = acct.userlevel;
 
-  /* ¦³ PERM_BM ¦ı¤£¦b¥ş¯¸ªO¥D¦W³æ¤º¡A²¾°£¨ä PERM_BM */
+  /* æœ‰ PERM_BM ä½†ä¸åœ¨å…¨ç«™æ¿ä¸»åå–®å…§ï¼Œç§»é™¤å…¶ PERM_BM */
   if ((ulevel & PERM_BM) && !check_allBM(lowid))
   {
     ulevel ^= PERM_BM;
@@ -399,15 +399,15 @@ reaper(fpath, lowid)
     return;
   }
 
-  life = acct.lastlogin;	/* ¥²¤£¬° 0 */
+  life = acct.lastlogin;	/* å¿…ä¸ç‚º 0 */
   login = acct.numlogins;
 
 #ifdef EADDR_GROUPING
-  if (ulevel & PERM_VALID)	/* Thor.980930: ¥u¬İ³q¹L»{ÃÒªº email, ¥şºâ */
+  if (ulevel & PERM_VALID)	/* Thor.980930: åªçœ‹é€šéèªè­‰çš„ email, å…¨ç®— */
     eaddr_group(userno, acct.email);
 #endif
 
-  if (ulevel & (PERM_XEMPT | PERM_BM | PERM_ALLADMIN))	/* ¦³³o¨ÇÅv­­ªÌ¤£¬å */
+  if (ulevel & (PERM_XEMPT | PERM_BM | PERM_ALLADMIN))	/* æœ‰é€™äº›æ¬Šé™è€…ä¸ç  */
   {
     datemsg(buf, &acct.lastlogin);
     levelmsg(data, ulevel);
@@ -422,15 +422,15 @@ reaper(fpath, lowid)
     }
 #endif
   }
-  else if (ulevel)		/* guest.ulevel == 0, ¥Ã»·«O¯d */
+  else if (ulevel)		/* guest.ulevel == 0, æ°¸é ä¿ç•™ */
   {
-    if (ulevel & PERM_PURGE)	/* lkchu.990221: ¡u²M°£±b¸¹¡v */
+    if (ulevel & PERM_PURGE)	/* lkchu.990221: ã€Œæ¸…é™¤å¸³è™Ÿã€ */
     {
       life = 0;
     }
-    else if (ulevel & PERM_DENYLOGIN)	/* itoc.010927: ¦³¡u¸T¤î¤W¯¸¡vªº¤£¬å¡A¦ı­Y¦³¡u²M°£±b¸¹¡vÅv­­·Ó¬å */
+    else if (ulevel & PERM_DENYLOGIN)	/* itoc.010927: æœ‰ã€Œç¦æ­¢ä¸Šç«™ã€çš„ä¸ç ï¼Œä½†è‹¥æœ‰ã€Œæ¸…é™¤å¸³è™Ÿã€æ¬Šé™ç…§ç  */
     {
-      /* life = 1; */	/* ¤£»İ­n¡A«e­±¦³¤F */
+      /* life = 1; */	/* ä¸éœ€è¦ï¼Œå‰é¢æœ‰äº† */
     }
     else if (ulevel & PERM_VALID)
     {
@@ -449,7 +449,7 @@ reaper(fpath, lowid)
 
     if (!life)
     {
-      /* ²M°£ªº±b¸¹©ñ¦b usr/@ */
+      /* æ¸…é™¤çš„å¸³è™Ÿæ”¾åœ¨ usr/@ */
       sprintf(buf, "usr/@/%s", lowid);
       if (rename(fpath, buf) < 0)
         f_rm(fpath);
@@ -540,7 +540,7 @@ main()
   if (funo < 0)
     exit(1);
 
-  /* °²³]²M°£±b¸¹´Á¶¡¡A·sµù¥U¤H¼Æ¤£·|¶W¹L 300 ¤H */
+  /* å‡è¨­æ¸…é™¤å¸³è™ŸæœŸé–“ï¼Œæ–°è¨»å†Šäººæ•¸ä¸æœƒè¶…é 300 äºº */
 
   fstat(funo, &st);
   max_uno = st.st_size / sizeof(SCHEMA) + 300;
@@ -551,11 +551,11 @@ main()
   time(&start);
   ptime = localtime(&start);
 
-  /* itoc.011002.µù¸Ñ: ¤£¯à¦b¤@¶}¾Ç´N°¨¤W apply ÄY®æªº®É¶¡­­¨î¡A
-     §_«h«Ü¦h user ·|¦]¬°¾ã­Ó´»°²¨S¦³¤W¯¸¡A¦b¤@¶}¾Ç´N³Q reaper ±¼ */   
+  /* itoc.011002.è¨»è§£: ä¸èƒ½åœ¨ä¸€é–‹å­¸å°±é¦¬ä¸Š apply åš´æ ¼çš„æ™‚é–“é™åˆ¶ï¼Œ
+     å¦å‰‡å¾ˆå¤š user æœƒå› ç‚ºæ•´å€‹æš‘å‡æ²’æœ‰ä¸Šç«™ï¼Œåœ¨ä¸€é–‹å­¸å°±è¢« reaper æ‰ */   
 
-  if ((ptime->tm_mon >= 6 && ptime->tm_mon <= 8) ||	/* 7 ¤ë¨ì 9 ¤ë¬O´»°² */
-    (ptime->tm_mon >= 1 && ptime->tm_mon <= 2))		/* 2 ¤ë¨ì 3 ¤ë¬O´H°² */
+  if ((ptime->tm_mon >= 6 && ptime->tm_mon <= 8) ||	/* 7 æœˆåˆ° 9 æœˆæ˜¯æš‘å‡ */
+    (ptime->tm_mon >= 1 && ptime->tm_mon <= 2))		/* 2 æœˆåˆ° 3 æœˆæ˜¯å¯’å‡ */
   {
     due_newusr = start - REAPER_VAC_NEWUSR * 86400;
     due_forfun = start - REAPER_VAC_FORFUN * 86400;
@@ -605,15 +605,15 @@ main()
   fclose(flst);
 
   time(&end);
-  fprintf(flog, "# ¶}©l®É¶¡¡G%s\n", Btime(&start));
-  fprintf(flog, "# µ²§ô®É¶¡¡G%s\n", Btime(&end));
+  fprintf(flog, "# é–‹å§‹æ™‚é–“ï¼š%s\n", Btime(&start));
+  fprintf(flog, "# çµæŸæ™‚é–“ï¼š%s\n", Btime(&end));
   end -= start;
   start = end % 60;
   end /= 60;
-  fprintf(flog, "# Á`­p¯Ó®É¡G%d:%d:%d\n", end / 60, end % 60, start);
-  fprintf(flog, "# µù¥U¤H¼Æ¡G%d\n", visit);	/* ¥¼²M°£«eªºÁ`¼Æ */
-  fprintf(flog, "# ²M°£¤H¼Æ¡G%d\n", prune);
-  fprintf(flog, "# ¥¼»{ÃÒ¼Æ¡G%d\n", invalid);
+  fprintf(flog, "# ç¸½è¨ˆè€—æ™‚ï¼š%d:%d:%d\n", end / 60, end % 60, start);
+  fprintf(flog, "# è¨»å†Šäººæ•¸ï¼š%d\n", visit);	/* æœªæ¸…é™¤å‰çš„ç¸½æ•¸ */
+  fprintf(flog, "# æ¸…é™¤äººæ•¸ï¼š%d\n", prune);
+  fprintf(flog, "# æœªèªè­‰æ•¸ï¼š%d\n", invalid);
   fclose(flog);
 
 #ifdef CHECK_LAZYBM

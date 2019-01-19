@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* help.c	( NTHU CS MapleBBS Ver 3.10 )		 */
 /*-------------------------------------------------------*/
-/* target : help »¡©ú¤å¥ó				 */
+/* target : help èªªæ˜æ–‡ä»¶				 */
 /* create : 03/05/10				 	 */
 /* update :   /  /  				 	 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -12,7 +12,7 @@
 
 
 static void
-do_help(path)	/* itoc.021122: »¡©ú¤å¥ó */
+do_help(path)	/* itoc.021122: èªªæ˜æ–‡ä»¶ */
   char *path;
 {
   char *str;
@@ -22,7 +22,7 @@ do_help(path)	/* itoc.021122: »¡©ú¤å¥ó */
   struct stat st;
   PAL *pal;
 
-  /* »¡©ú¤å¥ó³£©ñ¦b etc/help/ ¤U */
+  /* èªªæ˜æ–‡ä»¶éƒ½æ”¾åœ¨ etc/help/ ä¸‹ */
   sprintf(fpath, "etc/help/%s/%s", path, fn_dir);
   str = strchr(fpath, '.');
 
@@ -57,8 +57,8 @@ do_help(path)	/* itoc.021122: »¡©ú¤å¥ó */
 
     if (redraw)
     {
-      /* itoc.µù¸Ñ: ºÉ¶q°µ±o¹³ xover ®æ¦¡ */
-      vs_head("»¡©ú¤å¥ó", str_site);
+      /* itoc.è¨»è§£: ç›¡é‡åšå¾—åƒ xover æ ¼å¼ */
+      vs_head("èªªæ˜æ–‡ä»¶", str_site);
       prints(NECKER_HELP, d_cols, "");
 
       i = pageno * XO_TALL;
@@ -97,8 +97,8 @@ do_help(path)	/* itoc.021122: »¡©ú¤å¥ó */
 
 	memset(&new, 0, sizeof(PAL));
 
-	if (vget(b_lines, 0, "¼ĞÃD¡G", new.ship, sizeof(new.ship), DOECHO) &&
-	  vget(b_lines, 0, "ÀÉ®×¡G", new.userid, IDLEN + 1, DOECHO))
+	if (vget(b_lines, 0, "æ¨™é¡Œï¼š", new.ship, sizeof(new.ship), DOECHO) &&
+	  vget(b_lines, 0, "æª”æ¡ˆï¼š", new.userid, IDLEN + 1, DOECHO))
 	{
 	  strcpy(str, new.userid);
 	  i = vedit(fpath, 0);
@@ -107,7 +107,7 @@ do_help(path)	/* itoc.021122: »¡©ú¤å¥ó */
 	  {
 	    rec_add(fpath, &new, sizeof(PAL));
 	    num++;
-	    cur = num % XO_TALL;	/* ´å¼Ğ©ñ¦b·s¥[¤Jªº³o½g */
+	    cur = num % XO_TALL;	/* æ¸¸æ¨™æ”¾åœ¨æ–°åŠ å…¥çš„é€™ç¯‡ */
 	    pageno = num / XO_TALL;
 	    reload = 1;
 	  }
@@ -126,7 +126,7 @@ do_help(path)	/* itoc.021122: »¡©ú¤å¥ó */
 	  unlink(fpath);
 	  strcpy(str, fn_dir);
 	  rec_del(fpath, sizeof(PAL), i, NULL);
-	  cur = i ? ((i - 1) % XO_TALL) : 0;	/* ´å¼Ğ©ñ¦b¬å±¼ªº«e¤@½g */
+	  cur = i ? ((i - 1) % XO_TALL) : 0;	/* æ¸¸æ¨™æ”¾åœ¨ç æ‰çš„å‰ä¸€ç¯‡ */
 	  reload = 1;
 	}
 	redraw = 1;
@@ -137,14 +137,14 @@ do_help(path)	/* itoc.021122: »¡©ú¤å¥ó */
       if (HAS_PERM(PERM_ALLADMIN))
       {
 	i = cur + pageno * XO_TALL;
-	if (vget(b_lines, 0, "¼ĞÃD¡G", pal[i].ship, sizeof(pal[0].ship), GCARRY))
+	if (vget(b_lines, 0, "æ¨™é¡Œï¼š", pal[i].ship, sizeof(pal[0].ship), GCARRY))
 	  rec_put(fpath, &pal[i], sizeof(PAL), i, NULL);
 	redraw = 1;
       }
       break;
 
     case 'E':
-      if (!HAS_STATUS(STATUS_EDITHELP))	/* ­Y¬O±q vedit ®É¶i¨Ó help «h¤£¯à¦A vedit */
+      if (!HAS_STATUS(STATUS_EDITHELP))	/* è‹¥æ˜¯å¾ vedit æ™‚é€²ä¾† help å‰‡ä¸èƒ½å† vedit */
       {
 	i = cur + pageno * XO_TALL;
 	strcpy(str, pal[i].userid);
@@ -160,10 +160,10 @@ do_help(path)	/* itoc.021122: »¡©ú¤å¥ó */
 	char buf[40], ans[5];
 
 	i = cur + pageno * XO_TALL;
-	sprintf(buf, "½Ğ¿é¤J²Ä %d ¿ï¶µªº·s¦ì¸m¡G", i + 1);
+	sprintf(buf, "è«‹è¼¸å…¥ç¬¬ %d é¸é …çš„æ–°ä½ç½®ï¼š", i + 1);
 	if (vget(b_lines, 0, buf, ans, 5, DOECHO))
 	{
-	  redraw = atoi(ans) - 1;	/* ­É¥Î redraw */
+	  redraw = atoi(ans) - 1;	/* å€Ÿç”¨ redraw */
 	  if (redraw < 0)
 	    redraw = 0;
 	  else if (redraw > num)

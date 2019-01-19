@@ -1,14 +1,14 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xB     �xgem_toggle  �x�[�ݼҦ�                                        �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │B     │gem_toggle  │觀看模式                                        │
+  └───┴──────┴────────────────────────┘
 
-    �� B �i�H���y�����H�U�Ҧ��G
+    按 B 可以輪流切換以下模式：
 
-  �@����D�Ҧ��G���D��u��ܼ��D
-  �s�̮ɶ��Ҧ��G���D��e�b��ܼ��D�A��b��ܽs�̤νs��ɶ�
-  ��    �W�Ҧ��G���D��e�b��ܼ��D�A��b����ɦW�νs��ɶ��A
-                �u�������~�|�X�{�ɦW�Ҧ�
+  一般標題模式：標題欄只顯示標題
+  編者時間模式：標題欄前半顯示標題，後半顯示編者及編選時間
+  檔    名模式：標題欄前半顯示標題，後半顯示檔名及編選時間，
+                只有站長才會出現檔名模式
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

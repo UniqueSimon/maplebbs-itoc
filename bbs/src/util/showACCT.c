@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/showACCT.c      ( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : Åã¥Ü¨Ï¥ÎªÌ¸ê®Æ				 */
+/* target : é¡¯ç¤ºä½¿ç”¨è€…è³‡æ–™				 */
 /* create : 01/07/16					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -11,17 +11,17 @@
 #include "bbs.h"
 
 
-#undef	SHOW_PASSWORD		/* Åã¥Ü±K½X («Ü¯Ó®É¶¡) */
+#undef	SHOW_PASSWORD		/* é¡¯ç¤ºå¯†ç¢¼ (å¾ˆè€—æ™‚é–“) */
 
 
 #ifdef SHOW_PASSWORD
 
 #if 0
-#  define GUESS_LEN	3	/* ´ú¤T½X(§t)¥H¤Uªº©Ò¦³±K½X²Õ¦X (³Ì¦h¬O PSWDLEN) */
+#  define GUESS_LEN	3	/* æ¸¬ä¸‰ç¢¼(å«)ä»¥ä¸‹çš„æ‰€æœ‰å¯†ç¢¼çµ„åˆ (æœ€å¤šæ˜¯ PSWDLEN) */
 #  define GUESS_START	' '
 #  define GUESS_END	0x7f
 #else
-#  define GUESS_LEN	6	/* ´ú¤»½X(§t)¥H¤Uªº¼Æ¦r±K½X²Õ¦X (³Ì¦h¬O PSWDLEN) */
+#  define GUESS_LEN	6	/* æ¸¬å…­ç¢¼(å«)ä»¥ä¸‹çš„æ•¸å­—å¯†ç¢¼çµ„åˆ (æœ€å¤šæ˜¯ PSWDLEN) */
 #  define GUESS_START	'0'
 #  define GUESS_END	'9'
 #endif
@@ -35,7 +35,7 @@ showpasswd(passwd)
   int i, index;
   char guess[PSWDLEN + 1];
 
-  /* µL½×¬O¤°»ò encrypt ªº¤èªk¡A³£µw±q GUESS_START ¶}©l try ¨ì GUESS_END */
+  /* ç„¡è«–æ˜¯ä»€éº¼ encrypt çš„æ–¹æ³•ï¼Œéƒ½ç¡¬å¾ GUESS_START é–‹å§‹ try åˆ° GUESS_END */
 
   memset(guess, 0, sizeof(guess));
   index = 0;
@@ -45,7 +45,7 @@ showpasswd(passwd)
   {
     if (!chkpasswd(passwd, guess))
     {
-      printf("±K½X: %s \n", guess);
+      printf("å¯†ç¢¼: %s \n", guess);
       return;
     }
 
@@ -56,20 +56,20 @@ showpasswd(passwd)
 	guess[i]++;
 	break;
       }
-      else     /* ¶i¦ì */
+      else     /* é€²ä½ */
       {
 	guess[i] = GUESS_START;
       }
     }
 
-    if (i < 0)	/* ©Ò¦³ index ¦ì³£¸Õ§¹¤F */
+    if (i < 0)	/* æ‰€æœ‰ index ä½éƒ½è©¦å®Œäº† */
     {
       index++;
       guess[index] = GUESS_START;
-      printf("±½´y±K½X¤¤¡A½Ğµy«İ...¡]¤w§¹¦¨ %d ¦ì±K½X¤§±½´y¡^\n", index);
+      printf("æƒæå¯†ç¢¼ä¸­ï¼Œè«‹ç¨å¾…...ï¼ˆå·²å®Œæˆ %d ä½å¯†ç¢¼ä¹‹æƒæï¼‰\n", index);
     }
   }
-  printf("±K½Xªø«×¶W¹L %d ¦ì\n", GUESS_LEN);
+  printf("å¯†ç¢¼é•·åº¦è¶…é %d ä½\n", GUESS_LEN);
 }
 #endif
 
@@ -111,18 +111,18 @@ showACCT(acct)
   strcpy(msg6, Btime(&(acct->tvalid)));
 
   printf("> ------------------------------------------------------------------------------------------ \n"
-    "½s¸¹: %-15d [ID]: %-15s ©m¦W: %-15s ¼ÊºÙ: %-15s \n" 
-    "Åv­­: %-37s ³]©w: %-37s \n" 
-    "Ã±¦W: %-37d ©Ê§O: %-15.2s \n" 
-    "»È¹ô: %-15d ª÷¹ô: %-15d ¥Í¤é: %02d/%02d/%02d \n" 
-    "¤W¯¸: %-15d ¤å³¹: %-15d µo«H: %-15d \n" 
-    "­º¦¸: %-37s ¤W¦¸: %-30s \n" 
-    "ÀË¬d: %-37s ³q¹L: %-30s \n" 
-    "µn¤J: %-30s \n" 
-    "«H½c: %-60s \n", 
+    "ç·¨è™Ÿ: %-15d [ID]: %-15s å§“å: %-15s æš±ç¨±: %-15s \n" 
+    "æ¬Šé™: %-37s è¨­å®š: %-37s \n" 
+    "ç°½å: %-37d æ€§åˆ¥: %-15.2s \n" 
+    "éŠ€å¹£: %-15d é‡‘å¹£: %-15d ç”Ÿæ—¥: %02d/%02d/%02d \n" 
+    "ä¸Šç«™: %-15d æ–‡ç« : %-15d ç™¼ä¿¡: %-15d \n" 
+    "é¦–æ¬¡: %-37s ä¸Šæ¬¡: %-30s \n" 
+    "æª¢æŸ¥: %-37s é€šé: %-30s \n" 
+    "ç™»å…¥: %-30s \n" 
+    "ä¿¡ç®±: %-60s \n", 
     acct->userno, acct->userid, acct->realname, acct->username, 
     msg1, msg2,
-    acct->signature, "¡H¡ñ¡ğ" + (acct->sex << 1),
+    acct->signature, "ï¼Ÿâ™‚â™€" + (acct->sex << 1),
     acct->money, acct->gold, acct->year, acct->month, acct->day, 
     acct->numlogins, acct->numposts, acct->numemails, 
     msg3, msg4, 

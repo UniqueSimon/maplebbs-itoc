@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/modestat.c	( NTHU CS MapleBBS Ver 3.00 )	 */
 /*-------------------------------------------------------*/
-/* target : ²Î­p¨Ï¥ÎªÌ°ÊºA                               */
+/* target : çµ±è¨ˆä½¿ç”¨è€…å‹•æ…‹                               */
 /* create : 95/11/21				 	 */
 /* update : 97/11/21				 	 */
 /*-------------------------------------------------------*/
@@ -49,7 +49,7 @@ main(argc, argv)
 
       sum += mlog.used_time[i];
       tt = localtime(&mlog.used_time[i]);
-      sprintf(buf + (c * 22), "%-12s%02d¤À%02d¬í  ", ModeTypeTable[i], tt->tm_min, tt->tm_sec);
+      sprintf(buf + (c * 22), "%-12s%02dåˆ†%02dç§’  ", ModeTypeTable[i], tt->tm_min, tt->tm_sec);
 
       if (++c == 3)
       {
@@ -58,7 +58,7 @@ main(argc, argv)
 	c = 0;
       }
     }
-    printf("Á`¦@°±¯d®É¶¡: %s\n", Btime(&sum));
+    printf("ç¸½å…±åœç•™æ™‚é–“: %s\n", Btime(&sum));
   }
 
 

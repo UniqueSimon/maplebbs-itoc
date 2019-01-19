@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* pip_stuff.c         ( NTHU CS MapleBBS Ver 3.10 )     */
 /*-------------------------------------------------------*/
-/* target : ¤É¯Å¡B¨t²Î¡B¯S®í¿ï³æµ¥Âø¤CÂø¤K¨ç¦¡           */
+/* target : å‡ç´šã€ç³»çµ±ã€ç‰¹æ®Šé¸å–®ç­‰é›œä¸ƒé›œå…«å‡½å¼           */
 /* create :   /  /                                       */
 /* update : 01/08/14                                     */
 /* author : dsyan.bbs@forever.twbbs.org                  */
@@ -17,25 +17,25 @@
 
 
 /*-------------------------------------------------------*/
-/* ¸ê®Æ¦s¨ú						 */
+/* è³‡æ–™å­˜å–						 */
 /*-------------------------------------------------------*/
 
 
 void
-pip_write_file()		/* ¹CÀ¸¼g¸ê®Æ¤JÀÉ®× */
+pip_write_file()		/* éŠæˆ²å¯«è³‡æ–™å…¥æª”æ¡ˆ */
 {
   int fd;
   char fpath[64];
 
   usr_fpath(fpath, cuser.userid, fn_pip);
-  fd = open(fpath, O_WRONLY | O_CREAT, 0600);	/* fpath ¤£¥²¤w¸g¦s¦b */
+  fd = open(fpath, O_WRONLY | O_CREAT, 0600);	/* fpath ä¸å¿…å·²ç¶“å­˜åœ¨ */
   write(fd, &d, sizeof(CHICKEN));
   close(fd);
 }
 
 
-int		/* >=0:¦¨¥\  <0:¥¢±Ñ */
-pip_read_file(userid, p)	/* ¹CÀ¸Åª¸ê®Æ¥XÀÉ®× */
+int		/* >=0:æˆåŠŸ  <0:å¤±æ•— */
+pip_read_file(userid, p)	/* éŠæˆ²è®€è³‡æ–™å‡ºæª”æ¡ˆ */
   char *userid;
   struct CHICKEN *p;
 {
@@ -43,7 +43,7 @@ pip_read_file(userid, p)	/* ¹CÀ¸Åª¸ê®Æ¥XÀÉ®× */
   char fpath[64];
 
   usr_fpath(fpath, userid, fn_pip);
-  fd = open(fpath, O_RDONLY);		/* fpath ¥²¶·¤w¸g¦s¦b */
+  fd = open(fpath, O_RDONLY);		/* fpath å¿…é ˆå·²ç¶“å­˜åœ¨ */
   if (fd >= 0)
   {
     read(fd, p, sizeof(CHICKEN));
@@ -53,36 +53,36 @@ pip_read_file(userid, p)	/* ¹CÀ¸Åª¸ê®Æ¥XÀÉ®× */
 }
 
 
-int			/* 1: ¦¨¥\¼g¤J  0: ©ñ±ó */
-pip_write_backup()	/* ¤pÂû¶i«×³Æ¥÷ */
+int			/* 1: æˆåŠŸå¯«å…¥  0: æ”¾æ£„ */
+pip_write_backup()	/* å°é›é€²åº¦å‚™ä»½ */
 {
-  char *files[4] = {"¨S¦³", "¶i«×¤@", "¶i«×¤G", "¶i«×¤T"};
+  char *files[4] = {"æ²’æœ‰", "é€²åº¦ä¸€", "é€²åº¦äºŒ", "é€²åº¦ä¸‰"};
   char buf[80], fpath[64];
   int ch;
 
   show_basic_pic(101);
 
-  ch = ians(b_lines - 2, 0, "Àx¦s [1] ¶i«×¤@ [2] ¶i«×¤G [3] ¶i«×¤T [Q] ©ñ±ó¡G[Q] ") - '0';
+  ch = ians(b_lines - 2, 0, "å„²å­˜ [1] é€²åº¦ä¸€ [2] é€²åº¦äºŒ [3] é€²åº¦ä¸‰ [Q] æ”¾æ£„ï¼š[Q] ") - '0';
 
   if (ch < 1 || ch > 3)
   {
-    vmsg("©ñ±óÀx¦s¹CÀ¸³Æ¥÷");
+    vmsg("æ”¾æ£„å„²å­˜éŠæˆ²å‚™ä»½");
     return 0;
   }
 
-  sprintf(buf, "½T©w­nÀx¦s©ó [%s] ÀÉ®×¶Ü(Y/N)¡H[N] ", files[ch]);
+  sprintf(buf, "ç¢ºå®šè¦å„²å­˜æ–¼ [%s] æª”æ¡ˆå—(Y/N)ï¼Ÿ[N] ", files[ch]);
   if (ians(b_lines - 2, 0, buf) != 'y')
   {
-    vmsg("©ñ±óÀx¦sÀÉ®×");
+    vmsg("æ”¾æ£„å„²å­˜æª”æ¡ˆ");
     return 0;
   }
 
-  sprintf(buf, "Àx¦s [%s] ÀÉ®×§¹¦¨¤F", files[ch]);
+  sprintf(buf, "å„²å­˜ [%s] æª”æ¡ˆå®Œæˆäº†", files[ch]);
   vmsg(buf);
 
   sprintf(buf, "%s.bak%d", fn_pip, ch);
   usr_fpath(fpath, cuser.userid, buf);
-  ch = open(fpath, O_WRONLY | O_CREAT, 0600);	/* fpath ¤£¥²¤w¸g¦s¦b */
+  ch = open(fpath, O_WRONLY | O_CREAT, 0600);	/* fpath ä¸å¿…å·²ç¶“å­˜åœ¨ */
   write(ch, &d, sizeof(CHICKEN));
   close(ch);
 
@@ -90,45 +90,45 @@ pip_write_backup()	/* ¤pÂû¶i«×³Æ¥÷ */
 }
 
 
-int			/* 1: ¦¨¥\Åª¥X  0: ©ñ±ó */
-pip_read_backup()	/* ¤pÂû³Æ¥÷Åª¨ú */
+int			/* 1: æˆåŠŸè®€å‡º  0: æ”¾æ£„ */
+pip_read_backup()	/* å°é›å‚™ä»½è®€å– */
 {
-  char *files[4] = {"¨S¦³", "¶i«×¤@", "¶i«×¤G", "¶i«×¤T"};
+  char *files[4] = {"æ²’æœ‰", "é€²åº¦ä¸€", "é€²åº¦äºŒ", "é€²åº¦ä¸‰"};
   char buf[80], fpath[64];
   int ch, fd;
 
   show_basic_pic(102);
 
-  ch = ians(b_lines - 2, 0, "Åª¨ú [1] ¶i«×¤@ [2] ¶i«×¤G [3] ¶i«×¤T [Q] ©ñ±ó¡G[Q] ") - '0';
+  ch = ians(b_lines - 2, 0, "è®€å– [1] é€²åº¦ä¸€ [2] é€²åº¦äºŒ [3] é€²åº¦ä¸‰ [Q] æ”¾æ£„ï¼š[Q] ") - '0';
 
   if (ch < 1 || ch > 3)
   {
-    vmsg("©ñ±óÅª¨ú¹CÀ¸³Æ¥÷");
+    vmsg("æ”¾æ£„è®€å–éŠæˆ²å‚™ä»½");
     return 0;
   }
 
   sprintf(buf, "%s.bak%d", fn_pip, ch);
   usr_fpath(fpath, cuser.userid, buf);
 
-  fd = open(fpath, O_RDONLY);		/* fpath ¥²¶·¤w¸g¦s¦b */
+  fd = open(fpath, O_RDONLY);		/* fpath å¿…é ˆå·²ç¶“å­˜åœ¨ */
   if (fd >= 0)
   {
-    sprintf(buf, "½T©w­nÅª¨ú©ó [%s] ÀÉ®×¶Ü(Y/N)¡H[N] ", files[ch]);
+    sprintf(buf, "ç¢ºå®šè¦è®€å–æ–¼ [%s] æª”æ¡ˆå—(Y/N)ï¼Ÿ[N] ", files[ch]);
     if (ians(b_lines - 2, 0, buf) == 'y')
     {
       read(fd, &d, sizeof(CHICKEN));
       close(fd);
-      sprintf(buf, "Åª¨ú [%s] ÀÉ®×§¹¦¨¤F", files[ch]);
+      sprintf(buf, "è®€å– [%s] æª”æ¡ˆå®Œæˆäº†", files[ch]);
       vmsg(buf);
       return 1;
     }
-    vmsg("©ñ±óÅª¨úÀÉ®×");
+    vmsg("æ”¾æ£„è®€å–æª”æ¡ˆ");
     close(fd);
     return 0;
   }
   else
   {
-    sprintf(buf, "ÀÉ®× [%s] ¤£¦s¦b", files[ch]);
+    sprintf(buf, "æª”æ¡ˆ [%s] ä¸å­˜åœ¨", files[ch]);
     vmsg(buf);
     return 0;
   }
@@ -136,36 +136,36 @@ pip_read_backup()	/* ¤pÂû³Æ¥÷Åª¨ú */
 
 
 /*-------------------------------------------------------*/
-/* ¤pÂûª¬ºA¨ç¦¡					 	 */
+/* å°é›ç‹€æ…‹å‡½å¼					 	 */
 /*-------------------------------------------------------*/
 
 
 void
-pipdie(msg, diemode)	/* ¤pÂû¦º¤` */
+pipdie(msg, diemode)	/* å°é›æ­»äº¡ */
   char *msg;
   int diemode;
 {
-  vs_head("¹q¤l¾i¤pÂû", str_site);
+  vs_head("é›»å­é¤Šå°é›", str_site);
 
   if (diemode == 1)
   {
     show_die_pic(1);
-    vmsg("¦º¯«¨Ó±a¨«¤pÂû¤F");
-    vs_head("¹q¤l¾i¤pÂû", str_site);
+    vmsg("æ­»ç¥ä¾†å¸¶èµ°å°é›äº†");
+    vs_head("é›»å­é¤Šå°é›", str_site);
     show_die_pic(2);
     move(14, 20);
-    prints("¥i¼¦ªº¤pÂû\033[1;31m%s\033[m", msg);
-    vmsg(BBSNAME "«s±¥¤¤....");
+    prints("å¯æ†çš„å°é›\033[1;31m%s\033[m", msg);
+    vmsg(BBSNAME "å“€æ‚¼ä¸­....");
   }
   else if (diemode == 2)
   {
     show_die_pic(3);
-    vmsg("¶ã¶ã¶ã..§Ú³Q¥á±ó¤F.....");
+    vmsg("å—šå—šå—š..æˆ‘è¢«ä¸Ÿæ£„äº†.....");
   }
   else if (diemode == 3)
   {
     show_die_pic(0);
-    vmsg("¹CÀ¸µ²§ôÅo..");
+    vmsg("éŠæˆ²çµæŸå›‰..");
   }
 
   d.death = diemode;
@@ -174,45 +174,45 @@ pipdie(msg, diemode)	/* ¤pÂû¦º¤` */
 
 
 int
-count_tired(prob, base, mode, mul, cal)		/* itoc.010803: ¨Ì·Ó¶Ç¤Jªº¤Ş¼Æ¨Ó¼W´î¯h³Ò«× */
-  int prob;				/* ¾÷²v */
-  int base;				/* ©³¼Æ */
-  int mode;				/* Ãş«¬ 1:©M¦~ÄÖ¦³Ãö  0:©M¦~ÄÖµLÃö  */
-  int mul;				/* ¥[Åv (¥H % ¨Ó­p 100->1) */
-  int cal;				/* 1:¥[¯h³Ò  0:´î¯h³Ò */
+count_tired(prob, base, mode, mul, cal)		/* itoc.010803: ä¾ç…§å‚³å…¥çš„å¼•æ•¸ä¾†å¢æ¸›ç–²å‹åº¦ */
+  int prob;				/* æ©Ÿç‡ */
+  int base;				/* åº•æ•¸ */
+  int mode;				/* é¡å‹ 1:å’Œå¹´é½¡æœ‰é—œ  0:å’Œå¹´é½¡ç„¡é—œ  */
+  int mul;				/* åŠ æ¬Š (ä»¥ % ä¾†è¨ˆ 100->1) */
+  int cal;				/* 1:åŠ ç–²å‹  0:æ¸›ç–²å‹ */
 {
-  int tiredvary;       /* §ïÅÜ­È */
+  int tiredvary;       /* æ”¹è®Šå€¼ */
 
-  /* ¥ıºâ§ïÅÜ¶q */  
+  /* å…ˆç®—æ”¹è®Šé‡ */  
   tiredvary = rand() % prob + base;  
 
-  if (mode)            /* ©M¦~ÄÖ¦³Ãö */
+  if (mode)            /* å’Œå¹´é½¡æœ‰é—œ */
   {
-    int tm;            /* ¦~ÄÖ */
+    int tm;            /* å¹´é½¡ */
     tm = d.bbtime / 60 / 30;
 
-    /* itoc.010803: ¦~¬ö¶V¤p¡A¥[¯h³Ò¤ñ¸û¤Ö¡A«ì´_¯h³Ò¤]¤ñ¸û§Ö */
-    /* ª`·N¤£¯à¼g¦¨ tiredvary *= 6 / 5; ³á :p */
+    /* itoc.010803: å¹´ç´€è¶Šå°ï¼ŒåŠ ç–²å‹æ¯”è¼ƒå°‘ï¼Œæ¢å¾©ç–²å‹ä¹Ÿæ¯”è¼ƒå¿« */
+    /* æ³¨æ„ä¸èƒ½å¯«æˆ tiredvary *= 6 / 5; å–” :p */
 
-    if (tm <= 3)       /* 0~3 ·³ */
+    if (tm <= 3)       /* 0~3 æ­² */
     {
       tiredvary = cal ? tiredvary * 16 / 15 : tiredvary * 6 / 5;
     }
-    else if (tm <= 7)  /* 4~7 ·³ */
+    else if (tm <= 7)  /* 4~7 æ­² */
     {
       tiredvary = cal ? tiredvary * 11 / 10 : tiredvary * 8 / 7;
     }
-    else if (tm <= 10) /* 8~10 ·³ */
+    else if (tm <= 10) /* 8~10 æ­² */
     {
       tiredvary = cal ? tiredvary * 8 / 7 : tiredvary * 11 / 10;
     }
-    else               /* 11 ·³¥H¤W */
+    else               /* 11 æ­²ä»¥ä¸Š */
     {
       tiredvary = cal ? tiredvary * 6 / 5 : tiredvary * 16 / 15;
     }
   }
 
-  /* ¦Aºâ¥[Åv */
+  /* å†ç®—åŠ æ¬Š */
   if (cal)
   {
     d.tired += tiredvary * mul / 100;
@@ -221,7 +221,7 @@ count_tired(prob, base, mode, mul, cal)		/* itoc.010803: ¨Ì·Ó¶Ç¤Jªº¤Ş¼Æ¨Ó¼W´î¯h³
   }
   else
   {
-    d.tired -= tiredvary;      /* ¦©­È¤£¦A¥[Åv¤F */
+    d.tired -= tiredvary;      /* æ‰£å€¼ä¸å†åŠ æ¬Šäº† */
     if (d.tired < 0)
       d.tired = 0;
   }
@@ -229,19 +229,19 @@ count_tired(prob, base, mode, mul, cal)		/* itoc.010803: ¨Ì·Ó¶Ç¤Jªº¤Ş¼Æ¨Ó¼W´î¯h³
 
 
 /*-------------------------------------------------------*/
-/* ¯S®í¿ï³æ:¬İ¯f ´îªÎ 				         */
+/* ç‰¹æ®Šé¸å–®:çœ‹ç—… æ¸›è‚¥ 				         */
 /*-------------------------------------------------------*/
 
 
-int				/* 1:¬İ§¹Âå¥Í  0:¨S¯f¨ÓÂå°|´c·d */
-pip_see_doctor()		/* ¬İÂå¥Í */
+int				/* 1:çœ‹å®Œé†«ç”Ÿ  0:æ²’ç—…ä¾†é†«é™¢æƒ¡æ */
+pip_see_doctor()		/* çœ‹é†«ç”Ÿ */
 {
   char buf[256];
   int savemoney;
   savemoney = d.sick * 25;
   if (d.sick <= 0)
   {
-    vmsg("«z­ù..¨S¯f¨ÓÂå°|·F¹À..³Q½|¤F..¶ã~~");
+    vmsg("å“‡å“©..æ²’ç—…ä¾†é†«é™¢å¹¹å˜›..è¢«ç½µäº†..å—š~~");
     d.character -= rand() % 3 + 1;
     if (d.character < 0)
       d.character = 0;
@@ -250,7 +250,7 @@ pip_see_doctor()		/* ¬İÂå¥Í */
   }
   else if (d.money < savemoney)
   {
-    sprintf(buf, "±zªº¯f­nªá %d ¤¸³á....±z¤£°÷¿ú°Õ...", savemoney);
+    sprintf(buf, "æ‚¨çš„ç—…è¦èŠ± %d å…ƒå–”....æ‚¨ä¸å¤ éŒ¢å•¦...", savemoney);
     vmsg(buf);
   }
   else
@@ -262,60 +262,60 @@ pip_see_doctor()		/* ¬İÂå¥Í */
     d.money = d.money - savemoney;
     move(4, 0);
     show_special_pic(1);
-    vmsg("ÃÄ¨ì¯f°£..¨S¦³°Æ§@¥Î!!");
+    vmsg("è—¥åˆ°ç—…é™¤..æ²’æœ‰å‰¯ä½œç”¨!!");
     return 1;
   }
   return 0;
 }
 
 
-int				/* 1:¾ã®e  0:¨S¦³¾ã®e */
-pip_change_weight()		/* ¼W­D/´îªÎ */
+int				/* 1:æ•´å®¹  0:æ²’æœ‰æ•´å®¹ */
+pip_change_weight()		/* å¢èƒ–/æ¸›è‚¥ */
 {
   char buf[80];
   int weightmp;
 
   show_special_pic(2);
 
-  out_cmd("", COLOR1 " ¬ü®e " COLOR2 " [1]¶Ç²Î¼W­D [2]§Ö³t¼W­D [3]¶Ç²Î´îªÎ [4]§Ö³t´îªÎ [Q]¸õ¥X                \033[m");
+  out_cmd("", COLOR1 " ç¾å®¹ " COLOR2 " [1]å‚³çµ±å¢èƒ– [2]å¿«é€Ÿå¢èƒ– [3]å‚³çµ±æ¸›è‚¥ [4]å¿«é€Ÿæ¸›è‚¥ [Q]è·³å‡º                \033[m");
 
   switch (vkey())
   {
   case '1':
     if (d.money < 80)
     {
-      vmsg("¶Ç²Î¼W­D­n80¤¸³á....±z¤£°÷¿ú°Õ...");
+      vmsg("å‚³çµ±å¢èƒ–è¦80å…ƒå–”....æ‚¨ä¸å¤ éŒ¢å•¦...");
     }
     else
     {
-      if (ians(b_lines - 1, 0, " »İªá¶O 80 ¤¸¡]3¡ã5¤½¤ç¡^¡A½T©w¶Ü(Y/N)¡H[N] ") == 'Y')
+      if (ians(b_lines - 1, 0, " éœ€èŠ±è²» 80 å…ƒï¼ˆ3ï½5å…¬æ–¤ï¼‰ï¼Œç¢ºå®šå—(Y/N)ï¼Ÿ[N] ") == 'Y')
       {
 	weightmp = 3 + rand() % 3;
 	d.weight += weightmp;
 	d.money -= 80;
 	d.hp -= rand() % 2 + 3;
 	show_special_pic(3);
-	sprintf(buf, "Á`¦@¼W¥[¤F %d ¤½¤ç", weightmp);
+	sprintf(buf, "ç¸½å…±å¢åŠ äº† %d å…¬æ–¤", weightmp);
 	vmsg(buf);
 	return 1;
       }
       else
       {
-	vmsg("¦^¤ßÂà·NÅo.....");
+	vmsg("å›å¿ƒè½‰æ„å›‰.....");
       }
     }
     break;
 
   case '2':
-    vget(b_lines - 1, 0, " ¼W¤@¤½¤ç­n 30 ¤¸¡A±z­n¼W¦h¤Ö¤½¤ç©O¡H[½Ğ¶ñ¼Æ¦r]¡G", buf, 4, DOECHO);
+    vget(b_lines - 1, 0, " å¢ä¸€å…¬æ–¤è¦ 30 å…ƒï¼Œæ‚¨è¦å¢å¤šå°‘å…¬æ–¤å‘¢ï¼Ÿ[è«‹å¡«æ•¸å­—]ï¼š", buf, 4, DOECHO);
     weightmp = atoi(buf);
     if (weightmp <= 0)
     {
-      vmsg("¿é¤J¦³»~..©ñ±óÅo...");
+      vmsg("è¼¸å…¥æœ‰èª¤..æ”¾æ£„å›‰...");
     }
     else if (d.money > (weightmp * 30))
     {
-      sprintf(buf, " ¼W¥[ %d ¤½¤ç¡AÁ`¦@»İªá¶O¤F %d ¤¸¡A½T©w¶Ü(Y/N)¡H[N] ", weightmp, weightmp * 30);      
+      sprintf(buf, " å¢åŠ  %d å…¬æ–¤ï¼Œç¸½å…±éœ€èŠ±è²»äº† %d å…ƒï¼Œç¢ºå®šå—(Y/N)ï¼Ÿ[N] ", weightmp, weightmp * 30);      
       if (ians(b_lines - 1, 0, buf) == 'y')
       {
 	d.money -= weightmp * 30;
@@ -324,29 +324,29 @@ pip_change_weight()		/* ¼W­D/´îªÎ */
 	d.hp -= (rand() % 2 + 3);
 	d.sick += rand() % 10 + 5;
 	show_special_pic(3);
-	sprintf(buf, "Á`¦@¼W¥[¤F %d ¤½¤ç", weightmp);
+	sprintf(buf, "ç¸½å…±å¢åŠ äº† %d å…¬æ–¤", weightmp);
 	vmsg(buf);
 	return 1;
       }
       else
       {
-	vmsg("¦^¤ßÂà·NÅo.....");
+	vmsg("å›å¿ƒè½‰æ„å›‰.....");
       }
     }
     else
     {
-      vmsg("±z¿ú¨S¨º»ò¦h°Õ.......");
+      vmsg("æ‚¨éŒ¢æ²’é‚£éº¼å¤šå•¦.......");
     }
     break;
 
   case '3':
     if (d.money < 80)
     {
-      vmsg("¶Ç²Î´îªÎ­n80¤¸³á....±z¤£°÷¿ú°Õ...");
+      vmsg("å‚³çµ±æ¸›è‚¥è¦80å…ƒå–”....æ‚¨ä¸å¤ éŒ¢å•¦...");
     }
     else
     {
-      if (ians(b_lines - 1, 0, "»İªá¶O 80¤¸(3¡ã5¤½¤ç)¡A½T©w¶Ü(Y/N)¡H[N] ") == 'y')
+      if (ians(b_lines - 1, 0, "éœ€èŠ±è²» 80å…ƒ(3ï½5å…¬æ–¤)ï¼Œç¢ºå®šå—(Y/N)ï¼Ÿ[N] ") == 'y')
       {
 	weightmp = 3 + rand() % 3;
 	d.weight -= weightmp;
@@ -355,31 +355,31 @@ pip_change_weight()		/* ¼W­D/´îªÎ */
 	d.money -= 100;
 	d.hp -= rand() % 2 + 3;
 	show_special_pic(4);
-	sprintf(buf, "Á`¦@´î¤Ö¤F %d ¤½¤ç", weightmp);
+	sprintf(buf, "ç¸½å…±æ¸›å°‘äº† %d å…¬æ–¤", weightmp);
 	vmsg(buf);
 	return 1;
       }
       else
       {
-	vmsg("¦^¤ßÂà·NÅo.....");
+	vmsg("å›å¿ƒè½‰æ„å›‰.....");
       }
     }
     break;
 
   case '4':
-    vget(b_lines - 1, 0, " ´î¤@¤½¤ç­n 30 ¤¸¡A±z­n´î¦h¤Ö¤½¤ç©O¡H[½Ğ¶ñ¼Æ¦r]¡G", buf, 4, DOECHO);
+    vget(b_lines - 1, 0, " æ¸›ä¸€å…¬æ–¤è¦ 30 å…ƒï¼Œæ‚¨è¦æ¸›å¤šå°‘å…¬æ–¤å‘¢ï¼Ÿ[è«‹å¡«æ•¸å­—]ï¼š", buf, 4, DOECHO);
     weightmp = atoi(buf);
     if (weightmp <= 0)
     {
-      vmsg("¿é¤J¦³»~..©ñ±óÅo...");
+      vmsg("è¼¸å…¥æœ‰èª¤..æ”¾æ£„å›‰...");
     }
     else if (d.weight <= weightmp)
     {
-      vmsg("±z¨S¨º»ò­«³á.....");
+      vmsg("æ‚¨æ²’é‚£éº¼é‡å–”.....");
     }
     else if (d.money > (weightmp * 30))
     {
-      sprintf(buf, " ´î¤Ö %d ¤½¤ç¡AÁ`¦@»İªá¶O¤F %d ¤¸¡A½T©w¶Ü(Y/N)¡H[N] ", weightmp, weightmp * 30);
+      sprintf(buf, " æ¸›å°‘ %d å…¬æ–¤ï¼Œç¸½å…±éœ€èŠ±è²»äº† %d å…ƒï¼Œç¢ºå®šå—(Y/N)ï¼Ÿ[N] ", weightmp, weightmp * 30);
       if (ians(b_lines - 1, 0, buf) == 'y')
       {
 	d.money -= weightmp * 30;
@@ -388,18 +388,18 @@ pip_change_weight()		/* ¼W­D/´îªÎ */
 	d.hp -= (rand() % 2 + 3);
 	d.sick += rand() % 10 + 5;
 	show_special_pic(4);
-	sprintf(buf, "Á`¦@´î¤Ö¤F %d ¤½¤ç", weightmp);
+	sprintf(buf, "ç¸½å…±æ¸›å°‘äº† %d å…¬æ–¤", weightmp);
 	vmsg(buf);
 	return 1;
       }
       else
       {
-	vmsg("¦^¤ßÂà·NÅo.....");
+	vmsg("å›å¿ƒè½‰æ„å›‰.....");
       }
     }
     else
     {
-      vmsg("±z¿ú¨S¨º»ò¦h°Õ.......");
+      vmsg("æ‚¨éŒ¢æ²’é‚£éº¼å¤šå•¦.......");
     }
     break;
   }
@@ -408,25 +408,25 @@ pip_change_weight()		/* ¼W­D/´îªÎ */
 
 
 /*-------------------------------------------------------*/
-/* ¨t²Î¿ï³æ: ­Ó¤H¸ê®Æ «ô³X ¤pÂû©ñ¥Í  ¯S§OªA°È		 */
+/* ç³»çµ±é¸å–®: å€‹äººè³‡æ–™ æ‹œè¨ª å°é›æ”¾ç”Ÿ  ç‰¹åˆ¥æœå‹™		 */
 /*-------------------------------------------------------*/
 
 
-static int			/* 0: ¨S¦³¾i¤pÂû  1: ¦³¾i¤pÂû */
-pip_data_list(userid)		/* ¬İ¬Y¤H¤pÂû¸Ô²Ó¸ê®Æ */
+static int			/* 0: æ²’æœ‰é¤Šå°é›  1: æœ‰é¤Šå°é› */
+pip_data_list(userid)		/* çœ‹æŸäººå°é›è©³ç´°è³‡æ–™ */
   char *userid;
 {
   char buf1[20], buf2[20], buf3[20], buf4[20];
   int ch, page;
   struct CHICKEN chicken;
 
-  if (!strcmp(cuser.userid, userid))	/* itoc.021031: ¦pªG¬d¸ß¦Û¤v¡A±q°O¾ĞÅé¥s²{¦b­È */
+  if (!strcmp(cuser.userid, userid))	/* itoc.021031: å¦‚æœæŸ¥è©¢è‡ªå·±ï¼Œå¾è¨˜æ†¶é«”å«ç¾åœ¨å€¼ */
   {
     memcpy(&chicken, &d, sizeof(CHICKEN));
   }
   else if (pip_read_file(userid, &chicken) < 0)
   {
-    vmsg("¥L¨S¦³¾i¤pÂû³á");
+    vmsg("ä»–æ²’æœ‰é¤Šå°é›å–”");
     return 0;
   }
 
@@ -437,43 +437,43 @@ pip_data_list(userid)		/* ¬İ¬Y¤H¤pÂû¸Ô²Ó¸ê®Æ */
     clear();
     move(1, 0);
 
-    /* itoc,010802: ¬°¤F¬İ²M·¡¤@ÂI¡A©Ò¥H prints() ¸Ì­±ªº¤Ş¼Æ´N¤£Â_¦æ¼g¦b¸Ó¦C³Ì«á */
+    /* itoc,010802: ç‚ºäº†çœ‹æ¸…æ¥šä¸€é»ï¼Œæ‰€ä»¥ prints() è£¡é¢çš„å¼•æ•¸å°±ä¸æ–·è¡Œå¯«åœ¨è©²åˆ—æœ€å¾Œ */
 
     if (page == 1)
     {
-      outs("\033[1;31m ¢~¢t\033[41;37m °ò¥»¸ê®Æ \033[0;1;31m¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢¡\033[m\n");
-      prints("\033[1;31m ¢x\033[33m¡Ì©m    ¦W : \033[37m%-10s\033[33m¡Ì¥Í    ¤é : \033[37m%-10s\033[33m¡Ì©Ê    §O : \033[37m%-10s\033[31m ¢x\033[m\n", chicken.name, chicken.birth, chicken.sex == 1 ? "¡ñ" : "¡ğ");
-      prints("\033[1;31m ¢x\033[33m¡Ìª¬    ºA : \033[37m%-10s\033[33m¡Ì´_¬¡¦¸¼Æ : \033[37m%-10d\033[33m¡Ì¦~    ÄÖ : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.death == 1 ? "¦º¤`" : chicken.death == 2 ? "©ß±ó" : chicken.death == 3 ? "µ²§ô" : "¥¿±`", chicken.liveagain, chicken.bbtime / 60 / 30);
+      outs("\033[1;31m â•­â”¤\033[41;37m åŸºæœ¬è³‡æ–™ \033[0;1;31mâ”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â•®\033[m\n");
+      prints("\033[1;31m â”‚\033[33mï¹Ÿå§“    å : \033[37m%-10s\033[33mï¹Ÿç”Ÿ    æ—¥ : \033[37m%-10s\033[33mï¹Ÿæ€§    åˆ¥ : \033[37m%-10s\033[31m â”‚\033[m\n", chicken.name, chicken.birth, chicken.sex == 1 ? "â™‚" : "â™€");
+      prints("\033[1;31m â”‚\033[33mï¹Ÿç‹€    æ…‹ : \033[37m%-10s\033[33mï¹Ÿå¾©æ´»æ¬¡æ•¸ : \033[37m%-10d\033[33mï¹Ÿå¹´    é½¡ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.death == 1 ? "æ­»äº¡" : chicken.death == 2 ? "æ‹‹æ£„" : chicken.death == 3 ? "çµæŸ" : "æ­£å¸¸", chicken.liveagain, chicken.bbtime / 60 / 30);
 
-      outs("\033[1;31m ¢u¢t\033[41;37m ª¬ºA«ü¼Æ \033[0;1;31m¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t\033[m\n");
-      prints("\033[1;31m ¢x\033[33m¡Ì¿Ë¤lÃö«Y : \033[37m%-10d\033[33m¡Ì§Ö ¼Ö «× : \033[37m%-10d\033[33m¡Ìº¡ ·N «× : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.relation, chicken.happy, chicken.satisfy);
-      prints("\033[1;31m ¢x\033[33m¡ÌÅÊ·R«ü¼Æ : \033[37m%-10d\033[33m¡Ì«H    ¥õ : \033[37m%-10d\033[33m¡Ì¸o    Ä^ : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.fallinlove, chicken.belief, chicken.sin);
-      prints("\033[1;31m ¢x\033[33m¡Ì·P    ¨ü : \033[37m%-10d\033[33m¡Ì         : \033[37m%-10s\033[33m¡Ì         : \033[37m%-10s\033[31m ¢x\033[m\n", chicken.affect, "", "");
+      outs("\033[1;31m â”œâ”¤\033[41;37m ç‹€æ…‹æŒ‡æ•¸ \033[0;1;31mâ”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\033[m\n");
+      prints("\033[1;31m â”‚\033[33mï¹Ÿè¦ªå­é—œä¿‚ : \033[37m%-10d\033[33mï¹Ÿå¿« æ¨‚ åº¦ : \033[37m%-10d\033[33mï¹Ÿæ»¿ æ„ åº¦ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.relation, chicken.happy, chicken.satisfy);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿæˆ€æ„›æŒ‡æ•¸ : \033[37m%-10d\033[33mï¹Ÿä¿¡    ä»° : \033[37m%-10d\033[33mï¹Ÿç½ª    å­½ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.fallinlove, chicken.belief, chicken.sin);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿæ„Ÿ    å— : \033[37m%-10d\033[33mï¹Ÿ         : \033[37m%-10s\033[33mï¹Ÿ         : \033[37m%-10s\033[31m â”‚\033[m\n", chicken.affect, "", "");
 
-      outs("\033[1;31m ¢u¢t\033[41;37m °·±d«ü¼Æ \033[0;1;31m¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t\033[m\n");
-      prints("\033[1;31m ¢x\033[33m¡ÌÅé    ­« : \033[37m%-10d\033[33m¡Ì¯h ³Ò «× : \033[37m%-10d\033[33m¡Ì¯f    ®ğ : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.weight, chicken.tired, chicken.sick);
-      prints("\033[1;31m ¢x\033[33m¡Ì²M ¼ä «× : \033[37m%-10d\033[33m¡Ì         : \033[37m%-10s\033[33m¡Ì         : \033[37m%-10s\033[31m ¢x\033[m\n", chicken.shit, "", "");
+      outs("\033[1;31m â”œâ”¤\033[41;37m å¥åº·æŒ‡æ•¸ \033[0;1;31mâ”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\033[m\n");
+      prints("\033[1;31m â”‚\033[33mï¹Ÿé«”    é‡ : \033[37m%-10d\033[33mï¹Ÿç–² å‹ åº¦ : \033[37m%-10d\033[33mï¹Ÿç—…    æ°£ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.weight, chicken.tired, chicken.sick);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿæ¸… æ½” åº¦ : \033[37m%-10d\033[33mï¹Ÿ         : \033[37m%-10s\033[33mï¹Ÿ         : \033[37m%-10s\033[31m â”‚\033[m\n", chicken.shit, "", "");
 
-      outs("\033[1;31m ¢u¢t\033[41;37m ¹CÀ¸­I´º \033[0;1;31m¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t\033[m\n");
-      prints("\033[1;31m ¢x\033[33m¡Ì²q ®± Ä¹ : \033[37m%-10d\033[33m¡Ì²q ®± ¿é : \033[37m%-10d\033[33m¡Ì²q®±¥­¤â : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.winn, chicken.losee, chicken.tiee);
+      outs("\033[1;31m â”œâ”¤\033[41;37m éŠæˆ²èƒŒæ™¯ \033[0;1;31mâ”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\033[m\n");
+      prints("\033[1;31m â”‚\033[33mï¹ŸçŒœ æ‹³ è´ : \033[37m%-10d\033[33mï¹ŸçŒœ æ‹³ è¼¸ : \033[37m%-10d\033[33mï¹ŸçŒœæ‹³å¹³æ‰‹ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.winn, chicken.losee, chicken.tiee);
 
-      outs("\033[1;31m ¢u¢t\033[41;37m µû»ù°Ñ¼Æ \033[0;1;31m¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t\033[m\n");
-      prints("\033[1;31m ¢x\033[33m¡ÌªÀ¥æµû»ù : \033[37m%-10d\033[33m¡Ì®a¨Æµû»ù : \033[37m%-10d\033[33m¡Ì¾Ô°«µû»ù : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.social, chicken.family, chicken.hexp);
-      prints("\033[1;31m ¢x\033[33m¡ÌÅ]ªkµû»ù : \033[37m%-10d\033[33m¡Ì         : \033[37m%-10s\033[33m¡Ì         : \033[37m%-10s\033[31m ¢x\033[m\n", chicken.hexp, "", "");
+      outs("\033[1;31m â”œâ”¤\033[41;37m è©•åƒ¹åƒæ•¸ \033[0;1;31mâ”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\033[m\n");
+      prints("\033[1;31m â”‚\033[33mï¹Ÿç¤¾äº¤è©•åƒ¹ : \033[37m%-10d\033[33mï¹Ÿå®¶äº‹è©•åƒ¹ : \033[37m%-10d\033[33mï¹Ÿæˆ°é¬¥è©•åƒ¹ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.social, chicken.family, chicken.hexp);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿé­”æ³•è©•åƒ¹ : \033[37m%-10d\033[33mï¹Ÿ         : \033[37m%-10s\033[33mï¹Ÿ         : \033[37m%-10s\033[31m â”‚\033[m\n", chicken.hexp, "", "");
 
-      outs("\033[1;31m ¢¢¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢£\033[m\n");
+      outs("\033[1;31m â•°â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â•¯\033[m\n");
       move(b_lines - 2, 0);
-      outs("                                                             \033[1;36m²Ä¤@­¶\033[37m/\033[36m¦@¤T­¶\033[m\n");
+      outs("                                                             \033[1;36mç¬¬ä¸€é \033[37m/\033[36må…±ä¸‰é \033[m\n");
     }
     else if (page == 2)
     {
-      outs("\033[1;31m ¢~¢t\033[41;37m ¯à¤O°Ñ¼Æ \033[0;1;31m¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢¡\033[m\n");
-      prints("\033[1;31m ¢x\033[33m¡Ì«İ¤H±µª« : \033[37m%-10d\033[33m¡Ì®ğ ½è «× : \033[37m%-10d\033[33m¡Ì·R    ¤ß : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.toman, chicken.character, chicken.love);
-      prints("\033[1;31m ¢x\033[33m¡Ì´¼    ¤O : \033[37m%-10d\033[33m¡ÌÃÀ³N¯à¤O : \033[37m%-10d\033[33m¡Ì¹D    ¼w : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.wisdom, chicken.art, chicken.etchics);
-      prints("\033[1;31m ¢x\033[33m¡Ì«i    ´± : \033[37m%-10d\033[33m¡Ì±½¦a¬~¦ç : \033[37m%-10d\033[33m¡Ì¾y    ¤O : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.brave, chicken.homework, chicken.charm);
-      prints("\033[1;31m ¢x\033[33m¡ÌÂ§    »ö : \033[37m%-10d\033[33m¡Ì½Í    ¦R : \033[37m%-10d\033[33m¡Ì²i    ¶¹ : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.manners, chicken.speech, chicken.cook);
-      prints("\033[1;31m ¢x\033[33m¡Ì§ğ À» ¤O : \033[37m%-10d\033[33m¡Ì¨¾ ¿m ¤O : \033[37m%-10d\033[33m¡Ì³t    «× : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.attack, chicken.resist, chicken.speed);
-      prints("\033[1;31m ¢x\033[33m¡Ì¾Ô°«§Ş³N : \033[37m%-10d\033[33m¡ÌÅ]ªk§Ş³N : \033[37m%-10d\033[33m¡Ì§ÜÅ]¯à¤O : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.hskill, chicken.mskill, chicken.immune);
+      outs("\033[1;31m â•­â”¤\033[41;37m èƒ½åŠ›åƒæ•¸ \033[0;1;31mâ”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â•®\033[m\n");
+      prints("\033[1;31m â”‚\033[33mï¹Ÿå¾…äººæ¥ç‰© : \033[37m%-10d\033[33mï¹Ÿæ°£ è³ª åº¦ : \033[37m%-10d\033[33mï¹Ÿæ„›    å¿ƒ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.toman, chicken.character, chicken.love);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿæ™º    åŠ› : \033[37m%-10d\033[33mï¹Ÿè—è¡“èƒ½åŠ› : \033[37m%-10d\033[33mï¹Ÿé“    å¾· : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.wisdom, chicken.art, chicken.etchics);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿå‹‡    æ•¢ : \033[37m%-10d\033[33mï¹Ÿæƒåœ°æ´—è¡£ : \033[37m%-10d\033[33mï¹Ÿé­…    åŠ› : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.brave, chicken.homework, chicken.charm);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿç¦®    å„€ : \033[37m%-10d\033[33mï¹Ÿè«‡    å : \033[37m%-10d\033[33mï¹Ÿçƒ¹    é£ª : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.manners, chicken.speech, chicken.cook);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿæ”» æ“Š åŠ› : \033[37m%-10d\033[33mï¹Ÿé˜² ç¦¦ åŠ› : \033[37m%-10d\033[33mï¹Ÿé€Ÿ    åº¦ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.attack, chicken.resist, chicken.speed);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿæˆ°é¬¥æŠ€è¡“ : \033[37m%-10d\033[33mï¹Ÿé­”æ³•æŠ€è¡“ : \033[37m%-10d\033[33mï¹ŸæŠ—é­”èƒ½åŠ› : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.hskill, chicken.mskill, chicken.immune);
 
       sprintf(buf1, "%d%s/%d%s", chicken.hp > 1000 ? chicken.hp / 1000 : chicken.hp, chicken.hp > 1000 ? "K" : "",	/* HP */
 	chicken.maxhp > 1000 ? chicken.maxhp / 1000 : chicken.maxhp, chicken.maxhp > 1000 ? "K" : "");
@@ -484,55 +484,55 @@ pip_data_list(userid)		/* ¬İ¬Y¤H¤pÂû¸Ô²Ó¸ê®Æ */
       sprintf(buf4, "%d%s/%d%s", chicken.sp > 1000 ? chicken.sp / 1000 : chicken.sp, chicken.sp > 1000 ? "K" : "",	/* SP */      
 	chicken.maxsp > 1000 ? chicken.maxsp / 1000 : chicken.maxsp, chicken.maxsp > 1000 ? "K" : "");            
 
-      outs("\033[1;31m ¢u¢t\033[41;37m ¾Ô°««ü¼Ğ \033[0;1;31m¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t\033[m\n");
-      prints("\033[1;31m ¢x\033[33m¡Ìµ¥    ¯Å : \033[37m%-10d\033[33m¡Ì¸g Åç ­È : \033[37m%-10d\033[33m¡Ì   ¦å    : \033[37m%-10s\033[31m ¢x\033[m\n", chicken.level, chicken.exp, buf1);
-      prints("\033[1;31m ¢x\033[33m¡Ìªk    ¤O : \033[37m%-10s\033[33m¡Ì²¾ °Ê ¤O : \033[37m%-10s\033[33m¡Ì¤º    ¤O : \033[37m%-10s\033[31m ¢x\033[m\n", buf2, buf3, buf4);
+      outs("\033[1;31m â”œâ”¤\033[41;37m æˆ°é¬¥æŒ‡æ¨™ \033[0;1;31mâ”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\033[m\n");
+      prints("\033[1;31m â”‚\033[33mï¹Ÿç­‰    ç´š : \033[37m%-10d\033[33mï¹Ÿç¶“ é©— å€¼ : \033[37m%-10d\033[33mï¹Ÿ   è¡€    : \033[37m%-10s\033[31m â”‚\033[m\n", chicken.level, chicken.exp, buf1);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿæ³•    åŠ› : \033[37m%-10s\033[33mï¹Ÿç§» å‹• åŠ› : \033[37m%-10s\033[33mï¹Ÿå…§    åŠ› : \033[37m%-10s\033[31m â”‚\033[m\n", buf2, buf3, buf4);
 
-      outs("\033[1;31m ¢u¢t\033[41;37m ­¹ª«®w¦s \033[0;1;31m¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t\033[m\n");
-      prints("\033[1;31m ¢x\033[33m¡Ì­¹    ª« : \033[37m%-10d\033[33m¡Ì¹s    ­¹ : \033[37m%-10d\033[33m¡Ì         : \033[37m%-10s\033[31m ¢x\033[m\n", chicken.food, chicken.cookie, "");
-      prints("\033[1;31m ¢x\033[33m¡Ì¤j ÁÙ ¤¦ : \033[37m%-10d\033[33m¡ÌÆF    ªÛ : \033[37m%-10d\033[33m¡Ì¤j ¸É ¤Y : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.pill, chicken.medicine, chicken.burger);
-      prints("\033[1;31m ¢x\033[33m¡Ì¤H    çx : \033[37m%-10d\033[33m¡ÌÂ_ Äò »I : \033[37m%-10d\033[33m¡Ì³·    ½¬ : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.ginseng, chicken.paste, chicken.snowgrass);
+      outs("\033[1;31m â”œâ”¤\033[41;37m é£Ÿç‰©åº«å­˜ \033[0;1;31mâ”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\033[m\n");
+      prints("\033[1;31m â”‚\033[33mï¹Ÿé£Ÿ    ç‰© : \033[37m%-10d\033[33mï¹Ÿé›¶    é£Ÿ : \033[37m%-10d\033[33mï¹Ÿ         : \033[37m%-10s\033[31m â”‚\033[m\n", chicken.food, chicken.cookie, "");
+      prints("\033[1;31m â”‚\033[33mï¹Ÿå¤§ é‚„ ä¸¹ : \033[37m%-10d\033[33mï¹Ÿéˆ    èŠ : \033[37m%-10d\033[33mï¹Ÿå¤§ è£œ ä¸¸ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.pill, chicken.medicine, chicken.burger);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿäºº    è”˜ : \033[37m%-10d\033[33mï¹Ÿæ–· çºŒ è† : \033[37m%-10d\033[33mï¹Ÿé›ª    è“® : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.ginseng, chicken.paste, chicken.snowgrass);
 
-      outs("\033[1;31m ¢u¢t\033[41;37m ª««~®w¦s \033[0;1;31m¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t\033[m\n");
-      prints("\033[1;31m ¢x\033[33m¡Ìª÷    ¿ú : \033[37m%-10d\033[33m¡Ì         : \033[37m%-10s\033[33m¡Ì         : \033[37m%-10s\033[31m ¢x\033[m\n", chicken.money, "", "");
-      prints("\033[1;31m ¢x\033[33m¡Ì®Ñ    ¥» : \033[37m%-10d\033[33m¡Ìª±    ¨ã : \033[37m%-10d\033[33m¡Ì½Ò¥~Åªª« : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.book, chicken.toy, chicken.playboy);
+      outs("\033[1;31m â”œâ”¤\033[41;37m ç‰©å“åº«å­˜ \033[0;1;31mâ”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\033[m\n");
+      prints("\033[1;31m â”‚\033[33mï¹Ÿé‡‘    éŒ¢ : \033[37m%-10d\033[33mï¹Ÿ         : \033[37m%-10s\033[33mï¹Ÿ         : \033[37m%-10s\033[31m â”‚\033[m\n", chicken.money, "", "");
+      prints("\033[1;31m â”‚\033[33mï¹Ÿæ›¸    æœ¬ : \033[37m%-10d\033[33mï¹Ÿç©    å…· : \033[37m%-10d\033[33mï¹Ÿèª²å¤–è®€ç‰© : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.book, chicken.toy, chicken.playboy);
 
  
-      outs("\033[1;31m ¢¢¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢£\033[m\n");
+      outs("\033[1;31m â•°â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â•¯\033[m\n");
       move(b_lines - 2, 0);
-      outs("                                                             \033[1;36m²Ä¤G­¶\033[37m/\033[36m¦@¤T­¶\033[m\n");
+      outs("                                                             \033[1;36mç¬¬äºŒé \033[37m/\033[36må…±ä¸‰é \033[m\n");
     }
     else /* if (page == 3) */
     {
-      outs("\033[1;31m ¢~¢t\033[41;37m °Ñ¨£¤ı¦Ú \033[0;1;31m¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢¡\033[m\n");
-      prints("\033[1;31m ¢x\033[33m¡Ì¦u½Ã¦n·P : \033[37m%-10d\033[33m¡Ìªñ½Ã¦n·P : \033[37m%-10d\033[33m¡Ì±N­x¦n·P : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.royalA, chicken.royalB, chicken.royalC);
-      prints("\033[1;31m ¢x\033[33m¡Ì¤j¦Ú¦n·P : \033[37m%-10d\033[33m¡Ì²½¥q¦n·P : \033[37m%-10d\033[33m¡ÌÃd¦m¦n·P : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.royalD, chicken.royalE, chicken.royalF);
-      prints("\033[1;31m ¢x\033[33m¡Ì¤ı¦m¦n·P : \033[37m%-10d\033[33m¡Ì°ê¤ı¦n·P : \033[37m%-10d\033[33m¡Ì¤p¤¡¦n·P : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.royalG, chicken.royalH, chicken.royalI);
+      outs("\033[1;31m â•­â”¤\033[41;37m åƒè¦‹ç‹è‡£ \033[0;1;31mâ”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â•®\033[m\n");
+      prints("\033[1;31m â”‚\033[33mï¹Ÿå®ˆè¡›å¥½æ„Ÿ : \033[37m%-10d\033[33mï¹Ÿè¿‘è¡›å¥½æ„Ÿ : \033[37m%-10d\033[33mï¹Ÿå°‡è»å¥½æ„Ÿ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.royalA, chicken.royalB, chicken.royalC);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿå¤§è‡£å¥½æ„Ÿ : \033[37m%-10d\033[33mï¹Ÿç¥­å¸å¥½æ„Ÿ : \033[37m%-10d\033[33mï¹Ÿå¯µå¦ƒå¥½æ„Ÿ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.royalD, chicken.royalE, chicken.royalF);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿç‹å¦ƒå¥½æ„Ÿ : \033[37m%-10d\033[33mï¹Ÿåœ‹ç‹å¥½æ„Ÿ : \033[37m%-10d\033[33mï¹Ÿå°ä¸‘å¥½æ„Ÿ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.royalG, chicken.royalH, chicken.royalI);
 
-      outs("\033[1;31m ¢u¢t\033[41;37m ¤u§@¦¸¼Æ \033[0;1;31m¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t\033[m\n");
-      prints("\033[1;31m ¢x\033[33m¡Ì®a¨Æ¦¸¼Æ : \033[37m%-10d\033[33m¡Ì«O©i¦¸¼Æ : \033[37m%-10d\033[33m¡Ì®È©±¦¸¼Æ : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.workA, chicken.workB, chicken.workC);
-      prints("\033[1;31m ¢x\033[33m¡Ì¹A³õ¦¸¼Æ : \033[37m%-10d\033[33m¡ÌÀ\\ÆU¦¸¼Æ : \033[37m%-10d\033[33m¡Ì±Ğ°ó¦¸¼Æ : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.workD, chicken.workE, chicken.workF);
-      prints("\033[1;31m ¢x\033[33m¡Ì¦aÅu¦¸¼Æ : \033[37m%-10d\033[33m¡Ì¥ï¤ì¦¸¼Æ : \033[37m%-10d\033[33m¡Ì¬ü¾v¦¸¼Æ : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.workG, chicken.workH, chicken.workI);
-      prints("\033[1;31m ¢x\033[33m¡ÌÂy¤H¦¸¼Æ : \033[37m%-10d\033[33m¡Ì¤u¦a¦¸¼Æ : \033[37m%-10d\033[33m¡Ì¦u¹Ó¦¸¼Æ : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.workJ, chicken.workK, chicken.workL);
-      prints("\033[1;31m ¢x\033[33m¡Ì®a±Ğ¦¸¼Æ : \033[37m%-10d\033[33m¡Ì°s®a¦¸¼Æ : \033[37m%-10d\033[33m¡Ì°s©±¦¸¼Æ : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.workM, chicken.workN, chicken.workO);
-      prints("\033[1;31m ¢x\033[33m¡Ì©] Á` ·| : \033[37m%-10d\033[33m¡Ì         : \033[37m%-10s\033[33m¡Ì         : \033[37m%-10s\033[31m ¢x\033[m\n", chicken.workP, "", "");
+      outs("\033[1;31m â”œâ”¤\033[41;37m å·¥ä½œæ¬¡æ•¸ \033[0;1;31mâ”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\033[m\n");
+      prints("\033[1;31m â”‚\033[33mï¹Ÿå®¶äº‹æ¬¡æ•¸ : \033[37m%-10d\033[33mï¹Ÿä¿å§†æ¬¡æ•¸ : \033[37m%-10d\033[33mï¹Ÿæ—…åº—æ¬¡æ•¸ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.workA, chicken.workB, chicken.workC);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿè¾²å ´æ¬¡æ•¸ : \033[37m%-10d\033[33mï¹Ÿé¤\å»³æ¬¡æ•¸ : \033[37m%-10d\033[33mï¹Ÿæ•™å ‚æ¬¡æ•¸ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.workD, chicken.workE, chicken.workF);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿåœ°æ”¤æ¬¡æ•¸ : \033[37m%-10d\033[33mï¹Ÿä¼æœ¨æ¬¡æ•¸ : \033[37m%-10d\033[33mï¹Ÿç¾é«®æ¬¡æ•¸ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.workG, chicken.workH, chicken.workI);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿçµäººæ¬¡æ•¸ : \033[37m%-10d\033[33mï¹Ÿå·¥åœ°æ¬¡æ•¸ : \033[37m%-10d\033[33mï¹Ÿå®ˆå¢“æ¬¡æ•¸ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.workJ, chicken.workK, chicken.workL);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿå®¶æ•™æ¬¡æ•¸ : \033[37m%-10d\033[33mï¹Ÿé…’å®¶æ¬¡æ•¸ : \033[37m%-10d\033[33mï¹Ÿé…’åº—æ¬¡æ•¸ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.workM, chicken.workN, chicken.workO);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿå¤œ ç¸½ æœƒ : \033[37m%-10d\033[33mï¹Ÿ         : \033[37m%-10s\033[33mï¹Ÿ         : \033[37m%-10s\033[31m â”‚\033[m\n", chicken.workP, "", "");
 
-      outs("\033[1;31m ¢u¢t\033[41;37m ¤W½Ò¦¸¼Æ \033[0;1;31m¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t\033[m\n");
-      prints("\033[1;31m ¢x\033[33m¡Ì¦ÛµM¬ì¾Ç : \033[37m%-10d\033[33m¡Ì­ğ¸Ö§ºµü : \033[37m%-10d\033[33m¡Ì¯«¾Ç±Ğ¨| : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.classA, chicken.classB, chicken.classC);
-      prints("\033[1;31m ¢x\033[33m¡Ì­x¾Ç±Ğ¨| : \033[37m%-10d\033[33m¡Ì¼C¹D§Ş³N : \033[37m%-10d\033[33m¡Ì®æ°«¾Ô§Ş : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.classD, chicken.classE, chicken.classF);
-      prints("\033[1;31m ¢x\033[33m¡ÌÅ]ªk±Ğ¨| : \033[37m%-10d\033[33m¡ÌÂ§»ö±Ğ¨| : \033[37m%-10d\033[33m¡ÌÃ¸µe§Ş¥© : \033[37m%-10d\033[31m ¢x\033[m\n", chicken.classG, chicken.classH, chicken.classI);
-      prints("\033[1;31m ¢x\033[33m¡Ì»RÁĞ§Ş¥© : \033[37m%-10d\033[33m¡Ì         : \033[37m%-10s\033[33m¡Ì         : \033[37m%-10s\033[31m ¢x\033[m\n", chicken.classJ, "", "");
+      outs("\033[1;31m â”œâ”¤\033[41;37m ä¸Šèª²æ¬¡æ•¸ \033[0;1;31mâ”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\033[m\n");
+      prints("\033[1;31m â”‚\033[33mï¹Ÿè‡ªç„¶ç§‘å­¸ : \033[37m%-10d\033[33mï¹Ÿå”è©©å®‹è© : \033[37m%-10d\033[33mï¹Ÿç¥å­¸æ•™è‚² : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.classA, chicken.classB, chicken.classC);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿè»å­¸æ•™è‚² : \033[37m%-10d\033[33mï¹ŸåŠé“æŠ€è¡“ : \033[37m%-10d\033[33mï¹Ÿæ ¼é¬¥æˆ°æŠ€ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.classD, chicken.classE, chicken.classF);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿé­”æ³•æ•™è‚² : \033[37m%-10d\033[33mï¹Ÿç¦®å„€æ•™è‚² : \033[37m%-10d\033[33mï¹Ÿç¹ªç•«æŠ€å·§ : \033[37m%-10d\033[31m â”‚\033[m\n", chicken.classG, chicken.classH, chicken.classI);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿèˆè¹ˆæŠ€å·§ : \033[37m%-10d\033[33mï¹Ÿ         : \033[37m%-10s\033[33mï¹Ÿ         : \033[37m%-10s\033[31m â”‚\033[m\n", chicken.classJ, "", "");
 
-      outs("\033[1;31m ¢u¢t\033[41;37m ¸Ë³Æ¦Cªí \033[0;1;31m¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t\033[m\n");
-      prints("\033[1;31m ¢x\033[33m¡ÌÀY³¡¸Ë³Æ : \033[37m%-10s\033[33m¡Ì¤â³¡¸Ë³Æ : \033[37m%-10s\033[33m¡Ì¬ŞµP¸Ë³Æ : \033[37m%-10s\033[31m ¢x\033[m\n", chicken.equiphead, chicken.equiphand, chicken.equipshield);
-      prints("\033[1;31m ¢x\033[33m¡Ì¨­Åé¸Ë³Æ : \033[37m%-10s\033[33m¡Ì¸}³¡¸Ë³Æ : \033[37m%-10s\033[33m¡Ì           \033[37m%-10s\033[31m ¢x\033[m\n", chicken.equipbody, chicken.equipfoot, "");
+      outs("\033[1;31m â”œâ”¤\033[41;37m è£å‚™åˆ—è¡¨ \033[0;1;31mâ”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\033[m\n");
+      prints("\033[1;31m â”‚\033[33mï¹Ÿé ­éƒ¨è£å‚™ : \033[37m%-10s\033[33mï¹Ÿæ‰‹éƒ¨è£å‚™ : \033[37m%-10s\033[33mï¹Ÿç›¾ç‰Œè£å‚™ : \033[37m%-10s\033[31m â”‚\033[m\n", chicken.equiphead, chicken.equiphand, chicken.equipshield);
+      prints("\033[1;31m â”‚\033[33mï¹Ÿèº«é«”è£å‚™ : \033[37m%-10s\033[33mï¹Ÿè…³éƒ¨è£å‚™ : \033[37m%-10s\033[33mï¹Ÿ           \033[37m%-10s\033[31m â”‚\033[m\n", chicken.equipbody, chicken.equipfoot, "");
 
-      outs("\033[1;31m ¢¢¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢£\033[m\n");
+      outs("\033[1;31m â•°â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â•¯\033[m\n");
       move(b_lines - 2, 0);
-      outs("                                                             \033[1;36m²Ä¤T­¶\033[37m/\033[36m¦@¤T­¶\033[m\n");
+      outs("                                                             \033[1;36mç¬¬ä¸‰é \033[37m/\033[36må…±ä¸‰é \033[m\n");
     }
 
-    out_cmd("", COLOR1 " ¬d¸ß " COLOR2 " [¡ô/PgUP]©¹¤W¤@­¶ [¡õ/PgDN]©¹¤U¤@­¶ [Q]Â÷¶}                            \033[m");
+    out_cmd("", COLOR1 " æŸ¥è©¢ " COLOR2 " [â†‘/PgUP]å¾€ä¸Šä¸€é  [â†“/PgDN]å¾€ä¸‹ä¸€é  [Q]é›¢é–‹                            \033[m");
 
     switch (ch = vkey())
     {
@@ -554,20 +554,20 @@ pip_data_list(userid)		/* ¬İ¬Y¤H¤pÂû¸Ô²Ó¸ê®Æ */
 
 
 int
-pip_query_self()		/* ¬d¸ß¦Û¤v */
+pip_query_self()		/* æŸ¥è©¢è‡ªå·± */
 {
   pip_data_list(cuser.userid);
   return 0;
 }
 
 
-int				/* 1:«ô³X¦¨¥\  0:¨S³o°¦Âû */
-pip_query()			/* «ô³X¤pÂû */
+int				/* 1:æ‹œè¨ªæˆåŠŸ  0:æ²’é€™éš»é› */
+pip_query()			/* æ‹œè¨ªå°é› */
 {
   int uno;
   char uid[IDLEN + 1];
 
-  vs_bar("«ô³X¦P¦ñ");
+  vs_bar("æ‹œè¨ªåŒä¼´");
   if (vget(1, 0, msg_uid, uid, IDLEN + 1, GET_USER))
   {
     move(2, 0);
@@ -586,14 +586,14 @@ pip_query()			/* «ô³X¤pÂû */
 }
 
 
-int				/* 1:©ñ¥Í  0:Äò¾i */
+int				/* 1:æ”¾ç”Ÿ  0:çºŒé¤Š */
 pip_system_freepip()
 {
   char buf[80];
 
-  if (ians(b_lines - 2, 0, "¯uªº­n©ñ¥Í¶Ü(Y/N)¡H[N] ") == 'y')
+  if (ians(b_lines - 2, 0, "çœŸçš„è¦æ”¾ç”Ÿå—(Y/N)ï¼Ÿ[N] ") == 'y')
   {
-    sprintf(buf, "\033[1;31m%s ³Q¬½¤ßªº %s ¥á±¼¤F~\033[m", d.name, cuser.userid);
+    sprintf(buf, "\033[1;31m%s è¢«ç‹ å¿ƒçš„ %s ä¸Ÿæ‰äº†~\033[m", d.name, cuser.userid);
     pipdie(buf, 2);
     return 1;
   }
@@ -607,57 +607,57 @@ pip_system_service()
   int choice;
   char buf[128];
 
-  out_cmd("", COLOR1 " ªA°È " COLOR2 " [1]©R¦W¤j®v [2]ÅÜ©Ê¤â³N [3]µ²§½³]§½ [Q]Â÷¶}                            \033[m");
+  out_cmd("", COLOR1 " æœå‹™ " COLOR2 " [1]å‘½åå¤§å¸« [2]è®Šæ€§æ‰‹è¡“ [3]çµå±€è¨­å±€ [Q]é›¢é–‹                            \033[m");
 
   switch (vkey())
   {
   case '1':
-    vget(b_lines - 2, 0, "À°¤pÂû­«·s¨ú­Ó¦n¦W¦r¡G", buf, 11, DOECHO);
+    vget(b_lines - 2, 0, "å¹«å°é›é‡æ–°å–å€‹å¥½åå­—ï¼š", buf, 11, DOECHO);
     if (!buf[0])
     {
-      vmsg("µ¥¤@¤U·Q¦n¦A¨Ó¦n¤F  :)");
+      vmsg("ç­‰ä¸€ä¸‹æƒ³å¥½å†ä¾†å¥½äº†  :)");
     }
     else
     {
       strcpy(d.name, buf);
-      vmsg("¶â¶â  ´«¤@­Ó·sªº¦W¦r³á...");
+      vmsg("å—¯å—¯  æ›ä¸€å€‹æ–°çš„åå­—å–”...");
     }
     break;
 
-  case '2':			/* ÅÜ©Ê */
-    if (d.sex == 1)	/* 1:¤½ 2:¥À */
+  case '2':			/* è®Šæ€§ */
+    if (d.sex == 1)	/* 1:å…¬ 2:æ¯ */
     {
-      choice = 2;		/* ¤½-->¥À */
-      sprintf(buf, "±N¤pÂû¥Ñ¡ñÅÜ©Ê¦¨¡ğªº¶Ü(Y/N)¡H[N] ");
+      choice = 2;		/* å…¬-->æ¯ */
+      sprintf(buf, "å°‡å°é›ç”±â™‚è®Šæ€§æˆâ™€çš„å—(Y/N)ï¼Ÿ[N] ");
     }
     else
     {
-      choice = 1;		/* ¥À-->¤½ */
-      sprintf(buf, "±N¤pÂû¥Ñ¡ğÅÜ©Ê¦¨¡ñªº¶Ü(Y/N)¡H[N] ");
+      choice = 1;		/* æ¯-->å…¬ */
+      sprintf(buf, "å°‡å°é›ç”±â™€è®Šæ€§æˆâ™‚çš„å—(Y/N)ï¼Ÿ[N] ");
     }
     if (ians(b_lines - 2, 0, buf) == 'y')
     {
       d.sex = choice;
-      vmsg("ÅÜ©Ê¤â³N§¹²¦...");
+      vmsg("è®Šæ€§æ‰‹è¡“å®Œç•¢...");
     }
     break;
 
   case '3':
-    /* 1:¤£­n¥B¥¼±B 4:­n¥B¥¼±B */
+    /* 1:ä¸è¦ä¸”æœªå©š 4:è¦ä¸”æœªå©š */
     if (d.wantend == 1 || d.wantend == 2 || d.wantend == 3)
     {
-      choice = 3;		/* ¨S¦³-->¦³ */
-      sprintf(buf, "±N¤pÂû¹CÀ¸§ï¦¨¡i¦³20·³µ²§½¡j(Y/N)¡H[N] ");
+      choice = 3;		/* æ²’æœ‰-->æœ‰ */
+      sprintf(buf, "å°‡å°é›éŠæˆ²æ”¹æˆã€æœ‰20æ­²çµå±€ã€‘(Y/N)ï¼Ÿ[N] ");
     }
     else
     {
-      choice = -3;		/* ¦³-->¨S¦³ */
-      sprintf(buf, "±N¤pÂû¹CÀ¸§ï¦¨¡i¨S¦³20·³µ²§½¡j(Y/N)¡H[N] ");
+      choice = -3;		/* æœ‰-->æ²’æœ‰ */
+      sprintf(buf, "å°‡å°é›éŠæˆ²æ”¹æˆã€æ²’æœ‰20æ­²çµå±€ã€‘(Y/N)ï¼Ÿ[N] ");
     }
     if (ians(b_lines - 2, 0, buf) == 'y')
     {
       d.wantend += choice;
-      vmsg("¹CÀ¸µ²§½³]©w§¹²¦...");
+      vmsg("éŠæˆ²çµå±€è¨­å®šå®Œç•¢...");
     }
     break;
   }

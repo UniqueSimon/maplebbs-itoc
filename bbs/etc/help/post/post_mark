@@ -1,13 +1,13 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xm     �xpost_mark   �x�аO�峹                                        �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │m     │post_mark   │標記文章                                        │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� m �i�H�аO�ӽg�峹�A�Q�аO���峹�|�X�{ m �� M ���Ÿ��A
-  �N�L�k�Q�R���C
+    將游標移到某欄，按 m 可以標記該篇文章，被標記的文章會出現 m 或 M 的符號，
+  將無法被刪除。
 
-  �Ÿ� m�G���ܳQ�аO�B�w�\Ū
-  �Ÿ� M�G���ܳQ�аO�B���\Ū
+  符號 m：表示被標記且已閱讀
+  符號 M：表示被標記且未閱讀
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

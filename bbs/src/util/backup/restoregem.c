@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/restoregem.c    ( NTHU MapleBBS Ver 3.10 )       */
 /*-------------------------------------------------------*/
-/* target : ÁÙ­ì©Ò¦³ºëµØ°Ï¸ê®Æ                           */
+/* target : é‚„åŽŸæ‰€æœ‰ç²¾è¯å€è³‡æ–™                           */
 /* create : 01/10/26                                     */
 /* update :   /  /                                       */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw                 */
@@ -10,9 +10,9 @@
 
 #if 0
 
-   BAKPATH ¤U·|¦³«Ü¦h¤£¦P¤é´Á³Æ¥÷ªººëµØ°Ï¸ê®Æ¡A¨Ò¦p gem010101 gem010102
-   §â­n´_­ìªº¨º¥÷§ó¦W¬° gem  (mv gem010101 gem)
-   °õ¦æ¥»µ{¦¡§Y¥i¥þ³¡´_­ì
+   BAKPATH ä¸‹æœƒæœ‰å¾ˆå¤šä¸åŒæ—¥æœŸå‚™ä»½çš„ç²¾è¯å€è³‡æ–™ï¼Œä¾‹å¦‚ gem010101 gem010102
+   æŠŠè¦å¾©åŽŸçš„é‚£ä»½æ›´åç‚º gem  (mv gem010101 gem)
+   åŸ·è¡Œæœ¬ç¨‹å¼å³å¯å…¨éƒ¨å¾©åŽŸ
 
 #endif
 
@@ -37,12 +37,12 @@ main()
   sprintf(cmd, "cp %s %s/", FN_DIR, gempath);
   system(cmd);
 
-  /* §â 0~9 @ A~V ¤À§O¸ÑÀ£ÁY¦^¨Ó */
+  /* æŠŠ 0~9 @ A~V åˆ†åˆ¥è§£å£“ç¸®å›žä¾† */
   while (de = readdir(dirp))
   {
     ptr = de->d_name;
 
-    /* ¬ÝªOªººëµØ°Ï¥t¥~¸ÑÀ£ÁY */
+    /* çœ‹æ¿çš„ç²¾è¯å€å¦å¤–è§£å£“ç¸® */
     if (!strcmp(ptr, "brd"))
       continue;
 
@@ -55,7 +55,7 @@ main()
   closedir(dirp);
 
 
-  /* ¦^´_¬ÝªO */
+  /* å›žå¾©çœ‹æ¿ */
 
   if (chdir(BAKPATH "/gem/brd") || !(dirp = opendir(".")))
     exit(-1);
@@ -63,7 +63,7 @@ main()
   strcat(gempath, "/brd");
   mkdir(gempath, 0700);
 
-  /* §â¦U¬ÝªO¤À§O¸ÑÀ£ÁY¦^¨Ó */
+  /* æŠŠå„çœ‹æ¿åˆ†åˆ¥è§£å£“ç¸®å›žä¾† */
   while (de = readdir(dirp))
   {
     ptr = de->d_name;

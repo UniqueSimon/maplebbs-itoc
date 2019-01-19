@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/transfavor.c                   			 */
 /*-------------------------------------------------------*/
-/* target : WD �� Maple 3.02 �ڪ��̷R�ഫ           	 */
+/* target : WD 至 Maple 3.02 我的最愛轉換           	 */
 /* create : 01/09/15                     		 */
 /* update :   /  /                   			 */
 /* author : itoc.bbs@bbs.ee.nctu.edu.tw          	 */
@@ -12,11 +12,11 @@
 
 #if 0
 
-   1. �ק� transmf()
-   2. �ഫ(�ݪO)�n�ͦW�椧�e�A�z�������ഫ���ݪO�ΨϥΪ̡C
+   1. 修改 transmf()
+   2. 轉換(看板)好友名單之前，您必須先轉換完看板及使用者。
 
-   ps. �ϥΫe�Х���ƥ��Ause on ur own risk. �{����H�Х]�[ :p
-   ps. �P�� lkchu �� Maple 3.02 for FreeBSD
+   ps. 使用前請先行備份，use on ur own risk. 程式拙劣請包涵 :p
+   ps. 感謝 lkchu 的 Maple 3.02 for FreeBSD
 
 #endif
 
@@ -45,7 +45,7 @@ _mf_fpath(fpath, userid, fname)
 
 
 /* ----------------------------------------------------- */
-/* �ഫ�D�{��                                            */
+/* 轉換主程式                                            */
 /* ----------------------------------------------------- */
 
 
@@ -60,11 +60,11 @@ transmf(userid)
   char *str, brdname[BNLEN + 1];
   MF mf;
 
-  /* �إߥؿ� */
+  /* 建立目錄 */
   _mf_fpath(fpath, userid, NULL);
   mkdir(fpath, 0700);
 
-  /* sob �� usr �ؿ������j�p�g�A�ҥH�n�����o�j�p�g */
+  /* sob 的 usr 目錄有分大小寫，所以要先取得大小寫 */
   usr_fpath(buf, userid, FN_ACCT);
   if ((fd = open(buf, O_RDONLY)) >= 0)
   {
@@ -76,7 +76,7 @@ transmf(userid)
     return;
   }
 
-  sprintf(buf, OLD_BBSHOME"/home/%s/favorite", acct.userid);  /* �ª��ڪ��̷R */
+  sprintf(buf, OLD_BBSHOME"/home/%s/favorite", acct.userid);  /* 舊的我的最愛 */
 
   if (!(fp = fopen(buf, "r")))
     return;
@@ -96,12 +96,12 @@ transmf(userid)
     }
 
     brd_fpath(buf, brdname, NULL);
-    if (dashd(buf))			/* ���T���o�ӪO */
+    if (dashd(buf))			/* 的確有這個板 */
     {
       mf.chrono = ++num;      
       mf.mftype = MF_BOARD;
       str_ncpy(mf.xname, brdname, sizeof(mf.xname));
-      mf.title[0] = '\0';		/* �ݪO���|�S�� mf.title */
+      mf.title[0] = '\0';		/* 看板捷徑沒有 mf.title */
       rec_add(fpath, &mf, sizeof(MF));
     }
   }
@@ -120,8 +120,8 @@ main(argc, argv)
   struct dirent *de;
   DIR *dirp;
 
-  /* argc == 1 ������ϥΪ̤άݪO */
-  /* argc == 2 ��Y�S�w�ϥΪ� */
+  /* argc == 1 轉全部使用者及看板 */
+  /* argc == 2 轉某特定使用者 */
 
   if (argc > 2)
   {
@@ -137,7 +137,7 @@ main(argc, argv)
     exit(1);
   }
 
-  /* �ഫ�ϥΪ̧ڪ��̷R */
+  /* 轉換使用者我的最愛 */
   for (c = 'a'; c <= 'z'; c++)
   {
     sprintf(buf, "usr/%c", c);

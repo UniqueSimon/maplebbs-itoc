@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/wd.h 	                                         */
 /*-------------------------------------------------------*/
-/* target : WD ¦Ü Maple 3.02 Âà´«			 */
+/* target : WD è‡³ Maple 3.02 è½‰æ›			 */
 /* create : 02/01/03                                     */
 /* author : ernie@micro8.ee.nthu.edu.tw                  */
 /* modify : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -10,14 +10,14 @@
 
 #if 0
 
-  1. ³]©w OLD_BBSHOME¡BFN_PASSWD¡BFN_BOARD
-  2. ­×§ï©Ò¦³ªº old struct
+  1. è¨­å®š OLD_BBSHOMEã€FN_PASSWDã€FN_BOARD
+  2. ä¿®æ”¹æ‰€æœ‰çš„ old struct
 
-  3. ¥²¶·¦b brd Âà§¹¤~¥i¥HÂà´« gem
-  4. ¥²¶·¦b usr ¤Î brd ³£Âà§¹¤~¥i¥HÂà´« mf
-  5. ¥²¶·¦b usr ¤Î brd ³£Âà§¹¤~¥i¥HÂà´« pal
-  6. ¥²¶·¦b usr Âà§¹¤~¥i¥HÂà´« bmw pip list
-  7. «ØÄ³Âà´«¶¶§Ç¬° usr -> brd -> gem -> mf -> pal -> bmw -> pip -> list
+  3. å¿…é ˆåœ¨ brd è½‰å®Œæ‰å¯ä»¥è½‰æ› gem
+  4. å¿…é ˆåœ¨ usr åŠ brd éƒ½è½‰å®Œæ‰å¯ä»¥è½‰æ› mf
+  5. å¿…é ˆåœ¨ usr åŠ brd éƒ½è½‰å®Œæ‰å¯ä»¥è½‰æ› pal
+  6. å¿…é ˆåœ¨ usr è½‰å®Œæ‰å¯ä»¥è½‰æ› bmw pip list
+  7. å»ºè­°è½‰æ›é †åºç‚º usr -> brd -> gem -> mf -> pal -> bmw -> pip -> list
 
 #endif
 
@@ -30,7 +30,7 @@
 #define FN_BOARD        "/home/oldbbs/.BOARDS"	/* WD */
 
 
-#define	HAVE_PERSONAL_GEM			/* WD ¬O¦³­Ó¤HºëµØ°Ïªº */
+#define	HAVE_PERSONAL_GEM			/* WD æ˜¯æœ‰å€‹äººç²¾è¯å€çš„ */
 
 
 /* ----------------------------------------------------- */
@@ -39,43 +39,43 @@
 
 struct userec
 {
-  char userid[13];                /* ¨Ï¥ÎªÌ¦WºÙ  13 bytes */
-  char realname[20];              /* ¯u¹ê©m¦W    20 bytes */
-  char username[24];              /* ¼ÊºÙ        24 bytes */
-  char passwd[14];                /* ±K½X        14 bytes */
-  uschar uflag;                   /* ¨Ï¥ÎªÌ¿ï¶µ   1 byte  */
-  usint userlevel;                /* ¨Ï¥ÎªÌÅv­­   4 bytes */
-  ushort numlogins;               /* ¤W¯¸¦¸¼Æ     2 bytes */
-  ushort numposts;                /* POST¦¸¼Æ     2 bytes */
-  time_t firstlogin;              /* µù¥U®É¶¡     4 bytes */
-  time_t lastlogin;               /* «e¦¸¤W¯¸     4 bytes */
-  char lasthost[24];              /* ¤W¯¸¦aÂI    24 bytes */
-  char vhost[24];                 /* µêÀÀºô§}    24 bytes */
+  char userid[13];                /* ä½¿ç”¨è€…åç¨±  13 bytes */
+  char realname[20];              /* çœŸå¯¦å§“å    20 bytes */
+  char username[24];              /* æš±ç¨±        24 bytes */
+  char passwd[14];                /* å¯†ç¢¼        14 bytes */
+  uschar uflag;                   /* ä½¿ç”¨è€…é¸é …   1 byte  */
+  usint userlevel;                /* ä½¿ç”¨è€…æ¬Šé™   4 bytes */
+  ushort numlogins;               /* ä¸Šç«™æ¬¡æ•¸     2 bytes */
+  ushort numposts;                /* POSTæ¬¡æ•¸     2 bytes */
+  time_t firstlogin;              /* è¨»å†Šæ™‚é–“     4 bytes */
+  time_t lastlogin;               /* å‰æ¬¡ä¸Šç«™     4 bytes */
+  char lasthost[24];              /* ä¸Šç«™åœ°é»    24 bytes */
+  char vhost[24];                 /* è™›æ“¬ç¶²å€    24 bytes */
   char email[50];                 /* E-MAIL      50 bytes */
-  char address[50];               /* ¦a§}        50 bytes */
-  char justify[39];               /* µù¥U¸ê®Æ    39 bytes */
-  uschar month;                   /* ¥X¥Í¤ë¥÷     1 byte  */
-  uschar day;                     /* ¥X¥Í¤é´Á     1 byte  */
-  uschar year;                    /* ¥X¥Í¦~¥÷     1 byte  */
-  uschar sex;                     /* ©Ê§O         1 byte  */
-  uschar state;                   /* ª¬ºA??       1 byte  */
-  usint habit;                    /* ³ß¦n³]©w     4 bytes */
-  uschar pager;                   /* ¤ß±¡ÃC¦â     1 bytes */
-  uschar invisible;               /* Áô¨­¼Ò¦¡     1 bytes */
-  usint exmailbox;                /* «H½c«Ê¼Æ     4 bytes */
-  usint exmailboxk;               /* «H½cK¼Æ      4 bytes */
-  usint toquery;                  /* ¦n©_«×       4 bytes */
-  usint bequery;                  /* ¤H®ğ«×       4 bytes */
-  char toqid[13];	          /* «e¦¸¬d½Ö    13 bytes */
-  char beqid[13];                 /* «e¦¸³Q½Ö¬d  13 bytes */
-  unsigned long int totaltime;    /* ¤W½uÁ`®É¼Æ   8 bytes */
-  usint sendmsg;                  /* µo°T®§¦¸¼Æ   4 bytes */
-  usint receivemsg;               /* ¦¬°T®§¦¸¼Æ   4 bytes */
-  unsigned long int goldmoney;    /* ­·¹Ğª÷¹ô     8 bytes */
-  unsigned long int silvermoney;  /* »È¹ô         8 bytes */
-  unsigned long int exp;          /* ¸gÅç­È       8 bytes */
-  time_t dtime;                   /* ¦s´Ú®É¶¡     4 bytes */
-  int limitmoney;                 /* ª÷¿ú¤U­­     4 bytes */
+  char address[50];               /* åœ°å€        50 bytes */
+  char justify[39];               /* è¨»å†Šè³‡æ–™    39 bytes */
+  uschar month;                   /* å‡ºç”Ÿæœˆä»½     1 byte  */
+  uschar day;                     /* å‡ºç”Ÿæ—¥æœŸ     1 byte  */
+  uschar year;                    /* å‡ºç”Ÿå¹´ä»½     1 byte  */
+  uschar sex;                     /* æ€§åˆ¥         1 byte  */
+  uschar state;                   /* ç‹€æ…‹??       1 byte  */
+  usint habit;                    /* å–œå¥½è¨­å®š     4 bytes */
+  uschar pager;                   /* å¿ƒæƒ…é¡è‰²     1 bytes */
+  uschar invisible;               /* éš±èº«æ¨¡å¼     1 bytes */
+  usint exmailbox;                /* ä¿¡ç®±å°æ•¸     4 bytes */
+  usint exmailboxk;               /* ä¿¡ç®±Kæ•¸      4 bytes */
+  usint toquery;                  /* å¥½å¥‡åº¦       4 bytes */
+  usint bequery;                  /* äººæ°£åº¦       4 bytes */
+  char toqid[13];	          /* å‰æ¬¡æŸ¥èª°    13 bytes */
+  char beqid[13];                 /* å‰æ¬¡è¢«èª°æŸ¥  13 bytes */
+  unsigned long int totaltime;    /* ä¸Šç·šç¸½æ™‚æ•¸   8 bytes */
+  usint sendmsg;                  /* ç™¼è¨Šæ¯æ¬¡æ•¸   4 bytes */
+  usint receivemsg;               /* æ”¶è¨Šæ¯æ¬¡æ•¸   4 bytes */
+  unsigned long int goldmoney;    /* é¢¨å¡µé‡‘å¹£     8 bytes */
+  unsigned long int silvermoney;  /* éŠ€å¹£         8 bytes */
+  unsigned long int exp;          /* ç¶“é©—å€¼       8 bytes */
+  time_t dtime;                   /* å­˜æ¬¾æ™‚é–“     4 bytes */
+  int limitmoney;                 /* é‡‘éŒ¢ä¸‹é™     4 bytes */
 };
 typedef struct userec userec;
 
@@ -102,24 +102,24 @@ typedef struct fileheader fileheader;
 
 struct boardheader
 {
-  char brdname[13];             /* ¬İªO­^¤å¦WºÙ    13 bytes */
-  char title[49];               /* ¬İªO¤¤¤å¦WºÙ    49 bytes */
-  char BM[39];                  /* ªO¥DID©M"/"     39 bytes */
-  usint brdattr;                /* ¬İªOªºÄİ©Ê       4 bytes */
+  char brdname[13];             /* çœ‹æ¿è‹±æ–‡åç¨±    13 bytes */
+  char title[49];               /* çœ‹æ¿ä¸­æ–‡åç¨±    49 bytes */
+  char BM[39];                  /* æ¿ä¸»IDå’Œ"/"     39 bytes */
+  usint brdattr;                /* çœ‹æ¿çš„å±¬æ€§       4 bytes */
   time_t bupdate;               /* note update time 4 bytes */
   uschar bvote;                 /* Vote flags       1 bytes */
   time_t vtime;                 /* Vote close time  4 bytes */
-  usint level;                  /* ¥i¥H¬İ¦¹ªOªºÅv­­ 4 bytes */
-  unsigned long int totalvisit; /* Á`«ô³X¤H¼Æ       8 bytes */
-  unsigned long int totaltime;  /* Á`°±¯d®É¶¡       8 bytes */
-  char lastvisit[13];           /* ³Ì«á¬İ¸ÓªOªº¤H  13 bytes */
-  time_t opentime;              /* ¶}ªO®É¶¡         4 bytes */
-  time_t lastime;               /* ³Ì«á«ô³X®É¶¡     4 bytes */
-  char passwd[14];              /* ±K½X            14 bytes */
-  unsigned long int postotal;   /* Á`¤ô¶q :p        8 bytes */
-  usint maxpost;                /* ¤å³¹¤W­­         4 bytes */
-  usint maxtime;                /* ¤å³¹«O¯d®É¶¡     4 bytes */
-  char desc[3][80];             /* ¤¤¤å´y­z      240 bytes */
+  usint level;                  /* å¯ä»¥çœ‹æ­¤æ¿çš„æ¬Šé™ 4 bytes */
+  unsigned long int totalvisit; /* ç¸½æ‹œè¨ªäººæ•¸       8 bytes */
+  unsigned long int totaltime;  /* ç¸½åœç•™æ™‚é–“       8 bytes */
+  char lastvisit[13];           /* æœ€å¾Œçœ‹è©²æ¿çš„äºº  13 bytes */
+  time_t opentime;              /* é–‹æ¿æ™‚é–“         4 bytes */
+  time_t lastime;               /* æœ€å¾Œæ‹œè¨ªæ™‚é–“     4 bytes */
+  char passwd[14];              /* å¯†ç¢¼            14 bytes */
+  unsigned long int postotal;   /* ç¸½æ°´é‡ :p        8 bytes */
+  usint maxpost;                /* æ–‡ç« ä¸Šé™         4 bytes */
+  usint maxtime;                /* æ–‡ç« ä¿ç•™æ™‚é–“     4 bytes */
+  char desc[3][80];             /* ä¸­æ–‡æè¿°      240 bytes */
   char pad[87];
 };
 typedef struct boardheader boardheader;

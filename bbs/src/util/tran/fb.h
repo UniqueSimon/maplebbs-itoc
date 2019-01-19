@@ -1,7 +1,7 @@
 /*----------------------------------------------------------*/
 /* util/fb/fb.h	                                            */
 /*----------------------------------------------------------*/
-/* target : firebird 3.0 Âà Maple 3.x                       */
+/* target : firebird 3.0 è½‰ Maple 3.x                       */
 /* create : 00/11/22                                        */
 /* update :   /  /                                          */
 /* author : hightman@263.net                                */
@@ -10,12 +10,12 @@
 
 #if 0
 
-  1. ³]©w OLD_BBSHOME¡BFN_PASSWD¡BFN_BOARD
-  2. ­×§ï©Ò¦³ªº old struct
+  1. è¨­å®š OLD_BBSHOMEã€FN_PASSWDã€FN_BOARD
+  2. ä¿®æ”¹æ‰€æœ‰çš„ old struct
 
-  3. ¥²¶·¦b brd Âà§¹¤~¥i¥HÂà´« gem
-  4. ¥²¶·¦b usr ¤Î brd ³£Âà§¹¤~¥i¥HÂà´« pal
-  5. «ØÄ³Âà´«¶¶§Ç¬° usr -> brd -> gem ->pal
+  3. å¿…é ˆåœ¨ brd è½‰å®Œæ‰å¯ä»¥è½‰æ› gem
+  4. å¿…é ˆåœ¨ usr åŠ brd éƒ½è½‰å®Œæ‰å¯ä»¥è½‰æ› pal
+  5. å»ºè­°è½‰æ›é †åºç‚º usr -> brd -> gem ->pal
 
 #endif
 
@@ -31,7 +31,7 @@
 
 
 /* ----------------------------------------------------- */
-/* ·sÂÂºX¼Ğ/Åv­­¹ïÀ³					 */
+/* æ–°èˆŠæ——æ¨™/æ¬Šé™å°æ‡‰					 */
 /* ----------------------------------------------------- */
 
 struct BITS
@@ -85,7 +85,7 @@ struct userec
   unsigned int numlogins;
   unsigned int numposts;
   char flags[2];
-  char passwd[14];		/* ­Y¬O MD5¡A­n±N 14 §ï¦¨ 35 */
+  char passwd[14];		/* è‹¥æ˜¯ MD5ï¼Œè¦å°‡ 14 æ”¹æˆ 35 */
   char username[40];
   char ident[40];
   char termtype[16];

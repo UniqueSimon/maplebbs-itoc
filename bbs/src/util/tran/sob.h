@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/sob.h 	                                         */
 /*-------------------------------------------------------*/
-/* target : SOB ¦Ü Maple 3.02 Âà´«			 */
+/* target : SOB è‡³ Maple 3.02 è½‰æ›			 */
 /* create : 02/10/26					 */
 /* author : ernie@micro8.ee.nthu.edu.tw                  */
 /* modify : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -10,12 +10,12 @@
 
 #if 0
 
-  1. ³]©w OLD_BBSHOME¡BFN_PASSWD¡BFN_BOARD
-  2. ­×§ï©Ò¦³ªº old struct
+  1. è¨­å®š OLD_BBSHOMEã€FN_PASSWDã€FN_BOARD
+  2. ä¿®æ”¹æ‰€æœ‰çš„ old struct
 
-  3. ¥²¶·¦b brd Âà§¹¤~¥i¥HÂà´« gem
-  4. ¥²¶·¦b usr ¤Î brd ³£Âà§¹¤~¥i¥HÂà´« pal
-  5. «ØÄ³Âà´«¶¶§Ç¬° usr -> brd -> gem ->pal
+  3. å¿…é ˆåœ¨ brd è½‰å®Œæ‰å¯ä»¥è½‰æ› gem
+  4. å¿…é ˆåœ¨ usr åŠ brd éƒ½è½‰å®Œæ‰å¯ä»¥è½‰æ› pal
+  5. å»ºè­°è½‰æ›é †åºç‚º usr -> brd -> gem ->pal
 
 #endif
 
@@ -28,7 +28,7 @@
 #define FN_BOARD        "/home/oldbbs/.BOARDS"	/* SOB */
 
 
-#undef	HAVE_PERSONAL_GEM			/* SOB ¬O¨S¦³­Ó¤HºëµØ°Ïªº */
+#undef	HAVE_PERSONAL_GEM			/* SOB æ˜¯æ²’æœ‰å€‹äººç²¾è¯å€çš„ */
 
 
 /* ----------------------------------------------------- */

@@ -1,11 +1,11 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xm     �xmf_move     �x���ʧڪ��̷R                                    �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │m     │mf_move     │移動我的最愛                                    │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� m �i�H���ʸӳ̷R�C
+    將游標移到某欄，按 m 可以移動該最愛。
 
-    �z�i�H�ǵ۲��ʧڪ��̷R����m�A�ӱƦC�z���w�����ǡC
+    您可以藉著移動我的最愛的位置，來排列您喜歡的順序。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

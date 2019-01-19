@@ -11,29 +11,29 @@
 #               permission notice appear in all copies.
 
 
-        innbbsd ¥Ñ skhuang@csie.nctu.edu.tw ½s¼g
-        ¥»µ{¦¡ NoCeM-innbbsd ¥u¬O patch
+        innbbsd ç”± skhuang@csie.nctu.edu.tw ç·¨å¯«
+        æœ¬ç¨‹å¼ NoCeM-innbbsd åªæ˜¯ patch
 
-        ¥»µ{¦¡·PÁÂ clcheng@CCCA.NCTU.edu.tw ¤Î stevel@bbs.ee.ntu.edu.tw
-        ´£¨ÑÄ_¶Q·N¨£.
+        æœ¬ç¨‹å¼æ„Ÿè¬ clcheng@CCCA.NCTU.edu.tw åŠ stevel@bbs.ee.ntu.edu.tw
+        æä¾›å¯¶è²´æ„è¦‹.
 
-        NoCeM ¤§³]©wÀÉ¦b ~bbs/innd/ncmperm.bbs, ®æ¦¡¬° "Issuer Type Perm"
-        ¦UÄæ¦ì *¥²¶·* ¨Ï¥Î tab ¹j¶}. ²Ä¤@¦¸¸ü¤J®Éµ{¦¡·|¦Û°Ê²£¥Í³]©wÀÉ.
+        NoCeM ä¹‹è¨­å®šæª”åœ¨ ~bbs/innd/ncmperm.bbs, æ ¼å¼ç‚º "Issuer Type Perm"
+        å„æ¬„ä½ *å¿…é ˆ* ä½¿ç”¨ tab éš”é–‹. ç¬¬ä¸€æ¬¡è¼‰å…¥æ™‚ç¨‹å¼æœƒè‡ªå‹•ç”¢ç”Ÿè¨­å®šæª”.
 
-        ¦pÄ@±µ¦¬¬Y¤@¦W Issuer ªº ncm-notice, ½Ğ±N³Ì«á¤@Äæ no ±q§ï¬° yes
-        µM«á ctlinnbbsd reload ­«·s¸ü¤J¸ê®Æ§Y¥i.
-        *½Ğ¤Å* ¨Ï¥Î ve ½s¿è ncmperm.bbs , ¦]¬° ve ·|±N tab ¥ş³¡Âà¬° space
+        å¦‚é¡˜æ¥æ”¶æŸä¸€å Issuer çš„ ncm-notice, è«‹å°‡æœ€å¾Œä¸€æ¬„ no å¾æ”¹ç‚º yes
+        ç„¶å¾Œ ctlinnbbsd reload é‡æ–°è¼‰å…¥è³‡æ–™å³å¯.
+        *è«‹å‹¿* ä½¿ç”¨ ve ç·¨è¼¯ ncmperm.bbs , å› ç‚º ve æœƒå°‡ tab å…¨éƒ¨è½‰ç‚º space
 
-        ¥»µ{¦¡»İ°t¦X pgp5 ¨Ï¥Î, ¦w¸Ë NoCeM-innbbsd-patch «e, ½Ğ¥ı¦w¸Ë pgp5
-        §_«h½Ğ­×§ï nocem.c , #undef PGP5
+        æœ¬ç¨‹å¼éœ€é…åˆ pgp5 ä½¿ç”¨, å®‰è£ NoCeM-innbbsd-patch å‰, è«‹å…ˆå®‰è£ pgp5
+        å¦å‰‡è«‹ä¿®æ”¹ nocem.c , #undef PGP5
 
-        pgp5 ªº¤¤¤å¤å¥ó¥i¦b©³¤U´X³B§ä¨ì.
+        pgp5 çš„ä¸­æ–‡æ–‡ä»¶å¯åœ¨åº•ä¸‹å¹¾è™•æ‰¾åˆ°.
         http://bbs.ee.ntu.edu.tw/boards/BSD/4/62.html
         http://www.sinica.edu.tw/cc/netsrv/dawei/pgp5.0/
 
-        NoCeM ¸ê®Æ½Ğ°Ñ¦Ò http://www.cm.org
-        ¤Î benjamin.bbs@com.neto.net (clcheng) ©Ò¼gªº»¡©ú¤å¥ó.
+        NoCeM è³‡æ–™è«‹åƒè€ƒ http://www.cm.org
+        åŠ benjamin.bbs@com.neto.net (clcheng) æ‰€å¯«çš„èªªæ˜æ–‡ä»¶.
 
 --
- Yen-Ming Lee [§õ«Û©ú]          | http://cae.ce.ntu.edu.tw/~leeym/
+ Yen-Ming Lee [æå½¥æ˜]          | http://cae.ce.ntu.edu.tw/~leeym/
  CAE Group, Civil Engineering, NTU, Taipei, Taiwan

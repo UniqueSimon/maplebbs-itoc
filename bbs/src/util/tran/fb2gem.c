@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/fb/fb2gem.c					 */
 /*-------------------------------------------------------*/
-/* target : firebird 3.0 Âà Maple 3.x ºëµØ°Ï		 */
+/* target : firebird 3.0 è½‰ Maple 3.x ç²¾è¯å€		 */
 /*          0Announce => gem/@Class			 */
 /* create : 00/11/22					 */
 /* update :   /  /  					 */
@@ -26,7 +26,7 @@ static char *fn_names = ".Names";
 
 
 /* ------------------------------------------------------------- */
-/* «Ø¥ß gem/.DIR ¤Î gem/@/@Class                                 */
+/* å»ºç«‹ gem/.DIR åŠ gem/@/@Class                                 */
 /* ------------------------------------------------------------- */
 
 
@@ -41,7 +41,7 @@ new_class()
   strcpy(hdr.nick, SYSOPNICK);
   str_stamp(hdr.date, &hdr.chrono);
   strcpy(hdr.xname, "@Class");
-  strcpy(hdr.title, "Class/     ¬İªOºëµØ°Ï");
+  strcpy(hdr.title, "Class/     çœ‹æ¿ç²¾è¯å€");
   hdr.xmode = GEM_FOLDER;
   rec_add("gem/.DIR", &hdr, sizeof(HDR));
 }
@@ -67,7 +67,7 @@ tran_group(title, fname, flag)
   strcpy(hdr.nick, SYSOPNICK);
   str_stamp(hdr.date, &hdr.chrono);
 
-  if (flag == 1)		/* ¨÷©v */
+  if (flag == 1)		/* å·å®— */
   {
     strcpy(tmp_name, fname);
 
@@ -79,7 +79,7 @@ tran_group(title, fname, flag)
     sprintf(buf, "%s/0Announce/groups/%s/%s", OLD_BBSHOME, fname, fn_names);
     Names_class(buf);
   }
-  else if (flag == 2)		/* ¬İªO */
+  else if (flag == 2)		/* çœ‹æ¿ */
   {
     strcpy(hdr.xname, fname);
     str_ncpy(hdr.title, title, sizeof(hdr.title));
@@ -238,12 +238,12 @@ mandex(board, fpath, deep)
       *str = '\0';
     if (!memcmp(buf, "Name=", 5))
     {
-      if (!memcmp(ptr, "¡ó ", 3) || !memcmp(ptr, "¡ô ", 3) || !memcmp(ptr, "¡ñ", 3) ||
-	!memcmp(ptr, "¡ğ ", 3) || !memcmp(ptr, "¡Ñ ", 3))
+      if (!memcmp(ptr, "âŠ™ ", 3) || !memcmp(ptr, "â†‘ ", 3) || !memcmp(ptr, "â™‚", 3) ||
+	!memcmp(ptr, "â™€ ", 3) || !memcmp(ptr, "Ã— ", 3))
       {
 	ptr += 3;
       }
-      else if (!memcmp(ptr, "¡õ ", 3) || !memcmp(ptr, "¡ö ", 3))
+      else if (!memcmp(ptr, "â†“ ", 3) || !memcmp(ptr, "â† ", 3))
       {
 	ptr += 3;
 	gport = 70;
@@ -299,7 +299,7 @@ mandex(board, fpath, deep)
       }
       ghdr.chrono = ++chrono;
 
-      if (gport)		/* Gopher ´N·í¦¨¤@¯ë¤å³¹©Î¨÷©v */
+      if (gport)		/* Gopher å°±ç•¶æˆä¸€èˆ¬æ–‡ç« æˆ–å·å®— */
       {
 	xmode = 0;
 	if (*ptr == '1')

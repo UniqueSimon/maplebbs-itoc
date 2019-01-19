@@ -1,15 +1,15 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xS     �xulist_ship  �x�����G�m�ͽ�                                    �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │S     │ulist_ship  │切換故鄉友誼                                    │
+  └───┴──────┴────────────────────────┘
 
-    �� S �i�H���� �G�m/�ͽ˱ԭz �G�ؼҦ��C
+    按 S 可以切換 故鄉/友誼敘述 二種模式。
 
-    �b�G�m�Ҧ����|��ܸӨϥΪ̪��G�m�άO�ӷ��F�b�n�ͱԭz�Ҧ����h�O�|��ܸ�
-  �ϥΪ̪��ͽ˱ԭz�C
+    在故鄉模式中會顯示該使用者的故鄉或是來源；在好友敘述模式中則是會顯示該
+  使用者的友誼敘述。
 
-    ���M�A�b�ͽ˱ԭz�Ҧ����A�p�G�ӨϥΪ̤��O�z���n��/�a�H�A�άO�z�S���s��L
-  ���ͽ˱ԭz�A����o���N�|�d�աC
+    當然，在友誼敘述模式中，如果該使用者不是您的好友/壞人，或是您沒有編輯他
+  的友誼敘述，那麼這欄位就會留白。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

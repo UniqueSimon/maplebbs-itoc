@@ -11,7 +11,7 @@
 #include <stdio.h>
 
 
-#if 0	/* itoc.030411: ¨S¦³¸g RFC 2047 encode */
+#if 0	/* itoc.030411: æ²’æœ‰ç¶“ RFC 2047 encode */
 void
 output_str(fp, prefix, str, charset, suffix)
   FILE *fp;
@@ -39,12 +39,12 @@ output_rfc2047_qp(fp, prefix, str, charset, suffix)
   char *suffix;
 {
   int i, ch;
-  int blank = 1;	/* 1:¥ş¥ÑªÅ¥Õ²Õ¦¨ */
+  int blank = 1;	/* 1:å…¨ç”±ç©ºç™½çµ„æˆ */
   static char tbl[16] = {'0','1','2','3','4','5','6','7','8','9', 'A','B','C','D','E','F'};
 
   fputs(prefix, fp);
 
-  /* ¦pªG¦r¦ê¶}ÀY¦³ US_ASCII printable characters¡A¥i¥ı¦æ¿é¥X¡A³o¼Ë¤ñ¸û¦n¬İ¡A¤]¤ñ¸û¬Û®e */
+  /* å¦‚æœå­—ä¸²é–‹é ­æœ‰ US_ASCII printable charactersï¼Œå¯å…ˆè¡Œè¼¸å‡ºï¼Œé€™æ¨£æ¯”è¼ƒå¥½çœ‹ï¼Œä¹Ÿæ¯”è¼ƒç›¸å®¹ */
   for (i = 0; ch = str[i]; i++)
   {
     if (ch != '=' && ch != '?' && ch != '_' && ch > '\x1f' && ch < '\x7f')
@@ -53,7 +53,7 @@ output_rfc2047_qp(fp, prefix, str, charset, suffix)
       {
 	if (ch != ' ')
 	  blank = 0;
-	else if (str[i + 1] == '\0')	/* ­Y¥ş¬OªÅ¥Õ¡A³Ì«á¤@­Ó­nÂà½X */
+	else if (str[i + 1] == '\0')	/* è‹¥å…¨æ˜¯ç©ºç™½ï¼Œæœ€å¾Œä¸€å€‹è¦è½‰ç¢¼ */
 	  break;
       }
       fprintf(fp, "%c", ch);
@@ -62,18 +62,18 @@ output_rfc2047_qp(fp, prefix, str, charset, suffix)
       break;
   }
 
-  if (ch != '\0')	/* ¦pªG³£¨S¦³¯S®í¦r¤¸´Nµ²§ô */
+  if (ch != '\0')	/* å¦‚æœéƒ½æ²’æœ‰ç‰¹æ®Šå­—å…ƒå°±çµæŸ */
   {
-    /* ¶}©l encode */
-    fprintf(fp, "=?%s?Q?", charset);	/* «ü©w¦r¶° */
+    /* é–‹å§‹ encode */
+    fprintf(fp, "=?%s?Q?", charset);	/* æŒ‡å®šå­—é›† */
     for (; ch = str[i]; i++)
     {
-      /* ¦pªG¬O non-printable ¦r¤¸´N­nÂà½X */
-      /* ½d³ò: '\x20' ~ '\x7e' ¬° printable, ¨ä¤¤ =, ?, _, ªÅ¥Õ, ¬°¯S®í²Å¸¹¤]­nÂà½X */
+      /* å¦‚æœæ˜¯ non-printable å­—å…ƒå°±è¦è½‰ç¢¼ */
+      /* ç¯„åœ: '\x20' ~ '\x7e' ç‚º printable, å…¶ä¸­ =, ?, _, ç©ºç™½, ç‚ºç‰¹æ®Šç¬¦è™Ÿä¹Ÿè¦è½‰ç¢¼ */
 
       if (ch == '=' || ch == '?' || ch == '_' || ch <= '\x1f' || ch >= '\x7f')
 	fprintf(fp, "=%c%c", tbl[(ch >> 4) & '\x0f'], tbl[ch & '\x0f']);
-      else if (ch == ' ')	/* ªÅ¥Õ¤ñ¸û¯S®í, Âà¦¨ '_' ©Î "=20" */
+      else if (ch == ' ')	/* ç©ºç™½æ¯”è¼ƒç‰¹æ®Š, è½‰æˆ '_' æˆ– "=20" */
 	fprintf(fp, "=20");
       else
 	fprintf(fp, "%c", ch);
@@ -87,7 +87,7 @@ output_rfc2047_qp(fp, prefix, str, charset, suffix)
 
 #if 0
 
-/* output_rfc2047_qp() ¥i¥H¥ş³¡´«¦¨ output_rfc2047_base64()¡A¦pªG·Q´« encode ªº¸Ü */
+/* output_rfc2047_qp() å¯ä»¥å…¨éƒ¨æ›æˆ output_rfc2047_base64()ï¼Œå¦‚æœæƒ³æ› encode çš„è©± */
 
 /*-------------------------------------------------------*/
 /* RFC2047 base64 encode				 */

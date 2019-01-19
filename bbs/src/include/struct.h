@@ -14,15 +14,15 @@
 /* screen control */
 
 #define STRLEN		80	/* Length of most string data */
-#define ANSILINELEN	500	/* Maximum Screen width in chars¡A¤£¯à¶W¹L 1023 */
+#define ANSILINELEN	500	/* Maximum Screen width in charsï¼Œä¸èƒ½è¶…é 1023 */
 
 #define SCR_WIDTH	78	/* edit/talk/camera screen width */
 
-#define TAB_STOP	4	/* «ö TAB ´«¦¨´X®æªÅ¥Õ (­n¬O 2 ªº¦¸¤è) */
+#define TAB_STOP	4	/* æŒ‰ TAB æ›æˆå¹¾æ ¼ç©ºç™½ (è¦æ˜¯ 2 çš„æ¬¡æ–¹) */
 #define TAB_WIDTH	(TAB_STOP - 1)
 
 #define T_LINES		50	/* maximum total lines */
-#define T_COLS		120	/* maximum total columns¡A­n¤ñ ANSILINELEN ¤p */
+#define T_COLS		120	/* maximum total columnsï¼Œè¦æ¯” ANSILINELEN å° */
 
 /* board structure */
 
@@ -37,11 +37,11 @@
 #define FNLEN		28	/* Length of filename  */
 
 /* user structure */
-/* DES ½s½Xªk¡A±µ¨ü 8 ­Ó¦r¤¸ªø«×ªº¦r¦ê¡A²£¥ÍªºÁä­È¬° 13 ¦ì¤¸²Õ */
+/* DES ç·¨ç¢¼æ³•ï¼Œæ¥å— 8 å€‹å­—å…ƒé•·åº¦çš„å­—ä¸²ï¼Œç”¢ç”Ÿçš„éµå€¼ç‚º 13 ä½å…ƒçµ„ */
 
 #define IDLEN		12	/* Length of user id */
 #define PASSLEN		13	/* Length of encrypted passwd field */
-#define PSWDLEN		8	/* Length of passwd (¥¼¥[±Kªºªø«×) */
+#define PSWDLEN		8	/* Length of passwd (æœªåŠ å¯†çš„é•·åº¦) */
 #define RNLEN		19	/* Length of real name */
 #define UNLEN		23	/* Length of user name */
 
@@ -53,7 +53,7 @@ typedef struct UTMP UTMP;
 
 
 /* ----------------------------------------------------- */
-/* ¨Ï¥ÎªÌ±b¸¹ .ACCT struct : 512 bytes			 */
+/* ä½¿ç”¨è€…å¸³è™Ÿ .ACCT struct : 512 bytes			 */
 /* ----------------------------------------------------- */
 
 
@@ -62,34 +62,34 @@ typedef struct
   int userno;			/* unique positive code */
 
   char userid[IDLEN + 1];	/* ID */
-  char passwd[PASSLEN + 1];	/* ±K½X */
-  char realname[RNLEN + 1];	/* ¯u¹ê©m¦W */
-  char username[UNLEN + 1];	/* ¼ÊºÙ */
+  char passwd[PASSLEN + 1];	/* å¯†ç¢¼ */
+  char realname[RNLEN + 1];	/* çœŸå¯¦å§“å */
+  char username[UNLEN + 1];	/* æš±ç¨± */
 
-  usint userlevel;		/* Åv­­ */
+  usint userlevel;		/* æ¬Šé™ */
   usint ufo;			/* habit */
-  uschar signature;		/* ¹w³]Ã±¦WÀÉ */
+  uschar signature;		/* é è¨­ç°½åæª” */
 
-  char year;			/* ¥Í¤é(¥Á°ê¦~) */
-  char month;			/* ¥Í¤é(¤ë) */
-  char day;			/* ¥Í¤é(¤é) */
-  char sex;			/* ©Ê§O 0:¤¤©Ê ©_¼Æ:¨k©Ê °¸¼Æ:¤k©Ê */
-  int money;			/* »È¹ô */
-  int gold;			/* ª÷¹ô */
+  char year;			/* ç”Ÿæ—¥(æ°‘åœ‹å¹´) */
+  char month;			/* ç”Ÿæ—¥(æœˆ) */
+  char day;			/* ç”Ÿæ—¥(æ—¥) */
+  char sex;			/* æ€§åˆ¥ 0:ä¸­æ€§ å¥‡æ•¸:ç”·æ€§ å¶æ•¸:å¥³æ€§ */
+  int money;			/* éŠ€å¹£ */
+  int gold;			/* é‡‘å¹£ */
 
-  int numlogins;		/* ¤W¯¸¦¸¼Æ */
-  int numposts;			/* µoªí¦¸¼Æ */
-  int numemails;		/* ±Hµo Inetrnet E-mail ¦¸¼Æ */
+  int numlogins;		/* ä¸Šç«™æ¬¡æ•¸ */
+  int numposts;			/* ç™¼è¡¨æ¬¡æ•¸ */
+  int numemails;		/* å¯„ç™¼ Inetrnet E-mail æ¬¡æ•¸ */
 
-  time_t firstlogin;		/* ²Ä¤@¦¸¤W¯¸®É¶¡ */
-  time_t lastlogin;		/* ¤W¤@¦¸¤W¯¸®É¶¡ */
-  time_t tcheck;		/* ¤W¦¸ check «H½c/ªB¤Í¦W³æªº®É¶¡ */
-  time_t tvalid;		/* ­Y°±Åv¡A°±Åv´Áº¡ªº®É¶¡¡F
-                                   ­Y¥¼°±Åv¥B³q¹L»{ÃÒ¡A³q¹L»{ÃÒªº®É¶¡¡F
-                                   ­Y¥¼°±Åv¥B¥¼³q¹L»{ÃÒ¡A»{ÃÒ¨çªº time-seed */
+  time_t firstlogin;		/* ç¬¬ä¸€æ¬¡ä¸Šç«™æ™‚é–“ */
+  time_t lastlogin;		/* ä¸Šä¸€æ¬¡ä¸Šç«™æ™‚é–“ */
+  time_t tcheck;		/* ä¸Šæ¬¡ check ä¿¡ç®±/æœ‹å‹åå–®çš„æ™‚é–“ */
+  time_t tvalid;		/* è‹¥åœæ¬Šï¼Œåœæ¬ŠæœŸæ»¿çš„æ™‚é–“ï¼›
+                                   è‹¥æœªåœæ¬Šä¸”é€šéèªè­‰ï¼Œé€šéèªè­‰çš„æ™‚é–“ï¼›
+                                   è‹¥æœªåœæ¬Šä¸”æœªé€šéèªè­‰ï¼Œèªè­‰å‡½çš„ time-seed */
 
-  char lasthost[30];		/* ¤W¦¸µn¤J¨Ó·½ */
-  char email[60];		/* ¥Ø«eµn°Oªº¹q¤l«H½c */
+  char lasthost[30];		/* ä¸Šæ¬¡ç™»å…¥ä¾†æº */
+  char email[60];		/* ç›®å‰ç™»è¨˜çš„é›»å­ä¿¡ç®± */
 }      ACCT;
 
 
@@ -102,10 +102,10 @@ typedef struct			/* 16 bytes */
 
 #ifdef HAVE_REGISTER_FORM
 
-/* itoc.041025: RFROM ¤£À³¥X²{©M ACCT ¤@¼Ë¦ı­È¥i¯à¤£¦PªºÄæ¦ì
-   RFORM ©M ACCT °ß¤G¬Û¦PªºÄæ¦ì¬O userno¡Buserid */
+/* itoc.041025: RFROM ä¸æ‡‰å‡ºç¾å’Œ ACCT ä¸€æ¨£ä½†å€¼å¯èƒ½ä¸åŒçš„æ¬„ä½
+   RFORM å’Œ ACCT å”¯äºŒç›¸åŒçš„æ¬„ä½æ˜¯ usernoã€userid */
 
-typedef struct	/* µù¥Uªí³æ (Register From) 256 bytes */
+typedef struct	/* è¨»å†Šè¡¨å–® (Register From) 256 bytes */
 {
   int userno;
   time_t rtime;
@@ -129,42 +129,42 @@ typedef struct	/* µù¥Uªí³æ (Register From) 256 bytes */
 /* ----------------------------------------------------- */
 
 
-/* itoc.041101.µù¸Ñ: VCH ©M HDR ªº xname ¦ì¸m¡Bªø«×­n¤Ç°t */
+/* itoc.041101.è¨»è§£: VCH å’Œ HDR çš„ xname ä½ç½®ã€é•·åº¦è¦åŒ¹é… */
 
 typedef struct VoteControlHeader
 {
-  time_t chrono;		/* §ë²¼¶}¿ì®É¶¡ */	/* Thor: ¬° key ¦Ó¥B match HDR chrono */
-  time_t bstamp;		/* ¬İªO¿ëÃÑ¥N½X */	/* Thor: ¬° key */
-  time_t vclose;		/* §ë²¼µ²§ô®É¶¡ */
+  time_t chrono;		/* æŠ•ç¥¨é–‹è¾¦æ™‚é–“ */	/* Thor: ç‚º key è€Œä¸” match HDR chrono */
+  time_t bstamp;		/* çœ‹æ¿è¾¨è­˜ä»£ç¢¼ */	/* Thor: ç‚º key */
+  time_t vclose;		/* æŠ•ç¥¨çµæŸæ™‚é–“ */
 
-  char xname[32];		/* ¥DÀÉ¦W */		/* Thor: match HDR ªº xname */
-  char date[9];			/* ¶}©l¤é´Á */		/* Thor: match HDR ªº date */
-  char cdate[9];		/* µ²§ô¤é´Á */		/* Thor: ¥u¨ÑÅã¥Ü¡A¤£°µ¤ñ¸û */  
-  char owner[IDLEN + 1];	/* Á|¿ì¤H */
-  char title[TTLEN + 1];	/* §ë²¼¥DÃD */
+  char xname[32];		/* ä¸»æª”å */		/* Thor: match HDR çš„ xname */
+  char date[9];			/* é–‹å§‹æ—¥æœŸ */		/* Thor: match HDR çš„ date */
+  char cdate[9];		/* çµæŸæ—¥æœŸ */		/* Thor: åªä¾›é¡¯ç¤ºï¼Œä¸åšæ¯”è¼ƒ */  
+  char owner[IDLEN + 1];	/* èˆ‰è¾¦äºº */
+  char title[TTLEN + 1];	/* æŠ•ç¥¨ä¸»é¡Œ */
 
-  char vgamble;			/* ¬O§_¬°½ä½L        '$':½ä½L  ' ':¤@¯ë§ë²¼ */
-  char vsort;			/* ¶}²¼µ²ªG¬O§_±Æ§Ç  's':±Æ§Ç  ' ':¤£±Æ§Ç */
-  char vpercent;		/* ¬O§_Åã¥Ü¦Ê¤À¤ñ¨Ò  '%':¦Ê¤À  ' ':¤@¯ë */
-  char vprivate;		/* ¬O§_¬°¨p¤H§ë²¼    ')':¨p¤H  ' ':¤½¶} */
+  char vgamble;			/* æ˜¯å¦ç‚ºè³­ç›¤        '$':è³­ç›¤  ' ':ä¸€èˆ¬æŠ•ç¥¨ */
+  char vsort;			/* é–‹ç¥¨çµæœæ˜¯å¦æ’åº  's':æ’åº  ' ':ä¸æ’åº */
+  char vpercent;		/* æ˜¯å¦é¡¯ç¤ºç™¾åˆ†æ¯”ä¾‹  '%':ç™¾åˆ†  ' ':ä¸€èˆ¬ */
+  char vprivate;		/* æ˜¯å¦ç‚ºç§äººæŠ•ç¥¨    ')':ç§äºº  ' ':å…¬é–‹ */
 
-  int maxblt;			/* ¨C¤H¥i§ë´X²¼ */
-  int price;			/* ¨C±i½ä²¼ªº°â»ù */
+  int maxblt;			/* æ¯äººå¯æŠ•å¹¾ç¥¨ */
+  int price;			/* æ¯å¼µè³­ç¥¨çš„å”®åƒ¹ */
 
-  int limitlogins;		/* ­­¨î­nµn¤J¶W¹L´X¦¸¥H¤Wªº¨Ï¥ÎªÌ¤~¯à§ë²¼ */
-  int limitposts;		/* ­­¨î­nµo¤å¶W¹L´X¦¸¥H¤Wªº¨Ï¥ÎªÌ¤~¯à§ë²¼ */
+  int limitlogins;		/* é™åˆ¶è¦ç™»å…¥è¶…éå¹¾æ¬¡ä»¥ä¸Šçš„ä½¿ç”¨è€…æ‰èƒ½æŠ•ç¥¨ */
+  int limitposts;		/* é™åˆ¶è¦ç™¼æ–‡è¶…éå¹¾æ¬¡ä»¥ä¸Šçš„ä½¿ç”¨è€…æ‰èƒ½æŠ•ç¥¨ */
 
   char nouse[88];
 }      VCH;
 
 
-typedef char vitem_t[32];	/* §ë²¼¿ï¶µ */
+typedef char vitem_t[32];	/* æŠ•ç¥¨é¸é … */
 
 
 typedef struct
 {
   char userid[IDLEN + 1];
-  char numvotes;		/* §ë´X±i */
+  char numvotes;		/* æŠ•å¹¾å¼µ */
   usint choice;
 }      VLOG;
 
@@ -179,7 +179,7 @@ typedef struct
 
 typedef struct
 {
-  time_t mailtime;		/* ±H«H®É¶¡ */
+  time_t mailtime;		/* å¯„ä¿¡æ™‚é–“ */
   char method;
   char sender[IDLEN + 1];
   char username[UNLEN + 1];
@@ -190,8 +190,8 @@ typedef struct
 }      MailQueue;
 
 
-#define MQ_JUSTIFY	0x01	/* ¨­¤À»{ÃÒ«H¨ç */
-#define MQ_ATTACH	0x02	/* ¦³ attachment ªº«H¨ç */
+#define MQ_JUSTIFY	0x01	/* èº«åˆ†èªè­‰ä¿¡å‡½ */
+#define MQ_ATTACH	0x02	/* æœ‰ attachment çš„ä¿¡å‡½ */
 
 
 /* ----------------------------------------------------- */
@@ -207,7 +207,7 @@ typedef struct
   int userno;
 }      PAL;
 
-#define	PAL_BAD		0x02	/* ¦n¤Í vs Ãa¤H */
+#define	PAL_BAD		0x02	/* å¥½å‹ vs å£äºº */
 
 
 /* ----------------------------------------------------- */
@@ -221,15 +221,15 @@ typedef struct
   UTMP *caller;			/* who call-in me ? */
   int sender;			/* calling userno */
   int recver;			/* called userno */
-  char userid[IDLEN + 1 + 2];	/* itoc.010529: «O¯d 2 byte µ¹¼s¼½²Å¸¹ > */
-  char msg[69];			/* ¤ô²y */
+  char userid[IDLEN + 1 + 2];	/* itoc.010529: ä¿ç•™ 2 byte çµ¦å»£æ’­ç¬¦è™Ÿ > */
+  char msg[69];			/* æ°´çƒ */
 }      BMW;			/* bbs message write */
 
 
 #ifdef LOGIN_NOTIFY
 
 /* ----------------------------------------------------- */
-/* BENZ : ¨t²Î¨ó´M¦W³æ : 20 bytes			 */
+/* BENZ : ç³»çµ±å”å°‹åå–® : 20 bytes			 */
 /* ----------------------------------------------------- */
 
 
@@ -245,7 +245,7 @@ typedef struct
 #ifdef HAVE_ALOHA
 
 /* ----------------------------------------------------- */
-/* ALOHA : ¤W¯¸³qª¾¦W³æ : 20 bytes			 */
+/* ALOHA : ä¸Šç«™é€šçŸ¥åå–® : 20 bytes			 */
 /* ----------------------------------------------------- */
 
 
@@ -257,11 +257,11 @@ typedef struct
 
 
 /* ----------------------------------------------------- */
-/* FRIENZ : ¤W¯¸³qª¾¦W³æ : 100 bytes			 */
+/* FRIENZ : ä¸Šç«™é€šçŸ¥åå–® : 100 bytes			 */
 /* ----------------------------------------------------- */
 
 
-/* itoc.041011.µù¸Ñ: ®Ú¥»¨S¥²­n¥Î³o»ò¤j */
+/* itoc.041011.è¨»è§£: æ ¹æœ¬æ²’å¿…è¦ç”¨é€™éº¼å¤§ */
 
 typedef struct
 {
@@ -277,16 +277,16 @@ typedef struct
 
 
 /* ----------------------------------------------------- */
-/* PAYCHECK : ¤ä²¼ : 32 bytes				 */
+/* PAYCHECK : æ”¯ç¥¨ : 32 bytes				 */
 /* ----------------------------------------------------- */
 
 
 typedef struct
 {
-  time_t tissue;		/* µo¤ä²¼®É¶¡ */
+  time_t tissue;		/* ç™¼æ”¯ç¥¨æ™‚é–“ */
   int money;
   int gold;
-  char reason[20];		/* "[°Ê§@] brdname/userid"¡A°²³] BNLEN¡BIDLEN ¤£¶W¹L 12 */
+  char reason[20];		/* "[å‹•ä½œ] brdname/userid"ï¼Œå‡è¨­ BNLENã€IDLEN ä¸è¶…é 12 */
 }      PAYCHECK;
 
 
@@ -320,11 +320,11 @@ struct UTMP
   char reading[BNLEN + 1];	/* reading board */
 #endif
 
-  int pal_max;			/* ¦³´X­ÓªB¤Í */
-  int pal_spool[PAL_MAX];	/* ©Ò¦³ªB¤Íªº userno */
+  int pal_max;			/* æœ‰å¹¾å€‹æœ‹å‹ */
+  int pal_spool[PAL_MAX];	/* æ‰€æœ‰æœ‹å‹çš„ userno */
 
 #ifdef BMW_COUNT
-  int bmw_count;		/* °O¿ı¤¤¤F´X­Ó¤ô²y */
+  int bmw_count;		/* è¨˜éŒ„ä¸­äº†å¹¾å€‹æ°´çƒ */
 #endif
 };
 
@@ -341,22 +341,22 @@ typedef struct BoardHeader
   char title[BTLEN + 1];
   char BM[BMLEN + 1];		/* BMs' uid, token '/' */
 
-  char bvote;			/* 0:µL§ë²¼ -1:¦³½ä½L(¥i¯à¦³§ë²¼) 1:¦³§ë²¼ */
+  char bvote;			/* 0:ç„¡æŠ•ç¥¨ -1:æœ‰è³­ç›¤(å¯èƒ½æœ‰æŠ•ç¥¨) 1:æœ‰æŠ•ç¥¨ */
 
-  time_t bstamp;		/* «Ø¥ß¬İªOªº®É¶¡, unique */
-  usint readlevel;		/* ¾\Åª¤å³¹ªºÅv­­ */
-  usint postlevel;		/* µoªí¤å³¹ªºÅv­­ */
-  usint battr;			/* ¬İªOÄİ©Ê */
-  time_t btime;			/* -1:bpost/blast »İ­n§ó·s */
-  int bpost;			/* ¦@¦³´X½g post */
-  time_t blast;			/* ³Ì«á¤@½g post ªº®É¶¡ */
+  time_t bstamp;		/* å»ºç«‹çœ‹æ¿çš„æ™‚é–“, unique */
+  usint readlevel;		/* é–±è®€æ–‡ç« çš„æ¬Šé™ */
+  usint postlevel;		/* ç™¼è¡¨æ–‡ç« çš„æ¬Šé™ */
+  usint battr;			/* çœ‹æ¿å±¬æ€§ */
+  time_t btime;			/* -1:bpost/blast éœ€è¦æ›´æ–° */
+  int bpost;			/* å…±æœ‰å¹¾ç¯‡ post */
+  time_t blast;			/* æœ€å¾Œä¸€ç¯‡ post çš„æ™‚é–“ */
 }           BRD;
 
 
 typedef struct
 {
-  int pal_max;			/* ¦³´X­ÓªO¤Í */
-  int pal_spool[PAL_MAX];	/* ©Ò¦³ªO¤Íªº userno */
+  int pal_max;			/* æœ‰å¹¾å€‹æ¿å‹ */
+  int pal_spool[PAL_MAX];	/* æ‰€æœ‰æ¿å‹çš„ userno */
 }	BPAL;
 
 
@@ -367,12 +367,12 @@ typedef struct
 
 #define CLASS_INIFILE		"Class"
 
-/* itoc.010413: §â class.img ¤À¦¨¤G­Ó */
+/* itoc.010413: æŠŠ class.img åˆ†æˆäºŒå€‹ */
 #define CLASS_IMGFILE_NAME	"run/classname.img"
 #define CLASS_IMGFILE_TITLE	"run/classtitle.img"
 
 
-#define CH_MAX		100	/* ³Ì¤j¤ÀÃş¼Æ¥Ø */
+#define CH_MAX		100	/* æœ€å¤§åˆ†é¡æ•¸ç›® */
 #define	CH_END		-1
 #define	CH_TTLEN	64
 
@@ -388,25 +388,25 @@ typedef	struct
 #ifdef MY_FAVORITE
 
 /* ----------------------------------------------------- */
-/* favor.c ¤¤¹B¥Îªº¸ê®Æµ²ºc                              */
+/* favor.c ä¸­é‹ç”¨çš„è³‡æ–™çµæ§‹                              */
 /* ----------------------------------------------------- */
 
 
 typedef struct MF
 {
-  time_t chrono;		/* «Ø¥ß®É¶¡ */
+  time_t chrono;		/* å»ºç«‹æ™‚é–“ */
   int mftype;			/* type */
-  char xname[BNLEN + 1];	/* ªO¦W©ÎÀÉ¦W */
-  char class[BCLEN + 1];	/* ¤ÀÃş */
-  char title[BTLEN + 1];	/* ¥DÃD */
+  char xname[BNLEN + 1];	/* æ¿åæˆ–æª”å */
+  char class[BCLEN + 1];	/* åˆ†é¡ */
+  char title[BTLEN + 1];	/* ä¸»é¡Œ */
 }	MF;
 
-#define	MF_MARK		0x01	/* ³Q mark °_¨Óªº */
-#define	MF_BOARD    	0x02	/* ¬İªO±¶®| */
-#define	MF_FOLDER   	0x04	/* ¨÷©v */
-#define	MF_GEM      	0x08	/* ºëµØ°Ï±¶®| */
-#define MF_LINE		0x10	/* ¤À¹j½u */
-#define MF_CLASS	0x20	/* ¤ÀÃş¸s²Õ */
+#define	MF_MARK		0x01	/* è¢« mark èµ·ä¾†çš„ */
+#define	MF_BOARD    	0x02	/* çœ‹æ¿æ·å¾‘ */
+#define	MF_FOLDER   	0x04	/* å·å®— */
+#define	MF_GEM      	0x08	/* ç²¾è¯å€æ·å¾‘ */
+#define MF_LINE		0x10	/* åˆ†éš”ç·š */
+#define MF_CLASS	0x20	/* åˆ†é¡ç¾¤çµ„ */
 
 #endif  /* MY_FAVORITE */
 
@@ -414,7 +414,7 @@ typedef struct MF
 #ifdef HAVE_COSIGN
 
 /* ----------------------------------------------------- */
-/* newbrd.c ¤¤¹B¥Îªº¸ê®Æµ²ºc                             */
+/* newbrd.c ä¸­é‹ç”¨çš„è³‡æ–™çµæ§‹                             */
 /* ----------------------------------------------------- */
 
 
@@ -433,12 +433,12 @@ typedef struct NewBoardHeader
 }	NBRD;
 
 
-#define NBRD_FINISH	0x00001	/* ¤wµ²®× */
-#define NBRD_END	0x00002	/* ³s¸pµ²§ô */
-#define NBRD_START	0x00004	/* ³s¸p¶}©l */
-#define NBRD_ANONYMOUS	0x00100	/* °Î¦W */
-#define NBRD_NEWBOARD	0x10000	/* ·sªO³s¸p */
-#define NBRD_OTHER	0x20000	/* ¨ä¥L³s¸p */
+#define NBRD_FINISH	0x00001	/* å·²çµæ¡ˆ */
+#define NBRD_END	0x00002	/* é€£ç½²çµæŸ */
+#define NBRD_START	0x00004	/* é€£ç½²é–‹å§‹ */
+#define NBRD_ANONYMOUS	0x00100	/* åŒ¿å */
+#define NBRD_NEWBOARD	0x10000	/* æ–°æ¿é€£ç½² */
+#define NBRD_OTHER	0x20000	/* å…¶ä»–é€£ç½² */
 
 #endif	/* HAVE_COSIGN */
 
@@ -446,13 +446,13 @@ typedef struct NewBoardHeader
 #ifdef LOG_SONG_USIES
 
 /* ----------------------------------------------------- */
-/* SONG log ¤¤¹B¥Îªº¸ê®Æµ²ºc                             */
+/* SONG log ä¸­é‹ç”¨çš„è³‡æ–™çµæ§‹                             */
 /* ----------------------------------------------------- */
 
 typedef struct SONGDATA
 {
   time_t chrono;
-  int count;		/* ³QÂI¦¸¼Æ */
+  int count;		/* è¢«é»æ¬¡æ•¸ */
   char title[80];
 }	SONGDATA;
 
@@ -460,13 +460,13 @@ typedef struct SONGDATA
 
 
 /* ----------------------------------------------------- */
-/* cache.c ¤¤¹B¥Îªº¸ê®Æµ²ºc				 */
+/* cache.c ä¸­é‹ç”¨çš„è³‡æ–™çµæ§‹				 */
 /* ----------------------------------------------------- */
 
 
 typedef struct
 {
-  int shot[MOVIE_MAX];	/* Thor.980805: ¦X²z½d³ò¬° 0..MOVIE_MAX - 1 */
+  int shot[MOVIE_MAX];	/* Thor.980805: åˆç†ç¯„åœç‚º 0..MOVIE_MAX - 1 */
   char film[MOVIE_SIZE];
   char today[16];
 } FCACHE;
@@ -475,23 +475,23 @@ typedef struct
 #define	FILM_SIZ	4000	/* max size for each film */
 
 
-#define FILM_OPENING0	0	/* ¶}ÀYµe­±(¢¯) */
-#define FILM_OPENING1	1	/* ¶}ÀYµe­±(¢°) */
-#define FILM_OPENING2	2	/* ¶}ÀYµe­±(¢±) */
-#define FILM_GOODBYE	3	/* ¦A¨£µe­± */
-#define FILM_NOTIFY	4	/* ©|¥¼³q¹L»{ÃÒ³qª¾ */
-#define FILM_MQUOTA	5	/* «H¥ó¶W¹L«O¦s´Á­­³qª¾ */
-#define FILM_MAILOVER	6	/* «H¥ó«Ê¼Æ¹L¦h³qª¾ */
-#define FILM_MGEMOVER	7	/* ­Ó¤HºëµØ°Ï¹L¦h³qª¾ */
-#define FILM_BIRTHDAY	8	/* ¥Í¤é·í¤Ñªº¤W¯¸µe­± */
-#define FILM_APPLY	9	/* µù¥U´£¥Üµe­± */
-#define FILM_JUSTIFY	10	/* ¨­¥÷»{ÃÒªº¤èªk */
-#define FILM_REREG	11	/* ­«·s»{ÃÒ»¡©ú */
-#define FILM_EMAIL	12	/* ¶l¥ó«H½c»{ÃÒ»¡©ú */
-#define FILM_NEWUSER	13	/* ·s¤â¤W¸ô¶·ª¾ */
-#define FILM_TRYOUT	14	/* ±K½X¿ù»~ */
-#define FILM_POST	15	/* ¤å³¹µoªíºõ»â */
-#define FILM_MOVIE	16	/* °ÊºA¬İªO FILM_MOVIE ­n©ñ¦b³Ì«á­± */
+#define FILM_OPENING0	0	/* é–‹é ­ç•«é¢(ï¼) */
+#define FILM_OPENING1	1	/* é–‹é ­ç•«é¢(ï¼‘) */
+#define FILM_OPENING2	2	/* é–‹é ­ç•«é¢(ï¼’) */
+#define FILM_GOODBYE	3	/* å†è¦‹ç•«é¢ */
+#define FILM_NOTIFY	4	/* å°šæœªé€šéèªè­‰é€šçŸ¥ */
+#define FILM_MQUOTA	5	/* ä¿¡ä»¶è¶…éä¿å­˜æœŸé™é€šçŸ¥ */
+#define FILM_MAILOVER	6	/* ä¿¡ä»¶å°æ•¸éå¤šé€šçŸ¥ */
+#define FILM_MGEMOVER	7	/* å€‹äººç²¾è¯å€éå¤šé€šçŸ¥ */
+#define FILM_BIRTHDAY	8	/* ç”Ÿæ—¥ç•¶å¤©çš„ä¸Šç«™ç•«é¢ */
+#define FILM_APPLY	9	/* è¨»å†Šæç¤ºç•«é¢ */
+#define FILM_JUSTIFY	10	/* èº«ä»½èªè­‰çš„æ–¹æ³• */
+#define FILM_REREG	11	/* é‡æ–°èªè­‰èªªæ˜ */
+#define FILM_EMAIL	12	/* éƒµä»¶ä¿¡ç®±èªè­‰èªªæ˜ */
+#define FILM_NEWUSER	13	/* æ–°æ‰‹ä¸Šè·¯é ˆçŸ¥ */
+#define FILM_TRYOUT	14	/* å¯†ç¢¼éŒ¯èª¤ */
+#define FILM_POST	15	/* æ–‡ç« ç™¼è¡¨ç¶±é ˜ */
+#define FILM_MOVIE	16	/* å‹•æ…‹çœ‹æ¿ FILM_MOVIE è¦æ”¾åœ¨æœ€å¾Œé¢ */
 
 
 typedef struct
@@ -512,16 +512,16 @@ typedef struct
 {
   BRD bcache[MAXBOARD];
   BPAL pcache[MAXBOARD];
-  int mantime[MAXBOARD];	/* ¦UªO¥Ø«e¥¿¦³¦h¤Ö¤H¦b¾\Åª */
-  int number;			/* ¥ş³¡¬İªOªº¼Æ¥Ø */
-  int numberOld;		/* ­è¶}¯¸®É¬İªOªº¼Æ¥Ø */
-  int min_chn;			/* °O¿ıÁ`¦@¦³´X­Ó¤ÀÃş */
+  int mantime[MAXBOARD];	/* å„æ¿ç›®å‰æ­£æœ‰å¤šå°‘äººåœ¨é–±è®€ */
+  int number;			/* å…¨éƒ¨çœ‹æ¿çš„æ•¸ç›® */
+  int numberOld;		/* å‰›é–‹ç«™æ™‚çœ‹æ¿çš„æ•¸ç›® */
+  int min_chn;			/* è¨˜éŒ„ç¸½å…±æœ‰å¹¾å€‹åˆ†é¡ */
   time_t uptime;
 } BCACHE;
 
 
 /* ----------------------------------------------------- */
-/* visio.c ¤¤¹B¥Îªº¸ê®Æµ²ºc				 */
+/* visio.c ä¸­é‹ç”¨çš„è³‡æ–™çµæ§‹				 */
 /* ----------------------------------------------------- */
 
 
@@ -542,7 +542,7 @@ typedef struct screenline
   int emod;			/* end of modified data */
   int sso;			/* start of standout data */
   int eso;			/* end of standout data */
-  uschar mode;			/* status of line, as far as update */	/* ¥Ñ©ó SL_* ªº mode ¤£¶W¹L¤K­Ó¡A¬G¥Î uschar §Y¥i */
+  uschar mode;			/* status of line, as far as update */	/* ç”±æ–¼ SL_* çš„ mode ä¸è¶…éå…«å€‹ï¼Œæ•…ç”¨ uschar å³å¯ */
   uschar data[ANSILINELEN];
 }          screenline;
 
@@ -555,7 +555,7 @@ typedef struct LinkList
 
 
 /* ----------------------------------------------------- */
-/* xover.c ¤¤¹B¥Îªº¸ê®Æµ²ºc				 */
+/* xover.c ä¸­é‹ç”¨çš„è³‡æ–™çµæ§‹				 */
 /* ----------------------------------------------------- */
 
 
@@ -595,7 +595,7 @@ typedef struct
 
 
 /* ----------------------------------------------------- */
-/* poststat.c ¤¤¹B¥Îªº¸ê®Æµ²ºc				 */
+/* poststat.c ä¸­é‹ç”¨çš„è³‡æ–™çµæ§‹				 */
 /* ----------------------------------------------------- */
 
 
@@ -612,7 +612,7 @@ typedef struct
 #ifdef MODE_STAT
 
 /* ----------------------------------------------------- */
-/* modestat.c ¤¤¹B¥Îªº¸ê®Æµ²ºc				 */
+/* modestat.c ä¸­é‹ç”¨çš„è³‡æ–™çµæ§‹				 */
 /* ----------------------------------------------------- */
 
 typedef struct
@@ -634,7 +634,7 @@ typedef struct
 
 
 /* ----------------------------------------------------- */
-/* innbbsd ¤¤¹B¥Îªº¸ê®Æµ²ºc				 */
+/* innbbsd ä¸­é‹ç”¨çš„è³‡æ–™çµæ§‹				 */
 /* ----------------------------------------------------- */
 
 
@@ -643,7 +643,7 @@ typedef struct
   time_t chrono;	/* >=0:stamp -1:cancel */
   char board[BNLEN + 1];
 
-  /* ¥H¤UÄæ¦ìªº¤j¤p»P HDR ¬Û¦P */
+  /* ä»¥ä¸‹æ¬„ä½çš„å¤§å°èˆ‡ HDR ç›¸åŒ */
   char xname[32];
   char owner[80];
   char nick[49];
@@ -657,12 +657,12 @@ typedef struct
 
 typedef struct
 {
-  char name[13];	/* ¸Ó¯¸ªº short-name */
-  char host[83];	/* ¸Ó¯¸ªº host */
-  int port;		/* ¸Ó¯¸ªº port */
-  usint xmode;		/* ¸Ó¯¸ªº xmode */
-  char blank[20];	/* «O¯d */
-  int feedfd;		/* bbslink.c ¨Ï¥Î */
+  char name[13];	/* è©²ç«™çš„ short-name */
+  char host[83];	/* è©²ç«™çš„ host */
+  int port;		/* è©²ç«™çš„ port */
+  usint xmode;		/* è©²ç«™çš„ xmode */
+  char blank[20];	/* ä¿ç•™ */
+  int feedfd;		/* bbslink.c ä½¿ç”¨ */
 } nodelist_t;
 
 
@@ -671,21 +671,21 @@ typedef struct
 
 typedef struct
 {
-  char path[13];	/* ¸Ó¸s²Õ©Ò¹ïÂàªº¯¸¥x */
-  char newsgroup[83];	/* ¸Ó¸s²Õªº¦WºÙ */
-  char board[BNLEN + 1];/* ¸Ó¸s²Õ©Ò¹ïÀ³ªº¬İªO */
-  char charset[11];	/* ¸Ó¸s²Õªº¦r¶° */
-  usint xmode;		/* ¸Ó¸s²Õªº xmode */
-  int high;		/* ¥Ø«e§ì¨ì¸Ó¸s²Õªº­ş¤@½g */
+  char path[13];	/* è©²ç¾¤çµ„æ‰€å°è½‰çš„ç«™å° */
+  char newsgroup[83];	/* è©²ç¾¤çµ„çš„åç¨± */
+  char board[BNLEN + 1];/* è©²ç¾¤çµ„æ‰€å°æ‡‰çš„çœ‹æ¿ */
+  char charset[11];	/* è©²ç¾¤çµ„çš„å­—é›† */
+  usint xmode;		/* è©²ç¾¤çµ„çš„ xmode */
+  int high;		/* ç›®å‰æŠ“åˆ°è©²ç¾¤çµ„çš„å“ªä¸€ç¯‡ */
 } newsfeeds_t;
 
 
 typedef struct
 {
-  char issuer[128];	/* NCM message ªºµo«H¤H */
-  char type[64];	/* NCM message ªººØÃş¦WºÙ */
-  int perm;		/* ¤¹³\¦¹ NCM message §R«H (1:¶} 0:Ãö) */
-  char blank[60];	/* «O¯d */
+  char issuer[128];	/* NCM message çš„ç™¼ä¿¡äºº */
+  char type[64];	/* NCM message çš„ç¨®é¡åç¨± */
+  int perm;		/* å…è¨±æ­¤ NCM message åˆªä¿¡ (1:é–‹ 0:é—œ) */
+  char blank[60];	/* ä¿ç•™ */
 } ncmperm_t;
 
 
@@ -700,11 +700,11 @@ typedef struct
 
 typedef struct
 {
-  char detail[80];	/* ¸Ó³W«hªº ¤º®e */
-  usint xmode;		/* ¸Ó³W«hªº xmode */
-  char board[BNLEN + 1];/* ¸Ó³W«h¾A¥Îªº¬İªO */
-  char path[13];	/* ¸Ó³W«h¾A¥Îªº¯¸¥x */
-  char blank[18];	/* «O¯d */
+  char detail[80];	/* è©²è¦å‰‡çš„ å…§å®¹ */
+  usint xmode;		/* è©²è¦å‰‡çš„ xmode */
+  char board[BNLEN + 1];/* è©²è¦å‰‡é©ç”¨çš„çœ‹æ¿ */
+  char path[13];	/* è©²è¦å‰‡é©ç”¨çš„ç«™å° */
+  char blank[18];	/* ä¿ç•™ */
 } spamrule_t;
 
 #endif				/* _STRUCT_H_ */

@@ -8,8 +8,8 @@ str_sub(str, tag)
 { 
   int cc, c1, c2;
   char *p1, *p2;
-  int in_chi = 0;	/* 1: «e¤@½X¬O¤¤¤å¦r */
-  int in_chii;		/* 1: «e¤@½X¬O¤¤¤å¦r */
+  int in_chi = 0;	/* 1: å‰ä¸€ç¢¼æ˜¯ä¸­æ–‡å­— */
+  int in_chii;		/* 1: å‰ä¸€ç¢¼æ˜¯ä¸­æ–‡å­— */
 
   cc = *tag++;
  

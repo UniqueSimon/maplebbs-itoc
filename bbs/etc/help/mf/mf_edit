@@ -1,12 +1,12 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xE     �xmf_edit     �x�ק�ݪO�ݩ�                                    �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │E     │mf_edit     │修改看板屬性                                    │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� E �i�H�ק�ӳ̷R���ݩʡC
+    將游標移到某欄，按 E 可以修改該最愛的屬性。
 
-    �u���ݪO���|�~�i�H�ק��ݩʡA�O�D�i�H�ק�ݪO�O�W�A�ݪO�`�ޥi�H�ק�ݪO��
-  �ơC
+    只有看板捷徑才可以修改屬性，板主可以修改看板板名，看板總管可以修改看板資
+  料。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

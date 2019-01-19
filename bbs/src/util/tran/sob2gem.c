@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/transman.c					 */
 /*-------------------------------------------------------*/
-/* target : Maple Sob 2.36 ¦Ü Maple 3.02 ºëµØ°ÏÂà´«	 */
+/* target : Maple Sob 2.36 è‡³ Maple 3.02 ç²¾è¯å€è½‰æ›	 */
 /* create : 98/06/15					 */
 /* update : 02/10/26					 */
 /* author : ernie@micro8.ee.nthu.edu.tw			 */
@@ -13,10 +13,10 @@
 
 #if 0
 
-   1. µ{¦¡¤£¶}¥Ø¿ı¡A¨Ï¥Î«e¥ı½T©w gem/target_board/? ¥Ø¿ı¦s¦b
-      if not¡A¥ı¶}·sªO or transbrd
-   2. ¥uÂà M.*.A ¤Î D.*.A¡A¨ä¥L link ¤£Âà´«
-   3. ¦p¦³»İ­n½Ğ¥ı chmod 644 `find PATH -perm 600`
+   1. ç¨‹å¼ä¸é–‹ç›®éŒ„ï¼Œä½¿ç”¨å‰å…ˆç¢ºå®š gem/target_board/? ç›®éŒ„å­˜åœ¨
+      if notï¼Œå…ˆé–‹æ–°æ¿ or transbrd
+   2. åªè½‰ M.*.A åŠ D.*.Aï¼Œå…¶ä»– link ä¸è½‰æ›
+   3. å¦‚æœ‰éœ€è¦è«‹å…ˆ chmod 644 `find PATH -perm 600`
 
    ps. User on ur own risk.
 
@@ -27,7 +27,7 @@
 
 
 /* ----------------------------------------------------- */
-/* Âà´«ºëµØ°Ï						 */
+/* è½‰æ›ç²¾è¯å€						 */
 /* ----------------------------------------------------- */
 
 
@@ -37,7 +37,7 @@ trans_hdr_chrono(filename)
 {
   char time_str[11];
 
-  /* M.1087654321.A ©Î M.987654321.A */
+  /* M.1087654321.A æˆ– M.987654321.A */
   str_ncpy(time_str, filename + 2, filename[2] == '1' ? 11 : 10);
 
   return (time_t) atoi(time_str);
@@ -91,7 +91,7 @@ trans_man_stamp(folder, token, hdr, fpath, time)
 
 
 /* ----------------------------------------------------- */
-/* Âà´«¥Dµ{¦¡						 */
+/* è½‰æ›ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
  
@@ -115,9 +115,9 @@ transman(index, folder)
       ptr = strrchr(buf, '/') + 1;
       strcpy(ptr, fh.filename);
 
-      if (*fh.filename == 'M' && dashf(buf))	/* ¥uÂà M.xxxx.A ¤Î D.xxxx.a */
+      if (*fh.filename == 'M' && dashf(buf))	/* åªè½‰ M.xxxx.A åŠ D.xxxx.a */
       {
-	/* Âà´«¤å³¹ .DIR */
+	/* è½‰æ›æ–‡ç«  .DIR */
 	memset(&hdr, 0, sizeof(HDR));
 	chrono = trans_hdr_chrono(fh.filename);
 	trans_man_stamp(folder, 'A', &hdr, fpath, chrono);
@@ -126,23 +126,23 @@ transman(index, folder)
 	str_ncpy(hdr.title, fh.title + 3, sizeof(hdr.title));
 	rec_add(folder, &hdr, sizeof(HDR));
 
-	/* «ş¨©ÀÉ®× */
+	/* æ‹·è²æª”æ¡ˆ */
 	f_cp(buf, fpath, O_TRUNC);
       }
       else if (*fh.filename == 'D' && dashd(buf))
       {
 	char sub_index[256];
 
-	/* Âà´«¤å³¹ .DIR */
+	/* è½‰æ›æ–‡ç«  .DIR */
 	memset(&hdr, 0, sizeof(HDR));
-	chrono = ++count;		/* WD ªº¥Ø¿ı©R¦W¤ñ¸û©_©Ç¡A¥u¦n¦Û¤vµ¹¼Æ¦r */
+	chrono = ++count;		/* WD çš„ç›®éŒ„å‘½åæ¯”è¼ƒå¥‡æ€ªï¼Œåªå¥½è‡ªå·±çµ¦æ•¸å­— */
 	trans_man_stamp(folder, 'F', &hdr, fpath, chrono);
 	hdr.xmode = GEM_FOLDER;
 	str_ncpy(hdr.owner, fh.owner, sizeof(hdr.owner));
 	str_ncpy(hdr.title, fh.title + 3, sizeof(hdr.title));
 	rec_add(folder, &hdr, sizeof(HDR));
 
-	/* recursive ¶i¥hÂà´«¤l¥Ø¿ı */
+	/* recursive é€²å»è½‰æ›å­ç›®éŒ„ */
 	strcpy(sub_index, buf);
 	ptr = strrchr(sub_index, '/') + 1;
 	sprintf(ptr, "%s/.DIR", fh.filename);
@@ -163,8 +163,8 @@ main(argc, argv)
   char *brdname, index[64], folder[64];
   boardheader bh;
 
-  /* argc == 1 Âà¥ş³¡ªO */
-  /* argc == 2 Âà¬Y¯S©wªO */
+  /* argc == 1 è½‰å…¨éƒ¨æ¿ */
+  /* argc == 2 è½‰æŸç‰¹å®šæ¿ */
 
   if (argc > 2)
   {
@@ -203,7 +203,7 @@ main(argc, argv)
 	sprintf(index, OLD_BBSHOME "/man/boards/%s/.DIR", brdname);
 	sprintf(folder, "gem/brd/%s/%s", brdname, FN_DIR);
 
-	printf("Âà´« %s ºëµØ°Ï\n", brdname);
+	printf("è½‰æ› %s ç²¾è¯å€\n", brdname);
 	transman(index, folder);
       }
       close(fd);
@@ -223,7 +223,7 @@ main(argc, argv)
     sprintf(index, OLD_BBSHOME "/man/boards/%s/.DIR", brdname);
     sprintf(folder, "gem/brd/%s/%s", brdname, FN_DIR);
 
-    printf("Âà´« %s ºëµØ°Ï\n", brdname);
+    printf("è½‰æ› %s ç²¾è¯å€\n", brdname);
     transman(index, folder);
 
     exit(1);

@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/snap2usr.c	( NTHU CS MapleBBS Ver 3.10 )	 */
 /*-------------------------------------------------------*/
-/* target : M3 ACCT Âà´«µ{¦¡				 */
+/* target : M3 ACCT è½‰æ›ç¨‹å¼				 */
 /* create : 98/12/15					 */
 /* update : 02/04/29					 */
 /* author : mat.bbs@fall.twbbs.org			 */
@@ -63,7 +63,7 @@ transfer_ufo(oldufo)
 
 
 /* ----------------------------------------------------- */
-/* Âà´«¥Dµ{¦¡						 */
+/* è½‰æ›ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -82,10 +82,10 @@ trans_acct(old, new)
   str_ncpy(new->username, old->username, sizeof(new->username));
 
   new->userlevel = old->userlevel;
-  new->ufo = transfer_ufo(old->ufo);	/* itoc.010917: ufo Äæ¦ì¥¼¥²¤@¼Ë */
+  new->ufo = transfer_ufo(old->ufo);	/* itoc.010917: ufo æ¬„ä½æœªå¿…ä¸€æ¨£ */
   new->signature = old->signature;
 
-  new->year = 0;		/* µ¹ªì©l­È */
+  new->year = 0;		/* çµ¦åˆå§‹å€¼ */
   new->month = 0;
   new->day = 0;
   new->sex = 0;
@@ -158,11 +158,11 @@ main(argc, argv)
 
       read(fd, &old, sizeof(userec));
       close(fd);
-      unlink(buf);			/* itoc.010831: ¬å±¼­ì¨Óªº FN_ACCT */
+      unlink(buf);			/* itoc.010831: ç æ‰åŸä¾†çš„ FN_ACCT */
 
       trans_acct(&old, &new);
 
-      fd = open(buf, O_WRONLY | O_CREAT, 0600);	/* itoc.010831: ­««Ø·sªº FN_ACCT */
+      fd = open(buf, O_WRONLY | O_CREAT, 0600);	/* itoc.010831: é‡å»ºæ–°çš„ FN_ACCT */
       write(fd, &new, sizeof(ACCT));
       close(fd);
     }

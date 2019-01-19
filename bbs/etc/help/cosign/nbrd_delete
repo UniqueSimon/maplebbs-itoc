@@ -1,13 +1,13 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xd     �xnbrd_delete �x�R���s�p                                        �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │d     │nbrd_delete │刪除連署                                        │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� d �i�H�R���ӽg�C
+    將游標移到某欄，按 d 可以刪除該篇。
 
-  �нT�w�R��(Y/N)�H  �� �T�{�R��
+  請確定刪除(Y/N)？  → 確認刪除
 
-    �����i�H�R������@�g�s�p��A�Ӥ@��ϥΪ̥u��R���Ѧۤv�o�_���s�p��C
+    站長可以刪除任何一篇連署文，而一般使用者只能刪除由自己發起的連署文。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

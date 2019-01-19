@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* xyz.c	( NTHU CS MapleBBS Ver 3.10 )		 */
 /*-------------------------------------------------------*/
-/* target : Âø¤CÂø¤Kªº¥~±¾				 */
+/* target : é›œä¸ƒé›œå…«çš„å¤–æ›				 */
 /* create : 01/03/01					 */
 /* update :   /  /  					 */
 /*-------------------------------------------------------*/
@@ -13,7 +13,7 @@
 #ifdef HAVE_TIP
 
 /* ----------------------------------------------------- */
-/* ¨C¤é¤p¯µ³Z						 */
+/* æ¯æ—¥å°ç§˜è¨£						 */
 /* ----------------------------------------------------- */
 
 int
@@ -27,11 +27,11 @@ x_tip()
     return XEASY;
 
   fgets(msg, 128, fp);
-  j = atoi(msg);		/* ²Ä¤@¦æ°O¿ıÁ`½g¼Æ */
+  j = atoi(msg);		/* ç¬¬ä¸€è¡Œè¨˜éŒ„ç¸½ç¯‡æ•¸ */
   i = time(0) % j + 1;
   j = 0;
 
-  while (j < i)			/* ¨ú²Ä i ­Ó tip */
+  while (j < i)			/* å–ç¬¬ i å€‹ tip */
   {
     fgets(msg, 128, fp);
     if (msg[0] == '#')
@@ -41,7 +41,7 @@ x_tip()
   move(12, 0);
   clrtobot();
   fgets(msg, 128, fp);
-  prints("\033[1;36m¨C¤é¤p¯¦³Z¡G\033[m\n");
+  prints("\033[1;36mæ¯æ—¥å°ç¥•è¨£ï¼š\033[m\n");
   prints("            %s", msg);
   fgets(msg, 128, fp);
   prints("            %s", msg);
@@ -55,39 +55,39 @@ x_tip()
 #ifdef HAVE_LOVELETTER 
 
 /* ----------------------------------------------------- */
-/* ±¡®Ñ²£¥Í¾¹						 */
+/* æƒ…æ›¸ç”¢ç”Ÿå™¨						 */
 /* ----------------------------------------------------- */
 
 int
 x_loveletter()
 {
   FILE *fp;
-  int start_show;	/* 1:¶}©l¨q */
-  int style;		/* 0:¶}ÀY 1:¥¿¤å 2:µ²§À */
+  int start_show;	/* 1:é–‹å§‹ç§€ */
+  int style;		/* 0:é–‹é ­ 1:æ­£æ–‡ 2:çµå°¾ */
   int line;
   char buf[128];
-  char header[3][5] = {"head", "body", "foot"};	/* ¶}ÀY¡B¥¿¤å¡Bµ²§À */
+  char header[3][5] = {"head", "body", "foot"};	/* é–‹é ­ã€æ­£æ–‡ã€çµå°¾ */
   int num[3];
 
-  /* etc/loveletter «e¬q¬O#head ¤¤¬q¬O#body «á¬q¬O#foot */
-  /* ¦æ¼Æ¤W­­¡G#head¤­¦æ  #body¤K¦æ  #foot¤­¦æ */
+  /* etc/loveletter å‰æ®µæ˜¯#head ä¸­æ®µæ˜¯#body å¾Œæ®µæ˜¯#foot */
+  /* è¡Œæ•¸ä¸Šé™ï¼š#headäº”è¡Œ  #bodyå…«è¡Œ  #footäº”è¡Œ */
 
   if (!(fp = fopen(FN_ETC_LOVELETTER, "r")))
     return XEASY;
 
-  /* «e¤T¦æ°O¿ı½g¼Æ */
+  /* å‰ä¸‰è¡Œè¨˜éŒ„ç¯‡æ•¸ */
   fgets(buf, 128, fp);
   num[0] = atoi(buf + 5);
   num[1] = atoi(buf + 5);
   num[2] = atoi(buf + 5);
 
-  /* ¨M©w­n¿ï²Ä´X½g */
+  /* æ±ºå®šè¦é¸ç¬¬å¹¾ç¯‡ */
   line = time(0);
   num[0] = line % num[0];
   num[1] = (line >> 1) % num[1];
   num[2] = (line >> 2) % num[2];
 
-  vs_bar("±¡®Ñ²£¥Í¾¹");
+  vs_bar("æƒ…æ›¸ç”¢ç”Ÿå™¨");
 
   start_show = style = line = 0;
 
@@ -95,10 +95,10 @@ x_loveletter()
   {
     if (*buf == '#')
     {
-      if (!strncmp(buf + 1, header[style], 4))  /* header[] ªø«×³£¬O 5 bytes */
+      if (!strncmp(buf + 1, header[style], 4))  /* header[] é•·åº¦éƒ½æ˜¯ 5 bytes */
 	num[style]--;
 
-      if (num[style] < 0)	/* ¤w¸g fget ¨ì­n¿ïªº³o½g¤F */
+      if (num[style] < 0)	/* å·²ç¶“ fget åˆ°è¦é¸çš„é€™ç¯‡äº† */
       {
 	outc('\n');
 	start_show = 1;
@@ -113,7 +113,7 @@ x_loveletter()
 
     if (start_show)
     {
-      if (line >= (b_lines - 5))	/* ¶W¹L¿Ã¹õ¤j¤p¤F */
+      if (line >= (b_lines - 5))	/* è¶…éè¢å¹•å¤§å°äº† */
 	break;
 
       outs(buf);
@@ -130,7 +130,7 @@ x_loveletter()
 
 
 /* ----------------------------------------------------- */
-/* ±K½X§Ñ°O¡A­«³]±K½X					 */
+/* å¯†ç¢¼å¿˜è¨˜ï¼Œé‡è¨­å¯†ç¢¼					 */
 /* ----------------------------------------------------- */
 
 
@@ -143,7 +143,7 @@ x_password()
   char fpath[80], email[60], passwd[PSWDLEN + 1];
   time_t now;
 
-  vmsg("·í¨ä¥L¨Ï¥ÎªÌ§Ñ°O±K½X®É¡A­«°e·s±K½X¦Ü¸Ó¨Ï¥ÎªÌªº«H½c");
+  vmsg("ç•¶å…¶ä»–ä½¿ç”¨è€…å¿˜è¨˜å¯†ç¢¼æ™‚ï¼Œé‡é€æ–°å¯†ç¢¼è‡³è©²ä½¿ç”¨è€…çš„ä¿¡ç®±");
 
   if (acct_get(msg_uid, &acct) > 0)
   {
@@ -151,15 +151,15 @@ x_password()
 
     if (acct.lastlogin > now - 86400 * 10)
     {
-      vmsg("¸Ó¨Ï¥ÎªÌ¥²¶·¤Q¤Ñ¥H¤W¥¼¤W¯¸¤è¥i­«°e±K½X");
+      vmsg("è©²ä½¿ç”¨è€…å¿…é ˆåå¤©ä»¥ä¸Šæœªä¸Šç«™æ–¹å¯é‡é€å¯†ç¢¼");
       return 0;
     }
 
-    vget(b_lines - 2, 0, "½Ğ¿é¤J»{ÃÒ®Éªº Email¡G", email, 40, DOECHO);
+    vget(b_lines - 2, 0, "è«‹è¼¸å…¥èªè­‰æ™‚çš„ Emailï¼š", email, 40, DOECHO);
 
     if (str_cmp(acct.email, email))
     {
-      vmsg("³o¤£¬O¸Ó¨Ï¥ÎªÌ»{ÃÒ®É¥Îªº Email");
+      vmsg("é€™ä¸æ˜¯è©²ä½¿ç”¨è€…èªè­‰æ™‚ç”¨çš„ Email");
       return 0;
     }
 
@@ -169,25 +169,25 @@ x_password()
       return 0;
     }
 
-    vget(b_lines - 1, 0, "½Ğ¿é¤J¯u¹ê©m¦W¡G", fpath, RNLEN + 1, DOECHO);
+    vget(b_lines - 1, 0, "è«‹è¼¸å…¥çœŸå¯¦å§“åï¼š", fpath, RNLEN + 1, DOECHO);
     if (strcmp(acct.realname, fpath))
     {
-      vmsg("³o¤£¬O¸Ó¨Ï¥ÎªÌªº¯u¹ê©m¦W");
+      vmsg("é€™ä¸æ˜¯è©²ä½¿ç”¨è€…çš„çœŸå¯¦å§“å");
       return 0;
     }
 
-    if (vans("¸ê®Æ¥¿½T¡A½Ğ½T»{¬O§_²£¥Í·s±K½X(Y/N)¡H[N] ") != 'y')
+    if (vans("è³‡æ–™æ­£ç¢ºï¼Œè«‹ç¢ºèªæ˜¯å¦ç”¢ç”Ÿæ–°å¯†ç¢¼(Y/N)ï¼Ÿ[N] ") != 'y')
       return 0;
 
-    sprintf(fpath, "%s §ï¤F %s ªº±K½X", cuser.userid, acct.userid);
+    sprintf(fpath, "%s æ”¹äº† %s çš„å¯†ç¢¼", cuser.userid, acct.userid);
     blog("PASSWD", fpath);
 
-    /* ¶Ã¼Æ²£¥Í A~Z ²Õ¦Xªº±K½X¤K½X */
+    /* äº‚æ•¸ç”¢ç”Ÿ A~Z çµ„åˆçš„å¯†ç¢¼å…«ç¢¼ */
     for (i = 0; i < PSWDLEN; i++)
       passwd[i] = rnd(26) + 'A';
     passwd[PSWDLEN] = '\0';
 
-    /* ­«·s acct_load ¸ü¤J¤@¦¸¡AÁ×§K¹ï¤è¦b vans() ®Éµn¤J·|¦³¬~¿úªº®ÄªG */
+    /* é‡æ–° acct_load è¼‰å…¥ä¸€æ¬¡ï¼Œé¿å…å°æ–¹åœ¨ vans() æ™‚ç™»å…¥æœƒæœ‰æ´—éŒ¢çš„æ•ˆæœ */
     if (acct_load(&acct, acct.userid) >= 0)
     {
       str_ncpy(acct.passwd, genpasswd(passwd), PASSLEN + 1);
@@ -197,15 +197,15 @@ x_password()
     sprintf(fpath, "tmp/sendpass.%s", cuser.userid);
     if (fp = fopen(fpath, "w"))
     {
-      fprintf(fp, "%s ¬°±z¥Ó½Ğ¤F·s±K½X\n\n", cuser.userid);
+      fprintf(fp, "%s ç‚ºæ‚¨ç”³è«‹äº†æ–°å¯†ç¢¼\n\n", cuser.userid);
       fprintf(fp, BBSNAME "ID : %s\n\n", acct.userid);
-      fprintf(fp, BBSNAME "·s±K½X : %s\n", passwd);
+      fprintf(fp, BBSNAME "æ–°å¯†ç¢¼ : %s\n", passwd);
       fclose(fp);
 
-      bsmtp(fpath, BBSNAME "·s±K½X", email, 0);
+      bsmtp(fpath, BBSNAME "æ–°å¯†ç¢¼", email, 0);
       unlink(fpath);
 
-      vmsg("·s±K½X¤w±H¨ì¸Ó»{ÃÒ«H½c");
+      vmsg("æ–°å¯†ç¢¼å·²å¯„åˆ°è©²èªè­‰ä¿¡ç®±");
     }
   }
 

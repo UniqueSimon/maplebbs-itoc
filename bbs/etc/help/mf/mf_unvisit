@@ -1,11 +1,11 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xV     �xmf_unvisit  �x��Ū�ݪO�峹                                    �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │V     │mf_unvisit  │未讀看板文章                                    │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� V �i�H�N�ӬݪO�]�������峹��Ū�A��Ū�O�|�G�_�C
+    將游標移到某欄，按 V 可以將該看板設為全部文章未讀，未讀燈會亮起。
 
-    �u���ݪO���|�~�i�H�]����Ū�C
+    只有看板捷徑才可以設為未讀。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/mailpost.c	( NTHU CS MapleBBS Ver 2.36 )	 */
 /*-------------------------------------------------------*/
-/* target : ¼f®Ö¨­¤À»{ÃÒ«H¨ç¤§¦^«H			 */
+/* target : å¯©æ ¸èº«åˆ†èªè­‰ä¿¡å‡½ä¹‹å›ä¿¡			 */
 /* create : 95/03/29				 	 */
 /* update : 97/03/29				 	 */
 /*-------------------------------------------------------*/
@@ -35,7 +35,7 @@ mailog(msg)
 
 
 /* ----------------------------------------------------- */
-/* °O¿ıÅçÃÒ¸ê®Æ¡Guser ¦³¥i¯à¥¿¦b½u¤W¡A¬G¼g¤JÀÉ®×¥H«O©P¥ş */
+/* è¨˜éŒ„é©—è­‰è³‡æ–™ï¼šuser æœ‰å¯èƒ½æ­£åœ¨ç·šä¸Šï¼Œæ•…å¯«å…¥æª”æ¡ˆä»¥ä¿å‘¨å…¨ */
 /* ----------------------------------------------------- */
 
 
@@ -71,17 +71,17 @@ justify_user(userid, email)
   HDR hdr;
   FILE *fp;
 
-  /* ±H»{ÃÒ³q¹L«Hµ¹¨Ï¥ÎªÌ */
+  /* å¯„èªè­‰é€šéä¿¡çµ¦ä½¿ç”¨è€… */
   usr_fpath(fpath, userid, FN_DIR);
   if (!hdr_stamp(fpath, HDR_LINK, &hdr, FN_ETC_JUSTIFIED))
   {
-    strcpy(hdr.title, "±z¤w¸g³q¹L¨­¤À»{ÃÒ¤F¡I");
+    strcpy(hdr.title, "æ‚¨å·²ç¶“é€šéèº«åˆ†èªè­‰äº†ï¼");
     strcpy(hdr.owner, STR_SYSOP);
     hdr.xmode = MAIL_NOREPLY;
     rec_add(fpath, &hdr, sizeof(HDR));
   }
 
-  /* °O¿ı¦b FN_JUSTIFY */
+  /* è¨˜éŒ„åœ¨ FN_JUSTIFY */
   usr_fpath(fpath, userid, FN_JUSTIFY);
   if (fp = fopen(fpath, "a"))
   {
@@ -99,7 +99,7 @@ verify_user(str)
   char *ptr, *next, fpath[64];
   ACCT acct;
 
-  /* itoc.µù¸Ñ: "userid(regkey) [VALID]" */
+  /* itoc.è¨»è§£: "userid(regkey) [VALID]" */
 
   if ((ptr = strchr(str, '(')) && (next = strchr(ptr + 1, ')')))
   {
@@ -108,16 +108,16 @@ verify_user(str)
 
     if (!is_badid(str) && !str_ncmp(next + 1, " [VALID]", 8))
     {
-      /* ¨ì¦¹®æ¦¡³£¥¿½T */
+      /* åˆ°æ­¤æ ¼å¼éƒ½æ­£ç¢º */
 
       usr_fpath(fpath, str, FN_ACCT);
       if ((fd = open(fpath, O_RDWR, 0600)) >= 0)
       {
 	if (read(fd, &acct, sizeof(ACCT)) == sizeof(ACCT))
 	{
-	  if (str_hash(acct.email, acct.tvalid) == chrono32(ptr))	/* regkey ¥¿½T */
+	  if (str_hash(acct.email, acct.tvalid) == chrono32(ptr))	/* regkey æ­£ç¢º */
 	  {
-	    /* ´£¤ÉÅv­­ */
+	    /* æå‡æ¬Šé™ */
 	    acct.userlevel |= PERM_VALID;
 	    time(&acct.tvalid);
 	    lseek(fd, (off_t) 0, SEEK_SET);
@@ -134,7 +134,7 @@ verify_user(str)
 
 
 /* ----------------------------------------------------- */
-/* ¥Dµ{¦¡						 */
+/* ä¸»ç¨‹å¼						 */
 /* ----------------------------------------------------- */
 
 
@@ -144,19 +144,19 @@ mailpost()
   int count;
   char *ptr, buf[512];
 
-  /* ¥u»İ­n§ä Subject: ªºÀÉÀY */
+  /* åªéœ€è¦æ‰¾ Subject: çš„æª”é ­ */
 
   count = 0;
-  while ((++count < 20) && fgets(buf, sizeof(buf), stdin))	/* ³Ì¦h fgets 20 ¦¸¡AÁ×§K¨S¦³ subject */
+  while ((++count < 20) && fgets(buf, sizeof(buf), stdin))	/* æœ€å¤š fgets 20 æ¬¡ï¼Œé¿å…æ²’æœ‰ subject */
   {
     if (!str_ncmp(buf, "Subject: ", 9))
     {
       str_decode(buf);
 
-      /* itoc.µù¸Ñ: mail.c: TAG_VALID " userid(regkey) [VALID]" */
+      /* itoc.è¨»è§£: mail.c: TAG_VALID " userid(regkey) [VALID]" */
       if (ptr = strstr(buf, TAG_VALID " "))
       {
-	/* gslin.990101: TAG_VALID ªø«×¤£¤@©w */
+	/* gslin.990101: TAG_VALID é•·åº¦ä¸ä¸€å®š */
 	verify_user(ptr + sizeof(TAG_VALID));
       }
       break;

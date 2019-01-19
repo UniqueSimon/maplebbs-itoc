@@ -1,15 +1,15 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xD     �xpost_rangede�x�Ϭq�R���峹                                    �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │D     │post_rangede│區段刪除文章                                    │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� d �i�H�N�ӽg�峹�q�ݪO���R���C
+    將游標移到某欄，按 d 可以將該篇文章從看板中刪除。
 
-    �Y�O�� D �h�i�H�Ϭq�R���A�u���O�D��ϥΦ��\��C
+    若是按 D 則可以區段刪除，只有板主能使用此功能。
 
-  [�]�w�R���d��] �_�I�G       ���I�G       �бz�T�w(Y/N)�H
+  [設定刪除範圍] 起點：       終點：       請您確定(Y/N)？
 
-  ��J�_�I�M���I�A�N�i�H�q�ݪO���R���s��ƽg�峹�C
+  輸入起點和終點，就可以從看板中刪除連續數篇文章。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

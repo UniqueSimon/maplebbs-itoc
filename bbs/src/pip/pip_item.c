@@ -1,7 +1,7 @@
 /* ----------------------------------------------------- */
 /* pip_item.c     ( NTHU CS MapleBBS Ver 3.10 )          */
 /* ----------------------------------------------------- */
-/* target : ¤pÂû item                                    */
+/* target : å°é› item                                    */
 /* create :   /  /                                       */
 /* update : 01/08/14                                     */
 /* author : dsyan.bbs@forever.twbbs.org                  */
@@ -19,9 +19,9 @@
 struct itemset pipfoodlist[] = 
 {
   /*  name          msgbuy           msgfeed                        price */
-  0, "ª««~¦W",     "ÁÊ¶R¶·ª¾",      "¨Ï¥Î¶·ª¾",                        0, 
-  1, "¦n¦Yªº­¹ª«", "Åé¤O«ì´_ 50",   "¨C¦Y¤@¦¸­¹ª«·|«ì´_Åé¤O 50 ³á",   50, 
-  2, "¬ü¨ıªº¹s­¹", "Åé¤O«ì´_ 100",  "°£¤F«ì´_Åé¤O¡A¤pÂû¤]·|§ó§Ö¼Ö",  120, 
+  0, "ç‰©å“å",     "è³¼è²·é ˆçŸ¥",      "ä½¿ç”¨é ˆçŸ¥",                        0, 
+  1, "å¥½åƒçš„é£Ÿç‰©", "é«”åŠ›æ¢å¾© 50",   "æ¯åƒä¸€æ¬¡é£Ÿç‰©æœƒæ¢å¾©é«”åŠ› 50 å–”",   50, 
+  2, "ç¾å‘³çš„é›¶é£Ÿ", "é«”åŠ›æ¢å¾© 100",  "é™¤äº†æ¢å¾©é«”åŠ›ï¼Œå°é›ä¹Ÿæœƒæ›´å¿«æ¨‚",  120, 
   0, NULL, NULL, NULL, 0
 };
 
@@ -29,13 +29,13 @@ struct itemset pipfoodlist[] =
 struct itemset pipmedicinelist[] = 
 {
   /*  name          msgbuy           msgfeed                        price */
-  0, "ª««~¦W",     "ÁÊ¶R¶·ª¾",      "¨Ï¥Î¶·ª¾",                        0, 
-  1, "¸É¦å¤jÁÙ¤¦", "Åé¤O«ì´_ 1000", "«ì´_¤j¶q¬y¥¢Åé¤Oªº¨}¤è",       1000, 
-  2, "¬Ã¶QªºÆFªÛ", "ªk¤O«ì´_ 1000", "«ì´_¤j¶q¬y¥¢ªk¤Oªº¨}¤è",       1000, 
-  3, "¦n¥Î¤j¸É¤Y", "²¾°Ê«ì´_ 1000", "«ì´_¤j¶q¬y¥¢²¾°Êªº¨}¤è",       1000, 
-  4, "¤d¦~¤H°Ñ¤ı", "¤º¤O«ì´_ 1000", "«ì´_¤j¶q¬y¥¢¤º¤Oªº¨}¤è",       1000, 
-  5, "¶Â¥ÉÂ_Äò»I", "Åé¤O§¹¥ş«ì´_",  "¶Ç»¡¤¤¯à±N©Ò¦³¨ü¶Ë«ì´_ªºÃÄ§÷", 5000, 
-  6, "¤Ñ¤s³·½¬",   "ª¬ºA§¹¥ş«ì´_",  "ªF¥_¤Ñ¤s¤~¦³³·½¬¤l",          10000, 
+  0, "ç‰©å“å",     "è³¼è²·é ˆçŸ¥",      "ä½¿ç”¨é ˆçŸ¥",                        0, 
+  1, "è£œè¡€å¤§é‚„ä¸¹", "é«”åŠ›æ¢å¾© 1000", "æ¢å¾©å¤§é‡æµå¤±é«”åŠ›çš„è‰¯æ–¹",       1000, 
+  2, "çè²´çš„éˆèŠ", "æ³•åŠ›æ¢å¾© 1000", "æ¢å¾©å¤§é‡æµå¤±æ³•åŠ›çš„è‰¯æ–¹",       1000, 
+  3, "å¥½ç”¨å¤§è£œä¸¸", "ç§»å‹•æ¢å¾© 1000", "æ¢å¾©å¤§é‡æµå¤±ç§»å‹•çš„è‰¯æ–¹",       1000, 
+  4, "åƒå¹´äººåƒç‹", "å…§åŠ›æ¢å¾© 1000", "æ¢å¾©å¤§é‡æµå¤±å…§åŠ›çš„è‰¯æ–¹",       1000, 
+  5, "é»‘ç‰æ–·çºŒè†", "é«”åŠ›å®Œå…¨æ¢å¾©",  "å‚³èªªä¸­èƒ½å°‡æ‰€æœ‰å—å‚·æ¢å¾©çš„è—¥æ", 5000, 
+  6, "å¤©å±±é›ªè“®",   "ç‹€æ…‹å®Œå…¨æ¢å¾©",  "æ±åŒ—å¤©å±±æ‰æœ‰é›ªè“®å­",          10000, 
   0, NULL, NULL, NULL, 0
 };
 
@@ -43,16 +43,16 @@ struct itemset pipmedicinelist[] =
 struct itemset pipotherlist[] = 
 {
   /*  name          msgbuy           msgfeed                        price */
-  0, "ª««~¦W",     "ÁÊ¶R¶·ª¾",      "¨Ï¥Î¶·ª¾",                        0, 
-  1, "¦Ê¬ì¥ş®Ñ",   "ª¾ÃÑªº¨Ó·½",    "®Ñ¥»Åı¤pÂû§óÁo©ú§ó¦³®ğ½è°Õ",   3000, 
-  2, "¼Ö°ªª±¨ã²Õ", "§Ö¼Öº¡·N«×",    "ª±¨ãÅı¤pÂû§ó§Ö¼Ö°Õ",            300, 
-  3, "»Õ¼ÓÂø»x",   "º¡¨¬ªº§Ö·P",    "®Ñ¤¤¦Û¦³ÃC¦p¥É°Õ",              500, 
+  0, "ç‰©å“å",     "è³¼è²·é ˆçŸ¥",      "ä½¿ç”¨é ˆçŸ¥",                        0, 
+  1, "ç™¾ç§‘å…¨æ›¸",   "çŸ¥è­˜çš„ä¾†æº",    "æ›¸æœ¬è®“å°é›æ›´è°æ˜æ›´æœ‰æ°£è³ªå•¦",   3000, 
+  2, "æ¨‚é«˜ç©å…·çµ„", "å¿«æ¨‚æ»¿æ„åº¦",    "ç©å…·è®“å°é›æ›´å¿«æ¨‚å•¦",            300, 
+  3, "é–£æ¨“é›œèªŒ",   "æ»¿è¶³çš„å¿«æ„Ÿ",    "æ›¸ä¸­è‡ªæœ‰é¡å¦‚ç‰å•¦",              500, 
   0, NULL, NULL, NULL, 0
 };
 
 
 /* ------------------------------------------------------- */
-/* ª««~ÁÊ¶R¨ç¦¡                                            */
+/* ç‰©å“è³¼è²·å‡½å¼                                            */
 /* ------------------------------------------------------- */
 
 
@@ -62,17 +62,17 @@ pip_buy_item(mode, p, oldnum)
   int oldnum[];
   struct itemset *p;
 {
-  char *shopname[4] = {"©±¦W", "«K§Q°Ó©±", "ªø¬KÃÄ¾Q", "©]¸Ì®Ñ§½"};
+  char *shopname[4] = {"åº—å", "ä¾¿åˆ©å•†åº—", "é•·æ˜¥è—¥é‹ª", "å¤œè£¡æ›¸å±€"};
   char buf[128], genbuf[20];
-  int oldmoney;		/* ¶i°Ó©±«e­ì¦³¿ú */
-  int total;		/* ÁÊ¶R/³c½æ­Ó¼Æ */
+  int oldmoney;		/* é€²å•†åº—å‰åŸæœ‰éŒ¢ */
+  int total;		/* è³¼è²·/è²©è³£å€‹æ•¸ */
   int ch, choice;
 
   oldmoney = d.money;
 
-  /* ¨q¥X²£«~¦Cªí */
+  /* ç§€å‡ºç”¢å“åˆ—è¡¨ */
   clrfromto(6, 18);
-  outs("\033[1;31m  ¢w\033[41;37m ½s¸¹\033[0;1;31m¢w\033[41;37m °Ó      «~\033[0;1;31m¢w¢w\033[41;37m ®Ä            ¯à\033[0;1;31m¢w¢w\033[41;37m »ù     ®æ\033[0;1;31m¢w\033[37;41m ¾Ö¦³¼Æ¶q\033[0;1;31m¢w\033[m\n\n");
+  outs("\033[1;31m  â”€\033[41;37m ç·¨è™Ÿ\033[0;1;31mâ”€\033[41;37m å•†      å“\033[0;1;31mâ”€â”€\033[41;37m æ•ˆ            èƒ½\033[0;1;31mâ”€â”€\033[41;37m åƒ¹     æ ¼\033[0;1;31mâ”€\033[37;41m æ“æœ‰æ•¸é‡\033[0;1;31mâ”€\033[m\n\n");
   for (ch = 1; ch <= oldnum[0]; ch++)
   {
     prints("    \033[1;35m[\033[37m%2d\033[35m]    \033[36m%-10s     \033[37m%-14s       \033[1;33m%-10d  \033[1;32m%-9d   \033[m\n",
@@ -81,37 +81,37 @@ pip_buy_item(mode, p, oldnum)
 
   do
   {
-    sprintf(buf, COLOR1 " ±Ä¶R " COLOR2 " (%8s) [B]¶R¤Jª««~ [S]½æ¥Xª««~ [Q]¸õ¥X                             \033[m", shopname[mode]);
+    sprintf(buf, COLOR1 " æ¡è²· " COLOR2 " (%8s) [B]è²·å…¥ç‰©å“ [S]è³£å‡ºç‰©å“ [Q]è·³å‡º                             \033[m", shopname[mode]);
     out_cmd("", buf);
 
     switch (ch = vkey())
     {
     case 'b':
-      sprintf(buf, "·Q­n¶R¤JÔ£©O¡H[0]©ñ±ó¶R¤J [1¡ã%d]ª««~°Ó¸¹¡G", oldnum[0]);
+      sprintf(buf, "æƒ³è¦è²·å…¥å•¥å‘¢ï¼Ÿ[0]æ”¾æ£„è²·å…¥ [1ï½%d]ç‰©å“å•†è™Ÿï¼š", oldnum[0]);
       choice = ians(b_lines - 2, 0, buf) - '0';
       if (choice >= 1 && choice <= oldnum[0])
       {
-	sprintf(buf, "±z­n¶R¤Jª««~ [%s] ¦h¤Ö­Ó©O(1-%d)¡H[Q] ", p[choice].name, d.money / p[choice].price);
+	sprintf(buf, "æ‚¨è¦è²·å…¥ç‰©å“ [%s] å¤šå°‘å€‹å‘¢(1-%d)ï¼Ÿ[Q] ", p[choice].name, d.money / p[choice].price);
 	vget(b_lines - 2, 0, buf, genbuf, 6, DOECHO);
 	total = atoi(genbuf);
 
 	if (total <= 0)
 	{
-	  vmsg("©ñ±ó¶R¤J...");
+	  vmsg("æ”¾æ£„è²·å…¥...");
 	}
 	else if (d.money < total * p[choice].price)
 	{
-	  vmsg("±zªº¿ú¨S¦³¨º»ò¦h³á..");
+	  vmsg("æ‚¨çš„éŒ¢æ²’æœ‰é‚£éº¼å¤šå–”..");
 	}
 	else
 	{
-	  sprintf(buf, "½T©w¶R¤JÁ`»ù¬° %d ªºª««~ [%s] ¼Æ¶q %d ­Ó¶Ü(Y/N)¡H[N] ", total * p[choice].price, p[choice].name, total);
+	  sprintf(buf, "ç¢ºå®šè²·å…¥ç¸½åƒ¹ç‚º %d çš„ç‰©å“ [%s] æ•¸é‡ %d å€‹å—(Y/N)ï¼Ÿ[N] ", total * p[choice].price, p[choice].name, total);
 	  if (ians(b_lines - 2, 0, buf) == 'y')
 	  {
 	    oldnum[choice] += total;
 	    d.money -= total * p[choice].price;
 
-	    /* itoc.010816: §ó·s¾Ö¦³¼Æ¶q */
+	    /* itoc.010816: æ›´æ–°æ“æœ‰æ•¸é‡ */
 	    move(7 + choice, 0);
 	    prints("    \033[1;35m[\033[37m%2d\033[35m]    \033[36m%-10s     \033[37m%-14s       \033[1;33m%-10d  \033[1;32m%-9d   \033[m",
 	      p[choice].num, p[choice].name, p[choice].msgbuy, p[choice].price, oldnum[choice]);
@@ -120,72 +120,72 @@ pip_buy_item(mode, p, oldnum)
 	  }
 	  else
 	  {
-	    vmsg("©ñ±ó¶R¤J...");
+	    vmsg("æ”¾æ£„è²·å…¥...");
 	  }
 	}
       }
       else
       {
-	sprintf(buf, "©ñ±ó¶R¤J.....");
+	sprintf(buf, "æ”¾æ£„è²·å…¥.....");
 	vmsg(buf);
       }
       break;
 
     case 's':
-      sprintf(buf, "·Q­n½æ¥XÔ£©O¡H[0]©ñ±ó½æ¥X [1¡ã%d]ª««~°Ó¸¹: ", oldnum[0]);
+      sprintf(buf, "æƒ³è¦è³£å‡ºå•¥å‘¢ï¼Ÿ[0]æ”¾æ£„è³£å‡º [1ï½%d]ç‰©å“å•†è™Ÿ: ", oldnum[0]);
       choice = ians(b_lines - 2, 0, buf) - '0';
       if (choice >= 1 && choice <= oldnum[0])
       {
-	sprintf(buf, "±z­n½æ¥Xª««~ [%s] ¦h¤Ö­Ó©O(1-%d)¡H[Q] ", p[choice].name, oldnum[choice]);
+	sprintf(buf, "æ‚¨è¦è³£å‡ºç‰©å“ [%s] å¤šå°‘å€‹å‘¢(1-%d)ï¼Ÿ[Q] ", p[choice].name, oldnum[choice]);
 	vget(b_lines - 2, 0, buf, genbuf, 6, DOECHO);
 	total = atoi(genbuf);
 
 	if (total <= 0)
 	{
-	  vmsg("©ñ±ó½æ¥X...");
+	  vmsg("æ”¾æ£„è³£å‡º...");
 	}
 	else if (total > oldnum[choice])
 	{
-	  sprintf(buf, "±zªº [%s] ¨S¦³¨º»ò¦h­Ó³á", p[choice].name);
+	  sprintf(buf, "æ‚¨çš„ [%s] æ²’æœ‰é‚£éº¼å¤šå€‹å–”", p[choice].name);
 	  vmsg(buf);
 	}
 	else
 	{
-	  sprintf(buf, "½T©w½æ¥XÁ`»ù¬° %d ªºª««~ [%s] ¼Æ¶q %d ­Ó¶Ü(Y/N)¡H[N] ", total * p[choice].price * 4 / 5, p[choice].name, total);
+	  sprintf(buf, "ç¢ºå®šè³£å‡ºç¸½åƒ¹ç‚º %d çš„ç‰©å“ [%s] æ•¸é‡ %d å€‹å—(Y/N)ï¼Ÿ[N] ", total * p[choice].price * 4 / 5, p[choice].name, total);
 	  if (ians(b_lines - 2, 0, buf) == 'y')
 	  {
 	    oldnum[choice] -= total;
 	    d.money += total * p[choice].price * 8 / 10;
 
-	    /* itoc.010816: §ó·s¾Ö¦³¼Æ¶q */
+	    /* itoc.010816: æ›´æ–°æ“æœ‰æ•¸é‡ */
 	    move(7 + choice, 0);
 	    prints("    \033[1;35m[\033[37m%2d\033[35m]    \033[36m%-10s     \033[37m%-14s       \033[1;33m%-10d  \033[1;32m%-9d   \033[m",
 	      p[choice].num, p[choice].name, p[choice].msgbuy, p[choice].price, oldnum[choice]);
 
-	    sprintf(buf, "¦ÑÁó®³¨«¤F±zªº %d ­Ó%s", total,  p[choice].name);
+	    sprintf(buf, "è€é—†æ‹¿èµ°äº†æ‚¨çš„ %d å€‹%s", total,  p[choice].name);
 	    vmsg(buf);
 	  }
 	  else
 	  {
-	    vmsg("©ñ±ó½æ¥X...");
+	    vmsg("æ”¾æ£„è³£å‡º...");
 	  }
 	}
       }
       else
       {
-	sprintf(buf, "©ñ±ó½æ¥X.....");
+	sprintf(buf, "æ”¾æ£„è³£å‡º.....");
 	vmsg(buf);
       }
       break;
 
     case 'q':
     case KEY_LEFT:
-      sprintf(buf, "ª÷¿ú¥æ©ö¦@ %d ¤¸,Â÷¶} %s ", oldmoney - d.money, shopname[mode]);
+      sprintf(buf, "é‡‘éŒ¢äº¤æ˜“å…± %d å…ƒ,é›¢é–‹ %s ", oldmoney - d.money, shopname[mode]);
       vmsg(buf);
       break;
     }
 
-    /* itoc.010816: ®ø±¼ ians() vget() ¯d¤Uªº´İÀe */
+    /* itoc.010816: æ¶ˆæ‰ ians() vget() ç•™ä¸‹çš„æ®˜éª¸ */
     move (b_lines - 2, 0);
     clrtoeol();
 
@@ -196,11 +196,11 @@ pip_buy_item(mode, p, oldnum)
 
 
 /*-------------------------------------------------------*/
-/* °Ó©±¿ï³æ:­¹ª« ¹s­¹ ¤j¸É¤Y ª±¨ã ®Ñ¥»			 */
+/* å•†åº—é¸å–®:é£Ÿç‰© é›¶é£Ÿ å¤§è£œä¸¸ ç©å…· æ›¸æœ¬			 */
 /*-------------------------------------------------------*/
 
 /*-------------------------------------------------------*/
-/* ¨ç¦¡®w                      				 */
+/* å‡½å¼åº«                      				 */
 /*-------------------------------------------------------*/
 
 int

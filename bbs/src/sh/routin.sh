@@ -1,6 +1,6 @@
 #!/bin/bash
 ####################################################################
-#¬İªO±Æ¦æº]²Î­p
+#çœ‹æ¿æ’è¡Œæ¦œçµ±è¨ˆ
 basedir=/home/bbs/manage
 logfile=/home/bbs/gem/@/@hotboard
 hotweek=/home/bbs/gem/@/@hotweek
@@ -11,14 +11,14 @@ if [ ! -d "$basedir/brd" ]; then
 fi
 cp /home/bbs/run/brd_usies.log $basedir/brd/$yestarday.log
 cat /home/bbs/run/brd_usies.log|awk '{print $1}'|uniq -c|awk '{printf "%-15s%s\n" ,$2,$1}'|sort -rn -k 2 > $basedir/board.log
-echo "¬İªO¦WºÙ °ÑÆ[¤H¦¸"|awk '{printf("%-15s%s\n",$1,$2)}'	> $logfile
-echo "¦W¦¸ ¬İªO¦WºÙ °ÑÆ[¤H¦¸"|awk '{printf("%-8s%-15s%s\n",$1,$2,$3)}'	> $hotweek
-echo "¦W¦¸ ¬İªO¦WºÙ °ÑÆ[¤H¦¸"|awk '{printf("%-8s%-15s%s\n",$1,$2,$3)}'	> $hotmonth
+echo "çœ‹æ¿åç¨± åƒè§€äººæ¬¡"|awk '{printf("%-15s%s\n",$1,$2)}'	> $logfile
+echo "åæ¬¡ çœ‹æ¿åç¨± åƒè§€äººæ¬¡"|awk '{printf("%-8s%-15s%s\n",$1,$2,$3)}'	> $hotweek
+echo "åæ¬¡ çœ‹æ¿åç¨± åƒè§€äººæ¬¡"|awk '{printf("%-8s%-15s%s\n",$1,$2,$3)}'	> $hotmonth
 echo "-----------------------------"			>> $logfile
 echo "-----------------------------"			>> $hotweek
 echo "-----------------------------"			>> $hotmonth
 ls -l /home/bbs/brd|awk '$1 !~ /total/ {print $9}'|sed 's/\///' > $basedir/boardlist
-echo "¥Ø«e¬İªO­Ó¼Æ:`cat $basedir/boardlist|wc -l`"	>> $logfile
+echo "ç›®å‰çœ‹æ¿å€‹æ•¸:`cat $basedir/boardlist|wc -l`"	>> $logfile
 cat $basedir/board.log                          	>> $logfile
 today=`date +%y%m%d`
 find $basedir/brd -mtime -7 -type f -exec cat '{}' \;|awk '{print $1}'|sort|uniq -c|awk '{printf "%-15s%s\n" ,$2,$1}'|sort -rn -k 2 > $basedir/week

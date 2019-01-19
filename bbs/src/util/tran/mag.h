@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/mag.h						 */
 /*-------------------------------------------------------*/
-/* target : Magic ¦Ü Maple 3.02 ¨Ï¥ÎªÌÂà´«		 */
+/* target : Magic è‡³ Maple 3.02 ä½¿ç”¨è€…è½‰æ›		 */
 /* create : 02/01/03					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -10,15 +10,15 @@
 
 #if 0
 
-  1. ³]©w FN_PASSWD¡BFN_BOARD¡BOLD_MAILPATH¡BOLD_BOARDPATH¡BOLD_MANPATH
-  2. ­×§ï©Ò¦³ªº old struct
+  1. è¨­å®š FN_PASSWDã€FN_BOARDã€OLD_MAILPATHã€OLD_BOARDPATHã€OLD_MANPATH
+  2. ä¿®æ”¹æ‰€æœ‰çš„ old struct
 
-  3. §â ÂÂ¯¸ªº mail ²¾¨ì OLD_MAILPATH
-  4. §â ÂÂ¯¸ªº boards/brdname ²¾¨ì OLD_BOARDPATH/brdname
-  5. §â ÂÂ¯¸ªº 0Announce/groups/ooxx.faq/brdname ²¾¨ì OLD_MANPATH/brdname
+  3. æŠŠ èˆŠç«™çš„ mail ç§»åˆ° OLD_MAILPATH
+  4. æŠŠ èˆŠç«™çš„ boards/brdname ç§»åˆ° OLD_BOARDPATH/brdname
+  5. æŠŠ èˆŠç«™çš„ 0Announce/groups/ooxx.faq/brdname ç§»åˆ° OLD_MANPATH/brdname
 
-  6. ¥²¶·¦b brd Âà§¹¤~¥i¥HÂà´« gem
-  7. «ØÄ³Âà´«¶¶§Ç¬° usr -> brd -> gem
+  6. å¿…é ˆåœ¨ brd è½‰å®Œæ‰å¯ä»¥è½‰æ› gem
+  7. å»ºè­°è½‰æ›é †åºç‚º usr -> brd -> gem
 
 #endif
 

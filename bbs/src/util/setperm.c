@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/setperm.c	( NTHU CS MapleBBS Ver 3.00 )    */
 /*-------------------------------------------------------*/
-/* target : ³]©w¨Ï¥ÎªÌÅv­­                               */
+/* target : è¨­å®šä½¿ç”¨è€…æ¬Šé™                               */
 /* author : gslin@abpe.org                               */
 /* create : 00/07/28                                     */
 /* update :                                              */
@@ -9,15 +9,15 @@
 
 
 #if 0
-   ±N itoc ¤Î sysop ³]¬°©Ò¦³Åv­­³£¦³:
+   å°‡ itoc åŠ sysop è¨­ç‚ºæ‰€æœ‰æ¬Šé™éƒ½æœ‰:
    setperm -1 itoc sysop
    setperm 11111111111111111111111111111111 itoc sysop
 
-   ±N itoc ³]¬°¥u¦³°ò¥»Åv­­:
+   å°‡ itoc è¨­ç‚ºåªæœ‰åŸºæœ¬æ¬Šé™:
    setperm 1 itoc
    setperm 00000000000000000000000000000001 itoc
 
-   ±N guest ³]¬°¨S¦³Åv­­:
+   å°‡ guest è¨­ç‚ºæ²’æœ‰æ¬Šé™:
    setperm 0 guest
    setperm 00000000000000000000000000000000 guest
 #endif

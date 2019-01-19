@@ -1,19 +1,19 @@
 /*-------------------------------------------------------*/
 /* util/gem-index.c	( NTHU CS MapleBBS Ver 2.39 )	 */
 /*-------------------------------------------------------*/
-/* target : ºëµØ°Ï¯Á¤Şµ{¦¡ (man index)			 */
+/* target : ç²¾è¯å€ç´¢å¼•ç¨‹å¼ (man index)			 */
 /* create : 95/03/29				 	 */
 /* update : 95/08/08				 	 */
 /*-------------------------------------------------------*/
 /* syntax : gem-index [board]				 */
-/*          [board] ¦³­È ==> ¥u¶]¸Ó board		 */
-/*           ªÅªº ==> ©Ò¦³ªº boards ³£¶]		 */
+/*          [board] æœ‰å€¼ ==> åªè·‘è©² board		 */
+/*           ç©ºçš„ ==> æ‰€æœ‰çš„ boards éƒ½è·‘		 */
 /*-------------------------------------------------------*/
 
 
 #include	"bbs.h"
 
-#define	COLOR_INDEX	/* Thor.980307: ¥[¤WÃC¦â¸Õ¸Õ¬O§_¤ñ¸û©ö§ä */
+#define	COLOR_INDEX	/* Thor.980307: åŠ ä¸Šé¡è‰²è©¦è©¦æ˜¯å¦æ¯”è¼ƒæ˜“æ‰¾ */
 
 
 #define GINDEX_LOG      (BBSHOME "/run/gindex.log")
@@ -85,7 +85,7 @@ gindex(level, toc, fpath, fndx)
       fclose(fgem);
       return;
     }
-    fprintf(fndx, "§Ç¸¹\t\t\tºëµØ°Ï¥DÃD\n"
+    fprintf(fndx, "åºè™Ÿ\t\t\tç²¾è¯å€ä¸»é¡Œ\n"
       "-------------------------------------------------------------\n");
     strcpy(pndx, fpath);
     gem_default = ndir = nfile = 0;
@@ -97,7 +97,7 @@ gindex(level, toc, fpath, fndx)
     count++;
     xmode = hdr.xmode;
 
-    /* ÀË¬d¬O§_¬°¯Á¤Ş¡B²§°Ê */
+    /* æª¢æŸ¥æ˜¯å¦ç‚ºç´¢å¼•ã€ç•°å‹• */
     if (!level && hdr.chrono <= CHRONO_LOG)
     {
       gem_default |= hdr.chrono;
@@ -115,7 +115,7 @@ gindex(level, toc, fpath, fndx)
     sprintf(buf, "%.*s%3d. ", level * 4, toc, count);
 
 #ifdef COLOR_INDEX
-    /* Thor.980307: ¥[¤WÃC¦â¸Õ¸Õ¬O§_¤ñ¸û©ö§ä */
+    /* Thor.980307: åŠ ä¸Šé¡è‰²è©¦è©¦æ˜¯å¦æ¯”è¼ƒæ˜“æ‰¾ */
     if (xmode & GEM_FOLDER) 
       fprintf(fndx, "%s\033[1;37;%dm%s\033[m\n", buf, 41 + (level % 6) , hdr.title);
     else
@@ -127,7 +127,7 @@ gindex(level, toc, fpath, fndx)
       fprintf(fndx, "%*d. %s\n", 4 * level + 3, count, hdr.title);
 #endif
 
-    if ((xmode & (GEM_FOLDER | GEM_BOARD)) == GEM_FOLDER)	/* ¤@¯ë¨÷©v */
+    if ((xmode & (GEM_FOLDER | GEM_BOARD)) == GEM_FOLDER)	/* ä¸€èˆ¬å·å®— */
     {
       ptr = hdr.xname;		/* F1234567 */
       sprintf(fname, "%c/%s", (*ptr == '@' ? '@' : ptr[7]), ptr);
@@ -146,7 +146,7 @@ gindex(level, toc, fpath, fndx)
     fprintf(flog, "==> d: %d\tf: %d\n", ndir, nfile);
 
     xmode = gem_default;
-    if (xmode != (CHRONO_INDEX | CHRONO_LOG))	/* ¤w¦³¯Á¤Ş¤Î²§°Ê */
+    if (xmode != (CHRONO_INDEX | CHRONO_LOG))	/* å·²æœ‰ç´¢å¼•åŠç•°å‹• */
     {
       sprintf(pool, "%s.o", pgem);
       sprintf(pndx, "%s.n", pgem);
@@ -160,7 +160,7 @@ gindex(level, toc, fpath, fndx)
 	{
 	  hdr.chrono = CHRONO_INDEX;
 	  strcpy(hdr.xname, fn_index + 2);
-	  strcpy(hdr.title, "ºëµØ°Ï¯Á¤Ş");
+	  strcpy(hdr.title, "ç²¾è¯å€ç´¢å¼•");
 	  fwrite(&hdr, sizeof(hdr), 1, fndx);
 	}
 
@@ -168,7 +168,7 @@ gindex(level, toc, fpath, fndx)
 	{
 	  hdr.chrono = CHRONO_LOG;
 	  strcpy(hdr.xname, fn_log + 2);
-	  strcpy(hdr.title, "ºëµØ°Ï²§°Ê");
+	  strcpy(hdr.title, "ç²¾è¯å€ç•°å‹•");
 	  fwrite(&hdr, sizeof(hdr), 1, fndx);
 	}
 
@@ -207,7 +207,7 @@ main(argc, argv)
   if (argc > 1)
   {
     flog = stderr;
-    /* Á×§K¿é¤J¹Lªø¦r¦ê ÄYÂÔ¤@ÂIªº¸Ü À³¸Ó­n¦AÀË¬d¦Xªk¦r¤¸ */
+    /* é¿å…è¼¸å…¥éé•·å­—ä¸² åš´è¬¹ä¸€é»çš„è©± æ‡‰è©²è¦å†æª¢æŸ¥åˆæ³•å­—å…ƒ */
     if (strlen(argv[1]) > BNLEN)
       return -1;
     sprintf(fpath, "brd/%s", argv[1]);

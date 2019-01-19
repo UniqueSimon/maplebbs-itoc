@@ -1,5 +1,5 @@
 #!/bin/sh
-# ²M°£¯¸¤W¨Ï¥ÎªÌ»Pshared memory
+# æ¸…é™¤ç«™ä¸Šä½¿ç”¨è€…èˆ‡shared memory
 kill `ps -auxwww | grep bbsd | awk '{print $2}'`
 
 # for freebsd only
@@ -10,4 +10,4 @@ do
   fi
 done
 
-# Linux ½Ğ¥Î ipcs ¤Î ipcrm shm
+# Linux è«‹ç”¨ ipcs åŠ ipcrm shm

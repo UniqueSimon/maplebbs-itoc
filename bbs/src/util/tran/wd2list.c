@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/translist.c                   			 */
 /*-------------------------------------------------------*/
-/* target : WD ¦Ü Maple 3.02 ¯S®í¦W³æÂà´«           	 */
+/* target : WD è‡³ Maple 3.02 ç‰¹æ®Šåå–®è½‰æ›           	 */
 /* create : 02/01/26                     		 */
 /* update :   /  /                   			 */
 /* author : itoc.bbs@bbs.ee.nctu.edu.tw          	 */
@@ -12,11 +12,11 @@
 
 #if 0
 
-   1. ­×§ï translist()
-   2. ¥uÂà list.1 ~ list.5
+   1. ä¿®æ”¹ translist()
+   2. åªè½‰ list.1 ~ list.5
 
-   ps. ¨Ï¥Î«e½Ğ¥ı¦æ³Æ¥÷¡Ause on ur own risk. µ{¦¡©å¦H½Ğ¥]²[ :p
-   ps. ·PÁÂ lkchu ªº Maple 3.02 for FreeBSD
+   ps. ä½¿ç”¨å‰è«‹å…ˆè¡Œå‚™ä»½ï¼Œuse on ur own risk. ç¨‹å¼æ‹™åŠ£è«‹åŒ…æ¶µ :p
+   ps. æ„Ÿè¬ lkchu çš„ Maple 3.02 for FreeBSD
 
 #endif
 
@@ -51,7 +51,7 @@ acct_uno(userid)
 
 
 /* ----------------------------------------------------- */
-/* Âà´«¥Dµ{¦¡                                            */
+/* è½‰æ›ä¸»ç¨‹å¼                                            */
 /* ----------------------------------------------------- */
 
 
@@ -65,7 +65,7 @@ translist(userid)
   PAL pal;
   FRIEND friend;
 
-  /* sob ªº usr ¥Ø¿ı¦³¤À¤j¤p¼g¡A©Ò¥H­n¥ı¨ú±o¤j¤p¼g */
+  /* sob çš„ usr ç›®éŒ„æœ‰åˆ†å¤§å°å¯«ï¼Œæ‰€ä»¥è¦å…ˆå–å¾—å¤§å°å¯« */
   usr_fpath(buf, userid, FN_ACCT);
   if ((fd = open(buf, O_RDONLY)) >= 0)
   {
@@ -73,14 +73,14 @@ translist(userid)
     close(fd);
   }
 
-  for (i = 1; i <= 5; i++)	/* ¥uÂà list.1 ~ list.5 */
+  for (i = 1; i <= 5; i++)	/* åªè½‰ list.1 ~ list.5 */
   {
     sprintf(buf, "%s.%d", FN_LIST, i);
-    usr_fpath(fpath, userid, buf);				/* ·sªº¯S®í¦W³æ */
-    sprintf(buf, OLD_BBSHOME "/home/%s/list.%d", acct.userid, i);/* ÂÂªº¯S®í¦W³æ */
+    usr_fpath(fpath, userid, buf);				/* æ–°çš„ç‰¹æ®Šåå–® */
+    sprintf(buf, OLD_BBSHOME "/home/%s/list.%d", acct.userid, i);/* èˆŠçš„ç‰¹æ®Šåå–® */
 
     if (dashf(fpath))
-      unlink(fpath);		/* ²M±¼­««Ø */
+      unlink(fpath);		/* æ¸…æ‰é‡å»º */
 
     pos = 0;
     fd = open(buf, O_RDONLY);
@@ -95,7 +95,7 @@ translist(userid)
 	if ((friend_userno = acct_uno(friend.userid)) >= 0)
 	{
 	  str_ncpy(pal.userid, friend.userid, sizeof(pal.userid));
-	  pal.ftype = 0;		/* ¯S®í¦W³æ¤@«ß¬°¦n¤Í */
+	  pal.ftype = 0;		/* ç‰¹æ®Šåå–®ä¸€å¾‹ç‚ºå¥½å‹ */
 	  str_ncpy(pal.ship, friend.desc, sizeof(pal.ship));      
 	  pal.userno = friend_userno;
 	  rec_add(fpath, &pal, sizeof(PAL));
@@ -122,8 +122,8 @@ main(argc, argv)
   struct dirent *de;
   DIR *dirp;
 
-  /* argc == 1 Âà¥ş³¡¨Ï¥ÎªÌ */
-  /* argc == 2 Âà¬Y¯S©w¨Ï¥ÎªÌ */
+  /* argc == 1 è½‰å…¨éƒ¨ä½¿ç”¨è€… */
+  /* argc == 2 è½‰æŸç‰¹å®šä½¿ç”¨è€… */
 
   if (argc > 2)
   {
@@ -139,7 +139,7 @@ main(argc, argv)
     exit(1);
   }
 
-  /* Âà´«¨Ï¥ÎªÌ¯S®í¦W³æ */
+  /* è½‰æ›ä½¿ç”¨è€…ç‰¹æ®Šåå–® */
   for (c = 'a'; c <= 'z'; c++)
   {
     sprintf(buf, "usr/%c", c);

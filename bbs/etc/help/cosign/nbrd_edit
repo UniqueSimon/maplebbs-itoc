@@ -1,12 +1,12 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xE     �xnbrd_edit   �x�s��s�p                                        �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │E     │nbrd_edit   │編輯連署                                        │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� E �i�H�s��ӽg�A�u�������i�H�s��s�p�C
+    將游標移到某欄，按 E 可以編輯該篇，只有站長可以編輯連署。
 
-    �s��s�p�ɡA�u��s�軡���Ӥw�A���ä��|���ܡA�p�G�n������쪺�ܡA�Ы�
-  B �ӳ]�w�s�p�C
+    編輯連署時，只能編輯說明而已，欄位並不會改變，如果要改變欄位的話，請按
+  B 來設定連署。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

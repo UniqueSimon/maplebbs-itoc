@@ -15,7 +15,7 @@ is_bottompost(hdr)
 
 
 int
-rec_bot(fpath, data, size)	/* amaki.040715: ´O¤J¦¡¼gÀÉ */
+rec_bot(fpath, data, size)	/* amaki.040715: åµŒå…¥å¼å¯«æª” */
   char *fpath;
   void *data;
   int size;
@@ -29,7 +29,7 @@ rec_bot(fpath, data, size)	/* amaki.040715: ´O¤J¦¡¼gÀÉ */
     return -1;
 
   /* flock(fd, LOCK_EX); */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_exlock(fd);
 
   fstat(fd, &st);
@@ -55,7 +55,7 @@ rec_bot(fpath, data, size)	/* amaki.040715: ´O¤J¦¡¼gÀÉ */
 	}
 	break;
       }
-      else if (fsize <= 0)	/* amaki.040715: ¥ş³¡³£¬O¸m©³ªºªF¦è */
+      else if (fsize <= 0)	/* amaki.040715: å…¨éƒ¨éƒ½æ˜¯ç½®åº•çš„æ±è¥¿ */
       {
 	count++;
 	pool = (void *) malloc(count * size);
@@ -79,7 +79,7 @@ rec_bot(fpath, data, size)	/* amaki.040715: ´O¤J¦¡¼gÀÉ */
   }
 
   /* flock(fd, LOCK_EX); */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_unlock(fd);
 
   close(fd);

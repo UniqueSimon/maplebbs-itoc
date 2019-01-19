@@ -141,13 +141,13 @@ valid_guess(num)
 
 static int 
 mainNum(fighting)
-  int fighting;	/* Thor.990317: ¹ï¾Ô¼Ò¦¡ */
+  int fighting;	/* Thor.990317: å°æˆ°æ¨¡å¼ */
 {
   Num myNumber;
 
-  if (vans("·Q¦n±zªº¼Æ¦r¤F¶Ü(Y/N)¡H[N] ") != 'y')
+  if (vans("æƒ³å¥½æ‚¨çš„æ•¸å­—äº†å—Ž(Y/N)ï¼Ÿ[N] ") != 'y')
   {
-    /* vmsg(MSG_QUITGAME); */	/* itoc.010312: ¤£­n¤F */
+    /* vmsg(MSG_QUITGAME); */	/* itoc.010312: ä¸è¦äº† */
     return XEASY;
   }
 
@@ -160,11 +160,11 @@ mainNum(fighting)
   numNum = 10 * 9 * 8 * 7;
   memset(numSet, 0, 10 * 9 * 8 * 7 * sizeof(char));
 
-  /* Thor.990317:¹ï¾Ô¼Ò¦¡ */
-  vs_bar(fighting ? "²q¼Æ¦r¤j¾Ô" : "¶Ì¥Ê²q¼Æ¦r");
+  /* Thor.990317:å°æˆ°æ¨¡å¼ */
+  vs_bar(fighting ? "çŒœæ•¸å­—å¤§æˆ°" : "å‚»ç“œçŒœæ•¸å­—");
 
   if (fighting)
-    ord2Num(rnd(numNum), myNumber);	/* Thor.990317:¹ï¾Ô¼Ò¦¡ */
+    ord2Num(rnd(numNum), myNumber);	/* Thor.990317:å°æˆ°æ¨¡å¼ */
 
   /* while there is possibility */
   for (;;)
@@ -172,11 +172,11 @@ mainNum(fighting)
     Num myGuess, yourGuess;
     int youA, youB, myA, myB;
 
-    if (fighting)		/* Thor.990317:¹ï¾Ô¼Ò¦¡ */
+    if (fighting)		/* Thor.990317:å°æˆ°æ¨¡å¼ */
     {
       int i;
       char tmp[50];
-      vget(b_lines - 3, 0, "±z²q§Úªº¼Æ¦r¬O[????]¡G", tmp, 5, DOECHO);
+      vget(b_lines - 3, 0, "æ‚¨çŒœæˆ‘çš„æ•¸å­—æ˜¯[????]ï¼š", tmp, 5, DOECHO);
       if (!valid_guess(tmp))
 	goto abort_game;
 
@@ -184,12 +184,12 @@ mainNum(fighting)
 	yourGuess[i] = tmp[i] - '0';
       AB(myNumber, yourGuess, &myA, &myB);
       move(b_lines - 2, 0);
-      prints("§Ú»¡ \033[1m%dA%dB \033[m", myA, myB);
+      prints("æˆ‘èªª \033[1m%dA%dB \033[m", myA, myB);
 
       if (myA == 4)
       {
 	/* you win  */
-	finish("±zÄ¹¤F! ¦n±R«ô ^O^");
+	finish("æ‚¨è´äº†! å¥½å´‡æ‹œ ^O^");
 	return 0;
       }
     }
@@ -214,14 +214,14 @@ mainNum(fighting)
 
     /* show the picked number */
     move(b_lines - 1, 0);
-    prints("§Ú²q±zªº¼Æ¦r¬O \033[1;37m%d%d%d%d\033[m", myGuess[0], myGuess[1], myGuess[2], myGuess[3]);
+    prints("æˆ‘çŒœæ‚¨çš„æ•¸å­—æ˜¯ \033[1;37m%d%d%d%d\033[m", myGuess[0], myGuess[1], myGuess[2], myGuess[3]);
 
     /* get ?A?B */
     for (;;)
     {
       char buf[5];
       /* get response */
-      vget(b_lines, 0, "±zªº¦^µª[?A?B]¡G", buf, 5, DOECHO);
+      vget(b_lines, 0, "æ‚¨çš„å›žç­”[?A?B]ï¼š", buf, 5, DOECHO);
 
       if (!buf[0])
       {
@@ -243,7 +243,7 @@ mainNum(fighting)
 	  if (youA == 4)
 	  {
 	    /* I win  */
-	    finish("§ÚÄ¹¤F! ¼F®`§a ^O^");
+	    finish("æˆ‘è´äº†! åŽ²å®³å§ ^O^");
 	    return 0;
 	  }
 	  else
@@ -253,7 +253,7 @@ mainNum(fighting)
 	}
       }
       /* err A B */
-      zmsg("¿é¤J®æ¦¡¦³»~");
+      zmsg("è¼¸å…¥æ ¼å¼æœ‰èª¤");
     }
     /* put in history */
     hisNum++;
@@ -263,15 +263,15 @@ mainNum(fighting)
     hisList[hisNum - 1].B = youB;
 
     move(hisNum + 2, 0);
-    if (fighting)		/* Thor.990317: ¹ï¾Ô¼Ò¦¡ */
-      prints("²Ä \033[1;37m%d\033[m ¦¸, ±z²q \033[1;36m%d%d%d%d\033[m, §Ú»¡ \033[1;33m%dA%dB\033[m; §Ú²q \033[1;33m%d%d%d%d\033[m, ±z»¡ \033[1;36m%dA%dB\033[m", hisNum, yourGuess[0], yourGuess[1], yourGuess[2], yourGuess[3], myA, myB, myGuess[0], myGuess[1], myGuess[2], myGuess[3], youA, youB);
+    if (fighting)		/* Thor.990317: å°æˆ°æ¨¡å¼ */
+      prints("ç¬¬ \033[1;37m%d\033[m æ¬¡, æ‚¨çŒœ \033[1;36m%d%d%d%d\033[m, æˆ‘èªª \033[1;33m%dA%dB\033[m; æˆ‘çŒœ \033[1;33m%d%d%d%d\033[m, æ‚¨èªª \033[1;36m%dA%dB\033[m", hisNum, yourGuess[0], yourGuess[1], yourGuess[2], yourGuess[3], myA, myB, myGuess[0], myGuess[1], myGuess[2], myGuess[3], youA, youB);
     else
-      prints("²Ä \033[1;37m%d\033[m ¦¸, §Ú²q \033[1;33m%d%d%d%d\033[m, ±z»¡ \033[1;36m%dA%dB\033[m", hisNum, myGuess[0], myGuess[1], myGuess[2], myGuess[3], youA, youB);
+      prints("ç¬¬ \033[1;37m%d\033[m æ¬¡, æˆ‘çŒœ \033[1;33m%d%d%d%d\033[m, æ‚¨èªª \033[1;36m%dA%dB\033[m", hisNum, myGuess[0], myGuess[1], myGuess[2], myGuess[3], youA, youB);
   }
 
 foolme:
   /* there is no posibility, show "you fool me" */
-  finish("±zÄF§Ú¡I¤£¸ò±zª±¤F ~~~>_<~~~");
+  finish("æ‚¨é¨™æˆ‘ï¼ä¸è·Ÿæ‚¨çŽ©äº† ~~~>_<~~~");
 
   return 0;
 }

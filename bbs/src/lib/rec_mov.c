@@ -20,7 +20,7 @@ rec_mov(fpath, size, from, to)
     return -1;
 
   /* flock(fd, LOCK_EX); */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_exlock(fd);
 
   fstat(fd, &st);
@@ -65,7 +65,7 @@ rec_mov(fpath, size, from, to)
   write(fd, fpath, len);
 
   /* flock(fd, LOCK_UN); */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_unlock(fd);
 
   close(fd);

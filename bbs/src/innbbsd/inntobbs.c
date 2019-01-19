@@ -21,7 +21,7 @@ typedef struct Header
 }      header_t;
 
 
-enum HeaderValue	/* ©Ò¦³¦³¥Î¨ìªº header */
+enum HeaderValue	/* æ‰€æœ‰æœ‰ç”¨åˆ°çš„ header */
 {
   SUBJECT_H,
   FROM_H,
@@ -38,7 +38,7 @@ enum HeaderValue	/* ©Ò¦³¦³¥Î¨ìªº header */
 };
 
 
-/* ¥u¹ï³o¨ÇÀÉÀY¦³¿³½ì */
+/* åªå°é€™äº›æª”é ­æœ‰èˆˆè¶£ */
 static header_t headertable[LASTHEADER] = 
 {
   "Subject",			SUBJECT_H,
@@ -48,7 +48,7 @@ static header_t headertable[LASTHEADER] =
   "Newsgroups",			GROUP_H,
   "Message-ID",			MSGID_H,
 
-  /* SITE_H (§t) ¥H¤U¬°«D¥²³ÆÀÉÀY */
+  /* SITE_H (å«) ä»¥ä¸‹ç‚ºéžå¿…å‚™æª”é ­ */
   "Organization",		SITE_H,
   "NNTP-Posting-Host",		POSTHOST_H,
   "Control",			CONTROL_H,
@@ -97,7 +97,7 @@ is_loopback(path, token, len)
 {
   int cc;
 
-  if (!path)		/* ­Y¨S¦³ PATH «h¤£ÀË¬d */
+  if (!path)		/* è‹¥æ²’æœ‰ PATH å‰‡ä¸æª¢æŸ¥ */
     return 0;
 
   for (;;)
@@ -121,8 +121,8 @@ is_loopback(path, token, len)
 }
 
 
-int 			/* 1:¦¨¥\ 0:PATH¥]¬A¦Û¤v -1:ÀÉÀY¤£§¹¾ã */
-readlines(data)		/* Åª¤JÀÉÀY©M¤º¤å */
+int 			/* 1:æˆåŠŸ 0:PATHåŒ…æ‹¬è‡ªå·± -1:æª”é ­ä¸å®Œæ•´ */
+readlines(data)		/* è®€å…¥æª”é ­å’Œå…§æ–‡ */
   char *data;
 {
   int i;
@@ -161,7 +161,7 @@ readlines(data)		/* Åª¤JÀÉÀY©M¤º¤å */
       *hptr = '\0';
 
       i = header_value(front);
-      if (i >= 0)		/* ¬O¦³¿³½ìªºÀÉÀY */
+      if (i >= 0)		/* æ˜¯æœ‰èˆˆè¶£çš„æª”é ­ */
       {
 	HEADER[i] = hptr + 2;
 
@@ -170,7 +170,7 @@ readlines(data)		/* Åª¤JÀÉÀY©M¤º¤å */
 	hptr = ptr;
 
 	/* while (ptr[1] == ' ') */
-        /* Thor.990110: ¦³ªº¬O¥Î \t ¥NªíÁÙ¦³ */
+        /* Thor.990110: æœ‰çš„æ˜¯ç”¨ \t ä»£è¡¨é‚„æœ‰ */
 	while (ptr[1] == ' ' || ptr[1] == '\t')
 	{
           /* while (*++ptr == ' ') ; */
@@ -203,8 +203,8 @@ readlines(data)		/* Åª¤JÀÉÀY©M¤º¤å */
     front = ptr;
   }
 
-  /* ÀË¬dÀÉÀYÄæ¦ì¬O§_§¹¾ã */
-  for (i = 0; i < POSTHOST_H; i++)	/* POSTHOST_H (§t) ¥H¤U¬°«D¥²³ÆÀÉÀY */
+  /* æª¢æŸ¥æª”é ­æ¬„ä½æ˜¯å¦å®Œæ•´ */
+  for (i = 0; i < POSTHOST_H; i++)	/* POSTHOST_H (å«) ä»¥ä¸‹ç‚ºéžå¿…å‚™æª”é ­ */
   {
     if (!HEADER[i] || !*HEADER[i])
       return -1;
@@ -222,7 +222,7 @@ readlines(data)		/* Åª¤JÀÉÀY©M¤º¤å */
   POSTHOST = HEADER[POSTHOST_H];
   CONTROL = HEADER[CONTROL_H];
 
-  /* SITE_H (§t) ¥H¤U¬°«D¥²³ÆÀÉÀY¡A¦ý¤´­nÀË¬d¬O§_¬°ªÅ¦r¦ê */
+  /* SITE_H (å«) ä»¥ä¸‹ç‚ºéžå¿…å‚™æª”é ­ï¼Œä½†ä»è¦æª¢æŸ¥æ˜¯å¦ç‚ºç©ºå­—ä¸² */
   if (SITE && !*SITE)
     SITE = NULL;
   if (POSTHOST && !*POSTHOST)
@@ -230,10 +230,10 @@ readlines(data)		/* Åª¤JÀÉÀY©M¤º¤å */
   if (CONTROL && !*CONTROL)
     return -1;
 
-  if (!CONTROL)		/* ¤@¯ë«H¥ó */
+  if (!CONTROL)		/* ä¸€èˆ¬ä¿¡ä»¶ */
   {
-    /* itoc.030223.µù¸Ñ: ¬Ý¨ì path ¸Ì­±¦³¦Û¤v¯¸ªº¦WºÙ¥H«á¡A«H´N¤£·|¶i¨Ó¡A
-       Á×§K¯¸¤Wªº«H³Q bbslink °e¥h news server ¥H«á¡A¤S³Q¦Û¤v¥Î bbsnnrp ¨ú¦^ */
+    /* itoc.030223.è¨»è§£: çœ‹åˆ° path è£¡é¢æœ‰è‡ªå·±ç«™çš„åç¨±ä»¥å¾Œï¼Œä¿¡å°±ä¸æœƒé€²ä¾†ï¼Œ
+       é¿å…ç«™ä¸Šçš„ä¿¡è¢« bbslink é€åŽ» news server ä»¥å¾Œï¼Œåˆè¢«è‡ªå·±ç”¨ bbsnnrp å–å›ž */
     if (is_loopback(PATH, MYBBSID, strlen(MYBBSID)))
       return 0;
   }

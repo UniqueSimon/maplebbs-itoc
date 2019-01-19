@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* pushbox.c	( NTHU CS MapleBBS Ver 3.10 )		 */
 /*-------------------------------------------------------*/
-/* target : ­Ü®wµf					 */
+/* target : å€‰åº«ç•ª					 */
 /* create : 98/11/11					 */
 /* update : 02/09/05					 */
 /* author : period.bbs@smth.org				 */
@@ -18,15 +18,15 @@
 
 #define MAX_MAP_WIDTH		20
 #define MAX_MAP_HEIGHT		16
-#define MAX_MOVE_TIMES		1000	/* ³Ì¦h²¾°Ê´X¨B */
+#define MAX_MOVE_TIMES		1000	/* æœ€å¤šç§»å‹•å¹¾æ­¥ */
 
 #define move2(x, y)		move(x+6, y*2)
-#define move3(x, y)		move(x+6, y*2+1)	/* Á×§K¥ş§Î°»´ú */
+#define move3(x, y)		move(x+6, y*2+1)	/* é¿å…å…¨å½¢åµæ¸¬ */
 
-static int cx, cy;		/* ¥Ø«e©Ò¦b¦ì¸m */
-static int stage;		/* ²Ä´XÃö */
-static int NUM_TABLE;		/* Á`¦@¦³´XÃö */
-static int total_line;		/* ¥»Ãö¦³´X¦C */
+static int cx, cy;		/* ç›®å‰æ‰€åœ¨ä½ç½® */
+static int stage;		/* ç¬¬å¹¾é—œ */
+static int NUM_TABLE;		/* ç¸½å…±æœ‰å¹¾é—œ */
+static int total_line;		/* æœ¬é—œæœ‰å¹¾åˆ— */
 static usint map[MAX_MAP_HEIGHT][MAX_MAP_WIDTH];
 
 
@@ -35,13 +35,13 @@ map_char(n)
   usint n;
 {
   if (n & 8)
-    return "¡½";
+    return "â– ";
   if (n & 4)
-    return "¡¼";
+    return "â–¡";
   if (n & 2)
-    return "¡ó";
+    return "âŠ™";
   if (n & 1)
-    return "¡O";
+    return "ï¹’";
   return "  ";
 }
 
@@ -62,7 +62,7 @@ map_item(item)
 }
 
 
-static int	/* 0:¥¢±Ñ  !=0:¦@¦³´X¦C */
+static int	/* 0:å¤±æ•—  !=0:å…±æœ‰å¹¾åˆ— */
 map_init(fp)
   FILE *fp;
 {
@@ -72,7 +72,7 @@ map_init(fp)
   sprintf(level, "--%03d", stage);
   while (fgets(buf, 10, fp))
   {
-    if (!str_ncmp(buf, level, 5))	/* §ä¨ì¥¿½TªºÃö¥d */
+    if (!str_ncmp(buf, level, 5))	/* æ‰¾åˆ°æ­£ç¢ºçš„é—œå¡ */
       break;
   }
 
@@ -81,7 +81,7 @@ map_init(fp)
   i = 0;
   while (fgets(buf, 80, fp))
   {
-    /* ¸ü¤J¦a¹Ï */
+    /* è¼‰å…¥åœ°åœ– */
     if (buf[0] == '-')
       break;
 
@@ -99,7 +99,7 @@ map_init(fp)
 
 
 static void
-map_line(x)	/* ¦L¥X²Ä x ¦C */
+map_line(x)	/* å°å‡ºç¬¬ x åˆ— */
   int x;
 {
   int j;
@@ -110,7 +110,7 @@ map_line(x)	/* ¦L¥X²Ä x ¦C */
   for (j = 0; j < MAX_MAP_WIDTH; j++)
   {
     n = map[x][j];
-    if (n & 5)		/* ¥[±jÃC¦â¨Ï²M·¡ */
+    if (n & 5)		/* åŠ å¼·é¡è‰²ä½¿æ¸…æ¥š */
       prints("\033[1;32m%s\033[m", map_char(n));
     else
       outs(map_char(n));
@@ -138,8 +138,8 @@ map_move(x0, y0, x1, y1)	/* (x0, y0) -> (x1, y1) */
 
   m = map[x0][y0];
 
-  map[x1][y1] = (m & 6) | (map[x1][y1] & 1);	/* ¥Øªº®æ¥[¤J '¡ó' ¤Î '¡¼' */
-  map[x0][y0] = m & 1;				/* ©Ò¦b®æ²MªÅ '¡ó' ¤Î '¡¼' */
+  map[x1][y1] = (m & 6) | (map[x1][y1] & 1);	/* ç›®çš„æ ¼åŠ å…¥ 'âŠ™' åŠ 'â–¡' */
+  map[x0][y0] = m & 1;				/* æ‰€åœ¨æ ¼æ¸…ç©º 'âŠ™' åŠ 'â–¡' */
 
   map_line(x0);
   if (x1 != x0)
@@ -147,7 +147,7 @@ map_move(x0, y0, x1, y1)	/* (x0, y0) -> (x1, y1) */
 }
 
 
-static int	/* 1:¦¨¥\ */
+static int	/* 1:æˆåŠŸ */
 check_win()
 {
   int i, j;
@@ -155,7 +155,7 @@ check_win()
   {
     for (j = 0; j < MAX_MAP_WIDTH; j++)
     {
-      if ((map[i][j] & 1) && !(map[i][j] & 4))	/* ÁÙ¦³ '¡O' ¤W¨S¦³ '¡¼' */
+      if ((map[i][j] & 1) && !(map[i][j] & 4))	/* é‚„æœ‰ 'ï¹’' ä¸Šæ²’æœ‰ 'â–¡' */
 	return 0;
     }
   }
@@ -164,7 +164,7 @@ check_win()
 
 
 static int
-find_cxy()		/* §äªì©l¦ì¸m */
+find_cxy()		/* æ‰¾åˆå§‹ä½ç½® */
 {
   int i, j;
   for (i = 0; i < total_line; i++)
@@ -193,18 +193,18 @@ select_stage()
   if (!(fp = fopen("etc/game/pushbox.map", "r")))
     return 0;
 
-  if (stage < 0)	/* ²Ä¤@¦¸¶i¤J¹CÀ¸ */
+  if (stage < 0)	/* ç¬¬ä¸€æ¬¡é€²å…¥éŠæˆ² */
   {
     fgets(buf, 4, fp);
-    NUM_TABLE = atoi(buf);	/* etc/game/pushbox.map ²Ä¤@¦æ°O¿ıÃö¥d¼Æ */
-    sprintf(buf, "½Ğ¿ï¾Ü½s¸¹ [1-%d]¡A[0] ÀH¾÷¥XÃD¡A©Î«ö [Q] Â÷¶}¡G", NUM_TABLE);
+    NUM_TABLE = atoi(buf);	/* etc/game/pushbox.map ç¬¬ä¸€è¡Œè¨˜éŒ„é—œå¡æ•¸ */
+    sprintf(buf, "è«‹é¸æ“‡ç·¨è™Ÿ [1-%d]ï¼Œ[0] éš¨æ©Ÿå‡ºé¡Œï¼Œæˆ–æŒ‰ [Q] é›¢é–‹ï¼š", NUM_TABLE);
     if (vget(b_lines, 0, buf, ans, 4, DOECHO) == 'q')
     {
       fclose(fp);
       return 0;
     }
     stage = atoi(ans);
-    if (stage <= 0 || stage > NUM_TABLE)	/* ÀH¾÷¥XÃD */
+    if (stage <= 0 || stage > NUM_TABLE)	/* éš¨æ©Ÿå‡ºé¡Œ */
       stage = 1 + time(0) % NUM_TABLE;
   }
 
@@ -218,7 +218,7 @@ select_stage()
 int
 main_pushbox()
 {
-  int dx, dy;		/* ¤U¤@¨B©Ò¦æ¦ì¬í */
+  int dx, dy;		/* ä¸‹ä¸€æ­¥æ‰€è¡Œä½ç§’ */
   int valid;
   usint n;
 
@@ -229,14 +229,14 @@ start_game:
   if (!(total_line = select_stage()))
     return XEASY;
 
-  vs_bar("­Ü®wµf");
+  vs_bar("å€‰åº«ç•ª");
   move(2, 0);
-  prints("²Ä \033[1;32m%03d\033[m Ãö¡G§â©Ò¦³ªº '¡¼' ³£±À¨ì '¡O' ¤W­±¥h(·|ÅÜ¦¨\033[1;32mºñ¦â\033[m)´N¹LÃö¤F\n", stage);
-  outs("«öÁä»¡©ú¡G(¡ô¡õ¡ö¡÷)²¾°Ê (s)­«ª± (q)Â÷¶} (^L)¿Ã¹õ­«Ã¸");
+  prints("ç¬¬ \033[1;32m%03d\033[m é—œï¼šæŠŠæ‰€æœ‰çš„ 'â–¡' éƒ½æ¨åˆ° 'ï¹’' ä¸Šé¢å»(æœƒè®Šæˆ\033[1;32mç¶ è‰²\033[m)å°±éé—œäº†\n", stage);
+  outs("æŒ‰éµèªªæ˜ï¼š(â†‘â†“â†â†’)ç§»å‹• (s)é‡ç© (q)é›¢é–‹ (^L)è¢å¹•é‡ç¹ª");
 
   if (!find_cxy())
   {
-    vmsg("³o±i¦a¹Ï¦ü¥G¤£¹ï«l¡I");
+    vmsg("é€™å¼µåœ°åœ–ä¼¼ä¹ä¸å°å‹ï¼");
     return 0;
   }
 
@@ -278,18 +278,18 @@ start_game:
     if (!dx && !dy)
       continue;
 
-    /* ¶}©l²¾°Ê */
+    /* é–‹å§‹ç§»å‹• */
     valid = 0;
-    n = map[cx + dx][cy + dy];	/* ¥Øªº®æ */
+    n = map[cx + dx][cy + dy];	/* ç›®çš„æ ¼ */
 
-    if (n <= 1)		/* ¥Øªº®æ¬OªÅªº¡Aª½±µ²¾¤J§Y¥i */
+    if (n <= 1)		/* ç›®çš„æ ¼æ˜¯ç©ºçš„ï¼Œç›´æ¥ç§»å…¥å³å¯ */
     {
       map_move(cx, cy, cx + dx, cy + dy);
       valid = 1;
     }
-    else if (n & 4)	/* ¥Øªº®æ¦³ '¡¼'¡A±À¥h¤U¤U®æ */
+    else if (n & 4)	/* ç›®çš„æ ¼æœ‰ 'â–¡'ï¼Œæ¨å»ä¸‹ä¸‹æ ¼ */
     {
-      if (map[cx + dx * 2][cy + dy * 2] <= 1)	/* ¤U¤U®æ¬OªÅªº */
+      if (map[cx + dx * 2][cy + dy * 2] <= 1)	/* ä¸‹ä¸‹æ ¼æ˜¯ç©ºçš„ */
       {
 	map_move(cx + dx, cy + dy, cx + dx * 2, cy + dy * 2);
 	map_move(cx, cy, cx + dx, cy + dy);
@@ -297,7 +297,7 @@ start_game:
       }
     }
 
-    if (valid)	/* ¦³®Ä²¾°Ê */
+    if (valid)	/* æœ‰æ•ˆç§»å‹• */
     {
       if (check_win())
 	break;
@@ -308,7 +308,7 @@ start_game:
     }
   }
 
-  vmsg("¯¬¶P±z¡I¦¨¥\\¹LÃö");
+  vmsg("ç¥è³€æ‚¨ï¼æˆåŠŸ\éé—œ");
 
   if (++stage > NUM_TABLE)
     stage = 1;

@@ -28,7 +28,7 @@ static void XoSong();
 
 
 #ifdef LOG_SONG_USIES
-static int			/* -1:¨S§ä¨ì  >=0:pos */
+static int			/* -1:æ²’æ‰¾åˆ°  >=0:pos */
 song_usies_find(fpath, chrono, songdata)
   char *fpath;
   time_t chrono;
@@ -82,7 +82,7 @@ song_usies_log(chrono, title)
 #endif
 
 
-static int swaped;		/* ¥»¤å¬O§_¦³ <~Src~> µ¥ */
+static int swaped;		/* æœ¬æ–‡æ˜¯å¦æœ‰ <~Src~> ç­‰ */
 
 static int
 song_swap(str, src, des)
@@ -98,7 +98,7 @@ song_swap(str, src, des)
     *ptr = '\0';
     ptr += strlen(src);
     /* sprintf(buf, "%s%s%s", str, des, ptr); */
-    snprintf(buf, ANSILINELEN, "%s%s%s", str, des, ptr);	/* swap ¥i¯à·|¶W¹L ANSILINELEN */
+    snprintf(buf, ANSILINELEN, "%s%s%s", str, des, ptr);	/* swap å¯èƒ½æœƒè¶…é ANSILINELEN */
     strcpy(str, buf);
 
     /* return 1; */
@@ -110,7 +110,7 @@ song_swap(str, src, des)
 
 
 static void
-song_quote(fpr, fpw, src, des, say)	/* ±q fpr Åª¥X¤º¤å¡A§â <~Src~> µ¥´À´«±¼¡A¼g¤J fpw */
+song_quote(fpr, fpw, src, des, say)	/* å¾ fpr è®€å‡ºå…§æ–‡ï¼ŒæŠŠ <~Src~> ç­‰æ›¿æ›æ‰ï¼Œå¯«å…¥ fpw */
   FILE *fpr, *fpw;
   char *src, *des, *say;
 {
@@ -128,25 +128,25 @@ song_quote(fpr, fpw, src, des, say)	/* ±q fpr Åª¥X¤º¤å¡A§â <~Src~> µ¥´À´«±¼¡A¼g¤
     fputs(buf, fpw);
   }
 
-  if (!swaped)	/* itoc.011115: ¦pªG¥»¤å¨S¦³ <~Src~>¡A«h¦b³Ì«á¥[¤W */
+  if (!swaped)	/* itoc.011115: å¦‚æœæœ¬æ–‡æ²’æœ‰ <~Src~>ï¼Œå‰‡åœ¨æœ€å¾ŒåŠ ä¸Š */
   {
-    /* ¦b³Ì«á¤@¦æ¥[¤W <~Src~> ·Q¹ï <~Des~> »¡ <~Say~> */
-    strcpy(buf, "\033[1;33m" SONG_SRC " ·Q¹ï " SONG_DES " »¡ " SONG_SAY "\033[m\n");
+    /* åœ¨æœ€å¾Œä¸€è¡ŒåŠ ä¸Š <~Src~> æƒ³å° <~Des~> èªª <~Say~> */
+    strcpy(buf, "\033[1;33m" SONG_SRC " æƒ³å° " SONG_DES " èªª " SONG_SAY "\033[m\n");
     song_swap(buf, SONG_SRC, src);
     song_swap(buf, SONG_DES, des);
     song_swap(buf, SONG_SAY, say);
     fputs(buf, fpw);
   }
 
-  /* ¦bÀÉ®×³Ì«á¥[¤WÂIºq®É¶¡ */
+  /* åœ¨æª”æ¡ˆæœ€å¾ŒåŠ ä¸Šé»æ­Œæ™‚é–“ */
   fprintf(fpw, "\n--\n%s\n", Now());
 }
 
 
-#define GEM_FILE	0x01	/* ¹w´Á¬OÀÉ®× */
+#define GEM_FILE	0x01	/* é æœŸæ˜¯æª”æ¡ˆ */
 
 
-static HDR *		/* NULL:µLÅvÅª¨ú */
+static HDR *		/* NULL:ç„¡æ¬Šè®€å– */
 song_check(xo, fpath, op)
   XO *xo;
   char *fpath;
@@ -186,13 +186,13 @@ song_item(num, hdr, level)
   xmode = hdr->xmode;
   gtype = (char) 0xba;
 
-  /* ¥Ø¿ı¥Î¹ê¤ß¡A¤£¬O¥Ø¿ı¥ÎªÅ¤ß */
-  if (xmode & GEM_FOLDER)		/* ¤å³¹:¡º ¨÷©v:¡» */
+  /* ç›®éŒ„ç”¨å¯¦å¿ƒï¼Œä¸æ˜¯ç›®éŒ„ç”¨ç©ºå¿ƒ */
+  if (xmode & GEM_FOLDER)		/* æ–‡ç« :â—‡ å·å®—:â—† */
     gtype += 1;
 
-  if (hdr->xname[0] == '@')		/* ¸ê®Æ:¡¸ ¤ÀÃş:¡¹ */
+  if (hdr->xname[0] == '@')		/* è³‡æ–™:â˜† åˆ†é¡:â˜… */
     gtype -= 2;
-  else if (xmode & GEM_BOARD)		/*         ¬İªO:¡½ */
+  else if (xmode & GEM_BOARD)		/*         çœ‹æ¿:â–  */
     gtype += 2;
 
   prints("%6d%c \241%c ", num, xmode & GEM_RESTRICT ? ')' : ' ', gtype);
@@ -214,7 +214,7 @@ song_body(xo)
   max = xo->max;
   if (max <= 0)
   {
-    outs("\n\n¡mºq¥»¡n©|¦b§l¨ú¤Ñ¦a¶¡ªº¤éºë¤ëµØ :)");
+    outs("\n\nã€Šæ­Œæœ¬ã€‹å°šåœ¨å¸å–å¤©åœ°é–“çš„æ—¥ç²¾æœˆè¯ :)");
     vmsg(NULL);
     return XO_QUIT;
   }
@@ -226,7 +226,7 @@ song_body(xo)
     max = tail;
 
   move(3, 0);
-  tail = xo->key;	/* ­É¥Î tail */
+  tail = xo->key;	/* å€Ÿç”¨ tail */
   do
   {
     song_item(++num, hdr++, tail);
@@ -234,7 +234,7 @@ song_body(xo)
   clrtobot();
 
   /* return XO_NONE; */
-  return XO_FOOT;	/* itoc.010403: §â b_lines ¶ñ¤W feeter */  
+  return XO_FOOT;	/* itoc.010403: æŠŠ b_lines å¡«ä¸Š feeter */  
 }
 
 
@@ -242,7 +242,7 @@ static int
 song_head(xo)
   XO *xo;
 {
-  vs_head("ºëµØ¤å³¹", xo->xyz);
+  vs_head("ç²¾è¯æ–‡ç« ", xo->xyz);
   prints(NECKER_SONG, d_cols, "");
   return song_body(xo);
 }
@@ -267,7 +267,7 @@ song_load(xo)
 
 
 /* ----------------------------------------------------- */
-/* ¸ê®Æ¤§·s¼W¡Gappend / insert				 */
+/* è³‡æ–™ä¹‹æ–°å¢ï¼šappend / insert				 */
 /* ----------------------------------------------------- */
 
 
@@ -296,13 +296,13 @@ song_browse(xo)
       {
 	if ((op = gem_link(hdr->xname)) < 0)
 	{
-	  vmsg("¹ï¤£°_¡A¦¹ªOºëµØ°Ï¥u­ãªO¤Í¶i¤J¡A½Ğ¦VªO¥D¥Ó½Ğ¤J¹Ò³\\¥i");
+	  vmsg("å°ä¸èµ·ï¼Œæ­¤æ¿ç²¾è¯å€åªå‡†æ¿å‹é€²å…¥ï¼Œè«‹å‘æ¿ä¸»ç”³è«‹å…¥å¢ƒè¨±\å¯");
 	  return XO_FOOT;
 	}
       }
-      else			/* ¤@¯ë¨÷©v */
+      else			/* ä¸€èˆ¬å·å®— */
       {
-	op = xo->key;		/* Ä~©Ó¥À¨÷©vªºÅv­­ */
+	op = xo->key;		/* ç¹¼æ‰¿æ¯å·å®—çš„æ¬Šé™ */
       }
 
       strcpy(title, hdr->title);
@@ -312,7 +312,7 @@ song_browse(xo)
 
     /* browse article */
 
-    /* Thor.990204: ¬°¦Ò¼{more ¶Ç¦^­È */
+    /* Thor.990204: ç‚ºè€ƒæ…®more å‚³å›å€¼ */
     if ((xmode = more(fpath, FOOTER_GEM)) < 0)
       break;
 
@@ -325,7 +325,7 @@ re_key:
       continue;
 
     case '/':
-      if (vget(b_lines, 0, "·j´M¡G", hunt, sizeof(hunt), DOECHO))
+      if (vget(b_lines, 0, "æœå°‹ï¼š", hunt, sizeof(hunt), DOECHO))
       {
 	more(fpath, FOOTER_GEM);
 	goto re_key;
@@ -355,7 +355,7 @@ re_key:
 
 
 static int
-count_ktv()	/* itoc.021102: ktv ªO¸Ì­±¤w¦³´X½gªºÂIºq°O¿ı */
+count_ktv()	/* itoc.021102: ktv æ¿è£¡é¢å·²æœ‰å¹¾ç¯‡çš„é»æ­Œè¨˜éŒ„ */
 {
   int count, fd;
   time_t yesterday;
@@ -371,11 +371,11 @@ count_ktv()	/* itoc.021102: ktv ªO¸Ì­±¤w¦³´X½gªºÂIºq°O¿ı */
   yesterday = time(0) - 86400;
   while (hdr = mread(fd, sizeof(HDR)))
   {
-    /* §Y¨Ï¬O°Î¦WÂIºq¡Auserid ¤´°O¿ı¦b hdr.owner + IDLEN + 1 */
+    /* å³ä½¿æ˜¯åŒ¿åé»æ­Œï¼Œuserid ä»è¨˜éŒ„åœ¨ hdr.owner + IDLEN + 1 */
     if (!strcmp(hdr->owner + IDLEN + 1, cuser.userid) &&
       hdr->chrono > yesterday)
     {
-      if (++count >= 3)		/* ­­¨îÂI¤T­º */
+      if (++count >= 3)		/* é™åˆ¶é»ä¸‰é¦– */
 	break;
     }
   }
@@ -396,42 +396,42 @@ song_order(xo)
   HDR *hdr, xpost;
   FILE *fpr, *fpw;
 
-  /* itoc.µù¸Ñ: song_order µø¦P post */
+  /* itoc.è¨»è§£: song_order è¦–åŒ post */
   if (!HAS_PERM(PERM_POST))
     return XO_NONE;
 
-  /* itoc.010831: ÂIºq­n¿ú¡A©Ò¥H­n¸T¤î multi-login */
+  /* itoc.010831: é»æ­Œè¦éŒ¢ï¼Œæ‰€ä»¥è¦ç¦æ­¢ multi-login */
   if (HAS_STATUS(STATUS_COINLOCK))
   {
     vmsg(msg_coinlock);
     return XO_FOOT;
   }
 
-  if (count_ktv() >= 3)		/* ­­¨îÂI¤T­º */
+  if (count_ktv() >= 3)		/* é™åˆ¶é»ä¸‰é¦– */
   {
-    vmsg("¹L¥h¤G¤Q¥|¤p®É¤º±z¤wÂI¿ï¹L¦hºq¦±");
+    vmsg("éå»äºŒåå››å°æ™‚å…§æ‚¨å·²é»é¸éå¤šæ­Œæ›²");
     return XO_FOOT;
   }
 
   if (cuser.money < 1000)
   {
-    vmsg("­n 1000 »È¹ô¤~¯àÂIºq¨ì¬İªO³á");
+    vmsg("è¦ 1000 éŠ€å¹£æ‰èƒ½é»æ­Œåˆ°çœ‹æ¿å–”");
     return XO_FOOT;
   }
 
   if (!(hdr = song_check(xo, fpath, GEM_FILE)))
     return XO_NONE;
 
-  if (!vget(b_lines, 0, "ÂIºqµ¹½Ö¡G", des, sizeof(des), DOECHO))
+  if (!vget(b_lines, 0, "é»æ­Œçµ¦èª°ï¼š", des, sizeof(des), DOECHO))
     return XO_FOOT;
-  if (!vget(b_lines, 0, "·Q»¡ªº¸Ü¡G", say, sizeof(say), DOECHO))
+  if (!vget(b_lines, 0, "æƒ³èªªçš„è©±ï¼š", say, sizeof(say), DOECHO))
     return XO_FOOT;
 
 #ifdef HAVE_ANONYMOUS
-  annoy = vans("·Q­n°Î¦W¶Ü(Y/N)¡H[N] ") == 'y';
+  annoy = vans("æƒ³è¦åŒ¿åå—(Y/N)ï¼Ÿ[N] ") == 'y';
 #endif
 
-  if (vans("½T©wÂIºq¶Ü(Y/N)¡H[Y] ") == 'n')
+  if (vans("ç¢ºå®šé»æ­Œå—(Y/N)ï¼Ÿ[Y] ") == 'n')
     return XO_FOOT;
 
   if (!(fpr = fopen(fpath, "r")))
@@ -443,7 +443,7 @@ song_order(xo)
   song_usies_log(hdr->chrono, hdr->title);
 #endif
 
-  /* ¥[¤J¤å³¹ÀÉ®× */
+  /* åŠ å…¥æ–‡ç« æª”æ¡ˆ */
 
   brd_fpath(fpath, BN_KTV, fn_dir);
 
@@ -459,17 +459,17 @@ song_order(xo)
 
   fclose(fpr);
 
-  /* ¥[¤J .DIR record */
+  /* åŠ å…¥ .DIR record */
 
 #ifdef HAVE_ANONYMOUS
   strcpy(xpost.owner, annoy ? STR_ANONYMOUS : cuser.userid);
-  /* §Y¨Ï¬O°Î¦WÂIºq¡Auserid ¤´°O¿ı¦b hdr.owner + IDLEN + 1 */
+  /* å³ä½¿æ˜¯åŒ¿åé»æ­Œï¼Œuserid ä»è¨˜éŒ„åœ¨ hdr.owner + IDLEN + 1 */
   strcpy(xpost.owner + IDLEN + 1, cuser.userid);
 #else
   strcpy(xpost.owner, cuser.userid);
 #endif
   strcpy(xpost.nick, xpost.owner);
-  sprintf(xpost.title, "%s ÂIµ¹ %s", xpost.owner, des);
+  sprintf(xpost.title, "%s é»çµ¦ %s", xpost.owner, des);
   rec_bot(fpath, &xpost, sizeof(HDR));
 
   btime_update(brd_bno(BN_KTV));
@@ -487,30 +487,30 @@ song_send(xo)
   FILE *fpr, *fpw;
   ACCT acct;
 
-  /* itoc.µù¸Ñ: song_send µø¦P mail */
+  /* itoc.è¨»è§£: song_send è¦–åŒ mail */
   if (!HAS_PERM(PERM_LOCAL))
     return XO_NONE;
 
   if (!(hdr = song_check(xo, fpath, GEM_FILE)))
     return XO_NONE;
 
-  if (acct_get("ÂIºqµ¹½Ö¡G", &acct) < 1)	/* acct_get ¥i¯à·| clear¡A©Ò¥H­n­«Ã¸ */
+  if (acct_get("é»æ­Œçµ¦èª°ï¼š", &acct) < 1)	/* acct_get å¯èƒ½æœƒ clearï¼Œæ‰€ä»¥è¦é‡ç¹ª */
     return song_head(xo);
 
-  if (!vget(b_lines, 0, "·Q»¡ªº¸Ü¡G", say, sizeof(say), DOECHO))
+  if (!vget(b_lines, 0, "æƒ³èªªçš„è©±ï¼š", say, sizeof(say), DOECHO))
     strcpy(say, ".........");
 
-  if (vans("½T©wÂIºq¶Ü(Y/N)¡H[Y] ") == 'n')
-    return song_head(xo);			/* acct_get ¥i¯à·| clear¡A©Ò¥H­n­«Ã¸ */
+  if (vans("ç¢ºå®šé»æ­Œå—(Y/N)ï¼Ÿ[Y] ") == 'n')
+    return song_head(xo);			/* acct_get å¯èƒ½æœƒ clearï¼Œæ‰€ä»¥è¦é‡ç¹ª */
 
 #ifdef LOG_SONG_USIES
   song_usies_log(hdr->chrono, hdr->title);
 #endif
 
-  /* ¥[¤J¤å³¹ÀÉ®× */
+  /* åŠ å…¥æ–‡ç« æª”æ¡ˆ */
 
   if (!(fpr = fopen(fpath, "r")))
-    return song_head(xo);			/* acct_get ¥i¯à·| clear¡A©Ò¥H­n­«Ã¸ */
+    return song_head(xo);			/* acct_get å¯èƒ½æœƒ clearï¼Œæ‰€ä»¥è¦é‡ç¹ª */
 
   usr_fpath(fpath, acct.userid, fn_dir);
 
@@ -522,17 +522,17 @@ song_send(xo)
 
   fclose(fpr);
 
-  /* ¥[¤J .DIR record */
+  /* åŠ å…¥ .DIR record */
 
   strcpy(xpost.owner, cuser.userid);
   strcpy(xpost.nick, cuser.username);
-  sprintf(xpost.title, "%s ÂIºqµ¹±z", cuser.userid);
+  sprintf(xpost.title, "%s é»æ­Œçµ¦æ‚¨", cuser.userid);
   rec_add(fpath, &xpost, sizeof(HDR));
 
   mail_hold(buf, acct.userid, xpost.title, 0);
-  m_biff(acct.userno);		/* ­Y¹ï¤è¦b½u¤W¡A«h­n³qª¾¦³·s«H */
+  m_biff(acct.userno);		/* è‹¥å°æ–¹åœ¨ç·šä¸Šï¼Œå‰‡è¦é€šçŸ¥æœ‰æ–°ä¿¡ */
 
-  return song_head(xo);				/* acct_get ¥i¯à·| clear¡A©Ò¥H­n­«Ã¸ */
+  return song_head(xo);				/* acct_get å¯èƒ½æœƒ clearï¼Œæ‰€ä»¥è¦é‡ç¹ª */
 }
 
 
@@ -545,31 +545,31 @@ song_internet(xo)
   HDR *hdr;
   FILE *fpr, *fpw;
 
-  /* itoc.µù¸Ñ: song_internet µø¦P internet_mail */
+  /* itoc.è¨»è§£: song_internet è¦–åŒ internet_mail */
   if (!HAS_PERM(PERM_INTERNET))
     return XO_NONE;
 
   if (!(hdr = song_check(xo, fpath, GEM_FILE)))
     return XO_NONE;
 
-  if (!vget(b_lines, 0, "¥Øªº¦a¡G", rcpt, sizeof(rcpt), DOECHO))
+  if (!vget(b_lines, 0, "ç›®çš„åœ°ï¼š", rcpt, sizeof(rcpt), DOECHO))
     return XO_FOOT;
   if (!strchr(rcpt, '@'))
     return XO_FOOT;
 
-  if (!vget(b_lines, 0, "ÂIºqµ¹½Ö¡G", des, sizeof(des), DOECHO))
+  if (!vget(b_lines, 0, "é»æ­Œçµ¦èª°ï¼š", des, sizeof(des), DOECHO))
     return XO_FOOT;
-  if (!vget(b_lines, 0, "·Q»¡ªº¸Ü¡G", say, sizeof(say), DOECHO))
+  if (!vget(b_lines, 0, "æƒ³èªªçš„è©±ï¼š", say, sizeof(say), DOECHO))
     strcpy(say, ".........");
 
-  if (vans("½T©wÂIºq¶Ü(Y/N)¡H[Y] ") == 'n')
+  if (vans("ç¢ºå®šé»æ­Œå—(Y/N)ï¼Ÿ[Y] ") == 'n')
     return XO_FOOT;
 
 #ifdef LOG_SONG_USIES
   song_usies_log(hdr->chrono, hdr->title);
 #endif
 
-  /* ¥[¤J¤å³¹ÀÉ®× */
+  /* åŠ å…¥æ–‡ç« æª”æ¡ˆ */
 
   if (!(fpr = fopen(fpath, "r")))
     return XO_FOOT;
@@ -582,10 +582,10 @@ song_internet(xo)
   fclose(fpr);
   fclose(fpw);
 
-  /* ±Hµ¹¹ï¤è */
+  /* å¯„çµ¦å°æ–¹ */
 
-  rc = bsmtp(fpath, "ÂIºqµ¹±z", rcpt, 0);
-  vmsg(rc >= 0 ? msg_sent_ok : "«H¥óµLªk±H¹F¡A©³½Z³Æ¥÷¦b«H½c");
+  rc = bsmtp(fpath, "é»æ­Œçµ¦æ‚¨", rcpt, 0);
+  vmsg(rc >= 0 ? msg_sent_ok : "ä¿¡ä»¶ç„¡æ³•å¯„é”ï¼Œåº•ç¨¿å‚™ä»½åœ¨ä¿¡ç®±");
 
   mail_hold(fpath, rcpt, hdr->title, rc);
   unlink(fpath);
@@ -606,7 +606,7 @@ song_edit(xo)
   if (xo->key & GEM_W_BIT)
     vedit(fpath, 0);
   else
-    vedit(fpath, -1);		/* itoc.010403: Åı¤@¯ë¨Ï¥ÎªÌ¤]¥i¥H edit ¬İ±±¨î½X */
+    vedit(fpath, -1);		/* itoc.010403: è®“ä¸€èˆ¬ä½¿ç”¨è€…ä¹Ÿå¯ä»¥ edit çœ‹æ§åˆ¶ç¢¼ */
   return song_head(xo);
 }
 
@@ -623,13 +623,13 @@ song_title(xo)
 
   memcpy(&mhdr, fhdr, sizeof(HDR));
 
-  vget(b_lines, 0, "¼ĞÃD¡G", mhdr.title, TTLEN + 1, GCARRY);
+  vget(b_lines, 0, "æ¨™é¡Œï¼š", mhdr.title, TTLEN + 1, GCARRY);
 
   if (xo->key & GEM_X_BIT)
   {
-    vget(b_lines, 0, "½sªÌ¡G", mhdr.owner, IDLEN + 1, GCARRY);
-    /* vget(b_lines, 0, "¼ÊºÙ¡G", mhdr.nick, sizeof(mhdr.nick), GCARRY); */	/* ºëµØ°Ï¦¹Äæ¦ì¬°ªÅ */
-    vget(b_lines, 0, "¤é´Á¡G", mhdr.date, sizeof(mhdr.date), GCARRY);
+    vget(b_lines, 0, "ç·¨è€…ï¼š", mhdr.owner, IDLEN + 1, GCARRY);
+    /* vget(b_lines, 0, "æš±ç¨±ï¼š", mhdr.nick, sizeof(mhdr.nick), GCARRY); */	/* ç²¾è¯å€æ­¤æ¬„ä½ç‚ºç©º */
+    vget(b_lines, 0, "æ—¥æœŸï¼š", mhdr.date, sizeof(mhdr.date), GCARRY);
   }
 
   if (memcmp(fhdr, &mhdr, sizeof(HDR)) && vans(msg_sure_ny) == 'y')
@@ -691,7 +691,7 @@ XoSong(folder, title, level)
   xo->pos = 0;
   xo->key = level;
   xo->xyz = title;
-  strcpy(currBM, "ªO¥D¡G¨t²ÎºŞ²zªÌ");
+  strcpy(currBM, "æ¿ä¸»ï¼šç³»çµ±ç®¡ç†è€…");
 
   xover(XZ_SONG);
 
@@ -716,7 +716,7 @@ XoSongMain()
   else
     level = 0;
 
-  XoSong(fpath, "ÂIºq¨t²Î", level);
+  XoSong(fpath, "é»æ­Œç³»çµ±", level);
   return 0;
 }
 

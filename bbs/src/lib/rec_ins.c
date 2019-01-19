@@ -22,14 +22,14 @@ rec_ins(fpath, data, size, pos, num)
     return -1;
 
   /* flock(fd, LOCK_EX); */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_exlock(fd);
 
   fstat(fd, &st);
   len = st.st_size;
 
-  /* lkchu.990428: ernie patch ¦pªG len=0 & pos>0 
-                   (¦b­è¶}ºëµØ°Ï¥Ø¿ı¶i¥h¶K¤W¡A¿ï¤U¤@­Ó) ®É·|¼g¤J©U§£ */
+  /* lkchu.990428: ernie patch å¦‚æœ len=0 & pos>0 
+                   (åœ¨å‰›é–‹ç²¾è¯å€ç›®éŒ„é€²å»è²¼ä¸Šï¼Œé¸ä¸‹ä¸€å€‹) æ™‚æœƒå¯«å…¥åƒåœ¾ */
   off = len ? size * pos : 0;
   lseek(fd, off, SEEK_SET);
 
@@ -48,7 +48,7 @@ rec_ins(fpath, data, size, pos, num)
   write(fd, data, size);
 
   /* flock(fd, LOCK_UN); */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_unlock(fd);
 
   close(fd);

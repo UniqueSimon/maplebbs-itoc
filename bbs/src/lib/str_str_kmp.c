@@ -5,11 +5,11 @@
 
 
 void
-str_expand(dst, src)	/* ±N char Âà¬° short¡A¨Ã±N­^¤åÅÜ¤p¼g */
+str_expand(dst, src)	/* å°‡ char è½‰ç‚º shortï¼Œä¸¦å°‡è‹±æ–‡è®Šå°å¯« */
   char *dst, *src;
 {
   int ch;
-  int in_chi = 0;	/* 1: «e¤@½X¬O¤¤¤å¦r */
+  int in_chi = 0;	/* 1: å‰ä¸€ç¢¼æ˜¯ä¸­æ–‡å­— */
 
   do
   {
@@ -67,7 +67,7 @@ str_str_kmp(str, pat, tbl)
     else if (j)
     {
       j = tbl[j - 1] + 1;
-      continue;		/* ¤£»İ­n i++ */
+      continue;		/* ä¸éœ€è¦ i++ */
     }
     i++;
   }
@@ -87,32 +87,32 @@ static void
 try_match(str, key)
   char *str, *key;
 {
-  short a[256], b[256];		/* °²³] 256 ¤w¨¬°÷ */
+  short a[256], b[256];		/* å‡è¨­ 256 å·²è¶³å¤  */
   int tbl[256];
 
   str_expand(a, str);
   str_expand(b, key);
 
   str_str_kmp_tbl(key, tbl);
-  printf("¡u%s¡v %s¥]¬A ¡u%s¡v\n", 
-    str, str_str_kmp(a, b, tbl) ? "" : "¤£", key);
+  printf("ã€Œ%sã€ %såŒ…æ‹¬ ã€Œ%sã€\n", 
+    str, str_str_kmp(a, b, tbl) ? "" : "ä¸", key);
 }
 
 
 int
 main()
 {
-  try_match("¦nªº¹q¼v", "º¹");
-  try_match("¦nªº¹q¼v", "N");
-  try_match("¦nªº¹q¼v", "n");
-  try_match("¦nªº¹q¼v", "¦nªº");
+  try_match("å¥½çš„é›»å½±", "çŠ’");
+  try_match("å¥½çš„é›»å½±", "N");
+  try_match("å¥½çš„é›»å½±", "n");
+  try_match("å¥½çš„é›»å½±", "å¥½çš„");
 
-  try_match("x¦nªºx¹q¼v", "ºx¹q");
-  try_match("x¦nªºx¹q¼v", "ªºx");
-  try_match("x¦nªºx¹q¼v", "ªºX");
-  try_match("x¦nªºX¹q¼v", "ªºx");
+  try_match("xå¥½çš„xé›»å½±", "æ¼©é›»");
+  try_match("xå¥½çš„xé›»å½±", "çš„x");
+  try_match("xå¥½çš„xé›»å½±", "çš„X");
+  try_match("xå¥½çš„Xé›»å½±", "çš„x");
 
-  try_match("abx¦nªºx¹q¼v", "x¹q");
+  try_match("abxå¥½çš„xé›»å½±", "xé›»");
 
   return 0;
 }

@@ -37,7 +37,7 @@ mak_dirs(fpath)
 
 
 void
-mak_links(fpath)		/* itoc.010924: ´î¤Ö­Ó¤HºëµØ°Ï¥Ø¿ı¡A¥Î link ¨Ó¥N´À¥Ø¿ı */
+mak_links(fpath)		/* itoc.010924: æ¸›å°‘å€‹äººç²¾è¯å€ç›®éŒ„ï¼Œç”¨ link ä¾†ä»£æ›¿ç›®éŒ„ */
   char *fpath;
 {
   char *fname;

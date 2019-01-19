@@ -12,10 +12,10 @@
 
 
 /* ----------------------------------------------------- */
-/* user ¾Ş§@ª¬ºA»P¼Ò¦¡					 */
+/* user æ“ä½œç‹€æ…‹èˆ‡æ¨¡å¼					 */
 /* ----------------------------------------------------- */
 
-/* itoc.010329.µù¸Ñ: §â 0 «O¯d¡A®³¨Ó°µ¯S®í¥Î³~ */
+/* itoc.010329.è¨»è§£: æŠŠ 0 ä¿ç•™ï¼Œæ‹¿ä¾†åšç‰¹æ®Šç”¨é€” */
 
 #define M_0MENU		1	/*  main MENU */
 #define M_AMENU		2	/* admin MENU */
@@ -23,8 +23,8 @@
 #define M_TMENU		4	/*  talk MENU */
 #define M_UMENU		5	/*  user MENU */
 #define M_XMENU		6	/*  tool MENU */
-				/* M_XMENU ¬O menu ªº³Ì«á¤@­Ó */
-				/* M_XMENU ¤§«e¦³°ÊºA¬İªO */
+				/* M_XMENU æ˜¯ menu çš„æœ€å¾Œä¸€å€‹ */
+				/* M_XMENU ä¹‹å‰æœ‰å‹•æ…‹çœ‹æ¿ */
 
 #define M_LOGIN		7	/* login */
 
@@ -41,7 +41,7 @@
 #define M_SONG		17
 #define M_COSIGN	18
 
-#define M_SYSTEM	19	/* ¡÷ M_SYSTEM(§t) »P M_CHAT(§t) ¶¡¤£±µ¨ü talk request */
+#define M_SYSTEM	19	/* â†’ M_SYSTEM(å«) èˆ‡ M_CHAT(å«) é–“ä¸æ¥å— talk request */
 
 #define M_XFILES        20	/* admin set system files */
 #define M_UFILES        21	/* user set user files  */
@@ -52,11 +52,11 @@
 #define M_SMAIL		25
 #define M_TRQST		26
 
-#define M_TALK		27	/* ¡ö M_TALK(§t) »P M_IDLE(§t) ¶¡±µ mateid */
-#define M_CHAT		28	/* ¡÷ M_BBTP(§t) »P M_CHAT(§t) ¶¡¤£±µ¨ü talk request */
+#define M_TALK		27	/* â† M_TALK(å«) èˆ‡ M_IDLE(å«) é–“æ¥ mateid */
+#define M_CHAT		28	/* â†’ M_BBTP(å«) èˆ‡ M_CHAT(å«) é–“ä¸æ¥å— talk request */
 #define M_PAGE		29
 #define M_QUERY		30
-#define M_IDLE		31	/* ¡ö M_TALK(§t) »P M_IDLE(§t) ¶¡±µ mateid */
+#define M_IDLE		31	/* â† M_TALK(å«) èˆ‡ M_IDLE(å«) é–“æ¥ mateid */
 
 #define M_XMODE		32
 #define M_MAX           M_XMODE
@@ -65,54 +65,54 @@
 #ifdef	_MODES_C_
 static char *ModeTypeTable[] =
 {
-  "«O¯d",
+  "ä¿ç•™",
 
-  "¥D¿ï³æ",			/* M_0MENU */
-  "¨t²ÎºûÅ@",			/* M_AMENU */
-  "¶l¥ó¿ï³æ",			/* M_MMENU */
-  "¥æ½Í¿ï³æ",			/* M_TMENU */
-  "¨Ï¥ÎªÌ¿ï³æ",			/* M_UMENU */
-  "Xyz ¿ï³æ",			/* M_XMENU */
+  "ä¸»é¸å–®",			/* M_0MENU */
+  "ç³»çµ±ç¶­è­·",			/* M_AMENU */
+  "éƒµä»¶é¸å–®",			/* M_MMENU */
+  "äº¤è«‡é¸å–®",			/* M_TMENU */
+  "ä½¿ç”¨è€…é¸å–®",			/* M_UMENU */
+  "Xyz é¸å–®",			/* M_XMENU */
 
-  "¤W¯¸³~¤¤",			/* M_LOGIN */
+  "ä¸Šç«™é€”ä¸­",			/* M_LOGIN */
 
-  "¤½§GÄæ",			/* M_GEM */
-  "¬İªO¦Cªí",			/* M_BOARD */
-  "§Úªº³Ì·R",			/* M_MF */
-  "¾\\Åª¤å³¹",			/* M_READA */
-  "Åª«H",			/* M_RMAIL */
+  "å…¬ä½ˆæ¬„",			/* M_GEM */
+  "çœ‹æ¿åˆ—è¡¨",			/* M_BOARD */
+  "æˆ‘çš„æœ€æ„›",			/* M_MF */
+  "é–±\è®€æ–‡ç« ",			/* M_READA */
+  "è®€ä¿¡",			/* M_RMAIL */
 
-  "µ²¥æªB¤Í",			/* M_PAL */
-  "¨Ï¥ÎªÌ¦W³æ",			/* M_LUSERS */
-  "§ë²¼¤¤",			/* M_VOTE */
-  "¹î¬İ¤ô²y",                   /* M_BMW */
-  "ÂIºq",			/* M_SONG */
-  "¬İªO³s¸p",			/* M_COSIGN */
+  "çµäº¤æœ‹å‹",			/* M_PAL */
+  "ä½¿ç”¨è€…åå–®",			/* M_LUSERS */
+  "æŠ•ç¥¨ä¸­",			/* M_VOTE */
+  "å¯Ÿçœ‹æ°´çƒ",                   /* M_BMW */
+  "é»æ­Œ",			/* M_SONG */
+  "çœ‹æ¿é€£ç½²",			/* M_COSIGN */
 
-  "¨t²ÎºŞ²z",			/* M_SYSTEM */
+  "ç³»çµ±ç®¡ç†",			/* M_SYSTEM */
 
-  "½s¨t²ÎÀÉ®×",                 /* M_XFILES */
-  "½s­Ó¤HÀÉ®×",                 /* M_UFILES */
+  "ç·¨ç³»çµ±æª”æ¡ˆ",                 /* M_XFILES */
+  "ç·¨å€‹äººæª”æ¡ˆ",                 /* M_UFILES */
 
-  "¤ô²y·Ç³Æ¤¤",			/* M_BMW_REPLY */
-  "ª±¹CÀ¸",			/* M_GAME */
-  "µoªí¤å³¹",			/* M_POST */
-  "¼g«H",			/* M_SMAIL */
-  "«İ¾÷",			/* M_TRQST */
+  "æ°´çƒæº–å‚™ä¸­",			/* M_BMW_REPLY */
+  "ç©éŠæˆ²",			/* M_GAME */
+  "ç™¼è¡¨æ–‡ç« ",			/* M_POST */
+  "å¯«ä¿¡",			/* M_SMAIL */
+  "å¾…æ©Ÿ",			/* M_TRQST */
 
-  "¥æ½Í",			/* M_TALK */	/* ±µ mateid ªº°ÊºA¤¤¤å¦r¤£¥i¤Óªø */
-  "²á¤Ñ",			/* M_CHAT */
-  "©I¥s",			/* M_PAGE */
-  "¬d¸ß",			/* M_QUERY */
-  "µo§b",			/* M_IDLE */
+  "äº¤è«‡",			/* M_TALK */	/* æ¥ mateid çš„å‹•æ…‹ä¸­æ–‡å­—ä¸å¯å¤ªé•· */
+  "èŠå¤©",			/* M_CHAT */
+  "å‘¼å«",			/* M_PAGE */
+  "æŸ¥è©¢",			/* M_QUERY */
+  "ç™¼å‘†",			/* M_IDLE */
 
-  "¨ä¥L"			/* M_XMODE */
+  "å…¶ä»–"			/* M_XMODE */
 };
 #endif				/* _MODES_C_ */
 
 
 /* ----------------------------------------------------- */
-/* menu.c ¤¤ªº¼Ò¦¡					 */
+/* menu.c ä¸­çš„æ¨¡å¼					 */
 /* ----------------------------------------------------- */
 
 
@@ -120,85 +120,85 @@ static char *ModeTypeTable[] =
 
 
 /* ----------------------------------------------------- */
-/* pal.c ¤¤ªº¼Ò¦¡					 */
+/* pal.c ä¸­çš„æ¨¡å¼					 */
 /* ----------------------------------------------------- */
 
 
-#define PALTYPE_PAL	0		/* ªB¤Í¦W³æ */
-#define PALTYPE_LIST	1		/* ¸s²Õ¦W³æ */
-#define PALTYPE_BPAL	2		/* ªO¤Í¦W³æ */
-#define PALTYPE_VOTE	3		/* ­­¨î§ë²¼¦W³æ */
+#define PALTYPE_PAL	0		/* æœ‹å‹åå–® */
+#define PALTYPE_LIST	1		/* ç¾¤çµ„åå–® */
+#define PALTYPE_BPAL	2		/* æ¿å‹åå–® */
+#define PALTYPE_VOTE	3		/* é™åˆ¶æŠ•ç¥¨åå–® */
 
 
 /* ----------------------------------------------------- */
-/* visio.c ¤¤ªº¼Ò¦¡					 */
+/* visio.c ä¸­çš„æ¨¡å¼					 */
 /* ----------------------------------------------------- */
 
 
 /* Flags to getdata input function */
 
-#define NOECHO		0x0000		/* ¤£Åã¥Ü¡A¥Î©ó±K½X¨ú±o */
-#define DOECHO		0x0100		/* ¤@¯ëÅã¥Ü */
-#define LCECHO		0x0200		/* low case echo¡A´«¦¨¤p¼g */
-#define GCARRY		0x0400		/* ·|Åã¥Ü¤W¤@¦¸/¥Ø«eªº­È */
+#define NOECHO		0x0000		/* ä¸é¡¯ç¤ºï¼Œç”¨æ–¼å¯†ç¢¼å–å¾— */
+#define DOECHO		0x0100		/* ä¸€èˆ¬é¡¯ç¤º */
+#define LCECHO		0x0200		/* low case echoï¼Œæ›æˆå°å¯« */
+#define GCARRY		0x0400		/* æœƒé¡¯ç¤ºä¸Šä¸€æ¬¡/ç›®å‰çš„å€¼ */
 
-#define GET_LIST	0x1000		/* ¨ú±o Link List */
-#define GET_USER	0x2000		/* ¨ú±o user id */
-#define GET_BRD		0x4000		/* ¨ú±o board id */
+#define GET_LIST	0x1000		/* å–å¾— Link List */
+#define GET_USER	0x2000		/* å–å¾— user id */
+#define GET_BRD		0x4000		/* å–å¾— board id */
 
 
 /* ----------------------------------------------------- */
-/* read.c ¤¤ªº¼Ò¦¡					 */
+/* read.c ä¸­çš„æ¨¡å¼					 */
 /* ----------------------------------------------------- */
 
 /* for tag */
 
-#define	TAG_NIN		0		/* ¤£Äİ©ó TagList */
-#define	TAG_TOGGLE	1		/* ¤Á´« Taglist */
-#define	TAG_INSERT	2		/* ¥[¤J TagList */
+#define	TAG_NIN		0		/* ä¸å±¬æ–¼ TagList */
+#define	TAG_TOGGLE	1		/* åˆ‡æ› Taglist */
+#define	TAG_INSERT	2		/* åŠ å…¥ TagList */
 
 
 /* for bbstate : bbs operating state */
 
-#define	STAT_POST	0x0010000	/* ¬O§_¥i¥H¦b currboard µoªí¤å³¹ */
-#define STAT_BOARD	0x0020000	/* ¬O§_¥i¥H¦b currboard §R°£¡Bmark¤å³¹ (ªO¥D¡B¬İªOÁ`ºŞ) */
-#define STAT_BM		0x0040000	/* ¬O§_¬° currboard ªºªO¥D */
-#define	STAT_LOCK	0x0100000	/* ¬O§_¬°Âê©w¿Ã¹õ */
-#define	STAT_STARTED	0x8000000	/* ¬O§_¤w¸g¶i¤J¨t²Î */
+#define	STAT_POST	0x0010000	/* æ˜¯å¦å¯ä»¥åœ¨ currboard ç™¼è¡¨æ–‡ç«  */
+#define STAT_BOARD	0x0020000	/* æ˜¯å¦å¯ä»¥åœ¨ currboard åˆªé™¤ã€markæ–‡ç«  (æ¿ä¸»ã€çœ‹æ¿ç¸½ç®¡) */
+#define STAT_BM		0x0040000	/* æ˜¯å¦ç‚º currboard çš„æ¿ä¸» */
+#define	STAT_LOCK	0x0100000	/* æ˜¯å¦ç‚ºé–å®šè¢å¹• */
+#define	STAT_STARTED	0x8000000	/* æ˜¯å¦å·²ç¶“é€²å…¥ç³»çµ± */
 
 
 /* for user's board permission level & state record */
 
-#define BRD_L_BIT	0x0001		/* ¥i¦C¡Alist */
-#define BRD_R_BIT	0x0002		/* ¥iÅª¡Aread */
-#define BRD_W_BIT	0x0004		/* ¥i¼g¡Awrite */
-#define BRD_X_BIT	0x0008		/* ¥iºŞ¡Aexecute¡AªO¥D¡B¬İªOÁ`ºŞ */
-#define BRD_M_BIT	0x0010		/* ¥i²z¡Amanage¡AªO¥D */
+#define BRD_L_BIT	0x0001		/* å¯åˆ—ï¼Œlist */
+#define BRD_R_BIT	0x0002		/* å¯è®€ï¼Œread */
+#define BRD_W_BIT	0x0004		/* å¯å¯«ï¼Œwrite */
+#define BRD_X_BIT	0x0008		/* å¯ç®¡ï¼Œexecuteï¼Œæ¿ä¸»ã€çœ‹æ¿ç¸½ç®¡ */
+#define BRD_M_BIT	0x0010		/* å¯ç†ï¼Œmanageï¼Œæ¿ä¸» */
 
-#define BRD_V_BIT	0x0020		/* ¤w¸g³}¹L¤F¡Avisit ==> ¬İ¹L¡u¶iªOµe­±¡v */
-#define BRD_H_BIT	0x0040		/* .BRH ¤¤¦³¾\Åª°O¿ı (history) */
-#define BRD_Z_BIT	0x0080		/* .BRH zap ±¼¤F */
+#define BRD_V_BIT	0x0020		/* å·²ç¶“é€›éäº†ï¼Œvisit ==> çœ‹éã€Œé€²æ¿ç•«é¢ã€ */
+#define BRD_H_BIT	0x0040		/* .BRH ä¸­æœ‰é–±è®€è¨˜éŒ„ (history) */
+#define BRD_Z_BIT	0x0080		/* .BRH zap æ‰äº† */
 
 
 /* for user's gem permission level record */
 
-#define GEM_W_BIT	0x0001		/* ¥i¼g¡Awrite¡AªO¥D¡A¬İªOÁ`ºŞ */
-#define GEM_X_BIT	0x0002		/* ¥iºŞ¡Aexecute¡A¯¸ªø */
-#define GEM_M_BIT	0x0004		/* ¥i²z¡Amanage¡AªO¥D */
+#define GEM_W_BIT	0x0001		/* å¯å¯«ï¼Œwriteï¼Œæ¿ä¸»ï¼Œçœ‹æ¿ç¸½ç®¡ */
+#define GEM_X_BIT	0x0002		/* å¯ç®¡ï¼Œexecuteï¼Œç«™é•· */
+#define GEM_M_BIT	0x0004		/* å¯ç†ï¼Œmanageï¼Œæ¿ä¸» */
 
 
 /* for curredit */
 
-#define EDIT_MAIL	0x0001		/* ¥Ø«e¬O mail/board ? */
-#define EDIT_LIST	0x0002		/* ¬O§_¬° mail list ? */
+#define EDIT_MAIL	0x0001		/* ç›®å‰æ˜¯ mail/board ? */
+#define EDIT_LIST	0x0002		/* æ˜¯å¦ç‚º mail list ? */
 #define EDIT_BOTH	0x0004		/* both reply to author/board ? */
-#define EDIT_OUTGO	0x0008		/* «İÂà«H¥X¥h */
-#define EDIT_ANONYMOUS	0x0010		/* °Î¦W¼Ò¦¡ */
-#define EDIT_RESTRICT	0x0020		/* ¥[±K¦sÀÉ */
+#define EDIT_OUTGO	0x0008		/* å¾…è½‰ä¿¡å‡ºå» */
+#define EDIT_ANONYMOUS	0x0010		/* åŒ¿åæ¨¡å¼ */
+#define EDIT_RESTRICT	0x0020		/* åŠ å¯†å­˜æª” */
 
 
 /* ----------------------------------------------------- */
-/* xover.c ¤¤ªº¼Ò¦¡					 */
+/* xover.c ä¸­çš„æ¨¡å¼					 */
 /* ----------------------------------------------------- */
 
 
@@ -213,13 +213,13 @@ static char *ModeTypeTable[] =
 #define XO_HEAD		(XO_MODE + 3)
 #define XO_NECK		(XO_MODE + 4)
 #define XO_BODY		(XO_MODE + 5)
-#define XO_FOOT		(XO_MODE + 6)	/* itoc.µù¸Ñ: ²M°£ b_lines */
+#define XO_FOOT		(XO_MODE + 6)	/* itoc.è¨»è§£: æ¸…é™¤ b_lines */
 #define XO_LAST		(XO_MODE + 7)
 #define	XO_QUIT		(XO_MODE + 8)
 
 
 #define	XO_RSIZ		256		/* max record length */
-#define XO_TALL		(b_lines - 3)	/* page size = b_lines - 3 (¦©¥h head/neck/foot ¦@¤T¦æ) */
+#define XO_TALL		(b_lines - 3)	/* page size = b_lines - 3 (æ‰£å» head/neck/foot å…±ä¸‰è¡Œ) */
 
 
 #define	XO_MOVE		0x20000000	/* cursor movement */
@@ -227,27 +227,27 @@ static char *ModeTypeTable[] =
 #define	XO_TAIL		(XO_MOVE - 999)	/* init cursor to tail */
 
 
-#define	XO_ZONE		0x40000000	/* ¶i¤J¬Y¤@­Ó zone */
+#define	XO_ZONE		0x40000000	/* é€²å…¥æŸä¸€å€‹ zone */
 #define	XZ_BACK		0x100
 
 
-#define	XZ_CLASS	(XO_ZONE + 0)	/* ¬İªO¦Cªí */
-#define	XZ_ULIST	(XO_ZONE + 1)	/* ½u¤W¨Ï¥ÎªÌ¦W³æ */
-#define	XZ_PAL		(XO_ZONE + 2)	/* ªB¤Í¦W³æ */
-#define XZ_ALOHA	(XO_ZONE + 3)	/* ¤W¯¸³qª¾¦W³æ */ 
-#define	XZ_VOTE		(XO_ZONE + 4)	/* §ë²¼ */
-#define XZ_BMW		(XO_ZONE + 5)	/* ¤ô²y */
-#define	XZ_MF		(XO_ZONE + 6)	/* §Úªº³Ì·R */
-#define XZ_COSIGN	(XO_ZONE + 7)	/* ³s¸p */
-#define	XZ_SONG		(XO_ZONE + 8)	/* ÂIºq */
-#define XZ_NEWS		(XO_ZONE + 9)	/* ·s»D¾\Åª¼Ò¦¡ */
+#define	XZ_CLASS	(XO_ZONE + 0)	/* çœ‹æ¿åˆ—è¡¨ */
+#define	XZ_ULIST	(XO_ZONE + 1)	/* ç·šä¸Šä½¿ç”¨è€…åå–® */
+#define	XZ_PAL		(XO_ZONE + 2)	/* æœ‹å‹åå–® */
+#define XZ_ALOHA	(XO_ZONE + 3)	/* ä¸Šç«™é€šçŸ¥åå–® */ 
+#define	XZ_VOTE		(XO_ZONE + 4)	/* æŠ•ç¥¨ */
+#define XZ_BMW		(XO_ZONE + 5)	/* æ°´çƒ */
+#define	XZ_MF		(XO_ZONE + 6)	/* æˆ‘çš„æœ€æ„› */
+#define XZ_COSIGN	(XO_ZONE + 7)	/* é€£ç½² */
+#define	XZ_SONG		(XO_ZONE + 8)	/* é»æ­Œ */
+#define XZ_NEWS		(XO_ZONE + 9)	/* æ–°èé–±è®€æ¨¡å¼ */
 
-/* ¥H¤Uªº¦³ thread ¥DÃD¦¡¾\Åªªº¥\¯à */
-/* ¥H¤Uªº¦³ tag ¥\¯à */
+/* ä»¥ä¸‹çš„æœ‰ thread ä¸»é¡Œå¼é–±è®€çš„åŠŸèƒ½ */
+/* ä»¥ä¸‹çš„æœ‰ tag åŠŸèƒ½ */
 
-#define XZ_XPOST        (XO_ZONE + 10)	/* ·j´M¤å³¹¼Ò¦¡ */
-#define	XZ_MBOX		(XO_ZONE + 11)	/* «H½c */
-#define	XZ_POST		(XO_ZONE + 12)	/* ¬İªO */
-#define XZ_GEM		(XO_ZONE + 13)	/* ºëµØ°Ï */
+#define XZ_XPOST        (XO_ZONE + 10)	/* æœå°‹æ–‡ç« æ¨¡å¼ */
+#define	XZ_MBOX		(XO_ZONE + 11)	/* ä¿¡ç®± */
+#define	XZ_POST		(XO_ZONE + 12)	/* çœ‹æ¿ */
+#define XZ_GEM		(XO_ZONE + 13)	/* ç²¾è¯å€ */
 
 #endif				/* _MODES_H_ */

@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/showUSR.c       ( NTHU CS MapleBBS Ver 3.00 )    */
 /*-------------------------------------------------------*/
-/* target : ¨q¥X FN_SCHEMA                               */
+/* target : ç§€å‡º FN_SCHEMA                               */
 /* create :   /  /                                       */
 /* update : 02/11/03                                     */
 /*-------------------------------------------------------*/
@@ -37,14 +37,14 @@ main()
   fd = st.st_size / sizeof(SCHEMA);
   for (n = 0; n < fd; n++)
   {
-    /* userno: ¦b .USR ¤¤¬O²Ä´X­Ó slot */
-    /* uptime: µù¥Uªº®É¶¡ (­Y ID ¬OªÅ¥Õ«h¬O³Q reaper ±¼ªº®É¶¡) */
-    /* userid: ID (­Y¬OªÅ¥Õªí¥Ü¦¹¤H³Q reaper ¤F) */
+    /* userno: åœ¨ .USR ä¸­æ˜¯ç¬¬å¹¾å€‹ slot */
+    /* uptime: è¨»å†Šçš„æ™‚é–“ (è‹¥ ID æ˜¯ç©ºç™½å‰‡æ˜¯è¢« reaper æŽ‰çš„æ™‚é–“) */
+    /* userid: ID (è‹¥æ˜¯ç©ºç™½è¡¨ç¤ºæ­¤äººè¢« reaper äº†) */
 
     printf("userno:%d  uptime:%s  userid:%-12.12s\n",
       n + 1, Btime(&usr[n].uptime), usr[n].userid);
 
-    if (n % 23 == 22)	/* ¨C 23 µ§«ö¥ô·NÁäÄ~Äò */
+    if (n % 23 == 22)	/* æ¯ 23 ç­†æŒ‰ä»»æ„éµç¹¼çºŒ */
     {
       printf("-== Press ENTER to continue and 'q + ENTER' to quit ==-\n");
       if (getchar() == 'q')

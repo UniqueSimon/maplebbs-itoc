@@ -1,37 +1,37 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xX     �xmbox_forward�x��F�H�� (������)                               �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │X     │mbox_forward│轉達信件 (給網友)                               │
+  └───┴──────┴────────────────────────┘
 
-    �b�ݪO/�H�c/��ذϤ��A�N��в���Y��G
+    在看板/信箱/精華區中，將游標移到某欄：
 
-  �� x �i�H����ӽg�ܬݪO (cross post)             [��ذϤ��L���\��]
-  �� X �i�H��F�ӽg������ (bbs forward)            [��ذϤ��L���\��]
-  �� F �i�H��H�ӽg�쯸�~ (internet forward)       [��ذϤ������O�ؿ�]
-
-
-  [1;31m�m����ܬݪO�n[m�i�t�X���Ҩϥ�
-
-  �ЬD��A�����ݪO�A��������W�L�T�O  �� �п�J�n����ܭ��@�ӬݪO
-  (1)������ (2)����峹�H           �� ���@�̩άO�����A�~���ܭ�����
-  ���D�G                              �� ����᪺���D�A�Y�O tag ����h����
-  (S)�s�� (L)���� (X) �K�� (Q)�����H  �� �@��s�ɷ|��H�A����/�K�ʫh����H
-                                         �K�ʷ|������᪺�峹�[�K�_��
+  按 x 可以轉錄該篇至看板 (cross post)             [精華區內無此功能]
+  按 X 可以轉達該篇給網友 (bbs forward)            [精華區內無此功能]
+  按 F 可以轉寄該篇到站外 (internet forward)       [精華區內限不是目錄]
 
 
-  [1;31m�m��F�����͡n[m���i�t�X���Ҩϥ�
+  [1;31m《轉錄至看板》[m可配合標籤使用
 
-  ��F�H�󵹡G                        �� �п�J�n��F�����@�Ӣע�
+  請挑選適當的看板，切勿轉錄超過三板  → 請輸入要轉錄至哪一個看板
+  (1)原文轉載 (2)轉錄文章？           → 原文作者或是站長，才能選擇原文轉載
+  標題：                              → 轉錄後的標題，若是 tag 轉錄則不問
+  (S)存檔 (L)站內 (X) 密封 (Q)取消？  → 一般存檔會轉信，站內/密封則不轉信
+                                         密封會把轉錄後的文章加密起來
 
-  ��F�峹/�H��ɡA�٥i�H���s�s��@���C
+
+  [1;31m《轉達給網友》[m不可配合標籤使用
+
+  轉達信件給：                        → 請輸入要轉達給哪一個ＩＤ
+
+  轉達文章/信件時，還可以重新編輯一次。
 
 
-  [1;31m�m��H�쯸�~�n[m�i�t�X���Ҩϥ�
+  [1;31m《轉寄到站外》[m可配合標籤使用
 
-  �ت��a�G                            �� �п�J�n��H����@�� Internet �H�c
+  目的地：                            → 請輸入要轉寄到哪一個 Internet 信箱
 
-  �ت��a�Y�u��J�עҡA�Ӥ��O���~�a�}���ܡA�N����������F�H��C
-  �ت��a�Y��J�ۤv���עҡA�N������ﶰ�x�s��ۤv���H�c�C
+  目的地若只輸入ＩＤ，而不是站外地址的話，將視為站內轉達信件。
+  目的地若輸入自己的ＩＤ，將視為精選集儲存於自己的信箱。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

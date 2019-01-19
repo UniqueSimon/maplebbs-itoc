@@ -1,7 +1,7 @@
 /* ----------------------------------------------------- */
 /* pip_struct.h     ( NTHU CS MapleBBS Ver 3.10 )        */
 /* ----------------------------------------------------- */
-/* target : ¤pÂû data structure                          */
+/* target : å°é›ž data structure                          */
 /* create :   /  /                                       */
 /* update : 01/08/14                                     */
 /* author : dsyan.bbs@@forever.twbbs.org                 */  
@@ -14,67 +14,67 @@
 
 
 /* ------------------------------------------------------- */
-/* ¤pÂû°Ñ¼Æ³]©w                   			   */
+/* å°é›žåƒæ•¸è¨­å®š                   			   */
 /* ------------------------------------------------------- */
 
 
 struct CHICKEN
 {
-  /* ---©m¦W¤Î¥Í¤é--- */
-  char name[IDLEN + 1];		/* ©m    ¦W */
-  char birth[9];		/* ¥Í    ¤é */
+  /* ---å§“ååŠç”Ÿæ—¥--- */
+  char name[IDLEN + 1];		/* å§“    å */
+  char birth[9];		/* ç”Ÿ    æ—¥ */
 
-  /* ---¤pÂûªº®É¶¡--- */        
-  time_t bbtime;		/* ª±¤pÂûªºÁ`®É¶¡(¬í) */
-  				/* itoc.010804: ¥Ø«eªº³]©w¬O 30 ¤À(§Y30*60¬í) ¬°¤@·³ */
+  /* ---å°é›žçš„æ™‚é–“--- */        
+  time_t bbtime;		/* çŽ©å°é›žçš„ç¸½æ™‚é–“(ç§’) */
+  				/* itoc.010804: ç›®å‰çš„è¨­å®šæ˜¯ 30 åˆ†(å³30*60ç§’) ç‚ºä¸€æ­² */
 
-  /* ¥H¤U¥þ¬O integer */
-  /* ¨C¤@ºØÃþ«¬³£«O¯d¦Ü¤QÄæ¥H·Ç³ÆÂX¥R */
-  /* ¨S¦³µù¸Ñªº³o¨Ç³£¬O«O¯d¡A¨S¦³¨Ï¥ÎªºÄæ¦ì */
+  /* ä»¥ä¸‹å…¨æ˜¯ integer */
+  /* æ¯ä¸€ç¨®é¡žåž‹éƒ½ä¿ç•™è‡³åæ¬„ä»¥æº–å‚™æ“´å…… */
+  /* æ²’æœ‰è¨»è§£çš„é€™äº›éƒ½æ˜¯ä¿ç•™ï¼Œæ²’æœ‰ä½¿ç”¨çš„æ¬„ä½ */
 
-  /* ---°ò¥»¸ê®Æ--- */
-  int year;			/* ¥Í¤é  ¦~ */
-  int month;			/* ¥Í¤é  ¤ë */
-  int day;			/* ¥Í¤é  ¤é */
-  int sex;			/* ©Ê    §O 1:¡ñ 2:¡ð  */
-  int death;			/* ª¬    ºA 1:¦º¤` 2:©ß±ó 3:µ²§ô */
-  int liveagain;		/* ´_¬¡¦¸¼Æ */
-  int wantend;			/* 20·³µ²§½ 1:¤£­n¥B¥¼±B 2:¤£­n¥B¤w±B  3:¤£­n¥B·í²Ä¤TªÌ 4:­n¥B¥¼±B  5:­n¥B¤w±B 6:­n¥B·í²Ä¤TªÌ */
-  int lover;			/* ·R¤H     0:¨S¦³ 1:Å]¤ý 2:Às±Ú 3:A 4:B 5:C 6:D 7:E */
-  int seeroyalJ;		/* ¬O§_¥i¥H¹J¤W¤ý¤l/¤½¥D  1:¥i¥H(¤ý¤l¤w¸g¦^°ê¤F) 0:¤£¯à(¤ý¤lÁÙ¦bÃäÃ¦) */
-  int quest;			/* ¥ô    °È 0:µL¥ô°È !=0:¥ô°È½s¸¹ */
+  /* ---åŸºæœ¬è³‡æ–™--- */
+  int year;			/* ç”Ÿæ—¥  å¹´ */
+  int month;			/* ç”Ÿæ—¥  æœˆ */
+  int day;			/* ç”Ÿæ—¥  æ—¥ */
+  int sex;			/* æ€§    åˆ¥ 1:â™‚ 2:â™€  */
+  int death;			/* ç‹€    æ…‹ 1:æ­»äº¡ 2:æ‹‹æ£„ 3:çµæŸ */
+  int liveagain;		/* å¾©æ´»æ¬¡æ•¸ */
+  int wantend;			/* 20æ­²çµå±€ 1:ä¸è¦ä¸”æœªå©š 2:ä¸è¦ä¸”å·²å©š  3:ä¸è¦ä¸”ç•¶ç¬¬ä¸‰è€… 4:è¦ä¸”æœªå©š  5:è¦ä¸”å·²å©š 6:è¦ä¸”ç•¶ç¬¬ä¸‰è€… */
+  int lover;			/* æ„›äºº     0:æ²’æœ‰ 1:é­”çŽ‹ 2:é¾æ— 3:A 4:B 5:C 6:D 7:E */
+  int seeroyalJ;		/* æ˜¯å¦å¯ä»¥é‡ä¸ŠçŽ‹å­/å…¬ä¸»  1:å¯ä»¥(çŽ‹å­å·²ç¶“å›žåœ‹äº†) 0:ä¸èƒ½(çŽ‹å­é‚„åœ¨é‚Šç–†) */
+  int quest;			/* ä»»    å‹™ 0:ç„¡ä»»å‹™ !=0:ä»»å‹™ç·¨è™Ÿ */
 
-  /* ---ª¬ºA«ü¼Æ--- */
-  /* itoc.010730: ³o¨Ç«ü¼Æ¦b¤u§@/¾Ç²ß/¹Cª±¤¤§ïÅÜ */
-  int relation;			/* ¿Ë¤lÃö«Y (¤H©MÃdª«ªº¤¬°ÊÃö«Y) */
-  int happy;			/* §Ö ¼Ö «× */
-  int satisfy;			/* º¡ ·N «× */
-  int fallinlove;		/* ÅÊ·R«ü¼Æ */
-  int belief;			/* «H    ¥õ */
-  int sin;			/* ¸o    Ä^ */
-  int affect;			/* ·P    ¨ü */
+  /* ---ç‹€æ…‹æŒ‡æ•¸--- */
+  /* itoc.010730: é€™äº›æŒ‡æ•¸åœ¨å·¥ä½œ/å­¸ç¿’/éŠçŽ©ä¸­æ”¹è®Š */
+  int relation;			/* è¦ªå­é—œä¿‚ (äººå’Œå¯µç‰©çš„äº’å‹•é—œä¿‚) */
+  int happy;			/* å¿« æ¨‚ åº¦ */
+  int satisfy;			/* æ»¿ æ„ åº¦ */
+  int fallinlove;		/* æˆ€æ„›æŒ‡æ•¸ */
+  int belief;			/* ä¿¡    ä»° */
+  int sin;			/* ç½ª    å­½ */
+  int affect;			/* æ„Ÿ    å— */
   int state7;
   int state8;
   int state9;
   
-  /* ---°·±d«ü¼Æ--- */
-  /* itoc.010730: ³o¨Ç«ü¼Æ¦b¤u§@/¾Ç²ß/¹Cª±¤¤§ïÅÜ */
-  int weight;			/* Åé    ­« */
-  int tired;			/* ¯h ³Ò «× */
-  int sick;			/* ¯f    ®ð */
-  int shit;			/* ²M ¼ä «× */
+  /* ---å¥åº·æŒ‡æ•¸--- */
+  /* itoc.010730: é€™äº›æŒ‡æ•¸åœ¨å·¥ä½œ/å­¸ç¿’/éŠçŽ©ä¸­æ”¹è®Š */
+  int weight;			/* é«”    é‡ */
+  int tired;			/* ç–² å‹ž åº¦ */
+  int sick;			/* ç—…    æ°£ */
+  int shit;			/* æ¸… æ½” åº¦ */
   int body4;
   int body5;
   int body6;
-  int winn;			/* ²q®±Ä¹ªº¦¸¼Æ */
-  int losee;			/* ²q®±¿éªº¦¸¼Æ */
-  int tiee;			/* ²q®±¥­¤âªº¦¸¼Æ */
+  int winn;			/* çŒœæ‹³è´çš„æ¬¡æ•¸ */
+  int losee;			/* çŒœæ‹³è¼¸çš„æ¬¡æ•¸ */
+  int tiee;			/* çŒœæ‹³å¹³æ‰‹çš„æ¬¡æ•¸ */
 
-  /* ---µû»ù°Ñ¼Æ--- */
-  int social;			/* ªÀ¥æµû»ù */
-  int family;			/* ®a¨Æµû»ù */
-  int hexp;			/* ¾Ô°«µû»ù */
-  int mexp;			/* Å]ªkµû»ù */
+  /* ---è©•åƒ¹åƒæ•¸--- */
+  int social;			/* ç¤¾äº¤è©•åƒ¹ */
+  int family;			/* å®¶äº‹è©•åƒ¹ */
+  int hexp;			/* æˆ°é¬¥è©•åƒ¹ */
+  int mexp;			/* é­”æ³•è©•åƒ¹ */
   int value4;
   int value5;
   int value6;
@@ -82,96 +82,96 @@ struct CHICKEN
   int value8;
   int value9;
 
-  /* ---¯à¤O°Ñ¼Æ--- */
-  /* itoc.010730: ³o¨Ç«ü¼Æ¦b¾Ç²ß¤¤¤j¶q§ïÅÜ¡A¦b¤u§@¤¤·L¶q½Õ¾ã */
-  int toman;			/* «Ý¤H±µª« */
-  int character;		/* ®ð ½è «× */
-  int love;			/* ·R    ¤ß */
-  int wisdom;			/* ´¼    ¤O */
-  int art;			/* ÃÀ³N¯à¤O */
-  int etchics;			/* ¹D    ¼w */
-  int brave;			/* «i    ´± */
-  int homework;			/* ±½¦a¬~¦ç */
-  int charm;			/* ¾y    ¤O */
-  int manners;			/* Â§    »ö */
-  int speech;			/* ½Í    ¦R */
-  int cook;			/* ²i    ¶¹ */
-  int attack;			/* §ð À» ¤O */
-  int resist;			/* ¨¾ ¿m ¤O */
-  int speed;			/* ³t    «× */
-  int hskill;			/* ¾Ô°«§Þ³N */
-  int mskill;			/* Å]ªk§Þ³N */
-  int immune;			/* §ÜÅ]¯à¤O */
+  /* ---èƒ½åŠ›åƒæ•¸--- */
+  /* itoc.010730: é€™äº›æŒ‡æ•¸åœ¨å­¸ç¿’ä¸­å¤§é‡æ”¹è®Šï¼Œåœ¨å·¥ä½œä¸­å¾®é‡èª¿æ•´ */
+  int toman;			/* å¾…äººæŽ¥ç‰© */
+  int character;		/* æ°£ è³ª åº¦ */
+  int love;			/* æ„›    å¿ƒ */
+  int wisdom;			/* æ™º    åŠ› */
+  int art;			/* è—è¡“èƒ½åŠ› */
+  int etchics;			/* é“    å¾· */
+  int brave;			/* å‹‡    æ•¢ */
+  int homework;			/* æŽƒåœ°æ´—è¡£ */
+  int charm;			/* é­…    åŠ› */
+  int manners;			/* ç¦®    å„€ */
+  int speech;			/* è«‡    å */
+  int cook;			/* çƒ¹    é£ª */
+  int attack;			/* æ”» æ“Š åŠ› */
+  int resist;			/* é˜² ç¦¦ åŠ› */
+  int speed;			/* é€Ÿ    åº¦ */
+  int hskill;			/* æˆ°é¬¥æŠ€è¡“ */
+  int mskill;			/* é­”æ³•æŠ€è¡“ */
+  int immune;			/* æŠ—é­”èƒ½åŠ› */
   int learn18;
   int learn19;
 
-  /* ---¾Ô°««ü¼Ð--- (ÀH¤É¯Å¦Ó¼W¥[) */
-  /* itoc.010730: ¬°¤F¼W¥[¾Ô°«ªº¥²­n©Ê¡Amaxhp maxmp maxvp maxsp
-     ³o¨ÇÄÝ©ÊÀ³¸Ó¥u¦b exp ¼W¥[¤É¯Å«á¡A¤~¯à¤j¶q¼W¥[ */
-  /* itoc.010804: ¥Ø«e®e³\¦b¬Y¨Çª¬ªp¤U maxhp ¥H 0~3 ÂIªº³t«×¼W¥[ */
+  /* ---æˆ°é¬¥æŒ‡æ¨™--- (éš¨å‡ç´šè€Œå¢žåŠ ) */
+  /* itoc.010730: ç‚ºäº†å¢žåŠ æˆ°é¬¥çš„å¿…è¦æ€§ï¼Œmaxhp maxmp maxvp maxsp
+     é€™äº›å±¬æ€§æ‡‰è©²åªåœ¨ exp å¢žåŠ å‡ç´šå¾Œï¼Œæ‰èƒ½å¤§é‡å¢žåŠ  */
+  /* itoc.010804: ç›®å‰å®¹è¨±åœ¨æŸäº›ç‹€æ³ä¸‹ maxhp ä»¥ 0~3 é»žçš„é€Ÿåº¦å¢žåŠ  */
 
-  int level;			/* µ¥    ¯Å */
-  int exp;			/* ¸g Åç ­È */
-  int hp;			/* Health Point ¦å */
-  int maxhp;			/* ³Ì¤j¦å */
-  int mp;			/* Mana Point ªk¤O */
-  int maxmp;			/* ³Ì¤jªk¤O */
-  int vp;			/* moVe Point ²¾°Ê¤O */
-  int maxvp;			/* ³Ì¤j²¾°Ê¤O */
-  int sp;			/* Spirit Point ¤º¤O */
-  int maxsp;			/* ³Ì¤j¤º¤O */
+  int level;			/* ç­‰    ç´š */
+  int exp;			/* ç¶“ é©— å€¼ */
+  int hp;			/* Health Point è¡€ */
+  int maxhp;			/* æœ€å¤§è¡€ */
+  int mp;			/* Mana Point æ³•åŠ› */
+  int maxmp;			/* æœ€å¤§æ³•åŠ› */
+  int vp;			/* moVe Point ç§»å‹•åŠ› */
+  int maxvp;			/* æœ€å¤§ç§»å‹•åŠ› */
+  int sp;			/* Spirit Point å…§åŠ› */
+  int maxsp;			/* æœ€å¤§å…§åŠ› */
 
-  /* ---©Ò¾Ç·|§Þ¯à--- */	/* bitwise operation */
-  usint skillA;			/* §Þ¯à: Å@¨­ */
-  usint skillB;			/* §Þ¯à: »´¥\ */
-  usint skillC;			/* §Þ¯à: ¤ßªk */
-  usint skillD;			/* §Þ¯à: ®±ªk */
-  usint skillE;			/* §Þ¯à: ¼Cªk */
-  usint skillF;			/* §Þ¯à: ¤Mªk */
-  usint skillG;			/* §Þ¯à: ·t¾¹¡B¬r */
+  /* ---æ‰€å­¸æœƒæŠ€èƒ½--- */	/* bitwise operation */
+  usint skillA;			/* æŠ€èƒ½: è­·èº« */
+  usint skillB;			/* æŠ€èƒ½: è¼•åŠŸ */
+  usint skillC;			/* æŠ€èƒ½: å¿ƒæ³• */
+  usint skillD;			/* æŠ€èƒ½: æ‹³æ³• */
+  usint skillE;			/* æŠ€èƒ½: åŠæ³• */
+  usint skillF;			/* æŠ€èƒ½: åˆ€æ³• */
+  usint skillG;			/* æŠ€èƒ½: æš—å™¨ã€æ¯’ */
   usint skill7;
   usint skill8;
-  usint skillXYZ;		/* ¯S®í§Þ¯à */
-  usint spellA;			/* ªvÀøªk³N */
-  usint spellB;			/* ¹p¨tªk³N */
-  usint spellC;			/* ¦B¨tªk³N */
-  usint spellD;			/* ª¢¨tªk³N */
-  usint spellE;			/* ¤g¨tªk³N */
-  usint spellF;			/* ­·¨tªk³N */
-  usint spellG;			/* ¨s·¥ªk³N */
+  usint skillXYZ;		/* ç‰¹æ®ŠæŠ€èƒ½ */
+  usint spellA;			/* æ²»ç™‚æ³•è¡“ */
+  usint spellB;			/* é›·ç³»æ³•è¡“ */
+  usint spellC;			/* å†°ç³»æ³•è¡“ */
+  usint spellD;			/* ç‚Žç³»æ³•è¡“ */
+  usint spellE;			/* åœŸç³»æ³•è¡“ */
+  usint spellF;			/* é¢¨ç³»æ³•è¡“ */
+  usint spellG;			/* ç©¶æ¥µæ³•è¡“ */
   usint spell7;
   usint spell8;
   usint spell9;
 
-  /* ---ªZ¾¹ªº°Ñ¼Æ--- */
-  int weaponhead;		/* ÀY³¡ªZ¾¹ */
-  int weaponhand;		/* ¤â³¡ªZ¾¹ */
-  int weaponshield;		/* ¬ÞµPªZ¾¹ */
-  int weaponbody;		/* ¨­ÅéªZ¾¹ */
-  int weaponfoot;		/* ¸}³¡ªZ¾¹ */
+  /* ---æ­¦å™¨çš„åƒæ•¸--- */
+  int weaponhead;		/* é ­éƒ¨æ­¦å™¨ */
+  int weaponhand;		/* æ‰‹éƒ¨æ­¦å™¨ */
+  int weaponshield;		/* ç›¾ç‰Œæ­¦å™¨ */
+  int weaponbody;		/* èº«é«”æ­¦å™¨ */
+  int weaponfoot;		/* è…³éƒ¨æ­¦å™¨ */
   int weapon5;
   int weapon6;
   int weapon7;
   int weapon8;
   int weapon9;
 
-  /* ---¦YªºªF¦è--- */
-  int food;			/* ­¹    ª« */
-  int cookie;			/* ¹s    ­¹ */  
+  /* ---åƒçš„æ±è¥¿--- */
+  int food;			/* é£Ÿ    ç‰© */
+  int cookie;			/* é›¶    é£Ÿ */  
   int eat2;
-  int pill;			/* ¤j ÁÙ ¤¦ : ¸É¦å */
-  int medicine;			/* ÆF    ªÛ : ¸Éªk¤O */
-  int burger;			/* ¤j ¸É ¤Y : ¸É²¾°Ê¤O */
-  int ginseng;			/* ¤d¦~¤Hçx : ¸É¤º¤O */
-  int paste;			/* ¶Â¥ÉÂ_Äò»I : ¦å¥þº¡ */
-  int snowgrass;		/* ¤Ñ¤s³·½¬ : ³q³q¥þº¡ */
+  int pill;			/* å¤§ é‚„ ä¸¹ : è£œè¡€ */
+  int medicine;			/* éˆ    èŠ : è£œæ³•åŠ› */
+  int burger;			/* å¤§ è£œ ä¸¸ : è£œç§»å‹•åŠ› */
+  int ginseng;			/* åƒå¹´äººè”˜ : è£œå…§åŠ› */
+  int paste;			/* é»‘çŽ‰æ–·çºŒè† : è¡€å…¨æ»¿ */
+  int snowgrass;		/* å¤©å±±é›ªè“® : é€šé€šå…¨æ»¿ */
   int eat9;
 
-  /* ---¾Ö¦³ªºªF¦è--- */
-  int money;			/* ª÷    ¿ú */  
-  int book;			/* ®Ñ    ¥» */
-  int toy;			/* ª±    ¨ã */  
-  int playboy;			/* ½Ò¥~Åªª« */
+  /* ---æ“æœ‰çš„æ±è¥¿--- */
+  int money;			/* é‡‘    éŒ¢ */  
+  int book;			/* æ›¸    æœ¬ */
+  int toy;			/* çŽ©    å…· */  
+  int playboy;			/* èª²å¤–è®€ç‰© */
   int thing4;
   int thing5;
   int thing6;
@@ -179,51 +179,51 @@ struct CHICKEN
   int thing8;
   int thing9;  
 
-  /* ---°Ñ¨£¤ý¦Ú-- */
-  int royalA;			/* ©M ¦u½Ã ªº¦n·P */
-  int royalB;			/* ©M ªñ½Ã ªº¦n·P */
-  int royalC;			/* ©M ±N­x ªº¦n·P */
-  int royalD;			/* ©M ¤j¦Ú ªº¦n·P */
-  int royalE;			/* ©M ²½¥q ªº¦n·P */
-  int royalF;			/* ©M Ãd¦m ªº¦n·P */
-  int royalG;			/* ©M ¤ý¦m ªº¦n·P */
-  int royalH;			/* ©M °ê¤ý ªº¦n·P */
-  int royalI;			/* ©M ¤p¤¡ ªº¦n·P */
-  int royalJ;			/* ©M ¤ý¤l/¤½¥D ªº¦n·P */
+  /* ---åƒè¦‹çŽ‹è‡£-- */
+  int royalA;			/* å’Œ å®ˆè¡› çš„å¥½æ„Ÿ */
+  int royalB;			/* å’Œ è¿‘è¡› çš„å¥½æ„Ÿ */
+  int royalC;			/* å’Œ å°‡è» çš„å¥½æ„Ÿ */
+  int royalD;			/* å’Œ å¤§è‡£ çš„å¥½æ„Ÿ */
+  int royalE;			/* å’Œ ç¥­å¸ çš„å¥½æ„Ÿ */
+  int royalF;			/* å’Œ å¯µå¦ƒ çš„å¥½æ„Ÿ */
+  int royalG;			/* å’Œ çŽ‹å¦ƒ çš„å¥½æ„Ÿ */
+  int royalH;			/* å’Œ åœ‹çŽ‹ çš„å¥½æ„Ÿ */
+  int royalI;			/* å’Œ å°ä¸‘ çš„å¥½æ„Ÿ */
+  int royalJ;			/* å’Œ çŽ‹å­/å…¬ä¸» çš„å¥½æ„Ÿ */
 
-  /* -------¤u§@¦¸¼Æ-------- */
-  int workA;			/* ®a¨Æ */
-  int workB;			/* «O©i */
-  int workC;			/* ®È©± */
-  int workD;			/* ¹A³õ */
-  int workE;			/* À\ÆU */
-  int workF;			/* ±Ð°ó */
-  int workG;			/* ¦aÅu */
-  int workH;			/* ¥ï¤ì */
-  int workI;			/* ¬ü¾v */
-  int workJ;			/* Ây¤H */
-  int workK;			/* ¤u¦a */
-  int workL;			/* ¦u¹Ó */
-  int workM;			/* ®a±Ð */
-  int workN;			/* °s®a */
-  int workO;			/* °s©± */
-  int workP;			/* ©]Á`·| */
+  /* -------å·¥ä½œæ¬¡æ•¸-------- */
+  int workA;			/* å®¶äº‹ */
+  int workB;			/* ä¿å§† */
+  int workC;			/* æ—…åº— */
+  int workD;			/* è¾²å ´ */
+  int workE;			/* é¤å»³ */
+  int workF;			/* æ•™å ‚ */
+  int workG;			/* åœ°æ”¤ */
+  int workH;			/* ä¼æœ¨ */
+  int workI;			/* ç¾Žé«® */
+  int workJ;			/* çµäºº */
+  int workK;			/* å·¥åœ° */
+  int workL;			/* å®ˆå¢“ */
+  int workM;			/* å®¶æ•™ */
+  int workN;			/* é…’å®¶ */
+  int workO;			/* é…’åº— */
+  int workP;			/* å¤œç¸½æœƒ */
   int work16;
   int work17;
   int work18;
   int work19;
 
-  /* -------¤W½Ò¦¸¼Æ-------- */
-  int classA;			/* ¦ÛµM¬ì¾Ç */
-  int classB;			/* ­ð¸Ö§ºµü */
-  int classC;			/* ¯«¾Ç±Ð¨| */
-  int classD;			/* ­x¾Ç±Ð¨| */
-  int classE;			/* ¼C¹D§Þ³N */
-  int classF;			/* ®æ°«¾Ô§Þ */
-  int classG;			/* Å]ªk±Ð¨| */
-  int classH;			/* Â§»ö±Ð¨| */
-  int classI;			/* Ã¸µe§Þ¥© */
-  int classJ;			/* »RÁÐ§Þ¥© */
+  /* -------ä¸Šèª²æ¬¡æ•¸-------- */
+  int classA;			/* è‡ªç„¶ç§‘å­¸ */
+  int classB;			/* å”è©©å®‹è©ž */
+  int classC;			/* ç¥žå­¸æ•™è‚² */
+  int classD;			/* è»å­¸æ•™è‚² */
+  int classE;			/* åŠé“æŠ€è¡“ */
+  int classF;			/* æ ¼é¬¥æˆ°æŠ€ */
+  int classG;			/* é­”æ³•æ•™è‚² */
+  int classH;			/* ç¦®å„€æ•™è‚² */
+  int classI;			/* ç¹ªç•«æŠ€å·§ */
+  int classJ;			/* èˆžè¹ˆæŠ€å·§ */
   int class10;
   int class11;
   int class12;
@@ -235,12 +235,12 @@ struct CHICKEN
   int class18;
   int class19;
 
-  /* ---ªZ¾¹ªº¦WºÙ--- */
-  char equiphead[11];		/* ÀY³¡ªZ¾¹¦WºÙ */
-  char equiphand[11];		/* ¤â³¡ªZ¾¹¦WºÙ */
-  char equipshield[11];		/* ¬ÞµPªZ¾¹¦WºÙ */
-  char equipbody[11];		/* ¨­ÅéªZ¾¹¦WºÙ */
-  char equipfoot[11];		/* ¸}³¡ªZ¾¹¦WºÙ */
+  /* ---æ­¦å™¨çš„åç¨±--- */
+  char equiphead[11];		/* é ­éƒ¨æ­¦å™¨åç¨± */
+  char equiphand[11];		/* æ‰‹éƒ¨æ­¦å™¨åç¨± */
+  char equipshield[11];		/* ç›¾ç‰Œæ­¦å™¨åç¨± */
+  char equipbody[11];		/* èº«é«”æ­¦å™¨åç¨± */
+  char equipfoot[11];		/* è…³éƒ¨æ­¦å™¨åç¨± */
   char equip5[11];
   char equip6[11];
   char equip7[11];
@@ -251,32 +251,32 @@ typedef struct CHICKEN CHICKEN;
 
 
 /* ------------------------------------------------------- */
-/* ª««~°Ñ¼Æ³]©w                                            */
+/* ç‰©å“åƒæ•¸è¨­å®š                                            */
 /* ------------------------------------------------------- */
 
 struct itemset
 {
-  int num;			/* ½s¸¹ */
-  char *name;			/* ¦W¦r */
-  char *msgbuy;			/* ¥\¥Î */
-  char *msguse;			/* »¡©ú */
-  int price;			/* »ù®æ */
+  int num;			/* ç·¨è™Ÿ */
+  char *name;			/* åå­— */
+  char *msgbuy;			/* åŠŸç”¨ */
+  char *msguse;			/* èªªæ˜Ž */
+  int price;			/* åƒ¹æ ¼ */
 };
 typedef struct itemset itemset;
 
 
 /* ------------------------------------------------------- */
-/* °Ñ¨£¤ý¦Ú°Ñ¼Æ³]©w                                        */
+/* åƒè¦‹çŽ‹è‡£åƒæ•¸è¨­å®š                                        */
 /* ------------------------------------------------------- */
 
 struct royalset
 {
-  char *num;			/* ¥N½X */
-  char *name;			/* ¤ý¦Úªº¦W¦r */
-  int needmode;			/* »Ý­nªºmode *//* 0:¤£»Ý­n 1:Â§»ö 2:½Í¦R */
-  int needvalue;		/* »Ý­nªºvalue */
-  int addtoman;			/* ³Ì¤jªº¼W¥[¶q */
-  int maxtoman;			/* ®w¦s¶q */
+  char *num;			/* ä»£ç¢¼ */
+  char *name;			/* çŽ‹è‡£çš„åå­— */
+  int needmode;			/* éœ€è¦çš„mode *//* 0:ä¸éœ€è¦ 1:ç¦®å„€ 2:è«‡å */
+  int needvalue;		/* éœ€è¦çš„value */
+  int addtoman;			/* æœ€å¤§çš„å¢žåŠ é‡ */
+  int maxtoman;			/* åº«å­˜é‡ */
   char *words1;
   char *words2;
 };
@@ -284,44 +284,44 @@ typedef struct royalset royalset;
 
 
 /* ------------------------------------------------------- */
-/* §Þ¯à°Ñ¼Æ³]©w                                            */
+/* æŠ€èƒ½åƒæ•¸è¨­å®š                                            */
 /* ------------------------------------------------------- */
 
 
-#if 0		/* itoc.010729.»¡©ú */
+#if 0		/* itoc.010729.èªªæ˜Ž */
 
-  smode ­n¹ïÀ³ struce CHICKEN ªºªº skill/spell
-  smode = +1 ¬° skillA¡Asmode = +2 ¬° skillB
-  smode = -1 ¬° spellA¡Asmode = -2 ¬° spellB
+  smode è¦å°æ‡‰ struce CHICKEN çš„çš„ skill/spell
+  smode = +1 ç‚º skillAï¼Œsmode = +2 ç‚º skillB
+  smode = -1 ç‚º spellAï¼Œsmode = -2 ç‚º spellB
 
-  sno ¬O¦¹§Þ¯àªº½s¸¹¡A¨Ò¦p 0x01 ¬O¼Cªk¥Ò¡A0x02 ¬O¼Cªk¤A¡A0x04 ¬O¼Cªk¤þ (ª`·N¬O bit operation)
-  sbasic «h¬O¦¹§Þ¯àªº°ò¥»§Þ¯à¡A­Y­n¥ý¾Ç²ß¼Cªk¥Ò¤þ¥H«á¤~¯à¾Ç²ß¼Cªk¤B¡A¨º»ò¼Cªk¤Bªº sbasic = 0x01 | 0x04 = 0x05
+  sno æ˜¯æ­¤æŠ€èƒ½çš„ç·¨è™Ÿï¼Œä¾‹å¦‚ 0x01 æ˜¯åŠæ³•ç”²ï¼Œ0x02 æ˜¯åŠæ³•ä¹™ï¼Œ0x04 æ˜¯åŠæ³•ä¸™ (æ³¨æ„æ˜¯ bit operation)
+  sbasic å‰‡æ˜¯æ­¤æŠ€èƒ½çš„åŸºæœ¬æŠ€èƒ½ï¼Œè‹¥è¦å…ˆå­¸ç¿’åŠæ³•ç”²ä¸™ä»¥å¾Œæ‰èƒ½å­¸ç¿’åŠæ³•ä¸ï¼Œé‚£éº¼åŠæ³•ä¸çš„ sbasic = 0x01 | 0x04 = 0x05
 
-  needhp/nedmp/addtired ­Y¬O¥¿ªº¡A´N¬O¦©¦å/¦©ªk¤O/¥[¯h³Ò
+  needhp/nedmp/addtired è‹¥æ˜¯æ­£çš„ï¼Œå°±æ˜¯æ‰£è¡€/æ‰£æ³•åŠ›/åŠ ç–²å‹ž
 
 #endif
 
 
 struct skillset
 {
-  int smode;			/* skill mode  0:¯S®í  >0:ªZ¥\  <0:Å]ªk */
+  int smode;			/* skill mode  0:ç‰¹æ®Š  >0:æ­¦åŠŸ  <0:é­”æ³• */
   usint sno;			/* skill number */
   usint sbasic;			/* basic skill */
-  char name[13];		/* §Þ¯àªº¦W¦r¡A­­¨î¤»­Ó¤¤¤å¦r */
-  int needhp;			/* ¥Í©R¤Oªº§ïÅÜ */
-  int needmp;			/* ªk¤Oªº§ïÅÜ */
-  int needvp;			/* ²¾°Ê¤Oªº§ïÅÜ */
-  int needsp;			/* ¤º¤Oªº§ïÅÜ */
-  int addtired;			/* ¯h³Ò­Èªº§ïÅÜ */
-  int effect;			/* ®ÄªG/±j®z */
-  int pic;			/* ¹ÏÀÉ */
-  char msg[41];			/* ¨Ï¥Î§Þ¯àªº»¡©ú¡A­­¨î20­Ó¤¤¤å¦r */  
+  char name[13];		/* æŠ€èƒ½çš„åå­—ï¼Œé™åˆ¶å…­å€‹ä¸­æ–‡å­— */
+  int needhp;			/* ç”Ÿå‘½åŠ›çš„æ”¹è®Š */
+  int needmp;			/* æ³•åŠ›çš„æ”¹è®Š */
+  int needvp;			/* ç§»å‹•åŠ›çš„æ”¹è®Š */
+  int needsp;			/* å…§åŠ›çš„æ”¹è®Š */
+  int addtired;			/* ç–²å‹žå€¼çš„æ”¹è®Š */
+  int effect;			/* æ•ˆæžœ/å¼·å¼± */
+  int pic;			/* åœ–æª” */
+  char msg[41];			/* ä½¿ç”¨æŠ€èƒ½çš„èªªæ˜Žï¼Œé™åˆ¶20å€‹ä¸­æ–‡å­— */  
 };
 typedef struct skillset skillset;
 
 
 /* ------------------------------------------------------- */
-/* ¿ï³æªº³]©w                                              */
+/* é¸å–®çš„è¨­å®š                                              */
 /* ------------------------------------------------------- */
 
 struct pipcommands
@@ -333,90 +333,90 @@ typedef struct pipcommands pipcommands;
 
 
 /* ------------------------------------------------------- */
-/* ©Çª«°Ñ¼Æ³]©w                                            */
+/* æ€ªç‰©åƒæ•¸è¨­å®š                                            */
 /* ------------------------------------------------------- */
 
 struct playrule
 {
-  /* itoc.010731: ©Çª«¥u¦³ hp ³oºØ¦å¡A¤£»Ý­n mp/vp/sp/tired¡A
-    ¥¦ªº§Þ¯à§ðÀ»µL­­¡A¦ý¬O©Çª«ªº§ðÀ»¼Ò¦¡¬O¥Ñ¶Ã¼Æ¨M©w¡A¦p¦¹¥iÂ²³æ¤Æ */
+  /* itoc.010731: æ€ªç‰©åªæœ‰ hp é€™ç¨®è¡€ï¼Œä¸éœ€è¦ mp/vp/sp/tiredï¼Œ
+    å®ƒçš„æŠ€èƒ½æ”»æ“Šç„¡é™ï¼Œä½†æ˜¯æ€ªç‰©çš„æ”»æ“Šæ¨¡å¼æ˜¯ç”±äº‚æ•¸æ±ºå®šï¼Œå¦‚æ­¤å¯ç°¡å–®åŒ– */
 
-  /* itoc.010731: µ¥¯Å¬° n ¯Åªº©Çª«¡A¨ä´Á±æ
-     maxhp = 0.75*(n^2)   (©Mª±®a¤@¼Ë)
+  /* itoc.010731: ç­‰ç´šç‚º n ç´šçš„æ€ªç‰©ï¼Œå…¶æœŸæœ›
+     maxhp = 0.75*(n^2)   (å’ŒçŽ©å®¶ä¸€æ¨£)
      attack/spirit/magic/armor/dodge = 10*n
      money = 10*n
-     exp = 5*n (­ì«h¤W¥´20°¦©Çª«¤É¤@¯Å) */
+     exp = 5*n (åŽŸå‰‡ä¸Šæ‰“20éš»æ€ªç‰©å‡ä¸€ç´š) */
                
-  char name[13];		/* ¦W¦r¡A­­¨î¤»­Ó¤¤¤å¦r */
-  int attribute;		/* ·R¥Îªº§ðÀ»§Þ¯à  0:µL  >0:ªZ¥\  <0:Å]ªk */
-  int hp;			/* ¦å */
-  int maxhp;			/* ³Ì¤j¦å */
+  char name[13];		/* åå­—ï¼Œé™åˆ¶å…­å€‹ä¸­æ–‡å­— */
+  int attribute;		/* æ„›ç”¨çš„æ”»æ“ŠæŠ€èƒ½  0:ç„¡  >0:æ­¦åŠŸ  <0:é­”æ³• */
+  int hp;			/* è¡€ */
+  int maxhp;			/* æœ€å¤§è¡€ */
 
-  /* ¤À§O»P©Çª« ª«²z/ªZ¥\/Å]ªk §ðÀ»¤pÂû¥¿¬ÛÃö */
-  int attack;			/* ª«²z§ðÀ»¯à¤O */
-  int spirit;			/* ¤º¤O«ü¼Æ¡A§Þ¯à§ðÀ»¯à¤O */
-  int magic;			/* Å]ªk«ü¼Æ¡Aªk³N§ðÀ»¯à¤O */
+  /* åˆ†åˆ¥èˆ‡æ€ªç‰© ç‰©ç†/æ­¦åŠŸ/é­”æ³• æ”»æ“Šå°é›žæ­£ç›¸é—œ */
+  int attack;			/* ç‰©ç†æ”»æ“Šèƒ½åŠ› */
+  int spirit;			/* å…§åŠ›æŒ‡æ•¸ï¼ŒæŠ€èƒ½æ”»æ“Šèƒ½åŠ› */
+  int magic;			/* é­”æ³•æŒ‡æ•¸ï¼Œæ³•è¡“æ”»æ“Šèƒ½åŠ› */
 
-  /* ¤À§O»P¤pÂû¥´©Çª«ªº ¶Ë®`/©R¤¤²v ­t¬ÛÃö */
-  int armor;			/* ¨¾Å@«ü¼Æ¡A©Ó¨ü§ðÀ»ªº¯à¤O */
-  int dodge;			/* °{Á×«ü¼Æ¡A°{Á×§ðÀ»ªº¯à¤O */
+  /* åˆ†åˆ¥èˆ‡å°é›žæ‰“æ€ªç‰©çš„ å‚·å®³/å‘½ä¸­çŽ‡ è² ç›¸é—œ */
+  int armor;			/* é˜²è­·æŒ‡æ•¸ï¼Œæ‰¿å—æ”»æ“Šçš„èƒ½åŠ› */
+  int dodge;			/* é–ƒé¿æŒ‡æ•¸ï¼Œé–ƒé¿æ”»æ“Šçš„èƒ½åŠ› */
 
-  /* ¥´¦º©Çª«ªº¼úÀy */
-  int money;			/* ¥´¦º©Çª«±o¨ìªº°]Ä_ */
-  int exp;			/* ¥´¦º©Çª«±o¨ìªº¸gÅç­È */
+  /* æ‰“æ­»æ€ªç‰©çš„çŽå‹µ */
+  int money;			/* æ‰“æ­»æ€ªç‰©å¾—åˆ°çš„è²¡å¯¶ */
+  int exp;			/* æ‰“æ­»æ€ªç‰©å¾—åˆ°çš„ç¶“é©—å€¼ */
 
-  int pic;			/* ¹ÏÀÉ */
+  int pic;			/* åœ–æª” */
 };
 typedef struct playrule playrule;
 
 
 /* ------------------------------------------------------- */
-/* ªZ¾¹°Ñ¼Æ³]©w                                            */
+/* æ­¦å™¨åƒæ•¸è¨­å®š                                            */
 /* ------------------------------------------------------- */
 
 struct weapon
 {
-  char name[11];		/* ¦WºÙ¡A­­¨î¤­­Ó¤¤¤å¦r */
-  int quality;			/* «~½è */
-  int cost;			/* »ù®æ */
+  char name[11];		/* åç¨±ï¼Œé™åˆ¶äº”å€‹ä¸­æ–‡å­— */
+  int quality;			/* å“è³ª */
+  int cost;			/* åƒ¹æ ¼ */
 };
 typedef struct weapon weapon;
 
 
 /* ------------------------------------------------------- */
-/* PK ¹ï¾Ô°Ñ¼Æ³]©w                                         */
+/* PK å°æˆ°åƒæ•¸è¨­å®š                                         */
 /* ------------------------------------------------------- */
 
 
-#define	MAX_PIPPK_USER	10	/* ³Ì¦h¦P®É¦³ 10 ¤H¦b PK ³õ¤¤ */
+#define	MAX_PIPPK_USER	10	/* æœ€å¤šåŒæ™‚æœ‰ 10 äººåœ¨ PK å ´ä¸­ */
 
 struct PTMP
 {
-  char inuse;			/* 0:¥¼¨Ï¥Î 1:»W¶Õ«Ýµo 2:¤U¬D¾Ô®Ñ -1:¾Ô°«¤¤ */
-  char done;			/* 0:¥¼¦æ°Ê 1:¤w¦æ°Ê */ 
-  char name[IDLEN + 1];		/* ©m¦W */
-  char userid[IDLEN + 1];	/* ¦Û¤vªº ID */
-  char mateid[IDLEN + 1];	/* ¹ï¤âªº ID */
+  char inuse;			/* 0:æœªä½¿ç”¨ 1:è“„å‹¢å¾…ç™¼ 2:ä¸‹æŒ‘æˆ°æ›¸ -1:æˆ°é¬¥ä¸­ */
+  char done;			/* 0:æœªè¡Œå‹• 1:å·²è¡Œå‹• */ 
+  char name[IDLEN + 1];		/* å§“å */
+  char userid[IDLEN + 1];	/* è‡ªå·±çš„ ID */
+  char mateid[IDLEN + 1];	/* å°æ‰‹çš„ ID */
 
-  int sex;			/* ©Ê§O */
-  int level;			/* µ¥¯Å */
+  int sex;			/* æ€§åˆ¥ */
+  int level;			/* ç­‰ç´š */
 
-  int hp;			/* Health Point ¦å */
-  int maxhp;			/* ³Ì¤j¦å */
-  int mp;			/* Mana Point ªk¤O */
-  int maxmp;			/* ³Ì¤jªk¤O */
-  int vp;			/* moVe Point ²¾°Ê¤O */
-  int maxvp;			/* ³Ì¤j²¾°Ê¤O */
-  int sp;			/* Spirit Point ¤º¤O */
-  int maxsp;			/* ³Ì¤j¤º¤O */
+  int hp;			/* Health Point è¡€ */
+  int maxhp;			/* æœ€å¤§è¡€ */
+  int mp;			/* Mana Point æ³•åŠ› */
+  int maxmp;			/* æœ€å¤§æ³•åŠ› */
+  int vp;			/* moVe Point ç§»å‹•åŠ› */
+  int maxvp;			/* æœ€å¤§ç§»å‹•åŠ› */
+  int sp;			/* Spirit Point å…§åŠ› */
+  int maxsp;			/* æœ€å¤§å…§åŠ› */
 
-  int combat;			/* ª«²z¨­¬q: ¨M©w¡u¦×·i¡B¨¾¿m¡vªº±j«× */
-  int magic;			/* Å]ªk³y¸Ú: ¨M©w¡uªk³N-¦U¨t¡vªº±j«× */
-  int speed;			/* ±Ó±¶§Þ¥©: ¨M©w¡u§Þ¯à-Å@¨­¡B§Þ¯à-»´¥\¡B§Þ¯à-¼Cªk¡vªº±j«× */
-  int spirit;			/* ¤º¤O±j«×: ¨M©w¡u§Þ¯à-¤ßªk¡B§Þ¯à-®±ªk¡B§Þ¯à-¤Mªk¡vªº±j«× */
-  int charm;			/* °Ê·P¾y¤O: ¨M©w¡u¾y´b¡B¥l³ê¡vªº±j«× */
-  int oral;			/* ¤f­YÄaªe: ¨M©w¡u»¡ªA¡Bº´°Ê¡vªº±j«× */
-  int cook;			/* ¬ü¨ý²i½Õ: ¨M©w¡u§Þ¯à-·t¾¹¡Bªk³N-ªvÀø¡v */
+  int combat;			/* ç‰©ç†èº«æ®µ: æ±ºå®šã€Œè‚‰æã€é˜²ç¦¦ã€çš„å¼·åº¦ */
+  int magic;			/* é­”æ³•é€ è©£: æ±ºå®šã€Œæ³•è¡“-å„ç³»ã€çš„å¼·åº¦ */
+  int speed;			/* æ•æ·æŠ€å·§: æ±ºå®šã€ŒæŠ€èƒ½-è­·èº«ã€æŠ€èƒ½-è¼•åŠŸã€æŠ€èƒ½-åŠæ³•ã€çš„å¼·åº¦ */
+  int spirit;			/* å…§åŠ›å¼·åº¦: æ±ºå®šã€ŒæŠ€èƒ½-å¿ƒæ³•ã€æŠ€èƒ½-æ‹³æ³•ã€æŠ€èƒ½-åˆ€æ³•ã€çš„å¼·åº¦ */
+  int charm;			/* å‹•æ„Ÿé­…åŠ›: æ±ºå®šã€Œé­…æƒ‘ã€å¬å–šã€çš„å¼·åº¦ */
+  int oral;			/* å£è‹¥æ‡¸æ²³: æ±ºå®šã€Œèªªæœã€ç…½å‹•ã€çš„å¼·åº¦ */
+  int cook;			/* ç¾Žå‘³çƒ¹èª¿: æ±ºå®šã€ŒæŠ€èƒ½-æš—å™¨ã€æ³•è¡“-æ²»ç™‚ã€ */
 };
 typedef struct PTMP PTMP;
 

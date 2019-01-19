@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/wintop2brd.c					 */
 /*-------------------------------------------------------*/
-/* target : WindTop .BRD �ഫ				 */
+/* target : WindTop .BRD 轉換				 */
 /* create : 03/06/30					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -59,7 +59,7 @@ main()
     {
       if (*bh.brdname)
       {
-	/* �ഫ .BRD */
+	/* 轉換 .BRD */
 	memset(&brd, 0, sizeof(BRD));
 
 	str_ncpy(brd.brdname, bh.brdname, sizeof(brd.brdname));
@@ -74,7 +74,7 @@ main()
 
 	rec_add(FN_BRD, &brd, sizeof(BRD));
 
-	/* �إ� expire.conf */
+	/* 建立 expire.conf */
 	if (bh.expireday && bh.expiremax && bh.expiremin)
 	{
 	  sprintf(buf, "%s\t%d\t%d\t%d\n", brd.brdname, bh.expireday, bh.expiremax, bh.expiremin);

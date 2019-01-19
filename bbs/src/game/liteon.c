@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* liteon.c	( NTHU CS MapleBBS Ver 3.10 )		 */
 /*-------------------------------------------------------*/
-/* target : ¶}¿O¹CÀ¸					 */
+/* target : é–‹ç‡ˆéŠæˆ²					 */
 /* create : 02/05/23					 */
 /* update :   /  /                                       */
 /* author : Gein.bbs@csdc.twbbs.org			 */
@@ -21,16 +21,16 @@ enum
   TL_XPOS = 2,
   TL_YPOS = 5,
 
-  /* ¥Î bitwise operators */
-  TILE_BLANK = 0,	/* ·t°Ï */
-  TILE_LIGHT = 1	/* «G°Ï */
+  /* ç”¨ bitwise operators */
+  TILE_BLANK = 0,	/* æš—å€ */
+  TILE_LIGHT = 1	/* äº®å€ */
 };
 
 
-static int cx, cy;	/* ¥Ø«e©Ò¦b´å¼Ğ */
-static int level;	/* µ¥¯Å¡A¦P®É¤]¬O board ªºÃäªø */
-static int onturn;	/* ¦³´X­Ó¿O¥´¶}¤F */
-static int candle;	/* ÂI¤F´X¦¸ÄúÀë */
+static int cx, cy;	/* ç›®å‰æ‰€åœ¨æ¸¸æ¨™ */
+static int level;	/* ç­‰ç´šï¼ŒåŒæ™‚ä¹Ÿæ˜¯ board çš„é‚Šé•· */
+static int onturn;	/* æœ‰å¹¾å€‹ç‡ˆæ‰“é–‹äº† */
+static int candle;	/* é»äº†å¹¾æ¬¡è Ÿç‡­ */
 static int tl_board[T_LINES - 4][T_LINES - 4];
 
 
@@ -48,7 +48,7 @@ tl_setb()			/* set board all 0 */
     for (j = 0; j < level; j++)
     {
       tl_board[i][j] = TILE_BLANK;
-      outs("¡³");
+      outs("â—‹");
     }
   }
 
@@ -66,12 +66,12 @@ tl_draw(x, y)			/* set/reset and draw a tile */
   if (tl_board[x][y] == TILE_BLANK)	/* on-turn -> off-turn */
   {
     onturn--;
-    outs("¡³");
+    outs("â—‹");
   }
   else					/* off-turn -> on-turn */
   {
     onturn++;
-    outs("¡´");
+    outs("â—");
   }
 }
 
@@ -98,7 +98,7 @@ tl_turn()			/* turn light and light arround it */
 static void 
 tl_candle()			/* cheat: use candle */
 {
-  /* itoc.µù¸Ñ: ¦]¬°¤j®a³£¯}¤£¤F³o¹CÀ¸¡A©Ò¥H´£¨Ñ¤@¤U§@¹ú¥ÎªºÂIÄúÀë */
+  /* itoc.è¨»è§£: å› ç‚ºå¤§å®¶éƒ½ç ´ä¸äº†é€™éŠæˆ²ï¼Œæ‰€ä»¥æä¾›ä¸€ä¸‹ä½œå¼Šç”¨çš„é»è Ÿç‡­ */
   tl_draw(cx, cy);
   candle++;
 }
@@ -163,7 +163,7 @@ main_liteon()
 {
   char ans[5], buf[80];
 
-  sprintf(buf, "½Ğ¿ï¾Üµ¥¯Å(1¡ã%d)¡A©Î«ö [Q] Â÷¶}¡G", MAX_LEVEL);
+  sprintf(buf, "è«‹é¸æ“‡ç­‰ç´š(1ï½%d)ï¼Œæˆ–æŒ‰ [Q] é›¢é–‹ï¼š", MAX_LEVEL);
   level = vget(b_lines, 0, buf, ans, 3, DOECHO);
   if (level == 'q' || level == 'Q')
   {
@@ -176,38 +176,38 @@ main_liteon()
       return XEASY;
   }
 
-  vs_bar("¶}¿O¹CÀ¸");
+  vs_bar("é–‹ç‡ˆéŠæˆ²");
   move(4, 13);
-  outs("«e±¡´£­n¡G");
+  outs("å‰æƒ…æè¦ï¼š");
   move(5, 15);
-  outs("¦³¤@¤Ñ¡A¤p«Ø¦^¨ì®aµo²{¿O³£³QÃö¤F¡C");
+  outs("æœ‰ä¸€å¤©ï¼Œå°å»ºå›åˆ°å®¶ç™¼ç¾ç‡ˆéƒ½è¢«é—œäº†ã€‚");
   move(6, 15);
-  outs("¥i¬O¥L®aªº¿O¦³¤@­Ó¯S©Ê¡A¨º´N¬O¡G");
+  outs("å¯æ˜¯ä»–å®¶çš„ç‡ˆæœ‰ä¸€å€‹ç‰¹æ€§ï¼Œé‚£å°±æ˜¯ï¼š");
   move(7, 15);
-  outs("·í¤@·ø¿O³Q«ö¤U¶}Ãö¥H«á¡A¥L©P³òªº¿O");
+  outs("ç•¶ä¸€ç›ç‡ˆè¢«æŒ‰ä¸‹é–‹é—œä»¥å¾Œï¼Œä»–å‘¨åœçš„ç‡ˆ");
   move(8, 15);
-  outs("­ì¥»«Gªº¡A´N·|ÅÜ·t¡A­ì¥»·tªº¡A´N·|ÅÜ«G¡C -____-#");
+  outs("åŸæœ¬äº®çš„ï¼Œå°±æœƒè®Šæš—ï¼ŒåŸæœ¬æš—çš„ï¼Œå°±æœƒè®Šäº®ã€‚ -____-#");
   move(9, 15);
-  outs("²{¦b´N½ĞÁo©úªº±zÀ°¥L§â©Ò¦³¿O¥´¶}§a¡I");
+  outs("ç¾åœ¨å°±è«‹è°æ˜çš„æ‚¨å¹«ä»–æŠŠæ‰€æœ‰ç‡ˆæ‰“é–‹å§ï¼");
 
   move(11, 13);
-  outs("«öÁä»¡©ú¡G");
+  outs("æŒ‰éµèªªæ˜ï¼š");
   move(12, 15);
-  outs("¡ô¡õ¡ö¡÷     ²¾°Ê¤è¦V");
+  outs("â†‘â†“â†â†’     ç§»å‹•æ–¹å‘");
   move(13, 15);
-  outs("Enter/Space  ¤Á´«¶}Ãö");
+  outs("Enter/Space  åˆ‡æ›é–‹é—œ");
   move(14, 15);
-  outs("c            ÂI¿UÄúÀë [±K§Ş]");
+  outs("c            é»ç‡ƒè Ÿç‡­ [å¯†æŠ€]");
   move(15, 15);
-  outs("r            ­«·s¨Ó¹L");
+  outs("r            é‡æ–°ä¾†é");
   move(16, 15);
-  outs("q            Â÷¶}¹CÀ¸");
+  outs("q            é›¢é–‹éŠæˆ²");
 
   vmsg(NULL);
 
   if (tl_play())		/* if win */
   {
-    sprintf(buf, "®¥³ß±z¦¨¥\\¤F  (¥Î¤F %d ®ÚÄúÀë)", candle);
+    sprintf(buf, "æ­å–œæ‚¨æˆåŠŸ\äº†  (ç”¨äº† %d æ ¹è Ÿç‡­)", candle);
     vmsg(buf);
   }
 

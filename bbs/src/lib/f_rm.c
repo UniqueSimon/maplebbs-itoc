@@ -24,7 +24,7 @@ rm_dir(fpath)
   {
     fpath = de->d_name;
 
-    /* skip ./ ¤Î ../ */
+    /* skip ./ åŠ ../ */
     if (!*fpath || (*fpath == '.' && (fpath[1] == '\0' || (fpath[1] == '.' && fpath[2] == '\0'))))
       continue;
 

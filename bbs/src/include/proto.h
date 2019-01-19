@@ -38,7 +38,7 @@ char *genpasswd();
 
 
 #define	STR4(x)		((x[0] << 24) + (x[1] << 16) + (x[2] << 8) + x[3])
-                     /* Thor.980913: «OÃÒprecedence */
+                     /* Thor.980913: ä¿è­‰precedence */
 
 #define	IS_ZHC_LO	is_zhc_low
 #define	IS_ZHC_HI(x)	(x & 0x80)

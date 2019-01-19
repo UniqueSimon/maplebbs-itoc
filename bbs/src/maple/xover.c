@@ -10,9 +10,9 @@
 #include "bbs.h"
 
 #ifdef MY_FAVORITE
-#define MSG_ZONE_SWITCH	"§Ö³t¤Á´«¡G(A)ºëµØ (B)¤å³¹ (C)¬İªO (F)³Ì·R (M)«H¥ó (U)¨Ï¥ÎªÌ (W)¤ô²y¡G"
+#define MSG_ZONE_SWITCH	"å¿«é€Ÿåˆ‡æ›ï¼š(A)ç²¾è¯ (B)æ–‡ç«  (C)çœ‹æ¿ (F)æœ€æ„› (M)ä¿¡ä»¶ (U)ä½¿ç”¨è€… (W)æ°´çƒï¼š"
 #else
-#define MSG_ZONE_SWITCH	"§Ö³t¤Á´«¡G(A)ºëµØ (B)¤å³¹ (C)¬İªO (M)«H¥ó (U)¨Ï¥ÎªÌ (W)¤ô²y¡G"
+#define MSG_ZONE_SWITCH	"å¿«é€Ÿåˆ‡æ›ï¼š(A)ç²¾è¯ (B)æ–‡ç«  (C)çœ‹æ¿ (M)ä¿¡ä»¶ (U)ä½¿ç”¨è€… (W)æ°´çƒï¼š"
 #endif
 
 
@@ -57,7 +57,7 @@ xo_get(path)
   xo->nxt = xo_root;
   xo_root = xo;
   xo->xyz = NULL;
-  xo->pos = XO_TAIL;		/* ²Ä¤@¦¸¶i¤J®É¡A±N´å¼Ğ©ñ¦b³Ì«á­± */
+  xo->pos = XO_TAIL;		/* ç¬¬ä¸€æ¬¡é€²å…¥æ™‚ï¼Œå°‡æ¸¸æ¨™æ”¾åœ¨æœ€å¾Œé¢ */
 
   return xo;
 }
@@ -65,14 +65,14 @@ xo_get(path)
 
 #ifdef AUTO_JUMPPOST
 XO *
-xo_get_post(path, brd)		/* itoc.010910: °Ñ¦Ò xover.c xo_get()¡A¬° XoPost ¶q¨­¥´³y */
+xo_get_post(path, brd)		/* itoc.010910: åƒè€ƒ xover.c xo_get()ï¼Œç‚º XoPost é‡èº«æ‰“é€  */
   char *path;
   BRD *brd;
 {
   XO *xo;
   time_t chrono;
   int fd;
-  int pos, locus, mid;	/* locus:¥ª«ü¼Ğ mid:¤¤«ü¼Ğ pos:¥k«ü¼Ğ */
+  int pos, locus, mid;	/* locus:å·¦æŒ‡æ¨™ mid:ä¸­æŒ‡æ¨™ pos:å³æŒ‡æ¨™ */
 
   for (xo = xo_root; xo; xo = xo->nxt)
   {
@@ -85,15 +85,15 @@ xo_get_post(path, brd)		/* itoc.010910: °Ñ¦Ò xover.c xo_get()¡A¬° XoPost ¶q¨­¥´³
   xo_root = xo;
   xo->xyz = NULL;
 
-  /* ©|¥¼§ó·s brd->blast ©Î ³Ì«á¤@½g¤wÅª ©Î ¥u¦³¤@½g¡A«h´å¼Ğª½±µ©ñ³Ì«á */
+  /* å°šæœªæ›´æ–° brd->blast æˆ– æœ€å¾Œä¸€ç¯‡å·²è®€ æˆ– åªæœ‰ä¸€ç¯‡ï¼Œå‰‡æ¸¸æ¨™ç›´æ¥æ”¾æœ€å¾Œ */
   if (brd->btime < 0 || !brh_unread(brd->blast) || 
     (pos = rec_num(path, sizeof(HDR))) <= 1 || (fd = open(path, O_RDONLY)) < 0)
   {
-    xo->pos = XO_TAIL;	/* ´å¼Ğ©ñ¦b³Ì«á­± */
+    xo->pos = XO_TAIL;	/* æ¸¸æ¨™æ”¾åœ¨æœ€å¾Œé¢ */
     return xo;
   }
 
-  /* §ä²Ä¤@½g¥¼Åª binary search */
+  /* æ‰¾ç¬¬ä¸€ç¯‡æœªè®€ binary search */
   pos--;
   locus = 0;
   while (1)
@@ -116,20 +116,20 @@ xo_get_post(path, brd)		/* itoc.010910: °Ñ¦Ò xover.c xo_get()¡A¬° XoPost ¶q¨­¥´³
     }
   }
 
-  /* ¯S¨Ò: ¦pªG¥k«ü¼Ğ°±¯d¦b 1¡A¦³¤GºØ¥i¯à¡A¤@¬O«êÅª¨ì²Ä¤G½g¡A¥t¤@¬°³s²Ä¤@½g³£¨SÅª */
+  /* ç‰¹ä¾‹: å¦‚æœå³æŒ‡æ¨™åœç•™åœ¨ 1ï¼Œæœ‰äºŒç¨®å¯èƒ½ï¼Œä¸€æ˜¯æ°è®€åˆ°ç¬¬äºŒç¯‡ï¼Œå¦ä¸€ç‚ºé€£ç¬¬ä¸€ç¯‡éƒ½æ²’è®€ */
   if (pos == 1)
   {
-    /* ÀË¬d²Ä¤@½g¬O§_¤wÅª */
+    /* æª¢æŸ¥ç¬¬ä¸€ç¯‡æ˜¯å¦å·²è®€ */
     lseek(fd, (off_t) 0, SEEK_SET);
     if (read(fd, &chrono, sizeof(time_t)) == sizeof(time_t))
     {
-      if (brh_unread(chrono))	/* ­Y³s²Ä¤@½g¤]¥¼Åª¡Apos ½Õ¦^¥h²Ä¤@½g */
+      if (brh_unread(chrono))	/* è‹¥é€£ç¬¬ä¸€ç¯‡ä¹Ÿæœªè®€ï¼Œpos èª¿å›å»ç¬¬ä¸€ç¯‡ */
 	pos = 0;
     }
   }
 
   close(fd);
-  xo->pos = pos;	/* ²Ä¤@¦¸¶i¤J®É¡A±N´å¼Ğ©ñ¦b²Ä¤@½g¥¼Åª */
+  xo->pos = pos;	/* ç¬¬ä¸€æ¬¡é€²å…¥æ™‚ï¼Œå°‡æ¸¸æ¨™æ”¾åœ¨ç¬¬ä¸€ç¯‡æœªè®€ */
 
   return xo;
 }
@@ -200,29 +200,29 @@ xo_load(xo, recsiz)
 }
 
 
-int					/* XO_LOAD:§R°£  XO_FOOT:¨ú®ø */
-xo_rangedel(xo, size, fchk, fdel)	/* itoc.031001: °Ï¬q§R°£ */
+int					/* XO_LOAD:åˆªé™¤  XO_FOOT:å–æ¶ˆ */
+xo_rangedel(xo, size, fchk, fdel)	/* itoc.031001: å€æ®µåˆªé™¤ */
   XO *xo;
   int size;
-  int (*fchk) ();			/* ÀË¬d°Ï¬q¤¤¬O§_¦³³Q«OÅ@ªº°O¿ı  0:§R°£ 1:«OÅ@ */
-  void (*fdel) ();			/* °£¤F§R°£°O¿ı¥H¥~¡AÁÙ­n°µ¨Ç¤°»ò¨Æ */
+  int (*fchk) ();			/* æª¢æŸ¥å€æ®µä¸­æ˜¯å¦æœ‰è¢«ä¿è­·çš„è¨˜éŒ„  0:åˆªé™¤ 1:ä¿è­· */
+  void (*fdel) ();			/* é™¤äº†åˆªé™¤è¨˜éŒ„ä»¥å¤–ï¼Œé‚„è¦åšäº›ä»€éº¼äº‹ */
 {
   char ans[8];
   int head, tail;
 
-  vget(b_lines, 0, "[³]©w§R°£½d³ò] °_ÂI¡G", ans, 6, DOECHO);
+  vget(b_lines, 0, "[è¨­å®šåˆªé™¤ç¯„åœ] èµ·é»ï¼š", ans, 6, DOECHO);
   head = atoi(ans);
   if (head <= 0)
   {
-    zmsg("°_ÂI¦³»~");
+    zmsg("èµ·é»æœ‰èª¤");
     return XO_FOOT;
   }
 
-  vget(b_lines, 28, "²×ÂI¡G", ans, 6, DOECHO);
+  vget(b_lines, 28, "çµ‚é»ï¼š", ans, 6, DOECHO);
   tail = atoi(ans);
   if (tail < head)
   {
-    zmsg("²×ÂI¦³»~");
+    zmsg("çµ‚é»æœ‰èª¤");
     return XO_FOOT;
   }
 
@@ -260,13 +260,13 @@ xo_rangedel(xo, size, fchk, fdel)	/* itoc.031001: °Ï¬q§R°£ */
       char *ptr;
       for (ptr = phead; ptr < ptail; ptr += size)
       {
-	if (fchk && fchk(ptr))		/* ³oµ§°O¿ı«OÅ@¤£³Q¬å */
+	if (fchk && fchk(ptr))		/* é€™ç­†è¨˜éŒ„ä¿è­·ä¸è¢«ç  */
 	{
 	  memcpy(phead, ptr, size);
 	  phead += size;
 	  head += size;
 	}
-	else if (fdel)			/* °£¤F§R°£°O¿ı¡AÁÙ­n°µ fdel() */
+	else if (fdel)			/* é™¤äº†åˆªé™¤è¨˜éŒ„ï¼Œé‚„è¦åš fdel() */
 	{
 	  fdel(xo, ptr);
 	}
@@ -289,7 +289,7 @@ xo_rangedel(xo, size, fchk, fdel)	/* itoc.031001: °Ï¬q§R°£ */
 
 
 /* ----------------------------------------------------- */
-/* Tag List ¼ĞÅÒ					 */
+/* Tag List æ¨™ç±¤					 */
 /* ----------------------------------------------------- */
 
 
@@ -331,7 +331,7 @@ Tagger(chrono, recno, op)
 
   if (op == TAG_NIN)
   {
-    if (!cmp && recno)		/* µ´¹ïÄYÂÔ¡G³s recno ¤@°_¤ñ¹ï */
+    if (!cmp && recno)		/* çµ•å°åš´è¬¹ï¼šé€£ recno ä¸€èµ·æ¯”å° */
       cmp = recno - tagp[pos].recno;
     return cmp;
   }
@@ -385,7 +385,7 @@ AskTag(msg)
   char *msg;
 /* ----------------------------------------------------- */
 /* return value :					 */
-/* -1	: ¨ú®ø						 */
+/* -1	: å–æ¶ˆ						 */
 /* 0	: single article				 */
 /* o.w.	: whole tag list				 */
 /* ----------------------------------------------------- */
@@ -395,9 +395,9 @@ AskTag(msg)
 
   num = TagNum;
 
-  if (num)	/* itoc.020130: ¦³ TagNum ¤~°İ */
+  if (num)	/* itoc.020130: æœ‰ TagNum æ‰å• */
   {  
-    sprintf(buf, "¡» %s A)³æ½g¤å³¹ T)¼Ğ°O¤å³¹ Q)Â÷¶}¡H[%c] ", msg, num ? 'T' : 'A');
+    sprintf(buf, "â—† %s A)å–®ç¯‡æ–‡ç«  T)æ¨™è¨˜æ–‡ç«  Q)é›¢é–‹ï¼Ÿ[%c] ", msg, num ? 'T' : 'A');
     switch (vans(buf))
     {
     case 'q':
@@ -461,12 +461,12 @@ xo_tag(xo, op)
 }
 
 
-int					/* XO_LOAD:§R°£  XO_FOOT/XO_NONE:¨ú®ø */
-xo_prune(xo, size, fvfy, fdel)		/* itoc.031003: ¼ĞÅÒ§R°£ */
+int					/* XO_LOAD:åˆªé™¤  XO_FOOT/XO_NONE:å–æ¶ˆ */
+xo_prune(xo, size, fvfy, fdel)		/* itoc.031003: æ¨™ç±¤åˆªé™¤ */
   XO *xo;
   int size;
-  int (*fvfy) ();			/* ÀË¬d°Ï¬q¤¤¬O§_¦³³Q«OÅ@ªº°O¿ı  0:§R°£ 1:«OÅ@ */
-  void (*fdel) ();			/* °£¤F§R°£°O¿ı¥H¥~¡AÁÙ­n°µ¨Ç¤°»ò¨Æ */
+  int (*fvfy) ();			/* æª¢æŸ¥å€æ®µä¸­æ˜¯å¦æœ‰è¢«ä¿è­·çš„è¨˜éŒ„  0:åˆªé™¤ 1:ä¿è­· */
+  void (*fdel) ();			/* é™¤äº†åˆªé™¤è¨˜éŒ„ä»¥å¤–ï¼Œé‚„è¦åšäº›ä»€éº¼äº‹ */
 {
   int fd, total, pos;
   char *data, *phead, *ptail, *ptr;
@@ -476,7 +476,7 @@ xo_prune(xo, size, fvfy, fdel)		/* itoc.031003: ¼ĞÅÒ§R°£ */
   if (!TagNum)
     return XO_NONE;
 
-  sprintf(buf, "½T©w­n§R°£ %d ½g¼ĞÅÒ¶Ü(Y/N)¡H[N] ", TagNum);
+  sprintf(buf, "ç¢ºå®šè¦åˆªé™¤ %d ç¯‡æ¨™ç±¤å—(Y/N)ï¼Ÿ[N] ", TagNum);
   if (vans(buf) != 'y')
     return XO_FOOT;
 
@@ -495,13 +495,13 @@ xo_prune(xo, size, fvfy, fdel)		/* itoc.031003: ¼ĞÅÒ§R°£ */
 
   for (ptr = phead; ptr < ptail; ptr += size)
   {
-    if (fvfy(ptr, pos))			/* ³oµ§°O¿ı«OÅ@¤£³Q¬å */
+    if (fvfy(ptr, pos))			/* é€™ç­†è¨˜éŒ„ä¿è­·ä¸è¢«ç  */
     {
       memcpy(phead, ptr, size);
       phead += size;
       total += size;
     }
-    else if (fdel)			/* °£¤F§R°£°O¿ı¡AÁÙ­n°µ fdel() */
+    else if (fdel)			/* é™¤äº†åˆªé™¤è¨˜éŒ„ï¼Œé‚„è¦åš fdel() */
     {
       fdel(xo, ptr);
     }
@@ -542,7 +542,7 @@ xo_tbf(xo)
   if (!cuser.userlevel)
     return XO_NONE;
 
-  tag = AskTag("«ş¨©¨ì¼È¦sÀÉ");
+  tag = AskTag("æ‹·è²åˆ°æš«å­˜æª”");
   if (tag < 0)
     return XO_FOOT;
 
@@ -564,12 +564,12 @@ xo_tbf(xo)
 
     xmode = hdr->xmode;
 
-    /* itoc.000319: ­×¥¿­­¨î¯Å¤å³¹¤£±o¶×¤J¼È¦sÀÉ */
-    /* itoc.010602: GEM_RESTRICT ©M POST_RESTRICT ¤Ç°t¡A©Ò¥H¥[±K¤å³¹¤]¤£±o¶×¤J¼È¦sÀÉ */
+    /* itoc.000319: ä¿®æ­£é™åˆ¶ç´šæ–‡ç« ä¸å¾—åŒ¯å…¥æš«å­˜æª” */
+    /* itoc.010602: GEM_RESTRICT å’Œ POST_RESTRICT åŒ¹é…ï¼Œæ‰€ä»¥åŠ å¯†æ–‡ç« ä¹Ÿä¸å¾—åŒ¯å…¥æš«å­˜æª” */
     if (xmode & (GEM_RESTRICT | GEM_RESERVED))
       continue;
 
-    if (!(xmode & GEM_FOLDER))		/* ¬d hdr ¬O§_ plain text */
+    if (!(xmode & GEM_FOLDER))		/* æŸ¥ hdr æ˜¯å¦ plain text */
     {
       hdr_fpath(fpath, dir, hdr);
       f_suck(fp, fpath);
@@ -577,7 +577,7 @@ xo_tbf(xo)
   } while (++locus < tag);
 
   fclose(fp);
-  zmsg("«ş¨©§¹¦¨");
+  zmsg("æ‹·è²å®Œæˆ");
 
   return XO_FOOT;
 }
@@ -591,29 +591,29 @@ xo_forward(xo)
   char fpath[64], folder[64], *dir, *title, *userid;
   HDR *hdr, xhdr;
   int tag, locus, userno, cc, xmode;
-  int method;		/* Âà±H¨ì 0:¯¸¥~ >0:¦Û¤v <0:¨ä¥L¯¸¤º¨Ï¥ÎªÌ */
+  int method;		/* è½‰å¯„åˆ° 0:ç«™å¤– >0:è‡ªå·± <0:å…¶ä»–ç«™å…§ä½¿ç”¨è€… */
 
   if (!cuser.userlevel || HAS_PERM(PERM_DENYMAIL))
     return XO_NONE;
 
-  tag = AskTag("Âà±H");
+  tag = AskTag("è½‰å¯„");
   if (tag < 0)
     return XO_FOOT;
 
   if (!rcpt[0])
     strcpy(rcpt, cuser.email);
 
-  if (!vget(b_lines, 0, "¥Øªº¦a¡G", rcpt, sizeof(rcpt), GCARRY))
+  if (!vget(b_lines, 0, "ç›®çš„åœ°ï¼š", rcpt, sizeof(rcpt), GCARRY))
     return XO_FOOT;
 
   userid = cuser.userid;
   userno = 0;
 
-  if (!mail_external(rcpt))	/* ¤¤³~ÄdºI */
+  if (!mail_external(rcpt))	/* ä¸­é€”æ””æˆª */
   {
     if (!str_cmp(rcpt, userid))
     {
-      /* userno = cuser.userno; */	/* Thor.981027: ±Hºë¿ï¶°µ¹¦Û¤v¤£³qª¾¦Û¤v */
+      /* userno = cuser.userno; */	/* Thor.981027: å¯„ç²¾é¸é›†çµ¦è‡ªå·±ä¸é€šçŸ¥è‡ªå·± */
       method = 1;
     }
     else
@@ -635,7 +635,7 @@ xo_forward(xo)
   {
     if (!HAS_PERM(PERM_INTERNET))
     {
-      vmsg("±zµLªk±H«H¨ì¯¸¥~");
+      vmsg("æ‚¨ç„¡æ³•å¯„ä¿¡åˆ°ç«™å¤–");
       return XO_FOOT;
     }
 
@@ -662,28 +662,28 @@ xo_forward(xo)
 
     xmode = hdr->xmode;
 
-    /* itoc.000319: ­×¥¿­­¨î¯Å¤å³¹¤£±oÂà±H */
-    /* itoc.010602: GEM_RESTRICT ©M POST_RESTRICT ¤Ç°t¡A©Ò¥H¥[±K¤å³¹¤]¤£±oÂà±H */
+    /* itoc.000319: ä¿®æ­£é™åˆ¶ç´šæ–‡ç« ä¸å¾—è½‰å¯„ */
+    /* itoc.010602: GEM_RESTRICT å’Œ POST_RESTRICT åŒ¹é…ï¼Œæ‰€ä»¥åŠ å¯†æ–‡ç« ä¹Ÿä¸å¾—è½‰å¯„ */
     if (xmode & (GEM_RESTRICT | GEM_RESERVED))
       continue;     
 
-    if (!(xmode & GEM_FOLDER))		/* ¬d hdr ¬O§_ plain text */
+    if (!(xmode & GEM_FOLDER))		/* æŸ¥ hdr æ˜¯å¦ plain text */
     {
       hdr_fpath(fpath, dir, hdr);
 
-      if (method)		/* Âà±H¯¸¤º */
+      if (method)		/* è½‰å¯„ç«™å…§ */
       {
 	HDR mhdr;
 
 	if ((cc = hdr_stamp(folder, HDR_COPY, &mhdr, fpath)) < 0)
 	  break;
 
-	if (method > 0)		/* Âà±H¦Û¤v */
+	if (method > 0)		/* è½‰å¯„è‡ªå·± */
 	{
-	  strcpy(mhdr.owner, "[ºë ¿ï ¶°]");
+	  strcpy(mhdr.owner, "[ç²¾ é¸ é›†]");
 	  mhdr.xmode = MAIL_READ | MAIL_NOREPLY;
 	}
-	else			/* Âà±H¨ä¥L¨Ï¥ÎªÌ */
+	else			/* è½‰å¯„å…¶ä»–ä½¿ç”¨è€… */
 	{
 	  strcpy(mhdr.owner, userid);
 	}
@@ -692,7 +692,7 @@ xo_forward(xo)
 	if ((cc = rec_add(folder, &mhdr, sizeof(HDR))) < 0)
 	  break;
       }
-      else			/* Âà±H¯¸¥~ */
+      else			/* è½‰å¯„ç«™å¤– */
       {
 	if ((cc = bsmtp(fpath, title, rcpt, 0)) < 0)
 	  break;
@@ -703,14 +703,14 @@ xo_forward(xo)
   if (userno > 0 && cc >= 0)
     m_biff(userno);
 
-  zmsg(cc >= 0 ? msg_sent_ok : "³¡¥÷«H¥óµLªk±H¹F");
+  zmsg(cc >= 0 ? msg_sent_ok : "éƒ¨ä»½ä¿¡ä»¶ç„¡æ³•å¯„é”");
 
   return XO_FOOT;
 }
 
 
 /* ----------------------------------------------------- */
-/* ¤å³¹§@ªÌ¬d¸ß¡BÅv­­³]©w				 */
+/* æ–‡ç« ä½œè€…æŸ¥è©¢ã€æ¬Šé™è¨­å®š				 */
 /* ----------------------------------------------------- */
 
 
@@ -756,7 +756,7 @@ xo_usetup(xo)
 
 
 /* ----------------------------------------------------- */
-/* ¥DÃD¦¡¾\Åª						 */
+/* ä¸»é¡Œå¼é–±è®€						 */
 /* ----------------------------------------------------- */
 
 
@@ -769,7 +769,7 @@ xo_usetup(xo)
 #define RS_SEQUENT	0x040	/* sequential read */
 #define RS_MARKED 	0x080	/* marked article */
 #define RS_UNREAD 	0x100	/* unread article */
-#define	RS_BOARD	0x1000	/* ¥Î©ó RS_UNREAD¡A¸ò«e­±ªº¤£¥i­«Å| */
+#define	RS_BOARD	0x1000	/* ç”¨æ–¼ RS_UNREADï¼Œè·Ÿå‰é¢çš„ä¸å¯é‡ç–Š */
 
 #define CURSOR_FIRST	(RS_RELATED | RS_TITLE | RS_FIRST)
 #define CURSOR_NEXT	(RS_RELATED | RS_TITLE | RS_FORWARD)
@@ -780,7 +780,7 @@ xo_usetup(xo)
 #define THREAD_NEXT	(RS_THREAD | RS_FORWARD)
 #define THREAD_PREV	(RS_THREAD)
 
-/* Thor: «e«á§ämark¤å³¹, ¤è«Kª¾¹D¦³¤°»ò°İÃD¥¼³B²z */
+/* Thor: å‰å¾Œæ‰¾markæ–‡ç« , æ–¹ä¾¿çŸ¥é“æœ‰ä»€éº¼å•é¡Œæœªè™•ç† */
 
 #define MARK_NEXT	(RS_MARKED | RS_FORWARD | RS_CURRENT)
 #define MARK_PREV	(RS_MARKED | RS_CURRENT)
@@ -823,8 +823,8 @@ static KeyMap keymap[] =
   '\'', RS_MARKED | RS_FORWARD | RS_CURRENT,
   ';', RS_MARKED | RS_CURRENT,
 
-  /* Thor: ¦V«e§ä²Ä¤@½g¥¼Åªªº¤å³¹ */
-  /* Thor.980909: ¦V«e§ä­º½g¥¼Åª, ©Î¥½½g¤wÅª */
+  /* Thor: å‘å‰æ‰¾ç¬¬ä¸€ç¯‡æœªè®€çš„æ–‡ç«  */
+  /* Thor.980909: å‘å‰æ‰¾é¦–ç¯‡æœªè®€, æˆ–æœ«ç¯‡å·²è®€ */
   '`', RS_UNREAD /* | RS_FIRST */,
 
   /* sequential */
@@ -833,12 +833,12 @@ static KeyMap keymap[] =
   KEY_RIGHT, RS_SEQUENT | RS_FORWARD,
   KEY_PGDN, RS_SEQUENT | RS_FORWARD,
   KEY_DOWN, RS_SEQUENT | RS_FORWARD,
-  /* Thor.990208: ¬°¤F¤è«K¬İ¤å³¹¹Lµ{¤¤, ²¾¦Ü¤U½g, ÁöµM¤W¼h³Qxover¦Y±¼¤F:p */
+  /* Thor.990208: ç‚ºäº†æ–¹ä¾¿çœ‹æ–‡ç« éç¨‹ä¸­, ç§»è‡³ä¸‹ç¯‡, é›–ç„¶ä¸Šå±¤è¢«xoveråƒæ‰äº†:p */
   'j', RS_SEQUENT | RS_FORWARD,
 
   KEY_UP, RS_SEQUENT,
   KEY_PGUP, RS_SEQUENT,
-  /* Thor.990208: ¬°¤F¤è«K¬İ¤å³¹¹Lµ{¤¤, ²¾¦Ü¤W½g, ÁöµM¤W¼h³Qxover¦Y±¼¤F:p */
+  /* Thor.990208: ç‚ºäº†æ–¹ä¾¿çœ‹æ–‡ç« éç¨‹ä¸­, ç§»è‡³ä¸Šç¯‡, é›–ç„¶ä¸Šå±¤è¢«xoveråƒæ‰äº†:p */
   'k', RS_SEQUENT,
 
   /* end of keymap */
@@ -865,12 +865,12 @@ xo_keymap(key)
 }
 
 
-/* itoc.010913: xo_thread() ¦^¶Ç­È                */
-/*  XO_NONE: ¨S§ä¨ì©Î´N¬O´å¼Ğ©Ò¦b¡A¤£¥Î²M b_lines */
-/*  XO_FOOT: ¨S§ä¨ì©Î´N¬O´å¼Ğ©Ò¦b¡A»İ­n²M b_lines */
-/*  XO_BODY: §ä¨ì¤F¡A¦ı¦b§O­¶                     */
-/* -XO_NONE: §ä¨ì¤F¡A´N¦b¥»­¶¡A¤£¥Î²M b_lines     */
-/* -XO_FOOT: §ä¨ì¤F¡A´N¦b¥»­¶¡A»İ­n²M b_lines     */
+/* itoc.010913: xo_thread() å›å‚³å€¼                */
+/*  XO_NONE: æ²’æ‰¾åˆ°æˆ–å°±æ˜¯æ¸¸æ¨™æ‰€åœ¨ï¼Œä¸ç”¨æ¸… b_lines */
+/*  XO_FOOT: æ²’æ‰¾åˆ°æˆ–å°±æ˜¯æ¸¸æ¨™æ‰€åœ¨ï¼Œéœ€è¦æ¸… b_lines */
+/*  XO_BODY: æ‰¾åˆ°äº†ï¼Œä½†åœ¨åˆ¥é                      */
+/* -XO_NONE: æ‰¾åˆ°äº†ï¼Œå°±åœ¨æœ¬é ï¼Œä¸ç”¨æ¸… b_lines     */
+/* -XO_FOOT: æ‰¾åˆ°äº†ï¼Œå°±åœ¨æœ¬é ï¼Œéœ€è¦æ¸… b_lines     */
 
 
 static int
@@ -883,7 +883,7 @@ xo_thread(xo, op)
 
   char *tag, *query, *title;
   const int origpos = xo->pos, origtop = xo->top, max = xo->max;
-  int pos, match, near, neartop;	/* Thor: neartop »P near ¦¨¹ï¥Î */
+  int pos, match, near, neartop;	/* Thor: neartop èˆ‡ near æˆå°ç”¨ */
   int top, bottom, step, len;
   HDR *pool, *hdr;
 
@@ -903,7 +903,7 @@ xo_thread(xo, op)
       query = currtitle;
       if (op & RS_FIRST)
       {
-	if (!strcmp(query, tag))	/* ¥Ø«eªº´N¬O²Ä¤@µ§¤F */
+	if (!strcmp(query, tag))	/* ç›®å‰çš„å°±æ˜¯ç¬¬ä¸€ç­†äº† */
 	  return XO_NONE;
 	near = -1;
       }
@@ -922,13 +922,13 @@ xo_thread(xo, op)
   }
   else if (op & RS_UNREAD)
   {
-    /* Thor.980909: ¸ß°İ "­º½g¥¼Åª" ©Î "¥½½g¤wÅª" */
+    /* Thor.980909: è©¢å• "é¦–ç¯‡æœªè®€" æˆ– "æœ«ç¯‡å·²è®€" */
 
     near = xo->dir[0];
-    if (near != 'b' && near != 'u')	/* itoc.010913: ¥u¤¹³\¦b¬İªO/«H½c·j´M */
-      return XO_NONE;			/* itoc.040916.bug: ¨S¦³­­¨î¦b«H½cºëµØ°Ï·j´M */
+    if (near != 'b' && near != 'u')	/* itoc.010913: åªå…è¨±åœ¨çœ‹æ¿/ä¿¡ç®±æœå°‹ */
+      return XO_NONE;			/* itoc.040916.bug: æ²’æœ‰é™åˆ¶åœ¨ä¿¡ç®±ç²¾è¯å€æœå°‹ */
 
-    if (!vget(b_lines, 0, "¦V«e§ä´M 0)­º½g¥¼Åª 1)¥½½g¤wÅª ", s_unread, sizeof(s_unread), GCARRY))
+    if (!vget(b_lines, 0, "å‘å‰æ‰¾å°‹ 0)é¦–ç¯‡æœªè®€ 1)æœ«ç¯‡å·²è®€ ", s_unread, sizeof(s_unread), GCARRY))
       return XO_FOOT;
 
     if (*s_unread == '0')
@@ -943,18 +943,18 @@ xo_thread(xo, op)
   {
     if (op & RS_TITLE)
     {
-      title = "¼ĞÃD";
+      title = "æ¨™é¡Œ";
       tag = s_title;
       len = sizeof(s_title);
     }
     else
     {
-      title = "§@ªÌ";
+      title = "ä½œè€…";
       tag = s_author;
       len = sizeof(s_author);
     }
 
-    sprintf(query = buf, "·j´M%s(%s)¡G", title, (step > 0) ? "¡õ" : "¡ô");
+    sprintf(query = buf, "æœå°‹%s(%s)ï¼š", title, (step > 0) ? "â†“" : "â†‘");
     if (!vget(b_lines, 0, query, tag, len, GCARRY))
       return XO_FOOT;
 
@@ -1008,7 +1008,7 @@ xo_thread(xo, op)
       break;
     }
 
-    /* Thor: «e«á search marked ¤å³¹ */
+    /* Thor: å‰å¾Œ search marked æ–‡ç«  */
 
     if (op & RS_MARKED)
     {
@@ -1020,12 +1020,12 @@ xo_thread(xo, op)
       continue;
     }
 
-    /* ¦V«e§ä´M§ä´M¥¼Åª/¤wÅª¤å³¹ */
+    /* å‘å‰æ‰¾å°‹æ‰¾å°‹æœªè®€/å·²è®€æ–‡ç«  */
 
     if (op & RS_UNREAD)
     {
 #define UNREAD_FUNC()   (op & RS_BOARD ? brh_unread(hdr->chrono) : !(hdr->xmode & MAIL_READ))
-      if (op & RS_FIRST)	/* ­º½g¥¼Åª */
+      if (op & RS_FIRST)	/* é¦–ç¯‡æœªè®€ */
       {
 	if (UNREAD_FUNC())
 	{
@@ -1034,7 +1034,7 @@ xo_thread(xo, op)
 	  continue;
 	}
       }
-      else			/* ¥½½g¤wÅª */
+      else			/* æœ«ç¯‡å·²è®€ */
       {
 	if (!UNREAD_FUNC())
 	{
@@ -1046,13 +1046,13 @@ xo_thread(xo, op)
     }
 
     /* ------------------------------------------------- */
-    /* ¥H¤U·j´M title / author				 */
+    /* ä»¥ä¸‹æœå°‹ title / author				 */
     /* ------------------------------------------------- */
 
     if (op & (RS_TITLE | RS_THREAD))
     {
-      title = hdr->title;	/* title «ü¦V [title] field */
-      tag = str_ttl(title);	/* tag «ü¦V thread's subject */
+      title = hdr->title;	/* title æŒ‡å‘ [title] field */
+      tag = str_ttl(title);	/* tag æŒ‡å‘ thread's subject */
 
       if (op & RS_THREAD)
       {
@@ -1066,7 +1066,7 @@ xo_thread(xo, op)
     }
     else
     {
-      tag = hdr->owner;	/* tag «ü¦V [owner] field */
+      tag = hdr->owner;	/* tag æŒ‡å‘ [owner] field */
     }
 
     if (((op & RS_RELATED) && !strncmp(tag, query, 40)) ||
@@ -1074,7 +1074,7 @@ xo_thread(xo, op)
     {
       if ((op & RS_FIRST) && tag != title)
       {
-	near = pos;		/* °O¤U³Ì±µªñ°_ÂIªº¦ì¸m */
+	near = pos;		/* è¨˜ä¸‹æœ€æ¥è¿‘èµ·é»çš„ä½ç½® */
 	neartop = top;
 	continue;
       }
@@ -1084,39 +1084,39 @@ xo_thread(xo, op)
     }
   }
 
-  /* top = xo->top = buffering ªº top */
-  /* ¦pªG match = -1 ªí¥Ü§ä¨ì¤F¡A¦Ó pos, top = ­n¥hªº¦a¤è */
-  /* ¦pªG RS_FIRST && near >= 0 ªí¥Ü§ä¨ì¤F¡A¦Ó near, neartop = ­n¥hªº¦a¤è */
+  /* top = xo->top = buffering çš„ top */
+  /* å¦‚æœ match = -1 è¡¨ç¤ºæ‰¾åˆ°äº†ï¼Œè€Œ pos, top = è¦å»çš„åœ°æ–¹ */
+  /* å¦‚æœ RS_FIRST && near >= 0 è¡¨ç¤ºæ‰¾åˆ°äº†ï¼Œè€Œ near, neartop = è¦å»çš„åœ°æ–¹ */
 
 #define CLEAR_FOOT()	(!(op & RS_RELATED) && ((op & RS_UNREAD) || !(op & (RS_THREAD | RS_SEQUENT | RS_MARKED))))
   
-  if (match < 0)			/* §ä¨ì¤F */
+  if (match < 0)			/* æ‰¾åˆ°äº† */
   {
-    xo->pos = pos;			/* §â­n¥hªº¦ì¸m¶ñ¶i¥h */
+    xo->pos = pos;			/* æŠŠè¦å»çš„ä½ç½®å¡«é€²å» */
 
-    if (top != origtop)			/* ¦b§O­¶§ä¨ì¤F */
+    if (top != origtop)			/* åœ¨åˆ¥é æ‰¾åˆ°äº† */
       match = XO_BODY;
-    else				/* ¦b¥»­¶§ä¨ì¤F */
+    else				/* åœ¨æœ¬é æ‰¾åˆ°äº† */
       match = CLEAR_FOOT() ? -XO_FOOT : -XO_NONE;
   }
-  else if ((op & RS_FIRST) && near >= 0)/* §ä¨ì¤F */
+  else if ((op & RS_FIRST) && near >= 0)/* æ‰¾åˆ°äº† */
   {
-    xo->pos = near;			/* §â­n¥hªº¦ì¸m¶ñ¶i¥h */
+    xo->pos = near;			/* æŠŠè¦å»çš„ä½ç½®å¡«é€²å» */
 
-    /* ¥Ñ©ó¬O RS_FIRST §ä²Ä¤@½g¡A©Ò¥H buffering ªº top ¥i¯à§ä¨ì¤ñ³Ì«áµ²ªG neartop §ó«e­± */
+    /* ç”±æ–¼æ˜¯ RS_FIRST æ‰¾ç¬¬ä¸€ç¯‡ï¼Œæ‰€ä»¥ buffering çš„ top å¯èƒ½æ‰¾åˆ°æ¯”æœ€å¾Œçµæœ neartop æ›´å‰é¢ */
     if (top != neartop)
       xo_load(xo, sizeof(HDR));
 
-    if (xo->top != origtop)		/* ¦b§O­¶§ä¨ì¤F */
+    if (xo->top != origtop)		/* åœ¨åˆ¥é æ‰¾åˆ°äº† */
       match = XO_BODY;
-    else				/* ¦b¥»­¶§ä¨ì¤F */
+    else				/* åœ¨æœ¬é æ‰¾åˆ°äº† */
       match = CLEAR_FOOT() ? -XO_FOOT : -XO_NONE;
   }
-  else					/* §ä¤£¨ì */
+  else					/* æ‰¾ä¸åˆ° */
   {
-    xo->pos = origpos;			/* ÁÙ­ì­ì¨Ó¦ì¸m */
+    xo->pos = origpos;			/* é‚„åŸåŸä¾†ä½ç½® */
 
-    if (top != origtop)			/* ¦^¥Ø«e©Ò¦b­¶ */
+    if (top != origtop)			/* å›ç›®å‰æ‰€åœ¨é  */
       xo_load(xo, sizeof(HDR));
 
     match = CLEAR_FOOT() ? XO_FOOT : XO_NONE;
@@ -1126,8 +1126,8 @@ xo_thread(xo, op)
 }
 
 
-/* Thor.990204: ¬°¦Ò¼{more ¶Ç¦^­È, ¥H«K¬İ¤@¥b¥i¥H¥Î []... 
-                ch ¬°¥ı«emore()¤¤©Ò«öªºkey */   
+/* Thor.990204: ç‚ºè€ƒæ…®more å‚³å›å€¼, ä»¥ä¾¿çœ‹ä¸€åŠå¯ä»¥ç”¨ []... 
+                ch ç‚ºå…ˆå‰more()ä¸­æ‰€æŒ‰çš„key */   
 int
 xo_getch(xo, ch)
   XO *xo;
@@ -1143,7 +1143,7 @@ xo_getch(xo, ch)
   {
     ch = xo_thread(xo, op);
     if (ch != XO_NONE)
-      ch = XO_BODY;		/* Ä~ÄòÂsÄı */
+      ch = XO_BODY;		/* ç¹¼çºŒç€è¦½ */
   }
 
   return ch;
@@ -1181,20 +1181,20 @@ XZ xz[] =
 
 static int
 xo_jump(pos, zone)
-  int pos;			/* ²¾°Ê´å¼Ğ¨ì number ©Ò¦bªº¯S©w¦ì¸m */
-  int zone;			/* itoc.010403: §â zone ¤]¶Ç¶i¨Ó */
+  int pos;			/* ç§»å‹•æ¸¸æ¨™åˆ° number æ‰€åœ¨çš„ç‰¹å®šä½ç½® */
+  int zone;			/* itoc.010403: æŠŠ zone ä¹Ÿå‚³é€²ä¾† */
 {
   char buf[6];
 
   buf[0] = pos;
   buf[1] = '\0';
-  vget(b_lines, 0, "¸õ¦Ü²Ä´X¶µ¡G", buf, sizeof(buf), GCARRY);
+  vget(b_lines, 0, "è·³è‡³ç¬¬å¹¾é …ï¼š", buf, sizeof(buf), GCARRY);
 
 #if 0
   move(b_lines, 0);
   clrtoeol();
 #endif
-  outf(xz[zone - XO_ZONE].feeter);	/* itoc.010403: §â b_lines ¶ñ¤W feeter */
+  outf(xz[zone - XO_ZONE].feeter);	/* itoc.010403: æŠŠ b_lines å¡«ä¸Š feeter */
 
   pos = atoi(buf);
 
@@ -1224,7 +1224,7 @@ xover(cmd)
     {
       if (cmd == XO_FOOT)
       {
-	outf(xz[zone - XO_ZONE].feeter);	/* itoc.010403: §â b_lines ¶ñ¤W feeter */
+	outf(xz[zone - XO_ZONE].feeter);	/* itoc.010403: æŠŠ b_lines å¡«ä¸Š feeter */
 	break;
       }
 
@@ -1250,7 +1250,7 @@ xover(cmd)
 	/* calc cursor pos and show cursor correctly	 */
 	/* --------------------------------------------- */
 
-	/* cmd >= XO_MOVE - XO_TALL so ... :chuan: °²³] cmd = -1 ?? */
+	/* cmd >= XO_MOVE - XO_TALL so ... :chuan: å‡è¨­ cmd = -1 ?? */
 
 	/* fix cursor's range */
 
@@ -1258,12 +1258,12 @@ xover(cmd)
 
 	/* pos = (cmd | XO_WRAP) - (XO_MOVE + XO_WRAP); */
 	/* cmd &= XO_WRAP; */
-	/* itoc.020124: ­×¥¿¦b²Ä¤@­¶«ö PGUP¡B³Ì«á¤@­¶«ö PGDN¡B²Ä¤@¶µ«ö UP¡B³Ì«á¤@¶µ«ö DOWN ·|§â XO_WRAP ºX¼Ğ®ø¥¢ */
+	/* itoc.020124: ä¿®æ­£åœ¨ç¬¬ä¸€é æŒ‰ PGUPã€æœ€å¾Œä¸€é æŒ‰ PGDNã€ç¬¬ä¸€é …æŒ‰ UPã€æœ€å¾Œä¸€é …æŒ‰ DOWN æœƒæŠŠ XO_WRAP æ——æ¨™æ¶ˆå¤± */
 
-	if (cmd > XO_MOVE + (XO_WRAP >> 1))     /* XO_WRAP >> 1 »·¤j¹L¤å³¹¼Æ */
+	if (cmd > XO_MOVE + (XO_WRAP >> 1))     /* XO_WRAP >> 1 é å¤§éæ–‡ç« æ•¸ */
 	{
 	  pos = cmd - (XO_MOVE + XO_WRAP);
-	  cmd = 1;				/* «ö KEY_UP ©Î KEY_DOWN */
+	  cmd = 1;				/* æŒ‰ KEY_UP æˆ– KEY_DOWN */
 	}
 	else
 	{
@@ -1271,21 +1271,21 @@ xover(cmd)
 	  cmd = 0;
 	}
 
-	/* pos: ­n¸õ¥hªº¶µ¥Ø  cmd: ¬O§_¬° KEY_UP ©Î KEY_DOWN */
+	/* pos: è¦è·³å»çš„é …ç›®  cmd: æ˜¯å¦ç‚º KEY_UP æˆ– KEY_DOWN */
 
 	if (pos < 0)
 	{
-	  /* pos = (zone == XZ_POST) ? 0 : num; *//* itoc.000304: ¾\Åª¨ì²Ä¤@½g«ö KEY_UP ©Î KEY_PGUP ¤£·|Â½¨ì³Ì«á */
-	  pos = num;	/* itoc.020124: Â½¨ì³Ì«á¤ñ¸û¤è«K¡AÀ³¸Ó¤£·|¦³¤H¬O©¹¤WÅªªº :P */
+	  /* pos = (zone == XZ_POST) ? 0 : num; *//* itoc.000304: é–±è®€åˆ°ç¬¬ä¸€ç¯‡æŒ‰ KEY_UP æˆ– KEY_PGUP ä¸æœƒç¿»åˆ°æœ€å¾Œ */
+	  pos = num;	/* itoc.020124: ç¿»åˆ°æœ€å¾Œæ¯”è¼ƒæ–¹ä¾¿ï¼Œæ‡‰è©²ä¸æœƒæœ‰äººæ˜¯å¾€ä¸Šè®€çš„ :P */
 	}
 	else if (pos > num)
 	{
 	  if (zone == XZ_POST)
-	    pos = num;	/* itoc.000304: ¾\Åª¨ì³Ì«á¤@½g«ö KEY_DOWN ©Î KEY_PGDN ¤£·|Â½¨ì³Ì«e */
+	    pos = num;	/* itoc.000304: é–±è®€åˆ°æœ€å¾Œä¸€ç¯‡æŒ‰ KEY_DOWN æˆ– KEY_PGDN ä¸æœƒç¿»åˆ°æœ€å‰ */
 	  else
-	    pos = (cmd || pos == num + XO_TALL) ? 0 : num;	/* itoc.020124: ­nÁ×§K¦pªG¦b­Ë¼Æ²Ä¤G­¶«ö KEY_PGDN¡A
-								   ¦Ó³Ì«á¤@­¶½g¼Æ¤Ó¤Ö·|ª½±µ¸õ¥h²Ä¤@­¶¡A¨Ï¥ÎªÌ·|
-								   ¤£ª¾¹D¦³³Ì«á¤@­¶¡A¬G¥ı¦b³Ì«á¤@¶µ°±¤@¤U */
+	    pos = (cmd || pos == num + XO_TALL) ? 0 : num;	/* itoc.020124: è¦é¿å…å¦‚æœåœ¨å€’æ•¸ç¬¬äºŒé æŒ‰ KEY_PGDNï¼Œ
+								   è€Œæœ€å¾Œä¸€é ç¯‡æ•¸å¤ªå°‘æœƒç›´æ¥è·³å»ç¬¬ä¸€é ï¼Œä½¿ç”¨è€…æœƒ
+								   ä¸çŸ¥é“æœ‰æœ€å¾Œä¸€é ï¼Œæ•…å…ˆåœ¨æœ€å¾Œä¸€é …åœä¸€ä¸‹ */
 	}
 
 	/* check cursor's range */
@@ -1300,19 +1300,19 @@ xover(cmd)
 	if ((pos < num) || (pos >= num + XO_TALL))
 	{
 	  xo->top = (pos / XO_TALL) * XO_TALL;
-	  cmd = XO_LOAD;	/* ¸ü¤J¸ê®Æ¨Ã¤©¥HÅã¥Ü */
+	  cmd = XO_LOAD;	/* è¼‰å…¥è³‡æ–™ä¸¦äºˆä»¥é¡¯ç¤º */
 	}
 	else
 	{
 	  move(3 + cmd - num, 0);
 	  outc(' ');
 
-	  break;		/* ¥u²¾°Ê´å¼Ğ */
+	  break;		/* åªç§»å‹•æ¸¸æ¨™ */
 	}
       }
 
       /* ----------------------------------------------- */
-      /* °õ¦æ call-back routines			 */
+      /* åŸ·è¡Œ call-back routines			 */
       /* ----------------------------------------------- */
 
       cb = xcmd;
@@ -1347,23 +1347,23 @@ xover(cmd)
 	  break;
 	}
 	
-	if (pos == 'h')		/* itoc.001029: 'h' ¬O¤@¯S¨Ò¡A¥Nªí *_cb ªºµ²§ô */
+	if (pos == 'h')		/* itoc.001029: 'h' æ˜¯ä¸€ç‰¹ä¾‹ï¼Œä»£è¡¨ *_cb çš„çµæŸ */
 	{
-	  cmd = XO_NONE;	/* itoc.001029: ¥Nªí§ä¤£¨ì call-back, ¤£§@¤F! */
+	  cmd = XO_NONE;	/* itoc.001029: ä»£è¡¨æ‰¾ä¸åˆ° call-back, ä¸ä½œäº†! */
 	  break;
 	}
 
 	cb++;
       }
 
-    } /* Thor.990220.µù¸Ñ: end of while (cmd!=XO_NONE) */
+    } /* Thor.990220.è¨»è§£: end of while (cmd!=XO_NONE) */
 
     utmp_mode(sysmode); 
-    /* Thor.990220:µù¸Ñ:¥Î¨Ó¦^´_ event handle routine ¦^¨Ó«áªº¼Ò¦¡ */
+    /* Thor.990220:è¨»è§£:ç”¨ä¾†å›å¾© event handle routine å›ä¾†å¾Œçš„æ¨¡å¼ */
 
     pos = xo->pos;
 
-    if (xo->max > 0)		/* Thor: ­Y¬OµLªF¦è´N¤£show¤F */
+    if (xo->max > 0)		/* Thor: è‹¥æ˜¯ç„¡æ±è¥¿å°±ä¸showäº† */
     {
       num = 3 + pos - xo->top;
       move(num, 0);
@@ -1372,18 +1372,18 @@ xover(cmd)
 
     cmd = vkey();
 
-    /* itoc.µù¸Ñ: ¥H¤U©w¸q¤F°ò¥»«öÁä¡A©Ò¿×°ò¥»«öÁä¡A´N¬O²¾°Êªº¤§Ãşªº¡A³q¥Î©ó©Ò¦³ XZ_ ªº¦a¤è */  
+    /* itoc.è¨»è§£: ä»¥ä¸‹å®šç¾©äº†åŸºæœ¬æŒ‰éµï¼Œæ‰€è¬‚åŸºæœ¬æŒ‰éµï¼Œå°±æ˜¯ç§»å‹•çš„ä¹‹é¡çš„ï¼Œé€šç”¨æ–¼æ‰€æœ‰ XZ_ çš„åœ°æ–¹ */  
 
     /* ------------------------------------------------- */
-    /* °ò¥»ªº´å¼Ğ²¾°Ê routines				 */
+    /* åŸºæœ¬çš„æ¸¸æ¨™ç§»å‹• routines				 */
     /* ------------------------------------------------- */
 
     if (cmd == KEY_LEFT || cmd == 'e')
     {
-      TagNum = 0;	/* itoc.050413: ±qºëµØ°Ï¦^¨ì¤å³¹¦Cªí®É­n²M°£ tag */
+      TagNum = 0;	/* itoc.050413: å¾ç²¾è¯å€å›åˆ°æ–‡ç« åˆ—è¡¨æ™‚è¦æ¸…é™¤ tag */
       return;
     }
-    else if (xo->max <= 0)	/* Thor: µLªF¦è«hµLªk²¾´å¼Ğ */
+    else if (xo->max <= 0)	/* Thor: ç„¡æ±è¥¿å‰‡ç„¡æ³•ç§»æ¸¸æ¨™ */
     {
       continue;
     }
@@ -1436,12 +1436,12 @@ xover(cmd)
 #endif
 
     /* ------------------------------------------------- */
-    /* ¨ä¾lªº«öÁä					 */
+    /* å…¶é¤˜çš„æŒ‰éµ					 */
     /* ------------------------------------------------- */
 
     else
     {
-      if (zone >= XZ_XPOST)		/* xo_pool ¤¤©ñªº¬O HDR */
+      if (zone >= XZ_XPOST)		/* xo_pool ä¸­æ”¾çš„æ˜¯ HDR */
       {
 	/* --------------------------------------------- */
 	/* Tag						 */
@@ -1471,33 +1471,33 @@ xover(cmd)
 	}
 
 	/* --------------------------------------------- */
-	/* ¥DÃD¦¡¾\Åª					 */
+	/* ä¸»é¡Œå¼é–±è®€					 */
 	/* --------------------------------------------- */
 
-	if (zone == XZ_XPOST)		/* ¦ê±µ¤¤¤£¤ä´©¥DÃD¦¡¾\Åª */
+	if (zone == XZ_XPOST)		/* ä¸²æ¥ä¸­ä¸æ”¯æ´ä¸»é¡Œå¼é–±è®€ */
 	  continue;
 
 	pos = xo_keymap(cmd);
-	if (pos >= 0)			/* ¦pªG¤£¬O«ö¤è¦VÁä */
+	if (pos >= 0)			/* å¦‚æœä¸æ˜¯æŒ‰æ–¹å‘éµ */
 	{
-	  cmd = xo_thread(xo, pos);	/* ¥h¬d¬d¬O­ş¤@ºØ thread ·j´M */	  
+	  cmd = xo_thread(xo, pos);	/* å»æŸ¥æŸ¥æ˜¯å“ªä¸€ç¨® thread æœå°‹ */	  
 
-	  if (cmd < 0)		/* ¦b¥»­¶§ä¨ì match */
+	  if (cmd < 0)		/* åœ¨æœ¬é æ‰¾åˆ° match */
 	  {
 	    move(num, 0);
 	    outc(' ');
 	    /* cmd = XO_NONE; */
-	    /* itoc.010913: ¬Y¨Ç·j´M­n§â b_lines ¶ñ¤W feeter */
+	    /* itoc.010913: æŸäº›æœå°‹è¦æŠŠ b_lines å¡«ä¸Š feeter */
 	    cmd = -cmd;
 	  }
 	}
       }
 
       /* ----------------------------------------------- */
-      /* ¨ä¥Lªº¥æµ¹ call-back routine ¥h³B²z		 */
+      /* å…¶ä»–çš„äº¤çµ¦ call-back routine å»è™•ç†		 */
       /* ----------------------------------------------- */
 
-    } /* Thor.990220.µù¸Ñ: end of vkey() handling */
+    } /* Thor.990220.è¨»è§£: end of vkey() handling */
   }
 }
 
@@ -1508,15 +1508,15 @@ xover(cmd)
 
 
 #ifdef EVERY_Z
-int z_status = 0;	/* ¶i¤J´X¼h */
+int z_status = 0;	/* é€²å…¥å¹¾å±¤ */
 
 int
 every_Z(zone)
-  int zone;				/* ¶Ç¤J©Ò¦b XZ_ZONE¡A­Y¶Ç¤J 0¡Aªí¥Ü¤£¦b xover() ¤¤ */
+  int zone;				/* å‚³å…¥æ‰€åœ¨ XZ_ZONEï¼Œè‹¥å‚³å…¥ 0ï¼Œè¡¨ç¤ºä¸åœ¨ xover() ä¸­ */
 {
   int cmd, tmpbno, tmpmode;
 
-  /* itoc.000319: ³Ì¦h every_Z ¤@¼h */
+  /* itoc.000319: æœ€å¤š every_Z ä¸€å±¤ */
   if (z_status >= 1)
     return XO_NONE;
   else
@@ -1525,7 +1525,7 @@ every_Z(zone)
   cmd = zone;
   outz(MSG_ZONE_SWITCH);
 
-  tmpbno = vkey();	/* ­É¥Î tmpbno ¨Ó´«¦¨¤p¼g */
+  tmpbno = vkey();	/* å€Ÿç”¨ tmpbno ä¾†æ›æˆå°å¯« */
   if (tmpbno >= 'A' && tmpbno <= 'Z')
     tmpbno |= 0x20;
   switch (tmpbno)
@@ -1535,7 +1535,7 @@ every_Z(zone)
     break;
 
   case 'b':
-    if (currbno >= 0)	/* ­Y¤w¿ï©w¬İªO¡A¶i¤J¬İªO¡A§_«h¨ì¬İªO¦Cªí */
+    if (currbno >= 0)	/* è‹¥å·²é¸å®šçœ‹æ¿ï¼Œé€²å…¥çœ‹æ¿ï¼Œå¦å‰‡åˆ°çœ‹æ¿åˆ—è¡¨ */
     {
       cmd = XZ_POST;
       break;
@@ -1567,10 +1567,10 @@ every_Z(zone)
     break;
   }
 
-  if (cmd == zone)		/* ©M¥Ø«e©Ò¦b zone ¤@¼Ë¡A©Î¨ú®ø */
+  if (cmd == zone)		/* å’Œç›®å‰æ‰€åœ¨ zone ä¸€æ¨£ï¼Œæˆ–å–æ¶ˆ */
   {
     z_status--;
-    return XO_FOOT;		/* ­Y¦b xover() ¤¤¨ú®ø©I¥s every_Z() «h°e¦^ XO_FOOT §Y¥i­«Ã¸ */
+    return XO_FOOT;		/* è‹¥åœ¨ xover() ä¸­å–æ¶ˆå‘¼å« every_Z() å‰‡é€å› XO_FOOT å³å¯é‡ç¹ª */
   }
 
   if (cmd == XZ_POST)
@@ -1589,19 +1589,19 @@ every_Z(zone)
   xover(cmd);
   utmp_mode(tmpmode);
 
-  if (tmpbno >= 0)		/* itoc.030731: ¦³¥i¯à¶i¤J§OªºªO¡A´N»İ­n­«·s XoPost¡A·|¦A¬İ¤@¦¸¶iªOµe­± */
+  if (tmpbno >= 0)		/* itoc.030731: æœ‰å¯èƒ½é€²å…¥åˆ¥çš„æ¿ï¼Œå°±éœ€è¦é‡æ–° XoPostï¼Œæœƒå†çœ‹ä¸€æ¬¡é€²æ¿ç•«é¢ */
     XoPost(tmpbno);
 
   z_status--;
-  return XO_INIT;		/* »İ­n­«·s¸ü¤J xo_pool¡A­Y¦b xover() ¤¤¤]¥iÂÇ¦¹­«Ã¸ */
+  return XO_INIT;		/* éœ€è¦é‡æ–°è¼‰å…¥ xo_poolï¼Œè‹¥åœ¨ xover() ä¸­ä¹Ÿå¯è—‰æ­¤é‡ç¹ª */
 }
 
 
 int
 every_U(zone)
-  int zone;			/* ¶Ç¤J©Ò¦b XZ_ZONE¡A­Y¶Ç¤J 0¡Aªí¥Ü¤£¦b xover() ¤¤ */
+  int zone;			/* å‚³å…¥æ‰€åœ¨ XZ_ZONEï¼Œè‹¥å‚³å…¥ 0ï¼Œè¡¨ç¤ºä¸åœ¨ xover() ä¸­ */
 {
-  /* itoc.000319: ³Ì¦h every_Z ¤@¼h */
+  /* itoc.000319: æœ€å¤š every_Z ä¸€å±¤ */
   if (z_status >= 1)
     return XO_NONE;
 
@@ -1621,12 +1621,12 @@ every_U(zone)
 
 
 /* ----------------------------------------------------- */
-/* Ãş XZ_* µ²ºcªº´å¼Ğ²¾°Ê				 */
+/* é¡ XZ_* çµæ§‹çš„æ¸¸æ¨™ç§»å‹•				 */
 /* ----------------------------------------------------- */
 
 
-/* ¶Ç¤J: ch, pagemax, num, pageno, cur, redraw */
-/* ¶Ç¥X: ch, pageno, cur, redraw */
+/* å‚³å…¥: ch, pagemax, num, pageno, cur, redraw */
+/* å‚³å‡º: ch, pageno, cur, redraw */
 int
 xo_cursor(ch, pagemax, num, pageno, cur, redraw)
   int ch, pagemax, num;
@@ -1659,7 +1659,7 @@ xo_cursor(ch, pagemax, num, pageno, cur, redraw)
     {
       if (*pageno == pagemax)
       {
-	/* ¦b³Ì«á¤@¶µ°±¤@¤U */
+	/* åœ¨æœ€å¾Œä¸€é …åœä¸€ä¸‹ */
 	if (*cur != num % XO_TALL)
 	{
 	  *cur = num % XO_TALL;
@@ -1752,7 +1752,7 @@ xo_cursor(ch, pagemax, num, pageno, cur, redraw)
 
       buf[0] = ch;
       buf[1] = '\0';
-      vget(b_lines, 0, "¸õ¦Ü²Ä´X¶µ¡G", buf, sizeof(buf), GCARRY);
+      vget(b_lines, 0, "è·³è‡³ç¬¬å¹¾é …ï¼š", buf, sizeof(buf), GCARRY);
 
       pos = atoi(buf);
 
@@ -1765,7 +1765,7 @@ xo_cursor(ch, pagemax, num, pageno, cur, redraw)
 	*cur = pos % XO_TALL;
       }
 
-      *redraw = 1;	/* ´Nºâ¨S¦³´«­¶¡A¤]­n­«Ã¸ feeter */
+      *redraw = 1;	/* å°±ç®—æ²’æœ‰æ›é ï¼Œä¹Ÿè¦é‡ç¹ª feeter */
     }
   }
 
@@ -1774,14 +1774,14 @@ xo_cursor(ch, pagemax, num, pageno, cur, redraw)
 
 
 /* ----------------------------------------------------- */
-/* »¡©ú¤å¥ó						 */
+/* èªªæ˜æ–‡ä»¶						 */
 /* ----------------------------------------------------- */
 
 
 void
-xo_help(path)			/* itoc.021122: »¡©ú¤å¥ó */
+xo_help(path)			/* itoc.021122: èªªæ˜æ–‡ä»¶ */
   char *path;
 {
-  /* itoc.030510: ©ñ¨ì so ¸Ì­± */
+  /* itoc.030510: æ”¾åˆ° so è£¡é¢ */
   DL_func("bin/help.so:vaHelp", path);
 }

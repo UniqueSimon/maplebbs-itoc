@@ -6,19 +6,19 @@ static char datemsg[40];
 
 
 char *
-Atime(clock)	/* Thor.990125: °²¸Ë ARPANET ®É¶¡®æ¦¡ */
+Atime(clock)	/* Thor.990125: å‡è£ ARPANET æ™‚é–“æ ¼å¼ */
   time_t *clock;
 {
   /* ARPANET format: Thu, 11 Feb 1999 06:00:37 +0800 (CST) */
   /* strftime(datemsg, 40, "%a, %d %b %Y %T %Z", localtime(clock)); */
-  /* Thor.990125: time zoneªº¶Ç¦^­È¤£ª¾©MARPANET®æ¦¡¬O§_¤@¼Ë,¥ıµwµ¹,¦Psendmail*/
+  /* Thor.990125: time zoneçš„å‚³å›å€¼ä¸çŸ¥å’ŒARPANETæ ¼å¼æ˜¯å¦ä¸€æ¨£,å…ˆç¡¬çµ¦,åŒsendmail*/
   strftime(datemsg, 40, "%a, %d %b %Y %T +0800 (CST)", localtime(clock));
   return (datemsg);
 }
 
 
 char *
-Btime(clock)	/* BBS ®É¶¡®æ¦¡ */
+Btime(clock)	/* BBS æ™‚é–“æ ¼å¼ */
   time_t *clock;
 {
   struct tm *t = localtime(clock);

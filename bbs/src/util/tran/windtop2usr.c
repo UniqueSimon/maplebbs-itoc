@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/windtop2usr.c					 */
 /*-------------------------------------------------------*/
-/* target : WindTop .ACCT Âà´«				 */
+/* target : WindTop .ACCT è½‰æ›				 */
 /* create : 03/06/30					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -10,42 +10,42 @@
 
 #include "windtop.h"
 
-#define	MAK_DIRS	/* «Ø¥Ø¿ı MF/ ¤Î gem/ */
+#define	MAK_DIRS	/* å»ºç›®éŒ„ MF/ åŠ gem/ */
 
 
-#define OLDUFO_PAGER       BFLAG(5)        /* Ãö³¬©I¥s¾¹ */
-#define OLDUFO_QUIET       BFLAG(6)        /* µ²Ãf¦b¤H¹Ò¡A¦ÓµL¨®°¨³Ù */
-#define OLDUFO_MAXMSG      BFLAG(7)        /* °T®§¤W­­©Ú¦¬°T®§ */
-#define OLDUFO_FORWARD     BFLAG(8)        /* ¦Û°ÊÂà±H */
-#define OLDUFO_CLASSTABLE  BFLAG(9)        /* ¥\½Òªí³qª¾ */
-#define OLDUFO_BROADCAST   BFLAG(14)       /* ©Ú¦¬¼s¼½ */
-#define OLDUFO_HIDEDN      BFLAG(18)       /* ÁôÂÃ¨Ó·½ */
+#define OLDUFO_PAGER       BFLAG(5)        /* é—œé–‰å‘¼å«å™¨ */
+#define OLDUFO_QUIET       BFLAG(6)        /* çµå»¬åœ¨äººå¢ƒï¼Œè€Œç„¡è»Šé¦¬å–§ */
+#define OLDUFO_MAXMSG      BFLAG(7)        /* è¨Šæ¯ä¸Šé™æ‹’æ”¶è¨Šæ¯ */
+#define OLDUFO_FORWARD     BFLAG(8)        /* è‡ªå‹•è½‰å¯„ */
+#define OLDUFO_CLASSTABLE  BFLAG(9)        /* åŠŸèª²è¡¨é€šçŸ¥ */
+#define OLDUFO_BROADCAST   BFLAG(14)       /* æ‹’æ”¶å»£æ’­ */
+#define OLDUFO_HIDEDN      BFLAG(18)       /* éš±è—ä¾†æº */
 #define OLDUFO_CLOAK       BFLAG(19)       /* true if cloak was ON */
 #define OLDUFO_WEB         BFLAG(22)       /* visor.020325: WEB */
-#define OLDUFO_MPAGER      BFLAG(10)       /* lkchu.990428: ¹q¤l¶l¥ó¶Ç©I */
-#define OLDUFO_MESSAGE     BFLAG(23)       /* visor.991030: °T®§¥şÃö */
-#define OLDUFO_PAGER1      BFLAG(26)       /* visor.991030: ©I¥s¾¹¥şÃö */
+#define OLDUFO_MPAGER      BFLAG(10)       /* lkchu.990428: é›»å­éƒµä»¶å‚³å‘¼ */
+#define OLDUFO_MESSAGE     BFLAG(23)       /* visor.991030: è¨Šæ¯å…¨é—œ */
+#define OLDUFO_PAGER1      BFLAG(26)       /* visor.991030: å‘¼å«å™¨å…¨é—œ */
 
 #define OLDUFO2_COLOR      BFLAG(0)        /* true if the ANSI color mode open */
 #define OLDUFO2_MOVIE      BFLAG(1)        /* true if show movie */
-#define OLDUFO2_BRDNEW     BFLAG(2)        /* ·s¤å³¹¼Ò¦¡ */
-#define OLDUFO2_BNOTE      BFLAG(3)        /* Åã¥Ü¶iªOµe­± */
-#define OLDUFO2_VEDIT      BFLAG(4)        /* Â²¤Æ½s¿è¾¹ */
+#define OLDUFO2_BRDNEW     BFLAG(2)        /* æ–°æ–‡ç« æ¨¡å¼ */
+#define OLDUFO2_BNOTE      BFLAG(3)        /* é¡¯ç¤ºé€²æ¿ç•«é¢ */
+#define OLDUFO2_VEDIT      BFLAG(4)        /* ç°¡åŒ–ç·¨è¼¯å™¨ */
 #define OLDUFO2_PAL        BFLAG(5)        /* true if show pals only */
-#define OLDUFO2_MOTD       BFLAG(6)        /* Â²¤Æ¶i¯¸µe­± */
-#define OLDUFO2_MIME       BFLAG(7)        /* MIME ¸Ñ½X */
-#define OLDUFO2_SIGN       BFLAG(8)        /* Ã±¦WÀÉ */
-#define OLDUFO2_SHOWUSER   BFLAG(9)        /* Åã¥Ü ID ©M ¼ÊºÙ */
-#define OLDUFO2_PRH        BFLAG(10)       /* Åã¥Ü±ÀÂË¤å³¹¤À¼Æ */
-#define OLDUFO2_SHIP       BFLAG(11)       /* visor.991030: ¦n¤Í´y­z */
-#define OLDUFO2_NWLOG      BFLAG(12)       /* lkchu.990510: ¤£¦s¹ï¸Ü¬ö¿ı */
-#define OLDUFO2_NTLOG      BFLAG(13)       /* lkchu.990510: ¤£¦s²á¤Ñ¬ö¿ı */
-#define OLDUFO2_CIRCLE     BFLAG(14)       /* ´`Àô¾\Åª */
-#define OLDUFO2_ORIGUI     BFLAG(15)       /* Ãö³¬­·¤§¶ğ¶W¬¯¤¶­± */
-#define OLDUFO2_DEF_ANONY  BFLAG(16)       /* ¹w³]¤£°Î¦W */
-#define OLDUFO2_DEF_LEAVE  BFLAG(17)       /* ¹w³]¤£Â÷¯¸ */
+#define OLDUFO2_MOTD       BFLAG(6)        /* ç°¡åŒ–é€²ç«™ç•«é¢ */
+#define OLDUFO2_MIME       BFLAG(7)        /* MIME è§£ç¢¼ */
+#define OLDUFO2_SIGN       BFLAG(8)        /* ç°½åæª” */
+#define OLDUFO2_SHOWUSER   BFLAG(9)        /* é¡¯ç¤º ID å’Œ æš±ç¨± */
+#define OLDUFO2_PRH        BFLAG(10)       /* é¡¯ç¤ºæ¨è–¦æ–‡ç« åˆ†æ•¸ */
+#define OLDUFO2_SHIP       BFLAG(11)       /* visor.991030: å¥½å‹æè¿° */
+#define OLDUFO2_NWLOG      BFLAG(12)       /* lkchu.990510: ä¸å­˜å°è©±ç´€éŒ„ */
+#define OLDUFO2_NTLOG      BFLAG(13)       /* lkchu.990510: ä¸å­˜èŠå¤©ç´€éŒ„ */
+#define OLDUFO2_CIRCLE     BFLAG(14)       /* å¾ªç’°é–±è®€ */
+#define OLDUFO2_ORIGUI     BFLAG(15)       /* é—œé–‰é¢¨ä¹‹å¡”è¶…ç‚«ä»‹é¢ */
+#define OLDUFO2_DEF_ANONY  BFLAG(16)       /* é è¨­ä¸åŒ¿å */
+#define OLDUFO2_DEF_LEAVE  BFLAG(17)       /* é è¨­ä¸é›¢ç«™ */
 #define OLDUFO2_ACL        BFLAG(24)       /* true if ACL was ON */
-#define OLDUFO2_REALNAME   BFLAG(28)       /* visor.991030: ¯u¹ê©m¦W */
+#define OLDUFO2_REALNAME   BFLAG(28)       /* visor.991030: çœŸå¯¦å§“å */
 
 
 static usint
@@ -83,9 +83,9 @@ trans_ufo(oldufo, oldufo2)
   if (oldufo2 & OLDUFO2_PAL)
     ufo |= UFO_PAL;
 
-  ufo |= UFO_ALOHA;		/* ¹w³] */
+  ufo |= UFO_ALOHA;		/* é è¨­ */
 
-  /* ufo |= UFO_BMWDISPLAY; */	/* ¹w³]¤£­n */
+  /* ufo |= UFO_BMWDISPLAY; */	/* é è¨­ä¸è¦ */
 
   if (oldufo2 & OLDUFO2_NWLOG)
     ufo |= UFO_NWLOG;
@@ -93,9 +93,9 @@ trans_ufo(oldufo, oldufo2)
   if (oldufo2 & OLDUFO2_NTLOG)
     ufo |= UFO_NTLOG;
 
-  ufo |= UFO_NOSIGN;		/* ¹w³] */
+  ufo |= UFO_NOSIGN;		/* é è¨­ */
 
-  /* ufo |= UFO_SHOWSIGN; */	/* ¹w³]¤£­n */
+  /* ufo |= UFO_SHOWSIGN; */	/* é è¨­ä¸è¦ */
 
   if (oldufo & OLDUFO_CLOAK)
     ufo |= UFO_CLOAK;
@@ -148,7 +148,7 @@ main()
 
       read(fd, &old, sizeof(userec));
       close(fd);
-      unlink(buf);			/* itoc.010831: ¬å±¼­ì¨Óªº FN_ACCT */
+      unlink(buf);			/* itoc.010831: ç æ‰åŸä¾†çš„ FN_ACCT */
 
       memset(&new, 0, sizeof(ACCT));
 
@@ -166,7 +166,7 @@ main()
       new.year = 0;
       new.month = 0;
       new.day = 0;
-      new.sex = 1;		/* µ¹ªì©l­È */
+      new.sex = 1;		/* çµ¦åˆå§‹å€¼ */
       new.money = 100;
       new.gold = 1;
 
@@ -182,7 +182,7 @@ main()
       str_ncpy(new.lasthost, old.lasthost, sizeof(new.lasthost));
       str_ncpy(new.email, old.email, sizeof(new.email));
 
-      fd = open(buf, O_WRONLY | O_CREAT, 0600);	/* itoc.010831: ­««Ø·sªº FN_ACCT */
+      fd = open(buf, O_WRONLY | O_CREAT, 0600);	/* itoc.010831: é‡å»ºæ–°çš„ FN_ACCT */
       write(fd, &new, sizeof(ACCT));
       close(fd);
     }

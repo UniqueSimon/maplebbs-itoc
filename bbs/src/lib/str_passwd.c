@@ -41,14 +41,14 @@ genpasswd(pw)
 }
 
 
-/* Thor.990214: µù¸Ñ: ¦X±K½X®É, ¶Ç¦^0 */
+/* Thor.990214: è¨»è§£: åˆå¯†ç¢¼æ™‚, å‚³å›0 */
 int
 chkpasswd(passwd, test)
   char *passwd, *test;
 {
   char *pw;
   
-  /* if(!*passwd) return -1 */ /* Thor.990416: ©È¦³®Épasswd¬OªÅªº */
+  /* if(!*passwd) return -1 */ /* Thor.990416: æ€•æœ‰æ™‚passwdæ˜¯ç©ºçš„ */
   str_ncpy(pwbuf, test, sizeof(pwbuf));
   pw = crypt(pwbuf, passwd);
   return (strncmp(pw, passwd, PASSLEN));

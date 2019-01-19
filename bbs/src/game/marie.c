@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* marie.c         ( NTHU CS MapleBBS Ver 3.10 )         */
 /*-------------------------------------------------------*/
-/* target : ¤pº¿²ú¼Ö¶é¹CÀ¸                               */
+/* target : å°ç‘ªè‰æ¨‚åœ’éŠæˆ²                               */
 /* create :   /  /                                       */
 /* update : 01/04/26                                     */
 /* author : unknown                                      */
@@ -13,20 +13,20 @@
 
 #ifdef HAVE_GAME
 
-#define MAX_MARIEBET	50000	/* ³Ì¦h©ã¨ì 50000 ¤¸ */
+#define MAX_MARIEBET	50000	/* æœ€å¤šæŠ¼åˆ° 50000 å…ƒ */
 
 
 static inline int
-get_item()		/* ¶Ã¼Æ¿ï¨ú­n¤¤ªº¶µ¥Ø */
+get_item()		/* äº‚æ•¸é¸å–è¦ä¸­çš„é …ç›® */
 {
 
 #if 0
-½s¸¹¡G   0     1     2     3     4     5     6     7     8     9
-¾÷²v¡G 200     2     5    10     1    20    40   100   500   122   /1000
-½ß²v¡G   5   500   200   100  1000    50    25    10     2     0
+ç·¨è™Ÿï¼š   0     1     2     3     4     5     6     7     8     9
+æ©Ÿç‡ï¼š 200     2     5    10     1    20    40   100   500   122   /1000
+è³ ç‡ï¼š   5   500   200   100  1000    50    25    10     2     0
 #endif
 
-  int randnum = rnd(1000);	/* ½ß²v * ¾÷²v = ´Á±æ­È (¨C©ã 1 ¤¸©Ò¦^¦¬ªºª÷ÃB) */
+  int randnum = rnd(1000);	/* è³ ç‡ * æ©Ÿç‡ = æœŸæœ›å€¼ (æ¯æŠ¼ 1 å…ƒæ‰€å›æ”¶çš„é‡‘é¡) */
 
   if (randnum < 500)		/* 2 * 0.500 = 1 */
     return 8;
@@ -47,21 +47,21 @@ get_item()		/* ¶Ã¼Æ¿ï¨ú­n¤¤ªº¶µ¥Ø */
   if (randnum < 878)		/* 1000 * 0.001 = 1 */
     return 4;
 
-  return 9;			/* »ÊÁÂ´fÅU¾÷²v¬O 0.122 */
+  return 9;			/* éŠ˜è¬æƒ é¡§æ©Ÿç‡æ˜¯ 0.122 */
 }
 
 
 int
 main_marie()
 {
-  int c_flag[7] = {1, 5, 10, 50, 100, 500, 1000};		/* ­¿²v */
-  int price[10] = {5, 500, 200, 100, 1000, 50, 25, 10, 2, 0};	/* ½ä²v */
-  int x[9] = {0};						/* ¦U¶µ©ãª÷ */
+  int c_flag[7] = {1, 5, 10, 50, 100, 500, 1000};		/* å€ç‡ */
+  int price[10] = {5, 500, 200, 100, 1000, 50, 25, 10, 2, 0};	/* è³­ç‡ */
+  int x[9] = {0};						/* å„é …æŠ¼é‡‘ */
 
-  int w;		/* ­¿²vªººØÃş */
+  int w;		/* å€ç‡çš„ç¨®é¡ */
   int flag;		/* flag = c_flag[w] */
-  int item;		/* ¤¤¼úªº¶µ¥Ø */
-  int xtotal;		/* Á`©ãª÷ */
+  int item;		/* ä¸­ççš„é …ç›® */
+  int xtotal;		/* ç¸½æŠ¼é‡‘ */
   int i, ch;
   FILE *fp;
   char buf[STRLEN];
@@ -75,13 +75,13 @@ main_marie()
   if (!(fp = fopen("etc/game/marie", "r")))
     return XEASY;
 
-  vs_bar("¤pº¿²ú¼Ö¶é");
+  vs_bar("å°ç‘ªè‰æ¨‚åœ’");
   move(1, 0);
-  while (fgets(buf, STRLEN, fp))	/* ¦L¥X½ä³õ¤º³¡Â\³] */
+  while (fgets(buf, STRLEN, fp))	/* å°å‡ºè³­å ´å…§éƒ¨æ“ºè¨­ */
     outs(buf);
   fclose(fp);
 
-  w = 0;			/* ²Ä¤@¦¸¶i¤J¿ï¾Ü¤@­¿¡A²Ä¤G¦¸¥H«á«h¸ò¤W¦¸ª±¤@¼Ë */
+  w = 0;			/* ç¬¬ä¸€æ¬¡é€²å…¥é¸æ“‡ä¸€å€ï¼Œç¬¬äºŒæ¬¡ä»¥å¾Œå‰‡è·Ÿä¸Šæ¬¡ç©ä¸€æ¨£ */
   flag = c_flag[w];
   item = 0;
   xtotal = 0;
@@ -89,23 +89,23 @@ main_marie()
   while (1)
   {
     move(9, 44);
-    prints("\033[1m±z¨­¤WÁÙ¦³Äw½X %8d ¤¸\033[m", cuser.money);
+    prints("\033[1mæ‚¨èº«ä¸Šé‚„æœ‰ç±Œç¢¼ %8d å…ƒ\033[m", cuser.money);
     move(10, 44);
-    prints("\033[1m¥Ø«e©ãª`ªº­¿²v¬O \033[46m%6d ­¿\033[m", flag);
+    prints("\033[1mç›®å‰æŠ¼æ³¨çš„å€ç‡æ˜¯ \033[46m%6d å€\033[m", flag);
 
     move(b_lines - 3, 0);
     for (i = 0; i < 9; i++)
       prints("  %5d", x[i]);
 
-    ch = igetch();		/* ¤£»İ¥Î¨ì vkey() */
+    ch = igetch();		/* ä¸éœ€ç”¨åˆ° vkey() */
     switch (ch)
     {
-    case 'w':			/* ¤Á´«­¿²v */
+    case 'w':			/* åˆ‡æ›å€ç‡ */
       w = (w + 1) % 7;
-      flag = c_flag[w];		/* ¤Á´«­¿²v®É¤~»İ­n­«³] flag */
+      flag = c_flag[w];		/* åˆ‡æ›å€ç‡æ™‚æ‰éœ€è¦é‡è¨­ flag */
       break;
 
-    case 'a':			/* ¥şÀ£ */
+    case 'a':			/* å…¨å£“ */
       i = 9 * flag;
       if ((xtotal + i <= MAX_MARIEBET) && (cuser.money >= i))
       {
@@ -116,7 +116,7 @@ main_marie()
       }
       break;
 
-    case '1':			/* ¤À§O¤Uª` */
+    case '1':			/* åˆ†åˆ¥ä¸‹æ³¨ */
     case '2':
     case '3':
     case '4':
@@ -133,39 +133,39 @@ main_marie()
       }
       break;
 
-    case 's':			/* ¶}©l¹CÀ¸ */
+    case 's':			/* é–‹å§‹éŠæˆ² */
     case '\n':
       if (x[0] || x[1] || x[2] || x[3] || x[4] || x[5] || x[6] || x[7] || x[8])
-      {		/* ¦³¤Uª`¤~¯à¶}©lª± */
+      {		/* æœ‰ä¸‹æ³¨æ‰èƒ½é–‹å§‹ç© */
 	move(15, 5 + 7 * item);
-	outs("  ");   		/* ²M°£¤W¦¸¤¤ªº¶µ¥Ø */
+	outs("  ");   		/* æ¸…é™¤ä¸Šæ¬¡ä¸­çš„é …ç›® */
 	item = get_item();
-	if (item != 9)		/* item=9 ¬O»ÊÁÂ´fÅU */
+	if (item != 9)		/* item=9 æ˜¯éŠ˜è¬æƒ é¡§ */
 	{
 	  move(15, 5 + 7 * item);
-	  outs("¡´");		/* Ã¸¤W³o¦¸¤¤ªº¶µ¥Ø */
+	  outs("â—");		/* ç¹ªä¸Šé€™æ¬¡ä¸­çš„é …ç›® */
 
 	  if (x[item])
 	  {
 	    i = x[item] * price[item];
 	    addmoney(i);
-	    sprintf(buf, "±z¥i±o %d ¤¸", i);
+	    sprintf(buf, "æ‚¨å¯å¾— %d å…ƒ", i);
 	    vmsg(buf);
 	  }
 	  else
 	  {
-	    vmsg("«Ü©êºp¡A±z¨S¦³©ã¤¤");
+	    vmsg("å¾ˆæŠ±æ­‰ï¼Œæ‚¨æ²’æœ‰æŠ¼ä¸­");
 	  }
 	}
 	else
 	{
-	  vmsg("«Ü©êºp¡A»ÊÁÂ´fÅU");
+	  vmsg("å¾ˆæŠ±æ­‰ï¼ŒéŠ˜è¬æƒ é¡§");
 	}
 
 	move(b_lines, 0);
-	clrtoeol();		/* ²M°£ vmsg() */
+	clrtoeol();		/* æ¸…é™¤ vmsg() */
 
-	/* ¦U¶µ½äª÷Âk¹s */
+	/* å„é …è³­é‡‘æ­¸é›¶ */
 	xtotal = 0;
 	for (i = 0; i < 9; i++)
  	  x[i] = 0;
@@ -176,12 +176,12 @@ main_marie()
       }
       break;
 
-    case 'q':			/* Â÷¶} */
+    case 'q':			/* é›¢é–‹ */
       goto abort_game;
 
-    }	/* switch µ²§ô */
+    }	/* switch çµæŸ */
 
-  }	/* while °j°éµ²§ô */
+  }	/* while è¿´åœˆçµæŸ */
 
 abort_game:
   return 0;

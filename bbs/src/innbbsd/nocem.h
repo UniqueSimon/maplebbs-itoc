@@ -6,7 +6,7 @@
 #ifndef _NOCEM_H_
 #define _NOCEM_H_
 
-#define NCMINNBBSVER	"NoCeM-INNBBSD-0.8"	/* ª©¥»«Å§i */
+#define NCMINNBBSVER	"NoCeM-INNBBSD-0.8"	/* ç‰ˆæœ¬å®£å‘Š */
 
 
 #define TEXT		0

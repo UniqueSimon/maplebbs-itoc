@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/transpip.c                   			 */
 /*-------------------------------------------------------*/
-/* target : WD ¦Ü Maple 3.02 ¤pÂû¸ê®ÆÂà´«           	 */
+/* target : WD è‡³ Maple 3.02 å°é›žè³‡æ–™è½‰æ›           	 */
 /* create : 02/01/26                     		 */
 /* update :   /  /                   			 */
 /* author : itoc.bbs@bbs.ee.nctu.edu.tw          	 */
@@ -12,11 +12,11 @@
 
 #if 0
 
-   1. ­×§ï transpip()
-   2. ¥uÂà chicken¡Achicken.bak* ´N¤£Âà¤F
+   1. ä¿®æ”¹ transpip()
+   2. åªè½‰ chickenï¼Œchicken.bak* å°±ä¸è½‰äº†
 
-   ps. ¨Ï¥Î«e½Ð¥ý¦æ³Æ¥÷¡Ause on ur own risk. µ{¦¡©å¦H½Ð¥]²[ :p
-   ps. ·PÁÂ lkchu ªº Maple 3.02 for FreeBSD
+   ps. ä½¿ç”¨å‰è«‹å…ˆè¡Œå‚™ä»½ï¼Œuse on ur own risk. ç¨‹å¼æ‹™åŠ£è«‹åŒ…æ¶µ :p
+   ps. æ„Ÿè¬ lkchu çš„ Maple 3.02 for FreeBSD
 
 #endif
 
@@ -25,98 +25,98 @@
 
 #ifdef HAVE_GAME
 
-#include "../../pip/pipstruct.h"	/* ¤Þ¤J·s¤pÂûªº°Ñ¼Æ³]©w */
+#include "../../pip/pipstruct.h"	/* å¼•å…¥æ–°å°é›žçš„åƒæ•¸è¨­å®š */
 
 
 /* ----------------------------------------------------- */
-/* ÂÂ¤pÂû°Ñ¼Æ³]©w					 */
+/* èˆŠå°é›žåƒæ•¸è¨­å®š					 */
 /* ----------------------------------------------------- */
 
 
 struct chicken 
 {
- /* ---°ò¥»ªº¸ê®Æ--- */
- char name[20];		/* ©m    ¦W */
- char birth[21];	/* ¥Í    ¤é */
- int year;		/* ¥Í¤é  ¦~ */
- int month;		/* ¥Í¤é  ¤ë */
- int day; 		/* ¥Í¤é  ¤é */
- int sex;		/* ©Ê    §O 1:¡ñ   2:¡ð   */
- int death;             /* 1:  ¦º¤` 2:©ß±ó 3:µ²§½ */
- int nodone;		/* 1:  ¥¼°µ */
- int relation;		/* ¨â¤HÃö«Y */
- int liveagain;		/* ´_¬¡¦¸¼Æ */
+ /* ---åŸºæœ¬çš„è³‡æ–™--- */
+ char name[20];		/* å§“    å */
+ char birth[21];	/* ç”Ÿ    æ—¥ */
+ int year;		/* ç”Ÿæ—¥  å¹´ */
+ int month;		/* ç”Ÿæ—¥  æœˆ */
+ int day; 		/* ç”Ÿæ—¥  æ—¥ */
+ int sex;		/* æ€§    åˆ¥ 1:â™‚   2:â™€   */
+ int death;             /* 1:  æ­»äº¡ 2:æ‹‹æ£„ 3:çµå±€ */
+ int nodone;		/* 1:  æœªåš */
+ int relation;		/* å…©äººé—œä¿‚ */
+ int liveagain;		/* å¾©æ´»æ¬¡æ•¸ */
  int dataB;
  int dataC;
  int dataD;
  int dataE;
   
- /* ---¨­Åéªº°Ñ¼Æ--- */
- int hp;		/* Åé    ¤O */
- int maxhp;             /* ³Ì¤jÅé¤O */
- int weight;            /* Åé    ­« */
- int tired;		/* ¯h ³Ò «× */
- int sick;		/* ¯f    ®ð */
- int shit;		/* ²M ¼ä «× */ 
- int wrist;		/* µÃ    ¤O */
+ /* ---èº«é«”çš„åƒæ•¸--- */
+ int hp;		/* é«”    åŠ› */
+ int maxhp;             /* æœ€å¤§é«”åŠ› */
+ int weight;            /* é«”    é‡ */
+ int tired;		/* ç–² å‹ž åº¦ */
+ int sick;		/* ç—…    æ°£ */
+ int shit;		/* æ¸… æ½” åº¦ */ 
+ int wrist;		/* è…•    åŠ› */
  int bodyA;
  int bodyB;
  int bodyC;
  int bodyD;
  int bodyE;
  
- /* ---µû»ùªº°Ñ¼Æ--- */
- int social;		/* ªÀ¥æµû»ù */
- int family;		/* ®a¨Æµû»ù */
- int hexp;		/* ¾Ô°«µû»ù */
- int mexp;		/* Å]ªkµû»ù */
+ /* ---è©•åƒ¹çš„åƒæ•¸--- */
+ int social;		/* ç¤¾äº¤è©•åƒ¹ */
+ int family;		/* å®¶äº‹è©•åƒ¹ */
+ int hexp;		/* æˆ°é¬¥è©•åƒ¹ */
+ int mexp;		/* é­”æ³•è©•åƒ¹ */
  int tmpA;
  int tmpB;
  int tmpC;
  int tmpD;
  int tmpE;
  
- /* ---¾Ô°«¥Î°Ñ¼Æ--- */
- int mp;		/* ªk    ¤O */
- int maxmp;             /* ³Ì¤jªk¤O */
- int attack;		/* §ð À» ¤O */
- int resist;		/* ¨¾ ¿m ¤O */
- int speed;		/* ³t    «× */
- int hskill;		/* ¾Ô°«§Þ³N */
- int mskill;		/* Å]ªk§Þ³N */
- int mresist;		/* §ÜÅ]¯à¤O */
- int magicmode;		/* Å]ªk«¬ºA */
+ /* ---æˆ°é¬¥ç”¨åƒæ•¸--- */
+ int mp;		/* æ³•    åŠ› */
+ int maxmp;             /* æœ€å¤§æ³•åŠ› */
+ int attack;		/* æ”» æ“Š åŠ› */
+ int resist;		/* é˜² ç¦¦ åŠ› */
+ int speed;		/* é€Ÿ    åº¦ */
+ int hskill;		/* æˆ°é¬¥æŠ€è¡“ */
+ int mskill;		/* é­”æ³•æŠ€è¡“ */
+ int mresist;		/* æŠ—é­”èƒ½åŠ› */
+ int magicmode;		/* é­”æ³•åž‹æ…‹ */
  int fightB;
  int fightC;
  int fightD;
  int fightE;
  
 
- /* ---ªZ¾¹ªº°Ñ¼Æ--- */
- int weaponhead;	/* ÀY³¡ªZ¾¹ */
- int weaponrhand;	/* ¥k¤âªZ¾¹ */
- int weaponlhand;	/* ¥ª¤âªZ¾¹ */
- int weaponbody;	/* ¨­ÅéªZ¾¹ */
- int weaponfoot;	/* ¸}ªºªZ¾¹ */ 
+ /* ---æ­¦å™¨çš„åƒæ•¸--- */
+ int weaponhead;	/* é ­éƒ¨æ­¦å™¨ */
+ int weaponrhand;	/* å³æ‰‹æ­¦å™¨ */
+ int weaponlhand;	/* å·¦æ‰‹æ­¦å™¨ */
+ int weaponbody;	/* èº«é«”æ­¦å™¨ */
+ int weaponfoot;	/* è…³çš„æ­¦å™¨ */ 
  int weaponA;
  int weaponB;
  int weaponC;
  int weaponD;
  int weaponE;
  
- /* ---¦U¯à¤O°Ñ¼Æ--- */
- int toman;		/* «Ý¤H±µª« */ 
- int character;		/* ®ð ½è «× */ 
- int love;		/* ·R    ¤ß */ 
- int wisdom;		/* ´¼    ¼z */
- int art;		/* ÃÀ³N¯à¤O */
- int etchics;		/* ¹D    ¼w */
- int brave;		/* «i    ´± */
- int homework;		/* ±½¦a¬~¦ç */
- int charm;		/* ¾y	¤O */
- int manners;		/* Â§    »ö */
- int speech;		/* ½Í	¦R */
- int cookskill;		/* ²i    ¶¹ */
+ /* ---å„èƒ½åŠ›åƒæ•¸--- */
+ int toman;		/* å¾…äººæŽ¥ç‰© */ 
+ int character;		/* æ°£ è³ª åº¦ */ 
+ int love;		/* æ„›    å¿ƒ */ 
+ int wisdom;		/* æ™º    æ…§ */
+ int art;		/* è—è¡“èƒ½åŠ› */
+ int etchics;		/* é“    å¾· */
+ int brave;		/* å‹‡    æ•¢ */
+ int homework;		/* æŽƒåœ°æ´—è¡£ */
+ int charm;		/* é­…	åŠ› */
+ int manners;		/* ç¦®    å„€ */
+ int speech;		/* è«‡	å */
+ int cookskill;		/* çƒ¹    é£ª */
  int learnA;
  int learnB;
  int learnC;
@@ -124,83 +124,83 @@ struct chicken
  int learnE;
  
  
- /* ---¦Uª¬ºA¼Æ­È--- */
- int happy;		/* §Ö ¼Ö «× */
- int satisfy;		/* º¡ ·N «× */
- int fallinlove;	/* ÅÊ·R«ü¼Æ */
- int belief;		/* «H    ¥õ */
- int offense;		/* ¸o    Ä^ */
- int affect;		/* ·P    ¨ü */
+ /* ---å„ç‹€æ…‹æ•¸å€¼--- */
+ int happy;		/* å¿« æ¨‚ åº¦ */
+ int satisfy;		/* æ»¿ æ„ åº¦ */
+ int fallinlove;	/* æˆ€æ„›æŒ‡æ•¸ */
+ int belief;		/* ä¿¡    ä»° */
+ int offense;		/* ç½ª    å­½ */
+ int affect;		/* æ„Ÿ    å— */
  int stateA;
  int stateB;
  int stateC;
  int stateD;
  int stateE;
  
- /* ---¦YªºªF¦è°Õ--- */
- int food;		/* ­¹    ª« */
- int medicine;          /* ÆF    ªÛ */
- int bighp;             /* ¤j ¸É ¤Y */
- int cookie;		/* ¹s    ­¹ */
- int ginseng;		/* ¤d¦~¤Hçx */
- int snowgrass;		/* ¤Ñ¤s³·½¬ */
+ /* ---åƒçš„æ±è¥¿å•¦--- */
+ int food;		/* é£Ÿ    ç‰© */
+ int medicine;          /* éˆ    èŠ */
+ int bighp;             /* å¤§ è£œ ä¸¸ */
+ int cookie;		/* é›¶    é£Ÿ */
+ int ginseng;		/* åƒå¹´äººè”˜ */
+ int snowgrass;		/* å¤©å±±é›ªè“® */
  int eatC;
  int eatD;
  int eatE;
  
- /* ---¾Ö¦³ªºªF¦è--- */
- int book;		/* ®Ñ    ¥» */
- int playtool; 		/* ª±    ¨ã */
- int money;		/* ª÷    ¿ú */
+ /* ---æ“æœ‰çš„æ±è¥¿--- */
+ int book;		/* æ›¸    æœ¬ */
+ int playtool; 		/* çŽ©    å…· */
+ int money;		/* é‡‘    éŒ¢ */
  int thingA;		
  int thingB;		
  int thingC;
  int thingD;
  int thingE; 
  
- /* ---²q®±ªº°Ñ¼Æ--- */
+ /* ---çŒœæ‹³çš„åƒæ•¸--- */
  int winn;		
  int losee;
  
- /* ---°Ñ¨£¤ý¦Ú-- */
- int royalA;		/* from¦u½Ã */
- int royalB;		/* fromªñ½Ã */
- int royalC;		/* from±N­x */
- int royalD;		/* from¤j¦Ú */
- int royalE;		/* from²½¥q */ 		
- int royalF;		/* fromÃd¦m */
- int royalG;		/* from¤ý¦m */
- int royalH;  		/* from°ê¤ý */
- int royalI;		/* from¤p¤¡ */
- int royalJ;		/* from¤ý¤l */
- int seeroyalJ;		/* ¬O§_¤w¸g¬Ý¹L¤ý¤l¤F */
+ /* ---åƒè¦‹çŽ‹è‡£-- */
+ int royalA;		/* fromå®ˆè¡› */
+ int royalB;		/* fromè¿‘è¡› */
+ int royalC;		/* fromå°‡è» */
+ int royalD;		/* fromå¤§è‡£ */
+ int royalE;		/* fromç¥­å¸ */ 		
+ int royalF;		/* fromå¯µå¦ƒ */
+ int royalG;		/* fromçŽ‹å¦ƒ */
+ int royalH;  		/* fromåœ‹çŽ‹ */
+ int royalI;		/* fromå°ä¸‘ */
+ int royalJ;		/* fromçŽ‹å­ */
+ int seeroyalJ;		/* æ˜¯å¦å·²ç¶“çœ‹éŽçŽ‹å­äº† */
  int seeA;
  int seeB;
  int seeC;
  int seeD;
  int seeE;
 
- /* ---µ²§½---- */
- int wantend;		/* 20·³µ²§½ 1:¤£­n¥B¥¼±B 2:¤£­n¥B¤w±B  3:¤£­n¥B·í²Ä¤TªÌ 4:­n¥B¥¼±B  5:­n¥B¤w±B 6:­n¥B·í²Ä¤TªÌ */
- int lover;		/* ·R¤H 0:¨S¦³ 1:Å]¤ý 2:Às±Ú 3:A 4:B 5:C 6:D 7:E  */ 
+ /* ---çµå±€---- */
+ int wantend;		/* 20æ­²çµå±€ 1:ä¸è¦ä¸”æœªå©š 2:ä¸è¦ä¸”å·²å©š  3:ä¸è¦ä¸”ç•¶ç¬¬ä¸‰è€… 4:è¦ä¸”æœªå©š  5:è¦ä¸”å·²å©š 6:è¦ä¸”ç•¶ç¬¬ä¸‰è€… */
+ int lover;		/* æ„›äºº 0:æ²’æœ‰ 1:é­”çŽ‹ 2:é¾æ— 3:A 4:B 5:C 6:D 7:E  */ 
  
- /* -------¤u§@¦¸¼Æ-------- */
- int workA;		/* ®a¨Æ */
- int workB;		/* «O©i */
- int workC;		/* ®È©± */
- int workD;		/* ¹A³õ */
- int workE;		/* À\ÆU */
- int workF;		/* ±Ð°ó */
- int workG;		/* ¦aÅu */
- int workH;		/* ¥ï¤ì */
- int workI;		/* ¬ü¾v */
- int workJ;		/* Ây¤H */
- int workK;		/* ¤u¦a */
- int workL;		/* ¦u¹Ó */
- int workM;		/* ®a±Ð */
- int workN;		/* °s®a */
- int workO;		/* °s©± */
- int workP;		/* ©]Á`·| */
+ /* -------å·¥ä½œæ¬¡æ•¸-------- */
+ int workA;		/* å®¶äº‹ */
+ int workB;		/* ä¿å§† */
+ int workC;		/* æ—…åº— */
+ int workD;		/* è¾²å ´ */
+ int workE;		/* é¤å»³ */
+ int workF;		/* æ•™å ‚ */
+ int workG;		/* åœ°æ”¤ */
+ int workH;		/* ä¼æœ¨ */
+ int workI;		/* ç¾Žé«® */
+ int workJ;		/* çµäºº */
+ int workK;		/* å·¥åœ° */
+ int workL;		/* å®ˆå¢“ */
+ int workM;		/* å®¶æ•™ */
+ int workN;		/* é…’å®¶ */
+ int workO;		/* é…’åº— */
+ int workP;		/* å¤œç¸½æœƒ */
  int workQ;
  int workR;
  int workS;
@@ -212,7 +212,7 @@ struct chicken
  int workY;
  int workZ;
  
- /* -------¤W½Ò¦¸¼Æ-------- */
+ /* -------ä¸Šèª²æ¬¡æ•¸-------- */
  int classA;
  int classB;
  int classC;
@@ -229,14 +229,14 @@ struct chicken
  int classN;
  int classO;
  
- /* ---¤pÂûªº®É¶¡--- */
+ /* ---å°é›žçš„æ™‚é–“--- */
  time_t bbtime;
 };
 typedef struct chicken chicken;
 
 
 /* ----------------------------------------------------- */
-/* Âà´«¥Dµ{¦¡                                            */
+/* è½‰æ›ä¸»ç¨‹å¼                                            */
 /* ----------------------------------------------------- */
 
 
@@ -248,22 +248,22 @@ transpip(userid)
   int fd;
   char fpath[64];
   FILE *fp;
-  struct chicken d;	/* ÂÂ¤pÂû */
-  struct CHICKEN p;	/* ·s¤pÂû */
+  struct chicken d;	/* èˆŠå°é›ž */
+  struct CHICKEN p;	/* æ–°å°é›ž */
   
 
-  /* sob ªº usr ¥Ø¿ý¦³¤À¤j¤p¼g¡A©Ò¥H­n¥ý¨ú±o¤j¤p¼g */
+  /* sob çš„ usr ç›®éŒ„æœ‰åˆ†å¤§å°å¯«ï¼Œæ‰€ä»¥è¦å…ˆå–å¾—å¤§å°å¯« */
   usr_fpath(fpath, userid, FN_ACCT);
   if ((fd = open(fpath, O_RDONLY)) >= 0)
   {
     read(fd, &acct, sizeof(ACCT));
     close(fd);
   }
-  sprintf(fpath, OLD_BBSHOME "/home/%s/chicken", acct.userid);	/* ÂÂªº¤pÂû¸ê®Æ */
+  sprintf(fpath, OLD_BBSHOME "/home/%s/chicken", acct.userid);	/* èˆŠçš„å°é›žè³‡æ–™ */
 
   if (fp = fopen(fpath, "r"))
   {
-    /* Åª¥XÂÂ¤pÂû¸ê®Æ */
+    /* è®€å‡ºèˆŠå°é›žè³‡æ–™ */
 
     fgets(fpath, 20, fp);
     d.bbtime = (time_t) atoi(fpath);
@@ -301,7 +301,7 @@ transpip(userid)
 
     fclose(fp);
 
-    /* Âà´«¤pÂû¸ê®Æ */
+    /* è½‰æ›å°é›žè³‡æ–™ */
 
     memset(&p, 0, sizeof(p));
 
@@ -319,7 +319,7 @@ transpip(userid)
     p.wantend = d.wantend;
     p.lover = d.lover;
     p.seeroyalJ = d.seeroyalJ;
-    p.quest = 0;		/* ÂÂ¹q¤lÂû¨S¦³¥ô°È */
+    p.quest = 0;		/* èˆŠé›»å­é›žæ²’æœ‰ä»»å‹™ */
 
     p.relation = d.relation;
     p.happy = d.happy;
@@ -358,20 +358,20 @@ transpip(userid)
     p.mskill = d.mskill;
     p.immune = d.mresist;
 
-    p.level = 1;		/* ±q 1 ¯Å¶}©l */
+    p.level = 1;		/* å¾ž 1 ç´šé–‹å§‹ */
     p.exp = 0;
     p.hp = d.hp;
     p.maxhp = d.maxhp;
     p.mp = d.mp;
     p.maxmp = d.maxmp;
-    p.vp = d.hp;		/* ÂÂ¹q¤lÂû¨S¦³ vp/sp ®³ hp/mp ¨Ó®M */
+    p.vp = d.hp;		/* èˆŠé›»å­é›žæ²’æœ‰ vp/sp æ‹¿ hp/mp ä¾†å¥— */
     p.maxvp = d.maxhp;
     p.sp = d.mp;
     p.maxsp = d.maxmp;
 
-    /* ÂÂ¹q¤lÂû¨S¦³§Þ¯à¡A¹w³]¬° 0 */
+    /* èˆŠé›»å­é›žæ²’æœ‰æŠ€èƒ½ï¼Œé è¨­ç‚º 0 */
 
-    /* ªZ¾¹³q³q­«¸m¬° 0¡A¥H§KªZ¾¹¦Cªí¤£¦P */
+    /* æ­¦å™¨é€šé€šé‡ç½®ç‚º 0ï¼Œä»¥å…æ­¦å™¨åˆ—è¡¨ä¸åŒ */
 
     p.food = d.food;
     p.cookie = d.cookie;
@@ -428,9 +428,9 @@ transpip(userid)
     p.classI = d.classI;
     p.classJ = d.classJ;    
     
-    /* ¼g¤J·s¤pÂû¸ê®Æ */
+    /* å¯«å…¥æ–°å°é›žè³‡æ–™ */
 
-    usr_fpath(fpath, acct.userid, "chicken");	/* ·sªº¤pÂû¸ê®Æ */
+    usr_fpath(fpath, acct.userid, "chicken");	/* æ–°çš„å°é›žè³‡æ–™ */
     fd = open(fpath, O_WRONLY | O_CREAT, 0600);
     write(fd, &p, sizeof(CHICKEN));
     close(fd);    
@@ -448,8 +448,8 @@ main(argc, argv)
   struct dirent *de;
   DIR *dirp;
 
-  /* argc == 1 Âà¥þ³¡¨Ï¥ÎªÌ */
-  /* argc == 2 Âà¬Y¯S©w¨Ï¥ÎªÌ */
+  /* argc == 1 è½‰å…¨éƒ¨ä½¿ç”¨è€… */
+  /* argc == 2 è½‰æŸç‰¹å®šä½¿ç”¨è€… */
 
   if (argc > 2)
   {
@@ -465,7 +465,7 @@ main(argc, argv)
     exit(1);
   }
 
-  /* Âà´«¨Ï¥ÎªÌ¤pÂû¸ê®Æ */
+  /* è½‰æ›ä½¿ç”¨è€…å°é›žè³‡æ–™ */
   for (c = 'a'; c <= 'z'; c++)
   {
     sprintf(buf, "usr/%c", c);

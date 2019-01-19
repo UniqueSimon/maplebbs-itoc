@@ -1,12 +1,12 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xc     �xmbox_copy   �x�����H��                                        �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │c     │mbox_copy   │拷貝信件                                        │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� c �i�H�����ӽg�峹/�H��/��ءA�i�J��ذϥH��� p �K
-  �W�A�Y�������s��ذϡC
+    將游標移到某欄，按 c 可以拷貝該篇文章/信件/精華，進入精華區以後按 p 貼
+  上，即完成收編精華區。
 
-    �����O�i�H�t�X���ҨϥΡC
+    本指令可以配合標籤使用。
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

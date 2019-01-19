@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/gem-expire.c	( NTHU CS MapleBBS Ver 3.10 )    */
 /*-------------------------------------------------------*/
-/* target : ­pºâ¥¼½sºëµØ°Ï & ¥¼½s¤Ñ¼ÆºëµØ°Ï±Æ¦æº]	 */
+/* target : è¨ˆç®—æœªç·¨ç²¾è¯å€ & æœªç·¨å¤©æ•¸ç²¾è¯å€æ’è¡Œæ¦œ	 */
 /* create : 99/11/26                                     */
 /* update : 01/08/27					 */
 /* author : Jimmy.bbs@whshs.twbbs.org			 */
@@ -18,7 +18,7 @@
 
 
 /*-------------------------------------------------------*/
-/* BRD shm ³¡¤À¶·»P cache.c ¬Û®e			 */
+/* BRD shm éƒ¨åˆ†é ˆèˆ‡ cache.c ç›¸å®¹			 */
 /*-------------------------------------------------------*/
 
 
@@ -28,26 +28,26 @@ static BCACHE *bshm;
 static void
 init_bshm()
 {
-  /* itoc.030727: ¦b¶}±Ò bbsd ¤§«e¡AÀ³¸Ó´N­n°õ¦æ¹L account¡A
-     ©Ò¥H bshm À³¸Ó¤w³]©w¦n */
+  /* itoc.030727: åœ¨é–‹å•Ÿ bbsd ä¹‹å‰ï¼Œæ‡‰è©²å°±è¦åŸ·è¡Œé accountï¼Œ
+     æ‰€ä»¥ bshm æ‡‰è©²å·²è¨­å®šå¥½ */
 
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-  if (bshm->uptime <= 0)	/* bshm ¥¼³]©w§¹¦¨ */
+  if (bshm->uptime <= 0)	/* bshm æœªè¨­å®šå®Œæˆ */
     exit(0);
 }
 
 
 /*-------------------------------------------------------*/
-/* ¥Dµ{¦¡						 */
+/* ä¸»ç¨‹å¼						 */
 /*-------------------------------------------------------*/
 
 
 typedef struct
 {
-  int day;			/* ´X¤Ñ¨S¾ã²zºëµØ°Ï */
-  char brdname[BNLEN + 1];	/* ªO¦W */
-  char BM[BMLEN + 1];		/* ªO¥D */
+  int day;			/* å¹¾å¤©æ²’æ•´ç†ç²¾è¯å€ */
+  char brdname[BNLEN + 1];	/* æ¿å */
+  char BM[BMLEN + 1];		/* æ¿ä¸» */
 }	BRDDATA;
 
 
@@ -55,12 +55,12 @@ static int
 int_cmp(a, b)
   BRDDATA *a, *b;
 {
-  return (b->day - a->day);	/* ¥Ñ¤j±Æ¨ì¤p */
+  return (b->day - a->day);	/* ç”±å¤§æ’åˆ°å° */
 }
 
 
 static BRDDATA board[MAXBOARD];
-static int locus = 0;			/* Á`¦@°O¿ı¤F´X­ÓªO */
+static int locus = 0;			/* ç¸½å…±è¨˜éŒ„äº†å¹¾å€‹æ¿ */
 
 
 static void
@@ -77,16 +77,16 @@ topgem()
   tail = bhdr + bshm->number;
   do
   {
-    /* ¸õ¹L¤£¦C¤J±Æ¦æº]ªº¬İªO */
+    /* è·³éä¸åˆ—å…¥æ’è¡Œæ¦œçš„çœ‹æ¿ */
     if ((bhdr->readlevel | bhdr->postlevel) >= (PERM_VALID << 1))	/* (BASIC + ... + VALID) < (VALID << 1) */
       continue;
 
     brdname = bhdr->brdname;
     sprintf(fpath, "gem/brd/%s/@/@log", brdname);
 
-    if (stat(fpath, &st) != -1)	/* ¦³ºëµØ°ÏªÌÀË¬d´X¤Ñ¥¼½s */
+    if (stat(fpath, &st) != -1)	/* æœ‰ç²¾è¯å€è€…æª¢æŸ¥å¹¾å¤©æœªç·¨ */
       board[locus].day = (now - st.st_mtime) / 86400;
-    else			/* µLºëµØ°ÏªÌ */
+    else			/* ç„¡ç²¾è¯å€è€… */
       board[locus].day = 999;
     strcpy(board[locus].brdname, brdname);
     strcpy(board[locus].BM, bhdr->BM);
@@ -113,13 +113,13 @@ write_data()
   fpo = fopen(OUTFILE_GEMOVERDUE, "w");
 
   fprintf(fpe,
-    "         \033[1;34m-----\033[37m=====\033[41m ¬İªOºëµØ°Ï¥¼½s¤§¬İªO (¦Ü %d ¤ë %d ¤é¤î) \033[;1;37m=====\033[34m-----\033[m\n"
-    "           \033[1;42m ¦W¦¸ \033[44m   ¬İªO¦WºÙ   \033[42m      ºëµØ°Ï¥¼½s      \033[44m   ªO   ¥D    \033[m\n",
+    "         \033[1;34m-----\033[37m=====\033[41m çœ‹æ¿ç²¾è¯å€æœªç·¨ä¹‹çœ‹æ¿ (è‡³ %d æœˆ %d æ—¥æ­¢) \033[;1;37m=====\033[34m-----\033[m\n"
+    "           \033[1;42m åæ¬¡ \033[44m   çœ‹æ¿åç¨±   \033[42m      ç²¾è¯å€æœªç·¨      \033[44m   æ¿   ä¸»    \033[m\n",
     ptime->tm_mon + 1, ptime->tm_mday);
 
   fprintf(fpo,
-    "        \033[1;34m-----\033[37m=====\033[41m ¬İªOºëµØ°Ï¥¼½s¤Ñ¼Æ¤§¬İªO (¦Ü %d ¤ë %d ¤é¤î) \033[;1;37m=====\033[34m-----\033[m\n"
-    "              \033[1;42m ¦W¦¸ \033[44m    ¬İªO¦WºÙ    \033[42m ºëµØ°Ï¥¼½s¤Ñ¼Æ \033[44m   ªO   ¥D    \033[m\n",
+    "        \033[1;34m-----\033[37m=====\033[41m çœ‹æ¿ç²¾è¯å€æœªç·¨å¤©æ•¸ä¹‹çœ‹æ¿ (è‡³ %d æœˆ %d æ—¥æ­¢) \033[;1;37m=====\033[34m-----\033[m\n"
+    "              \033[1;42m åæ¬¡ \033[44m    çœ‹æ¿åç¨±    \033[42m ç²¾è¯å€æœªç·¨å¤©æ•¸ \033[44m   æ¿   ä¸»    \033[m\n",
     ptime->tm_mon + 1, ptime->tm_mday);
 
   m = 1;
@@ -130,7 +130,7 @@ write_data()
     if (board[i].day == 999)
     {
       fprintf(fpe, "            %3d   %12s     %s      %.20s\n",
-	m, board[i].brdname, "©|¥¼½s¿èºëµØ°Ï", board[i].BM);
+	m, board[i].brdname, "å°šæœªç·¨è¼¯ç²¾è¯å€", board[i].BM);
       m++;
     }
     else

@@ -10,9 +10,9 @@
 
 
 #if 0
-   ¦¬¨ì¤§¤å³¹¤º®e©MÀÉÀY¤À§O¦b
-   ¤º¤å (body)   ¦b char *BODY
-   ÀÉÀY (header) ¦b char *SUBJECT, *FROM, *SITE, *DATE, *PATH, *GROUP, *MSGID, *POSTHOST, *CONTROL;
+   æ”¶åˆ°ä¹‹æ–‡ç« å…§å®¹å’Œæª”é ­åˆ†åˆ¥åœ¨
+   å…§æ–‡ (body)   åœ¨ char *BODY
+   æª”é ­ (header) åœ¨ char *SUBJECT, *FROM, *SITE, *DATE, *PATH, *GROUP, *MSGID, *POSTHOST, *CONTROL;
 #endif
 
 
@@ -22,7 +22,7 @@
 
 
 /* ----------------------------------------------------- */
-/* board¡Gshm ³¡¥÷¶·»P cache.c ¬Û®e			 */
+/* boardï¼šshm éƒ¨ä»½é ˆèˆ‡ cache.c ç›¸å®¹			 */
 /* ----------------------------------------------------- */
 
 
@@ -32,22 +32,22 @@ static BCACHE *bshm;
 void
 init_bshm()
 {
-  /* itoc.030727: ¦b¶}±Ò bbsd ¤§«e¡AÀ³¸Ó´N­n°õ¦æ¹L account¡A
-     ©Ò¥H bshm À³¸Ó¤w³]©w¦n */
+  /* itoc.030727: åœ¨é–‹å•Ÿ bbsd ä¹‹å‰ï¼Œæ‡‰è©²å°±è¦åŸ·è¡Œé accountï¼Œ
+     æ‰€ä»¥ bshm æ‡‰è©²å·²è¨­å®šå¥½ */
 
   bshm = shm_new(BRDSHM_KEY, sizeof(BCACHE));
 
-  if (bshm->uptime <= 0)	/* bshm ¥¼³]©w§¹¦¨ */
+  if (bshm->uptime <= 0)	/* bshm æœªè¨­å®šå®Œæˆ */
     exit(0);
 }
 
 
 /* ----------------------------------------------------- */
-/* ³B²z DATE						 */
+/* è™•ç† DATE						 */
 /* ----------------------------------------------------- */
 
 
-#if 0	/* itoc.030303.µù¸Ñ: RFC 822 ªº DATE Äæ¦ì¡FRFC 1123 ±N year §ï¦¨ 4-DIGIT */
+#if 0	/* itoc.030303.è¨»è§£: RFC 822 çš„ DATE æ¬„ä½ï¼›RFC 1123 å°‡ year æ”¹æˆ 4-DIGIT */
 
 date-time := [ wday "," ] date time ; dd mm yy, hh:mm:ss zzz 
 wday      :=  "Mon" / "Tue" / "Wed" / "Thu" / "Fri" / "Sat" / "Sun" 
@@ -62,7 +62,7 @@ zone      :=  "UT" / "GMT" / "EST" / "EDT" / "CST" / "CDT" / "MST" / "MDT" / "PS
 static time_t datevalue;
 
 static void
-parse_date()		/* §â²Å¦X "dd mmm yyyy hh:mm:ss" ªº®æ¦¡¡AÂà¦¨ time_t */
+parse_date()		/* æŠŠç¬¦åˆ "dd mmm yyyy hh:mm:ss" çš„æ ¼å¼ï¼Œè½‰æˆ time_t */
 {
   static char months[12][4] = {"jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"};
   int i;
@@ -70,7 +70,7 @@ parse_date()		/* §â²Å¦X "dd mmm yyyy hh:mm:ss" ªº®æ¦¡¡AÂà¦¨ time_t */
   struct tm ptime;
 
   str_ncpy(buf, DATE, sizeof(buf));
-  str_lower(buf, buf);			/* ³q³q´«¤p¼g¡A¦]¬° Dec DEC dec ¦UºØ³£¦³¤H¥Î */
+  str_lower(buf, buf);			/* é€šé€šæ›å°å¯«ï¼Œå› ç‚º Dec DEC dec å„ç¨®éƒ½æœ‰äººç”¨ */
 
   str = buf + 2;
   for (i = 0; i < 12; i++)
@@ -86,7 +86,7 @@ parse_date()		/* §â²Å¦X "dd mmm yyyy hh:mm:ss" ªº®æ¦¡¡AÂà¦¨ time_t */
     ptime.tm_sec = atoi(ptr + 15);
     ptime.tm_min = atoi(ptr + 12);
     ptime.tm_hour = atoi(ptr + 9);
-    ptime.tm_mday = (ptr == buf + 2 || ptr == buf + 7) ? atoi(ptr - 2) : atoi(ptr - 3);	/* RFC 822 ¤¹³\ mday ¬O 1- ©Î 2- DIGIT */
+    ptime.tm_mday = (ptr == buf + 2 || ptr == buf + 7) ? atoi(ptr - 2) : atoi(ptr - 3);	/* RFC 822 å…è¨± mday æ˜¯ 1- æˆ– 2- DIGIT */
     ptime.tm_mon = i;
     ptime.tm_year = atoi(ptr + 4) - 1900;
     ptime.tm_isdst = 0;
@@ -99,21 +99,21 @@ parse_date()		/* §â²Å¦X "dd mmm yyyy hh:mm:ss" ªº®æ¦¡¡AÂà¦¨ time_t */
     str = ptr + 18;
     if (ptr = strchr(str, '+'))
     {
-      /* ¦pªG¦³ +0100 (MET) µ¥µù©ú®É°Ï¡A¥ı½Õ¦^ GMT ®É°Ï */
+      /* å¦‚æœæœ‰ +0100 (MET) ç­‰è¨»æ˜æ™‚å€ï¼Œå…ˆèª¿å› GMT æ™‚å€ */
       datevalue -= ((ptr[1] - '0') * 10 + (ptr[2] - '0')) * 3600 + ((ptr[3] - '0') * 10 + (ptr[4] - '0')) * 60;
     }
     else if (ptr = strchr(str, '-'))
     {
-      /* ¦pªG¦³ -1000 (HST) µ¥µù©ú®É°Ï¡A¥ı½Õ¦^ GMT ®É°Ï */
+      /* å¦‚æœæœ‰ -1000 (HST) ç­‰è¨»æ˜æ™‚å€ï¼Œå…ˆèª¿å› GMT æ™‚å€ */
       datevalue += ((ptr[1] - '0') * 10 + (ptr[2] - '0')) * 3600 + ((ptr[3] - '0') * 10 + (ptr[4] - '0')) * 60;
     }
-    datevalue += 28800;		/* ¥xÆW©Ò¦bªº CST ®É°Ï¤ñ GMT §Ö¤K¤p®É */
+    datevalue += 28800;		/* å°ç£æ‰€åœ¨çš„ CST æ™‚å€æ¯” GMT å¿«å…«å°æ™‚ */
   }
   else
   {
-    /* ¦pªG¤ÀªR¥¢±Ñ¡A¨º»ò®³²{¦b®É¶¡¨Ó·íµo¤å®É¶¡ */
+    /* å¦‚æœåˆ†æå¤±æ•—ï¼Œé‚£éº¼æ‹¿ç¾åœ¨æ™‚é–“ä¾†ç•¶ç™¼æ–‡æ™‚é–“ */
     time(&datevalue);
-    /* bbslog("<rec_article> :Warn: parse_date ¿ù»~¡G%s\n", DATE); */
+    /* bbslog("<rec_article> :Warn: parse_date éŒ¯èª¤ï¼š%s\n", DATE); */
   }
 }
 
@@ -152,20 +152,20 @@ bbspost_add(board, addr, nick)
   HDR hdr;
   FILE *fp;
 
-  /* ¼g¤J¤å³¹¤º®e */
+  /* å¯«å…¥æ–‡ç« å…§å®¹ */
 
   brd_fpath(folder, board, FN_DIR);
 
   if (fp = fdopen(hdr_stamp(folder, 'A', &hdr, fpath), "w"))
   {
-    fprintf(fp, "µo«H¤H: %.50s ¬İªO: %s\n", FROM, board);
-    fprintf(fp, "¼Ğ  ÃD: %.70s\n", SUBJECT);
+    fprintf(fp, "ç™¼ä¿¡äºº: %.50s çœ‹æ¿: %s\n", FROM, board);
+    fprintf(fp, "æ¨™  é¡Œ: %.70s\n", SUBJECT);
     if (SITE)
-      fprintf(fp, "µo«H¯¸: %.27s (%.40s)\n\n", SITE, DATE);
+      fprintf(fp, "ç™¼ä¿¡ç«™: %.27s (%.40s)\n\n", SITE, DATE);
     else
-      fprintf(fp, "µo«H¯¸: %.40s\n\n", DATE);
+      fprintf(fp, "ç™¼ä¿¡ç«™: %.40s\n\n", DATE);
 
-    /* chuan: header ¸ò body ­nªÅ¦æ¹j¶} */
+    /* chuan: header è·Ÿ body è¦ç©ºè¡Œéš”é–‹ */
 
     /* fprintf(fp, "%s", BODY); */
 
@@ -184,14 +184,14 @@ bbspost_add(board, addr, nick)
     fclose(fp);
   }
 
-  /* ³y HDR */
+  /* é€  HDR */
 
   hdr.xmode = POST_INCOME;
 
-  /* Thor.980825: ¨¾¤î¦r¦ê¤Óªø»\¹LÀY */
+  /* Thor.980825: é˜²æ­¢å­—ä¸²å¤ªé•·è“‹éé ­ */
   str_ncpy(hdr.owner, addr, sizeof(hdr.owner));
   str_ncpy(hdr.nick, nick, sizeof(hdr.nick));
-  str_stamp(hdr.date, &datevalue);	/* ¨Ì DATE: Äæ¦ìªº¤é´Á¡A»P hdr.chrono ¤£¦P¨B */
+  str_stamp(hdr.date, &datevalue);	/* ä¾ DATE: æ¬„ä½çš„æ—¥æœŸï¼Œèˆ‡ hdr.chrono ä¸åŒæ­¥ */
   str_ncpy(hdr.title, SUBJECT, sizeof(hdr.title));
 
   rec_bot(folder, &hdr, sizeof(HDR));
@@ -220,7 +220,7 @@ move_post(hdr, board, filename)
   hdr_stamp(folder, HDR_LINK | 'A', &post, filename);
   unlink(filename);
 
-  /* ª½±µ½Æ»s trailing data */
+  /* ç›´æ¥è¤‡è£½ trailing data */
 
   memcpy(post.owner, hdr->owner, TTLEN + 140);
 
@@ -251,18 +251,18 @@ bbspost_cancel(board, chrono, fpath)
     return;
 
   /* flock(fd, LOCK_EX); */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_exlock(fd);
 
   fstat(fd, &st);
   size = sizeof(HDR);
   ent = ((long) st.st_size) / size;
 
-  /* itoc.030307.µù¸Ñ: ¥h .DIR ¤¤ÂÇ¥Ñ¤ñ¹ï chrono §ä¥X¬O­ş¤@½g */
+  /* itoc.030307.è¨»è§£: å» .DIR ä¸­è—‰ç”±æ¯”å° chrono æ‰¾å‡ºæ˜¯å“ªä¸€ç¯‡ */
 
   while (1)
   {
-    /* itoc.030307.µù¸Ñ: ¨C 16 ½g¬°¤@­Ó block */
+    /* itoc.030307.è¨»è§£: æ¯ 16 ç¯‡ç‚ºä¸€å€‹ block */
     ent -= 16;
     if (ent <= 0)
       break;
@@ -271,18 +271,18 @@ bbspost_cancel(board, chrono, fpath)
     if (read(fd, &hdr, size) != size)
       break;
 
-    if (hdr.chrono <= chrono)	/* ¸¨¦b³o­Ó block ¸Ì */
+    if (hdr.chrono <= chrono)	/* è½åœ¨é€™å€‹ block è£¡ */
     {
       do
       {
 	if (hdr.chrono == chrono)
 	{
-	  /* Thor.981014: mark ªº¤å³¹¤£³Q cancel */
+	  /* Thor.981014: mark çš„æ–‡ç« ä¸è¢« cancel */
 	  if (hdr.xmode & POST_MARKED)
 	    break;
 
 #ifdef _KEEP_CANCEL_
-	  /* itoc.030613: «O¯d³Q cancel ªº¤å³¹©ó [deleted] */
+	  /* itoc.030613: ä¿ç•™è¢« cancel çš„æ–‡ç« æ–¼ [deleted] */
 	  move_post(&hdr, BN_DELETED, fpath);
 #else
 	  unlink(fpath);
@@ -290,7 +290,7 @@ bbspost_cancel(board, chrono, fpath)
 
 	  update_btime(board);
 
-	  /* itoc.030307: ³Q cancel ªº¤å³¹¤£«O¯d header */
+	  /* itoc.030307: è¢« cancel çš„æ–‡ç« ä¸ä¿ç•™ header */
 
 	  off = lseek(fd, 0, SEEK_CUR);
 	  len = st.st_size - off;
@@ -315,7 +315,7 @@ bbspost_cancel(board, chrono, fpath)
   }
 
   /* flock(fd, LOCK_UN); */
-  /* Thor.981205: ¥Î fcntl ¨ú¥Nflock, POSIX¼Ğ·Ç¥Îªk */
+  /* Thor.981205: ç”¨ fcntl å–ä»£flock, POSIXæ¨™æº–ç”¨æ³• */
   f_unlock(fd);
 
   close(fd);
@@ -340,7 +340,7 @@ cancel_article(msgid)
 
   /* XLOG("cancel %s (%s)\n", cancelfrom, buffer); */
 
-  sprintf(fpath, "brd/%s/%c/%s", board, xname[7], xname);	/* ¥h§ä¥X¨º½g¤å³¹ */
+  sprintf(fpath, "brd/%s/%c/%s", board, xname[7], xname);	/* å»æ‰¾å‡ºé‚£ç¯‡æ–‡ç«  */
 
   /* XLOG("cancel fpath (%s)\n", fpath); */
 
@@ -351,8 +351,8 @@ cancel_article(msgid)
     len = read(fd, buffer, sizeof(buffer));
     close(fd);
 
-    /* Thor.981221.µù¸Ñ: ¥~¨Ó¤å³¹¤~¯à³Q cancel */
-    if ((len > 10) && !memcmp(buffer, "µo«H¤H: ", 8))
+    /* Thor.981221.è¨»è§£: å¤–ä¾†æ–‡ç« æ‰èƒ½è¢« cancel */
+    if ((len > 10) && !memcmp(buffer, "ç™¼ä¿¡äºº: ", 8))
     {
       char *xfrom, *str;
 
@@ -362,14 +362,14 @@ cancel_article(msgid)
 	*str = '\0';
 
 #ifdef _NoCeM_
-	/* gslin.000607: ncm_issuer ¥i¥H¬å§O¯¸µoªº«H */
+	/* gslin.000607: ncm_issuer å¯ä»¥ç åˆ¥ç«™ç™¼çš„ä¿¡ */
 	if (strcmp(xfrom, cancelfrom) && !search_issuer(FROM, NULL))
 #else
 	if (strcmp(xfrom, cancelfrom))
 #endif
 	{
-	  /* itoc.030107.µù¸Ñ: ­Y cancelfrom ©M¥»¦a¤å³¹ header °O¿ıªº xfrom ¤£¦P¡A´N¬O fake cancel */
-	  bbslog("<rec_article> :Warn: µL®Äªº cancel¡G%s, sender: %s, path: %s\n", xfrom, FROM, PATH);
+	  /* itoc.030107.è¨»è§£: è‹¥ cancelfrom å’Œæœ¬åœ°æ–‡ç«  header è¨˜éŒ„çš„ xfrom ä¸åŒï¼Œå°±æ˜¯ fake cancel */
+	  bbslog("<rec_article> :Warn: ç„¡æ•ˆçš„ cancelï¼š%s, sender: %s, path: %s\n", xfrom, FROM, PATH);
 	  return -1;
 	}
 
@@ -387,7 +387,7 @@ cancel_article(msgid)
 /* ----------------------------------------------------- */
 
 
-static int		/* 1: ²Å¦X¾×«H³W«h */
+static int		/* 1: ç¬¦åˆæ“‹ä¿¡è¦å‰‡ */
 is_spam(board, addr, nick)
   char *board, *addr, *nick;
 {
@@ -422,9 +422,9 @@ is_spam(board, addr, nick)
       compare = MSGID;
     else if (xmode & INN_SPAMBODY)
       compare = BODY;
-    else if (xmode & INN_SPAMSITE && SITE)		/* SITE ¥i¥H¬O NULL */
+    else if (xmode & INN_SPAMSITE && SITE)		/* SITE å¯ä»¥æ˜¯ NULL */
       compare = SITE;
-    else if (xmode & INN_SPAMPOSTHOST && POSTHOST)	/* POSTHOST ¥i¥H¬O NULL */
+    else if (xmode & INN_SPAMPOSTHOST && POSTHOST)	/* POSTHOST å¯ä»¥æ˜¯ NULL */
       compare = POSTHOST;
     else
       continue;
@@ -473,21 +473,21 @@ receive_article()
     if (!(nf = search_newsfeeds_bygroup(group)))
       continue;
 
-    if (firstboard)	/* opus: ²Ä¤@­ÓªO¤~»İ­n³B²z */
+    if (firstboard)	/* opus: ç¬¬ä¸€å€‹æ¿æ‰éœ€è¦è™•ç† */
     {
-      /* Thor.980825: gc patch: lib/str_decode ¥u¯à±µ¨ü decode §¹ strlen < 256 */ 
+      /* Thor.980825: gc patch: lib/str_decode åªèƒ½æ¥å— decode å®Œ strlen < 256 */ 
 
       str_ncpy(poolx, SUBJECT, 255);
       str_decode(poolx);
-      str_ansi(mysubject, poolx, 70);	/* 70 ¬O bbspost_add() ¼ĞÃD©Ò»İªºªø«× */
+      str_ansi(mysubject, poolx, 70);	/* 70 æ˜¯ bbspost_add() æ¨™é¡Œæ‰€éœ€çš„é•·åº¦ */
       SUBJECT = mysubject;
 
       str_ncpy(poolx, FROM, 255);
       str_decode(poolx);
-      str_ansi(myfrom, poolx, 128);	/* ÁöµM bbspost_add() µo«H¤H©Ò»İªºªø«×¥u»İ­n 50¡A¦ı¬O str_from() »İ­nªø¤@¨Ç */
+      str_ansi(myfrom, poolx, 128);	/* é›–ç„¶ bbspost_add() ç™¼ä¿¡äººæ‰€éœ€çš„é•·åº¦åªéœ€è¦ 50ï¼Œä½†æ˜¯ str_from() éœ€è¦é•·ä¸€äº› */
       FROM = myfrom;
 
-      /* itoc.030218.µù¸Ñ: ³B²z¡uµo«H¯¸¡v¤¤ªº®É¶¡ */
+      /* itoc.030218.è¨»è§£: è™•ç†ã€Œç™¼ä¿¡ç«™ã€ä¸­çš„æ™‚é–“ */
       parse_date();
       strcpy(mydate, (char *) Btime(&datevalue));
       DATE = mydate;

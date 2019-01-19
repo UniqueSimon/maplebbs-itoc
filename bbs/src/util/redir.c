@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/redir.c		( NTHU CS MapleBBS Ver 3.10 )	 */
 /*-------------------------------------------------------*/
-/* target : ¦Û°Ê­««Ø.DIRµ{¦¡				 */
+/* target : è‡ªå‹•é‡å»º.DIRç¨‹å¼				 */
 /* create : 99/10/07					 */
 /* update : 04/11/29					 */
 /* author : Thor.bbs@bbs.cs.nthu.edu.tw			 */
@@ -14,9 +14,9 @@
 
 #if 0
 
-  ¦¹µ{¦¡¥i¥H­««Ø¬İªO¡BºëµØ°Ï¡B«H½cªº .DIR
-  ·| scan current directory ¨Ó²£¥Í .DIR.re
-  ¥H chrono ¨Ó±Æ§Ç
+  æ­¤ç¨‹å¼å¯ä»¥é‡å»ºçœ‹æ¿ã€ç²¾è¯å€ã€ä¿¡ç®±çš„ .DIR
+  æœƒ scan current directory ä¾†ç”¢ç”Ÿ .DIR.re
+  ä»¥ chrono ä¾†æ’åº
 
 #endif
 
@@ -65,7 +65,7 @@ pool_add(fname)
 }
 
 
-static int type;		/* 'b':¬İªO 'g':ºëµØ°Ï 'm':«H½c */
+static int type;		/* 'b':çœ‹æ¿ 'g':ç²¾è¯å€ 'm':ä¿¡ç®± */
 
 
 static HDR *
@@ -85,12 +85,12 @@ article_parse(fname)
   if (type == 'm')
     hdr.xmode = MAIL_READ;
 
-  if (*fname == 'F')	/* ¦pªG¬O¨÷©v¡A¥Ñ©ó¨S¦³¨ä¥L¸ê°T¤F¡A©Ò¥H¥u¯àÀH«Kµ¹ */
+  if (*fname == 'F')	/* å¦‚æœæ˜¯å·å®—ï¼Œç”±æ–¼æ²’æœ‰å…¶ä»–è³‡è¨Šäº†ï¼Œæ‰€ä»¥åªèƒ½éš¨ä¾¿çµ¦ */
   {
     hdr.xmode = GEM_FOLDER;
     strcpy(hdr.owner, STR_SYSOP);
     strcpy(hdr.nick, SYSOPNICK);
-    strcpy(hdr.title, "·É®ü¬B¿ò");
+    strcpy(hdr.title, "æ»„æµ·æ‹¾éº");
     return &hdr;
   }
 
@@ -114,7 +114,7 @@ article_parse(fname)
 	ptr2 = strchr(ptr1 + 1, '@');
 	ptr3 = strchr(ptr1 + 1, '(');
 
-	if (ptr2 && (!ptr3 || ptr2 < ptr3))	/* ¦b¼ÊºÙ¸Ì­±ªº @ ¤£ºâ¬O email */
+	if (ptr2 && (!ptr3 || ptr2 < ptr3))	/* åœ¨æš±ç¨±è£¡é¢çš„ @ ä¸ç®—æ˜¯ email */
 	{
 	  str_from(ptr1, hdr.owner, hdr.nick);
 	  hdr.xmode |= POST_INCOME;	/* also MAIL_INCOME */
@@ -136,14 +136,14 @@ article_parse(fname)
 	if (ptr1 = strchr(buf, '\n'))
 	  *ptr1 = '\0';
 
-	if (!strncmp(buf, "¼ĞÃD: ", LEN_AUTHOR1 + 1))
+	if (!strncmp(buf, "æ¨™é¡Œ: ", LEN_AUTHOR1 + 1))
 	  ptr1 = buf + LEN_AUTHOR1 + 1;
-	else if (!strncmp(buf, "¼Ğ  ÃD: ", LEN_AUTHOR2 + 1))
+	else if (!strncmp(buf, "æ¨™  é¡Œ: ", LEN_AUTHOR2 + 1))
 	  ptr1 = buf + LEN_AUTHOR2 + 1;
 	else
 	  ptr1 = NULL;
 
-	if (ptr1 && *ptr1)	/* ¦³¼ĞÃDÄæ¦ì */
+	if (ptr1 && *ptr1)	/* æœ‰æ¨™é¡Œæ¬„ä½ */
 	  str_ncpy(hdr.title, ptr1, sizeof(hdr.title));
       }
     }
@@ -165,7 +165,7 @@ allindex_collect()
   char *fname, fpath[64];
   FILE *fp;
 
-  /* ±N©Ò¦³ªº F* ³£¼g¤J¤@­Ó¼È¦sÀÉ */
+  /* å°‡æ‰€æœ‰çš„ F* éƒ½å¯«å…¥ä¸€å€‹æš«å­˜æª” */
   if (fp = fopen(allindex, "w"))
   {
     for (i = 0; i < n_head; i++)
@@ -221,11 +221,11 @@ usage(argv)
 {
   char *str = argv[0];
 
-  printf("Usage: ½Ğ«ü©w°Ñ¼Æ\n");
-  printf("  ­««Ø ¬İªO¤å³¹ ¯Á¤Ş½Ğ°õ¦æ %s -b\n", str);
-  printf("  ­««ØºëµØ°Ï¤å³¹¯Á¤Ş½Ğ°õ¦æ %s -g\n", str);
-  printf("  ­««Ø «H½c«H¥ó ¯Á¤Ş½Ğ°õ¦æ %s -m\n", str);
-  printf("°õ¦æµ²§ô¥H«á¡A¦A±N .DIR.re ÂĞ»\\ .DIR §Y¥i\n");
+  printf("Usage: è«‹æŒ‡å®šåƒæ•¸\n");
+  printf("  é‡å»º çœ‹æ¿æ–‡ç«  ç´¢å¼•è«‹åŸ·è¡Œ %s -b\n", str);
+  printf("  é‡å»ºç²¾è¯å€æ–‡ç« ç´¢å¼•è«‹åŸ·è¡Œ %s -g\n", str);
+  printf("  é‡å»º ä¿¡ç®±ä¿¡ä»¶ ç´¢å¼•è«‹åŸ·è¡Œ %s -m\n", str);
+  printf("åŸ·è¡ŒçµæŸä»¥å¾Œï¼Œå†å°‡ .DIR.re è¦†è“‹\ .DIR å³å¯\n");
 
   exit(0);
 }
@@ -250,7 +250,7 @@ main(argc, argv)
   if (type != 'b' && type != 'g' && type != 'm')
     usage(argv);
 
-  /* readdir 0-9A-V(¬İªO¡BºëµØ°Ï) ©Î @(«H½c) */
+  /* readdir 0-9A-V(çœ‹æ¿ã€ç²¾è¯å€) æˆ– @(ä¿¡ç®±) */
 
   buf[1] = '\0';
 
@@ -263,11 +263,11 @@ main(argc, argv)
       while (de = readdir(dirp))
       {
 	fname = de->d_name;
-	if (type == 'b' && *fname != 'A')			/* ¬İªO¥²¬O A1234567 */
+	if (type == 'b' && *fname != 'A')			/* çœ‹æ¿å¿…æ˜¯ A1234567 */
 	  continue;
-	if (type == 'g' && *fname != 'A' && *fname != 'F')	/* ºëµØ°Ï¥²¬O A1234567 ©Î F1234567 */
+	if (type == 'g' && *fname != 'A' && *fname != 'F')	/* ç²¾è¯å€å¿…æ˜¯ A1234567 æˆ– F1234567 */
 	  continue;
-	if (type == 'm' && *fname != '@')			/* «H½c¥²¬O @1234567 */
+	if (type == 'm' && *fname != '@')			/* ä¿¡ç®±å¿…æ˜¯ @1234567 */
 	  continue;
 
 	if (pool_add(fname) < 0)
@@ -276,14 +276,14 @@ main(argc, argv)
       closedir(dirp);
     }
 
-    if (type == 'm')	/* «H½c¥u»İ­n±½ @ ³o­Ó¥Ø¿ı */
+    if (type == 'm')	/* ä¿¡ç®±åªéœ€è¦æƒ @ é€™å€‹ç›®éŒ„ */
       break;
   }
 
   if (n_head)
   {
-    /* ¬İªO/«H½c ´Nª½±µ§â n_pool ¸Ì­±ªº©Ò¦³ÀÉ®×¥[¶i .DIR §Y¥i */
-    /* ºëµØ°Ïªº¸Ü¡A«h¬O¥u»İ­n§â¨S¦³¦b¨ä¥L F* ¸Ì­±ªº¥[¤J .DIR */
+    /* çœ‹æ¿/ä¿¡ç®± å°±ç›´æ¥æŠŠ n_pool è£¡é¢çš„æ‰€æœ‰æª”æ¡ˆåŠ é€² .DIR å³å¯ */
+    /* ç²¾è¯å€çš„è©±ï¼Œå‰‡æ˜¯åªéœ€è¦æŠŠæ²’æœ‰åœ¨å…¶ä»– F* è£¡é¢çš„åŠ å…¥ .DIR */
 
     /* qsort chrono */
     if (n_head > 1)
@@ -300,7 +300,7 @@ main(argc, argv)
       {
 	fname = n_pool[i];
 
-	if (type == 'g' && allindex_search(fname))	/* ¤w¸g¦b¨ä¥L¨÷©v¸Ì­±¤F¡A¨º´N¤£·|¬O¦b .DIR ¸Ì­± */
+	if (type == 'g' && allindex_search(fname))	/* å·²ç¶“åœ¨å…¶ä»–å·å®—è£¡é¢äº†ï¼Œé‚£å°±ä¸æœƒæ˜¯åœ¨ .DIR è£¡é¢ */
 	  continue;
 
 	/* parse header */

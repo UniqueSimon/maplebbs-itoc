@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/windtop.h					 */
 /*-------------------------------------------------------*/
-/* target : WindTop ¦Ü Maple Âà´«			 */
+/* target : WindTop è‡³ Maple è½‰æ›			 */
 /* create : 03/06/30					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -10,25 +10,25 @@
 
 #if 0
 
-  0. «O¯d­ì¨Ó brd/ gem/ usr/ .USR¡A¨ä¾l´«¦¨·sª©ªº
+  0. ä¿ç•™åŸä¾† brd/ gem/ usr/ .USRï¼Œå…¶é¤˜æ›æˆæ–°ç‰ˆçš„
 
-  1. ³]©w FN_BOARD
+  1. è¨­å®š FN_BOARD
 
-  2. §Q¥Î windtop2brd Âà´« .BRD
+  2. åˆ©ç”¨ windtop2brd è½‰æ› .BRD
 
-  3. §Q¥Î windtop2usr Âà´« .ACCT
+  3. åˆ©ç”¨ windtop2usr è½‰æ› .ACCT
 
-  4. §Q¥Î windtop2mf Âà´« MF
+  4. åˆ©ç”¨ windtop2mf è½‰æ› MF
 
-  5. §Q¥Î windtop2pip Âà´« chicken
+  5. åˆ©ç”¨ windtop2pip è½‰æ› chicken
 
-  6. ±N·sª©ªº gem/@/ ¤Uªº³o¨ÇÀÉ®×½Æ»s¹L¨Ó
+  6. å°‡æ–°ç‰ˆçš„ gem/@/ ä¸‹çš„é€™äº›æª”æ¡ˆè¤‡è£½éä¾†
      @apply @e-mail @goodbye @index @justify @newuser @opening.0
      @opening.1 @opening.2 @post @re-reg @tryout @welcome
             
-  7. ¤W BBS ¯¸¡A¦b (A)nnounce ¸Ì­±¡A«Ø¥H¤U¤G­Ó¨÷©vªº©Ò¦³¸ê®Æ
-     {¸ÜÃD} ¼öªù°Q½×
-     {±Æ¦æ} ²Î­p¸ê®Æ
+  7. ä¸Š BBS ç«™ï¼Œåœ¨ (A)nnounce è£¡é¢ï¼Œå»ºä»¥ä¸‹äºŒå€‹å·å®—çš„æ‰€æœ‰è³‡æ–™
+     {è©±é¡Œ} ç†±é–€è¨è«–
+     {æ’è¡Œ} çµ±è¨ˆè³‡æ–™
 
 #endif
 
@@ -36,7 +36,7 @@
 #include "bbs.h"
 
 
-#define FN_BOARD	"/tmp/.BRD"	/* WindTop BBS ªº .BRD */
+#define FN_BOARD	"/tmp/.BRD"	/* WindTop BBS çš„ .BRD */
 
 
 /* ----------------------------------------------------- */
@@ -61,15 +61,15 @@ typedef struct
   time_t staytime;		/* user total stay time */
   time_t tcheck;		/* time to check mbox/pal */
   char lasthost[32];		/* user last login remote host */
-  int numemail;			/* ±Hµo Inetrnet E-mail ¦¸¼Æ */
-  time_t tvalid;		/* ³q¹L»{ÃÒ¡B§ó§ï mail address ªº®É¶¡ */
+  int numemail;			/* å¯„ç™¼ Inetrnet E-mail æ¬¡æ•¸ */
+  time_t tvalid;		/* é€šéèªè­‰ã€æ›´æ”¹ mail address çš„æ™‚é–“ */
   char email[60];		/* user email */
   char address[60];		/* user address */
   char justify[60];		/* FROM of replied justify mail */
-  char vmail[60];		/* ³q¹L»{ÃÒ¤§ email */
+  char vmail[60];		/* é€šéèªè­‰ä¹‹ email */
   time_t deny;			/* user violatelaw time */
-  int request;			/* ÂIºq¨t²Î */
-  usint ufo2;			/* ©µ¦ùªº­Ó¤H³]©w */
+  int request;			/* é»æ­Œç³»çµ± */
+  usint ufo2;			/* å»¶ä¼¸çš„å€‹äººè¨­å®š */
   char ident[108];		/* user remote host ident */
   time_t vtime;			/* validate time */
 }	userec;
@@ -88,23 +88,23 @@ typedef struct
   char class[5];
   char BM[37];			/* BMs' uid, token '/' */
 
-  uschar bvote;			/* ¦@¦³´X¶µ§ë²¼Á|¦æ¤¤ */
+  uschar bvote;			/* å…±æœ‰å¹¾é …æŠ•ç¥¨èˆ‰è¡Œä¸­ */
 
-  time_t bstamp;		/* «Ø¥ß¬İªOªº®É¶¡, unique */
-  usint readlevel;		/* ¾\Åª¤å³¹ªºÅv­­ */
-  usint postlevel;		/* µoªí¤å³¹ªºÅv­­ */
-  usint battr;			/* ¬İªOÄİ©Ê */
-  time_t btime;			/* .DIR ªº st_mtime */
-  int bpost;			/* ¦@¦³´X½g post */
-  time_t blast;			/* ³Ì«á¤@½g post ªº®É¶¡ */
+  time_t bstamp;		/* å»ºç«‹çœ‹æ¿çš„æ™‚é–“, unique */
+  usint readlevel;		/* é–±è®€æ–‡ç« çš„æ¬Šé™ */
+  usint postlevel;		/* ç™¼è¡¨æ–‡ç« çš„æ¬Šé™ */
+  usint battr;			/* çœ‹æ¿å±¬æ€§ */
+  time_t btime;			/* .DIR çš„ st_mtime */
+  int bpost;			/* å…±æœ‰å¹¾ç¯‡ post */
+  time_t blast;			/* æœ€å¾Œä¸€ç¯‡ post çš„æ™‚é–“ */
   usint expiremax;		/* Expire Max Post */
   usint expiremin;		/* Expire Min Post */
   usint expireday;		/* Expire old Post */
-  usint n_reads;		/* ¬İªO¾\Åª²Ö­p times/hour */
-  usint n_posts;		/* ¬İªOµoªí²Ö­p times/hour */
-  usint n_news;			/* ¬İªOÂà«H²Ö­p times/hour */
-  usint n_bans;			/* ¬İªOÀÉ«H²Ö­p times/hour */
-  char  reserve[100];		/* «O¯d¥¼¥Î */
+  usint n_reads;		/* çœ‹æ¿é–±è®€ç´¯è¨ˆ times/hour */
+  usint n_posts;		/* çœ‹æ¿ç™¼è¡¨ç´¯è¨ˆ times/hour */
+  usint n_news;			/* çœ‹æ¿è½‰ä¿¡ç´¯è¨ˆ times/hour */
+  usint n_bans;			/* çœ‹æ¿æª”ä¿¡ç´¯è¨ˆ times/hour */
+  char  reserve[100];		/* ä¿ç•™æœªç”¨ */
 }	boardheader;
 
 
@@ -113,24 +113,24 @@ typedef struct
 /* ----------------------------------------------------- */
 
 
-#define BATTR_NOZAP       0x0001  /* ¤£¥i zap */
-#define BATTR_NOTRAN      0x0002  /* ¤£Âà«H */
-#define BATTR_NOCOUNT     0x0004  /* ¤£­p¤å³¹µoªí½g¼Æ */
-#define BATTR_NOSTAT      0x0008  /* ¤£¯Ç¤J¼öªù¸ÜÃD²Î­p */
-#define BATTR_NOVOTE      0x0010  /* ¤£¤½§G§ë²¼µ²ªG©ó [sysop] ªO */
-#define BATTR_ANONYMOUS   0x0020  /* °Î¦W¬İªO */
-#define BATTR_NOFORWARD   0x0040  /* lkchu.981201: ¤£¥iÂà±H */
-#define BATTR_LOGEMAIL    0x0080  /* ¦Û°Êªş¥[e-mail */
-#define BATTR_NOBAN       0x0100  /* ¤£¾×«H */
-#define BATTR_NOLOG       0x0200  /* ¤£¬ö¿ı¯¸¤º¹Hªk */
-#define BATTR_NOCNTCROSS  0x0400  /* ¤£¬ö¿ı cross post */
-#define BATTR_NOREPLY     0x0800  /* ¤£¯à¦^¤å³¹ */
-#define BATTR_NOLOGREAD   0x1000  /* ¤£¬ö¿ı¬İª©¾\Åª²v */
-#define BATTR_CHECKWATER  0x2000  /* ¬ö¿ıÄé¤ô¦¸¼Æ */
-#define BATTR_CHANGETITLE 0x4000  /* ª©¥D­×§ïª©¦W */
-#define BATTR_MODIFY      0x8000  /* ¨Ï¥ÎªÌ­×§ï¤å³¹ */
-#define BATTR_PRH         0x10000 /* ±ÀÂË¤å³¹ */
-#define BATTR_NOTOTAL     0x20000 /* ¤£²Î­p¬İªO¨Ï¥Î¬ö¿ı */
+#define BATTR_NOZAP       0x0001  /* ä¸å¯ zap */
+#define BATTR_NOTRAN      0x0002  /* ä¸è½‰ä¿¡ */
+#define BATTR_NOCOUNT     0x0004  /* ä¸è¨ˆæ–‡ç« ç™¼è¡¨ç¯‡æ•¸ */
+#define BATTR_NOSTAT      0x0008  /* ä¸ç´å…¥ç†±é–€è©±é¡Œçµ±è¨ˆ */
+#define BATTR_NOVOTE      0x0010  /* ä¸å…¬ä½ˆæŠ•ç¥¨çµæœæ–¼ [sysop] æ¿ */
+#define BATTR_ANONYMOUS   0x0020  /* åŒ¿åçœ‹æ¿ */
+#define BATTR_NOFORWARD   0x0040  /* lkchu.981201: ä¸å¯è½‰å¯„ */
+#define BATTR_LOGEMAIL    0x0080  /* è‡ªå‹•é™„åŠ e-mail */
+#define BATTR_NOBAN       0x0100  /* ä¸æ“‹ä¿¡ */
+#define BATTR_NOLOG       0x0200  /* ä¸ç´€éŒ„ç«™å…§é•æ³• */
+#define BATTR_NOCNTCROSS  0x0400  /* ä¸ç´€éŒ„ cross post */
+#define BATTR_NOREPLY     0x0800  /* ä¸èƒ½å›æ–‡ç«  */
+#define BATTR_NOLOGREAD   0x1000  /* ä¸ç´€éŒ„çœ‹ç‰ˆé–±è®€ç‡ */
+#define BATTR_CHECKWATER  0x2000  /* ç´€éŒ„çŒæ°´æ¬¡æ•¸ */
+#define BATTR_CHANGETITLE 0x4000  /* ç‰ˆä¸»ä¿®æ”¹ç‰ˆå */
+#define BATTR_MODIFY      0x8000  /* ä½¿ç”¨è€…ä¿®æ”¹æ–‡ç«  */
+#define BATTR_PRH         0x10000 /* æ¨è–¦æ–‡ç«  */
+#define BATTR_NOTOTAL     0x20000 /* ä¸çµ±è¨ˆçœ‹æ¿ä½¿ç”¨ç´€éŒ„ */
 
 
 /* ----------------------------------------------------- */
@@ -142,15 +142,15 @@ typedef struct
   time_t chrono;                /* timestamp */
   int xmode;
 
-  int xid;                      /* reserved «O¯d*/
+  int xid;                      /* reserved ä¿ç•™*/
 
-  char xname[31];               /* ÀÉ®×¦WºÙ */
+  char xname[31];               /* æª”æ¡ˆåç¨± */
   signed char pushscore;
-  char owner[80];               /* §@ªÌ (E-mail address) */
-  char nick[50];                /* ¼ÊºÙ */
+  char owner[80];               /* ä½œè€… (E-mail address) */
+  char nick[50];                /* æš±ç¨± */
 
   char date[9];                 /* [96/12/01] */
-  char title[73];               /* ¥DÃD (TTLEN + 1) */
+  char title[73];               /* ä¸»é¡Œ (TTLEN + 1) */
 }   mfheader;
 
 

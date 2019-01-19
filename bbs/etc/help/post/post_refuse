@@ -1,14 +1,14 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xCtrl+Y�xpost_refuse �x�[�K�峹                                        �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │Ctrl+Y│post_refuse │加密文章                                        │
+  └───┴──────┴────────────────────────┘
 
-    �N��в���Y��A�� Ctrl+Y �i�H�[�K�ӽg�峹�A�Q�[�K���峹�|�X�{ x �� X
-  ���Ÿ��A���F�O�D�έ��@�̥H�~���ϥΪ̱N�L�k�\Ū�Q�[�K���峹�A�u���O�D��
-  ���@�̥i�H�[�K�峹�C
+    將游標移到某欄，按 Ctrl+Y 可以加密該篇文章，被加密的文章會出現 x 或 X
+  的符號，除了板主及原文作者以外的使用者將無法閱讀被加密的文章，只有板主及
+  原文作者可以加密文章。
 
-  �Ÿ� x�G���ܳQ�[�K�B�w�\Ū
-  �Ÿ� X�G���ܳQ�[�K�B���\Ū
+  符號 x：表示被加密且已閱讀
+  符號 X：表示被加密且未閱讀
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

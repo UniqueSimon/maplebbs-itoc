@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* innbbs.c	( NTHU CS MapleBBS Ver 3.10 )		 */
 /*-------------------------------------------------------*/
-/* target : Âà«H³]©w					 */
+/* target : è½‰ä¿¡è¨­å®š					 */
 /* create : 04/04/25					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -15,7 +15,7 @@ extern BCACHE *bshm;
 
 
 /* ----------------------------------------------------- */
-/* nodelist.bbs ¤l¨ç¦¡					 */
+/* nodelist.bbs å­å‡½å¼					 */
 /* ----------------------------------------------------- */
 
 
@@ -35,13 +35,13 @@ nl_query(nl)
 {
   move(3, 0);
   clrtobot();
-  prints("\n\nÂà«H¯¸¥x¡G%s\n¯¸¥x¦ì§}¡G%s\n¯¸¥x¨ó©w¡G%s(%d)\n³Q Áı «H¡G%s", 
-    nl->name, nl->host, nl->xmode & INN_USEIHAVE ? "IHAVE" : "POST", nl->port, nl->xmode & INN_FEEDED ? "¬O" : "§_");
+  prints("\n\nè½‰ä¿¡ç«™å°ï¼š%s\nç«™å°ä½å€ï¼š%s\nç«™å°å”å®šï¼š%s(%d)\nè¢« é¤µ ä¿¡ï¼š%s", 
+    nl->name, nl->host, nl->xmode & INN_USEIHAVE ? "IHAVE" : "POST", nl->port, nl->xmode & INN_FEEDED ? "æ˜¯" : "å¦");
   vmsg(NULL);
 }
 
 
-static int	/* 1:¦¨¥\ 0:¥¢±Ñ */
+static int	/* 1:æˆåŠŸ 0:å¤±æ•— */
 nl_add(fpath, old, pos)
   char *fpath;
   nodelist_t *old;
@@ -50,37 +50,37 @@ nl_add(fpath, old, pos)
   nodelist_t nl;
   int ch, port;
   char ans[8];
-  char msg1[] = "¨ó©w¡G(1)IHAVE (2)POST [1] ";
-  char msg2[] = "¦¹¯¸¥x·|¥D°ÊÁı«Hµ¹¥»¯¸¶Ü(Y/N)¡H[N] ";
+  char msg1[] = "å”å®šï¼š(1)IHAVE (2)POST [1] ";
+  char msg2[] = "æ­¤ç«™å°æœƒä¸»å‹•é¤µä¿¡çµ¦æœ¬ç«™å—(Y/N)ï¼Ÿ[N] ";
 
   if (old)
     memcpy(&nl, old, sizeof(nodelist_t));
   else
     memset(&nl, 0, sizeof(nodelist_t));
 
-  if (vget(b_lines, 0, "­^¤å¯¸¦W¡G", nl.name, sizeof(nl.name), GCARRY) &&
-    vget(b_lines, 0, "¯¸§}¡G", nl.host, /* sizeof(nl.host) */ 70, GCARRY))
+  if (vget(b_lines, 0, "è‹±æ–‡ç«™åï¼š", nl.name, sizeof(nl.name), GCARRY) &&
+    vget(b_lines, 0, "ç«™å€ï¼š", nl.host, /* sizeof(nl.host) */ 70, GCARRY))
   {
-    msg1[24] = (nl.xmode & INN_USEPOST) ? '2' : '1';	/* ·s¼W¸ê®Æ¹w³] INN_HAVE */
+    msg1[24] = (nl.xmode & INN_USEPOST) ? '2' : '1';	/* æ–°å¢è³‡æ–™é è¨­ INN_HAVE */
     ch = vans(msg1);
     if (ch != '1' && ch != '2')
       ch = msg1[24];
 
     if (ch == '1')
     {
-      nl.xmode = INN_USEIHAVE | INN_FEEDED;	/* IHAVE ¤@©w¬O³QÁı«H */
-      vget(b_lines, 0, "Port¡G[7777] ", ans, 6, DOECHO);
+      nl.xmode = INN_USEIHAVE | INN_FEEDED;	/* IHAVE ä¸€å®šæ˜¯è¢«é¤µä¿¡ */
+      vget(b_lines, 0, "Portï¼š[7777] ", ans, 6, DOECHO);
       if ((port = atoi(ans)) <= 0)
 	port = 7777;
     }
     else /* if (ch == '2') */
     {
       nl.xmode = INN_USEPOST;
-      vget(b_lines, 0, "Port¡G[119] ", ans, 6, DOECHO);
+      vget(b_lines, 0, "Portï¼š[119] ", ans, 6, DOECHO);
       if ((port = atoi(ans)) <= 0)
 	port = 119;
 
-      msg2[32] = (old && old->xmode & INN_FEEDED) ? 'Y' : 'N';	/* ·s¼W¸ê®Æ¹w³]¤£Áı«H */
+      msg2[32] = (old && old->xmode & INN_FEEDED) ? 'Y' : 'N';	/* æ–°å¢è³‡æ–™é è¨­ä¸é¤µä¿¡ */
       ch = vans(msg2);
       if (ch != 'y' && ch != 'n')
 	ch = msg2[32] | 0x20;
@@ -104,7 +104,7 @@ static int
 nl_cmp(a, b)
   nodelist_t *a, *b;
 {
-  /* ¨Ì name ±Æ§Ç */
+  /* ä¾ name æ’åº */
   return str_cmp(a->name, b->name);
 }
 
@@ -119,7 +119,7 @@ nl_search(nl, key)
 
 
 /* ----------------------------------------------------- */
-/* newsfeeds.bbs ¤l¨ç¦¡					 */
+/* newsfeeds.bbs å­å‡½å¼					 */
 /* ----------------------------------------------------- */
 
 
@@ -165,7 +165,7 @@ nf_query(nf)
   BRD *brd;
   char *outgo, *income;
 
-  /* §ä¥X¸Ó¯¸¥x¦b nodelist.bbs ¤¤ªº¸ê°T */
+  /* æ‰¾å‡ºè©²ç«™å°åœ¨ nodelist.bbs ä¸­çš„è³‡è¨Š */
   if ((fd = open("innd/nodelist.bbs", O_RDONLY)) >= 0)
   {
     while (read(fd, &nl, sizeof(nodelist_t)) == sizeof(nodelist_t))
@@ -181,36 +181,36 @@ nf_query(nf)
   if (!rc)
   {
     memset(&nl, 0, sizeof(nodelist_t));
-    strcpy(nl.host, "\033[1;33m¦¹¯¸¥x¤£¦b nodelist.bbs ¤¤\033[m");
+    strcpy(nl.host, "\033[1;33mæ­¤ç«™å°ä¸åœ¨ nodelist.bbs ä¸­\033[m");
   }
 
-  /* ¬İªOª¬ºA */
+  /* çœ‹æ¿ç‹€æ…‹ */
   if ((rc = brd_bno(nf->board)) >= 0)
   {
     brd = bshm->bcache + rc;
-    outgo = brd->battr & BRD_NOTRAN ? "\033[1;33m¤£Âà¥X\033[m"  : "Âà¥X";
-    income = nf->xmode & INN_NOINCOME ? "¥B\033[1;33m¤£Âà¶i\033[m" : "¥BÂà¶i";
+    outgo = brd->battr & BRD_NOTRAN ? "\033[1;33mä¸è½‰å‡º\033[m"  : "è½‰å‡º";
+    income = nf->xmode & INN_NOINCOME ? "ä¸”\033[1;33mä¸è½‰é€²\033[m" : "ä¸”è½‰é€²";
   }
   else
   {
-    outgo = "\033[1;33m¦¹¬İªO¤£¦s¦b\033[m";
+    outgo = "\033[1;33mæ­¤çœ‹æ¿ä¸å­˜åœ¨\033[m";
     income = "";
   }
 
   move(3, 0);
   clrtobot();
-  prints("\n\nÂà«H¯¸¥x¡G%s\n¯¸¥x¦ì§}¡G%s\n¯¸¥x¨ó©w¡G%s(%d)\n"
-    "Âà«H¸s²Õ¡G%s%s\n¥»¯¸¬İªO¡G%s (%s%s)\n¨Ï¥Î¦r¶°¡G%s", 
+  prints("\n\nè½‰ä¿¡ç«™å°ï¼š%s\nç«™å°ä½å€ï¼š%s\nç«™å°å”å®šï¼š%s(%d)\n"
+    "è½‰ä¿¡ç¾¤çµ„ï¼š%s%s\næœ¬ç«™çœ‹æ¿ï¼š%s (%s%s)\nä½¿ç”¨å­—é›†ï¼š%s", 
     nf->path, nl.host, nl.xmode & INN_USEIHAVE ? "IHAVE" : "POST", nl.port, 
-    nf->newsgroup, nf->xmode & INN_ERROR ? " (\033[1;33m¦¹¸s²Õ¤£¦s¦b\033[m)" : "", 
+    nf->newsgroup, nf->xmode & INN_ERROR ? " (\033[1;33mæ­¤ç¾¤çµ„ä¸å­˜åœ¨\033[m)" : "", 
     nf->board, outgo, income, nf->charset);
   if (rc && !(nl.xmode & INN_FEEDED))
-    prints("\n¥Ø«e½g¼Æ¡G%d", nf->high);
+    prints("\nç›®å‰ç¯‡æ•¸ï¼š%d", nf->high);
   vmsg(NULL);
 }
 
 
-static int	/* 1:¦¨¥\ 0:¥¢±Ñ */
+static int	/* 1:æˆåŠŸ 0:å¤±æ•— */
 nf_add(fpath, old, pos)
   char *fpath;
   newsfeeds_t *old;
@@ -226,21 +226,21 @@ nf_add(fpath, old, pos)
   else
   {
     memset(&nf, 0, sizeof(newsfeeds_t));
-    nf.high = INT_MAX;		/* ²Ä¤@¦¸¨ú«H±j­¢ reload */
+    nf.high = INT_MAX;		/* ç¬¬ä¸€æ¬¡å–ä¿¡å¼·è¿« reload */
   }
 
   if ((brd = ask_board(nf.board, BRD_L_BIT, NULL)) &&
-    vget(b_lines, 0, "­^¤å¯¸¦W¡G", nf.path, sizeof(nf.path), GCARRY) &&
-    vget(b_lines, 0, "¸s²Õ¡G", nf.newsgroup, /* sizeof(nf.newsgroup) */ 70, GCARRY))
+    vget(b_lines, 0, "è‹±æ–‡ç«™åï¼š", nf.path, sizeof(nf.path), GCARRY) &&
+    vget(b_lines, 0, "ç¾¤çµ„ï¼š", nf.newsgroup, /* sizeof(nf.newsgroup) */ 70, GCARRY))
   {
-    if (!vget(b_lines, 0, "¦r¶° [" MYCHARSET "]¡G", nf.charset, sizeof(nf.charset), GCARRY))
+    if (!vget(b_lines, 0, "å­—é›† [" MYCHARSET "]ï¼š", nf.charset, sizeof(nf.charset), GCARRY))
       str_ncpy(nf.charset, MYCHARSET, sizeof(nf.charset));
-    nf.xmode = (vans("¬O§_Âà¶i(Y/N)¡H[Y] ") == 'n') ? INN_NOINCOME : 0;
+    nf.xmode = (vans("æ˜¯å¦è½‰é€²(Y/N)ï¼Ÿ[Y] ") == 'n') ? INN_NOINCOME : 0;
 
-    if (vans("¬O§_§ó§ïÂà«Hªº high-number ³]©w¡A³o³]©w¹ï³QÁı«Hªº¸s²ÕµL®Ä(Y/N)¡H[N] ") == 'y')
+    if (vans("æ˜¯å¦æ›´æ”¹è½‰ä¿¡çš„ high-number è¨­å®šï¼Œé€™è¨­å®šå°è¢«é¤µä¿¡çš„ç¾¤çµ„ç„¡æ•ˆ(Y/N)ï¼Ÿ[N] ") == 'y')
     {
       sprintf(ans, "%d", nf.high);
-      vget(b_lines, 0, "¥Ø«e½g¼Æ¡G", ans, 11, GCARRY);
+      vget(b_lines, 0, "ç›®å‰ç¯‡æ•¸ï¼š", ans, 11, GCARRY);
       if ((high = atoi(ans)) >= 0)
 	nf.high = high;
     }
@@ -250,7 +250,7 @@ nf_add(fpath, old, pos)
     else
       rec_add(fpath, &nf, sizeof(newsfeeds_t));
 
-    if ((brd->battr & BRD_NOTRAN) && vans("¥»ªOÄİ©Ê¥Ø«e¬°¤£Âà¥X¡A¬O§_§ï¬°Âà¥X(Y/N)¡H[Y] ") != 'n')
+    if ((brd->battr & BRD_NOTRAN) && vans("æœ¬æ¿å±¬æ€§ç›®å‰ç‚ºä¸è½‰å‡ºï¼Œæ˜¯å¦æ”¹ç‚ºè½‰å‡º(Y/N)ï¼Ÿ[Y] ") != 'n')
     {
       high = brd - bshm->bcache;
       brd->battr &= ~BRD_NOTRAN;
@@ -267,7 +267,7 @@ static int
 nf_cmp(a, b)
   newsfeeds_t *a, *b;
 {
-  /* path/newsgroup ¥æ¤e¤ñ¹ï */
+  /* path/newsgroup äº¤å‰æ¯”å° */
   int k = str_cmp(a->path, b->path);
   return k ? k : str_cmp(a->newsgroup, b->newsgroup);
 }
@@ -283,7 +283,7 @@ nf_search(nf, key)
 
 
 /* ----------------------------------------------------- */
-/* ncmperm.bbs ¤l¨ç¦¡					 */
+/* ncmperm.bbs å­å‡½å¼					 */
 /* ----------------------------------------------------- */
 
 
@@ -293,7 +293,7 @@ ncm_item(num, ncm)
   ncmperm_t *ncm;
 {
   prints("%6d %-*.*s%-23.23s %s\n", num, 
-    d_cols + 44, d_cols + 44, ncm->issuer, ncm->type, ncm->perm ? "¡³" : "¢®");
+    d_cols + 44, d_cols + 44, ncm->issuer, ncm->type, ncm->perm ? "â—‹" : "â•³");
 }
 
 
@@ -303,13 +303,13 @@ ncm_query(ncm)
 {
   move(3, 0);
   clrtobot();
-  prints("\n\nµo¦æ¯¸¥x¡G%s\n¬å«HºØÃş¡G%s\n¤¹³\\¬å«H¡G%s", 
-    ncm->issuer, ncm->type, ncm->perm ? "¡³" : "¢®");
+  prints("\n\nç™¼è¡Œç«™å°ï¼š%s\nç ä¿¡ç¨®é¡ï¼š%s\nå…è¨±\ç ä¿¡ï¼š%s", 
+    ncm->issuer, ncm->type, ncm->perm ? "â—‹" : "â•³");
   vmsg(NULL);
 }
 
 
-static int	/* 1:¦¨¥\ 0:¥¢±Ñ */
+static int	/* 1:æˆåŠŸ 0:å¤±æ•— */
 ncm_add(fpath, old, pos)
   char *fpath;
   ncmperm_t *old;
@@ -322,10 +322,10 @@ ncm_add(fpath, old, pos)
   else
     memset(&ncm, 0, sizeof(ncmperm_t));
 
-  if (vget(b_lines, 0, "µo¦æ¡G", ncm.issuer, /* sizeof(ncm.issuer) */ 70, GCARRY) &&
-    vget(b_lines, 0, "ºØÃş¡G", ncm.type, sizeof(ncm.type), GCARRY))
+  if (vget(b_lines, 0, "ç™¼è¡Œï¼š", ncm.issuer, /* sizeof(ncm.issuer) */ 70, GCARRY) &&
+    vget(b_lines, 0, "ç¨®é¡ï¼š", ncm.type, sizeof(ncm.type), GCARRY))
   {
-    ncm.perm = (vans("¤¹³\\¦¹ NCM message ¬å«H(Y/N)¡H[N] ") == 'y');
+    ncm.perm = (vans("å…è¨±\æ­¤ NCM message ç ä¿¡(Y/N)ï¼Ÿ[N] ") == 'y');
 
     if (old)
       rec_put(fpath, &ncm, sizeof(ncmperm_t), pos, NULL);
@@ -341,7 +341,7 @@ static int
 ncm_cmp(a, b)
   ncmperm_t *a, *b;
 {
-  /* issuer/type ¥æ¤e¤ñ¹ï */
+  /* issuer/type äº¤å‰æ¯”å° */
   int k = str_cmp(a->issuer, b->issuer);
   return k ? k : str_cmp(a->type, b->type);
 }
@@ -357,7 +357,7 @@ ncm_search(ncm, key)
 
 
 /* ----------------------------------------------------- */
-/* spamrule.bbs ¤l¨ç¦¡					 */
+/* spamrule.bbs å­å‡½å¼					 */
 /* ----------------------------------------------------- */
 
 
@@ -366,22 +366,22 @@ spam_compare(xmode)
   int xmode;
 {
   if (xmode & INN_SPAMADDR)
-    return "§@ªÌ";
+    return "ä½œè€…";
   if (xmode & INN_SPAMNICK)
-    return "¼ÊºÙ";
+    return "æš±ç¨±";
   if (xmode & INN_SPAMSUBJECT)
-    return "¼ĞÃD";
+    return "æ¨™é¡Œ";
   if (xmode & INN_SPAMPATH)
-    return "¸ô®|";
+    return "è·¯å¾‘";
   if (xmode & INN_SPAMMSGID)
     return "MSID";
   if (xmode & INN_SPAMBODY)
-    return "¥»¤å";
+    return "æœ¬æ–‡";
   if (xmode & INN_SPAMSITE)
-    return "²ÕÂ´";
+    return "çµ„ç¹”";
   if (xmode & INN_SPAMPOSTHOST)
-    return "¨Ó·½";
-  return "¡H¡H";
+    return "ä¾†æº";
+  return "ï¼Ÿï¼Ÿ";
 }
 
 
@@ -394,8 +394,8 @@ spam_item(num, spam)
 
   path = spam->path;
   board = spam->board;
-  prints("%6d %-13s%-13s[%s] ¥]§t %.*s\n", 
-    num, *path ? path : "©Ò¦³¯¸¥x", *board ? board : "©Ò¦³¬İªO", 
+  prints("%6d %-13s%-13s[%s] åŒ…å« %.*s\n", 
+    num, *path ? path : "æ‰€æœ‰ç«™å°", *board ? board : "æ‰€æœ‰çœ‹æ¿", 
     spam_compare(spam->xmode), d_cols + 30, spam->detail);
 }
 
@@ -411,13 +411,13 @@ spam_query(spam)
 
   move(3, 0);
   clrtobot();
-  prints("\n\n¾A¥Î¯¸¥x¡G%s\n¾A¥Î¬İªO¡G%s\n¤ñ¸û¶µ¥Ø¡G%s\n¤ñ¸û¤º®e¡G%s", 
-    *path ? path : "©Ò¦³¯¸¥x", *board ? board : "©Ò¦³¬İªO", spam_compare(spam->xmode), spam->detail);
-  vmsg("­Yº¡¨¬¦¹³W«h¡A·|³Qµø¬°¼s§i¦ÓµLªkÂà«H¶i¨Ó");
+  prints("\n\né©ç”¨ç«™å°ï¼š%s\né©ç”¨çœ‹æ¿ï¼š%s\næ¯”è¼ƒé …ç›®ï¼š%s\næ¯”è¼ƒå…§å®¹ï¼š%s", 
+    *path ? path : "æ‰€æœ‰ç«™å°", *board ? board : "æ‰€æœ‰çœ‹æ¿", spam_compare(spam->xmode), spam->detail);
+  vmsg("è‹¥æ»¿è¶³æ­¤è¦å‰‡ï¼Œæœƒè¢«è¦–ç‚ºå»£å‘Šè€Œç„¡æ³•è½‰ä¿¡é€²ä¾†");
 }
 
 
-static int	/* 1:¦¨¥\ 0:¥¢±Ñ */
+static int	/* 1:æˆåŠŸ 0:å¤±æ•— */
 spam_add(fpath, old, pos)
   char *fpath;
   spamrule_t *old;
@@ -430,10 +430,10 @@ spam_add(fpath, old, pos)
   else
     memset(&spam, 0, sizeof(spamrule_t));
 
-  vget(b_lines, 0, "­^¤å¯¸¦W¡G", spam.path, sizeof(spam.path), GCARRY);
+  vget(b_lines, 0, "è‹±æ–‡ç«™åï¼š", spam.path, sizeof(spam.path), GCARRY);
   ask_board(spam.board, BRD_L_BIT, NULL);
 
-  switch (vans("¾×«H³W«h 1)§@ªÌ 2)¼ÊºÙ 3)¼ĞÃD 4)¸ô®| 5)MSGID 6)¥»¤å 7)²ÕÂ´ 8)¨Ó·½ [Q] "))
+  switch (vans("æ“‹ä¿¡è¦å‰‡ 1)ä½œè€… 2)æš±ç¨± 3)æ¨™é¡Œ 4)è·¯å¾‘ 5)MSGID 6)æœ¬æ–‡ 7)çµ„ç¹” 8)ä¾†æº [Q] "))
   {
   case '1':
     spam.xmode = INN_SPAMADDR;
@@ -463,7 +463,7 @@ spam_add(fpath, old, pos)
     return 0;
   }
 
-  if (vget(b_lines, 0, "¥]§t¡G", spam.detail, /* sizeof(spam.detail) */ 70, GCARRY))
+  if (vget(b_lines, 0, "åŒ…å«ï¼š", spam.detail, /* sizeof(spam.detail) */ 70, GCARRY))
   {
     if (old)
       rec_put(fpath, &spam, sizeof(spamrule_t), pos, NULL);
@@ -479,7 +479,7 @@ static int
 spam_cmp(a, b)
   spamrule_t *a, *b;
 {
-  /* path/board/xmode/detail ¥æ¤e¤ñ¹ï */
+  /* path/board/xmode/detail äº¤å‰æ¯”å° */
   int i = strcmp(a->path, b->path);
   int j = strcmp(a->board, b->board);
   int k = a->xmode - b->xmode;
@@ -497,7 +497,7 @@ spam_search(spam, key)
 
 
 /* ----------------------------------------------------- */
-/* Âà«H³]©w¥D¨ç¦¡					 */
+/* è½‰ä¿¡è¨­å®šä¸»å‡½å¼					 */
 /* ----------------------------------------------------- */
 
 
@@ -514,10 +514,10 @@ a_innbbs()
   void (*item_func)(), (*query_func)();
   int (*add_func)(), (*sync_func)(), (*search_func)();
 
-  vs_bar("Âà«H³]©w");
+  vs_bar("è½‰ä¿¡è¨­å®š");
   more("etc/innbbs.hlp", (char *) -1);
 
-  switch (vans("½Ğ¿ï¾Ü 1)Âà¤å¯¸¥x¦Cªí 2)Âà¤å¬İªO¦Cªí 3)NoCeM¾×¤å³W«h 4)¼s§i¤å¦W³æ¡G[Q] "))
+  switch (vans("è«‹é¸æ“‡ 1)è½‰æ–‡ç«™å°åˆ—è¡¨ 2)è½‰æ–‡çœ‹æ¿åˆ—è¡¨ 3)NoCeMæ“‹æ–‡è¦å‰‡ 4)å»£å‘Šæ–‡åå–®ï¼š[Q] "))
   {
   case '1':
     fpath = "innd/nodelist.bbs";
@@ -563,7 +563,7 @@ a_innbbs()
     return 0;
   }
 
-  dirty = 0;	/* 1:¦³·s¼W/§R°£¸ê®Æ */
+  dirty = 0;	/* 1:æœ‰æ–°å¢/åˆªé™¤è³‡æ–™ */
   reload = 1;
   pageno = 0;
   cur = 0;
@@ -605,8 +605,8 @@ a_innbbs()
 
     if (redraw)
     {
-      /* itoc.µù¸Ñ: ºÉ¶q°µ±o¹³ xover ®æ¦¡ */
-      vs_head("Âà«H³]©w", str_site);
+      /* itoc.è¨»è§£: ç›¡é‡åšå¾—åƒ xover æ ¼å¼ */
+      vs_head("è½‰ä¿¡è¨­å®š", str_site);
       prints(NECKER_INNBBS, d_cols, "");
 
       i = pageno * XO_TALL;
@@ -641,7 +641,7 @@ a_innbbs()
       {
 	dirty = 1;
 	num++;
-	cur = num % XO_TALL;		/* ´å¼Ğ©ñ¦b·s¥[¤Jªº³o½g */
+	cur = num % XO_TALL;		/* æ¸¸æ¨™æ”¾åœ¨æ–°åŠ å…¥çš„é€™ç¯‡ */
 	pageno = num / XO_TALL;
 	reload = 1;
       }
@@ -654,7 +654,7 @@ a_innbbs()
 	dirty = 1;
 	i = cur + pageno * XO_TALL;
 	rec_del(fpath, recsiz, i, NULL);
-	cur = i ? ((i - 1) % XO_TALL) : 0;	/* ´å¼Ğ©ñ¦b¬å±¼ªº«e¤@½g */
+	cur = i ? ((i - 1) % XO_TALL) : 0;	/* æ¸¸æ¨™æ”¾åœ¨ç æ‰çš„å‰ä¸€ç¯‡ */
 	reload = 1;
       }
       redraw = 1;
@@ -671,10 +671,10 @@ a_innbbs()
       break;
 
     case '/':
-      if (vget(b_lines, 0, "ÃöÁä¦r¡G", buf, sizeof(buf), DOECHO))
+      if (vget(b_lines, 0, "é—œéµå­—ï¼š", buf, sizeof(buf), DOECHO))
       {
 	str_lower(buf, buf);
-	for (i = pageno * XO_TALL + cur + 1; i <= num; i++)	/* ±q´å¼Ğ¤U¤@­Ó¶}©l§ä */
+	for (i = pageno * XO_TALL + cur + 1; i <= num; i++)	/* å¾æ¸¸æ¨™ä¸‹ä¸€å€‹é–‹å§‹æ‰¾ */
 	{
 	  if (search_func(data + i * recsiz, buf))
 	  {

@@ -7,10 +7,10 @@
 # ------------------------------------------------------- #
 
 
-# ¤ä´©ªº OS-type
+# æ”¯æ´çš„ OS-type
 # sun linux solaris sol-x86 freebsd bsd cygwin
 
-# »İ­n compile ªº¥Ø¿ı
+# éœ€è¦ compile çš„ç›®éŒ„
 # lib daemon innbbsd maple so game pip util util/backup util/tran util/uno
 
 

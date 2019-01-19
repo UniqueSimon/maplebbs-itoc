@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* util/transusr.c					 */
 /*-------------------------------------------------------*/
-/* target : Magic ¦Ü Maple 3.02 ¨Ï¥ÎªÌÂà´«		 */
+/* target : Magic è‡³ Maple 3.02 ä½¿ç”¨è€…è½‰æ›		 */
 /* create : 02/09/09					 */
 /* update :   /  /  					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -10,7 +10,7 @@
 
 #if 0
 
-  0. ¾A¥Î Magic Âà .ACCT ¤Î«H½c
+  0. é©ç”¨ Magic è½‰ .ACCT åŠä¿¡ç®±
 
   ps. User on ur own risk.
 
@@ -21,7 +21,7 @@
 
 
 /*-------------------------------------------------------*/
-/* Âà´«.ACCT						 */
+/* è½‰æ›.ACCT						 */
 /*-------------------------------------------------------*/
 
 
@@ -34,7 +34,7 @@ trans_acct()
   ACCT new;
   SCHEMA slot;
 
-  count = 1;	/* userno ±q 1 °_ºâ */
+  count = 1;	/* userno å¾ 1 èµ·ç®— */
 
   if ((fd = open(FN_PASSWDS, O_RDONLY)) >= 0)
   {
@@ -79,8 +79,8 @@ trans_acct()
       mkdir(buf, 0700);
       strcat(buf, "/@");
       mkdir(buf, 0700);
-      usr_fpath(buf, userid, "gem");	/* itoc.010727: ­Ó¤HºëµØ°Ï */
-      mak_links(buf);			/* itoc.010924: ´î¤Ö­Ó¤HºëµØ°Ï¥Ø¿ı */
+      usr_fpath(buf, userid, "gem");	/* itoc.010727: å€‹äººç²¾è¯å€ */
+      mak_links(buf);			/* itoc.010924: æ¸›å°‘å€‹äººç²¾è¯å€ç›®éŒ„ */
 #ifdef MY_FAVORITE
       usr_fpath(buf, userid, "MF");
       mkdir(buf, 0700);
@@ -100,7 +100,7 @@ trans_acct()
 
 
 /*-------------------------------------------------------*/
-/* Âà´««H½c						 */
+/* è½‰æ›ä¿¡ç®±						 */
 /*-------------------------------------------------------*/
 
 
@@ -110,7 +110,7 @@ trans_hdr_chrono(filename)
 {
   char time_str[11];
 
-  /* M.1087654321.A ©Î M.987654321.A */
+  /* M.1087654321.A æˆ– M.987654321.A */
   str_ncpy(time_str, filename + 2, filename[2] == '1' ? 11 : 10);
 
   return (time_t) atoi(time_str);
@@ -129,14 +129,14 @@ trans_owner(hdr, old)
 
   if (strchr(owner, '.'))	/* innbbsd ==> bbs */
   {
-    /* ®æ¦¡: itoc.bbs@bbs.tnfsh.tn.edu.tw (§Úªº¼ÊºÙ) */
+    /* æ ¼å¼: itoc.bbs@bbs.tnfsh.tn.edu.tw (æˆ‘çš„æš±ç¨±) */
 
     left = strchr(owner, '(');
     right = strrchr(owner, ')');
 
     if (!left || !right)
     {
-      str_ncpy(hdr->owner, "§H¦W", sizeof(hdr->owner));
+      str_ncpy(hdr->owner, "ä½šå", sizeof(hdr->owner));
     }
     else
     {
@@ -148,7 +148,7 @@ trans_owner(hdr, old)
   }
   else if (left = strchr(owner, '('))	/* local post */
   {
-    /* ®æ¦¡: itoc (§Úªº¼ÊºÙ) */
+    /* æ ¼å¼: itoc (æˆ‘çš„æš±ç¨±) */
 
     *(left - 1) = '\0';
     str_ncpy(hdr->owner, owner, sizeof(hdr->owner));
@@ -160,7 +160,7 @@ trans_owner(hdr, old)
   }
   else
   {
-    /* ®æ¦¡: itoc */
+    /* æ ¼å¼: itoc */
 
     str_ncpy(hdr->owner, owner, sizeof(hdr->owner));
   }
@@ -178,11 +178,11 @@ trans_mail(userid)
   time_t chrono;
 
   ch = userid[0];
-  if (ch >= 'a' && ch <= 'z')	/* ´«¤j¼g */
+  if (ch >= 'a' && ch <= 'z')	/* æ›å¤§å¯« */
     ch -= 32;
 
-  sprintf(index, "%s/%c/%s/.DIR", OLD_MAILPATH, ch, userid);	/* ÂÂªº header */
-  usr_fpath(folder, userid, FN_DIR);				/* ·sªº header */
+  sprintf(index, "%s/%c/%s/.DIR", OLD_MAILPATH, ch, userid);	/* èˆŠçš„ header */
+  usr_fpath(folder, userid, FN_DIR);				/* æ–°çš„ header */
 
   if ((fd = open(index, O_RDONLY)) >= 0)
   {
@@ -190,11 +190,11 @@ trans_mail(userid)
     {
       sprintf(buf, "%s/%c/%s/%s", OLD_MAILPATH, ch, userid, fh.filename);
 
-      if (dashf(buf))		/* ¤å³¹ÀÉ®×¦b¤~°µÂà´« */
+      if (dashf(buf))		/* æ–‡ç« æª”æ¡ˆåœ¨æ‰åšè½‰æ› */
       {
 	char new_name[10] = "@";
 
-	/* Âà´«¤å³¹ .DIR */
+	/* è½‰æ›æ–‡ç«  .DIR */
 	memset(&hdr, 0, sizeof(HDR));
 	chrono = trans_hdr_chrono(fh.filename);
 	new_name[1] = radix32[chrono & 31];
@@ -211,7 +211,7 @@ trans_mail(userid)
 
 	rec_add(folder, &hdr, sizeof(HDR));
 
-	/* «ş¨©ÀÉ®× */
+	/* æ‹·è²æª”æ¡ˆ */
 	usr_fpath(fpath, userid, "@/");
 	strcat(fpath, new_name);
 	f_cp(buf, fpath, O_TRUNC);
@@ -232,10 +232,10 @@ main()
 
   chdir(BBSHOME);
 
-  /* ¥ıÂà .ACCT¡A«Ø¥Ø¿ı */
+  /* å…ˆè½‰ .ACCTï¼Œå»ºç›®éŒ„ */
   trans_acct();
 
-  /* ¥Ñ¦³®Äªº¨Ï¥ÎªÌ ID ¨ÓÂà´««H½c */
+  /* ç”±æœ‰æ•ˆçš„ä½¿ç”¨è€… ID ä¾†è½‰æ›ä¿¡ç®± */
   for (c = 'a'; c <= 'z'; c++)
   {
     sprintf(buf, "usr/%c", c);

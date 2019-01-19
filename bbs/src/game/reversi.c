@@ -1,7 +1,7 @@
 /*-------------------------------------------------------*/
 /* reversi.c	( NTHU CS MapleBBS Ver 3.10 )		 */
 /*-------------------------------------------------------*/
-/* target : ¶Â¥Õ´Ñ¹CÀ¸					 */
+/* target : é»‘ç™½æ£‹éŠæˆ²					 */
 /* create : 01/07/24					 */
 /* update :   /  /					 */
 /* author : itoc.bbs@bbs.tnfsh.tn.edu.tw		 */
@@ -14,42 +14,42 @@
 
 enum
 {
-  /* GRAY_XPOS + MAP_X ­n¤p©ó b_lines - 2 = 21    *
-   * GRAY_YPOS + MAP_Y * 2 ­n¤p©ó STRLEN - 1 = 79 *
-   * GRAY_YPOS ­n¨¬°÷¨Ï out_prompt() ©ñ¤J */
+  /* GRAY_XPOS + MAP_X è¦å°æ–¼ b_lines - 2 = 21    *
+   * GRAY_YPOS + MAP_Y * 2 è¦å°æ–¼ STRLEN - 1 = 79 *
+   * GRAY_YPOS è¦è¶³å¤ ä½¿ out_prompt() æ”¾å…¥ */
 
-  GRAY_XPOS = 2,	/* ¡õ x ¤è¦V */
-  GRAY_YPOS = 17,	/* ¡÷ y ¤è¦V */
+  GRAY_XPOS = 2,	/* â†“ x æ–¹å‘ */
+  GRAY_YPOS = 17,	/* â†’ y æ–¹å‘ */
 
-  MAP_X = 8,		/* ­n¬O°¸¼Æ */
-  MAP_Y = 8,		/* ­n¬O°¸¼Æ */
+  MAP_X = 8,		/* è¦æ˜¯å¶æ•¸ */
+  MAP_Y = 8,		/* è¦æ˜¯å¶æ•¸ */
 
   /* These are flags for "map, tile" bitwise operators */
-  TILE_BLANK= 0,	/* ¨S¦³¼Ğ°O */
-  TILE_CPU = 1,		/* ¹q¸£¾Ö¦³ */
-  TILE_USR = 2,		/* ª±®a¾Ö¦³ */
+  TILE_BLANK= 0,	/* æ²’æœ‰æ¨™è¨˜ */
+  TILE_CPU = 1,		/* é›»è…¦æ“æœ‰ */
+  TILE_USR = 2,		/* ç©å®¶æ“æœ‰ */
 
   /* These are flags for "level" bitwise operators */
-  LEVEL_USR_FIRST = 1,	/* ª±®a¥ı¤U */
-  LEVEL_1 = 2,		/* ¤@¯Å */
-  LEVEL_2 = 4,		/* ¤G¯Å */
-  LEVEL_3 = 8		/* ¤T¯Å */
+  LEVEL_USR_FIRST = 1,	/* ç©å®¶å…ˆä¸‹ */
+  LEVEL_1 = 2,		/* ä¸€ç´š */
+  LEVEL_2 = 4,		/* äºŒç´š */
+  LEVEL_3 = 8		/* ä¸‰ç´š */
 };
 
 
-static char piece[3][3] = {"¡¼", "¡´", "¡³"};
-static char map[MAP_X][MAP_Y];	/* ¦a¹Ï¤W¨C®æªº¾Ö¦³ªÌ */
+static char piece[3][3] = {"â–¡", "â—", "â—‹"};
+static char map[MAP_X][MAP_Y];	/* åœ°åœ–ä¸Šæ¯æ ¼çš„æ“æœ‰è€… */
 static int cx, cy;		/* current (x, y) */
-static int EndGame;		/* -1: Â÷¶}¹CÀ¸ 1: ¹CÀ¸µ²§ô 0: ÁÙ¦bª± */
+static int EndGame;		/* -1: é›¢é–‹éŠæˆ² 1: éŠæˆ²çµæŸ 0: é‚„åœ¨ç© */
 
 #define	mouts(x,y,t)	{ move(GRAY_XPOS + x, GRAY_YPOS + (y) * 2); outs(piece[t]); }
 
 
 /* int count##(x, y, tile)     */
-/* ##     : ´ú¸Õªº¤è¦V N E W S */
-/* x, y   : ©ñ¸mªº (x,y) ®y¼Ğ  */
-/* tile   : ½Ö¤Uªº¤l	       */
-/* return : ¯à¦Y´X¤l	       */
+/* ##     : æ¸¬è©¦çš„æ–¹å‘ N E W S */
+/* x, y   : æ”¾ç½®çš„ (x,y) åº§æ¨™  */
+/* tile   : èª°ä¸‹çš„å­	       */
+/* return : èƒ½åƒå¹¾å­	       */
 
 
 static int
@@ -216,7 +216,7 @@ countSW(x, y, tile)
 }
 
 
-static int 		/* Á`¦@¥i¥H¦Y´X¤l 0: ¤£¯à¦Y */
+static int 		/* ç¸½å…±å¯ä»¥åƒå¹¾å­ 0: ä¸èƒ½åƒ */
 do_count(x, y, tile)
 {
   if (map[x][y] != TILE_BLANK)
@@ -228,10 +228,10 @@ do_count(x, y, tile)
 
 
 /* void eat##(x, y, tile, num) */
-/* ##   : ±ı¦Yªº¤è¦V N E W S   */
-/* x, y : ©ñ¸mªº (x,y) ®y¼Ğ    */
-/* tile : ½Ö¤Uªº¤l	       */
-/* num  : ¦Y´X¤l	       */
+/* ##   : æ¬²åƒçš„æ–¹å‘ N E W S   */
+/* x, y : æ”¾ç½®çš„ (x,y) åº§æ¨™    */
+/* tile : èª°ä¸‹çš„å­	       */
+/* num  : åƒå¹¾å­	       */
 
 
 static inline void
@@ -365,7 +365,7 @@ eatSW(x, y, tile, num)
 static void
 do_eat(x, y, tile)
 {
-  /* ¦Y¦U¤è¦V¯à¦Yªº */
+  /* åƒå„æ–¹å‘èƒ½åƒçš„ */
   eatN(x, y, tile, countN(x, y, tile));
   eatS(x, y, tile, countS(x, y, tile));
   eatE(x, y, tile, countE(x, y, tile));
@@ -375,42 +375,42 @@ do_eat(x, y, tile)
   eatSE(x, y, tile, countSE(x, y, tile));
   eatSW(x, y, tile, countSW(x, y, tile));
 
-  /* ¦Y©Ò¤Uªº³o®æ */
+  /* åƒæ‰€ä¸‹çš„é€™æ ¼ */
   map[x][y] = tile;
   mouts(x, y, tile);
 }
 
 
-/* µû¤À¨î«×¡A«Ü²Ê²Lªº¤H¤u´¼¼z¡A«İ§ïµ½ */
+/* è©•åˆ†åˆ¶åº¦ï¼Œå¾ˆç²—æ·ºçš„äººå·¥æ™ºæ…§ï¼Œå¾…æ”¹å–„ */
 
-/* ºâ¯à¦Y¨ì´X­ÓÃä */
+/* ç®—èƒ½åƒåˆ°å¹¾å€‹é‚Š */
 static int
 count_edge(x, y, tile)
   int x, y;
   int tile;
 {
-  /* ¥»¨­¬OÃä¡A¤~¤]¥i¯à¦Y¨ì¤W¤U©Î¥ª¥kªºÃä */
+  /* æœ¬èº«æ˜¯é‚Šï¼Œæ‰ä¹Ÿå¯èƒ½åƒåˆ°ä¸Šä¸‹æˆ–å·¦å³çš„é‚Š */
   if (x == 0 || x == MAP_X - 1)
   {
-    return 1 + countE(x, y, tile) + countW(x, y, tile);	/* ¥]¬A¦Û¤v¤@­ÓÃä */
+    return 1 + countE(x, y, tile) + countW(x, y, tile);	/* åŒ…æ‹¬è‡ªå·±ä¸€å€‹é‚Š */
   }
   if (y == 0 || y == MAP_Y - 1)
   {
-    return 1 + countN(x, y, tile) + countS(x, y, tile);	/* ¥]¬A¦Û¤v¤@­ÓÃä */
+    return 1 + countN(x, y, tile) + countS(x, y, tile);	/* åŒ…æ‹¬è‡ªå·±ä¸€å€‹é‚Š */
   }
   return 0;
 }
 
 
 static inline int
-find_best(x, y, level)	/* ¶Ç¦^ (x, y) ¹q¸£©Ò©ñ¸m³Ì¦nªº¦ì¸m */
+find_best(x, y, level)	/* å‚³å› (x, y) é›»è…¦æ‰€æ”¾ç½®æœ€å¥½çš„ä½ç½® */
   int *x, *y;
   int level;
 {
   int i, j, bestx, besty, tmp;
   int score = 0;
 
-  if (level & LEVEL_1)			/* ¤@¯Å: ¦Y¶V¦h¶V¦n */
+  if (level & LEVEL_1)			/* ä¸€ç´š: åƒè¶Šå¤šè¶Šå¥½ */
   {
     for (i = 0; i < MAP_X; i++)
     {
@@ -428,7 +428,7 @@ find_best(x, y, level)	/* ¶Ç¦^ (x, y) ¹q¸£©Ò©ñ¸m³Ì¦nªº¦ì¸m */
       }
     }
   }
-  else if (level & LEVEL_2)		/* ¤G¯Å: Â²¤Æªºª÷¨¤»ÈÃä */
+  else if (level & LEVEL_2)		/* äºŒç´š: ç°¡åŒ–çš„é‡‘è§’éŠ€é‚Š */
   {
     for (i = 0; i < MAP_X; i++)
     {
@@ -436,7 +436,7 @@ find_best(x, y, level)	/* ¶Ç¦^ (x, y) ¹q¸£©Ò©ñ¸m³Ì¦nªº¦ì¸m */
       {
 	if (tmp = do_count(i, j, TILE_CPU))
 	{
-	  /* ¨¤ +100  Ãä +50  ¤@¯ë +1 */
+	  /* è§’ +100  é‚Š +50  ä¸€èˆ¬ +1 */
 	  if (i == 0 || i == MAP_X - 1)
 	  {
 	    if (j == 0 || j == MAP_Y - 1)
@@ -459,7 +459,7 @@ find_best(x, y, level)	/* ¶Ç¦^ (x, y) ¹q¸£©Ò©ñ¸m³Ì¦nªº¦ì¸m */
       }
     }	  
   }
-  else /* if (level & LEVEL_3) */	/* ¤T¯Å: ª÷¨¤»ÈÃä */
+  else /* if (level & LEVEL_3) */	/* ä¸‰ç´š: é‡‘è§’éŠ€é‚Š */
   {
     for (i = 0; i < MAP_X; i++)
     {
@@ -467,7 +467,7 @@ find_best(x, y, level)	/* ¶Ç¦^ (x, y) ¹q¸£©Ò©ñ¸m³Ì¦nªº¦ì¸m */
       {
 	if (tmp = do_count(i, j, TILE_CPU))
 	{
-	  /* ¨¤ +100  ¤@­ÓÃä +10  ¤@¯ë +1 */
+	  /* è§’ +100  ä¸€å€‹é‚Š +10  ä¸€èˆ¬ +1 */
 	  if (i == 0 || i == MAP_X - 1)
 	  {
 	    if (j == 0 || j == MAP_Y - 1)
@@ -497,7 +497,7 @@ find_best(x, y, level)	/* ¶Ç¦^ (x, y) ¹q¸£©Ò©ñ¸m³Ì¦nªº¦ì¸m */
 }
 
 
-/* ³]©w´Ñ½L */
+/* è¨­å®šæ£‹ç›¤ */
 
 static inline void
 init_map()
@@ -520,27 +520,27 @@ init_map()
 
 
 
-/* ¿Ã¹õ±±¨î */
+/* è¢å¹•æ§åˆ¶ */
 
 static inline void
 out_prompt()
 {
-  /* ¤£±o¶W¹L GRAY_YPOS¡A§_«h·|¿ù¶Ã */
+  /* ä¸å¾—è¶…é GRAY_YPOSï¼Œå¦å‰‡æœƒéŒ¯äº‚ */
   move(3, 0);
-  outs("«öÁä»¡©ú¡G");
+  outs("æŒ‰éµèªªæ˜ï¼š");
   move(5, 0);
-  outs("²¾°Ê     ¤è¦VÁä");
+  outs("ç§»å‹•     æ–¹å‘éµ");
   move(6, 0);
-  outs("¦û»â     ªÅ¥ÕÁä");
+  outs("ä½”é ˜     ç©ºç™½éµ");
   move(7, 0);
-  outs("¦û»â     Enter");
+  outs("ä½”é ˜     Enter");
   move(8, 0);
-  outs("Â÷¶}     Esc / q");
+  outs("é›¢é–‹     Esc / q");
   move(10, 0);
-  outs("ª±®a     ");
+  outs("ç©å®¶     ");
   outs(piece[TILE_USR]);
   move(11, 0);
-  outs("¹q¸£     ");
+  outs("é›»è…¦     ");
   outs(piece[TILE_CPU]);
 }
 
@@ -550,11 +550,11 @@ out_song()
 {
   uschar *msg[5] = 
   {
-    "¤G°¦¦Ñªê  ¤G°¦¦Ñªê",
-    "¶]±o§Ö  ¶]±o§Ö",
-    "¤@°¦¨S¦³²´·ú",
-    "¤@°¦¨S¦³§À¤Ú",
-    "¯u©_©Ç  ¯u©_©Ç"
+    "äºŒéš»è€è™  äºŒéš»è€è™",
+    "è·‘å¾—å¿«  è·‘å¾—å¿«",
+    "ä¸€éš»æ²’æœ‰çœ¼ç›",
+    "ä¸€éš»æ²’æœ‰å°¾å·´",
+    "çœŸå¥‡æ€ª  çœŸå¥‡æ€ª"
   };
   move(b_lines - 2, 0);
   prints("\033[1;3%dm%s\033[m", time(0) % 7, msg[time(0) % 5]);
@@ -567,7 +567,7 @@ out_map()
 {
   int i, j;
 
-  vs_bar("¶Â¥Õ´Ñ");
+  vs_bar("é»‘ç™½æ£‹");
 
   out_prompt();
   out_song();
@@ -588,7 +588,7 @@ out_map()
 }
 
 
-/* ¹CÀ¸¥Dµ{¦¡ */
+/* éŠæˆ²ä¸»ç¨‹å¼ */
 
 static inline void
 result(msg)
@@ -609,8 +609,8 @@ result(msg)
     }
   }
 
-  sprintf(msg, "[%s] ª±®a¡G¹q¸£ = %d¡G%d", 
-    (sumUSR > sumCPU) ? "³Ó§Q" : (sumUSR < sumCPU ? "¸¨±Ñ" : "¥­¤â"),
+  sprintf(msg, "[%s] ç©å®¶ï¼šé›»è…¦ = %dï¼š%d", 
+    (sumUSR > sumCPU) ? "å‹åˆ©" : (sumUSR < sumCPU ? "è½æ•—" : "å¹³æ‰‹"),
     sumUSR, sumCPU);
 }
 
@@ -621,9 +621,9 @@ play_reversi(level)
 {
   int i, j;
   int ch;
-  int usr_turn;		/* 1: ¸Óª±®a  0: ¸Ó¹q¸£ */
-  int pass;		/* 0: ¨S¦³¤Hpass  1: ¤@­Ó¤Hpass  2:³sÄò¤G­Ó¤Hpass */
-  int bestx, besty;	/* ¹q¸£³Ì¨Î¤U¤l³B */
+  int usr_turn;		/* 1: è©²ç©å®¶  0: è©²é›»è…¦ */
+  int pass;		/* 0: æ²’æœ‰äººpass  1: ä¸€å€‹äººpass  2:é€£çºŒäºŒå€‹äººpass */
+  int bestx, besty;	/* é›»è…¦æœ€ä½³ä¸‹å­è™• */
 
   pass = 0;
   if (!(level & LEVEL_USR_FIRST))
@@ -631,7 +631,7 @@ play_reversi(level)
 
   while (!EndGame)
   {
-    /* ¥ıºâª±®aÁÙ¦³¨S¦³¤l¥i¥H¤U */
+    /* å…ˆç®—ç©å®¶é‚„æœ‰æ²’æœ‰å­å¯ä»¥ä¸‹ */
     for (i = 0; i < MAP_X; i++)
     {
       for (j = 0; j < MAP_Y; j++)
@@ -639,7 +639,7 @@ play_reversi(level)
 	if (do_count(i, j, TILE_USR))
 	{
 	  usr_turn = 1;
-	  i = MAP_X;	/* Â÷¶} for °j°é */
+	  i = MAP_X;	/* é›¢é–‹ for è¿´åœˆ */
 	  j = MAP_Y;
 	}
       }	
@@ -649,21 +649,21 @@ play_reversi(level)
     {
       pass++;
 
-      /* ÀË¬d¬O§_¦³¤G¤H passout */
+      /* æª¢æŸ¥æ˜¯å¦æœ‰äºŒäºº passout */
       if (pass == 2)
       {
-	EndGame = 1;	/* ¹CÀ¸µ²§ô */
+	EndGame = 1;	/* éŠæˆ²çµæŸ */
 	return;
       }
     }
     else if (pass)
     {
-      vmsg("¹q¸£µL¤l¥i¤U¡A½ü¨ì±z¤F");
+      vmsg("é›»è…¦ç„¡å­å¯ä¸‹ï¼Œè¼ªåˆ°æ‚¨äº†");
       move(b_lines, 0);
-      clrtoeol();	/* ®ø±¼ vmsg() */
+      clrtoeol();	/* æ¶ˆæ‰ vmsg() */
     }
 
-    while (usr_turn && (ch = vkey()))	/* ¸Óª±®a¤U */
+    while (usr_turn && (ch = vkey()))	/* è©²ç©å®¶ä¸‹ */
     {
       switch (ch)
       {
@@ -718,11 +718,11 @@ play_reversi(level)
       default:
         break;
       }
-    }		/* ª±®a¤U while °j°éµ²§ô */
+    }		/* ç©å®¶ä¸‹ while è¿´åœˆçµæŸ */
 
 cpu_first:
 
-    /* ¸Ó CPU ¤U */
+    /* è©² CPU ä¸‹ */
     if (!find_best(&bestx, &besty, level))
     {
       pass++;
@@ -731,16 +731,16 @@ cpu_first:
     {
       do_eat(bestx, besty, TILE_CPU);
       pass = 0;
-      cx = bestx;		/* ²¾¨ì CPU ©Ò¤Uªº¦ì¸m */
+      cx = bestx;		/* ç§»åˆ° CPU æ‰€ä¸‹çš„ä½ç½® */
       cy = besty;
     }
     move(GRAY_XPOS + cx, GRAY_YPOS + cy * 2 + 1);
 
-    /* ÀË¬d¬O§_¦³¤G¤H passout */
+    /* æª¢æŸ¥æ˜¯å¦æœ‰äºŒäºº passout */
     if (pass == 2)
-      EndGame = 1;	/* ¹CÀ¸µ²§ô */
+      EndGame = 1;	/* éŠæˆ²çµæŸ */
 
-  }	/* while (!EndGame) °j°éµ²§ô */
+  }	/* while (!EndGame) è¿´åœˆçµæŸ */
 }
 
 
@@ -749,16 +749,16 @@ main_reversi()
 {
   int level;
 
-  level = vans("½Ğ¿ï¾Ü 1)©ö¦p¤Ï´x 2)«D±`Â²³æ 3)´¶³qÃø«×¡A©Î«ö [Q] Â÷¶}¡G") - '1';
+  level = vans("è«‹é¸æ“‡ 1)æ˜“å¦‚åæŒ 2)éå¸¸ç°¡å–® 3)æ™®é€šé›£åº¦ï¼Œæˆ–æŒ‰ [Q] é›¢é–‹ï¼š") - '1';
   if (level >= 0 && level <= 2)
   {
-    level = LEVEL_1 << level;	/* ³]©wÃø«× */
-    if (vans("ª±®a¥ı¤U¶Ü(Y/N)¡H[Y] ") != 'n')
+    level = LEVEL_1 << level;	/* è¨­å®šé›£åº¦ */
+    if (vans("ç©å®¶å…ˆä¸‹å—(Y/N)ï¼Ÿ[Y] ") != 'n')
       level |= LEVEL_USR_FIRST;
   }
   else
   {
-    /* vmsg(MSG_QUITGAME); */	/* itoc.010312: ¤£­n¤F */
+    /* vmsg(MSG_QUITGAME); */	/* itoc.010312: ä¸è¦äº† */
     return XEASY;
   }
 

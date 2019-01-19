@@ -18,12 +18,12 @@ static int x_roll;
 
 
 /* ----------------------------------------------------- */
-/* µe­±Ã¸»s						 */
+/* ç•«é¢ç¹ªè£½						 */
 /* ----------------------------------------------------- */
 
 
 static void
-draw_line(x, y, msg)	/* ¦b (x, y) ªº¦ì¸m¶ë¤J msg¡A¥ª¥k¤´­n¦L¥X­ì¨Óªº±m¦â¤å¦r */
+draw_line(x, y, msg)	/* åœ¨ (x, y) çš„ä½ç½®å¡å…¥ msgï¼Œå·¦å³ä»è¦å°å‡ºåŸä¾†çš„å½©è‰²æ–‡å­— */
   int x, y;
   uschar *msg;
 {
@@ -32,9 +32,9 @@ draw_line(x, y, msg)	/* ¦b (x, y) ªº¦ì¸m¶ë¤J msg¡A¥ª¥k¤´­n¦L¥X­ì¨Óªº±m¦â¤å¦r */
   char color[4];
   int ch, i;
   int len;
-  int ansi;		/* 1: ¦b ANSI ¤¤ */
-  int in_chi = 0;	/* 1: ¦b¤¤¤å¦r¤¤ */
-  int fg, bg, hl;	/* «e´º/­I´º/°ª±m */
+  int ansi;		/* 1: åœ¨ ANSI ä¸­ */
+  int in_chi = 0;	/* 1: åœ¨ä¸­æ–‡å­—ä¸­ */
+  int fg, bg, hl;	/* å‰æ™¯/èƒŒæ™¯/é«˜å½© */
 
   hl = 0;
   fg = 37;
@@ -51,9 +51,9 @@ draw_line(x, y, msg)	/* ¦b (x, y) ªº¦ì¸m¶ë¤J msg¡A¥ª¥k¤´­n¦L¥X­ì¨Óªº±m¦â¤å¦r */
   move(x, 0);
   clrtoeol();
 
-  /* ¦L¥X (x, 0) ¦Ü (x, y - 1) */
+  /* å°å‡º (x, 0) è‡³ (x, y - 1) */
   ansi = 0;
-  len = 0;		/* ¤w¦L¥X´X­Ó¦r (¤£§t±±¨î½X) */
+  len = 0;		/* å·²å°å‡ºå¹¾å€‹å­— (ä¸å«æ§åˆ¶ç¢¼) */
   while (ch = *str++)
   {
     if (ch == KEY_ESC)
@@ -100,7 +100,7 @@ draw_line(x, y, msg)	/* ¦b (x, y) ªº¦ì¸m¶ë¤J msg¡A¥ª¥k¤´­n¦L¥X­ì¨Óªº±m¦â¤å¦r */
     {
       if (++len >= y)
       {
-	/* ³Ì«á¤@¦r­Y¬O¤¤¤å¦rªº­º½X¡A´N¤£¦L */
+	/* æœ€å¾Œä¸€å­—è‹¥æ˜¯ä¸­æ–‡å­—çš„é¦–ç¢¼ï¼Œå°±ä¸å° */
 	if (!in_chi && IS_ZHC_HI(ch))
 	{
 	  outc(' ');
@@ -124,10 +124,10 @@ draw_line(x, y, msg)	/* ¦b (x, y) ªº¦ì¸m¶ë¤J msg¡A¥ª¥k¤´­n¦L¥X­ì¨Óªº±m¦â¤å¦r */
   while (len++ < y)
     outc(' ');
 
-  /* ¦L¥X (x, y) ¦Ü (x, y + strip_ansi_len(msg) - 1) */
+  /* å°å‡º (x, y) è‡³ (x, y + strip_ansi_len(msg) - 1) */
   ptr = msg;
   ansi = 0;
-  len = 0;		/* msg ªºªø«×(¤£§t±±¨î½X) */
+  len = 0;		/* msg çš„é•·åº¦(ä¸å«æ§åˆ¶ç¢¼) */
   while (ch = *ptr++)
   {
     if (ch == KEY_ESC)
@@ -146,7 +146,7 @@ draw_line(x, y, msg)	/* ¦b (x, y) ªº¦ì¸m¶ë¤J msg¡A¥ª¥k¤´­n¦L¥X­ì¨Óªº±m¦â¤å¦r */
     outc(ch);
   }
 
-  /* ¸õ±¼ str ¤¤¶¡¤@¾ã¬q¡A¨Ã¨ú¥X³Ì«áªºÃC¦â */
+  /* è·³æ‰ str ä¸­é–“ä¸€æ•´æ®µï¼Œä¸¦å–å‡ºæœ€å¾Œçš„é¡è‰² */
   ansi = 0;
   while (ch = *str++)
   {
@@ -191,7 +191,7 @@ draw_line(x, y, msg)	/* ¦b (x, y) ªº¦ì¸m¶ë¤J msg¡A¥ª¥k¤´­n¦L¥X­ì¨Óªº±m¦â¤å¦r */
     }
     else
     {
-      if (--len < 0)	/* ¸õ¹L strip_ansi_len(msg) ªºªø«× */
+      if (--len < 0)	/* è·³é strip_ansi_len(msg) çš„é•·åº¦ */
 	break;
 
       if (in_chi || IS_ZHC_HI(ch))
@@ -199,12 +199,12 @@ draw_line(x, y, msg)	/* ¦b (x, y) ªº¦ì¸m¶ë¤J msg¡A¥ª¥k¤´­n¦L¥X­ì¨Óªº±m¦â¤å¦r */
     }
   }
 
-  /* ¦L¥X (x, y + strip_ansi_len(msg)) ³o­Ó¦r¤Î«á­±ªº±±¨î½X */
+  /* å°å‡º (x, y + strip_ansi_len(msg)) é€™å€‹å­—åŠå¾Œé¢çš„æ§åˆ¶ç¢¼ */
   prints("\033[%d;%d;%dm", hl, fg, bg);
-  /* ¦¹¦r­Y¬O¤¤¤å¦rªº§À½X¡A´N¤£¦L */
+  /* æ­¤å­—è‹¥æ˜¯ä¸­æ–‡å­—çš„å°¾ç¢¼ï¼Œå°±ä¸å° */
   outc(in_chi ? ' ' : ch);
 
-  /* ¦L¥X (x, y + strip_ansi_len(msg) + 1) ¦Ü ¦æ§À */
+  /* å°å‡º (x, y + strip_ansi_len(msg) + 1) è‡³ è¡Œå°¾ */
   outs(str);
   outs(str_ransi);
 }
@@ -213,7 +213,7 @@ draw_line(x, y, msg)	/* ¦b (x, y) ªº¦ì¸m¶ë¤J msg¡A¥ª¥k¤´­n¦L¥X­ì¨Óªº±m¦â¤å¦r */
 #ifdef POPUP_ANSWER
 
 /* ----------------------------------------------------- */
-/* ¿ï¶µÃ¸»s						 */
+/* é¸é …ç¹ªè£½						 */
 /* ----------------------------------------------------- */
 
 
@@ -222,11 +222,11 @@ draw_item(x, y, desc, hotkey, mode)
   int x, y;
   char *desc;
   char hotkey;
-  int mode;		/* 0:²M°£¥ú´Î  1:µe¤W¥ú´Î */
+  int mode;		/* 0:æ¸…é™¤å…‰æ£’  1:ç•«ä¸Šå…‰æ£’ */
 {
   char buf[128];
 
-  sprintf(buf, " ¢x%s%c %c%c%c%-25s  \033[m¢x ",
+  sprintf(buf, " â”‚%s%c %c%c%c%-25s  \033[mâ”‚ ",
     mode ? COLOR4 : "\033[30;47m", mode ? '>' : ' ',
     (hotkey == *desc) ? '[' : '(', *desc,
     (hotkey == *desc) ? ']' : ')', desc + 1);
@@ -235,23 +235,23 @@ draw_item(x, y, desc, hotkey, mode)
 }
 
 
-static int	/* ¦^¶ÇÁ`¦@¦³´X­Ó¿ï¶µ */
+static int	/* å›å‚³ç¸½å…±æœ‰å¹¾å€‹é¸é … */
 draw_menu(x, y, title, desc, hotkey, cur)
   int x, y;
   char *title;
   char *desc[];
   char hotkey;
-  int *cur;	/* ¦^¶Ç¹w³]­È©Ò¦b¦ì¸m */
+  int *cur;	/* å›å‚³é è¨­å€¼æ‰€åœ¨ä½ç½® */
 {
   int i, meet;
   char buf[128];
 
-  draw_line(x++, y, " ¢~¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢¡ ");
+  draw_line(x++, y, " â•­â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â•® ");
 
-  sprintf(buf, " ¢x" COLOR4 "  %-28s  \033[m¢x ", title);
+  sprintf(buf, " â”‚" COLOR4 "  %-28s  \033[mâ”‚ ", title);
   draw_line(x++, y, buf);
 
-  draw_line(x++, y, " ¢u¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢t ");
+  draw_line(x++, y, " â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤ ");
 
   for (i = 1; desc[i]; i++)
   {
@@ -261,9 +261,9 @@ draw_menu(x, y, title, desc, hotkey, cur)
       *cur = i;
   }
 
-  draw_line(x, y, " ¢¢¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢w¢£ ");
+  draw_line(x, y, " â•°â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â•¯ ");
 
-  /* Á×§K¦b°»´ú¥ª¥kÁä¥ş§Î¤U¡A«ö¥ªÁä·|¸õÂ÷¤G¼h¿ï³æªº°İÃD */
+  /* é¿å…åœ¨åµæ¸¬å·¦å³éµå…¨å½¢ä¸‹ï¼ŒæŒ‰å·¦éµæœƒè·³é›¢äºŒå±¤é¸å–®çš„å•é¡Œ */
   move(b_lines, 0);
 
   return i - 1;
@@ -271,25 +271,25 @@ draw_menu(x, y, title, desc, hotkey, cur)
 
 
 /* ----------------------------------------------------- */
-/* §ä¿ï¶µ						 */
+/* æ‰¾é¸é …						 */
 /* ----------------------------------------------------- */
 
 
-static int			/* -1:§ä¤£¨ì >=0:²Ä´X­Ó¿ï¶µ */
-find_cur(ch, max, desc)		/* §ä ch ³o­Ó«öÁä¬O²Ä´X­Ó¿ï¶µ */
+static int			/* -1:æ‰¾ä¸åˆ° >=0:ç¬¬å¹¾å€‹é¸é … */
+find_cur(ch, max, desc)		/* æ‰¾ ch é€™å€‹æŒ‰éµæ˜¯ç¬¬å¹¾å€‹é¸é … */
   int ch, max;
   char *desc[];
 {
   int i, cc;
 
   if (ch >= 'A' && ch <= 'Z')
-    ch |= 0x20;		/* ´«¤p¼g */
+    ch |= 0x20;		/* æ›å°å¯« */
 
   for (i = 1; i <= max; i++)
   {
     cc = desc[i][0];
     if (cc >= 'A' && cc <= 'Z')
-      cc |= 0x20;	/* ´«¤p¼g */
+      cc |= 0x20;	/* æ›å°å¯« */
 
     if (ch == cc)
       return i;
@@ -300,20 +300,20 @@ find_cur(ch, max, desc)		/* §ä ch ³o­Ó«öÁä¬O²Ä´X­Ó¿ï¶µ */
 
 
 /*------------------------------------------------------ */
-/* ¸ß°İ¿ï¶µ¡A¥i¥Î¨Ó¨ú¥N vans()				 */
+/* è©¢å•é¸é …ï¼Œå¯ç”¨ä¾†å–ä»£ vans()				 */
 /*------------------------------------------------------ */
-/* x, y  ¬OÂÛ¥Xµøµ¡¥ª¤W¨¤ªº (x, y) ¦ì¸m			 */
-/* title ¬Oµøµ¡ªº¼ĞÃD					 */
-/* desc  ¬O¿ï¶µªº±Ô­z¡G					 */
-/*       ²Ä¤@­Ó¦r¦ê¥²¶·¬°¨â­Ó char			 */
-/*         ²Ä¤@­Ó¦r¤¸¥Nªí¤@¶}©l´å¼Ğ°±ªº¦ì¸m		 */
-/*         ²Ä¤G­Ó¦r¤¸¥Nªí«ö¤U KEY_LEFT ªº¹w³]¦^¶Ç­È	 */
-/*       ¤¤¶¡ªº¦r¦ê¬O¨C­Ó¿ï¶µªº±Ô­z (­º¦r¥À¬°¼öÁä)	 */
-/*       ³Ì«á¤@­Ó¦r¦ê¥²¶·¬° NULL			 */
+/* x, y  æ˜¯è¹¦å‡ºè¦–çª—å·¦ä¸Šè§’çš„ (x, y) ä½ç½®			 */
+/* title æ˜¯è¦–çª—çš„æ¨™é¡Œ					 */
+/* desc  æ˜¯é¸é …çš„æ•˜è¿°ï¼š					 */
+/*       ç¬¬ä¸€å€‹å­—ä¸²å¿…é ˆç‚ºå…©å€‹ char			 */
+/*         ç¬¬ä¸€å€‹å­—å…ƒä»£è¡¨ä¸€é–‹å§‹æ¸¸æ¨™åœçš„ä½ç½®		 */
+/*         ç¬¬äºŒå€‹å­—å…ƒä»£è¡¨æŒ‰ä¸‹ KEY_LEFT çš„é è¨­å›å‚³å€¼	 */
+/*       ä¸­é–“çš„å­—ä¸²æ˜¯æ¯å€‹é¸é …çš„æ•˜è¿° (é¦–å­—æ¯ç‚ºç†±éµ)	 */
+/*       æœ€å¾Œä¸€å€‹å­—ä¸²å¿…é ˆç‚º NULL			 */
 /*------------------------------------------------------ */
 
 
-int		/* ¶Ç¦^¤p¼g¦r¥À©Î¼Æ¦r */
+int		/* å‚³å›å°å¯«å­—æ¯æˆ–æ•¸å­— */
 pans(x, y, title, desc)
   int x, y;
   char *title;
@@ -326,11 +326,11 @@ pans(x, y, title, desc)
 
   hotkey = desc[0][0];
 
-  /* µe¥X¾ã­Ó¿ï³æ */
+  /* ç•«å‡ºæ•´å€‹é¸å–® */
   max = draw_menu(x, y, title, desc, hotkey, &cur);
   x += 2;
 
-  /* ¤@¶i¤J¡A´å¼Ğ°±¦b¹w³]­È */
+  /* ä¸€é€²å…¥ï¼Œæ¸¸æ¨™åœåœ¨é è¨­å€¼ */
   old_cur = cur;
 
   while (1)
@@ -343,7 +343,7 @@ pans(x, y, title, desc)
       vs_restore(slt);
       ch = (ch == KEY_LEFT) ? desc[0][1] : desc[cur][0];
       if (ch >= 'A' && ch <= 'Z')
-	ch |= 0x20;		/* ¦^¶Ç¤p¼g */
+	ch |= 0x20;		/* å›å‚³å°å¯« */
       return ch;
 
     case KEY_UP:
@@ -362,18 +362,18 @@ pans(x, y, title, desc)
       cur = max;
       break;
 
-    default:		/* ¥h§ä©Ò«öÁä¬O­ş¤@­Ó¿ï¶µ */
+    default:		/* å»æ‰¾æ‰€æŒ‰éµæ˜¯å“ªä¸€å€‹é¸é … */
       if ((ch = find_cur(ch, max, desc)) > 0)
 	cur = ch;
       break;
     }
 
-    if (old_cur != cur)		/* ´å¼ĞÅÜ°Ê¦ì¸m¤~»İ­n­«Ã¸ */
+    if (old_cur != cur)		/* æ¸¸æ¨™è®Šå‹•ä½ç½®æ‰éœ€è¦é‡ç¹ª */
     {
       draw_item(x + old_cur, y, desc[old_cur], hotkey, 0);
       draw_item(x + cur, y, desc[cur], hotkey, 1);
       old_cur = cur;
-      /* Á×§K¦b°»´ú¥ª¥kÁä¥ş§Î¤U¡A«ö¥ªÁä·|¸õÂ÷¤G¼h¿ï³æªº°İÃD */
+      /* é¿å…åœ¨åµæ¸¬å·¦å³éµå…¨å½¢ä¸‹ï¼ŒæŒ‰å·¦éµæœƒè·³é›¢äºŒå±¤é¸å–®çš„å•é¡Œ */
       move(b_lines, 0);
     }
   }
@@ -383,13 +383,13 @@ pans(x, y, title, desc)
 
 #ifdef POPUP_MESSAGE
 /*------------------------------------------------------ */
-/* ÂÛ¥X¦¡µøµ¡°T®§¡A¥i¥Î¨Ó¨ú¥N vmsg()			 */
+/* è¹¦å‡ºå¼è¦–çª—è¨Šæ¯ï¼Œå¯ç”¨ä¾†å–ä»£ vmsg()			 */
 /*------------------------------------------------------ */
 
 
 int
 pmsg(msg)
-  char *msg;		/* ¤£¥i¬° NULL */
+  char *msg;		/* ä¸å¯ç‚º NULL */
 {
   int len, x, y, i;
   char buf[80];
@@ -397,35 +397,35 @@ pmsg(msg)
   x_roll = vs_save(slt);
 
   len = strlen(msg);
-  if (len < 16)		/* ¨ú msg title ¨ä¤¤¸ûªøªÌ¬° len */
+  if (len < 16)		/* å– msg title å…¶ä¸­è¼ƒé•·è€…ç‚º len */
     len = 16;
-  if (len % 2)		/* ÅÜ¦¨°¸¼Æ */
+  if (len % 2)		/* è®Šæˆå¶æ•¸ */
     len++;
-  x = (b_lines - 4) >> 1;	/* ¸m¤¤ */
+  x = (b_lines - 4) >> 1;	/* ç½®ä¸­ */
   y = (b_cols - 8 - len) >> 1;
 
-  strcpy(buf, "¢~");
+  strcpy(buf, "â•­");
   for (i = -4; i < len; i += 2)
-    strcat(buf, "¢w");
-  strcat(buf, "¢¡");
+    strcat(buf, "â”€");
+  strcat(buf, "â•®");
   draw_line(x++, y, buf);
 
-  sprintf(buf, "¢x" COLOR4 "  %-*s  \033[m¢x", len, "½Ğ«ö¥ô·NÁäÄ~Äò..");
+  sprintf(buf, "â”‚" COLOR4 "  %-*s  \033[mâ”‚", len, "è«‹æŒ‰ä»»æ„éµç¹¼çºŒ..");
   draw_line(x++, y, buf);
 
-  strcpy(buf, "¢u");
+  strcpy(buf, "â”œ");
   for (i = -4; i < len; i += 2)
-    strcat(buf, "¢w");
-   strcat(buf, "¢t");
+    strcat(buf, "â”€");
+   strcat(buf, "â”¤");
   draw_line(x++, y, buf);
 
-  sprintf(buf, "¢x\033[30;47m  %-*s  \033[m¢x", len, msg);
+  sprintf(buf, "â”‚\033[30;47m  %-*s  \033[mâ”‚", len, msg);
   draw_line(x++, y, buf);
 
-  strcpy(buf, "¢¢");
+  strcpy(buf, "â•°");
   for (i = -4; i < len; i += 2)
-    strcat(buf, "¢w");
-  strcat(buf, "¢£");
+    strcat(buf, "â”€");
+  strcat(buf, "â•¯");
   draw_line(x++, y, buf);
 
   move(b_lines, 0);

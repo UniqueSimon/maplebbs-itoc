@@ -1,11 +1,11 @@
-  �z�w�w�w�s�w�w�w�w�w�w�s�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�{
-  �x��  ��x ��      �� �x  ��                                        �z  �x
-  �u�w�w�w�q�w�w�w�w�w�w�q�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�t
-  �xs     �xpost_switch �x����ݪO                                        �x
-  �|�w�w�w�r�w�w�w�w�w�w�r�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�w�}
+  ┌───┬──────┬────────────────────────┐
+  │按  鍵│ 函      式 │  敘                                        述  │
+  ├───┼──────┼────────────────────────┤
+  │s     │post_switch │選取看板                                        │
+  └───┴──────┴────────────────────────┘
 
-    �� s ��J�ݪO�W�A�i�����i�J�ӪO�C
+    按 s 輸入看板名，可直接進入該板。
 
-  �п�J�ݪO�W��(���ť���۰ʷj�M)�G     �� ��J�ݪO�^��O�W
+  請輸入看板名稱(按空白鍵自動搜尋)：     → 輸入看板英文板名
 
  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
