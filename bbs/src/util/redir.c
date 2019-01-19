@@ -225,7 +225,7 @@ usage(argv)
   printf("  重建 看板文章 索引請執行 %s -b\n", str);
   printf("  重建精華區文章索引請執行 %s -g\n", str);
   printf("  重建 信箱信件 索引請執行 %s -m\n", str);
-  printf("執行結束以後，再將 .DIR.re 覆蓋\ .DIR 即可\n");
+  printf("執行結束以後，再將 .DIR.re 覆蓋 .DIR 即可\n");
 
   exit(0);
 }
