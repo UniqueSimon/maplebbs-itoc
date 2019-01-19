@@ -511,7 +511,7 @@ pip_data_list(userid)		/* 看某人小雞詳細資料 */
 
       outs("\033[1;31m ├┤\033[41;37m 工作次數 \033[0;1;31m├────────────────────────────┤\033[m\n");
       prints("\033[1;31m │\033[33m﹟家事次數 : \033[37m%-10d\033[33m﹟保姆次數 : \033[37m%-10d\033[33m﹟旅店次數 : \033[37m%-10d\033[31m │\033[m\n", chicken.workA, chicken.workB, chicken.workC);
-      prints("\033[1;31m │\033[33m﹟農場次數 : \033[37m%-10d\033[33m﹟餐\廳次數 : \033[37m%-10d\033[33m﹟教堂次數 : \033[37m%-10d\033[31m │\033[m\n", chicken.workD, chicken.workE, chicken.workF);
+      prints("\033[1;31m │\033[33m﹟農場次數 : \033[37m%-10d\033[33m﹟餐廳次數 : \033[37m%-10d\033[33m﹟教堂次數 : \033[37m%-10d\033[31m │\033[m\n", chicken.workD, chicken.workE, chicken.workF);
       prints("\033[1;31m │\033[33m﹟地攤次數 : \033[37m%-10d\033[33m﹟伐木次數 : \033[37m%-10d\033[33m﹟美髮次數 : \033[37m%-10d\033[31m │\033[m\n", chicken.workG, chicken.workH, chicken.workI);
       prints("\033[1;31m │\033[33m﹟獵人次數 : \033[37m%-10d\033[33m﹟工地次數 : \033[37m%-10d\033[33m﹟守墓次數 : \033[37m%-10d\033[31m │\033[m\n", chicken.workJ, chicken.workK, chicken.workL);
       prints("\033[1;31m │\033[33m﹟家教次數 : \033[37m%-10d\033[33m﹟酒家次數 : \033[37m%-10d\033[33m﹟酒店次數 : \033[37m%-10d\033[31m │\033[m\n", chicken.workM, chicken.workN, chicken.workO);

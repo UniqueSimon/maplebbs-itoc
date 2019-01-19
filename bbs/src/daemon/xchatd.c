@@ -1690,7 +1690,7 @@ print_user_counts(cuser)
     "⊙ 歡迎光臨【聊天室】，目前開了 \033[1;31m%d\033[m 間包廂", roomc);
   send_to_user(cuser, buf, 0, number);
 
-  sprintf(buf, "⊙ 共有 \033[1;36m%d\033[m 人來擺\龍門陣", userc);
+  sprintf(buf, "⊙ 共有 \033[1;36m%d\033[m 人來擺龍門陣", userc);
   if (suserc)
     sprintf(buf + strlen(buf), " [%d 人在秘密聊天室]", suserc);
 
@@ -2370,13 +2370,13 @@ static ChatAction party_data[ACTNUM_PARTY] =
     "board", "主機板", "把", "抓去跪主機板"
   },
   {
-    "bokan", "氣功\", "雙掌微合，蓄勢待發……突然間，電光乍現，對", "使出了Ｂｏ--Ｋａｎ"
+    "bokan", "氣功", "雙掌微合，蓄勢待發……突然間，電光乍現，對", "使出了Ｂｏ--Ｋａｎ"
   },
   {
     "bow", "鞠躬", "畢躬畢敬的向", "鞠躬"
   },
   {
-    "box", "幕之內", "開始輪擺\式移位，對", "作肝臟攻擊"
+    "box", "幕之內", "開始輪擺式移位，對", "作肝臟攻擊"
   },
   {
     "bye", "掰掰", "向", "說掰掰"
@@ -2472,7 +2472,7 @@ static ChatAction party_data[ACTNUM_PARTY] =
     "glue", "補心", "用快乾把", "的心黏了起來"
   },
   {
-    "goodbye", "告別", "淚\眼汪汪的向",	"告別"
+    "goodbye", "告別", "淚眼汪汪的向",	"告別"
   },
   {
     "grin", "奸笑", "對", "露出邪惡的笑容"
@@ -3032,7 +3032,7 @@ static ChatAction condition_data[ACTNUM_CONDITION] =
     "story", "講古", "開始講古了", NULL
   },
   {
-    "strut", "搖擺\走",	"大搖大擺\地走", NULL
+    "strut", "搖擺走",	"大搖大擺地走", NULL
   },
   {
     "suicide", "自殺", "自殺", NULL
@@ -3041,7 +3041,7 @@ static ChatAction condition_data[ACTNUM_CONDITION] =
     "sweat", "流汗", "揮汗如雨！", NULL
   },
   {
-    "tear", "流淚\", "痛哭流涕中.....",	NULL
+    "tear", "流淚", "痛哭流涕中.....",	NULL
   },
   {
     "think", "思考", "歪著頭想了一下", NULL

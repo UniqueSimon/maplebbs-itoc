@@ -443,7 +443,7 @@ start_game:
   {
     if (count == 1 && board[MAX_X / 2][MAX_Y / 2] & TILE_CHESS)
     {			/* 最後一子要在正中間 */
-      vmsg("恭喜您成功\了");
+      vmsg("恭喜您成功了");
 
 #ifdef LOG_KM
       if (vans("您是否要把完成的棋譜保存在信箱中(Y/N)？[Y] ") != 'n')

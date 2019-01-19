@@ -308,7 +308,7 @@ start_game:
     }
   }
 
-  vmsg("祝賀您！成功\過關");
+  vmsg("祝賀您！成功過關");
 
   if (++stage > NUM_TABLE)
     stage = 1;

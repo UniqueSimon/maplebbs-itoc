@@ -401,7 +401,7 @@ admip_query(xo)
       "E  修改 IP 資料",
       "Q  取消", NULL};
 
-  switch (pans(-1, -1, "功\能選單", menu))
+  switch (pans(-1, -1, "功能選單", menu))
   {
     case 'a':
       return admip_add(xo);
@@ -819,7 +819,7 @@ admfqdn_query(xo)
       "E  修改 FQDN 資料",
       "Q  取消", NULL};
 
-  switch (pans(-1, -1, "功\能選單", menu))
+  switch (pans(-1, -1, "功能選單", menu))
   {
     case 'a':
       return admfqdn_add(xo);

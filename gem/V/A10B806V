@@ -43,7 +43,7 @@ brd_force2()
     if (brd->blast > brd_visit[bno])
 #endif
     {
-      vmsg("有新公告！請先閱\讀完新公告後再離開");
+      vmsg("有新公告！請先閱讀完新公告後再離開");
       XoPost(bno);
       xover(XZ_POST);
 

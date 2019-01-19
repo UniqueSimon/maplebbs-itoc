@@ -43,7 +43,7 @@ m_setforward()
   vget(b_lines - 1, 0, "請輸入信件自動轉寄的 E-mail：", ip, 50, GCARRY);
 
   if (ip[0] && !not_addr(ip) &&
-    vans("確定開啟自動轉信功\能(Y/N)？[N] ") == 'y')
+    vans("確定開啟自動轉信功能(Y/N)？[N] ") == 'y')
   {
     if (fp = fopen(fpath, "w"))
     {

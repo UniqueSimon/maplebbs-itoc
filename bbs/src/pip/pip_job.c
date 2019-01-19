@@ -82,7 +82,7 @@ pip_job_workA()
   {
     class = 4;
     d.money += 80 + (d.homework + d.cook) / 50;
-    vmsg("家事很成功\喔..多一點錢給您..");
+    vmsg("家事很成功喔..多一點錢給您..");
   }
   else if (class >= 50)
   {
@@ -136,7 +136,7 @@ pip_job_workB()
   {
     class = 4;
     d.money += 150 + (d.toman + d.love) / 50;
-    vmsg("當保姆很成功\喔..下次再來喔..");
+    vmsg("當保姆很成功喔..下次再來喔..");
   }
   else if (class >= 50)
   {
@@ -380,7 +380,7 @@ pip_job_workG()
     return 0;
 
   d.money += 200 + (d.charm + d.speech) * class / 5000;
-  vmsg("擺\地攤要躲警察啦..:p");
+  vmsg("擺地攤要躲警察啦..:p");
 
   d.toman += rand() % 2;
   d.charm += rand() % 2;
@@ -531,7 +531,7 @@ pip_job_workJ()
   {
     class = 3;
     d.money += 270 + (d.attack + d.speed) / 55;
-    vmsg("收獲還不錯喔..可以飽餐\一頓了..");
+    vmsg("收獲還不錯喔..可以飽餐一頓了..");
   }
   else if (class >= 25)
   {
@@ -641,13 +641,13 @@ pip_job_workL()
   {
     class = 4;
     d.money += 200 + (d.brave + d.affect) / 50;
-    vmsg("守墓成功\喔..多謝了");
+    vmsg("守墓成功喔..多謝了");
   }
   else if (class >= 50)
   {
     class = 3;
     d.money += 150 + (d.brave + d.affect) / 55;
-    vmsg("守墓還算成功\喔..謝啦..");
+    vmsg("守墓還算成功喔..謝啦..");
   }
   else if (class >= 25)
   {

@@ -43,7 +43,7 @@ add_class(brd)
   rec_add(fpath, &hdr, sizeof(HDR));
   rec_sync(fpath, sizeof(HDR), hdr_cmp, NULL);
 
-  vmsg("新板成立，程式自動加入 Class 群組成功\");
+  vmsg("新板成立，程式自動加入 Class 群組成功");
 }
 
 : newbrd.c:nbrd_newbrd()

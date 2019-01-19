@@ -65,7 +65,7 @@ post_undelete(xo)
     strcpy(xpost.title, hdr->title + IDLEN + 1);
     rec_add(buf, &xpost, sizeof(HDR));
 
-    sprintf(fpath, "已成功\地將本文救回 %s 板", brdname);
+    sprintf(fpath, "已成功地將本文救回 %s 板", brdname);
     vmsg(fpath);
   }
   else

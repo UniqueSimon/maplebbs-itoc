@@ -61,7 +61,7 @@
 
 /* ulist_neck() 及 xpost_head() 的第一行比較特別，不在此定義 */
 
-#define NECKER_CLASS	"[←]主選單 [→]閱\讀 [↑↓]選擇 [c]篇數 [y]載入 [/?]搜尋 [s]看板 [h]說明\n" \
+#define NECKER_CLASS	"[←]主選單 [→]閱讀 [↑↓]選擇 [c]篇數 [y]載入 [/?]搜尋 [s]看板 [h]說明\n" \
 			COLOR3 "  %s   看  板       類別轉信中   文   敘   述%*s              人氣 板    主%*s    \033[m"
 
 #define NECKER_ULIST	"\n" \
@@ -82,13 +82,13 @@
 #define NECKER_MF	"[←]離開 [→]進入 [^P]新增 [d]刪除 [c]切換 [C]複製 [^V]貼上 [m]移動 [h]說明\n" \
 			COLOR3 "  %s   看  板       類別轉信中   文   敘   述%*s              人氣 板    主%*s    \033[m"
 
-#define NECKER_COSIGN	"[←]離開 [→]閱\讀 [^P]申請 [d]刪除 [o]開板 [h]說明\n" \
+#define NECKER_COSIGN	"[←]離開 [→]閱讀 [^P]申請 [d]刪除 [o]開板 [h]說明\n" \
 			COLOR3 "  編號   日 期  舉辦人       看  板  標  題%*s                                   \033[m"
 
 #define NECKER_SONG	"[←]離開 [→]瀏覽 [o]點歌到看板 [m]點歌到信箱 [Enter]瀏覽 [h]說明\n" \
 			COLOR3 "  編號     主              題%*s                            [編      選] [日  期]\033[m"
 
-#define NECKER_NEWS	"[←]離開 [→]閱\讀 [h]說明\n" \
+#define NECKER_NEWS	"[←]離開 [→]閱讀 [h]說明\n" \
 			COLOR3 "  編號    日 期 作  者       新  聞  標  題%*s                                   \033[m"
 
 #define NECKER_XPOST	"\n" \
@@ -97,7 +97,7 @@
 #define NECKER_MBOX	"[←]離開 [→,r]讀信 [d]刪除 [R,y](群組)回信 [s]寄信 [x]轉錄 [X]轉達 [h]說明\n" \
 			COLOR3 "  編號   日 期 作  者       信  件  標  題%*s                                    \033[m"
 
-#define NECKER_POST	"[←]離開 [→]閱\讀 [^P]發表 [b]進板畫面 [d]刪除 [V]投票 [TAB]精華區 [h]說明\n" \
+#define NECKER_POST	"[←]離開 [→]閱讀 [^P]發表 [b]進板畫面 [d]刪除 [V]投票 [TAB]精華區 [h]說明\n" \
 			COLOR3 "  編號    日 期 作  者       文  章  標  題%*s                 評:%s  人氣:%-4d  \033[m"
 
 #define NECKER_GEM	"[←]離開 [→]瀏覽 [B]模式 [C]暫存 [F]轉寄 [d]刪除 [h]說明  %s\n" \
@@ -111,7 +111,7 @@
 #define NECKER_CREDIT	"[←]離開 [C]換頁 [1]新增 [2]刪除 [3]全刪 [4]總計\n" \
 			COLOR3 "  編號   日  期   收支  金  額  分類     說  明%*s                               \033[m"
 
-#define NECKER_HELP	"[←]離開 [→]閱\讀 [^P]新增 [d]刪除 [T]標題 [E]編輯 [m]移動\n" \
+#define NECKER_HELP	"[←]離開 [→]閱讀 [^P]新增 [d]刪除 [T]標題 [E]編輯 [m]移動\n" \
 			COLOR3 "  編號    檔 案         標       題%*s                                           \033[m"
 
 #define NECKER_INNBBS	"[←]離開 [^P]新增 [d]刪除 [E]編輯 [/]搜尋 [Enter]詳細\n" \

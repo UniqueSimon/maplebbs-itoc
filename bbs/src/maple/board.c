@@ -804,7 +804,7 @@ XoPost(bno)
 #ifdef HAVE_MODERATED_BOARD
     if (!(bits & BRD_R_BIT))
     {
-      vmsg("對不起，此板只准板友進入，請向板主申請入境許\可");
+      vmsg("對不起，此板只准板友進入，請向板主申請入境許可");
       return -1;
     }
 #endif
@@ -876,7 +876,7 @@ brd_force()			/* itoc.010407: 強制閱讀公告板，且強迫讀最後一篇 *
     if (brd->blast > brd_visit[bno])
 #endif
     {
-      vmsg("有新公告！請先閱\讀完新公告後再離開");
+      vmsg("有新公告！請先閱讀完新公告後再離開");
       XoPost(bno);
       xover(XZ_POST);
 
@@ -1443,7 +1443,7 @@ class_zapall(xo)
   BRD *brdp, *bend;
   int ans, bno;
 
-  ans = vans("設定所有看板 (U)訂閱\ (Z)不訂閱\ (Q)取消？ [Q] ");
+  ans = vans("設定所有看板 (U)訂閱 (Z)不訂閱 (Q)取消？ [Q] ");
   if (ans != 'z' && ans != 'u')
     return XO_FOOT;
 

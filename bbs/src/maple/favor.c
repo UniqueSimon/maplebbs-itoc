@@ -513,7 +513,7 @@ mf_browse(xo)
     if ((bno = brd_bno(xname)) < 0 || !(brd_bits[bno] & BRD_R_BIT))
     {
       rec_del(xo->dir, sizeof(MF), xo->pos, NULL);
-      vmsg("本看板已被刪除或您沒有權限閱\讀本看板，系統將自動移除捷徑");
+      vmsg("本看板已被刪除或您沒有權限閱讀本看板，系統將自動移除捷徑");
       return mf_load(xo);
     }
 
@@ -537,7 +537,7 @@ mf_browse(xo)
     if ((type = gem_link(xname)) < 0)
     {
       rec_del(xo->dir, sizeof(MF), xo->pos, NULL);
-      vmsg("本看板已被刪除或您沒有權限閱\讀本看板，系統將自動移除捷徑");
+      vmsg("本看板已被刪除或您沒有權限閱讀本看板，系統將自動移除捷徑");
       return mf_load(xo);
     }
 

@@ -296,7 +296,7 @@ song_browse(xo)
       {
 	if ((op = gem_link(hdr->xname)) < 0)
 	{
-	  vmsg("對不起，此板精華區只准板友進入，請向板主申請入境許\可");
+	  vmsg("對不起，此板精華區只准板友進入，請向板主申請入境許可");
 	  return XO_FOOT;
 	}
       }

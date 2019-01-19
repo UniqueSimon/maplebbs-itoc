@@ -60,7 +60,7 @@ bmode(up, simple)
   /* itoc.020602: 站長得知使用者在看哪個板 */
   if (mode == M_READA && HAS_PERM(PERM_SYSOP))
   {
-    sprintf(modestr, "閱\:%s", up->reading);
+    sprintf(modestr, "閱:%s", up->reading);
     return modestr;
   }
 #endif

@@ -346,7 +346,7 @@ acct_apply()
   } while (strlen(cuser.username) < 2);
 
   /* itoc.010317: 提示 user 以後將不能改姓名 */
-  vmsg("注意：請輸入真實姓名，本站不提供修改姓名的功\能");
+  vmsg("注意：請輸入真實姓名，本站不提供修改姓名的功能");
 
   do
   {

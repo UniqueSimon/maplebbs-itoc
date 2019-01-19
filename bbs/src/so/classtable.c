@@ -179,7 +179,7 @@ table_mail(table)
 
   usr_fpath(fpath, cuser.userid, FN_CLASSTBL_LOG);
   table_file(fpath, table);
-  mail_self(fpath, cuser.userid, "個人功\課表", MAIL_READ);
+  mail_self(fpath, cuser.userid, "個人功課表", MAIL_READ);
 }
 
 
@@ -189,7 +189,7 @@ table_edit(table)
 {
   int i, j;
 
-  vs_bar("編輯個人功\課表");
+  vs_bar("編輯個人功課表");
 
   if (class_number(&i, &j))
   {
@@ -205,7 +205,7 @@ table_del(table)
 {
   int i, j;
 
-  vs_bar("刪除個人功\課表");
+  vs_bar("刪除個人功課表");
 
   if (!class_number(&i, &j))
     return;
@@ -223,7 +223,7 @@ table_copy(table)
 {
   int i, j, x, y;
 
-  vs_bar("個人功\課表");
+  vs_bar("個人功課表");
 
   move(9, 0);
   outs("來源：");

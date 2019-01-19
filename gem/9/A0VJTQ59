@@ -62,7 +62,7 @@ a_personal_board()
 #if 1   [1;44m// 這一段是條件的檢查，可以隨便改或是拿掉 [m
   if (!is_school_email())
   {
-    vmsg("這功\能僅限本校同學使用");
+    vmsg("這功能僅限本校同學使用");
     return XEASY;
   }
 

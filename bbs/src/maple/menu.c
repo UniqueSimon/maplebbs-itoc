@@ -459,7 +459,7 @@ XoMbox()
 static MENU menu_mail[] =
 {
   XoMbox, PERM_BASIC, M_RMAIL,
-  "Read       ├ 閱\讀信件 ┤",
+  "Read       ├ 閱讀信件 ┤",
 
   m_send, PERM_LOCAL, M_SMAIL,
   "Mail       ├ 站內寄信 ┤",
@@ -854,7 +854,7 @@ static MENU menu_other[] =
 
 #ifdef HAVE_CLASSTABLE
   "bin/classtable.so:main_classtable", PERM_BASIC, - M_XMODE,
-  "ClassTable ♂ 功\課時段 ♀",
+  "ClassTable ♂ 功課時段 ♀",
 #endif
 
 #ifdef HAVE_CREDIT
@@ -871,7 +871,7 @@ static MENU menu_other[] =
 #endif
 
   menu_tool, PERM_MENU + Ctrl('A'), M_XMENU,	/* itoc.020829: 怕 guest 沒選項 */
-  "其他功\能"
+  "其他功能"
 };
 
 
@@ -963,7 +963,7 @@ static MENU menu_main[] =
   "Goodbye   δ 下次再會吧 δ",
 
   NULL, PERM_MENU + 'B', M_0MENU,
-  "主功\能表"
+  "主功能表"
 };
 
 

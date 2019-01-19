@@ -361,7 +361,7 @@ XoXfull(xo)
 
   if (!(bbstate & STAT_BOARD))
   {
-    zmsg("抱歉！您不是板主不能用這功\能！");
+    zmsg("抱歉！您不是板主不能用這功能！");
     return XO_FOOT;
   }
 
@@ -384,7 +384,7 @@ XoXfull(xo)
   {
     if (!HAS_PERM(PERM_SYSOP))
     {
-      zmsg("抱歉！您不是站長，不能使用該功\能！");
+      zmsg("抱歉！您不是站長，不能使用該功能！");
       return XO_FOOT;
     }
     if (!vget(b_lines, 0, "要替換的舊字串：", out_hunt, sizeof(out_hunt), DOECHO))

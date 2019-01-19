@@ -183,7 +183,7 @@ bshm 應該已設定好 */
    }
 
    static char* Userid = "新聞報馬仔";
-   static char* Usernick="CTRL+O可以完整閱\讀!";
+   static char* Usernick="CTRL+O可以完整閱讀!";
 
    static void
       post_board(fpath, title, kind)

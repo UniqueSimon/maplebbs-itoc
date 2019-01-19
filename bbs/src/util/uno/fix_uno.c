@@ -81,7 +81,7 @@ new_acct(userid)
   memcpy(slot.userid, acct.userid, IDLEN);
   rec_add(FN_SCHEMA, &slot, sizeof(SCHEMA));
 
-  DEBUG(("授予 %s 新的 userno 成功\\n", userid));
+  DEBUG(("授予 %s 新的 userno 成功\n", userid));
 }
 
 
@@ -217,7 +217,7 @@ new_pal(userid)
 
     unlink(folder);
     rec_add(folder, rec_pool, num * sizeof(PAL));
-    DEBUG(("成功\重建 %s 的朋友名單，共 %d 人\n", userid, num));
+    DEBUG(("成功重建 %s 的朋友名單，共 %d 人\n", userid, num));
   }
 }
 
@@ -250,7 +250,7 @@ new_list(userid)
 
       unlink(folder);
       rec_add(folder, rec_pool, num * sizeof(PAL));
-      DEBUG(("成功\重建 %s 的特殊名單，共 %d 人\n", userid, num));
+      DEBUG(("成功重建 %s 的特殊名單，共 %d 人\n", userid, num));
     }
   }
 }
@@ -288,7 +288,7 @@ new_aloha(userid)
 	  /* 把自己加入對方的 frienz 中 */
 	  usr_fpath(fpath, aloha.userid, FN_FRIENZ);
 	  rec_add(fpath, &frienz, sizeof(FRIENZ));
-	  DEBUG(("成功\重建 %s 的上站通知名單，共 %d 人\n", userid, num));
+	  DEBUG(("成功重建 %s 的上站通知名單，共 %d 人\n", userid, num));
 	}
       }
     }
@@ -326,7 +326,7 @@ new_benz(userid)
 
     unlink(folder);
     rec_add(folder, rec_pool, num * sizeof(BENZ));
-    DEBUG(("成功\重建 %s 的系統協尋名單，共 %d 人\n", userid, num));
+    DEBUG(("成功重建 %s 的系統協尋名單，共 %d 人\n", userid, num));
   }
 }
 #endif
@@ -355,7 +355,7 @@ new_bmw(userid)
     rec_add(folder, data, fsize);
     free(data);
 
-    DEBUG(("成功\重建 %s 的水球列表，共 %d 個\n", userid, fsize / sizeof(BMW)));
+    DEBUG(("成功重建 %s 的水球列表，共 %d 個\n", userid, fsize / sizeof(BMW)));
   }
 }
 
@@ -385,7 +385,7 @@ new_bpal(brdname)
 
     unlink(folder);
     rec_add(folder, rec_pool, num * sizeof(PAL));
-    DEBUG(("成功\重建 %s 的板友名單，共 %d 人\n", brdname, num));
+    DEBUG(("成功重建 %s 的板友名單，共 %d 人\n", brdname, num));
   }
 }
 #endif

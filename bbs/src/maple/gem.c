@@ -78,7 +78,7 @@ gem_body(xo)
 
     if (xo->key & GEM_W_BIT)
     {
-      switch (vans("(A)新增資料 (P)貼複 (G)海錨功\能 [N]無所事事 "))
+      switch (vans("(A)新增資料 (P)貼複 (G)海錨功能 [N]無所事事 "))
       {
       case 'a':
 	max = gem_add_all(xo);
@@ -770,7 +770,7 @@ gem_browse(xo)
       {
 	if ((op = gem_link(hdr->xname)) < 0)
 	{
-	  vmsg("對不起，此板精華區只准板友進入，請向板主申請入境許\可");
+	  vmsg("對不起，此板精華區只准板友進入，請向板主申請入境許可");
 	  return XO_FOOT;
 	}
       }
@@ -1268,7 +1268,7 @@ gem_paste(xo)
 
   case 'e':
     if (gem_extend(xo, num))
-      zmsg("[Extend 檔案附加] 動作並未完全成功\");
+      zmsg("[Extend 檔案附加] 動作並未完全成功");
     return XO_FOOT;
 
   default:

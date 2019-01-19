@@ -64,7 +64,7 @@ post_brdclass(xo)
       rec_add(path[rc], &gem, sizeof(HDR));
       rec_sync(path[rc], sizeof(HDR), cmphdr, NULL);
 
-      vmsg("看板分類已修改成功\，一小時後將於分類群組中更新");
+      vmsg("看板分類已修改成功，一小時後將於分類群組中更新");
     }
   }
 

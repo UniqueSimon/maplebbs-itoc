@@ -303,7 +303,7 @@ ncm_query(ncm)
 {
   move(3, 0);
   clrtobot();
-  prints("\n\n發行站台：%s\n砍信種類：%s\n允許\砍信：%s", 
+  prints("\n\n發行站台：%s\n砍信種類：%s\n允許砍信：%s", 
     ncm->issuer, ncm->type, ncm->perm ? "○" : "╳");
   vmsg(NULL);
 }
@@ -325,7 +325,7 @@ ncm_add(fpath, old, pos)
   if (vget(b_lines, 0, "發行：", ncm.issuer, /* sizeof(ncm.issuer) */ 70, GCARRY) &&
     vget(b_lines, 0, "種類：", ncm.type, sizeof(ncm.type), GCARRY))
   {
-    ncm.perm = (vans("允許\此 NCM message 砍信(Y/N)？[N] ") == 'y');
+    ncm.perm = (vans("允許此 NCM message 砍信(Y/N)？[N] ") == 'y');
 
     if (old)
       rec_put(fpath, &ncm, sizeof(ncmperm_t), pos, NULL);

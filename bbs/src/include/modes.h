@@ -79,7 +79,7 @@ static char *ModeTypeTable[] =
   "公佈欄",			/* M_GEM */
   "看板列表",			/* M_BOARD */
   "我的最愛",			/* M_MF */
-  "閱\讀文章",			/* M_READA */
+  "閱讀文章",			/* M_READA */
   "讀信",			/* M_RMAIL */
 
   "結交朋友",			/* M_PAL */

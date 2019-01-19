@@ -207,7 +207,7 @@ main_liteon()
 
   if (tl_play())		/* if win */
   {
-    sprintf(buf, "恭喜您成功\了  (用了 %d 根蠟燭)", candle);
+    sprintf(buf, "恭喜您成功了  (用了 %d 根蠟燭)", candle);
     vmsg(buf);
   }
 

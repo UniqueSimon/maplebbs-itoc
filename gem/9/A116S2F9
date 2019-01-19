@@ -63,7 +63,7 @@ typedef struct
 - COLOR3 "  編號   日  期   收支  金  額  分類     說  明%*s                               \033[m"
 
 + #define NECKER_CREDIT   \
-+ "[←]離開 [T]修改資料說明 [t]標籤 [d/D/^D]刪除 [m]移動 [^G]海錨功\能
++ "[←]離開 [T]修改資料說明 [t]標籤 [d/D/^D]刪除 [m]移動 [^G]海錨功能
  [h]說明\n" \
 + COLOR3 "  編號  日      期  收支 金    額  用途
  說              明%*s                    \033[m"
@@ -352,7 +352,7 @@ credit_add(xo, ctype)
   char *menu[] = {"AQ",
       "A  記帳資料",
       "F  資料夾",
-      "G  海錨功\能",
+      "G  海錨功能",
       "Q  離開", NULL};
 
   char *menu2[] = {"AQ",
@@ -738,7 +738,7 @@ credit_query(xo)
         "S  記帳資料統計",
         "Q  取消", NULL};
 
-    switch (pans(-1, -1, "功\能選單", menu))
+    switch (pans(-1, -1, "功能選單", menu))
     {
       case 'a':
         return credit_add_data(xo);

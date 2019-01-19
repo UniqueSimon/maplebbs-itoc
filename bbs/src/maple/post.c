@@ -499,7 +499,7 @@ do_post(xo, title)
     else			/* 站內使用者 */
       mode = mail_him(fpath, rcpt, title, 0);
 
-    outs(mode >= 0 ? "\n\n成功\回應至作者信箱" : "\n\n作者無法收信");
+    outs(mode >= 0 ? "\n\n成功回應至作者信箱" : "\n\n作者無法收信");
   }
 
   unlink(fpath);

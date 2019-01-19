@@ -48,7 +48,7 @@ post_usies(xo)
 : manage.c:post_manage()
 
     "Manager 增減副板主",
-+   "Usies   觀察看板閱\讀記錄",
++   "Usies   觀察看板閱讀記錄",
 
   ...
   ...

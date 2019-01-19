@@ -832,7 +832,7 @@ brd_set(brd, row)
     break;
 
   case 'b':
-    if (vget(++i, 0, "閱\讀權限(Y/N)？[N] ", buf, 3, LCECHO) == 'y')
+    if (vget(++i, 0, "閱讀權限(Y/N)？[N] ", buf, 3, LCECHO) == 'y')
     {
       brd->readlevel = bitset(brd->readlevel, NUMPERMS, NUMPERMS, MSG_READPERM, perm_tbl);
       move(2, 0);

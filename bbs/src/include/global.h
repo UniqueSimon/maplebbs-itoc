@@ -369,7 +369,7 @@ KEY_BKSP == Ctrl('H') == 0x08
 #define MSG_XY_NONE	"空無一物"
 
 #define MSG_USERPERM	"權限等級："
-#define MSG_READPERM	"閱\讀權限："
+#define MSG_READPERM	"閱讀權限："
 #define MSG_POSTPERM	"發表權限："
 #define MSG_BRDATTR	"看板屬性："
 #define MSG_USERUFO	"習慣旗標：             ■ / □                                 ■ / □"

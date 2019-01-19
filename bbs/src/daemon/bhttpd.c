@@ -2028,7 +2028,7 @@ postlist_neck(fpw, start, total, brdname)
   fprintf(fpw, "></td>\n  <td width=20%% align=center><a href=/dopost?%s target=_blank>發表文章</a></td>\n"
     "  <td width=20%% align=center><a href=/gem?%s>精華區</a></td>\n"
     "  <td width=20%% align=center><a href=/brdlist>看板列表</a>&nbsp;"
-    "<a href=/rss?%s><img border=0 src=/img?xml.gif alt=\"RSS 訂閱\這個看板\"></a></td>\n"
+    "<a href=/rss?%s><img border=0 src=/img?xml.gif alt=\"RSS 訂閱這個看板\"></a></td>\n"
     "</tr></table><br>\n",
     brdname, brdname, brdname);
 }
@@ -2309,7 +2309,7 @@ more_item(fpw, folder, pos, brdname)
 #ifdef HAVE_REFUSEMARK
       }
       else
-	out_mesg(fpw, "這是加密的文章，您無法閱\讀");
+	out_mesg(fpw, "這是加密的文章，您無法閱讀");
 #endif
 
       more_neck(fpw, pos, total, brdname, NULL);
@@ -2327,7 +2327,7 @@ cmd_brdmore(ap)
 {
   int pos;
   char folder[64], *brdname, *number;
-  FILE *fpw = out_head(ap, "閱\讀看板文章");
+  FILE *fpw = out_head(ap, "閱讀看板文章");
 
   if (!arg_analyze(2, '?', ap->urlp, &brdname, &number, NULL, NULL))
     return HS_ERROR;
@@ -2354,7 +2354,7 @@ cmd_mboxmore(ap)
 {
   int pos;
   char folder[64], *number;
-  FILE *fpw = out_head(ap, "閱\讀信箱文章");
+  FILE *fpw = out_head(ap, "閱讀信箱文章");
 
   if (!arg_analyze(1, '?', ap->urlp, &number, NULL, NULL, NULL))
     return HS_ERROR;
@@ -2416,7 +2416,7 @@ brdmost_neck(fpw)
   fputs("<br>\n"
     "<table cellspacing=0 cellpadding=1 border=0 width=760>\n"
     "<tr bgcolor=" HCOLOR_NECK ">\n"
-    "  <td align=center>同標題閱\讀</td>\n"
+    "  <td align=center>同標題閱讀</td>\n"
     "</tr></table><br>\n", fpw);
 }
 
@@ -2428,7 +2428,7 @@ cmd_brdmost(ap)
   int fd, pos;
   char folder[64], *brdname, *number;
   HDR hdr;
-  FILE *fpw = out_head(ap, "閱\讀看板同標題文章");
+  FILE *fpw = out_head(ap, "閱讀看板同標題文章");
 
   if (!arg_analyze(2, '?', ap->urlp, &brdname, &number, NULL, NULL))
     return HS_ERROR;
@@ -2473,7 +2473,7 @@ cmd_gemmore(ap)
   int fd, pos, total;
   char *brdname, *xname, *number, folder[64];
   HDR hdr;
-  FILE *fpw = out_head(ap, "閱\讀精華區文章");
+  FILE *fpw = out_head(ap, "閱讀精華區文章");
 
   if (!arg_analyze(3, '?', ap->urlp, &brdname, &xname, &number, NULL))
     return HS_ERROR;
@@ -2512,7 +2512,7 @@ cmd_gemmore(ap)
 	  out_article(fpw, folder);
 	}
 	else
-	  out_mesg(fpw, "此為保密精華區，您無法閱\讀");
+	  out_mesg(fpw, "此為保密精華區，您無法閱讀");
       }
       else
 	out_mesg(fpw, "這是卷宗或唯讀資料，您必須由精華區列表來讀取");
@@ -3316,7 +3316,7 @@ cmd_addpost(ap)
 	if (hdr.xmode & POST_OUTGO)
 	  outgo_post(&hdr, brdname);
 
-	out_reload(fpw, "您的文章發表成功\");
+	out_reload(fpw, "您的文章發表成功");
 	return HS_OK;
       }
       return HS_ERR_BOARD;
@@ -3369,13 +3369,13 @@ cmd_addmail(ap)
 	strcpy(hdr.nick, ap->username);
 	rec_add(folder, &hdr, sizeof(HDR));
 
-	out_reload(fpw, "您的信件發送成功\");
+	out_reload(fpw, "您的信件發送成");
 	return HS_OK;
       }
     }
   }
 
-  out_reload(fpw, "您的信件發送失敗，也許\是因為您尚未登入或是查無此使用者");
+  out_reload(fpw, "您的信件發送失敗，也許是因為您尚未登入或是查無此使用者");
   return HS_OK;
 }
 

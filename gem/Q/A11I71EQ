@@ -153,7 +153,7 @@ int bbsteach()
             nextmsg(0);
             nextmsg("本系統會介紹 BBS 基本使用的方式");
             nextmsg("主要提供給還沒使用過 BBS 的使用者。");
-            nextmsg("\033[1;33;41m  強烈建議還沒始用過 BBS 閱\讀本文件。  \033[m");
+            nextmsg("\033[1;33;41m  強烈建議還沒始用過 BBS 閱讀本文件。  \033[m");
             nextmsg("如果本系統在您登入時自動出現，表示您尚未通過認證。");
             nextmsg(0);
             nextmsg("你可以在以下地方找到這個教學精靈：");
@@ -168,8 +168,8 @@ int bbsteach()
             bbsteach_msg(MODE_CLEAR, "BBS 瀏覽方式簡介");
             nextmsg(0);
             nextmsg("要瀏覽 BBS ，只要使用鍵盤的方向鍵即可");
-            nextmsg("往左 (←) 通常代表離開，往右 (→) 通常代表進入或閱\讀");
-            nextmsg("當然，你也可以使用英文字母來做特定功\能的事情。");
+            nextmsg("往左 (←) 通常代表離開，往右 (→) 通常代表進入或閱讀");
+            nextmsg("當然，你也可以使用英文字母來做特定功能的事情。");
             nextmsg("但要注意大小寫英文字母是不一樣的，像是 'A' 和 'a' 就會產生不同的結果。");
             nextmsg("所以請特別注意你的大寫燈(鍵盤右邊三個燈中間那個)是否已經開啟。");
             nextmsg(0);
@@ -200,15 +200,15 @@ int bbsteach()
             nextmsg("例如: [\033[1;44m(C)lass     【 分組討論集 】\033[m]");
             nextmsg("然後使用 (→) 進入， (←) 離開");
             nextmsg(0);
-            nextmsg("這裡面有很多東西，幾乎所有提供的功\能都會放在上面");
-            nextmsg("在結束這個精靈之後，您可以到處看看，這個 BBS 裡面到底有什麼功\能。");
+            nextmsg("這裡面有很多東西，幾乎所有提供的功能都會放在上面");
+            nextmsg("在結束這個精靈之後，您可以到處看看，這個 BBS 裡面到底有什麼功能。");
 
             break;
 
         case 3:
             bbsteach_msg(MODE_CLEAR, "選擇看板");
             nextmsg(0);
-            nextmsg("在 BBS 有許\多討論群組，而一個討論群組我們叫做看板。");
+            nextmsg("在 BBS 有許多討論群組，而一個討論群組我們叫做看板。");
             nextmsg("為了讓我們更快找到我們想要的看板，通常都會將看板分類。");
             nextmsg(0);
             nextmsg("接著我們示範如何找到 sysop 看板。");
@@ -226,15 +226,15 @@ int bbsteach()
             nextmsg(0);
             nextmsg("如此一來，你就進入 sysop 看板了。");
             nextmsg(0);
-            nextmsg("接著我們將教你如何閱\讀與發表文章。");
+            nextmsg("接著我們將教你如何閱讀與發表文章。");
 
             break;
 
         case 4:
-            bbsteach_msg(MODE_CLEAR, "閱\讀與發表文章");
+            bbsteach_msg(MODE_CLEAR, "閱讀與發表文章");
             nextmsg(0);
-            nextmsg("閱\讀文章就如同選擇看板一樣，將 '>' 移到想要閱\讀的文章前面。");
-            nextmsg("(→)進入，按(↑)(↓)或是 空白鍵 閱\讀文章，按 (←) 離開。");
+            nextmsg("閱讀文章就如同選擇看板一樣，將 '>' 移到想要閱讀的文章前面。");
+            nextmsg("(→)進入，按(↑)(↓)或是 空白鍵 閱讀文章，按 (←) 離開。");
             nextmsg(0);
             nextmsg("現在我們來發表文章。");
             nextmsg("在看板列表中按著 'Ctrl' 再按 'p'。");
@@ -313,7 +313,7 @@ int bbsteach()
             move(b_lines, 0);
             clrtoeol();
 
-            nextmsg("接著就是編輯文章，細節請閱\讀上一個章節。");
+            nextmsg("接著就是編輯文章，細節請閱讀上一個章節。");
 
             bbsteach_msg(MODE_CLEAR, "推薦文章");
             nextmsg(0);
@@ -376,19 +376,19 @@ int bbsteach()
         {
                 bbsteach_msg(MODE_CLEAR, "選擇章節");
                 nextmsg(0);
-                nowaitmsg("請直接按 ENTER 看下一個章節，或選擇想要閱\讀的章節：");
+                nowaitmsg("請直接按 ENTER 看下一個章節，或選擇想要閱讀的章節：");
                 nowaitmsg(0);
                 nowaitmsg("1) 瀏覽方式簡介");
                 nowaitmsg("2) 目錄選單");
                 nowaitmsg("3) 選擇看板");
-                nowaitmsg("4) 閱\讀與發表文章");
+                nowaitmsg("4) 閱讀與發表文章");
                 nowaitmsg("5) 回覆文章與推薦文章");
                 nowaitmsg(0);
                 nowaitmsg("0) 離開");
 
                 move(b_lines, 0);
                 clrtoeol();
-                printf("請輸入想要閱\讀的主題, 不輸入=%d: ", ++playing);
+                printf("請輸入想要閱讀的主題, 不輸入=%d: ", ++playing);
                 if((cmd = tolower(vkey())) && ((cmd >= '0' && cmd <= '9') || cmd == 'q' || cmd == '\n' ))
                 {
                     if(cmd == 'q' || cmd == '0')

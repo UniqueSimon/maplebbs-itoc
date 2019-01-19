@@ -343,7 +343,7 @@ open_connect(node)		/* 連去這個站 */
     }
   }
 
-  DEBUG(("│<open_connect> 伺服器連線成功\\n"));
+  DEBUG(("│<open_connect> 伺服器連線成功\n"));
   return atoi(SERVERbuffer);
 }
 

@@ -235,7 +235,7 @@ post_battr_noscore(xo)
   oldbrd = bshm->bcache + currbno;
   memcpy(&newbrd, oldbrd, sizeof(BRD));
 
-  switch (vans("開放評分 (1)允許\ (2)不許\ (Q)取消？[Q] "))
+  switch (vans("開放評分 (1)允許 (2)不許 (Q)取消？[Q] "))
   {
   case '1':
     newbrd.battr &= ~BRD_NOSCORE;

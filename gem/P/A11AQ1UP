@@ -38,7 +38,7 @@
 #endif
     {
 +     time_t now;
-      vmsg("有新公告！請先閱\讀完新公告後再離開");
+      vmsg("有新公告！請先閱讀完新公告後再離開");
       XoPost(bno);
 +     time(&now);
       xover(XZ_POST);

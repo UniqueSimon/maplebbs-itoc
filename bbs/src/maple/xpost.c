@@ -67,7 +67,7 @@ extern char xo_pool[];
 
 
 #ifdef EVERY_Z
-#define MSG_XYDENY	"請先退出使用 ^Z 以前的串接/新聞功\能"
+#define MSG_XYDENY	"請先退出使用 ^Z 以前的串接/新聞功能"
 extern int z_status;
 #endif
 
@@ -986,7 +986,7 @@ int
 news_head(xo)
   XO *xo;
 {
-  vs_head("新聞閱\讀", xo->xyz);
+  vs_head("新聞閱讀", xo->xyz);
   prints(NECKER_NEWS, d_cols, "");
   return XO_BODY;
 }

@@ -220,7 +220,7 @@ main_recall()
 
     if (count == MAX_X * MAX_Y)
     {
-      vmsg("恭喜您成功\了");
+      vmsg("恭喜您成功了");
       break;
     }
 

@@ -97,7 +97,7 @@ main(argc, argv)
   {
     if (kill(pid, SIGKILL) == 0)
     {
-      printf("\n成功\殺掉進程!\n");
+      printf("\n成功殺掉進程!\n");
     }
     else
     {

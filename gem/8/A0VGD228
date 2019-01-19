@@ -277,7 +277,7 @@ Pnote(newflag)
           rec_del(fpath, sizeof(PNOTE), pos, NULL);
           pos--;
           num--;
-          vmsg("保留成功\");
+          vmsg("保留成功");
         }
       }
       break;
@@ -307,7 +307,7 @@ Pnote(newflag)
 static void
 p_read()
 {
-  switch (vans("◎ 閱\讀留言 N)新的留言 S)被保存的留言 Q)取消？[Q] "))
+  switch (vans("◎ 閱讀留言 N)新的留言 S)被保存的留言 Q)取消？[Q] "))
   {
   case 'n':
     Pnote(1);
@@ -360,7 +360,7 @@ main_pnote()
 {
   while (1)
   {
-    switch (vans("★ 個人答錄機：R)閱\讀留言 C)錄製留言 E)更改問候語 Q)離開？[Q] "))
+    switch (vans("★ 個人答錄機：R)閱讀留言 C)錄製留言 E)更改問候語 Q)離開？[Q] "))
     {
     case 'r':
       p_read();

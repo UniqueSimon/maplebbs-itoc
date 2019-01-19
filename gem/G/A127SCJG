@@ -13,7 +13,7 @@
 +  #define UFO_NOANSI      BFLAG(22)     /* more()去除顏色 */
 ..
 ..
-+  "閱\讀文字顏色   (去除/保留)",        /* UFO_NOANSI */
++  "閱讀文字顏色   (去除/保留)",        /* UFO_NOANSI */
 
 [32m:/src/maple/more.c[m
 

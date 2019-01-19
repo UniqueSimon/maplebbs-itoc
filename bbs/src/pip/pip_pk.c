@@ -355,7 +355,7 @@ pip_pk_skill()		/* 技能: 武功/魔法 */
   int ch, class;
   int injure[5] = {125, 200, 300, 450, 750};
 
-  out_cmd(COLOR1 " 武功\選單 " COLOR2 " [1]護身 [2]輕功\ [3]心法 [4]拳法 [5]劍法 [6]刀法 [7]暗器 [Q]放棄    \033[m",
+  out_cmd(COLOR1 " 武功選單 " COLOR2 " [1]護身 [2]輕功 [3]心法 [4]拳法 [5]劍法 [6]刀法 [7]暗器 [Q]放棄    \033[m",
     COLOR1 " 法術選單 " COLOR2 " [A]治療 [B]雷系 [C]冰系 [D]炎系 [E]土系 [F]風系 [G]特殊 [Q]放棄    \033[m");
 
   for (;;)
@@ -585,7 +585,7 @@ pip_pk_convince()	/* 說服: 耗 vp */
   {
     cp->vp -= needvp[class];
     ep->hp -= injure[class] * (75 + rand() % 50) / 100;
-    sprintf(buf, "您成功\地說服%s來助您一臂之力", name[class]);
+    sprintf(buf, "您成功地說服%s來助您一臂之力", name[class]);
     vmsg(buf);
     pip_pk_turn();
   }
