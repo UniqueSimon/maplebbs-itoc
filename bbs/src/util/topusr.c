@@ -516,7 +516,7 @@ write_sex(fpath, year, month, day)
   int i, j;
   int max, item, maxsex;
 
-  char name[3][7] = 
+  char name[3][9] = 
   {
     "  中性",
     "  男性",
