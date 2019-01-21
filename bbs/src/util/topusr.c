@@ -421,7 +421,7 @@ write_star(fpath, year, month, day)
   int i, j;
   int max, item, maxstar;
 
-  char name[13][7] = 
+  char name[13][10] = 
   {
     "牡羊座",
     "金牛座",
