@@ -58,7 +58,7 @@ add_money(log)
 {
   char fpath[64];
   PAYCHECK paycheck;
-  static char name[7][3] = {"普", "陸", "伍", "肆", "參", "貳", "頭"};
+  static char name[7][4] = {"普", "陸", "伍", "肆", "參", "貳", "頭"};
 
   memset(&paycheck, 0, sizeof(PAYCHECK));
   time(&paycheck.tissue);

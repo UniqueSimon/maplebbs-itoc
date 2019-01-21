@@ -63,7 +63,7 @@ static int origin_board[MAX_X][MAX_Y];
 #endif
 static int cx, cy;
 static int stage, NUM_TABLE;
-static char piece[4][3] = {"　", "○", "●", "☆"};
+static char piece[4][4] = {" ", "○", "●", "☆"};
 static char title[20];		/* 棋譜名稱 */
 
 #ifdef RETRACT_CHESS

@@ -37,7 +37,7 @@ enum
 };
 
 
-static char piece[3][3] = {"□", "●", "○"};
+static char piece[3][4] = {"□", "●", "○"};
 static char map[MAP_X][MAP_Y];	/* 地圖上每格的擁有者 */
 static int cx, cy;		/* current (x, y) */
 static int EndGame;		/* -1: 離開遊戲 1: 遊戲結束 0: 還在玩 */

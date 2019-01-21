@@ -21,7 +21,7 @@
 /*-------------------------------------------------------*/
 
 
-static char racename[4][9] = {"武鬥大會", "藝術大展", "皇家舞會", "烹飪大賽"};
+static char racename[4][13] = {"武鬥大會", "藝術大展", "皇家舞會", "烹飪大賽"};
 
 
 /* name[13] attribute hp maxhp attack spirit magic armor dodge money exp pic */

@@ -9,7 +9,7 @@
 extern UCACHE *ushm;
 
 + int cursor_count = 0;
-+ char cursor_table[3][3] = {"→", "♂", "♀"};
++ char cursor_table[3][4] = {"→", "♂", "♀"};
 
 : menu.c:menu()
 

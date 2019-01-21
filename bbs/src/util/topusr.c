@@ -438,7 +438,7 @@ write_star(fpath, year, month, day)
     "不可考"
   };
 
-  char blk[10][3] =
+  char blk[10][4] =
   {
     "  ", "▏", "▎", "▍", "▌",
     "▋", "▊", "▉", "█", "█",
@@ -523,7 +523,7 @@ write_sex(fpath, year, month, day)
     "  女性"
   };
 
-  char blk[10][3] =
+  char blk[10][4] =
   {
     "  ", "▏", "▎", "▍", "▌",
     "▋", "▊", "▉", "█", "█",

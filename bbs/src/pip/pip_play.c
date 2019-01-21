@@ -321,7 +321,7 @@ pip_play_guess()		/* 猜拳程式 */
 {
   int mankey;		/* 我出的手 */
   int pipkey;		/* 小雞出的手 */
-  char msg[3][5] = {"剪刀", "石頭", "布  "};
+  char msg[3][7] = {"剪刀", "石頭", "布  "};
 
   out_cmd("", COLOR1 " 猜拳 " COLOR2 " [1]我出剪刀 [2]我出石頭 [3]我出布啦 [Q]跳出                            \033[m");
 

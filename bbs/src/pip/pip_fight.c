@@ -160,8 +160,8 @@ badman_generate(area)
 
   case '2':
     {
-      char color[7][5] = {"黑", "白", "紅", "綠", "藍", "金", "上古"};
-      char race[4][9] = {"冰魔", "雪怪", "冰蠶", "長毛象"};
+      char color[7][7] = {"黑", "白", "紅", "綠", "藍", "金", "上古"};
+      char race[4][10] = {"冰魔", "雪怪", "冰蠶", "長毛象"};
 
       sprintf(m.name, "%s%s", color[level % 7], race[level % 4]);
       level = d.level - 10 + level % 10;		/* 難度低 */
@@ -203,8 +203,8 @@ badman_generate(area)
 
   case '4':
     {
-      char title[5][5] = {"英勇", "神武", "百戰", "常勝", "萬能"};
-      char race[8][5] = {"騎士", "武士", "忍者", "劍客", "盜賊", "僧侶", "巫師", "牧師"};
+      char title[5][7] = {"英勇", "神武", "百戰", "常勝", "萬能"};
+      char race[8][7] = {"騎士", "武士", "忍者", "劍客", "盜賊", "僧侶", "巫師", "牧師"};
 
       sprintf(m.name, "%s%s", title[level % 5], race[level % 8]);
       level = d.level + level % 10;			/* 難度高 */
@@ -223,8 +223,8 @@ badman_generate(area)
 
   case '5':
     {
-      char title[3][7] = {"貪吃的", "路過的", "愛玩的"};
-      char race[5][7] = {"幽靈", "吸血鬼", "黑無常", "白無常", "小鬼"};
+      char title[3][10] = {"貪吃的", "路過的", "愛玩的"};
+      char race[5][10] = {"幽靈", "吸血鬼", "黑無常", "白無常", "小鬼"};
 
       sprintf(m.name, "%s%s", title[level % 3], race[level % 5]);
       level = d.level + level % 20;			/* 難度高 */
@@ -1095,7 +1095,7 @@ pip_attack_skill(dr, sr, mr, hr)	/* 怪物技能攻擊 */
     if (num % 3 == 0)
     {
       /* itoc.010801: 做一些怪怪的效果 */
-      char name[3][9] = {"一斷貪嗔", "二斷愛欲", "三斷煩惱"};
+      char name[3][13] = {"一斷貪嗔", "二斷愛欲", "三斷煩惱"};
 
       for (num = 0; num < 3; num++)
       {
@@ -1141,7 +1141,7 @@ pip_attack_skill(dr, sr, mr, hr)	/* 怪物技能攻擊 */
     /* itoc.010814: 所有的攻擊法術合併在一起處理 */
     {
       /* itoc.010814: 每系法術各 2 隻以配合 mankey 來選召喚獸 */
-      char name[10][9] = {"電氣豬", "雷光獸", "寒冰鬼", "凍水怪", "熱火魔", "火焰球", "怒土虫", "石頭怪", "暴風妖", "迷魂鬼"};
+      char name[10][10] = {"電氣豬", "雷光獸", "寒冰鬼", "凍水怪", "熱火魔", "火焰球", "怒土虫", "石頭怪", "暴風妖", "迷魂鬼"};
 
       num = mr * (125 + num % 50) / 100;	/* 借用 num 當傷害點數 */
       d.hp -= num;

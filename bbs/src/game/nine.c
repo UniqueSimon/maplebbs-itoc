@@ -23,11 +23,11 @@ static char AI_score[13] = {7, 6, 5, 4,10, 9, 3, 2, 1, 0,11, 8,12};
 /* AI_score 6 以下的是數字牌，7 以上的是特殊牌 */
 /* 電腦傾向把 AI_score 小的牌丟出去 */
 
-static char str_dir[4][3] = {"↓", "→", "↑", "←"};
+static char str_dir[4][4] = {"↓", "→", "↑", "←"};
 
 /* hand[] 裡面的值所代表的牌張 0~12:CK~CQ 13~25:DK~DQ 26~38:HK~KQ 39~51:SK~SQ */
-static char str_suit[4][3] = {"Ｃ", "Ｄ", "Ｈ", "Ｓ"};
-static char str_num[13][3] = {"Ｋ", "Ａ", "２", "３", "４", "５", "６", "７", "８", "９", "Ｔ", "Ｊ", "Ｑ"};
+static char str_suit[4][4] = {"Ｃ", "Ｄ", "Ｈ", "Ｓ"};
+static char str_num[13][4] = {"Ｋ", "Ａ", "２", "３", "４", "５", "６", "７", "８", "９", "Ｔ", "Ｊ", "Ｑ"};
 
 static char hand[4][5];		/* 東西南北四家的牌張 */
 static char now;		/* 現在桌上點數 */

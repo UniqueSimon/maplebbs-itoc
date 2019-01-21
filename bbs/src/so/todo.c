@@ -200,7 +200,7 @@ GenerateCalendar(calendar, y, m, tm_mon, tm_mday)	/* 產生月曆 */
   int y, m;			/* 要產生幾年幾月的月曆 */
   int tm_mon, tm_mday;		/* 今天是幾月幾日 */
 {
-  static char week_str[7][3] = {"日", "一", "二", "三", "四", "五", "六"};
+  static char week_str[7][4] = {"日", "一", "二", "三", "四", "五", "六"};
   static char month_color[12][8] = 
   {
     "\033[1;32m", "\033[1;33m", "\033[1;35m", "\033[1;36m",

@@ -425,7 +425,7 @@ main()
   FILE *fp;
   time_t now;
   char des[MAX_DES][200] = {"", "", "", ""};
-  static char betname[8][9] =
+  static char betname[8][13] =
   {
     "疲倦野貓","沒力咩咩","遊魂小風","魔力小夢",
     "勤奮大魚","碼頭阿倫","一堆螞蟻","嘰哩咕嚕"
