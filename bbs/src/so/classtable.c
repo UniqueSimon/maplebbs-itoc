@@ -39,7 +39,7 @@ typedef struct
 
 typedef struct
 {
-  char c_class[5];	/* 第幾節 */
+  char c_class[6];	/* 第幾節 */
   char c_start[6];	/* 上課時間 */
   char c_break[6];	/* 下課時間 */
 }  CLOCK;
