@@ -334,7 +334,7 @@ pip_refresh_screen(menunum, mode)	/* 重繪整個畫面 */
   int tm, age, pic;
   char inbuf2[20], inbuf3[20], inbuf4[20], inbuf5[20], inbuf6[20], inbuf7[20];
 
-  char yo[12][5] = 
+  char yo[12][7] = 
   {
     "誕生", "嬰兒", "幼兒", "兒童", "少年", "青年",
     "成年", "壯年", "更年", "老年", "古稀", "神仙"
