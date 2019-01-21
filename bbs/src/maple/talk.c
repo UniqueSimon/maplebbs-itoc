@@ -108,7 +108,7 @@ do_query(acct)
   UTMP *up;
   int userno, rich;
   char *userid;
-  char fortune[4][9] = {"赤貧乞丐", "一般個體", "家境小康", "財閥地主"};
+  char fortune[4][13] = {"赤貧乞丐", "一般個體", "家境小康", "財閥地主"};
 
   utmp_mode(M_QUERY);
 
