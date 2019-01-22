@@ -61,7 +61,7 @@ bbslink: $(LNKOBJS)
 	$(CC) -o bbslink $(LNKOBJS) $(OPT) $(LDFLAGS)
 
 innbbsd: $(INNOBJS)
-	$(CC) -o innbbsd $(INNOBJS) $(OPT) $(LDFLAGS)
+	$(CC) -o innbbsd $(INNOBJS) $(OPT) -m32 $(LDFLAGS)
 
 
 install: $(INNBBSD)
