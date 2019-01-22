@@ -420,8 +420,8 @@
 #define FINGER_PORT	79		/* Finger 所用的 port (bguard.c) */
 #define BHTTP_PORT	80		/* HTTP   所用的 port (bhttpd.c) */
 #define POP3_PORT	110		/* POP3   所用的 port (bpop3d.c) */
-#define BNNTP_PORT	119		/* NNTP   所用的 port (bnntp.c) */
-#define CHAT_PORT	3838		/* 聊天室 所用的 port (chat.c xchatd.c) */
+#define BNNTP_PORT	10087		/* NNTP   所用的 port (bnntp.c) */
+#define CHAT_PORT	10085		/* 聊天室 所用的 port (chat.c xchatd.c) */
 #define INNBBS_PORT	7777		/* 轉信   所用的 port (channel.c) */
 
 
