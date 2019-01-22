@@ -58,7 +58,7 @@ cygwin:
 
 
 bbslink: $(LNKOBJS)
-	$(CC) -o bbslink $(LNKOBJS) $(OPT) $(LDFLAGS)
+	$(CC) -o bbslink $(LNKOBJS) $(OPT) -m32 $(LDFLAGS)
 
 innbbsd: $(INNOBJS)
 	$(CC) -o innbbsd $(INNOBJS) $(OPT) -m32 $(LDFLAGS)
