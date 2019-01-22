@@ -6,7 +6,6 @@
 
 SO =    .... [1;33mgallery.so[m
 
-.SUFFIXES:
 .SUFFIXES: .c .o .so
 
 .c.o:   ;  $(CC) $(CFLAGS) -c $*.c
