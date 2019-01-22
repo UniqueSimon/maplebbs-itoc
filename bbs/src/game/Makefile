@@ -23,7 +23,7 @@ SO =	bar.so bingo.so bj.so bwboard.so chessmj.so dice.so dragon.so fantan.so \
 .SUFFIXES: .c .o .so
 
 .c.o:	;  $(CC) $(CFLAGS) -c $*.c
-.o.so:	;  ld -s -G $*.o -o $*.so -L../lib -ldao
+.o.so:	;  ld -s -G $*.o -o $*.so -L../lib -ldao -melf_i386
 
 
 all: 
