@@ -31,11 +31,11 @@
 #define SYSOPNICK	"複讀機"		/* sysop 的暱稱 */
 #define TAG_VALID       "["BBSNAME2"]To"	/* 身分認證函 token */
 
-#define MYIPADDR	"255.255.255.255"		/* IP address */
-#define MYHOSTNAME	"local.bbs"	/* 網路地址 FQDN */
+#define MYIPADDR	"103.124.106.236"		/* IP address */
+#define MYHOSTNAME	"vps5895209.hosteons.com"	/* 網路地址 FQDN */
 
 #define HOST_ALIASES	{MYHOSTNAME, MYIPADDR, \
-			 "local.bbs", "local.bbs", \
+			 "vps5895209.hosteons.com", "103.124.106.236", \
 			 NULL}
 
 #define MYCHARSET	"utf-8"			/* BBS 所使用的字集 */

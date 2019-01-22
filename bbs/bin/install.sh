@@ -23,8 +23,8 @@ schoolname="Steamgay"
 bbsname="人類的本質"
 bbsname2="Human Nature"
 sysopnick="複讀機"
-myipaddr="255.255.255.255"
-myhostname="local.bbs"
+myipaddr="103.124.106.236"
+myhostname="vps5895209.hosteons.com"
 msg_bmw="水球"
 
 # 請修改您的作業系統
