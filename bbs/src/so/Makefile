@@ -19,7 +19,7 @@ SO =	admutil.so aloha.so bank.so chat.so help.so innbbs.so manage.so newbrd.so \
 	song.so vote.so xyz.so \
 	calendar.so classtable.so credit.so todo.so
 
-
+.SUFFIXES:
 .SUFFIXES: .c .o .so
 
 .c.o:	;  $(CC) $(CFLAGS) -c $*.c
